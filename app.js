@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Determine the logged-in user first to use for specific storage keys
     const loggedInUser = (() => {
         try {
-            const user = JSON.parse(localStorage.getItem('enggtv_user')) || { tier: 'free', username: 'guest' };
+            const user = JSON.parse(localStorage.getItem('enggtv_user')) || { tier: 'premium', username: 'guest' };
+            // Ensure the user is always premium
+            user.tier = 'premium';
+            localStorage.setItem('enggtv_user', JSON.stringify(user));
+            
             // Force Mechanical for demo user
             if (user.username === 'demo') {
                 user.discipline = 'Mechanical';
@@ -11,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return user;
         } catch (e) {
-            return { tier: 'free', username: 'guest' };
+            return { tier: 'premium', username: 'guest' };
         }
     })();
 
@@ -111,39 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGamificationUI();
     }
 
-    function startFreeTrialTimer() {
-        // Only for free tier users
-        if (state.user.tier !== 'free') return;
-
-        const TRIAL_DURATION = 30 * 1000; // 30 seconds
-        const startTime = sessionStorage.getItem('enggtv_trial_start');
-        
-        const now = Date.now();
-        let remainingTime = TRIAL_DURATION;
-
-        if (startTime) {
-            const elapsed = now - parseInt(startTime);
-            remainingTime = TRIAL_DURATION - elapsed;
-        } else {
-            sessionStorage.setItem('enggtv_trial_start', now.toString());
-        }
-
-        if (remainingTime <= 0) {
-            // Trial already expired in this session
-            navigateTo('upgrade-view');
-        } else {
-            // Start the countdown
-            setTimeout(() => {
-                // Double check they haven't upgraded in the meantime
-                const currentUser = JSON.parse(localStorage.getItem('enggtv_user') || '{}');
-                if (currentUser.tier === 'free') {
-                    navigateTo('upgrade-view');
-                    // We could also show a toast message here
-                    console.log('Trial expired. Redirecting to upgrade screen.');
-                }
-            }, remainingTime);
-        }
-    }
 
     function updateUIForTier() {
         const badges = [
@@ -284,8 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
             'quiz-view': 'Practice Session',
             'account-info-view': 'Account Information',
             'support-view': 'Help & Support',
-            'upgrade-view': 'Premium Upgrade',
-            'plans-view': 'Membership Plans',
             'achievements-view': 'Achievements',
             'leaderboard': 'Leaderboard'
         };
@@ -472,29 +441,38 @@ document.addEventListener('DOMContentLoaded', () => {
         
         questionText.innerHTML = `<p>${question.question}</p>`;
         
-        if (question.question_image) {
-            const imgDiv = document.createElement('div');
-            imgDiv.className = 'question-image-container';
-            imgDiv.innerHTML = `<img src="${question.question_image}" alt="Question Diagram" class="quiz-image">`;
-            questionText.appendChild(imgDiv);
-        } else if (question.image) {
-            const imgDiv = document.createElement('div');
-            imgDiv.className = 'question-image-container';
-            imgDiv.innerHTML = `<img src="${question.image}" alt="Question Diagram" class="quiz-image">`;
-            questionText.appendChild(imgDiv);
-        } else if (question.tikz) {
-            const tikzDiv = document.createElement('div');
-            tikzDiv.className = 'tikz-container';
-            const script = document.createElement('script');
-            script.type = 'text/tikz';
-            script.textContent = question.tikz;
-            tikzDiv.appendChild(script);
-            questionText.appendChild(tikzDiv);
-            
-            const trigger = () => window.dispatchEvent(new Event('load'));
-            setTimeout(trigger, 50);
-            setTimeout(trigger, 200);
-            setTimeout(trigger, 500);
+        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || state.user.username === 'admin' || state.user.role === 'admin';
+        
+        if (diagramsUnlocked) {
+            if (question.question_image) {
+                const imgDiv = document.createElement('div');
+                imgDiv.className = 'question-image-container';
+                imgDiv.innerHTML = `<img src="${question.question_image}" alt="Question Diagram" class="quiz-image">`;
+                questionText.appendChild(imgDiv);
+            } else if (question.image) {
+                const imgDiv = document.createElement('div');
+                imgDiv.className = 'question-image-container';
+                imgDiv.innerHTML = `<img src="${question.image}" alt="Question Diagram" class="quiz-image">`;
+                questionText.appendChild(imgDiv);
+            } else if (question.tikz) {
+                const tikzDiv = document.createElement('div');
+                tikzDiv.className = 'tikz-container';
+                const script = document.createElement('script');
+                script.type = 'text/tikz';
+                script.textContent = question.tikz;
+                tikzDiv.appendChild(script);
+                questionText.appendChild(tikzDiv);
+                
+                const trigger = () => window.dispatchEvent(new Event('load'));
+                setTimeout(trigger, 50);
+                setTimeout(trigger, 200);
+                setTimeout(trigger, 500);
+            }
+        } else if (question.question_image || question.image || question.tikz) {
+            const lockedDiv = document.createElement('div');
+            lockedDiv.className = 'bg-surface-container-low dark:bg-slate-800 p-4 rounded-xl text-center my-4 border border-outline/20 dark:border-slate-700';
+            lockedDiv.innerHTML = '<span class="material-symbols-outlined text-outline dark:text-slate-400 mb-2">lock</span><p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400">Diagram locked. Earn 150 points to view.</p>';
+            questionText.appendChild(lockedDiv);
         }
         
         const progress = ((state.currentQuestionIndex + 1) / state.quizQuestions.length) * 100;
@@ -625,11 +603,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         explanationText.innerHTML = '';
 
-        if (question.solution_image) {
-            const globalImgDiv = document.createElement('div');
-            globalImgDiv.className = 'solution-image-container';
-            globalImgDiv.innerHTML = `<img src="${question.solution_image}" alt="Solution Overview" class="quiz-image">`;
-            explanationText.appendChild(globalImgDiv);
+        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || state.user.username === 'admin' || state.user.role === 'admin';
+        const solImg = question.solution_image || (question.solution && question.solution.solution_image);
+        
+        if (diagramsUnlocked) {
+            if (solImg) {
+                const globalImgDiv = document.createElement('div');
+                globalImgDiv.className = 'solution-image-container';
+                globalImgDiv.innerHTML = `<img src="${solImg}" alt="Solution Overview" class="quiz-image">`;
+                explanationText.appendChild(globalImgDiv);
+            }
+        } else if (solImg) {
+            const lockedDiv = document.createElement('div');
+            lockedDiv.className = 'bg-surface-container-low dark:bg-slate-800 p-4 rounded-xl text-center my-4 border border-outline/20 dark:border-slate-700';
+            lockedDiv.innerHTML = '<span class="material-symbols-outlined text-outline dark:text-slate-400 mb-2">lock</span><p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400">Solution diagram locked. Earn 150 points to view.</p>';
+            explanationText.appendChild(lockedDiv);
         }
 
         question.solution.steps.forEach((step, idx) => {
@@ -640,29 +628,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h5>Step ${idx + 1}: ${step.title}</h5>
                 <p>${step.content}</p>
             `;
-            if (step.solution_image) {
-                const imgDiv = document.createElement('div');
-                imgDiv.className = 'step-image-container';
-                imgDiv.innerHTML = `<img src="${step.solution_image}" alt="Step ${idx + 1} Diagram" class="quiz-image">`;
-                stepDiv.appendChild(imgDiv);
-            } else if (step.image) {
-                const imgDiv = document.createElement('div');
-                imgDiv.className = 'step-image-container';
-                imgDiv.innerHTML = `<img src="${step.image}" alt="Step ${idx + 1} Diagram" class="quiz-image">`;
-                stepDiv.appendChild(imgDiv);
-            } else if (step.tikz) {
-                const tikzDiv = document.createElement('div');
-                tikzDiv.className = 'tikz-container';
-                const script = document.createElement('script');
-                script.type = 'text/tikz';
-                script.textContent = step.tikz;
-                tikzDiv.appendChild(script);
-                stepDiv.appendChild(tikzDiv);
-                
-                const trigger = () => window.dispatchEvent(new Event('load'));
-                setTimeout(trigger, 50);
-                setTimeout(trigger, 200);
-                setTimeout(trigger, 500);
+            const stepImg = step.solution_image || step.image;
+            
+            if (diagramsUnlocked) {
+                if (stepImg) {
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = 'step-image-container';
+                    imgDiv.innerHTML = `<img src="${stepImg}" alt="Step ${idx + 1} Diagram" class="quiz-image">`;
+                    stepDiv.appendChild(imgDiv);
+                } else if (step.tikz) {
+                    const tikzDiv = document.createElement('div');
+                    tikzDiv.className = 'tikz-container';
+                    const script = document.createElement('script');
+                    script.type = 'text/tikz';
+                    script.textContent = step.tikz;
+                    tikzDiv.appendChild(script);
+                    stepDiv.appendChild(tikzDiv);
+                    
+                    const trigger = () => window.dispatchEvent(new Event('load'));
+                    setTimeout(trigger, 50);
+                    setTimeout(trigger, 200);
+                    setTimeout(trigger, 500);
+                }
+            } else if (stepImg || step.tikz) {
+                const lockedDiv = document.createElement('div');
+                lockedDiv.className = 'bg-surface-container-low dark:bg-slate-800 p-4 rounded-xl text-center my-4 border border-outline/20 dark:border-slate-700';
+                lockedDiv.innerHTML = '<span class="material-symbols-outlined text-outline dark:text-slate-400 mb-2">lock</span><p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400">Step diagram locked. Earn 150 points to view.</p>';
+                stepDiv.appendChild(lockedDiv);
             }
             explanationText.appendChild(stepDiv);
         });
@@ -777,19 +769,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startMockExam() {
-        let allQuestions = [];
-        for (const subjectId in QUESTIONS) {
-            allQuestions = allQuestions.concat(QUESTIONS[subjectId]);
-        }
+        const totalExamQuestions = 20;
+        let selectedQuestions = [];
+        let availablePools = [];
 
-        if (allQuestions.length === 0) {
+        state.subjects.forEach(subject => {
+            const subjectQuestions = QUESTIONS[subject.id] || [];
+            if (subjectQuestions.length > 0) {
+                availablePools.push([...subjectQuestions].sort(() => 0.5 - Math.random()));
+            }
+        });
+
+        if (availablePools.length === 0) {
             alert("No questions available.");
             return;
         }
 
+        let poolIndex = 0;
+        while (selectedQuestions.length < totalExamQuestions && availablePools.length > 0) {
+            const question = availablePools[poolIndex].pop();
+            selectedQuestions.push(question);
+            
+            if (availablePools[poolIndex].length === 0) {
+                availablePools.splice(poolIndex, 1);
+            } else {
+                poolIndex++;
+            }
+            
+            if (poolIndex >= availablePools.length) {
+                poolIndex = 0;
+            }
+        }
+
         state.currentSubject = { name: "Full Mock Exam", id: "mock" };
         state.currentTopic = "Mock Exam";
-        state.quizQuestions = [...allQuestions].sort(() => 0.5 - Math.random()).slice(0, 20);
+        state.quizQuestions = [...selectedQuestions].sort(() => 0.5 - Math.random());
         state.currentQuestionIndex = 0;
         state.answers = new Array(state.quizQuestions.length).fill(null);
         state.submitted = new Array(state.quizQuestions.length).fill(false);
@@ -1013,6 +1027,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 if (pointsNeededText) {
                     pointsNeededText.textContent = `${points}/${required} Points`;
+                }
+            }
+        }
+
+        const examUnlocked = document.getElementById('exam-unlocked');
+        const examLocked = document.getElementById('exam-locked');
+        const examRequired = 100;
+        const isExamUnlocked = points >= examRequired || state.user.tier === 'premium' || state.user.username === 'admin' || state.user.role === 'admin';
+        
+        if (examUnlocked && examLocked) {
+            if (isExamUnlocked) {
+                examUnlocked.classList.remove('hidden');
+                examLocked.classList.add('hidden');
+            } else {
+                examUnlocked.classList.add('hidden');
+                examLocked.classList.remove('hidden');
+                
+                const examProgress = document.getElementById('exam-points-progress-bar');
+                const examNeededText = document.getElementById('exam-points-needed-text');
+                
+                if (examProgress) {
+                    const percent = Math.min(100, (points / examRequired) * 100);
+                    examProgress.style.width = `${percent}%`;
+                }
+                if (examNeededText) {
+                    examNeededText.textContent = `${points}/${examRequired} Points`;
                 }
             }
         }

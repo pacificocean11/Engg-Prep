@@ -59,7 +59,7 @@ const QUESTIONS = {
       "topic": "Analytic geometry and trigonometry",
       "title": "Equation of a Perpendicular Line",
       "question": "What is the equation of the line passing through the point $(2, -3)$ and perpendicular to the line defined by $3x - 4y + 7 = 0$?",
-      "question_image": "assets/images/questions/tikz_ea40f39c0b.svg",
+      "question_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.1.PNG",
       "options": [
         {
           "label": "A",
@@ -324,7 +324,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "$e = \\frac{\\sqrt{7}}{4}$",
-        "solution_image": "assets/images/questions/tikz_46053afaa8.svg"
+        "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.6A.PNG"
       }
     },
     {
@@ -366,7 +366,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "$(3, 0)$",
-        "solution_image": "assets/images/questions/tikz_7a42844d58.svg"
+        "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.7A.PNG"
       }
     },
     {
@@ -412,7 +412,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "10",
-        "solution_image": "assets/images/questions/tikz_83227d6d57.svg"
+        "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.8A.PNG"
       }
     },
     {
@@ -458,7 +458,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "(2, -2)",
-        "solution_image": "assets/images/questions/tikz_d0f8b06454.svg"
+        "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.9A.PNG"
       }
     },
     {
@@ -504,7 +504,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "0.8",
-        "solution_image": "assets/images/questions/tikz_741a2f4c1f.svg"
+        "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.10A.PNG"
       }
     },
     {
@@ -550,7 +550,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "(1, 2)",
-        "solution_image": "assets/images/questions/tikz_5ff309e64e.svg"
+        "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.11A.PNG"
       }
     },
     {
@@ -9765,7 +9765,7 @@ const QUESTIONS = {
       "topic": "Kinematics of Particles",
       "title": "Projectile Motion",
       "question": "A projectile is launched from ground level with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance and assuming $g = 9.81\\text{ m/s}^2$, what is the maximum height $h_{max}$ reached by the projectile?",
-      "question_image": "",
+      "question_image": "assets/images/questions/tikz_1436a7189a.svg",
       "options": [
         {
           "label": "A",
@@ -9807,7 +9807,7 @@ const QUESTIONS = {
       "topic": "Kinematics of Particles",
       "title": "Maximum Speed on a Curve",
       "question": "A car with a mass of $1500$ kg travels around a flat circular curve with a radius of $100$ m. If the coefficient of static friction between the tires and the road is $\\mu_s = 0.6$, what is the maximum speed the car can maintain without sliding?",
-      "question_image": "",
+      "question_image": "assets/images/questions/tikz_b8c6028674.svg",
       "options": [
         {
           "label": "A",
@@ -9849,7 +9849,7 @@ const QUESTIONS = {
       "topic": "Kinematics of Particles",
       "title": "Projectile Motion",
       "question": "A projectile is launched from a height of $h = 10\\text{ m}$ with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance, what is the horizontal distance $x$ traveled by the projectile when it hits the ground? Use $g = 9.81\\text{ m/s}^2$.",
-      "question_image": "",
+      "question_image": "assets/images/questions/tikz_f24fd57b1b.svg",
       "options": [
         {
           "label": "A",
@@ -9930,7 +9930,7 @@ const QUESTIONS = {
           }
         ],
         "final_answer": "A",
-        "solution_image": ""
+        "solution_image": "assets/images/questions/tikz_70485aae89.svg"
       }
     },
     {
@@ -10297,7 +10297,7 @@ const QUESTIONS = {
       "topic": "Kinetic Friction",
       "title": "Kinetic Friction of a Sliding Object",
       "question": "A crate with a mass of $m = 50 \\text{ kg}$ is placed on a ramp inclined at an angle of $\\theta = 20^\\circ$ to the horizontal. The coefficient of static friction between the crate and the ramp is $\\mu_s = 0.35$, and the coefficient of kinetic friction is $\\mu_k = 0.25$. A force $P = 100 \\text{ N}$ is applied to the crate parallel to the ramp and directed upwards. Determine the magnitude of the friction force acting on the crate. Assume the acceleration due to gravity is $g = 9.81 \\text{ m/s}^2$.",
-      "question_image": "",
+      "question_image": "assets/images/questions/tikz_f54431105b.svg",
       "options": [
         {
           "label": "A",
@@ -23519,6 +23519,266 @@ const QUESTIONS = {
           {
             "title": "Convert to Percentage",
             "content": "$S \\approx 40.5\\%$."
+          }
+        ],
+        "final_answer": "B",
+        "solution_image": ""
+      }
+    },
+    {
+      "topic": "Foundation Engineering",
+      "title": "Ultimate Bearing Capacity Calculation",
+      "question": "A square spread footing ($2.5 \\, m \\times 2.5 \\, m$) is placed at a depth of $1.5 \\, m$ below the ground surface. The soil has a cohesion $c = 25 \\, kPa$, a friction angle $\\phi = 0^{\\circ}$, and a unit weight $\\gamma = 18.5 \\, kN/m^3$. Using Terzaghi's bearing capacity equation for general shear failure, calculate the ultimate bearing capacity $q_u$. For $\\phi = 0^{\\circ}$, $N_c = 5.7$, $N_q = 1.0$, and $N_{\\gamma} = 0$.",
+      "question_image": "",
+      "options": [
+        {
+          "label": "A",
+          "text": "$142.5 \\, kPa$",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "$170.3 \\, kPa$",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "$213.1 \\, kPa$",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "$233.5 \\, kPa$",
+          "is_correct": false
+        }
+      ],
+      "solution": {
+        "steps": [
+          {
+            "title": "Identify the Given Data",
+            "content": "Shape: Square ($B = 2.5 \\, m$), Depth ($D_f$) = $1.5 \\, m$, $c = 25 \\, kPa$, $\\gamma = 18.5 \\, kN/m^3$. Factors: $N_c = 5.7, N_q = 1.0, N_{\\gamma} = 0$."
+          },
+          {
+            "title": "Terzaghi's Equation for Square Footing",
+            "content": "For a square footing: $q_u = 1.3 c N_c + q N_q + 0.4 \\gamma B N_{\\gamma}$."
+          },
+          {
+            "title": "Calculate Overburden Pressure (q)",
+            "content": "$q = \\gamma \\times D_f = 18.5 \\times 1.5 = 27.75 \\, kN/m^2$."
+          },
+          {
+            "title": "Substitute Values into the Equation",
+            "content": "$q_u = (1.3 \\times 25 \\times 5.7) + (27.75 \\times 1.0) + 0 = 185.25 + 27.75 = 213.0 \\, kPa$."
+          }
+        ],
+        "final_answer": "C",
+        "solution_image": ""
+      }
+    },
+    {
+      "topic": "Foundation Engineering",
+      "title": "Mat Foundation Selection Criteria",
+      "question": "In foundation design, a 'mat' or 'raft' foundation is typically preferred over individual spread footings when the total area of the spread footings would exceed what percentage of the total building footprint area?",
+      "question_image": "",
+      "options": [
+        {
+          "label": "A",
+          "text": "10%",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "25%",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "50%",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "75%",
+          "is_correct": false
+        }
+      ],
+      "solution": {
+        "steps": [
+          {
+            "title": "Understanding Foundation Types",
+            "content": "Spread footings are individual. Mat foundations are large continuous slabs supporting all columns/walls."
+          },
+          {
+            "title": "Economic Threshold",
+            "content": "According to standard engineering practice, if the total area required for individual spread footings exceeds 50% of the total building footprint area, a mat foundation is usually the more practical and cost-effective choice."
+          }
+        ],
+        "final_answer": "C",
+        "solution_image": ""
+      }
+    },
+    {
+      "topic": "Foundation Engineering",
+      "title": "Negative Skin Friction on Piles",
+      "question": "Which of the following conditions is most likely to cause negative skin friction (downdrag) on a deep foundation pile?",
+      "question_image": "",
+      "options": [
+        {
+          "label": "A",
+          "text": "A rise in the groundwater table level",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Placement of a heavy fill layer over a soft, compressible clay layer",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Driving piles into a dense sand layer",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "The use of a larger diameter pile",
+          "is_correct": false
+        }
+      ],
+      "solution": {
+        "steps": [
+          {
+            "title": "Define Negative Skin Friction",
+            "content": "Negative skin friction (downdrag) occurs when the soil surrounding a pile settles more than the pile itself."
+          },
+          {
+            "title": "Evaluate the Condition",
+            "content": "The placement of a heavy fill layer over a soft, compressible clay causes consolidation and settlement. As the clay moves down relative to the pile, it drags the pile down."
+          }
+        ],
+        "final_answer": "B",
+        "solution_image": ""
+      }
+    },
+    {
+      "topic": "Foundation Engineering",
+      "title": "Factor of Safety for Wall Footing",
+      "question": "A continuous wall footing is $1.2 \\, m$ wide and supports a wall load of $150 \\, kN/m$. If the footing is placed $1.0 \\, m$ below the ground surface in a purely cohesive soil ($c_u = 60 \\, kPa, \\phi = 0^{\\circ}, \\gamma = 19 \\, kN/m^3$), what is the factor of safety ($FS$) against bearing capacity failure? (Use $N_c = 5.7, N_q = 1.0, N_{\\gamma} = 0$ for a continuous footing).",
+      "question_image": "",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.8",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "2.4",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "2.9",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "3.3",
+          "is_correct": false
+        }
+      ],
+      "solution": {
+        "steps": [
+          {
+            "title": "Calculate Ultimate Bearing Capacity (q_u)",
+            "content": "$q_u = c N_c + q N_q = (60 \\times 5.7) + (19 \\times 1.0 \\times 1.0) = 342 + 19 = 361 \\, kPa$."
+          },
+          {
+            "title": "Calculate Actual Pressure (q_act)",
+            "content": "$q_{act} = Q / B = 150 / 1.2 = 125 \\, kPa$."
+          },
+          {
+            "title": "Determine Factor of Safety (FS)",
+            "content": "$FS = q_u / q_{act} = 361 / 125 = 2.888 \\approx 2.9$."
+          }
+        ],
+        "final_answer": "C",
+        "solution_image": ""
+      }
+    },
+    {
+      "topic": "Foundation Engineering",
+      "title": "Compensated Mat Foundations",
+      "question": "What is the primary purpose of a 'compensated' or 'floating' mat foundation?",
+      "question_image": "",
+      "options": [
+        {
+          "label": "A",
+          "text": "To increase the skin friction of the mat edges",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "To ensure the building is level by using hydraulic jacks",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "To balance the weight of the structure with the weight of the excavated soil",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "To allow the foundation to move laterally during an earthquake",
+          "is_correct": false
+        }
+      ],
+      "solution": {
+        "steps": [
+          {
+            "title": "The Mechanism of Balancing",
+            "content": "A deep excavation is made to remove a volume of soil whose weight is approximately equal to the weight of the structure. This minimizes the net increase in effective stress on the underlying soil, reducing settlement."
+          }
+        ],
+        "final_answer": "C",
+        "solution_image": ""
+      }
+    },
+    {
+      "topic": "Foundation Engineering",
+      "title": "Foundation Types for Property Lines",
+      "question": "Which foundation type is most appropriate for a structure where one column is located on a property line and cannot have a symmetrical spread footing?",
+      "question_image": "",
+      "options": [
+        {
+          "label": "A",
+          "text": "Square spread footing",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "Combined footing (Strap or Trapezoidal)",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "Isolated wall footing",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "Deep caisson",
+          "is_correct": false
+        }
+      ],
+      "solution": {
+        "steps": [
+          {
+            "title": "Analyze the Problem Constraints",
+            "content": "A column on a property line causes eccentricity. A standard footing would extend beyond the boundary or tilt."
+          },
+          {
+            "title": "Evaluate the Options",
+            "content": "Strap footings connect the eccentric edge column footing to an interior column footing with a rigid beam (strap) to counteract overturning and ensure uniform soil pressure."
           }
         ],
         "final_answer": "B",
