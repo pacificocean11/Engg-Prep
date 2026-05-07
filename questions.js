@@ -22578,7 +22578,443 @@ const QUESTIONS = {
         "final_answer": "C",
         "solution_image": ""
       }
+    },
+    {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Greenshields Maximum Flow",
+    "question": "A freeway section is modeled using Greenshields' linear speed-density relationship. If the free-flow speed ($u_f$) is 70 mph and the jam density ($k_j$) is 130 vehicles per mile (vpm), what is the maximum flow ($q_{max}$) in vehicles per hour (vph)?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "2275 vph",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "4550 vph",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "9100 vph",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1820 vph",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify Given Parameters",
+          "content": "From the problem description, we have free-flow speed $u_f = 70$ mph and jam density $k_j = 130$ vpm."
+        },
+        {
+          "title": "Apply Maximum Flow Formula",
+          "content": "In the Greenshields model, maximum flow ($q_{max}$) occurs at $k = \\frac{k_j}{2}$ and $u = \\frac{u_f}{2}$. The formula is $q_{max} = \\frac{u_f \\cdot k_j}{4}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$q_{max} = \\frac{70 \\cdot 130}{4} = \\frac{9100}{4} = 2275$ vph."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
     }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Peak Hour Factor Calculation",
+    "question": "Traffic counts for four consecutive 15-minute intervals are 350, 425, 475, and 400 vehicles. Calculate the Peak Hour Factor (PHF).",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.921",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "0.868",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "0.785",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "0.812",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Sum the Total Hourly Volume (V)",
+          "content": "$V = 350 + 425 + 475 + 400 = 1650$ vehicles."
+        },
+        {
+          "title": "Identify the Peak 15-minute Volume ($V_{15}$)",
+          "content": "The maximum volume in a single 15-minute interval is $V_{15} = 475$."
+        },
+        {
+          "title": "Calculate PHF",
+          "content": "$\\text{PHF} = \\frac{V}{4 \\cdot V_{15}} = \\frac{1650}{4 \\cdot 475} = \\frac{1650}{1900} \\approx 0.868$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Space Mean Speed",
+    "question": "Three vehicles pass a point on a highway at constant speeds of 30 mph, 45 mph, and 60 mph. What is the space mean speed ($u_s$) of these vehicles?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "45.0 mph",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "41.5 mph",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "48.2 mph",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "50.0 mph",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify Formula",
+          "content": "Space Mean Speed is the harmonic mean of speeds: $u_s = \\frac{n}{\\sum \\frac{1}{u_i}}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$u_s = \\frac{3}{\\frac{1}{30} + \\frac{1}{45} + \\frac{1}{60}} = \\frac{3}{0.0333 + 0.0222 + 0.0167} = \\frac{3}{0.0722} \\approx 41.54$ mph."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Traffic Density from Flow",
+    "question": "If the traffic flow on a segment of a highway is 1,500 vehicles per hour and the space mean speed is 50 mph, what is the density of the traffic in vehicles per mile?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "30 vpm",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "75 vpm",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "25 vpm",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "45 vpm",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Fundamental Traffic Relation",
+          "content": "The fundamental relation is $q = u_s \\cdot k$."
+        },
+        {
+          "title": "Solve for Density (k)",
+          "content": "$k = \\frac{q}{u_s} = \\frac{1500}{50} = 30$ vpm."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Flow Rate Greenshields",
+    "question": "A traffic stream follows the Greenshields model with a free-flow speed of 60 mph and a jam density of 140 vpm. What is the flow rate when the density is 40 vpm?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1714 vph",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "2400 vph",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1800 vph",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1250 vph",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify Model Equation",
+          "content": "Using the Greenshields model: $u = u_f (1 - \\frac{k}{k_j})$."
+        },
+        {
+          "title": "Calculate Speed at k=40",
+          "content": "$u = 60 (1 - \\frac{40}{140}) = 60 (1 - 0.2857) = 60 (0.7143) = 42.86$ mph."
+        },
+        {
+          "title": "Calculate Flow (q)",
+          "content": "$q = k \\cdot u = 40 \\cdot 42.86 \\approx 1714$ vph."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Hourly Flow from Headway",
+    "question": "The average time headway in a single lane of traffic is measured as 2.4 seconds. What is the corresponding hourly flow rate?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1200 vph",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1500 vph",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "1800 vph",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "2400 vph",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Relation between Flow and Headway",
+          "content": "$q = \\frac{3600}{h_t}$ where $h_t$ is time headway in seconds."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$q = \\frac{3600}{2.4} = 1500$ vph."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Density at Maximum Flow",
+    "question": "A highway segment has a speed-density relationship defined by $u = 55 - 0.5k$, where $u$ is speed in mph and $k$ is density in vpm. At what density does the maximum flow occur?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "110 vpm",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "27.5 vpm",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "55 vpm",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "45 vpm",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify $u_f$ and $k_j$",
+          "content": "From $u = 55 - 0.5k$: When $k=0, u_f = 55$. When $u=0, 0 = 55 - 0.5k \\implies k_j = 110$."
+        },
+        {
+          "title": "Find Optimal Density",
+          "content": "Maximum flow occurs at the optimal density $k_{opt} = \\frac{k_j}{2}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$k_{opt} = \\frac{110}{2} = 55$ vpm."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Traffic Density from Spacing",
+    "question": "If the average spacing between vehicles in a single lane is 165 feet, what is the traffic density?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "32 vpm",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "40 vpm",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "50 vpm",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "25 vpm",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Relation between Density and Spacing",
+          "content": "$k = \\frac{5280}{s}$ where $s$ is spacing in feet and 5280 is the number of feet in a mile."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$k = \\frac{5280}{165} = 32$ vpm."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Level of Service (LOS)",
+    "question": "According to the Highway Capacity Manual (HCM), what is the Level of Service (LOS) for a basic freeway segment with a density of 30 pc/mi/ln?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "LOS B",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "LOS C",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "LOS D",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "LOS E",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "LOS Criteria",
+          "content": "Referencing HCM tables: LOS A: $\\leq 11$, LOS B: $11-18$, LOS C: $18-26$, LOS D: $26-35$, LOS E: $35-45$ pc/mi/ln."
+        },
+        {
+          "title": "Conclusion",
+          "content": "A density of 30 pc/mi/ln falls within the range for LOS D."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Traffic Capacity and Flow Theory",
+    "title": "Space Mean Speed from Flow",
+    "question": "In a traffic stream where the flow is 1,200 vph and the density is 20 vpm, what is the space mean speed?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "60 mph",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "40 mph",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "50 mph",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "30 mph",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Fundamental Relation",
+          "content": "$q = u_s \\cdot k$."
+        },
+        {
+          "title": "Solve for Speed ($u_s$)",
+          "content": "$u_s = \\frac{q}{k} = \\frac{1200}{20} = 60$ mph."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  }
   ],
   "geotech": [
     {
@@ -24226,7 +24662,457 @@ const QUESTIONS = {
         "final_answer": "C",
         "solution_image": ""
       }
+    },{
+    "topic": "Basic Hydraulics",
+    "title": "Bernoulli's Equation Pressure Calculation",
+    "question": "Water flows through a pipe. At Point 1, the pressure is $50$ kPa, velocity is $2$ m/s, and elevation is $10$ m. At Point 2, the velocity is $4$ m/s and elevation is $5$ m. Assuming no head loss and using a density of $1000$ kg/m$^3$, what is the pressure at Point 2?",
+    "question_image": "TIKZ: \\begin{tikzpicture}[>=Stealth, scale=0.8]
+    % Pipe path
+    \draw[fill=blue!10, draw=blue!50, thick] (0, 4.5) -- (2, 4.5) -- (4, 1.5) -- (6, 1.5) -- (6, 0.5) -- (4, 0.5) -- (2, 3.5) -- (0, 3.5) -- cycle;
+    
+    % Centerline
+    \draw[dashed, gray] (0, 4) -- (2, 4) -- (4, 1) -- (6, 1);
+    
+    % Point 1
+    \filldraw (1, 4) circle (2pt) node[above=5pt] {Point 1};
+    \draw[<->] (-0.5, -1) -- (-0.5, 4) node[midway, left] {$z_1 = 10$ m};
+    \draw[dashed, gray] (0, 4) -- (-1, 4);
+    
+    % Point 2
+    \filldraw (5, 1) circle (2pt) node[above=5pt] {Point 2};
+    \draw[<->] (6.5, -1) -- (6.5, 1) node[midway, right] {$z_2 = 5$ m};
+    \draw[dashed, gray] (6, 1) -- (7, 1);
+    
+    % Datum
+    \draw[thick] (-1, -1) -- (7, -1) node[right] {Datum};
+    
+    % Flow arrow
+    \draw[->, blue, ultra thick] (0.5, 4.2) -- (1.5, 4.2) node[midway, above] {$v_1, P_1$};
+    \draw[->, blue, ultra thick] (4.5, 1.2) -- (5.5, 1.2) node[midway, above] {$v_2, P_2$};
+\end{tikzpicture}",
+    "options": [
+      {
+        "label": "A",
+        "text": "93.1 kPa",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "85.2 kPa",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "43.1 kPa",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "102.4 kPa",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify Given Data",
+          "content": "$P_1 = 50,000$ Pa, $v_1 = 2$ m/s, $v_2 = 4$ m/s, $z_1 = 10$ m, $z_2 = 5$ m, $\\rho = 1000$ kg/m$^3$."
+        },
+        {
+          "title": "Apply Bernoulli's Equation",
+          "content": "Using $P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$, solve for $P_2$: $P_2 = P_1 + \\frac{\\rho}{2}(v_1^2 - v_2^2) + \\rho g(z_1 - z_2)$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$P_2 = 50,000 + 500(4 - 16) + 1000(9.81)(5) = 50,000 - 6,000 + 49,050 = 93,050$ Pa, which is $93.05$ kPa."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
     }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Full Pipe Discharge Calculation",
+    "question": "A circular concrete pipe ($n = 0.013$) with a diameter of $1$ m is laid on a slope of $0.005$ m/m. What is the discharge ($Q$) when the pipe is flowing full under gravity?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1.25 m³/s",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "0.85 m³/s",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "1.69 m³/s",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "2.11 m³/s",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Determine Hydraulic Properties",
+          "content": "Area $A = \\frac{\\pi(1)^2}{4} \\approx 0.7854$ m²; Hydraulic Radius $R = \\frac{D}{4} = 0.25$ m."
+        },
+        {
+          "title": "Apply Manning's Equation",
+          "content": "$Q = \\frac{1}{n} A R^{2/3} S^{1/2}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$Q = \\frac{1}{0.013} (0.7854) (0.25)^{2/3} (0.005)^{1/2} \\approx 1.69$ m³/s."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Rectangular Channel Critical Depth",
+    "question": "A rectangular open channel has a width of $3$ m and carries a discharge of $15$ m$^3$/s. Calculate the critical depth ($y_c$) of the flow.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1.12 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1.37 m",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "1.55 m",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1.84 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Unit Discharge (q)",
+          "content": "$q = Q / b = 15 / 3 = 5$ m²/s."
+        },
+        {
+          "title": "Solve for Critical Depth",
+          "content": "$y_c = \\sqrt[3]{q^2 / g} = \\sqrt[3]{5^2 / 9.81} = \\sqrt[3]{2.548} \\approx 1.366$ m."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Froude Number and Regime",
+    "question": "In an open channel, the flow velocity is $4$ m/s and the flow depth is $1.2$ m. Determine the Froude number ($Fr$) and classify the flow regime.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.85, Subcritical",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1.17, Supercritical",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "1.00, Critical",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1.52, Supercritical",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Froude Number",
+          "content": "$Fr = v / \\sqrt{gy} = 4 / \\sqrt{9.81 \\times 1.2} = 4 / 3.431 \\approx 1.166$."
+        },
+        {
+          "title": "Classify Flow",
+          "content": "Since $Fr > 1$, the flow regime is Supercritical."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Darcy-Weisbach Friction Head Loss",
+    "question": "A $200$ m long pipe with a diameter of $0.3$ m has a friction factor $f = 0.02$. If the flow velocity is $2.5$ m/s, calculate the head loss ($h_f$) due to friction using the Darcy-Weisbach equation.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "2.12 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "6.38 m",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "4.25 m",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "8.50 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Apply Formula",
+          "content": "$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$h_f = 0.02 (200 / 0.3) [2.5^2 / (2 \\times 9.81)] \\approx 13.33 \\times 0.3185 \\approx 4.247$ m."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Hydraulic Radius Calculation",
+    "question": "A rectangular channel is $4$ m wide and has a flow depth of $2$ m. Calculate the hydraulic radius ($R$) of the channel.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.5 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1.0 m",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "1.5 m",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "2.0 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Area and Wetted Perimeter",
+          "content": "$A = 4 \\times 2 = 8$ m²; $P = 4 + 2(2) = 8$ m."
+        },
+        {
+          "title": "Calculate Hydraulic Radius",
+          "content": "$R = A / P = 8 / 8 = 1.0$ m."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Manning's Flow Velocity",
+    "question": "Using the Manning equation in SI units, calculate the flow velocity in a channel with a Manning's $n$ of $0.02$, a hydraulic radius of $0.5$ m, and a bed slope of $1\%$.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1.58 m/s",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "2.50 m/s",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "3.15 m/s",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "5.00 m/s",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Apply Manning's Formula",
+          "content": "$v = \\frac{1}{n} R^{2/3} S^{1/2}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$v = (1 / 0.02) \\times (0.5)^{2/3} \\times (0.01)^{1/2} = 50 \\times 0.63 \\times 0.1 = 3.15$ m/s."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Orifice Discharge Rate",
+    "question": "A sharp-edged orifice with a diameter of $0.1$ m is located in the side of a tank. The head of water above the center of the orifice is $5$ m. If the coefficient of discharge $C_d$ is $0.6$, what is the discharge rate ($Q$)?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.023 m³/s",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "0.047 m³/s",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "0.078 m³/s",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "0.125 m³/s",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Area",
+          "content": "$A = \\pi(0.1)^2 / 4 \\approx 0.007854$ m²."
+        },
+        {
+          "title": "Apply Discharge Formula",
+          "content": "$Q = C_d A \\sqrt{2gh} = 0.6 \\times 0.007854 \\times \\sqrt{2 \\times 9.81 \\times 5} \\approx 0.0467$ m³/s."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Reynolds Number Pipe Flow",
+    "question": "Water flows at $2$ m/s through a $0.05$ m diameter pipe. If the kinematic viscosity of water is $1.006 \\times 10^{-6}$ m$^2$/s, determine the Reynolds number and classify the flow.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1,000; Laminar",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "99,400; Turbulent",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "2,100; Transitional",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "4,000; Turbulent",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Re",
+          "content": "$Re = vD / \\nu = (2 \\times 0.05) / (1.006 \\times 10^{-6}) \\approx 99,403$."
+        },
+        {
+          "title": "Classify Flow",
+          "content": "Since $Re > 4000$ for pipe flow, the flow is classified as Turbulent."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Basic Hydraulics",
+    "title": "Specific Energy Calculation",
+    "question": "For a rectangular channel with a flow depth of $2$ m and a velocity of $1$ m/s, what is the specific energy ($E$) of the flow?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1.05 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "2.05 m",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "2.51 m",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "3.01 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Apply Formula",
+          "content": "$E = y + v^2 / 2g$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$E = 2 + 1^2 / (2 \\times 9.81) = 2 + 0.051 \\approx 2.051$ m."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  }
   ],
   "construction": [
     {
@@ -24728,7 +25614,951 @@ const QUESTIONS = {
         "final_answer": "B",
         "solution_image": ""
       }
+    },
+    {
+    "topic": "Construction Operations and Methods",
+    "title": "Scraper Hourly Production Calculation",
+    "question": "A scraper has a heaped capacity of 20 LCY (Loose Cubic Yards). The load time is 1.0 min, the travel time is 4.0 min, the dump time is 0.5 min, and the return time is 3.5 min. If the efficiency factor is 0.85 (51 minutes per hour), what is the hourly production of the scraper in LCY/hr?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "102 LCY/hr",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "113 LCY/hr",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "120 LCY/hr",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "136 LCY/hr",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate the total cycle time",
+          "content": "Sum the load, travel, dump, and return times: $1.0 + 4.0 + 0.5 + 3.5 = 9.0$ minutes."
+        },
+        {
+          "title": "Calculate the number of cycles per hour",
+          "content": "Using the 51-minute hour efficiency: $51 \\text{ min/hr} / 9.0 \\text{ min/cycle} = 5.6667 \\text{ cycles/hr}$."
+        },
+        {
+          "title": "Calculate the hourly production",
+          "content": "$5.6667 \\text{ cycles/hr} \\times 20 \\text{ LCY/cycle} = 113.33 \\text{ LCY/hr}$. Rounded to 113 LCY/hr."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
     }
+  },
+  {
+    "topic": "Construction Operations and Methods",
+    "title": "OSHA Mandatory Protective System Depth",
+    "question": "According to OSHA standards for excavations, what is the maximum depth (in feet) an excavation can reach before a protective system (such as shoring, shielding, or sloping) is mandatory, provided there is no potential for a cave-in?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "3 feet",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "4 feet",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "5 feet",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "6 feet",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify Relevant OSHA Regulations",
+          "content": "OSHA Standard 1926.652(a)(1) states protective systems are required unless the excavation is in stable rock or is less than 5 feet deep with no cave-in potential."
+        },
+        {
+          "title": "Determine the Depth Threshold",
+          "content": "Once an excavation reaches a depth of 5 feet, a protective system is mandatory."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Operations and Methods",
+    "title": "Excavator Hourly Production Calculation",
+    "question": "An excavator has a bucket capacity of $1.5 \\text{ yd}^3$. The cycle time is 25 seconds. The fill factor for the material is 0.90. If the machine operates at an efficiency of 50 minutes per hour, what is the estimated hourly production in LCY/hr?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "162 LCY/hr",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "180 LCY/hr",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "194 LCY/hr",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "216 LCY/hr",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate the effective bucket capacity",
+          "content": "$1.5 \\text{ yd}^3 \\times 0.90 = 1.35 \\text{ LCY/cycle}$."
+        },
+        {
+          "title": "Calculate the number of cycles per hour",
+          "content": "$50 \\text{ min/hr} \\times 60 \\text{ sec/min} = 3,000 \\text{ sec/hr}$. $3,000 / 25 \\text{ sec/cycle} = 120 \\text{ cycles/hr}$."
+        },
+        {
+          "title": "Calculate the hourly production",
+          "content": "$120 \\text{ cycles/hr} \\times 1.35 \\text{ LCY/cycle} = 162 \\text{ LCY/hr}$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Operations and Methods",
+    "title": "Temporary Erosion Control Measures",
+    "question": "In the context of temporary erosion control, which of the following is primarily designed to reduce the velocity of flow in a ditch or swale and allow sediment to settle?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "Silt fence",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Check dam",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Inlet protection",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Soil stabilizer",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Analyze the Function of a Check Dam",
+          "content": "A check dam is a small, temporary dam built across a swale or ditch to reduce water flow velocity, which allows sediment to settle."
+        },
+        {
+          "title": "Evaluate Other Options",
+          "content": "Silt fences filter sheet flow; Inlet protection keeps sediment out of drains; Soil stabilizers bind surface particles."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Operations and Methods",
+    "title": "Balanced Fleet for Hauling Soil",
+    "question": "A fleet of trucks is being used to haul soil. The loader takes 3 minutes to load a truck. The round-trip travel and dump time for a truck is 15 minutes. What is the balanced number of trucks required to keep the loader busy with no idle time?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "4 trucks",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "5 trucks",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "6 trucks",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "7 trucks",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Understand the cycle of a single truck",
+          "content": "Total Cycle Time = Load Time + Travel/Dump Time = $3 + 15 = 18$ minutes."
+        },
+        {
+          "title": "Determine the balanced number of trucks",
+          "content": "$N = \\text{Total Cycle Time} / \\text{Load Time} = 18 / 3 = 6$ trucks."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Operations and Methods",
+    "title": "Trench Shield Extension Requirements",
+    "question": "When using a trench shield (trench box) during excavation, how high above the top of the vertical side of the trench must the shield extend if the top of the shield is at ground level and the surrounding soil is sloped?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "6 inches",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "12 inches",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "18 inches",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "24 inches",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify OSHA Regulations",
+          "content": "OSHA 1926 Subpart P specifies the use of shields with sloping."
+        },
+        {
+          "title": "Determine Extension Requirements",
+          "content": "The shield must extend at least 18 inches above the top of the vertical side to prevent sloped soil from sliding into the box."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Project Controls",
+    "title": "Earned Value Management Metrics",
+    "question": "A construction project has a Budget at Completion ($BAC$) of $500,000$. At the end of month 4, the status is as follows: Earned Value ($EV$) $= 200,000$; Planned Value ($PV$) $= 240,000$; and Actual Cost ($AC$) $= 220,000$. Calculate the Schedule Performance Index ($SPI$) and the Cost Performance Index ($CPI$).",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$SPI = 0.833, CPI = 0.909$",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "$SPI = 1.200, CPI = 1.100$",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "$SPI = 0.833, CPI = 1.100$",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$SPI = 1.200, CPI = 0.909$",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Schedule Performance Index (SPI)",
+          "content": "The formula for $SPI$ is the ratio of Earned Value to Planned Value: $SPI = EV / PV = 200,000 / 240,000 = 0.833$."
+        },
+        {
+          "title": "Calculate Cost Performance Index (CPI)",
+          "content": "The formula for $CPI$ is the ratio of Earned Value to Actual Cost: $CPI = EV / AC = 200,000 / 220,000 = 0.909$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Project Controls",
+    "title": "Project Scheduling: SS Relationship Lag",
+    "question": "An activity has a Start-to-Start (SS) relationship with its successor with a lag of 4 days. If the predecessor starts on day 10, what is the earliest the successor can start?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "Day 6",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Day 10",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Day 14",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Day 18",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Apply the SS Logic",
+          "content": "A Start-to-Start (SS) relationship with lag means the successor can start a specific number of days after the predecessor starts. $\\text{Successor Start} = \\text{Predecessor Start} + \\text{Lag} = 10 + 4 = 14$."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Project Controls",
+    "title": "Project Status Using CPI and SPI",
+    "question": "A project manager determines that the $CPI$ of a project is 1.15 and the $SPI$ is 0.85. Which of the following best describes the project status?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "Under budget and ahead of schedule",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Over budget and ahead of schedule",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Under budget and behind schedule",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Over budget and behind schedule",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Analyze CPI",
+          "content": "$CPI = 1.15$ is greater than 1.0, which means the project is performing efficiently regarding costs (\u003cb\u003eunder budget\u003c/b\u003e)."
+        },
+        {
+          "title": "Analyze SPI",
+          "content": "$SPI = 0.85$ is less than 1.0, which means the project is progressing slower than planned (\u003cb\u003ebehind schedule\u003c/b\u003e)."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Project Controls",
+    "title": "Calculating Activity Free Float",
+    "question": "Calculate the Free Float ($FF$) for Activity C, given that Activity C has an Early Finish ($EF$) of day 20 and its only successor, Activity D, has an Early Start ($ES$) of day 24.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0 days",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "4 days",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "20 days",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "44 days",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Apply Free Float Formula",
+          "content": "$FF$ is the amount of time an activity can be delayed without affecting the $ES$ of successors. $FF = ES_{\\text{successor}} - EF_{\\text{current activity}} = 24 - 20 = 4$ days."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Project Controls",
+    "title": "Resource Management Optimization Techniques",
+    "question": "Which of the following resource management techniques involves shifting activities within their float to minimize fluctuations in resource demand without extending the project duration?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resource Leveling",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Resource Smoothing",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Fast Tracking",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Crashing",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Differentiate Optimization Techniques",
+          "content": "Resource Smoothing delays activities only within their float, ensuring the project finish date is not affected. Resource Leveling may extend the project duration."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Project Controls",
+    "title": "Estimate at Completion Calculation",
+    "question": "A project has a $BAC = 200,000$. Currently, $AC = 120,000$ and $EV = 100,000$. If the project continues at the current cost efficiency, what is the Estimate at Completion ($EAC$)?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$180,000",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "$200,000",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "$220,000",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$240,000",
+        "is_correct": true
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate CPI",
+          "content": "$CPI = EV / AC = 100,000 / 120,000 = 0.8333$."
+        },
+        {
+          "title": "Calculate EAC",
+          "content": "Assuming the current $CPI$ continues: $EAC = BAC / CPI = 200,000 / (100,000/120,000) = 200,000 \\times 1.2 = 240,000$."
+        }
+      ],
+      "final_answer": "D",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Construction Cost Index Estimation",
+    "question": "An institutional building cost $1,250,000 to construct in 2015 when the construction cost index was 520. What is the estimated cost of a similar building in 2023 if the index has risen to 710?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$1,706,731",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "$915,493",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "$1,560,000",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$1,935,200",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify Given Data",
+          "content": "Original Cost ($C_{old}$) = $1,250,000; Old Index ($I_{old}$) = 520; New Index ($I_{new}$) = 710."
+        },
+        {
+          "title": "Apply the Cost Index Formula",
+          "content": "$\\text{New Cost} = C_{old} \\times (I_{new} / I_{old})$"
+        },
+        {
+          "title": "Calculation",
+          "content": "$\\text{New Cost} = 1,250,000 \\times (710 / 520) = 1,250,000 \\times 1.36538 \\approx \\$1,706,731$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "ENR CCI Linear Scaling",
+    "question": "In 2010, the cost to construct a specific building was $5,000,000 when the ENR Construction Cost Index (CCI) was 8000. If the ENR CCI in 2023 is 13000, what is the estimated cost of the same building in 2023, assuming cost scales linearly with the index?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$7.25 million",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "$7.80 million",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "$8.13 million",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "$8.50 million",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Apply Linear Scaling",
+          "content": "$\\text{Cost}_{2023} = 5,000,000 \\times (13000 / 8000)$"
+        },
+        {
+          "title": "Calculation",
+          "content": "$\\text{Cost}_{2023} = 5,000,000 \\times 1.625 = \\$8,125,000$. Rounded, this is $8.13 million."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Concrete Slab Volume Calculation",
+    "question": "Calculate the total volume of concrete required in cubic yards (CY) for a slab measuring 40 ft by 60 ft and 6 inches thick. Assume a 10% waste factor.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "44.4 CY",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "48.9 CY",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "52.3 CY",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "55.6 CY",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Convert Units and Calculate Volume",
+          "content": "Thickness = 0.5 ft. $V = 40 \\times 60 \\times 0.5 = 1,200 \\text{ ft}^3$."
+        },
+        {
+          "title": "Convert to Cubic Yards",
+          "content": "$V_{CY} = 1,200 / 27 \\approx 44.44 \\text{ CY}$."
+        },
+        {
+          "title": "Apply Waste Factor",
+          "content": "$\\text{Total Volume} = 44.44 \\times 1.10 = 48.88 \\text{ CY}$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Earthwork Excavation Hauling",
+    "question": "An excavation project requires moving 5,000 bank cubic yards (BCY) of earth. The soil has a swell factor of 25%. If the dump trucks used for hauling have a loose capacity of 12 cubic yards each, how many truckloads are required to complete the project?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "417 loads",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "521 loads",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "625 loads",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "667 loads",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Convert BCY to LCY",
+          "content": "$\\text{LCY} = 5,000 \\times 1.25 = 6,250 \\text{ LCY}$."
+        },
+        {
+          "title": "Calculate Number of Loads",
+          "content": "$\\text{Loads} = 6,250 / 12 \\approx 520.83$."
+        },
+        {
+          "title": "Final Adjustment",
+          "content": "Rounding up to the next full truckload gives 521 loads."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Average End Area Method",
+    "question": "Using the average end area method, calculate the total volume of cut required between Station 12+00 and Station 13+50. The cross-sectional area at Station 12+00 is 350 $\\text{ft}^2$ and at Station 13+50 is 480 $\\text{ft}^2$. Express the answer in cubic yards (CY).",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "2,306 CY",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "4,611 CY",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "62,250 CY",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "2,415 CY",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Determine Distance (L)",
+          "content": "$L = 1350 - 1200 = 150 \\text{ ft}$."
+        },
+        {
+          "title": "Calculate Volume in Cubic Feet",
+          "content": "$V = 150 \\times [(350 + 480) / 2] = 62,250 \\text{ ft}^3$."
+        },
+        {
+          "title": "Convert to Cubic Yards",
+          "content": "$V_{CY} = 62,250 / 27 \\approx 2,305.56 \\text{ CY}$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Straight-Line Depreciation",
+    "question": "A construction equipment item was purchased for 180,000 and has an estimated salvage value of 30,000 after a useful life of 6 years. Using straight-line depreciation, what is the book value of the equipment at the end of Year 3?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$105,000",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "$90,000",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "$75,000",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$130,000",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Annual Depreciation",
+          "content": "$\\text{Annual Depr.} = (180,000 - 30,000) / 6 = \\$25,000$."
+        },
+        {
+          "title": "Calculate Accumulated Depreciation",
+          "content": "After 3 years: $25,000 \\times 3 = \\$75,000$."
+        },
+        {
+          "title": "Calculate Book Value",
+          "content": "$\\text{Book Value} = 180,000 - 75,000 = \\$105,000$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Warehouse Cost Inflation",
+    "question": "A project cost index was 1,250 in 2010 and 1,800 in 2023. If a warehouse cost 2.4 million to build in 2010, what is the estimated cost to build a similar warehouse in 2023, assuming only price inflation applies?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$3.15 million",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "$3.46 million",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "$1.67 million",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$4.32 million",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculation",
+          "content": "$\\text{Cost}_{2023} = 2.4 \\times (1,800 / 1,250) = 2.4 \\times 1.44 = \\$3.456 \\text{ million}$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Labor Cost Estimation",
+    "question": "A crew consists of 1 foreman at 50/hr and 3 laborers at 30/hr each. The crew's historical productivity for installing a specific type of piping is 0.2 crew-hours per linear foot (LF). What is the estimated labor cost to install 1,000 LF of this pipe?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$14,000",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "$28,000",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "$7,000",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$11,500",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Crew Hourly Rate",
+          "content": "$\\text{Rate} = (1 \\times 50) + (3 \\times 30) = \\$140 \\text{ per hour}$."
+        },
+        {
+          "title": "Calculate Total Crew Hours",
+          "content": "$\\text{Hours} = 0.2 \\text{ hours/LF} \\times 1,000 \\text{ LF} = 200 \\text{ hours}$."
+        },
+        {
+          "title": "Calculate Total Cost",
+          "content": "$\\text{Cost} = 200 \\text{ hours} \\times \\$140/\\text{hr} = \\$28,000$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Footing Concrete Volume",
+    "question": "Determine the volume of concrete (in CY) required for 15 square footings, each measuring 4' x 4' x 1.5'. Add a 10% waste factor to the total.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "13.33 CY",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "14.67 CY",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "360 CY",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "15.22 CY",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Total Volume in Cubic Feet",
+          "content": "$V = 15 \\times (4 \\times 4 \\times 1.5) = 360 \\text{ ft}^3$."
+        },
+        {
+          "title": "Convert to Cubic Yards",
+          "content": "$360 / 27 = 13.33 \\text{ CY}$."
+        },
+        {
+          "title": "Add Waste",
+          "content": "$13.33 \\times 1.10 = 14.67 \\text{ CY}$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Construction Estimating",
+    "title": "Bid Price Calculation",
+    "question": "A contractor estimates the direct costs of a project to be 450,000. Indirect costs (overhead) are calculated as 15% of the direct costs. If the contractor wants to achieve a profit of 8% of the total cost (direct + indirect), what should be the total bid price?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "$553,500",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "$558,900",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "$517,500",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "$561,600",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Calculate Total Cost",
+          "content": "$\\text{Direct} = 450,000$. $\\text{Indirect} = 450,000 \\times 0.15 = 67,500$. $\\text{Total} = 517,500$."
+        },
+        {
+          "title": "Calculate Bid Price",
+          "content": "$\\text{Profit} = 517,500 \\times 0.08 = 41,400$. $\\text{Bid} = 517,500 + 41,400 = \\$558,900$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  }
   ],
   "structural": [
     {

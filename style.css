@@ -19,6 +19,20 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Focused Session Styles (Hides Navigation) */
+.nav-hidden #main-header,
+.nav-hidden #bottom-nav {
+    display: none !important;
+}
+
+.nav-hidden main {
+    padding-top: 1rem !important;
+}
+
+body.nav-hidden {
+    padding-bottom: 0 !important;
+}
+
 /* Dark Mode Overrides */
 html.dark {
     --bg-main: #020617;
@@ -929,11 +943,22 @@ html.dark .result-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-center {
+    flex: 1;
+    justify-content: center;
 }
 
 .footer-left, .footer-right {
-    display: flex;
-    gap: 12px;
+    flex: 0 0 auto;
 }
 
 #flag-btn.active {
