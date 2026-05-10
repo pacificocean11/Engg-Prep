@@ -5,7 +5,8 @@ const urlsToCache = [
   './style.css',
   './app.js',
   './questions.js',
-  './engg_tv_logo.png'
+  './engg_tv_logo.png',
+  './pwa-icon.png'
 ];
 
 // Install the service worker and cache core assets

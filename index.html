@@ -15,7 +15,7 @@
             document.documentElement.classList.remove('dark');
         }
     </script>
-    <title>ENGG.tv | FE Mechanical Exam Study Suite</title>
+    <title>ENGG.tv | FE Exam Study</title>
     <meta name="description"
         content="A premium study application for the Fundamentals of Engineering (FE) Mechanical Exam. Practice questions, mock exams, and progress tracking.">
     <link rel="stylesheet" href="style.css">
@@ -825,27 +825,27 @@
     <nav id="bottom-nav" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-2 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(255,179,0,0.05)] rounded-t-2xl">
         <ul class="nav-links flex justify-around w-full m-0 p-0" style="list-style: none;">
             <li data-page="dashboard" id="nav-dashboard" class="nav-item" onclick="navigateTo('dashboard')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link">
+                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
                     <span class="material-symbols-outlined mb-1">dashboard</span>
-                    <span class="font-space-grotesk text-[10px] font-bold uppercase tracking-widest">Dashboard</span>
+                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Dashboard</span>
                 </a>
             </li>
             <li data-page="study" id="nav-study" class="nav-item" onclick="navigateTo('study')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link">
+                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
                     <span class="material-symbols-outlined mb-1">menu_book</span>
-                    <span class="font-space-grotesk text-[10px] font-bold uppercase tracking-widest">Topics</span>
+                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Topics</span>
                 </a>
             </li>
             <li data-page="exam" id="nav-exam" class="hidden" onclick="navigateTo('exam')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link">
+                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
                     <span class="material-symbols-outlined mb-1">quiz</span>
-                    <span class="font-space-grotesk text-[10px] font-bold uppercase tracking-widest">Exams</span>
+                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Exams</span>
                 </a>
             </li>
             <li data-page="settings" id="nav-settings" class="nav-item" onclick="navigateTo('settings')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link">
+                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
                     <span class="material-symbols-outlined mb-1">settings</span>
-                    <span class="font-space-grotesk text-[10px] font-bold uppercase tracking-widest">Settings</span>
+                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Settings</span>
                 </a>
             </li>
         </ul>
@@ -854,6 +854,11 @@
         .nav-links li {
             color: #94a3b8;
             transition: all 0.2s ease;
+        }
+        #bottom-nav .nav-links li {
+            padding: 0;
+            margin: 0;
+            gap: 0;
         }
         .nav-links li.active {
             background-color: #fffbeb;
