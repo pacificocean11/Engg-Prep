@@ -1,0 +1,21 @@
+{
+  "name": "ENGG.tv | FE Mechanical Exam Prep",
+  "short_name": "ENGG.tv",
+  "description": "A premium study application for the Fundamentals of Engineering (FE) Mechanical Exam. Practice questions, mock exams, and progress tracking.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fcf9f8",
+  "theme_color": "#FF006E",
+  "icons": [
+    {
+      "src": "engg_tv_logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "engg_tv_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

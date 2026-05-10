@@ -48,12 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })(),
         isFinished: false,
         isMockExam: false,
+        recentActivity: (() => {
+            try {
+                const key = `enggtv_recent_activity_${loggedInUser.username}`;
+                return JSON.parse(localStorage.getItem(key)) || [];
+            } catch (e) {
+                return [];
+            }
+        })(),
         subjects: (() => {
             const discipline = localStorage.getItem('enggtv_discipline') || loggedInUser.discipline;
             if (discipline === 'Mechanical') return MECHANICAL_SUBJECTS;
             if (discipline === 'Civil' || discipline === 'Civil Engineering') return CIVIL_SUBJECTS;
             return OTHER_SUBJECTS;
-        })()
+        })(),
+        charts: {
+            radar: null,
+            line: null
+        }
     };
 
 
@@ -102,10 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.querySelector('.sidebar');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    // Dashboard Specific Elements
+    const circleBg = document.getElementById('overall-progress-circle');
+    const textDisplay = document.getElementById('overall-progress-text');
+    const circleDisplay = document.getElementById('overall-progress-circle-text');
 
     // Initialization
     function init() {
         setupQuizListeners();
+        setupDashboardListeners();
         renderSubjects();
         setupNavigation();
         setupMobileMenu();
@@ -113,6 +131,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // startFreeTrialTimer();
         updateDashboardStats();
         updateGamificationUI();
+    }
+
+    function setupDashboardListeners() {
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'btn-intensity-7d') {
+                initCharts(0, '7d');
+            } else if (e.target.id === 'btn-intensity-30d') {
+                initCharts(0, '30d');
+            } else if (e.target.closest('#btn-clear-activity')) {
+                if (confirm('Are you sure you want to clear all recent activity?')) {
+                    state.recentActivity = [];
+                    const activityKey = `enggtv_recent_activity_${state.user.username}`;
+                    localStorage.removeItem(activityKey);
+                    renderRecentActivity();
+                }
+            }
+        });
     }
 
 
@@ -259,60 +294,71 @@ document.addEventListener('DOMContentLoaded', () => {
             pageTitle.textContent = titles[pageId] || 'ENGG.tv';
         }
 
-        // Toggle Pages
-        pages.forEach(page => {
-            page.classList.remove('active');
-            if (page.id === pageId) {
-                page.classList.add('active');
-            }
-        });
+        const performNav = () => {
+            // Toggle Pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+                if (page.id === pageId) {
+                    page.classList.add('active');
+                }
+            });
 
-        // Specific Page Logic
-        if (pageId === 'dashboard') {
-            updateDashboardStats();
-            updateGamificationUI();
-        }
-        if (pageId === 'achievements-view') {
-            renderAchievements();
-        }
-        if (pageId === 'leaderboard') {
-            renderLeaderboard();
-        }
-        if (pageId === 'study') {
-            renderSubjects();
-        }
-        if (pageId === 'account-info-view') {
-            initAccountInfo();
-            const adminSelector = document.getElementById('admin-discipline-selector');
-            if (adminSelector) {
-                if (state.user.username === 'admin') {
-                    adminSelector.classList.remove('hidden');
-                    const selectDisc = document.getElementById('select-discipline');
-                    if (selectDisc) {
-                        selectDisc.value = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            // Specific Page Logic
+            if (pageId === 'dashboard') {
+                updateDashboardStats();
+                updateGamificationUI();
+            }
+            if (pageId === 'settings') {
+                updateGamificationUI();
+            }
+            if (pageId === 'achievements-view') {
+                renderAchievements();
+            }
+            if (pageId === 'leaderboard') {
+                renderLeaderboard();
+            }
+            if (pageId === 'study') {
+                renderSubjects();
+            }
+            if (pageId === 'account-info-view') {
+                initAccountInfo();
+                const adminSelector = document.getElementById('admin-discipline-selector');
+                if (adminSelector) {
+                    if (state.user.username === 'admin') {
+                        adminSelector.classList.remove('hidden');
+                        const selectDisc = document.getElementById('select-discipline');
+                        if (selectDisc) {
+                            selectDisc.value = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+                        }
+                    } else {
+                        adminSelector.classList.add('hidden');
                     }
-                } else {
-                    adminSelector.classList.add('hidden');
                 }
             }
+
+            // Update nav active state (Sidebar and Bottom Nav)
+            const allNavLinks = document.querySelectorAll('.nav-links li');
+            allNavLinks.forEach(link => {
+                const targetPage = link.getAttribute('data-page');
+                if (targetPage === pageId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // Close sidebar on mobile if it exists
+            if (typeof sidebar !== 'undefined' && sidebar) sidebar.classList.remove('active');
+            if (typeof sidebarOverlay !== 'undefined' && sidebarOverlay) sidebarOverlay.classList.remove('active');
+
+            window.scrollTo(0, 0);
+        };
+
+        if (document.startViewTransition) {
+            document.startViewTransition(performNav);
+        } else {
+            performNav();
         }
-
-        // Update nav active state (Sidebar and Bottom Nav)
-        const allNavLinks = document.querySelectorAll('.nav-links li');
-        allNavLinks.forEach(link => {
-            const targetPage = link.getAttribute('data-page');
-            if (targetPage === pageId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-
-        // Close sidebar on mobile if it exists
-        if (typeof sidebar !== 'undefined' && sidebar) sidebar.classList.remove('active');
-        if (typeof sidebarOverlay !== 'undefined' && sidebarOverlay) sidebarOverlay.classList.remove('active');
-
-        window.scrollTo(0, 0);
     };
 
     
@@ -337,7 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentage = questionsInSubject > 0 ? Math.round((completed / questionsInSubject) * 100) : 0;
             
             const subjectCard = document.createElement('div');
-            subjectCard.className = 'bg-surface-container-lowest dark:bg-slate-900 rounded-[16px] p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white/50 dark:border-slate-800 flex flex-col gap-4 active:scale-[0.98] transition-transform duration-150 cursor-pointer';
+            subjectCard.className = 'stagger-item bg-surface-container-lowest dark:bg-slate-900 rounded-[16px] p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white/50 dark:border-slate-800 flex flex-col gap-4 active:scale-[0.98] transition-transform duration-150 cursor-pointer';
+            subjectCard.style.animationDelay = `${idx * 100}ms`;
             
             subjectCard.onclick = () => startQuiz(subject.id);
             
@@ -365,11 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateDashboardStats() {
-        const textDisplay = document.getElementById('overall-progress-text');
-        const circleDisplay = document.getElementById('overall-progress-circle-text');
-        const circleBg = document.getElementById('overall-progress-circle');
-        
-        if (!textDisplay || !circleDisplay || !circleBg) return;
+        if (!textDisplay) return;
 
         let totalQuestions = 0;
         let totalCompleted = 0;
@@ -385,18 +428,367 @@ document.addEventListener('DOMContentLoaded', () => {
         const percentage = totalQuestions > 0 ? Math.round((totalCompleted / totalQuestions) * 100) : 0;
 
         textDisplay.textContent = `${percentage}% Completed`;
-        circleDisplay.textContent = `${percentage}%`;
-        
-        // Update circle visual
-        circleBg.style.background = `conic-gradient(#FF006E ${percentage}% 0%, #f0eded ${percentage}% 100%)`;
-        
+
+        if (circleDisplay) circleDisplay.textContent = `${percentage}%`;
+
+        // Restore: Animate the conic-gradient ring (Hollow Ring Effect)
+        if (circleBg) {
+            const startPct = 0;
+            const endPct = percentage;
+            const duration = 1000;
+            const startTime = performance.now();
+            
+            function animateRing(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // ease-out
+                const current = Math.round(startPct + (endPct - startPct) * eased);
+                
+                circleBg.style.background = `conic-gradient(#FF006E ${current}% 0%, rgba(148, 163, 184, 0.1) ${current}% 100%)`;
+                if (circleDisplay) circleDisplay.textContent = `${current}%`;
+                
+                if (progress < 1) requestAnimationFrame(animateRing);
+            }
+            requestAnimationFrame(animateRing);
+        }
+
         // Optional: Update peer comparison text
         const peerText = textDisplay.nextElementSibling;
         if (peerText && peerText.tagName === 'P') {
-            const peerPercent = Math.min(99, Math.max(5, percentage + 25)); // Mock logic
+            const peerPercent = Math.min(99, Math.max(5, percentage + 25));
             peerText.textContent = `You're ahead of ${peerPercent}% of peers!`;
         }
+        
+        renderRecentActivity();
+        initCharts(percentage, state.intensityRange || '7d');
     }
+
+    function renderRecentActivity() {
+        const list = document.getElementById('recent-activity-list');
+        if (!list) return;
+
+        if (state.recentActivity.length === 0) {
+            list.innerHTML = `
+                <div class="flex flex-col items-center justify-center p-8 text-center bg-slate-50/50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800">
+                    <span class="material-symbols-outlined text-slate-300 dark:text-slate-700 text-4xl mb-2">history</span>
+                    <p class="text-sm text-slate-400 font-medium">No recent activity yet. Start studying!</p>
+                </div>
+            `;
+            return;
+        }
+
+        list.innerHTML = state.recentActivity.map((activity, idx) => {
+            const date = new Date(activity.timestamp);
+            const timeStr = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const dateStr = date.toLocaleDateString([], { month: 'short', day: 'numeric' });
+            
+            const accuracyColor = activity.accuracy >= 80 ? 'text-green-500' : (activity.accuracy >= 50 ? 'text-amber-500' : 'text-red-500');
+            
+            return `
+                <div class="stagger-item glass-card-sm p-4 rounded-2xl flex items-center justify-between group hover:border-pink-500/30 transition-all cursor-pointer" 
+                     onclick="window.reviewActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-500">
+                            <span class="material-symbols-outlined">${activity.isMockExam ? 'assignment' : 'menu_book'}</span>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-800 dark:text-slate-100">${activity.title}</h4>
+                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">${dateStr} • ${timeStr}</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs font-black ${accuracyColor}">${activity.accuracy}%</p>
+                        <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">${activity.score}/${activity.attempted}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    window.reviewActivity = function(activityId) {
+        const activity = state.recentActivity.find(a => a.id === activityId);
+        if (!activity || !activity.stateSnapshot) return;
+
+        // Restore state from snapshot
+        state.quizQuestions = activity.stateSnapshot.quizQuestions;
+        state.answers = activity.stateSnapshot.answers;
+        state.submitted = activity.stateSnapshot.submitted;
+        state.flagged = activity.stateSnapshot.flagged;
+        state.currentSubject = activity.stateSnapshot.currentSubject;
+        state.currentTopic = activity.stateSnapshot.currentTopic;
+        state.isMockExam = activity.isMockExam;
+        state.score = activity.score;
+        state.isFinished = true;
+
+        navigateTo('quiz-view');
+        state.currentQuestionIndex = 0;
+        loadQuestion();
+    };
+
+    function updateGamificationUI() {
+        const pointsDisplay = document.getElementById('user-points-display');
+        const levelDisplay = document.getElementById('user-level-display');
+        const levelBadge = document.getElementById('level-badge-display');
+        
+        if (pointsDisplay) pointsDisplay.textContent = state.userPoints;
+        
+        // Mock levels
+        let level = 'Apprentice';
+        if (state.userPoints >= 1000) level = 'Exam Ready';
+        else if (state.userPoints >= 500) level = 'Master';
+        else if (state.userPoints >= 250) level = 'Lead Engineer';
+        else if (state.userPoints >= 100) level = 'Senior Engineer';
+        else if (state.userPoints >= 50) level = 'Dedicated';
+        
+        if (levelDisplay) levelDisplay.textContent = level;
+        if (levelBadge) levelBadge.textContent = level;
+
+        // Update Exam Lock status
+        const examLock = document.getElementById('exam-lock-overlay');
+        const examNav = document.querySelector('[data-page="exam"]');
+        const examUnlockProgress = document.getElementById('exam-unlock-progress');
+        const examUnlockText = document.getElementById('exam-unlock-text');
+        
+        const examThreshold = 100;
+        const isExamUnlocked = state.userPoints >= examThreshold;
+        
+        if (examLock) {
+            if (isExamUnlocked) {
+                examLock.classList.add('hidden');
+            } else {
+                examLock.classList.remove('hidden');
+                if (examUnlockProgress) {
+                    const progress = Math.min(100, Math.round((state.userPoints / examThreshold) * 100));
+                    examUnlockProgress.style.width = `${progress}%`;
+                }
+                if (examUnlockText) {
+                    examUnlockText.textContent = `${state.userPoints}/${examThreshold} PTS to Unlock`;
+                }
+            }
+        }
+        
+        if (examNav) {
+            if (isExamUnlocked) {
+                examNav.style.opacity = "1";
+                examNav.style.pointerEvents = "auto";
+            } else {
+                examNav.style.opacity = "0.5";
+                examNav.style.pointerEvents = "none";
+            }
+        }
+    }
+
+    function initCharts(overallPercentage, range = '7d') {
+        state.intensityRange = range;
+        
+        // Update toggle UI
+        const btn7d = document.getElementById('btn-intensity-7d');
+        const btn30d = document.getElementById('btn-intensity-30d');
+        if (btn7d && btn30d) {
+            if (range === '7d') {
+                btn7d.className = "text-[10px] px-2 py-0.5 rounded-full bg-secondary text-white font-bold transition-all";
+                btn30d.className = "text-[10px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-outline font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all";
+            } else {
+                btn30d.className = "text-[10px] px-2 py-0.5 rounded-full bg-secondary text-white font-bold transition-all";
+                btn7d.className = "text-[10px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-outline font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all";
+            }
+        }
+
+        // Study Intensity Line Chart (B-3)
+        const lineCtx = document.getElementById('studyIntensityChart');
+        if (lineCtx) {
+            let labels, intensityData;
+            
+            if (range === '7d') {
+                labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                intensityData = [12, 19, 3, 5, 2, 3, 9].map(v => v + Math.floor(state.userPoints / 20));
+            } else {
+                // Generate 30 days of labels and mock data
+                labels = Array.from({length: 30}, (_, i) => `${30-i}d`);
+                intensityData = Array.from({length: 30}, () => Math.floor(Math.random() * 20) + Math.floor(state.userPoints / 50));
+            }
+
+            if (state.charts.line) {
+                state.charts.line.data.labels = labels;
+                state.charts.line.data.datasets[0].data = intensityData;
+                state.charts.line.update();
+            } else {
+                state.charts.line = new Chart(lineCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Questions Answered',
+                            data: intensityData,
+                            borderColor: '#FF006E',
+                            backgroundColor: 'rgba(255, 0, 110, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            borderWidth: 3,
+                            pointRadius: range === '7d' ? 4 : 0,
+                            pointHoverRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { 
+                                grid: { display: false }, 
+                                border: { display: false },
+                                ticks: {
+                                    display: true,
+                                    maxRotation: 0,
+                                    autoSkip: true,
+                                    maxTicksLimit: 7,
+                                    font: { size: 9 }
+                                }
+                            },
+                            y: { display: false, grid: { display: false } }
+                        }
+                    }
+                });
+            }
+        }
+    }
+    
+    function renderRecentActivity() {
+        const container = document.getElementById('recent-activity-list');
+        if (!container) return;
+
+        if (!state.recentActivity || state.recentActivity.length === 0) {
+            container.innerHTML = `
+                <div class="bg-surface-container-lowest dark:bg-slate-900 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] text-center border border-slate-50 dark:border-slate-800">
+                    <p class="font-body-sm text-outline dark:text-slate-400">No recent activity yet. Start studying!</p>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = state.recentActivity.map((activity, idx) => {
+            const timeAgo = getTimeAgo(activity.timestamp);
+            return `
+                <div class="stagger-item bg-surface-container-lowest dark:bg-slate-900 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex items-center gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" onclick="window.loadRecentActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
+                    <div class="w-12 h-12 rounded-lg bg-${activity.isMockExam ? 'primary' : 'secondary'}/10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-${activity.isMockExam ? 'primary' : 'secondary'}" data-icon="quiz">quiz</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-title-sm text-body-base text-on-surface dark:text-slate-100">${activity.title}</p>
+                        <p class="font-body-sm text-body-sm text-outline dark:text-slate-400">Score: ${activity.accuracy}% • Completed ${timeAgo}</p>
+                    </div>
+                    <span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function getTimeAgo(timestamp) {
+        const diffMs = Date.now() - timestamp;
+        const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
+        const diffMins = Math.floor(diffMs / (1000 * 60));
+        if (diffHrs > 24) {
+            return `${Math.floor(diffHrs / 24)}d ago`;
+        } else if (diffHrs > 0) {
+            return `${diffHrs}h ago`;
+        } else if (diffMins > 0) {
+            return `${diffMins}m ago`;
+        } else {
+            return 'Just now';
+        }
+    }
+
+    window.loadRecentActivity = function(activityId) {
+        const activity = state.recentActivity.find(a => a.id === activityId);
+        if (!activity || !activity.stateSnapshot) {
+            alert("Sorry, full details for this older activity were not saved.");
+            return;
+        }
+
+        // Restore state
+        state.quizQuestions = activity.stateSnapshot.quizQuestions;
+        state.answers = activity.stateSnapshot.answers;
+        state.submitted = activity.stateSnapshot.submitted;
+        state.flagged = activity.stateSnapshot.flagged;
+        state.currentSubject = activity.stateSnapshot.currentSubject;
+        state.currentTopic = activity.stateSnapshot.currentTopic;
+        
+        state.isMockExam = activity.isMockExam;
+        state.score = activity.score;
+        state.isFinished = true;
+
+        // Display results
+        let attempted = activity.attempted || 0;
+        
+        resTotal.textContent = state.quizQuestions.length;
+        resAttempted.textContent = attempted;
+        resCorrect.textContent = state.score;
+        resAccuracy.textContent = `${activity.accuracy}%`;
+        resultsSubjectName.textContent = state.currentTopic || state.currentSubject.name;
+
+        resultsQuestionMap.innerHTML = state.quizQuestions.map((q, idx) => {
+            let statusClass = '';
+            if (state.submitted[idx]) {
+                const selectedIndex = state.answers[idx];
+                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
+                    statusClass = 'correct-res';
+                } else {
+                    statusClass = 'wrong-res';
+                }
+            }
+            return `<button class="map-btn ${statusClass}" data-index="${idx}">${idx + 1}</button>`;
+        }).join('');
+
+        document.querySelectorAll('.results-map .map-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                state.currentQuestionIndex = parseInt(btn.getAttribute('data-index'));
+                state.isFinished = true;
+                navigateTo('quiz-view');
+                loadQuestion();
+            });
+        });
+
+        resultsDetailedList.innerHTML = state.quizQuestions.map((q, idx) => {
+            let status = 'unanswered';
+            let icon = '○';
+            if (state.submitted[idx]) {
+                const selectedIndex = state.answers[idx];
+                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
+                    status = 'correct';
+                    icon = '✓';
+                } else {
+                    status = 'wrong';
+                    icon = '✗';
+                }
+            }
+            
+            let displayHeader = q.question;
+            if (displayHeader.length > 100) {
+                displayHeader = displayHeader.substring(0, 100) + '...';
+            }
+            
+            return `
+                <div class="result-item" data-index="${idx}">
+                    <div class="result-status-icon ${status}">${icon}</div>
+                    <div class="result-text">${idx + 1}. ${displayHeader}</div>
+                </div>
+            `;
+        }).join('');
+
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise();
+        }
+
+        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
+            triggerConfetti();
+        }
+
+        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
+            triggerConfetti();
+        }
+
+        navigateTo('results-view');
+    };
     
     // Quiz Engine
     function startQuiz(subjectId, topicName) {
@@ -495,6 +887,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (window.MathJax && window.MathJax.typesetPromise) {
             window.MathJax.typesetPromise();
+        }
+
+        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
+            triggerConfetti();
         }
 
         updateMapVisuals();
@@ -665,6 +1061,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.MathJax.typesetPromise();
         }
 
+        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
+            triggerConfetti();
+        }
+
         submitBtn.classList.add('hidden');
         nextBtn.classList.remove('hidden');
     }
@@ -817,6 +1217,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function finishQuiz() {
         stopTimer();
         
+        if (state.isFinished) {
+            navigateTo('results-view');
+            return;
+        }
+
         let attempted = 0;
         let correct = 0;
 
@@ -840,6 +1245,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
         
+        // Save to recent activity
+        const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || state.currentSubject.name);
+        const newActivity = {
+            id: Date.now().toString(),
+            title: activityTitle,
+            score: correct,
+            accuracy: accuracy,
+            attempted: attempted,
+            isMockExam: state.isMockExam,
+            timestamp: Date.now(),
+            stateSnapshot: {
+                quizQuestions: state.quizQuestions,
+                answers: state.answers,
+                submitted: state.submitted,
+                flagged: state.flagged,
+                currentSubject: state.currentSubject,
+                currentTopic: state.currentTopic
+            }
+        };
+        state.recentActivity.unshift(newActivity);
+        if (state.recentActivity.length > 5) {
+            state.recentActivity.pop();
+        }
+        const activityKey = `enggtv_recent_activity_${state.user.username}`;
+        localStorage.setItem(activityKey, JSON.stringify(state.recentActivity));
+
         resTotal.textContent = state.quizQuestions.length;
         resAttempted.textContent = attempted;
         resCorrect.textContent = state.score;
@@ -899,6 +1330,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (window.MathJax && window.MathJax.typesetPromise) {
             window.MathJax.typesetPromise();
+        }
+
+        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
+            triggerConfetti();
         }
 
         document.querySelectorAll('.result-item').forEach(item => {
@@ -1090,6 +1525,71 @@ document.addEventListener('DOMContentLoaded', () => {
         if (settingsPoints) {
             settingsPoints.textContent = `${points} Points`;
         }
+
+        // --- Dynamic Streak Calculation ---
+        // Counts consecutive calendar days (today + backwards) that had activity
+        const streakDisplay = document.getElementById('settings-streak-display');
+        const streakSubtitle = document.getElementById('settings-streak-subtitle');
+        if (streakDisplay) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Build a Set of unique day strings from recentActivity timestamps
+            const activeDays = new Set(
+                (state.recentActivity || []).map(a => {
+                    const d = new Date(a.timestamp);
+                    d.setHours(0, 0, 0, 0);
+                    return d.getTime();
+                })
+            );
+
+            // Walk backwards from today counting consecutive active days
+            let streak = 0;
+            let checkDay = today.getTime();
+            while (activeDays.has(checkDay)) {
+                streak++;
+                checkDay -= 86400000; // subtract one day
+            }
+            // If today has no activity yet, also check if yesterday does (streak still alive)
+            if (streak === 0) {
+                const yesterday = today.getTime() - 86400000;
+                let checkYesterday = yesterday;
+                while (activeDays.has(checkYesterday)) {
+                    streak++;
+                    checkYesterday -= 86400000;
+                }
+            }
+
+            streakDisplay.textContent = `${streak} ${streak === 1 ? 'Day' : 'Days'}`;
+            if (streakSubtitle) {
+                if (streak === 0) {
+                    streakSubtitle.textContent = 'Start today!';
+                } else if (streak < 3) {
+                    streakSubtitle.textContent = 'Good start!';
+                } else if (streak < 7) {
+                    streakSubtitle.textContent = 'Building momentum!';
+                } else {
+                    streakSubtitle.textContent = `${streak} days strong 🔥`;
+                }
+            }
+        }
+
+        // --- Dynamic Courses Calculation ---
+        // Counts subjects with any progress vs total subjects available
+        const coursesDisplay = document.getElementById('settings-courses-display');
+        const coursesSubtitle = document.getElementById('settings-courses-subtitle');
+        if (coursesDisplay) {
+            const totalSubjects = state.subjects.length;
+            const startedSubjects = state.subjects.filter(s => {
+                const prog = state.userProgress[s.id];
+                return prog && prog.completed > 0;
+            }).length;
+
+            coursesDisplay.textContent = `${startedSubjects} Started`;
+            if (coursesSubtitle) {
+                coursesSubtitle.textContent = `of ${totalSubjects} total`;
+            }
+        }
         const levelBadge = document.querySelector('.text-right p:first-child');
         if (levelBadge) {
             let level = 1;
@@ -1198,9 +1698,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if(e.target.checked) {
                 document.documentElement.classList.add('dark');
                 document.body.classList.add('dark-theme');
+                localStorage.setItem('enggtv_theme', 'dark');
             } else {
                 document.documentElement.classList.remove('dark');
                 document.body.classList.remove('dark-theme');
+                localStorage.setItem('enggtv_theme', 'light');
             }
         });
     }
@@ -1331,6 +1833,132 @@ document.addEventListener('DOMContentLoaded', () => {
     // Expose functions to global scope for inline handlers
     window.startMockExam = startMockExam;
     window.startQuiz = startQuiz;
+
+    // ============================================================
+    // B-3: Avatar Picker Logic
+    // ============================================================
+    const AVATAR_PRESETS = [
+        { id: 'scholar',   emoji: '🎓', gradient: 'linear-gradient(135deg, #FDA60A, #FF006E)',   label: 'Scholar'   },
+        { id: 'engineer',  emoji: '⚙️',  gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',   label: 'Engineer'  },
+        { id: 'scientist', emoji: '🔬', gradient: 'linear-gradient(135deg, #10B981, #06B6D4)',   label: 'Scientist' },
+        { id: 'architect', emoji: '📐', gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)',   label: 'Architect' },
+        { id: 'pioneer',   emoji: '🚀', gradient: 'linear-gradient(135deg, #EF4444, #F97316)',   label: 'Pioneer'   },
+    ];
+
+    let pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
+
+    function applyAvatar() {
+        const savedId = localStorage.getItem('enggtv_avatar');
+        const preset = AVATAR_PRESETS.find(a => a.id === savedId);
+
+        const headerContainer   = document.getElementById('header-avatar-container');
+        const settingsContainer = document.getElementById('settings-avatar-container');
+
+        [headerContainer, settingsContainer].forEach((container, i) => {
+            if (!container) return;
+            if (preset) {
+                const size = i === 0 ? '22px' : '36px';
+                container.innerHTML = `
+                    <div class="avatar-emoji-display"
+                         style="background:${preset.gradient}; font-size:${size};">
+                        ${preset.emoji}
+                    </div>`;
+            } else {
+                // Restore original imgs if no avatar chosen
+                if (i === 0) {
+                    container.innerHTML = `<img id="header-avatar-img" class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4"/>`;
+                } else {
+                    container.innerHTML = `<img id="settings-avatar-img" class="w-full h-full object-cover" alt="Profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KvXfnOr12k5SzP6fbV0MWcvNYjQppUc89dWdHwtt0LrMrxWc1UtbF12daBvTIvDM4-Pbiso8pORGGDZgEp95bsmWYDbPdggsVh89FcxWsuzHhPxhY9KM5FxwbYYVVJlRdHw1eVngYCCJYLEwkE1OZnwygR0y-za4B_I1aACLrZJ5_SsP0Uundq_5ePMlIxpXJi2YoSsNZnCF4Mp0shocQ1xiC60lxWTjsK-CY3Md962fc6vAc6Csv8KEhV8gBTOGs4jAoTC5mKjN"/>`;
+                }
+            }
+        });
+    }
+
+    function renderAvatarGrid() {
+        const grid = document.getElementById('avatar-options-grid');
+        if (!grid) return;
+        grid.innerHTML = AVATAR_PRESETS.map(a => `
+            <div class="avatar-option ${pendingAvatarId === a.id ? 'selected-avatar' : ''}"
+                 data-avatar-id="${a.id}"
+                 style="background: ${a.gradient};"
+                 onclick="window._selectAvatar('${a.id}')">
+                ${a.emoji}
+            </div>
+        `).join('');
+    }
+
+    window._selectAvatar = function(id) {
+        pendingAvatarId = id;
+        document.querySelectorAll('.avatar-option').forEach(el => {
+            el.classList.toggle('selected-avatar', el.dataset.avatarId === id);
+        });
+    };
+
+    const avatarModal      = document.getElementById('avatar-picker-modal');
+    const openAvatarBtn    = document.getElementById('btn-open-avatar-picker');
+    const closeAvatarBtn   = document.getElementById('close-avatar-picker');
+    const saveAvatarBtn    = document.getElementById('btn-save-avatar');
+    const removeAvatarBtn  = document.getElementById('btn-remove-avatar');
+
+    if (openAvatarBtn) {
+        openAvatarBtn.addEventListener('click', () => {
+            pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
+            renderAvatarGrid();
+            avatarModal.classList.add('open');
+        });
+    }
+    if (closeAvatarBtn)  closeAvatarBtn.addEventListener('click',  () => avatarModal.classList.remove('open'));
+    if (avatarModal)     avatarModal.addEventListener('click', e => { if (e.target === avatarModal) avatarModal.classList.remove('open'); });
+
+    if (saveAvatarBtn) {
+        saveAvatarBtn.addEventListener('click', () => {
+            if (pendingAvatarId) localStorage.setItem('enggtv_avatar', pendingAvatarId);
+            else localStorage.removeItem('enggtv_avatar');
+            applyAvatar();
+            avatarModal.classList.remove('open');
+        });
+    }
+    if (removeAvatarBtn) {
+        removeAvatarBtn.addEventListener('click', () => {
+            pendingAvatarId = null;
+            localStorage.removeItem('enggtv_avatar');
+            applyAvatar();
+            avatarModal.classList.remove('open');
+        });
+    }
+
+    function triggerConfetti() {
+        if (typeof confetti === 'function') {
+            const duration = 3 * 1000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 4,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#FF006E', '#FDA60A', '#720026']
+                });
+                confetti({
+                    particleCount: 4,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#FF006E', '#FDA60A', '#720026']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+    }
+
+    // Apply saved avatar immediately on load
+    applyAvatar();
 
     // Run Init
     init();
