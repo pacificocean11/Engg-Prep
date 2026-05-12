@@ -1,5 +1,6 @@
 {
-  "appId": "com.habittracker.app",
+  "appId": "tv.engg.prep",
   "appName": "Engg.tv Prep",
-  "webDir": "www"
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

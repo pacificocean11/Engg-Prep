@@ -9765,7 +9765,7 @@ const QUESTIONS = {
       "topic": "Kinematics of Particles",
       "title": "Projectile Motion",
       "question": "A projectile is launched from ground level with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance and assuming $g = 9.81\\text{ m/s}^2$, what is the maximum height $h_{max}$ reached by the projectile?",
-      "question_image": "assets/images/questions/tikz_1436a7189a.svg",
+      "question_image": "assets/images/questions/tikz_5a65a21612.svg",
       "options": [
         {
           "label": "A",
@@ -9807,7 +9807,7 @@ const QUESTIONS = {
       "topic": "Kinematics of Particles",
       "title": "Maximum Speed on a Curve",
       "question": "A car with a mass of $1500$ kg travels around a flat circular curve with a radius of $100$ m. If the coefficient of static friction between the tires and the road is $\\mu_s = 0.6$, what is the maximum speed the car can maintain without sliding?",
-      "question_image": "assets/images/questions/tikz_b8c6028674.svg",
+      "question_image": "assets/images/questions/tikz_dd0fec48f5.svg",
       "options": [
         {
           "label": "A",
@@ -9849,7 +9849,7 @@ const QUESTIONS = {
       "topic": "Kinematics of Particles",
       "title": "Projectile Motion",
       "question": "A projectile is launched from a height of $h = 10\\text{ m}$ with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance, what is the horizontal distance $x$ traveled by the projectile when it hits the ground? Use $g = 9.81\\text{ m/s}^2$.",
-      "question_image": "assets/images/questions/tikz_f24fd57b1b.svg",
+      "question_image": "assets/images/questions/tikz_6ca6b20627.svg",
       "options": [
         {
           "label": "A",

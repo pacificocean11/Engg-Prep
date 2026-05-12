@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="pwa-icon.png">
     <meta name="theme-color" content="#FF006E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -54,6 +55,9 @@
     
     <!-- Canvas Confetti for Gamification -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Vanilla Tilt for 3D Card Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Lexend:wght@300..700&amp;display=swap" rel="stylesheet"/>
@@ -140,6 +144,18 @@
 </head>
 
 <body class="bg-background dark:bg-slate-950 text-on-surface dark:text-slate-100 font-body-base min-h-screen pb-24 overflow-x-hidden break-words dark-theme">
+    <div class="floating-bg-elements" aria-hidden="true">
+        <div class="glass-shape shape-1"></div>
+        <div class="glass-shape shape-2"></div>
+        <div class="glass-shape shape-3"></div>
+        <div class="floating-symbol" style="top: 10%; left: 5%;">⚙️</div>
+        <div class="floating-symbol" style="top: 25%; left: 85%;">∫</div>
+        <div class="floating-symbol" style="top: 45%; left: 15%;">π</div>
+        <div class="floating-symbol" style="top: 65%; left: 80%;">Σ</div>
+        <div class="floating-symbol" style="top: 85%; left: 10%;">Δ</div>
+    </div>
+    <div id="cursor-follower" class="hidden md:block"></div>
+    <div id="toast-container"></div>
     <script>
         if (localStorage.getItem('enggtv_theme') === 'light') {
             document.body.classList.remove('dark-theme');
@@ -149,7 +165,7 @@
 <header id="main-header" class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm docked full-width top-0 z-50 fixed w-full">
 <div class="flex justify-between items-center w-full px-5 py-3">
 <div class="flex items-center gap-0.5">
-<div id="header-avatar-container" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<div id="header-avatar-container" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container magnetic-btn">
 <img id="header-avatar-img" class="w-full h-full object-cover" data-alt="Portrait of a young male engineering student with a friendly expression in a modern bright setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4"/>
 </div>
 <div class="h-10 w-40 flex items-center justify-start">
@@ -197,17 +213,20 @@
             <h2 id="overall-progress-text" class="font-display-lg text-4xl text-on-surface dark:text-white">0% Completed</h2>
             <p class="font-body-sm text-outline dark:text-slate-400">Your engineering intuition is growing stronger!</p>
             <div class="flex gap-3 mt-4">
-                <button class="bg-secondary text-white font-bold px-6 py-3 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110" onclick="navigateTo('study')">
+                <button class="bg-secondary text-white font-bold px-6 py-3 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 magnetic-btn" onclick="navigateTo('study')">
                     Resume Study
                 </button>
             </div>
         </div>
         
         <div class="relative w-32 h-32 flex items-center justify-center">
-            <!-- Restored Circular Progress (Hollow Ring Style) -->
-            <div id="overall-progress-circle" class="w-full h-full rounded-full flex items-center justify-center p-1" style="background: conic-gradient(#FF006E 0% 0%, rgba(148, 163, 184, 0.1) 0% 100%);">
-                <div class="bg-white dark:bg-slate-900 w-full h-full rounded-full flex items-center justify-center shadow-inner">
-                    <span id="overall-progress-circle-text" class="font-display-lg text-2xl text-secondary dark:text-pink-400">0%</span>
+            <!-- Liquid Progress Visual (Suggestion 3) -->
+            <div id="overall-progress-circle" class="liquid-progress-container w-full h-full rounded-full overflow-hidden relative border-4 border-slate-100 dark:border-slate-800 shadow-inner">
+                <div class="liquid-wave" id="liquid-wave-element" style="top: 100%;"></div>
+                <div class="liquid-wave liquid-wave-back" id="liquid-wave-element-back" style="top: 100%;"></div>
+                <div class="liquid-glass-glint"></div>
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <span id="overall-progress-circle-text" class="font-display-lg text-2xl text-secondary dark:text-pink-400 drop-shadow-md">0%</span>
                 </div>
             </div>
         </div>
@@ -420,7 +439,6 @@
 <span class="material-symbols-outlined" data-icon="logout">logout</span>
                 Logout
             </button>
-<p class="text-center text-[12px] text-slate-400 mt-stack-md font-medium tracking-wide">VERSION 2.4.0 (BETA)</p>
 </section>
 
         </section>
@@ -430,7 +448,7 @@
     
             <section id="exam" class="page">
                     <div class="mock-exam-landing" id="exam-unlocked">
-                        <div class="exam-hero-card">
+                        <div class="exam-hero-card glass-card tilt-card">
                             <div class="hero-content">
                                 <div class="hero-badge">Simulation</div>
                                 <h2 id="exam-headline">FE Mechanical Mock Exam</h2>
@@ -468,7 +486,7 @@
                                     </ul>
                                 </div>
 
-                                <button id="start-mock-exam" class="btn-primary btn-large" onclick="startMockExam()">
+                                <button id="start-mock-exam" class="btn-primary btn-large magnetic-btn" onclick="openMockPreview()">
                                     <span class="icon">🚀</span> Start Simulated Exam
                                 </button>
                             </div>
@@ -612,7 +630,7 @@
                             <h2 class="font-display-lg text-display-lg text-on-surface dark:text-slate-100">Account Info</h2>
                         </div>
 
-                        <div class="bg-white dark:bg-slate-900 rounded-[32px] p-8 shadow-xl border border-slate-50 dark:border-slate-800">
+                        <div class="glass-card tilt-card rounded-[32px] p-8 shadow-xl border border-slate-50 dark:border-slate-800">
                             <div class="flex flex-col items-center mb-8">
                                 <div class="w-24 h-24 rounded-3xl bg-surface-container-highest flex items-center justify-center overflow-hidden card-shadow mb-4">
                                     <img alt="Alex Riviera" class="w-full h-full object-cover" data-alt="Close-up profile photo of Alex Riviera, a professional young man, studio lighting, clear high quality aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KvXfnOr12k5SzP6fbV0MWcvNYjQppUc89dWdHwtt0LrMrxWc1UtbF12daBvTIvDM4-Pbiso8pORGGDZgEp95bsmWYDbPdggsVh89FcxWsuzHhPxhY9KM5FxwbYYVVJlRdHw1eVngYCCJYLEwkE1OZnwygR0y-za4B_I1aACLrZJ5_SsP0Uundq_5ePMlIxpXJi2YoSsNZnCF4Mp0shocQ1xiC60lxWTjsK-CY3Md962fc6vAc6Csv8KEhV8gBTOGs4jAoTC5mKjN"/>
@@ -822,66 +840,35 @@
         </div>
     </main>
     
-    <nav id="bottom-nav" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-2 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(255,179,0,0.05)] rounded-t-2xl">
-        <ul class="nav-links flex justify-around w-full m-0 p-0" style="list-style: none;">
-            <li data-page="dashboard" id="nav-dashboard" class="nav-item" onclick="navigateTo('dashboard')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
-                    <span class="material-symbols-outlined mb-1">dashboard</span>
-                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Dashboard</span>
-                </a>
-            </li>
-            <li data-page="study" id="nav-study" class="nav-item" onclick="navigateTo('study')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
-                    <span class="material-symbols-outlined mb-1">menu_book</span>
-                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Topics</span>
-                </a>
-            </li>
-            <li data-page="exam" id="nav-exam" class="hidden" onclick="navigateTo('exam')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
-                    <span class="material-symbols-outlined mb-1">quiz</span>
-                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Exams</span>
-                </a>
-            </li>
-            <li data-page="settings" id="nav-settings" class="nav-item" onclick="navigateTo('settings')">
-                <a href="javascript:void(0)" class="flex flex-col items-center justify-center px-1 md:px-3 py-1.5 active:scale-90 transition-transform duration-150 bottom-nav-link w-full">
-                    <span class="material-symbols-outlined mb-1">settings</span>
-                    <span class="font-space-grotesk text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center w-full">Settings</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <style>
-        .nav-links li {
-            color: #94a3b8;
-            transition: all 0.2s ease;
-        }
-        #bottom-nav .nav-links li {
-            padding: 0;
-            margin: 0;
-            gap: 0;
-        }
-        .nav-links li.active {
-            background-color: #fffbeb;
-            color: #d97706 !important;
-            border-radius: 0.75rem;
-        }
-        .nav-links li.active a {
-            color: #d97706 !important;
-        }
-        .nav-links li.active .material-symbols-outlined {
-            font-variation-settings: 'FILL' 1;
-        }
-        .legacy-wrapper {
-            width: 100%;
-        }
-    </style>
     
     <script src="questions.js"></script>
+    <!-- Firebase Compat SDK (must load before firebase-config.js) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
     <script src="app.js"></script>
 
-<!-- B-3: Avatar Picker Modal -->
-<div id="avatar-picker-modal">
-  <div id="avatar-picker-sheet">
+<!-- Bottom Navigation Bar -->
+<nav id="bottom-nav" class="fixed glass-card rounded-full shadow-2xl border border-white/20 px-10 py-3">
+    <li data-page="dashboard" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+        <span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+    </li>
+    <li data-page="study" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+        <span class="material-symbols-outlined text-2xl" data-icon="menu_book">menu_book</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest">Study</span>
+    </li>
+    <li data-page="exam" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+        <span class="material-symbols-outlined text-2xl" data-icon="assignment">assignment</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest">Exam</span>
+    </li>
+    <li data-page="settings" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+        <span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest">Settings</span>
+    </li>
+</nav>
+<div id="avatar-picker-modal" class="fixed inset-0 z-[10002] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+  <div id="avatar-picker-sheet" class="glass-card w-full max-w-xl rounded-[40px] p-8 overflow-hidden shadow-2xl border border-white/20">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
       <h3 class="font-headline-md text-headline-md text-on-surface dark:text-slate-100">Choose Your Avatar</h3>
       <button id="close-avatar-picker" style="width:32px;height:32px;border-radius:50%;background:#f1f5f9;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">
@@ -907,6 +894,53 @@
         });
       }
     </script>
+    <!-- Mock Exam Preview Modal -->
+    <div id="mock-preview-modal" class="fixed inset-0 z-[10002] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+        <div class="glass-card w-full max-w-xl rounded-[40px] overflow-hidden shadow-2xl border border-white/20">
+            <div class="p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-3xl">assignment_late</span>
+                    </div>
+                    <div>
+                        <h2 class="font-display-lg text-2xl text-on-surface dark:text-white">Exam Simulation</h2>
+                        <p class="text-sm text-outline dark:text-slate-400">Ready to test your engineering intuition?</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-surface-container-low dark:bg-slate-800/50 p-4 rounded-3xl border border-outline/10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-secondary block mb-1">Duration</span>
+                        <p class="font-bold text-lg">20 Questions</p>
+                    </div>
+                    <div class="bg-surface-container-low dark:bg-slate-800/50 p-4 rounded-3xl border border-outline/10">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-secondary block mb-1">Difficulty</span>
+                        <p class="font-bold text-lg">Mixed Adaptive</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-green-500 text-sm mt-0.5">check_circle</span>
+                        <p class="text-sm text-on-surface-variant dark:text-slate-300">Covers all core subjects in your discipline.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-green-500 text-sm mt-0.5">check_circle</span>
+                        <p class="text-sm text-on-surface-variant dark:text-slate-300">No time limit per question, but total time is tracked.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-green-500 text-sm mt-0.5">check_circle</span>
+                        <p class="text-sm text-on-surface-variant dark:text-slate-300">Detailed solutions available after completion.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <button class="flex-1 px-6 py-4 rounded-2xl font-bold bg-slate-100 dark:bg-slate-800 text-outline hover:bg-slate-200 transition-all" onclick="closeMockPreview()">Cancel</button>
+                    <button class="flex-1 px-8 py-4 rounded-2xl font-bold bg-primary text-white shadow-lg shadow-primary/20 magnetic-btn" onclick="confirmStartMock()">Confirm Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

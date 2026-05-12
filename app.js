@@ -120,6 +120,147 @@ document.addEventListener('DOMContentLoaded', () => {
     const textDisplay = document.getElementById('overall-progress-text');
     const circleDisplay = document.getElementById('overall-progress-circle-text');
 
+    // Firebase Data Synchronization
+    async function syncToFirebase() {
+        if (!window.saveUserProgress) {
+            console.warn("⚠️ Firebase save function not available.");
+            return;
+        }
+        if (!state.user.username || state.user.username === 'guest') {
+            console.log("ℹ️ Skipping sync for guest user.");
+            return;
+        }
+
+        console.log(`🔄 Syncing data for ${state.user.username} to Firebase...`);
+
+        try {
+            // Strip stateSnapshot (full quiz questions) — too large for Firestore's 1MB limit
+            const lightActivity = (state.recentActivity || []).map(a => ({
+                id: a.id,
+                title: a.title,
+                score: a.score,
+                accuracy: a.accuracy,
+                attempted: a.attempted,
+                isMockExam: a.isMockExam,
+                timestamp: a.timestamp
+            }));
+
+            // Gather all profile data
+            const discipline = localStorage.getItem('enggtv_discipline') || state.user.discipline || 'Mechanical';
+            const dateJoined = localStorage.getItem('enggtv_date_joined') || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            const avatar = localStorage.getItem('enggtv_avatar') || null;
+
+            const payload = {
+                userPoints: state.userPoints,
+                userProgress: state.userProgress,
+                recentActivity: lightActivity,
+                discipline: discipline,
+                dateJoined: dateJoined,
+            };
+            if (avatar) payload.avatar = avatar;
+
+            await window.saveUserProgress(state.user.username, payload);
+            console.log("✅ Firebase sync successful.");
+        } catch (error) {
+            console.error("❌ Firebase sync failed:", error);
+        }
+    }
+
+    async function loadFromFirebase() {
+        if (!window.getUserProgress) {
+            console.warn("⚠️ Firebase load function not available.");
+            return;
+        }
+        if (!state.user.username || state.user.username === 'guest') return;
+
+        console.log(`📂 Loading data for ${state.user.username} from Firebase...`);
+        try {
+            const data = await window.getUserProgress(state.user.username);
+            if (data) {
+                if (data.userPoints !== undefined) {
+                    state.userPoints = data.userPoints;
+                    localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
+                }
+                if (data.userProgress) {
+                    state.userProgress = data.userProgress;
+                    localStorage.setItem(`enggtv_progress_${state.user.username}`, JSON.stringify(state.userProgress));
+                }
+                if (data.recentActivity) {
+                    state.recentActivity = data.recentActivity;
+                    localStorage.setItem(`enggtv_recent_activity_${state.user.username}`, JSON.stringify(state.recentActivity));
+                }
+
+                if (data.discipline) {
+                    localStorage.setItem('enggtv_discipline', data.discipline);
+                    state.user.discipline = data.discipline;
+                }
+                if (data.dateJoined) {
+                    localStorage.setItem('enggtv_date_joined', data.dateJoined);
+                }
+                if (data.avatar) {
+                    localStorage.setItem('enggtv_avatar', data.avatar);
+                }
+
+                updateDashboardStats();
+                updateGamificationUI();
+                renderRecentActivity();
+                renderSubjects();
+                applyAvatar();
+                updateUIForTier();
+                console.log("✅ Data restored from Firebase.");
+            }
+        } catch (error) {
+            console.error("❌ Firebase load failed:", error);
+        }
+    }
+
+    // --- UI UTILITIES ---
+    window.showToast = function(title, message, icon = 'stars', duration = 4000) {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+
+        const toast = document.createElement('div');
+        toast.className = 'glass-card p-4 rounded-2xl flex items-center gap-4 shadow-xl border-l-4 border-l-secondary translate-x-10 opacity-0 transition-all duration-500 pointer-events-auto min-w-[280px]';
+        toast.innerHTML = `
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined">${icon}</span>
+            </div>
+            <div class="flex-1">
+                <h4 class="text-sm font-bold text-slate-800 dark:text-slate-100">${title}</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">${message}</p>
+            </div>
+        `;
+
+        container.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.remove('translate-x-10', 'opacity-0');
+        }, 10);
+
+        setTimeout(() => {
+            toast.classList.add('translate-x-10', 'opacity-0');
+            setTimeout(() => toast.remove(), 500);
+        }, duration);
+    };
+
+    function addPoints(points, reason = "Correct Answer!") {
+        state.userPoints += points;
+        localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
+        updateGamificationUI();
+        syncToFirebase();
+        
+        window.showToast(`+${points} Points`, reason, 'military_tech');
+        
+        if (points >= 10) {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FF006E', '#FDA60A', '#720026']
+            });
+        }
+    }
+
     // Initialization
     function init() {
         setupQuizListeners();
@@ -131,6 +272,118 @@ document.addEventListener('DOMContentLoaded', () => {
         // startFreeTrialTimer();
         updateDashboardStats();
         updateGamificationUI();
+        // Load cloud data, then do an initial sync to push any localStorage data not yet in Firebase
+        loadFromFirebase().then(() => {
+            syncToFirebase();
+            initTilt();
+            initMagneticButtons();
+            initCursorFollower();
+            setupHeaderScroll();
+        });
+        initTilt();
+        initMagneticButtons();
+        initCursorFollower();
+        setupHeaderScroll();
+    }
+
+    function setupHeaderScroll() {
+        const header = document.getElementById('main-header');
+        if (!header) return;
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
+    function initCursorFollower() {
+        const follower = document.getElementById('cursor-follower');
+        if (!follower) return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // For spotlight effects on cards
+            const cards = document.querySelectorAll('.glass-card, .tilt-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        function animateFollower() {
+            // Smooth lerp (linear interpolation) for momentum effect
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+
+            follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animateFollower);
+        }
+        animateFollower();
+
+        // Refresh interactive elements listeners periodically or on page change
+        function updateFollowerListeners() {
+            const interactiveElements = document.querySelectorAll('button, a, .option, .map-btn, .nav-links li, .glass-card, .tilt-card, .subject-card-tilt');
+            
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    follower.classList.add('active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    follower.classList.remove('active');
+                });
+            });
+        }
+        updateFollowerListeners();
+        
+        // Expose to global so we can call it after rendering dynamic content
+        window.updateFollowerListeners = updateFollowerListeners;
+    }
+
+    function initTilt() {
+        if (typeof VanillaTilt === 'undefined') return;
+        
+        // Target specific cards for 3D tilt effect
+        const tiltElements = document.querySelectorAll('.glass-card, .tilt-card, #announcement-section, .subject-card-tilt');
+        
+        VanillaTilt.init(tiltElements, {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+            gyroscope: true,
+            scale: 1.02
+        });
+    }
+
+    function initMagneticButtons() {
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+        
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', function(e) {
+                const position = btn.getBoundingClientRect();
+                const x = e.pageX - position.left - position.width / 2;
+                const y = e.pageY - position.top - position.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
+            });
+            
+            btn.addEventListener('mouseout', function() {
+                btn.style.transform = 'translate(0px, 0px) scale(1)';
+            });
+        });
     }
 
     function setupDashboardListeners() {
@@ -144,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     state.recentActivity = [];
                     const activityKey = `enggtv_recent_activity_${state.user.username}`;
                     localStorage.removeItem(activityKey);
+                    syncToFirebase();
                     renderRecentActivity();
                 }
             }
@@ -247,14 +501,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         sidebarOverlay.addEventListener('click', () => {
-            sidebar.classList.remove('active');
+                sidebar.classList.remove('active');
             sidebarOverlay.classList.remove('active');
+        });
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function prepareQuestions(questions) {
+        return questions.map(q => {
+            // Deep clone to avoid modifying original data (crucial as QUESTIONS is a global reference)
+            const newQ = JSON.parse(JSON.stringify(q));
+            
+            // Shuffle options
+            shuffleArray(newQ.options);
+            
+            // Re-assign labels and update final_answer if it exists
+            const labels = ['A', 'B', 'C', 'D', 'E', 'F'];
+            newQ.options.forEach((opt, idx) => {
+                const newLabel = labels[idx] || String.fromCharCode(65 + idx);
+                opt.label = newLabel;
+                // If this is the correct option, update the final_answer reference in the solution
+                if (opt.is_correct && newQ.solution) {
+                    newQ.solution.final_answer = newLabel;
+                }
+            });
+            
+            return newQ;
         });
     }
 
     // Navigation Logic
     function setupNavigation() {
-        const allNavItems = document.querySelectorAll('.nav-links li');
+        const allNavItems = document.querySelectorAll('.nav-links li, #bottom-nav li');
         allNavItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 const pageId = item.getAttribute('data-page');
@@ -337,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Update nav active state (Sidebar and Bottom Nav)
-            const allNavLinks = document.querySelectorAll('.nav-links li');
+            const allNavLinks = document.querySelectorAll('.nav-links li, #bottom-nav li');
             allNavLinks.forEach(link => {
                 const targetPage = link.getAttribute('data-page');
                 if (targetPage === pageId) {
@@ -355,7 +640,12 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (document.startViewTransition) {
-            document.startViewTransition(performNav);
+            try {
+                document.startViewTransition(performNav);
+            } catch (e) {
+                console.warn("View transition aborted:", e);
+                performNav();
+            }
         } else {
             performNav();
         }
@@ -386,6 +676,11 @@ document.addEventListener('DOMContentLoaded', () => {
             subjectCard.className = 'stagger-item bg-surface-container-lowest dark:bg-slate-900 rounded-[16px] p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white/50 dark:border-slate-800 flex flex-col gap-4 active:scale-[0.98] transition-transform duration-150 cursor-pointer';
             subjectCard.style.animationDelay = `${idx * 100}ms`;
             
+            
+            const accentGlow = color.text === 'text-primary' ? 'rgba(126, 87, 0, 0.2)' : 
+                              (color.text === 'text-tertiary' ? 'rgba(215, 186, 255, 0.2)' : 'rgba(255, 0, 110, 0.2)');
+            subjectCard.style.setProperty('--accent-glow-dynamic', accentGlow);
+            
             subjectCard.onclick = () => startQuiz(subject.id);
             
             subjectCard.innerHTML = `
@@ -406,9 +701,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
+            subjectCard.classList.add('subject-card-tilt');
             subjectList.appendChild(subjectCard);
         });
         updateDashboardStats();
+        initTilt();
     }
 
     function updateDashboardStats() {
@@ -416,43 +713,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let totalQuestions = 0;
         let totalCompleted = 0;
+        let coursesStarted = 0;
 
         state.subjects.forEach(subject => {
             const questionsInSubject = (QUESTIONS[subject.id] || []).length;
             const completed = (state.userProgress[subject.id] && state.userProgress[subject.id].completed) || 0;
             
+            if (completed > 0) coursesStarted++;
             totalQuestions += questionsInSubject;
             totalCompleted += completed;
         });
 
         const percentage = totalQuestions > 0 ? Math.round((totalCompleted / totalQuestions) * 100) : 0;
-
         textDisplay.textContent = `${percentage}% Completed`;
-
         if (circleDisplay) circleDisplay.textContent = `${percentage}%`;
 
-        // Restore: Animate the conic-gradient ring (Hollow Ring Effect)
-        if (circleBg) {
-            const startPct = 0;
-            const endPct = percentage;
-            const duration = 1000;
-            const startTime = performance.now();
-            
-            function animateRing(now) {
-                const elapsed = now - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3); // ease-out
-                const current = Math.round(startPct + (endPct - startPct) * eased);
-                
-                circleBg.style.background = `conic-gradient(#FF006E ${current}% 0%, rgba(148, 163, 184, 0.1) ${current}% 100%)`;
-                if (circleDisplay) circleDisplay.textContent = `${current}%`;
-                
-                if (progress < 1) requestAnimationFrame(animateRing);
-            }
-            requestAnimationFrame(animateRing);
+        // Update Course Display in Settings
+        const coursesDisplay = document.getElementById('settings-courses-display');
+        const coursesSubtitle = document.getElementById('settings-courses-subtitle');
+        if (coursesDisplay) coursesDisplay.textContent = `${coursesStarted} Started`;
+        if (coursesSubtitle) coursesSubtitle.textContent = `of ${state.subjects.length} total`;
+
+        // Calculate and Update Streak
+        const streak = calculateStreak();
+        const streakDisplay = document.getElementById('settings-streak-display');
+        if (streakDisplay) streakDisplay.textContent = `${streak} Day${streak !== 1 ? 's' : ''}`;
+
+        // Liquid Wave Animation
+        const wave = document.getElementById('liquid-wave-element');
+        const waveBack = document.getElementById('liquid-wave-element-back');
+        if (wave) {
+            const topValue = 100 - (percentage * 1.1); 
+            wave.style.top = `${topValue}%`;
+            if (waveBack) waveBack.style.top = `${topValue - 5}%`; // Offset for depth
         }
 
-        // Optional: Update peer comparison text
         const peerText = textDisplay.nextElementSibling;
         if (peerText && peerText.tagName === 'P') {
             const peerPercent = Math.min(99, Math.max(5, percentage + 25));
@@ -461,6 +756,44 @@ document.addEventListener('DOMContentLoaded', () => {
         
         renderRecentActivity();
         initCharts(percentage, state.intensityRange || '7d');
+    }
+
+    function calculateStreak() {
+        if (!state.recentActivity || state.recentActivity.length === 0) return 0;
+        
+        // Get unique dates sorted descending
+        const dates = [...new Set(state.recentActivity.map(a => 
+            new Date(a.timestamp).toDateString()
+        ))].map(d => new Date(d)).sort((a, b) => b - a);
+        
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        const yesterday = new Date(today);
+        yesterday.setDate(today.getDate() - 1);
+
+        // If most recent is not today or yesterday, streak is broken
+        if (dates[0] < yesterday) return 0;
+
+        let streak = 0;
+        let currentDate = today;
+
+        for (let i = 0; i < dates.length; i++) {
+            const diff = Math.round((currentDate - dates[i]) / (1000 * 60 * 60 * 24));
+            
+            if (diff === 0) {
+                // Same day as current check, continue
+                if (i === 0) streak++; // Start streak if today/yesterday
+            } else if (diff === 1) {
+                // Exactly one day apart
+                streak++;
+                currentDate = dates[i];
+            } else {
+                // Gap in streak
+                break;
+            }
+        }
+        return streak;
     }
 
     function renderRecentActivity() {
@@ -485,7 +818,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const accuracyColor = activity.accuracy >= 80 ? 'text-green-500' : (activity.accuracy >= 50 ? 'text-amber-500' : 'text-red-500');
             
             return `
-                <div class="stagger-item glass-card-sm p-4 rounded-2xl flex items-center justify-between group hover:border-pink-500/30 transition-all cursor-pointer" 
+                <div class="stagger-item glass-card-sm p-4 rounded-2xl flex items-center justify-between group hover:border-pink-500/30 transition-all cursor-pointer tilt-card" 
                      onclick="window.reviewActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-500">
@@ -503,6 +836,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }).join('');
+        initTilt();
     }
 
     window.reviewActivity = function(activityId) {
@@ -597,15 +931,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // Study Intensity Line Chart (B-3)
         const lineCtx = document.getElementById('studyIntensityChart');
         if (lineCtx) {
-            let labels, intensityData;
+            let labels = [];
+            let intensityData = [];
+            const daysCount = range === '7d' ? 7 : 30;
             
-            if (range === '7d') {
-                labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-                intensityData = [12, 19, 3, 5, 2, 3, 9].map(v => v + Math.floor(state.userPoints / 20));
-            } else {
-                // Generate 30 days of labels and mock data
-                labels = Array.from({length: 30}, (_, i) => `${30-i}d`);
-                intensityData = Array.from({length: 30}, () => Math.floor(Math.random() * 20) + Math.floor(state.userPoints / 50));
+            // Generate labels and real data
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            for (let i = daysCount - 1; i >= 0; i--) {
+                const date = new Date(today);
+                date.setDate(today.getDate() - i);
+                
+                if (range === '7d') {
+                    labels.push(date.toLocaleDateString([], { weekday: 'short' }));
+                } else {
+                    labels.push(date.toLocaleDateString([], { month: 'short', day: 'numeric' }));
+                }
+                
+                // Calculate real intensity for this day
+                const dayStart = new Date(date).getTime();
+                const dayEnd = dayStart + (24 * 60 * 60 * 1000);
+                
+                const dayIntensity = state.recentActivity
+                    .filter(a => {
+                        const ts = new Date(a.timestamp).getTime();
+                        return ts >= dayStart && ts < dayEnd;
+                    })
+                    .reduce((sum, a) => sum + (a.attempted || 0), 0);
+                
+                intensityData.push(dayIntensity);
             }
 
             if (state.charts.line) {
@@ -613,6 +968,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.charts.line.data.datasets[0].data = intensityData;
                 state.charts.line.update();
             } else {
+                const ctx = lineCtx.getContext('2d');
+                const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+                gradient.addColorStop(0, 'rgba(255, 0, 110, 0.3)');
+                gradient.addColorStop(1, 'rgba(255, 0, 110, 0.02)');
+
                 state.charts.line = new Chart(lineCtx, {
                     type: 'line',
                     data: {
@@ -621,18 +981,36 @@ document.addEventListener('DOMContentLoaded', () => {
                             label: 'Questions Answered',
                             data: intensityData,
                             borderColor: '#FF006E',
-                            backgroundColor: 'rgba(255, 0, 110, 0.1)',
+                            backgroundColor: gradient,
                             fill: true,
                             tension: 0.4,
-                            borderWidth: 3,
+                            borderWidth: 4,
                             pointRadius: range === '7d' ? 4 : 0,
-                            pointHoverRadius: 6
+                            pointBackgroundColor: '#FF006E',
+                            pointHoverRadius: 6,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#FF006E',
+                            pointHoverBorderWidth: 3
                         }]
                     },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
+                        plugins: { 
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                                titleFont: { family: 'Outfit', size: 12 },
+                                bodyFont: { family: 'Lexend', size: 12 },
+                                padding: 12,
+                                cornerRadius: 8,
+                                callbacks: {
+                                    label: function(context) {
+                                        return ` ${context.parsed.y} Questions`;
+                                    }
+                                }
+                            }
+                        },
                         scales: {
                             x: { 
                                 grid: { display: false }, 
@@ -642,10 +1020,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                     maxRotation: 0,
                                     autoSkip: true,
                                     maxTicksLimit: 7,
-                                    font: { size: 9 }
+                                    font: { size: 9, family: 'Lexend' },
+                                    color: '#94a3b8'
                                 }
                             },
-                            y: { display: false, grid: { display: false } }
+                            y: { 
+                                display: false, 
+                                grid: { display: false },
+                                beginAtZero: true
+                            }
                         }
                     }
                 });
@@ -726,61 +1109,10 @@ document.addEventListener('DOMContentLoaded', () => {
         resAccuracy.textContent = `${activity.accuracy}%`;
         resultsSubjectName.textContent = state.currentTopic || state.currentSubject.name;
 
-        resultsQuestionMap.innerHTML = state.quizQuestions.map((q, idx) => {
-            let statusClass = '';
-            if (state.submitted[idx]) {
-                const selectedIndex = state.answers[idx];
-                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
-                    statusClass = 'correct-res';
-                } else {
-                    statusClass = 'wrong-res';
-                }
-            }
-            return `<button class="map-btn ${statusClass}" data-index="${idx}">${idx + 1}</button>`;
-        }).join('');
-
-        document.querySelectorAll('.results-map .map-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                state.currentQuestionIndex = parseInt(btn.getAttribute('data-index'));
-                state.isFinished = true;
-                navigateTo('quiz-view');
-                loadQuestion();
-            });
-        });
-
-        resultsDetailedList.innerHTML = state.quizQuestions.map((q, idx) => {
-            let status = 'unanswered';
-            let icon = '○';
-            if (state.submitted[idx]) {
-                const selectedIndex = state.answers[idx];
-                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
-                    status = 'correct';
-                    icon = '✓';
-                } else {
-                    status = 'wrong';
-                    icon = '✗';
-                }
-            }
-            
-            let displayHeader = q.question;
-            if (displayHeader.length > 100) {
-                displayHeader = displayHeader.substring(0, 100) + '...';
-            }
-            
-            return `
-                <div class="result-item" data-index="${idx}">
-                    <div class="result-status-icon ${status}">${icon}</div>
-                    <div class="result-text">${idx + 1}. ${displayHeader}</div>
-                </div>
-            `;
-        }).join('');
+        updateQuestionMap();
 
         if (window.MathJax && window.MathJax.typesetPromise) {
             window.MathJax.typesetPromise();
-        }
-
-        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
-            triggerConfetti();
         }
 
         if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
@@ -806,7 +1138,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         state.currentSubject = subject;
         state.currentTopic = topicName;
-        state.quizQuestions = [...questions].sort(() => 0.5 - Math.random()).slice(0, 10);
+        
+        const selectedRaw = [...questions].sort(() => 0.5 - Math.random()).slice(0, 10);
+        state.quizQuestions = prepareQuestions(selectedRaw);
+        
         state.currentQuestionIndex = 0;
         state.answers = new Array(state.quizQuestions.length).fill(null);
         state.submitted = new Array(state.quizQuestions.length).fill(false);
@@ -817,7 +1152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         state.isMockExam = false;
 
         navigateTo('quiz-view');
-        renderQuestionMap();
+        updateQuestionMap();
         loadQuestion();
         startTimer();
     }
@@ -889,11 +1224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.MathJax.typesetPromise();
         }
 
-        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
-            triggerConfetti();
-        }
-
-        updateMapVisuals();
+        updateQuestionMap();
 
         if (state.isFinished) {
             quizLegendActive.classList.add('hidden');
@@ -935,48 +1266,55 @@ document.addEventListener('DOMContentLoaded', () => {
         options[index].classList.add('selected');
         
         state.answers[state.currentQuestionIndex] = index;
-        updateMapVisuals();
+        updateQuestionMap();
     }
 
-    function renderQuestionMap() {
+    function updateQuestionMap() {
         if (!questionMap) return;
-        
-        questionMap.innerHTML = state.quizQuestions.map((_, index) => `
-            <button class="map-btn" data-index="${index}">${index + 1}</button>
-        `).join('');
-
-        document.querySelectorAll('.map-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                state.currentQuestionIndex = parseInt(btn.getAttribute('data-index'));
-                loadQuestion();
-            });
-        });
-        
-        updateMapVisuals();
-    }
-
-    function updateMapVisuals() {
-        const btns = document.querySelectorAll('.map-btn');
-        btns.forEach((btn, index) => {
-            btn.className = 'map-btn';
+        questionMap.innerHTML = '';
+        state.quizQuestions.forEach((_, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'map-btn w-8 h-8 rounded-lg font-bold text-xs transition-all active:scale-90 flex items-center justify-center';
+            btn.textContent = idx + 1;
             
-            if (state.isFinished) {
-                if (state.submitted[index]) {
-                    const q = state.quizQuestions[index];
-                    const selectedIndex = state.answers[index];
-                    if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
-                        btn.classList.add('correct-res');
-                    } else {
-                        btn.classList.add('wrong-res');
-                    }
+            if (idx === state.currentQuestionIndex) {
+                btn.classList.add('bg-secondary', 'text-white', 'ring-2', 'ring-offset-2', 'ring-secondary/50');
+            } else if (state.submitted[idx]) {
+                const isCorrect = state.answers[idx] === state.quizQuestions[idx].solution.final_answer;
+                if (state.isFinished) {
+                    btn.classList.add(isCorrect ? 'bg-green-500' : 'bg-red-500', 'text-white');
+                } else {
+                    btn.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-300');
                 }
-                if (index === state.currentQuestionIndex) btn.classList.add('current');
+            } else if (state.flagged[idx]) {
+                btn.classList.add('bg-amber-500', 'text-white');
+                btn.innerHTML = '<span class="material-symbols-outlined text-xs">flag</span>';
             } else {
-                if (index === state.currentQuestionIndex) btn.classList.add('current');
-                else if (state.flagged[index]) btn.classList.add('flagged');
-                else if (state.submitted[index]) btn.classList.add('answered');
+                btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-400', 'hover:bg-slate-200');
             }
+            
+            btn.onclick = () => {
+                state.currentQuestionIndex = idx;
+                loadQuestion();
+            };
+            
+            questionMap.appendChild(btn);
         });
+        
+        // Also update results question map if it exists
+        if (resultsQuestionMap && state.isFinished) {
+            resultsQuestionMap.innerHTML = questionMap.innerHTML;
+            const resultBtns = resultsQuestionMap.querySelectorAll('button');
+            resultBtns.forEach((btn, idx) => {
+                btn.onclick = () => {
+                    navigateTo('quiz-view');
+                    state.currentQuestionIndex = idx;
+                    loadQuestion();
+                };
+            });
+        }
+        
+        if (window.updateFollowerListeners) window.updateFollowerListeners();
     }
 
     function showFeedback() {
@@ -1061,10 +1399,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.MathJax.typesetPromise();
         }
 
-        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
-            triggerConfetti();
-        }
-
         submitBtn.classList.add('hidden');
         nextBtn.classList.remove('hidden');
     }
@@ -1082,23 +1416,37 @@ document.addEventListener('DOMContentLoaded', () => {
             flagBtn.addEventListener('click', () => {
                 state.flagged[state.currentQuestionIndex] = !state.flagged[state.currentQuestionIndex];
                 flagBtn.classList.toggle('active');
-                updateMapVisuals();
+                updateQuestionMap();
             });
         }
 
         if (submitBtn) {
             submitBtn.addEventListener('click', () => {
-                if (state.answers[state.currentQuestionIndex] === null) {
+                const selectedIdx = state.answers[state.currentQuestionIndex];
+                if (selectedIdx === null) {
                     alert("Please select an option first.");
                     return;
                 }
+                
+                const question = state.quizQuestions[state.currentQuestionIndex];
+                const isCorrect = question.options[selectedIdx].is_correct;
+                
                 state.submitted[state.currentQuestionIndex] = true;
                 state.flagged[state.currentQuestionIndex] = false;
-                updateMapVisuals();
+                
+                if (isCorrect) {
+                    addPoints(10);
+                }
+                
+                updateQuestionMap();
                 
                 if (state.currentQuestionIndex < state.quizQuestions.length - 1) {
-                    state.currentQuestionIndex++;
-                    loadQuestion();
+                    setTimeout(() => {
+                        if (!state.isFinished) {
+                            state.currentQuestionIndex++;
+                            loadQuestion();
+                        }
+                    }, 800);
                 } else {
                     loadQuestion();
                     alert("Last question answered! Click 'Finish Session' to see results.");
@@ -1163,6 +1511,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Inline handler in HTML now handles start-mock-exam
     }
 
+    function openMockPreview() {
+        const modal = document.getElementById('mock-preview-modal');
+        if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeMockPreview() {
+        const modal = document.getElementById('mock-preview-modal');
+        if (modal) modal.classList.add('hidden');
+    }
+
+    function confirmStartMock() {
+        closeMockPreview();
+        startMockExam();
+    }
+
     function startMockExam() {
         const totalExamQuestions = 20;
         let selectedQuestions = [];
@@ -1197,8 +1560,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         state.currentSubject = { name: "Full Mock Exam", id: "mock" };
-        state.currentTopic = "Mock Exam";
-        state.quizQuestions = [...selectedQuestions].sort(() => 0.5 - Math.random());
+        state.currentTopic = "All Subjects";
+        state.quizQuestions = prepareQuestions(selectedQuestions);
         state.currentQuestionIndex = 0;
         state.answers = new Array(state.quizQuestions.length).fill(null);
         state.submitted = new Array(state.quizQuestions.length).fill(false);
@@ -1209,9 +1572,15 @@ document.addEventListener('DOMContentLoaded', () => {
         state.isMockExam = true;
 
         navigateTo('quiz-view');
-        renderQuestionMap();
+        updateQuestionMap();
         loadQuestion();
         startTimer();
+    }
+
+    function showToast(title, subtitle, icon = 'stars') {
+        const container = document.getElementById('toast-container');
+        container.appendChild(toast);
+        setTimeout(() => toast.remove(), 5000);
     }
 
     function finishQuiz() {
@@ -1222,6 +1591,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const prevPoints = state.userPoints;
         let attempted = 0;
         let correct = 0;
 
@@ -1239,9 +1609,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save points (User specific)
         const pointsKey = `enggtv_points_${state.user.username}`;
         localStorage.setItem(pointsKey, state.userPoints.toString());
-        updateGamificationUI();
-
+        
         state.score = correct;
+        const newPoints = state.userPoints;
+
+        // Check for achievements
+        ACHIEVEMENTS.forEach(ach => {
+            if (prevPoints < ach.points && newPoints >= ach.points) {
+                setTimeout(() => {
+                    showToast('Milestone Unlocked! 🏆', ach.name, ach.icon);
+                }, 1000);
+            }
+        });
+
+        // Show generic toast for points
+        if (correct > 0) {
+            setTimeout(() => {
+                showToast(`Points Earned! +${correct}`, `Total: ${newPoints} PTS`, 'military_tech');
+            }, 500);
+        }
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
         
@@ -1270,6 +1656,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const activityKey = `enggtv_recent_activity_${state.user.username}`;
         localStorage.setItem(activityKey, JSON.stringify(state.recentActivity));
+
+        // Save Progress
+        if (!state.isMockExam) {
+            updateProgress(state.currentSubject.id, attempted);
+        }
+
+        // Final Cloud Sync
+        syncToFirebase();
+        updateGamificationUI();
 
         resTotal.textContent = state.quizQuestions.length;
         resAttempted.textContent = attempted;
@@ -1371,6 +1766,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const progressKey = `enggtv_progress_${state.user.username}`;
         localStorage.setItem(progressKey, JSON.stringify(state.userProgress));
+        syncToFirebase();
         renderSubjects();
     }
 
@@ -1670,6 +2066,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateUIForTier();
             renderSubjects();
             updateDashboardStats();
+            syncToFirebase(); // Sync discipline change to cloud
             
             // Update labels in account info view immediately
             if (userDisciplineDisplay) userDisciplineDisplay.textContent = newDiscipline;
@@ -1761,15 +2158,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backFromAchievements) backFromAchievements.addEventListener('click', () => navigateTo('settings'));
 
     const MOCK_LEADERBOARD = [
-        { username: 'Sara', points: 482, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=sara' },
-        { username: 'MikeEng', points: 395, discipline: 'Mechanical', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=mike' },
-        { username: 'Julia', points: 320, discipline: 'Civil', country: 'Egypt', avatar: 'https://i.pravatar.cc/150?u=julia' },
-        { username: 'Tom', points: 285, discipline: 'Mechanical', country: 'United Arab Emirates', avatar: 'https://i.pravatar.cc/150?u=tom' },
-        { username: 'Elena', points: 210, discipline: 'Mechanical', country: 'India', avatar: 'https://i.pravatar.cc/150?u=elena' },
-        { username: 'David', points: 195, discipline: 'Other', country: 'United Kingdom', avatar: 'https://i.pravatar.cc/150?u=david' },
-        { username: 'Chris', points: 150, discipline: 'Mechanical', country: 'Australia', avatar: 'https://i.pravatar.cc/150?u=chris' },
-        { username: 'Emma', points: 120, discipline: 'Other', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=emma' },
-        { username: 'Ryan', points: 95, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=ryan' }
+        { username: 'Sara', points: 482, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=sara', trend: 'up', streak: 12 },
+        { username: 'MikeEng', points: 395, discipline: 'Mechanical', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=mike', trend: 'down', streak: 5 },
+        { username: 'Julia', points: 320, discipline: 'Civil', country: 'Egypt', avatar: 'https://i.pravatar.cc/150?u=julia', trend: 'up', streak: 8 },
+        { username: 'Tom', points: 285, discipline: 'Mechanical', country: 'United Arab Emirates', avatar: 'https://i.pravatar.cc/150?u=tom', trend: 'same', streak: 3 },
+        { username: 'Elena', points: 210, discipline: 'Mechanical', country: 'India', avatar: 'https://i.pravatar.cc/150?u=elena', trend: 'up', streak: 15 },
+        { username: 'David', points: 195, discipline: 'Other', country: 'United Kingdom', avatar: 'https://i.pravatar.cc/150?u=david', trend: 'down', streak: 2 },
+        { username: 'Chris', points: 150, discipline: 'Mechanical', country: 'Australia', avatar: 'https://i.pravatar.cc/150?u=chris', trend: 'up', streak: 4 },
+        { username: 'Emma', points: 120, discipline: 'Other', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=emma', trend: 'same', streak: 0 },
+        { username: 'Ryan', points: 95, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=ryan', trend: 'down', streak: 1 }
     ];
 
     function renderLeaderboard() {
@@ -1777,6 +2174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!list) return;
 
         const userCountry = state.user.country || 'Other';
+        const userStreak = calculateStreak();
 
         // Combine mock data with current user
         const allUsers = [...MOCK_LEADERBOARD, {
@@ -1785,6 +2183,8 @@ document.addEventListener('DOMContentLoaded', () => {
             discipline: localStorage.getItem('enggtv_discipline') || 'FE Candidate',
             country: userCountry,
             isCurrentUser: true,
+            trend: 'up',
+            streak: userStreak,
             avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4'
         }];
 
@@ -1802,17 +2202,26 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (rank === 3) rankBadge = 'bg-amber-600/60 text-white';
             else rankBadge = 'bg-slate-100 dark:bg-slate-800 text-slate-400';
 
+            const trendIcon = user.trend === 'up' ? 'trending_up' : (user.trend === 'down' ? 'trending_down' : 'remove');
+            const trendColor = user.trend === 'up' ? 'text-green-500' : (user.trend === 'down' ? 'text-red-500' : 'text-slate-400');
+
             return `
-                <div class="flex items-center gap-4 p-5 ${user.isCurrentUser ? 'bg-primary/5 dark:bg-primary/10' : ''}">
-                    <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ${rankBadge} shrink-0">
-                        ${rank}
+                <div class="flex items-center gap-4 p-5 ${user.isCurrentUser ? 'bg-primary/5 dark:bg-primary/10 border-l-4 border-primary' : ''}">
+                    <div class="flex flex-col items-center shrink-0 w-8">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs ${rankBadge}">
+                            ${rank}
+                        </div>
+                        <span class="material-symbols-outlined text-[14px] ${trendColor} mt-1">${trendIcon}</span>
                     </div>
-                    <div class="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-slate-100 dark:border-slate-800">
+                    <div class="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-slate-100 dark:border-slate-800 relative">
                         <img src="${user.avatar}" class="w-full h-full object-cover" alt="${user.username}">
+                        ${user.streak > 5 ? '<div class="absolute bottom-0 right-0 bg-orange-500 text-white rounded-full p-0.5"><span class="material-symbols-outlined text-[10px] block">local_fire_department</span></div>' : ''}
                     </div>
                     <div class="flex-1">
-                        <h4 class="font-bold text-sm ${user.isCurrentUser ? 'text-primary' : 'text-slate-800 dark:text-slate-100'}">
-                            ${user.username} ${user.isCurrentUser ? '<span class="text-[10px] bg-primary text-white px-1.5 py-0.5 rounded ml-1 uppercase">Me</span>' : ''}
+                        <h4 class="font-bold text-sm ${user.isCurrentUser ? 'text-primary' : 'text-slate-800 dark:text-slate-100'} flex items-center gap-1">
+                            ${user.username} 
+                            ${user.isCurrentUser ? '<span class="text-[8px] bg-primary text-white px-1 py-0.5 rounded uppercase font-black">Me</span>' : ''}
+                            ${user.streak > 10 ? '<span class="material-symbols-outlined text-orange-500 text-sm animate-pulse">local_fire_department</span>' : ''}
                         </h4>
                         <div class="flex items-center gap-1.5 mt-0.5">
                             <span class="material-symbols-outlined text-[12px] text-slate-400">public</span>
@@ -1833,6 +2242,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Expose functions to global scope for inline handlers
     window.startMockExam = startMockExam;
     window.startQuiz = startQuiz;
+    window.openMockPreview = openMockPreview;
+    window.closeMockPreview = closeMockPreview;
+    window.confirmStartMock = confirmStartMock;
 
     // ============================================================
     // B-3: Avatar Picker Logic
@@ -1917,6 +2329,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (pendingAvatarId) localStorage.setItem('enggtv_avatar', pendingAvatarId);
             else localStorage.removeItem('enggtv_avatar');
             applyAvatar();
+            syncToFirebase(); // Sync avatar change to cloud
             avatarModal.classList.remove('open');
         });
     }
@@ -1925,6 +2338,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pendingAvatarId = null;
             localStorage.removeItem('enggtv_avatar');
             applyAvatar();
+            syncToFirebase(); // Sync avatar removal to cloud
             avatarModal.classList.remove('open');
         });
     }
