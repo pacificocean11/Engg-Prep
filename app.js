@@ -523,30 +523,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
 
     function prepareQuestions(questions) {
         return questions.map(q => {
-            // Deep clone to avoid modifying original data (crucial as QUESTIONS is a global reference)
+            // Deep clone to avoid modifying original data
             const newQ = JSON.parse(JSON.stringify(q));
             
-            // Capture original indices before shuffling to ensure answers stay stable across devices
-            newQ.options.forEach((opt, idx) => {
-                opt.originalIndex = idx;
-            });
-
-            // Shuffle options
-            shuffleArray(newQ.options);
+            // Option shuffling removed to ensure cross-device consistency
             
             // Re-assign labels and update final_answer if it exists
             const labels = ['A', 'B', 'C', 'D', 'E', 'F'];
             newQ.options.forEach((opt, idx) => {
+                opt.originalIndex = idx; // Keep for internal mapping consistency
                 const newLabel = labels[idx] || String.fromCharCode(65 + idx);
                 opt.label = newLabel;
                 // If this is the correct option, update the final_answer reference in the solution
