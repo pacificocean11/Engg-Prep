@@ -536,6 +536,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Deep clone to avoid modifying original data (crucial as QUESTIONS is a global reference)
             const newQ = JSON.parse(JSON.stringify(q));
             
+            // Capture original indices before shuffling to ensure answers stay stable across devices
+            newQ.options.forEach((opt, idx) => {
+                opt.originalIndex = idx;
+            });
+
             // Shuffle options
             shuffleArray(newQ.options);
             
@@ -1727,7 +1732,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         idx: masterList.findIndex(item => item.title === q.title)
                     };
                 }),
-                answers: [...state.answers],
+                // Store answer indices relative to the MASTER list (stable), not the shuffled list
+                answers: state.answers.map((ansIdx, qIdx) => {
+                    if (ansIdx === null) return null;
+                    return state.quizQuestions[qIdx].options[ansIdx].originalIndex;
+                }),
                 submitted: [...state.submitted],
                 flagged: [...state.flagged]
             }
