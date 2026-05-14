@@ -186,7 +186,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem(`enggtv_progress_${state.user.username}`, JSON.stringify(state.userProgress));
                 }
                 if (data.recentActivity) {
-                    state.recentActivity = data.recentActivity;
+                    const localActivity = JSON.parse(localStorage.getItem(`enggtv_recent_activity_${state.user.username}`)) || [];
+                    // Merge: Keep local stateSnapshot if cloud version doesn't have it
+                    state.recentActivity = data.recentActivity.map(cloudAct => {
+                        const localAct = localActivity.find(l => l.id === cloudAct.id);
+                        if (localAct && localAct.stateSnapshot && !cloudAct.stateSnapshot) {
+                            return { ...cloudAct, stateSnapshot: localAct.stateSnapshot };
+                        }
+                        return cloudAct;
+                    });
                     localStorage.setItem(`enggtv_recent_activity_${state.user.username}`, JSON.stringify(state.recentActivity));
                 }
 
@@ -217,29 +225,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- UI UTILITIES ---
     window.showToast = function(title, message, icon = 'stars', duration = 4000) {
         const container = document.getElementById('toast-container');
-        if (!container) return;
+        if (!container) {
+            console.error("Toast container not found!");
+            return;
+        }
 
         const toast = document.createElement('div');
-        toast.className = 'glass-card p-4 rounded-2xl flex items-center gap-4 shadow-xl border-l-4 border-l-secondary translate-x-10 opacity-0 transition-all duration-500 pointer-events-auto min-w-[280px]';
+        // Removed translate-x to avoid conflicts with centered container
+        toast.className = 'glass-card p-4 rounded-2xl flex items-center gap-4 shadow-2xl border-l-4 border-l-secondary opacity-0 transition-all duration-500 pointer-events-auto min-w-[300px] mb-4 transform translate-y-[-20px]';
+        toast.style.zIndex = "10002";
         toast.innerHTML = `
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
-                <span class="material-symbols-outlined">${icon}</span>
+            <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+                <span class="material-symbols-outlined text-2xl">${icon}</span>
             </div>
             <div class="flex-1">
                 <h4 class="text-sm font-bold text-slate-800 dark:text-slate-100">${title}</h4>
-                <p class="text-xs text-slate-500 dark:text-slate-400">${message}</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">${message}</p>
             </div>
         `;
 
         container.appendChild(toast);
         
+        // Force reflow
+        toast.offsetHeight;
+
         setTimeout(() => {
-            toast.classList.remove('translate-x-10', 'opacity-0');
+            toast.classList.remove('opacity-0', 'translate-y-[-20px]');
+            toast.classList.add('translate-y-0');
         }, 10);
 
         setTimeout(() => {
-            toast.classList.add('translate-x-10', 'opacity-0');
-            setTimeout(() => toast.remove(), 500);
+            toast.classList.add('opacity-0', 'translate-y-[-20px]');
+            setTimeout(() => toast.remove(), 600);
         }, duration);
     };
 
@@ -249,9 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
         updateGamificationUI();
         syncToFirebase();
         
-        window.showToast(`+${points} Points`, reason, 'military_tech');
+        window.showToast(`+${points} ${points === 1 ? 'point' : 'points'}`, reason, 'military_tech');
         
-        if (points >= 10) {
+        if (points >= 1) {
             confetti({
                 particleCount: 100,
                 spread: 70,
@@ -569,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'settings': 'Settings',
             'quiz-view': 'Practice Session',
             'account-info-view': 'Account Information',
-            'support-view': 'Help & Support',
+            'support-view': 'Message Admin',
             'achievements-view': 'Achievements',
             'leaderboard': 'Leaderboard'
         };
@@ -1280,7 +1297,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (idx === state.currentQuestionIndex) {
                 btn.classList.add('bg-secondary', 'text-white', 'ring-2', 'ring-offset-2', 'ring-secondary/50');
             } else if (state.submitted[idx]) {
-                const isCorrect = state.answers[idx] === state.quizQuestions[idx].solution.final_answer;
+                const q = state.quizQuestions[idx];
+                const selectedIdx = state.answers[idx];
+                const isCorrect = selectedIdx !== null && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
+                
                 if (state.isFinished) {
                     btn.classList.add(isCorrect ? 'bg-green-500' : 'bg-red-500', 'text-white');
                 } else {
@@ -1435,7 +1455,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.flagged[state.currentQuestionIndex] = false;
                 
                 if (isCorrect) {
-                    addPoints(10);
+                    addPoints(1);
                 }
                 
                 updateQuestionMap();
@@ -1446,7 +1466,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             state.currentQuestionIndex++;
                             loadQuestion();
                         }
-                    }, 800);
+                    }, 300);
                 } else {
                     loadQuestion();
                     alert("Last question answered! Click 'Finish Session' to see results.");
@@ -1601,7 +1621,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const selectedIndex = state.answers[idx];
                 if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
                     correct++;
-                    state.userPoints++;
                 }
             }
         });
@@ -1617,17 +1636,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ACHIEVEMENTS.forEach(ach => {
             if (prevPoints < ach.points && newPoints >= ach.points) {
                 setTimeout(() => {
-                    showToast('Milestone Unlocked! 🏆', ach.name, ach.icon);
+                    window.showToast('Milestone Unlocked! 🏆', ach.name, ach.icon);
                 }, 1000);
             }
         });
-
-        // Show generic toast for points
-        if (correct > 0) {
-            setTimeout(() => {
-                showToast(`Points Earned! +${correct}`, `Total: ${newPoints} PTS`, 'military_tech');
-            }, 500);
-        }
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
         
@@ -1746,8 +1758,15 @@ document.addEventListener('DOMContentLoaded', () => {
             updateProgress(state.currentSubject.id, attempted);
         }
         state.isFinished = true;
-
         navigateTo('results-view');
+
+        // Show summary toast for points gained - Triggered AFTER navigation for visibility
+        setTimeout(() => {
+            const pointText = correct === 1 ? 'point' : 'points';
+            if (typeof window.showToast === 'function') {
+                window.showToast(`+${correct} ${pointText} gained!`, `Total: ${newPoints} points`, 'stars');
+            }
+        }, 1000);
     }
 
     function updateProgress(subjectId, newlyCompleted) {
@@ -1864,7 +1883,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const milestoneBadge = document.getElementById('milestone-badge');
         const dashboardMilestoneBadge = document.getElementById('dashboard-milestone-badge');
         
-        const examRequired = 1000;
+        const examRequired = 100;
         // Note: Removed state.user.tier === 'premium' bypass to make point-based progression meaningful
         const isExamUnlocked = points >= examRequired || state.user.username === 'admin' || state.user.role === 'admin';
         
@@ -2080,6 +2099,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initAccountInfo();
     if (btnNotif) btnNotif.addEventListener('click', () => alert('Notification Preferences coming soon!'));
+    
+    // Contact Form Logic
+    const contactForm = document.getElementById('contact-form');
+
+    // ---- EmailJS config -------------------------------------------------------
+    // Dashboard: https://dashboard.emailjs.com
+    // Emails are delivered to: admin@engg.tv
+    const EMAILJS_SERVICE_ID  = 'service_flquaml';
+    const EMAILJS_TEMPLATE_ID = 'template_a97ngqw';
+    // Public key is initialized in index.html <head> via emailjs.init()
+    // ---------------------------------------------------------------------------
+
+    if (contactForm) {
+        // Auto-fill the name field with the logged-in username
+        const nameField = document.getElementById('contact-name');
+        if (nameField && state.user.username && state.user.username !== 'guest') {
+            nameField.value = state.user.username === 'demo' ? 'Alex' : state.user.username;
+        }
+
+        // Character counter
+        const msgField = document.getElementById('contact-message');
+        const charCounter = document.getElementById('char-counter');
+        if (msgField && charCounter) {
+            msgField.addEventListener('input', () => {
+                const len = msgField.value.length;
+                charCounter.textContent = `${len} / 500`;
+                charCounter.classList.toggle('text-secondary', len > 450);
+                charCounter.classList.toggle('text-slate-400', len <= 450);
+            });
+        }
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nameVal    = document.getElementById('contact-name')?.value?.trim() || state.user.username;
+            const subjectVal = document.getElementById('contact-subject')?.value;
+            const msgVal     = document.getElementById('contact-message')?.value?.trim();
+            const btnIcon    = document.getElementById('send-btn-icon');
+            const btnText    = document.getElementById('send-btn-text');
+            const btn        = document.getElementById('btn-send-message');
+
+            if (!msgVal) return;
+
+            // Loading state
+            btn.disabled = true;
+            if (btnIcon) { btnIcon.textContent = 'refresh'; btnIcon.style.animation = 'spin 1s linear infinite'; }
+            if (btnText) btnText.textContent = 'Sending...';
+
+            try {
+                // Try to send via EmailJS if properly configured
+                const isEmailJSConfigured = EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID'
+                    && EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID'
+                    && typeof emailjs !== 'undefined';
+
+                if (isEmailJSConfigured) {
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        from_name:    nameVal,
+                        from_user:    state.user.username,
+                        subject:      subjectVal,
+                        message:      msgVal,
+                        reply_to:     'admin@engg.tv',
+                        sent_at:      new Date().toLocaleString(),
+                        discipline:   localStorage.getItem('enggtv_discipline') || 'Unknown',
+                        user_points:  state.userPoints
+                    });
+                } else {
+                    // Fallback: open mailto with pre-filled content so the message still reaches admin
+                    const mailtoBody  = encodeURIComponent(`From: ${nameVal} (${state.user.username})\nSubject: ${subjectVal}\n\n${msgVal}`);
+                    const mailtoLink  = `mailto:admin@engg.tv?subject=${encodeURIComponent('[ENGG.tv App] ' + subjectVal)}&body=${mailtoBody}`;
+                    window.open(mailtoLink, '_blank');
+                }
+
+                window.showToast('Message Sent! ✅', 'The admin will get back to you soon.', 'forum');
+                contactForm.reset();
+                if (charCounter) charCounter.textContent = '0 / 500';
+
+                // Success confetti
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 150,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#FF006E', '#FDA60A', '#720026']
+                    });
+                }
+
+                // Navigate back after a short delay
+                setTimeout(() => navigateTo('settings'), 2500);
+
+            } catch (error) {
+                console.error('Contact form error:', error);
+                window.showToast('Send Failed', 'Please email us directly at admin@engg.tv', 'error');
+            } finally {
+                btn.disabled = false;
+                if (btnIcon) { btnIcon.textContent = 'send'; btnIcon.style.animation = ''; }
+                if (btnText) btnText.textContent = 'Send Message';
+            }
+        });
+    }
+
     if (btnSub) btnSub.addEventListener('click', () => navigateTo('plans-view'));
     if (btnLogout) btnLogout.addEventListener('click', () => { 
         if(confirm('Are you sure you want to log out?')) {
@@ -2109,10 +2228,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'consistent', name: 'Consistent Learner', points: 10, icon: 'auto_stories', description: 'Reach 10 points.' },
         { id: 'dedicated', name: 'Dedicated Engineer', points: 25, icon: 'engineering', description: 'Reach 25 points.' },
         { id: 'announcement_unlocked', name: 'Insider Access', points: 50, icon: 'campaign', description: 'Unlock the Announcements section.' },
-        { id: 'scholar', name: 'Senior Engineer', points: 100, icon: 'school', description: 'You are now a Senior Engineer!' },
-        { id: 'master', name: 'Lead Engineer', points: 250, icon: 'workspace_premium', description: 'Reach 250 points.' },
-        { id: 'senior', name: 'Master of Engineering Concepts', points: 500, icon: 'military_tech', description: 'Mastered core FE concepts.' },
-        { id: 'professional', name: 'Exam Ready Student', points: 1000, icon: 'verified', description: 'You are now ready for the full exam!' }
+        { id: 'scholar', name: 'Senior Engineer', points: 100, icon: 'school', description: 'Unlock the full-length Mock Exam simulation.' },
+        { id: 'master', name: 'Lead Engineer', points: 250, icon: 'workspace_premium', description: 'Commanding a strong grasp of FE fundamentals.' },
+        { id: 'senior', name: 'Concept Master', points: 500, icon: 'military_tech', description: 'Exhibiting advanced mastery of core engineering principles.' },
+        { id: 'professional', name: 'Official Exam Ready', points: 1000, icon: 'verified', description: 'Our Professors say Go ahead and be successful in your actual exam' }
     ];
 
     function renderAchievements() {
