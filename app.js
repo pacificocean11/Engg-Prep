@@ -1112,26 +1112,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Reconstruct full state if only minimal snapshot exists (e.g. from cloud sync)
         if (!activity.stateSnapshot && activity.minimalSnapshot) {
+            console.log("🛠️ Reconstructing activity from minimal snapshot...", activityId);
             const min = activity.minimalSnapshot;
             
             // Rebuild quizQuestions from indices or per-question refs
             let rebuiltQuestions = [];
-            if (min.questions) {
-                // New per-question format
-                rebuiltQuestions = min.questions.map(qRef => {
-                    const masterList = QUESTIONS[qRef.sid] || [];
-                    const q = masterList[qRef.idx];
-                    if (q) return { ...q, subjectId: qRef.sid };
-                    return null;
-                }).filter(q => q);
-            } else if (min.questionIndices) {
-                // Old single-subject format fallback
-                const masterList = QUESTIONS[min.subjectId] || [];
-                rebuiltQuestions = min.questionIndices.map(idx => {
-                    const q = masterList[idx];
-                    if (q) return { ...q, subjectId: min.subjectId };
-                    return null;
-                }).filter(q => q);
+            try {
+                if (min.questions) {
+                    rebuiltQuestions = min.questions.map(qRef => {
+                        const masterList = QUESTIONS[qRef.sid] || [];
+                        const q = masterList[qRef.idx];
+                        if (q) return { ...JSON.parse(JSON.stringify(q)), subjectId: qRef.sid };
+                        return null;
+                    }).filter(q => q);
+                } else if (min.questionIndices) {
+                    const masterList = QUESTIONS[min.subjectId] || [];
+                    rebuiltQuestions = min.questionIndices.map(idx => {
+                        const q = masterList[idx];
+                        if (q) return { ...JSON.parse(JSON.stringify(q)), subjectId: min.subjectId };
+                        return null;
+                    }).filter(q => q);
+                }
+            } catch (e) {
+                console.error("❌ Reconstruction failed:", e);
             }
             
             if (rebuiltQuestions.length === 0) {
@@ -1139,7 +1142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Find current subject object
             let subObj = null;
             if (min.subjectId === 'mock' || activity.isMockExam) {
                 subObj = { id: 'mock', name: 'Mock Exam' };
@@ -1153,12 +1155,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             activity.stateSnapshot = {
                 quizQuestions: rebuiltQuestions,
-                answers: min.answers,
-                submitted: min.submitted,
-                flagged: min.flagged,
+                answers: [...(min.answers || [])],
+                submitted: [...(min.submitted || [])],
+                flagged: [...(min.flagged || [])],
                 currentSubject: subObj || { id: min.subjectId, name: activity.title },
                 currentTopic: min.topic
             };
+            console.log("✅ Reconstruction complete. Correctness match:", activity.stateSnapshot.answers);
         }
 
         // Restore state
@@ -1714,11 +1717,11 @@ document.addEventListener('DOMContentLoaded', () => {
             isMockExam: state.isMockExam,
             timestamp: Date.now(),
             stateSnapshot: {
-                quizQuestions: state.quizQuestions,
-                answers: state.answers,
-                submitted: state.submitted,
-                flagged: state.flagged,
-                currentSubject: state.currentSubject,
+                quizQuestions: JSON.parse(JSON.stringify(state.quizQuestions)),
+                answers: [...state.answers],
+                submitted: [...state.submitted],
+                flagged: [...state.flagged],
+                currentSubject: JSON.parse(JSON.stringify(state.currentSubject)),
                 currentTopic: state.currentTopic
             },
             minimalSnapshot: {
