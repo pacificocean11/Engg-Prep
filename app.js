@@ -1108,10 +1108,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reconstruct full state if only minimal snapshot exists (e.g. from cloud sync)
         if (!activity.stateSnapshot && activity.minimalSnapshot) {
             const min = activity.minimalSnapshot;
-            const masterList = QUESTIONS[min.subjectId] || [];
             
-            // Rebuild quizQuestions from indices
-            const rebuiltQuestions = min.questionIndices.map(idx => masterList[idx]).filter(q => q);
+            // Rebuild quizQuestions from indices or per-question refs
+            let rebuiltQuestions = [];
+            if (min.questions) {
+                // New per-question format
+                rebuiltQuestions = min.questions.map(qRef => {
+                    const masterList = QUESTIONS[qRef.sid] || [];
+                    const q = masterList[qRef.idx];
+                    if (q) return { ...q, subjectId: qRef.sid };
+                    return null;
+                }).filter(q => q);
+            } else if (min.questionIndices) {
+                // Old single-subject format fallback
+                const masterList = QUESTIONS[min.subjectId] || [];
+                rebuiltQuestions = min.questionIndices.map(idx => {
+                    const q = masterList[idx];
+                    if (q) return { ...q, subjectId: min.subjectId };
+                    return null;
+                }).filter(q => q);
+            }
             
             if (rebuiltQuestions.length === 0) {
                 alert("Could not reconstruct activity details. The question database may have been updated.");
@@ -1119,11 +1135,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Find current subject object
-            let subObj = state.subjects.find(s => s.id === min.subjectId);
-            if (!subObj) {
-                // Fallback search across all subject categories
-                const allPossible = [...MECHANICAL_SUBJECTS, ...CIVIL_SUBJECTS, ...OTHER_SUBJECTS];
-                subObj = allPossible.find(s => s.id === min.subjectId);
+            let subObj = null;
+            if (min.subjectId === 'mock' || activity.isMockExam) {
+                subObj = { id: 'mock', name: 'Mock Exam' };
+            } else {
+                subObj = state.subjects.find(s => s.id === min.subjectId);
+                if (!subObj) {
+                    const allPossible = [...(typeof MECHANICAL_SUBJECTS !== 'undefined' ? MECHANICAL_SUBJECTS : []), ...(typeof CIVIL_SUBJECTS !== 'undefined' ? CIVIL_SUBJECTS : []), ...(typeof OTHER_SUBJECTS !== 'undefined' ? OTHER_SUBJECTS : [])];
+                    subObj = allPossible.find(s => s.id === min.subjectId);
+                }
             }
 
             activity.stateSnapshot = {
@@ -1131,7 +1151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 answers: min.answers,
                 submitted: min.submitted,
                 flagged: min.flagged,
-                currentSubject: subObj || { id: min.subjectId, name: activity.title.split(' - ')[0] },
+                currentSubject: subObj || { id: min.subjectId, name: activity.title },
                 currentTopic: min.topic
             };
         }
@@ -1188,7 +1208,9 @@ document.addEventListener('DOMContentLoaded', () => {
         state.currentTopic = topicName;
         
         const selectedRaw = [...questions].sort(() => 0.5 - Math.random()).slice(0, 10);
-        state.quizQuestions = prepareQuestions(selectedRaw);
+        // Tag each question with its subjectId for persistence
+        const taggedQuestions = selectedRaw.map(q => ({ ...q, subjectId: subjectId }));
+        state.quizQuestions = prepareQuestions(taggedQuestions);
         
         state.currentQuestionIndex = 0;
         state.answers = new Array(state.quizQuestions.length).fill(null);
@@ -1585,7 +1607,9 @@ document.addEventListener('DOMContentLoaded', () => {
         state.subjects.forEach(subject => {
             const subjectQuestions = QUESTIONS[subject.id] || [];
             if (subjectQuestions.length > 0) {
-                availablePools.push([...subjectQuestions].sort(() => 0.5 - Math.random()));
+                // Tag each question with its subjectId
+                const taggedPool = [...subjectQuestions].map(q => ({ ...q, subjectId: subject.id }));
+                availablePools.push(taggedPool.sort(() => 0.5 - Math.random()));
             }
         });
 
@@ -1695,9 +1719,13 @@ document.addEventListener('DOMContentLoaded', () => {
             minimalSnapshot: {
                 subjectId: state.currentSubject.id,
                 topic: state.currentTopic,
-                questionIndices: state.quizQuestions.map(q => {
-                    const masterList = QUESTIONS[state.currentSubject.id] || [];
-                    return masterList.findIndex(item => item.title === q.title);
+                questions: state.quizQuestions.map(q => {
+                    const sId = q.subjectId || state.currentSubject.id;
+                    const masterList = QUESTIONS[sId] || [];
+                    return {
+                        sid: sId,
+                        idx: masterList.findIndex(item => item.title === q.title)
+                    };
                 }),
                 answers: [...state.answers],
                 submitted: [...state.submitted],
