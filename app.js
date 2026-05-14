@@ -134,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`🔄 Syncing data for ${state.user.username} to Firebase...`);
 
         try {
-            // Strip stateSnapshot (full quiz questions) — too large for Firestore's 1MB limit
             const lightActivity = (state.recentActivity || []).map(a => ({
                 id: a.id,
                 title: a.title,
@@ -142,7 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 accuracy: a.accuracy,
                 attempted: a.attempted,
                 isMockExam: a.isMockExam,
-                timestamp: a.timestamp
+                timestamp: a.timestamp,
+                minimalSnapshot: a.minimalSnapshot
             }));
 
             // Gather all profile data
@@ -1100,9 +1100,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.loadRecentActivity = function(activityId) {
         const activity = state.recentActivity.find(a => a.id === activityId);
-        if (!activity || !activity.stateSnapshot) {
+        if (!activity || (!activity.stateSnapshot && !activity.minimalSnapshot)) {
             alert("Sorry, full details for this older activity were not saved.");
             return;
+        }
+
+        // Reconstruct full state if only minimal snapshot exists (e.g. from cloud sync)
+        if (!activity.stateSnapshot && activity.minimalSnapshot) {
+            const min = activity.minimalSnapshot;
+            const masterList = QUESTIONS[min.subjectId] || [];
+            
+            // Rebuild quizQuestions from indices
+            const rebuiltQuestions = min.questionIndices.map(idx => masterList[idx]).filter(q => q);
+            
+            if (rebuiltQuestions.length === 0) {
+                alert("Could not reconstruct activity details. The question database may have been updated.");
+                return;
+            }
+
+            // Find current subject object
+            let subObj = state.subjects.find(s => s.id === min.subjectId);
+            if (!subObj) {
+                // Fallback search across all subject categories
+                const allPossible = [...MECHANICAL_SUBJECTS, ...CIVIL_SUBJECTS, ...OTHER_SUBJECTS];
+                subObj = allPossible.find(s => s.id === min.subjectId);
+            }
+
+            activity.stateSnapshot = {
+                quizQuestions: rebuiltQuestions,
+                answers: min.answers,
+                submitted: min.submitted,
+                flagged: min.flagged,
+                currentSubject: subObj || { id: min.subjectId, name: activity.title.split(' - ')[0] },
+                currentTopic: min.topic
+            };
         }
 
         // Restore state
@@ -1660,6 +1691,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 flagged: state.flagged,
                 currentSubject: state.currentSubject,
                 currentTopic: state.currentTopic
+            },
+            minimalSnapshot: {
+                subjectId: state.currentSubject.id,
+                topic: state.currentTopic,
+                questionIndices: state.quizQuestions.map(q => {
+                    const masterList = QUESTIONS[state.currentSubject.id] || [];
+                    return masterList.findIndex(item => item.title === q.title);
+                }),
+                answers: [...state.answers],
+                submitted: [...state.submitted],
+                flagged: [...state.flagged]
             }
         };
         state.recentActivity.unshift(newActivity);
