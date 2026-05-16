@@ -1,4 +1,135 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- DYNAMIC BACKGROUND PARTICLE SYSTEM (A-1) ---
+    class Particle {
+        constructor(canvas, type = 'default') {
+            this.canvas = canvas;
+            this.ctx = canvas.getContext('2d');
+            this.type = type;
+            this.reset();
+        }
+
+        reset() {
+            this.x = Math.random() * this.canvas.width;
+            this.y = Math.random() * this.canvas.height;
+            this.size = Math.random() * 2 + 1;
+            this.speedX = (Math.random() - 0.5) * 0.5;
+            this.speedY = (Math.random() - 0.5) * 0.5;
+            this.opacity = Math.random() * 0.5 + 0.1;
+            this.color = 'rgba(255, 0, 110, ' + this.opacity + ')'; // Default pink
+
+            if (this.type === 'thermo' || this.type === 'heat') {
+                this.y = this.canvas.height + Math.random() * 100;
+                this.speedY = -Math.random() * 2 - 0.5;
+                this.speedX = (Math.random() - 0.5) * 1;
+                this.color = `rgba(255, ${Math.floor(Math.random() * 100 + 50)}, 0, ${this.opacity})`;
+            } else if (this.type === 'fluids' || this.type === 'water-res') {
+                this.x = -10;
+                this.speedX = Math.random() * 2 + 1;
+                this.speedY = Math.sin(this.x * 0.01) * 0.5;
+                this.color = `rgba(0, ${Math.floor(Math.random() * 100 + 155)}, 255, ${this.opacity})`;
+            } else if (this.type === 'electricity') {
+                this.speedX = (Math.random() - 0.5) * 4;
+                this.speedY = (Math.random() - 0.5) * 4;
+                this.color = `rgba(253, 166, 10, ${this.opacity})`;
+            }
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.type === 'thermo' || this.type === 'heat') {
+                if (this.y < -10) this.reset();
+            } else if (this.type === 'fluids' || this.type === 'water-res') {
+                this.speedY = Math.sin(this.x * 0.02) * 1;
+                if (this.x > this.canvas.width + 10) this.reset();
+            } else {
+                if (this.x < 0 || this.x > this.canvas.width || this.y < 0 || this.y > this.canvas.height) {
+                    this.reset();
+                }
+            }
+        }
+
+        draw() {
+            this.ctx.beginPath();
+            this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = this.color;
+            this.ctx.fill();
+        }
+    }
+
+    const ParticleSystem = {
+        canvas: document.getElementById('bg-canvas'),
+        ctx: null,
+        particles: [],
+        count: 60,
+        animationId: null,
+        currentType: 'default',
+
+        init() {
+            if (!this.canvas) return;
+            this.ctx = this.canvas.getContext('2d');
+            this.resize();
+            window.addEventListener('resize', () => this.resize());
+            this.createParticles();
+            this.animate();
+        },
+
+        resize() {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+        },
+
+        createParticles() {
+            this.particles = [];
+            for (let i = 0; i < this.count; i++) {
+                this.particles.push(new Particle(this.canvas, this.currentType));
+            }
+        },
+
+        setTheme(type) {
+            if (this.currentType === type) return;
+            this.currentType = type;
+            
+            // Fade out effect
+            this.canvas.style.opacity = '0';
+            setTimeout(() => {
+                this.createParticles();
+                this.canvas.style.opacity = '0.5';
+            }, 500);
+        },
+
+        animate() {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            this.animationId = requestAnimationFrame(() => this.animate());
+        }
+    };
+
+    ParticleSystem.init();
+
+    window.updateBackgroundTheme = function(subjectId) {
+        const themeMap = {
+            'thermo': 'thermo',
+            'heat': 'thermo',
+            'fluids': 'fluids',
+            'water-res': 'fluids',
+            'electricity': 'electricity',
+            'math': 'default',
+            'statics': 'default',
+            'dynamics': 'default',
+            'mock': 'electricity', // Mock exam uses high-energy gold theme
+            'structural': 'default',
+            'geotech': 'default',
+            'transport': 'default',
+            'construction': 'default'
+        };
+        ParticleSystem.setTheme(themeMap[subjectId] || 'default');
+    };
+
     // Determine the logged-in user first to use for specific storage keys
     const loggedInUser = (() => {
         try {
@@ -60,6 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const discipline = localStorage.getItem('enggtv_discipline') || loggedInUser.discipline;
             if (discipline === 'Mechanical') return MECHANICAL_SUBJECTS;
             if (discipline === 'Civil' || discipline === 'Civil Engineering') return CIVIL_SUBJECTS;
+            if (discipline === 'Chemical') return CHEMICAL_SUBJECTS;
+            if (discipline === 'Environmental') return ENVIRONMENTAL_SUBJECTS;
+            if (discipline === 'Industrial') return INDUSTRIAL_SUBJECTS;
+            if (discipline === 'Electrical and Computer') return ELECTRICAL_COMPUTER_SUBJECTS;
             return OTHER_SUBJECTS;
         })(),
         charts: {
@@ -67,6 +202,132 @@ document.addEventListener('DOMContentLoaded', () => {
             line: null
         }
     };
+
+    // --- CONTEXTUAL FORMULA POPUPS (A-5) ---
+    const FORMULA_DATA = {
+        'Discriminant': {
+            title: 'Discriminant (Conics)',
+            formula: '$$\\Delta = B^2 - 4AC$$',
+            context: 'Used to classify conic sections: $\\Delta < 0$ (Ellipse), $\\Delta = 0$ (Parabola), $\\Delta > 0$ (Hyperbola).'
+        },
+        'Point-Slope Form': {
+            title: 'Point-Slope Form',
+            formula: '$$y - y_1 = m(x - x_1)$$',
+            context: 'Equation of a line passing through $(x_1, y_1)$ with slope $m$.'
+        },
+        'Perpendicular': {
+            title: 'Perpendicular Lines',
+            formula: '$$m_1 \\cdot m_2 = -1$$',
+            context: 'The product of the slopes of two perpendicular lines is $-1$.'
+        },
+        'Bernoulli': {
+            title: "Bernoulli's Equation",
+            formula: '$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho gh_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho gh_2$$',
+            context: 'Energy conservation for an incompressible, non-viscous fluid in steady flow.'
+        },
+        'Ideal Gas Law': {
+            title: 'Ideal Gas Law',
+            formula: '$$PV = nRT$$',
+            context: 'Relates pressure, volume, temperature, and amount of an ideal gas.'
+        },
+        'Newton\'s Second Law': {
+            title: 'Newton\'s Second Law',
+            formula: '$$F = ma$$',
+            context: 'The force acting on an object is equal to the mass of that object times its acceleration.'
+        },
+        'Shear Stress': {
+            title: 'Shear Stress (Average)',
+            formula: '$$\\tau = \\frac{V}{A}$$',
+            context: 'The internal force per unit area acting tangent to a cross-section.'
+        },
+        'Hooke\'s Law': {
+            title: 'Hooke\'s Law',
+            formula: '$$\\sigma = E \\epsilon$$',
+            context: 'The stress in a material is proportional to the strain within its elastic limit.'
+        },
+        'Reynolds Number': {
+            title: 'Reynolds Number',
+            formula: '$$Re = \\frac{\\rho v D}{\\mu}$$',
+            context: 'A dimensionless quantity used to predict fluid flow patterns (laminar vs turbulent).'
+        },
+        'Moment of Inertia': {
+            title: 'Moment of Inertia (Rectangular)',
+            formula: '$$I_x = \\frac{bh^3}{12}$$',
+            context: 'A measure of an object\'s resistance to changes in its rotation or bending.'
+        },
+        'Manning\'s Equation': {
+            title: 'Manning\'s Equation',
+            formula: '$$v = \\frac{1.486}{n} R^{2/3} S^{1/2}$$',
+            context: 'Used to calculate flow velocity in open channels (US units).'
+        }
+    };
+
+    function injectFormulaTriggers(text) {
+        if (!text) return '';
+        let result = text;
+        const sortedKeys = Object.keys(FORMULA_DATA).sort((a, b) => b.length - a.length);
+        const replacements = [];
+        
+        sortedKeys.forEach((keyword, index) => {
+            const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'gi');
+            result = result.replace(regex, (match) => {
+                const placeholder = `[[F${index}]]`;
+                replacements[index] = `<span class="formula-trigger" data-keyword="${keyword}">${match}</span>`;
+                return placeholder;
+            });
+        });
+        
+        replacements.forEach((html, index) => {
+            if (html) {
+                result = result.replace(`[[F${index}]]`, html);
+            }
+        });
+        
+        return result;
+    }
+
+    const formulaPopup = document.getElementById('formula-popup');
+    const formulaTitle = document.getElementById('formula-title');
+    const formulaLatex = document.getElementById('formula-latex');
+    const formulaContext = document.getElementById('formula-context');
+
+    function showFormulaPopup(keyword, x, y) {
+        const data = FORMULA_DATA[keyword];
+        if (!data) return;
+
+        formulaTitle.textContent = data.title;
+        formulaLatex.innerHTML = data.formula;
+        formulaContext.textContent = data.context;
+
+        formulaPopup.style.left = `${x}px`;
+        formulaPopup.style.top = `${y - 10}px`;
+        formulaPopup.classList.add('visible');
+
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([formulaLatex]);
+        }
+    }
+
+    function hideFormulaPopup() {
+        if (formulaPopup) formulaPopup.classList.remove('visible');
+    }
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.classList.contains('formula-trigger')) {
+            const keyword = e.target.getAttribute('data-keyword');
+            const rect = e.target.getBoundingClientRect();
+            // Offset to show above
+            const px = rect.left + window.scrollX;
+            const py = rect.top + window.scrollY - 220; // Estimated height
+            showFormulaPopup(keyword, px, py);
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.classList.contains('formula-trigger')) {
+            hideFormulaPopup();
+        }
+    });
 
 
     // For backward compatibility with existing code that uses global SUBJECTS
@@ -469,6 +730,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 examHeadline.textContent = 'FE Mechanical Mock Exam';
             } else if (discipline === 'Civil' || discipline === 'Civil Engineering') {
                 examHeadline.textContent = 'FE Civil Mock Exam';
+            } else if (discipline === 'Chemical') {
+                examHeadline.textContent = 'FE Chemical Mock Exam';
+            } else if (discipline === 'Environmental') {
+                examHeadline.textContent = 'FE Environmental Mock Exam';
+            } else if (discipline === 'Industrial') {
+                examHeadline.textContent = 'FE Industrial Mock Exam';
+            } else if (discipline === 'Electrical and Computer') {
+                examHeadline.textContent = 'FE Electrical and Computer Mock Exam';
             } else {
                 examHeadline.textContent = 'FE Other discipline Mock Exam';
             }
@@ -562,6 +831,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.navigateTo = function(pageId) {
         state.currentPage = pageId;
+        
+        // Reset theme to default when navigating between main pages
+        if (pageId !== 'quiz-view' && pageId !== 'results-view') {
+            if (window.updateBackgroundTheme) window.updateBackgroundTheme('default');
+        }
         
         // Auto-hide navigation and header for focused sessions (Quiz/Exam)
         if (pageId === 'quiz-view') {
@@ -1188,6 +1462,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Quiz Engine
     function startQuiz(subjectId, topicName) {
+        // Update background theme for the subject (A-1)
+        if (window.updateBackgroundTheme) window.updateBackgroundTheme(subjectId);
+
         const subject = SUBJECTS.find(s => s.id === subjectId);
         let questions = QUESTIONS[subjectId] || [];
         
@@ -1227,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = state.quizQuestions[state.currentQuestionIndex];
         questionMeta.textContent = `Question ${state.currentQuestionIndex + 1} of ${state.quizQuestions.length} • ${state.currentTopic || state.currentSubject.name}`;
         
-        questionText.innerHTML = `<p>${question.question}</p>`;
+        questionText.innerHTML = `<p>${injectFormulaTriggers(question.question)}</p>`;
         
         const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || state.user.username === 'admin' || state.user.role === 'admin';
         
@@ -1424,7 +1701,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             stepDiv.innerHTML = `
                 <h5>Step ${idx + 1}: ${step.title}</h5>
-                <p>${step.content}</p>
+                <p>${injectFormulaTriggers(step.content)}</p>
             `;
             const stepImg = step.solution_image || step.image;
             
@@ -2150,6 +2427,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Reload subjects
             if (newDiscipline === 'Mechanical') state.subjects = MECHANICAL_SUBJECTS;
             else if (newDiscipline === 'Civil' || newDiscipline === 'Civil Engineering') state.subjects = CIVIL_SUBJECTS;
+            else if (newDiscipline === 'Chemical') state.subjects = CHEMICAL_SUBJECTS;
+            else if (newDiscipline === 'Environmental') state.subjects = ENVIRONMENTAL_SUBJECTS;
+            else if (newDiscipline === 'Industrial') state.subjects = INDUSTRIAL_SUBJECTS;
+            else if (newDiscipline === 'Electrical and Computer') state.subjects = ELECTRICAL_COMPUTER_SUBJECTS;
             else state.subjects = OTHER_SUBJECTS;
             
             updateUIForTier();

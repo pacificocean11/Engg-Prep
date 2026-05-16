@@ -52,6 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const discipline = localStorage.getItem('enggtv_discipline') || loggedInUser.discipline;
             if (discipline === 'Mechanical') return MECHANICAL_SUBJECTS;
             if (discipline === 'Civil' || discipline === 'Civil Engineering') return CIVIL_SUBJECTS;
+            if (discipline === 'Chemical') return CHEMICAL_SUBJECTS;
+            if (discipline === 'Environmental') return ENVIRONMENTAL_SUBJECTS;
+            if (discipline === 'Industrial') return INDUSTRIAL_SUBJECTS;
+            if (discipline === 'Electrical and Computer') return ELECTRICAL_COMPUTER_SUBJECTS;
             return OTHER_SUBJECTS;
         })()
     };
@@ -163,6 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 examHeadline.textContent = 'FE Mechanical Mock Exam';
             } else if (discipline === 'Civil' || discipline === 'Civil Engineering') {
                 examHeadline.textContent = 'FE Civil Mock Exam';
+            } else if (discipline === 'Chemical') {
+                examHeadline.textContent = 'FE Chemical Mock Exam';
+            } else if (discipline === 'Environmental') {
+                examHeadline.textContent = 'FE Environmental Mock Exam';
+            } else if (discipline === 'Industrial') {
+                examHeadline.textContent = 'FE Industrial Mock Exam';
+            } else if (discipline === 'Electrical and Computer') {
+                examHeadline.textContent = 'FE Electrical and Computer Mock Exam';
             } else {
                 examHeadline.textContent = 'FE Other discipline Mock Exam';
             }
@@ -1165,6 +1177,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Reload subjects
             if (newDiscipline === 'Mechanical') state.subjects = MECHANICAL_SUBJECTS;
             else if (newDiscipline === 'Civil' || newDiscipline === 'Civil Engineering') state.subjects = CIVIL_SUBJECTS;
+            else if (newDiscipline === 'Chemical') state.subjects = CHEMICAL_SUBJECTS;
+            else if (newDiscipline === 'Environmental') state.subjects = ENVIRONMENTAL_SUBJECTS;
+            else if (newDiscipline === 'Industrial') state.subjects = INDUSTRIAL_SUBJECTS;
+            else if (newDiscipline === 'Electrical and Computer') state.subjects = ELECTRICAL_COMPUTER_SUBJECTS;
             else state.subjects = OTHER_SUBJECTS;
             
             updateUIForTier();

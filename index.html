@@ -19,6 +19,7 @@
     <meta name="description"
         content="A premium study application for the Fundamentals of Engineering (FE) Mechanical Exam. Practice questions, mock exams, and progress tracking.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/formula_popups.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
@@ -152,6 +153,7 @@
 </head>
 
 <body class="bg-background dark:bg-slate-950 text-on-surface dark:text-slate-100 font-body-base min-h-screen pb-24 overflow-x-hidden break-words dark-theme">
+    <canvas id="bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-50 transition-opacity duration-1000"></canvas>
     <div class="floating-bg-elements" aria-hidden="true">
         <div class="glass-shape shape-1"></div>
         <div class="glass-shape shape-2"></div>
@@ -265,7 +267,7 @@
   </div>
   <div class="flex flex-col gap-1">
     <p class="font-title-sm text-title-sm text-on-surface dark:text-slate-100">1 New Announcement</p>
-    <p class="font-body-sm text-body-sm text-outline dark:text-slate-400">Next Lecture: Thermodynamics</p>
+    <p class="font-body-sm text-body-sm text-outline dark:text-slate-400">Next Lecture: Economics</p>
   </div>
 </div>
 
@@ -671,6 +673,10 @@
                                     <select id="select-discipline" class="w-full p-4 bg-slate-50 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-accent-yellow outline-none transition-all font-bold text-slate-800 dark:text-slate-100">
                                         <option value="Mechanical">Mechanical</option>
                                         <option value="Civil">Civil</option>
+                                        <option value="Chemical">Chemical</option>
+                                        <option value="Environmental">Environmental</option>
+                                        <option value="Industrial">Industrial</option>
+                                        <option value="Electrical and Computer">Electrical and Computer</option>
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
@@ -749,59 +755,18 @@
                         <h2 class="font-display-lg text-display-lg text-on-surface dark:text-slate-100">Announcements</h2>
                     </div>
 
-                    <div class="mock-exam-landing">
-                        <div class="exam-hero-card" style="background: #FDA60A;">
-                            <div class="hero-content">
-                                <div class="hero-badge" style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3);">Live Event</div>
-                                <h2 id="announcement-headline" style="color: white; font-size: 2.5rem; font-family: 'Outfit'; margin-bottom: 1.5rem; line-height: 1.1;">Next Lecture: Thermodynamics</h2>
-                                <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2.5rem; line-height: 1.6;">Join Dr. Sarah Chen for an in-depth review of key Thermodynamics concepts essential for your FE Exam preparation. Learn to solve complex problems faster.</p>
-                                
-                                <div class="exam-specs">
-                                    <div class="spec-item">
-                                        <span class="spec-icon">📅</span>
-                                        <div class="spec-info">
-                                            <strong>May 2, 2026</strong>
-                                            <span>Date</span>
-                                        </div>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-icon">⏰</span>
-                                        <div class="spec-info">
-                                            <strong>11:00 AM EDT</strong>
-                                            <span>Time</span>
-                                        </div>
-                                    </div>
-                                    <div class="spec-item">
-                                        <span class="spec-icon">👨‍🏫</span>
-                                        <div class="spec-info">
-                                            <strong>Dr. Sarah Chen</strong>
-                                            <span>Instructor</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="exam-instructions" style="border-left-color: #FFFFFF; background: rgba(0,0,0,0.2);">
-                                    <h3 style="color: #FFFFFF;">Global Timings:</h3>
-                                    <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                                        <li>San Francisco: 8:00 AM</li>
-                                        <li>Chicago: 10:00 AM</li>
-                                        <li>New York: 11:00 AM</li>
-                                        <li>Egypt: 6:00 PM</li>
-                                        <li>Dubai: 7:00 PM</li>
-                                        <li>Mumbai: 8:30 PM</li>
-                                    </ul>
-                                </div>
-
-                                <button class="btn-primary btn-large" style="background: #FF006E; border-color: #FF006E; color: white;" onclick="alert('Join link will be active 15 mins before lecture.')">
-                                    <span class="icon">🔗</span> Join Session
-                                </button>
+                    <div class="announcement-poster-container group">
+                        <div class="glass-card overflow-hidden rounded-[32px] border-4 border-white/20 shadow-2xl relative">
+                            <img id="announcement-poster-img" src="assets/images/announcements/economics_poster.jpg" alt="FE Exam Revision Lecture Series - Economics by Prof. Prashant More" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <p class="text-white font-display-lg text-2xl">Saturday, 23rd May 2026</p>
+                                <p class="text-white/80 font-body-sm">FE Exam Revision Series: Economics</p>
                             </div>
-                            <div class="hero-visual">
-                                <div class="exam-illustration">
-                                    <span class="clock-icon" style="font-size: 7rem;">🔥</span>
-                                    <div class="pulse-ring" style="background: #FFFFFF;"></div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-center">
+                            <button class="bg-secondary text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 hover:shadow-pink-500/40 magnetic-btn" onclick="alert('Registration link will be sent to your email 24 hours before the lecture.')">
+                                Register for Lecture
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -974,6 +939,15 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Contextual Formula Popup (A-5) -->
+    <div id="formula-popup">
+        <div class="formula-popup-header">
+            <span class="material-symbols-outlined" style="font-size: 18px;">auto_stories</span>
+            <span class="formula-popup-title" id="formula-title">Handbook Reference</span>
+        </div>
+        <div class="formula-display" id="formula-latex"></div>
+        <div class="formula-popup-content" id="formula-context"></div>
     </div>
 </body>
 
