@@ -1,0 +1,139 @@
+Question Counts per Discipline and Subject
+==========================================
+
+Other Disciplines
+-----------------
+Mathematics: 89 questions
+Probability and Statistics: 40 questions
+Chemistry: 23 questions
+Instrumentation and Controls: 43 questions
+Engineering Ethics and Societal Impacts: 68 questions
+Safety, Health, and Environment: 33 questions
+Engineering Economics: 31 questions
+Statics: 31 questions
+Dynamics: 43 questions
+Strength of Materials: 46 questions
+Materials Science: 39 questions
+Fluid Mechanics: 40 questions
+Electricity, Power, and Magnetism: 32 questions
+Thermodynamics: 96 questions
+Heat Transfer: 46 questions
+Total for Other Disciplines: 700 questions
+
+Mechanical Discipline
+---------------------
+Mathematics: 89 questions
+Probability and Statistics: 40 questions
+Engineering Ethics and Societal Impacts: 68 questions
+Engineering Economics: 31 questions
+Electricity, Power, and Magnetism: 32 questions
+Statics: 31 questions
+Dynamics: 43 questions
+Strength of Materials: 46 questions
+Materials Science: 39 questions
+Fluid Mechanics: 40 questions
+Thermodynamics: 96 questions
+Heat Transfer: 46 questions
+Instrumentation and Controls: 43 questions
+Mechanical Design and Anaysis: 110 questions
+Total for Mechanical Discipline: 754 questions
+
+Civil Discipline
+----------------
+Mathematics: 89 questions
+Probability and Statistics: 40 questions
+Engineering Ethics and Societal Impacts: 68 questions
+Engineering Economics: 31 questions
+Statics: 31 questions
+Dynamics: 43 questions
+Strength of Materials: 46 questions
+Materials Science: 39 questions
+Fluid Mechanics: 40 questions
+Surveying: 34 questions
+Water Resources and Environmental Engineering: 100 questions
+Structural Engineering: 80 questions
+Geotechnical Engineering: 100 questions
+Transportation Engineering: 64 questions
+Construction Engineering: 70 questions
+Total for Civil Discipline: 875 questions
+
+Chemical Discipline
+-------------------
+Mathematics and Probability/Statistics: 89 questions
+Ethics and Professional Practice: 68 questions
+Engineering Economics: 31 questions
+Engineering Sciences: 30 questions
+Computational Tools: 22 questions
+Materials Science: 39 questions
+Chemistry and Biology: 24 questions
+Fluid Mechanics/Dynamics: 40 questions
+Thermodynamics: 96 questions
+Material/Energy Balances: 22 questions
+Heat Transfer: 46 questions
+Mass Transfer and Separation: 70 questions
+Solids Handling: 32 questions
+Chemical Reaction Engineering: 22 questions
+Process Design and Economics: 32 questions
+Process Control: 27 questions
+Safety, Health, and Environment: 33 questions
+Total for Chemical Discipline: 723 questions
+
+Environmental Discipline
+------------------------
+Mathematics and Probability/Statistics: 89 questions
+Ethics and Professional Practice: 68 questions
+Engineering Economics: 31 questions
+Fundamental Principles: 31 questions
+Environmental Chemistry: 31 questions
+Health Hazards and Risk Assessment: 21 questions
+Fluid Mechanics and Hydraulics: 31 questions
+Thermodynamics: 96 questions
+Surface Water Resources and Hydrology: 31 questions
+Groundwater, Soils, and Sediments: 21 questions
+Water and Wastewater: 21 questions
+Air Quality and Control: 21 questions
+Solid and Hazardous Waste: 31 questions
+Energy and Environment: 21 questions
+Total for Environmental Discipline: 544 questions
+
+Industrial Discipline
+---------------------
+Mathematics: 89 questions
+Engineering Sciences: 30 questions
+Ethics and Professional Practice: 68 questions
+Engineering Economics: 31 questions
+Probability and Statistics: 40 questions
+Modeling and Quantitative Analysis: 21 questions
+Engineering Management: 21 questions
+Manufacturing, Service, and Other Production Systems: 31 questions
+Facilities and Supply Chain: 31 questions
+Human Factors, Ergonomics, and Safety: 50 questions
+Work Design: 31 questions
+Quality: 31 questions
+Systems Engineering, Analysis, and Design: 31 questions
+Total for Industrial Discipline: 505 questions
+
+Electrical and Computer Discipline
+----------------------------------
+Mathematics: 89 questions
+Probability and Statistics: 40 questions
+Ethics and Professional Practice: 68 questions
+Engineering Economics: 31 questions
+Properties of Electrical Materials: 42 questions
+Engineering Sciences: 30 questions
+Circuit Analysis (DC and AC Steady State): 70 questions
+Linear Systems: 100 questions
+Signal Processing: 180 questions
+Electronics: 60 questions
+Power: 50 questions
+Electromagnetics: 60 questions
+Control Systems: 70 questions
+Communications: 41 questions
+Computer Networks: 50 questions
+Digital Systems: 80 questions
+Computer Systems: 50 questions
+Software Development: 60 questions
+Total for Electrical and Computer Discipline: 1171 questions
+
+------------------------------------------
+Total Unique Questions in Database: 2959

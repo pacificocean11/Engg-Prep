@@ -5702,7 +5702,7 @@ const QUESTIONS = {
         {
             "topic": "Oxidation and Reduction",
             "title": "Identifying the Reducing Agent",
-            "question": "In the following balanced redox reaction, which species acts as the reducing agent?\\n$MnO_{4}^{-} + 5Fe^{2+} + 8H^{+} \\rightarrow Mn^{2+} + 5Fe^{3+} + 4H_{2}O$",
+            "question": "In the following balanced redox reaction, which species acts as the reducing agent?\\n$$MnO_{4}^{-} + 5Fe^{2+} + 8H^{+} \\rightarrow Mn^{2+} + 5Fe^{3+} + 4H_{2}O$$",
             "question_image": "",
             "options": [
                 {
@@ -6246,7 +6246,7 @@ const QUESTIONS = {
         {
             "topic": "Chemical Reactions",
             "title": "Limiting Reactant and Theoretical Yield",
-            "question": "A reaction occurs between $54.0\\text{ g}$ of aluminum ($Al$) and $64.0\\text{ g}$ of oxygen gas ($O_2$) to form aluminum oxide ($Al_2O_3$) according to the following balanced equation: $4Al(s) + 3O_2(g) \\rightarrow 2Al_2O_3(s)$ What is the maximum mass of $Al_2O_3$ that can be produced? (Assume molar masses: $M_{Al} = 26.98\\text{ g/mol}$, $M_{O} = 16.00\\text{ g/mol}$)",
+            "question": "A reaction occurs between $54.0\\text{ g}$ of aluminum ($Al$) and $64.0\\text{ g}$ of oxygen gas ($O_2$) to form aluminum oxide ($Al_2O_3$) according to the following balanced equation: $$4Al(s) + 3O_2(g) \\rightarrow 2Al_2O_3(s)$$ What is the maximum mass of $Al_2O_3$ that can be produced? (Assume molar masses: $M_{Al} = 26.98\\text{ g/mol}$, $M_{O} = 16.00\\text{ g/mol}$)",
             "question_image": "",
             "options": [
                 {
@@ -6475,262 +6475,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": ""
-            }
-        },
-        {
-            "topic": "Acids and Bases",
-            "title": "pH of a Strong Acid",
-            "question": "What is the pH of a $0.01\\ \\text{M}$ solution of hydrochloric acid (HCl) at $25^\\circ\\text{C}$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "12",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "7",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "1",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "2",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "HCl Dissociation",
-                        "content": "HCl is a strong acid and fully dissociates: $[H^+] = 0.01\\ M = 10^{-2}\\ M$"
-                    },
-                    {
-                        "title": "Calculate pH",
-                        "content": "$pH = -\\log[H^+] = -\\log(10^{-2}) = 2$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Acids and Bases",
-            "title": "Buffer Solution",
-            "question": "Which combination forms a buffer solution?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Weak acid and its conjugate base",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Strong acid and strong base",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Two strong acids",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Strong acid and weak base only",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Buffer Definition",
-                        "content": "A buffer resists changes in pH. It consists of a weak acid and its conjugate base (or weak base and conjugate acid)."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Chemical Reactions",
-            "title": "Balancing Redox Reactions",
-            "question": "In the reaction $Fe^{2+} \\rightarrow Fe^{3+}$, iron undergoes:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Reduction (gain of electrons)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Oxidation (loss of electrons)",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "No change in oxidation state",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Precipitation",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Oxidation State Change",
-                        "content": "$Fe^{2+} \\rightarrow Fe^{3+}$: oxidation number increases from +2 to +3, meaning electrons are lost — this is oxidation."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Oxidation and Reduction",
-            "title": "Galvanic Cell",
-            "question": "In an electrochemical galvanic cell, which electrode undergoes oxidation?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Cathode",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Both electrodes equally",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Anode",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Neither electrode",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Electrode Reactions",
-                        "content": "Oxidation (loss of electrons) occurs at the anode. Reduction (gain of electrons) occurs at the cathode. Mnemonic: AN OX / RED CAT."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Chemical Reactions",
-            "title": "Le Chatelier's Principle",
-            "question": "For the equilibrium $N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)$ (exothermic), what happens to the equilibrium when temperature is increased?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Shifts right (toward products)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "No change",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Equilibrium constant doubles",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Shifts left (toward reactants)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Le Chatelier's Principle",
-                        "content": "Increasing temperature adds heat. Since the forward reaction is exothermic, the system shifts in the endothermic (reverse) direction to absorb the excess heat."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Acids and Bases",
-            "title": "Henderson-Hasselbalch Equation",
-            "question": "A buffer solution contains 0.1 M acetic acid ($pK_a = 4.74$) and 0.1 M sodium acetate. What is the pH of this buffer?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "4.74",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "7.00",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "2.37",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "9.48",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Henderson-Hasselbalch",
-                        "content": "$pH = pK_a + \\log\\frac{[A^-]}{[HA]} = 4.74 + \\log\\frac{0.1}{0.1} = 4.74 + 0 = 4.74$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Chemical Reactions",
-            "title": "Rate Law Order",
-            "question": "For a reaction with rate $r = k[A]^2[B]$, the overall order of the reaction is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "2",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "3",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "1",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "4",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Overall Order",
-                        "content": "Overall order = sum of exponents = 2 + 1 = 3."
-                    }
-                ],
-                "final_answer": "B"
             }
         }
     ],
@@ -12476,150 +12220,6 @@ const QUESTIONS = {
                 "final_answer": "B",
                 "solution_image": ""
             }
-        },
-        {
-            "topic": "Industrial Hygiene",
-            "title": "Threshold Limit Value (TLV)",
-            "question": "The ACGIH Threshold Limit Value – Time-Weighted Average (TLV-TWA) represents the airborne concentration of a substance to which nearly all workers may be repeatedly exposed over:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Any 15-minute period",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "An 8-hour workday, 40-hour workweek",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "A lifetime without adverse effects",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A single acute 1-hour exposure",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "TLV-TWA Definition",
-                        "content": "The TLV-TWA is defined for an 8-hour workday and a 40-hour workweek without adverse health effects for nearly all workers."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Electrical Safety",
-            "title": "GFCI Protection",
-            "question": "A Ground Fault Circuit Interrupter (GFCI) is designed to protect people from electric shock by tripping when it detects a ground fault current as low as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$15\\ \\text{A}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$100\\ \\text{mA}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$4\\ \\text{to}\\ 6\\ \\text{mA}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$1\\ \\text{A}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "GFCI Sensitivity",
-                        "content": "GFCI devices trip at 4–6 mA of leakage current, well below the 10 mA threshold that can cause muscular paralysis in humans."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Hazard Communications",
-            "title": "GHS Signal Words",
-            "question": "According to the Globally Harmonized System (GHS) of chemical hazard communication, which signal word indicates a MORE severe hazard level?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Warning",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Caution",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Alert",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Danger",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "GHS Signal Words",
-                        "content": "GHS uses two signal words: 'Danger' for more severe hazard categories and 'Warning' for less severe hazard categories."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Basic Safety Equipment",
-            "title": "Fall Protection Threshold",
-            "question": "According to OSHA standards for general industry (29 CFR 1910), fall protection is generally required for unprotected sides and edges at heights of:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4\\ \\text{feet}$ or more",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$6\\ \\text{feet}$ or more",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$10\\ \\text{feet}$ or more",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2\\ \\text{feet}$ or more",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "OSHA Fall Protection Requirements",
-                        "content": "For general industry, OSHA requires fall protection at 4 feet. For construction (29 CFR 1926), the threshold is 6 feet."
-                    }
-                ],
-                "final_answer": "A"
-            }
         }
     ],
     "econ": [
@@ -13252,11 +12852,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculating the Change in Cost and Quantity",
-                        "content": "First, we determine the difference in total daily costs:\\n$\\Delta \\text{Cost} = \\text{New Cost} - \\text{Old Cost}$\\n$\\Delta \\text{Cost} = $14,250 - $12,000 = $2,250$\n\\nNext, we determine the difference in the number of components produced:\\n$\\Delta \\text{Quantity} = \\text{New Quantity} - \\text{Old Quantity}$\\n$\\Delta \\text{Quantity} = 2,500 - 2,000 = 500 \\text{ units}$"
+                        "content": "First, we determine the difference in total daily costs:\\n$$\\Delta \\text{Cost} = \\text{New Cost} - \\text{Old Cost}$$\\n$$\\Delta \\text{Cost} = $14,250 - $12,000 = $2,250$$\n\\nNext, we determine the difference in the number of components produced:\\n$$\\Delta \\text{Quantity} = \\text{New Quantity} - \\text{Old Quantity}$$\\n$$\\Delta \\text{Quantity} = 2,500 - 2,000 = 500 \\text{ units}$$"
                     },
                     {
                         "title": "Calculating Incremental Cost per Unit",
-                        "content": "Now, we divide the change in cost by the change in quantity:\\n$\\text{Incremental Cost per Unit} = \\dfrac{\\Delta \\text{Cost}}{\\Delta \\text{Quantity}}$\\n$\\text{Incremental Cost per Unit} = \\dfrac{$2,250}{500 \\text{ units}}$\\n$\\text{Incremental Cost per Unit} = $4.50$"
+                        "content": "Now, we divide the change in cost by the change in quantity:\\n$$\\text{Incremental Cost per Unit} = \\dfrac{\\Delta \\text{Cost}}{\\Delta \\text{Quantity}}$$\\n$$\\text{Incremental Cost per Unit} = \\dfrac{$2,250}{500 \\text{ units}}$$\\n$$\\text{Incremental Cost per Unit} = $4.50$$"
                     }
                 ],
                 "final_answer": "C",
@@ -13298,11 +12898,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Total Monthly Cost",
-                        "content": "Total variable cost is calculated by multiplying the cost per unit by the quantity:\\n$\\text{Total } VC = v \\times Q = 12.50 \\times 5,000 = $62,500$\\nNow, sum the fixed and variable costs to find the total cost:\\n$TC = FC + \\text{Total } VC = 25,000 + 62,500 = $87,500$"
+                        "content": "Total variable cost is calculated by multiplying the cost per unit by the quantity:\\n$$\\text{Total } VC = v \\times Q = 12.50 \\times 5,000 = $62,500$$\\nNow, sum the fixed and variable costs to find the total cost:\\n$$TC = FC + \\text{Total } VC = 25,000 + 62,500 = $87,500$$"
                     },
                     {
                         "title": "Calculate Average Cost per Unit",
-                        "content": "The average cost ($AC$) per unit is the total cost divided by the number of units produced:\\n$AC = \\dfrac{TC}{Q}$\\n$AC = \\dfrac{$87,500}{5,000}$\\n$AC = $17.50$"
+                        "content": "The average cost ($AC$) per unit is the total cost divided by the number of units produced:\\n$$AC = \\dfrac{TC}{Q}$$\\n$$AC = \\dfrac{$87,500}{5,000}$$\\n$$AC = $17.50$$"
                     }
                 ],
                 "final_answer": "D",
@@ -13344,11 +12944,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Deriving the Marginal Cost Function",
-                        "content": "Given the total cost function:\\n$C(x) = 0.02x^2 + 50x + 10,000$\\nWe find the marginal cost function, $MC(x)$, by taking the first derivative:\\n$MC(x) = \\dfrac{d}{dx}[C(x)]$\\n$MC(x) = 0.04x + 50$"
+                        "content": "Given the total cost function:\\n$$C(x) = 0.02x^2 + 50x + 10,000$$\\nWe find the marginal cost function, $MC(x)$, by taking the first derivative:\\n$$MC(x) = \\dfrac{d}{dx}[C(x)]$$\\n$$MC(x) = 0.04x + 50$$"
                     },
                     {
                         "title": "Calculating the Cost of the 101st Batch",
-                        "content": "To estimate the cost of the 101st batch using marginal cost, we evaluate the derivative at the current production level, which is $x = 100$ batches (the cost to go from 100 to 101):\\n$MC(100) = 0.04(100) + 50$\\n$MC(100) = 4 + 50$\\n$MC(100) = $54.00$"
+                        "content": "To estimate the cost of the 101st batch using marginal cost, we evaluate the derivative at the current production level, which is $x = 100$ batches (the cost to go from 100 to 101):\\n$$MC(100) = 0.04(100) + 50$$\\n$$MC(100) = 4 + 50$$\\n$$MC(100) = $54.00$$"
                     },
                     {
                         "title": "Note on Exact vs. Estimated Cost",
@@ -13390,7 +12990,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Identify the Payback Period Formula",
-                        "content": "The simple payback period is the amount of time required to recover the initial investment through the annual savings generated by the project. It is calculated as:\n\\n$\\text{Payback Period} = \\dfrac{\\text{Initial Investment}}{\\text{Annual Savings}}$"
+                        "content": "The simple payback period is the amount of time required to recover the initial investment through the annual savings generated by the project. It is calculated as:\n\\n$$\\text{Payback Period} = \\dfrac{\\text{Initial Investment}}{\\text{Annual Savings}}$$"
                     },
                     {
                         "title": "Step 2: Plug in the Given Values",
@@ -13398,7 +12998,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 3: Calculate the Final Result",
-                        "content": "Perform the division:\\n$\\text{Payback Period} = \\dfrac{85,000}{18,000}$\\n$\\text{Payback Period} \\approx 4.7222 \\dots \\text{ years}$\n\\nRounding to two decimal places, we get 4.72 years."
+                        "content": "Perform the division:\\n$$\\text{Payback Period} = \\dfrac{85,000}{18,000}$$\\n$$\\text{Payback Period} \\approx 4.7222 \\dots \\text{ years}$$\n\\nRounding to two decimal places, we get 4.72 years."
                     }
                 ],
                 "final_answer": "D",
@@ -13440,15 +13040,15 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Calculate the Capital Recovery Factor (CRF)",
-                        "content": "To find the equivalent annual cost of the initial investment, we use the formula:\\n$A = P \\left[ \\dfrac{i(1+i)^n}{(1+i)^n - 1} \\right]$\\n$CRF = \\dfrac{0.06(1+0.06)^{20}}{(1+0.06)^{20} - 1} \\approx 0.08718$"
+                        "content": "To find the equivalent annual cost of the initial investment, we use the formula:\\n$$A = P \\left[ \\dfrac{i(1+i)^n}{(1+i)^n - 1} \\right]$$\\n$$CRF = \\dfrac{0.06(1+0.06)^{20}}{(1+0.06)^{20} - 1} \\approx 0.08718$$"
                     },
                     {
                         "title": "Step 3: Calculate the Equivalent Annual Cost (EAC)",
-                        "content": "The total annual cost is the sum of the annualized initial investment and the annual maintenance cost:\\n$\\text{Annual Investment Cost} = 1,200,000 \\times 0.08718 = 104,616$\\n$\\text{Total Annual Cost (C)} = 104,616 + 50,000 = 154,616$"
+                        "content": "The total annual cost is the sum of the annualized initial investment and the annual maintenance cost:\\n$$\\text{Annual Investment Cost} = 1,200,000 \\times 0.08718 = 104,616$$\\n$$\\text{Total Annual Cost (C)} = 104,616 + 50,000 = 154,616$$"
                     },
                     {
                         "title": "Step 4: Calculate the Benefit-Cost (B/C) Ratio",
-                        "content": "The ratio is calculated by dividing the annual benefits by the total annual costs:\\n$\\text{B/C Ratio} = \\dfrac{B}{C}$\\n$\\text{B/C Ratio} = \\dfrac{220,000}{154,616} \\approx 1.4229$\n\n*Note: Using the total cost method common in exams results in 1.42.*"
+                        "content": "The ratio is calculated by dividing the annual benefits by the total annual costs:\\n$$\\text{B/C Ratio} = \\dfrac{B}{C}$$\\n$$\\text{B/C Ratio} = \\dfrac{220,000}{154,616} \\approx 1.4229$$\n\n*Note: Using the total cost method common in exams results in 1.42.*"
                     }
                 ],
                 "final_answer": "A",
@@ -13490,11 +13090,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Understand the Simple Payback Period formula",
-                        "content": "The simple payback period is the time required for the cumulative cash inflows to equal the initial cash outflow:\\n$\\text{Simple Payback Period} = \\dfrac{\\text{Initial Investment}}{\\text{Annual Savings}}$"
+                        "content": "The simple payback period is the time required for the cumulative cash inflows to equal the initial cash outflow:\\n$$\\text{Simple Payback Period} = \\dfrac{\\text{Initial Investment}}{\\text{Annual Savings}}$$"
                     },
                     {
                         "title": "Step 3: Perform the calculation",
-                        "content": "$\\text{Simple Payback Period} = \\dfrac{15,000}{4,000} = 3.75 \\text{ years}$"
+                        "content": "$$\\text{Simple Payback Period} = \\dfrac{15,000}{4,000} = 3.75 \\text{ years}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -13536,11 +13136,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Formula and Setup",
-                        "content": "We seek $n$ such that:\\n$P = A \\left[ \\dfrac{(1+i)^n - 1}{i(1+i)^n} \\right]$\\nGiven $P = 50,000$, $A = 12,000$, $i = 0.10$."
+                        "content": "We seek $n$ such that:\\n$$P = A \\left[ \\dfrac{(1+i)^n - 1}{i(1+i)^n} \\right]$$\\nGiven $P = 50,000$, $A = 12,000$, $i = 0.10$."
                     },
                     {
                         "title": "Solving for n",
-                        "content": "$50,000 = 12,000 \\left[ \\dfrac{(1.10)^n - 1}{0.10(1.10)^n} \\right]$\\n$4.1667 = \\dfrac{(1.10)^n - 1}{0.10(1.10)^n}$\\n$0.41667 = 1 - \\dfrac{1}{(1.10)^n}$\\n$(1.10)^n = \\dfrac{1}{0.58333} \\approx 1.7143$\\n$n = \\dfrac{\\ln(1.7143)}{\\ln(1.10)} \\approx 5.655 \\text{ years}$"
+                        "content": "$$50,000 = 12,000 \\left[ \\dfrac{(1.10)^n - 1}{0.10(1.10)^n} \\right]$$\\n$$4.1667 = \\dfrac{(1.10)^n - 1}{0.10(1.10)^n}$$\\n$$0.41667 = 1 - \\dfrac{1}{(1.10)^n}$$\\n$$(1.10)^n = \\dfrac{1}{0.58333} \\approx 1.7143$$\\n$$n = \\dfrac{\\ln(1.7143)}{\\ln(1.10)} \\approx 5.655 \\text{ years}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -13582,11 +13182,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Setting the Break-Even Condition",
-                        "content": "Set $TC_A = TC_B$:\\n$4,000 + 12.00h = 7,000 + 8.00h$"
+                        "content": "Set $TC_A = TC_B$:\\n$$4,000 + 12.00h = 7,000 + 8.00h$$"
                     },
                     {
                         "title": "Solving for Operating Hours",
-                        "content": "$12.00h - 8.00h = 7,000 - 4,000$\\n$4.00h = 3,000$\\n$h = 750 \\text{ hours}$"
+                        "content": "$$12.00h - 8.00h = 7,000 - 4,000$$\\n$$4.00h = 3,000$$\\n$$h = 750 \\text{ hours}$$"
                     }
                 ],
                 "final_answer": "B",
@@ -13628,11 +13228,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Interpolation for the Fractional Year",
-                        "content": "At the end of Year 2, $3,000 is still needed ($10,000 - $7,000). \\n$\\text{Fraction of Year 3} = \\dfrac{3,000}{5,000} = 0.6$"
+                        "content": "At the end of Year 2, $3,000 is still needed ($10,000 - $7,000). \\n$$\\text{Fraction of Year 3} = \\dfrac{3,000}{5,000} = 0.6$$"
                     },
                     {
                         "title": "Final Calculation",
-                        "content": "$\\text{Payback Period} = 2 + 0.6 = 2.6 \\text{ years}$"
+                        "content": "$$\\text{Payback Period} = 2 + 0.6 = 2.6 \\text{ years}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -13670,11 +13270,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Setting Up the Break-Even Equation",
-                        "content": "Break-even occurs when Total Revenue = Total Cost:\\n$45Q = 50,000 + 20Q$"
+                        "content": "Break-even occurs when Total Revenue = Total Cost:\\n$$45Q = 50,000 + 20Q$$"
                     },
                     {
                         "title": "Solving for Production Volume (Q)",
-                        "content": "$25Q = 50,000$\\n$Q = \\dfrac{50,000}{25} = 2,000 \\text{ units}$"
+                        "content": "$$25Q = 50,000$$\\n$$Q = \\dfrac{50,000}{25} = 2,000 \\text{ units}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -13968,114 +13568,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D"
             }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Present Worth Factor",
-            "question": "What is the present value of $\\$10{,}000$ to be received in 5 years, given an interest rate of $8\\%$ per year?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\$14{,}693$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\$8{,}000$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\$5{,}000$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\$6{,}806$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Present Worth Formula",
-                        "content": "$P = F(P/F, i, n) = \\frac{F}{(1+i)^n} = \\frac{10000}{(1.08)^5} = \\frac{10000}{1.4693} \\approx \\$6806$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Economic Analyses",
-            "title": "Benefit-Cost Ratio",
-            "question": "A project has a present worth of benefits of $\\$500{,}000$ and a present worth of costs of $\\$350{,}000$. What is the benefit-cost ratio (BCR)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1.43$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$0.70$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$150{,}000$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2.00$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "BCR Formula",
-                        "content": "$BCR = \\frac{PW_{Benefits}}{PW_{Costs}} = \\frac{500{,}000}{350{,}000} \\approx 1.43$. A BCR > 1 indicates the project is economically viable."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Cost Types and Breakdowns",
-            "title": "Break-Even Analysis",
-            "question": "A factory has fixed costs of $\\$50{,}000$/year, a variable cost of $\\$20$ per unit, and sells each unit for $\\$45$. What is the break-even quantity (units/year)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1{,}111$ units",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2{,}000$ units",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$2{,}500$ units",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$3{,}000$ units",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Break-Even Formula",
-                        "content": "$Q_{BE} = \\frac{\\text{Fixed Cost}}{\\text{Price} - \\text{Variable Cost}} = \\frac{50{,}000}{45 - 20} = \\frac{50{,}000}{25} = 2{,}000\\ \\text{units}$"
-                    }
-                ],
-                "final_answer": "B"
-            }
         }
     ],
     "statics": [
@@ -14114,11 +13606,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "2. Sum the components",
-                        "content": "$R_x = \\sum F_x = 43.30 - 56.57 - 30.00 = -43.27 \\text{ N}$\\n$R_y = \\sum F_y = 25.00 + 56.57 - 51.96 = 29.61 \\text{ N}$"
+                        "content": "$$R_x = \\sum F_x = 43.30 - 56.57 - 30.00 = -43.27 \\text{ N}$$\\n$$R_y = \\sum F_y = 25.00 + 56.57 - 51.96 = 29.61 \\text{ N}$$"
                     },
                     {
                         "title": "3. Calculate the magnitude of the resultant R",
-                        "content": "$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{(-43.27)^2 + (29.61)^2} = \\sqrt{2749.04} \\approx 52.43 \\text{ N}$"
+                        "content": "$$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{(-43.27)^2 + (29.61)^2} = \\sqrt{2749.04} \\approx 52.43 \\text{ N}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -14164,7 +13656,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "3. Calculate Resultant Magnitude",
-                        "content": "$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{(3.30)^2 + (94.28)^2} \\approx 94.34\\text{ N}$"
+                        "content": "$$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{(3.30)^2 + (94.28)^2} \\approx 94.34\\text{ N}$$"
                     }
                 ],
                 "final_answer": "B",
@@ -14202,15 +13694,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Identify the Force Vector",
-                        "content": "$\\mathbf{F} = 0\\mathbf{i} + 200\\mathbf{j}\\ \\text{N}$"
+                        "content": "$$\\mathbf{F} = 0\\mathbf{i} + 200\\mathbf{j}\\ \\text{N}$$"
                     },
                     {
                         "title": "Step 2: Identify the Position Vector",
-                        "content": "$\\mathbf{r} = 0.5\\mathbf{i} + 0.2\\mathbf{j}\\ \\text{m}$"
+                        "content": "$$\\mathbf{r} = 0.5\\mathbf{i} + 0.2\\mathbf{j}\\ \\text{m}$$"
                     },
                     {
                         "title": "Step 3: Calculate the Resulting Couple Moment",
-                        "content": "$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F} = (0.5\\mathbf{i} + 0.2\\mathbf{j}) \\times (200\\mathbf{j})$\\n$\\mathbf{M}_O = (0.5 \\times 200)(\\mathbf{i} \\times \\mathbf{j}) = 100\\mathbf{k}\\ \\text{Nm}$"
+                        "content": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F} = (0.5\\mathbf{i} + 0.2\\mathbf{j}) \\times (200\\mathbf{j})$$\\n$$\\mathbf{M}_O = (0.5 \\times 200)(\\mathbf{i} \\times \\mathbf{j}) = 100\\mathbf{k}\\ \\text{Nm}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -14252,11 +13744,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Calculate Sum of Components",
-                        "content": "$R_x = 86.6 - 75.0 = 11.6\\ \\text{lb}$\\n$R_y = 50.0 + 129.9 = 179.9\\ \\text{lb}$"
+                        "content": "$$R_x = 86.6 - 75.0 = 11.6\\ \\text{lb}$$\\n$$R_y = 50.0 + 129.9 = 179.9\\ \\text{lb}$$"
                     },
                     {
                         "title": "Step 3: Calculate the Magnitude",
-                        "content": "$R = \\sqrt{(11.6)^2 + (179.9)^2} \\approx 180.27\\ \\text{lb}$"
+                        "content": "$$R = \\sqrt{(11.6)^2 + (179.9)^2} \\approx 180.27\\ \\text{lb}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -14294,11 +13786,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Determine Position Vector Magnitude",
-                        "content": "$d = \\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{169} = 13\\ \\text{m}$"
+                        "content": "$$d = \\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{169} = 13\\ \\text{m}$$"
                     },
                     {
                         "title": "Step 2: Calculate the Z-Component",
-                        "content": "$F_z = F \\times \\dfrac{z}{d} = 500 \\times \\dfrac{12}{13} \\approx 461.54\\ \\text{N}$"
+                        "content": "$$F_z = F \\times \\dfrac{z}{d} = 500 \\times \\dfrac{12}{13} \\approx 461.54\\ \\text{N}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -14336,11 +13828,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Find the Resultant Force Vector",
-                        "content": "$\\mathbf{F}_R = (10-5)\\mathbf{i} + (20-5)\\mathbf{j} + (10-5)\\mathbf{k} = 5\\mathbf{i} + 15\\mathbf{j} + 5\\mathbf{k}$"
+                        "content": "$$\\mathbf{F}_R = (10-5)\\mathbf{i} + (20-5)\\mathbf{j} + (10-5)\\mathbf{k} = 5\\mathbf{i} + 15\\mathbf{j} + 5\\mathbf{k}$$"
                     },
                     {
                         "title": "Step 2: Calculate the Magnitude",
-                        "content": "$|\\mathbf{F}_R| = \\sqrt{5^2 + 15^2 + 5^2} = \\sqrt{275} \\approx 16.583$"
+                        "content": "$$|\\mathbf{F}_R| = \\sqrt{5^2 + 15^2 + 5^2} = \\sqrt{275} \\approx 16.583$$"
                     }
                 ],
                 "final_answer": "D",
@@ -14378,11 +13870,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Apply the Moment Formula",
-                        "content": "The magnitude of the moment ($M$) produced by a force couple is: \\n$M = F \\times d$"
+                        "content": "The magnitude of the moment ($M$) produced by a force couple is: \\n$$M = F \\times d$$"
                     },
                     {
                         "title": "Step 2: Calculate the Result",
-                        "content": "$M = 350 \\times 1.2 = 420\\ \\text{N}\\cdot\\text{m}$"
+                        "content": "$$M = 350 \\times 1.2 = 420\\ \\text{N}\\cdot\\text{m}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -14424,7 +13916,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Calculate Net Moment",
-                        "content": "$M_{net} = 120 - 125 = -5\\ \\text{lb}\\cdot\\text{ft}$ (Result is clockwise)."
+                        "content": "$$M_{net} = 120 - 125 = -5\\ \\text{lb}\\cdot\\text{ft}$$ (Result is clockwise)."
                     }
                 ],
                 "final_answer": "C",
@@ -14462,11 +13954,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Determine the Position Vector",
-                        "content": "$\\vec{r}_{BA} = 1\\mathbf{i} - 2\\mathbf{j} + 0\\mathbf{k}$"
+                        "content": "$$\\vec{r}_{BA} = 1\\mathbf{i} - 2\\mathbf{j} + 0\\mathbf{k}$$"
                     },
                     {
                         "title": "Step 2: Calculate Cross Product",
-                        "content": "$\\vec{M} = \\vec{r}_{BA} \\times \\vec{F} = (-2\\mathbf{i} - 1\\mathbf{j} + 1\\mathbf{k})$\n*(Note: Option D selected based on typical exam structure).* "
+                        "content": "$$\\vec{M} = \\vec{r}_{BA} \\times \\vec{F} = (-2\\mathbf{i} - 1\\mathbf{j} + 1\\mathbf{k})$$\n*(Note: Option D selected based on typical exam structure).* "
                     }
                 ],
                 "final_answer": "C",
@@ -14504,7 +13996,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analysis of Resultant Force",
-                        "content": "For a couple with forces $\\vec{F}$ and $-\\vec{F}$, the vector sum is:\\n$\\vec{R} = \\vec{F} + (-\\vec{F}) = 0$"
+                        "content": "For a couple with forces $\\vec{F}$ and $-\\vec{F}$, the vector sum is:\\n$$\\vec{R} = \\vec{F} + (-\\vec{F}) = 0$$"
                     }
                 ],
                 "final_answer": "A",
@@ -14546,11 +14038,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Calculate the sum of components",
-                        "content": "$\\sum F_x = 100 - 75 - 141.4 = -116.4\\text{ N}$\\n$\\sum F_y = 0 + 129.9 - 141.4 = -11.5\\text{ N}$"
+                        "content": "$$\\sum F_x = 100 - 75 - 141.4 = -116.4\\text{ N}$$\\n$$\\sum F_y = 0 + 129.9 - 141.4 = -11.5\\text{ N}$$"
                     },
                     {
                         "title": "Step 3: Calculate the magnitude of the resultant force",
-                        "content": "$R = \\sqrt{(\\sum F_x)^2 + (\\sum F_y)^2}$\\n$R = \\sqrt{(-116.4)^2 + (-11.5)^2} \\approx 116.97\\text{ N}$\n\\nRounding to the nearest tenth, we get **117.0 N**."
+                        "content": "$$R = \\sqrt{(\\sum F_x)^2 + (\\sum F_y)^2}$$\\n$$R = \\sqrt{(-116.4)^2 + (-11.5)^2} \\approx 116.97\\text{ N}$$\n\\nRounding to the nearest tenth, we get **117.0 N**."
                     }
                 ],
                 "final_answer": "B",
@@ -14592,11 +14084,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Solve for Tension in Rope B",
-                        "content": "$\\sum F_x = T_A \\cos(30^\\circ) + T_B \\cos(150^\\circ) = 0$\\n$500 \\cdot \\cos(30^\\circ) + T_B \\cdot (-\\cos(30^\\circ)) = 0$\\n$T_B = 500 \\text{ lb}$"
+                        "content": "$$\\sum F_x = T_A \\cos(30^\\circ) + T_B \\cos(150^\\circ) = 0$$\\n$$500 \\cdot \\cos(30^\\circ) + T_B \\cdot (-\\cos(30^\\circ)) = 0$$\\n$$T_B = 500 \\text{ lb}$$"
                     },
                     {
                         "title": "Step 3: Solve for Tension in Rope C",
-                        "content": "$\\sum F_y = T_A \\sin(30^\\circ) + T_B \\sin(150^\\circ) - T_C = 0$\\n$500 \\sin(30^\\circ) + 500 \\sin(150^\\circ) = T_C$\\n$250 + 250 = 500 \\text{ lb}$"
+                        "content": "$$\\sum F_y = T_A \\sin(30^\\circ) + T_B \\sin(150^\\circ) - T_C = 0$$\\n$$500 \\sin(30^\\circ) + 500 \\sin(150^\\circ) = T_C$$\\n$$250 + 250 = 500 \\text{ lb}$$"
                     }
                 ],
                 "final_answer": "A",
@@ -14634,11 +14126,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Calculate the resultant force vector",
-                        "content": "Add the corresponding components:\\n$\\mathbf{R} = (10 - 5)\\mathbf{i} + (20 + 10)\\mathbf{j} + (-5 + 15)\\mathbf{k}$\\n$\\mathbf{R} = 5\\mathbf{i} + 30\\mathbf{j} + 10\\mathbf{k} \\text{ kN}$"
+                        "content": "Add the corresponding components:\\n$$\\mathbf{R} = (10 - 5)\\mathbf{i} + (20 + 10)\\mathbf{j} + (-5 + 15)\\mathbf{k}$$\\n$$\\mathbf{R} = 5\\mathbf{i} + 30\\mathbf{j} + 10\\mathbf{k} \\text{ kN}$$"
                     },
                     {
                         "title": "Step 2: Calculate the magnitude of the resultant",
-                        "content": "$R = \\sqrt{R_x^2 + R_y^2 + R_z^2}$\\n$R = \\sqrt{5^2 + 30^2 + 10^2} = \\sqrt{25 + 900 + 100} = \\sqrt{1025}$\\n$R \\approx 32.0156 \\text{ kN}$"
+                        "content": "$$R = \\sqrt{R_x^2 + R_y^2 + R_z^2}$$\\n$$R = \\sqrt{5^2 + 30^2 + 10^2} = \\sqrt{25 + 900 + 100} = \\sqrt{1025}$$\\n$$R \\approx 32.0156 \\text{ kN}$$"
                     }
                 ],
                 "final_answer": "A",
@@ -14680,11 +14172,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Apply the Equilibrium Equation",
-                        "content": "Vertical sum of forces must be zero:\\n$2T \\cos(45^\\circ) = W$"
+                        "content": "Vertical sum of forces must be zero:\\n$$2T \\cos(45^\\circ) = W$$"
                     },
                     {
                         "title": "Step 3: Solve for Tension",
-                        "content": "$2T(0.7071) = 1000$\\n$1.4142T = 1000$\\n$T \\approx 707.1 \\text{ N}$"
+                        "content": "$$2T(0.7071) = 1000$$\\n$$1.4142T = 1000$$\\n$$T \\approx 707.1 \\text{ N}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -14730,7 +14222,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 3: Solve for the Reaction Force $R_B$",
-                        "content": "Substitute the values into the equilibrium equation:\\n$-24 \\text{ kNm} - 20 \\text{ kNm} + (R_B \\times 6 \\text{ m}) = 0$\\n$-44 + 6R_B = 0$\\n$6R_B = 44 \\implies R_B = 44/6 \\approx 7.33 \\text{ kN}$"
+                        "content": "Substitute the values into the equilibrium equation:\\n$$-24 \\text{ kNm} - 20 \\text{ kNm} + (R_B \\times 6 \\text{ m}) = 0$$\\n$$-44 + 6R_B = 0$$\\n$$6R_B = 44 \\implies R_B = 44/6 \\approx 7.33 \\text{ kN}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -14768,15 +14260,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Calculate the Total Resultant Force",
-                        "content": "The total resultant force ($F_R$) of a triangular distributed load is equal to the area of the triangle: $F_R = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$.\\n$F_R = \\frac{1}{2} \\times 6 \\text{ m} \\times 10 \\text{ kN/m} = 30 \\text{ kN}$"
+                        "content": "The total resultant force ($F_R$) of a triangular distributed load is equal to the area of the triangle: $F_R = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$.\\n$$F_R = \\frac{1}{2} \\times 6 \\text{ m} \\times 10 \\text{ kN/m} = 30 \\text{ kN}$$"
                     },
                     {
                         "title": "Step 2: Determine the Location of the Resultant Force",
-                        "content": "The resultant force acts at the centroid, which is at a distance of $\\frac{2}{3}L$ from the vertex (support $A$):\\n$\\bar{x}_A = \\frac{2}{3} \\times 6 \\text{ m} = 4 \\text{ m}$"
+                        "content": "The resultant force acts at the centroid, which is at a distance of $\\frac{2}{3}L$ from the vertex (support $A$):\\n$$\\bar{x}_A = \\frac{2}{3} \\times 6 \\text{ m} = 4 \\text{ m}$$"
                     },
                     {
                         "title": "Step 3: Apply Moment Equilibrium about Support A",
-                        "content": "$\\sum M_A = 0 \\implies (R_B \\times 6 \\text{ m}) - (30 \\text{ kN} \\times 4 \\text{ m}) = 0$\\n$6R_B = 120 \\implies R_B = 20 \\text{ kN}$"
+                        "content": "$$\\sum M_A = 0 \\implies (R_B \\times 6 \\text{ m}) - (30 \\text{ kN} \\times 4 \\text{ m}) = 0$$\\n$$6R_B = 120 \\implies R_B = 20 \\text{ kN}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -14818,11 +14310,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Apply Moment Equilibrium about the Base",
-                        "content": "$\\sum M_A = 0 \\implies W \\times (\\frac{L}{2} \\cos \\theta) = N_w \\times (L \\sin \\theta)$\\n$200 \\times 0.5 \\cos 60^\\circ = N_w \\sin 60^\\circ$\\n$N_w = 100 / \\tan 60^\\circ = 100 / \\sqrt{3} \\approx 57.74 \\text{ N}$"
+                        "content": "$$\\sum M_A = 0 \\implies W \\times (\\frac{L}{2} \\cos \\theta) = N_w \\times (L \\sin \\theta)$$\\n$$200 \\times 0.5 \\cos 60^\\circ = N_w \\sin 60^\\circ$$\\n$$N_w = 100 / \\tan 60^\\circ = 100 / \\sqrt{3} \\approx 57.74 \\text{ N}$$"
                     },
                     {
                         "title": "Step 3: Apply Horizontal Force Equilibrium",
-                        "content": "$\\sum F_x = 0 \\implies f = N_w \\approx 57.7 \\text{ N}$"
+                        "content": "$$\\sum F_x = 0 \\implies f = N_w \\approx 57.7 \\text{ N}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -14860,11 +14352,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "1. Sum of Moments Equation",
-                        "content": "Taking moments about point $A$ and setting them to zero ($\\sum M_A = 0$):\\n$(R_B \\times L) - (F \\times a) = 0$"
+                        "content": "Taking moments about point $A$ and setting them to zero ($\\sum M_A = 0$):\\n$$(R_B \\times L) - (F \\times a) = 0$$"
                     },
                     {
                         "title": "2. Solve for $R_B$",
-                        "content": "$(R_B \\times 6) - (12 \\times 2) = 0$\\n$6 R_B = 24 \\implies R_B = 4\\text{ kN}$"
+                        "content": "$$(R_B \\times 6) - (12 \\times 2) = 0$$\\n$$6 R_B = 24 \\implies R_B = 4\\text{ kN}$$"
                     }
                 ],
                 "final_answer": "A",
@@ -14906,11 +14398,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "2. Calculate the Cross Product",
-                        "content": "$\\vec{M}_O = \\vec{r} \\times \\vec{F} = (17\\mathbf{i} + 2\\mathbf{j} - 7\\mathbf{k})\\text{ N} \\cdot \\text{m}$"
+                        "content": "$$\\vec{M}_O = \\vec{r} \\times \\vec{F} = (17\\mathbf{i} + 2\\mathbf{j} - 7\\mathbf{k})\\text{ N} \\cdot \\text{m}$$"
                     },
                     {
                         "title": "3. Calculate the Magnitude",
-                        "content": "$M_O = \\sqrt{17^2 + 2^2 + (-7)^2} = \\sqrt{342} \\approx 18.5 \\text{ N} \\cdot \\text{m}$"
+                        "content": "$$M_O = \\sqrt{17^2 + 2^2 + (-7)^2} = \\sqrt{342} \\approx 18.5 \\text{ N} \\cdot \\text{m}$$"
                     }
                 ],
                 "final_answer": "B",
@@ -14952,7 +14444,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "2. Solve for $T_{AC}$",
-                        "content": "$0.5 T_{AC} + (1.732 T_{AC})(0.866) = 1000$\\n$0.5 T_{AC} + 1.5 T_{AC} = 1000 \\implies 2 T_{AC} = 1000 \\implies T_{AC} = 500\\text{ N}$"
+                        "content": "$$0.5 T_{AC} + (1.732 T_{AC})(0.866) = 1000$$\\n$$0.5 T_{AC} + 1.5 T_{AC} = 1000 \\implies 2 T_{AC} = 1000 \\implies T_{AC} = 500\\text{ N}$$"
                     }
                 ],
                 "final_answer": "B",
@@ -14994,11 +14486,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "2. Sum of Moments Equation",
-                        "content": "$\\sum M_A = 0 \\implies (T \\sin 30^\\circ \\cdot 10) - (200 \\cdot 5) - (100 \\cdot 5) = 0$"
+                        "content": "$$\\sum M_A = 0 \\implies (T \\sin 30^\\circ \\cdot 10) - (200 \\cdot 5) - (100 \\cdot 5) = 0$$"
                     },
                     {
                         "title": "3. Solve for $T$",
-                        "content": "$5T - 1500 = 0 \\implies T = 300\\text{ lb}$"
+                        "content": "$$5T - 1500 = 0 \\implies T = 300\\text{ lb}$$"
                     }
                 ],
                 "final_answer": "C",
@@ -15040,11 +14532,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Set up the Torque Equation",
-                        "content": "$\\sum M_A = (T \\sin 60^\\circ) \\times 5 - 196.2 \\times 2.5 = 0$"
+                        "content": "$$\\sum M_A = (T \\sin 60^\\circ) \\times 5 - 196.2 \\times 2.5 = 0$$"
                     },
                     {
                         "title": "Step 3: Solve for Tension",
-                        "content": "$T = \\frac{196.2}{2 \\sin 60^\\circ} \\approx \\frac{196.2}{1.732} \\approx 113.3\\text{ N}$"
+                        "content": "$$T = \\frac{196.2}{2 \\sin 60^\\circ} \\approx \\frac{196.2}{1.732} \\approx 113.3\\text{ N}$$"
                     }
                 ],
                 "final_answer": "B",
@@ -15082,19 +14574,19 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Find the Resultant Force",
-                        "content": "$\\mathbf{F}_R = \\mathbf{F}_1 + \\mathbf{F}_2 = 2\\mathbf{i} + 2\\mathbf{j} + 3\\mathbf{k}\\text{ N}$"
+                        "content": "$$\\mathbf{F}_R = \\mathbf{F}_1 + \\mathbf{F}_2 = 2\\mathbf{i} + 2\\mathbf{j} + 3\\mathbf{k}\\text{ N}$$"
                     },
                     {
                         "title": "Step 2: Determine Position Vector",
-                        "content": "$\\mathbf{r} = 1\\mathbf{i} + 1\\mathbf{j} + 1\\mathbf{k}\\text{ m}$"
+                        "content": "$$\\mathbf{r} = 1\\mathbf{i} + 1\\mathbf{j} + 1\\mathbf{k}\\text{ m}$$"
                     },
                     {
                         "title": "Step 3: Calculate the Resultant Moment Vector",
-                        "content": "$\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}_R = 1\\mathbf{i} - 1\\mathbf{j} + 0\\mathbf{k}\\text{ Nm}$"
+                        "content": "$$\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}_R = 1\\mathbf{i} - 1\\mathbf{j} + 0\\mathbf{k}\\text{ Nm}$$"
                     },
                     {
                         "title": "Step 4: Calculate the Magnitude",
-                        "content": "$|\\mathbf{M}| = \\sqrt{1^2 + (-1)^2 + 0^2} = \\sqrt{2} \\approx 1.41\\text{ Nm}$"
+                        "content": "$$|\\mathbf{M}| = \\sqrt{1^2 + (-1)^2 + 0^2} = \\sqrt{2} \\approx 1.41\\text{ Nm}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -15132,11 +14624,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Step 1: Determine Support Reactions",
-                        "content": "Summing moments about Joint $A$ to find the vertical reaction at $B$ ($R_{By}$):\\n$\\sum M_A = 0 \\implies (10 \\text{ kN} \\times 2 \\text{ m}) - (R_{By} \\times 4 \\text{ m}) = 0$\\n$4 R_{By} = 20 \\implies R_{By} = 5 \\text{ kN}$\n\\nSumming vertical forces to find the vertical reaction at $A$ ($R_{Ay}$):\\n$\\sum F_y = 0 \\implies R_{Ay} + R_{By} - 10 \\text{ kN} = 0$\\n$R_{Ay} + 5 \\text{ kN} = 10 \\text{ kN} \\implies R_{Ay} = 5 \\text{ kN}$"
+                        "content": "Summing moments about Joint $A$ to find the vertical reaction at $B$ ($R_{By}$):\\n$$\\sum M_A = 0 \\implies (10 \\text{ kN} \\times 2 \\text{ m}) - (R_{By} \\times 4 \\text{ m}) = 0$$\\n$$4 R_{By} = 20 \\implies R_{By} = 5 \\text{ kN}$$\n\\nSumming vertical forces to find the vertical reaction at $A$ ($R_{Ay}$):\\n$$\\sum F_y = 0 \\implies R_{Ay} + R_{By} - 10 \\text{ kN} = 0$$\\n$$R_{Ay} + 5 \\text{ kN} = 10 \\text{ kN} \\implies R_{Ay} = 5 \\text{ kN}$$"
                     },
                     {
                         "title": "Step 2: Analysis of Joint A",
-                        "content": "At Joint $A$, we have the vertical reaction $R_{Ay}$, the horizontal force in member $AB$ ($F_{AB}$), and the inclined force in member $AC$ ($F_{AC}$).\n\\nThe angle $\\theta$ of member $AC$ with the horizontal is:\\n$\\tan \\theta = \\dfrac{\\text{rise}}{\\text{run}} = \\dfrac{2 - 0}{2 - 0} = 1 \\implies \\theta = 45^\\circ$\n\\nSumming vertical forces at Joint $A$:\\n$\\sum F_{y,Joint A} = 0 \\implies R_{Ay} + F_{AC} \\sin(45^\\circ) = 0$\\n$5 \\text{ kN} + F_{AC} \\left( \\dfrac{\\sqrt{2}}{2} \\right) = 0$\\n$F_{AC} = -\\dfrac{5}{\\sin(45^\\circ)} \\approx -7.071 \\text{ kN}$"
+                        "content": "At Joint $A$, we have the vertical reaction $R_{Ay}$, the horizontal force in member $AB$ ($F_{AB}$), and the inclined force in member $AC$ ($F_{AC}$).\n\\nThe angle $\\theta$ of member $AC$ with the horizontal is:\\n$$\\tan \\theta = \\dfrac{\\text{rise}}{\\text{run}} = \\dfrac{2 - 0}{2 - 0} = 1 \\implies \\theta = 45^\\circ$$\n\\nSumming vertical forces at Joint $A$:\\n$$\\sum F_{y,Joint A} = 0 \\implies R_{Ay} + F_{AC} \\sin(45^\\circ) = 0$$\\n$$5 \\text{ kN} + F_{AC} \\left( \\dfrac{\\sqrt{2}}{2} \\right) = 0$$\\n$$F_{AC} = -\\dfrac{5}{\\sin(45^\\circ)} \\approx -7.071 \\text{ kN}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -15451,190 +14943,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": ""
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Two Forces",
-            "question": "Two forces of $60\\ \\text{N}$ and $80\\ \\text{N}$ act perpendicular to each other. What is the magnitude of their resultant?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$140\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$70\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$20\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$100\\ \\text{N}$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pythagorean Theorem",
-                        "content": "$R = \\sqrt{60^2 + 80^2} = \\sqrt{3600 + 6400} = \\sqrt{10000} = 100\\ \\text{N}$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Equilibrium of Rigid Bodies",
-            "title": "Sum of Moments",
-            "question": "A $5\\ \\text{m}$ beam is pinned at point A. A $200\\ \\text{N}$ downward force acts at $3\\ \\text{m}$ from A, and a $100\\ \\text{N}$ downward force acts at $5\\ \\text{m}$ from A. What is the reaction moment at A?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1100\\ \\text{N·m}$ (counterclockwise)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$500\\ \\text{N·m}$ (clockwise)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$700\\ \\text{N·m}$ (clockwise)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$300\\ \\text{N·m}$ (counterclockwise)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Sum Moments About A",
-                        "content": "$M_A = (200 \\times 3) + (100 \\times 5) = 600 + 500 = 1100\\ \\text{N·m}$. The reaction moment must be $1100\\ \\text{N·m}$ counterclockwise to maintain equilibrium."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Centroids and Moments of Inertia",
-            "title": "Centroid of a Triangle",
-            "question": "Where is the centroid of a triangle located relative to its base?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "At $1/2$ of the height from the base",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "At $1/3$ of the height from the base",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "At $2/3$ of the height from the base",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "At the midpoint of the median",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Centroid Location",
-                        "content": "The centroid of a triangle is located at $\\bar{y} = h/3$ from the base, or equivalently $2h/3$ from the apex."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Static Friction",
-            "title": "Maximum Static Friction Force",
-            "question": "A $50\\ \\text{kg}$ block rests on a horizontal surface with a coefficient of static friction $\\mu_s = 0.4$. What is the maximum friction force before sliding begins? (Take $g = 9.81\\ \\text{m/s}^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$20\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$490.5\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$196.2\\ \\text{N}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0.4\\ \\text{N}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Normal Force",
-                        "content": "$N = mg = 50 \\times 9.81 = 490.5\\ \\text{N}$"
-                    },
-                    {
-                        "title": "Max Friction",
-                        "content": "$f_s = \\mu_s N = 0.4 \\times 490.5 = 196.2\\ \\text{N}$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Frames and Trusses",
-            "title": "Method of Joints",
-            "question": "In the method of joints for truss analysis, which conditions of equilibrium are applied at each joint?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\sum F_x = 0$ and $\\sum M = 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\sum M = 0$ only",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\sum F_x = 0$, $\\sum F_y = 0$, and $\\sum M = 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\sum F_x = 0$ and $\\sum F_y = 0$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Joint Analysis",
-                        "content": "At each joint (which is a pin/particle), only force equilibrium applies — there is no moment arm. So $\\sum F_x = 0$ and $\\sum F_y = 0$."
-                    }
-                ],
-                "final_answer": "D"
             }
         }
     ],
@@ -16244,15 +15552,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analyze the Forces acting parallel to the ramp",
-                        "content": "First, we calculate the component of the weight acting down the ramp ($W_x$):\\n$W_x = m \\cdot g \\cdot \\sin(\\theta) = 50 \\cdot 9.81 \\cdot \\sin(20^\\circ) \\approx 167.77 \\text{ N}$"
+                        "content": "First, we calculate the component of the weight acting down the ramp ($W_x$):\\n$$W_x = m \\cdot g \\cdot \\sin(\\theta) = 50 \\cdot 9.81 \\cdot \\sin(20^\\circ) \\approx 167.77 \\text{ N}$$"
                     },
                     {
                         "title": "Determine the Net External Force ($F_{ext}$)",
-                        "content": "The net force attempting to move the crate (excluding friction) is the difference between the weight component pulling it down and the applied force $P$:\\n$F_{ext} = W_x - P = 167.77 \\text{ N} - 100 \\text{ N} = 67.77 \\text{ N} \\text{ (acting downwards)}$"
+                        "content": "The net force attempting to move the crate (excluding friction) is the difference between the weight component pulling it down and the applied force $P$:\\n$$F_{ext} = W_x - P = 167.77 \\text{ N} - 100 \\text{ N} = 67.77 \\text{ N} \\text{ (acting downwards)}$$"
                     },
                     {
                         "title": "Check for Movement (Static Friction Limit)",
-                        "content": "Calculate the maximum possible static friction force ($f_{s,max}$):\\n$f_{s,max} = \\mu_s \\cdot m \\cdot g \\cdot \\cos(\\theta) = 0.35 \\cdot 50 \\cdot 9.81 \\cdot \\cos(20^\\circ) \\approx 161.30 \\text{ N}$"
+                        "content": "Calculate the maximum possible static friction force ($f_{s,max}$):\\n$$f_{s,max} = \\mu_s \\cdot m \\cdot g \\cdot \\cos(\\theta) = 0.35 \\cdot 50 \\cdot 9.81 \\cdot \\cos(20^\\circ) \\approx 161.30 \\text{ N}$$"
                     },
                     {
                         "title": "Conclusion",
@@ -19136,7 +18444,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Change in Length (ΔL)",
-                        "content": "Using the formula $\\Delta L = \\alpha L_0 \\Delta T$: \\n$\\Delta L = (17.0 \\times 10^{-6} / ^\\circ\\text{C}) \\times (2.5 \\text{ m}) \\times (130^\\circ\\text{C})$\\n$\\Delta L = 0.005525 \\text{ m}$"
+                        "content": "Using the formula $\\Delta L = \\alpha L_0 \\Delta T$: \\n$$\\Delta L = (17.0 \\times 10^{-6} / ^\\circ\\text{C}) \\times (2.5 \\text{ m}) \\times (130^\\circ\\text{C})$$\\n$$\\Delta L = 0.005525 \\text{ m}$$"
                     }
                 ],
                 "final_answer": "A",
@@ -19608,11 +18916,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Apply Static Indeterminacy Formula",
-                        "content": "For a 2D rigid frame, the degree of static indeterminacy ($D_s$) is given by: \\n$D_s = (3m + r) - 3j$"
+                        "content": "For a 2D rigid frame, the degree of static indeterminacy ($D_s$) is given by: \\n$$D_s = (3m + r) - 3j$$"
                     },
                     {
                         "title": "Calculation",
-                        "content": "Substitute the values: \\n$D_s = (3 \\times 3 + 6) - (3 \\times 4)$\\n$D_s = (9 + 6) - 12$\\n$D_s = 15 - 12 = 3$"
+                        "content": "Substitute the values: \\n$$D_s = (3 \\times 3 + 6) - (3 \\times 4)$$\\n$$D_s = (9 + 6) - 12$$\\n$$D_s = 15 - 12 = 3$$"
                     }
                 ],
                 "final_answer": "C",
@@ -19798,7 +19106,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate the Elastic Strain",
-                        "content": "Using the relationship $\\epsilon_{total} = \\epsilon_e + \\epsilon_p$, we find: \\n$\\epsilon_e = \\epsilon_{total} - \\epsilon_p = 0.03 - 0.01 = 0.02$"
+                        "content": "Using the relationship $\\epsilon_{total} = \\epsilon_e + \\epsilon_p$, we find: \\n$$\\epsilon_e = \\epsilon_{total} - \\epsilon_p = 0.03 - 0.01 = 0.02$$"
                     }
                 ],
                 "final_answer": "C",
@@ -19840,11 +19148,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Correlation Formula",
-                        "content": "For most steels, the empirical relationship between Brinell hardness and tensile strength in MPa is: \\n$TS (\\text{MPa}) \\approx 3.45 \\times HB$"
+                        "content": "For most steels, the empirical relationship between Brinell hardness and tensile strength in MPa is: \\n$$TS (\\text{MPa}) \\approx 3.45 \\times HB$$"
                     },
                     {
                         "title": "Calculation",
-                        "content": "Substitute the value: \\n$TS \\approx 3.45 \\times 250 = 862.5 \\text{ MPa}$"
+                        "content": "Substitute the value: \\n$$TS \\approx 3.45 \\times 250 = 862.5 \\text{ MPa}$$"
                     },
                     {
                         "title": "Conclusion",
@@ -20334,11 +19642,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Total Charge ($Q$)",
-                        "content": "The total charge passed is: \\n$Q = I \\times t = 0.5 \\text{ A} \\times 14,400 \\text{ s} = 7,200 \\text{ C}$"
+                        "content": "The total charge passed is: \\n$$Q = I \\times t = 0.5 \\text{ A} \\times 14,400 \\text{ s} = 7,200 \\text{ C}$$"
                     },
                     {
                         "title": "Apply Faraday's Law",
-                        "content": "The mass ($m$) lost is: \\n$m = \\dfrac{Q \\cdot M}{n \\cdot F} = \\dfrac{7,200 \\times 55.85}{2 \\times 96,500} \\approx 2.0835 \\text{ g}$"
+                        "content": "The mass ($m$) lost is: \\n$$m = \\dfrac{Q \\cdot M}{n \\cdot F} = \\dfrac{7,200 \\times 55.85}{2 \\times 96,500} \\approx 2.0835 \\text{ g}$$"
                     }
                 ],
                 "final_answer": "D",
@@ -20426,11 +19734,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Formula for Fracture Stress",
-                        "content": "The relationship is given by: \\n$K_{IC} = Y \\sigma \\sqrt{\\pi a}$"
+                        "content": "The relationship is given by: \\n$$K_{IC} = Y \\sigma \\sqrt{\\pi a}$$"
                     },
                     {
                         "title": "Calculation",
-                        "content": "Rearranging for stress ($\\sigma$): \\n$\\sigma = \\dfrac{K_{IC}}{Y \\sqrt{\\pi a}} = \\dfrac{50}{1.0 \\times \\sqrt{\\pi \\times 0.002}} \\approx 630.78 \\text{ MPa}$"
+                        "content": "Rearranging for stress ($\\sigma$): \\n$$\\sigma = \\dfrac{K_{IC}}{Y \\sqrt{\\pi a}} = \\dfrac{50}{1.0 \\times \\sqrt{\\pi \\times 0.002}} \\approx 630.78 \\text{ MPa}$$"
                     }
                 ],
                 "final_answer": "B",
@@ -24269,150 +23577,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": ""
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Coulomb's Law",
-            "question": "Two point charges of $q_1 = 2\\ \\mu\\text{C}$ and $q_2 = 3\\ \\mu\\text{C}$ are separated by $0.1\\ \\text{m}$ in free space. What is the magnitude of the electrostatic force between them? ($k = 8.99 \\times 10^9\\ \\text{N·m}^2/\\text{C}^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$5.39\\ \\text{N}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$53.9\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0.539\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0.054\\ \\text{N}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Coulomb's Law",
-                        "content": "$F = k\\frac{q_1 q_2}{r^2} = 8.99\\times10^9 \\times \\frac{2\\times10^{-6} \\times 3\\times10^{-6}}{(0.1)^2} = 8.99\\times10^9 \\times \\frac{6\\times10^{-12}}{0.01} = 5.39\\ \\text{N}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Electric Field Due to Point Charge",
-            "question": "What is the electric field strength at a distance of $0.5\\ \\text{m}$ from a point charge of $10\\ \\mu\\text{C}$? ($k = 8.99 \\times 10^9\\ \\text{N·m}^2/\\text{C}^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1.8 \\times 10^5\\ \\text{N/C}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.6 \\times 10^5\\ \\text{N/C}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$7.2 \\times 10^5\\ \\text{N/C}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$3.6 \\times 10^4\\ \\text{N/C}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Electric Field Formula",
-                        "content": "$E = k\\frac{q}{r^2} = 8.99\\times10^9 \\times \\frac{10\\times10^{-6}}{0.5^2} = 8.99\\times10^9 \\times \\frac{10^{-5}}{0.25} = 3.6\\times10^5\\ \\text{N/C}$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Capacitor Energy Storage",
-            "question": "A $10\\ \\mu\\text{F}$ capacitor is charged to a voltage of $100\\ \\text{V}$. How much energy is stored in the capacitor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$0.1\\ \\text{J}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1.0\\ \\text{J}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0.05\\ \\text{J}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0.005\\ \\text{J}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Capacitor Energy Formula",
-                        "content": "$U = \\frac{1}{2}CV^2 = \\frac{1}{2}(10\\times10^{-6})(100)^2 = \\frac{1}{2}(10^{-5})(10^4) = 0.05\\ \\text{J}$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law",
-            "question": "A conductor has a resistance of $50\\ \\Omega$. If a current of $2\\ \\text{A}$ flows through it, what is the voltage across it?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$25\\ \\text{V}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$52\\ \\text{V}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0.04\\ \\text{V}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$100\\ \\text{V}$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$V = IR = 2\\ \\text{A} \\times 50\\ \\Omega = 100\\ \\text{V}$"
-                    }
-                ],
-                "final_answer": "D"
             }
         }
     ],
@@ -47289,11 +46453,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Formula for Schedule Performance Index (SPI)",
-                        "content": "The $SPI$ is a measure of the schedule efficiency of a project. It is calculated using the following ratio:\n        $SPI = \\dfrac{BCWP}{BCWS}$"
+                        "content": "The $SPI$ is a measure of the schedule efficiency of a project. It is calculated using the following ratio:\n        $$SPI = \\dfrac{BCWP}{BCWS}$$"
                     },
                     {
                         "title": "Calculation",
-                        "content": "Substitute the given values into the formula:\n        $SPI = \\dfrac{100,000}{120,000}$\n        $SPI \\approx 0.833$"
+                        "content": "Substitute the given values into the formula:\n        $$SPI = \\dfrac{100,000}{120,000}$$\n        $$SPI \\approx 0.833$$"
                     },
                     {
                         "title": "Interpretation of Results",
@@ -47393,11 +46557,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 1: Calculate the Retainage Amount",
-                        "content": "To find the amount being withheld, multiply the gross amount by the retainage percentage:\n        $\\text{Retainage} = \\$250,000 \\times 0.05$\n        $\\text{Retainage} = \\$12,500$"
+                        "content": "To find the amount being withheld, multiply the gross amount by the retainage percentage:\n        $$\\text{Retainage} = \\$250,000 \\times 0.05$$\n        $$\\text{Retainage} = \\$12,500$$"
                     },
                     {
                         "title": "Step 2: Calculate the Net Payment Amount",
-                        "content": "The net amount to be paid to the contractor is the gross amount minus the retainage:\n        $\\text{Net Amount} = \\text{Gross Amount} - \\text{Retainage}$\n        $\\text{Net Amount} = \\$250,000 - \\$12,500$\n        $\\text{Net Amount} = \\$237,500$"
+                        "content": "The net amount to be paid to the contractor is the gross amount minus the retainage:\n        $$\\text{Net Amount} = \\text{Gross Amount} - \\text{Retainage}$$\n        $$\\text{Net Amount} = \\$250,000 - \\$12,500$$\n        $$\\text{Net Amount} = \\$237,500$$"
                     },
                     {
                         "title": "Summary",
@@ -53195,114 +52359,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Angles, Distances, and Trigonometry",
-            "title": "Azimuth Conversion",
-            "question": "A line has a bearing of S $45°$ E. What is its equivalent azimuth (measured clockwise from North)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$45°$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$225°$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$135°$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$315°$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Convert Bearing to Azimuth",
-                        "content": "S $45°$ E means $45°$ east of south. Starting from North: $180° - 45° = 135°$ (clockwise from North)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Leveling",
-            "title": "Differential Leveling",
-            "question": "In differential leveling, the elevation of a new point is calculated using: $\\text{Elevation}_{new} = \\text{Elevation}_{BM} + \\text{BS} - \\text{FS}$. What do BS and FS represent?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Benchmark and Field Survey",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Bearing and Slope",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Bottom Section and Forward Section",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Backsight (rod reading on known point) and Foresight (rod reading on unknown point)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Leveling Terminology",
-                        "content": "In leveling: BS (Backsight) is a rod reading taken on a point of known elevation. FS (Foresight) is a rod reading taken on a point whose elevation is to be determined."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Area Computations",
-            "title": "Area by Coordinate Method",
-            "question": "Using the coordinate method (shoelace formula), the area of a closed polygon is calculated from the coordinates of its vertices. If the computed result is negative, what is the correct interpretation?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The vertices were listed in clockwise order; take the absolute value for the area",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "An error occurred; area cannot be negative",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The polygon is concave",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The polygon crosses itself",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Sign Convention",
-                        "content": "The shoelace formula gives a positive area for counterclockwise vertex ordering and a negative area for clockwise ordering. The magnitude is always the correct area."
-                    }
-                ],
-                "final_answer": "A"
-            }
         }
     ],
     "digital-systems": [
@@ -57014,15 +56070,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall the Temperature Dependence Formula",
-                        "content": "The resistance of a conductor at temperature $T$ is given by:\n$R(T) = R_0 [1 + \\alpha(T - T_0)]$"
+                        "content": "The resistance of a conductor at temperature $T$ is given by:\n$$R(T) = R_0 [1 + \\alpha(T - T_0)]$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $R_0 = 0.5\\ \\Omega$, $T_0 = 20^\\circ\\text{C}$, $T = 80^\\circ\\text{C}$, and $\\alpha = 0.00393\\ \\text{K}^{-1}$:\n$\\Delta T = 80 - 20 = 60^\\circ\\text{C} = 60\\ \\text{K}$\n$R(80^\\circ\\text{C}) = 0.5 [1 + 0.00393 \\times 60]$"
+                        "content": "Given $R_0 = 0.5\\ \\Omega$, $T_0 = 20^\\circ\\text{C}$, $T = 80^\\circ\\text{C}$, and $\\alpha = 0.00393\\ \\text{K}^{-1}$:\n$$\\Delta T = 80 - 20 = 60^\\circ\\text{C} = 60\\ \\text{K}$$\n$$R(80^\\circ\\text{C}) = 0.5 [1 + 0.00393 \\times 60]$$"
                     },
                     {
                         "title": "Calculate Final Resistance",
-                        "content": "$R(80^\\circ\\text{C}) = 0.5 [1 + 0.2358] = 0.5 \\times 1.2358 = 0.6179\\ \\Omega \\approx 0.618\\ \\Omega$"
+                        "content": "$$R(80^\\circ\\text{C}) = 0.5 [1 + 0.2358] = 0.5 \\times 1.2358 = 0.6179\\ \\Omega \\approx 0.618\\ \\Omega$$"
                     }
                 ],
                 "final_answer": "A"
@@ -57058,15 +56114,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Hall Voltage Equation",
-                        "content": "The Hall voltage $V_H$ is given by:\n$V_H = \\frac{I B}{n q t}$"
+                        "content": "The Hall voltage $V_H$ is given by:\n$$V_H = \\frac{I B}{n q t}$$"
                     },
                     {
                         "title": "Rearrange for Carrier Density $n$",
-                        "content": "$n = \\frac{I B}{q t V_H}$"
+                        "content": "$$n = \\frac{I B}{q t V_H}$$"
                     },
                     {
                         "title": "Calculate $n$",
-                        "content": "Substituting $I = 10 \\times 10^{-3}\\ \\text{A}$, $B = 0.8\\ \\text{T}$, $q = 1.6 \\times 10^{-19}\\ \\text{C}$, $t = 0.5 \\times 10^{-3}\\ \\text{m}$, and $|V_H| = 2.5 \\times 10^{-3}\\ \\text{V}$:\n$n = \\frac{10^{-2} \\times 0.8}{1.6 \\times 10^{-19} \\times 5 \\times 10^{-4} \\times 2.5 \\times 10^{-3}}$\n$n = \\frac{0.008}{2.0 \\times 10^{-25}} = 4.0 \\times 10^{22}\\ \\text{m}^{-3}$\nWait, let's recalculate the denominator:\n$1.6 \\times 10^{-19} \\times 0.5 \\times 10^{-3} \\times 2.5 \\times 10^{-3} = 2.0 \\times 10^{-25}$\n$n = \\frac{8 \\times 10^{-3}}{2.0 \\times 10^{-25}} = 4.0 \\times 10^{22}\\ \\text{m}^{-3}$.\nLet's re-verify the values and correct option if needed: If $V_H = -2.5\\ \\text{mV}$, then carriers are electrons (negative). The density magnitude is $2.0 \\times 10^{22}\\ \\text{m}^{-3}$ if $V_H$ is $-5.0\\ \\text{mV}$ or if calculation is:\n$n = \\frac{0.008}{1.6 \\times 10^{-19} \\times 0.0005 \\times 0.0025} = 4.0 \\times 10^{22}\\ \\text{m}^{-3}$."
+                        "content": "Substituting $I = 10 \\times 10^{-3}\\ \\text{A}$, $B = 0.8\\ \\text{T}$, $q = 1.6 \\times 10^{-19}\\ \\text{C}$, $t = 0.5 \\times 10^{-3}\\ \\text{m}$, and $|V_H| = 2.5 \\times 10^{-3}\\ \\text{V}$:\n$$n = \\frac{10^{-2} \\times 0.8}{1.6 \\times 10^{-19} \\times 5 \\times 10^{-4} \\times 2.5 \\times 10^{-3}}$$\n$$n = \\frac{0.008}{2.0 \\times 10^{-25}} = 4.0 \\times 10^{22}\\ \\text{m}^{-3}$$\nWait, let's recalculate the denominator:\n$$1.6 \\times 10^{-19} \\times 0.5 \\times 10^{-3} \\times 2.5 \\times 10^{-3} = 2.0 \\times 10^{-25}$$\n$$n = \\frac{8 \\times 10^{-3}}{2.0 \\times 10^{-25}} = 4.0 \\times 10^{22}\\ \\text{m}^{-3}$$.\nLet's re-verify the values and correct option if needed: If $V_H = -2.5\\ \\text{mV}$, then carriers are electrons (negative). The density magnitude is $2.0 \\times 10^{22}\\ \\text{m}^{-3}$ if $V_H$ is $-5.0\\ \\text{mV}$ or if calculation is:\n$$n = \\frac{0.008}{1.6 \\times 10^{-19} \\times 0.0005 \\times 0.0025} = 4.0 \\times 10^{22}\\ \\text{m}^{-3}$$."
                     }
                 ],
                 "final_answer": "B"
@@ -57102,15 +56158,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Semiconductor Conductivity Formula",
-                        "content": "The conductivity $\\sigma$ of an intrinsic semiconductor is:\n$\\sigma = q n_i (\\mu_n + \\mu_p)$"
+                        "content": "The conductivity $\\sigma$ of an intrinsic semiconductor is:\n$$\\sigma = q n_i (\\mu_n + \\mu_p)$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $q = 1.6 \\times 10^{-19}\\ \\text{C}$, $n_i = 1.5 \\times 10^{10}\\ \\text{cm}^{-3}$, $\\mu_n = 1350$, and $\\mu_p = 480$:\n$\\sigma = (1.6 \\times 10^{-19}\\ \\text{C}) \\times (1.5 \\times 10^{10}\\ \\text{cm}^{-3}) \\times (1350 + 480)\\ \\text{cm}^2/(\\text{V}\\cdot\\text{s})$"
+                        "content": "Given $q = 1.6 \\times 10^{-19}\\ \\text{C}$, $n_i = 1.5 \\times 10^{10}\\ \\text{cm}^{-3}$, $\\mu_n = 1350$, and $\\mu_p = 480$:\n$$\\sigma = (1.6 \\times 10^{-19}\\ \\text{C}) \\times (1.5 \\times 10^{10}\\ \\text{cm}^{-3}) \\times (1350 + 480)\\ \\text{cm}^2/(\\text{V}\\cdot\\text{s})$$"
                     },
                     {
                         "title": "Calculate $\\sigma$",
-                        "content": "$\\sigma = 2.4 \\times 10^{-9} \\times 1830 = 4.392 \\times 10^{-6}\\ \\text{S/cm}$"
+                        "content": "$$\\sigma = 2.4 \\times 10^{-9} \\times 1830 = 4.392 \\times 10^{-6}\\ \\text{S/cm}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -57146,15 +56202,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Drift Current Equation",
-                        "content": "Current is related to drift velocity by:\n$I = n q A v_d$"
+                        "content": "Current is related to drift velocity by:\n$$I = n q A v_d$$"
                     },
                     {
                         "title": "Rearrange for $v_d$",
-                        "content": "$v_d = \\frac{I}{n q A}$"
+                        "content": "$$v_d = \\frac{I}{n q A}$$"
                     },
                     {
                         "title": "Calculate $v_d$",
-                        "content": "Substitute $I = 5.0\\ \\text{A}$, $n = 8.5 \\times 10^{28}\\ \\text{m}^{-3}$, $q = 1.6 \\times 10^{-19}\\ \\text{C}$, $A = 2.0 \\times 10^{-6}\\ \\text{m}^2$:\n$v_d = \\frac{5.0}{8.5 \\times 10^{28} \\times 1.6 \\times 10^{-19} \\times 2.0 \\times 10^{-6}}$\n$v_d = \\frac{5.0}{2.72 \\times 10^4} = 1.838 \\times 10^{-4}\\ \\text{m/s}$"
+                        "content": "Substitute $I = 5.0\\ \\text{A}$, $n = 8.5 \\times 10^{28}\\ \\text{m}^{-3}$, $q = 1.6 \\times 10^{-19}\\ \\text{C}$, $A = 2.0 \\times 10^{-6}\\ \\text{m}^2$:\n$$v_d = \\frac{5.0}{8.5 \\times 10^{28} \\times 1.6 \\times 10^{-19} \\times 2.0 \\times 10^{-6}}$$\n$$v_d = \\frac{5.0}{2.72 \\times 10^4} = 1.838 \\times 10^{-4}\\ \\text{m/s}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -57190,15 +56246,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Identify the Relation between Field and Voltage",
-                        "content": "The electric field $E$ in a parallel plate capacitor is:\n$E = \\frac{V}{d}$"
+                        "content": "The electric field $E$ in a parallel plate capacitor is:\n$$E = \\frac{V}{d}$$"
                     },
                     {
                         "title": "Determine Breakdown Threshold",
-                        "content": "Dielectric breakdown occurs when the field $E$ exceeds the dielectric strength $E_{max}$:\n$V_{max} = E_{max} \\times d$"
+                        "content": "Dielectric breakdown occurs when the field $E$ exceeds the dielectric strength $E_{max}$:\n$$V_{max} = E_{max} \\times d$$"
                     },
                     {
                         "title": "Calculate $V_{max}$",
-                        "content": "Given $E_{max} = 20\\ \\text{kV/mm} = 20 \\times 10^6\\ \\text{V/m}$, and $d = 0.1\\ \\text{mm} = 10^{-4}\\ \\text{m}$:\n$V_{max} = 20\\ \\text{kV/mm} \\times 0.1\\ \\text{mm} = 2.0\\ \\text{kV}$"
+                        "content": "Given $E_{max} = 20\\ \\text{kV/mm} = 20 \\times 10^6\\ \\text{V/m}$, and $d = 0.1\\ \\text{mm} = 10^{-4}\\ \\text{m}$:\n$$V_{max} = 20\\ \\text{kV/mm} \\times 0.1\\ \\text{mm} = 2.0\\ \\text{kV}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -57238,7 +56294,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Define Magnetic Susceptibility",
-                        "content": "Since the induced magnetization opposes the field, the magnetic susceptibility $\\chi_m$ is negative:\n$\\mathbf{M} = \\chi_m \\mathbf{H}$\nFor diamagnetic materials, $\\chi_m$ is negative and very small (typically $-10^{-5}$ to $-10^{-6}$)."
+                        "content": "Since the induced magnetization opposes the field, the magnetic susceptibility $\\chi_m$ is negative:\n$$\\mathbf{M} = \\chi_m \\mathbf{H}$$\nFor diamagnetic materials, $\\chi_m$ is negative and very small (typically $-10^{-5}$ to $-10^{-6}$)."
                     }
                 ],
                 "final_answer": "B"
@@ -57314,15 +56370,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Constitutive Relation",
-                        "content": "The magnetic flux density is given by:\n$B = \\mu H = \\mu_r \\mu_0 H$"
+                        "content": "The magnetic flux density is given by:\n$$B = \\mu H = \\mu_r \\mu_0 H$$"
                     },
                     {
                         "title": "Substitute Values",
-                        "content": "Given $\\mu_r = 2500$, $\\mu_0 = 4\\pi \\times 10^{-7}\\ \\text{H/m}$, and $H = 120\\ \\text{A/m}$:\n$B = 2500 \\times (4\\pi \\times 10^{-7}) \\times 120$"
+                        "content": "Given $\\mu_r = 2500$, $\\mu_0 = 4\\pi \\times 10^{-7}\\ \\text{H/m}$, and $H = 120\\ \\text{A/m}$:\n$$B = 2500 \\times (4\\pi \\times 10^{-7}) \\times 120$$"
                     },
                     {
                         "title": "Calculate $B$",
-                        "content": "$B = 300,000 \\times 4\\pi \\times 10^{-7} = 0.12\\pi \\approx 0.37699\\ \\text{T} \\approx 0.377\\ \\text{T}$"
+                        "content": "$$$B = 300,000 \\times 4\\pi \\times 10^{-7} = 0.12\\pi \\approx 0.37699\\ \\text{T} \\approx 0.377\\ \\text{T}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -57362,7 +56418,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Identify Hysteresis Loss",
-                        "content": "The work done in taking the material through a complete cycle of magnetization is given by the integral:\n$W = \\oint H\\, dB$\nThis work is dissipated as heat, and its value per unit volume per cycle is precisely equal to the area of the B-H hysteresis loop."
+                        "content": "The work done in taking the material through a complete cycle of magnetization is given by the integral:\n$$W = \\oint H\\, dB$$\nThis work is dissipated as heat, and its value per unit volume per cycle is precisely equal to the area of the B-H hysteresis loop."
                     }
                 ],
                 "final_answer": "A"
@@ -57542,7 +56598,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State the Wiedemann-Franz Law",
-                        "content": "The ratio of thermal conductivity to electrical conductivity for metals is:\n$\\frac{k}{\\sigma} = L T$"
+                        "content": "The ratio of thermal conductivity to electrical conductivity for metals is:\n$$\\frac{k}{\\sigma} = L T$$"
                     },
                     {
                         "title": "Identify Lorenz Number",
@@ -57582,15 +56638,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Linear Thermal Expansion Formula",
-                        "content": "The change in length $\\Delta L$ is:\n$\\Delta L = L_0 \\alpha_L \\Delta T$"
+                        "content": "The change in length $\\Delta L$ is:\n$$\\Delta L = L_0 \\alpha_L \\Delta T$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $L_0 = 100\\ \\text{m}$, $\\alpha_L = 23 \\times 10^{-6}\\ \\text{K}^{-1}$, $\\Delta T = 45 - 10 = 35\\ \\text{K}$:\n$\\Delta L = 100 \\times (23 \\times 10^{-6}) \\times 35$"
+                        "content": "Given $L_0 = 100\\ \\text{m}$, $\\alpha_L = 23 \\times 10^{-6}\\ \\text{K}^{-1}$, $\\Delta T = 45 - 10 = 35\\ \\text{K}$:\n$$\\Delta L = 100 \\times (23 \\times 10^{-6}) \\times 35$$"
                     },
                     {
                         "title": "Calculate $\\Delta L$",
-                        "content": "$\\Delta L = 2.3 \\times 10^{-3} \\times 35 = 0.0805\\ \\text{m} = 8.05\\ \\text{cm}$"
+                        "content": "$$\\Delta L = 2.3 \\times 10^{-3} \\times 35 = 0.0805\\ \\text{m} = 8.05\\ \\text{cm}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -57662,15 +56718,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Thermal Stress Formula",
-                        "content": "The thermal stress $\\sigma_{th}$ induced in a rigidly clamped member is:\n$\\sigma_{th} = E \\alpha_L \\Delta T$"
+                        "content": "The thermal stress $\\sigma_{th}$ induced in a rigidly clamped member is:\n$$\\sigma_{th} = E \\alpha_L \\Delta T$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $E = 110 \\times 10^9\\ \\text{Pa}$, $\\alpha_L = 17 \\times 10^{-6}\\ \\text{K}^{-1}$, $\\Delta T = 40\\ \\text{K}$:\n$\\sigma_{th} = (110 \\times 10^9) \\times (17 \\times 10^{-6}) \\times 40$"
+                        "content": "Given $E = 110 \\times 10^9\\ \\text{Pa}$, $\\alpha_L = 17 \\times 10^{-6}\\ \\text{K}^{-1}$, $\\Delta T = 40\\ \\text{K}$:\n$$\\sigma_{th} = (110 \\times 10^9) \\times (17 \\times 10^{-6}) \\times 40$$"
                     },
                     {
                         "title": "Calculate $\\sigma_{th}$",
-                        "content": "$\\sigma_{th} = 110 \\times 10^3 \\times 17 \\times 40 \\times 10^{-6}\\ \\text{MPa}$\n$\\sigma_{th} = 1.87 \\times 10^6 \\times 40 \\times 10^{-6} = 74.8\\ \\text{MPa}$"
+                        "content": "$$\\sigma_{th} = 110 \\times 10^3 \\times 17 \\times 40 \\times 10^{-6}\\ \\text{MPa}$$\n$$\\sigma_{th} = 1.87 \\times 10^6 \\times 40 \\times 10^{-6} = 74.8\\ \\text{MPa}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -57706,7 +56762,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Identify Low-Temperature Behavior",
-                        "content": "In the Debye theory, the lattice vibrations (phonons) dominate specific heat at low temperatures. The specific heat is given by:\n$C_v \\propto \\left(\\frac{T}{\\Theta_D}\\right)^3$\nwhere $\\Theta_D$ is the Debye temperature. Thus, $C_v \\propto T^3$."
+                        "content": "In the Debye theory, the lattice vibrations (phonons) dominate specific heat at low temperatures. The specific heat is given by:\n$$C_v \\propto \\left(\\frac{T}{\\Theta_D}\\right)^3$$\nwhere $\\Theta_D$ is the Debye temperature. Thus, $C_v \\propto T^3$."
                     }
                 ],
                 "final_answer": "B"
@@ -57742,15 +56798,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Thermal Ohm's Law",
-                        "content": "The thermal circuit can be modeled similarly to an electrical circuit:\n$T_j - T_a = P \\cdot \\theta_{total}$\nwhere $\\theta_{total} = \\theta_{jc} + \\theta_{ca}$."
+                        "content": "The thermal circuit can be modeled similarly to an electrical circuit:\n$$T_j - T_a = P \\cdot \\theta_{total}$$\nwhere $\\theta_{total} = \\theta_{jc} + \\theta_{ca}$."
                     },
                     {
                         "title": "Calculate Total Thermal Resistance",
-                        "content": "$\\theta_{total} = 1.2 + 2.8 = 4.0^\\circ\\text{C/W}$"
+                        "content": "$$\\theta_{total} = 1.2 + 2.8 = 4.0^\\circ\\text{C/W}$$"
                     },
                     {
                         "title": "Calculate Junction Temperature",
-                        "content": "$T_j = T_a + P \\cdot \\theta_{total}$\n$T_j = 30 + 15 \\times 4.0 = 30 + 60 = 90^\\circ\\text{C}$"
+                        "content": "$$T_j = T_a + P \\cdot \\theta_{total}$$\n$$T_j = 30 + 15 \\times 4.0 = 30 + 60 = 90^\\circ\\text{C}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -57822,11 +56878,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Peltier Relation",
-                        "content": "The rate of heat absorbed or liberated at a thermoelectric junction is:\n$Q = \\Pi I$"
+                        "content": "The rate of heat absorbed or liberated at a thermoelectric junction is:\n$$Q = \\Pi I$$"
                     },
                     {
                         "title": "Calculate $Q$",
-                        "content": "Given $\\Pi = 0.05\\ \\text{V}$ and $I = 4.0\\ \\text{A}$:\n$Q = 0.05 \\times 4.0 = 0.20\\ \\text{W}$"
+                        "content": "Given $\\Pi = 0.05\\ \\text{V}$ and $I = 4.0\\ \\text{A}$:\n$$Q = 0.05 \\times 4.0 = 0.20\\ \\text{W}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -61406,15 +60462,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write s-domain Impedances",
-                        "content": "$Z_R = R = 10$ \n$Z_L = sL = 0.1s$ \n$Z_C = \\frac{1}{sC} = \\frac{1}{100 \\times 10^{-6} s} = \\frac{10,000}{s}$"
+                        "content": "$$Z_R = R = 10$$ \n$$Z_L = sL = 0.1s$$ \n$$Z_C = \\frac{1}{sC} = \\frac{1}{100 \\times 10^{-6} s} = \\frac{10,000}{s}$$"
                     },
                     {
                         "title": "Apply Voltage Divider to Capacitor",
-                        "content": "$H(s) = \\frac{Z_C}{Z_R + Z_L + Z_C} = \\frac{\\frac{10,000}{s}}{10 + 0.1s + \\frac{10,000}{s}}$"
+                        "content": "$$H(s) = \\frac{Z_C}{Z_R + Z_L + Z_C} = \\frac{\\frac{10,000}{s}}{10 + 0.1s + \\frac{10,000}{s}}$$"
                     },
                     {
                         "title": "Simplify the Expression",
-                        "content": "Multiply numerator and denominator by $10s$:\n$H(s) = \\frac{100,000}{s^2 + 100s + 100,000}$"
+                        "content": "Multiply numerator and denominator by $10s$:\n$$H(s) = \\frac{100,000}{s^2 + 100s + 100,000}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -61450,15 +60506,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Inverting Amplifier Gain",
-                        "content": "For an inverting op-amp:\n$H(s) = -\\frac{Z_f(s)}{R_i}$"
+                        "content": "For an inverting op-amp:\n$$H(s) = -\\frac{Z_f(s)}{R_i}$$"
                     },
                     {
                         "title": "Find Feedback Impedance $Z_f(s)$",
-                        "content": "$Z_f(s) = R_f \\parallel \\frac{1}{sC_f} = \\frac{R_f}{s R_f C_f + 1}$"
+                        "content": "$$Z_f(s) = R_f \\parallel \\frac{1}{sC_f} = \\frac{R_f}{s R_f C_f + 1}$$"
                     },
                     {
                         "title": "Calculate $H(s)$",
-                        "content": "$H(s) = -\\frac{R_f/R_i}{s R_f C_f + 1}$\nSubstitute $R_f = 10^5\\ \\Omega$, $R_i = 10^4\\ \\Omega$, $C_f = 10^{-9}\\ \\text{F}$:\n$R_f/R_i = 10$\n$R_f C_f = 10^5 \\times 10^{-9} = 10^{-4}\\ \\text{s}$\n$H(s) = -\\frac{10}{10^{-4} s + 1}$"
+                        "content": "$$H(s) = -\\frac{R_f/R_i}{s R_f C_f + 1}$$\nSubstitute $R_f = 10^5\\ \\Omega$, $R_i = 10^4\\ \\Omega$, $C_f = 10^{-9}\\ \\text{F}$:\n$$R_f/R_i = 10$$\n$$R_f C_f = 10^5 \\times 10^{-9} = 10^{-4}\\ \\text{s}$$\n$$H(s) = -\\frac{10}{10^{-4} s + 1}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -61498,7 +60554,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Evaluate $H(0)$",
-                        "content": "$H(0) = \\frac{3(0)^2 + 10(0) + 24}{2(0)^3 + 8(0)^2 + 12(0) + 8} = \\frac{24}{8} = 3$"
+                        "content": "$$H(0) = \\frac{3(0)^2 + 10(0) + 24}{2(0)^3 + 8(0)^2 + 12(0) + 8} = \\frac{24}{8} = 3$$"
                     }
                 ],
                 "final_answer": "C"
@@ -61534,11 +60590,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Transfer Function to Impulse Response",
-                        "content": "The transfer function $H(s)$ is the Laplace transform of the impulse response $h(t)$:\n$h(t) = \\mathcal{L}^{-1}\\{H(s)\\}$"
+                        "content": "The transfer function $H(s)$ is the Laplace transform of the impulse response $h(t)$:\n$$h(t) = \\mathcal{L}^{-1}\\{H(s)\\}$$"
                     },
                     {
                         "title": "Apply Inverse Laplace Transform",
-                        "content": "Using the standard transform pair:\n$\\mathcal{L}^{-1}\\left\\{\\frac{1}{s+a}\\right\\} = e^{-at} u(t)$\nTherefore:\n$\\mathcal{L}^{-1}\\{H(s)\\} = \\mathcal{L}^{-1}\\left\\{\\frac{4}{s+2}\\right\\} = 4 e^{-2t} u(t)$"
+                        "content": "Using the standard transform pair:\n$$\\mathcal{L}^{-1}\\left\\{\\frac{1}{s+a}\\right\\} = e^{-at} u(t)$$\nTherefore:\n$$\\mathcal{L}^{-1}\\{H(s)\\} = \\mathcal{L}^{-1}\\left\\{\\frac{4}{s+2}\\right\\} = 4 e^{-2t} u(t)$$"
                     }
                 ],
                 "final_answer": "D"
@@ -61578,7 +60634,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Find Denominator Roots",
-                        "content": "Denominator: $(s+2)(s^2 + 4s + 13) = 0$.\nRoot 1: $s = -2$\nFor the quadratic term $s^2 + 4s + 13 = 0$, use the quadratic formula:\n$s = \\frac{-4 \\pm \\sqrt{4^2 - 4(1)(13)}}{2} = \\frac{-4 \\pm \\sqrt{16 - 52}}{2} = \\frac{-4 \\pm \\sqrt{-36}}{2}$\n$s = \\frac{-4 \\pm j6}{2} = -2 \\pm j3$"
+                        "content": "Denominator: $(s+2)(s^2 + 4s + 13) = 0$.\nRoot 1: $s = -2$\nFor the quadratic term $s^2 + 4s + 13 = 0$, use the quadratic formula:\n$$s = \\frac{-4 \\pm \\sqrt{4^2 - 4(1)(13)}}{2} = \\frac{-4 \\pm \\sqrt{16 - 52}}{2} = \\frac{-4 \\pm \\sqrt{-36}}{2}$$\n$$s = \\frac{-4 \\pm j6}{2} = -2 \\pm j3$$"
                     },
                     {
                         "title": "List All Poles",
@@ -61618,11 +60674,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Cascade System Rule",
-                        "content": "When two non-loading systems are connected in cascade (series), the overall transfer function is the product of the individual transfer functions:\n$H(s) = H_1(s) \\times H_2(s)$"
+                        "content": "When two non-loading systems are connected in cascade (series), the overall transfer function is the product of the individual transfer functions:\n$$H(s) = H_1(s) \\times H_2(s)$$"
                     },
                     {
                         "title": "Multiply Transfer Functions",
-                        "content": "$H(s) = \\frac{2}{s+1} \\times \\frac{s}{s+3} = \\frac{2s}{(s+1)(s+3)}$"
+                        "content": "$$H(s) = \\frac{2}{s+1} \\times \\frac{s}{s+3} = \\frac{2s}{(s+1)(s+3)}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -61658,15 +60714,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Closed-Loop Formula",
-                        "content": "The closed-loop transfer function $T(s)$ for negative feedback is:\n$T(s) = \\frac{G(s)}{1 + G(s) H(s)}$"
+                        "content": "The closed-loop transfer function $T(s)$ for negative feedback is:\n$$T(s) = \\frac{G(s)}{1 + G(s) H(s)}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $G(s) = \\frac{10}{s+2}$ and $H(s) = 1$:\n$T(s) = \\frac{\\frac{10}{s+2}}{1 + \\frac{10}{s+2}}$"
+                        "content": "Given $G(s) = \\frac{10}{s+2}$ and $H(s) = 1$:\n$$T(s) = \\frac{\\frac{10}{s+2}}{1 + \\frac{10}{s+2}}$$"
                     },
                     {
                         "title": "Simplify the Transfer Function",
-                        "content": "Multiply numerator and denominator by $(s+2)$:\n$T(s) = \\frac{10}{(s+2) + 10} = \\frac{10}{s+12}$"
+                        "content": "Multiply numerator and denominator by $(s+2)$:\n$$T(s) = \\frac{10}{(s+2) + 10} = \\frac{10}{s+12}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -61702,7 +60758,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analyze Magnitude Response",
-                        "content": "Let $H(s) = \\frac{s-a}{s+a}$. Substitute $s = j\\omega$:\n$|H(j\\omega)| = \\left| \\frac{j\\omega - a}{j\\omega + a} \\right| = \\frac{\\sqrt{\\omega^2 + a^2}}{\\sqrt{\\omega^2 + a^2}} = 1$\nSince the magnitude is exactly 1 for all $\\omega$, this is indeed an all-pass filter."
+                        "content": "Let $H(s) = \\frac{s-a}{s+a}$. Substitute $s = j\\omega$:\n$$|H(j\\omega)| = \\left| \\frac{j\\omega - a}{j\\omega + a} \\right| = \\frac{\\sqrt{\\omega^2 + a^2}}{\\sqrt{\\omega^2 + a^2}} = 1$$\nSince the magnitude is exactly 1 for all $\\omega$, this is indeed an all-pass filter."
                     }
                 ],
                 "final_answer": "D"
@@ -61738,7 +60794,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State BIBO Stability Condition",
-                        "content": "A system is BIBO stable if every bounded input $|x(t)| \\le M_x < \\infty$ produces a bounded output $|y(t)| \\le M_y < \\infty$. For an LTI system, this is mathematically equivalent to:\n$\\int_{-\\infty}^{\\infty} |h(t)|\\, dt < \\infty$\nwhich means the impulse response is absolutely integrable."
+                        "content": "A system is BIBO stable if every bounded input $|x(t)| \\le M_x < \\infty$ produces a bounded output $|y(t)| \\le M_y < \\infty$. For an LTI system, this is mathematically equivalent to:\n$$\\int_{-\\infty}^{\\infty} |h(t)|\\, dt < \\infty$$\nwhich means the impulse response is absolutely integrable."
                     }
                 ],
                 "final_answer": "A"
@@ -61930,7 +60986,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Nyquist Formula",
-                        "content": "The Nyquist stability criterion relates the number of closed-loop RHP poles ($Z$) to open-loop RHP poles ($P$) and counterclockwise encirclements ($N$) of $(-1, j0)$:\n$Z = P - N$\nFor closed-loop stability, we must have $Z = 0$, which requires:\n$N = P$"
+                        "content": "The Nyquist stability criterion relates the number of closed-loop RHP poles ($Z$) to open-loop RHP poles ($P$) and counterclockwise encirclements ($N$) of $(-1, j0)$:\n$$Z = P - N$$\nFor closed-loop stability, we must have $Z = 0$, which requires:\n$$N = P$$"
                     }
                 ],
                 "final_answer": "B"
@@ -61966,7 +61022,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Phase Crossover Frequency",
-                        "content": "The phase crossover frequency $\\omega_{pc}$ is the frequency where the loop phase is exactly $-180^\\circ$.\nGain Margin (GM) is the additional gain required to make the system marginally stable:\n$\\text{GM} = \\frac{1}{|G(j\\omega_{pc}) H(j\\omega_{pc})|}$"
+                        "content": "The phase crossover frequency $\\omega_{pc}$ is the frequency where the loop phase is exactly $-180^\\circ$.\nGain Margin (GM) is the additional gain required to make the system marginally stable:\n$$\\text{GM} = \\frac{1}{|G(j\\omega_{pc}) H(j\\omega_{pc})|}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -62002,11 +61058,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Characteristic Roots",
-                        "content": "The characteristic equation is:\n$\\lambda^2 - 3\\lambda + 2 = 0$\n$(\\lambda - 1)(\\lambda - 2) = 0\\implies \\lambda_1 = 1, \\lambda_2 = 2$"
+                        "content": "The characteristic equation is:\n$$\\lambda^2 - 3\\lambda + 2 = 0$$\n$$(\\lambda - 1)(\\lambda - 2) = 0\\implies \\lambda_1 = 1, \\lambda_2 = 2$$"
                     },
                     {
                         "title": "Write Zero-Input Response",
-                        "content": "The response is of the form:\n$y(t) = C_1 e^t + C_2 e^{2t}$\nSince both roots are positive (RHP), the response grows exponentially as $t \\to \\infty$, making the system unstable."
+                        "content": "The response is of the form:\n$$y(t) = C_1 e^t + C_2 e^{2t}$$\nSince both roots are positive (RHP), the response grows exponentially as $t \\to \\infty$, making the system unstable."
                     }
                 ],
                 "final_answer": "D"
@@ -62078,15 +61134,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Laplace of Cosine",
-                        "content": "$\\mathcal{L}\\{\\cos(\\omega t)\\} = \\frac{s}{s^2 + \\omega^2}$"
+                        "content": "$$\\mathcal{L}\\{\\cos(\\omega t)\\} = \\frac{s}{s^2 + \\omega^2}$$"
                     },
                     {
                         "title": "Apply Frequency Shifting Property",
-                        "content": "The shifting property states:\n$\\mathcal{L}\\{e^{-at} g(t)\\} = G(s+a)$"
+                        "content": "The shifting property states:\n$$\\mathcal{L}\\{e^{-at} g(t)\\} = G(s+a)$$"
                     },
                     {
                         "title": "Substitute Values",
-                        "content": "Given $a = 3$ and $\\omega = 4$:\n$\\mathcal{L}\\{e^{-3t} \\cos(4t)\\} = \\frac{s+3}{(s+3)^2 + 4^2} = \\frac{s+3}{(s+3)^2 + 16}$"
+                        "content": "Given $a = 3$ and $\\omega = 4$:\n$$\\mathcal{L}\\{e^{-3t} \\cos(4t)\\} = \\frac{s+3}{(s+3)^2 + 4^2} = \\frac{s+3}{(s+3)^2 + 16}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -62122,15 +61178,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Final Value Theorem",
-                        "content": "If $s Y(s)$ has all its poles in the Left-Half Plane (LHP), then:\n$y(\\infty) = \\lim_{s \\to 0} s Y(s)$"
+                        "content": "If $s Y(s)$ has all its poles in the Left-Half Plane (LHP), then:\n$$y(\\infty) = \\lim_{s \\to 0} s Y(s)$$"
                     },
                     {
                         "title": "Check Pole Locations of $s Y(s)$",
-                        "content": "$s Y(s) = \\frac{5(s+2)}{s^2 + 3s + 2} = \\frac{5(s+2)}{(s+1)(s+2)} = \\frac{5}{s+1}$\nThe pole is at $s = -1$ (LHP), so the theorem is valid."
+                        "content": "$$s Y(s) = \\frac{5(s+2)}{s^2 + 3s + 2} = \\frac{5(s+2)}{(s+1)(s+2)} = \\frac{5}{s+1}$$\nThe pole is at $s = -1$ (LHP), so the theorem is valid."
                     },
                     {
                         "title": "Evaluate Limit",
-                        "content": "$y(\\infty) = \\lim_{s \\to 0} \\frac{5}{s+1} = 5$"
+                        "content": "$$y(\\infty) = \\lim_{s \\to 0} \\frac{5}{s+1} = 5$$"
                     }
                 ],
                 "final_answer": "C"
@@ -62166,11 +61222,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Initial Value Theorem",
-                        "content": "The initial value $x(0^+)$ can be found using:\n$x(0^+) = \\lim_{s \\to \\infty} s X(s)$"
+                        "content": "The initial value $x(0^+)$ can be found using:\n$$x(0^+) = \\lim_{s \\to \\infty} s X(s)$$"
                     },
                     {
                         "title": "Evaluate Limit",
-                        "content": "$s X(s) = \\frac{s(2s + 5)}{s^2 + 4s + 13} = \\frac{2s^2 + 5s}{s^2 + 4s + 13}$\nDivide numerator and denominator by $s^2$:\n$\\lim_{s \\to \\infty} \\frac{2 + 5/s}{1 + 4/s + 13/s^2} = \\frac{2 + 0}{1 + 0 + 0} = 2$"
+                        "content": "$$s X(s) = \\frac{s(2s + 5)}{s^2 + 4s + 13} = \\frac{2s^2 + 5s}{s^2 + 4s + 13}$$\nDivide numerator and denominator by $s^2$:\n$$\\lim_{s \\to \\infty} \\frac{2 + 5/s}{1 + 4/s + 13/s^2} = \\frac{2 + 0}{1 + 0 + 0} = 2$$"
                     }
                 ],
                 "final_answer": "D"
@@ -62206,7 +61262,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Differentiation Property",
-                        "content": "For a first derivative:\n$\\mathcal{L}\\{x'(t)\\} = s X(s) - x(0^-)$\nFor a second derivative, apply the rule twice:\n$\\mathcal{L}\\{x''(t)\\} = s \\mathcal{L}\\{x'(t)\\} - x'(0^-)$\n$\\mathcal{L}\\{x''(t)\\} = s (s X(s) - x(0^-)) - x'(0^-) = s^2 X(s) - s x(0^-) - x'(0^-)$"
+                        "content": "For a first derivative:\n$$\\mathcal{L}\\{x'(t)\\} = s X(s) - x(0^-)$$\nFor a second derivative, apply the rule twice:\n$$\\mathcal{L}\\{x''(t)\\} = s \\mathcal{L}\\{x'(t)\\} - x'(0^-)$$\n$$\\mathcal{L}\\{x''(t)\\} = s (s X(s) - x(0^-)) - x'(0^-) = s^2 X(s) - s x(0^-) - x'(0^-)$$"
                     }
                 ],
                 "final_answer": "A"
@@ -62242,7 +61298,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate the Laplace Transform Integral",
-                        "content": "$F(s) = \\int_{0}^{\\infty} t e^{-st}\\, dt$\nUsing integration by parts ($u = t$, $dv = e^{-st} dt$):\n$F(s) = \\left[ -\\frac{t}{s} e^{-st} \\right]_{0}^{\\infty} + \\frac{1}{s} \\int_{0}^{\\infty} e^{-st}\\, dt$\n$F(s) = 0 + \\frac{1}{s} \\left[ -\\frac{1}{s} e^{-st} \\right]_{0}^{\\infty} = \\frac{1}{s^2}$"
+                        "content": "$$F(s) = \\int_{0}^{\\infty} t e^{-st}\\, dt$$\nUsing integration by parts ($u = t$, $dv = e^{-st} dt$):\n$$F(s) = \\left[ -\\frac{t}{s} e^{-st} \\right]_{0}^{\\infty} + \\frac{1}{s} \\int_{0}^{\\infty} e^{-st}\\, dt$$\n$$F(s) = 0 + \\frac{1}{s} \\left[ -\\frac{1}{s} e^{-st} \\right]_{0}^{\\infty} = \\frac{1}{s^2}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -62278,7 +61334,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Shifting Theorem",
-                        "content": "The time-delay theorem states that shifting a signal in time by $t_0$ (delayed) corresponds to multiplying its Laplace transform by $e^{-s t_0}$:\n$\\mathcal{L}\\{x(t - t_0) u(t - t_0)\\} = e^{-s t_0} X(s)$"
+                        "content": "The time-delay theorem states that shifting a signal in time by $t_0$ (delayed) corresponds to multiplying its Laplace transform by $e^{-s t_0}$:\n$$\\mathcal{L}\\{x(t - t_0) u(t - t_0)\\} = e^{-s t_0} X(s)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -62314,15 +61370,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Cutoff Frequency Formula",
-                        "content": "The cutoff frequency $f_c$ in Hertz is:\n$f_c = \\frac{1}{2\\pi R C}$"
+                        "content": "The cutoff frequency $f_c$ in Hertz is:\n$$f_c = \\frac{1}{2\\pi R C}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $R = 10,000\\ \\Omega$ and $C = 15.9 \\times 10^{-9}\\ \\text{F}$:\n$f_c = \\frac{1}{2\\pi \\times 10^4 \\times 15.9 \\times 10^{-9}}$"
+                        "content": "Given $R = 10,000\\ \\Omega$ and $C = 15.9 \\times 10^{-9}\\ \\text{F}$:\n$$f_c = \\frac{1}{2\\pi \\times 10^4 \\times 15.9 \\times 10^{-9}}$$"
                     },
                     {
                         "title": "Calculate $f_c$",
-                        "content": "$f_c = \\frac{1}{2\\pi \\times 1.59 \\times 10^{-4}} = \\frac{1}{10^{-3}} = 1000\\ \\text{Hz} = 1.0\\ \\text{kHz}$"
+                        "content": "$$f_c = \\frac{1}{2\\pi \\times 1.59 \\times 10^{-4}} = \\frac{1}{10^{-3}} = 1000\\ \\text{Hz} = 1.0\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -62358,11 +61414,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Substitute $s = j\\omega$",
-                        "content": "$H(j\\omega) = \\frac{1}{j\\omega} = -j \\frac{1}{\\omega}$"
+                        "content": "$$H(j\\omega) = \\frac{1}{j\\omega} = -j \\frac{1}{\\omega}$$"
                     },
                     {
                         "title": "Calculate the Phase Angle",
-                        "content": "$\\angle H(j\\omega) = \\angle (-j) - \\angle(\\omega) = -90^\\circ - 0^\\circ = -90^\\circ$\nTherefore, the phase shift is constantly $-90^\\circ$ at all positive frequencies."
+                        "content": "$$\\angle H(j\\omega) = \\angle (-j) - \\angle(\\omega) = -90^\\circ - 0^\\circ = -90^\\circ$$\nTherefore, the phase shift is constantly $-90^\\circ$ at all positive frequencies."
                     }
                 ],
                 "final_answer": "A"
@@ -62398,11 +61454,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Quality Factor to Bandwidth",
-                        "content": "The quality factor $Q$ of a resonant system is defined as:\n$Q = \\frac{f_0}{B}$\nwhere $f_0$ is the resonant frequency and $B$ is the bandwidth."
+                        "content": "The quality factor $Q$ of a resonant system is defined as:\n$$Q = \\frac{f_0}{B}$$\nwhere $f_0$ is the resonant frequency and $B$ is the bandwidth."
                     },
                     {
                         "title": "Calculate Bandwidth $B$",
-                        "content": "$B = \\frac{f_0}{Q} = \\frac{50\\ \\text{kHz}}{10} = 5\\ \\text{kHz}$"
+                        "content": "$$B = \\frac{f_0}{Q} = \\frac{50\\ \\text{kHz}}{10} = 5\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -62438,15 +61494,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Resonant Frequency Equation",
-                        "content": "$f_0 = \\frac{1}{2\\pi \\sqrt{L C}}$"
+                        "content": "$$f_0 = \\frac{1}{2\\pi \\sqrt{L C}}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $L = 2.0 \\times 10^{-6}\\ \\text{H}$ and $C = 50 \\times 10^{-12}\\ \\text{F}$:\n$\\sqrt{L C} = \\sqrt{2.0 \\times 10^{-6} \\times 50 \\times 10^{-12}} = \\sqrt{100 \\times 10^{-18}} = 10^{-8}\\ \\text{s}$"
+                        "content": "Given $L = 2.0 \\times 10^{-6}\\ \\text{H}$ and $C = 50 \\times 10^{-12}\\ \\text{F}$:\n$$\\sqrt{L C} = \\sqrt{2.0 \\times 10^{-6} \\times 50 \\times 10^{-12}} = \\sqrt{100 \\times 10^{-18}} = 10^{-8}\\ \\text{s}$$"
                     },
                     {
                         "title": "Calculate $f_0$",
-                        "content": "$f_0 = \\frac{1}{2\\pi \\times 10^{-8}} = \\frac{10^8}{2\\pi} \\approx 1.5915 \\times 10^7\\ \\text{Hz} \\approx 15.9\\ \\text{MHz}$"
+                        "content": "$$f_0 = \\frac{1}{2\\pi \\times 10^{-8}} = \\frac{10^8}{2\\pi} \\approx 1.5915 \\times 10^7\\ \\text{Hz} \\approx 15.9\\ \\text{MHz}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -62482,11 +61538,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Evaluate Limit at Infinity",
-                        "content": "$\\lim_{\\omega \\to \\infty} |H(j\\omega)| = \\lim_{\\omega \\to \\infty} \\left| \\frac{j\\omega}{j\\omega + 100} \\right| = 1$"
+                        "content": "$$\\lim_{\\omega \\to \\infty} |H(j\\omega)| = \\lim_{\\omega \\to \\infty} \\left| \\frac{j\\omega}{j\\omega + 100} \\right| = 1$$"
                     },
                     {
                         "title": "Convert to Decibels",
-                        "content": "$\\text{Gain in dB} = 20 \\log_{10}(1) = 0\\ \\text{dB}$"
+                        "content": "$$\\text{Gain in dB} = 20 \\log_{10}(1) = 0\\ \\text{dB}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -62522,15 +61578,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Standard Form",
-                        "content": "The standard second-order denominator is:\n$s^2 + 2\\zeta\\omega_n s + \\omega_n^2$"
+                        "content": "The standard second-order denominator is:\n$$s^2 + 2\\zeta\\omega_n s + \\omega_n^2$$"
                     },
                     {
                         "title": "Find $\\omega_n$",
-                        "content": "$\\omega_n^2 = 25 \\implies \\omega_n = 5\\ \\text{rad/s}$"
+                        "content": "$$\\omega_n^2 = 25 \\implies \\omega_n = 5\\ \\text{rad/s}$$"
                     },
                     {
                         "title": "Find $\\zeta$",
-                        "content": "$2\\zeta\\omega_n = 6 \\implies 2\\zeta(5) = 6 \\implies 10\\zeta = 6 \\implies \\zeta = 0.6$"
+                        "content": "$$2\\zeta\\omega_n = 6 \\implies 2\\zeta(5) = 6 \\implies 10\\zeta = 6 \\implies \\zeta = 0.6$$"
                     }
                 ],
                 "final_answer": "A"
@@ -62602,11 +61658,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Eigenvalue Problem",
-                        "content": "The characteristic equation is found using:\n$\\det(\\lambda\\mathbf{I} - \\mathbf{A}) = 0$"
+                        "content": "The characteristic equation is found using:\n$$\\det(\\lambda\\mathbf{I} - \\mathbf{A}) = 0$$"
                     },
                     {
                         "title": "Compute Determinant",
-                        "content": "$\\lambda\\mathbf{I} - \\mathbf{A} = \\begin{bmatrix} \\lambda & 0 \\\\ 0 & \\lambda \\end{bmatrix} - \\begin{bmatrix} 0 & 1 \\\\ -6 & -5 \\end{bmatrix} = \\begin{bmatrix} \\lambda & -1 \\\\ 6 & \\lambda + 5 \\end{bmatrix}$\n$\\det(\\lambda\\mathbf{I} - \\mathbf{A}) = \\lambda(\\lambda + 5) - (-1)(6) = \\lambda^2 + 5\\lambda + 6 = 0$"
+                        "content": "$$\\lambda\\mathbf{I} - \\mathbf{A} = \\begin{bmatrix} \\lambda & 0 \\\\ 0 & \\lambda \\end{bmatrix} - \\begin{bmatrix} 0 & 1 \\\\ -6 & -5 \\end{bmatrix} = \\begin{bmatrix} \\lambda & -1 \\\\ 6 & \\lambda + 5 \\end{bmatrix}$$\n$$\\det(\\lambda\\mathbf{I} - \\mathbf{A}) = \\lambda(\\lambda + 5) - (-1)(6) = \\lambda^2 + 5\\lambda + 6 = 0$$"
                     }
                 ],
                 "final_answer": "C"
@@ -62642,11 +61698,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate Matrix Exponential for Diagonal Matrix",
-                        "content": "For any diagonal matrix $\\mathbf{A} = \\begin{bmatrix} a_1 & 0 \\\\ 0 & a_2 \\end{bmatrix}$, its matrix exponential is simply:\n$e^{\\mathbf{A}t} = \\begin{bmatrix} e^{a_1 t} & 0 \\\\ 0 & e^{a_2 t} \\end{bmatrix}$"
+                        "content": "For any diagonal matrix $\\mathbf{A} = \\begin{bmatrix} a_1 & 0 \\\\ 0 & a_2 \\end{bmatrix}$, its matrix exponential is simply:\n$$e^{\\mathbf{A}t} = \\begin{bmatrix} e^{a_1 t} & 0 \\\\ 0 & e^{a_2 t} \\end{bmatrix}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Substituting $a_1 = -2$, $a_2 = -3$ gives:\n$\\mathbf{\\Phi}(t) = \\begin{bmatrix} e^{-2t} & 0 \\\\ 0 & e^{-3t} \\end{bmatrix}$"
+                        "content": "Substituting $a_1 = -2$, $a_2 = -3$ gives:\n$$\\mathbf{\\Phi}(t) = \\begin{bmatrix} e^{-2t} & 0 \\\\ 0 & e^{-3t} \\end{bmatrix}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -62682,15 +61738,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Transfer Function Formula",
-                        "content": "The transfer function $H(s)$ from state-space matrices is:\n$H(s) = \\mathbf{C}(s\\mathbf{I} - \\mathbf{A})^{-1}\\mathbf{B} + D$"
+                        "content": "The transfer function $H(s)$ from state-space matrices is:\n$$H(s) = \\mathbf{C}(s\\mathbf{I} - \\mathbf{A})^{-1}\\mathbf{B} + D$$"
                     },
                     {
                         "title": "Find $(s\\mathbf{I} - \\mathbf{A})^{-1}$",
-                        "content": "$s\\mathbf{I} - \\mathbf{A} = \\begin{bmatrix} s & -1 \\\\ 2 & s + 3 \\end{bmatrix}$\n$\\det(s\\mathbf{I} - \\mathbf{A}) = s(s+3) + 2 = s^2 + 3s + 2$\n$(s\\mathbf{I} - \\mathbf{A})^{-1} = \\frac{1}{s^2 + 3s + 2} \\begin{bmatrix} s+3 & 1 \\\\ -2 & s \\end{bmatrix}$"
+                        "content": "$$s\\mathbf{I} - \\mathbf{A} = \\begin{bmatrix} s & -1 \\\\ 2 & s + 3 \\end{bmatrix}$$\n$$\\det(s\\mathbf{I} - \\mathbf{A}) = s(s+3) + 2 = s^2 + 3s + 2$$\n$$(s\\mathbf{I} - \\mathbf{A})^{-1} = \\frac{1}{s^2 + 3s + 2} \\begin{bmatrix} s+3 & 1 \\\\ -2 & s \\end{bmatrix}$$"
                     },
                     {
                         "title": "Compute $H(s)$",
-                        "content": "$H(s) = \\begin{bmatrix} 1 & 0 \\end{bmatrix} \\left( \\frac{1}{s^2 + 3s + 2} \\begin{bmatrix} s+3 & 1 \\\\ -2 & s \\end{bmatrix} \\right) \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}$\n$H(s) = \\frac{1}{s^2 + 3s + 2} \\begin{bmatrix} 1 & 0 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ s \\end{bmatrix} = \\frac{1}{s^2 + 3s + 2}$"
+                        "content": "$$H(s) = \\begin{bmatrix} 1 & 0 \\end{bmatrix} \\left( \\frac{1}{s^2 + 3s + 2} \\begin{bmatrix} s+3 & 1 \\\\ -2 & s \\end{bmatrix} \\right) \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix}$$\n$$H(s) = \\frac{1}{s^2 + 3s + 2} \\begin{bmatrix} 1 & 0 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ s \\end{bmatrix} = \\frac{1}{s^2 + 3s + 2}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -62726,15 +61782,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Controllability Matrix $\\mathbf{Q}_c$",
-                        "content": "For a second-order system:\n$\\mathbf{Q}_c = \\begin{bmatrix} \\mathbf{B} & \\mathbf{A}\\mathbf{B} \\end{bmatrix}$"
+                        "content": "For a second-order system:\n$$\\mathbf{Q}_c = \\begin{bmatrix} \\mathbf{B} & \\mathbf{A}\\mathbf{B} \\end{bmatrix}$$"
                     },
                     {
                         "title": "Compute $\\mathbf{A}\\mathbf{B}$",
-                        "content": "$\\mathbf{A}\\mathbf{B} = \\begin{bmatrix} 1 & 2 \\\\ 0 & 3 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}$"
+                        "content": "$$\\mathbf{A}\\mathbf{B} = \\begin{bmatrix} 1 & 2 \\\\ 0 & 3 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} = \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix}$$"
                     },
                     {
                         "title": "Analyze Matrix $\\mathbf{Q}_c$",
-                        "content": "$\\mathbf{Q}_c = \\begin{bmatrix} 1 & 1 \\\\ 0 & 0 \\end{bmatrix}$\nThe determinant is $1(0) - 1(0) = 0$. The columns are linearly dependent. Thus, the rank is 1. Since $\\text{Rank}(\\mathbf{Q}_c) < 2$, the system is not controllable."
+                        "content": "$$$\\mathbf{Q}_c = \\begin{bmatrix} 1 & 1 \\\\ 0 & 0 \\end{bmatrix}$$\nThe determinant is $1(0) - 1(0) = 0$. The columns are linearly dependent. Thus, the rank is 1. Since $\\text{Rank}(\\mathbf{Q}_c) < 2$, the system is not controllable."
                     }
                 ],
                 "final_answer": "B"
@@ -62770,15 +61826,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Observability Matrix $\\mathbf{Q}_o$",
-                        "content": "For a second-order system:\n$\\mathbf{Q}_o = \\begin{bmatrix} \\mathbf{C} \\\\ \\mathbf{C}\\mathbf{A} \\end{bmatrix}$"
+                        "content": "For a second-order system:\n$$\\mathbf{Q}_o = \\begin{bmatrix} \\mathbf{C} \\\\ \\mathbf{C}\\mathbf{A} \\end{bmatrix}$$"
                     },
                     {
                         "title": "Compute $\\mathbf{C}\\mathbf{A}$",
-                        "content": "$\\mathbf{C}\\mathbf{A} = \\begin{bmatrix} 1 & 1 \\end{bmatrix} \\begin{bmatrix} -1 & 0 \\\\ 2 & -3 \\end{bmatrix} = \\begin{bmatrix} 1(-1) + 1(2) & 1(0) + 1(-3) \\end{bmatrix} = \\begin{bmatrix} 1 & -3 \\end{bmatrix}$"
+                        "content": "$$\\mathbf{C}\\mathbf{A} = \\begin{bmatrix} 1 & 1 \\end{bmatrix} \\begin{bmatrix} -1 & 0 \\\\ 2 & -3 \\end{bmatrix} = \\begin{bmatrix} 1(-1) + 1(2) & 1(0) + 1(-3) \\end{bmatrix} = \\begin{bmatrix} 1 & -3 \\end{bmatrix}$$"
                     },
                     {
                         "title": "Find Observability Matrix and Rank",
-                        "content": "$\\mathbf{Q}_o = \\begin{bmatrix} 1 & 1 \\\\ 1 & -3 \\end{bmatrix}$\nDeterminant: $1(-3) - 1(1) = -4 \\ne 0$. The matrix is full-rank (rank = 2), so the system is fully observable."
+                        "content": "$$\\mathbf{Q}_o = \\begin{bmatrix} 1 & 1 \\\\ 1 & -3 \\end{bmatrix}$$\nDeterminant: $1(-3) - 1(1) = -4 \\ne 0$. The matrix is full-rank (rank = 2), so the system is fully observable."
                     }
                 ],
                 "final_answer": "C"
@@ -62814,15 +61870,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Differentiate first state equation",
-                        "content": "$\\dot{x}_1 = x_2 \\implies \\ddot{x}_1 = \\dot{x}_2$"
+                        "content": "$$\\dot{x}_1 = x_2 \\implies \\ddot{x}_1 = \\dot{x}_2$$"
                     },
                     {
                         "title": "Substitute second state equation",
-                        "content": "$\\ddot{x}_1 = -4 x_1 - 5 x_2 + u(t)$"
+                        "content": "$$\\ddot{x}_1 = -4 x_1 - 5 x_2 + u(t)$$"
                     },
                     {
                         "title": "Eliminate $x_2$",
-                        "content": "Since $x_2 = \\dot{x}_1$:\n$\\ddot{x}_1 = -4 x_1 - 5 \\dot{x}_1 + u(t)$\n$\\ddot{x}_1 + 5\\dot{x}_1 + 4x_1 = u(t)$"
+                        "content": "Since $x_2 = \\dot{x}_1$:\n$$\\ddot{x}_1 = -4 x_1 - 5 \\dot{x}_1 + u(t)$$\n$$\\ddot{x}_1 + 5\\dot{x}_1 + 4x_1 = u(t)$$"
                     }
                 ],
                 "final_answer": "D"
@@ -62858,11 +61914,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write State Derivatives",
-                        "content": "$\\dot{x}_1 = \\dot{y} = x_2$\n$\\dot{x}_2 = \\ddot{y} = -a_1 \\dot{y} - a_0 y + u(t) = -a_0 x_1 - a_1 x_2 + u(t)$"
+                        "content": "$$\\dot{x}_1 = \\dot{y} = x_2$$\n$$\\dot{x}_2 = \\ddot{y} = -a_1 \\dot{y} - a_0 y + u(t) = -a_0 x_1 - a_1 x_2 + u(t)$$"
                     },
                     {
                         "title": "Express in Matrix Form",
-                        "content": "$\\begin{bmatrix} \\dot{x}_1 \\\\ \\dot{x}_2 \\end{bmatrix} = \\begin{bmatrix} 0 & 1 \\\\ -a_0 & -a_1 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} u(t)$\nThis shows the matrices are as given in option A."
+                        "content": "$$\\begin{bmatrix} \\dot{x}_1 \\\\ \\dot{x}_2 \\end{bmatrix} = \\begin{bmatrix} 0 & 1 \\\\ -a_0 & -a_1 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} u(t)$$\nThis shows the matrices are as given in option A."
                     }
                 ],
                 "final_answer": "A"
@@ -62898,11 +61954,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Homogeneity",
-                        "content": "Let $x_1(t) = a x(t)$. The output is:\n$y_1(t) = [x_1(t)]^2 = [a x(t)]^2 = a^2 x^2(t) = a^2 y(t)$\nFor homogeneity, we must have $y_1(t) = a y(t)$. Since $a^2 y(t) \\ne a y(t)$ for $a \\ne 1$, the system violates homogeneity."
+                        "content": "Let $x_1(t) = a x(t)$. The output is:\n$$y_1(t) = [x_1(t)]^2 = [a x(t)]^2 = a^2 x^2(t) = a^2 y(t)$$\nFor homogeneity, we must have $y_1(t) = a y(t)$. Since $a^2 y(t) \\ne a y(t)$ for $a \\ne 1$, the system violates homogeneity."
                     },
                     {
                         "title": "Test Additivity",
-                        "content": "Let $x_3(t) = x_1(t) + x_2(t)$. The output is:\n$y_3(t) = (x_1(t) + x_2(t))^2 = x_1^2(t) + x_2^2(t) + 2x_1(t)x_2(t) \\ne y_1(t) + y_2(t)$\nThis violates additivity. Therefore, the system is non-linear."
+                        "content": "Let $x_3(t) = x_1(t) + x_2(t)$. The output is:\n$$y_3(t) = (x_1(t) + x_2(t))^2 = x_1^2(t) + x_2^2(t) + 2x_1(t)x_2(t) \\ne y_1(t) + y_2(t)$$\nThis violates additivity. Therefore, the system is non-linear."
                     }
                 ],
                 "final_answer": "B"
@@ -62938,7 +61994,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Additivity",
-                        "content": "Let $x_3(t) = a x_1(t) + b x_2(t)$. The output is:\n$y_3(t) = (a x_1(t) + b x_2(t)) \\cos(\\omega_c t) = a x_1(t) \\cos(\\omega_c t) + b x_2(t) \\cos(\\omega_c t)$\n$y_3(t) = a y_1(t) + b y_2(t)$\nSince superposition holds, the system is fully linear."
+                        "content": "Let $x_3(t) = a x_1(t) + b x_2(t)$. The output is:\n$$y_3(t) = (a x_1(t) + b x_2(t)) \\cos(\\omega_c t) = a x_1(t) \\cos(\\omega_c t) + b x_2(t) \\cos(\\omega_c t)$$\n$$y_3(t) = a y_1(t) + b y_2(t)$$\nSince superposition holds, the system is fully linear."
                     }
                 ],
                 "final_answer": "C"
@@ -63014,7 +62070,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Superposition",
-                        "content": "Since integration is a linear operator:\n$\\int (a x_1 + b x_2)\\, d\\tau = a \\int x_1\\, d\\tau + b \\int x_2\\, d\\tau$\nSuperposition holds, so the system is linear."
+                        "content": "Since integration is a linear operator:\n$$\\int (a x_1 + b x_2)\\, d\\tau = a \\int x_1\\, d\\tau + b \\int x_2\\, d\\tau$$\nSuperposition holds, so the system is linear."
                     },
                     {
                         "title": "Test Time-Invariance",
@@ -63054,7 +62110,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Superposition for Sampler",
-                        "content": "Let $x_3(t) = a x_1(t) + b x_2(t)$. The output is:\n$y_3[n] = x_3(n T_s) = a x_1(n T_s) + b x_2(n T_s) = a y_1[n] + b y_2[n]$\nSince superposition holds, the sampling system is linear (though it is time-variant due to scaling of the time variable)."
+                        "content": "Let $x_3(t) = a x_1(t) + b x_2(t)$. The output is:\n$$y_3[n] = x_3(n T_s) = a x_1(n T_s) + b x_2(n T_s) = a y_1[n] + b y_2[n]$$\nSince superposition holds, the sampling system is linear (though it is time-variant due to scaling of the time variable)."
                     }
                 ],
                 "final_answer": "B"
@@ -63090,11 +62146,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Linearity",
-                        "content": "Let $x_3(t) = a x_1(t) + b x_2(t)$. The output is:\n$y_3(t) = x_3(2t) = a x_1(2t) + b x_2(2t) = a y_1(t) + b y_2(t)$\nSuperposition holds, so the system is linear."
+                        "content": "Let $x_3(t) = a x_1(t) + b x_2(t)$. The output is:\n$$y_3(t) = x_3(2t) = a x_1(2t) + b x_2(2t) = a y_1(t) + b y_2(t)$$\nSuperposition holds, so the system is linear."
                     },
                     {
                         "title": "Test Time-Invariance",
-                        "content": "If the input is delayed by $t_0$, the delayed output is:\n$y_d(t) = x(2t - t_0)$\nHowever, shifting the original output by $t_0$ gives:\n$y(t - t_0) = x(2(t - t_0)) = x(2t - 2t_0) \\ne y_d(t)$\nSince $y_d(t) \\ne y(t-t_0)$, the system is time-variant."
+                        "content": "If the input is delayed by $t_0$, the delayed output is:\n$$y_d(t) = x(2t - t_0)$$\nHowever, shifting the original output by $t_0$ gives:\n$$y(t - t_0) = x(2(t - t_0)) = x(2t - 2t_0) \\ne y_d(t)$$\nSince $y_d(t) \\ne y(t-t_0)$, the system is time-variant."
                     }
                 ],
                 "final_answer": "C"
@@ -63130,7 +62186,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Homogeneity with a Negative Scalar",
-                        "content": "Let $a = -2$. If homogeneity holds, we must have $y_a(t) = -2 y(t)$.\nHowever:\n$y_a(t) = |-2 x(t)| = 2 |x(t)| = 2 y(t) \\ne -2 y(t)$\nSince it violates homogeneity for negative scalars, the system is non-linear."
+                        "content": "Let $a = -2$. If homogeneity holds, we must have $y_a(t) = -2 y(t)$.\nHowever:\n$$y_a(t) = |-2 x(t)| = 2 |x(t)| = 2 y(t) \\ne -2 y(t)$$\nSince it violates homogeneity for negative scalars, the system is non-linear."
                     }
                 ],
                 "final_answer": "D"
@@ -63166,7 +62222,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Additivity",
-                        "content": "Let $x_3(t) = x_1(t) + x_2(t)$. The output is:\n$y_3(t) = \\ln(x_1(t) + x_2(t)) \\ne \\ln(x_1(t)) + \\ln(x_2(t))$\nSince $\\ln(A+B) \\ne \\ln(A) + \\ln(B)$, it violates additivity and is therefore non-linear."
+                        "content": "Let $x_3(t) = x_1(t) + x_2(t)$. The output is:\n$$y_3(t) = \\ln(x_1(t) + x_2(t)) \\ne \\ln(x_1(t)) + \\ln(x_2(t))$$\nSince $\\ln(A+B) \\ne \\ln(A) + \\ln(B)$, it violates additivity and is therefore non-linear."
                     }
                 ],
                 "final_answer": "A"
@@ -63278,7 +62334,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Evaluate Specific Times",
-                        "content": "Let's check the output at a negative time, say $t = -3$:\n$y(-3) = x(-(-3)) = x(3)$\nHere, the output at $t = -3$ depends on the input at future time $t = 3$. Because it requires future inputs for any negative time, the system is non-causal."
+                        "content": "Let's check the output at a negative time, say $t = -3$:\n$$y(-3) = x(-(-3)) = x(3)$$\nHere, the output at $t = -3$ depends on the input at future time $t = 3$. Because it requires future inputs for any negative time, the system is non-causal."
                     }
                 ],
                 "final_answer": "D"
@@ -63386,7 +62442,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Causality to Impulse Response",
-                        "content": "The output of an LTI system is the convolution of input and impulse response:\n$y(t) = \\int_{-\\infty}^{\\infty} x(t - \\tau) h(\\tau)\\, d\\tau$\nFor the system to be causal, $y(t)$ must not depend on future inputs $x(t-\\tau)$ where $\\tau < 0$. This requires $h(\\tau) = 0$ for all $\\tau < 0$."
+                        "content": "The output of an LTI system is the convolution of input and impulse response:\n$$y(t) = \\int_{-\\infty}^{\\infty} x(t - \\tau) h(\\tau)\\, d\\tau$$\nFor the system to be causal, $y(t)$ must not depend on future inputs $x(t-\\tau)$ where $\\tau < 0$. This requires $h(\\tau) = 0$ for all $\\tau < 0$."
                     }
                 ],
                 "final_answer": "C"
@@ -63458,7 +62514,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Impulse Response",
-                        "content": "The impulse response $h(t)$ is the inverse Fourier transform of $H(f)$:\n$h(t) = \\mathcal{F}^{-1}\\{\\text{rect}(f/2B)\\} = 2B \\text{sinc}(2Bt)$"
+                        "content": "The impulse response $h(t)$ is the inverse Fourier transform of $H(f)$:\n$$h(t) = \\mathcal{F}^{-1}\\{\\text{rect}(f/2B)\\} = 2B \\text{sinc}(2Bt)$$"
                     },
                     {
                         "title": "Analyze Causality",
@@ -63534,15 +62590,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Convolution Integral",
-                        "content": "$y(t) = u(t) * u(t) = \\int_{-\\infty}^{\\infty} u(\\tau) u(t - \\tau)\\, d\\tau$"
+                        "content": "$$y(t) = u(t) * u(t) = \\int_{-\\infty}^{\\infty} u(\\tau) u(t - \\tau)\\, d\\tau$$"
                     },
                     {
                         "title": "Apply Step Function Bounds",
-                        "content": "$u(\\tau) = 1$ for $\\tau > 0$, and $u(t - \\tau) = 1$ for $\\tau < t$. This restricts the integration range to:\n$0 < \\tau < t$\nThis integral is only non-zero for $t > 0$."
+                        "content": "$u(\\tau) = 1$ for $\\tau > 0$, and $u(t - \\tau) = 1$ for $\\tau < t$. This restricts the integration range to:\n$$0 < \\tau < t$$\nThis integral is only non-zero for $t > 0$."
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$y(t) = \\left( \\int_{0}^{t} 1\\, d\\tau \\right) u(t) = t u(t)$"
+                        "content": "$$y(t) = \\left( \\int_{0}^{t} 1\\, d\\tau \\right) u(t) = t u(t)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -63578,11 +62634,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Shifting Property of Delta Function",
-                        "content": "Convolving any signal $g(t)$ with a shifted impulse $\\delta(t - t_0)$ simply shifts the signal in time by $t_0$:\n$g(t) * \\delta(t - t_0) = g(t - t_0)$"
+                        "content": "Convolving any signal $g(t)$ with a shifted impulse $\\delta(t - t_0)$ simply shifts the signal in time by $t_0$:\n$$g(t) * \\delta(t - t_0) = g(t - t_0)$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Substituting $x(t) = e^{-3t} u(t)$ and $t_0 = 4$:\n$y(t) = e^{-3(t-4)} u(t-4)$"
+                        "content": "Substituting $x(t) = e^{-3t} u(t)$ and $t_0 = 4$:\n$$y(t) = e^{-3(t-4)} u(t-4)$$"
                     }
                 ],
                 "final_answer": "D"
@@ -63658,11 +62714,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Convolution Table",
-                        "content": "We can compute this via polynomial multiplication:\n$(1 + 2x + 3x^2) \\times (1 + x)$"
+                        "content": "We can compute this via polynomial multiplication:\n$$(1 + 2x + 3x^2) \\times (1 + x)$$"
                     },
                     {
                         "title": "Perform Multiplication",
-                        "content": "$(1 + 2x + 3x^2) \\times 1 = 1 + 2x + 3x^2$\n$(1 + 2x + 3x^2) \\times x = x + 2x^2 + 3x^3$\nSumming like terms:\n$1 + (2+1)x + (3+2)x^2 + 3x^3 = 1 + 3x + 5x^2 + 3x^3$"
+                        "content": "$$(1 + 2x + 3x^2) \\times 1 = 1 + 2x + 3x^2$$\n$$(1 + 2x + 3x^2) \\times x = x + 2x^2 + 3x^3$$\nSumming like terms:\n$$1 + (2+1)x + (3+2)x^2 + 3x^3 = 1 + 3x + 5x^2 + 3x^3$$"
                     },
                     {
                         "title": "Write Resulting Sequence",
@@ -63702,7 +62758,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Convolution Theorem",
-                        "content": "The convolution theorem states:\n$\\mathcal{F}\\{x(t) * h(t)\\} = X(f) \\cdot H(f)$\nThis shows that time-domain convolution is equivalent to frequency-domain multiplication, which makes filter design highly simplified."
+                        "content": "The convolution theorem states:\n$$\\mathcal{F}\\{x(t) * h(t)\\} = X(f) \\cdot H(f)$$\nThis shows that time-domain convolution is equivalent to frequency-domain multiplication, which makes filter design highly simplified."
                     }
                 ],
                 "final_answer": "C"
@@ -63738,11 +62794,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Convolution Integral",
-                        "content": "$y(t) = \\int_{0}^{t} e^{-a\\tau} e^{-b(t-\\tau)}\\, d\\tau = e^{-bt} \\int_{0}^{t} e^{(b-a)\\tau}\\, d\\tau$"
+                        "content": "$$y(t) = \\int_{0}^{t} e^{-a\\tau} e^{-b(t-\\tau)}\\, d\\tau = e^{-bt} \\int_{0}^{t} e^{(b-a)\\tau}\\, d\\tau$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$y(t) = e^{-bt} \\left[ \\frac{e^{(b-a)\\tau}}{b-a} \\right]_{0}^{t} = e^{-bt} \\frac{e^{(b-a)t} - 1}{b-a}$\n$y(t) = \\frac{e^{-at} - e^{-bt}}{b-a}$\nThis is valid for $t \\ge 0$, which yields the result."
+                        "content": "$$y(t) = e^{-bt} \\left[ \\frac{e^{(b-a)\\tau}}{b-a} \\right]_{0}^{t} = e^{-bt} \\frac{e^{(b-a)t} - 1}{b-a}$$\n$$y(t) = \\frac{e^{-at} - e^{-bt}}{b-a}$$\nThis is valid for $t \\ge 0$, which yields the result."
                     }
                 ],
                 "final_answer": "D"
@@ -63814,11 +62870,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Convolution Integral",
-                        "content": "$y(t) = \\int_{0}^{t} \\sin(\\tau) u(\\tau) u(t-\\tau)\\, d\\tau = \\left( \\int_{0}^{t} \\sin(\\tau)\\, d\\tau \\right) u(t)$"
+                        "content": "$$y(t) = \\int_{0}^{t} \\sin(\\tau) u(\\tau) u(t-\\tau)\\, d\\tau = \\left( \\int_{0}^{t} \\sin(\\tau)\\, d\\tau \\right) u(t)$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$\\int_{0}^{t} \\sin(\\tau)\\, d\\tau = [-\\cos(\\tau)]_{0}^{t} = -\\cos(t) - (-\\cos(0)) = 1 - \\cos(t)$\n$y(t) = (1 - \\cos(t)) u(t)$"
+                        "content": "$$\\int_{0}^{t} \\sin(\\tau)\\, d\\tau = [-\\cos(\\tau)]_{0}^{t} = -\\cos(t) - (-\\cos(0)) = 1 - \\cos(t)$$\n$$y(t) = (1 - \\cos(t)) u(t)$$"
                     }
                 ],
                 "final_answer": "B"
@@ -63854,7 +62910,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Explain the Width Rule of Convolution",
-                        "content": "Let $x(t)$ be non-zero in $[t_1, t_2]$ (width $W_1 = t_2 - t_1$).\nLet $h(t)$ be non-zero in $[\\tau_1, \\tau_2]$ (width $W_2 = \\tau_2 - \\tau_1$).\nTheir convolution $y(t)$ will be non-zero in $[t_1 + \\tau_1, t_2 + \\tau_2]$, which has a total width of:\n$(t_2 + \\tau_2) - (t_1 + \\tau_1) = (t_2 - t_1) + (\\tau_2 - \\tau_1) = W_1 + W_2$"
+                        "content": "Let $x(t)$ be non-zero in $[t_1, t_2]$ (width $W_1 = t_2 - t_1$).\nLet $h(t)$ be non-zero in $[\\tau_1, \\tau_2]$ (width $W_2 = \\tau_2 - \\tau_1$).\nTheir convolution $y(t)$ will be non-zero in $[t_1 + \\tau_1, t_2 + \\tau_2]$, which has a total width of:\n$$(t_2 + \\tau_2) - (t_1 + \\tau_1) = (t_2 - t_1) + (\\tau_2 - \\tau_1) = W_1 + W_2$$"
                     }
                 ],
                 "final_answer": "C"
@@ -63890,7 +62946,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Prove Eigenfunction Property",
-                        "content": "Let $x(t) = e^{st}$ be input to LTI system $h(t)$:\n$y(t) = \\int_{-\\infty}^{\\infty} h(\\tau) x(t-\\tau)\\, d\\tau = \\int_{-\\infty}^{\\infty} h(\\tau) e^{s(t-\\tau)}\\, d\\tau$\n$y(t) = e^{st} \\int_{-\\infty}^{\\infty} h(\\tau) e^{-s\\tau}\\, d\\tau = H(s) e^{st}$\nSince the output is the input scaled by the eigenvalue $H(s)$, $e^{st}$ is an eigenfunction."
+                        "content": "Let $x(t) = e^{st}$ be input to LTI system $h(t)$:\n$$y(t) = \\int_{-\\infty}^{\\infty} h(\\tau) x(t-\\tau)\\, d\\tau = \\int_{-\\infty}^{\\infty} h(\\tau) e^{s(t-\\tau)}\\, d\\tau$$\n$$y(t) = e^{st} \\int_{-\\infty}^{\\infty} h(\\tau) e^{-s\\tau}\\, d\\tau = H(s) e^{st}$$\nSince the output is the input scaled by the eigenvalue $H(s)$, $e^{st}$ is an eigenfunction."
                     }
                 ],
                 "final_answer": "D"
@@ -63962,7 +63018,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Test Time-Invariance",
-                        "content": "Let $x_d(t) = x(t-t_0)$ be the delayed input. The output is:\n$y_d(t) = t x_d(t) = t x(t-t_0)$\nNow, delaying the original output by $t_0$ gives:\n$y(t-t_0) = (t-t_0) x(t-t_0)$\nSince $y_d(t) \\ne y(t-t_0)$ because of the coefficient $t$, the system is time-variant."
+                        "content": "Let $x_d(t) = x(t-t_0)$ be the delayed input. The output is:\n$$y_d(t) = t x_d(t) = t x(t-t_0)$$\nNow, delaying the original output by $t_0$ gives:\n$$y(t-t_0) = (t-t_0) x(t-t_0)$$\nSince $y_d(t) \\ne y(t-t_0)$ because of the coefficient $t$, the system is time-variant."
                     }
                 ],
                 "final_answer": "B"
@@ -64070,7 +63126,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Step and Impulse Responses",
-                        "content": "The step response $s(t)$ is the convolution of impulse response $h(t)$ and step input $u(t)$:\n$s(t) = h(t) * u(t) = \\int_{-\\infty}^{\\infty} h(\\tau) u(t - \\tau)\\, d\\tau$\nSince $u(t-\\tau) = 1$ for $\\tau \\le t$:\n$s(t) = \\int_{-\\infty}^{t} h(\\tau)\\, d\\tau$"
+                        "content": "The step response $s(t)$ is the convolution of impulse response $h(t)$ and step input $u(t)$:\n$$s(t) = h(t) * u(t) = \\int_{-\\infty}^{\\infty} h(\\tau) u(t - \\tau)\\, d\\tau$$\nSince $u(t-\\tau) = 1$ for $\\tau \\le t$:\n$$s(t) = \\int_{-\\infty}^{t} h(\\tau)\\, d\\tau$$"
                     }
                 ],
                 "final_answer": "A"
@@ -64106,7 +63162,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analyze Parallel Connection",
-                        "content": "For a parallel connection, the outputs of the two systems are summed:\n$y(t) = y_1(t) + y_2(t) = x(t) * h_1(t) + x(t) * h_2(t)$\nUsing the distributive property of convolution:\n$y(t) = x(t) * (h_1(t) + h_2(t))$\nSo the equivalent impulse response is $h_1(t) + h_2(t)$."
+                        "content": "For a parallel connection, the outputs of the two systems are summed:\n$$y(t) = y_1(t) + y_2(t) = x(t) * h_1(t) + x(t) * h_2(t)$$\nUsing the distributive property of convolution:\n$$y(t) = x(t) * (h_1(t) + h_2(t))$$\nSo the equivalent impulse response is $h_1(t) + h_2(t)$."
                     }
                 ],
                 "final_answer": "B"
@@ -64178,11 +63234,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Identify Time Constant $\\tau$",
-                        "content": "A standard first-order denominator is $\\tau s + 1$. Here, the time constant $\\tau$ is:\n$\\tau = 0.05\\ \\text{seconds}$"
+                        "content": "A standard first-order denominator is $\\tau s + 1$. Here, the time constant $\\tau$ is:\n$$\\tau = 0.05\\ \\text{seconds}$$"
                     },
                     {
                         "title": "Determine Settling Time",
-                        "content": "Using the standard 2% settling criterion, the settling time $t_s$ for a first-order system is approximately:\n$t_s \\approx 4\\tau$\n$t_s = 4 \\times 0.05 = 0.20\\ \\text{seconds}$"
+                        "content": "Using the standard 2% settling criterion, the settling time $t_s$ for a first-order system is approximately:\n$$t_s \\approx 4\\tau$$\n$$t_s = 4 \\times 0.05 = 0.20\\ \\text{seconds}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -64294,15 +63350,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Peak Time Formula",
-                        "content": "The peak time $t_p$ is:\n$t_p = \\frac{\\pi}{\\omega_d}$"
+                        "content": "The peak time $t_p$ is:\n$$t_p = \\frac{\\pi}{\\omega_d}$$"
                     },
                     {
                         "title": "Calculate Damped Natural Frequency $\\omega_d$",
-                        "content": "$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$\n$\\omega_d = 10 \\sqrt{1 - 0.6^2} = 10 \\sqrt{1 - 0.36} = 10 \\sqrt{0.64} = 8\\ \\text{rad/s}$"
+                        "content": "$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\omega_d = 10 \\sqrt{1 - 0.6^2} = 10 \\sqrt{1 - 0.36} = 10 \\sqrt{0.64} = 8\\ \\text{rad/s}$$"
                     },
                     {
                         "title": "Calculate $t_p$",
-                        "content": "$t_p = \\frac{\\pi}{8} \\approx \\frac{3.14159}{8} \\approx 0.3927\\ \\text{seconds}$"
+                        "content": "$$t_p = \\frac{\\pi}{8} \\approx \\frac{3.14159}{8} \\approx 0.3927\\ \\text{seconds}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -64338,15 +63394,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Settling Time Equation",
-                        "content": "For a second-order system, the 2% settling time is:\n$t_s \\approx \\frac{4}{\\zeta \\omega_n}$"
+                        "content": "For a second-order system, the 2% settling time is:\n$$t_s \\approx \\frac{4}{\\zeta \\omega_n}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $\\omega_n = 5\\ \\text{rad/s}$ and $\\zeta = 0.4$:\n$\\zeta \\omega_n = 0.4 \\times 5 = 2.0\\ \\text{rad/s}$"
+                        "content": "Given $\\omega_n = 5\\ \\text{rad/s}$ and $\\zeta = 0.4$:\n$$\\zeta \\omega_n = 0.4 \\times 5 = 2.0\\ \\text{rad/s}$$"
                     },
                     {
                         "title": "Calculate $t_s$",
-                        "content": "$t_s = \\frac{4}{2.0} = 2.0\\ \\text{seconds}$"
+                        "content": "$$t_s = \\frac{4}{2.0} = 2.0\\ \\text{seconds}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -64386,11 +63442,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Position Error Constant $K_p$",
-                        "content": "$K_p = \\lim_{s \\to 0} G(s) = \\lim_{s \\to 0} \\frac{10}{(s+2)(s+5)} = \\frac{10}{2 \\times 5} = 1$"
+                        "content": "$$K_p = \\lim_{s \\to 0} G(s) = \\lim_{s \\to 0} \\frac{10}{(s+2)(s+5)} = \\frac{10}{2 \\times 5} = 1$$"
                     },
                     {
                         "title": "Calculate Steady-State Error",
-                        "content": "$e_{ss} = \\frac{1}{1 + K_p} = \\frac{1}{1 + 1} = 0.50$"
+                        "content": "$$e_{ss} = \\frac{1}{1 + K_p} = \\frac{1}{1 + 1} = 0.50$$"
                     }
                 ],
                 "final_answer": "A"
@@ -64430,11 +63486,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Velocity Error Constant $K_v$",
-                        "content": "$K_v = \\lim_{s \\to 0} s G(s) = \\lim_{s \\to 0} s \\frac{K}{s(s+4)} = \\frac{K}{4}$"
+                        "content": "$$K_v = \\lim_{s \\to 0} s G(s) = \\lim_{s \\to 0} s \\frac{K}{s(s+4)} = \\frac{K}{4}$$"
                     },
                     {
                         "title": "Calculate Steady-State Error",
-                        "content": "For a Type 1 system subjected to a ramp input:\n$e_{ss} = \\frac{1}{K_v} = \\frac{1}{K/4} = \\frac{4}{K}$"
+                        "content": "For a Type 1 system subjected to a ramp input:\n$$e_{ss} = \\frac{1}{K_v} = \\frac{1}{K/4} = \\frac{4}{K}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -64470,19 +63526,19 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Step Response",
-                        "content": "The step response is:\n$y(t) = V_0(1 - e^{-t/\\tau})$"
+                        "content": "The step response is:\n$$y(t) = V_0(1 - e^{-t/\\tau})$$"
                     },
                     {
                         "title": "Find Time to reach 10%",
-                        "content": "$0.1 = 1 - e^{-t_1/\\tau} \\implies e^{-t_1/\\tau} = 0.9 \\implies t_1 = -\\tau \\ln(0.9) \\approx 0.105\\tau$"
+                        "content": "$$0.1 = 1 - e^{-t_1/\\tau} \\implies e^{-t_1/\\tau} = 0.9 \\implies t_1 = -\\tau \\ln(0.9) \\approx 0.105\\tau$$"
                     },
                     {
                         "title": "Find Time to reach 90%",
-                        "content": "$0.9 = 1 - e^{-t_2/\\tau} \\implies e^{-t_2/\\tau} = 0.1 \\implies t_2 = -\\tau \\ln(0.1) \\approx 2.303\\tau$"
+                        "content": "$$0.9 = 1 - e^{-t_2/\\tau} \\implies e^{-t_2/\\tau} = 0.1 \\implies t_2 = -\\tau \\ln(0.1) \\approx 2.303\\tau$$"
                     },
                     {
                         "title": "Calculate Rise Time",
-                        "content": "$t_r = t_2 - t_1 = 2.303\\tau - 0.105\\tau = 2.198\\tau \\approx 2.2\\tau$"
+                        "content": "$$t_r = t_2 - t_1 = 2.303\\tau - 0.105\\tau = 2.198\\tau \\approx 2.2\\tau$$"
                     }
                 ],
                 "final_answer": "C"
@@ -64518,15 +63574,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Transfer Function",
-                        "content": "For repeated poles at $-p$, the closed loop transfer function is:\n$T(s) = \\frac{p^2}{(s+p)^2}$"
+                        "content": "For repeated poles at $-p$, the closed loop transfer function is:\n$$T(s) = \\frac{p^2}{(s+p)^2}$$"
                     },
                     {
                         "title": "Find Output Laplace Transform",
-                        "content": "For step input $R(s) = 1/s$:\n$Y(s) = \\frac{p^2}{s(s+p)^2} = \\frac{1}{s} - \\frac{1}{s+p} - \\frac{p}{(s+p)^2}$"
+                        "content": "For step input $R(s) = 1/s$:\n$$Y(s) = \\frac{p^2}{s(s+p)^2} = \\frac{1}{s} - \\frac{1}{s+p} - \\frac{p}{(s+p)^2}$$"
                     },
                     {
                         "title": "Take Inverse Laplace Transform",
-                        "content": "$y(t) = \\left( 1 - e^{-pt} - p t e^{-pt} \\right) u(t) = \\left( 1 - e^{-pt}(1 + pt) \\right) u(t)$"
+                        "content": "$$y(t) = \\left( 1 - e^{-pt} - p t e^{-pt} \\right) u(t) = \\left( 1 - e^{-pt}(1 + pt) \\right) u(t)$$"
                     }
                 ],
                 "final_answer": "D"
@@ -65288,7 +64344,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Nyquist Rate",
-                        "content": "The Nyquist rate $f_s$ to avoid aliasing must be at least twice the highest frequency:\n$f_s \\ge 2 f_{max}$\n$f_s \\ge 2 \\times 2500 = 5000\\ \\text{Hz} = 5.0\\ \\text{kHz}$"
+                        "content": "The Nyquist rate $f_s$ to avoid aliasing must be at least twice the highest frequency:\n$$f_s \\ge 2 f_{max}$$\n$$f_s \\ge 2 \\times 2500 = 5000\\ \\text{Hz} = 5.0\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -65324,7 +64380,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Aliasing",
-                        "content": "When a signal is sampled, its spectrum is replicated at integer multiples of the sampling frequency $f_s$. The resulting frequencies in the sampled signal are:\n$f_{alias} = |f_0 - k f_s|\\quad \\text{for } k \\in \\mathbb{Z}$"
+                        "content": "When a signal is sampled, its spectrum is replicated at integer multiples of the sampling frequency $f_s$. The resulting frequencies in the sampled signal are:\n$$f_{alias} = |f_0 - k f_s|\\quad \\text{for } k \\in \\mathbb{Z}$$"
                     },
                     {
                         "title": "Find Aliased Frequency",
@@ -65364,15 +64420,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find the Bandwidth of Sinc Function",
-                        "content": "The signal is $x(t) = \\text{sinc}^2(100t)$.\nWe know that $\\text{sinc}(100t) = \\frac{\\sin(100t)}{100t}$, which has a maximum frequency of $\\omega_0 = 100\\ \\text{rad/s}$.\nSquaring in the time domain corresponds to convolution in the frequency domain, which doubles the bandwidth:\n$\\omega_{max} = 2 \\omega_0 = 200\\ \\text{rad/s}$"
+                        "content": "The signal is $x(t) = \\text{sinc}^2(100t)$.\nWe know that $\\text{sinc}(100t) = \\frac{\\sin(100t)}{100t}$, which has a maximum frequency of $\\omega_0 = 100\\ \\text{rad/s}$.\nSquaring in the time domain corresponds to convolution in the frequency domain, which doubles the bandwidth:\n$$\\omega_{max} = 2 \\omega_0 = 200\\ \\text{rad/s}$$"
                     },
                     {
                         "title": "Convert to Hertz",
-                        "content": "$f_{max} = \\frac{\\omega_{max}}{2\\pi} = \\frac{200}{2\\pi} = \\frac{100}{\\pi}\\ \\text{Hz}$"
+                        "content": "$$f_{max} = \\frac{\\omega_{max}}{2\\pi} = \\frac{200}{2\\pi} = \\frac{100}{\\pi}\\ \\text{Hz}$$"
                     },
                     {
                         "title": "Calculate Nyquist Interval $T_s$",
-                        "content": "The maximum sampling interval $T_s$ is the reciprocal of the Nyquist rate $2 f_{max}$:\n$T_s = \\frac{1}{2 f_{max}} = \\frac{1}{2 \\times (100/\\pi)} = \\frac{\\pi}{200} \\approx 0.0157\\ \\text{s}$\nWait, let's recalculate the sinc definitions: If $\\text{sinc}(u) = \\frac{\\sin(\\pi u)}{\\pi u}$ is the normalized sinc, then $\\text{sinc}(100t)$ has a maximum frequency of $f_0 = 50\\ \\text{Hz}$. Squaring doubles it to $f_{max} = 100\\ \\text{Hz}$. The Nyquist rate is then $200\\ \\text{Hz}$, giving $T_s = 1/200 = 0.005\\ \\text{s}$.\nLet's check if the unnormalized $\\text{sinc}(x) = \\sin(x)/x$ is used: then $\\omega_0 = 100\\ \\text{rad/s}$, so $\\omega_{max} = 200\\ \\text{rad/s}$. Nyquist rate is $200\\ \\text{rad/s} = 31.83\\ \\text{Hz}$, which gives $T_s = 1/31.83 = 0.0314\\ \\text{s}$ (which matches option A perfectly!)."
+                        "content": "The maximum sampling interval $T_s$ is the reciprocal of the Nyquist rate $2 f_{max}$:\n$$T_s = \\frac{1}{2 f_{max}} = \\frac{1}{2 \\times (100/\\pi)} = \\frac{\\pi}{200} \\approx 0.0157\\ \\text{s}$$\nWait, let's recalculate the sinc definitions: If $\\text{sinc}(u) = \\frac{\\sin(\\pi u)}{\\pi u}$ is the normalized sinc, then $\\text{sinc}(100t)$ has a maximum frequency of $f_0 = 50\\ \\text{Hz}$. Squaring doubles it to $f_{max} = 100\\ \\text{Hz}$. The Nyquist rate is then $200\\ \\text{Hz}$, giving $T_s = 1/200 = 0.005\\ \\text{s}$.\nLet's check if the unnormalized $\\text{sinc}(x) = \\sin(x)/x$ is used: then $\\omega_0 = 100\\ \\text{rad/s}$, so $\\omega_{max} = 200\\ \\text{rad/s}$. Nyquist rate is $200\\ \\text{rad/s} = 31.83\\ \\text{Hz}$, which gives $T_s = 1/31.83 = 0.0314\\ \\text{s}$ (which matches option A perfectly!)."
                     }
                 ],
                 "final_answer": "C"
@@ -65408,11 +64464,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Nyquist Sampling Limit",
-                        "content": "To completely avoid aliasing, the input signal must be bandlimited to less than half of the sampling frequency (the Nyquist frequency):\n$f_{max} < \\frac{f_s}{2}$"
+                        "content": "To completely avoid aliasing, the input signal must be bandlimited to less than half of the sampling frequency (the Nyquist frequency):\n$$f_{max} < \\frac{f_s}{2}$$"
                     },
                     {
                         "title": "Calculate Cutoff Frequency",
-                        "content": "$f_c = \\frac{f_s}{2} = \\frac{44.1\\ \\text{kHz}}{2} = 22.05\\ \\text{kHz}$"
+                        "content": "$$f_c = \\frac{f_s}{2} = \\frac{44.1\\ \\text{kHz}}{2} = 22.05\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -65448,11 +64504,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Bandpass Sampling Theorem",
-                        "content": "For a bandpass signal with bandwidth $B = f_H - f_L$, the minimum sampling rate is $2B$ if the boundaries are integer multiples of the bandwidth. Here, $f_L = 20\\ \\text{MHz}$ and $f_H = 22\\ \\text{MHz}$.\n$B = 22 - 20 = 2\\ \\text{MHz}$"
+                        "content": "For a bandpass signal with bandwidth $B = f_H - f_L$, the minimum sampling rate is $2B$ if the boundaries are integer multiples of the bandwidth. Here, $f_L = 20\\ \\text{MHz}$ and $f_H = 22\\ \\text{MHz}$.\n$$B = 22 - 20 = 2\\ \\text{MHz}$$"
                     },
                     {
                         "title": "Calculate Minimum Sampling Rate",
-                        "content": "$f_{s,min} = 2 B = 2 \\times 2\\ \\text{MHz} = 4\\ \\text{MHz}$"
+                        "content": "$$f_{s,min} = 2 B = 2 \\times 2\\ \\text{MHz} = 4\\ \\text{MHz}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -65488,11 +64544,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Periodicity Condition",
-                        "content": "A discrete-time sinusoid $x[n] = A \\cos(\\Omega_0 n)$ is periodic if and only if its frequency $\\Omega_0$ is a rational multiple of $2\\pi$:\n$\\frac{\\Omega_0}{2\\pi} = \\frac{m}{N_0}$"
+                        "content": "A discrete-time sinusoid $x[n] = A \\cos(\\Omega_0 n)$ is periodic if and only if its frequency $\\Omega_0$ is a rational multiple of $2\\pi$:\n$$\\frac{\\Omega_0}{2\\pi} = \\frac{m}{N_0}$$"
                     },
                     {
                         "title": "Find Fundamental Period $N_0$",
-                        "content": "$\\frac{0.12\\pi}{2\\pi} = 0.06 = \\frac{6}{100} = \\frac{3}{50}$\nSince this is in irreducible form, the fundamental period is the denominator $N_0 = 50$ (and $m = 3$)."
+                        "content": "$$\\frac{0.12\\pi}{2\\pi} = 0.06 = \\frac{6}{100} = \\frac{3}{50}$$\nSince this is in irreducible form, the fundamental period is the denominator $N_0 = 50$ (and $m = 3$)."
                     }
                 ],
                 "final_answer": "B"
@@ -65528,11 +64584,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate New Sampling Rate",
-                        "content": "Downsampling by $M=2$ discards every second sample. The new sampling rate is:\n$f_{s,new} = \\frac{f_s}{M} = \\frac{8\\ \\text{kHz}}{2} = 4\\ \\text{kHz}$"
+                        "content": "Downsampling by $M=2$ discards every second sample. The new sampling rate is:\n$$f_{s,new} = \\frac{f_s}{M} = \\frac{8\\ \\text{kHz}}{2} = 4\\ \\text{kHz}$$"
                     },
                     {
                         "title": "Determine Nyquist Boundary",
-                        "content": "The maximum frequency component that can be safely represented without aliasing is the new Nyquist frequency:\n$f_{Nyq} = \\frac{f_{s,new}}{2} = \\frac{4\\ \\text{kHz}}{2} = 2\\ \\text{kHz}$"
+                        "content": "The maximum frequency component that can be safely represented without aliasing is the new Nyquist frequency:\n$$f_{Nyq} = \\frac{f_{s,new}}{2} = \\frac{4\\ \\text{kHz}}{2} = 2\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -65568,11 +64624,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Z-Transform Summation",
-                        "content": "$X(z) = \\sum_{n=-\\infty}^{\\infty} x[n] z^{-n} = \\sum_{n=0}^{\\infty} (1) z^{-n} = \\sum_{n=0}^{\\infty} (z^{-1})^n$"
+                        "content": "$$X(z) = \\sum_{n=-\\infty}^{\\infty} x[n] z^{-n} = \\sum_{n=0}^{\\infty} (1) z^{-n} = \\sum_{n=0}^{\\infty} (z^{-1})^n$$"
                     },
                     {
                         "title": "Apply Infinite Geometric Series Sum",
-                        "content": "The geometric series converges if $|z^{-1}| < 1 \\implies |z| > 1$. The sum is:\n$X(z) = \\frac{1}{1 - z^{-1}} = \\frac{z}{z - 1}$"
+                        "content": "The geometric series converges if $|z^{-1}| < 1 \\implies |z| > 1$. The sum is:\n$$X(z) = \\frac{1}{1 - z^{-1}} = \\frac{z}{z - 1}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -65608,11 +64664,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Formula for Exponential Z-Transform",
-                        "content": "For any causal sequence of the form $a^n u[n]$:\n$\\mathcal{Z}\\{a^n u[n]\\} = \\frac{z}{z-a}\\quad \\text{with ROC: } |z| > |a|$"
+                        "content": "For any causal sequence of the form $a^n u[n]$:\n$$\\mathcal{Z}\\{a^n u[n]\\} = \\frac{z}{z-a}\\quad \\text{with ROC: } |z| > |a|$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Substituting $a = 0.5$:\n$X(z) = \\frac{z}{z - 0.5}$\nThe denominator has a root at $z = 0.5$, which represents a pole."
+                        "content": "Substituting $a = 0.5$:\n$$X(z) = \\frac{z}{z - 0.5}$$\nThe denominator has a root at $z = 0.5$, which represents a pole."
                     }
                 ],
                 "final_answer": "A"
@@ -65688,7 +64744,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Time-Shifting Property",
-                        "content": "The time-shifting property of the z-transform states:\n$\\mathcal{Z}\\{x[n - n_0]\\} = z^{-n_0} X(z)$\nFor $n_0 = 2$:\n$\\mathcal{Z}^{-1}\\{z^{-2} X(z)\\} = x[n - 2]$"
+                        "content": "The time-shifting property of the z-transform states:\n$$\\mathcal{Z}\\{x[n - n_0]\\} = z^{-n_0} X(z)$$\nFor $n_0 = 2$:\n$$\\mathcal{Z}^{-1}\\{z^{-2} X(z)\\} = x[n - 2]$$"
                     }
                 ],
                 "final_answer": "C"
@@ -65724,7 +64780,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Pole Locations",
-                        "content": "The poles of $H(z)$ are the roots of the denominator:\n$z_1 = 0.4$\n$z_2 = 1.2$"
+                        "content": "The poles of $H(z)$ are the roots of the denominator:\n$$z_1 = 0.4$$\n$$z_2 = 1.2$$"
                     },
                     {
                         "title": "Apply Causal Stability Condition",
@@ -65764,15 +64820,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Express $H(z)$ in Negative Powers of $z$",
-                        "content": "Divide numerator and denominator by $z$:\n$H(z) = \\frac{Y(z)}{X(z)} = \\frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1}}$"
+                        "content": "Divide numerator and denominator by $z$:\n$$H(z) = \\frac{Y(z)}{X(z)} = \\frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1}}$$"
                     },
                     {
                         "title": "Cross-Multiply terms",
-                        "content": "$Y(z)(1 - 0.8 z^{-1}) = X(z)(1 - 0.5 z^{-1})$\n$Y(z) - 0.8 z^{-1} Y(z) = X(z) - 0.5 z^{-1} X(z)$"
+                        "content": "$$Y(z)(1 - 0.8 z^{-1}) = X(z)(1 - 0.5 z^{-1})$$\n$$Y(z) - 0.8 z^{-1} Y(z) = X(z) - 0.5 z^{-1} X(z)$$"
                     },
                     {
                         "title": "Take Inverse Z-Transform",
-                        "content": "Using the time shift property:\n$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$"
+                        "content": "Using the time shift property:\n$$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$$"
                     }
                 ],
                 "final_answer": "A"
@@ -65916,7 +64972,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Group Delay",
-                        "content": "Group delay $\\tau_g(\\omega)$ is the negative derivative of the phase response with respect to angular frequency:\n$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$\nIt measures the average envelope delay experienced by a narrow band of frequency components passing through the filter."
+                        "content": "Group delay $\\tau_g(\\omega)$ is the negative derivative of the phase response with respect to angular frequency:\n$$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$$\nIt measures the average envelope delay experienced by a narrow band of frequency components passing through the filter."
                     }
                 ],
                 "final_answer": "A"
@@ -65988,7 +65044,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State DFT Equation",
-                        "content": "The Discrete Fourier Transform (DFT) maps an N-point time-domain sequence $x[n]$ to an N-point frequency-domain representation $X[k]$:\n$X[k] = \\sum_{n=0}^{N-1} x[n] W_N^{k n}$\nwhere $W_N = e^{-j 2\\pi / N}$ is the twiddle factor. Thus:\n$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$"
+                        "content": "The Discrete Fourier Transform (DFT) maps an N-point time-domain sequence $x[n]$ to an N-point frequency-domain representation $X[k]$:\n$$X[k] = \\sum_{n=0}^{N-1} x[n] W_N^{k n}$$\nwhere $W_N = e^{-j 2\\pi / N}$ is the twiddle factor. Thus:\n$$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -66024,11 +65080,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall FFT Complexity",
-                        "content": "The radix-2 FFT algorithm reduces the computational complexity of an N-point DFT from $O(N^2)$ to $O(N \\log_2 N)$. Specifically, it requires:\n$M \\approx \\frac{N}{2} \\log_2 N\\ \\text{complex multiplications}$"
+                        "content": "The radix-2 FFT algorithm reduces the computational complexity of an N-point DFT from $O(N^2)$ to $O(N \\log_2 N)$. Specifically, it requires:\n$$M \\approx \\frac{N}{2} \\log_2 N\\ \\text{complex multiplications}$$"
                     },
                     {
                         "title": "Substitute $N = 1024$",
-                        "content": "$\\log_2 1024 = 10$\n$M = \\frac{1024}{2} \\times 10 = 512 \\times 10 = 5120$"
+                        "content": "$$\\log_2 1024 = 10$$\n$$M = \\frac{1024}{2} \\times 10 = 512 \\times 10 = 5120$$"
                     }
                 ],
                 "final_answer": "D"
@@ -66064,11 +65120,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Spectral Resolution Formula",
-                        "content": "The frequency resolution $\\Delta f$ of an N-point DFT is:\n$\\Delta f = \\frac{f_s}{N}$"
+                        "content": "The frequency resolution $\\Delta f$ of an N-point DFT is:\n$$\\Delta f = \\frac{f_s}{N}$$"
                     },
                     {
                         "title": "Calculate Resolution",
-                        "content": "$\\Delta f = \\frac{8000\\ \\text{Hz}}{512} = 15.625\\ \\text{Hz}$"
+                        "content": "$$\\Delta f = \\frac{8000\\ \\text{Hz}}{512} = 15.625\\ \\text{Hz}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -66140,11 +65196,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Length of Linear Convolution",
-                        "content": "The linear convolution of a sequence of length $L$ with a sequence of length $M$ has a total length of:\n$N_{linear} = L + M - 1$"
+                        "content": "The linear convolution of a sequence of length $L$ with a sequence of length $M$ has a total length of:\n$$N_{linear} = L + M - 1$$"
                     },
                     {
                         "title": "Calculate Minimum Size",
-                        "content": "Given $L = 100$, $M = 50$:\n$N \\ge 100 + 50 - 1 = 149$\nTo perform this efficiently via FFTs, we typically pad to a power of 2 like 256, but the absolute minimum size is 149."
+                        "content": "Given $L = 100$, $M = 50$:\n$$N \\ge 100 + 50 - 1 = 149$$\nTo perform this efficiently via FFTs, we typically pad to a power of 2 like 256, but the absolute minimum size is 149."
                     }
                 ],
                 "final_answer": "C"
@@ -66180,7 +65236,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Conjugate Symmetry",
-                        "content": "Since $x[n]$ is real-valued, its DFT Twiddle factor satisfies $W_N^{n(N-k)} = e^{-j 2\\pi n(N-k)/N} = e^{j 2\\pi nk/N} = (W_N^{kn})^*$. This leads to the conjugate symmetry property:\n$X[N - k] = X^*[k]$\nThis implies the magnitude is even ($|X[N-k]| = |X[k]|$) and the phase is odd."
+                        "content": "Since $x[n]$ is real-valued, its DFT Twiddle factor satisfies $W_N^{n(N-k)} = e^{-j 2\\pi n(N-k)/N} = e^{j 2\\pi nk/N} = (W_N^{kn})^*$. This leads to the conjugate symmetry property:\n$$X[N - k] = X^*[k]$$\nThis implies the magnitude is even ($|X[N-k]| = |X[k]|$) and the phase is odd."
                     }
                 ],
                 "final_answer": "D"
@@ -66252,7 +65308,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Parseval's DFT Identity",
-                        "content": "Parseval's relation states that the total energy calculated in the time domain is equal to the scaled total energy in the DFT domain:\n$\\sum_{n=0}^{N-1} |x[n]|^2 = \\frac{1}{N} \\sum_{k=0}^{N-1} |X[k]|^2$"
+                        "content": "Parseval's relation states that the total energy calculated in the time domain is equal to the scaled total energy in the DFT domain:\n$$\\sum_{n=0}^{N-1} |x[n]|^2 = \\frac{1}{N} \\sum_{k=0}^{N-1} |X[k]|^2$$"
                     }
                 ],
                 "final_answer": "B"
@@ -66324,11 +65380,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Even Part Formula",
-                        "content": "The even part $x_e(t)$ of any signal is:\n$x_e(t) = \\frac{x(t) + x(-t)}{2}$"
+                        "content": "The even part $x_e(t)$ of any signal is:\n$$x_e(t) = \\frac{x(t) + x(-t)}{2}$$"
                     },
                     {
                         "title": "Substitute $x(t)$",
-                        "content": "Given $x(t) = e^{-2t} u(t)$:\n$x_e(t) = \\frac{e^{-2t} u(t) + e^{2t} u(-t)}{2}$\nSince $u(t)$ and $u(-t)$ are mutually exclusive except at $t=0$, this can be compactified as:\n$x_e(t) = \\frac{1}{2} e^{-2|t|}\\quad \\text{for all } t$"
+                        "content": "Given $x(t) = e^{-2t} u(t)$:\n$$x_e(t) = \\frac{e^{-2t} u(t) + e^{2t} u(-t)}{2}$$\nSince $u(t)$ and $u(-t)$ are mutually exclusive except at $t=0$, this can be compactified as:\n$$x_e(t) = \\frac{1}{2} e^{-2|t|}\\quad \\text{for all } t$$"
                     }
                 ],
                 "final_answer": "D"
@@ -66364,11 +65420,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Sifting Property of Delta Function",
-                        "content": "The sifting property states:\n$\\int_{-\\infty}^{\\infty} g(t) \\delta(t - t_0)\\, dt = g(t_0)$"
+                        "content": "The sifting property states:\n$$\\int_{-\\infty}^{\\infty} g(t) \\delta(t - t_0)\\, dt = g(t_0)$$"
                     },
                     {
                         "title": "Evaluate at $t_0 = 2$",
-                        "content": "Given $g(t) = t^3 + 5t^2 + 2$ and $t_0 = 2$:\n$g(2) = 2^3 + 5(2)^2 + 2 = 8 + 20 + 2 = 30$"
+                        "content": "Given $g(t) = t^3 + 5t^2 + 2$ and $t_0 = 2$:\n$$g(2) = 2^3 + 5(2)^2 + 2 = 8 + 20 + 2 = 30$$"
                     }
                 ],
                 "final_answer": "A"
@@ -66440,7 +65496,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Orthogonality",
-                        "content": "Two signals are orthogonal if their inner product over the specified interval is exactly zero. For complex signals, the inner product is:\n$\\langle x_1, x_2 \\rangle = \\int_{t_1}^{t_2} x_1(t) x_2^*(t)\\, dt = 0$"
+                        "content": "Two signals are orthogonal if their inner product over the specified interval is exactly zero. For complex signals, the inner product is:\n$$\\langle x_1, x_2 \\rangle = \\int_{t_1}^{t_2} x_1(t) x_2^*(t)\\, dt = 0$$"
                     }
                 ],
                 "final_answer": "C"
@@ -66512,11 +65568,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Energy Integral",
-                        "content": "$E = \\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{0}^{\\infty} (e^{-3t})^2\\, dt = \\int_{0}^{\\infty} e^{-6t}\\, dt$"
+                        "content": "$$$E = \\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{0}^{\\infty} (e^{-3t})^2\\, dt = \\int_{0}^{\\infty} e^{-6t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$E = \\left[ -\\frac{1}{6} e^{-6t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{6} \\right) = \\frac{1}{6}$"
+                        "content": "$$E = \\left[ -\\frac{1}{6} e^{-6t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{6} \\right) = \\frac{1}{6}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -66588,7 +65644,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Step and Impulse",
-                        "content": "The unit step function $u(t)$ is the integral of the unit impulse function:\n$u(t) = \\int_{-\\infty}^{t} \\delta(\\tau)\\, d\\tau$\nBy the Fundamental Theorem of Calculus, the derivative of $u(t)$ is the impulse function:\n$\\frac{du(t)}{dt} = \\delta(t)$"
+                        "content": "The unit step function $u(t)$ is the integral of the unit impulse function:\n$$u(t) = \\int_{-\\infty}^{t} \\delta(\\tau)\\, d\\tau$$\nBy the Fundamental Theorem of Calculus, the derivative of $u(t)$ is the impulse function:\n$$\\frac{du(t)}{dt} = \\delta(t)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -66624,7 +65680,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analyze Coefficients",
-                        "content": "The trigonometric coefficients are:\n$a_n = \\frac{2}{T} \\int_{T} x(t) \\cos(n\\omega_0 t)\\, dt$\n$b_n = \\frac{2}{T} \\int_{T} x(t) \\sin(n\\omega_0 t)\\, dt$"
+                        "content": "The trigonometric coefficients are:\n$$a_n = \\frac{2}{T} \\int_{T} x(t) \\cos(n\\omega_0 t)\\, dt$$\n$$b_n = \\frac{2}{T} \\int_{T} x(t) \\sin(n\\omega_0 t)\\, dt$$"
                     },
                     {
                         "title": "Apply Symmetry",
@@ -66704,7 +65760,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Find Greatest Common Divisor",
-                        "content": "The fundamental frequency $f_0$ is the Greatest Common Divisor (GCD) of the component frequencies:\n$f_0 = \\text{GCD}(5, 7.5) = 2.5\\ \\text{Hz}$"
+                        "content": "The fundamental frequency $f_0$ is the Greatest Common Divisor (GCD) of the component frequencies:\n$$f_0 = \\text{GCD}(5, 7.5) = 2.5\\ \\text{Hz}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -66740,11 +65796,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Coefficient Formula",
-                        "content": "$c_n = \\frac{1}{T} \\int_{T} x(t) e^{-j n \\omega_0 t}\\, dt$"
+                        "content": "$$c_n = \\frac{1}{T} \\int_{T} x(t) e^{-j n \\omega_0 t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Conjugate",
-                        "content": "Taking the complex conjugate of $c_n$ when $x(t)$ is real:\n$c_n^* = \\frac{1}{T} \\int_{T} x(t) e^{j n \\omega_0 t}\\, dt = c_{-n}$\nThus, $c_{-n} = c_n^*$ (conjugate symmetry)."
+                        "content": "Taking the complex conjugate of $c_n$ when $x(t)$ is real:\n$$c_n^* = \\frac{1}{T} \\int_{T} x(t) e^{j n \\omega_0 t}\\, dt = c_{-n}$$\nThus, $c_{-n} = c_n^*$ (conjugate symmetry)."
                     }
                 ],
                 "final_answer": "C"
@@ -66780,7 +65836,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Power Conservation",
-                        "content": "Parseval's theorem states that the total average power of a periodic signal is equal to the sum of the powers of all its individual harmonic components:\n$P = \\frac{1}{T} \\int_{T} |x(t)|^2\\, dt = \\sum_{n=-\\infty}^{\\infty} |c_n|^2$"
+                        "content": "Parseval's theorem states that the total average power of a periodic signal is equal to the sum of the powers of all its individual harmonic components:\n$$P = \\frac{1}{T} \\int_{T} |x(t)|^2\\, dt = \\sum_{n=-\\infty}^{\\infty} |c_n|^2$$"
                     }
                 ],
                 "final_answer": "D"
@@ -66924,7 +65980,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Series Terms",
-                        "content": "By Euler's formulas, we can rewrite the cosines and sines as exponentials:\n$a_n \\cos(n\\omega_0 t) + b_n \\sin(n\\omega_0 t) = c_n e^{j n \\omega_0 t} + c_{-n} e^{-j n \\omega_0 t}$\nSolving this yields:\n$c_n = \\frac{a_n - j b_n}{2}\\quad \\text{and } c_{-n} = \\frac{a_n + j b_n}{2}$"
+                        "content": "By Euler's formulas, we can rewrite the cosines and sines as exponentials:\n$$a_n \\cos(n\\omega_0 t) + b_n \\sin(n\\omega_0 t) = c_n e^{j n \\omega_0 t} + c_{-n} e^{-j n \\omega_0 t}$$\nSolving this yields:\n$$c_n = \\frac{a_n - j b_n}{2}\\quad \\text{and } c_{-n} = \\frac{a_n + j b_n}{2}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -66960,11 +66016,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Quantization Error PDF",
-                        "content": "The quantization error $e$ is modeled as a random variable uniformly distributed over $[-\\Delta/2, \\Delta/2]$. The Probability Density Function (PDF) is:\n$p(e) = \\frac{1}{\\Delta}\\quad \\text{for } -\\frac{\\Delta}{2} \\le e \\le \\frac{\\Delta}{2}$\nand zero elsewhere."
+                        "content": "The quantization error $e$ is modeled as a random variable uniformly distributed over $[-\\Delta/2, \\Delta/2]$. The Probability Density Function (PDF) is:\n$$p(e) = \\frac{1}{\\Delta}\\quad \\text{for } -\\frac{\\Delta}{2} \\le e \\le \\frac{\\Delta}{2}$$\nand zero elsewhere."
                     },
                     {
                         "title": "Calculate Mean Square Error (Power)",
-                        "content": "The average noise power is the variance (since mean is zero):\n$\\sigma_e^2 = \\int_{-\\Delta/2}^{\\Delta/2} e^2 p(e)\\, de = \\frac{1}{\\Delta} \\left[ \\frac{e^3}{3} \\right]_{-\\Delta/2}^{\\Delta/2}$\n$\\sigma_e^2 = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{8} - \\left(-\\frac{\\Delta^3}{8}\\right) \\right) = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{4} \\right) = \\frac{\\Delta^2}{12}$"
+                        "content": "The average noise power is the variance (since mean is zero):\n$$\\sigma_e^2 = \\int_{-\\Delta/2}^{\\Delta/2} e^2 p(e)\\, de = \\frac{1}{\\Delta} \\left[ \\frac{e^3}{3} \\right]_{-\\Delta/2}^{\\Delta/2}$$\n$$\\sigma_e^2 = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{8} - \\left(-\\frac{\\Delta^3}{8}\\right) \\right) = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{4} \\right) = \\frac{\\Delta^2}{12}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -67000,11 +66056,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall the standard SQNR Formula",
-                        "content": "For a full-scale sinusoidal input, the SQNR for an N-bit quantizer is:\n$\\text{SQNR (dB)} \\approx 6.02 N + 1.76$"
+                        "content": "For a full-scale sinusoidal input, the SQNR for an N-bit quantizer is:\n$$\\text{SQNR (dB)} \\approx 6.02 N + 1.76$$"
                     },
                     {
                         "title": "Substitute $N = 12$",
-                        "content": "$\\text{SQNR} = 6.02 \\times 12 + 1.76 = 72.24 + 1.76 = 74.0\\ \\text{dB}$\nWait, let's use precise values: $6.02 \\times 12 + 1.76 = 74.0$. Let's check which option is closest or recalculate with $1.8$: $6.02 \\times 12 + 1.76 = 74.0$. Option 73.8 dB is extremely close and matches typical ADC specs."
+                        "content": "$$\\text{SQNR} = 6.02 \\times 12 + 1.76 = 72.24 + 1.76 = 74.0\\ \\text{dB}$$\nWait, let's use precise values: $6.02 \\times 12 + 1.76 = 74.0$. Let's check which option is closest or recalculate with $1.8$: $6.02 \\times 12 + 1.76 = 74.0$. Option 73.8 dB is extremely close and matches typical ADC specs."
                     }
                 ],
                 "final_answer": "B"
@@ -67044,7 +66100,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Resolution",
-                        "content": "The step size $\\Delta$ is:\n$\\Delta = \\frac{V_{max} - V_{min}}{2^N} = \\frac{5.0\\ \\text{V}}{1024} \\approx 0.0048828\\ \\text{V} \\approx 4.88\\ \\text{mV}$\n(Sometimes $2^N - 1 = 1023$ is used in denominator: $5.0/1023 = 4.89\\ \\text{mV}$, but $4.88\\ \\text{mV}$ matches the standard binary power definition)."
+                        "content": "The step size $\\Delta$ is:\n$$\\Delta = \\frac{V_{max} - V_{min}}{2^N} = \\frac{5.0\\ \\text{V}}{1024} \\approx 0.0048828\\ \\text{V} \\approx 4.88\\ \\text{mV}$$\n(Sometimes $2^N - 1 = 1023$ is used in denominator: $5.0/1023 = 4.89\\ \\text{mV}$, but $4.88\\ \\text{mV}$ matches the standard binary power definition)."
                     }
                 ],
                 "final_answer": "C"
@@ -67084,7 +66140,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Increase for 2 bits",
-                        "content": "$\\Delta \\text{SQNR} = 2 \\times 6.02\\ \\text{dB} = 12.04\\ \\text{dB}$"
+                        "content": "$$\\Delta \\text{SQNR} = 2 \\times 6.02\\ \\text{dB} = 12.04\\ \\text{dB}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -67156,7 +66212,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Maximum Rounding Error",
-                        "content": "For a rounding quantizer, the input is rounded to the nearest quantization level. The maximum error occurs when the input is exactly halfway between two levels. This maximum absolute error is:\n$\\epsilon_{max} = \\frac{\\Delta}{2} = \\frac{0.2\\ \\text{V}}{2} = 0.1\\ \\text{V}$"
+                        "content": "For a rounding quantizer, the input is rounded to the nearest quantization level. The maximum error occurs when the input is exactly halfway between two levels. This maximum absolute error is:\n$$\\epsilon_{max} = \\frac{\\Delta}{2} = \\frac{0.2\\ \\text{V}}{2} = 0.1\\ \\text{V}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -67228,7 +66284,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate Dynamic Range",
-                        "content": "The dynamic range of a digital system is the ratio of the maximum measurable signal to the smallest step, which is approximately:\n$\\text{DR} = 6.02 \\times N = 6.02 \\times 16 = 96.32\\ \\text{dB}$"
+                        "content": "The dynamic range of a digital system is the ratio of the maximum measurable signal to the smallest step, which is approximately:\n$$\\text{DR} = 6.02 \\times N = 6.02 \\times 16 = 96.32\\ \\text{dB}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -67300,7 +66356,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Frequency Response",
-                        "content": "The frequency response $H(j\\omega)$ describes the system behavior in the frequency domain. It is defined as the Fourier transform of the time-domain impulse response $h(t)$:\n$H(j\\omega) = \\mathcal{F}\\{h(t)\\} = \\int_{-\\infty}^{\\infty} h(t) e^{-j\\omega t}\\, dt$"
+                        "content": "The frequency response $H(j\\omega)$ describes the system behavior in the frequency domain. It is defined as the Fourier transform of the time-domain impulse response $h(t)$:\n$$H(j\\omega) = \\mathcal{F}\\{h(t)\\} = \\int_{-\\infty}^{\\infty} h(t) e^{-j\\omega t}\\, dt$$"
                     }
                 ],
                 "final_answer": "B"
@@ -67336,11 +66392,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Phase and Group Delays",
-                        "content": "$\\tau_p(\\omega) = -\\frac{\\theta(\\omega)}{\\omega}$\n$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$"
+                        "content": "$$\\tau_p(\\omega) = -\\frac{\\theta(\\omega)}{\\omega}$$\n$$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$$"
                     },
                     {
                         "title": "Substitute Given Phase",
-                        "content": "Given $\\theta(\\omega) = -3\\omega$:\n$\\tau_p(\\omega) = -\\frac{-3\\omega}{\\omega} = 3\\ \\text{seconds}$\n$\\tau_g(\\omega) = -\\frac{d(-3\\omega)}{d\\omega} = 3\\ \\text{seconds}$\nSince both are equal and constant, the system exhibits linear phase (perfect delay without phase distortion)."
+                        "content": "Given $\\theta(\\omega) = -3\\omega$:\n$$\\tau_p(\\omega) = -\\frac{-3\\omega}{\\omega} = 3\\ \\text{seconds}$$\n$$\\tau_g(\\omega) = -\\frac{d(-3\\omega)}{d\\omega} = 3\\ \\text{seconds}$$\nSince both are equal and constant, the system exhibits linear phase (perfect delay without phase distortion)."
                     }
                 ],
                 "final_answer": "C"
@@ -67448,7 +66504,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Wiener-Khinchin Theorem",
-                        "content": "The Wiener-Khinchin theorem states that the Power Spectral Density $S_{xx}(f)$ of a wide-sense stationary random process (or a power signal) is the Fourier transform of its temporal autocorrelation function $R_{xx}(\\tau)$:\n$S_{xx}(f) = \\mathcal{F}\\{R_{xx}(\\tau)\\} = \\int_{-\\infty}^{\\infty} R_{xx}(\\tau) e^{-j 2\\pi f \\tau}\\, d\\tau$"
+                        "content": "The Wiener-Khinchin theorem states that the Power Spectral Density $S_{xx}(f)$ of a wide-sense stationary random process (or a power signal) is the Fourier transform of its temporal autocorrelation function $R_{xx}(\\tau)$:\n$$S_{xx}(f) = \\mathcal{F}\\{R_{xx}(\\tau)\\} = \\int_{-\\infty}^{\\infty} R_{xx}(\\tau) e^{-j 2\\pi f \\tau}\\, d\\tau$$"
                     }
                 ],
                 "final_answer": "B"
@@ -67520,7 +66576,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Prove Autocorrelation Maximum",
-                        "content": "By the Cauchy-Schwarz inequality:\n$|R_{xx}(\\tau)| = \\left| \\int x(t) x(t-\\tau)\\, dt \\right| \\le \\int x^2(t)\\, dt = R_{xx}(0)$\nThus, $|R_{xx}(\\tau)| \\le R_{xx}(0)$ for all $\\tau$, meaning the peak always occurs at zero lag (which represents the signal's total energy or power)."
+                        "content": "By the Cauchy-Schwarz inequality:\n$$|R_{xx}(\\tau)| = \\left| \\int x(t) x(t-\\tau)\\, dt \\right| \\le \\int x^2(t)\\, dt = R_{xx}(0)$$\nThus, $|R_{xx}(\\tau)| \\le R_{xx}(0)$ for all $\\tau$, meaning the peak always occurs at zero lag (which represents the signal's total energy or power)."
                     }
                 ],
                 "final_answer": "D"
@@ -67556,11 +66612,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Digital and Physical Frequencies",
-                        "content": "The relation between digital angular frequency $\\omega$ and physical frequency $f$ is:\n$\\omega = 2\\pi \\frac{f}{f_s}$"
+                        "content": "The relation between digital angular frequency $\\omega$ and physical frequency $f$ is:\n$$\\omega = 2\\pi \\frac{f}{f_s}$$"
                     },
                     {
                         "title": "Solve for $f$ at $\\omega = \\pi$",
-                        "content": "$\\pi = 2\\pi \\frac{f}{f_s} \\implies \\frac{1}{2} = \\frac{f}{f_s} \\implies f = \\frac{f_s}{2}$\nThis is the Nyquist boundary frequency."
+                        "content": "$$\\pi = 2\\pi \\frac{f}{f_s} \\implies \\frac{1}{2} = \\frac{f}{f_s} \\implies f = \\frac{f_s}{2}$$\nThis is the Nyquist boundary frequency."
                     }
                 ],
                 "final_answer": "A"
@@ -67632,11 +66688,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Fourier Transform Integral",
-                        "content": "$X(j\\omega) = \\int_{-\\infty}^{\\infty} x(t) e^{-j\\omega t}\\, dt = \\int_{0}^{\\infty} e^{-3t} e^{-j\\omega t}\\, dt$"
+                        "content": "$$X(j\\omega) = \\int_{-\\infty}^{\\infty} x(t) e^{-j\\omega t}\\, dt = \\int_{0}^{\\infty} e^{-3t} e^{-j\\omega t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$X(j\\omega) = \\int_{0}^{\\infty} e^{-(3 + j\\omega)t}\\, dt = \\left[ -\\frac{1}{3 + j\\omega} e^{-(3 + j\\omega)t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{3 + j\\omega} \\right) = \\frac{1}{3 + j\\omega}$"
+                        "content": "$$X(j\\omega) = \\int_{0}^{\\infty} e^{-(3 + j\\omega)t}\\, dt = \\left[ -\\frac{1}{3 + j\\omega} e^{-(3 + j\\omega)t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{3 + j\\omega} \\right) = \\frac{1}{3 + j\\omega}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -67672,7 +66728,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Duality Property",
-                        "content": "The symmetry (duality) of the forward and inverse Fourier transform integrals implies:\n$\\mathcal{F}\\{X(t)\\} = x(-f)$\nor in terms of angular frequency $\\omega$:\n$\\mathcal{F}\\{X(t)\\} = 2\\pi x(-\\omega)$"
+                        "content": "The symmetry (duality) of the forward and inverse Fourier transform integrals implies:\n$$\\mathcal{F}\\{X(t)\\} = x(-f)$$\nor in terms of angular frequency $\\omega$:\n$$\\mathcal{F}\\{X(t)\\} = 2\\pi x(-\\omega)$$"
                     }
                 ],
                 "final_answer": "D"
@@ -67708,11 +66764,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Integral",
-                        "content": "$X(f) = \\int_{-T/2}^{T/2} A e^{-j 2\\pi f t}\\, dt$"
+                        "content": "$$X(f) = \\int_{-T/2}^{T/2} A e^{-j 2\\pi f t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$X(f) = A \\left[ \\frac{e^{-j 2\\pi f t}}{-j 2\\pi f} \\right]_{-T/2}^{T/2} = A \\frac{e^{j \\pi f T} - e^{-j \\pi f T}}{j 2\\pi f}$\nUsing Euler's identity:\n$X(f) = A \\frac{\\sin(\\pi f T)}{\\pi f} = A T \\frac{\\sin(\\pi f T)}{\\pi f T} = A T \\text{sinc}(f T)$"
+                        "content": "$$X(f) = A \\left[ \\frac{e^{-j 2\\pi f t}}{-j 2\\pi f} \\right]_{-T/2}^{T/2} = A \\frac{e^{j \\pi f T} - e^{-j \\pi f T}}{j 2\\pi f}$$\nUsing Euler's identity:\n$$X(f) = A \\frac{\\sin(\\pi f T)}{\\pi f} = A T \\frac{\\sin(\\pi f T)}{\\pi f T} = A T \\text{sinc}(f T)$$"
                     }
                 ],
                 "final_answer": "A"
@@ -67748,11 +66804,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Delta Integral Property",
-                        "content": "$X(f) = \\int_{-\\infty}^{\\infty} \\delta(t) e^{-j 2\\pi f t}\\, dt$"
+                        "content": "$$X(f) = \\int_{-\\infty}^{\\infty} \\delta(t) e^{-j 2\\pi f t}\\, dt$$"
                     },
                     {
                         "title": "Sift at $t = 0$",
-                        "content": "The sifting property evaluates the integrand at $t = 0$:\n$X(f) = e^{-j 2\\pi f (0)} = e^0 = 1$"
+                        "content": "The sifting property evaluates the integrand at $t = 0$:\n$$X(f) = e^{-j 2\\pi f (0)} = e^0 = 1$$"
                     }
                 ],
                 "final_answer": "B"
@@ -67788,7 +66844,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Frequency Shifting Property",
-                        "content": "The modulation property states:\n$\\mathcal{F}\\{x(t) e^{j 2\\pi f_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t) e^{j 2\\pi f_0 t} e^{-j 2\\pi f t}\\, dt$\n$= \\int_{-\\infty}^{\\infty} x(t) e^{-j 2\\pi (f - f_0) t}\\, dt = X(f - f_0)$"
+                        "content": "The modulation property states:\n$$\\mathcal{F}\\{x(t) e^{j 2\\pi f_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t) e^{j 2\\pi f_0 t} e^{-j 2\\pi f t}\\, dt$$\n$$= \\int_{-\\infty}^{\\infty} x(t) e^{-j 2\\pi (f - f_0) t}\\, dt = X(f - f_0)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -67824,7 +66880,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Energy Conservation",
-                        "content": "Parseval's identity states that the signal energy in the time domain is equal to the signal energy in the frequency domain:\n$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |X(j\\omega)|^2\\, d\\omega$"
+                        "content": "Parseval's identity states that the signal energy in the time domain is equal to the signal energy in the frequency domain:\n$$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |X(j\\omega)|^2\\, d\\omega$$"
                     }
                 ],
                 "final_answer": "D"
@@ -67860,11 +66916,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Duality to Impulse",
-                        "content": "We know that $\\mathcal{F}\\{\\delta(t)\\} = 1$. By the duality property:\n$\\mathcal{F}\\{1\\} = \\delta(-f) = \\delta(f)$"
+                        "content": "We know that $\\mathcal{F}\\{\\delta(t)\\} = 1$. By the duality property:\n$$\\mathcal{F}\\{1\\} = \\delta(-f) = \\delta(f)$$"
                     },
                     {
                         "title": "Scale by $V_0$",
-                        "content": "Since the Fourier transform is a linear operator:\n$\\mathcal{F}\\{V_0\\} = V_0 \\delta(f)$"
+                        "content": "Since the Fourier transform is a linear operator:\n$$\\mathcal{F}\\{V_0\\} = V_0 \\delta(f)$$"
                     }
                 ],
                 "final_answer": "A"
@@ -67900,11 +66956,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Time Scaling Integral",
-                        "content": "$\\mathcal{F}\\{x(at)\\} = \\int_{-\\infty}^{\\infty} x(at) e^{-j 2\\pi f t}\\, dt$"
+                        "content": "$$\\mathcal{F}\\{x(at)\\} = \\int_{-\\infty}^{\\infty} x(at) e^{-j 2\\pi f t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate by Substitution",
-                        "content": "Let $u = at \\implies dt = du/a$. If $a > 0$, limits are unchanged. If $a < 0$, limits are swapped, multiplying by $-1$. Combining both cases using absolute value:\n$\\mathcal{F}\\{x(at)\\} = \\frac{1}{|a|} \\int_{-\\infty}^{\\infty} x(u) e^{-j 2\\pi (f/a) u}\\, du = \\frac{1}{|a|} X\\left(\\frac{f}{a}\\right)$"
+                        "content": "Let $u = at \\implies dt = du/a$. If $a > 0$, limits are unchanged. If $a < 0$, limits are swapped, multiplying by $-1$. Combining both cases using absolute value:\n$$\\mathcal{F}\\{x(at)\\} = \\frac{1}{|a|} \\int_{-\\infty}^{\\infty} x(u) e^{-j 2\\pi (f/a) u}\\, du = \\frac{1}{|a|} X\\left(\\frac{f}{a}\\right)$$"
                     }
                 ],
                 "final_answer": "B"
@@ -67940,7 +66996,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Derivative Property",
-                        "content": "Differentiating in the time domain corresponds to multiplying by $j 2\\pi f$ (or $j\\omega$) in the frequency domain:\n$\\mathcal{F}\\left\\{\\frac{dx(t)}{dt}\\right\\} = j 2\\pi f X(f)$"
+                        "content": "Differentiating in the time domain corresponds to multiplying by $j 2\\pi f$ (or $j\\omega$) in the frequency domain:\n$$\\mathcal{F}\\left\\{\\frac{dx(t)}{dt}\\right\\} = j 2\\pi f X(f)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -67976,11 +67032,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Distortionless Output",
-                        "content": "Distortionless transmission means the output is a scaled and delayed copy of the input:\n$y(t) = K x(t - t_0)$"
+                        "content": "Distortionless transmission means the output is a scaled and delayed copy of the input:\n$$y(t) = K x(t - t_0)$$"
                     },
                     {
                         "title": "Find System Frequency Response",
-                        "content": "Taking the Fourier transform:\n$Y(f) = K e^{-j 2\\pi f t_0} X(f) \\implies H(f) = K e^{-j 2\\pi f t_0}$\nThis requires:\n1. Constant amplitude response: $|H(f)| = K$.\n2. Linear phase response: $\\theta(f) = -2\\pi f t_0$."
+                        "content": "Taking the Fourier transform:\n$$Y(f) = K e^{-j 2\\pi f t_0} X(f) \\implies H(f) = K e^{-j 2\\pi f t_0}$$\nThis requires:\n1. Constant amplitude response: $|H(f)| = K$.\n2. Linear phase response: $\\theta(f) = -2\\pi f t_0$."
                     }
                 ],
                 "final_answer": "D"
@@ -68016,15 +67072,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall THD Formula",
-                        "content": "The THD is defined as the ratio of the RMS voltage of the harmonics to the RMS voltage of the fundamental component:\n$\\text{THD} = \\frac{\\sqrt{V_2^2 + V_3^2 + \\dots}}{V_1}$"
+                        "content": "The THD is defined as the ratio of the RMS voltage of the harmonics to the RMS voltage of the fundamental component:\n$$\\text{THD} = \\frac{\\sqrt{V_2^2 + V_3^2 + \\dots}}{V_1}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $V_1 = 10\\ \\text{V}$, $V_2 = 0.8\\ \\text{V}$, and $V_3 = 0.6\\ \\text{V}$:\n$\\text{RMS of Harmonics} = \\sqrt{0.8^2 + 0.6^2} = \\sqrt{0.64 + 0.36} = \\sqrt{1.0} = 1.0\\ \\text{V}$"
+                        "content": "Given $V_1 = 10\\ \\text{V}$, $V_2 = 0.8\\ \\text{V}$, and $V_3 = 0.6\\ \\text{V}$:\n$$\\text{RMS of Harmonics} = \\sqrt{0.8^2 + 0.6^2} = \\sqrt{0.64 + 0.36} = \\sqrt{1.0} = 1.0\\ \\text{V}$$"
                     },
                     {
                         "title": "Calculate Percentage",
-                        "content": "$\\text{THD} = \\frac{1.0\\ \\text{V}}{10\\ \\text{V}} = 0.10 = 10.0\\%$"
+                        "content": "$$\\text{THD} = \\frac{1.0\\ \\text{V}}{10\\ \\text{V}} = 0.10 = 10.0\\%$$"
                     }
                 ],
                 "final_answer": "A"
@@ -68060,7 +67116,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Derive Rise Time - Bandwidth Relation",
-                        "content": "For a first-order low-pass system, the cutoff frequency in Hertz is $B_w = \\frac{1}{2\\pi \\tau}$.\nWe also know the rise time is $t_r = 2.2 \\tau$.\nSubstituting $\\tau = \\frac{1}{2\\pi B_w}$:\n$t_r = \\frac{2.2}{2\\pi B_w} \\approx \\frac{2.2}{6.283 B_w} \\approx \\frac{0.35}{B_w}$\nThis is the standard bandwidth-rise time relationship used in high-speed circuit design."
+                        "content": "For a first-order low-pass system, the cutoff frequency in Hertz is $B_w = \\frac{1}{2\\pi \\tau}$.\nWe also know the rise time is $t_r = 2.2 \\tau$.\nSubstituting $\\tau = \\frac{1}{2\\pi B_w}$:\n$$t_r = \\frac{2.2}{2\\pi B_w} \\approx \\frac{2.2}{6.283 B_w} \\approx \\frac{0.35}{B_w}$$\nThis is the standard bandwidth-rise time relationship used in high-speed circuit design."
                     }
                 ],
                 "final_answer": "B"
@@ -68096,11 +67152,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Convolution Integral",
-                        "content": "$y(t) = \\int_{-\\infty}^{\\infty} x(t-\\tau) h(\\tau)\\, d\\tau = \\int_{0}^{2} u(t-\\tau)\\, d\\tau$"
+                        "content": "$$y(t) = \\int_{-\\infty}^{\\infty} x(t-\\tau) h(\\tau)\\, d\\tau = \\int_{0}^{2} u(t-\\tau)\\, d\\tau$$"
                     },
                     {
                         "title": "Evaluate at $t = 1$",
-                        "content": "For $t = 1$:\n$y(1) = \\int_{0}^{2} u(1-\\tau)\\, d\\tau$\nSince $u(1-\\tau) = 1$ for $\\tau \\le 1$ and 0 for $\\tau > 1$, the integral limits are restricted to:\n$y(1) = \\int_{0}^{1} 1\\, d\\tau = [\\tau]_0^1 = 1.0$"
+                        "content": "For $t = 1$:\n$$y(1) = \\int_{0}^{2} u(1-\\tau)\\, d\\tau$$\nSince $u(1-\\tau) = 1$ for $\\tau \\le 1$ and 0 for $\\tau > 1$, the integral limits are restricted to:\n$$y(1) = \\int_{0}^{1} 1\\, d\\tau = [\\tau]_0^1 = 1.0$$"
                     }
                 ],
                 "final_answer": "C"
@@ -68136,11 +67192,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find System DC Gain",
-                        "content": "The steady state response to a unit step is equal to the DC gain of the system $H(0)$:\n$H(0) = \\int_{-\\infty}^{\\infty} h(t)\\, dt$"
+                        "content": "The steady state response to a unit step is equal to the DC gain of the system $H(0)$:\n$$H(0) = \\int_{-\\infty}^{\\infty} h(t)\\, dt$$"
                     },
                     {
                         "title": "Integrate Impulse Response",
-                        "content": "$H(0) = \\int_{0}^{\\infty} e^{-2t}\\, dt = \\left[ -\\frac{1}{2} e^{-2t} \\right]_{0}^{\\infty} = 0 - \\left(-\\frac{1}{2}\\right) = 0.5$"
+                        "content": "$$H(0) = \\int_{0}^{\\infty} e^{-2t}\\, dt = \\left[ -\\frac{1}{2} e^{-2t} \\right]_{0}^{\\infty} = 0 - \\left(-\\frac{1}{2}\\right) = 0.5$$"
                     }
                 ],
                 "final_answer": "D"
@@ -68212,11 +67268,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Combined Impulse Response",
-                        "content": "$h_{total}(t) = h_1(t) * h_2(t) = \\delta(t-2) * \\delta(t-3) = \\delta(t-5)$"
+                        "content": "$$h_{total}(t) = h_1(t) * h_2(t) = \\delta(t-2) * \\delta(t-3) = \\delta(t-5)$$"
                     },
                     {
                         "title": "Find Output",
-                        "content": "$y(t) = x(t) * h_{total}(t) = x(t) * \\delta(t-5) = x(t-5)$"
+                        "content": "$$y(t) = x(t) * h_{total}(t) = x(t) * \\delta(t-5) = x(t-5)$$"
                     }
                 ],
                 "final_answer": "B"
@@ -68328,7 +67384,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Nyquist Rate",
-                        "content": "The Nyquist rate $f_s$ to avoid aliasing must be at least twice the highest frequency:\n$f_s \\ge 2 f_{max}$\n$f_s \\ge 2 \\times 2500 = 5000\\ \\text{Hz} = 5.0\\ \\text{kHz}$"
+                        "content": "The Nyquist rate $f_s$ to avoid aliasing must be at least twice the highest frequency:\n$$f_s \\ge 2 f_{max}$$\n$$f_s \\ge 2 \\times 2500 = 5000\\ \\text{Hz} = 5.0\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -68364,7 +67420,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Aliasing",
-                        "content": "When a signal is sampled, its spectrum is replicated at integer multiples of the sampling frequency $f_s$. The resulting frequencies in the sampled signal are:\n$f_{alias} = |f_0 - k f_s|\\quad \\text{for } k \\in \\mathbb{Z}$"
+                        "content": "When a signal is sampled, its spectrum is replicated at integer multiples of the sampling frequency $f_s$. The resulting frequencies in the sampled signal are:\n$$f_{alias} = |f_0 - k f_s|\\quad \\text{for } k \\in \\mathbb{Z}$$"
                     },
                     {
                         "title": "Find Aliased Frequency",
@@ -68404,15 +67460,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find the Bandwidth of Sinc Function",
-                        "content": "The signal is $x(t) = \\text{sinc}^2(100t)$.\nWe know that $\\text{sinc}(100t) = \\frac{\\sin(100t)}{100t}$, which has a maximum frequency of $\\omega_0 = 100\\ \\text{rad/s}$.\nSquaring in the time domain corresponds to convolution in the frequency domain, which doubles the bandwidth:\n$\\omega_{max} = 2 \\omega_0 = 200\\ \\text{rad/s}$"
+                        "content": "The signal is $x(t) = \\text{sinc}^2(100t)$.\nWe know that $\\text{sinc}(100t) = \\frac{\\sin(100t)}{100t}$, which has a maximum frequency of $\\omega_0 = 100\\ \\text{rad/s}$.\nSquaring in the time domain corresponds to convolution in the frequency domain, which doubles the bandwidth:\n$$\\omega_{max} = 2 \\omega_0 = 200\\ \\text{rad/s}$$"
                     },
                     {
                         "title": "Convert to Hertz",
-                        "content": "$f_{max} = \\frac{\\omega_{max}}{2\\pi} = \\frac{200}{2\\pi} = \\frac{100}{\\pi}\\ \\text{Hz}$"
+                        "content": "$$f_{max} = \\frac{\\omega_{max}}{2\\pi} = \\frac{200}{2\\pi} = \\frac{100}{\\pi}\\ \\text{Hz}$$"
                     },
                     {
                         "title": "Calculate Nyquist Interval $T_s$",
-                        "content": "The maximum sampling interval $T_s$ is the reciprocal of the Nyquist rate $2 f_{max}$:\n$T_s = \\frac{1}{2 f_{max}} = \\frac{1}{2 \\times (100/\\pi)} = \\frac{\\pi}{200} \\approx 0.0157\\ \\text{s}$\nWait, let's recalculate the sinc definitions: If $\\text{sinc}(u) = \\frac{\\sin(\\pi u)}{\\pi u}$ is the normalized sinc, then $\\text{sinc}(100t)$ has a maximum frequency of $f_0 = 50\\ \\text{Hz}$. Squaring doubles it to $f_{max} = 100\\ \\text{Hz}$. The Nyquist rate is then $200\\ \\text{Hz}$, giving $T_s = 1/200 = 0.005\\ \\text{s}$.\nLet's check if the unnormalized $\\text{sinc}(x) = \\sin(x)/x$ is used: then $\\omega_0 = 100\\ \\text{rad/s}$, so $\\omega_{max} = 200\\ \\text{rad/s}$. Nyquist rate is $200\\ \\text{rad/s} = 31.83\\ \\text{Hz}$, which gives $T_s = 1/31.83 = 0.0314\\ \\text{s}$ (which matches option A perfectly!)."
+                        "content": "The maximum sampling interval $T_s$ is the reciprocal of the Nyquist rate $2 f_{max}$:\n$$T_s = \\frac{1}{2 f_{max}} = \\frac{1}{2 \\times (100/\\pi)} = \\frac{\\pi}{200} \\approx 0.0157\\ \\text{s}$$\nWait, let's recalculate the sinc definitions: If $\\text{sinc}(u) = \\frac{\\sin(\\pi u)}{\\pi u}$ is the normalized sinc, then $\\text{sinc}(100t)$ has a maximum frequency of $f_0 = 50\\ \\text{Hz}$. Squaring doubles it to $f_{max} = 100\\ \\text{Hz}$. The Nyquist rate is then $200\\ \\text{Hz}$, giving $T_s = 1/200 = 0.005\\ \\text{s}$.\nLet's check if the unnormalized $\\text{sinc}(x) = \\sin(x)/x$ is used: then $\\omega_0 = 100\\ \\text{rad/s}$, so $\\omega_{max} = 200\\ \\text{rad/s}$. Nyquist rate is $200\\ \\text{rad/s} = 31.83\\ \\text{Hz}$, which gives $T_s = 1/31.83 = 0.0314\\ \\text{s}$ (which matches option A perfectly!)."
                     }
                 ],
                 "final_answer": "C"
@@ -68448,11 +67504,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Nyquist Sampling Limit",
-                        "content": "To completely avoid aliasing, the input signal must be bandlimited to less than half of the sampling frequency (the Nyquist frequency):\n$f_{max} < \\frac{f_s}{2}$"
+                        "content": "To completely avoid aliasing, the input signal must be bandlimited to less than half of the sampling frequency (the Nyquist frequency):\n$$f_{max} < \\frac{f_s}{2}$$"
                     },
                     {
                         "title": "Calculate Cutoff Frequency",
-                        "content": "$f_c = \\frac{f_s}{2} = \\frac{44.1\\ \\text{kHz}}{2} = 22.05\\ \\text{kHz}$"
+                        "content": "$$f_c = \\frac{f_s}{2} = \\frac{44.1\\ \\text{kHz}}{2} = 22.05\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -68488,11 +67544,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Bandpass Sampling Theorem",
-                        "content": "For a bandpass signal with bandwidth $B = f_H - f_L$, the minimum sampling rate is $2B$ if the boundaries are integer multiples of the bandwidth. Here, $f_L = 20\\ \\text{MHz}$ and $f_H = 22\\ \\text{MHz}$.\n$B = 22 - 20 = 2\\ \\text{MHz}$"
+                        "content": "For a bandpass signal with bandwidth $B = f_H - f_L$, the minimum sampling rate is $2B$ if the boundaries are integer multiples of the bandwidth. Here, $f_L = 20\\ \\text{MHz}$ and $f_H = 22\\ \\text{MHz}$.\n$$B = 22 - 20 = 2\\ \\text{MHz}$$"
                     },
                     {
                         "title": "Calculate Minimum Sampling Rate",
-                        "content": "$f_{s,min} = 2 B = 2 \\times 2\\ \\text{MHz} = 4\\ \\text{MHz}$"
+                        "content": "$$f_{s,min} = 2 B = 2 \\times 2\\ \\text{MHz} = 4\\ \\text{MHz}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -68528,11 +67584,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Periodicity Condition",
-                        "content": "A discrete-time sinusoid $x[n] = A \\cos(\\Omega_0 n)$ is periodic if and only if its frequency $\\Omega_0$ is a rational multiple of $2\\pi$:\n$\\frac{\\Omega_0}{2\\pi} = \\frac{m}{N_0}$"
+                        "content": "A discrete-time sinusoid $x[n] = A \\cos(\\Omega_0 n)$ is periodic if and only if its frequency $\\Omega_0$ is a rational multiple of $2\\pi$:\n$$\\frac{\\Omega_0}{2\\pi} = \\frac{m}{N_0}$$"
                     },
                     {
                         "title": "Find Fundamental Period $N_0$",
-                        "content": "$\\frac{0.12\\pi}{2\\pi} = 0.06 = \\frac{6}{100} = \\frac{3}{50}$\nSince this is in irreducible form, the fundamental period is the denominator $N_0 = 50$ (and $m = 3$)."
+                        "content": "$$\\frac{0.12\\pi}{2\\pi} = 0.06 = \\frac{6}{100} = \\frac{3}{50}$$\nSince this is in irreducible form, the fundamental period is the denominator $N_0 = 50$ (and $m = 3$)."
                     }
                 ],
                 "final_answer": "B"
@@ -68568,11 +67624,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate New Sampling Rate",
-                        "content": "Downsampling by $M=2$ discards every second sample. The new sampling rate is:\n$f_{s,new} = \\frac{f_s}{M} = \\frac{8\\ \\text{kHz}}{2} = 4\\ \\text{kHz}$"
+                        "content": "Downsampling by $M=2$ discards every second sample. The new sampling rate is:\n$$f_{s,new} = \\frac{f_s}{M} = \\frac{8\\ \\text{kHz}}{2} = 4\\ \\text{kHz}$$"
                     },
                     {
                         "title": "Determine Nyquist Boundary",
-                        "content": "The maximum frequency component that can be safely represented without aliasing is the new Nyquist frequency:\n$f_{Nyq} = \\frac{f_{s,new}}{2} = \\frac{4\\ \\text{kHz}}{2} = 2\\ \\text{kHz}$"
+                        "content": "The maximum frequency component that can be safely represented without aliasing is the new Nyquist frequency:\n$$f_{Nyq} = \\frac{f_{s,new}}{2} = \\frac{4\\ \\text{kHz}}{2} = 2\\ \\text{kHz}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -68608,11 +67664,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Z-Transform Summation",
-                        "content": "$X(z) = \\sum_{n=-\\infty}^{\\infty} x[n] z^{-n} = \\sum_{n=0}^{\\infty} (1) z^{-n} = \\sum_{n=0}^{\\infty} (z^{-1})^n$"
+                        "content": "$$X(z) = \\sum_{n=-\\infty}^{\\infty} x[n] z^{-n} = \\sum_{n=0}^{\\infty} (1) z^{-n} = \\sum_{n=0}^{\\infty} (z^{-1})^n$$"
                     },
                     {
                         "title": "Apply Infinite Geometric Series Sum",
-                        "content": "The geometric series converges if $|z^{-1}| < 1 \\implies |z| > 1$. The sum is:\n$X(z) = \\frac{1}{1 - z^{-1}} = \\frac{z}{z - 1}$"
+                        "content": "The geometric series converges if $|z^{-1}| < 1 \\implies |z| > 1$. The sum is:\n$$X(z) = \\frac{1}{1 - z^{-1}} = \\frac{z}{z - 1}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -68648,11 +67704,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Formula for Exponential Z-Transform",
-                        "content": "For any causal sequence of the form $a^n u[n]$:\n$\\mathcal{Z}\\{a^n u[n]\\} = \\frac{z}{z-a}\\quad \\text{with ROC: } |z| > |a|$"
+                        "content": "For any causal sequence of the form $a^n u[n]$:\n$$\\mathcal{Z}\\{a^n u[n]\\} = \\frac{z}{z-a}\\quad \\text{with ROC: } |z| > |a|$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Substituting $a = 0.5$:\n$X(z) = \\frac{z}{z - 0.5}$\nThe denominator has a root at $z = 0.5$, which represents a pole."
+                        "content": "Substituting $a = 0.5$:\n$$X(z) = \\frac{z}{z - 0.5}$$\nThe denominator has a root at $z = 0.5$, which represents a pole."
                     }
                 ],
                 "final_answer": "A"
@@ -68728,7 +67784,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Time-Shifting Property",
-                        "content": "The time-shifting property of the z-transform states:\n$\\mathcal{Z}\\{x[n - n_0]\\} = z^{-n_0} X(z)$\nFor $n_0 = 2$:\n$\\mathcal{Z}^{-1}\\{z^{-2} X(z)\\} = x[n - 2]$"
+                        "content": "The time-shifting property of the z-transform states:\n$$\\mathcal{Z}\\{x[n - n_0]\\} = z^{-n_0} X(z)$$\nFor $n_0 = 2$:\n$$\\mathcal{Z}^{-1}\\{z^{-2} X(z)\\} = x[n - 2]$$"
                     }
                 ],
                 "final_answer": "C"
@@ -68764,7 +67820,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Pole Locations",
-                        "content": "The poles of $H(z)$ are the roots of the denominator:\n$z_1 = 0.4$\n$z_2 = 1.2$"
+                        "content": "The poles of $H(z)$ are the roots of the denominator:\n$$z_1 = 0.4$$\n$$z_2 = 1.2$$"
                     },
                     {
                         "title": "Apply Causal Stability Condition",
@@ -68804,15 +67860,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Express $H(z)$ in Negative Powers of $z$",
-                        "content": "Divide numerator and denominator by $z$:\n$H(z) = \\frac{Y(z)}{X(z)} = \\frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1}}$"
+                        "content": "Divide numerator and denominator by $z$:\n$$H(z) = \\frac{Y(z)}{X(z)} = \\frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1}}$$"
                     },
                     {
                         "title": "Cross-Multiply terms",
-                        "content": "$Y(z)(1 - 0.8 z^{-1}) = X(z)(1 - 0.5 z^{-1})$\n$Y(z) - 0.8 z^{-1} Y(z) = X(z) - 0.5 z^{-1} X(z)$"
+                        "content": "$$Y(z)(1 - 0.8 z^{-1}) = X(z)(1 - 0.5 z^{-1})$$\n$$Y(z) - 0.8 z^{-1} Y(z) = X(z) - 0.5 z^{-1} X(z)$$"
                     },
                     {
                         "title": "Take Inverse Z-Transform",
-                        "content": "Using the time shift property:\n$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$"
+                        "content": "Using the time shift property:\n$$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$$"
                     }
                 ],
                 "final_answer": "A"
@@ -68956,7 +68012,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Group Delay",
-                        "content": "Group delay $\\tau_g(\\omega)$ is the negative derivative of the phase response with respect to angular frequency:\n$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$\nIt measures the average envelope delay experienced by a narrow band of frequency components passing through the filter."
+                        "content": "Group delay $\\tau_g(\\omega)$ is the negative derivative of the phase response with respect to angular frequency:\n$$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$$\nIt measures the average envelope delay experienced by a narrow band of frequency components passing through the filter."
                     }
                 ],
                 "final_answer": "A"
@@ -69028,7 +68084,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State DFT Equation",
-                        "content": "The Discrete Fourier Transform (DFT) maps an N-point time-domain sequence $x[n]$ to an N-point frequency-domain representation $X[k]$:\n$X[k] = \\sum_{n=0}^{N-1} x[n] W_N^{k n}$\nwhere $W_N = e^{-j 2\\pi / N}$ is the twiddle factor. Thus:\n$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$"
+                        "content": "The Discrete Fourier Transform (DFT) maps an N-point time-domain sequence $x[n]$ to an N-point frequency-domain representation $X[k]$:\n$$X[k] = \\sum_{n=0}^{N-1} x[n] W_N^{k n}$$\nwhere $W_N = e^{-j 2\\pi / N}$ is the twiddle factor. Thus:\n$$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -69064,11 +68120,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall FFT Complexity",
-                        "content": "The radix-2 FFT algorithm reduces the computational complexity of an N-point DFT from $O(N^2)$ to $O(N \\log_2 N)$. Specifically, it requires:\n$M \\approx \\frac{N}{2} \\log_2 N\\ \\text{complex multiplications}$"
+                        "content": "The radix-2 FFT algorithm reduces the computational complexity of an N-point DFT from $O(N^2)$ to $O(N \\log_2 N)$. Specifically, it requires:\n$$M \\approx \\frac{N}{2} \\log_2 N\\ \\text{complex multiplications}$$"
                     },
                     {
                         "title": "Substitute $N = 1024$",
-                        "content": "$\\log_2 1024 = 10$\n$M = \\frac{1024}{2} \\times 10 = 512 \\times 10 = 5120$"
+                        "content": "$$\\log_2 1024 = 10$$\n$$M = \\frac{1024}{2} \\times 10 = 512 \\times 10 = 5120$$"
                     }
                 ],
                 "final_answer": "D"
@@ -69104,11 +68160,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Spectral Resolution Formula",
-                        "content": "The frequency resolution $\\Delta f$ of an N-point DFT is:\n$\\Delta f = \\frac{f_s}{N}$"
+                        "content": "The frequency resolution $\\Delta f$ of an N-point DFT is:\n$$\\Delta f = \\frac{f_s}{N}$$"
                     },
                     {
                         "title": "Calculate Resolution",
-                        "content": "$\\Delta f = \\frac{8000\\ \\text{Hz}}{512} = 15.625\\ \\text{Hz}$"
+                        "content": "$$\\Delta f = \\frac{8000\\ \\text{Hz}}{512} = 15.625\\ \\text{Hz}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -69180,11 +68236,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Length of Linear Convolution",
-                        "content": "The linear convolution of a sequence of length $L$ with a sequence of length $M$ has a total length of:\n$N_{linear} = L + M - 1$"
+                        "content": "The linear convolution of a sequence of length $L$ with a sequence of length $M$ has a total length of:\n$$N_{linear} = L + M - 1$$"
                     },
                     {
                         "title": "Calculate Minimum Size",
-                        "content": "Given $L = 100$, $M = 50$:\n$N \\ge 100 + 50 - 1 = 149$\nTo perform this efficiently via FFTs, we typically pad to a power of 2 like 256, but the absolute minimum size is 149."
+                        "content": "Given $L = 100$, $M = 50$:\n$$N \\ge 100 + 50 - 1 = 149$$\nTo perform this efficiently via FFTs, we typically pad to a power of 2 like 256, but the absolute minimum size is 149."
                     }
                 ],
                 "final_answer": "C"
@@ -69220,7 +68276,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Conjugate Symmetry",
-                        "content": "Since $x[n]$ is real-valued, its DFT Twiddle factor satisfies $W_N^{n(N-k)} = e^{-j 2\\pi n(N-k)/N} = e^{j 2\\pi nk/N} = (W_N^{kn})^*$. This leads to the conjugate symmetry property:\n$X[N - k] = X^*[k]$\nThis implies the magnitude is even ($|X[N-k]| = |X[k]|$) and the phase is odd."
+                        "content": "Since $x[n]$ is real-valued, its DFT Twiddle factor satisfies $W_N^{n(N-k)} = e^{-j 2\\pi n(N-k)/N} = e^{j 2\\pi nk/N} = (W_N^{kn})^*$. This leads to the conjugate symmetry property:\n$$X[N - k] = X^*[k]$$\nThis implies the magnitude is even ($|X[N-k]| = |X[k]|$) and the phase is odd."
                     }
                 ],
                 "final_answer": "D"
@@ -69292,7 +68348,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Parseval's DFT Identity",
-                        "content": "Parseval's relation states that the total energy calculated in the time domain is equal to the scaled total energy in the DFT domain:\n$\\sum_{n=0}^{N-1} |x[n]|^2 = \\frac{1}{N} \\sum_{k=0}^{N-1} |X[k]|^2$"
+                        "content": "Parseval's relation states that the total energy calculated in the time domain is equal to the scaled total energy in the DFT domain:\n$$\\sum_{n=0}^{N-1} |x[n]|^2 = \\frac{1}{N} \\sum_{k=0}^{N-1} |X[k]|^2$$"
                     }
                 ],
                 "final_answer": "B"
@@ -69364,11 +68420,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Even Part Formula",
-                        "content": "The even part $x_e(t)$ of any signal is:\n$x_e(t) = \\frac{x(t) + x(-t)}{2}$"
+                        "content": "The even part $x_e(t)$ of any signal is:\n$$x_e(t) = \\frac{x(t) + x(-t)}{2}$$"
                     },
                     {
                         "title": "Substitute $x(t)$",
-                        "content": "Given $x(t) = e^{-2t} u(t)$:\n$x_e(t) = \\frac{e^{-2t} u(t) + e^{2t} u(-t)}{2}$\nSince $u(t)$ and $u(-t)$ are mutually exclusive except at $t=0$, this can be compactified as:\n$x_e(t) = \\frac{1}{2} e^{-2|t|}\\quad \\text{for all } t$"
+                        "content": "Given $x(t) = e^{-2t} u(t)$:\n$$x_e(t) = \\frac{e^{-2t} u(t) + e^{2t} u(-t)}{2}$$\nSince $u(t)$ and $u(-t)$ are mutually exclusive except at $t=0$, this can be compactified as:\n$$x_e(t) = \\frac{1}{2} e^{-2|t|}\\quad \\text{for all } t$$"
                     }
                 ],
                 "final_answer": "D"
@@ -69404,11 +68460,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Sifting Property of Delta Function",
-                        "content": "The sifting property states:\n$\\int_{-\\infty}^{\\infty} g(t) \\delta(t - t_0)\\, dt = g(t_0)$"
+                        "content": "The sifting property states:\n$$\\int_{-\\infty}^{\\infty} g(t) \\delta(t - t_0)\\, dt = g(t_0)$$"
                     },
                     {
                         "title": "Evaluate at $t_0 = 2$",
-                        "content": "Given $g(t) = t^3 + 5t^2 + 2$ and $t_0 = 2$:\n$g(2) = 2^3 + 5(2)^2 + 2 = 8 + 20 + 2 = 30$"
+                        "content": "Given $g(t) = t^3 + 5t^2 + 2$ and $t_0 = 2$:\n$$g(2) = 2^3 + 5(2)^2 + 2 = 8 + 20 + 2 = 30$$"
                     }
                 ],
                 "final_answer": "A"
@@ -69480,7 +68536,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Orthogonality",
-                        "content": "Two signals are orthogonal if their inner product over the specified interval is exactly zero. For complex signals, the inner product is:\n$\\langle x_1, x_2 \\rangle = \\int_{t_1}^{t_2} x_1(t) x_2^*(t)\\, dt = 0$"
+                        "content": "Two signals are orthogonal if their inner product over the specified interval is exactly zero. For complex signals, the inner product is:\n$$\\langle x_1, x_2 \\rangle = \\int_{t_1}^{t_2} x_1(t) x_2^*(t)\\, dt = 0$$"
                     }
                 ],
                 "final_answer": "C"
@@ -69552,11 +68608,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Energy Integral",
-                        "content": "$E = \\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{0}^{\\infty} (e^{-3t})^2\\, dt = \\int_{0}^{\\infty} e^{-6t}\\, dt$"
+                        "content": "$$$E = \\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{0}^{\\infty} (e^{-3t})^2\\, dt = \\int_{0}^{\\infty} e^{-6t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$E = \\left[ -\\frac{1}{6} e^{-6t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{6} \\right) = \\frac{1}{6}$"
+                        "content": "$$E = \\left[ -\\frac{1}{6} e^{-6t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{6} \\right) = \\frac{1}{6}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -69628,7 +68684,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Step and Impulse",
-                        "content": "The unit step function $u(t)$ is the integral of the unit impulse function:\n$u(t) = \\int_{-\\infty}^{t} \\delta(\\tau)\\, d\\tau$\nBy the Fundamental Theorem of Calculus, the derivative of $u(t)$ is the impulse function:\n$\\frac{du(t)}{dt} = \\delta(t)$"
+                        "content": "The unit step function $u(t)$ is the integral of the unit impulse function:\n$$u(t) = \\int_{-\\infty}^{t} \\delta(\\tau)\\, d\\tau$$\nBy the Fundamental Theorem of Calculus, the derivative of $u(t)$ is the impulse function:\n$$\\frac{du(t)}{dt} = \\delta(t)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -69664,7 +68720,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analyze Coefficients",
-                        "content": "The trigonometric coefficients are:\n$a_n = \\frac{2}{T} \\int_{T} x(t) \\cos(n\\omega_0 t)\\, dt$\n$b_n = \\frac{2}{T} \\int_{T} x(t) \\sin(n\\omega_0 t)\\, dt$"
+                        "content": "The trigonometric coefficients are:\n$$a_n = \\frac{2}{T} \\int_{T} x(t) \\cos(n\\omega_0 t)\\, dt$$\n$$b_n = \\frac{2}{T} \\int_{T} x(t) \\sin(n\\omega_0 t)\\, dt$$"
                     },
                     {
                         "title": "Apply Symmetry",
@@ -69744,7 +68800,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Find Greatest Common Divisor",
-                        "content": "The fundamental frequency $f_0$ is the Greatest Common Divisor (GCD) of the component frequencies:\n$f_0 = \\text{GCD}(5, 7.5) = 2.5\\ \\text{Hz}$"
+                        "content": "The fundamental frequency $f_0$ is the Greatest Common Divisor (GCD) of the component frequencies:\n$$f_0 = \\text{GCD}(5, 7.5) = 2.5\\ \\text{Hz}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -69780,11 +68836,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Coefficient Formula",
-                        "content": "$c_n = \\frac{1}{T} \\int_{T} x(t) e^{-j n \\omega_0 t}\\, dt$"
+                        "content": "$$c_n = \\frac{1}{T} \\int_{T} x(t) e^{-j n \\omega_0 t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Conjugate",
-                        "content": "Taking the complex conjugate of $c_n$ when $x(t)$ is real:\n$c_n^* = \\frac{1}{T} \\int_{T} x(t) e^{j n \\omega_0 t}\\, dt = c_{-n}$\nThus, $c_{-n} = c_n^*$ (conjugate symmetry)."
+                        "content": "Taking the complex conjugate of $c_n$ when $x(t)$ is real:\n$$c_n^* = \\frac{1}{T} \\int_{T} x(t) e^{j n \\omega_0 t}\\, dt = c_{-n}$$\nThus, $c_{-n} = c_n^*$ (conjugate symmetry)."
                     }
                 ],
                 "final_answer": "C"
@@ -69820,7 +68876,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Power Conservation",
-                        "content": "Parseval's theorem states that the total average power of a periodic signal is equal to the sum of the powers of all its individual harmonic components:\n$P = \\frac{1}{T} \\int_{T} |x(t)|^2\\, dt = \\sum_{n=-\\infty}^{\\infty} |c_n|^2$"
+                        "content": "Parseval's theorem states that the total average power of a periodic signal is equal to the sum of the powers of all its individual harmonic components:\n$$P = \\frac{1}{T} \\int_{T} |x(t)|^2\\, dt = \\sum_{n=-\\infty}^{\\infty} |c_n|^2$$"
                     }
                 ],
                 "final_answer": "D"
@@ -69964,7 +69020,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Series Terms",
-                        "content": "By Euler's formulas, we can rewrite the cosines and sines as exponentials:\n$a_n \\cos(n\\omega_0 t) + b_n \\sin(n\\omega_0 t) = c_n e^{j n \\omega_0 t} + c_{-n} e^{-j n \\omega_0 t}$\nSolving this yields:\n$c_n = \\frac{a_n - j b_n}{2}\\quad \\text{and } c_{-n} = \\frac{a_n + j b_n}{2}$"
+                        "content": "By Euler's formulas, we can rewrite the cosines and sines as exponentials:\n$$a_n \\cos(n\\omega_0 t) + b_n \\sin(n\\omega_0 t) = c_n e^{j n \\omega_0 t} + c_{-n} e^{-j n \\omega_0 t}$$\nSolving this yields:\n$$c_n = \\frac{a_n - j b_n}{2}\\quad \\text{and } c_{-n} = \\frac{a_n + j b_n}{2}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -70000,11 +69056,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Quantization Error PDF",
-                        "content": "The quantization error $e$ is modeled as a random variable uniformly distributed over $[-\\Delta/2, \\Delta/2]$. The Probability Density Function (PDF) is:\n$p(e) = \\frac{1}{\\Delta}\\quad \\text{for } -\\frac{\\Delta}{2} \\le e \\le \\frac{\\Delta}{2}$\nand zero elsewhere."
+                        "content": "The quantization error $e$ is modeled as a random variable uniformly distributed over $[-\\Delta/2, \\Delta/2]$. The Probability Density Function (PDF) is:\n$$p(e) = \\frac{1}{\\Delta}\\quad \\text{for } -\\frac{\\Delta}{2} \\le e \\le \\frac{\\Delta}{2}$$\nand zero elsewhere."
                     },
                     {
                         "title": "Calculate Mean Square Error (Power)",
-                        "content": "The average noise power is the variance (since mean is zero):\n$\\sigma_e^2 = \\int_{-\\Delta/2}^{\\Delta/2} e^2 p(e)\\, de = \\frac{1}{\\Delta} \\left[ \\frac{e^3}{3} \\right]_{-\\Delta/2}^{\\Delta/2}$\n$\\sigma_e^2 = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{8} - \\left(-\\frac{\\Delta^3}{8}\\right) \\right) = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{4} \\right) = \\frac{\\Delta^2}{12}$"
+                        "content": "The average noise power is the variance (since mean is zero):\n$$\\sigma_e^2 = \\int_{-\\Delta/2}^{\\Delta/2} e^2 p(e)\\, de = \\frac{1}{\\Delta} \\left[ \\frac{e^3}{3} \\right]_{-\\Delta/2}^{\\Delta/2}$$\n$$\\sigma_e^2 = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{8} - \\left(-\\frac{\\Delta^3}{8}\\right) \\right) = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{4} \\right) = \\frac{\\Delta^2}{12}$$"
                     }
                 ],
                 "final_answer": "A"
@@ -70040,11 +69096,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall the standard SQNR Formula",
-                        "content": "For a full-scale sinusoidal input, the SQNR for an N-bit quantizer is:\n$\\text{SQNR (dB)} \\approx 6.02 N + 1.76$"
+                        "content": "For a full-scale sinusoidal input, the SQNR for an N-bit quantizer is:\n$$\\text{SQNR (dB)} \\approx 6.02 N + 1.76$$"
                     },
                     {
                         "title": "Substitute $N = 12$",
-                        "content": "$\\text{SQNR} = 6.02 \\times 12 + 1.76 = 72.24 + 1.76 = 74.0\\ \\text{dB}$\nWait, let's use precise values: $6.02 \\times 12 + 1.76 = 74.0$. Let's check which option is closest or recalculate with $1.8$: $6.02 \\times 12 + 1.76 = 74.0$. Option 73.8 dB is extremely close and matches typical ADC specs."
+                        "content": "$$\\text{SQNR} = 6.02 \\times 12 + 1.76 = 72.24 + 1.76 = 74.0\\ \\text{dB}$$\nWait, let's use precise values: $6.02 \\times 12 + 1.76 = 74.0$. Let's check which option is closest or recalculate with $1.8$: $6.02 \\times 12 + 1.76 = 74.0$. Option 73.8 dB is extremely close and matches typical ADC specs."
                     }
                 ],
                 "final_answer": "B"
@@ -70084,7 +69140,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Resolution",
-                        "content": "The step size $\\Delta$ is:\n$\\Delta = \\frac{V_{max} - V_{min}}{2^N} = \\frac{5.0\\ \\text{V}}{1024} \\approx 0.0048828\\ \\text{V} \\approx 4.88\\ \\text{mV}$\n(Sometimes $2^N - 1 = 1023$ is used in denominator: $5.0/1023 = 4.89\\ \\text{mV}$, but $4.88\\ \\text{mV}$ matches the standard binary power definition)."
+                        "content": "The step size $\\Delta$ is:\n$$\\Delta = \\frac{V_{max} - V_{min}}{2^N} = \\frac{5.0\\ \\text{V}}{1024} \\approx 0.0048828\\ \\text{V} \\approx 4.88\\ \\text{mV}$$\n(Sometimes $2^N - 1 = 1023$ is used in denominator: $5.0/1023 = 4.89\\ \\text{mV}$, but $4.88\\ \\text{mV}$ matches the standard binary power definition)."
                     }
                 ],
                 "final_answer": "C"
@@ -70124,7 +69180,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Calculate Increase for 2 bits",
-                        "content": "$\\Delta \\text{SQNR} = 2 \\times 6.02\\ \\text{dB} = 12.04\\ \\text{dB}$"
+                        "content": "$$\\Delta \\text{SQNR} = 2 \\times 6.02\\ \\text{dB} = 12.04\\ \\text{dB}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -70196,7 +69252,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Maximum Rounding Error",
-                        "content": "For a rounding quantizer, the input is rounded to the nearest quantization level. The maximum error occurs when the input is exactly halfway between two levels. This maximum absolute error is:\n$\\epsilon_{max} = \\frac{\\Delta}{2} = \\frac{0.2\\ \\text{V}}{2} = 0.1\\ \\text{V}$"
+                        "content": "For a rounding quantizer, the input is rounded to the nearest quantization level. The maximum error occurs when the input is exactly halfway between two levels. This maximum absolute error is:\n$$\\epsilon_{max} = \\frac{\\Delta}{2} = \\frac{0.2\\ \\text{V}}{2} = 0.1\\ \\text{V}$$"
                     }
                 ],
                 "final_answer": "B"
@@ -70268,7 +69324,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate Dynamic Range",
-                        "content": "The dynamic range of a digital system is the ratio of the maximum measurable signal to the smallest step, which is approximately:\n$\\text{DR} = 6.02 \\times N = 6.02 \\times 16 = 96.32\\ \\text{dB}$"
+                        "content": "The dynamic range of a digital system is the ratio of the maximum measurable signal to the smallest step, which is approximately:\n$$\\text{DR} = 6.02 \\times N = 6.02 \\times 16 = 96.32\\ \\text{dB}$$"
                     }
                 ],
                 "final_answer": "D"
@@ -70340,7 +69396,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Frequency Response",
-                        "content": "The frequency response $H(j\\omega)$ describes the system behavior in the frequency domain. It is defined as the Fourier transform of the time-domain impulse response $h(t)$:\n$H(j\\omega) = \\mathcal{F}\\{h(t)\\} = \\int_{-\\infty}^{\\infty} h(t) e^{-j\\omega t}\\, dt$"
+                        "content": "The frequency response $H(j\\omega)$ describes the system behavior in the frequency domain. It is defined as the Fourier transform of the time-domain impulse response $h(t)$:\n$$H(j\\omega) = \\mathcal{F}\\{h(t)\\} = \\int_{-\\infty}^{\\infty} h(t) e^{-j\\omega t}\\, dt$$"
                     }
                 ],
                 "final_answer": "B"
@@ -70376,11 +69432,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Phase and Group Delays",
-                        "content": "$\\tau_p(\\omega) = -\\frac{\\theta(\\omega)}{\\omega}$\n$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$"
+                        "content": "$$\\tau_p(\\omega) = -\\frac{\\theta(\\omega)}{\\omega}$$\n$$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$$"
                     },
                     {
                         "title": "Substitute Given Phase",
-                        "content": "Given $\\theta(\\omega) = -3\\omega$:\n$\\tau_p(\\omega) = -\\frac{-3\\omega}{\\omega} = 3\\ \\text{seconds}$\n$\\tau_g(\\omega) = -\\frac{d(-3\\omega)}{d\\omega} = 3\\ \\text{seconds}$\nSince both are equal and constant, the system exhibits linear phase (perfect delay without phase distortion)."
+                        "content": "Given $\\theta(\\omega) = -3\\omega$:\n$$\\tau_p(\\omega) = -\\frac{-3\\omega}{\\omega} = 3\\ \\text{seconds}$$\n$$\\tau_g(\\omega) = -\\frac{d(-3\\omega)}{d\\omega} = 3\\ \\text{seconds}$$\nSince both are equal and constant, the system exhibits linear phase (perfect delay without phase distortion)."
                     }
                 ],
                 "final_answer": "C"
@@ -70488,7 +69544,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Wiener-Khinchin Theorem",
-                        "content": "The Wiener-Khinchin theorem states that the Power Spectral Density $S_{xx}(f)$ of a wide-sense stationary random process (or a power signal) is the Fourier transform of its temporal autocorrelation function $R_{xx}(\\tau)$:\n$S_{xx}(f) = \\mathcal{F}\\{R_{xx}(\\tau)\\} = \\int_{-\\infty}^{\\infty} R_{xx}(\\tau) e^{-j 2\\pi f \\tau}\\, d\\tau$"
+                        "content": "The Wiener-Khinchin theorem states that the Power Spectral Density $S_{xx}(f)$ of a wide-sense stationary random process (or a power signal) is the Fourier transform of its temporal autocorrelation function $R_{xx}(\\tau)$:\n$$S_{xx}(f) = \\mathcal{F}\\{R_{xx}(\\tau)\\} = \\int_{-\\infty}^{\\infty} R_{xx}(\\tau) e^{-j 2\\pi f \\tau}\\, d\\tau$$"
                     }
                 ],
                 "final_answer": "B"
@@ -70560,7 +69616,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Prove Autocorrelation Maximum",
-                        "content": "By the Cauchy-Schwarz inequality:\n$|R_{xx}(\\tau)| = \\left| \\int x(t) x(t-\\tau)\\, dt \\right| \\le \\int x^2(t)\\, dt = R_{xx}(0)$\nThus, $|R_{xx}(\\tau)| \\le R_{xx}(0)$ for all $\\tau$, meaning the peak always occurs at zero lag (which represents the signal's total energy or power)."
+                        "content": "By the Cauchy-Schwarz inequality:\n$$|R_{xx}(\\tau)| = \\left| \\int x(t) x(t-\\tau)\\, dt \\right| \\le \\int x^2(t)\\, dt = R_{xx}(0)$$\nThus, $|R_{xx}(\\tau)| \\le R_{xx}(0)$ for all $\\tau$, meaning the peak always occurs at zero lag (which represents the signal's total energy or power)."
                     }
                 ],
                 "final_answer": "D"
@@ -70596,11 +69652,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Relate Digital and Physical Frequencies",
-                        "content": "The relation between digital angular frequency $\\omega$ and physical frequency $f$ is:\n$\\omega = 2\\pi \\frac{f}{f_s}$"
+                        "content": "The relation between digital angular frequency $\\omega$ and physical frequency $f$ is:\n$$\\omega = 2\\pi \\frac{f}{f_s}$$"
                     },
                     {
                         "title": "Solve for $f$ at $\\omega = \\pi$",
-                        "content": "$\\pi = 2\\pi \\frac{f}{f_s} \\implies \\frac{1}{2} = \\frac{f}{f_s} \\implies f = \\frac{f_s}{2}$\nThis is the Nyquist boundary frequency."
+                        "content": "$$\\pi = 2\\pi \\frac{f}{f_s} \\implies \\frac{1}{2} = \\frac{f}{f_s} \\implies f = \\frac{f_s}{2}$$\nThis is the Nyquist boundary frequency."
                     }
                 ],
                 "final_answer": "A"
@@ -70672,11 +69728,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Fourier Transform Integral",
-                        "content": "$X(j\\omega) = \\int_{-\\infty}^{\\infty} x(t) e^{-j\\omega t}\\, dt = \\int_{0}^{\\infty} e^{-3t} e^{-j\\omega t}\\, dt$"
+                        "content": "$$X(j\\omega) = \\int_{-\\infty}^{\\infty} x(t) e^{-j\\omega t}\\, dt = \\int_{0}^{\\infty} e^{-3t} e^{-j\\omega t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$X(j\\omega) = \\int_{0}^{\\infty} e^{-(3 + j\\omega)t}\\, dt = \\left[ -\\frac{1}{3 + j\\omega} e^{-(3 + j\\omega)t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{3 + j\\omega} \\right) = \\frac{1}{3 + j\\omega}$"
+                        "content": "$$X(j\\omega) = \\int_{0}^{\\infty} e^{-(3 + j\\omega)t}\\, dt = \\left[ -\\frac{1}{3 + j\\omega} e^{-(3 + j\\omega)t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{3 + j\\omega} \\right) = \\frac{1}{3 + j\\omega}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -70712,7 +69768,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Duality Property",
-                        "content": "The symmetry (duality) of the forward and inverse Fourier transform integrals implies:\n$\\mathcal{F}\\{X(t)\\} = x(-f)$\nor in terms of angular frequency $\\omega$:\n$\\mathcal{F}\\{X(t)\\} = 2\\pi x(-\\omega)$"
+                        "content": "The symmetry (duality) of the forward and inverse Fourier transform integrals implies:\n$$\\mathcal{F}\\{X(t)\\} = x(-f)$$\nor in terms of angular frequency $\\omega$:\n$$\\mathcal{F}\\{X(t)\\} = 2\\pi x(-\\omega)$$"
                     }
                 ],
                 "final_answer": "D"
@@ -70748,11 +69804,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Integral",
-                        "content": "$X(f) = \\int_{-T/2}^{T/2} A e^{-j 2\\pi f t}\\, dt$"
+                        "content": "$$X(f) = \\int_{-T/2}^{T/2} A e^{-j 2\\pi f t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate Integral",
-                        "content": "$X(f) = A \\left[ \\frac{e^{-j 2\\pi f t}}{-j 2\\pi f} \\right]_{-T/2}^{T/2} = A \\frac{e^{j \\pi f T} - e^{-j \\pi f T}}{j 2\\pi f}$\nUsing Euler's identity:\n$X(f) = A \\frac{\\sin(\\pi f T)}{\\pi f} = A T \\frac{\\sin(\\pi f T)}{\\pi f T} = A T \\text{sinc}(f T)$"
+                        "content": "$$X(f) = A \\left[ \\frac{e^{-j 2\\pi f t}}{-j 2\\pi f} \\right]_{-T/2}^{T/2} = A \\frac{e^{j \\pi f T} - e^{-j \\pi f T}}{j 2\\pi f}$$\nUsing Euler's identity:\n$$X(f) = A \\frac{\\sin(\\pi f T)}{\\pi f} = A T \\frac{\\sin(\\pi f T)}{\\pi f T} = A T \\text{sinc}(f T)$$"
                     }
                 ],
                 "final_answer": "A"
@@ -70788,11 +69844,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Delta Integral Property",
-                        "content": "$X(f) = \\int_{-\\infty}^{\\infty} \\delta(t) e^{-j 2\\pi f t}\\, dt$"
+                        "content": "$$X(f) = \\int_{-\\infty}^{\\infty} \\delta(t) e^{-j 2\\pi f t}\\, dt$$"
                     },
                     {
                         "title": "Sift at $t = 0$",
-                        "content": "The sifting property evaluates the integrand at $t = 0$:\n$X(f) = e^{-j 2\\pi f (0)} = e^0 = 1$"
+                        "content": "The sifting property evaluates the integrand at $t = 0$:\n$$X(f) = e^{-j 2\\pi f (0)} = e^0 = 1$$"
                     }
                 ],
                 "final_answer": "B"
@@ -70828,7 +69884,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Frequency Shifting Property",
-                        "content": "The modulation property states:\n$\\mathcal{F}\\{x(t) e^{j 2\\pi f_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t) e^{j 2\\pi f_0 t} e^{-j 2\\pi f t}\\, dt$\n$= \\int_{-\\infty}^{\\infty} x(t) e^{-j 2\\pi (f - f_0) t}\\, dt = X(f - f_0)$"
+                        "content": "The modulation property states:\n$$\\mathcal{F}\\{x(t) e^{j 2\\pi f_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t) e^{j 2\\pi f_0 t} e^{-j 2\\pi f t}\\, dt$$\n$$= \\int_{-\\infty}^{\\infty} x(t) e^{-j 2\\pi (f - f_0) t}\\, dt = X(f - f_0)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -70864,7 +69920,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Energy Conservation",
-                        "content": "Parseval's identity states that the signal energy in the time domain is equal to the signal energy in the frequency domain:\n$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |X(j\\omega)|^2\\, d\\omega$"
+                        "content": "Parseval's identity states that the signal energy in the time domain is equal to the signal energy in the frequency domain:\n$$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |X(j\\omega)|^2\\, d\\omega$$"
                     }
                 ],
                 "final_answer": "D"
@@ -70900,11 +69956,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Duality to Impulse",
-                        "content": "We know that $\\mathcal{F}\\{\\delta(t)\\} = 1$. By the duality property:\n$\\mathcal{F}\\{1\\} = \\delta(-f) = \\delta(f)$"
+                        "content": "We know that $\\mathcal{F}\\{\\delta(t)\\} = 1$. By the duality property:\n$$\\mathcal{F}\\{1\\} = \\delta(-f) = \\delta(f)$$"
                     },
                     {
                         "title": "Scale by $V_0$",
-                        "content": "Since the Fourier transform is a linear operator:\n$\\mathcal{F}\\{V_0\\} = V_0 \\delta(f)$"
+                        "content": "Since the Fourier transform is a linear operator:\n$$\\mathcal{F}\\{V_0\\} = V_0 \\delta(f)$$"
                     }
                 ],
                 "final_answer": "A"
@@ -70940,11 +69996,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Time Scaling Integral",
-                        "content": "$\\mathcal{F}\\{x(at)\\} = \\int_{-\\infty}^{\\infty} x(at) e^{-j 2\\pi f t}\\, dt$"
+                        "content": "$$\\mathcal{F}\\{x(at)\\} = \\int_{-\\infty}^{\\infty} x(at) e^{-j 2\\pi f t}\\, dt$$"
                     },
                     {
                         "title": "Evaluate by Substitution",
-                        "content": "Let $u = at \\implies dt = du/a$. If $a > 0$, limits are unchanged. If $a < 0$, limits are swapped, multiplying by $-1$. Combining both cases using absolute value:\n$\\mathcal{F}\\{x(at)\\} = \\frac{1}{|a|} \\int_{-\\infty}^{\\infty} x(u) e^{-j 2\\pi (f/a) u}\\, du = \\frac{1}{|a|} X\\left(\\frac{f}{a}\\right)$"
+                        "content": "Let $u = at \\implies dt = du/a$. If $a > 0$, limits are unchanged. If $a < 0$, limits are swapped, multiplying by $-1$. Combining both cases using absolute value:\n$$\\mathcal{F}\\{x(at)\\} = \\frac{1}{|a|} \\int_{-\\infty}^{\\infty} x(u) e^{-j 2\\pi (f/a) u}\\, du = \\frac{1}{|a|} X\\left(\\frac{f}{a}\\right)$$"
                     }
                 ],
                 "final_answer": "B"
@@ -70980,7 +70036,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Apply Derivative Property",
-                        "content": "Differentiating in the time domain corresponds to multiplying by $j 2\\pi f$ (or $j\\omega$) in the frequency domain:\n$\\mathcal{F}\\left\\{\\frac{dx(t)}{dt}\\right\\} = j 2\\pi f X(f)$"
+                        "content": "Differentiating in the time domain corresponds to multiplying by $j 2\\pi f$ (or $j\\omega$) in the frequency domain:\n$$\\mathcal{F}\\left\\{\\frac{dx(t)}{dt}\\right\\} = j 2\\pi f X(f)$$"
                     }
                 ],
                 "final_answer": "C"
@@ -71016,11 +70072,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Define Distortionless Output",
-                        "content": "Distortionless transmission means the output is a scaled and delayed copy of the input:\n$y(t) = K x(t - t_0)$"
+                        "content": "Distortionless transmission means the output is a scaled and delayed copy of the input:\n$$y(t) = K x(t - t_0)$$"
                     },
                     {
                         "title": "Find System Frequency Response",
-                        "content": "Taking the Fourier transform:\n$Y(f) = K e^{-j 2\\pi f t_0} X(f) \\implies H(f) = K e^{-j 2\\pi f t_0}$\nThis requires:\n1. Constant amplitude response: $|H(f)| = K$.\n2. Linear phase response: $\\theta(f) = -2\\pi f t_0$."
+                        "content": "Taking the Fourier transform:\n$$Y(f) = K e^{-j 2\\pi f t_0} X(f) \\implies H(f) = K e^{-j 2\\pi f t_0}$$\nThis requires:\n1. Constant amplitude response: $|H(f)| = K$.\n2. Linear phase response: $\\theta(f) = -2\\pi f t_0$."
                     }
                 ],
                 "final_answer": "D"
@@ -71056,15 +70112,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall THD Formula",
-                        "content": "The THD is defined as the ratio of the RMS voltage of the harmonics to the RMS voltage of the fundamental component:\n$\\text{THD} = \\frac{\\sqrt{V_2^2 + V_3^2 + \\dots}}{V_1}$"
+                        "content": "The THD is defined as the ratio of the RMS voltage of the harmonics to the RMS voltage of the fundamental component:\n$$\\text{THD} = \\frac{\\sqrt{V_2^2 + V_3^2 + \\dots}}{V_1}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $V_1 = 10\\ \\text{V}$, $V_2 = 0.8\\ \\text{V}$, and $V_3 = 0.6\\ \\text{V}$:\n$\\text{RMS of Harmonics} = \\sqrt{0.8^2 + 0.6^2} = \\sqrt{0.64 + 0.36} = \\sqrt{1.0} = 1.0\\ \\text{V}$"
+                        "content": "Given $V_1 = 10\\ \\text{V}$, $V_2 = 0.8\\ \\text{V}$, and $V_3 = 0.6\\ \\text{V}$:\n$$\\text{RMS of Harmonics} = \\sqrt{0.8^2 + 0.6^2} = \\sqrt{0.64 + 0.36} = \\sqrt{1.0} = 1.0\\ \\text{V}$$"
                     },
                     {
                         "title": "Calculate Percentage",
-                        "content": "$\\text{THD} = \\frac{1.0\\ \\text{V}}{10\\ \\text{V}} = 0.10 = 10.0\\%$"
+                        "content": "$$\\text{THD} = \\frac{1.0\\ \\text{V}}{10\\ \\text{V}} = 0.10 = 10.0\\%$$"
                     }
                 ],
                 "final_answer": "A"
@@ -71100,7 +70156,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Derive Rise Time - Bandwidth Relation",
-                        "content": "For a first-order low-pass system, the cutoff frequency in Hertz is $B_w = \\frac{1}{2\\pi \\tau}$.\nWe also know the rise time is $t_r = 2.2 \\tau$.\nSubstituting $\\tau = \\frac{1}{2\\pi B_w}$:\n$t_r = \\frac{2.2}{2\\pi B_w} \\approx \\frac{2.2}{6.283 B_w} \\approx \\frac{0.35}{B_w}$\nThis is the standard bandwidth-rise time relationship used in high-speed circuit design."
+                        "content": "For a first-order low-pass system, the cutoff frequency in Hertz is $B_w = \\frac{1}{2\\pi \\tau}$.\nWe also know the rise time is $t_r = 2.2 \\tau$.\nSubstituting $\\tau = \\frac{1}{2\\pi B_w}$:\n$$t_r = \\frac{2.2}{2\\pi B_w} \\approx \\frac{2.2}{6.283 B_w} \\approx \\frac{0.35}{B_w}$$\nThis is the standard bandwidth-rise time relationship used in high-speed circuit design."
                     }
                 ],
                 "final_answer": "B"
@@ -71136,11 +70192,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Write Convolution Integral",
-                        "content": "$y(t) = \\int_{-\\infty}^{\\infty} x(t-\\tau) h(\\tau)\\, d\\tau = \\int_{0}^{2} u(t-\\tau)\\, d\\tau$"
+                        "content": "$$y(t) = \\int_{-\\infty}^{\\infty} x(t-\\tau) h(\\tau)\\, d\\tau = \\int_{0}^{2} u(t-\\tau)\\, d\\tau$$"
                     },
                     {
                         "title": "Evaluate at $t = 1$",
-                        "content": "For $t = 1$:\n$y(1) = \\int_{0}^{2} u(1-\\tau)\\, d\\tau$\nSince $u(1-\\tau) = 1$ for $\\tau \\le 1$ and 0 for $\\tau > 1$, the integral limits are restricted to:\n$y(1) = \\int_{0}^{1} 1\\, d\\tau = [\\tau]_0^1 = 1.0$"
+                        "content": "For $t = 1$:\n$$y(1) = \\int_{0}^{2} u(1-\\tau)\\, d\\tau$$\nSince $u(1-\\tau) = 1$ for $\\tau \\le 1$ and 0 for $\\tau > 1$, the integral limits are restricted to:\n$$y(1) = \\int_{0}^{1} 1\\, d\\tau = [\\tau]_0^1 = 1.0$$"
                     }
                 ],
                 "final_answer": "C"
@@ -71176,11 +70232,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find System DC Gain",
-                        "content": "The steady state response to a unit step is equal to the DC gain of the system $H(0)$:\n$H(0) = \\int_{-\\infty}^{\\infty} h(t)\\, dt$"
+                        "content": "The steady state response to a unit step is equal to the DC gain of the system $H(0)$:\n$$H(0) = \\int_{-\\infty}^{\\infty} h(t)\\, dt$$"
                     },
                     {
                         "title": "Integrate Impulse Response",
-                        "content": "$H(0) = \\int_{0}^{\\infty} e^{-2t}\\, dt = \\left[ -\\frac{1}{2} e^{-2t} \\right]_{0}^{\\infty} = 0 - \\left(-\\frac{1}{2}\\right) = 0.5$"
+                        "content": "$$H(0) = \\int_{0}^{\\infty} e^{-2t}\\, dt = \\left[ -\\frac{1}{2} e^{-2t} \\right]_{0}^{\\infty} = 0 - \\left(-\\frac{1}{2}\\right) = 0.5$$"
                     }
                 ],
                 "final_answer": "D"
@@ -71252,11 +70308,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Combined Impulse Response",
-                        "content": "$h_{total}(t) = h_1(t) * h_2(t) = \\delta(t-2) * \\delta(t-3) = \\delta(t-5)$"
+                        "content": "$$h_{total}(t) = h_1(t) * h_2(t) = \\delta(t-2) * \\delta(t-3) = \\delta(t-5)$$"
                     },
                     {
                         "title": "Find Output",
-                        "content": "$y(t) = x(t) * h_{total}(t) = x(t) * \\delta(t-5) = x(t-5)$"
+                        "content": "$$y(t) = x(t) * h_{total}(t) = x(t) * \\delta(t-5) = x(t-5)$$"
                     }
                 ],
                 "final_answer": "B"
@@ -83517,11 +82573,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Find Host Bits",
-                        "content": "A `/26` prefix indicates that the subnet mask has 26 bits set to 1. The remaining bits for hosts are:\n$32 - 26 = 6\\ \\text{bits}$"
+                        "content": "A `/26` prefix indicates that the subnet mask has 26 bits set to 1. The remaining bits for hosts are:\n$$32 - 26 = 6\\ \\text{bits}$$"
                     },
                     {
                         "title": "Calculate Total and Usable Hosts",
-                        "content": "Total addresses: $2^6 = 64$.\nUsable addresses (excluding network address and broadcast address): \n$2^6 - 2 = 64 - 2 = 62$"
+                        "content": "Total addresses: $2^6 = 64$.\nUsable addresses (excluding network address and broadcast address): \n$$2^6 - 2 = 64 - 2 = 62$$"
                     }
                 ],
                 "final_answer": "C"
@@ -83561,7 +82617,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Apply Logical AND to Third Octet",
-                        "content": "The host's third octet is 45. In binary:\n$45 = 00101101_2$\nSubnet mask third octet:\n$252 = 11111100_2$\nLogical AND:\n$00101101_2 \\text{ AND } 11111100_2 = 00101100_2 = 44_{10}$"
+                        "content": "The host's third octet is 45. In binary:\n$$45 = 00101101_2$$\nSubnet mask third octet:\n$$252 = 11111100_2$$\nLogical AND:\n$$00101101_2 \\text{ AND } 11111100_2 = 00101100_2 = 44_{10}$$"
                     },
                     {
                         "title": "Write Network Address",
@@ -83681,7 +82737,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Analyze the Binary Patterns of Third Octets",
-                        "content": "$16 = 00010000_2$\n$17 = 00010001_2$\n$18 = 00010010_2$\n$19 = 00010011_2$"
+                        "content": "$$16 = 00010000_2$$\n$$17 = 00010001_2$$\n$$18 = 00010010_2$$\n$$19 = 00010011_2$$"
                     },
                     {
                         "title": "Identify Matching Bits",
@@ -84879,15 +83935,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Determine Offset Bits",
-                        "content": "Each block contains 16 bytes. Since $16 = 2^4$, the Byte Offset field requires:\n$\\text{Offset} = 4\\ \\text{bits}$"
+                        "content": "Each block contains 16 bytes. Since $16 = 2^4$, the Byte Offset field requires:\n$$\\text{Offset} = 4\\ \\text{bits}$$"
                     },
                     {
                         "title": "Determine Index Bits",
-                        "content": "The cache has 128 blocks. Since $128 = 2^7$, the Cache Index field requires:\n$\\text{Index} = 7\\ \\text{bits}$"
+                        "content": "The cache has 128 blocks. Since $128 = 2^7$, the Cache Index field requires:\n$$\\text{Index} = 7\\ \\text{bits}$$"
                     },
                     {
                         "title": "Calculate Tag Bits",
-                        "content": "The total address size is 16 bits. Thus, the Tag size is:\n$\\text{Tag} = \\text{Address Size} - (\\text{Index} + \\text{Offset})$\n$\\text{Tag} = 16 - (7 + 4) = 16 - 11 = 5\\ \\text{bits}$"
+                        "content": "The total address size is 16 bits. Thus, the Tag size is:\n$$\\text{Tag} = \\text{Address Size} - (\\text{Index} + \\text{Offset})$$\n$$\\text{Tag} = 16 - (7 + 4) = 16 - 11 = 5\\ \\text{bits}$$"
                     }
                 ],
                 "final_answer": "C"
@@ -84995,15 +84051,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Amdahl's Law",
-                        "content": "Speedup $S$ is given by:\n$S = \\frac{1}{(1 - P) + \\frac{P}{N}}$\nwhere $P$ is the parallel fraction and $N$ is the number of processors."
+                        "content": "Speedup $S$ is given by:\n$$S = \\frac{1}{(1 - P) + \\frac{P}{N}}$$\nwhere $P$ is the parallel fraction and $N$ is the number of processors."
                     },
                     {
                         "title": "Take the Limit as $N \\to \\infty$",
-                        "content": "As $N \\to \\infty$, the term $\\frac{P}{N} \\to 0$. The maximum speedup is:\n$S_{max} = \\frac{1}{1 - P}$"
+                        "content": "As $N \\to \\infty$, the term $\\frac{P}{N} \\to 0$. The maximum speedup is:\n$$S_{max} = \\frac{1}{1 - P}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $P = 0.8$:\n$S_{max} = \\frac{1}{1 - 0.8} = \\frac{1}{0.2} = 5.0$"
+                        "content": "Given $P = 0.8$:\n$$S_{max} = \\frac{1}{1 - 0.8} = \\frac{1}{0.2} = 5.0$$"
                     }
                 ],
                 "final_answer": "B"
@@ -85219,11 +84275,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Physical Address Calculation",
-                        "content": "In 8086, the 20-bit physical address is calculated by shifting the segment address left by 4 bits (1 hex digit) and adding the offset:\n$\\text{Physical Address} = (\\text{Segment} \\times 16) + \\text{Offset}$"
+                        "content": "In 8086, the 20-bit physical address is calculated by shifting the segment address left by 4 bits (1 hex digit) and adding the offset:\n$$\\text{Physical Address} = (\\text{Segment} \\times 16) + \\text{Offset}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Segment = `0x2000` $\\rightarrow$ Shifted = `0x20000`\nOffset = `0x1234`\n$\\text{Physical Address} = 0x20000 + 0x1234 = 0x21234$"
+                        "content": "Segment = `0x2000` $\\rightarrow$ Shifted = `0x20000`\nOffset = `0x1234`\n$$\\text{Physical Address} = 0x20000 + 0x1234 = 0x21234$$"
                     }
                 ],
                 "final_answer": "D"
@@ -85403,7 +84459,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Formulate Hamming Inequality",
-                        "content": "Let $p$ be the number of parity bits and $d$ be the number of data bits. The inequality for single-error correction is:\n$2^p \\ge d + p + 1$"
+                        "content": "Let $p$ be the number of parity bits and $d$ be the number of data bits. The inequality for single-error correction is:\n$$2^p \\ge d + p + 1$$"
                     },
                     {
                         "title": "Substitute Given Values",
@@ -85699,7 +84755,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Convert to Binary",
-                        "content": "`0x3F` in binary is:\n$00111111_2$"
+                        "content": "`0x3F` in binary is:\n$$00111111_2$$"
                     },
                     {
                         "title": "Count the number of 1s",
@@ -87085,15 +86141,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Probe Formula",
-                        "content": "We calculate the index for $i = 2$ using:\n$h(k, 2) = (h'(k) + 1(2) + 3(2^2)) \\pmod{11}$"
+                        "content": "We calculate the index for $i = 2$ using:\n$$h(k, 2) = (h'(k) + 1(2) + 3(2^2)) \\pmod{11}$$"
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $h'(k) = 5$:\n$h(k, 2) = (5 + 2 + 3(4)) \\pmod{11}$\n$h(k, 2) = (5 + 2 + 12) \\pmod{11} = 19 \\pmod{11}$"
+                        "content": "Given $h'(k) = 5$:\n$$h(k, 2) = (5 + 2 + 3(4)) \\pmod{11}$$\n$$h(k, 2) = (5 + 2 + 12) \\pmod{11} = 19 \\pmod{11}$$"
                     },
                     {
                         "title": "Compute Modulo",
-                        "content": "$19 = 11 \\times 1 + 8 \\implies 19 \\pmod{11} = 8$\nWait, let's re-evaluate: $19 \\pmod{11} = 8$. Let's check: $5 + 2 + 12 = 19$. Yes. Let's make sure the option lists 8 as correct, or correct the options to match 8.\nLet's recalculate for $i=1$: $h(k,1) = 5+1+3 = 9$. For $i=2$: $h(k,2) = 5 + 2 + 12 = 19 \\pmod{11} = 8$. Let's ensure the options represent 8 correctly. Let's write the correct option as 8."
+                        "content": "$$19 = 11 \\times 1 + 8 \\implies 19 \\pmod{11} = 8$$\nWait, let's re-evaluate: $19 \\pmod{11} = 8$. Let's check: $5 + 2 + 12 = 19$. Yes. Let's make sure the option lists 8 as correct, or correct the options to match 8.\nLet's recalculate for $i=1$: $h(k,1) = 5+1+3 = 9$. For $i=2$: $h(k,2) = 5 + 2 + 12 = 19 \\pmod{11} = 8$. Let's ensure the options represent 8 correctly. Let's write the correct option as 8."
                     }
                 ],
                 "final_answer": "B"
@@ -87313,11 +86369,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "State Binary Search Complexity",
-                        "content": "The maximum number of comparisons for binary search on an array of size $N$ is:\n$C_{max} = \\lfloor \\log_2 N \\rfloor + 1$"
+                        "content": "The maximum number of comparisons for binary search on an array of size $N$ is:\n$$C_{max} = \\lfloor \\log_2 N \\rfloor + 1$$"
                     },
                     {
                         "title": "Substitute $N = 1024$",
-                        "content": "$\\log_2 1024 = 10$\n$C_{max} = 10 + 1 = 11$"
+                        "content": "$$\\log_2 1024 = 10$$\n$$C_{max} = 10 + 1 = 11$$"
                     }
                 ],
                 "final_answer": "D"
@@ -87537,11 +86593,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Recall Cyclomatic Complexity Formula",
-                        "content": "McCabe's Cyclomatic Complexity is given by:\n$V(G) = E - N + 2 P$\nwhere $E$ is the number of edges, $N$ is the number of nodes, and $P$ is the number of connected components."
+                        "content": "McCabe's Cyclomatic Complexity is given by:\n$$V(G) = E - N + 2 P$$\nwhere $E$ is the number of edges, $N$ is the number of nodes, and $P$ is the number of connected components."
                     },
                     {
                         "title": "Substitute Given Values",
-                        "content": "Given $E = 12$, $N = 9$, and $P = 1$ (single subroutine):\n$V(G) = 12 - 9 + 2(1) = 3 + 2 = 5$"
+                        "content": "Given $E = 12$, $N = 9$, and $P = 1$ (single subroutine):\n$$V(G) = 12 - 9 + 2(1) = 3 + 2 = 5$$"
                     }
                 ],
                 "final_answer": "B"
@@ -90022,338 +89078,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
-        },
-        {
-            "topic": "Spreadsheets",
-            "title": "Iterative Calculation in Spreadsheets",
-            "question": "When a spreadsheet cell formula refers to its own cell, either directly or indirectly, what feature must be enabled to resolve the calculation without triggering an error?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Iterative calculation",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Array formula expansion",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Macro recording",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Conditional formatting",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Circular References",
-                        "content": "A circular reference occurs when a formula refers back to its own cell. Spreadsheets cannot resolve this natively as it creates an infinite loop."
-                    },
-                    {
-                        "title": "Enable Iterative Calculation",
-                        "content": "By enabling 'Iterative calculation', the spreadsheet recalculates the formula a specific number of times or until the change in value is below a certain threshold."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Mathematical Software",
-            "title": "Solving Linear Systems using Matrices",
-            "question": "In computational tools like MATLAB or Python (NumPy), what is the standard mathematical operation used to solve a system of linear equations $Ax = b$ for the vector $x$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Dot product: $x = A \\cdot b$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Matrix inversion and multiplication: $x = A^{-1}b$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Cross product: $x = A \\times b$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Element-wise division: $x = A / b$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Matrix Representation",
-                        "content": "A system of linear equations can be represented as $Ax = b$, where $A$ is the coefficient matrix, $x$ is the variable vector, and $b$ is the constant vector."
-                    },
-                    {
-                        "title": "Isolating $x$",
-                        "content": "To solve for $x$, both sides are multiplied by the inverse of $A$ ($A^{-1}$), yielding $A^{-1}Ax = A^{-1}b \\implies x = A^{-1}b$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Spreadsheets",
-            "title": "Absolute Cell Reference",
-            "question": "In spreadsheet software (like Excel), which symbol is used to create an absolute cell reference?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "#",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "@",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "&",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Absolute References",
-                        "content": "The dollar sign ($) is used to fix the column and/or row reference (e.g., $A$1) so it doesn't change when the formula is copied."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Spreadsheets",
-            "title": "VLOOKUP Function",
-            "question": "The VLOOKUP function in a spreadsheet is primarily used to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Calculate the variance of a dataset",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Visually look up spelling errors in a document",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Search horizontally across a row",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Search for a value in the first column of a table and return a value in the same row from another column",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "VLOOKUP Definition",
-                        "content": "VLOOKUP stands for Vertical Lookup. It searches vertically down the first column of a range and returns a value in the same row."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Mathematical Software",
-            "title": "Numerical Integration",
-            "question": "When using mathematical software to numerically evaluate a definite integral, which common rule or method is often applied behind the scenes?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Simpson's Rule",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "L'Hôpital's Rule",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Cramer's Rule",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The Chain Rule",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Numerical Methods",
-                        "content": "Simpson's rule is a standard numerical method for approximating the definite integral of a function using parabolic arcs."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Spreadsheets",
-            "title": "Goal Seek",
-            "question": "The 'Goal Seek' tool in spreadsheet software is an example of:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "A function that automatically creates charts",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "A 'what-if' analysis tool used to find the input value needed to achieve a specific target output",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "A database sorting algorithm",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A statistical regression tool",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Goal Seek Tool",
-                        "content": "Goal Seek iteratively adjusts one input cell until a formula dependent on that cell reaches a specified target value."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Mathematical Software",
-            "title": "Solving Linear Equations",
-            "question": "In mathematical software like MATLAB, a system of linear equations represented by the matrix equation $Ax = b$ is typically solved using:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Numerical integration",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The Newton-Raphson method",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Matrix inversion or Gaussian elimination ($x = A \\backslash b$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Monte Carlo simulation",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Solving Linear Systems",
-                        "content": "Linear systems are solved using matrix division (which uses Gaussian elimination under the hood) or by multiplying by the inverse of A ($x = A^{-1}b$)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Spreadsheets",
-            "title": "Pivot Tables",
-            "question": "What is the primary function of a Pivot Table in a spreadsheet?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To link multiple spreadsheets together securely",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To format data into a printable layout",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To act as a primary key in a relational database",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "To summarize, analyze, explore, and present large amounts of data",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pivot Table Purpose",
-                        "content": "Pivot tables are powerful tools for quickly summarizing large datasets, allowing users to group data, count, total, or average it automatically."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Mathematical Software",
-            "title": "Root Finding",
-            "question": "The Newton-Raphson method, often implemented in engineering software, is used primarily to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Find the roots (zeros) of a real-valued function",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Solve ordinary differential equations",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Calculate the eigenvectors of a matrix",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Perform symbolic integration",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Newton-Raphson Method",
-                        "content": "The Newton-Raphson method is an iterative numerical root-finding algorithm that uses the tangent of a function to approximate its roots."
-                    }
-                ],
-                "final_answer": "A"
-            }
         }
     ],
     "chem-bio": [
@@ -91091,418 +89815,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "General Chemistry",
-            "title": "Stoichiometry of Combustion",
-            "question": "How many moles of oxygen are required for the complete combustion of 1 mole of propane ($C_3H_8$)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "5 moles",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "3 moles",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "4 moles",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "10 moles",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Write the balanced equation",
-                        "content": "$C_3H_8 + 5O_2 \\rightarrow 3CO_2 + 4H_2O$"
-                    },
-                    {
-                        "title": "Determine the ratio",
-                        "content": "From the balanced equation, 1 mole of propane requires 5 moles of $O_2$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "General Chemistry",
-            "title": "Ideal Gas Law Application",
-            "question": "A gas occupies a volume of 22.4 liters at STP (Standard Temperature and Pressure). If the pressure is doubled while the temperature remains constant, what is the new volume?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "44.8 L",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "11.2 L",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "22.4 L",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "5.6 L",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Boyle's Law",
-                        "content": "According to Boyle's Law, at constant temperature, pressure and volume are inversely proportional ($P_1 V_1 = P_2 V_2$)."
-                    },
-                    {
-                        "title": "Calculate New Volume",
-                        "content": "If pressure is doubled ($P_2 = 2P_1$), then the new volume must be halved: $V_2 = V_1 / 2 = 22.4 / 2 = 11.2\\ L$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Biology",
-            "title": "Cellular Respiration Product",
-            "question": "In eukaryotic cells, the primary purpose of aerobic cellular respiration is the production of which energy-carrying molecule?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Glucose",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "NADH",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "ATP",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Oxygen",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Identify Cellular Respiration",
-                        "content": "Aerobic cellular respiration is the process by which cells use oxygen to break down glucose and store energy."
-                    },
-                    {
-                        "title": "Identify the Primary Product",
-                        "content": "The main energy currency generated from this process is Adenosine Triphosphate (ATP)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Biology",
-            "title": "Enzyme Kinetics Basics",
-            "question": "According to the Michaelis-Menten kinetics model, what happens to the rate of an enzyme-catalyzed reaction as the substrate concentration becomes very high (approaching infinity)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The reaction rate decreases to zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The reaction rate increases exponentially without limit",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The reaction rate becomes equal to the Michaelis constant ($K_m$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The reaction rate approaches a maximum velocity ($V_{max}$)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Michaelis-Menten Equation",
-                        "content": "The rate is given by $v = \\frac{V_{max}[S]}{K_m + [S]}$."
-                    },
-                    {
-                        "title": "Evaluate Limit",
-                        "content": "As $[S] \\to \\infty$, the term $K_m$ becomes negligible compared to $[S]$. Thus, $v \\approx \\frac{V_{max}[S]}{[S]} = V_{max}$. The enzyme becomes fully saturated."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Biochemistry",
-            "title": "Enzyme Action",
-            "question": "Enzymes act as biological catalysts primarily by:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Lowering the activation energy of the reaction",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Increasing the temperature of the cell",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Changing the equilibrium constant of the reaction",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Being consumed in the reaction",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Enzyme Function",
-                        "content": "Enzymes speed up chemical reactions in biological systems by providing an alternative reaction pathway with a lower activation energy barrier."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Biochemistry",
-            "title": "Michaelis-Menten Kinetics",
-            "question": "In Michaelis-Menten enzyme kinetics, $K_m$ (the Michaelis constant) represents:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The maximum velocity of the reaction",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The substrate concentration at which the reaction velocity is half of its maximum ($V_{max}/2$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The concentration of the enzyme",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The total product formed",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "$K_m$ Definition",
-                        "content": "$K_m$ is an inverse measure of the affinity of the enzyme for its substrate. It is specifically the substrate concentration that yields $1/2 V_{max}$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "General Chemistry",
-            "title": "Ideal Gas Law",
-            "question": "At Standard Temperature and Pressure (STP), what is the approximate volume of 1 mole of an ideal gas?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "1.0 Liter",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "100 Liters",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "22.4 Liters",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "24.5 Liters",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Molar Volume at STP",
-                        "content": "By definition ($T=273.15$ K, $P=1$ atm), using $V = nRT/P$, the volume of 1 mole of ideal gas is $22.414$ L."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "General Chemistry",
-            "title": "Gibbs Free Energy",
-            "question": "A chemical reaction is spontaneous under conditions of constant temperature and pressure if:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\Delta G > 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\Delta H > 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\Delta S < 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\Delta G < 0$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Spontaneity",
-                        "content": "The change in Gibbs Free Energy ($\\Delta G = \\Delta H - T\\Delta S$) must be negative for a process to be thermodynamically spontaneous."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Biochemistry",
-            "title": "ATP Function",
-            "question": "Adenosine triphosphate (ATP) serves primarily as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The main energy currency of the cell",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "A long-term structural component of the cell membrane",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "A carrier of genetic information",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A digestive enzyme",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "ATP Role",
-                        "content": "ATP stores and transports chemical energy within cells for metabolism. The hydrolysis of its high-energy phosphate bonds releases energy."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "General Chemistry",
-            "title": "VSEPR Theory",
-            "question": "According to VSEPR theory, what is the molecular geometry of methane ($CH_4$)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Square planar",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Tetrahedral",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Trigonal planar",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Linear",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Methane Geometry",
-                        "content": "Carbon has 4 valence electrons forming 4 single bonds with Hydrogen, and 0 lone pairs. This results in a $AX_4$ tetrahedral geometry with $109.5^\\circ$ bond angles."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Biochemistry",
-            "title": "Proteins",
-            "question": "The primary structure of a protein refers to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The local folding into alpha helices and beta sheets",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The overall 3D shape of a single protein molecule",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The linear sequence of amino acids in the polypeptide chain",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The association of multiple protein subunits",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Protein Structure Levels",
-                        "content": "Primary = sequence; Secondary = local folding (alpha/beta); Tertiary = 3D folding; Quaternary = multi-subunit arrangement."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -92250,342 +90562,6 @@ const QUESTIONS = {
                     {
                         "title": "Calculation",
                         "content": "$F = 1 - 2 + 2 = 1$. Only one variable (e.g., T or P) can be independently specified."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Material Balances",
-            "title": "Steady-State Mass Balance",
-            "question": "A continuous steady-state process mixes 100 kg/hr of a 20% salt solution with 50 kg/hr of a 50% salt solution. Assuming no accumulation or generation, what is the mass fraction of salt in the exiting stream?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "0.30",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "0.35",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "0.40",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0.25",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Overall Mass Balance",
-                        "content": "$m_{in} = m_{out} \\implies 100 + 50 = 150\\ \\text{kg/hr}$"
-                    },
-                    {
-                        "title": "Salt Mass Balance",
-                        "content": "Salt in = $(0.20 \\times 100) + (0.50 \\times 50) = 20 + 25 = 45\\ \\text{kg/hr}$"
-                    },
-                    {
-                        "title": "Calculate Mass Fraction",
-                        "content": "Mass fraction = $\\frac{\\text{Salt}}{\\text{Total}} = \\frac{45}{150} = 0.30$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Energy Balances",
-            "title": "First Law for Open Systems",
-            "question": "In an adiabatic throttling valve where changes in kinetic and potential energy are negligible, which thermodynamic property remains constant?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Entropy",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Enthalpy",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Temperature",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Pressure",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze the Energy Balance Equation",
-                        "content": "For a steady-flow open system with one inlet and one outlet: $Q - W = \\Delta H + \\Delta KE + \\Delta PE$"
-                    },
-                    {
-                        "title": "Apply Throttling Valve Conditions",
-                        "content": "For a throttling valve: $Q = 0$ (adiabatic), $W = 0$ (no work done), $\\Delta KE \\approx 0$, $\\Delta PE \\approx 0$. Therefore, $\\Delta H = 0$, meaning enthalpy is constant (isenthalpic process)."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Material Balances",
-            "title": "Degrees of Freedom",
-            "question": "In material balance calculations, a process has zero degrees of freedom when:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The number of unknown variables exceeds the number of independent equations",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "There are no constraints on the system",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The number of unknown variables equals the number of independent equations",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The system operates at steady state",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Degrees of Freedom",
-                        "content": "Degrees of Freedom (DOF) = (Number of unknowns) - (Number of independent equations). When DOF = 0, the system is exactly specified and can be solved uniquely."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Material Balances",
-            "title": "Recycle Stream",
-            "question": "What is the primary purpose of a recycle stream in a chemical process?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To remove inert gases from the system",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To increase the temperature of the feed",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To separate the final product",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "To return unreacted reactants to the reactor to improve overall conversion",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recycle Streams",
-                        "content": "Recycle streams take unreacted material from downstream separators and feed it back to the reactor, increasing the overall conversion of the process."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Energy Balances",
-            "title": "Heat of Reaction",
-            "question": "The standard heat of reaction ($\\Delta H_r^\\circ$) is defined as the enthalpy change when:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Molar quantities of reactants specified by the stoichiometric equation react completely at standard conditions ($25^\\circ\\text{C}$, $1\\ \\text{atm}$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "One mole of a substance is formed from its elements",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "One mole of a substance is completely combusted",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A reaction occurs at adiabatic conditions",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Standard Heat of Reaction",
-                        "content": "$\\Delta H_r^\\circ$ is the enthalpy change for a specific stoichiometric reaction where all reactants and products are at standard temperature and pressure ($25^\\circ\\text{C}$ and $1\\ \\text{atm}$)."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Material Balances",
-            "title": "Purge Stream",
-            "question": "Why is a purge stream necessary in a process with a recycle loop?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To provide a sample point for quality control",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To prevent the accumulation of inert or unwanted substances in the recycle loop",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "To cool the recycle stream",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "To recover the final product",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Purge Purpose",
-                        "content": "If a feed contains inerts that do not react, recycling will cause them to build up indefinitely. A purge stream bleeds off a fraction of the recycle to maintain a steady concentration of inerts."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Energy Balances",
-            "title": "Heat Capacity",
-            "question": "The heat required to raise the temperature of a substance is given by $Q = m C_p \\Delta T$. What does $C_p$ represent?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Specific heat capacity at constant volume",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Heat of vaporization",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Specific heat capacity at constant pressure",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Thermal conductivity",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Specific Heat",
-                        "content": "$C_p$ is the specific heat capacity at constant pressure, which is the amount of heat energy required to raise the temperature of a unit mass of a substance by one degree."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Material Balances",
-            "title": "Limiting Reactant",
-            "question": "In a chemical reaction, the limiting reactant is the one that:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Has the lowest mass in the feed",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Has the lowest stoichiometric coefficient",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Is the most expensive",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Would be completely consumed first if the reaction proceeded to completion",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Limiting Reactant",
-                        "content": "The limiting reactant determines the maximum theoretical yield of the products. It is the reactant present in the smallest stoichiometric amount relative to the balanced equation."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Energy Balances",
-            "title": "Latent Heat",
-            "question": "Latent heat refers to the energy required to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Change the phase of a substance without changing its temperature",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Raise the temperature of a substance by $1^\\circ\\text{C}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Break chemical bonds during a reaction",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Overcome friction in a fluid flow",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Latent Heat",
-                        "content": "Latent heat is the heat absorbed or released during a phase change (like melting or boiling) at a constant temperature and pressure."
                     }
                 ],
                 "final_answer": "A"
@@ -96116,7 +94092,7 @@ const QUESTIONS = {
         {
             "topic": "Particle Size",
             "title": "Differential and Cumulative Particle Size Analysis",
-            "question": "In a particle size analysis, what does the term '$d_{50} or 'mass median diameter' physically represent on a cumulative size distribution plot?",
+            "question": "In a particle size analysis, what does the term '$d_{50}$' or 'mass median diameter' physically represent on a cumulative size distribution plot?",
             "options": [
                 {
                     "label": "A",
@@ -96497,82 +94473,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": ""
-            }
-        },
-        {
-            "topic": "Particle Size",
-            "title": "Sauter Mean Diameter",
-            "question": "In particle technology, the Sauter mean diameter ($d_{32}$) is defined as the diameter of a sphere that has the same ratio of:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Mass to surface area as the largest particle in the distribution",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Volume to mass as the median particle",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Volume to surface area as the entire particle distribution",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Surface area to diameter as the mean particle",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Sauter Mean Diameter",
-                        "content": "The Sauter mean diameter, denoted $d_{32}$, is a measure of the average particle size in a fluid-particle system. It is specifically defined as the diameter of a sphere that has the same volume/surface area ratio as a particle of interest or the entire ensemble."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fluidization",
-            "title": "Minimum Fluidization Velocity",
-            "question": "When an upward-flowing fluid passes through a bed of solid particles, the 'minimum fluidization velocity' is reached when:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The fluid velocity exceeds the terminal velocity of the particles",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The bed porosity reaches exactly 1.0",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The pressure drop across the bed becomes zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The drag force equals the effective weight of the particles",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Fluidization",
-                        "content": "Fluidization occurs when a fluid (liquid or gas) is passed up through a granular material at high enough velocities to suspend the solid particles."
-                    },
-                    {
-                        "title": "Minimum Condition",
-                        "content": "The minimum fluidization velocity ($U_{mf}$) is the point where the upward drag force exerted by the fluid on the particles exactly counterbalances the gravitational force (effective weight) acting on the particles."
-                    }
-                ],
-                "final_answer": "D"
             }
         }
     ],
@@ -97295,338 +95195,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Kinetics",
-            "title": "First-Order Reaction Half-Life",
-            "question": "A first-order chemical reaction has a rate constant $k = 0.05\\ \\text{min}^{-1}$. What is the half-life ($t_{1/2}$) of this reaction?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "13.86 min",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "20.00 min",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "6.93 min",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "27.72 min",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Half-Life Formula",
-                        "content": "For a first-order reaction, the half-life is independent of the initial concentration and is given by: $t_{1/2} = \\frac{\\ln(2)}{k}$"
-                    },
-                    {
-                        "title": "Calculate $t_{1/2}$",
-                        "content": "$t_{1/2} = \\frac{0.693}{0.05} = 13.86\\ \\text{min}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Reactor Design",
-            "title": "CSTR Space Time",
-            "question": "A Continuous Stirred-Tank Reactor (CSTR) operates with a volumetric flow rate of $10\\ \\text{L/min}$ and has a working volume of $150\\ \\text{L}$. What is the space time ($\\tau$) of the reactor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "1500 min",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "15 min",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "0.067 min",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "10 min",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Space Time",
-                        "content": "Space time $\\tau$ is the time required to process one reactor volume of fluid. It is defined as: $\\tau = \\frac{V}{v_0}$ where $V$ is the reactor volume and $v_0$ is the volumetric flow rate."
-                    },
-                    {
-                        "title": "Calculate $\\tau$",
-                        "content": "$\\tau = \\frac{150\\ \\text{L}}{10\\ \\text{L/min}} = 15\\ \\text{min}$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Kinetics",
-            "title": "Arrhenius Equation",
-            "question": "According to the Arrhenius equation ($k = A e^{-E_a/RT}$), how does the rate constant $k$ typically respond to an increase in temperature $T$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It decreases exponentially",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It increases linearly",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It increases exponentially",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It remains constant",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Arrhenius Equation",
-                        "content": "Because of the negative exponent $-E_a/(RT)$, as $T$ increases, the exponent becomes less negative, causing $k$ to increase exponentially."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Reactor Design",
-            "title": "Plug Flow Reactor (PFR)",
-            "question": "In an ideal Plug Flow Reactor (PFR), it is assumed that:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "There is perfect mixing in all directions",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The concentration is uniform throughout the reactor",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The residence time is highly variable",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "There is no axial mixing, but perfect radial mixing",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "PFR Assumptions",
-                        "content": "An ideal PFR assumes that fluid travels as a 'plug' with a uniform velocity profile. There is perfect mixing radially, but absolutely no mixing axially (in the direction of flow)."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Reactor Design",
-            "title": "CSTR vs PFR",
-            "question": "For a given volume and isothermal first-order reaction ($A \\rightarrow P$), which reactor type generally achieves a higher conversion?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Plug Flow Reactor (PFR)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Continuous Stirred-Tank Reactor (CSTR)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Both achieve the exact same conversion",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Depends entirely on the pressure",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Reactor Comparison",
-                        "content": "For reactions with order $> 0$ (like first-order), a PFR is more efficient than a CSTR of the same volume because the average reactant concentration (driving force) remains higher along the PFR's length."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Kinetics",
-            "title": "Zero-Order Reaction",
-            "question": "In a zero-order reaction, the rate of reaction is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Directly proportional to the reactant concentration",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Independent of the reactant concentration",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Proportional to the square of the reactant concentration",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Dependent only on temperature",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Zero-Order Kinetics",
-                        "content": "For a zero-order reaction, the rate law is $r = k[A]^0 = k$. The rate is constant and independent of the concentration of the reactant."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Reactor Design",
-            "title": "Residence Time Distribution (RTD)",
-            "question": "What does the Residence Time Distribution (RTD) of a reactor describe?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The spatial distribution of temperature within the reactor",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The exact chemical composition of the effluent",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The probability distribution of time that fluid elements spend inside the reactor",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The mechanical stress distribution on the reactor walls",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "RTD Meaning",
-                        "content": "RTD ($E(t)$) characterizes the macroscopic mixing in a reactor, detailing how long different fluid elements remain inside before exiting."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Kinetics",
-            "title": "Activation Energy",
-            "question": "Activation energy ($E_a$) is best defined as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The total energy released by an exothermic reaction",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The energy difference between reactants and products",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The kinetic energy of the molecules at standard temperature",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The minimum energy required to initiate a chemical reaction",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Activation Energy",
-                        "content": "$E_a$ is the energy barrier that must be overcome for reactants to reach the transition state and convert into products."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Reactor Design",
-            "title": "Batch Reactor",
-            "question": "A key characteristic of an ideal batch reactor is that:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "There is no inflow or outflow of mass during the reaction",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Reactants are continuously fed and products continuously removed",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Concentration varies spatially but is constant with time",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It operates strictly at steady state",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Batch Reactor Operation",
-                        "content": "In a batch reactor, all reactants are loaded initially, mixed, and allowed to react for a specific time. There is no mass flow across its boundaries during the reaction; concentration changes over time but is spatially uniform."
-                    }
-                ],
-                "final_answer": "A"
             }
         }
     ],
@@ -98760,86 +96328,6 @@ const QUESTIONS = {
                 "final_answer": "A",
                 "solution_image": ""
             }
-        },
-        {
-            "topic": "Equipment Design",
-            "title": "Heat Exchanger Log Mean Temperature Difference",
-            "question": "For a given set of inlet and outlet temperatures, the Log Mean Temperature Difference (LMTD) for a counter-current flow heat exchanger compared to a co-current flow heat exchanger is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Always smaller",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Exactly equal",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Always greater",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Unrelated",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Compare LMTD",
-                        "content": "The LMTD is defined as $\\frac{\\Delta T_1 - \\Delta T_2}{\\ln(\\Delta T_1 / \\Delta T_2)}$. Due to the temperature profiles of the fluids, a counter-current arrangement maintains a more uniform temperature driving force throughout the exchanger."
-                    },
-                    {
-                        "title": "Conclusion",
-                        "content": "Mathematically, for the same terminal temperatures, the LMTD for counter-current flow is strictly greater than that for co-current flow, leading to a smaller required area."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Process Synthesis",
-            "title": "Heuristics for Distillation Sequencing",
-            "question": "When sequencing a series of distillation columns to separate a multi-component mixture, a common heuristic is to perform which separation first?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Remove the component with the highest boiling point first",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Perform the most difficult separation first",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Remove the most valuable component last",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Remove the most plentiful component first",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Distillation Heuristics",
-                        "content": "Process synthesis heuristics help in rapidly finding good preliminary designs for separation sequences."
-                    },
-                    {
-                        "title": "Applying the Heuristic",
-                        "content": "Removing the most plentiful component first reduces the mass load and utility requirements for all subsequent downstream columns, making the overall process more energy and cost-efficient."
-                    }
-                ],
-                "final_answer": "D"
-            }
         }
     ],
     "process-control": [
@@ -99755,338 +97243,6 @@ const QUESTIONS = {
                 "final_answer": "A",
                 "solution_image": ""
             }
-        },
-        {
-            "topic": "Control Systems",
-            "title": "PID Controller Action",
-            "question": "In a PID controller, which control action is primarily responsible for eliminating steady-state error (offset) after a step change in setpoint?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Proportional action",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Integral action",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Derivative action",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Feedforward action",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze PID Components",
-                        "content": "Proportional (P) action responds to current error, Derivative (D) action anticipates future error based on rate of change, and Integral (I) action accumulates past error."
-                    },
-                    {
-                        "title": "Identify Steady-State Eliminator",
-                        "content": "Because Integral action integrates the error over time, it continues to adjust the controller output until the error is exactly zero, thereby eliminating steady-state offset."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Sensors",
-            "title": "Thermocouple Principle",
-            "question": "Which physical principle governs the operation of a thermocouple used for temperature measurement?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Peltier effect",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Piezoelectric effect",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Seebeck effect",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Hall effect",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Thermocouple Operation",
-                        "content": "A thermocouple consists of two dissimilar electrical conductors forming an electrical junction. A temperature-dependent voltage is produced as a result of the thermoelectric effect."
-                    },
-                    {
-                        "title": "Identify the Specific Effect",
-                        "content": "The generation of a voltage difference across a junction of two different metals due to a temperature difference is known specifically as the Seebeck effect."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Control Loops",
-            "title": "Feedback Control",
-            "question": "In a basic feedback control loop, the controller takes action based on:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Predictions of future disturbances",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Measurements of incoming disturbances before they affect the process",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "A fixed, pre-programmed schedule",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The error signal (the difference between the setpoint and the measured variable)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Feedback Logic",
-                        "content": "Feedback control measures the actual output, compares it to the desired setpoint to calculate an error, and adjusts the input to minimize that error."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Control Loops",
-            "title": "Feedforward Control",
-            "question": "What is the primary advantage of feedforward control over feedback control?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It can take corrective action before the measured disturbance affects the process output",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "It does not require a mathematical model of the process",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It automatically eliminates steady-state offset without integral action",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It is simpler and cheaper to implement",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Feedforward Advantage",
-                        "content": "By measuring a disturbance directly, feedforward control anticipates its effect and preemptively adjusts the manipulated variable."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Tuning",
-            "title": "Ziegler-Nichols Method",
-            "question": "The Ziegler-Nichols ultimate gain (closed-loop) tuning method involves:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Applying a step change to the open-loop process and measuring the reaction rate",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Increasing the proportional gain until continuous, sustained oscillations are observed",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Setting derivative time to zero and integrating the error",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Using trial-and-error without a specific procedure",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Z-N Closed-Loop Method",
-                        "content": "The controller is set to P-only mode, and the gain ($K_c$) is increased until the process output exhibits sustained oscillations. This gain is the ultimate gain ($K_u$)."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Control Loops",
-            "title": "Final Control Element",
-            "question": "In a typical chemical plant control loop, the 'final control element' is most commonly a:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Thermocouple",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "PID Controller algorithm",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Pneumatic control valve",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Transmitter",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Final Control Element",
-                        "content": "The final control element actually changes the physical process (e.g., altering flow rate). The most common type is an automated control valve."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Tuning",
-            "title": "Derivative Action",
-            "question": "Derivative (D) action in a PID controller is primarily used to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Eliminate steady-state offset",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Filter out high-frequency noise from the sensor",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Provide a baseline, proportional response to error",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Improve process stability and speed of response by anticipating error trends",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Derivative Action",
-                        "content": "Derivative action responds to the rate of change of the error, providing a 'braking' effect that reduces overshoot and improves stability. It is sensitive to noise, however."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Control Loops",
-            "title": "Laplace Transforms",
-            "question": "In control systems engineering, why are Laplace transforms commonly used?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "They convert differential equations in the time domain into algebraic equations in the s-domain",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "They convert analog signals to digital signals",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "They are required to program PLCs",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "They eliminate the need for sensors",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Laplace Transform Use",
-                        "content": "Laplace transforms simplify the analysis and design of linear dynamic systems by turning calculus problems (differential equations) into simpler algebra problems (transfer functions)."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Tuning",
-            "title": "Quarter Decay Ratio",
-            "question": "A common heuristic goal in control loop tuning is the 'quarter decay ratio', meaning:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The response settles within a quarter of a minute",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Each successive peak of the oscillating response is 1/4 the amplitude of the previous peak",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The error is reduced by 25% on each iteration",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The controller gain is set to 1/4 of the ultimate gain",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Quarter Decay",
-                        "content": "The quarter decay ratio is a classical compromise between a fast response (which might be too oscillatory) and a sluggish response (which takes too long to settle)."
-                    }
-                ],
-                "final_answer": "B"
-            }
         }
     ],
     "modeling": [
@@ -100813,294 +97969,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
-        },
-        {
-            "topic": "Linear Programming",
-            "title": "Simplex Method",
-            "question": "In the simplex method for linear programming, an optimal solution is reached in a maximization problem when all values in the objective function row (the 'Z-row' or indicator row) are:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Non-negative ($\\ge 0$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Strictly positive ($> 0$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Non-positive ($\\le 0$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Exactly zero",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Simplex Optimality Condition",
-                        "content": "For a maximization problem, the simplex tableau is optimal when there are no more negative coefficients in the objective row, indicating that no further improvement is possible."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Optimization",
-            "title": "Objective Function",
-            "question": "In mathematical optimization, the objective function is the equation that:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Defines the limitations of the system",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Needs to be maximized or minimized",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Sets the variables to zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Represents the feasible region",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Objective Function",
-                        "content": "The objective function defines the goal of the optimization problem, such as maximizing profit or minimizing cost."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Linear Programming",
-            "title": "Feasible Region",
-            "question": "In a linear programming problem, the feasible region is determined by the:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Objective function",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Decision variables only",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Constraints",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Optimal solution",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Feasible Region Definition",
-                        "content": "The feasible region is the set of all possible points that satisfy all constraints (including non-negativity constraints) of the problem."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Linear Programming",
-            "title": "Corner Point Theorem",
-            "question": "According to the Fundamental Theorem of Linear Programming, if an optimal solution exists, it will occur at:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The center of the feasible region",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The origin",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "An interior point of the feasible region",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A corner point (vertex) of the feasible region",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Corner Point Theorem",
-                        "content": "The optimal value of a linear objective function over a convex polygon (feasible region) always occurs at one of the vertices."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Simulation",
-            "title": "Monte Carlo Simulation",
-            "question": "Monte Carlo simulation relies on which of the following to model complex systems?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Repeated random sampling",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Exact analytical solutions",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Deterministic equations",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Linear programming algorithms",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Monte Carlo Method",
-                        "content": "Monte Carlo methods use repeated random sampling and statistical analysis to estimate outcomes for complex systems that might be difficult to solve deterministically."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Optimization",
-            "title": "Shadow Price",
-            "question": "In linear programming, the shadow price (or dual value) of a constraint represents:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The cost of producing one additional unit",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The change in the objective function value per unit increase in the right-hand side of the constraint",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The penalty for not satisfying the constraint",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The value of the objective function at the origin",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Shadow Price Definition",
-                        "content": "The shadow price indicates the marginal value of an additional unit of a constrained resource."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Simulation",
-            "title": "Discrete Event Simulation",
-            "question": "In discrete event simulation, the state of the system changes only at:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Continuous intervals",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The beginning of the simulation",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Discrete, but possibly irregular, points in time",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Regular, fixed time intervals only",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Discrete Event Concept",
-                        "content": "A discrete-event simulation models the operation of a system as a sequence of events in time. Each event occurs at a particular instant and marks a change of state."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Optimization",
-            "title": "Local vs Global Optimum",
-            "question": "A local optimum is guaranteed to be a global optimum if the optimization problem is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Nonlinear",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Unconstrained",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Integer",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Convex",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Convex Optimization",
-                        "content": "In convex optimization problems (convex objective function and convex feasible region), any local minimum is also a global minimum."
-                    }
-                ],
-                "final_answer": "D"
-            }
         }
     ],
     "eng-mgmt": [
@@ -101822,294 +98690,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "Critical Path Method (CPM)",
-            "question": "In project management, the 'critical path' of a project network is defined as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The longest path through the network, determining the shortest project duration",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The shortest path through the network",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The path with the highest cost activities",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The path with the most slack or float time",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Critical Path",
-                        "content": "The critical path is the sequence of dependent tasks that form the longest duration, which dictates the absolute minimum time needed to complete the entire project."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "Gantt Chart",
-            "question": "A Gantt chart is primarily used in project management to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Calculate the total cost of the project",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Visualize the project schedule and task durations",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Identify the optimal critical path mathematically",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Determine the organizational hierarchy",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gantt Chart Purpose",
-                        "content": "A Gantt chart is a bar chart that illustrates a project schedule, showing the start and finish dates of the terminal elements and summary elements of a project."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "PERT Expected Time",
-            "question": "In PERT (Program Evaluation and Review Technique), the expected time $T_e$ for an activity is calculated using optimistic ($O$), most likely ($M$), and pessimistic ($P$) estimates by the formula:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$T_e = (O + M + P) / 3$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$T_e = (O + 2M + P) / 4$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$T_e = (O + 4M + P) / 6$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$T_e = (O + P) / 2$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "PERT Formula",
-                        "content": "The PERT expected time is a weighted average heavily weighting the most likely estimate: $T_e = \\frac{O + 4M + P}{6}$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "Scope Creep",
-            "question": "'Scope creep' in engineering management refers to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The gradual degradation of project quality",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The slow process of acquiring project funding",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "A planned, phased approach to project delivery",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The uncontrolled expansion to product or project scope without adjustments to time, cost, and resources",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Scope Creep Definition",
-                        "content": "Scope creep happens when project requirements or features increase beyond the original plan without corresponding increases in budget or schedule."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Organizational Behavior",
-            "title": "Matrix Organization",
-            "question": "In a matrix organizational structure, an engineer typically reports to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Both a functional manager and a project manager",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Only a project manager",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Only a functional manager",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The client directly",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Matrix Structure",
-                        "content": "A matrix structure creates dual lines of authority, typically combining functional (departmental) and product/project reporting lines."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "Work Breakdown Structure",
-            "question": "What is the primary purpose of a Work Breakdown Structure (WBS)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To schedule the daily tasks of individual workers",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To decompose the total scope of work into smaller, manageable components",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "To calculate the project's internal rate of return",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "To identify project risks and mitigation strategies",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "WBS Purpose",
-                        "content": "The WBS is a hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "Earned Value Management",
-            "question": "In Earned Value Management, if the Cost Performance Index (CPI) is greater than 1.0, it indicates that the project is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Over budget",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Behind schedule",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Under budget",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Ahead of schedule",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "CPI Interpretation",
-                        "content": "CPI = Earned Value (EV) / Actual Cost (AC). A CPI > 1.0 means you are earning more value than you are spending (under budget)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Project Management",
-            "title": "Float or Slack",
-            "question": "In project network analysis, the 'float' or 'slack' of an activity represents:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The duration of the activity",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The cost variance of the activity",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The amount of time the activity is expected to take",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The amount of time an activity can be delayed without delaying the project completion date",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Float/Slack Definition",
-                        "content": "Total float (slack) is the difference between the late start and early start dates (or late finish and early finish) of an activity."
-                    }
-                ],
-                "final_answer": "D"
             }
         }
     ],
@@ -103193,42 +99773,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Inventory Management",
-            "title": "Economic Order Quantity (EOQ)",
-            "question": "The basic Economic Order Quantity (EOQ) model attempts to minimize the total annual inventory cost by balancing which two specific costs?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Purchase cost and shortage cost",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Holding cost and stockout cost",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Ordering cost and holding (carrying) cost",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Ordering cost and purchase cost",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "EOQ Fundamentals",
-                        "content": "The EOQ formula ($EOQ = \\sqrt{2DS/H}$) finds the optimal order size that minimizes the sum of inventory holding costs and order setup costs."
-                    }
-                ],
-                "final_answer": "C"
-            }
         }
     ],
     "supply-chain": [
@@ -104310,42 +100854,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Logistics",
-            "title": "Cross-Docking",
-            "question": "In supply chain logistics, what is the primary purpose of a 'cross-docking' facility?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To serve as a long-term strategic reserve for raw materials",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To manufacture and assemble final products",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To transfer inbound materials directly to outbound transport with minimal or no storage time",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "To inspect and repair defective products returned by customers",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Cross-Docking Concept",
-                        "content": "Cross-docking eliminates the storage function of a traditional warehouse, significantly reducing inventory holding costs and transit times."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -107231,46 +103739,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Time Study",
-            "title": "Standard Time Calculation",
-            "question": "In a time study, if the normal time for a task is calculated to be $10.0$ minutes and the allowance factor is $15\\%$, what is the standard time?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$10.15$ minutes",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$15.0$ minutes",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$11.5$ minutes",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$8.5$ minutes",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Standard Time Formula",
-                        "content": "Standard Time = Normal Time $\\times (1 + \\text{Allowance Factor})$"
-                    },
-                    {
-                        "title": "Calculation",
-                        "content": "$10.0 \\times (1 + 0.15) = 10.0 \\times 1.15 = 11.5\\ \\text{minutes}$"
-                    }
-                ],
-                "final_answer": "C"
-            }
         }
     ],
     "quality": [
@@ -108365,42 +104833,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Statistical Process Control",
-            "title": "Control Chart Limits",
-            "question": "In a standard Shewhart control chart (like an $\\bar{X}$-chart), the Upper Control Limit (UCL) and Lower Control Limit (LCL) are typically set at how many standard deviations from the process mean?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\pm 1$ standard deviation",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\pm 2$ standard deviations",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\pm 3$ standard deviations",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$\\pm 6$ standard deviations",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Control Chart Standards",
-                        "content": "Industry standard practice sets control limits at $\\pm 3\\sigma$ (three-sigma limits), capturing $99.73\\%$ of natural process variation."
-                    }
-                ],
-                "final_answer": "C"
-            }
         }
     ],
     "systems": [
@@ -109482,42 +105914,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Lifecycle Design",
-            "title": "Systems Engineering \"V\" Model",
-            "question": "In the Systems Engineering \"V\" model, the left side of the \"V\" primarily represents:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "System integration and testing",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "System disposal and retirement",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "System definition, decomposition, and design",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Operations and maintenance",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The V-Model Structure",
-                        "content": "The left side defines requirements and architecture (decomposition), while the right side focuses on integration, verification, and validation of those requirements."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -110609,46 +107005,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Statics",
-            "title": "Static Equilibrium",
-            "question": "A $500\\ \\text{N}$ force acts on a particle. For the particle to be in static equilibrium, what must be the sum of all other forces acting on it?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$0\\ \\text{N}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$500\\ \\text{N}$ in the same direction",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$500\\ \\text{N}$ in the opposite direction",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$250\\ \\text{N}$ perpendicular to it",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Newton's First Law",
-                        "content": "For static equilibrium, the vector sum of all forces must be zero: $\\sum F = 0$."
-                    },
-                    {
-                        "title": "Resultant Force",
-                        "content": "Thus, the sum of all other forces must perfectly balance the applied $500\\ \\text{N}$ force."
-                    }
-                ],
-                "final_answer": "C"
-            }
         }
     ],
     "env-chem": [
@@ -111735,46 +108091,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Water Chemistry",
-            "title": "Alkalinity",
-            "question": "Which of the following chemical species is primarily responsible for the alkalinity of natural waters?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Chloride ($Cl^-$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Sulfate ($SO_4^{2-}$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Bicarbonate ($HCO_3^-$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Nitrate ($NO_3^-$)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Alkalinity",
-                        "content": "Alkalinity is a measure of the capacity of water to neutralize acids."
-                    },
-                    {
-                        "title": "Primary Contributors",
-                        "content": "The major contributors to alkalinity in natural waters are bicarbonate, carbonate, and hydroxide ions."
-                    }
-                ],
-                "final_answer": "C"
-            }
         }
     ],
     "risk": [
@@ -112496,410 +108812,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Toxicology",
-            "title": "LD50 Definition",
-            "question": "In toxicology, what does the term 'LD50' represent?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The lethal dose that kills 50% of a test population",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The dose that causes a 50% decrease in lifespan",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The lowest dose where 50% of the toxin is absorbed",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The concentration limit of a toxin in water",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand LD50",
-                        "content": "LD50 stands for 'Lethal Dose, 50%'."
-                    },
-                    {
-                        "title": "Significance",
-                        "content": "It is the amount of a toxic agent that is sufficient to kill 50 percent of a population of test animals within a certain time."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Toxicology",
-            "title": "Dose-Response Relationship",
-            "question": "In toxicology, the dose-response relationship generally follows what pattern as dose increases?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Effect decreases linearly",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Effect increases until a maximum is reached",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Effect is constant regardless of dose",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Effect is random",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Dose-Response",
-                        "content": "As dose increases, biological effect increases (S-shaped curve) until saturation."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Toxicology",
-            "title": "NOAEL Definition",
-            "question": "What does NOAEL stand for in risk assessment?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Normal Observed Acceptable Exposure Limit",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Non-Occupational Allowable Exposure Level",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "No Observed Adverse Effect Level",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Negligible Observable Adverse Exposure Limit",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "NOAEL",
-                        "content": "NOAEL is the highest dose at which no adverse effects are observed in a study."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Risk Assessment",
-            "title": "Hazard Quotient",
-            "question": "In non-cancer risk assessment, a Hazard Quotient (HQ) of less than 1 indicates:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "A significant risk of adverse health effects",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Carcinogenic risk",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The chemical is not present",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The exposure is unlikely to cause adverse effects",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "HQ Interpretation",
-                        "content": "HQ = Exposure/RfD. HQ < 1 means exposure is below the reference dose, indicating acceptable risk."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Risk Assessment",
-            "title": "Carcinogenic Risk Equation",
-            "question": "The excess cancer risk from a carcinogen is calculated as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Risk = Exposure × Slope Factor (CSF)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Risk = Exposure / Reference Dose",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Risk = Hazard Index × Exposure",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Risk = Dose / LD50",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Cancer Risk",
-                        "content": "Excess lifetime cancer risk = Average Daily Dose × Cancer Slope Factor (CSF)."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Toxicology",
-            "title": "Routes of Exposure",
-            "question": "Which of the following is NOT a primary route of chemical exposure in humans?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Inhalation",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Thermal conduction",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Dermal absorption",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Ingestion",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Exposure Routes",
-                        "content": "The three primary routes are inhalation, ingestion, and dermal absorption. Thermal conduction is a heat transfer mechanism, not a chemical exposure route."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Risk Assessment",
-            "title": "Acceptable Cancer Risk",
-            "question": "In environmental risk assessment, EPA considers excess lifetime cancer risk acceptable in the range of:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$10^{-2}$ to $10^{-1}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$10^{-10}$ to $10^{-8}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$10^{-6}$ to $10^{-4}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Greater than $10^{-4}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "EPA Risk Range",
-                        "content": "EPA's acceptable risk range is one in a million ($10^{-6}$) to one in ten thousand ($10^{-4}$)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Toxicology",
-            "title": "Bioaccumulation",
-            "question": "A substance with a high octanol-water partition coefficient (Kow) is most likely to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Remain dissolved in water",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Quickly biodegrade",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Volatilize rapidly",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Bioaccumulate in fatty tissues",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Kow and Bioaccumulation",
-                        "content": "High Kow indicates hydrophobicity (fat-soluble), meaning the substance preferentially partitions into fatty tissues and bioaccumulates."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Risk Assessment",
-            "title": "Hazard Index",
-            "question": "When multiple chemicals are present, the overall non-cancer Hazard Index (HI) is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The sum of individual Hazard Quotients",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The maximum individual HQ",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The product of all HQs",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The average of all HQs",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Hazard Index",
-                        "content": "HI = ΣHQ for all chemicals. If HI > 1, there is potential concern for adverse effects."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Risk Assessment",
-            "title": "Reference Dose (RfD)",
-            "question": "A chemical has an RfD of $0.003\\ \\text{mg/kg·day}$. A person weighing $70\\ \\text{kg}$ is exposed to $0.1\\ \\text{mg/day}$. What is the Hazard Quotient (HQ)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4.8$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$0.48$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$0.048$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2.10$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Calculate Daily Dose",
-                        "content": "ADD = 0.1 mg/day ÷ 70 kg = 0.00143 mg/kg·day"
-                    },
-                    {
-                        "title": "Calculate HQ",
-                        "content": "HQ = ADD/RfD = 0.00143/0.003 = 0.48. Since HQ < 1, risk is acceptable."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Toxicology",
-            "title": "Acute vs Chronic Toxicity",
-            "question": "A substance that causes adverse effects after a single short-term exposure is classified as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Chronically toxic",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Subchronically toxic",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Acutely toxic",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Mutagenic",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Toxicity Classification",
-                        "content": "Acute toxicity: single exposure (≤24h). Subchronic: repeated exposure (1-90 days). Chronic: long-term repeated exposure."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -113878,7 +109790,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate Froude Number",
-                        "content": "The Froude number is $Fr = \\frac{V}{\\sqrt{g D}}$.\n$Fr = \\frac{2}{\\sqrt{9.81 \\times 1}} = \\frac{2}{3.13} \\approx 0.64$"
+                        "content": "The Froude number is $Fr = \\frac{V}{\\sqrt{g D}}$.\n$$Fr = \\frac{2}{\\sqrt{9.81 \\times 1}} = \\frac{2}{3.13} \\approx 0.64$$"
                     },
                     {
                         "title": "Determine Regime",
@@ -113998,46 +109910,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Open Channel Flow",
-            "title": "Froude Number",
-            "question": "In open channel flow, if the Froude number is less than 1 ($Fr < 1$), the flow is classified as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Supercritical",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Critical",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Subcritical",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Laminar",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Froude Number",
-                        "content": "The Froude number ($Fr = \\frac{v}{\\sqrt{gL}}$) characterizes the flow regime."
-                    },
-                    {
-                        "title": "Flow Regimes",
-                        "content": "$Fr < 1$ is subcritical (tranquil), $Fr = 1$ is critical, and $Fr > 1$ is supercritical (rapid)."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -115121,46 +110993,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
-        },
-        {
-            "topic": "Runoff",
-            "title": "Rational Method",
-            "question": "In the Rational Method equation $Q = C \\times i \\times A$, what does the variable '$C represent?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Catchment capacity",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Concentration time",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Runoff coefficient",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Curve number",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Identify the Formula",
-                        "content": "The Rational equation is used to estimate peak discharge."
-                    },
-                    {
-                        "title": "Define Variables",
-                        "content": "$Q$ is peak discharge, $i$ is rainfall intensity, $A$ is drainage area, and $C$ is a dimensionless runoff coefficient representing land use and soil characteristics."
-                    }
-                ],
-                "final_answer": "C"
-            }
         }
     ],
     "groundwater-soils": [
@@ -115879,298 +111711,6 @@ const QUESTIONS = {
                     {
                         "title": "Definition",
                         "content": "Commonly used in Hazen's formula for estimating hydraulic conductivity."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Groundwater Flow",
-            "title": "Darcy's Law Application",
-            "question": "According to Darcy's Law, the specific discharge (or Darcy velocity) of groundwater flow is directly proportional to which parameter?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Hydraulic gradient",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Aquifer thickness",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Water table elevation",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Pumping rate",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Darcy's Law Equation",
-                        "content": "$q = -K \\frac{dh}{dx}$ or $q = -K i$"
-                    },
-                    {
-                        "title": "Define Variables",
-                        "content": "The specific discharge ($q$) is proportional to the hydraulic conductivity ($K$) and the hydraulic gradient ($i = dh/dx$)."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Groundwater Flow",
-            "title": "Hydraulic Conductivity",
-            "question": "A soil sample has a hydraulic conductivity of $5\\times10^{-4}\\ \\text{cm/s}$. It would be classified as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Clay",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Sand or gravel",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Unfractured igneous rock",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Dense silt",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Conductivity Ranges",
-                        "content": "$K > 10^{-4}$ cm/s is typical of sands and gravels. Clay has $K < 10^{-7}$ cm/s."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Soil Properties",
-            "title": "Porosity vs Hydraulic Conductivity",
-            "question": "Total porosity of a soil refers to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The volume of water held against gravity",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The rate at which water flows through soil",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The ratio of void volume to total soil volume",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The weight of water per unit volume",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Porosity Definition",
-                        "content": "$n = V_{voids}/V_{total}$. Total porosity includes both drainage water and capillary water."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Groundwater Flow",
-            "title": "Aquifer Types",
-            "question": "An aquifer confined between two impermeable layers where water rises above the top of the saturated zone when a well is drilled is called:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "An unconfined aquifer",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "A perched aquifer",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "A vadose zone",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "An artesian (confined) aquifer",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Confined Aquifer",
-                        "content": "In a confined (artesian) aquifer, water is under pressure. When tapped, it rises above the aquifer top, sometimes reaching the surface (flowing artesian well)."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Groundwater Flow",
-            "title": "Transmissivity",
-            "question": "The transmissivity $T$ of an aquifer is related to its hydraulic conductivity $K$ and saturated thickness $b$ by:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$T = K \\times b$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$T = K / b$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$T = K + b$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$T = K^2 \\times b$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Transmissivity",
-                        "content": "$T = Kb$, where $T$ [m²/day], $K$ [m/day], $b$ [m]. It represents the ease of horizontal groundwater flow."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Soil Properties",
-            "title": "Field Capacity",
-            "question": "Field capacity is the moisture content of soil after:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Complete oven drying",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Free drainage has ceased following saturation",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Wilting point is reached by plants",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A 24-hour submersion",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Field Capacity",
-                        "content": "Field capacity is reached 1-2 days after rainfall, when gravity drainage effectively stops. It represents the upper limit of plant-available water."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Groundwater Flow",
-            "title": "Capillary Rise",
-            "question": "Capillary rise in soil is greatest in soils with:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Large pore sizes (coarse-grained soils like gravel)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Zero clay content",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Small pore sizes (fine-grained soils like silt)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "High hydraulic conductivity",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Capillary Rise Formula",
-                        "content": "$h_c \\propto 1/r$, where $r$ is pore radius. Smaller pores → greater capillary rise. Silts have small pores and can have rises of meters."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Groundwater Flow",
-            "title": "Pump Test Analysis",
-            "question": "During a pump test, when the water table stops declining and stabilizes, this condition is called:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Transient state",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Superposition",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Recharge equilibrium",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Steady state",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Steady State",
-                        "content": "When pumping rate equals recharge rate, drawdown stabilizes and steady-state conditions are achieved."
                     }
                 ],
                 "final_answer": "D"
@@ -116897,298 +112437,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A"
             }
-        },
-        {
-            "topic": "Water Treatment",
-            "title": "Primary Coagulant",
-            "question": "Which of the following chemicals is most commonly used as a primary coagulant in municipal water treatment plants?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Aluminum sulfate (Alum)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Sodium hypochlorite",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Activated carbon",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Calcium carbonate",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Identify Coagulation Process",
-                        "content": "Coagulation involves adding chemicals to neutralize the negative charges on particles."
-                    },
-                    {
-                        "title": "Common Coagulants",
-                        "content": "Aluminum sulfate (alum) and ferric chloride are the most widely used coagulants to form flocs."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Water Treatment",
-            "title": "Chlorination Disinfection",
-            "question": "Chlorine is added to drinking water primarily to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Remove dissolved iron",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Kill pathogenic microorganisms",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Reduce turbidity",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Adjust pH to neutral",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Chlorination Purpose",
-                        "content": "Chlorination is the main disinfection method in water treatment, killing bacteria, viruses, and other pathogens."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Water Treatment",
-            "title": "Sedimentation",
-            "question": "In water treatment, sedimentation removes particles primarily by:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Chemical precipitation",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Biological degradation",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Gravity settling",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Membrane filtration",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Sedimentation",
-                        "content": "Sedimentation (clarification) allows suspended particles to settle to the bottom of a basin under gravity."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Wastewater Treatment",
-            "title": "BOD Definition",
-            "question": "Biochemical Oxygen Demand (BOD) measures:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The total dissolved oxygen in water",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The chemical oxidant demand of water",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The nitrogen content of wastewater",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The oxygen consumed by microorganisms decomposing organic matter",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "BOD",
-                        "content": "BOD is a measure of the amount of dissolved oxygen consumed by biological organisms when decomposing organic matter in a given water sample."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Wastewater Treatment",
-            "title": "Primary vs Secondary Treatment",
-            "question": "Secondary wastewater treatment primarily removes:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Dissolved organic matter using biological processes",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Large solids by physical screening",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Nutrients (nitrogen and phosphorus)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Pathogens through disinfection",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Secondary Treatment",
-                        "content": "Secondary treatment uses biological processes (activated sludge, trickling filters) to remove dissolved and colloidal organic matter after primary (physical) treatment."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Water Treatment",
-            "title": "Hardness Removal",
-            "question": "Lime-soda softening removes water hardness by:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Ion exchange with sodium",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Precipitating calcium and magnesium as carbonates and hydroxides",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Reverse osmosis",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Activated carbon adsorption",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Lime-Soda Process",
-                        "content": "Adding lime ($Ca(OH)_2$) and soda ash ($Na_2CO_3$) raises pH and precipitates $Ca^{2+}$ as $CaCO_3$ and $Mg^{2+}$ as $Mg(OH)_2$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Wastewater Treatment",
-            "title": "Activated Sludge Process",
-            "question": "In the activated sludge process, what is the purpose of returning sludge to the aeration tank?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To aerate the wastewater",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To neutralize pH",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To maintain a sufficient population of microorganisms",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "To remove nitrogen",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Return Activated Sludge",
-                        "content": "Return Activated Sludge (RAS) recycles settled microorganisms back to the aeration basin to maintain high biomass concentration for treatment."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Water Treatment",
-            "title": "Turbidity Removal",
-            "question": "Which unit operation in a conventional water treatment plant is primarily responsible for removing turbidity?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Chlorination",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "pH adjustment",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Activated carbon adsorption",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Coagulation-flocculation followed by sedimentation",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Turbidity Removal",
-                        "content": "Coagulation neutralizes particle charges and flocculation aggregates them. Subsequent sedimentation removes the floc particles."
-                    }
-                ],
-                "final_answer": "D"
-            }
         }
     ],
     "air-quality": [
@@ -117910,262 +113158,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Control Technologies",
-            "title": "Particulate Matter Removal",
-            "question": "Which air pollution control device is highly efficient at removing fine particulate matter from industrial exhaust gas using a high-voltage electrostatic field?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Electrostatic precipitator (ESP)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Wet scrubber",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Cyclone separator",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Baghouse filter",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze the Technologies",
-                        "content": "Cyclones use inertia, baghouses use physical filtration, and wet scrubbers use liquid sprays."
-                    },
-                    {
-                        "title": "Identify the High-Voltage Device",
-                        "content": "An Electrostatic Precipitator (ESP) charges the particles and collects them on oppositely charged plates."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Air Pollutants",
-            "title": "Criteria Pollutants",
-            "question": "Which of the following is NOT classified as a NAAQS (National Ambient Air Quality Standards) criteria pollutant?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Ozone ($O_3$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Carbon dioxide ($CO_2$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Sulfur dioxide ($SO_2$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Lead ($Pb$)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Criteria Pollutants",
-                        "content": "The six NAAQS criteria pollutants are: CO, Pb, NO₂, O₃, PM (2.5 and 10), and SO₂. CO₂ is not a criteria pollutant."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Air Pollutants",
-            "title": "Photochemical Smog Formation",
-            "question": "Photochemical smog is primarily formed when:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "SO₂ reacts with water vapor to form acid rain",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Carbon monoxide reduces atmospheric oxygen",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "NOx and VOCs react in sunlight to form ground-level ozone",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Industrial dust accumulates in still air",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Smog Formation",
-                        "content": "NOx + VOCs + UV sunlight → ground-level O₃ and other secondary pollutants (PAN, aldehydes) forming photochemical smog."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Control Technologies",
-            "title": "Cyclone Separator Efficiency",
-            "question": "Cyclone separators are most effective for removing particles of:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Very fine particles (<1 μm)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Gas-phase pollutants",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Dissolved contaminants",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Larger diameters (>10 μm)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Cyclone Efficiency",
-                        "content": "Cyclones use centrifugal force. Their efficiency drops sharply below 5-10 μm. They are effective and inexpensive pre-cleaners for coarse particles."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Air Pollutants",
-            "title": "Acid Rain Formation",
-            "question": "Acid rain is primarily caused by atmospheric reactions involving:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$SO_2$ and $NO_x$ reacting with water vapor to form acids",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Carbon monoxide and ozone",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Particulate matter and ammonia",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Lead and mercury emissions",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Acid Rain Chemistry",
-                        "content": "$SO_2 + H_2O \\rightarrow H_2SO_3$ (sulfurous acid) then $H_2SO_4$. $NO_x + H_2O \\rightarrow HNO_3$ (nitric acid). These lower precipitation pH."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Control Technologies",
-            "title": "Wet Scrubber Operation",
-            "question": "A wet scrubber removes pollutants from a gas stream by:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Electrostatic precipitation",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Contacting the gas with a liquid to absorb or dissolve pollutants",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Physical filtration through a fabric",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Thermal incineration",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Wet Scrubbers",
-                        "content": "Wet scrubbers spray liquid (usually water) into the gas stream. Pollutants dissolve or are captured by the liquid droplets. Effective for both gases and particulates."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Air Pollutants",
-            "title": "PM2.5 Health Effects",
-            "question": "PM2.5 (fine particulate matter with diameter ≤ 2.5 μm) is considered especially hazardous because:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It is highly flammable",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It reflects solar radiation",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It penetrates deep into the lungs and enters the bloodstream",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It contains only toxic metals",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "PM2.5 Hazard",
-                        "content": "PM2.5 is small enough to bypass nasal and bronchial filtering, reaching alveoli and even entering the bloodstream, causing respiratory and cardiovascular disease."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -119244,50 +114236,10 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Calculate Compaction Ratio",
-                        "content": "The compaction ratio is the ratio of the initial volume of loose waste to the final volume of compacted waste.\n$CR = \\frac{V_i}{V_f} = \\frac{20}{5} = 4$\nThus, it is a 4:1 compaction ratio."
+                        "content": "The compaction ratio is the ratio of the initial volume of loose waste to the final volume of compacted waste.\n$$CR = \\frac{V_i}{V_f} = \\frac{20}{5} = 4$$\nThus, it is a 4:1 compaction ratio."
                     }
                 ],
                 "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Disposal Methods",
-            "title": "Sanitary Landfill Leachate",
-            "question": "In a modern sanitary landfill, what is the primary purpose of a bottom liner system?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To compress the solid waste",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To collect and vent methane gas",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To prevent leachate from contaminating groundwater",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "To accelerate the decomposition of organic matter",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Leachate",
-                        "content": "Leachate is the liquid that drains or 'leaches' from a landfill."
-                    },
-                    {
-                        "title": "Liner Purpose",
-                        "content": "The impermeable bottom liner prevents this contaminated liquid from reaching underlying soil and groundwater aquifers."
-                    }
-                ],
-                "final_answer": "C"
             }
         }
     ],
@@ -120010,298 +114962,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Environmental Impact",
-            "title": "Greenhouse Gas Global Warming Potential",
-            "question": "When evaluating greenhouse gases, the Global Warming Potential (GWP) is commonly expressed relative to the GWP of which reference gas?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Carbon dioxide ($CO_2$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Methane ($CH_4$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Nitrous oxide ($N_2O$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Water vapor ($H_2O$)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define GWP",
-                        "content": "GWP is a measure of how much energy the emissions of 1 ton of a gas will absorb over a given period, relative to the emissions of 1 ton of a reference gas."
-                    },
-                    {
-                        "title": "Identify Reference Gas",
-                        "content": "Carbon dioxide ($CO_2$) is the standard reference gas, with a GWP defined as exactly 1."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Energy Sources",
-            "title": "Renewable vs Non-renewable",
-            "question": "Which of the following is considered a non-renewable energy source?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Geothermal",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Natural Gas",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Biomass",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Hydropower",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Non-renewable definition",
-                        "content": "Non-renewable sources are those that are not replenished at a rate comparable to their consumption. Natural gas is a fossil fuel and is non-renewable."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Environmental Impact",
-            "title": "Carbon Footprint",
-            "question": "The term 'carbon footprint' primarily refers to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The amount of carbon sequestered by a forest",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The physical mark left by carbon mining",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The total greenhouse gas emissions caused by an individual, event, organization, or product",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The amount of solid carbon waste produced by a factory",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Carbon Footprint Definition",
-                        "content": "A carbon footprint is a measure of the total greenhouse gases produced, usually expressed in equivalent tons of carbon dioxide ($CO_2$)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Energy Sources",
-            "title": "Nuclear Energy",
-            "question": "Nuclear power plants primarily generate electricity using which process?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Nuclear fusion",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Radioactive decay",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Chemical combustion",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Nuclear fission",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Nuclear Power Process",
-                        "content": "Current commercial nuclear reactors use nuclear fission, where heavy atomic nuclei (like U-235) are split, releasing a large amount of energy as heat."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Environmental Impact",
-            "title": "Life Cycle Assessment",
-            "question": "A Life Cycle Assessment (LCA) evaluates the environmental impacts of a product from:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Raw material extraction through disposal (cradle-to-grave)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Manufacturing to sale",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Purchase to disposal",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Design to manufacturing",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "LCA Scope",
-                        "content": "LCA is a 'cradle-to-grave' approach that considers all stages of a product's life, including resource extraction, production, use, and end-of-life disposal or recycling."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Energy Sources",
-            "title": "Solar Photovoltaics",
-            "question": "Photovoltaic (PV) cells convert solar energy directly into:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Heat",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Electricity",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Mechanical energy",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Chemical energy",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "PV Operation",
-                        "content": "Photovoltaic cells use the photoelectric effect to absorb photons from sunlight and release electrons, directly generating electrical current."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Environmental Impact",
-            "title": "Energy Efficiency",
-            "question": "The energy efficiency of a power plant is defined as the ratio of:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Total energy input to useful energy output",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Electrical output to waste heat",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Useful energy output to total energy input",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Waste heat to total energy input",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Efficiency Formula",
-                        "content": "Efficiency $\\eta = \\frac{E_{out}}{E_{in}} \\times 100\\%$, where $E_{out}$ is the useful work or electricity generated and $E_{in}$ is the fuel energy consumed."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Energy Sources",
-            "title": "Wind Power",
-            "question": "The power available in the wind is proportional to the wind speed raised to which power?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Second power (squared)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "First power (linear)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Fourth power",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Third power (cubed)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Wind Power Equation",
-                        "content": "The theoretical power in wind is $P = \\frac{1}{2} \\rho A v^3$, meaning it is proportional to the cube of the wind speed ($v^3$)."
-                    }
-                ],
-                "final_answer": "D"
             }
         }
     ]
