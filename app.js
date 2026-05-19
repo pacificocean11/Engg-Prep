@@ -410,6 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const discipline = localStorage.getItem('enggtv_discipline') || state.user.discipline || 'Mechanical';
             const dateJoined = localStorage.getItem('enggtv_date_joined') || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
             const avatar = localStorage.getItem('enggtv_avatar') || null;
+            const country = state.user.country || 'Other';
 
             const payload = {
                 userPoints: state.userPoints,
@@ -417,6 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 recentActivity: lightActivity,
                 discipline: discipline,
                 dateJoined: dateJoined,
+                country: country
             };
             if (avatar) payload.avatar = avatar;
 
@@ -468,6 +470,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 if (data.avatar) {
                     localStorage.setItem('enggtv_avatar', data.avatar);
+                }
+                if (data.country) {
+                    state.user.country = data.country;
+                    try {
+                        const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
+                        localUser.country = data.country;
+                        localStorage.setItem('enggtv_user', JSON.stringify(localUser));
+                    } catch (e) {
+                        console.error("Error updating country in local user state", e);
+                    }
                 }
 
                 updateDashboardStats();
@@ -1042,11 +1054,11 @@ document.addEventListener('DOMContentLoaded', () => {
         initCharts(percentage, state.intensityRange || '7d');
     }
 
-    function calculateStreak() {
-        if (!state.recentActivity || state.recentActivity.length === 0) return 0;
+    function calculateStreakFromActivity(activityList) {
+        if (!activityList || activityList.length === 0) return 0;
         
         // Get unique dates sorted descending
-        const dates = [...new Set(state.recentActivity.map(a => 
+        const dates = [...new Set(activityList.map(a => 
             new Date(a.timestamp).toDateString()
         ))].map(d => new Date(d)).sort((a, b) => b - a);
         
@@ -1078,6 +1090,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         return streak;
+    }
+
+    function calculateStreak() {
+        return calculateStreakFromActivity(state.recentActivity);
     }
 
     function renderRecentActivity() {
@@ -2637,18 +2653,62 @@ document.addEventListener('DOMContentLoaded', () => {
         { username: 'David', points: 195, discipline: 'Other', country: 'United Kingdom', avatar: 'https://i.pravatar.cc/150?u=david', trend: 'down', streak: 2 },
         { username: 'Chris', points: 150, discipline: 'Mechanical', country: 'Australia', avatar: 'https://i.pravatar.cc/150?u=chris', trend: 'up', streak: 4 },
         { username: 'Emma', points: 120, discipline: 'Other', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=emma', trend: 'same', streak: 0 },
-        { username: 'Ryan', points: 95, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=ryan', trend: 'down', streak: 1 }
+        { username: 'Ryan', points: 95, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=ryan', trend: 'down', streak: 1 },
+        { username: 'Li Wei', points: 512, discipline: 'Electrical and Computer', country: 'Other', avatar: 'https://i.pravatar.cc/150?u=liwei', trend: 'up', streak: 18 },
+        { username: 'Amina', points: 430, discipline: 'Chemical', country: 'Egypt', avatar: 'https://i.pravatar.cc/150?u=amina', trend: 'up', streak: 10 },
+        { username: 'Lucas', points: 365, discipline: 'Environmental', country: 'Australia', avatar: 'https://i.pravatar.cc/150?u=lucas', trend: 'down', streak: 7 },
+        { username: 'Fatima', points: 310, discipline: 'Industrial', country: 'United Arab Emirates', avatar: 'https://i.pravatar.cc/150?u=fatima', trend: 'same', streak: 6 },
+        { username: 'Carlos', points: 260, discipline: 'Civil', country: 'Other', avatar: 'https://i.pravatar.cc/150?u=carlos', trend: 'up', streak: 9 },
+        { username: 'Priya', points: 225, discipline: 'Electrical and Computer', country: 'India', avatar: 'https://i.pravatar.cc/150?u=priya', trend: 'up', streak: 14 },
+        { username: 'Stefan', points: 180, discipline: 'Mechanical', country: 'United Kingdom', avatar: 'https://i.pravatar.cc/150?u=stefan', trend: 'down', streak: 3 },
+        { username: 'Yuki', points: 145, discipline: 'Chemical', country: 'Other', avatar: 'https://i.pravatar.cc/150?u=yuki', trend: 'up', streak: 5 },
+        { username: 'Chloe', points: 115, discipline: 'Environmental', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=chloe', trend: 'same', streak: 2 },
+        { username: 'Omar', points: 88, discipline: 'Electrical and Computer', country: 'Egypt', avatar: 'https://i.pravatar.cc/150?u=omar', trend: 'up', streak: 4 },
+        { username: 'Sophia', points: 75, discipline: 'Industrial', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=sophia', trend: 'down', streak: 1 },
+        { username: 'Daniel', points: 60, discipline: 'Other', country: 'United Kingdom', avatar: 'https://i.pravatar.cc/150?u=daniel', trend: 'same', streak: 0 },
+        { username: 'Mateo', points: 45, discipline: 'Civil', country: 'Other', avatar: 'https://i.pravatar.cc/150?u=mateo', trend: 'up', streak: 3 },
+        { username: 'Hannah', points: 30, discipline: 'Mechanical', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=hannah', trend: 'up', streak: 2 }
     ];
 
-    function renderLeaderboard() {
+    async function renderLeaderboard() {
         const list = document.getElementById('leaderboard-list');
         if (!list) return;
+
+        // Display a high-quality loading spinner matching the premium design
+        list.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-12 text-slate-400">
+                <div class="w-8 h-8 border-4 border-secondary border-t-transparent rounded-full animate-spin mb-4"></div>
+                <p class="text-xs font-bold uppercase tracking-widest">Syncing Global Standings...</p>
+            </div>
+        `;
+
+        let realUsers = [];
+        if (window.firebaseDb) {
+            try {
+                const querySnapshot = await window.firebaseDb.collection("users").get();
+                querySnapshot.forEach(doc => {
+                    const data = doc.data();
+                    if (doc.id === 'guest' || !data) return;
+                    realUsers.push({
+                        username: doc.id,
+                        points: data.userPoints !== undefined ? Number(data.userPoints) : 0,
+                        discipline: data.discipline || 'FE Candidate',
+                        country: data.country || 'Other',
+                        avatar: data.avatar || null,
+                        streak: data.recentActivity ? calculateStreakFromActivity(data.recentActivity) : 0,
+                        trend: 'same'
+                    });
+                });
+            } catch (e) {
+                console.error("Error fetching leaderboard users from Firestore:", e);
+            }
+        }
 
         const userCountry = state.user.country || 'Other';
         const userStreak = calculateStreak();
 
         // Combine mock data with current user
-        const allUsers = [...MOCK_LEADERBOARD, {
+        const currentUserData = {
             username: state.user.username === 'demo' ? 'You (Alex)' : `You (${state.user.username})`,
             points: state.userPoints,
             discipline: localStorage.getItem('enggtv_discipline') || 'FE Candidate',
@@ -2656,16 +2716,43 @@ document.addEventListener('DOMContentLoaded', () => {
             isCurrentUser: true,
             trend: 'up',
             streak: userStreak,
-            avatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4'
-        }];
+            avatar: localStorage.getItem('enggtv_avatar') || null
+        };
+
+        const currentUsername = state.user.username;
+        // Filter out current user from real users to avoid duplication
+        const filteredRealUsers = realUsers.filter(u => u.username !== currentUsername && u.username !== 'demo' && u.username !== 'You (Alex)' && !u.username.startsWith('You ('));
+
+        let allUsers = [...filteredRealUsers, currentUserData];
 
         // Sort by points descending
         allUsers.sort((a, b) => b.points - a.points);
 
-        // Take top 10
-        const top10 = allUsers.slice(0, 10);
+        // Ensure we have at least 20 entries by backfilling with mock data
+        const existingNames = new Set(allUsers.map(u => u.username.toLowerCase()));
+        for (const mockUser of MOCK_LEADERBOARD) {
+            if (allUsers.length >= 20) break;
+            if (!existingNames.has(mockUser.username.toLowerCase())) {
+                allUsers.push({
+                    username: mockUser.username,
+                    points: mockUser.points,
+                    discipline: mockUser.discipline,
+                    country: mockUser.country,
+                    avatar: mockUser.avatar,
+                    streak: mockUser.streak,
+                    trend: mockUser.trend || 'same'
+                });
+                existingNames.add(mockUser.username.toLowerCase());
+            }
+        }
 
-        list.innerHTML = top10.map((user, index) => {
+        // Sort again after backfilling to ensure everything is in perfect order
+        allUsers.sort((a, b) => b.points - a.points);
+
+        // Take top 20
+        const top20 = allUsers.slice(0, 20);
+
+        list.innerHTML = top20.map((user, index) => {
             const rank = index + 1;
             let rankBadge = '';
             if (rank === 1) rankBadge = 'bg-amber-400 text-white';
@@ -2676,6 +2763,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const trendIcon = user.trend === 'up' ? 'trending_up' : (user.trend === 'down' ? 'trending_down' : 'remove');
             const trendColor = user.trend === 'up' ? 'text-green-500' : (user.trend === 'down' ? 'text-red-500' : 'text-slate-400');
 
+            const preset = AVATAR_PRESETS.find(p => p.id === user.avatar);
+            let avatarHTML = '';
+            if (preset) {
+                avatarHTML = `
+                    <div class="avatar-emoji-display" style="background:${preset.gradient}; font-size: 20px;">
+                        ${preset.emoji}
+                    </div>`;
+            } else {
+                const avatarUrl = user.avatar || 'https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4';
+                avatarHTML = `<img src="${avatarUrl}" class="w-full h-full object-cover" alt="${user.username}">`;
+            }
+
             return `
                 <div class="flex items-center gap-4 p-5 ${user.isCurrentUser ? 'bg-primary/5 dark:bg-primary/10 border-l-4 border-primary' : ''}">
                     <div class="flex flex-col items-center shrink-0 w-8">
@@ -2685,7 +2784,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="material-symbols-outlined text-[14px] ${trendColor} mt-1">${trendIcon}</span>
                     </div>
                     <div class="w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-slate-100 dark:border-slate-800 relative">
-                        <img src="${user.avatar}" class="w-full h-full object-cover" alt="${user.username}">
+                        ${avatarHTML}
                         ${user.streak > 5 ? '<div class="absolute bottom-0 right-0 bg-orange-500 text-white rounded-full p-0.5"><span class="material-symbols-outlined text-[10px] block">local_fire_department</span></div>' : ''}
                     </div>
                     <div class="flex-1">
