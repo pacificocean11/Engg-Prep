@@ -1061,13 +1061,6 @@ html.dark .option-prefix {
     color: var(--accent-pink);
 }
 
-.map-btn.current {
-    background: var(--accent-pink);
-    color: white;
-    border-color: var(--accent-pink);
-    box-shadow: 0 4px 12px rgba(237, 0, 140, 0.3);
-}
-
 .map-btn.answered {
     background: rgba(114, 0, 38, 0.1);
     color: var(--accent-navy);
@@ -1078,6 +1071,13 @@ html.dark .option-prefix {
     border-color: #f59e0b;
     color: #f59e0b;
     background: rgba(245, 158, 11, 0.05);
+}
+
+.map-btn.current {
+    background: var(--accent-pink);
+    color: white;
+    border-color: var(--accent-pink);
+    box-shadow: 0 4px 12px rgba(237, 0, 140, 0.3);
 }
 
 .map-btn.flagged::after {

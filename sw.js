@@ -1,7 +1,8 @@
-const CACHE_NAME = 'enggtv-cache-v1.3';
+const CACHE_NAME = 'enggtv-cache-v1.5';
 const urlsToCache = [
   './',
   './index.html',
+  './login.html',
   './style.css',
   './app.js',
   './questions.js',

@@ -1,128 +1,1170 @@
 const OTHER_SUBJECTS = [
-    { id: 'math', name: 'Mathematics', icon: '📐', topics: ['Analytic geometry and trigonometry', 'Differential Equations', 'Numerical Methods', 'Linear Algebra', 'Calculus'] },
-    { id: 'stats', name: 'Probability and Statistics', icon: '📊', topics: ['Measures of Central Tendencies and Dispersions', 'Expected Value', 'Regression and Curve Fitting', 'Probability Distributions'] },
-    { id: 'chemistry', name: 'Chemistry', icon: '🧪', topics: ['Oxidation and Reduction', 'Acids and Bases', 'Chemical Reactions'] },
-    { id: 'instr-controls', name: 'Instrumentation and Controls', icon: '🕹️', topics: ['Sensors and Transducers', 'Data Acquisition', 'Logic Diagrams'] },
-    { id: 'ethics', name: 'Engineering Ethics and Societal Impacts', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare', 'Intellectual Property','Societal Considerations'] },
-    { id: 'safety', name: 'Safety, Health, and Environment', icon: '🛡️', topics: ['Industrial Hygiene', 'Basic Safety Equipment', 'Gas Detection and Monitoring', 'Electrical Safety', 'Confined Space Entry and Ventilation Rates', 'Hazard Communications'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types and Breakdowns', 'Economic Analyses'] },
-    { id: 'statics', name: 'Statics', icon: '⚖️', topics: ['Resultants of Force Systems', 'Concurrent Force Systems', 'Equilibrium of Rigid Bodies', 'Frames and Trusses', 'Centroids and Moments of Inertia', 'Static Friction'] },
-    { id: 'dynamics', name: 'Dynamics', icon: '🏎️', topics: ['Kinematics of Particles', 'Kinetic Friction', 'Newton\'s Second Law for Particles', 'Work-Energy of Particles', 'Impulse-Momentum of Particles','Kinematics of Rigid Bodies', 'Kinematics of Mechanisms', 'Newton\'s Second Law for Rigid Bodies', 'Work-Energy of Rigid Bodies', 'Impulse-Momentum of Rigid Bodies', 'Free and Forced Vibrations'] },
-    { id: 'materials-strength', name: 'Strength of Materials', icon: '🏗️', topics: ['Shear and Moment Diagrams', 'Stress Transformations and Mohr Circle', 'Stress/Strain Caused by Axial Loads','Stress/Strain Caused by Bending Loads','Stress/Strain Caused by Torsional Loads', 'Stress/Strain Caused by Shear','Stress/Strain Caused by Temp. Changes', 'Combined Loading','Deformations', 'Column Buckling','Statically Indeterminate Systems'] },
-    { id: 'materials-science', name: 'Materials Science', icon: '🔬', topics: ['Properties', 'Stress-Strain Diagrams', 'Ferrous Metals', 'Nonferrous Metals','Engineered Materials','Manufacturing Processes', 'Phase Diagrams, Phase Transformation, and Heat Treating','Materials Selection','Corrosion Mechanisms and Control','Failure Mechanisms'] },
-    { id: 'fluids', name: 'Fluid Mechanics', icon: '🌊', topics: ['Fluid Properties', 'Fluid Statics','Energy, Impulse, and Momentum', 'Internal Flow', 'External Flow', 'Compressible Flow', 'Power and Efficiency', 'Performance Curves', 'Scaling Laws' ] },
-    { id: 'electricity', name: 'Electricity, Power, and Magnetism', icon: '⚡', topics: ['Electrostatics'] },
-    { id: 'thermo', name: 'Thermodynamics', icon: '🔥', topics: ['Laws of thermodynamics', 'Properties of substances', 'Thermodynamic cycles'] },
-    { id: 'heat', name: 'Heat Transfer', icon: '🔥', topics: ['Conduction', 'Convection','Radiation'] }
+    {
+        "id": "math",
+        "name": "Mathematics",
+        "icon": "📐",
+        "topics": [
+            "Analytic geometry and trigonometry",
+            "Differential Equations",
+            "Numerical Methods",
+            "Linear Algebra",
+            "Calculus"
+        ]
+    },
+    {
+        "id": "stats",
+        "name": "Probability and Statistics",
+        "icon": "📊",
+        "topics": [
+            "Measures of Central Tendencies and Dispersions",
+            "Expected Value",
+            "Regression and Curve Fitting",
+            "Probability Distributions"
+        ]
+    },
+    {
+        "id": "chemistry",
+        "name": "Chemistry",
+        "icon": "🧪",
+        "topics": [
+            "Oxidation and Reduction",
+            "Acids and Bases",
+            "Chemical Reactions"
+        ]
+    },
+    {
+        "id": "instr-controls",
+        "name": "Instrumentation and Controls",
+        "icon": "🕹️",
+        "topics": [
+            "Sensors and Transducers",
+            "Data Acquisition",
+            "Logic Diagrams"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Engineering Ethics and Societal Impacts",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare",
+            "Intellectual Property",
+            "Societal Considerations"
+        ]
+    },
+    {
+        "id": "safety",
+        "name": "Safety, Health, and Environment",
+        "icon": "🛡️",
+        "topics": [
+            "Industrial Hygiene",
+            "Basic Safety Equipment",
+            "Gas Detection and Monitoring",
+            "Electrical Safety",
+            "Confined Space Entry and Ventilation Rates",
+            "Hazard Communications"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types and Breakdowns",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "statics",
+        "name": "Statics",
+        "icon": "⚖️",
+        "topics": [
+            "Resultants of Force Systems",
+            "Concurrent Force Systems",
+            "Equilibrium of Rigid Bodies",
+            "Frames and Trusses",
+            "Centroids and Moments of Inertia",
+            "Static Friction"
+        ]
+    },
+    {
+        "id": "dynamics",
+        "name": "Dynamics",
+        "icon": "🏎️",
+        "topics": [
+            "Kinematics of Particles",
+            "Kinetic Friction",
+            "Newton's Second Law for Particles",
+            "Work-Energy of Particles",
+            "Impulse-Momentum of Particles",
+            "Kinematics of Rigid Bodies",
+            "Kinematics of Mechanisms",
+            "Newton's Second Law for Rigid Bodies",
+            "Work-Energy of Rigid Bodies",
+            "Impulse-Momentum of Rigid Bodies",
+            "Free and Forced Vibrations"
+        ]
+    },
+    {
+        "id": "materials-strength",
+        "name": "Strength of Materials",
+        "icon": "🏗️",
+        "topics": [
+            "Shear and Moment Diagrams",
+            "Stress Transformations and Mohr Circle",
+            "Stress/Strain Caused by Axial Loads",
+            "Stress/Strain Caused by Bending Loads",
+            "Stress/Strain Caused by Torsional Loads",
+            "Stress/Strain Caused by Shear",
+            "Stress/Strain Caused by Temp. Changes",
+            "Combined Loading",
+            "Deformations",
+            "Column Buckling",
+            "Statically Indeterminate Systems"
+        ]
+    },
+    {
+        "id": "materials-science",
+        "name": "Materials Science",
+        "icon": "🔬",
+        "topics": [
+            "Properties",
+            "Stress-Strain Diagrams",
+            "Ferrous Metals",
+            "Nonferrous Metals",
+            "Engineered Materials",
+            "Manufacturing Processes",
+            "Phase Diagrams, Phase Transformation, and Heat Treating",
+            "Materials Selection",
+            "Corrosion Mechanisms and Control",
+            "Failure Mechanisms"
+        ]
+    },
+    {
+        "id": "fluids",
+        "name": "Fluid Mechanics",
+        "icon": "🌊",
+        "topics": [
+            "Fluid Properties",
+            "Fluid Statics",
+            "Energy, Impulse, and Momentum",
+            "Internal Flow",
+            "External Flow",
+            "Compressible Flow",
+            "Power and Efficiency",
+            "Performance Curves",
+            "Scaling Laws"
+        ]
+    },
+    {
+        "id": "electricity",
+        "name": "Electricity, Power, and Magnetism",
+        "icon": "⚡",
+        "topics": [
+            "Electrostatics"
+        ]
+    },
+    {
+        "id": "thermo",
+        "name": "Thermodynamics",
+        "icon": "🔥",
+        "topics": [
+            "Laws of thermodynamics",
+            "Properties of substances",
+            "Thermodynamic cycles"
+        ]
+    },
+    {
+        "id": "heat",
+        "name": "Heat Transfer",
+        "icon": "🔥",
+        "topics": [
+            "Conduction",
+            "Convection",
+            "Radiation"
+        ]
+    }
 ];
 
 const MECHANICAL_SUBJECTS = [
-    { id: 'math', name: 'Mathematics', icon: '📐', topics: ['Analytic geometry and trigonometry', 'Differential Equations', 'Numerical Methods', 'Linear Algebra', 'Calculus'] },
-    { id: 'stats', name: 'Probability and Statistics', icon: '📊', topics: ['Measures of Central Tendencies and Dispersions', 'Expected Value', 'Regression and Curve Fitting', 'Probability Distributions'] },
-    { id: 'ethics', name: 'Engineering Ethics and Societal Impacts', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare', 'Intellectual Property','Societal Considerations'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types and Breakdowns', 'Economic Analyses'] },
-    { id: 'electricity', name: 'Electricity, Power, and Magnetism', icon: '⚡', topics: ['Electrostatics'] },
-    { id: 'statics', name: 'Statics', icon: '⚖️', topics: ['Resultants of Force Systems', 'Concurrent Force Systems', 'Equilibrium of Rigid Bodies', 'Frames and Trusses', 'Centroids and Moments of Inertia', 'Static Friction'] },
-    { id: 'dynamics', name: 'Dynamics', icon: '🏎️', topics: ['Kinematics of Particles', 'Kinetic Friction', 'Newton\'s Second Law for Particles', 'Work-Energy of Particles', 'Impulse-Momentum of Particles','Kinematics of Rigid Bodies', 'Kinematics of Mechanisms', 'Newton\'s Second Law for Rigid Bodies', 'Work-Energy of Rigid Bodies', 'Impulse-Momentum of Rigid Bodies', 'Free and Forced Vibrations'] },
-    { id: 'materials-strength', name: 'Strength of Materials', icon: '🏗️', topics: ['Shear and Moment Diagrams', 'Stress Transformations and Mohr Circle', 'Stress/Strain Caused by Axial Loads','Stress/Strain Caused by Bending Loads','Stress/Strain Caused by Torsional Loads', 'Stress/Strain Caused by Shear','Stress/Strain Caused by Temp. Changes', 'Combined Loading','Deformations', 'Column Buckling','Statically Indeterminate Systems'] },
-    { id: 'materials-science', name: 'Materials Science', icon: '🔬', topics: ['Properties', 'Stress-Strain Diagrams', 'Ferrous Metals', 'Nonferrous Metals','Engineered Materials','Manufacturing Processes', 'Phase Diagrams, Phase Transformation, and Heat Treating','Materials Selection','Corrosion Mechanisms and Control','Failure Mechanisms'] },
-    { id: 'fluids', name: 'Fluid Mechanics', icon: '🌊', topics: ['Fluid Properties', 'Fluid Statics','Energy, Impulse, and Momentum', 'Internal Flow', 'External Flow', 'Compressible Flow', 'Power and Efficiency', 'Performance Curves', 'Scaling Laws' ] },
-    { id: 'thermo', name: 'Thermodynamics', icon: '🔥', topics: ['Laws of thermodynamics', 'Properties of substances', 'Heat transfer mechanisms', 'Thermodynamic cycles'] },
-    { id: 'heat', name: 'Heat Transfer', icon: '🔥', topics: ['Conduction', 'Convection','Radiation'] },
-    { id: 'instr-controls', name: 'Instrumentation and Controls', icon: '🕹️', topics: ['Sensors and Transducers',] },
-    { id: 'design', name: 'Mechanical Design and Anaysis', icon: '🕹️', topics: ['Deformation and Stiffness','Springs', 'Pressure Vessels and Piping', 'Bearings', 'Power Transmission', 'Manufacturability','Quality and Reliability', 'Components', 'Engineering Drawing Interpretations and GD & T',] },
+    {
+        "id": "math",
+        "name": "Mathematics",
+        "icon": "📐",
+        "topics": [
+            "Analytic geometry and trigonometry",
+            "Differential Equations",
+            "Numerical Methods",
+            "Linear Algebra",
+            "Calculus"
+        ]
+    },
+    {
+        "id": "stats",
+        "name": "Probability and Statistics",
+        "icon": "📊",
+        "topics": [
+            "Measures of Central Tendencies and Dispersions",
+            "Expected Value",
+            "Regression and Curve Fitting",
+            "Probability Distributions"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Engineering Ethics and Societal Impacts",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare",
+            "Intellectual Property",
+            "Societal Considerations"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types and Breakdowns",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "electricity",
+        "name": "Electricity, Power, and Magnetism",
+        "icon": "⚡",
+        "topics": [
+            "Electrostatics"
+        ]
+    },
+    {
+        "id": "statics",
+        "name": "Statics",
+        "icon": "⚖️",
+        "topics": [
+            "Resultants of Force Systems",
+            "Concurrent Force Systems",
+            "Equilibrium of Rigid Bodies",
+            "Frames and Trusses",
+            "Centroids and Moments of Inertia",
+            "Static Friction"
+        ]
+    },
+    {
+        "id": "dynamics",
+        "name": "Dynamics",
+        "icon": "🏎️",
+        "topics": [
+            "Kinematics of Particles",
+            "Kinetic Friction",
+            "Newton's Second Law for Particles",
+            "Work-Energy of Particles",
+            "Impulse-Momentum of Particles",
+            "Kinematics of Rigid Bodies",
+            "Kinematics of Mechanisms",
+            "Newton's Second Law for Rigid Bodies",
+            "Work-Energy of Rigid Bodies",
+            "Impulse-Momentum of Rigid Bodies",
+            "Free and Forced Vibrations"
+        ]
+    },
+    {
+        "id": "materials-strength",
+        "name": "Strength of Materials",
+        "icon": "🏗️",
+        "topics": [
+            "Shear and Moment Diagrams",
+            "Stress Transformations and Mohr Circle",
+            "Stress/Strain Caused by Axial Loads",
+            "Stress/Strain Caused by Bending Loads",
+            "Stress/Strain Caused by Torsional Loads",
+            "Stress/Strain Caused by Shear",
+            "Stress/Strain Caused by Temp. Changes",
+            "Combined Loading",
+            "Deformations",
+            "Column Buckling",
+            "Statically Indeterminate Systems"
+        ]
+    },
+    {
+        "id": "materials-science",
+        "name": "Materials Science",
+        "icon": "🔬",
+        "topics": [
+            "Properties",
+            "Stress-Strain Diagrams",
+            "Ferrous Metals",
+            "Nonferrous Metals",
+            "Engineered Materials",
+            "Manufacturing Processes",
+            "Phase Diagrams, Phase Transformation, and Heat Treating",
+            "Materials Selection",
+            "Corrosion Mechanisms and Control",
+            "Failure Mechanisms"
+        ]
+    },
+    {
+        "id": "fluids",
+        "name": "Fluid Mechanics",
+        "icon": "🌊",
+        "topics": [
+            "Fluid Properties",
+            "Fluid Statics",
+            "Energy, Impulse, and Momentum",
+            "Internal Flow",
+            "External Flow",
+            "Compressible Flow",
+            "Power and Efficiency",
+            "Performance Curves",
+            "Scaling Laws"
+        ]
+    },
+    {
+        "id": "thermo",
+        "name": "Thermodynamics",
+        "icon": "🔥",
+        "topics": [
+            "Laws of thermodynamics",
+            "Properties of substances",
+            "Heat transfer mechanisms",
+            "Thermodynamic cycles"
+        ]
+    },
+    {
+        "id": "heat",
+        "name": "Heat Transfer",
+        "icon": "🔥",
+        "topics": [
+            "Conduction",
+            "Convection",
+            "Radiation"
+        ]
+    },
+    {
+        "id": "instr-controls",
+        "name": "Instrumentation and Controls",
+        "icon": "🕹️",
+        "topics": [
+            "Sensors and Transducers"
+        ]
+    },
+    {
+        "id": "design",
+        "name": "Mechanical Design and Anaysis",
+        "icon": "🕹️",
+        "topics": [
+            "Deformation and Stiffness",
+            "Springs",
+            "Pressure Vessels and Piping",
+            "Bearings",
+            "Power Transmission",
+            "Manufacturability",
+            "Quality and Reliability",
+            "Components",
+            "Engineering Drawing Interpretations and GD & T"
+        ]
+    }
 ];
 
 const CIVIL_SUBJECTS = [
-    { id: 'math', name: 'Mathematics', icon: '📐', topics: ['Analytic geometry and trigonometry', 'Numerical Methods', 'Linear Algebra', 'Calculus'] },
-    { id: 'stats', name: 'Probability and Statistics', icon: '📊', topics: ['Measures of Central Tendencies and Dispersions', 'Expected Value', 'Regression and Curve Fitting', 'Probability Distributions'] },
-    { id: 'ethics', name: 'Engineering Ethics and Societal Impacts', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare', 'Intellectual Property','Societal Considerations'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types and Breakdowns', 'Economic Analyses'] },
-    { id: 'statics', name: 'Statics', icon: '⚖️', topics: ['Resultants of Force Systems', 'Concurrent Force Systems', 'Equilibrium of Rigid Bodies', 'Frames and Trusses', 'Centroids and Moments of Inertia', 'Static Friction'] },
-    { id: 'dynamics', name: 'Dynamics', icon: '🏎️', topics: ['Kinematics of Particles', 'Kinetic Friction', 'Newton\'s Second Law for Particles', 'Work-Energy of Particles', 'Impulse-Momentum of Particles','Kinematics of Rigid Bodies', 'Kinematics of Mechanisms', 'Newton\'s Second Law for Rigid Bodies', 'Work-Energy of Rigid Bodies', 'Impulse-Momentum of Rigid Bodies', 'Free and Forced Vibrations'] },
-    { id: 'materials-strength', name: 'Strength of Materials', icon: '🏗️', topics: ['Shear and Moment Diagrams', 'Stress Transformations and Mohr Circle', 'Stress/Strain Caused by Axial Loads','Stress/Strain Caused by Bending Loads','Stress/Strain Caused by Torsional Loads', 'Stress/Strain Caused by Shear','Stress/Strain Caused by Temp. Changes', 'Combined Loading','Deformations', 'Column Buckling','Statically Indeterminate Systems'] },
-    { id: 'materials-science', name: 'Materials Science', icon: '🔬', topics: ['Properties', 'Stress-Strain Diagrams', 'Ferrous Metals', 'Nonferrous Metals','Engineered Materials','Manufacturing Processes', 'Phase Diagrams, Phase Transformation, and Heat Treating','Materials Selection','Corrosion Mechanisms and Control','Failure Mechanisms'] },
-    { id: 'fluids', name: 'Fluid Mechanics', icon: '🌊', topics: ['Fluid Properties', 'Fluid Statics','Energy, Impulse, and Momentum', 'Internal Flow', 'External Flow', 'Compressible Flow', 'Power and Efficiency', 'Performance Curves', 'Scaling Laws' ] },
-    { id: 'surveying', name: 'Surveying', icon: '🏗️', topics: ['Angles, Distances, and Trigonometry', 'Area Computations', 'Earthwork and Volume Computations', 'Closure', 'Coordinate Systems', 'Leveling'] },
-    { id: 'water-res', name: 'Water Resources and Environmental Engineering', icon: '🚰', topics: ['Closed Conduit Flow', 'Open Channel Flow', 'Hydrology', 'Groundwater', 'Water Treatment', 'Wastewater Treatment'] },
-    { id: 'structural', name: 'Structural Engineering', icon: '🌉', topics: ['Analysis of Statically Determinate Beams and Trusses', 'Analysis of Statically Determinate Frames', 'Analysis of Statically Indeterminate Structures', 'Structural Material Properties and Strength', 'Design of Steel Components', 'Design of Reinforced Concrete Components'] },
-    { id: 'geotech', name: 'Geotechnical Engineering', icon: '🚜', topics: ['Index Properties and Soil Classification', 'Phase Relations', 'Laboratory and Field Tests', 'Effective Stress', 'Stability of Retaining Structures', 'Shear Strength', 'Bearing Capacity', 'Foundation Types', 'Consolidation and Settlement'] },
-    { id: 'transport', name: 'Transportation Engineering', icon: '🛣️', topics: ['Geometric Design', 'Pavement Design', 'Traffic Engineering', 'Traffic Safety'] },
-    { id: 'construction', name: 'Construction Engineering', icon: '🚧', topics: ['Project Scheduling', 'Estimating', 'Construction Operations and Methods', 'Safety'] },
+    {
+        "id": "math",
+        "name": "Mathematics",
+        "icon": "📐",
+        "topics": [
+            "Analytic geometry and trigonometry",
+            "Numerical Methods",
+            "Linear Algebra",
+            "Calculus"
+        ]
+    },
+    {
+        "id": "stats",
+        "name": "Probability and Statistics",
+        "icon": "📊",
+        "topics": [
+            "Measures of Central Tendencies and Dispersions",
+            "Expected Value",
+            "Regression and Curve Fitting",
+            "Probability Distributions"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Engineering Ethics and Societal Impacts",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare",
+            "Intellectual Property",
+            "Societal Considerations"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types and Breakdowns",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "statics",
+        "name": "Statics",
+        "icon": "⚖️",
+        "topics": [
+            "Resultants of Force Systems",
+            "Concurrent Force Systems",
+            "Equilibrium of Rigid Bodies",
+            "Frames and Trusses",
+            "Centroids and Moments of Inertia",
+            "Static Friction"
+        ]
+    },
+    {
+        "id": "dynamics",
+        "name": "Dynamics",
+        "icon": "🏎️",
+        "topics": [
+            "Kinematics of Particles",
+            "Kinetic Friction",
+            "Newton's Second Law for Particles",
+            "Work-Energy of Particles",
+            "Impulse-Momentum of Particles",
+            "Kinematics of Rigid Bodies",
+            "Kinematics of Mechanisms",
+            "Newton's Second Law for Rigid Bodies",
+            "Work-Energy of Rigid Bodies",
+            "Impulse-Momentum of Rigid Bodies",
+            "Free and Forced Vibrations"
+        ]
+    },
+    {
+        "id": "materials-strength",
+        "name": "Strength of Materials",
+        "icon": "🏗️",
+        "topics": [
+            "Shear and Moment Diagrams",
+            "Stress Transformations and Mohr Circle",
+            "Stress/Strain Caused by Axial Loads",
+            "Stress/Strain Caused by Bending Loads",
+            "Stress/Strain Caused by Torsional Loads",
+            "Stress/Strain Caused by Shear",
+            "Stress/Strain Caused by Temp. Changes",
+            "Combined Loading",
+            "Deformations",
+            "Column Buckling",
+            "Statically Indeterminate Systems"
+        ]
+    },
+    {
+        "id": "materials-science",
+        "name": "Materials Science",
+        "icon": "🔬",
+        "topics": [
+            "Properties",
+            "Stress-Strain Diagrams",
+            "Ferrous Metals",
+            "Nonferrous Metals",
+            "Engineered Materials",
+            "Manufacturing Processes",
+            "Phase Diagrams, Phase Transformation, and Heat Treating",
+            "Materials Selection",
+            "Corrosion Mechanisms and Control",
+            "Failure Mechanisms"
+        ]
+    },
+    {
+        "id": "fluids",
+        "name": "Fluid Mechanics",
+        "icon": "🌊",
+        "topics": [
+            "Fluid Properties",
+            "Fluid Statics",
+            "Energy, Impulse, and Momentum",
+            "Internal Flow",
+            "External Flow",
+            "Compressible Flow",
+            "Power and Efficiency",
+            "Performance Curves",
+            "Scaling Laws"
+        ]
+    },
+    {
+        "id": "surveying",
+        "name": "Surveying",
+        "icon": "🏗️",
+        "topics": [
+            "Angles, Distances, and Trigonometry",
+            "Area Computations",
+            "Earthwork and Volume Computations",
+            "Closure",
+            "Coordinate Systems",
+            "Leveling"
+        ]
+    },
+    {
+        "id": "water-res",
+        "name": "Water Resources and Environmental Engineering",
+        "icon": "🚰",
+        "topics": [
+            "Closed Conduit Flow",
+            "Open Channel Flow",
+            "Hydrology",
+            "Groundwater",
+            "Water Treatment",
+            "Wastewater Treatment"
+        ]
+    },
+    {
+        "id": "structural",
+        "name": "Structural Engineering",
+        "icon": "🌉",
+        "topics": [
+            "Analysis of Statically Determinate Beams and Trusses",
+            "Analysis of Statically Determinate Frames",
+            "Analysis of Statically Indeterminate Structures",
+            "Structural Material Properties and Strength",
+            "Design of Steel Components",
+            "Design of Reinforced Concrete Components"
+        ]
+    },
+    {
+        "id": "geotech",
+        "name": "Geotechnical Engineering",
+        "icon": "🚜",
+        "topics": [
+            "Index Properties and Soil Classification",
+            "Phase Relations",
+            "Laboratory and Field Tests",
+            "Effective Stress",
+            "Stability of Retaining Structures",
+            "Shear Strength",
+            "Bearing Capacity",
+            "Foundation Types",
+            "Consolidation and Settlement"
+        ]
+    },
+    {
+        "id": "transport",
+        "name": "Transportation Engineering",
+        "icon": "🛣️",
+        "topics": [
+            "Geometric Design",
+            "Pavement Design",
+            "Traffic Engineering",
+            "Traffic Safety"
+        ]
+    },
+    {
+        "id": "construction",
+        "name": "Construction Engineering",
+        "icon": "🚧",
+        "topics": [
+            "Project Scheduling",
+            "Estimating",
+            "Construction Operations and Methods",
+            "Safety"
+        ]
+    }
 ];
 
 const CHEMICAL_SUBJECTS = [
-    { id: 'math', name: 'Mathematics and Probability/Statistics', icon: '📐', topics: ['Mathematics', 'Probability and Statistics'] },
-    { id: 'ethics', name: 'Ethics and Professional Practice', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types', 'Economic Analyses'] },
-    { id: 'eng-sciences', name: 'Engineering Sciences', icon: '🏗️', topics: ['Statics', 'Dynamics', 'Strength of Materials'] },
-    { id: 'comp-tools', name: 'Computational Tools', icon: '💻', topics: ['Spreadsheets', 'Mathematical Software'] },
-    { id: 'materials-science', name: 'Materials Science', icon: '🔬', topics: ['Properties', 'Corrosion', 'Materials Selection'] },
-    { id: 'chem-bio', name: 'Chemistry and Biology', icon: '🧪', topics: ['General Chemistry', 'Biology'] },
-    { id: 'fluids', name: 'Fluid Mechanics/Dynamics', icon: '🌊', topics: ['Fluid Properties', 'Fluid Statics', 'Fluid Dynamics'] },
-    { id: 'thermo', name: 'Thermodynamics', icon: '🔥', topics: ['Laws of Thermodynamics', 'Cycles'] },
-    { id: 'balances', name: 'Material/Energy Balances', icon: '⚖️', topics: ['Material Balances', 'Energy Balances'] },
-    { id: 'heat', name: 'Heat Transfer', icon: '🔥', topics: ['Conduction', 'Convection', 'Radiation'] },
-    { id: 'mass-sep', name: 'Mass Transfer and Separation', icon: '⚗️', topics: ['Diffusion', 'Distillation', 'Extraction'] },
-    { id: 'solids', name: 'Solids Handling', icon: '🧱', topics: ['Particle Size', 'Fluidization'] },
-    { id: 'reaction-eng', name: 'Chemical Reaction Engineering', icon: '💥', topics: ['Kinetics', 'Reactor Design'] },
-    { id: 'process-design', name: 'Process Design and Economics', icon: '📈', topics: ['Equipment Design', 'Process Synthesis'] },
-    { id: 'process-control', name: 'Process Control', icon: '🕹️', topics: ['Control Systems', 'Sensors'] },
-    { id: 'safety', name: 'Safety, Health, and Environment', icon: '🛡️', topics: ['Industrial Hygiene', 'Hazardous Materials'] }
+    {
+        "id": "math",
+        "name": "Mathematics and Probability/Statistics",
+        "icon": "📐",
+        "topics": [
+            "Mathematics",
+            "Probability and Statistics"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Ethics and Professional Practice",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "eng-sciences",
+        "name": "Engineering Sciences",
+        "icon": "🏗️",
+        "topics": [
+            "Statics",
+            "Dynamics",
+            "Strength of Materials"
+        ]
+    },
+    {
+        "id": "comp-tools",
+        "name": "Computational Tools",
+        "icon": "💻",
+        "topics": [
+            "Spreadsheets",
+            "Mathematical Software"
+        ]
+    },
+    {
+        "id": "materials-science",
+        "name": "Materials Science",
+        "icon": "🔬",
+        "topics": [
+            "Properties",
+            "Corrosion",
+            "Materials Selection"
+        ]
+    },
+    {
+        "id": "chem-bio",
+        "name": "Chemistry and Biology",
+        "icon": "🧪",
+        "topics": [
+            "General Chemistry",
+            "Biology"
+        ]
+    },
+    {
+        "id": "fluids",
+        "name": "Fluid Mechanics/Dynamics",
+        "icon": "🌊",
+        "topics": [
+            "Fluid Properties",
+            "Fluid Statics",
+            "Fluid Dynamics"
+        ]
+    },
+    {
+        "id": "thermo",
+        "name": "Thermodynamics",
+        "icon": "🔥",
+        "topics": [
+            "Laws of Thermodynamics",
+            "Cycles"
+        ]
+    },
+    {
+        "id": "balances",
+        "name": "Material/Energy Balances",
+        "icon": "⚖️",
+        "topics": [
+            "Material Balances",
+            "Energy Balances"
+        ]
+    },
+    {
+        "id": "heat",
+        "name": "Heat Transfer",
+        "icon": "🔥",
+        "topics": [
+            "Conduction",
+            "Convection",
+            "Radiation"
+        ]
+    },
+    {
+        "id": "mass-sep",
+        "name": "Mass Transfer and Separation",
+        "icon": "⚗️",
+        "topics": [
+            "Diffusion",
+            "Distillation",
+            "Extraction"
+        ]
+    },
+    {
+        "id": "solids",
+        "name": "Solids Handling",
+        "icon": "🧱",
+        "topics": [
+            "Particle Size",
+            "Fluidization"
+        ]
+    },
+    {
+        "id": "reaction-eng",
+        "name": "Chemical Reaction Engineering",
+        "icon": "💥",
+        "topics": [
+            "Kinetics",
+            "Reactor Design"
+        ]
+    },
+    {
+        "id": "process-design",
+        "name": "Process Design and Economics",
+        "icon": "📈",
+        "topics": [
+            "Equipment Design",
+            "Process Synthesis"
+        ]
+    },
+    {
+        "id": "process-control",
+        "name": "Process Control",
+        "icon": "🕹️",
+        "topics": [
+            "Control Systems",
+            "Sensors"
+        ]
+    },
+    {
+        "id": "safety",
+        "name": "Safety, Health, and Environment",
+        "icon": "🛡️",
+        "topics": [
+            "Industrial Hygiene",
+            "Hazardous Materials"
+        ]
+    }
 ];
 
 const ENVIRONMENTAL_SUBJECTS = [
-    { id: 'math', name: 'Mathematics and Probability/Statistics', icon: '📐', topics: ['Mathematics', 'Probability and Statistics'] },
-    { id: 'ethics', name: 'Ethics and Professional Practice', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types', 'Economic Analyses'] },
-    { id: 'principles', name: 'Fundamental Principles', icon: '🏗️', topics: ['Statics', 'Dynamics', 'Materials Science'] },
-    { id: 'env-chem', name: 'Environmental Chemistry', icon: '🧪', topics: ['Water Chemistry', 'Soil Chemistry', 'Atmospheric Chemistry'] },
-    { id: 'risk', name: 'Health Hazards and Risk Assessment', icon: '☢️', topics: ['Toxicology', 'Risk Assessment'] },
-    { id: 'fluids-hyd', name: 'Fluid Mechanics and Hydraulics', icon: '🌊', topics: ['Fluid Statics', 'Closed Conduit Flow', 'Open Channel Flow'] },
-    { id: 'thermo', name: 'Thermodynamics', icon: '🔥', topics: ['Laws of Thermodynamics', 'Cycles'] },
-    { id: 'water-hydrology', name: 'Surface Water Resources and Hydrology', icon: '🌧️', topics: ['Hydrologic Cycle', 'Runoff', 'Hydrographs'] },
-    { id: 'groundwater-soils', name: 'Groundwater, Soils, and Sediments', icon: '🌱', topics: ['Groundwater Flow', 'Soil Properties'] },
-    { id: 'water-wastewater', name: 'Water and Wastewater', icon: '🚰', topics: ['Water Treatment', 'Wastewater Treatment'] },
-    { id: 'air-quality', name: 'Air Quality and Control', icon: '🌬️', topics: ['Air Pollutants', 'Control Technologies'] },
-    { id: 'waste', name: 'Solid and Hazardous Waste', icon: '🗑️', topics: ['Waste Collection', 'Disposal Methods'] },
-    { id: 'energy-env', name: 'Energy and Environment', icon: '⚡', topics: ['Renewable Energy', 'Environmental Impact'] }
+    {
+        "id": "math",
+        "name": "Mathematics and Probability/Statistics",
+        "icon": "📐",
+        "topics": [
+            "Mathematics",
+            "Probability and Statistics"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Ethics and Professional Practice",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "principles",
+        "name": "Fundamental Principles",
+        "icon": "🏗️",
+        "topics": [
+            "Statics",
+            "Dynamics",
+            "Materials Science"
+        ]
+    },
+    {
+        "id": "env-chem",
+        "name": "Environmental Chemistry",
+        "icon": "🧪",
+        "topics": [
+            "Water Chemistry",
+            "Soil Chemistry",
+            "Atmospheric Chemistry"
+        ]
+    },
+    {
+        "id": "risk",
+        "name": "Health Hazards and Risk Assessment",
+        "icon": "☢️",
+        "topics": [
+            "Toxicology",
+            "Risk Assessment"
+        ]
+    },
+    {
+        "id": "fluids-hyd",
+        "name": "Fluid Mechanics and Hydraulics",
+        "icon": "🌊",
+        "topics": [
+            "Fluid Statics",
+            "Closed Conduit Flow",
+            "Open Channel Flow"
+        ]
+    },
+    {
+        "id": "thermo",
+        "name": "Thermodynamics",
+        "icon": "🔥",
+        "topics": [
+            "Laws of Thermodynamics",
+            "Cycles"
+        ]
+    },
+    {
+        "id": "water-hydrology",
+        "name": "Surface Water Resources and Hydrology",
+        "icon": "🌧️",
+        "topics": [
+            "Hydrologic Cycle",
+            "Runoff",
+            "Hydrographs"
+        ]
+    },
+    {
+        "id": "groundwater-soils",
+        "name": "Groundwater, Soils, and Sediments",
+        "icon": "🌱",
+        "topics": [
+            "Groundwater Flow",
+            "Soil Properties"
+        ]
+    },
+    {
+        "id": "water-wastewater",
+        "name": "Water and Wastewater",
+        "icon": "🚰",
+        "topics": [
+            "Water Treatment",
+            "Wastewater Treatment"
+        ]
+    },
+    {
+        "id": "air-quality",
+        "name": "Air Quality and Control",
+        "icon": "🌬️",
+        "topics": [
+            "Air Pollutants",
+            "Control Technologies"
+        ]
+    },
+    {
+        "id": "waste",
+        "name": "Solid and Hazardous Waste",
+        "icon": "🗑️",
+        "topics": [
+            "Waste Collection",
+            "Disposal Methods"
+        ]
+    },
+    {
+        "id": "energy-env",
+        "name": "Energy and Environment",
+        "icon": "⚡",
+        "topics": [
+            "Renewable Energy",
+            "Environmental Impact"
+        ]
+    }
 ];
 
 const INDUSTRIAL_SUBJECTS = [
-    { id: 'math', name: 'Mathematics', icon: '📐', topics: ['Calculus', 'Linear Algebra', 'Differential Equations'] },
-    { id: 'eng-sciences', name: 'Engineering Sciences', icon: '🏗️', topics: ['Statics', 'Dynamics', 'Materials Science'] },
-    { id: 'ethics', name: 'Ethics and Professional Practice', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types', 'Economic Analyses'] },
-    { id: 'stats', name: 'Probability and Statistics', icon: '📊', topics: ['Probability Distributions', 'Statistical Inference', 'Design of Experiments'] },
-    { id: 'modeling', name: 'Modeling and Quantitative Analysis', icon: '📉', topics: ['Linear Programming', 'Optimization', 'Simulation'] },
-    { id: 'eng-mgmt', name: 'Engineering Management', icon: '📋', topics: ['Project Management', 'Organizational Behavior'] },
-    { id: 'production', name: 'Manufacturing, Service, and Other Production Systems', icon: '🏭', topics: ['Production Planning', 'Inventory Management'] },
-    { id: 'supply-chain', name: 'Facilities and Supply Chain', icon: '🚚', topics: ['Facility Layout', 'Logistics'] },
-    { id: 'ergonomics', name: 'Human Factors, Ergonomics, and Safety', icon: '👤', topics: ['Anthropometry', 'Workstation Design'] },
-    { id: 'work-design', name: 'Work Design', icon: '⏱️', topics: ['Methods Engineering', 'Time Study'] },
-    { id: 'quality', name: 'Quality', icon: '✅', topics: ['Statistical Process Control', 'Reliability'] },
-    { id: 'systems', name: 'Systems Engineering, Analysis, and Design', icon: '🔗', topics: ['Requirement Analysis', 'Lifecycle Design'] }
+    {
+        "id": "math",
+        "name": "Mathematics",
+        "icon": "📐",
+        "topics": [
+            "Calculus",
+            "Linear Algebra",
+            "Differential Equations"
+        ]
+    },
+    {
+        "id": "eng-sciences",
+        "name": "Engineering Sciences",
+        "icon": "🏗️",
+        "topics": [
+            "Statics",
+            "Dynamics",
+            "Materials Science"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Ethics and Professional Practice",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "stats",
+        "name": "Probability and Statistics",
+        "icon": "📊",
+        "topics": [
+            "Probability Distributions",
+            "Statistical Inference",
+            "Design of Experiments"
+        ]
+    },
+    {
+        "id": "modeling",
+        "name": "Modeling and Quantitative Analysis",
+        "icon": "📉",
+        "topics": [
+            "Linear Programming",
+            "Optimization",
+            "Simulation"
+        ]
+    },
+    {
+        "id": "eng-mgmt",
+        "name": "Engineering Management",
+        "icon": "📋",
+        "topics": [
+            "Project Management",
+            "Organizational Behavior"
+        ]
+    },
+    {
+        "id": "production",
+        "name": "Manufacturing, Service, and Other Production Systems",
+        "icon": "🏭",
+        "topics": [
+            "Production Planning",
+            "Inventory Management"
+        ]
+    },
+    {
+        "id": "supply-chain",
+        "name": "Facilities and Supply Chain",
+        "icon": "🚚",
+        "topics": [
+            "Facility Layout",
+            "Logistics"
+        ]
+    },
+    {
+        "id": "ergonomics",
+        "name": "Human Factors, Ergonomics, and Safety",
+        "icon": "👤",
+        "topics": [
+            "Anthropometry",
+            "Workstation Design"
+        ]
+    },
+    {
+        "id": "work-design",
+        "name": "Work Design",
+        "icon": "⏱️",
+        "topics": [
+            "Methods Engineering",
+            "Time Study"
+        ]
+    },
+    {
+        "id": "quality",
+        "name": "Quality",
+        "icon": "✅",
+        "topics": [
+            "Statistical Process Control",
+            "Reliability"
+        ]
+    },
+    {
+        "id": "systems",
+        "name": "Systems Engineering, Analysis, and Design",
+        "icon": "🔗",
+        "topics": [
+            "Requirement Analysis",
+            "Lifecycle Design"
+        ]
+    }
 ];
 
 const ELECTRICAL_COMPUTER_SUBJECTS = [
-    { id: 'math', name: 'Mathematics', icon: '📐', topics: ['Calculus', 'Linear Algebra', 'Differential Equations'] },
-    { id: 'stats', name: 'Probability and Statistics', icon: '📊', topics: ['Probability Distributions', 'Statistical Inference'] },
-    { id: 'ethics', name: 'Ethics and Professional Practice', icon: '🤝', topics: ['Codes of Ethics', 'Public Health, Safety, and Welfare'] },
-    { id: 'econ', name: 'Engineering Economics', icon: '💰', topics: ['Time Value of Money', 'Cost Types', 'Economic Analyses'] },
-    { id: 'elec-materials', name: 'Properties of Electrical Materials', icon: '💎', topics: ['Semiconductors', 'Magnetic Materials'] },
-    { id: 'eng-sciences', name: 'Engineering Sciences', icon: '🏗️', topics: ['Statics', 'Dynamics', 'Materials Science'] },
-    { id: 'circuits', name: 'Circuit Analysis (DC and AC Steady State)', icon: '🔌', topics: ['KCL/KVL', 'Thevenin/Norton', 'Phasors'] },
-    { id: 'linear-systems', name: 'Linear Systems', icon: '📉', topics: ['Frequency Response', 'Transfer Functions'] },
-    { id: 'signals', name: 'Signal Processing', icon: '📶', topics: ['Sampling', 'Digital Filters'] },
-    { id: 'electronics', name: 'Electronics', icon: '🔋', topics: ['Diodes', 'Transistors', 'Op-Amps'] },
-    { id: 'power', name: 'Power', icon: '⚡', topics: ['Transformers', 'Motors/Generators', 'Power Systems'] },
-    { id: 'electromagnetics', name: 'Electromagnetics', icon: '🧲', topics: ['Maxwell\'s Equations', 'Transmission Lines'] },
-    { id: 'control-systems', name: 'Control Systems', icon: '🕹️', topics: ['Feedback Control', 'Stability'] },
-    { id: 'communications', name: 'Communications', icon: '📡', topics: ['Modulation', 'Noise'] },
-    { id: 'networks', name: 'Computer Networks', icon: '🌐', topics: ['OSI Model', 'Routing'] },
-    { id: 'digital-systems', name: 'Digital Systems', icon: '🔢', topics: ['Logic Gates', 'FPGAs'] },
-    { id: 'computer-systems', name: 'Computer Systems', icon: '🖥️', topics: ['Architecture', 'Operating Systems'] },
-    { id: 'software', name: 'Software Development', icon: '💻', topics: ['Algorithms', 'Data Structures'] }
+    {
+        "id": "math",
+        "name": "Mathematics",
+        "icon": "📐",
+        "topics": [
+            "Calculus",
+            "Linear Algebra",
+            "Differential Equations"
+        ]
+    },
+    {
+        "id": "stats",
+        "name": "Probability and Statistics",
+        "icon": "📊",
+        "topics": [
+            "Probability Distributions",
+            "Statistical Inference"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Ethics and Professional Practice",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "elec-materials",
+        "name": "Properties of Electrical Materials",
+        "icon": "💎",
+        "topics": [
+            "Semiconductors",
+            "Magnetic Materials"
+        ]
+    },
+    {
+        "id": "eng-sciences",
+        "name": "Engineering Sciences",
+        "icon": "🏗️",
+        "topics": [
+            "Statics",
+            "Dynamics",
+            "Materials Science"
+        ]
+    },
+    {
+        "id": "circuits",
+        "name": "Circuit Analysis (DC and AC Steady State)",
+        "icon": "🔌",
+        "topics": [
+            "KCL/KVL",
+            "Thevenin/Norton",
+            "Phasors"
+        ]
+    },
+    {
+        "id": "linear-systems",
+        "name": "Linear Systems",
+        "icon": "📉",
+        "topics": [
+            "Frequency Response",
+            "Transfer Functions"
+        ]
+    },
+    {
+        "id": "signals",
+        "name": "Signal Processing",
+        "icon": "📶",
+        "topics": [
+            "Sampling",
+            "Digital Filters"
+        ]
+    },
+    {
+        "id": "electronics",
+        "name": "Electronics",
+        "icon": "🔋",
+        "topics": [
+            "Diodes",
+            "Transistors",
+            "Op-Amps"
+        ]
+    },
+    {
+        "id": "power",
+        "name": "Power",
+        "icon": "⚡",
+        "topics": [
+            "Transformers",
+            "Motors/Generators",
+            "Power Systems"
+        ]
+    },
+    {
+        "id": "electromagnetics",
+        "name": "Electromagnetics",
+        "icon": "🧲",
+        "topics": [
+            "Maxwell's Equations",
+            "Transmission Lines"
+        ]
+    },
+    {
+        "id": "control-systems",
+        "name": "Control Systems",
+        "icon": "🕹️",
+        "topics": [
+            "Feedback Control",
+            "Stability"
+        ]
+    },
+    {
+        "id": "communications",
+        "name": "Communications",
+        "icon": "📡",
+        "topics": [
+            "Modulation",
+            "Noise"
+        ]
+    },
+    {
+        "id": "networks",
+        "name": "Computer Networks",
+        "icon": "🌐",
+        "topics": [
+            "OSI Model",
+            "Routing"
+        ]
+    },
+    {
+        "id": "digital-systems",
+        "name": "Digital Systems",
+        "icon": "🔢",
+        "topics": [
+            "Logic Gates",
+            "FPGAs"
+        ]
+    },
+    {
+        "id": "computer-systems",
+        "name": "Computer Systems",
+        "icon": "🖥️",
+        "topics": [
+            "Architecture",
+            "Operating Systems"
+        ]
+    },
+    {
+        "id": "software",
+        "name": "Software Development",
+        "icon": "💻",
+        "topics": [
+            "Algorithms",
+            "Data Structures"
+        ]
+    }
 ];
 
 
@@ -5428,6 +6470,406 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D"
             }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 41",
+            "question": "A manufactured component has length that is normally distributed with mean $132$ mm and standard deviation $46$ mm. What is the probability that a component chosen at random has a length less than $201$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{201 - 132}{46} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 42",
+            "question": "A manufactured component has length that is normally distributed with mean $134$ mm and standard deviation $47$ mm. What is the probability that a component chosen at random has a length less than $204.5$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{204.5 - 134}{47} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 43",
+            "question": "A manufactured component has length that is normally distributed with mean $136$ mm and standard deviation $48$ mm. What is the probability that a component chosen at random has a length less than $208$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{208 - 136}{48} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 44",
+            "question": "A manufactured component has length that is normally distributed with mean $138$ mm and standard deviation $49$ mm. What is the probability that a component chosen at random has a length less than $211.5$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{211.5 - 138}{49} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 45",
+            "question": "A manufactured component has length that is normally distributed with mean $140$ mm and standard deviation $50$ mm. What is the probability that a component chosen at random has a length less than $215$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{215 - 140}{50} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 46",
+            "question": "A manufactured component has length that is normally distributed with mean $142$ mm and standard deviation $51$ mm. What is the probability that a component chosen at random has a length less than $218.5$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{218.5 - 142}{51} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 47",
+            "question": "A manufactured component has length that is normally distributed with mean $144$ mm and standard deviation $52$ mm. What is the probability that a component chosen at random has a length less than $222$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{222 - 144}{52} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 48",
+            "question": "A manufactured component has length that is normally distributed with mean $146$ mm and standard deviation $53$ mm. What is the probability that a component chosen at random has a length less than $225.5$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{225.5 - 146}{53} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 49",
+            "question": "A manufactured component has length that is normally distributed with mean $148$ mm and standard deviation $54$ mm. What is the probability that a component chosen at random has a length less than $229$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{229 - 148}{54} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Normal Distribution Prob - Case 50",
+            "question": "A manufactured component has length that is normally distributed with mean $150$ mm and standard deviation $55$ mm. What is the probability that a component chosen at random has a length less than $232.5$ mm?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8332$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9332$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9832$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.0668$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Z-Score",
+                        "content": "Calculate $z = \\dfrac{x - \\mu}{\\sigma} = \\dfrac{232.5 - 150}{55} = 1.5$."
+                    },
+                    {
+                        "title": "Probability",
+                        "content": "From normal distribution tables, $P(Z < 1.5) = 0.9332$."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "chemistry": [
@@ -6728,6 +8170,726 @@ const QUESTIONS = {
                     {
                         "title": "Overall Order",
                         "content": "Overall order = sum of exponents = 2 + 1 = 3."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 31",
+            "question": "What is the molarity of a solution containing $3.10$ moles of solute dissolved in $1.75$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.656$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.885$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.771$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3.542$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.10}{1.75} = 1.771$ M."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 32",
+            "question": "What is the molarity of a solution containing $3.20$ moles of solute dissolved in $1.80$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.667$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.889$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.556$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.778$ M",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.20}{1.80} = 1.778$ M."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 33",
+            "question": "What is the molarity of a solution containing $3.30$ moles of solute dissolved in $1.85$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.784$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.676$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.892$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.568$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.30}{1.85} = 1.784$ M."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 34",
+            "question": "What is the molarity of a solution containing $3.40$ moles of solute dissolved in $1.90$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.683$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.789$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.894$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.578$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.40}{1.90} = 1.789$ M."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 35",
+            "question": "What is the molarity of a solution containing $3.50$ moles of solute dissolved in $1.95$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.692$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.897$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.795$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3.590$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.50}{1.95} = 1.795$ M."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 36",
+            "question": "What is the molarity of a solution containing $3.60$ moles of solute dissolved in $2.00$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.700$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.900$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.600$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.800$ M",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.60}{2.00} = 1.800$ M."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 37",
+            "question": "What is the molarity of a solution containing $3.70$ moles of solute dissolved in $2.05$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.805$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.708$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.902$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.610$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.70}{2.05} = 1.805$ M."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 38",
+            "question": "What is the molarity of a solution containing $3.80$ moles of solute dissolved in $2.10$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.715$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.810$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.905$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.620$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.80}{2.10} = 1.810$ M."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 39",
+            "question": "What is the molarity of a solution containing $3.90$ moles of solute dissolved in $2.15$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.721$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.907$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.814$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3.628$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{3.90}{2.15} = 1.814$ M."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 40",
+            "question": "What is the molarity of a solution containing $4.00$ moles of solute dissolved in $2.20$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.727$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.909$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.636$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.818$ M",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.00}{2.20} = 1.818$ M."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 41",
+            "question": "What is the molarity of a solution containing $4.10$ moles of solute dissolved in $2.25$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.822$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.733$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.911$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.644$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.10}{2.25} = 1.822$ M."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 42",
+            "question": "What is the molarity of a solution containing $4.20$ moles of solute dissolved in $2.30$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.739$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.826$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.913$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.652$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.20}{2.30} = 1.826$ M."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 43",
+            "question": "What is the molarity of a solution containing $4.30$ moles of solute dissolved in $2.35$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.745$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.915$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.830$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3.660$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.30}{2.35} = 1.830$ M."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 44",
+            "question": "What is the molarity of a solution containing $4.40$ moles of solute dissolved in $2.40$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.749$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.916$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.666$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.833$ M",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.40}{2.40} = 1.833$ M."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 45",
+            "question": "What is the molarity of a solution containing $4.50$ moles of solute dissolved in $2.45$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.837$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.756$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.918$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.674$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.50}{2.45} = 1.837$ M."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 46",
+            "question": "What is the molarity of a solution containing $4.60$ moles of solute dissolved in $2.50$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.760$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.840$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.920$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.680$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.60}{2.50} = 1.840$ M."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 47",
+            "question": "What is the molarity of a solution containing $4.70$ moles of solute dissolved in $2.55$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.764$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.921$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.843$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3.686$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.70}{2.55} = 1.843$ M."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 48",
+            "question": "What is the molarity of a solution containing $4.80$ moles of solute dissolved in $2.60$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.769$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.923$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.692$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.846$ M",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.80}{2.60} = 1.846$ M."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 49",
+            "question": "What is the molarity of a solution containing $4.90$ moles of solute dissolved in $2.65$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.849$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.773$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.924$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.698$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{4.90}{2.65} = 1.849$ M."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Chemical Reactions",
+            "title": "Molarity Calculation - Case 50",
+            "question": "What is the molarity of a solution containing $5.00$ moles of solute dissolved in $2.70$ liters of solution?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.778$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.852$ M",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.926$ M",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.704$ M",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Molarity formula",
+                        "content": "$M = \\dfrac{\\text{moles}}{\\text{Volume (L)}} = \\dfrac{5.00}{2.70} = 1.852$ M."
                     }
                 ],
                 "final_answer": "B"
@@ -8431,6 +10593,258 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": ""
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 44",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{88}{22s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$22$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$88$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{88}{0 + 1} = 88$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 45",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{90}{22.5s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$90$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$22.5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{90}{0 + 1} = 90$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 46",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{92}{23s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$23$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$92$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{92}{0 + 1} = 92$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 47",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{94}{23.5s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$23.5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$94$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{94}{0 + 1} = 94$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 48",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{96}{24s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$24$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$96$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{96}{0 + 1} = 96$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 49",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{98}{24.5s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$98$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$24.5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{98}{0 + 1} = 98$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Sensors and Transducers",
+            "title": "First-Order System Gain - Case 50",
+            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{100}{25s + 1}$. What is the steady-state gain of this sensor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$25$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$4.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gain Determination",
+                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{100}{0 + 1} = 100$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -12620,6 +15034,474 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A"
             }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 38",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $123$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.12$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.08$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.04$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(123-90)/5}} = 0.08$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 39",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $124$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.11$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.04$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.07$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(124-90)/5}} = 0.07$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 40",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $125$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.09$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.06$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(125-90)/5}} = 0.06$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 41",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $126$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.05$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.08$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(126-90)/5}} = 0.05$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 42",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $127$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.08$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.05$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(127-90)/5}} = 0.05$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 43",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $128$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.06$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.02$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.04$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(128-90)/5}} = 0.04$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 44",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $129$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.06$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.02$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.04$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(129-90)/5}} = 0.04$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 45",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $130$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.03$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.04$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.01$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(130-90)/5}} = 0.03$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 46",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $131$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.04$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.03$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.01$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(131-90)/5}} = 0.03$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 47",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $132$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.01$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.02$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(132-90)/5}} = 0.02$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 48",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $133$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.01$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.02$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(133-90)/5}} = 0.02$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 49",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $134$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.02$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.01$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(134-90)/5}} = 0.02$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Industrial Hygiene",
+            "title": "Noise Exposure Limit - Case 50",
+            "question": "Under OSHA standards, if a worker is exposed to a continuous sound level of $135$ dBA, what is the maximum permissible exposure duration (in hours)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.03$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.02$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.01$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "OSHA Criterion",
+                        "content": "OSHA uses a 5 dBA doubling rate. Permissible duration $T = \\dfrac{8}{2^{(L-90)/5}} = \\dfrac{8}{2^{(135-90)/5}} = 0.02$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "econ": [
@@ -14072,6 +16954,582 @@ const QUESTIONS = {
                     {
                         "title": "Break-Even Formula",
                         "content": "$Q_{BE} = \\frac{\\text{Fixed Cost}}{\\text{Price} - \\text{Variable Cost}} = \\frac{50{,}000}{45 - 20} = \\frac{50{,}000}{25} = 2{,}000\\ \\text{units}$"
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 35",
+            "question": "An engineer deposits $P = $35000$ in an account earning $40\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$105000.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$225886.08$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$188238.40$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$150590.72$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 35000(1 + 0.4)^{5} = 188238.40$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 36",
+            "question": "An engineer deposits $P = $36000$ in an account earning $41\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$109800.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$240757.21$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$160504.81$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200631.01$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 36000(1 + 0.41)^{5} = 200631.01$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 37",
+            "question": "An engineer deposits $P = $37000$ in an account earning $42\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$213620.76$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$114700.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$256344.91$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$170896.61$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 37000(1 + 0.42)^{5} = 213620.76$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 38",
+            "question": "An engineer deposits $P = $38000$ in an account earning $43\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$119700.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$227229.01$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$272674.81$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$181783.21$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 38000(1 + 0.43)^{5} = 227229.01$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 39",
+            "question": "An engineer deposits $P = $39000$ in an account earning $44\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$124800.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$289773.26$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$241477.72$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$193182.18$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 39000(1 + 0.44)^{5} = 241477.72$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 40",
+            "question": "An engineer deposits $P = $40000$ in an account earning $45\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$130000.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$307667.23$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$205111.49$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$256389.36$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 40000(1 + 0.45)^{5} = 256389.36$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 41",
+            "question": "An engineer deposits $P = $41000$ in an account earning $46\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$271986.99$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$135300.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$326384.39$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$217589.59$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 41000(1 + 0.46)^{5} = 271986.99$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 42",
+            "question": "An engineer deposits $P = $42000$ in an account earning $47\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$140700.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$288294.24$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$345953.09$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$230635.39$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 42000(1 + 0.47)^{5} = 288294.24$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 43",
+            "question": "An engineer deposits $P = $43000$ in an account earning $48\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$146200.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$366402.37$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$305335.31$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$244268.25$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 43000(1 + 0.48)^{5} = 305335.31$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 44",
+            "question": "An engineer deposits $P = $44000$ in an account earning $49\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$151800.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$387762.01$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$258508.01$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$323135.01$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 44000(1 + 0.49)^{5} = 323135.01$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 45",
+            "question": "An engineer deposits $P = $45000$ in an account earning $50\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$341718.75$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$157500.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$410062.50$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$273375.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 45000(1 + 0.5)^{5} = 341718.75$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 46",
+            "question": "An engineer deposits $P = $46000$ in an account earning $51\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$163300.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$361112.54$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$433335.05$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$288890.03$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 46000(1 + 0.51)^{5} = 361112.54$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 47",
+            "question": "An engineer deposits $P = $47000$ in an account earning $52\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$169200.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$457611.62$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$381343.02$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$305074.42$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 47000(1 + 0.52)^{5} = 381343.02$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 48",
+            "question": "An engineer deposits $P = $48000$ in an account earning $53\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$175200.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$482924.94$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$321949.96$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$402437.45$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 48000(1 + 0.53)^{5} = 402437.45$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 49",
+            "question": "An engineer deposits $P = $49000$ in an account earning $54\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$424423.76$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$181300.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$509308.51$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$339539.01$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 49000(1 + 0.54)^{5} = 424423.76$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Value of Money",
+            "title": "Future Value Compound Interest - Case 50",
+            "question": "An engineer deposits $P = $50000$ in an account earning $55\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$187500.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$447330.48$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$536796.58$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$357864.38$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Future Value Formula",
+                        "content": "$F = P(1 + i)^n = 50000(1 + 0.55)^{5} = 447330.48$."
                     }
                 ],
                 "final_answer": "B"
@@ -15635,6 +19093,510 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 37",
+            "question": "Two orthogonal coplanar forces $F_1 = 370$ N and $F_2 = 185$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$413.67$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$555.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$537.77$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$289.57$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{370^2 + 185^2} = 413.67$ N."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 38",
+            "question": "Two orthogonal coplanar forces $F_1 = 380$ N and $F_2 = 190$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$570.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$424.85$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$552.31$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$297.39$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{380^2 + 190^2} = 424.85$ N."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 39",
+            "question": "Two orthogonal coplanar forces $F_1 = 390$ N and $F_2 = 195$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$585.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$566.84$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$436.03$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$305.22$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{390^2 + 195^2} = 436.03$ N."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 40",
+            "question": "Two orthogonal coplanar forces $F_1 = 400$ N and $F_2 = 200$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$600.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$581.37$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$313.05$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$447.21$ N",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{400^2 + 200^2} = 447.21$ N."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 41",
+            "question": "Two orthogonal coplanar forces $F_1 = 410$ N and $F_2 = 205$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$458.39$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$615.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$595.91$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$320.87$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{410^2 + 205^2} = 458.39$ N."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 42",
+            "question": "Two orthogonal coplanar forces $F_1 = 420$ N and $F_2 = 210$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$630.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$469.57$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$610.44$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$328.70$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{420^2 + 210^2} = 469.57$ N."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 43",
+            "question": "Two orthogonal coplanar forces $F_1 = 430$ N and $F_2 = 215$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$645.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$624.98$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$480.75$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$336.52$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{430^2 + 215^2} = 480.75$ N."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 44",
+            "question": "Two orthogonal coplanar forces $F_1 = 440$ N and $F_2 = 220$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$660.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$639.51$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$344.35$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$491.93$ N",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{440^2 + 220^2} = 491.93$ N."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 45",
+            "question": "Two orthogonal coplanar forces $F_1 = 450$ N and $F_2 = 225$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$503.12$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$675.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$654.06$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$352.18$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{450^2 + 225^2} = 503.12$ N."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 46",
+            "question": "Two orthogonal coplanar forces $F_1 = 460$ N and $F_2 = 230$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$690.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$514.30$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$668.59$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$360.01$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{460^2 + 230^2} = 514.30$ N."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 47",
+            "question": "Two orthogonal coplanar forces $F_1 = 470$ N and $F_2 = 235$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$705.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$683.12$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$525.48$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$367.84$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{470^2 + 235^2} = 525.48$ N."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 48",
+            "question": "Two orthogonal coplanar forces $F_1 = 480$ N and $F_2 = 240$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$720.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$697.66$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$375.66$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$536.66$ N",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{480^2 + 240^2} = 536.66$ N."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 49",
+            "question": "Two orthogonal coplanar forces $F_1 = 490$ N and $F_2 = 245$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$547.84$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$735.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$712.19$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$383.49$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{490^2 + 245^2} = 547.84$ N."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Resultants of Force Systems",
+            "title": "Resultant of Orthogonal Forces - Case 50",
+            "question": "Two orthogonal coplanar forces $F_1 = 500$ N and $F_2 = 250$ N act concurrently at a single point. What is the magnitude of the resultant force?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$750.00$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$559.02$ N",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$726.73$ N",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$391.31$ N",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Resultant Magnitude",
+                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{500^2 + 250^2} = 559.02$ N."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -17531,6 +21493,258 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": ""
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 44",
+            "question": "A particle starts with an initial velocity of $220$ m/s and moves with a constant acceleration of $6.4$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$660.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1033.20$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$344.40$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$688.80$ m",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (220)(3) + 0.5(6.4)(3)^2 = 688.80$ m."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 45",
+            "question": "A particle starts with an initial velocity of $225$ m/s and moves with a constant acceleration of $6.5$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$704.25$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$675.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1056.38$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$352.13$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (225)(3) + 0.5(6.5)(3)^2 = 704.25$ m."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 46",
+            "question": "A particle starts with an initial velocity of $230$ m/s and moves with a constant acceleration of $6.6$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$690.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$719.70$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1079.55$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$359.85$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (230)(3) + 0.5(6.6)(3)^2 = 719.70$ m."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 47",
+            "question": "A particle starts with an initial velocity of $235$ m/s and moves with a constant acceleration of $6.7$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$705.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1102.72$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$735.15$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$367.57$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (235)(3) + 0.5(6.7)(3)^2 = 735.15$ m."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 48",
+            "question": "A particle starts with an initial velocity of $240$ m/s and moves with a constant acceleration of $6.8$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$720.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1125.90$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$375.30$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$750.60$ m",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (240)(3) + 0.5(6.8)(3)^2 = 750.60$ m."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 49",
+            "question": "A particle starts with an initial velocity of $245$ m/s and moves with a constant acceleration of $6.9$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$766.05$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$735.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1149.07$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$383.02$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (245)(3) + 0.5(6.9)(3)^2 = 766.05$ m."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Kinematics of Particles",
+            "title": "Uniformly Accelerated Motion - Case 50",
+            "question": "A particle starts with an initial velocity of $250$ m/s and moves with a constant acceleration of $7.0$ m/s$^2$. What distance does it travel in $3$ seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$750.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$781.50$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1172.25$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$390.75$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinematic Equation",
+                        "content": "$s = v_0 t + \\frac{1}{2} a t^2 = (250)(3) + 0.5(7.0)(3)^2 = 781.50$ m."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -19618,6 +23832,150 @@ const QUESTIONS = {
                 "final_answer": "C",
                 "solution_image": ""
             }
+        },
+        {
+            "topic": "Stress/Strain Caused by Axial Loads",
+            "title": "Axial Normal Stress - Case 47",
+            "question": "A steel rod with a cross-sectional area of $2350$ mm$^2$ is subjected to a tensile axial force of $47000$ N. What is the average normal stress in the rod?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ MPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100$ MPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stress Formula",
+                        "content": "$\\sigma = \\dfrac{P}{A} = \\dfrac{47000\\text{ N}}{2350\\text{ mm}^2} = 20.00$ MPa."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Stress/Strain Caused by Axial Loads",
+            "title": "Axial Normal Stress - Case 48",
+            "question": "A steel rod with a cross-sectional area of $2400$ mm$^2$ is subjected to a tensile axial force of $48000$ N. What is the average normal stress in the rod?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.00$ MPa",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stress Formula",
+                        "content": "$\\sigma = \\dfrac{P}{A} = \\dfrac{48000\\text{ N}}{2400\\text{ mm}^2} = 20.00$ MPa."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Stress/Strain Caused by Axial Loads",
+            "title": "Axial Normal Stress - Case 49",
+            "question": "A steel rod with a cross-sectional area of $2450$ mm$^2$ is subjected to a tensile axial force of $49000$ N. What is the average normal stress in the rod?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ MPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100$ MPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stress Formula",
+                        "content": "$\\sigma = \\dfrac{P}{A} = \\dfrac{49000\\text{ N}}{2450\\text{ mm}^2} = 20.00$ MPa."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Stress/Strain Caused by Axial Loads",
+            "title": "Axial Normal Stress - Case 50",
+            "question": "A steel rod with a cross-sectional area of $2500$ mm$^2$ is subjected to a tensile axial force of $50000$ N. What is the average normal stress in the rod?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ MPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$ MPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100$ MPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stress Formula",
+                        "content": "$\\sigma = \\dfrac{P}{A} = \\dfrac{50000\\text{ N}}{2500\\text{ mm}^2} = 20.00$ MPa."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "materials-science": [
@@ -21201,6 +25559,402 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 40",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.45$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.45$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.4459$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2973$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3716$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.45) = 0.3716$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 41",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.46$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.3784$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.46$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.4541$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3027$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.46) = 0.3784$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 42",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.47$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.47$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.3853$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.4624$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3082$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.47) = 0.3853$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 43",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.48$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.48$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.4704$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.3920$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3136$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.48) = 0.3920$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 44",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.49$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.49$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.4786$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.3190$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3988$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.49) = 0.3988$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 45",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.50$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.4055$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.50$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.4866$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3244$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.50) = 0.4055$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 46",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.51$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.51$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.4121$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.4945$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3297$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.51) = 0.4121$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 47",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.52$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.52$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5024$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.4187$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3350$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.52) = 0.4187$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 48",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.53$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.53$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5104$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.3402$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.4253$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.53) = 0.4253$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 49",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.54$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.4318$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.54$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5182$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3454$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.54) = 0.4318$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Stress-Strain Diagrams",
+            "title": "True Strain vs Engineering Strain - Case 50",
+            "question": "A metal specimen undergoes plastic tensile deformation resulting in an engineering strain of $0.55$. What is the corresponding true strain?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.55$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.4383$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5260$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3506$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "True Strain formula",
+                        "content": "$\\epsilon_{true} = \\ln(1 + \\epsilon_{eng}) = \\ln(1 + 0.55) = 0.4383$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -22940,6 +27694,366 @@ const QUESTIONS = {
                 "final_answer": "B",
                 "solution_image": ""
             }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 41",
+            "question": "What is the hydrostatic pressure at a depth of $205$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2011.0$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3016.5$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1005.5$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(205) = 2011000$ Pa = 2011.0$ kPa."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 42",
+            "question": "What is the hydrostatic pressure at a depth of $210$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3090.1$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2060.1$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1030.0$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(210) = 2060100$ Pa = 2060.1$ kPa."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 43",
+            "question": "What is the hydrostatic pressure at a depth of $215$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3163.8$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1054.6$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2109.2$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(215) = 2109200$ Pa = 2109.2$ kPa."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 44",
+            "question": "What is the hydrostatic pressure at a depth of $220$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3237.3$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1079.1$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2158.2$ kPa",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(220) = 2158200$ Pa = 2158.2$ kPa."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 45",
+            "question": "What is the hydrostatic pressure at a depth of $225$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2207.3$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3311.0$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1103.7$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(225) = 2207300$ Pa = 2207.3$ kPa."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 46",
+            "question": "What is the hydrostatic pressure at a depth of $230$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3384.5$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2256.3$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1128.2$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(230) = 2256300$ Pa = 2256.3$ kPa."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 47",
+            "question": "What is the hydrostatic pressure at a depth of $235$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3458.0$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1152.7$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2305.3$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(235) = 2305300$ Pa = 2305.3$ kPa."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 48",
+            "question": "What is the hydrostatic pressure at a depth of $240$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3531.6$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1177.2$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2354.4$ kPa",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(240) = 2354400$ Pa = 2354.4$ kPa."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 49",
+            "question": "What is the hydrostatic pressure at a depth of $245$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2403.4$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3605.1$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1201.7$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(245) = 2403400$ Pa = 2403.4$ kPa."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Fluid Statics",
+            "title": "Hydrostatic Pressure - Case 50",
+            "question": "What is the hydrostatic pressure at a depth of $250$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3678.8$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2452.5$ kPa",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1226.3$ kPa",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$101.3$ kPa",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Pressure Equation",
+                        "content": "$P = \\rho g h = (1000)(9.81)(250) = 2452500$ Pa = 2452.5$ kPa."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "electricity": [
@@ -24413,6 +29527,510 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 37",
+            "question": "A direct current voltage source of $86$ V is connected across a resistor of $41$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.10$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3526.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.15$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{86}{41} = 2.10$ A."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 38",
+            "question": "A direct current voltage source of $88$ V is connected across a resistor of $42$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3696.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.10$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3.15$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{88}{42} = 2.10$ A."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 39",
+            "question": "A direct current voltage source of $90$ V is connected across a resistor of $43$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3870.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.13$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.09$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{90}{43} = 2.09$ A."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 40",
+            "question": "A direct current voltage source of $92$ V is connected across a resistor of $44$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4048.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.13$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2.09$ A",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{92}{44} = 2.09$ A."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 41",
+            "question": "A direct current voltage source of $94$ V is connected across a resistor of $45$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.09$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$4230.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.13$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{94}{45} = 2.09$ A."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 42",
+            "question": "A direct current voltage source of $96$ V is connected across a resistor of $46$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4416.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.09$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3.13$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{96}{46} = 2.09$ A."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 43",
+            "question": "A direct current voltage source of $98$ V is connected across a resistor of $47$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4606.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.13$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.09$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{98}{47} = 2.09$ A."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 44",
+            "question": "A direct current voltage source of $100$ V is connected across a resistor of $48$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4800.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.12$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2.08$ A",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{100}{48} = 2.08$ A."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 45",
+            "question": "A direct current voltage source of $102$ V is connected across a resistor of $49$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.08$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$4998.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.12$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{102}{49} = 2.08$ A."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 46",
+            "question": "A direct current voltage source of $104$ V is connected across a resistor of $50$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5200.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.08$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3.12$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{104}{50} = 2.08$ A."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 47",
+            "question": "A direct current voltage source of $106$ V is connected across a resistor of $51$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5406.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.12$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.08$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{106}{51} = 2.08$ A."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 48",
+            "question": "A direct current voltage source of $108$ V is connected across a resistor of $52$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5616.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.12$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2.08$ A",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{108}{52} = 2.08$ A."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 49",
+            "question": "A direct current voltage source of $110$ V is connected across a resistor of $53$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.08$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$5830.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.12$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{110}{53} = 2.08$ A."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Ohm's Law Circuit - Case 50",
+            "question": "A direct current voltage source of $112$ V is connected across a resistor of $54$ $\\Omega$. What is the current flowing through the resistor?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$6048.00$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.07$ A",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3.10$ A",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ A",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Ohm's Law",
+                        "content": "$I = \\dfrac{V}{R} = \\dfrac{112}{54} = 2.07$ A."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -30181,6 +35799,150 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Conduction",
+            "title": "Fourier Conduction Rate - Case 47",
+            "question": "A wall has thermal conductivity of $k = 5.2$ W/m\\cdot K, cross-sectional area $A = 2.0$ m$^2$, thickness $L = 0.1$ m, and temperature difference of $114$ K. Calculate the rate of heat conduction $q$ through the wall.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$17784$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5928$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$11856$ W",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ W",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Fourier's Law",
+                        "content": "$q = \\dfrac{kA\\Delta T}{L} = \\dfrac{(5.2)(2.0)(114)}{0.1} = 11856$ W."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Conduction",
+            "title": "Fourier Conduction Rate - Case 48",
+            "question": "A wall has thermal conductivity of $k = 5.3$ W/m\\cdot K, cross-sectional area $A = 2.0$ m$^2$, thickness $L = 0.1$ m, and temperature difference of $116$ K. Calculate the rate of heat conduction $q$ through the wall.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$18444$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6148$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$12296$ W",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Fourier's Law",
+                        "content": "$q = \\dfrac{kA\\Delta T}{L} = \\dfrac{(5.3)(2.0)(116)}{0.1} = 12296$ W."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Conduction",
+            "title": "Fourier Conduction Rate - Case 49",
+            "question": "A wall has thermal conductivity of $k = 5.4$ W/m\\cdot K, cross-sectional area $A = 2.0$ m$^2$, thickness $L = 0.1$ m, and temperature difference of $118$ K. Calculate the rate of heat conduction $q$ through the wall.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$12744$ W",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$19116$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6372$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ W",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Fourier's Law",
+                        "content": "$q = \\dfrac{kA\\Delta T}{L} = \\dfrac{(5.4)(2.0)(118)}{0.1} = 12744$ W."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Conduction",
+            "title": "Fourier Conduction Rate - Case 50",
+            "question": "A wall has thermal conductivity of $k = 5.5$ W/m\\cdot K, cross-sectional area $A = 2.0$ m$^2$, thickness $L = 0.1$ m, and temperature difference of $120$ K. Calculate the rate of heat conduction $q$ through the wall.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$19800$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$13200$ W",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$6600$ W",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ W",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Fourier's Law",
+                        "content": "$q = \\dfrac{kA\\Delta T}{L} = \\dfrac{(5.5)(2.0)(120)}{0.1} = 13200$ W."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -53303,6 +59065,526 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A"
             }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 38",
+            "question": "During differential leveling, a backsight (BS) of $5.30$ m is taken on a benchmark of elevation $290.00$ m. A foresight (FS) of $4.00$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$299.30$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$291.30$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$280.70$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 290.00 + 5.30 = 295.30$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 295.30 - 4.00 = 291.30$ m."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 39",
+            "question": "During differential leveling, a backsight (BS) of $5.40$ m is taken on a benchmark of elevation $295.00$ m. A foresight (FS) of $4.05$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$304.45$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$285.55$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$296.35$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 295.00 + 5.40 = 300.40$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 300.40 - 4.05 = 296.35$ m."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 40",
+            "question": "During differential leveling, a backsight (BS) of $5.50$ m is taken on a benchmark of elevation $300.00$ m. A foresight (FS) of $4.10$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$309.60$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$290.40$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$301.40$ m",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 300.00 + 5.50 = 305.50$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 305.50 - 4.10 = 301.40$ m."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 41",
+            "question": "During differential leveling, a backsight (BS) of $5.60$ m is taken on a benchmark of elevation $305.00$ m. A foresight (FS) of $4.15$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$306.45$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$314.75$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$295.25$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 305.00 + 5.60 = 310.60$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 310.60 - 4.15 = 306.45$ m."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 42",
+            "question": "During differential leveling, a backsight (BS) of $5.70$ m is taken on a benchmark of elevation $310.00$ m. A foresight (FS) of $4.20$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$319.90$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$311.50$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$300.10$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 310.00 + 5.70 = 315.70$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 315.70 - 4.20 = 311.50$ m."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 43",
+            "question": "During differential leveling, a backsight (BS) of $5.80$ m is taken on a benchmark of elevation $315.00$ m. A foresight (FS) of $4.25$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$325.05$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$304.95$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$316.55$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 315.00 + 5.80 = 320.80$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 320.80 - 4.25 = 316.55$ m."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 44",
+            "question": "During differential leveling, a backsight (BS) of $5.90$ m is taken on a benchmark of elevation $320.00$ m. A foresight (FS) of $4.30$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$330.20$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$309.80$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$321.60$ m",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 320.00 + 5.90 = 325.90$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 325.90 - 4.30 = 321.60$ m."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 45",
+            "question": "During differential leveling, a backsight (BS) of $6.00$ m is taken on a benchmark of elevation $325.00$ m. A foresight (FS) of $4.35$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$326.65$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$335.35$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$314.65$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 325.00 + 6.00 = 331.00$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 331.00 - 4.35 = 326.65$ m."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 46",
+            "question": "During differential leveling, a backsight (BS) of $6.10$ m is taken on a benchmark of elevation $330.00$ m. A foresight (FS) of $4.40$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$340.50$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$331.70$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$319.50$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 330.00 + 6.10 = 336.10$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 336.10 - 4.40 = 331.70$ m."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 47",
+            "question": "During differential leveling, a backsight (BS) of $6.20$ m is taken on a benchmark of elevation $335.00$ m. A foresight (FS) of $4.45$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$345.65$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$324.35$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$336.75$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 335.00 + 6.20 = 341.20$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 341.20 - 4.45 = 336.75$ m."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 48",
+            "question": "During differential leveling, a backsight (BS) of $6.30$ m is taken on a benchmark of elevation $340.00$ m. A foresight (FS) of $4.50$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$350.80$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$329.20$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$341.80$ m",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 340.00 + 6.30 = 346.30$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 346.30 - 4.50 = 341.80$ m."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 49",
+            "question": "During differential leveling, a backsight (BS) of $6.40$ m is taken on a benchmark of elevation $345.00$ m. A foresight (FS) of $4.55$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$346.85$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$355.95$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$334.05$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 345.00 + 6.40 = 351.40$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 351.40 - 4.55 = 346.85$ m."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Leveling",
+            "title": "Differential Leveling elevation - Case 50",
+            "question": "During differential leveling, a backsight (BS) of $6.50$ m is taken on a benchmark of elevation $350.00$ m. A foresight (FS) of $4.60$ m is then taken on point B. What is the elevation of point B?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$361.10$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$351.90$ m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$338.90$ m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Height of Instrument",
+                        "content": "Height of Instrument (HI) = $\\text{Elevation}_A + \\text{BS} = 350.00 + 6.50 = 356.50$ m."
+                    },
+                    {
+                        "title": "Point B Elevation",
+                        "content": "Elevation B = $\\text{HI} - \\text{FS} = 356.50 - 4.60 = 351.90$ m."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "digital-systems": [
@@ -57863,6 +64145,294 @@ const QUESTIONS = {
                     {
                         "title": "Explain Thermal Transport in Superconductors",
                         "content": "In the normal state, electrons are the primary carriers of both electricity and heat. Below $T_c$, electrons condense into Cooper pairs which carry electrical current with zero resistance. However, Cooper pairs do not carry entropy and do not contribute to thermal transport. Therefore, the thermal conductivity drops significantly because only the remaining normal electrons and phonons can conduct heat."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 43",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 23.5$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.081e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.081e-9$ F",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ F",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(23.5)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.081e-9$ F."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 44",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 24.0$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.125e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2.125e-9$ F",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(24.0)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.125e-9$ F."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 45",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 24.5$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.169e-9$ F",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.169e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ F",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(24.5)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.169e-9$ F."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 46",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 25.0$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.213e-9$ F",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$2.213e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ F",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(25.0)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.213e-9$ F."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 47",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 25.5$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.258e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.258e-9$ F",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ F",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(25.5)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.258e-9$ F."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 48",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 26.0$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.302e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2.302e-9$ F",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(26.0)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.302e-9$ F."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 49",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 26.5$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.346e-9$ F",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.346e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ F",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(26.5)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.346e-9$ F."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Semiconductors",
+            "title": "Parallel Plate Dielectric Capacitance - Case 50",
+            "question": "A parallel plate capacitor has plate area $A = 0.001$ m$^2$ and separation distance $d = 0.0001$ m. The dielectric material between plates has a relative permittivity (dielectric constant) $\\epsilon_r = 27.0$. What is the capacitance $C$ in farads? (Permittivity of free space $\\epsilon_0 = 8.854 \\times 10^{-12}$ F/m)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.000 \\times 10^{-12}$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.391e-9$ F",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$2.391e-13$ F",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ F",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Capacitance formula",
+                        "content": "$C = \\dfrac{\\epsilon_r \\epsilon_0 A}{d} = \\dfrac{(27.0)(8.854 \\times 10^{-12})(0.001)}{0.0001} = 2.391e-9$ F."
                     }
                 ],
                 "final_answer": "B"
@@ -82296,6 +88866,330 @@ const QUESTIONS = {
                 "final_answer": "A",
                 "solution_image": ""
             }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 42",
+            "question": "A communication channel has a bandwidth of $B = 420000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$420000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1680000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3360000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 420000 \\log_2(1 + 15) = 420000 \\log_2(16) = 420000 \\times 4 = 1680000$ bps."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 43",
+            "question": "A communication channel has a bandwidth of $B = 430000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$430000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3440000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1720000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 430000 \\log_2(1 + 15) = 430000 \\log_2(16) = 430000 \\times 4 = 1720000$ bps."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 44",
+            "question": "A communication channel has a bandwidth of $B = 440000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$440000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3520000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1760000$ bps",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 440000 \\log_2(1 + 15) = 440000 \\log_2(16) = 440000 \\times 4 = 1760000$ bps."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 45",
+            "question": "A communication channel has a bandwidth of $B = 450000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1800000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$450000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3600000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 450000 \\log_2(1 + 15) = 450000 \\log_2(16) = 450000 \\times 4 = 1800000$ bps."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 46",
+            "question": "A communication channel has a bandwidth of $B = 460000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$460000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1840000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3680000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 460000 \\log_2(1 + 15) = 460000 \\log_2(16) = 460000 \\times 4 = 1840000$ bps."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 47",
+            "question": "A communication channel has a bandwidth of $B = 470000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$470000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3760000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1880000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 470000 \\log_2(1 + 15) = 470000 \\log_2(16) = 470000 \\times 4 = 1880000$ bps."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 48",
+            "question": "A communication channel has a bandwidth of $B = 480000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$480000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3840000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1920000$ bps",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 480000 \\log_2(1 + 15) = 480000 \\log_2(16) = 480000 \\times 4 = 1920000$ bps."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 49",
+            "question": "A communication channel has a bandwidth of $B = 490000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1960000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$490000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3920000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 490000 \\log_2(1 + 15) = 490000 \\log_2(16) = 490000 \\times 4 = 1960000$ bps."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Modulation",
+            "title": "Shannon Channel Capacity Theorem - Case 50",
+            "question": "A communication channel has a bandwidth of $B = 500000$ Hz and a signal-to-noise ratio (SNR) of $15$ (linear). What is the maximum theoretical channel capacity $C$ in bits per second (bps)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$500000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2000000$ bps",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$4000000$ bps",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ bps",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Shannon-Hartley Theorem",
+                        "content": "$C = B \\log_2(1 + SNR) = 500000 \\log_2(1 + 15) = 500000 \\log_2(16) = 500000 \\times 4 = 2000000$ bps."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "networks": [
@@ -89300,6 +96194,726 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 31",
+            "question": "A particle of mass $m = 3100$ kg moves in a straight line with a constant velocity of $v = 155$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$480500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$74477500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$37238750$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3100)(155)^2 = 37238750$ J."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 32",
+            "question": "A particle of mass $m = 3200$ kg moves in a straight line with a constant velocity of $v = 160$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$512000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$81920000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40960000$ J",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3200)(160)^2 = 40960000$ J."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 33",
+            "question": "A particle of mass $m = 3300$ kg moves in a straight line with a constant velocity of $v = 165$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$44921250$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$544500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$89842500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3300)(165)^2 = 44921250$ J."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 34",
+            "question": "A particle of mass $m = 3400$ kg moves in a straight line with a constant velocity of $v = 170$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$578000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$49130000$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$98260000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3400)(170)^2 = 49130000$ J."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 35",
+            "question": "A particle of mass $m = 3500$ kg moves in a straight line with a constant velocity of $v = 175$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$612500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$107187500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$53593750$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3500)(175)^2 = 53593750$ J."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 36",
+            "question": "A particle of mass $m = 3600$ kg moves in a straight line with a constant velocity of $v = 180$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$648000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$116640000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$58320000$ J",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3600)(180)^2 = 58320000$ J."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 37",
+            "question": "A particle of mass $m = 3700$ kg moves in a straight line with a constant velocity of $v = 185$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$63316250$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$684500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$126632500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3700)(185)^2 = 63316250$ J."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 38",
+            "question": "A particle of mass $m = 3800$ kg moves in a straight line with a constant velocity of $v = 190$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$722000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$68590000$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$137180000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3800)(190)^2 = 68590000$ J."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 39",
+            "question": "A particle of mass $m = 3900$ kg moves in a straight line with a constant velocity of $v = 195$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$760500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$148297500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$74148750$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(3900)(195)^2 = 74148750$ J."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 40",
+            "question": "A particle of mass $m = 4000$ kg moves in a straight line with a constant velocity of $v = 200$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$800000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$160000000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$80000000$ J",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4000)(200)^2 = 80000000$ J."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 41",
+            "question": "A particle of mass $m = 4100$ kg moves in a straight line with a constant velocity of $v = 205$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$86151250$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$840500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$172302500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4100)(205)^2 = 86151250$ J."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 42",
+            "question": "A particle of mass $m = 4200$ kg moves in a straight line with a constant velocity of $v = 210$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$882000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$92610000$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$185220000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4200)(210)^2 = 92610000$ J."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 43",
+            "question": "A particle of mass $m = 4300$ kg moves in a straight line with a constant velocity of $v = 215$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$924500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$198767500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$99383750$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4300)(215)^2 = 99383750$ J."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 44",
+            "question": "A particle of mass $m = 4400$ kg moves in a straight line with a constant velocity of $v = 220$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$968000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$212960000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$106480000$ J",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4400)(220)^2 = 106480000$ J."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 45",
+            "question": "A particle of mass $m = 4500$ kg moves in a straight line with a constant velocity of $v = 225$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$113906250$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1012500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$227812500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4500)(225)^2 = 113906250$ J."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 46",
+            "question": "A particle of mass $m = 4600$ kg moves in a straight line with a constant velocity of $v = 230$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1058000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$121670000$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$243340000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4600)(230)^2 = 121670000$ J."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 47",
+            "question": "A particle of mass $m = 4700$ kg moves in a straight line with a constant velocity of $v = 235$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1104500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$259557500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$129778750$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4700)(235)^2 = 129778750$ J."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 48",
+            "question": "A particle of mass $m = 4800$ kg moves in a straight line with a constant velocity of $v = 240$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1152000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$276480000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$138240000$ J",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4800)(240)^2 = 138240000$ J."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 49",
+            "question": "A particle of mass $m = 4900$ kg moves in a straight line with a constant velocity of $v = 245$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$147061250$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1200500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$294122500$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(4900)(245)^2 = 147061250$ J."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Dynamics",
+            "title": "Flywheel Kinetic Energy - Case 50",
+            "question": "A particle of mass $m = 5000$ kg moves in a straight line with a constant velocity of $v = 250$ m/s. What is its kinetic energy?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1250000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$156250000$ J",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$312500000$ J",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ J",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Kinetic Energy",
+                        "content": "$KE = \\frac{1}{2} m v^2 = 0.5(5000)(250)^2 = 156250000$ J."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "comp-tools": [
@@ -90353,6 +97967,762 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 30",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x1E$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$30$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$60$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$46$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $30$ in base 10."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 31",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x1F$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$41$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$62$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$31$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$47$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $31$ in base 10."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 32",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x20$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$42$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$64$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$48$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$32$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $32$ in base 10."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 33",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x21$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$33$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$43$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$66$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$49$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $33$ in base 10."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 34",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x22$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$44$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$34$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$68$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $34$ in base 10."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 35",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x23$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$45$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$70$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$35$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$51$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $35$ in base 10."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 36",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x24$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$46$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$72$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$52$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$36$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $36$ in base 10."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 37",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x25$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$37$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$47$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$74$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$53$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $37$ in base 10."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 38",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x26$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$48$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$38$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$76$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$54$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $38$ in base 10."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 39",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x27$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$49$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$78$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$39$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$55$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $39$ in base 10."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 40",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x28$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$50$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$80$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$56$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $40$ in base 10."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 41",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x29$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$41$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$51$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$82$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$57$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $41$ in base 10."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 42",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x2A$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$52$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$42$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$84$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$58$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $42$ in base 10."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 43",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x2B$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$53$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$86$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$43$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$59$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $43$ in base 10."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 44",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x2C$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$54$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$88$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$60$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$44$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $44$ in base 10."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 45",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x2D$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$45$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$55$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$61$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $45$ in base 10."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 46",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x2E$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$56$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$46$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$92$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$62$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $46$ in base 10."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 47",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x2F$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$57$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$94$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$47$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$63$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $47$ in base 10."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 48",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x30$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$58$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$96$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$64$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$48$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $48$ in base 10."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 49",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x31$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$49$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$59$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$98$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$65$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $49$ in base 10."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Mathematical Software",
+            "title": "Hexadecimal to Decimal - Case 50",
+            "question": "What is the decimal equivalent of the hexadecimal number $0x32$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$50$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$100$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$66$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Base Conversion",
+                        "content": "In hexadecimal representation, each digit represents a power of 16. The value is $50$ in base 10."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -91504,6 +99874,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 32",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 320$ $\\mu$M/min, Michaelis constant $K_m = 64$ $\\mu$M, and substrate concentration $[S] = 96$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$320$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$160.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$288.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$192.00$ $\\mu$M/min",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(320)(96)}{64 + 96} = 192.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 33",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 330$ $\\mu$M/min, Michaelis constant $K_m = 66$ $\\mu$M, and substrate concentration $[S] = 99$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$198.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$330$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$165.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$297.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(330)(99)}{66 + 99} = 198.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 34",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 340$ $\\mu$M/min, Michaelis constant $K_m = 68$ $\\mu$M, and substrate concentration $[S] = 102$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$340$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$204.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$170.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$306.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(340)(102)}{68 + 102} = 204.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 35",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 350$ $\\mu$M/min, Michaelis constant $K_m = 70$ $\\mu$M, and substrate concentration $[S] = 105$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$350$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$175.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$210.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$315.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(350)(105)}{70 + 105} = 210.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 36",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 360$ $\\mu$M/min, Michaelis constant $K_m = 72$ $\\mu$M, and substrate concentration $[S] = 108$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$360$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$180.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$324.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$216.00$ $\\mu$M/min",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(360)(108)}{72 + 108} = 216.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 37",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 370$ $\\mu$M/min, Michaelis constant $K_m = 74$ $\\mu$M, and substrate concentration $[S] = 111$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$222.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$370$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$185.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$333.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(370)(111)}{74 + 111} = 222.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 38",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 380$ $\\mu$M/min, Michaelis constant $K_m = 76$ $\\mu$M, and substrate concentration $[S] = 114$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$380$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$228.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$190.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$342.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(380)(114)}{76 + 114} = 228.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 39",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 390$ $\\mu$M/min, Michaelis constant $K_m = 78$ $\\mu$M, and substrate concentration $[S] = 117$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$390$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$195.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$234.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$351.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(390)(117)}{78 + 117} = 234.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 40",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 400$ $\\mu$M/min, Michaelis constant $K_m = 80$ $\\mu$M, and substrate concentration $[S] = 120$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$400$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$360.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$240.00$ $\\mu$M/min",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(400)(120)}{80 + 120} = 240.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 41",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 410$ $\\mu$M/min, Michaelis constant $K_m = 82$ $\\mu$M, and substrate concentration $[S] = 123$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$246.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$410$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$205.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$369.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(410)(123)}{82 + 123} = 246.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 42",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 420$ $\\mu$M/min, Michaelis constant $K_m = 84$ $\\mu$M, and substrate concentration $[S] = 126$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$420$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$252.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$210.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$378.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(420)(126)}{84 + 126} = 252.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 43",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 430$ $\\mu$M/min, Michaelis constant $K_m = 86$ $\\mu$M, and substrate concentration $[S] = 129$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$430$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$215.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$258.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$387.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(430)(129)}{86 + 129} = 258.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 44",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 440$ $\\mu$M/min, Michaelis constant $K_m = 88$ $\\mu$M, and substrate concentration $[S] = 132$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$440$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$220.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$396.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$264.00$ $\\mu$M/min",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(440)(132)}{88 + 132} = 264.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 45",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 450$ $\\mu$M/min, Michaelis constant $K_m = 90$ $\\mu$M, and substrate concentration $[S] = 135$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$270.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$450$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$225.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$405.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(450)(135)}{90 + 135} = 270.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 46",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 460$ $\\mu$M/min, Michaelis constant $K_m = 92$ $\\mu$M, and substrate concentration $[S] = 138$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$460$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$276.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$230.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$414.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(460)(138)}{92 + 138} = 276.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 47",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 470$ $\\mu$M/min, Michaelis constant $K_m = 94$ $\\mu$M, and substrate concentration $[S] = 141$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$470$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$235.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$282.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$423.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(470)(141)}{94 + 141} = 282.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 48",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 480$ $\\mu$M/min, Michaelis constant $K_m = 96$ $\\mu$M, and substrate concentration $[S] = 144$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$480$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$240.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$432.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$288.00$ $\\mu$M/min",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(480)(144)}{96 + 144} = 288.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 49",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 490$ $\\mu$M/min, Michaelis constant $K_m = 98$ $\\mu$M, and substrate concentration $[S] = 147$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$294.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$490$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$245.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$441.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(490)(147)}{98 + 147} = 294.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Biology",
+            "title": "Michaelis-Menten Rate - Case 50",
+            "question": "In an enzyme-catalyzed reaction, the maximum velocity $V_{max} = 500$ $\\mu$M/min, Michaelis constant $K_m = 100$ $\\mu$M, and substrate concentration $[S] = 150$ $\\mu$M. According to Michaelis-Menten kinetics, what is the initial reaction rate $v$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$500$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$300.00$ $\\mu$M/min",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$250.00$ $\\mu$M/min",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$450.00$ $\\mu$M/min",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Michaelis-Menten Equation",
+                        "content": "$v = \\dfrac{V_{max}[S]}{K_m + [S]} = \\dfrac{(500)(150)}{100 + 150} = 300.00$ $\\mu$M/min."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "balances": [
@@ -92589,6 +101643,762 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 30",
+            "question": "A distillation column is fed with $3000$ kg/hr of a mixture containing $70\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$666.67$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2333.33$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$2100.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3000$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3000)(0.70) = D(0.9) + 0 \\implies D = 2333.33$ kg/hr."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 31",
+            "question": "A distillation column is fed with $3100$ kg/hr of a mixture containing $72\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$620.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2232.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2480.00$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3100$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3100)(0.72) = D(0.9) + 0 \\implies D = 2480.00$ kg/hr."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 32",
+            "question": "A distillation column is fed with $3200$ kg/hr of a mixture containing $74\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$568.89$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2368.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3200$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2631.11$ kg/hr",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3200)(0.74) = D(0.9) + 0 \\implies D = 2631.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 33",
+            "question": "A distillation column is fed with $3300$ kg/hr of a mixture containing $76\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2786.67$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$513.33$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2508.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3300$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3300)(0.76) = D(0.9) + 0 \\implies D = 2786.67$ kg/hr."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 34",
+            "question": "A distillation column is fed with $3400$ kg/hr of a mixture containing $78\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$453.33$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2946.67$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$2652.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3400$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3400)(0.78) = D(0.9) + 0 \\implies D = 2946.67$ kg/hr."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 35",
+            "question": "A distillation column is fed with $3500$ kg/hr of a mixture containing $80\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$388.89$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2800.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3111.11$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3500$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3500)(0.80) = D(0.9) + 0 \\implies D = 3111.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 36",
+            "question": "A distillation column is fed with $3600$ kg/hr of a mixture containing $82\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$320.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2952.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3600$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3280.00$ kg/hr",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3600)(0.82) = D(0.9) + 0 \\implies D = 3280.00$ kg/hr."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 37",
+            "question": "A distillation column is fed with $3700$ kg/hr of a mixture containing $84\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3453.33$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$246.67$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3108.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3700$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3700)(0.84) = D(0.9) + 0 \\implies D = 3453.33$ kg/hr."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 38",
+            "question": "A distillation column is fed with $3800$ kg/hr of a mixture containing $86\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$168.89$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3631.11$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3268.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3800$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3800)(0.86) = D(0.9) + 0 \\implies D = 3631.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 39",
+            "question": "A distillation column is fed with $3900$ kg/hr of a mixture containing $88\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$86.67$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3432.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3813.33$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$3900$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (3900)(0.88) = D(0.9) + 0 \\implies D = 3813.33$ kg/hr."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 40",
+            "question": "A distillation column is fed with $4000$ kg/hr of a mixture containing $90\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3600.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4000$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4000.00$ kg/hr",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4000)(0.90) = D(0.9) + 0 \\implies D = 4000.00$ kg/hr."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 41",
+            "question": "A distillation column is fed with $4100$ kg/hr of a mixture containing $92\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4191.11$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$-91.11$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3772.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4100$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4100)(0.92) = D(0.9) + 0 \\implies D = 4191.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 42",
+            "question": "A distillation column is fed with $4200$ kg/hr of a mixture containing $94\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-186.67$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4386.67$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3948.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4200$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4200)(0.94) = D(0.9) + 0 \\implies D = 4386.67$ kg/hr."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 43",
+            "question": "A distillation column is fed with $4300$ kg/hr of a mixture containing $96\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-286.67$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4128.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4586.67$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$4300$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4300)(0.96) = D(0.9) + 0 \\implies D = 4586.67$ kg/hr."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 44",
+            "question": "A distillation column is fed with $4400$ kg/hr of a mixture containing $98\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-391.11$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4312.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4400$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4791.11$ kg/hr",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4400)(0.98) = D(0.9) + 0 \\implies D = 4791.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 45",
+            "question": "A distillation column is fed with $4500$ kg/hr of a mixture containing $100\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5000.00$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$-500.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4500.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4500$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4500)(1.00) = D(0.9) + 0 \\implies D = 5000.00$ kg/hr."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 46",
+            "question": "A distillation column is fed with $4600$ kg/hr of a mixture containing $102\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-613.33$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5213.33$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$4692.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4600$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4600)(1.02) = D(0.9) + 0 \\implies D = 5213.33$ kg/hr."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 47",
+            "question": "A distillation column is fed with $4700$ kg/hr of a mixture containing $104\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-731.11$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4888.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5431.11$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$4700$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4700)(1.04) = D(0.9) + 0 \\implies D = 5431.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 48",
+            "question": "A distillation column is fed with $4800$ kg/hr of a mixture containing $106\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-853.33$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5088.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4800$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5653.33$ kg/hr",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4800)(1.06) = D(0.9) + 0 \\implies D = 5653.33$ kg/hr."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 49",
+            "question": "A distillation column is fed with $4900$ kg/hr of a mixture containing $108\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5880.00$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$-980.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5292.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4900$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (4900)(1.08) = D(0.9) + 0 \\implies D = 5880.00$ kg/hr."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Material Balances",
+            "title": "Distillation Mass Balance - Case 50",
+            "question": "A distillation column is fed with $5000$ kg/hr of a mixture containing $110\\%$ solute. If the distillate product is $90\\%$ solute, and bottom product has $0\\%$ solute, what is the distillate mass flow rate in kg/hr?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-1111.11$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6111.11$ kg/hr",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5500.00$ kg/hr",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5000$ kg/hr",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Solute Balance",
+                        "content": "$F \\cdot x_F = D \\cdot x_D + B \\cdot x_B \\implies (5000)(1.10) = D(0.9) + 0 \\implies D = 6111.11$ kg/hr."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -96574,6 +106384,654 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D"
             }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 33",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.033$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$890.2575$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1780.5150$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$445.1288$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.033)^2 (2500 - 1000)}{18 (0.001)} = 890.2575$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 34",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.034$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1890.0600$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$945.0300$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$472.5150$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.034)^2 (2500 - 1000)}{18 (0.001)} = 945.0300$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 35",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.035$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2002.8750$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$500.7188$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1001.4375$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.035)^2 (2500 - 1000)}{18 (0.001)} = 1001.4375$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 36",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.036$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2118.9600$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$529.7400$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1059.4800$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.036)^2 (2500 - 1000)}{18 (0.001)} = 1059.4800$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 37",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.037$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1119.1575$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2238.3150$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$559.5788$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.037)^2 (2500 - 1000)}{18 (0.001)} = 1119.1575$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 38",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.038$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2360.9400$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1180.4700$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$590.2350$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.038)^2 (2500 - 1000)}{18 (0.001)} = 1180.4700$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 39",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.039$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2486.8350$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$621.7088$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1243.4175$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.039)^2 (2500 - 1000)}{18 (0.001)} = 1243.4175$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 40",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.040$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2616.0000$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$654.0000$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1308.0000$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.040)^2 (2500 - 1000)}{18 (0.001)} = 1308.0000$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 41",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.041$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1374.2175$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2748.4350$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$687.1087$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.041)^2 (2500 - 1000)}{18 (0.001)} = 1374.2175$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 42",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.042$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2884.1400$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1442.0700$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$721.0350$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.042)^2 (2500 - 1000)}{18 (0.001)} = 1442.0700$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 43",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.043$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3023.1150$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$755.7787$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1511.5575$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.043)^2 (2500 - 1000)}{18 (0.001)} = 1511.5575$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 44",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.044$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3165.3600$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$791.3400$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1582.6800$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.044)^2 (2500 - 1000)}{18 (0.001)} = 1582.6800$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 45",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.045$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1655.4375$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3310.8750$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$827.7188$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.045)^2 (2500 - 1000)}{18 (0.001)} = 1655.4375$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 46",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.046$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3459.6600$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1729.8300$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$864.9150$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.046)^2 (2500 - 1000)}{18 (0.001)} = 1729.8300$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 47",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.047$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3611.7150$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$902.9288$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1805.8575$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.047)^2 (2500 - 1000)}{18 (0.001)} = 1805.8575$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 48",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.048$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$3767.0400$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$941.7600$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1883.5200$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.048)^2 (2500 - 1000)}{18 (0.001)} = 1883.5200$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 49",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.049$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1962.8175$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3925.6350$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$981.4088$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.049)^2 (2500 - 1000)}{18 (0.001)} = 1962.8175$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Particle Size",
+            "title": "Stokes Settling Velocity - Case 50",
+            "question": "Calculate the terminal settling velocity of a spherical sand particle of diameter $d = 0.050$ m settling in water under laminar flow. Assume particle density $\\rho_p = 2500$ kg/m$^3$, water density $\\rho = 1000$ kg/m$^3$, and dynamic viscosity $\\mu = 0.001$ Pa$\\cdot$s.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4087.5000$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2043.7500$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1021.8750$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Stokes' Law",
+                        "content": "$v_t = \\dfrac{g d^2 (\\rho_p - \\rho)}{18 \\mu} = \\dfrac{(9.81)(0.050)^2 (2500 - 1000)}{18 (0.001)} = 2043.7500$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "reaction-eng": [
@@ -97627,6 +108085,846 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 30",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 60$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 6.0$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{60(0.8)}{(6.0)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 31",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 62$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 6.2$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{62(0.8)}{(6.2)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 32",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 64$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 6.4$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{64(0.8)}{(6.4)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 33",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 66$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 6.6$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{66(0.8)}{(6.6)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 34",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 68$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 6.8$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{68(0.8)}{(6.8)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 35",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 70$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 7.0$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{70(0.8)}{(7.0)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 36",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 72$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 7.2$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{72(0.8)}{(7.2)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 37",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 74$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 7.4$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{74(0.8)}{(7.4)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 38",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 76$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 7.6$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{76(0.8)}{(7.6)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 39",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 78$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 7.8$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{78(0.8)}{(7.8)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 40",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 80$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 8.0$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{80(0.8)}{(8.0)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 41",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 82$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 8.2$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{82(0.8)}{(8.2)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 42",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 84$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 8.4$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{84(0.8)}{(8.4)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 43",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 86$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 8.6$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{86(0.8)}{(8.6)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 44",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 88$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 8.8$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{88(0.8)}{(8.8)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 45",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 90$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 9.0$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{90(0.8)}{(9.0)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 46",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 92$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 9.2$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{92(0.8)}{(9.2)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 47",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 94$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 9.4$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{94(0.8)}{(9.4)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 48",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 96$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 9.6$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{96(0.8)}{(9.6)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 49",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 98$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 9.8$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{98(0.8)}{(9.8)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reactor Design",
+            "title": "CSTR Volume Calculation - Case 50",
+            "question": "A first-order liquid phase reaction $A \\rightarrow B$ takes place in a CSTR with feed rate $F_{A0} = 100$ mol/s, initial concentration $C_{A0} = 1$ mol/L, and conversion $X = 0.8$. If the rate constant is $k = 10.0$ s$^{-1}$, what is the required CSTR volume (in liters)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$ L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$ L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100.00$ L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CSTR Design Equation",
+                        "content": "$V = \\dfrac{F_{A0} X}{-r_A}$. For first-order reaction: $-r_A = k C_{A0} (1 - X)$."
+                    },
+                    {
+                        "title": "Calculate Volume",
+                        "content": "$V = \\dfrac{100(0.8)}{(10.0)(1)(1 - 0.8)} = 40.00$ L."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -98839,6 +110137,654 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 33",
+            "question": "A heat exchanger with capacity $3300$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $6600$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{6600}{3300}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 34",
+            "question": "A heat exchanger with capacity $3400$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $6800$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{6800}{3400}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 35",
+            "question": "A heat exchanger with capacity $3500$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $7000$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{7000}{3500}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 36",
+            "question": "A heat exchanger with capacity $3600$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $7200$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$60629$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$75786$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{7200}{3600}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 37",
+            "question": "A heat exchanger with capacity $3700$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $7400$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{7400}{3700}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 38",
+            "question": "A heat exchanger with capacity $3800$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $7600$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{7600}{3800}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 39",
+            "question": "A heat exchanger with capacity $3900$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $7800$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{7800}{3900}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 40",
+            "question": "A heat exchanger with capacity $4000$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $8000$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$60629$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$75786$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{8000}{4000}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 41",
+            "question": "A heat exchanger with capacity $4100$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $8200$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{8200}{4100}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 42",
+            "question": "A heat exchanger with capacity $4200$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $8400$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{8400}{4200}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 43",
+            "question": "A heat exchanger with capacity $4300$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $8600$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{8600}{4300}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 44",
+            "question": "A heat exchanger with capacity $4400$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $8800$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$60629$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$75786$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{8800}{4400}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 45",
+            "question": "A heat exchanger with capacity $4500$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $9000$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{9000}{4500}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 46",
+            "question": "A heat exchanger with capacity $4600$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $9200$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{9200}{4600}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 47",
+            "question": "A heat exchanger with capacity $4700$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $9400$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{9400}{4700}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 48",
+            "question": "A heat exchanger with capacity $4800$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $9600$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$60629$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$75786$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{9600}{4800}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 49",
+            "question": "A heat exchanger with capacity $4900$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $9800$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{9800}{4900}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Equipment Design",
+            "title": "Equipment Cost Scaling - Case 50",
+            "question": "A heat exchanger with capacity $5000$ kW costs $50000$. If the cost exponent is $0.6$, what is the estimated cost of a similar exchanger with capacity $10000$ kW?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$100000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$75786$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$90943$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60629$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Power Law",
+                        "content": "$C_2 = C_1 \\left(\\dfrac{Q_2}{Q_1}\\right)^a = 50000 \\left(\\dfrac{10000}{5000}\\right)^{0.6} = 75786$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -100087,6 +112033,582 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B"
             }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 35",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{52.5}{70.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$52.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$140.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$70.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 70.0$ s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 36",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{54.0}{72.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$54.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$144.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$72.0$ s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 72.0$ s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 37",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{55.5}{74.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$74.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$55.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$148.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 74.0$ s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 38",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{57.0}{76.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$57.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$76.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$152.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 76.0$ s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 39",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{58.5}{78.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$58.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$156.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$78.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 78.0$ s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 40",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{60.0}{80.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$160.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$80.0$ s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 80.0$ s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 41",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{61.5}{82.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$82.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$61.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$164.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 82.0$ s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 42",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{63.0}{84.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$63.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$84.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$168.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 84.0$ s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 43",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{64.5}{86.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$64.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$172.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$86.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 86.0$ s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 44",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{66.0}{88.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$66.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$176.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$88.0$ s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 88.0$ s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 45",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{67.5}{90.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$90.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$67.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$180.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 90.0$ s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 46",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{69.0}{92.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$69.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$92.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$184.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 92.0$ s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 47",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{70.5}{94.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$70.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$188.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$94.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 94.0$ s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 48",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{72.0}{96.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$72.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$192.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$96.0$ s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 96.0$ s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 49",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{73.5}{98.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$98.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$73.5$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$196.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 98.0$ s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Control Systems",
+            "title": "Time Constant of First Order Process - Case 50",
+            "question": "A control system plant has a transfer function $G(s) = \\dfrac{75.0}{100.0s + 1}$. What is the time constant of this process in seconds?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.0$ s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$200.0$ s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Time Constant",
+                        "content": "In a standard first-order system transfer function $G(s) = \\dfrac{K}{\\tau s + 1}$, the time constant is the coefficient of $s$ in the denominator, which is $\\tau = 100.0$ s."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "modeling": [
@@ -101101,6 +113623,798 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D"
             }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 29",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 9.8$ per hour, and the server processes them at a rate of $\\mu = 11.8$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{11.8 - 9.8} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 30",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 10.0$ per hour, and the server processes them at a rate of $\\mu = 12.0$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{12.0 - 10.0} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 31",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 10.2$ per hour, and the server processes them at a rate of $\\mu = 12.2$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{12.2 - 10.2} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 32",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 10.4$ per hour, and the server processes them at a rate of $\\mu = 12.4$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{12.4 - 10.4} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 33",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 10.6$ per hour, and the server processes them at a rate of $\\mu = 12.6$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{12.6 - 10.6} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 34",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 10.8$ per hour, and the server processes them at a rate of $\\mu = 12.8$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{12.8 - 10.8} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 35",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 11.0$ per hour, and the server processes them at a rate of $\\mu = 13.0$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{13.0 - 11.0} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 36",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 11.2$ per hour, and the server processes them at a rate of $\\mu = 13.2$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{13.2 - 11.2} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 37",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 11.4$ per hour, and the server processes them at a rate of $\\mu = 13.4$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{13.4 - 11.4} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 38",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 11.6$ per hour, and the server processes them at a rate of $\\mu = 13.6$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{13.6 - 11.6} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 39",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 11.8$ per hour, and the server processes them at a rate of $\\mu = 13.8$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{13.8 - 11.8} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 40",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 12.0$ per hour, and the server processes them at a rate of $\\mu = 14.0$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{14.0 - 12.0} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 41",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 12.2$ per hour, and the server processes them at a rate of $\\mu = 14.2$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{14.2 - 12.2} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 42",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 12.4$ per hour, and the server processes them at a rate of $\\mu = 14.4$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{14.4 - 12.4} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 43",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 12.6$ per hour, and the server processes them at a rate of $\\mu = 14.6$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{14.6 - 12.6} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 44",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 12.8$ per hour, and the server processes them at a rate of $\\mu = 14.8$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{14.8 - 12.8} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 45",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 13.0$ per hour, and the server processes them at a rate of $\\mu = 15.0$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{15.0 - 13.0} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 46",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 13.2$ per hour, and the server processes them at a rate of $\\mu = 15.2$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{15.2 - 13.2} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 47",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 13.4$ per hour, and the server processes them at a rate of $\\mu = 15.4$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{15.4 - 13.4} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 48",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 13.6$ per hour, and the server processes them at a rate of $\\mu = 15.6$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{15.6 - 13.6} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 49",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 13.8$ per hour, and the server processes them at a rate of $\\mu = 15.8$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{15.8 - 13.8} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Simulation",
+            "title": "MM1 Queue System Wait Time - Case 50",
+            "question": "In an $M/M/1$ queueing system, customers arrive at a rate of $\\lambda = 14.0$ per hour, and the server processes them at a rate of $\\mu = 16.0$ per hour. What is the average time $W$ (in hours) a customer spends in the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30.0$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5000$ hours",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$ hours",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2500$ hours",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Queueing Wait Time",
+                        "content": "$W = \\dfrac{1}{\\mu - \\lambda} = \\dfrac{1}{16.0 - 14.0} = 0.5000$ hours."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "eng-mgmt": [
@@ -102110,6 +115424,798 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 29",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $290000$ and its Earned Value (EV or BCWP) is $261000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-29000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$29000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-43500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 261000 - 290000 = -29000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 30",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $300000$ and its Earned Value (EV or BCWP) is $270000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$30000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-30000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-45000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 270000 - 300000 = -30000$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 31",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $310000$ and its Earned Value (EV or BCWP) is $279000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$31000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-31000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-46500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 279000 - 310000 = -31000$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 32",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $320000$ and its Earned Value (EV or BCWP) is $288000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$32000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-48000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-32000$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 288000 - 320000 = -32000$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 33",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $330000$ and its Earned Value (EV or BCWP) is $297000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-33000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$33000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-49500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 297000 - 330000 = -33000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 34",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $340000$ and its Earned Value (EV or BCWP) is $306000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$34000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-34000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-51000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 306000 - 340000 = -34000$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 35",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $350000$ and its Earned Value (EV or BCWP) is $315000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$35000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-35000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-52500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 315000 - 350000 = -35000$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 36",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $360000$ and its Earned Value (EV or BCWP) is $324000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$36000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-54000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-36000$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 324000 - 360000 = -36000$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 37",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $370000$ and its Earned Value (EV or BCWP) is $333000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-37000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$37000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-55500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 333000 - 370000 = -37000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 38",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $380000$ and its Earned Value (EV or BCWP) is $342000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$38000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-38000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-57000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 342000 - 380000 = -38000$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 39",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $390000$ and its Earned Value (EV or BCWP) is $351000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$39000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-39000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-58500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 351000 - 390000 = -39000$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 40",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $400000$ and its Earned Value (EV or BCWP) is $360000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-60000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-40000$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 360000 - 400000 = -40000$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 41",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $410000$ and its Earned Value (EV or BCWP) is $369000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-41000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$41000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-61500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 369000 - 410000 = -41000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 42",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $420000$ and its Earned Value (EV or BCWP) is $378000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$42000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-42000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-63000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 378000 - 420000 = -42000$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 43",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $430000$ and its Earned Value (EV or BCWP) is $387000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$43000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-43000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-64500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 387000 - 430000 = -43000$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 44",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $440000$ and its Earned Value (EV or BCWP) is $396000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$44000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-66000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-44000$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 396000 - 440000 = -44000$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 45",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $450000$ and its Earned Value (EV or BCWP) is $405000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-45000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$45000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-67500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 405000 - 450000 = -45000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 46",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $460000$ and its Earned Value (EV or BCWP) is $414000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$46000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-46000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-69000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 414000 - 460000 = -46000$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 47",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $470000$ and its Earned Value (EV or BCWP) is $423000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$47000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-47000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-70500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 423000 - 470000 = -47000$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 48",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $480000$ and its Earned Value (EV or BCWP) is $432000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$48000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-72000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-48000$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 432000 - 480000 = -48000$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 49",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $490000$ and its Earned Value (EV or BCWP) is $441000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-49000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$49000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-73500$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 441000 - 490000 = -49000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Project Management",
+            "title": "EVM Cost Variance - Case 50",
+            "question": "In Earned Value Management, if a project's Planned Value (PV or BCWS) is $500000$ and its Earned Value (EV or BCWP) is $450000$, what is the Cost Variance (CV) assuming actual costs match PV?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$50000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-50000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-75000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Cost Variance formula",
+                        "content": "$CV = EV - AC = EV - PV = 450000 - 500000 = -50000$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -103229,6 +117335,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 32",
+            "question": "A facility has an annual demand $D = 26000$ units, setup cost $S = $210$, and holding cost $H = $5.20$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1738.97$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1159.31$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1449.14$ units",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(26000)(210)}{5.20}} = 1449.14$ units."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 33",
+            "question": "A facility has an annual demand $D = 26500$ units, setup cost $S = $215$, and holding cost $H = $5.30$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1466.29$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1759.55$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1173.03$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(26500)(215)}{5.30}} = 1466.29$ units."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 34",
+            "question": "A facility has an annual demand $D = 27000$ units, setup cost $S = $220$, and holding cost $H = $5.40$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1779.89$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1483.24$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1186.59$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(27000)(220)}{5.40}} = 1483.24$ units."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 35",
+            "question": "A facility has an annual demand $D = 27500$ units, setup cost $S = $225$, and holding cost $H = $5.50$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1800.00$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1200.00$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1500.00$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(27500)(225)}{5.50}} = 1500.00$ units."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 36",
+            "question": "A facility has an annual demand $D = 28000$ units, setup cost $S = $230$, and holding cost $H = $5.60$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1819.90$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1213.26$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1516.58$ units",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(28000)(230)}{5.60}} = 1516.58$ units."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 37",
+            "question": "A facility has an annual demand $D = 28500$ units, setup cost $S = $235$, and holding cost $H = $5.70$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1532.97$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1839.56$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1226.38$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(28500)(235)}{5.70}} = 1532.97$ units."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 38",
+            "question": "A facility has an annual demand $D = 29000$ units, setup cost $S = $240$, and holding cost $H = $5.80$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1859.03$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1549.19$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1239.35$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(29000)(240)}{5.80}} = 1549.19$ units."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 39",
+            "question": "A facility has an annual demand $D = 29500$ units, setup cost $S = $245$, and holding cost $H = $5.90$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1878.30$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1252.20$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1565.25$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(29500)(245)}{5.90}} = 1565.25$ units."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 40",
+            "question": "A facility has an annual demand $D = 30000$ units, setup cost $S = $250$, and holding cost $H = $6.00$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1897.37$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1264.91$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1581.14$ units",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(30000)(250)}{6.00}} = 1581.14$ units."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 41",
+            "question": "A facility has an annual demand $D = 30500$ units, setup cost $S = $255$, and holding cost $H = $6.10$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1596.87$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1916.24$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1277.50$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(30500)(255)}{6.10}} = 1596.87$ units."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 42",
+            "question": "A facility has an annual demand $D = 31000$ units, setup cost $S = $260$, and holding cost $H = $6.20$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1934.94$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1612.45$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1289.96$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(31000)(260)}{6.20}} = 1612.45$ units."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 43",
+            "question": "A facility has an annual demand $D = 31500$ units, setup cost $S = $265$, and holding cost $H = $6.30$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1953.46$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1302.30$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1627.88$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(31500)(265)}{6.30}} = 1627.88$ units."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 44",
+            "question": "A facility has an annual demand $D = 32000$ units, setup cost $S = $270$, and holding cost $H = $6.40$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1971.80$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1314.54$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1643.17$ units",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(32000)(270)}{6.40}} = 1643.17$ units."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 45",
+            "question": "A facility has an annual demand $D = 32500$ units, setup cost $S = $275$, and holding cost $H = $6.50$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1658.31$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1989.97$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1326.65$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(32500)(275)}{6.50}} = 1658.31$ units."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 46",
+            "question": "A facility has an annual demand $D = 33000$ units, setup cost $S = $280$, and holding cost $H = $6.60$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2007.98$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1673.32$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1338.66$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(33000)(280)}{6.60}} = 1673.32$ units."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 47",
+            "question": "A facility has an annual demand $D = 33500$ units, setup cost $S = $285$, and holding cost $H = $6.70$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2025.83$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1350.55$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1688.19$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(33500)(285)}{6.70}} = 1688.19$ units."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 48",
+            "question": "A facility has an annual demand $D = 34000$ units, setup cost $S = $290$, and holding cost $H = $6.80$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2043.53$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1362.35$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1702.94$ units",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(34000)(290)}{6.80}} = 1702.94$ units."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 49",
+            "question": "A facility has an annual demand $D = 34500$ units, setup cost $S = $295$, and holding cost $H = $6.90$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1717.56$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2061.07$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1374.05$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(34500)(295)}{6.90}} = 1717.56$ units."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Inventory Management",
+            "title": "Economic Order Quantity - Case 50",
+            "question": "A facility has an annual demand $D = 35000$ units, setup cost $S = $300$, and holding cost $H = $7.00$ per unit per year. Calculate the Economic Order Quantity (EOQ).",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2078.46$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1732.05$ units",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1385.64$ units",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500$ units",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "EOQ formula",
+                        "content": "$EOQ = \\sqrt{\\dfrac{2DS}{H}} = \\sqrt{\\dfrac{2(35000)(300)}{7.00}} = 1732.05$ units."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "supply-chain": [
@@ -104346,6 +119136,690 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 32",
+            "question": "Two customers are located at coordinates $x_1 = 320$ (weight $w_1 = 100$ shipments) and $x_2 = 640$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$480.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$693.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$533.33$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(320)(100) + (640)(200)}{100 + 200} = 533.33$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 33",
+            "question": "Two customers are located at coordinates $x_1 = 330$ (weight $w_1 = 100$ shipments) and $x_2 = 660$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$550.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$495.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$715.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(330)(100) + (660)(200)}{100 + 200} = 550.00$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 34",
+            "question": "Two customers are located at coordinates $x_1 = 340$ (weight $w_1 = 100$ shipments) and $x_2 = 680$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$510.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$566.67$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$736.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(340)(100) + (680)(200)}{100 + 200} = 566.67$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 35",
+            "question": "Two customers are located at coordinates $x_1 = 350$ (weight $w_1 = 100$ shipments) and $x_2 = 700$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$525.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$758.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$583.33$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(350)(100) + (700)(200)}{100 + 200} = 583.33$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 36",
+            "question": "Two customers are located at coordinates $x_1 = 360$ (weight $w_1 = 100$ shipments) and $x_2 = 720$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$540.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$780.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$600.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(360)(100) + (720)(200)}{100 + 200} = 600.00$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 37",
+            "question": "Two customers are located at coordinates $x_1 = 370$ (weight $w_1 = 100$ shipments) and $x_2 = 740$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$616.67$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$555.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$801.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(370)(100) + (740)(200)}{100 + 200} = 616.67$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 38",
+            "question": "Two customers are located at coordinates $x_1 = 380$ (weight $w_1 = 100$ shipments) and $x_2 = 760$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$570.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$633.33$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$823.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(380)(100) + (760)(200)}{100 + 200} = 633.33$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 39",
+            "question": "Two customers are located at coordinates $x_1 = 390$ (weight $w_1 = 100$ shipments) and $x_2 = 780$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$585.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$845.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$650.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(390)(100) + (780)(200)}{100 + 200} = 650.00$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 40",
+            "question": "Two customers are located at coordinates $x_1 = 400$ (weight $w_1 = 100$ shipments) and $x_2 = 800$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$600.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$866.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$666.67$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(400)(100) + (800)(200)}{100 + 200} = 666.67$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 41",
+            "question": "Two customers are located at coordinates $x_1 = 410$ (weight $w_1 = 100$ shipments) and $x_2 = 820$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$683.33$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$615.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$888.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(410)(100) + (820)(200)}{100 + 200} = 683.33$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 42",
+            "question": "Two customers are located at coordinates $x_1 = 420$ (weight $w_1 = 100$ shipments) and $x_2 = 840$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$630.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$700.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$910.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(420)(100) + (840)(200)}{100 + 200} = 700.00$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 43",
+            "question": "Two customers are located at coordinates $x_1 = 430$ (weight $w_1 = 100$ shipments) and $x_2 = 860$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$645.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$931.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$716.67$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(430)(100) + (860)(200)}{100 + 200} = 716.67$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 44",
+            "question": "Two customers are located at coordinates $x_1 = 440$ (weight $w_1 = 100$ shipments) and $x_2 = 880$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$660.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$953.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$733.33$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(440)(100) + (880)(200)}{100 + 200} = 733.33$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 45",
+            "question": "Two customers are located at coordinates $x_1 = 450$ (weight $w_1 = 100$ shipments) and $x_2 = 900$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$750.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$675.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$975.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(450)(100) + (900)(200)}{100 + 200} = 750.00$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 46",
+            "question": "Two customers are located at coordinates $x_1 = 460$ (weight $w_1 = 100$ shipments) and $x_2 = 920$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$690.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$766.67$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$996.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(460)(100) + (920)(200)}{100 + 200} = 766.67$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 47",
+            "question": "Two customers are located at coordinates $x_1 = 470$ (weight $w_1 = 100$ shipments) and $x_2 = 940$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$705.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1018.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$783.33$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(470)(100) + (940)(200)}{100 + 200} = 783.33$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 48",
+            "question": "Two customers are located at coordinates $x_1 = 480$ (weight $w_1 = 100$ shipments) and $x_2 = 960$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$720.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1040.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$800.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(480)(100) + (960)(200)}{100 + 200} = 800.00$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 49",
+            "question": "Two customers are located at coordinates $x_1 = 490$ (weight $w_1 = 100$ shipments) and $x_2 = 980$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$816.67$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$735.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1061.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(490)(100) + (980)(200)}{100 + 200} = 816.67$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Facility Layout",
+            "title": "Center of Gravity Warehouse Location - Case 50",
+            "question": "Two customers are located at coordinates $x_1 = 500$ (weight $w_1 = 100$ shipments) and $x_2 = 1000$ (weight $w_2 = 200$ shipments). What is the optimal 1-dimensional center of gravity $x_{cog}$ coordinate for a new warehouse?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$750.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$833.33$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1083.33$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Center of Gravity",
+                        "content": "$x_{cog} = \\dfrac{\\sum x_i w_i}{\\sum w_i} = \\dfrac{(500)(100) + (1000)(200)}{100 + 200} = 833.33$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -107271,6 +122745,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 32",
+            "question": "An assembly task has a normal time of $42$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$48.30$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$42$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$59.29$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$49.41$ minutes",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{42}{1 - 0.15} = 49.41$ minutes."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 33",
+            "question": "An assembly task has a normal time of $43$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$50.59$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$49.45$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$43$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$60.71$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{43}{1 - 0.15} = 50.59$ minutes."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 34",
+            "question": "An assembly task has a normal time of $44$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$50.60$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$51.76$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$44$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$62.11$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{44}{1 - 0.15} = 51.76$ minutes."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 35",
+            "question": "An assembly task has a normal time of $45$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$51.75$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$45$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$52.94$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$63.53$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{45}{1 - 0.15} = 52.94$ minutes."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 36",
+            "question": "An assembly task has a normal time of $46$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$52.90$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$46$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$64.94$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$54.12$ minutes",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{46}{1 - 0.15} = 54.12$ minutes."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 37",
+            "question": "An assembly task has a normal time of $47$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$55.29$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$54.05$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$47$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$66.35$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{47}{1 - 0.15} = 55.29$ minutes."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 38",
+            "question": "An assembly task has a normal time of $48$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$55.20$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$56.47$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$48$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$67.76$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{48}{1 - 0.15} = 56.47$ minutes."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 39",
+            "question": "An assembly task has a normal time of $49$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$56.35$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$49$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$57.65$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$69.18$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{49}{1 - 0.15} = 57.65$ minutes."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 40",
+            "question": "An assembly task has a normal time of $50$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$57.50$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$50$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$70.58$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$58.82$ minutes",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{50}{1 - 0.15} = 58.82$ minutes."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 41",
+            "question": "An assembly task has a normal time of $51$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$58.65$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$51$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$72.00$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{51}{1 - 0.15} = 60.00$ minutes."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 42",
+            "question": "An assembly task has a normal time of $52$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$59.80$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$61.18$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$52$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$73.42$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{52}{1 - 0.15} = 61.18$ minutes."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 43",
+            "question": "An assembly task has a normal time of $53$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.95$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$53$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$62.35$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$74.82$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{53}{1 - 0.15} = 62.35$ minutes."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 44",
+            "question": "An assembly task has a normal time of $54$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$62.10$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$54$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$76.24$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$63.53$ minutes",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{54}{1 - 0.15} = 63.53$ minutes."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 45",
+            "question": "An assembly task has a normal time of $55$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$64.71$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$63.25$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$55$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$77.65$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{55}{1 - 0.15} = 64.71$ minutes."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 46",
+            "question": "An assembly task has a normal time of $56$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$64.40$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$65.88$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$56$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$79.06$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{56}{1 - 0.15} = 65.88$ minutes."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 47",
+            "question": "An assembly task has a normal time of $57$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$65.55$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$57$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$67.06$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$80.47$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{57}{1 - 0.15} = 67.06$ minutes."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 48",
+            "question": "An assembly task has a normal time of $58$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$66.70$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$58$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$81.89$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$68.24$ minutes",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{58}{1 - 0.15} = 68.24$ minutes."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 49",
+            "question": "An assembly task has a normal time of $59$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$69.41$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$67.85$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$59$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$83.29$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{59}{1 - 0.15} = 69.41$ minutes."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Time Study",
+            "title": "Standard Time Allowance - Case 50",
+            "question": "An assembly task has a normal time of $60$ minutes. If the allowance factor is $15\\%$ based on the standard work day, what is the standard time for the task?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$69.00$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$70.59$ minutes",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$60$ minutes",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$84.71$ minutes",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Standard Time formula",
+                        "content": "$ST = \\dfrac{NT}{1 - AF} = \\dfrac{60}{1 - 0.15} = 70.59$ minutes."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "quality": [
@@ -108401,6 +124559,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 32",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.060$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0050$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.060$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.95$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0070$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.060)(0.95) = 1.0070$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 33",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.065$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0117$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0075$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.065$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.065)(0.95) = 1.0117$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 34",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.070$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0100$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0165$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.070$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.070)(0.95) = 1.0165$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 35",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.075$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0125$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.075$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0212$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.075)(0.95) = 1.0212$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 36",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.080$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0150$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.080$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.95$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0260$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.080)(0.95) = 1.0260$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 37",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.085$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0307$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0175$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.085$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.085)(0.95) = 1.0307$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 38",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.090$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0200$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0355$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.090$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.090)(0.95) = 1.0355$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 39",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.095$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0225$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.095$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0402$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.095)(0.95) = 1.0402$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 40",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.100$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0250$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.100$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.95$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0450$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.100)(0.95) = 1.0450$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 41",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.105$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0497$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0275$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.105$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.105)(0.95) = 1.0497$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 42",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.110$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0300$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0545$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.110$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.110)(0.95) = 1.0545$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 43",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.115$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0325$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.115$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0593$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.115)(0.95) = 1.0593$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 44",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.120$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0350$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.120$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.95$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0640$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.120)(0.95) = 1.0640$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 45",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.125$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0687$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0375$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.125$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.125)(0.95) = 1.0687$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 46",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.130$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0400$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0735$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.130$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.130)(0.95) = 1.0735$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 47",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.135$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0425$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.135$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0782$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.135)(0.95) = 1.0782$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 48",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.140$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0450$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.140$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.95$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0830$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.140)(0.95) = 1.0830$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 49",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.145$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0877$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0475$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.145$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.145)(0.95) = 1.0877$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Reliability",
+            "title": "Series System Reliability - Case 50",
+            "question": "A manufacturing machine consists of two components connected in series. The first component has a reliability of $1.150$ and the second component has a reliability of $0.95$. What is the overall reliability of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.0500$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.0925$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.150$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.95$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Series Reliability",
+                        "content": "$R_{sys} = R_1 \\times R_2 = (1.150)(0.95) = 1.0925$."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "systems": [
@@ -109518,6 +126360,690 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 32",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4200$ hours and a Mean Time To Repair (MTTR) of $42$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4200}{4200 + 42} = 0.9901$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 33",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4300$ hours and a Mean Time To Repair (MTTR) of $43$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4300}{4300 + 43} = 0.9901$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 34",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4400$ hours and a Mean Time To Repair (MTTR) of $44$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4400}{4400 + 44} = 0.9901$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 35",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4500$ hours and a Mean Time To Repair (MTTR) of $45$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4500}{4500 + 45} = 0.9901$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 36",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4600$ hours and a Mean Time To Repair (MTTR) of $46$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4600}{4600 + 46} = 0.9901$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 37",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4700$ hours and a Mean Time To Repair (MTTR) of $47$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4700}{4700 + 47} = 0.9901$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 38",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4800$ hours and a Mean Time To Repair (MTTR) of $48$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4800}{4800 + 48} = 0.9901$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 39",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $4900$ hours and a Mean Time To Repair (MTTR) of $49$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{4900}{4900 + 49} = 0.9901$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 40",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5000$ hours and a Mean Time To Repair (MTTR) of $50$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5000}{5000 + 50} = 0.9901$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 41",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5100$ hours and a Mean Time To Repair (MTTR) of $51$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5100}{5100 + 51} = 0.9901$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 42",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5200$ hours and a Mean Time To Repair (MTTR) of $52$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5200}{5200 + 52} = 0.9901$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 43",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5300$ hours and a Mean Time To Repair (MTTR) of $53$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5300}{5300 + 53} = 0.9901$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 44",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5400$ hours and a Mean Time To Repair (MTTR) of $54$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5400}{5400 + 54} = 0.9901$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 45",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5500$ hours and a Mean Time To Repair (MTTR) of $55$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5500}{5500 + 55} = 0.9901$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 46",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5600$ hours and a Mean Time To Repair (MTTR) of $56$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5600}{5600 + 56} = 0.9901$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 47",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5700$ hours and a Mean Time To Repair (MTTR) of $57$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5700}{5700 + 57} = 0.9901$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 48",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5800$ hours and a Mean Time To Repair (MTTR) of $58$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5800}{5800 + 58} = 0.9901$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 49",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $5900$ hours and a Mean Time To Repair (MTTR) of $59$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{5900}{5900 + 59} = 0.9901$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Lifecycle Design",
+            "title": "System Availability Calculation - Case 50",
+            "question": "A continuous process system has a Mean Time Between Failures (MTBF) of $6000$ hours and a Mean Time To Repair (MTTR) of $60$ hours. What is the operational availability of this system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.0099$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.9901$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.8911$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Availability formula",
+                        "content": "$A = \\dfrac{MTBF}{MTBF + MTTR} = \\dfrac{6000}{6000 + 60} = 0.9901$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -110649,6 +128175,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 32",
+            "question": "A system of total mass $m = 320$ kg is acted upon by a net external force $F = 3200$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3200}{320} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 33",
+            "question": "A system of total mass $m = 330$ kg is acted upon by a net external force $F = 3300$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3300}{330} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 34",
+            "question": "A system of total mass $m = 340$ kg is acted upon by a net external force $F = 3400$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3400}{340} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 35",
+            "question": "A system of total mass $m = 350$ kg is acted upon by a net external force $F = 3500$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3500}{350} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 36",
+            "question": "A system of total mass $m = 360$ kg is acted upon by a net external force $F = 3600$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3600}{360} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 37",
+            "question": "A system of total mass $m = 370$ kg is acted upon by a net external force $F = 3700$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3700}{370} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 38",
+            "question": "A system of total mass $m = 380$ kg is acted upon by a net external force $F = 3800$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3800}{380} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 39",
+            "question": "A system of total mass $m = 390$ kg is acted upon by a net external force $F = 3900$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{3900}{390} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 40",
+            "question": "A system of total mass $m = 400$ kg is acted upon by a net external force $F = 4000$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4000}{400} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 41",
+            "question": "A system of total mass $m = 410$ kg is acted upon by a net external force $F = 4100$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4100}{410} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 42",
+            "question": "A system of total mass $m = 420$ kg is acted upon by a net external force $F = 4200$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4200}{420} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 43",
+            "question": "A system of total mass $m = 430$ kg is acted upon by a net external force $F = 4300$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4300}{430} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 44",
+            "question": "A system of total mass $m = 440$ kg is acted upon by a net external force $F = 4400$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4400}{440} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 45",
+            "question": "A system of total mass $m = 450$ kg is acted upon by a net external force $F = 4500$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4500}{450} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 46",
+            "question": "A system of total mass $m = 460$ kg is acted upon by a net external force $F = 4600$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4600}{460} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 47",
+            "question": "A system of total mass $m = 470$ kg is acted upon by a net external force $F = 4700$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4700}{470} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 48",
+            "question": "A system of total mass $m = 480$ kg is acted upon by a net external force $F = 4800$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4800}{480} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 49",
+            "question": "A system of total mass $m = 490$ kg is acted upon by a net external force $F = 4900$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{4900}{490} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Statics",
+            "title": "Newton Second Law Mechanics - Case 50",
+            "question": "A system of total mass $m = 500$ kg is acted upon by a net external force $F = 5000$ N. What is the acceleration of the system?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$ m/s$^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s$^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9.81$ m/s$^2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Newton's Second Law",
+                        "content": "$a = \\dfrac{F}{m} = \\dfrac{5000}{500} = 10.00$ m/s$^2$."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "env-chem": [
@@ -111775,6 +129985,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 32",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.20$ mg/L and the final DO after 5 days of incubation is $2.40$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$8.80$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$660.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$220.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$440.0$ mg/L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.20 - 2.40) \\times 50 = 440.0$ mg/L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 33",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.30$ mg/L and the final DO after 5 days of incubation is $2.35$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$447.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$8.95$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$671.3$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$223.8$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.30 - 2.35) \\times 50 = 447.5$ mg/L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 34",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.40$ mg/L and the final DO after 5 days of incubation is $2.30$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9.10$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$455.0$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$682.5$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$227.5$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.40 - 2.30) \\times 50 = 455.0$ mg/L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 35",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.50$ mg/L and the final DO after 5 days of incubation is $2.25$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9.25$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$693.8$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$462.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$231.3$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.50 - 2.25) \\times 50 = 462.5$ mg/L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 36",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.60$ mg/L and the final DO after 5 days of incubation is $2.20$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9.40$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$705.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$235.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$470.0$ mg/L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.60 - 2.20) \\times 50 = 470.0$ mg/L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 37",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.70$ mg/L and the final DO after 5 days of incubation is $2.15$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$477.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$9.55$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$716.3$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$238.8$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.70 - 2.15) \\times 50 = 477.5$ mg/L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 38",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.80$ mg/L and the final DO after 5 days of incubation is $2.10$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9.70$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$485.0$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$727.5$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$242.5$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.80 - 2.10) \\times 50 = 485.0$ mg/L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 39",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $11.90$ mg/L and the final DO after 5 days of incubation is $2.05$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9.85$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$738.8$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$492.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$246.3$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (11.90 - 2.05) \\times 50 = 492.5$ mg/L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 40",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.00$ mg/L and the final DO after 5 days of incubation is $2.00$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.00$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$750.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$250.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500.0$ mg/L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.00 - 2.00) \\times 50 = 500.0$ mg/L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 41",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.10$ mg/L and the final DO after 5 days of incubation is $1.95$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$507.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$10.15$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$761.3$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$253.8$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.10 - 1.95) \\times 50 = 507.5$ mg/L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 42",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.20$ mg/L and the final DO after 5 days of incubation is $1.90$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.30$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$515.0$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$772.5$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$257.5$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.20 - 1.90) \\times 50 = 515.0$ mg/L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 43",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.30$ mg/L and the final DO after 5 days of incubation is $1.85$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.45$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$783.8$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$522.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$261.3$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.30 - 1.85) \\times 50 = 522.5$ mg/L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 44",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.40$ mg/L and the final DO after 5 days of incubation is $1.80$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.60$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$795.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$265.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$530.0$ mg/L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.40 - 1.80) \\times 50 = 530.0$ mg/L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 45",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.50$ mg/L and the final DO after 5 days of incubation is $1.75$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$537.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$10.75$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$806.3$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$268.8$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.50 - 1.75) \\times 50 = 537.5$ mg/L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 46",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.60$ mg/L and the final DO after 5 days of incubation is $1.70$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.90$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$545.0$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$817.5$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$272.5$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.60 - 1.70) \\times 50 = 545.0$ mg/L."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 47",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.70$ mg/L and the final DO after 5 days of incubation is $1.65$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$11.05$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$828.8$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$552.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$276.3$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.70 - 1.65) \\times 50 = 552.5$ mg/L."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 48",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.80$ mg/L and the final DO after 5 days of incubation is $1.60$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$11.20$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$840.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$280.0$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$560.0$ mg/L",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.80 - 1.60) \\times 50 = 560.0$ mg/L."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 49",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $12.90$ mg/L and the final DO after 5 days of incubation is $1.55$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$567.5$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$11.35$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$851.3$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$283.8$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (12.90 - 1.55) \\times 50 = 567.5$ mg/L."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Water Chemistry",
+            "title": "BOD5 Concentration - Case 50",
+            "question": "A water sample is diluted by a factor of $50$. The initial dissolved oxygen (DO) is $13.00$ mg/L and the final DO after 5 days of incubation is $1.50$ mg/L. What is the BOD$_5$ of the sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$11.50$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$575.0$ mg/L",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$862.5$ mg/L",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$287.5$ mg/L",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "BOD Formula",
+                        "content": "$\\text{BOD}_5 = (DO_{initial} - DO_{final}) \\times \\text{Dilution Factor} = (13.00 - 1.50) \\times 50 = 575.0$ mg/L."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "risk": [
@@ -112900,6 +131794,690 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 32",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.320$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.013715$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.004572$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.009143$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.320 \\times 2}{70} = 0.009143$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 33",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.330$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.009429$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.014143$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.004714$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.330 \\times 2}{70} = 0.009429$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 34",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.340$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.014571$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.009714$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.004857$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.340 \\times 2}{70} = 0.009714$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 35",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.350$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.015000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.005000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.010000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.350 \\times 2}{70} = 0.010000$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 36",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.360$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.015429$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.005143$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.010286$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.360 \\times 2}{70} = 0.010286$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 37",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.370$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.010571$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.015857$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.005286$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.370 \\times 2}{70} = 0.010571$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 38",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.380$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.016286$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.010857$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.005429$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.380 \\times 2}{70} = 0.010857$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 39",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.390$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.016715$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.005572$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.011143$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.390 \\times 2}{70} = 0.011143$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 40",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.400$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.017143$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.005714$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.011429$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.400 \\times 2}{70} = 0.011429$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 41",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.410$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.011714$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.017571$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.005857$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.410 \\times 2}{70} = 0.011714$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 42",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.420$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.018000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.012000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.006000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.420 \\times 2}{70} = 0.012000$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 43",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.430$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.018429$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.006143$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.012286$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.430 \\times 2}{70} = 0.012286$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 44",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.440$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.018857$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.006286$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.012571$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.440 \\times 2}{70} = 0.012571$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 45",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.450$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.012857$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.019286$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.006429$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.450 \\times 2}{70} = 0.012857$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 46",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.460$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.019714$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.013143$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.006572$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.460 \\times 2}{70} = 0.013143$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 47",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.470$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.020144$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.006714$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.013429$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.470 \\times 2}{70} = 0.013429$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 48",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.480$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.020571$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.006857$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.013714$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.480 \\times 2}{70} = 0.013714$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 49",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.490$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.014000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.021000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.007000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.490 \\times 2}{70} = 0.014000$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Risk Assessment",
+            "title": "Chronic Daily Intake - Case 50",
+            "question": "What is the Chronic Daily Intake (CDI) in mg/(kg\\cdot day) for a $70$ kg adult drinking $2.0$ L/day of water containing $0.500$ mg/L of a toxic chemical?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.021429$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.014286$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.007143$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "CDI formula",
+                        "content": "$CDI = \\dfrac{C \\times IR}{BW} = \\dfrac{0.500 \\times 2}{70} = 0.014286$ mg/(kg\\cdot day)."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -114039,6 +133617,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 32",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.20$ m$^2$ at a volumetric flow rate $Q = 16.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$51.20$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{16.00}{3.20} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 33",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.30$ m$^2$ at a volumetric flow rate $Q = 16.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$54.45$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{16.50}{3.30} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 34",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.40$ m$^2$ at a volumetric flow rate $Q = 17.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$57.80$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{17.00}{3.40} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 35",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.50$ m$^2$ at a volumetric flow rate $Q = 17.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$61.25$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{17.50}{3.50} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 36",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.60$ m$^2$ at a volumetric flow rate $Q = 18.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$64.80$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{18.00}{3.60} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 37",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.70$ m$^2$ at a volumetric flow rate $Q = 18.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$68.45$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{18.50}{3.70} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 38",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.80$ m$^2$ at a volumetric flow rate $Q = 19.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$72.20$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{19.00}{3.80} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 39",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 3.90$ m$^2$ at a volumetric flow rate $Q = 19.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$76.05$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{19.50}{3.90} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 40",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.00$ m$^2$ at a volumetric flow rate $Q = 20.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$80.00$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{20.00}{4.00} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 41",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.10$ m$^2$ at a volumetric flow rate $Q = 20.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$84.05$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{20.50}{4.10} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 42",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.20$ m$^2$ at a volumetric flow rate $Q = 21.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$88.20$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{21.00}{4.20} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 43",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.30$ m$^2$ at a volumetric flow rate $Q = 21.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$92.45$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{21.50}{4.30} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 44",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.40$ m$^2$ at a volumetric flow rate $Q = 22.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$96.80$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{22.00}{4.40} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 45",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.50$ m$^2$ at a volumetric flow rate $Q = 22.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$101.25$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{22.50}{4.50} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 46",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.60$ m$^2$ at a volumetric flow rate $Q = 23.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$105.80$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{23.00}{4.60} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 47",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.70$ m$^2$ at a volumetric flow rate $Q = 23.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$110.45$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{23.50}{4.70} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 48",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.80$ m$^2$ at a volumetric flow rate $Q = 24.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$115.20$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{24.00}{4.80} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 49",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 4.90$ m$^2$ at a volumetric flow rate $Q = 24.50$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$120.05$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{24.50}{4.90} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Closed Conduit Flow",
+            "title": "Flow Velocity Pipe - Case 50",
+            "question": "Water flows through a circular pipe of cross-sectional area $A = 5.00$ m$^2$ at a volumetric flow rate $Q = 25.00$ m$^3$/s. What is the average velocity of the flow?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$125.00$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.00$ m/s",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7.50$ m/s",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.0$ m/s",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Velocity formula",
+                        "content": "$v = \\dfrac{Q}{A} = \\dfrac{25.00}{5.00} = 5.00$ m/s."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "water-hydrology": [
@@ -115161,6 +135423,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 32",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $320$ acres. The runoff coefficient $C = 1.90$ and the design rainfall intensity $I = 8.40$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$6639.36$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3575.04$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5107.20$ cfs",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (1.90)(8.40)(320) = 5107.20$ cfs."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 33",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $330$ acres. The runoff coefficient $C = 1.95$ and the design rainfall intensity $I = 8.60$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$5534.10$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$7194.33$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3873.87$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (1.95)(8.60)(330) = 5534.10$ cfs."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 34",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $340$ acres. The runoff coefficient $C = 2.00$ and the design rainfall intensity $I = 8.80$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$7779.20$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5984.00$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$4188.80$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.00)(8.80)(340) = 5984.00$ cfs."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 35",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $350$ acres. The runoff coefficient $C = 2.05$ and the design rainfall intensity $I = 9.00$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$8394.75$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4520.25$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6457.50$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.05)(9.00)(350) = 6457.50$ cfs."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 36",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $360$ acres. The runoff coefficient $C = 2.10$ and the design rainfall intensity $I = 9.20$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9041.76$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4868.64$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$6955.20$ cfs",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.10)(9.20)(360) = 6955.20$ cfs."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 37",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $370$ acres. The runoff coefficient $C = 2.15$ and the design rainfall intensity $I = 9.40$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$7477.70$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$9721.01$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5234.39$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.15)(9.40)(370) = 7477.70$ cfs."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 38",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $380$ acres. The runoff coefficient $C = 2.20$ and the design rainfall intensity $I = 9.60$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10433.28$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$8025.60$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5617.92$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.20)(9.60)(380) = 8025.60$ cfs."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 39",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $390$ acres. The runoff coefficient $C = 2.25$ and the design rainfall intensity $I = 9.80$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$11179.35$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6019.65$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8599.50$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.25)(9.80)(390) = 8599.50$ cfs."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 40",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $400$ acres. The runoff coefficient $C = 2.30$ and the design rainfall intensity $I = 10.00$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$11960.00$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6440.00$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$9200.00$ cfs",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.30)(10.00)(400) = 9200.00$ cfs."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 41",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $410$ acres. The runoff coefficient $C = 2.35$ and the design rainfall intensity $I = 10.20$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$9827.70$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$12776.01$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6879.39$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.35)(10.20)(410) = 9827.70$ cfs."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 42",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $420$ acres. The runoff coefficient $C = 2.40$ and the design rainfall intensity $I = 10.40$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$13628.16$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10483.20$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7338.24$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.40)(10.40)(420) = 10483.20$ cfs."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 43",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $430$ acres. The runoff coefficient $C = 2.45$ and the design rainfall intensity $I = 10.60$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$14517.23$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7816.97$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$11167.10$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.45)(10.60)(430) = 11167.10$ cfs."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 44",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $440$ acres. The runoff coefficient $C = 2.50$ and the design rainfall intensity $I = 10.80$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$15444.00$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$8316.00$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$11880.00$ cfs",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.50)(10.80)(440) = 11880.00$ cfs."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 45",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $450$ acres. The runoff coefficient $C = 2.55$ and the design rainfall intensity $I = 11.00$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$12622.50$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$16409.25$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8835.75$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.55)(11.00)(450) = 12622.50$ cfs."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 46",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $460$ acres. The runoff coefficient $C = 2.60$ and the design rainfall intensity $I = 11.20$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$17413.76$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$13395.20$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$9376.64$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.60)(11.20)(460) = 13395.20$ cfs."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 47",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $470$ acres. The runoff coefficient $C = 2.65$ and the design rainfall intensity $I = 11.40$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$18458.31$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$9939.09$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$14198.70$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.65)(11.40)(470) = 14198.70$ cfs."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 48",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $480$ acres. The runoff coefficient $C = 2.70$ and the design rainfall intensity $I = 11.60$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$19543.68$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10523.52$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$15033.60$ cfs",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.70)(11.60)(480) = 15033.60$ cfs."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 49",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $490$ acres. The runoff coefficient $C = 2.75$ and the design rainfall intensity $I = 11.80$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$15900.50$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20670.65$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$11130.35$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.75)(11.80)(490) = 15900.50$ cfs."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Runoff",
+            "title": "Rational Peak Runoff - Case 50",
+            "question": "Using the Rational Method, calculate the peak runoff rate (in cfs) for a drainage basin of $500$ acres. The runoff coefficient $C = 2.80$ and the design rainfall intensity $I = 12.00$ in/hr.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$21840.00$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$16800.00$ cfs",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$11760.00$ cfs",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$ cfs",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rational Equation",
+                        "content": "$Q = C I A = (2.80)(12.00)(500) = 16800.00$ cfs."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "groundwater-soils": [
@@ -116174,6 +137120,798 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 29",
+            "question": "A soil sample has a porosity of $n = 0.83$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4.8824$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.83$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$5.8589$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.9059$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.83}{1 - 0.83} = 4.8824$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 30",
+            "question": "A soil sample has a porosity of $n = 0.85$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.85$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.6667$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$6.8000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4.5334$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.85}{1 - 0.85} = 5.6667$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 31",
+            "question": "A soil sample has a porosity of $n = 0.87$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.87$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$8.0308$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6.6923$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$5.3538$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.87}{1 - 0.87} = 6.6923$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 32",
+            "question": "A soil sample has a porosity of $n = 0.89$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.89$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$9.7091$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6.4727$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8.0909$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.89}{1 - 0.89} = 8.0909$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 33",
+            "question": "A soil sample has a porosity of $n = 0.91$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10.1111$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.91$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$12.1333$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8.0889$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.91}{1 - 0.91} = 10.1111$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 34",
+            "question": "A soil sample has a porosity of $n = 0.93$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.93$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$13.2857$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$15.9428$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.6286$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.93}{1 - 0.93} = 13.2857$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 35",
+            "question": "A soil sample has a porosity of $n = 0.95$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.95$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$22.8000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$19.0000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$15.2000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.95}{1 - 0.95} = 19.0000$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 36",
+            "question": "A soil sample has a porosity of $n = 0.97$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.97$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$38.8000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$25.8666$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$32.3333$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.97}{1 - 0.97} = 32.3333$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 37",
+            "question": "A soil sample has a porosity of $n = 0.99$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$99.0000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.99$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$118.8000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$79.2000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.99}{1 - 0.99} = 99.0000$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 38",
+            "question": "A soil sample has a porosity of $n = 1.01$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.01$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-101.0000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$-121.2000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-80.8000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.01}{1 - 1.01} = -101.0000$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 39",
+            "question": "A soil sample has a porosity of $n = 1.03$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.03$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-41.2000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-34.3333$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-27.4666$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.03}{1 - 1.03} = -34.3333$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 40",
+            "question": "A soil sample has a porosity of $n = 1.05$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.05$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-25.2000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-16.8000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-21.0000$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.05}{1 - 1.05} = -21.0000$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 41",
+            "question": "A soil sample has a porosity of $n = 1.07$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-15.2857$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.07$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-18.3428$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-12.2286$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.07}{1 - 1.07} = -15.2857$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 42",
+            "question": "A soil sample has a porosity of $n = 1.09$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.09$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-12.1111$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$-14.5333$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-9.6889$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.09}{1 - 1.09} = -12.1111$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 43",
+            "question": "A soil sample has a porosity of $n = 1.11$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.11$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-12.1091$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-10.0909$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-8.0727$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.11}{1 - 1.11} = -10.0909$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 44",
+            "question": "A soil sample has a porosity of $n = 1.13$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.13$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-10.4308$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-6.9538$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-8.6923$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.13}{1 - 1.13} = -8.6923$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 45",
+            "question": "A soil sample has a porosity of $n = 1.15$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-7.6667$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.15$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-9.2000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-6.1334$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.15}{1 - 1.15} = -7.6667$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 46",
+            "question": "A soil sample has a porosity of $n = 1.17$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.17$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-6.8824$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$-8.2589$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-5.5059$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.17}{1 - 1.17} = -6.8824$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 47",
+            "question": "A soil sample has a porosity of $n = 1.19$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.19$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-7.5158$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-6.2632$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$-5.0106$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.19}{1 - 1.19} = -6.2632$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 48",
+            "question": "A soil sample has a porosity of $n = 1.21$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.21$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-6.9143$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-4.6095$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-5.7619$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.21}{1 - 1.21} = -5.7619$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 49",
+            "question": "A soil sample has a porosity of $n = 1.23$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$-5.3478$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.23$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-6.4174$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-4.2782$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.23}{1 - 1.23} = -5.3478$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Soil Properties",
+            "title": "Soil Porosity to Void Ratio - Case 50",
+            "question": "A soil sample has a porosity of $n = 1.25$. What is the corresponding void ratio $e$ of the soil sample?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.25$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-5.0000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$-6.0000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$-4.0000$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Void Ratio Formula",
+                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{1.25}{1 - 1.25} = -5.0000$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -117189,6 +138927,798 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D"
             }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 29",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 29000$ m$^3$/day. If the surface area of the clarifier is $1450$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{29000}{1450} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 30",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 30000$ m$^3$/day. If the surface area of the clarifier is $1500$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{30000}{1500} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 31",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 31000$ m$^3$/day. If the surface area of the clarifier is $1550$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{31000}{1550} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 32",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 32000$ m$^3$/day. If the surface area of the clarifier is $1600$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{32000}{1600} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 33",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 33000$ m$^3$/day. If the surface area of the clarifier is $1650$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{33000}{1650} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 34",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 34000$ m$^3$/day. If the surface area of the clarifier is $1700$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{34000}{1700} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 35",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 35000$ m$^3$/day. If the surface area of the clarifier is $1750$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{35000}{1750} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 36",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 36000$ m$^3$/day. If the surface area of the clarifier is $1800$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{36000}{1800} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 37",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 37000$ m$^3$/day. If the surface area of the clarifier is $1850$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{37000}{1850} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 38",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 38000$ m$^3$/day. If the surface area of the clarifier is $1900$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{38000}{1900} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 39",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 39000$ m$^3$/day. If the surface area of the clarifier is $1950$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{39000}{1950} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 40",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 40000$ m$^3$/day. If the surface area of the clarifier is $2000$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{40000}{2000} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 41",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 41000$ m$^3$/day. If the surface area of the clarifier is $2050$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{41000}{2050} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 42",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 42000$ m$^3$/day. If the surface area of the clarifier is $2100$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{42000}{2100} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 43",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 43000$ m$^3$/day. If the surface area of the clarifier is $2150$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{43000}{2150} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 44",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 44000$ m$^3$/day. If the surface area of the clarifier is $2200$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{44000}{2200} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 45",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 45000$ m$^3$/day. If the surface area of the clarifier is $2250$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{45000}{2250} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 46",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 46000$ m$^3$/day. If the surface area of the clarifier is $2300$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{46000}{2300} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 47",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 47000$ m$^3$/day. If the surface area of the clarifier is $2350$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{47000}{2350} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 48",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 48000$ m$^3$/day. If the surface area of the clarifier is $2400$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.00$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{48000}{2400} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 49",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 49000$ m$^3$/day. If the surface area of the clarifier is $2450$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{49000}{2450} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Wastewater Treatment",
+            "title": "Surface Loading Rate - Case 50",
+            "question": "A primary clarifier handles a daily waste flow rate of $Q = 50000$ m$^3$/day. If the surface area of the clarifier is $2500$ m$^2$, what is the surface overflow rate (surface loading rate) in m$^3$/(m$^2\\cdot$day)?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$40.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$20.00$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10.00$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.00$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Clarifier Loading",
+                        "content": "$SLR = \\dfrac{Q}{A_s} = \\dfrac{50000}{2500} = 20.00$ m$^3$/(m$^2\\cdot$day)."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "air-quality": [
@@ -118166,6 +140696,834 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 28",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1400$ g/s and average wind speed $u = 8.6$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5182$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1295$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2591$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1400}{\\pi (8.6)(20)(10)} = 0.2591$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 29",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1450$ g/s and average wind speed $u = 8.8$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.2622$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5244$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1311$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1450}{\\pi (8.8)(20)(10)} = 0.2622$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 30",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1500$ g/s and average wind speed $u = 9.0$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5306$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.2653$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1326$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1500}{\\pi (9.0)(20)(10)} = 0.2653$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 31",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1550$ g/s and average wind speed $u = 9.2$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5362$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1341$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2681$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1550}{\\pi (9.2)(20)(10)} = 0.2681$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 32",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1600$ g/s and average wind speed $u = 9.4$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5418$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1354$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2709$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1600}{\\pi (9.4)(20)(10)} = 0.2709$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 33",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1650$ g/s and average wind speed $u = 9.6$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.2735$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5470$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1368$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1650}{\\pi (9.6)(20)(10)} = 0.2735$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 34",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1700$ g/s and average wind speed $u = 9.8$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5522$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.2761$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1381$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1700}{\\pi (9.8)(20)(10)} = 0.2761$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 35",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1750$ g/s and average wind speed $u = 10.0$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5570$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1393$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2785$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1750}{\\pi (10.0)(20)(10)} = 0.2785$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 36",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1800$ g/s and average wind speed $u = 10.2$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5618$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1404$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2809$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1800}{\\pi (10.2)(20)(10)} = 0.2809$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 37",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1850$ g/s and average wind speed $u = 10.4$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.2831$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5662$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1416$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1850}{\\pi (10.4)(20)(10)} = 0.2831$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 38",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1900$ g/s and average wind speed $u = 10.6$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5706$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.2853$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1426$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1900}{\\pi (10.6)(20)(10)} = 0.2853$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 39",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 1950$ g/s and average wind speed $u = 10.8$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5748$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1437$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2874$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{1950}{\\pi (10.8)(20)(10)} = 0.2874$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 40",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2000$ g/s and average wind speed $u = 11.0$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5788$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1447$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2894$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2000}{\\pi (11.0)(20)(10)} = 0.2894$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 41",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2050$ g/s and average wind speed $u = 11.2$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.2913$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5826$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1457$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2050}{\\pi (11.2)(20)(10)} = 0.2913$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 42",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2100$ g/s and average wind speed $u = 11.4$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5864$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.2932$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1466$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2100}{\\pi (11.4)(20)(10)} = 0.2932$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 43",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2150$ g/s and average wind speed $u = 11.6$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5900$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1475$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.2950$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2150}{\\pi (11.6)(20)(10)} = 0.2950$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 44",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2200$ g/s and average wind speed $u = 11.8$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.5934$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1484$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.2967$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2200}{\\pi (11.8)(20)(10)} = 0.2967$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 45",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2250$ g/s and average wind speed $u = 12.0$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.2984$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.5968$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1492$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2250}{\\pi (12.0)(20)(10)} = 0.2984$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 46",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2300$ g/s and average wind speed $u = 12.2$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.6000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.3000$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1500$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2300}{\\pi (12.2)(20)(10)} = 0.3000$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 47",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2350$ g/s and average wind speed $u = 12.4$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.6032$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1508$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.3016$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2350}{\\pi (12.4)(20)(10)} = 0.3016$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 48",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2400$ g/s and average wind speed $u = 12.6$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.6064$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1516$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3032$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2400}{\\pi (12.6)(20)(10)} = 0.3032$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 49",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2450$ g/s and average wind speed $u = 12.8$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.3046$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.6092$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1523$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2450}{\\pi (12.8)(20)(10)} = 0.3046$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Air Pollutants",
+            "title": "Centerline Pollutant Concentration - Case 50",
+            "question": "In a Gaussian plume model, what is the centerline ground-level pollutant concentration (in g/m$^3$) at a downwind distance where $\\sigma_y = 20$ m and $\\sigma_z = 10$ m? The emission rate $Q = 2500$ g/s and average wind speed $u = 13.0$ m/s. (Assume ground reflection is neglected)",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.6122$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.3061$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$0.1530$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Gaussian Plume",
+                        "content": "$C(x,0,0) = \\dfrac{Q}{\\pi u \\sigma_y \\sigma_z} = \\dfrac{2500}{\\pi (13.0)(20)(10)} = 0.3061$ g/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ],
@@ -119289,6 +142647,690 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C"
             }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 32",
+            "question": "A bin containing municipal solid waste holds a mass of $3200$ kg of waste. If the total volume occupied is $16.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3200}{16.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 33",
+            "question": "A bin containing municipal solid waste holds a mass of $3300$ kg of waste. If the total volume occupied is $16.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3300}{16.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 34",
+            "question": "A bin containing municipal solid waste holds a mass of $3400$ kg of waste. If the total volume occupied is $17.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3400}{17.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 35",
+            "question": "A bin containing municipal solid waste holds a mass of $3500$ kg of waste. If the total volume occupied is $17.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3500}{17.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 36",
+            "question": "A bin containing municipal solid waste holds a mass of $3600$ kg of waste. If the total volume occupied is $18.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3600}{18.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 37",
+            "question": "A bin containing municipal solid waste holds a mass of $3700$ kg of waste. If the total volume occupied is $18.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3700}{18.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 38",
+            "question": "A bin containing municipal solid waste holds a mass of $3800$ kg of waste. If the total volume occupied is $19.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3800}{19.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 39",
+            "question": "A bin containing municipal solid waste holds a mass of $3900$ kg of waste. If the total volume occupied is $19.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{3900}{19.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 40",
+            "question": "A bin containing municipal solid waste holds a mass of $4000$ kg of waste. If the total volume occupied is $20.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4000}{20.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 41",
+            "question": "A bin containing municipal solid waste holds a mass of $4100$ kg of waste. If the total volume occupied is $20.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4100}{20.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 42",
+            "question": "A bin containing municipal solid waste holds a mass of $4200$ kg of waste. If the total volume occupied is $21.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4200}{21.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 43",
+            "question": "A bin containing municipal solid waste holds a mass of $4300$ kg of waste. If the total volume occupied is $21.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4300}{21.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 44",
+            "question": "A bin containing municipal solid waste holds a mass of $4400$ kg of waste. If the total volume occupied is $22.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4400}{22.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 45",
+            "question": "A bin containing municipal solid waste holds a mass of $4500$ kg of waste. If the total volume occupied is $22.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4500}{22.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 46",
+            "question": "A bin containing municipal solid waste holds a mass of $4600$ kg of waste. If the total volume occupied is $23.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4600}{23.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 47",
+            "question": "A bin containing municipal solid waste holds a mass of $4700$ kg of waste. If the total volume occupied is $23.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4700}{23.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 48",
+            "question": "A bin containing municipal solid waste holds a mass of $4800$ kg of waste. If the total volume occupied is $24.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4800}{24.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 49",
+            "question": "A bin containing municipal solid waste holds a mass of $4900$ kg of waste. If the total volume occupied is $24.5$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{4900}{24.5} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Waste Collection",
+            "title": "Solid Waste Bulk Density - Case 50",
+            "question": "A bin containing municipal solid waste holds a mass of $5000$ kg of waste. If the total volume occupied is $25.0$ m$^3$, what is the bulk density of the uncompacted waste in kg/m$^3$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$300.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200.00$ kg/m$^3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$100.00$ kg/m$^3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1000$ kg/m$^3$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Density Formula",
+                        "content": "$\\rho = \\dfrac{\\text{Mass}}{\\text{Volume}} = \\dfrac{5000}{25.0} = 200.00$ kg/m$^3$."
+                    }
+                ],
+                "final_answer": "B"
+            }
         }
     ],
     "energy-env": [
@@ -120302,6 +144344,798 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 29",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1080$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$72.22\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$57.78\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$86.66\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1080} = 0.7222 = 72.22\\%$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 30",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1100$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$58.18\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$72.73\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$87.28\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1100} = 0.7273 = 72.73\\%$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 31",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1120$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$58.57\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$87.85\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$73.21\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1120} = 0.7321 = 73.21\\%$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 32",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1140$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$58.94\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$88.42\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$73.68\\%$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1140} = 0.7368 = 73.68\\%$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 33",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1160$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$74.14\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$59.31\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$88.97\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1160} = 0.7414 = 74.14\\%$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 34",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1180$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$59.66\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$74.58\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$89.50\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1180} = 0.7458 = 74.58\\%$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 35",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1200$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$75.00\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1200} = 0.7500 = 75.00\\%$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 36",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1220$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.33\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90.49\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$75.41\\%$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1220} = 0.7541 = 75.41\\%$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 37",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1240$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$75.81\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60.65\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$90.97\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1240} = 0.7581 = 75.81\\%$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 38",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1260$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$60.95\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$76.19\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$91.43\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1260} = 0.7619 = 76.19\\%$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 39",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1280$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$61.25\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$91.87\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$76.56\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1280} = 0.7656 = 76.56\\%$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 40",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1300$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$61.54\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$92.30\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$76.92\\%$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1300} = 0.7692 = 76.92\\%$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 41",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1320$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$77.27\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$61.82\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$92.72\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1320} = 0.7727 = 77.27\\%$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 42",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1340$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$62.09\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$77.61\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$93.13\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1340} = 0.7761 = 77.61\\%$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 43",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1360$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$62.35\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$93.53\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$77.94\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1360} = 0.7794 = 77.94\\%$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 44",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1380$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$62.61\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$93.91\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$78.26\\%$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1380} = 0.7826 = 78.26\\%$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 45",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1400$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$78.57\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$62.86\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$94.28\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1400} = 0.7857 = 78.57\\%$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 46",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1420$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$63.10\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$78.87\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$94.64\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1420} = 0.7887 = 78.87\\%$."
+                    }
+                ],
+                "final_answer": "B"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 47",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1440$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$63.34\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$95.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$79.17\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1440} = 0.7917 = 79.17\\%$."
+                    }
+                ],
+                "final_answer": "C"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 48",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1460$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$63.56\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$95.34\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$79.45\\%$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1460} = 0.7945 = 79.45\\%$."
+                    }
+                ],
+                "final_answer": "D"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 49",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1480$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$79.73\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$63.78\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$95.68\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1480} = 0.7973 = 79.73\\%$."
+                    }
+                ],
+                "final_answer": "A"
+            }
+        },
+        {
+            "topic": "Renewable Energy",
+            "title": "Carnot Cycle Efficiency - Case 50",
+            "question": "A heat engine operates between a hot reservoir at $T_H = 1500$ K and a cold reservoir at $T_C = 300$ K. What is the maximum theoretical (Carnot) efficiency of this engine?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$64.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$80.00\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$96.00\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50.00\\%$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Carnot Efficiency",
+                        "content": "$\\eta = 1 - \\dfrac{T_C}{T_H} = 1 - \\dfrac{300}{1500} = 0.8000 = 80.00\\%$."
+                    }
+                ],
+                "final_answer": "B"
             }
         }
     ]

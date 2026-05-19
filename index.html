@@ -14,7 +14,21 @@
         if (savedTheme === 'light') {
             document.documentElement.classList.remove('dark');
         }
+
+        // Prevent flash of dashboard if intro is meant to play
+        if (localStorage.getItem('enggtv_show_intro') === 'true') {
+            document.documentElement.classList.add('showing-intro');
+        }
     </script>
+    <style>
+        /* Hide everything except the intro overlay when playing intro */
+        html.showing-intro body > *:not(#splash-intro-overlay) {
+            display: none !important;
+        }
+        html.showing-intro #splash-intro-overlay {
+            display: flex !important;
+        }
+    </style>
     <title>ENGG.tv | FE Exam Study</title>
     <meta name="description"
         content="A premium study application for the Fundamentals of Engineering (FE) Mechanical Exam. Practice questions, mock exams, and progress tracking.">
@@ -196,7 +210,7 @@
 </button>
 </div>
 </header>
-    <main class="px-margin-page pt-20 flex flex-col gap-stack-lg max-w-xl mx-auto">
+    <main class="px-margin-page pt-20 flex flex-col gap-stack-lg w-full max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
         <section id="dashboard" class="page active">
             
 <!-- Hero Greeting (B-1: Animated gradient bg) -->
@@ -949,6 +963,37 @@
         <div class="formula-display" id="formula-latex"></div>
         <div class="formula-popup-content" id="formula-context"></div>
     </div>
+    <!-- Splash Intro Overlay -->
+    <div id="splash-intro-overlay" class="fixed inset-0 z-[99999] bg-black hidden flex items-center justify-center">
+        <video id="splash-intro-video" class="w-full h-full object-contain" muted playsinline autoplay>
+            <source src="assets/intro-animation.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('enggtv_show_intro') === 'true') {
+                localStorage.removeItem('enggtv_show_intro');
+                const splashOverlay = document.getElementById('splash-intro-overlay');
+                const splashVideo = document.getElementById('splash-intro-video');
+                
+                // Force show the overlay
+                splashOverlay.classList.remove('hidden');
+                splashOverlay.style.display = 'flex';
+                
+                splashVideo.play().catch(e => {
+                    console.log('Video auto-play prevented:', e);
+                    document.documentElement.classList.remove('showing-intro');
+                    splashOverlay.style.display = 'none';
+                });
+                
+                splashVideo.onended = () => {
+                    document.documentElement.classList.remove('showing-intro');
+                    splashOverlay.style.display = 'none';
+                };
+            }
+        });
+    </script>
 </body>
 
 </html>

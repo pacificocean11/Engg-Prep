@@ -1620,23 +1620,24 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.className = 'map-btn w-8 h-8 rounded-lg font-bold text-xs transition-all active:scale-90 flex items-center justify-center';
             btn.textContent = idx + 1;
             
+            // Apply semantic color-coding based on active quiz state
             if (idx === state.currentQuestionIndex) {
-                btn.classList.add('bg-secondary', 'text-white', 'ring-2', 'ring-offset-2', 'ring-secondary/50');
-            } else if (state.submitted[idx]) {
-                const q = state.quizQuestions[idx];
-                const selectedIdx = state.answers[idx];
-                const isCorrect = selectedIdx !== null && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
-                
+                btn.classList.add('current');
+            }
+            
+            if (state.flagged[idx]) {
+                btn.classList.add('flagged');
+            }
+            
+            if (state.submitted[idx]) {
                 if (state.isFinished) {
-                    btn.classList.add(isCorrect ? 'bg-green-500' : 'bg-red-500', 'text-white');
+                    const q = state.quizQuestions[idx];
+                    const selectedIdx = state.answers[idx];
+                    const isCorrect = selectedIdx !== null && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
+                    btn.classList.add(isCorrect ? 'correct-res' : 'wrong-res');
                 } else {
-                    btn.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-600', 'dark:text-slate-300');
+                    btn.classList.add('answered');
                 }
-            } else if (state.flagged[idx]) {
-                btn.classList.add('bg-amber-500', 'text-white');
-                btn.innerHTML = '<span class="material-symbols-outlined text-xs">flag</span>';
-            } else {
-                btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-400', 'hover:bg-slate-200');
             }
             
             btn.onclick = () => {
