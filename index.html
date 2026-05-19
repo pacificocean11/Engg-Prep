@@ -964,33 +964,61 @@
         <div class="formula-popup-content" id="formula-context"></div>
     </div>
     <!-- Splash Intro Overlay -->
-    <div id="splash-intro-overlay" class="fixed inset-0 z-[99999] bg-black hidden flex items-center justify-center">
-        <video id="splash-intro-video" class="w-full h-full object-contain" muted playsinline autoplay>
-            <source src="assets/intro-animation.mp4" type="video/mp4">
-        </video>
-    </div>
+    <div id="splash-intro-overlay" class="fixed inset-0 z-[99999] bg-black hidden flex items-center justify-center"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('enggtv_show_intro') === 'true') {
                 localStorage.removeItem('enggtv_show_intro');
                 const splashOverlay = document.getElementById('splash-intro-overlay');
-                const splashVideo = document.getElementById('splash-intro-video');
+                
+                // Create Vimeo iframe
+                const iframe = document.createElement('iframe');
+                iframe.id = 'splash-intro-iframe';
+                // Vimeo URL parameters: autoplay=1 (start automatically), muted=1 (required for autoplay in most browsers),
+                // controls=0 (hide interface), loop=0 (do not loop), title=0/byline=0/portrait=0 (hide video info)
+                iframe.src = 'https://player.vimeo.com/video/1193514737?autoplay=1&muted=1&controls=0&loop=0&badge=0&byline=0&portrait=0&title=0';
+                iframe.className = 'w-full h-full border-none';
+                iframe.allow = 'autoplay; fullscreen';
+                iframe.style.width = '100vw';
+                iframe.style.height = '100vh';
+                
+                splashOverlay.appendChild(iframe);
                 
                 // Force show the overlay
                 splashOverlay.classList.remove('hidden');
                 splashOverlay.style.display = 'flex';
                 
-                splashVideo.play().catch(e => {
-                    console.log('Video auto-play prevented:', e);
+                let introFinished = false;
+                const finishIntro = () => {
+                    if (introFinished) return;
+                    introFinished = true;
                     document.documentElement.classList.remove('showing-intro');
                     splashOverlay.style.display = 'none';
-                });
-                
-                splashVideo.onended = () => {
-                    document.documentElement.classList.remove('showing-intro');
-                    splashOverlay.style.display = 'none';
+                    splashOverlay.innerHTML = '';
                 };
+                
+                // Fallback timeout of 6 seconds (video is 5s) to guarantee overlay closes
+                const fallbackTimeout = setTimeout(finishIntro, 6000);
+                
+                // Load Vimeo Player SDK dynamically to handle 'ended' event
+                const sdkScript = document.createElement('script');
+                sdkScript.src = 'https://player.vimeo.com/api/player.js';
+                sdkScript.onload = () => {
+                    try {
+                        const player = new Vimeo.Player(iframe);
+                        player.on('ended', () => {
+                            clearTimeout(fallbackTimeout);
+                            finishIntro();
+                        });
+                    } catch (e) {
+                        console.error('Vimeo player API init error:', e);
+                    }
+                };
+                sdkScript.onerror = () => {
+                    console.warn('Vimeo Player SDK failed to load, relying on timeout fallback.');
+                };
+                document.head.appendChild(sdkScript);
             }
         });
     </script>
