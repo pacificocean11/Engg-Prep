@@ -90,72 +90,30 @@
       darkMode: "class",
       theme: {
         extend: {
-          "colors": {
-            "on-primary-fixed": "#281900",
-            "inverse-primary": "#ffba38",
-            "on-error-container": "#93000a",
-            "inverse-on-surface": "#f3f0ef",
-            "secondary-fixed-dim": "#ffb1c3",
-            "secondary-container": "#e4006c",
-            "surface": "#fcf9f8",
-            "surface-bright": "#fcf9f8",
-            "tertiary-fixed": "#eddcff",
-            "on-tertiary": "#ffffff",
-            "tertiary-fixed-dim": "#d7baff",
-            "inverse-surface": "#313030",
-            "surface-container-low": "#f6f3f2",
-            "on-tertiary-fixed-variant": "#5a2a9c",
-            "primary": "#7e5700",
-            "on-error": "#ffffff",
-            "on-secondary-fixed": "#3f0019",
-            "secondary": "#b60055",
-            "on-secondary": "#ffffff",
-            "surface-dim": "#dcd9d9",
-            "error": "#ba1a1a",
-            "error-container": "#ffdad6",
-            "outline": "#847560",
-            "primary-container": "#ffb300",
-            "on-primary": "#ffffff",
-            "on-background": "#1c1b1b",
-            "on-surface": "#1c1b1b",
-            "background": "#fcf9f8",
-            "on-primary-container": "#6b4900"
+          colors: {
+            primary: "#be0055",
+            "background-light": "#f8f9fa",
+            "background-dark": "#0f172a",
+            secondary: "#f59e0b",
+            "on-surface": "#0f172a",
+            "outline": "#64748b",
+            "surface-container-lowest": "#ffffff"
           },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
+          fontFamily: {
+            "display-lg": ["Lexend", "sans-serif"],
+            "body-sm": ["Lexend", "sans-serif"],
+            "label-caps": ["Lexend", "sans-serif"],
+            "body-base": ["Lexend", "sans-serif"],
+            "headline-md": ["Lexend", "sans-serif"],
+            "title-sm": ["Lexend", "sans-serif"]
           },
-          "spacing": {
-            "card-padding": "24px",
-            "stack-lg": "24px",
-            "stack-sm": "4px",
-            "base": "8px",
-            "stack-md": "12px",
-            "gutter": "16px",
-            "margin-page": "20px"
-          },
-          "fontFamily": {
-            "display-lg": ["Space Grotesk"],
-            "body-sm": ["Lexend"],
-            "label-caps": ["Lexend"],
-            "body-base": ["Lexend"],
-            "headline-md": ["Space Grotesk"],
-            "title-sm": ["Lexend"]
-          },
-          "fontSize": {
-            "display-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-            "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-            "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+          borderRadius: {
+            DEFAULT: "1rem",
           }
-        },
-      },
+        }
+      }
     }
-  </script>
+</script>
 <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -166,8 +124,8 @@
   </style>
 </head>
 
-<body class="bg-background dark:bg-slate-950 text-on-surface dark:text-slate-100 font-body-base min-h-screen pb-24 overflow-x-hidden break-words dark-theme">
-    <canvas id="bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-50 transition-opacity duration-1000"></canvas>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-body-base min-h-screen pb-24 overflow-x-hidden break-words dark-theme">
+    
     <div class="floating-bg-elements" aria-hidden="true">
         <div class="glass-shape shape-1"></div>
         <div class="glass-shape shape-2"></div>
@@ -186,7 +144,7 @@
         }
     </script>
     <!-- TopAppBar Section -->
-<header id="main-header" class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-sm docked full-width top-0 z-50 fixed w-full">
+<header id="main-header" class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm docked full-width top-0 z-50 fixed w-full">
 <div class="flex justify-between items-center w-full px-5 py-3">
 <div class="flex items-center gap-0.5">
 <div id="header-avatar-container" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container magnetic-btn">
@@ -210,7 +168,7 @@
 </button>
 </div>
 </header>
-    <main class="px-margin-page pt-20 flex flex-col gap-stack-lg w-full max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+    <main class="px-4 md:px-6 pt-20 pb-28 flex flex-col gap-stack-lg w-full max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto overflow-x-hidden">
         <section id="dashboard" class="page active">
             
 <!-- Hero Greeting (B-1: Animated gradient bg) -->
@@ -224,41 +182,53 @@
 </div>
 </section>
 <!-- Bento Grid Dashboard -->
-<div class="grid grid-cols-2 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Overall Progress Card (B-1: Glassmorphic + Glow) -->
-<div class="col-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group">
+<div class="col-span-1 md:col-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group">
     <!-- Animated Glow Background -->
     <div class="absolute -top-24 -right-24 w-48 h-48 bg-secondary/20 blur-[100px] group-hover:bg-secondary/30 transition-all duration-700"></div>
     <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-primary/10 blur-[100px] group-hover:bg-primary/20 transition-all duration-700"></div>
     
-    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="flex flex-col gap-2">
+    <div class="relative z-10 flex flex-col items-center text-center gap-6">
+        <div class="flex flex-col items-center gap-2">
             <span class="font-label-caps text-label-caps text-secondary dark:text-pink-400 uppercase tracking-widest">Mastery Overview</span>
             <h2 id="overall-progress-text" class="font-display-lg text-4xl text-on-surface dark:text-white">0% Completed</h2>
             <p class="font-body-sm text-outline dark:text-slate-400">Your engineering intuition is growing stronger!</p>
-            <div class="flex gap-3 mt-4">
+            <div class="flex gap-3 mt-2">
                 <button class="bg-secondary text-white font-bold px-6 py-3 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 magnetic-btn" onclick="navigateTo('study')">
                     Resume Study
                 </button>
             </div>
         </div>
-        
-        <div class="relative w-32 h-32 flex items-center justify-center">
-            <!-- Liquid Progress Visual (Suggestion 3) -->
-            <div id="overall-progress-circle" class="liquid-progress-container w-full h-full rounded-full overflow-hidden relative border-4 border-slate-100 dark:border-slate-800 shadow-inner">
-                <div class="liquid-wave" id="liquid-wave-element" style="top: 100%;"></div>
-                <div class="liquid-wave liquid-wave-back" id="liquid-wave-element-back" style="top: 100%;"></div>
-                <div class="liquid-glass-glint"></div>
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                    <span id="overall-progress-circle-text" class="font-display-lg text-2xl text-secondary dark:text-pink-400 drop-shadow-md">0%</span>
-                </div>
+
+        <!-- Hollow SVG ring progress indicator -->
+        <div class="relative w-36 h-36 flex items-center justify-center">
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                <!-- Background track -->
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#e2e8f0" stroke-width="8"/>
+                <!-- Animated progress arc -->
+                <circle id="overall-progress-circle" cx="50" cy="50" r="42" fill="none"
+                    stroke="url(#progressGrad)" stroke-width="8"
+                    stroke-linecap="round"
+                    stroke-dasharray="263.9"
+                    stroke-dashoffset="263.9"
+                    style="transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1);"/>
+                <defs>
+                    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#be0055"/>
+                        <stop offset="100%" stop-color="#f59e0b"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <span id="overall-progress-circle-text" class="text-2xl font-bold text-secondary dark:text-pink-400">0%</span>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Performance Analytics Card (B-3) -->
-<div class="col-span-2 glass-card rounded-3xl p-6">
+<div class="col-span-1 md:col-span-2 glass-card rounded-3xl p-6">
     <div class="flex justify-between items-center mb-4">
         <span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Study Intensity</span>
         <div class="flex items-center gap-2">
@@ -271,7 +241,7 @@
     </div>
 </div>
 <!-- Announcements Card (B-1) -->
-<div id="announcement-section" onclick="navigateTo('announcements-view')" class="col-span-2 glass-card rounded-3xl p-6 cursor-pointer hover:scale-[1.02] transition-all duration-300">
+<div id="announcement-section" onclick="navigateTo('announcements-view')" class="col-span-1 md:col-span-2 glass-card rounded-3xl p-6 cursor-pointer hover:scale-[1.02] transition-all duration-300">
   <div class="flex justify-between items-center">
     <div class="flex items-center gap-2">
       <span class="material-symbols-outlined text-secondary" data-icon="campaign">campaign</span>
@@ -286,7 +256,7 @@
 </div>
 
 <!-- Locked Announcements Card -->
-<div id="announcement-locked" class="col-span-2 bg-surface-container-lowest dark:bg-slate-900 rounded-xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col gap-stack-md hidden">
+<div id="announcement-locked" class="col-span-1 md:col-span-2 bg-surface-container-lowest dark:bg-slate-900 rounded-xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col gap-stack-md hidden">
   <div class="flex justify-between items-start">
     <span class="font-label-caps text-label-caps text-outline uppercase">Announcements</span>
     <span class="material-symbols-outlined text-slate-300" data-icon="lock">lock</span>
@@ -309,7 +279,7 @@
 </div>
 
 <!-- Recent Activity Section -->
-<div class="col-span-2 flex flex-col gap-stack-md">
+<div class="col-span-1 md:col-span-2 flex flex-col gap-4">
 <div class="flex justify-between items-center px-1">
 <h3 class="font-headline-md text-title-sm text-on-surface dark:text-slate-100 uppercase tracking-widest">Recent Activity</h3>
 <div class="flex items-center gap-4">
@@ -317,7 +287,7 @@
     <button class="text-secondary font-label-caps text-label-caps uppercase" onclick="navigateTo('study')">View All</button>
 </div>
 </div>
-<div id="recent-activity-list" class="flex flex-col gap-stack-md">
+<div id="recent-activity-list" class="flex flex-col gap-4">
 <!-- Populated dynamically by JS -->
 </div>
 </div>
@@ -326,13 +296,13 @@
         </section>
         
         <section id="study" class="page">
-            <div class="mb-stack-lg mt-4">
+            <div class="mb-stack-lg mt-4 min-w-0">
                 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-stack-sm block">Core Curriculum</span>
-                <h1 class="font-display-lg text-display-lg text-on-surface dark:text-slate-100 leading-tight">Study Topics</h1>
-                <p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400 mt-2">Master the fundamentals of engineering through curated practice tracks.</p>
+                <h1 class="font-display-lg text-display-lg text-on-surface dark:text-slate-100 leading-tight break-words">Study Topics</h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400 mt-2 break-words">Master the fundamentals of engineering through curated practice tracks.</p>
             </div>
             <!-- Container for JS injected subjects -->
-            <div id="subject-list" class="flex flex-col gap-gutter"></div>
+            <div id="subject-list" class="flex flex-col gap-6"></div>
         </section>
 
         <section id="settings" class="page">
@@ -358,50 +328,53 @@
 <span id="discipline-badge-display" class="font-label-caps text-label-caps text-amber-700 uppercase">Civil Engineer</span>
 </div>
 </section>
-<!-- Stats Grid (Bento Style) -->
-<div class="grid grid-cols-2 gap-gutter mb-stack-lg">
+<!-- Stats Stack (Spacious Glass Cards) -->
+<div class="flex flex-col gap-4 mb-8">
+
 <!-- Daily Streak Card -->
-<div class="bg-surface-container-lowest dark:bg-slate-900 rounded-xl p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col items-center text-center gap-2 border border-slate-50 dark:border-slate-800">
-  <span class="font-label-caps text-label-caps text-secondary uppercase block">STREAK</span>
-  <div class="w-12 h-12 bg-[#FF006E]/10 rounded-full flex items-center justify-center">
-    <span class="material-symbols-outlined text-[#FF006E] text-2xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div class="glass-card p-5 flex items-center gap-5">
+  <div class="w-14 h-14 bg-pink-50 dark:bg-pink-900/20 rounded-2xl flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-[#be0055] text-3xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
   </div>
-  <div>
-    <p id="settings-streak-display" class="font-headline-md text-[#FF006E] dark:text-[#FF006E]">0 Days</p>
-    <p id="settings-streak-subtitle" class="font-body-sm text-body-sm text-outline dark:text-slate-400 text-[11px]">Keep it up!</p>
+  <div class="flex flex-col">
+    <span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-widest">Daily Streak</span>
+    <p id="settings-streak-display" class="text-xl font-bold text-[#be0055]">0 Days</p>
+    <p id="settings-streak-subtitle" class="text-[11px] text-slate-400">Keep it up!</p>
   </div>
 </div>
-<div class="bg-white dark:bg-slate-900 rounded-xl p-card-padding card-shadow border border-slate-50 dark:border-slate-800 flex flex-col items-center text-center gap-1">
-<span class="font-label-caps text-label-caps text-secondary uppercase block mb-1">COURSES</span>
-<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+
+<!-- Courses Card -->
+<div class="glass-card p-5 flex items-center gap-5">
+  <div class="w-14 h-14 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-amber-600 text-3xl" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+  </div>
+  <div class="flex flex-col">
+    <span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-widest">Courses</span>
+    <p id="settings-courses-display" class="text-xl font-bold text-on-surface dark:text-slate-100">0 Started</p>
+    <p id="settings-courses-subtitle" class="text-[11px] text-slate-400">of 0 total</p>
+  </div>
 </div>
-<div>
-<p id="settings-courses-display" class="font-headline-md text-headline-md dark:text-slate-100">0 Started</p>
-<p id="settings-courses-subtitle" class="font-body-sm text-body-sm text-outline dark:text-slate-400 text-[11px]">of 0 total</p>
-</div>
-</div>
+
 <!-- Points Card -->
-<div id="btn-points-info" class="col-span-2 bg-white dark:bg-slate-900 rounded-xl p-card-padding card-shadow border border-slate-50 dark:border-slate-800 flex items-center justify-between cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-    <div class="flex flex-col">
-        <span class="font-label-caps text-label-caps text-secondary uppercase block mb-1">TOTAL POINTS</span>
-        <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-amber-500" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
-            <span id="settings-points-display" class="font-headline-md text-headline-md dark:text-slate-100">0 Points</span>
-        </div>
-    </div>
-    <div class="text-right">
-        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Level 1</p>
-        <p id="points-to-next-level" class="text-[10px] font-medium text-outline">50 pts to unlock announcements</p>
-    </div>
+<div id="btn-points-info" class="glass-card p-5 flex items-center gap-5 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+  <div class="w-14 h-14 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-amber-500 text-3xl" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+  </div>
+  <div class="flex-1 min-w-0">
+    <span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-widest">Total Points</span>
+    <p><span id="settings-points-display" class="text-xl font-bold text-on-surface dark:text-slate-100">0 Points</span></p>
+    <p id="points-to-next-level" class="text-[11px] text-slate-400 truncate">50 pts to unlock announcements</p>
+  </div>
+  <span class="material-symbols-outlined text-slate-300 shrink-0" data-icon="chevron_right">chevron_right</span>
 </div>
+
 </div>
 <!-- Settings List -->
 <section class="space-y-stack-md">
 <h3 class="font-label-caps text-label-caps text-slate-400 px-2">PREFERENCES</h3>
-<div class="bg-white dark:bg-slate-900 rounded-2xl card-shadow overflow-hidden border border-slate-50 dark:border-slate-800">
+
 <!-- Account Info -->
-<button id="btn-account-info" class="w-full flex items-center justify-between p-card-padding hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<button id="btn-account-info" class="w-full glass-card p-4 mb-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-xl bg-primary-fixed/30 text-primary flex items-center justify-center">
 <span class="material-symbols-outlined" data-icon="person">person</span>
@@ -411,7 +384,7 @@
 <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
 </button>
 <!-- Dark Mode -->
-<div class="w-full flex items-center justify-between p-card-padding border-t border-slate-50 dark:border-slate-800">
+<div class="w-full glass-card p-4 mb-4 flex items-center justify-between">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center">
 <span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
@@ -425,7 +398,7 @@
 </div>
 
 <!-- Help & Support -->
-<button id="btn-support" class="w-full flex items-center justify-between p-card-padding hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors border-t border-slate-50 dark:border-slate-800 group">
+<button id="btn-support" class="w-full glass-card p-4 mb-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-xl bg-on-tertiary-fixed-variant/10 text-on-tertiary-fixed-variant flex items-center justify-center">
 <span class="material-symbols-outlined" data-icon="forum">forum</span>
@@ -437,14 +410,14 @@
 </div>
 <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
 </button>
-</div>
+
 </section>
 
 <!-- Danger Zone -->
 <section class="mt-stack-lg">
     <h3 class="font-label-caps text-label-caps text-error px-2 mb-2 uppercase">Danger Zone</h3>
-    <div class="bg-white dark:bg-slate-900 rounded-2xl card-shadow overflow-hidden border border-error/10">
-        <button id="reset-data-btn" class="w-full flex items-center justify-between p-card-padding hover:bg-error/5 transition-colors group">
+    <div class="glass-card overflow-hidden border border-error/10">
+        <button id="reset-data-btn" class="w-full p-4 flex items-center justify-between hover:bg-error/5 transition-colors group">
             <div class="flex items-center gap-4">
                 <div class="w-10 h-10 rounded-xl bg-error/10 text-error flex items-center justify-center">
                     <span class="material-symbols-outlined" data-icon="restart_alt">restart_alt</span>

@@ -969,13 +969,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const percentage = questionsInSubject > 0 ? Math.round((completed / questionsInSubject) * 100) : 0;
             
             const subjectCard = document.createElement('div');
-            subjectCard.className = 'stagger-item bg-surface-container-lowest dark:bg-slate-900 rounded-[16px] p-card-padding shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-white/50 dark:border-slate-800 flex flex-col gap-4 active:scale-[0.98] transition-transform duration-150 cursor-pointer';
+            subjectCard.className = 'stagger-item glass-card p-6 flex flex-col gap-4 active:scale-[0.98] transition-transform duration-150 cursor-pointer';
             subjectCard.style.animationDelay = `${idx * 100}ms`;
-            
-            
-            const accentGlow = color.text === 'text-primary' ? 'rgba(126, 87, 0, 0.2)' : 
-                              (color.text === 'text-tertiary' ? 'rgba(215, 186, 255, 0.2)' : 'rgba(255, 0, 110, 0.2)');
-            subjectCard.style.setProperty('--accent-glow-dynamic', accentGlow);
             
             subjectCard.onclick = () => startQuiz(subject.id);
             
@@ -987,7 +982,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div>
                             <h3 class="font-title-sm text-title-sm text-on-surface dark:text-slate-100">${subject.name}</h3>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400">${questionsInSubject} Questions Available</p>
+                            <p class="text-xs text-slate-400 dark:text-slate-500 font-medium">${questionsInSubject} questions available</p>
                         </div>
                     </div>
                     <span class="font-label-caps text-label-caps text-secondary dark:text-pink-400">${percentage}%</span>
@@ -1035,13 +1030,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const streakDisplay = document.getElementById('settings-streak-display');
         if (streakDisplay) streakDisplay.textContent = `${streak} Day${streak !== 1 ? 's' : ''}`;
 
-        // Liquid Wave Animation
-        const wave = document.getElementById('liquid-wave-element');
-        const waveBack = document.getElementById('liquid-wave-element-back');
-        if (wave) {
-            const topValue = 100 - (percentage * 1.1); 
-            wave.style.top = `${topValue}%`;
-            if (waveBack) waveBack.style.top = `${topValue - 5}%`; // Offset for depth
+        // SVG Ring Animation (stroke-dashoffset)
+        const ringCircle = document.getElementById('overall-progress-circle');
+        if (ringCircle && ringCircle.tagName === 'circle') {
+            const circumference = 263.9; // 2 * Math.PI * 42
+            const offset = circumference * (1 - percentage / 100);
+            ringCircle.style.strokeDashoffset = offset;
         }
 
         const peerText = textDisplay.nextElementSibling;
@@ -1352,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = state.recentActivity.map((activity, idx) => {
             const timeAgo = getTimeAgo(activity.timestamp);
             return `
-                <div class="stagger-item bg-surface-container-lowest dark:bg-slate-900 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex items-center gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" onclick="window.loadRecentActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
+                <div class="stagger-item glass-card p-4 flex items-center gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" onclick="window.loadRecentActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
                     <div class="w-12 h-12 rounded-lg bg-${activity.isMockExam ? 'primary' : 'secondary'}/10 flex items-center justify-center">
                         <span class="material-symbols-outlined text-${activity.isMockExam ? 'primary' : 'secondary'}" data-icon="quiz">quiz</span>
                     </div>

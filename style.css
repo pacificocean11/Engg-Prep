@@ -1,23 +1,23 @@
 :root {
-    /* ENGG.tv Brand Palette */
-    --bg-main: #fff8f5;
-    --sidebar-bg: #FDA60A;
+    /* ENGG.tv Minimalist Brand Palette */
+    --bg-main: #f8f9fa;
+    --sidebar-bg: #f59e0b;
     --card-bg: #ffffff;
-    --accent-pink: #FF006E;
-    --accent-yellow: #FDA60A;
-    --accent-navy: #720026;
-    --text-primary: #720026;
-    --text-secondary: #555555;
+    --accent-pink: #be0055;
+    --accent-yellow: #f59e0b;
+    --accent-navy: #be0055;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
     --text-on-navy: #ffffff;
-    --border-color: rgba(114, 0, 38, 0.12);
-    --glass-effect: blur(8px);
+    --border-color: #f1f5f9;
+    --glass-effect: none;
     
     /* Spacing & Borders */
-    --radius-lg: 20px;
-    --radius-md: 14px;
-    --radius-sm: 10px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --radius-lg: 1rem;
+    --radius-md: 0.75rem;
+    --radius-sm: 0.5rem;
+    --transition: all 0.2s ease-in-out;
+    --transition-bounce: all 0.3s ease-out;
 }
 
 /* Custom Scrollbar for Premium Feel */
@@ -51,13 +51,13 @@ body.nav-hidden {
 
 /* Dark Mode Overrides (B-4: Cyber Aesthetics) */
 html.dark {
-    --bg-main: #0a0b14;
-    --card-bg: rgba(21, 23, 36, 0.7);
+    --bg-main: #0f172a;
+    --card-bg: #1e293b;
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --accent-navy: #ffba38;
-    --accent-glow: rgba(255, 0, 110, 0.3);
+    --border-color: #334155;
+    --accent-navy: #f59e0b;
+    --accent-glow: transparent;
 }
 
 html.dark body {
@@ -202,18 +202,16 @@ html.dark .content {
 
 /* Glassmorphism System (B-1) */
 .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(114, 0, 38, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 html.dark .glass-card {
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 /* Cyber Glow Effects (B-4) */
@@ -227,10 +225,7 @@ html.dark .glass-card {
 
 /* Floating Background Elements Container */
 .floating-bg-elements {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -2;
+    display: none !important;
 }
 
 /* Glass Card Refinement with Grain Overlay */
@@ -287,17 +282,9 @@ html.dark #bottom-nav {
 }
 
 /* Liquid Progress Dual Wave */
-.liquid-wave-back {
-    background: rgba(255, 0, 110, 0.3) !important;
-    animation-duration: 4s !important;
-    animation-delay: -1s !important;
-    opacity: 0.5;
-    z-index: 1;
-}
+.liquid-wave-back { display: none; }
 
-#liquid-wave-element {
-    z-index: 2;
-}
+#liquid-wave-element { display: none; }
 
 /* Enhanced Cursor Follower */
 #cursor-follower {
@@ -388,23 +375,13 @@ html.dark #bottom-nav {
 
 /* Hero Section Enhancement */
 .dashboard-hero-bg {
-    background: linear-gradient(135deg, rgba(255, 0, 110, 0.05), rgba(253, 166, 10, 0.05));
-    border-radius: 24px;
-    padding: 24px;
+    background: transparent;
+    padding: 12px 0;
     position: relative;
-    overflow: hidden;
 }
 
 .dashboard-hero-bg::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(255, 0, 110, 0.1), transparent 30%);
-    animation: rotateGlow 10s linear infinite;
-    pointer-events: none;
+    display: none;
 }
 
 @keyframes rotateGlow {
