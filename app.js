@@ -2728,31 +2728,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sort by points descending
         allUsers.sort((a, b) => b.points - a.points);
 
-        // Ensure we have at least 20 entries by backfilling with mock data
-        const existingNames = new Set(allUsers.map(u => u.username.toLowerCase()));
-        for (const mockUser of MOCK_LEADERBOARD) {
-            if (allUsers.length >= 20) break;
-            if (!existingNames.has(mockUser.username.toLowerCase())) {
-                allUsers.push({
-                    username: mockUser.username,
-                    points: mockUser.points,
-                    discipline: mockUser.discipline,
-                    country: mockUser.country,
-                    avatar: mockUser.avatar,
-                    streak: mockUser.streak,
-                    trend: mockUser.trend || 'same'
-                });
-                existingNames.add(mockUser.username.toLowerCase());
-            }
-        }
+        // Take top 100 real users
+        const top100 = allUsers.slice(0, 100);
 
-        // Sort again after backfilling to ensure everything is in perfect order
-        allUsers.sort((a, b) => b.points - a.points);
-
-        // Take top 20
-        const top20 = allUsers.slice(0, 20);
-
-        list.innerHTML = top20.map((user, index) => {
+        list.innerHTML = top100.map((user, index) => {
             const rank = index + 1;
             let rankBadge = '';
             if (rank === 1) rankBadge = 'bg-amber-400 text-white';
