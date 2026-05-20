@@ -80,17 +80,17 @@
                     <label class="block text-sm font-bold text-slate-700 mb-2 ml-1">Email Address</label>
                     <div class="relative">
                         <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
-                        <input type="email" id="email" 
+                        <input type="email" id="email" required
                             class="w-full pl-12 pr-4 py-4 bg-white border border-slate-100 rounded-2xl focus:ring-2 focus:ring-accent-yellow focus:border-transparent outline-none transition-all placeholder:text-slate-300"
                             placeholder="Enter your email">
                     </div>
                 </div>
 
-                <div>
+                <div id="username-field">
                     <label class="block text-sm font-bold text-slate-700 mb-2 ml-1">Username</label>
                     <div class="relative">
                         <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">person</span>
-                        <input type="text" id="username" required 
+                        <input type="text" id="username" 
                             class="w-full pl-12 pr-4 py-4 bg-white border border-slate-100 rounded-2xl focus:ring-2 focus:ring-accent-yellow focus:border-transparent outline-none transition-all placeholder:text-slate-300"
                             placeholder="Choose a username">
                     </div>
@@ -191,6 +191,11 @@
         <p class="text-center text-slate-400 text-[12px] mt-12 font-medium tracking-widest uppercase">Version 2.4.0 (BETA)</p>
     </div>
 
+    <!-- Firebase Compat SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
     <script>
         let mode = 'login'; // or 'register'
         const authForm = document.getElementById('auth-form');
@@ -202,6 +207,7 @@
         const submitBtn = document.getElementById('submit-btn');
         const footerLink = document.getElementById('switch-to-reg');
         const emailField = document.getElementById('email-field');
+        const usernameField = document.getElementById('username-field');
         const disciplineField = document.getElementById('discipline-field');
         const tabContainer = document.getElementById('tab-container');
         const backToStep1 = document.getElementById('back-to-step-1');
@@ -219,7 +225,9 @@
                 tabRegister.classList.remove('active');
                 formTitle.textContent = 'Welcome Back';
                 submitBtn.innerHTML = 'Sign In <span class="material-symbols-outlined">arrow_forward</span>';
-                emailField.classList.add('hidden');
+                emailField.classList.remove('hidden'); // Show email
+                usernameField.classList.add('hidden'); // Hide username
+                document.getElementById('username').required = false;
                 disciplineField.classList.add('hidden');
                 footerLink.parentElement.classList.remove('hidden');
             } else {
@@ -228,6 +236,8 @@
                 formTitle.textContent = 'Create Account';
                 submitBtn.innerHTML = 'Next Step <span class="material-symbols-outlined">arrow_forward</span>';
                 emailField.classList.remove('hidden');
+                usernameField.classList.remove('hidden');
+                document.getElementById('username').required = true;
                 disciplineField.classList.remove('hidden');
                 footerLink.parentElement.classList.add('hidden');
             }
@@ -242,36 +252,44 @@
             tabContainer.classList.remove('hidden');
         });
 
-        authForm.addEventListener('submit', (e) => {
+        authForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const user = document.getElementById('username').value;
             const pass = document.getElementById('password').value;
             const email = document.getElementById('email').value;
             const discipline = document.getElementById('discipline').value;
-            const users = JSON.parse(localStorage.getItem('enggtv_users') || '{}');
 
             if (mode === 'login') {
-                if (user === 'demo' && pass === 'habit-tracker') {
+                if (email === 'demo@engg.tv' && pass === 'habit-tracker') {
                     loginSuccess({ username: 'demo', email: 'demo@engg.tv', tier: 'premium', discipline: 'Mechanical' });
                     return;
                 }
-                if (user === 'admin' && pass === 'tiptop007') {
+                if (email === 'admin@engg.tv' && pass === 'tiptop007') {
                     loginSuccess({ username: 'admin', email: 'admin@engg.tv', tier: 'premium', discipline: 'Mechanical' });
                     return;
                 }
-                if (users[user] && users[user].password === pass) {
-                    loginSuccess(users[user]);
-                } else {
-                    showError('Invalid username or password');
+                
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Signing in...';
+                
+                try {
+                    const userCredential = await firebase.auth().signInWithEmailAndPassword(email, pass);
+                    const userDoc = await firebaseDb.collection('users').doc(userCredential.user.uid).get();
+                    
+                    if (userDoc.exists) {
+                        loginSuccess(userDoc.data());
+                    } else {
+                        loginSuccess({ username: email.split('@')[0], email: email, tier: 'free', discipline: 'Mechanical' });
+                    }
+                } catch (error) {
+                    showError(error.message);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Sign In <span class="material-symbols-outlined">arrow_forward</span>';
                 }
             } else {
                 // Register Step 1
-                if (user === 'demo') {
+                if (user === 'demo' || user === 'admin') {
                     showError('Username reserved');
-                    return;
-                }
-                if (users[user]) {
-                    showError('Username already exists');
                     return;
                 }
 
@@ -290,22 +308,42 @@
             }
         });
 
-        regStep2.addEventListener('submit', (e) => {
+        regStep2.addEventListener('submit', async (e) => {
             e.preventDefault();
             const timeline = document.getElementById('exam-timeline').value;
             const country = document.getElementById('country').value;
-            const users = JSON.parse(localStorage.getItem('enggtv_users') || '{}');
+            const submitRegBtn = regStep2.querySelector('button[type="submit"]');
             
-            const fullUserData = { ...pendingUserData, examTimeline: timeline, country: country };
-            users[fullUserData.username] = fullUserData;
-            localStorage.setItem('enggtv_users', JSON.stringify(users));
+            submitRegBtn.disabled = true;
+            submitRegBtn.innerHTML = 'Creating Account...';
             
-            showSuccess('Account created! Please sign in.');
-            setTimeout(() => {
-                setMode('login');
-                regStep2.classList.add('hidden');
-                authForm.classList.remove('hidden');
-            }, 1500);
+            try {
+                // Create user in Firebase Auth
+                const userCredential = await firebase.auth().createUserWithEmailAndPassword(pendingUserData.email, pendingUserData.password);
+                const uid = userCredential.user.uid;
+                
+                // Save extra data to Firestore
+                const fullUserData = { 
+                    uid: uid,
+                    username: pendingUserData.username,
+                    email: pendingUserData.email,
+                    tier: pendingUserData.tier,
+                    discipline: pendingUserData.discipline,
+                    examTimeline: timeline, 
+                    country: country 
+                };
+                
+                await firebaseDb.collection('users').doc(uid).set(fullUserData);
+                
+                showSuccess('Account created! Logging you in...');
+                setTimeout(() => {
+                    loginSuccess(fullUserData);
+                }, 1500);
+            } catch (error) {
+                showError(error.message);
+                submitRegBtn.disabled = false;
+                submitRegBtn.innerHTML = 'Complete Registration <span class="material-symbols-outlined">check_circle</span>';
+            }
         });
 
         function loginSuccess(userData) {
@@ -333,6 +371,9 @@
         if (localStorage.getItem('enggtv_authenticated') === 'true') {
             window.location.href = 'index.html';
         }
+        
+        // Initialize view mode
+        setMode('login');
     </script>
 </body>
 </html>
