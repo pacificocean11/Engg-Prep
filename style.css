@@ -286,27 +286,7 @@ html.dark #bottom-nav {
 
 #liquid-wave-element { display: none; }
 
-/* Enhanced Cursor Follower */
-#cursor-follower {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: var(--accent-pink);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background-color 0.3s, opacity 0.3s;
-    mix-blend-mode: difference;
-    opacity: 0.8;
-}
 
-#cursor-follower.active {
-    width: 60px;
-    height: 60px;
-    background: var(--accent-yellow);
-    opacity: 0.4;
-}
 
 /* Staggered Entrance Animations */
 .stagger-item {
@@ -2122,26 +2102,6 @@ html.dark .liquid-progress-container {
 /* ============================================================
    Premium Interactive Effects
    ============================================================ */
-#cursor-follower {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 0, 110, 0.3);
-    border: 2px solid var(--accent-pink);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transition: width 0.3s, height 0.3s, background 0.3s, border-color 0.3s;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
-}
-
-#cursor-follower.active {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 0, 110, 0.1);
-    border-color: var(--accent-yellow);
-}
 
 .nav-links li {
     position: relative;

@@ -354,7 +354,7 @@ const MECHANICAL_SUBJECTS = [
     },
     {
         "id": "design",
-        "name": "Mechanical Design and Anaysis",
+        "name": "Mechanical Design and Analysis",
         "icon": "🕹️",
         "topics": [
             "Deformation and Stiffness",
@@ -1323,7 +1323,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "$(x + 1)^2 + (y - 4)^2 = 5$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -1333,7 +1333,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$(x + 1)^2 + (y - 4)^2 = 25$",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5278,12 +5278,12 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "52.48",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "D",
                     "text": "54.24",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -5301,7 +5301,7 @@ const QUESTIONS = {
                         "content": "Remaining students = $20 + 12 - 7 = 25$. Average = $1312 / 25 = 54.24$ kg."
                     }
                 ],
-                "final_answer": "D",
+                "final_answer": "C",
                 "solution_image": ""
             }
         },
@@ -5637,6 +5637,145 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
+
+        {
+        "topic": "Expected Value of a Continuous Random Variable",
+        "title": "Expected Value of a Continuous Random Variable",
+        "question": "A continuous random variable $X$ has a probability density function $f(x) = \\frac{3}{8}x^2$ for $0 \\le x \\le 2$ and $f(x) = 0$ otherwise. Find the expected value of $X$.",
+        "question_image": "",
+        "options": [
+            {
+                "label": "A",
+                "text": "1.25",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "1.50",
+                "is_correct": true
+            },
+            {
+                "label": "C",
+                "text": "1.75",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "1.80",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Write down the formula for Expected Value",
+                    "content": "The expected value $E[X]$ of a continuous random variable with probability density function $f(x)$ is given by: $E[X] = \\int_{-\\infty}^{\\infty} x f(x) \\, dx$."
+                },
+                {
+                    "title": "Set up the integral with given limits",
+                    "content": "Since $f(x) = \\frac{3}{8}x^2$ only for $0 \\le x \\le 2$ and $0$ elsewhere, we can write: $E[X] = \\int_{0}^{2} x \\left( \\frac{3}{8}x^2 \\right) \\, dx = \\int_{0}^{2} \\frac{3}{8}x^3 \\, dx$."
+                },
+                {
+                    "title": "Evaluate the integral",
+                    "content": "Integrate with respect to $x$: $E[X] = \\frac{3}{8} \\left[ \\frac{x^4}{4} \\right]_{0}^{2} = \\frac{3}{32} \\left[ x^4 \\right]_{0}^{2} = \\frac{3}{32} \\left( 2^4 - 0^4 \\right) = \\frac{3}{32} \\times 16 = \\frac{3}{2} = 1.50$."
+                }
+            ],
+            "final_answer": "B",
+            "solution_image": ""
+        }
+    },
+    {
+        "topic": "Measures of Central Tendencies and Dispersions",
+        "title": "Expected Value of X^2",
+        "question": "A random variable $X$ has an expected value $E[X] = 10$ and a variance $Var(X) = 4$. What is the expected value of $X^2$?",
+        "question_image": "",
+        "options": [
+            {
+                "label": "A",
+                "text": "96",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "100",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "104",
+                "is_correct": true
+            },
+            {
+                "label": "D",
+                "text": "116",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Identify the relationship between Variance and Expected Values",
+                    "content": "The variance of a random variable $X$ is defined by the algebraic identity: $Var(X) = E[X^2] - (E[X])^2$."
+                },
+                {
+                    "title": "Rearrange the formula to solve for E[X^2]",
+                    "content": "$E[X^2] = Var(X) + (E[X])^2$."
+                },
+                {
+                    "title": "Substitute the given values",
+                    "content": "Given parameters: $E[X] = 10$ and $Var(X) = 4$. Substitute these values into the rearranged equation: $E[X^2] = 4 + (10)^2 = 4 + 100 = 104$."
+                }
+            ],
+            "final_answer": "C",
+            "solution_image": ""
+        }
+    },
+    {
+        "topic": "Probability Distributions",
+        "title": "Expected Value of a Uniformly Distributed Random Variable",
+        "question": "A continuous random variable $X$ is uniformly distributed between $a = 10$ and $b = 30$. What is the expected value $E[X]$?",
+        "question_image": "",
+        "options": [
+            {
+                "label": "A",
+                "text": "10",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "15",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "20",
+                "is_correct": true
+            },
+            {
+                "label": "D",
+                "text": "25",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Identify the Expected Value formula for a Uniform Distribution",
+                    "content": "For a continuous uniform distribution defined on the interval $[a, b]$, the probability density function is symmetric, and its expected value (mean) lies exactly at the midpoint of the interval: $E[X] = \\frac{a + b}{2}$."
+                },
+                {
+                    "title": "Substitute the given boundary limits",
+                    "content": "Given limits: Lower bound ($a$) = 10, Upper bound ($b$) = 30. Substitute these values into the formula: $E[X] = \\frac{10 + 30}{2}$."
+                },
+                {
+                    "title": "Simplify the expression",
+                    "content": "$E[X] = \\frac{40}{2} = 20$."
+                }
+            ],
+            "final_answer": "C",
+            "solution_image": ""
+        }
+    },
         {
             "topic": "Expected Value",
             "title": "Expected Value of a Discrete Function",
@@ -5772,12 +5911,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "43",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "37",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5801,7 +5940,7 @@ const QUESTIONS = {
                         "content": "$E[Z] = 4(12) - 2(8) + 5 = 48 - 16 + 5 = 37$."
                     }
                 ],
-                "final_answer": "A",
+                "final_answer": "B",
                 "solution_image": ""
             }
         },
@@ -17474,15 +17613,15 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Definition of a Sunk Cost",
-                        "content": "In economics and business decision-making, a **sunk cost** is a cost that has already been incurred and cannot be recovered. Because these costs do not change based on future actions, they should be ignored when making decisions about the future."
+                        "content": "In economics and business decision-making, a sunk cost is a cost that has already been incurred and cannot be recovered. Because these costs do not change based on future actions, they should be ignored when making decisions about the future."
                     },
                     {
                         "title": "Comparison with Other Cost Types",
-                        "content": "- **Incremental cost:** The additional cost incurred by choosing one alternative over another (in this case, the $100,000$ investment would be incremental).\\n- **Opportunity cost:** The value of the next best alternative foregone as a result of making a decision.\\n- **Average cost:** The total cost divided by the number of units produced."
+                        "content": "Incremental cost: The additional cost incurred by choosing one alternative over another (in this case, the $100,000$ investment would be incremental).\\n- **Opportunity cost:** The value of the next best alternative foregone as a result of making a decision.\\n- **Average cost:** The total cost divided by the number of units produced."
                     },
                     {
                         "title": "Conclusion",
-                        "content": "Since the $15,000$ is a past expense that is irrelevant to the current decision of whether to buy new equipment, it is classified as a sunk cost."
+                        "content": "Since the USD 15,000 is a past expense that is irrelevant to the current decision of whether to buy new equipment, it is classified as a sunk cost."
                     }
                 ],
                 "final_answer": "B",
@@ -17528,11 +17667,11 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Application to the Problem",
-                        "content": "By choosing to use the space internally, the firm is forfeiting the $3,000$ per month it would have otherwise received from a tenant. Even though no actual cash is being paid out by the firm to use its own building, the 'lost revenue' of $3,000$ is a real economic cost that must be charged against the new internal project to determine its true profitability."
+                        "content": "By choosing to use the space internally, the firm is forfeiting the USD 3,000 per month it would have otherwise received from a tenant. Even though no actual cash is being paid out by the firm to use its own building, the 'lost revenue' of $3,000$ is a real economic cost that must be charged against the new internal project to determine its true profitability."
                     },
                     {
                         "title": "Why Other Options are Incorrect",
-                        "content": "- **Sunk cost:** This refers to money already spent in the past that cannot be recovered.\\n- **Fixed cost:** These are business expenses that do not change with the level of production.\\n- **Marginal cost:** This is the cost of producing one additional unit of a product."
+                        "content": "- Sunk cost: This refers to money already spent in the past that cannot be recovered.\\n- Fixed cost: These are business expenses that do not change with the level of production.\\n- **Marginal cost:** This is the cost of producing one additional unit of a product."
                     }
                 ],
                 "final_answer": "C",
@@ -17542,7 +17681,7 @@ const QUESTIONS = {
         {
             "topic": "Cost Types and Breakdowns",
             "title": "Incremental Cost Analysis",
-            "question": "A production line produces 2,000 components per day at a total cost of $12,000$. Management is considering increasing production to 2,500 components per day, which would result in a new total daily cost of $14,250$. What is the incremental cost per unit for this expansion?",
+            "question": "A production line produces 2,000 components per day at a total cost of USD 12,000. Management is considering increasing production to 2,500 components per day, which would result in a new total daily cost of $14,250$. What is the incremental cost per unit for this expansion?",
             "question_image": "",
             "options": [
                 {
@@ -17588,7 +17727,7 @@ const QUESTIONS = {
         {
             "topic": "Cost Types and Breakdowns",
             "title": "Average Manufacturing Cost Calculation",
-            "question": "A manufacturing process has fixed monthly costs of $25,000$ and variable costs of $12.50$ per unit. If the facility produces 5,000 units in a month, what is the average cost per unit?",
+            "question": "A manufacturing process has fixed monthly costs of USD 25,000 and variable costs of USD 12.50 per unit. If the facility produces 5,000 units in a month, what is the average cost per unit?",
             "question_image": "",
             "options": [
                 {
@@ -17684,7 +17823,7 @@ const QUESTIONS = {
         {
             "topic": "Economic Analyses",
             "title": "Simple Payback Period Calculation",
-            "question": "A new manufacturing system costs 85,000 to install and is expected to generate annual savings of 18,000 in labor and material costs. Assuming no interest and no salvage value, what is the simple payback period for this investment?",
+            "question": "A new manufacturing system costs USD 85,000 to install and is expected to generate annual savings of USD 18,000 in labor and material costs. Assuming no interest and no salvage value, what is the simple payback period for this investment?",
             "question_image": "",
             "options": [
                 {
@@ -17730,13 +17869,13 @@ const QUESTIONS = {
         {
             "topic": "Economic Analyses",
             "title": "Benefit-Cost Ratio Analysis",
-            "question": "A public works project has an initial cost of 1,200,000 and annual maintenance costs of 50,000. The project is expected to provide annual benefits of $220,000 to the public. Using a project life of 20 years and an interest rate of 6%, what is the benefit-cost (B/C) ratio?",
+            "question": "A public works project has an initial cost of USD 1,200,000 and annual maintenance costs of USD 50,000. The project is expected to provide annual benefits of $220,000 to the public. Using a project life of 20 years and an interest rate of 6%, what is the benefit-cost (B/C) ratio?",
             "question_image": "",
             "options": [
                 {
                     "label": "A",
                     "text": "1.34",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17746,7 +17885,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "1.42",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17780,7 +17919,7 @@ const QUESTIONS = {
         {
             "topic": "Economic Analyses",
             "title": "Simple Payback Period Calculation",
-            "question": "A manufacturing firm is considering a new machine that costs 15,000. The machine is expected to reduce annual operating costs by 4,000 per year for 5 years. If the company's minimum attractive rate of return (MARR) is 10%, what is the simple payback period for this investment?",
+            "question": "A manufacturing firm is considering a new machine that costs USD 15,000. The machine is expected to reduce annual operating costs by 4,000 per year for 5 years. If the company's minimum attractive rate of return (MARR) is 10%, what is the simple payback period for this investment?",
             "question_image": "",
             "options": [
                 {
@@ -18294,7 +18433,7 @@ const QUESTIONS = {
         {
             "topic": "Time Value of Money",
             "title": "Present Worth Factor",
-            "question": "What is the present value of $\\$10{,}000$ to be received in 5 years, given an interest rate of $8\\%$ per year?",
+            "question": "What is the present value of USD 10000 to be received in 5 years, given an interest rate of $8\\%$ per year?",
             "options": [
                 {
                     "label": "A",
@@ -18400,585 +18539,9 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 35",
-            "question": "An engineer deposits $P = $35000$ in an account earning $40\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$105000.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$225886.08$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$188238.40$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$150590.72$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 35000(1 + 0.4)^{5} = 188238.40$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 36",
-            "question": "An engineer deposits $P = $36000$ in an account earning $41\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$109800.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$240757.21$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$160504.81$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$200631.01$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 36000(1 + 0.41)^{5} = 200631.01$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 37",
-            "question": "An engineer deposits $P = $37000$ in an account earning $42\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$213620.76$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$114700.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$256344.91$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$170896.61$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 37000(1 + 0.42)^{5} = 213620.76$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 38",
-            "question": "An engineer deposits $P = $38000$ in an account earning $43\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$119700.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$227229.01$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$272674.81$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$181783.21$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 38000(1 + 0.43)^{5} = 227229.01$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 39",
-            "question": "An engineer deposits $P = $39000$ in an account earning $44\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$124800.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$289773.26$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$241477.72$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$193182.18$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 39000(1 + 0.44)^{5} = 241477.72$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 40",
-            "question": "An engineer deposits $P = $40000$ in an account earning $45\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$130000.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$307667.23$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$205111.49$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$256389.36$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 40000(1 + 0.45)^{5} = 256389.36$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 41",
-            "question": "An engineer deposits $P = $41000$ in an account earning $46\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$271986.99$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$135300.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$326384.39$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$217589.59$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 41000(1 + 0.46)^{5} = 271986.99$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 42",
-            "question": "An engineer deposits $P = $42000$ in an account earning $47\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$140700.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$288294.24$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$345953.09$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$230635.39$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 42000(1 + 0.47)^{5} = 288294.24$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 43",
-            "question": "An engineer deposits $P = $43000$ in an account earning $48\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$146200.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$366402.37$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$305335.31$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$244268.25$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 43000(1 + 0.48)^{5} = 305335.31$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 44",
-            "question": "An engineer deposits $P = $44000$ in an account earning $49\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$151800.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$387762.01$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$258508.01$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$323135.01$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 44000(1 + 0.49)^{5} = 323135.01$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 45",
-            "question": "An engineer deposits $P = $45000$ in an account earning $50\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$341718.75$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$157500.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$410062.50$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$273375.00$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 45000(1 + 0.5)^{5} = 341718.75$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 46",
-            "question": "An engineer deposits $P = $46000$ in an account earning $51\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$163300.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$361112.54$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$433335.05$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$288890.03$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 46000(1 + 0.51)^{5} = 361112.54$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 47",
-            "question": "An engineer deposits $P = $47000$ in an account earning $52\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$169200.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$457611.62$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$381343.02$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$305074.42$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 47000(1 + 0.52)^{5} = 381343.02$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 48",
-            "question": "An engineer deposits $P = $48000$ in an account earning $53\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$175200.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$482924.94$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$321949.96$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$402437.45$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 48000(1 + 0.53)^{5} = 402437.45$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 49",
-            "question": "An engineer deposits $P = $49000$ in an account earning $54\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$424423.76$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$181300.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$509308.51$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$339539.01$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 49000(1 + 0.54)^{5} = 424423.76$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Future Value Compound Interest - Case 50",
-            "question": "An engineer deposits $P = $50000$ in an account earning $55\\%$ annual interest compounded annually. What is the future value $F$ after $5$ years?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$187500.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$447330.48$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$536796.58$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$357864.38$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Future Value Formula",
-                        "content": "$F = P(1 + i)^n = 50000(1 + 0.55)^{5} = 447330.48$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
             "topic": "Depreciation",
             "title": "Straight-Line Depreciation",
-            "question": "A machine costs $50,000, has a salvage value of $5,000, and a useful life of 9 years. What is the annual straight-line depreciation?",
+            "question": "A machine costs $50,000, has a salvage value of USD 5,000, and a useful life of 9 years. What is the annual straight-line depreciation?",
             "options": [
                 {
                     "label": "A",
@@ -19194,7 +18757,7 @@ const QUESTIONS = {
         {
             "topic": "Benefit-Cost Analysis",
             "title": "Benefit-Cost Ratio",
-            "question": "A highway project has total benefits of $8 million and total costs of $5 million over a 20-year analysis period (both in present worth). What is the benefit-cost ratio, and should the project be accepted?",
+            "question": "A highway project has total benefits of USD 8 million and total costs of $5 million over a 20-year analysis period (both in present worth). What is the benefit-cost ratio, and should the project be accepted?",
             "options": [
                 {
                     "label": "A",
@@ -29767,8 +29330,8 @@ const QUESTIONS = {
         },
         {
             "topic": "Fluid Statics",
-            "title": "Total Pressure on Submerged Plate",
-            "question": "Determine the total pressure on a circular plate of diameter 2 m, which is placed vertically in water in such a way that the Center of the plate is 2.5 m below the free surface of the water.",
+            "title": "Total force on Submerged Plate",
+            "question": "Determine the total force on a circular plate of diameter 2 m, which is placed vertically in water in such a way that the Center of the plate is 2.5 m below the free surface of the water.",
             "question_image": "",
             "options": [
                 {
@@ -33127,510 +32690,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 37",
-            "question": "A direct current voltage source of $86$ V is connected across a resistor of $41$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$2.10$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$3526.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$3.15$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{86}{41} = 2.10$ A."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 38",
-            "question": "A direct current voltage source of $88$ V is connected across a resistor of $42$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3696.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2.10$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$3.15$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{88}{42} = 2.10$ A."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 39",
-            "question": "A direct current voltage source of $90$ V is connected across a resistor of $43$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3870.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.13$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2.09$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{90}{43} = 2.09$ A."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 40",
-            "question": "A direct current voltage source of $92$ V is connected across a resistor of $44$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4048.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.13$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2.09$ A",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{92}{44} = 2.09$ A."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 41",
-            "question": "A direct current voltage source of $94$ V is connected across a resistor of $45$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$2.09$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$4230.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$3.13$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{94}{45} = 2.09$ A."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 42",
-            "question": "A direct current voltage source of $96$ V is connected across a resistor of $46$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4416.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2.09$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$3.13$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{96}{46} = 2.09$ A."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 43",
-            "question": "A direct current voltage source of $98$ V is connected across a resistor of $47$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4606.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.13$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2.09$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{98}{47} = 2.09$ A."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 44",
-            "question": "A direct current voltage source of $100$ V is connected across a resistor of $48$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4800.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.12$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2.08$ A",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{100}{48} = 2.08$ A."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 45",
-            "question": "A direct current voltage source of $102$ V is connected across a resistor of $49$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$2.08$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$4998.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$3.12$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{102}{49} = 2.08$ A."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 46",
-            "question": "A direct current voltage source of $104$ V is connected across a resistor of $50$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$5200.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2.08$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$3.12$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{104}{50} = 2.08$ A."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 47",
-            "question": "A direct current voltage source of $106$ V is connected across a resistor of $51$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$5406.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.12$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2.08$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{106}{51} = 2.08$ A."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 48",
-            "question": "A direct current voltage source of $108$ V is connected across a resistor of $52$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$5616.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$3.12$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2.08$ A",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{108}{52} = 2.08$ A."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 49",
-            "question": "A direct current voltage source of $110$ V is connected across a resistor of $53$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$2.08$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$5830.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$3.12$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{110}{53} = 2.08$ A."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Electrostatics",
-            "title": "Ohm's Law Circuit - Case 50",
-            "question": "A direct current voltage source of $112$ V is connected across a resistor of $54$ $\\Omega$. What is the current flowing through the resistor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$6048.00$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2.07$ A",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$3.10$ A",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$0$ A",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ohm's Law",
-                        "content": "$I = \\dfrac{V}{R} = \\dfrac{112}{54} = 2.07$ A."
-                    }
-                ],
-                "final_answer": "B"
             }
         },
         {
@@ -38070,12 +37129,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "When only the inlet temperatures of the hot and cold fluids are known, and the outlet temperatures are unknown",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "When all four inlet and outlet temperatures are known",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -38108,7 +37167,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Actual heat transfer rate to the maximum possible heat transfer rate",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -38118,7 +37177,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "LMTD in parallel flow to LMTD in counterflow",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -38130,7 +37189,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Effectiveness Formula",
-                        "content": "$epsilon = \frac{Q_{actual}}{Q_{max}} = \frac{C_h(T_{h,in} - T_{h,out})}{C_{min}(T_{h,in} - T_{c,in})} = \frac{C_c(T_{c,out} - T_{c,in})}{C_{min}(T_{h,in} - T_{c,in})}$ where $C = dot{m}C_p$."
+                        "content": "$\epsilon = \frac{Q_{actual}}{Q_{max}} = \frac{C_h(T_{h,in} - T_{h,out})}{C_{min}(T_{h,in} - T_{c,in})} = \frac{C_c(T_{c,out} - T_{c,in})}{C_{min}(T_{h,in} - T_{c,in})}$ where $C = \dot{m}C_p$."
                     }
                 ],
                 "final_answer": "A",
@@ -38225,22 +37284,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$epsilon = 1 - e^{-NTU}$",
+                    "text": "$\epsilon = 1 - e^{-NTU}$",
                     "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$epsilon = NTU / (1 + NTU)$",
+                    "text": "$\epsilon = NTU / (1 + NTU)$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$epsilon = 1$",
+                    "text": "$\epsilon = 1$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$epsilon = e^{-NTU}$",
+                    "text": "$\epsilon = e^{-NTU}$",
                     "is_correct": true
                 }
             ],
@@ -38296,7 +37355,7 @@ const QUESTIONS = {
         {
             "topic": "Radiation",
             "title": "Radiation View Factor Reciprocity",
-            "question": "Surface 1 ($A_1 = 2\text{ m}^2$) and Surface 2 ($A_2 = 4\text{ m}^2$) have a view factor $F_{12} = 0.60$. What is the view factor $F_{21}$?",
+            "question": "Surface 1 ($A_1 = 2 m^2$) and Surface 2 ($A_2 = 4 m^2$) have a view factor $F_{12} = 0.60$. What is the view factor $F_{21}$?",
             "question_image": "",
             "options": [
                 {
@@ -40509,22 +39568,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "σ_h = 60 MPa",
+                    "text": "$σ_h$ = 60 MPa",
                     "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "σ_h = 240 MPa",
+                    "text": "$σ_h$ = 240 MPa",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "σ_h = 120 MPa",
+                    "text": "$σ_h$ = 120 MPa",
                     "is_correct": true
                 },
                 {
                     "label": "D",
-                    "text": "σ_h = 12 MPa",
+                    "text": "$σ_h$ = 12 MPa",
                     "is_correct": false
                 }
             ],
@@ -40843,22 +39902,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "F_b = 32 kN",
+                    "text": "$F_b$ = 32 kN",
                     "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "F_b = 23 kN",
+                    "text": "$F_b$ = 23 kN",
                     "is_correct": true
                 },
                 {
                     "label": "C",
-                    "text": "F_b = 20 kN",
+                    "text": "$F_b$ = 20 kN",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "F_b = 29 kN",
+                    "text": "$F_b$ = 29 kN",
                     "is_correct": false
                 }
             ],
@@ -43167,22 +42226,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$TR = \frac{F d_m}{2} left[ \frac{l + pi mu d_m}{pi d_m - mu l} \right]$",
+                    "text": "$T_R = \frac{F d_m}{2} \left[ \frac{l + \pi \mu d_m}{\pi d_m - \mu l} \right]$",
                     "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$TR = \frac{F d_m}{2} left[ \frac{pi mu d_m - l}{pi d_m + mu l} \right]$",
+                    "text": "$T_R = \frac{F d_m}{2} \left[ \frac{\pi \mu d_m - l}{\pi d_m + \mu l} \right]$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$TR = F d_m mu$",
+                    "text": "$T_R = F d_m \mu$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$TR = \frac{F d_m}{2} \tanlambda$",
+                    "text": "$T_R = \frac{F d_m}{2} \tan \lambda$",
                     "is_correct": true
                 }
             ],
@@ -56554,7 +55613,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The consistency and workability of fresh concrete",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -56564,7 +55623,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The water-cement ratio of hardened concrete",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {

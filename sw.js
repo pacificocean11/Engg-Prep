@@ -1,4 +1,4 @@
-const CACHE_NAME = 'enggtv-cache-v1.5';
+﻿const CACHE_NAME = 'enggtv-cache-v2.0';
 const urlsToCache = [
   './',
   './index.html',
@@ -86,3 +86,6 @@ self.addEventListener('activate', event => {
     })
   );
 });
+
+
+

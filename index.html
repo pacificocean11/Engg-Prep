@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,11 @@
         if (localStorage.getItem('enggtv_authenticated') !== 'true') {
             window.location.href = 'login.html';
         }
-        
-        // Immediately apply saved theme preference to prevent flicker
+
+        // Immediately apply saved theme -- default is LIGHT; dark only activates if user explicitly chose it
         const savedTheme = localStorage.getItem('enggtv_theme');
-        if (savedTheme === 'light') {
-            document.documentElement.classList.remove('dark');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
         }
 
         // Prevent flash of dashboard if intro is meant to play
@@ -130,13 +130,12 @@
         <div class="glass-shape shape-1"></div>
         <div class="glass-shape shape-2"></div>
         <div class="glass-shape shape-3"></div>
-        <div class="floating-symbol" style="top: 10%; left: 5%;">⚙️</div>
+        <div class="floating-symbol" style="top: 10%; left: 5%;">⚙️</div>
         <div class="floating-symbol" style="top: 25%; left: 85%;">∫</div>
         <div class="floating-symbol" style="top: 45%; left: 15%;">π</div>
         <div class="floating-symbol" style="top: 65%; left: 80%;">Σ</div>
         <div class="floating-symbol" style="top: 85%; left: 10%;">Δ</div>
     </div>
-    <div id="cursor-follower" class="hidden md:block"></div>
     <div id="toast-container"></div>
     <script>
         if (localStorage.getItem('enggtv_theme') === 'light') {
@@ -163,9 +162,7 @@
 
 
 </div>
-<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 active:scale-95 transition-all duration-200">
-<span class="material-symbols-outlined text-slate-500" data-icon="notifications">notifications</span>
-</button>
+
 </div>
 </header>
     <main class="px-4 md:px-6 pt-20 pb-28 flex flex-col gap-stack-lg w-full max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto overflow-x-hidden">
@@ -413,6 +410,49 @@
 
 </section>
 
+<!-- Admin Tools (visible only to admin) -->
+<div id="admin-tools-section" class="hidden">
+    <h3 class="font-label-caps text-label-caps text-amber-500 px-2 mt-6 mb-2 uppercase tracking-widest">Admin Tools</h3>
+    <div class="glass-card p-4 mb-4 flex flex-col gap-3 border border-amber-500/20">
+        <div class="flex items-center gap-4 text-left">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined">security</span>
+            </div>
+            <div class="flex-1 min-w-0">
+                <span class="font-title-sm text-title-sm dark:text-slate-100 block font-bold">Purge Bot Accounts</span>
+                <span class="text-[11px] font-medium text-slate-400 block whitespace-normal mt-0.5">Scan and delete empty/invalid accounts from database</span>
+            </div>
+        </div>
+        <button id="btn-purge-bots" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-2xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-widest">
+            <span class="material-symbols-outlined text-sm">cleaning_services</span>
+            Start Purge System
+        </button>
+    </div>
+
+    <!-- Send Message to User -->
+    <div class="glass-card p-4 flex flex-col gap-3 border border-amber-500/20">
+        <div class="flex items-center gap-4 text-left">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">send</span>
+            </div>
+            <div class="flex-1 min-w-0">
+                <span class="font-title-sm text-title-sm dark:text-slate-100 block font-bold">Send Message to User</span>
+                <span class="text-[11px] font-medium text-slate-400 block mt-0.5">Leave a personal message for any registered user</span>
+            </div>
+        </div>
+        <input id="admin-msg-recipient" type="text" placeholder="Username (e.g. sara)"
+            class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl text-sm text-slate-800 dark:text-slate-100 outline-none focus:ring-2 focus:ring-amber-400 transition-all">
+        <textarea id="admin-msg-body" rows="3" maxlength="500" placeholder="Type your message here..."
+            class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl text-sm text-slate-800 dark:text-slate-100 outline-none focus:ring-2 focus:ring-amber-400 transition-all resize-none"></textarea>
+        <button id="btn-send-admin-msg" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-2xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-widest">
+            <span class="material-symbols-outlined text-sm">send</span>
+            Send Message
+        </button>
+    </div>
+
+    </div>
+</div>
+
 <!-- Danger Zone -->
 <section class="mt-stack-lg">
     <h3 class="font-label-caps text-label-caps text-error px-2 mb-2 uppercase">Danger Zone</h3>
@@ -498,12 +538,7 @@
                             </div>
                         </div>
 
-                        <div class="exam-history-section">
-                            <h3>Recent Performance</h3>
-                            <div class="empty-history">
-                                <p>No mock exams completed yet. Your results will appear here after your first session.</p>
-                            </div>
-                        </div>
+                        
                     </div>
                     
                     <div class="mock-exam-landing hidden" id="exam-locked">
@@ -700,6 +735,11 @@
                                 </div>
 
                                 <div>
+                                    <label for="contact-email" class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1 mb-1">Email Address</label>
+                                    <input id="contact-email" type="email" placeholder="Optional, only if you want to hear back from us" class="w-full p-4 bg-slate-50 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-secondary outline-none transition-all text-slate-800 dark:text-slate-100">
+                                </div>
+
+                                <div>
                                     <label for="contact-subject" class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1 mb-1">Subject</label>
                                     <select id="contact-subject" required class="w-full p-4 bg-slate-50 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-secondary outline-none transition-all text-slate-800 dark:text-slate-100">
                                         <option value="Technical Issue">Technical Issue</option>
@@ -729,6 +769,18 @@
                                 <a href="mailto:admin@engg.tv" class="text-secondary font-bold hover:underline">admin@engg.tv</a>
                                 <p class="text-[10px] text-slate-400 dark:text-slate-500 mt-4 uppercase tracking-widest font-bold">©2026 ENGG.tv Developer Team</p>
                             </div>
+                        </div>
+
+                        <!-- Admin Inbox - messages sent TO this user by admin -->
+                        <div id="admin-inbox-container" class="mt-6 hidden">
+                            <div class="flex items-center justify-between mb-3 px-1">
+                                <h3 class="font-label-caps text-label-caps text-slate-400 uppercase tracking-widest flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings:'FILL' 1;">mark_unread_chat_alt</span>
+                                    Messages from Admin
+                                </h3>
+                                <span id="admin-inbox-count" class="text-[10px] font-black bg-secondary text-white px-2 py-0.5 rounded-full hidden">0 new</span>
+                            </div>
+                            <div id="admin-inbox-list" class="space-y-3"></div>
                         </div>
                     </div>
                 </section>

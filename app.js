@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        console.log(`🔄 Syncing data for ${state.user.username} to Firebase...`);
+        console.log(`�� Syncing data for ${state.user.username} to Firebase...`);
 
         try {
             const lightActivity = (state.recentActivity || []).map(a => ({
@@ -413,6 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const country = state.user.country || 'Other';
 
             const payload = {
+                username: state.user.username,
                 userPoints: state.userPoints,
                 userProgress: state.userProgress,
                 recentActivity: lightActivity,
@@ -436,13 +437,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (!state.user.username || state.user.username === 'guest') return;
 
-        console.log(`📂 Loading data for ${state.user.username} from Firebase...`);
+        console.log(`�� Loading data for ${state.user.username} from Firebase...`);
         try {
             const data = await window.getUserProgress(state.user.username);
             if (data) {
                 if (data.userPoints !== undefined) {
-                    state.userPoints = data.userPoints;
-                    localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
+                    // Always keep the HIGHER value — never let cloud overwrite a higher local score
+                    const cloudPoints = Number(data.userPoints);
+                    if (cloudPoints > state.userPoints) {
+                        state.userPoints = cloudPoints;
+                        localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
+                    } else {
+                        // Local is higher — sync it back up to cloud
+                        console.log(`�� Local points (${state.userPoints}) > Cloud (${cloudPoints}). Will sync local to cloud.`);
+                    }
                 }
                 if (data.userProgress) {
                     state.userProgress = data.userProgress;
@@ -555,6 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function init() {
         setupQuizListeners();
         setupDashboardListeners();
+        setupAdminListeners();
         renderSubjects();
         setupNavigation();
         setupMobileMenu();
@@ -565,14 +574,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Load cloud data, then do an initial sync to push any localStorage data not yet in Firebase
         loadFromFirebase().then(() => {
             syncToFirebase();
+            checkAdminMessages();
             initTilt();
             initMagneticButtons();
-            initCursorFollower();
             setupHeaderScroll();
-        });
+        }).catch(e => console.error('loadFromFirebase REJECTED:', e));
         initTilt();
         initMagneticButtons();
-        initCursorFollower();
         setupHeaderScroll();
     }
 
@@ -587,59 +595,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.classList.remove('scrolled');
             }
         });
-    }
-
-    function initCursorFollower() {
-        const follower = document.getElementById('cursor-follower');
-        if (!follower) return;
-
-        let mouseX = 0;
-        let mouseY = 0;
-        let followerX = 0;
-        let followerY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // For spotlight effects on cards
-            const cards = document.querySelectorAll('.glass-card, .tilt-card');
-            cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
-
-        function animateFollower() {
-            // Smooth lerp (linear interpolation) for momentum effect
-            followerX += (mouseX - followerX) * 0.15;
-            followerY += (mouseY - followerY) * 0.15;
-
-            follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
-            requestAnimationFrame(animateFollower);
-        }
-        animateFollower();
-
-        // Refresh interactive elements listeners periodically or on page change
-        function updateFollowerListeners() {
-            const interactiveElements = document.querySelectorAll('button, a, .option, .map-btn, .nav-links li, .glass-card, .tilt-card, .subject-card-tilt');
-            
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    follower.classList.add('active');
-                });
-                el.addEventListener('mouseleave', () => {
-                    follower.classList.remove('active');
-                });
-            });
-        }
-        updateFollowerListeners();
-        
-        // Expose to global so we can call it after rendering dynamic content
-        window.updateFollowerListeners = updateFollowerListeners;
     }
 
     function initTilt() {
@@ -692,6 +647,296 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    }
+
+
+    // ── Admin Messaging System ─────────────────────────────────────────────
+
+    /** Show a premium toast notification */
+    function showToast(message, type = 'info', durationMs = 6000) {
+        const existing = document.getElementById('admin-toast');
+        if (existing) existing.remove();
+
+        const colors = {
+            info:    'bg-secondary text-white',
+            success: 'bg-green-500 text-white',
+            warning: 'bg-amber-500 text-white',
+            admin:   'bg-gradient-to-r from-secondary to-primary text-white'
+        };
+        const icons = { info: 'info', success: 'check_circle', warning: 'warning', admin: 'admin_panel_settings' };
+
+        const toast = document.createElement('div');
+        toast.id = 'admin-toast';
+        toast.className = `fixed top-5 left-1/2 -translate-x-1/2 z-[9999] flex items-start gap-3 px-5 py-4 rounded-2xl shadow-2xl max-w-sm w-full ${colors[type] || colors.info} transition-all duration-300 opacity-0 -translate-y-4`;
+        toast.innerHTML = `
+            <span class="material-symbols-outlined text-xl shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1;">${icons[type] || 'info'}</span>
+            <div class="flex-1">
+                <p class="font-bold text-[11px] uppercase tracking-widest opacity-75 mb-0.5">Message from Admin</p>
+                <p class="text-sm font-medium leading-snug">${message}</p>
+            </div>
+            <button onclick="this.closest('#admin-toast').remove()" class="shrink-0 opacity-60 hover:opacity-100 mt-0.5">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>`;
+        document.body.appendChild(toast);
+        requestAnimationFrame(() => {
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateX(-50%) translateY(0)';
+        });
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(-16px)';
+            setTimeout(() => toast.remove(), 400);
+        }, durationMs);
+    }
+    /** Check for unread admin messages on login and show toast */
+    async function checkAdminMessages() {
+        if (!window.firebaseDb) { console.warn('window.firebaseDb is NULL - Firebase not loaded!'); return; }
+        if (!state.user.username) { console.warn('state.user.username is empty'); return; }
+        if (state.user.username === 'guest') return;
+        if (state.user.username && state.user.username.toLowerCase() === 'admin') return;
+        try {
+            // Force fresh reads from Firestore server (bypass local SDK cache)
+            const opts = { source: 'server' };
+
+            // Get best available UID
+            const uid = state.user.uid || (window.firebase && firebase.auth().currentUser && firebase.auth().currentUser.uid) || null;
+
+            const docsToCheck = [];
+
+            // 1. UID-keyed document
+            if (uid) {
+                const uidDoc = await window.firebaseDb.collection('users').doc(uid).get(opts);
+                if (uidDoc.exists) docsToCheck.push(uidDoc);
+            }
+
+            // 2. Username-keyed document
+            const userDoc = await window.firebaseDb.collection('users').doc(state.user.username).get(opts);
+            if (userDoc.exists && (!uid || userDoc.id !== uid)) docsToCheck.push(userDoc);
+
+            // 3. Full collection scan (catches any remaining edge case)
+            if (docsToCheck.length === 0) {
+                const snap = await window.firebaseDb.collection('users').where('username', '==', state.user.username).limit(1).get(opts);
+                if (!snap.empty) docsToCheck.push(snap.docs[0]);
+            }
+
+            let foundUnread = false;
+
+            for (const doc of docsToCheck) {
+                const data = doc.data();
+                const messages = data.adminMessages || [];
+                const unread = messages.filter(m => !m.read);
+                if (unread.length > 0 && !foundUnread) {
+                    foundUnread = true;
+                    const latest = unread[unread.length - 1];
+                    setTimeout(() => showToast(latest.body, 'admin', 8000), 1500);
+                    const updated = messages.map(m => ({ ...m, read: true }));
+                    await doc.ref.update({ adminMessages: updated });
+                }
+            }
+
+        } catch(e) { console.error('[AdminMsg] Error:', e); }
+    }
+    /** Render inbox in the support-view page */
+    /** Render inbox in the support-view page */
+    async function renderAdminInbox() {
+        const container = document.getElementById('admin-inbox-container');
+        const list = document.getElementById('admin-inbox-list');
+        const countBadge = document.getElementById('admin-inbox-count');
+        if (!container || !list) return;
+        if (!window.firebaseDb || !state.user.username || state.user.username === 'guest' || (state.user.username && state.user.username.toLowerCase() === 'admin')) return;
+
+        try {
+            const uid = state.user.uid || (window.firebase && firebase.auth().currentUser && firebase.auth().currentUser.uid) || null;
+            let allMessages = [];
+
+            const seenIds = new Set();
+            const addMessages = (msgs) => {
+                msgs.forEach(m => { if (!seenIds.has(m.id)) { seenIds.add(m.id); allMessages.push(m); } });
+            };
+
+            if (uid) {
+                const d = await window.firebaseDb.collection('users').doc(uid).get();
+                if (d.exists) addMessages(d.data().adminMessages || []);
+            }
+            const d2 = await window.firebaseDb.collection('users').doc(state.user.username).get();
+            if (d2.exists && (!uid || d2.id !== uid)) addMessages(d2.data().adminMessages || []);
+
+            if (allMessages.length === 0) { container.classList.add('hidden'); return; }
+            container.classList.remove('hidden');
+
+            const unreadCount = allMessages.filter(m => !m.read).length;
+            if (unreadCount > 0) {
+                countBadge.textContent = unreadCount + ' new';
+                countBadge.classList.remove('hidden');
+            } else {
+                countBadge.classList.add('hidden');
+            }
+
+            allMessages.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+            list.innerHTML = allMessages.map(msg => {
+                const date = msg.timestamp ? new Date(msg.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+                const isUnread = !msg.read;
+                return `<div class="glass-card p-4 rounded-2xl ${isUnread ? 'border-l-4 border-secondary' : 'opacity-80'}">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings:'FILL' 1;">admin_panel_settings</span>
+                            <span class="text-[11px] font-black text-secondary uppercase tracking-widest">Admin</span>
+                            ${isUnread ? '<span class="text-[9px] font-black bg-secondary text-white px-1.5 py-0.5 rounded-full uppercase">New</span>' : ''}
+                        </div>
+                        <span class="text-[10px] text-slate-400">${date}</span>
+                    </div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">${msg.body}</p>
+                </div>`;
+            }).join('');
+        } catch(e) { console.error('Error loading admin inbox:', e); }
+    }
+    /** Admin: send a message to a specific user (robust dual-lookup) */
+    /** Admin: send a message to a specific user (robust dual-lookup) */
+    /** Admin: send a message to a specific user — dual-write for guaranteed delivery */
+    async function sendAdminMessage(recipient, body) {
+        if (!window.firebaseDb) { alert('Database not connected.'); return; }
+        if (!recipient || !body) { alert('Please fill in both recipient username and message.'); return; }
+
+        const recipientLower = recipient.trim().toLowerCase();
+        const newMsg = { body: body.trim(), timestamp: Date.now(), read: false, id: Date.now().toString() };
+        const docsUpdated = [];
+
+        try {
+            // 1. Scan collection for any doc with matching username field
+            const querySnapshot = await window.firebaseDb.collection('users').get();
+            const updatePromises = [];
+
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                if (data && data.username && data.username.toLowerCase() === recipientLower) {
+                    const existing = data.adminMessages || [];
+                    let updated = [...existing, newMsg];
+                    if (updated.length > 5) updated = updated.slice(-5);
+                    updatePromises.push(doc.ref.update({ adminMessages: updated }));
+                    docsUpdated.push(doc.id);
+                }
+            });
+
+            // 2. ALSO write to the username-keyed document directly (dual-write)
+            const usernameDoc = await window.firebaseDb.collection('users').doc(recipientLower).get();
+            if (usernameDoc.exists && !docsUpdated.includes(usernameDoc.id)) {
+                const existing = usernameDoc.data().adminMessages || [];
+                let updated = [...existing, newMsg];
+                if (updated.length > 5) updated = updated.slice(-5);
+                updatePromises.push(usernameDoc.ref.update({ adminMessages: updated }));
+                docsUpdated.push(usernameDoc.id);
+            }
+
+            if (updatePromises.length === 0) {
+                alert('User "' + recipient + '" not found. Make sure the username is spelled exactly as registered.');
+                return;
+            }
+
+            await Promise.all(updatePromises);
+            console.log('[AdminMsg] Message written to docs:', docsUpdated);
+            alert('✅ Message sent to ' + recipient + ' successfully! (Written to ' + docsUpdated.length + ' document(s))');
+        } catch(e) {
+            console.error('Error sending admin message:', e);
+            alert('Error sending message: ' + e.message);
+        }
+    }
+        function setupAdminListeners() {
+        const btnPurgeBots = document.getElementById('btn-purge-bots');
+        if (btnPurgeBots) {
+            btnPurgeBots.addEventListener('click', async () => {
+                if (!window.firebaseDb) {
+                    alert('Database connection not available.');
+                    return;
+                }
+                
+                const confirmPurge = confirm(
+                    'Are you sure you want to scan Firestore for bot accounts? This will find and delete all user documents that:\n' +
+                    '- Have 0 points and have raw UID document IDs\n' +
+                    '- Or have invalid/extremely long usernames (> 20 characters)\n' +
+                    '- Or have no valid username data field.'
+                );
+                
+                if (!confirmPurge) return;
+                
+                btnPurgeBots.disabled = true;
+                btnPurgeBots.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">sync</span> Purging Database...';
+                
+                try {
+                    const querySnapshot = await window.firebaseDb.collection("users").get();
+                    let deleteCount = 0;
+                    let promises = [];
+                    
+                    querySnapshot.forEach(doc => {
+                        const docId = doc.id;
+                        const data = doc.data();
+                        
+                        if (docId === 'guest' || docId === 'admin' || docId === 'demo') return;
+                        
+                        // Ultra-safe purge check:
+                        // ONLY purge if the document ID matches a 28-character Firebase UID pattern
+                        // OR if the document ID is extremely long/invalid (> 20 characters).
+                        // This leaves all normal usernames completely untouched!
+                        const isUid = /^[a-zA-Z0-9]{28}$/.test(docId);
+                        const isTooLong = docId.length > 20;
+                        
+                        if (isUid || isTooLong) {
+                            console.log('�� Purging bot/duplicate account: ' + docId, data);
+                            const p = window.firebaseDb.collection("users").doc(docId).delete();
+                            promises.push(p);
+                            deleteCount++;
+                        }
+                    });
+                    
+                    await Promise.all(promises);
+                    
+                    btnPurgeBots.disabled = false;
+                    btnPurgeBots.innerHTML = '<span class="material-symbols-outlined text-sm">cleaning_services</span> Start Purge System';
+                    
+                    alert('Purge completed successfully! Deleted ' + deleteCount + ' bot/invalid accounts.');
+                    
+                    // Refresh leaderboard if currently viewing it
+                    if (state.currentPage === 'leaderboard') {
+                        renderLeaderboard();
+                    }
+                } catch (e) {
+                    console.error("Purge error:", e);
+                    btnPurgeBots.disabled = false;
+                    btnPurgeBots.innerHTML = '<span class="material-symbols-outlined text-sm">cleaning_services</span> Start Purge System';
+                    alert('Error purging database: ' + e.message);
+                }
+            });
+        }
+
+        const btnSendAdminMsg = document.getElementById('btn-send-admin-msg');
+        if (btnSendAdminMsg) {
+            btnSendAdminMsg.addEventListener('click', async () => {
+                const recipientField = document.getElementById('admin-msg-recipient');
+                const bodyField = document.getElementById('admin-msg-body');
+                if (!recipientField || !bodyField) return;
+
+                const recipient = recipientField.value.trim();
+                const body = bodyField.value.trim();
+
+                if (!recipient || !body) {
+                    alert('Please fill in both recipient username and message.');
+                    return;
+                }
+
+                btnSendAdminMsg.disabled = true;
+                const originalText = btnSendAdminMsg.innerHTML;
+                btnSendAdminMsg.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">sync</span> Sending...';
+
+                try {
+                    await sendAdminMessage(recipient, body);
+                    bodyField.value = '';
+                } catch (e) {
+                    console.error('Error in click listener:', e);
+                } finally {
+                    btnSendAdminMsg.disabled = false;
+                    btnSendAdminMsg.innerHTML = originalText;
+                }
+            });
+        }
     }
 
 
@@ -781,6 +1026,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 subPlanBtn.classList.add('hidden');
             } else {
                 subPlanBtn.classList.remove('hidden');
+            }
+        }
+
+        // Toggle Admin Tools section visibility
+        const adminTools = document.getElementById('admin-tools-section');
+        if (adminTools) {
+            if ((state.user.username && state.user.username.toLowerCase() === 'admin')) {
+                adminTools.classList.remove('hidden');
+            } else {
+                adminTools.classList.add('hidden');
             }
         }
     }
@@ -905,7 +1160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 initAccountInfo();
                 const adminSelector = document.getElementById('admin-discipline-selector');
                 if (adminSelector) {
-                    if (state.user.username === 'admin') {
+                    if ((state.user.username && state.user.username.toLowerCase() === 'admin')) {
                         adminSelector.classList.remove('hidden');
                         const selectDisc = document.getElementById('select-discipline');
                         if (selectDisc) {
@@ -1384,7 +1639,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Reconstruct full state if only minimal snapshot exists (e.g. from cloud sync)
         if (!activity.stateSnapshot && activity.minimalSnapshot) {
-            console.log("🛠️ Reconstructing activity from minimal snapshot...", activityId);
+            console.log("��️ Reconstructing activity from minimal snapshot...", activityId);
             const min = activity.minimalSnapshot;
             
             // Rebuild quizQuestions from indices or per-question refs
@@ -1516,7 +1771,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         questionText.innerHTML = `<p>${injectFormulaTriggers(question.question)}</p>`;
         
-        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || state.user.username === 'admin' || state.user.role === 'admin';
+        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
         
         if (diagramsUnlocked) {
             if (question.question_image) {
@@ -1689,7 +1944,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         explanationText.innerHTML = '';
 
-        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || state.user.username === 'admin' || state.user.role === 'admin';
+        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
         const solImg = question.solution_image || (question.solution && question.solution.solution_image);
         
         if (diagramsUnlocked) {
@@ -1975,7 +2230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ACHIEVEMENTS.forEach(ach => {
             if (prevPoints < ach.points && newPoints >= ach.points) {
                 setTimeout(() => {
-                    window.showToast('Milestone Unlocked! 🏆', ach.name, ach.icon);
+                    window.showToast('Milestone Unlocked! ��', ach.name, ach.icon);
                 }, 1000);
             }
         });
@@ -2026,11 +2281,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const activityKey = `enggtv_recent_activity_${state.user.username}`;
         localStorage.setItem(activityKey, JSON.stringify(state.recentActivity));
-
-        // Save Progress
-        if (!state.isMockExam) {
-            updateProgress(state.currentSubject.id, attempted);
-        }
 
         // Final Cloud Sync
         syncToFirebase();
@@ -2215,7 +2465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const required = 50;
 
         // Note: Removed state.user.tier === 'premium' bypass to make point-based progression meaningful
-        const isUnlocked = points >= required || state.user.username === 'admin' || state.user.role === 'admin';
+        const isUnlocked = points >= required || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
 
         if (annSection && annLocked) {
             if (isUnlocked) {
@@ -2243,7 +2493,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const examRequired = 100;
         // Note: Removed state.user.tier === 'premium' bypass to make point-based progression meaningful
-        const isExamUnlocked = points >= examRequired || state.user.username === 'admin' || state.user.role === 'admin';
+        const isExamUnlocked = points >= examRequired || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
         
         // Handle Exam Menu Visibility (Nav Item)
         if (navExam) {
@@ -2342,7 +2592,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (streak < 7) {
                     streakSubtitle.textContent = 'Building momentum!';
                 } else {
-                    streakSubtitle.textContent = `${streak} days strong 🔥`;
+                    streakSubtitle.textContent = `${streak} days strong ��`;
                 }
             }
         }
@@ -2398,7 +2648,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnLogout = document.getElementById('btn-logout');
 
     if (btnAccount) btnAccount.addEventListener('click', () => navigateTo('account-info-view'));
-    if (btnSupport) btnSupport.addEventListener('click', () => navigateTo('support-view'));
+    if (btnSupport) btnSupport.addEventListener('click', () => { navigateTo('support-view'); renderAdminInbox(); });
     
     // Account Info View Logic
     const backToSettingsBtn = document.getElementById('back-to-settings');
@@ -2496,6 +2746,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const nameVal    = document.getElementById('contact-name')?.value?.trim() || state.user.username;
+            const emailVal   = document.getElementById('contact-email')?.value?.trim() || 'Not Provided';
             const subjectVal = document.getElementById('contact-subject')?.value;
             const msgVal     = document.getElementById('contact-message')?.value?.trim();
             const btnIcon    = document.getElementById('send-btn-icon');
@@ -2519,16 +2770,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
                         from_name:    nameVal,
                         from_user:    state.user.username,
+                        from_email:   emailVal,
                         subject:      subjectVal,
                         message:      msgVal,
-                        reply_to:     'admin@engg.tv',
+                        reply_to:     emailVal !== 'Not Provided' ? emailVal : 'admin@engg.tv',
                         sent_at:      new Date().toLocaleString(),
                         discipline:   localStorage.getItem('enggtv_discipline') || 'Unknown',
                         user_points:  state.userPoints
                     });
                 } else {
                     // Fallback: open mailto with pre-filled content so the message still reaches admin
-                    const mailtoBody  = encodeURIComponent(`From: ${nameVal} (${state.user.username})\nSubject: ${subjectVal}\n\n${msgVal}`);
+                    const mailtoBody  = encodeURIComponent(`From: ${nameVal} (${state.user.username})\nEmail: ${emailVal}\nSubject: ${subjectVal}\n\n${msgVal}`);
                     const mailtoLink  = `mailto:admin@engg.tv?subject=${encodeURIComponent('[ENGG.tv App] ' + subjectVal)}&body=${mailtoBody}`;
                     window.open(mailtoLink, '_blank');
                 }
@@ -2684,7 +2936,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const data = doc.data();
                     if (doc.id === 'guest' || !data) return;
                     realUsers.push({
-                        username: doc.id,
+                        username: data.username || doc.id,
                         points: data.userPoints !== undefined ? Number(data.userPoints) : 0,
                         discipline: data.discipline || 'FE Candidate',
                         country: data.country || 'Other',
@@ -2712,10 +2964,22 @@ document.addEventListener('DOMContentLoaded', () => {
             streak: userStreak,
             avatar: localStorage.getItem('enggtv_avatar') || null
         };
-
         const currentUsername = state.user.username;
-        // Filter out current user from real users to avoid duplication
-        const filteredRealUsers = realUsers.filter(u => u.username !== currentUsername && u.username !== 'demo' && u.username !== 'You (Alex)' && !u.username.startsWith('You ('));
+        const filteredRealUsers = realUsers.filter(u => {
+            // Remove the current user (they're added back below as "You (...)")
+            if (u.username === currentUsername || u.username.startsWith('You (')) {
+                return false;
+            }
+            // Filter out users with zero or negative points (no activity)
+            if (u.points <= 0) return false;
+            // Filter out extremely long/bot usernames
+            if (u.username.length > 20) return false;
+            // Filter out raw Firebase UIDs
+            const isUid = /^[a-zA-Z0-9]{28}$/.test(u.username);
+            if (isUid) return false;
+            
+            return true;
+        });
 
         let allUsers = [...filteredRealUsers, currentUserData];
 
@@ -2724,6 +2988,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Take top 100 real users
         const top100 = allUsers.slice(0, 100);
+
+        const isAdmin = state.user.username && state.user.username.toLowerCase() === 'admin';
 
         list.innerHTML = top100.map((user, index) => {
             const rank = index + 1;
@@ -2736,6 +3002,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const trendIcon = user.trend === 'up' ? 'trending_up' : (user.trend === 'down' ? 'trending_down' : 'remove');
             const trendColor = user.trend === 'up' ? 'text-green-500' : (user.trend === 'down' ? 'text-red-500' : 'text-slate-400');
 
+            let displayName = user.username;
+            if (!isAdmin) {
+                if (displayName.includes('@')) {
+                    displayName = displayName.split('@')[0];
+                }
+                if (displayName.startsWith('You (') && displayName.endsWith(')') && displayName.includes('@')) {
+                    const emailPart = displayName.slice(5, -1);
+                    displayName = `You (${emailPart.split('@')[0]})`;
+                }
+            }
+
             const preset = AVATAR_PRESETS.find(p => p.id === user.avatar);
             let avatarHTML = '';
             if (preset) {
@@ -2745,7 +3022,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>`;
             } else {
                 const avatarUrl = user.avatar || 'https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4';
-                avatarHTML = `<img src="${avatarUrl}" class="w-full h-full object-cover" alt="${user.username}">`;
+                avatarHTML = `<img src="${avatarUrl}" class="w-full h-full object-cover" alt="${displayName}">`;
             }
 
             return `
@@ -2762,7 +3039,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="flex-1">
                         <h4 class="font-bold text-sm ${user.isCurrentUser ? 'text-primary' : 'text-slate-800 dark:text-slate-100'} flex items-center gap-1">
-                            ${user.username} 
+                            ${displayName} 
                             ${user.isCurrentUser ? '<span class="text-[8px] bg-primary text-white px-1 py-0.5 rounded uppercase font-black">Me</span>' : ''}
                             ${user.streak > 10 ? '<span class="material-symbols-outlined text-orange-500 text-sm animate-pulse">local_fire_department</span>' : ''}
                         </h4>
@@ -2793,11 +3070,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // B-3: Avatar Picker Logic
     // ============================================================
     const AVATAR_PRESETS = [
-        { id: 'scholar',   emoji: '🎓', gradient: 'linear-gradient(135deg, #FDA60A, #FF006E)',   label: 'Scholar'   },
+        { id: 'scholar',   emoji: '��', gradient: 'linear-gradient(135deg, #FDA60A, #FF006E)',   label: 'Scholar'   },
         { id: 'engineer',  emoji: '⚙️',  gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',   label: 'Engineer'  },
-        { id: 'scientist', emoji: '🔬', gradient: 'linear-gradient(135deg, #10B981, #06B6D4)',   label: 'Scientist' },
-        { id: 'architect', emoji: '📐', gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)',   label: 'Architect' },
-        { id: 'pioneer',   emoji: '🚀', gradient: 'linear-gradient(135deg, #EF4444, #F97316)',   label: 'Pioneer'   },
+        { id: 'scientist', emoji: '��', gradient: 'linear-gradient(135deg, #10B981, #06B6D4)',   label: 'Scientist' },
+        { id: 'architect', emoji: '��', gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)',   label: 'Architect' },
+        { id: 'pioneer',   emoji: '��', gradient: 'linear-gradient(135deg, #EF4444, #F97316)',   label: 'Pioneer'   },
     ];
 
     let pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
