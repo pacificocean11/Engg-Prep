@@ -146,7 +146,7 @@
 <header id="main-header" class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm docked full-width top-0 z-50 fixed w-full">
 <div class="flex justify-between items-center w-full px-5 py-3">
 <div class="flex items-center gap-0.5">
-<div id="header-avatar-container" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container magnetic-btn">
+<div id="header-avatar-container" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
 <img id="header-avatar-img" class="w-full h-full object-cover" data-alt="Portrait of a young male engineering student with a friendly expression in a modern bright setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4"/>
 </div>
 <div class="h-10 w-40 flex items-center justify-start">
@@ -192,7 +192,7 @@
             <h2 id="overall-progress-text" class="font-display-lg text-4xl text-on-surface dark:text-white">0% Completed</h2>
             <p class="font-body-sm text-outline dark:text-slate-400">Your engineering intuition is growing stronger!</p>
             <div class="flex gap-3 mt-2">
-                <button class="bg-secondary text-white font-bold px-6 py-3 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 magnetic-btn" onclick="navigateTo('study')">
+                <button class="bg-secondary text-white font-bold px-6 py-3 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110" onclick="navigateTo('study')">
                     Resume Study
                 </button>
             </div>
@@ -526,7 +526,7 @@
                                     </ul>
                                 </div>
 
-                                <button id="start-mock-exam" class="btn-primary btn-large magnetic-btn" onclick="openMockPreview()">
+                                <button id="start-mock-exam" class="btn-primary btn-large" onclick="openMockPreview()">
                                     <span class="icon">🚀</span> Start Simulated Exam
                                 </button>
                             </div>
@@ -803,7 +803,7 @@
                             </div>
                         </div>
                         <div class="mt-8 flex justify-center">
-                            <button class="bg-secondary text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 hover:shadow-pink-500/40 magnetic-btn" onclick="alert('Registration link will be sent to your email 24 hours before the lecture.')">
+                            <button class="bg-secondary text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 hover:shadow-pink-500/40" onclick="alert('Registration link will be sent to your email 24 hours before the lecture.')">
                                 Register for Lecture
                             </button>
                         </div>
@@ -974,7 +974,7 @@
 
                 <div class="flex gap-4">
                     <button class="flex-1 px-6 py-4 rounded-2xl font-bold bg-slate-100 dark:bg-slate-800 text-outline hover:bg-slate-200 transition-all" onclick="closeMockPreview()">Cancel</button>
-                    <button class="flex-1 px-8 py-4 rounded-2xl font-bold bg-primary text-white shadow-lg shadow-primary/20 magnetic-btn" onclick="confirmStartMock()">Confirm Start</button>
+                    <button class="flex-1 px-8 py-4 rounded-2xl font-bold bg-primary text-white shadow-lg shadow-primary/20" onclick="confirmStartMock()">Confirm Start</button>
                 </div>
             </div>
         </div>

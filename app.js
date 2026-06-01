@@ -614,21 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initMagneticButtons() {
-        const magneticBtns = document.querySelectorAll('.magnetic-btn');
-        
-        magneticBtns.forEach(btn => {
-            btn.addEventListener('mousemove', function(e) {
-                const position = btn.getBoundingClientRect();
-                const x = e.pageX - position.left - position.width / 2;
-                const y = e.pageY - position.top - position.height / 2;
-                
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.05)`;
-            });
-            
-            btn.addEventListener('mouseout', function() {
-                btn.style.transform = 'translate(0px, 0px) scale(1)';
-            });
-        });
+        // Disabled globally to ensure buttons are reliable and easy to click
     }
 
     function setupDashboardListeners() {

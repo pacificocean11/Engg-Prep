@@ -2501,6 +2501,333 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
+
+
+
+
+
+        {
+    "topic": "Differential Equations",
+    "title": "First-Order Differential Equation",
+    "question": "What is the general solution to the first-order differential equation $\\frac{dy}{dx} = 3x^2y$?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "y = Ce^{x^3}",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "y = x^3 + C",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "y = Ce^{3x}",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "y = 3x^3 + C",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Separate the Variables",
+          "content": "The given differential equation is: $\\frac{dy}{dx} = 3x^2y$. Divide both sides by $y$ (assuming $y \\neq 0$) and multiply by $dx$ to separate variables: $\\frac{1}{y} \\, dy = 3x^2 \\, dx$."
+        },
+        {
+          "title": "Integrate Both Sides",
+          "content": "Integrate both sides of the equation with respect to their respective variables: $\\int \\frac{1}{y} \\, dy = \\int 3x^2 \\, dx \\implies \\ln|y| = x^3 + C_1$, where $C_1$ is the constant of integration."
+        },
+        {
+          "title": "Solve for y",
+          "content": "Exponentiate both sides to eliminate the natural logarithm: $|y| = e^{x^3 + C_1} = e^{C_1} \\cdot e^{x^3}$. Let $C = \\pm e^{C_1}$ (and note that $y=0$ when $C=0$). We rewrite the general solution as: $y = Ce^{x^3}$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Laplace Transforms",
+    "title": "Laplace Transform of a Power Function",
+    "question": "According to the Laplace transform table, what is the transform of $f(t) = t^2$?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "1/s^2",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "1/s^3",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "2/s^2",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "2/s^3",
+        "is_correct": true
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Standard Formula",
+          "content": "According to the standard Laplace transform table, the transform of a power function $t^n$ for a non-negative integer $n$ is given by: $\\mathcal{L}\\{t^n\\} = \\frac{n!}{s^{n+1}}$."
+        },
+        {
+          "title": "Substitute the Given Value",
+          "content": "Here, the given function is $f(t) = t^2$, which means $n = 2$. Substituting $n = 2$ into the formula gives: \\mathcal{L}\\{t^2\\} = \\frac{2!}{s^{2+1}}."
+        },
+        {
+          "title": "Simplify the Expression",
+          "content": "Calculate the factorial and the exponent: $2! = 2 \\times 1 = 2$ and $2 + 1 = 3$. Thus, the Laplace transform is: $\\mathcal{L}\\{t^2\\} = \\frac{2}{s^3}$."
+        }
+      ],
+      "final_answer": "D",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Laplace Transforms",
+    "title": "Laplace Transform with Exponential Shifting",
+    "question": "What is the Laplace transform of $f(t) = e^{-3t} \\sin(2t)$?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "2 / ((s+3)^2 + 4)",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "(s+3) / ((s+3)^2 + 4)",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "2 / ((s-3)^2 + 4)",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "(s-3) / ((s-3)^2 + 4)",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Basic Transform",
+          "content": "First, find the Laplace transform of the trigonometric component, $\\sin(2t)$, using the standard formula $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\frac{\\omega}{s^2 + \\omega^2}$: $\\mathcal{L}\\{\\sin(2t)\\} = \\frac{2}{s^2 + 2^2} = \\frac{2}{s^2 + 4}$."
+        },
+        {
+          "title": "Apply the First Shifting Theorem",
+          "content": "The First Shifting Theorem states that if $\\mathcal{L}\\{f(t)\\} = F(s)$, then: $\\mathcal{L}\\{e^{at}f(t)\\} = F(s - a)$."
+        },
+        {
+          "title": "Substitute the Value of a",
+          "content": "In this problem, the exponential term is $e^{-3t}$, so $a = -3$. This means we shift $s$ by replacing every $s$ with $(s - (-3)) = (s + 3)$: $\\mathcal{L}\\{e^{-3t} \\sin(2t)\\} = \\left. \\frac{2}{s^2 + 4} \\right|_{s \\to s+3} = \\frac{2}{(s+3)^2 + 4}$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Laplace Transforms",
+    "title": "Inverse Laplace Transform",
+    "question": "Determine the inverse Laplace transform of $F(s) = \\frac{1}{s-5}$.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "e^{-5t}",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "e^{5t}",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "5e^t",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "\\sin(5t)",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Reference the Standard Inverse Formula",
+          "content": "The standard formula for the inverse Laplace transform of a simple linear shifted fraction is: $\\mathcal{L}^{-1}\\left\\{\\frac{1}{s-a}\\right\\} = e^{at}$."
+        },
+        {
+          "title": "Match the Given Expression",
+          "content": "The given function is: $F(s) = \\frac{1}{s-5}$. By comparing this expression with the standard template $\\frac{1}{s-a}$, we find that: $a = 5$."
+        },
+        {
+          "title": "Write out the Solution",
+          "content": "Substituting $a = 5$ into the exponential formula gives: $f(t) = e^{5t}$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Differential Equations",
+    "title": "Initial Value Problem",
+    "question": "Solve the initial value problem: $y' + 4y = 0$ with $y(0) = 3$.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "y = 3e^{4t}",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "y = 4e^{-3t}",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "y = 3e^{-4t}",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "y = e^{-12t}",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Find the General Solution",
+          "content": "The given differential equation is a first-order linear homogeneous equation: $y' + 4y = 0 \\implies \\frac{dy}{dt} = -4y$. This is a standard exponential growth/decay equation whose general solution is: $y(t) = Ce^{-4t}$."
+        },
+        {
+          "title": "Apply the Initial Condition",
+          "content": "We are given the initial value condition $y(0) = 3$. Substitute $t = 0$ and $y = 3$ into the general solution equation: $3 = C e^{-4(0)} \\implies 3 = C \\cdot e^0 \\implies C = 3$."
+        },
+        {
+          "title": "Write the Final Particular Solution",
+          "content": "Substitute the calculated value of $C$ back into the general solution formula: $y = 3e^{-4t}$."
+        }
+      ],
+      "final_answer": "C",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Laplace Transforms",
+    "title": "Laplace Transform of a Derivative",
+    "question": "What is the Laplace transform of the derivative $f'(t)$, given the transform of $f(t)$ is $F(s)$?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "F(s) / s",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "sF(s) - f(0)",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "s^2F(s) - sf(0) - f'(0)",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "F(s) - f(0)",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Recall the Definition/Property of Derivative Transforms",
+          "content": "The Laplace transform of a derivative is derived using integration by parts from the basic definition of the Laplace transform: $\\mathcal{L}\\{f'(t)\\} = \\int_{0}^{\\infty} e^{-st} f'(t) \\, dt$."
+        },
+        {
+          "title": "State the Established Identity Rule",
+          "content": "Applying the integration by parts rule yields the standard property for the first derivative of a function: $\\mathcal{L}\\{f'(t)\\} = sF(s) - f(0)$, where $F(s) = \\mathcal{L}\\{f(t)\\}$ and $f(0)$ represents the initial condition of the function at $t = 0$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Differential Equations",
+    "title": "Particular Solution of Non-Homogeneous Equation",
+    "question": "Find the particular solution $y_p$ for the non-homogeneous equation $y'' - y' - 2y = 4$.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "y_p = 4",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "y_p = -2",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "y_p = 2",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "y_p = -4",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Choose the Form of the Particular Solution",
+          "content": "The non-homogeneous right-hand side of the differential equation is a constant value: $g(x) = 4$. Since the right side is a polynomial of degree 0 (a constant), and a constant is not a solution to the homogeneous equation, we assume a trial particular solution that is also a constant: $y_p = A$."
+        },
+        {
+          "title": "Find the Derivatives of the Trial Solution",
+          "content": "Take the first and second derivatives of the constant function $y_p$: $y_p' = 0$ and $y_p'' = 0$."
+        },
+        {
+          "title": "Substitute Back into the Differential Equation",
+          "content": "Substitute $y_p$, $y_p'$, and $y_p''$ into the original differential equation: $y'' - y' - 2y = 4 \\implies 0 - 0 - 2(A) = 4 \\implies -2A = 4$."
+        },
+        {
+          "title": "Solve for A",
+          "content": "Divide both sides by $-2$: $A = \\frac{4}{-2} = -2$. Thus, the particular solution is: $y_p = -2$."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
         {
             "topic": "Differential Equations",
             "title": "First-Order Separable Diff. Equation",
