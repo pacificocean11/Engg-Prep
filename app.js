@@ -263,27 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function injectFormulaTriggers(text) {
-        if (!text) return '';
-        let result = text;
-        const sortedKeys = Object.keys(FORMULA_DATA).sort((a, b) => b.length - a.length);
-        const replacements = [];
-        
-        sortedKeys.forEach((keyword, index) => {
-            const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'gi');
-            result = result.replace(regex, (match) => {
-                const placeholder = `[[F${index}]]`;
-                replacements[index] = `<span class="formula-trigger" data-keyword="${keyword}">${match}</span>`;
-                return placeholder;
-            });
-        });
-        
-        replacements.forEach((html, index) => {
-            if (html) {
-                result = result.replace(`[[F${index}]]`, html);
-            }
-        });
-        
-        return result;
+        return text;
     }
 
     const formulaPopup = document.getElementById('formula-popup');

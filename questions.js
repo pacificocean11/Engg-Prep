@@ -1171,6 +1171,148 @@ const ELECTRICAL_COMPUTER_SUBJECTS = [
 
 const QUESTIONS = {
     "math": [
+  {
+    "topic": "Analytic Geometry",
+    "title": "Acute Angle Between Two Lines",
+    "question": "Calculate the acute angle $\\alpha$ between the lines with slopes $m_{1} = 2$ and $m_{2} = -3$.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "45°",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "30°",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "60°",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "90°",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Angle Formula",
+          "content": "The acute angle $\\alpha$ between two lines with known slopes $m_1$ and $m_2$ is determined using the following formula: $\\tan(\\alpha) = \\left| \\frac{m_2 - m_1}{1 + m_1 \\cdot m_2} \\right|$."
+        },
+        {
+          "title": "Substitute the Given Slopes",
+          "content": "Given values: $m_1 = 2$ and $m_2 = -3$. Substituting these into the equation gives: $\\tan(\\alpha) = \\left| \\frac{-3 - 2}{1 + (2 \\cdot -3)} \\right|$."
+        },
+        {
+          "title": "Simplify the Expression",
+          "content": "$\\tan(\\alpha) = \\left| \\frac{-5}{1 - 6} \\right| = \\left| \\frac{-5}{-5} \\right| = |1| = 1$."
+        },
+        {
+          "title": "Solve for \\alpha",
+          "content": "$\\alpha = \\arctan(1) = 45^\\circ$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Analytic Geometry",
+    "title": "Intercepts of a Line",
+    "question": "A line has the equation $y - 3 = 2(x + 2)$. What are its x-intercept ($a$) and y-intercept ($b$)?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "a = -3.5, b = 7",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "a = -2, b = 3",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "a = 3.5, b = -7",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "a = -7, b = 3.5",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Expand and Simplify the Line Equation",
+          "content": "Start by distributing the constant on the right-hand side of the given equation: $y - 3 = 2x + 4 \\implies y = 2x + 7$."
+        },
+        {
+          "title": "Find the y-intercept (b)",
+          "content": "The y-intercept occurs where $x = 0$. In the slope-intercept form $y = mx + b$, the constant term directly gives the value: $b = 7$."
+        },
+        {
+          "title": "Find the x-intercept (a)",
+          "content": "The x-intercept occurs where $y = 0$. Set $y$ to zero in the simplified equation and solve for $x$: $0 = 2x + 7 \\implies 2x = -7 \\implies x = -3.5 \\implies a = -3.5$. Thus, the intercepts are $a = -3.5$ and $b = 7$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Analytic Geometry",
+    "title": "Eccentricity of an Ellipse",
+    "question": "Determine the eccentricity ($e$) of the ellipse given by the equation $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$.",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "e = 0.6",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "e = 0.8",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "e = 0.75",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "e = 0.64",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Semi-Axes Parameters",
+          "content": "The standard form of a horizontal ellipse equation is: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$. Comparing this with the given equation, we find: $a^2 = 25 \\implies a = 5$ and $b^2 = 16 \\implies b = 4$."
+        },
+        {
+          "title": "Recall the Eccentricity Formula",
+          "content": "The eccentricity $e$ of an ellipse measures how much it deviates from being a perfect circle and is given by: $e = \\sqrt{1 - \\frac{b^2}{a^2}}$."
+        },
+        {
+          "title": "Substitute and Calculate",
+          "content": "Substitute the known values of $a^2$ and $b^2$: $e = \\sqrt{1 - \\frac{16}{25}} = \\sqrt{\\frac{25 - 16}{25}} = \\sqrt{\\frac{9}{25}} = \\frac{3}{5} = 0.6$."
+        }
+      ],
+      "final_answer": "A",
+      "solution_image": ""
+    }
+},
         {
             "topic": "Analytic geometry and trigonometry",
             "title": "Equation of a Perpendicular Line",
@@ -10775,7 +10917,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Twice (Nyquist rate)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -10785,7 +10927,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Half of",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -11781,258 +11923,7 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 44",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{88}{22s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$22$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$1$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$88$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{88}{0 + 1} = 88$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 45",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{90}{22.5s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$90$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$22.5$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$1$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{90}{0 + 1} = 90$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 46",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{92}{23s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$23$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$92$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$1$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{92}{0 + 1} = 92$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 47",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{94}{23.5s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$23.5$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$94$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$1$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{94}{0 + 1} = 94$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 48",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{96}{24s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$24$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$1$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$96$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{96}{0 + 1} = 96$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 49",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{98}{24.5s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$98$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$24.5$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$1$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{98}{0 + 1} = 98$."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Sensors and Transducers",
-            "title": "First-Order System Gain - Case 50",
-            "question": "A first-order temperature sensor has a transfer function $G(s) = \\dfrac{100}{25s + 1}$. What is the steady-state gain of this sensor?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$25$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$100$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$4.00$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$1$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Gain Determination",
-                        "content": "The steady-state gain of a transfer function $G(s)$ is found by evaluating $G(0) = \\dfrac{100}{0 + 1} = 100$."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
+
         {
             "topic": "Control Systems",
             "title": "PID Controller — Integral Action",
@@ -18366,15 +18257,15 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Establish the Cost Equations",
-                        "content": "Let $h$ represent operating hours:\\n- $TC_A = 4,000 + 12.00h$\\n- $TC_B = 7,000 + 8.00h$"
+                        "content": "Let $h$ represent operating hours:\\- $TC_A = 4,000 + 12.00h$\\- $TC_B = 7,000 + 8.00h$"
                     },
                     {
                         "title": "Setting the Break-Even Condition",
-                        "content": "Set $TC_A = TC_B$:\\n$4,000 + 12.00h = 7,000 + 8.00h$"
+                        "content": "Set $TC_A = TC_B$:\\ $4,000 + 12.00h = 7,000 + 8.00h$"
                     },
                     {
                         "title": "Solving for Operating Hours",
-                        "content": "$12.00h - 8.00h = 7,000 - 4,000$\\n$4.00h = 3,000$\\n$h = 750 \\text{ hours}$"
+                        "content": "$12.00h - 8.00h = 7,000 - 4,000$\\ $4.00h = 3,000$\\$h = 750 \\text{ hours}$"
                     }
                 ],
                 "final_answer": "B",
@@ -29059,12 +28950,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "1 mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "10 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -30007,6 +29898,237 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
+
+        {
+    "topic": "Fluid Mechanics",
+    "title": "Reynolds Number and Flow Regime",
+    "question": "Water at 20°C (kinematic viscosity $\\nu = 1.0 \\times 10^{-6}\\text{ m}^2/\\text{s}$) flows through a pipe with a diameter of 0.05 m at a velocity of 1.5 m/s. What is the Reynolds number and the likely flow regime?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "750, Laminar",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "75,000, Turbulent",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "7,500, Turbulent",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "75,000, Laminar",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Reynolds Number Formula",
+          "content": "The Reynolds number ($Re$) for flow in a pipe is calculated using the following formula: $Re = \\frac{V \\cdot D}{\\nu}$, where $V$ = flow velocity (1.5 m/s), $D$ = pipe diameter (0.05 m), and $\\nu$ = kinematic viscosity ($1.0 \\times 10^{-6}\\text{ m}^2/\\text{s}$)."
+        },
+        {
+          "title": "Substitute the Given Values and Calculate",
+          "content": "Substituting the values into the formula: $Re = \\frac{1.5 \\times 0.05}{1.0 \\times 10^{-6}} = \\frac{0.075}{1.0 \\times 10^{-6}} = 75,000$."
+        },
+        {
+          "title": "Determine the Flow Regime",
+          "content": "For internal pipe flow, the typical classification criteria are: $Re < 2,300$ is Laminar flow, $2,300 \\le Re \\le 4,000$ is Transition flow, and $Re > 4,000$ is Turbulent flow. Since our calculated value is $75,000 > 4,000$, the flow regime is highly turbulent."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Fluid Mechanics",
+    "title": "Darcy Friction Factor for Laminar Flow",
+    "question": "For a fully developed laminar flow in a circular pipe, the Reynolds number is calculated to be 1,600. What is the Darcy friction factor $f$?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.010",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "0.040",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "0.025",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "0.064",
+        "is_correct": true
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Formula for Laminar Flow Friction Factor",
+          "content": "For a fully developed laminar flow ($Re < 2,300$) in a circular pipe, the Darcy friction factor $f$ depends solely on the Reynolds number and is defined by the exact analytical relation: $f = \\frac{64}{Re}$."
+        },
+        {
+          "title": "Substitute the Given Value",
+          "content": "Given that the Reynolds number $Re = 1,600$: $f = \\frac{64}{1,600}$."
+        },
+        {
+          "title": "Perform the Division",
+          "content": "$f = \\frac{4}{100} = 0.064$."
+        }
+      ],
+      "final_answer": "D",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Fluid Mechanics",
+    "title": "Head Loss due to Friction",
+    "question": "A 150 m long horizontal pipe with a diameter of 0.1 m has a Darcy friction factor of 0.025. If the water velocity is 2 m/s, what is the head loss due to friction?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "3.82 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "7.65 m",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "5.10 m",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "10.21 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Darcy-Weisbach Equation",
+          "content": "The major head loss ($h_f$) due to fluid friction in a pipe can be computed using the Darcy-Weisbach equation: $h_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}$, where $f$ = 0.025, $L$ = 150 m, $D$ = 0.1 m, $V$ = 2 m/s, and $g \\approx 9.81\\text{ m}/\\text{s}^2$."
+        },
+        {
+          "title": "Substitute the Given Values",
+          "content": "$h_f = 0.025 \\cdot \\frac{150}{0.1} \\cdot \\frac{2^2}{2 \\times 9.81}$."
+        },
+        {
+          "title": "Calculate the Result",
+          "content": "$h_f = 0.025 \\cdot 1,500 \\cdot \\frac{4}{19.62} = 37.5 \\cdot 0.20387 \\approx 7.645\\text{ m}$. Rounding to two decimal places gives 7.65 m."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Fluid Mechanics",
+    "title": "Hydraulic Diameter of a Rectangular Duct",
+    "question": "A rectangular air duct has cross-sectional dimensions of 0.4 m by 0.2 m. What is the hydraulic diameter $D_h$ of this duct?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.20 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "0.27 m",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "0.30 m",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "0.40 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Formula for Hydraulic Diameter",
+          "content": "The hydraulic diameter $D_h$ is given by $D_h = \\frac{4A}{P}$, where $A$ is the cross-sectional area and $P$ is the wetted perimeter. For a completely filled rectangular duct with width $w$ and height $h$, $A = w \\cdot h$ and $P = 2(w + h)$, simplifying the formula to: $D_h = \\frac{2(w \\cdot h)}{w + h}$."
+        },
+        {
+          "title": "Substitute the Dimensions",
+          "content": "Given $w = 0.4\\text{ m}$ and $h = 0.2\\text{ m}$: $D_h = \\frac{2(0.4 \\times 0.2)}{0.4 + 0.2}$."
+        },
+        {
+          "title": "Perform the Calculation",
+          "content": "$D_h = \\frac{2 \\times 0.08}{0.6} = \\frac{0.16}{0.6} \\approx 0.2667\\text{ m}$. Rounding to two decimal places matches the option 0.27 m."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
+  {
+    "topic": "Fluid Mechanics",
+    "title": "Minor Head Loss Across a Valve",
+    "question": "Water flows through a pipe with a velocity of 3 m/s. If a valve in the line has a loss coefficient $K = 1.5$, what is the head loss associated with the valve?",
+    "question_image": "",
+    "options": [
+      {
+        "label": "A",
+        "text": "0.46 m",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "0.69 m",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "0.23 m",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "1.38 m",
+        "is_correct": false
+      }
+    ],
+    "solution": {
+      "steps": [
+        {
+          "title": "Identify the Minor Head Loss Equation",
+          "content": "The localized head loss ($h_m$) caused by pipe components is calculated using the minor loss equation: $h_m = K \\cdot \\frac{V^2}{2g}$, where $K$ = 1.5, $V$ = 3 m/s, and $g \\approx 9.81\\text{ m}/\\text{s}^2$."
+        },
+        {
+          "title": "Substitute the Given Parameters",
+          "content": "$h_m = 1.5 \\cdot \\frac{3^2}{2 \\times 9.81}$."
+        },
+        {
+          "title": "Compute the Final Value",
+          "content": "$h_m = 1.5 \\cdot \\frac{9}{19.62} = \\frac{13.5}{19.62} \\approx 0.6881\\text{ m}$. Rounding to two decimal places yields 0.69 m."
+        }
+      ],
+      "final_answer": "B",
+      "solution_image": ""
+    }
+  },
         {
             "topic": "Internal Flow",
             "title": "Pressure Drop due to Friction",
@@ -31265,12 +31387,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "40.77 m",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "4 m",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
