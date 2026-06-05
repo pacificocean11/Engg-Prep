@@ -1171,148 +1171,148 @@ const ELECTRICAL_COMPUTER_SUBJECTS = [
 
 const QUESTIONS = {
     "math": [
-  {
-    "topic": "Analytic Geometry",
-    "title": "Acute Angle Between Two Lines",
-    "question": "Calculate the acute angle $\\alpha$ between the lines with slopes $m_{1} = 2$ and $m_{2} = -3$.",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "45°",
-        "is_correct": true
-      },
-      {
-        "label": "B",
-        "text": "30°",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "60°",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "90°",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
         {
-          "title": "Identify the Angle Formula",
-          "content": "The acute angle $\\alpha$ between two lines with known slopes $m_1$ and $m_2$ is determined using the following formula: $\\tan(\\alpha) = \\left| \\frac{m_2 - m_1}{1 + m_1 \\cdot m_2} \\right|$."
+            "topic": "Analytic Geometry",
+            "title": "Acute Angle Between Two Lines",
+            "question": "Calculate the acute angle $\\alpha$ between the lines with slopes $m_{1} = 2$ and $m_{2} = -3$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "45°",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "30°",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "60°",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "90°",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Angle Formula",
+                        "content": "The acute angle $\\alpha$ between two lines with known slopes $m_1$ and $m_2$ is determined using the following formula: $\\tan(\\alpha) = \\left| \\frac{m_2 - m_1}{1 + m_1 \\cdot m_2} \\right|$."
+                    },
+                    {
+                        "title": "Substitute the Given Slopes",
+                        "content": "Given values: $m_1 = 2$ and $m_2 = -3$. Substituting these into the equation gives: $\\tan(\\alpha) = \\left| \\frac{-3 - 2}{1 + (2 \\cdot -3)} \\right|$."
+                    },
+                    {
+                        "title": "Simplify the Expression",
+                        "content": "$\\tan(\\alpha) = \\left| \\frac{-5}{1 - 6} \\right| = \\left| \\frac{-5}{-5} \\right| = |1| = 1$."
+                    },
+                    {
+                        "title": "Solve for \\alpha",
+                        "content": "$\\alpha = \\arctan(1) = 45^\\circ$."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Substitute the Given Slopes",
-          "content": "Given values: $m_1 = 2$ and $m_2 = -3$. Substituting these into the equation gives: $\\tan(\\alpha) = \\left| \\frac{-3 - 2}{1 + (2 \\cdot -3)} \\right|$."
+            "topic": "Analytic Geometry",
+            "title": "Intercepts of a Line",
+            "question": "A line has the equation $y - 3 = 2(x + 2)$. What are its x-intercept ($a$) and y-intercept ($b$)?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "a = -3.5, b = 7",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "a = -2, b = 3",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "a = 3.5, b = -7",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "a = -7, b = 3.5",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Expand and Simplify the Line Equation",
+                        "content": "Start by distributing the constant on the right-hand side of the given equation: $y - 3 = 2x + 4 \\implies y = 2x + 7$."
+                    },
+                    {
+                        "title": "Find the y-intercept (b)",
+                        "content": "The y-intercept occurs where $x = 0$. In the slope-intercept form $y = mx + b$, the constant term directly gives the value: $b = 7$."
+                    },
+                    {
+                        "title": "Find the x-intercept (a)",
+                        "content": "The x-intercept occurs where $y = 0$. Set $y$ to zero in the simplified equation and solve for $x$: $0 = 2x + 7 \\implies 2x = -7 \\implies x = -3.5 \\implies a = -3.5$. Thus, the intercepts are $a = -3.5$ and $b = 7$."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Simplify the Expression",
-          "content": "$\\tan(\\alpha) = \\left| \\frac{-5}{1 - 6} \\right| = \\left| \\frac{-5}{-5} \\right| = |1| = 1$."
+            "topic": "Analytic Geometry",
+            "title": "Eccentricity of an Ellipse",
+            "question": "Determine the eccentricity ($e$) of the ellipse given by the equation $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "e = 0.6",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "e = 0.8",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "e = 0.75",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "e = 0.64",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Semi-Axes Parameters",
+                        "content": "The standard form of a horizontal ellipse equation is: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$. Comparing this with the given equation, we find: $a^2 = 25 \\implies a = 5$ and $b^2 = 16 \\implies b = 4$."
+                    },
+                    {
+                        "title": "Recall the Eccentricity Formula",
+                        "content": "The eccentricity $e$ of an ellipse measures how much it deviates from being a perfect circle and is given by: $e = \\sqrt{1 - \\frac{b^2}{a^2}}$."
+                    },
+                    {
+                        "title": "Substitute and Calculate",
+                        "content": "Substitute the known values of $a^2$ and $b^2$: $e = \\sqrt{1 - \\frac{16}{25}} = \\sqrt{\\frac{25 - 16}{25}} = \\sqrt{\\frac{9}{25}} = \\frac{3}{5} = 0.6$."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": ""
+            }
         },
-        {
-          "title": "Solve for \\alpha",
-          "content": "$\\alpha = \\arctan(1) = 45^\\circ$."
-        }
-      ],
-      "final_answer": "A",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Analytic Geometry",
-    "title": "Intercepts of a Line",
-    "question": "A line has the equation $y - 3 = 2(x + 2)$. What are its x-intercept ($a$) and y-intercept ($b$)?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "a = -3.5, b = 7",
-        "is_correct": true
-      },
-      {
-        "label": "B",
-        "text": "a = -2, b = 3",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "a = 3.5, b = -7",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "a = -7, b = 3.5",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Expand and Simplify the Line Equation",
-          "content": "Start by distributing the constant on the right-hand side of the given equation: $y - 3 = 2x + 4 \\implies y = 2x + 7$."
-        },
-        {
-          "title": "Find the y-intercept (b)",
-          "content": "The y-intercept occurs where $x = 0$. In the slope-intercept form $y = mx + b$, the constant term directly gives the value: $b = 7$."
-        },
-        {
-          "title": "Find the x-intercept (a)",
-          "content": "The x-intercept occurs where $y = 0$. Set $y$ to zero in the simplified equation and solve for $x$: $0 = 2x + 7 \\implies 2x = -7 \\implies x = -3.5 \\implies a = -3.5$. Thus, the intercepts are $a = -3.5$ and $b = 7$."
-        }
-      ],
-      "final_answer": "A",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Analytic Geometry",
-    "title": "Eccentricity of an Ellipse",
-    "question": "Determine the eccentricity ($e$) of the ellipse given by the equation $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$.",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "e = 0.6",
-        "is_correct": true
-      },
-      {
-        "label": "B",
-        "text": "e = 0.8",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "e = 0.75",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "e = 0.64",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Semi-Axes Parameters",
-          "content": "The standard form of a horizontal ellipse equation is: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$. Comparing this with the given equation, we find: $a^2 = 25 \\implies a = 5$ and $b^2 = 16 \\implies b = 4$."
-        },
-        {
-          "title": "Recall the Eccentricity Formula",
-          "content": "The eccentricity $e$ of an ellipse measures how much it deviates from being a perfect circle and is given by: $e = \\sqrt{1 - \\frac{b^2}{a^2}}$."
-        },
-        {
-          "title": "Substitute and Calculate",
-          "content": "Substitute the known values of $a^2$ and $b^2$: $e = \\sqrt{1 - \\frac{16}{25}} = \\sqrt{\\frac{25 - 16}{25}} = \\sqrt{\\frac{9}{25}} = \\frac{3}{5} = 0.6$."
-        }
-      ],
-      "final_answer": "A",
-      "solution_image": ""
-    }
-},
         {
             "topic": "Analytic geometry and trigonometry",
             "title": "Equation of a Perpendicular Line",
@@ -1373,7 +1373,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "(2, 3)",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -1383,7 +1383,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "(2, 5)",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -1419,7 +1419,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Hyperbola",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -1429,7 +1429,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Parabola",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -1809,6 +1809,56 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.11A.PNG"
+            }
+        },
+        {
+            "topic": "Analytic geometry and trigonometry",
+            "title": "Equation of a Perpendicular Line",
+            "question": "Find the equation of a line that passes through point $(4, -2)$ and is perpendicular to the line $3x + 4y - 8 = 0$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$4x - 3y - 22 = 0$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$4x + 3y + 10 = 0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3x - 4y - 20 = 0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4x - 3y + 10 = 0$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Find the Slope of the Given Line",
+                        "content": "The equation of the given line is $3x + 4y - 8 = 0$. Rewrite it in slope-intercept form ($y = mx + c$) to find its slope: $4y = -3x + 8 \\implies y = -\\frac{3}{4}x + 2$. The slope $m_1 = -\\frac{3}{4}$."
+                    },
+                    {
+                        "title": "Determine the Perpendicular Slope",
+                        "content": "For two lines to be perpendicular, the product of their slopes must be $-1$: $m_1 \\cdot m_2 = -1$. Therefore, the perpendicular slope $m_2 = -\\frac{1}{m_1} = -\\frac{1}{-3/4} = \\frac{4}{3}$."
+                    },
+                    {
+                        "title": "Apply the Point-Slope Form",
+                        "content": "Use the point-slope formula $y - y_1 = m_2(x - x_1)$ with the point $(4, -2)$ and the slope $m_2 = \\frac{4}{3}$: $y - (-2) = \\frac{4}{3}(x - 4) \\implies y + 2 = \\frac{4}{3}(x - 4)$."
+                    },
+                    {
+                        "title": "Simplify to General Form",
+                        "content": "Multiply both sides by $3$ to eliminate the fraction: $3(y + 2) = 4(x - 4) \\implies 3y + 6 = 4x - 16$. Rearrange the terms to get the general form $Ax + By + C = 0$: $4x - 3y - 22 = 0$."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": ""
             }
         },
         {
@@ -2643,333 +2693,328 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
-
-
-
-
-
         {
-    "topic": "Differential Equations",
-    "title": "First-Order Differential Equation",
-    "question": "What is the general solution to the first-order differential equation $\\frac{dy}{dx} = 3x^2y$?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "y = Ce^{x^3}",
-        "is_correct": true
-      },
-      {
-        "label": "B",
-        "text": "y = x^3 + C",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "y = Ce^{3x}",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "y = 3x^3 + C",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Separate the Variables",
-          "content": "The given differential equation is: $\\frac{dy}{dx} = 3x^2y$. Divide both sides by $y$ (assuming $y \\neq 0$) and multiply by $dx$ to separate variables: $\\frac{1}{y} \\, dy = 3x^2 \\, dx$."
+            "topic": "Differential Equations",
+            "title": "First-Order Differential Equation",
+            "question": "What is the general solution to the first-order differential equation $\\frac{dy}{dx} = 3x^2y$?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "y = Ce^{x^3}",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "y = x^3 + C",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "y = Ce^{3x}",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "y = 3x^3 + C",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Separate the Variables",
+                        "content": "The given differential equation is: $\\frac{dy}{dx} = 3x^2y$. Divide both sides by $y$ (assuming $y \\neq 0$) and multiply by $dx$ to separate variables: $\\frac{1}{y} \\, dy = 3x^2 \\, dx$."
+                    },
+                    {
+                        "title": "Integrate Both Sides",
+                        "content": "Integrate both sides of the equation with respect to their respective variables: $\\int \\frac{1}{y} \\, dy = \\int 3x^2 \\, dx \\implies \\ln|y| = x^3 + C_1$, where $C_1$ is the constant of integration."
+                    },
+                    {
+                        "title": "Solve for y",
+                        "content": "Exponentiate both sides to eliminate the natural logarithm: $|y| = e^{x^3 + C_1} = e^{C_1} \\cdot e^{x^3}$. Let $C = \\pm e^{C_1}$ (and note that $y=0$ when $C=0$). We rewrite the general solution as: $y = Ce^{x^3}$."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Integrate Both Sides",
-          "content": "Integrate both sides of the equation with respect to their respective variables: $\\int \\frac{1}{y} \\, dy = \\int 3x^2 \\, dx \\implies \\ln|y| = x^3 + C_1$, where $C_1$ is the constant of integration."
+            "topic": "Laplace Transforms",
+            "title": "Laplace Transform of a Power Function",
+            "question": "According to the Laplace transform table, what is the transform of $f(t) = t^2$?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "1/s^2",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "1/s^3",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "2/s^2",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "2/s^3",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Standard Formula",
+                        "content": "According to the standard Laplace transform table, the transform of a power function $t^n$ for a non-negative integer $n$ is given by: $\\mathcal{L}\\{t^n\\} = \\frac{n!}{s^{n+1}}$."
+                    },
+                    {
+                        "title": "Substitute the Given Value",
+                        "content": "Here, the given function is $f(t) = t^2$, which means $n = 2$. Substituting $n = 2$ into the formula gives: \\mathcal{L}\\{t^2\\} = \\frac{2!}{s^{2+1}}."
+                    },
+                    {
+                        "title": "Simplify the Expression",
+                        "content": "Calculate the factorial and the exponent: $2! = 2 \\times 1 = 2$ and $2 + 1 = 3$. Thus, the Laplace transform is: $\\mathcal{L}\\{t^2\\} = \\frac{2}{s^3}$."
+                    }
+                ],
+                "final_answer": "D",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Solve for y",
-          "content": "Exponentiate both sides to eliminate the natural logarithm: $|y| = e^{x^3 + C_1} = e^{C_1} \\cdot e^{x^3}$. Let $C = \\pm e^{C_1}$ (and note that $y=0$ when $C=0$). We rewrite the general solution as: $y = Ce^{x^3}$."
-        }
-      ],
-      "final_answer": "A",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Laplace Transforms",
-    "title": "Laplace Transform of a Power Function",
-    "question": "According to the Laplace transform table, what is the transform of $f(t) = t^2$?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "1/s^2",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "1/s^3",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "2/s^2",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "2/s^3",
-        "is_correct": true
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Standard Formula",
-          "content": "According to the standard Laplace transform table, the transform of a power function $t^n$ for a non-negative integer $n$ is given by: $\\mathcal{L}\\{t^n\\} = \\frac{n!}{s^{n+1}}$."
+            "topic": "Laplace Transforms",
+            "title": "Laplace Transform with Exponential Shifting",
+            "question": "What is the Laplace transform of $f(t) = e^{-3t} \\sin(2t)$?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "2 / ((s+3)^2 + 4)",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "(s+3) / ((s+3)^2 + 4)",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "2 / ((s-3)^2 + 4)",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "(s-3) / ((s-3)^2 + 4)",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Basic Transform",
+                        "content": "First, find the Laplace transform of the trigonometric component, $\\sin(2t)$, using the standard formula $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\frac{\\omega}{s^2 + \\omega^2}$: $\\mathcal{L}\\{\\sin(2t)\\} = \\frac{2}{s^2 + 2^2} = \\frac{2}{s^2 + 4}$."
+                    },
+                    {
+                        "title": "Apply the First Shifting Theorem",
+                        "content": "The First Shifting Theorem states that if $\\mathcal{L}\\{f(t)\\} = F(s)$, then: $\\mathcal{L}\\{e^{at}f(t)\\} = F(s - a)$."
+                    },
+                    {
+                        "title": "Substitute the Value of a",
+                        "content": "In this problem, the exponential term is $e^{-3t}$, so $a = -3$. This means we shift $s$ by replacing every $s$ with $(s - (-3)) = (s + 3)$: $\\mathcal{L}\\{e^{-3t} \\sin(2t)\\} = \\left. \\frac{2}{s^2 + 4} \\right|_{s \\to s+3} = \\frac{2}{(s+3)^2 + 4}$."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Substitute the Given Value",
-          "content": "Here, the given function is $f(t) = t^2$, which means $n = 2$. Substituting $n = 2$ into the formula gives: \\mathcal{L}\\{t^2\\} = \\frac{2!}{s^{2+1}}."
+            "topic": "Laplace Transforms",
+            "title": "Inverse Laplace Transform",
+            "question": "Determine the inverse Laplace transform of $F(s) = \\frac{1}{s-5}$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "e^{-5t}",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "e^{5t}",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "5e^t",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "\\sin(5t)",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Reference the Standard Inverse Formula",
+                        "content": "The standard formula for the inverse Laplace transform of a simple linear shifted fraction is: $\\mathcal{L}^{-1}\\left\\{\\frac{1}{s-a}\\right\\} = e^{at}$."
+                    },
+                    {
+                        "title": "Match the Given Expression",
+                        "content": "The given function is: $F(s) = \\frac{1}{s-5}$. By comparing this expression with the standard template $\\frac{1}{s-a}$, we find that: $a = 5$."
+                    },
+                    {
+                        "title": "Write out the Solution",
+                        "content": "Substituting $a = 5$ into the exponential formula gives: $f(t) = e^{5t}$."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Simplify the Expression",
-          "content": "Calculate the factorial and the exponent: $2! = 2 \\times 1 = 2$ and $2 + 1 = 3$. Thus, the Laplace transform is: $\\mathcal{L}\\{t^2\\} = \\frac{2}{s^3}$."
-        }
-      ],
-      "final_answer": "D",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Laplace Transforms",
-    "title": "Laplace Transform with Exponential Shifting",
-    "question": "What is the Laplace transform of $f(t) = e^{-3t} \\sin(2t)$?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "2 / ((s+3)^2 + 4)",
-        "is_correct": true
-      },
-      {
-        "label": "B",
-        "text": "(s+3) / ((s+3)^2 + 4)",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "2 / ((s-3)^2 + 4)",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "(s-3) / ((s-3)^2 + 4)",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Basic Transform",
-          "content": "First, find the Laplace transform of the trigonometric component, $\\sin(2t)$, using the standard formula $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\frac{\\omega}{s^2 + \\omega^2}$: $\\mathcal{L}\\{\\sin(2t)\\} = \\frac{2}{s^2 + 2^2} = \\frac{2}{s^2 + 4}$."
+            "topic": "Differential Equations",
+            "title": "Initial Value Problem",
+            "question": "Solve the initial value problem: $y' + 4y = 0$ with $y(0) = 3$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "y = 3e^{4t}",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "y = 4e^{-3t}",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "y = 3e^{-4t}",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "y = e^{-12t}",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Find the General Solution",
+                        "content": "The given differential equation is a first-order linear homogeneous equation: $y' + 4y = 0 \\implies \\frac{dy}{dt} = -4y$. This is a standard exponential growth/decay equation whose general solution is: $y(t) = Ce^{-4t}$."
+                    },
+                    {
+                        "title": "Apply the Initial Condition",
+                        "content": "We are given the initial value condition $y(0) = 3$. Substitute $t = 0$ and $y = 3$ into the general solution equation: $3 = C e^{-4(0)} \\implies 3 = C \\cdot e^0 \\implies C = 3$."
+                    },
+                    {
+                        "title": "Write the Final Particular Solution",
+                        "content": "Substitute the calculated value of $C$ back into the general solution formula: $y = 3e^{-4t}$."
+                    }
+                ],
+                "final_answer": "C",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Apply the First Shifting Theorem",
-          "content": "The First Shifting Theorem states that if $\\mathcal{L}\\{f(t)\\} = F(s)$, then: $\\mathcal{L}\\{e^{at}f(t)\\} = F(s - a)$."
+            "topic": "Laplace Transforms",
+            "title": "Laplace Transform of a Derivative",
+            "question": "What is the Laplace transform of the derivative $f'(t)$, given the transform of $f(t)$ is $F(s)$?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "F(s) / s",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "sF(s) - f(0)",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "s^2F(s) - sf(0) - f'(0)",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "F(s) - f(0)",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Recall the Definition/Property of Derivative Transforms",
+                        "content": "The Laplace transform of a derivative is derived using integration by parts from the basic definition of the Laplace transform: $\\mathcal{L}\\{f'(t)\\} = \\int_{0}^{\\infty} e^{-st} f'(t) \\, dt$."
+                    },
+                    {
+                        "title": "State the Established Identity Rule",
+                        "content": "Applying the integration by parts rule yields the standard property for the first derivative of a function: $\\mathcal{L}\\{f'(t)\\} = sF(s) - f(0)$, where $F(s) = \\mathcal{L}\\{f(t)\\}$ and $f(0)$ represents the initial condition of the function at $t = 0$."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Substitute the Value of a",
-          "content": "In this problem, the exponential term is $e^{-3t}$, so $a = -3$. This means we shift $s$ by replacing every $s$ with $(s - (-3)) = (s + 3)$: $\\mathcal{L}\\{e^{-3t} \\sin(2t)\\} = \\left. \\frac{2}{s^2 + 4} \\right|_{s \\to s+3} = \\frac{2}{(s+3)^2 + 4}$."
-        }
-      ],
-      "final_answer": "A",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Laplace Transforms",
-    "title": "Inverse Laplace Transform",
-    "question": "Determine the inverse Laplace transform of $F(s) = \\frac{1}{s-5}$.",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "e^{-5t}",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "e^{5t}",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "5e^t",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "\\sin(5t)",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Reference the Standard Inverse Formula",
-          "content": "The standard formula for the inverse Laplace transform of a simple linear shifted fraction is: $\\mathcal{L}^{-1}\\left\\{\\frac{1}{s-a}\\right\\} = e^{at}$."
+            "topic": "Differential Equations",
+            "title": "Particular Solution of Non-Homogeneous Equation",
+            "question": "Find the particular solution $y_p$ for the non-homogeneous equation $y'' - y' - 2y = 4$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "y_p = 4",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "y_p = -2",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "y_p = 2",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "y_p = -4",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Choose the Form of the Particular Solution",
+                        "content": "The non-homogeneous right-hand side of the differential equation is a constant value: $g(x) = 4$. Since the right side is a polynomial of degree 0 (a constant), and a constant is not a solution to the homogeneous equation, we assume a trial particular solution that is also a constant: $y_p = A$."
+                    },
+                    {
+                        "title": "Find the Derivatives of the Trial Solution",
+                        "content": "Take the first and second derivatives of the constant function $y_p$: $y_p' = 0$ and $y_p'' = 0$."
+                    },
+                    {
+                        "title": "Substitute Back into the Differential Equation",
+                        "content": "Substitute $y_p$, $y_p'$, and $y_p''$ into the original differential equation: $y'' - y' - 2y = 4 \\implies 0 - 0 - 2(A) = 4 \\implies -2A = 4$."
+                    },
+                    {
+                        "title": "Solve for A",
+                        "content": "Divide both sides by $-2$: $A = \\frac{4}{-2} = -2$. Thus, the particular solution is: $y_p = -2$."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
-        {
-          "title": "Match the Given Expression",
-          "content": "The given function is: $F(s) = \\frac{1}{s-5}$. By comparing this expression with the standard template $\\frac{1}{s-a}$, we find that: $a = 5$."
-        },
-        {
-          "title": "Write out the Solution",
-          "content": "Substituting $a = 5$ into the exponential formula gives: $f(t) = e^{5t}$."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Differential Equations",
-    "title": "Initial Value Problem",
-    "question": "Solve the initial value problem: $y' + 4y = 0$ with $y(0) = 3$.",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "y = 3e^{4t}",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "y = 4e^{-3t}",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "y = 3e^{-4t}",
-        "is_correct": true
-      },
-      {
-        "label": "D",
-        "text": "y = e^{-12t}",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Find the General Solution",
-          "content": "The given differential equation is a first-order linear homogeneous equation: $y' + 4y = 0 \\implies \\frac{dy}{dt} = -4y$. This is a standard exponential growth/decay equation whose general solution is: $y(t) = Ce^{-4t}$."
-        },
-        {
-          "title": "Apply the Initial Condition",
-          "content": "We are given the initial value condition $y(0) = 3$. Substitute $t = 0$ and $y = 3$ into the general solution equation: $3 = C e^{-4(0)} \\implies 3 = C \\cdot e^0 \\implies C = 3$."
-        },
-        {
-          "title": "Write the Final Particular Solution",
-          "content": "Substitute the calculated value of $C$ back into the general solution formula: $y = 3e^{-4t}$."
-        }
-      ],
-      "final_answer": "C",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Laplace Transforms",
-    "title": "Laplace Transform of a Derivative",
-    "question": "What is the Laplace transform of the derivative $f'(t)$, given the transform of $f(t)$ is $F(s)$?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "F(s) / s",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "sF(s) - f(0)",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "s^2F(s) - sf(0) - f'(0)",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "F(s) - f(0)",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Recall the Definition/Property of Derivative Transforms",
-          "content": "The Laplace transform of a derivative is derived using integration by parts from the basic definition of the Laplace transform: $\\mathcal{L}\\{f'(t)\\} = \\int_{0}^{\\infty} e^{-st} f'(t) \\, dt$."
-        },
-        {
-          "title": "State the Established Identity Rule",
-          "content": "Applying the integration by parts rule yields the standard property for the first derivative of a function: $\\mathcal{L}\\{f'(t)\\} = sF(s) - f(0)$, where $F(s) = \\mathcal{L}\\{f(t)\\}$ and $f(0)$ represents the initial condition of the function at $t = 0$."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Differential Equations",
-    "title": "Particular Solution of Non-Homogeneous Equation",
-    "question": "Find the particular solution $y_p$ for the non-homogeneous equation $y'' - y' - 2y = 4$.",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "y_p = 4",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "y_p = -2",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "y_p = 2",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "y_p = -4",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Choose the Form of the Particular Solution",
-          "content": "The non-homogeneous right-hand side of the differential equation is a constant value: $g(x) = 4$. Since the right side is a polynomial of degree 0 (a constant), and a constant is not a solution to the homogeneous equation, we assume a trial particular solution that is also a constant: $y_p = A$."
-        },
-        {
-          "title": "Find the Derivatives of the Trial Solution",
-          "content": "Take the first and second derivatives of the constant function $y_p$: $y_p' = 0$ and $y_p'' = 0$."
-        },
-        {
-          "title": "Substitute Back into the Differential Equation",
-          "content": "Substitute $y_p$, $y_p'$, and $y_p''$ into the original differential equation: $y'' - y' - 2y = 4 \\implies 0 - 0 - 2(A) = 4 \\implies -2A = 4$."
-        },
-        {
-          "title": "Solve for A",
-          "content": "Divide both sides by $-2$: $A = \\frac{4}{-2} = -2$. Thus, the particular solution is: $y_p = -2$."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
         {
             "topic": "Differential Equations",
             "title": "First-Order Separable Diff. Equation",
@@ -5356,7 +5401,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "7/12",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -5366,7 +5411,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "1/2",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5448,7 +5493,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "0.3333",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -5458,7 +5503,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "0.5000",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6106,145 +6151,144 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
-
         {
-        "topic": "Expected Value of a Continuous Random Variable",
-        "title": "Expected Value of a Continuous Random Variable",
-        "question": "A continuous random variable $X$ has a probability density function $f(x) = \\frac{3}{8}x^2$ for $0 \\le x \\le 2$ and $f(x) = 0$ otherwise. Find the expected value of $X$.",
-        "question_image": "",
-        "options": [
-            {
-                "label": "A",
-                "text": "1.25",
-                "is_correct": false
-            },
-            {
-                "label": "B",
-                "text": "1.50",
-                "is_correct": true
-            },
-            {
-                "label": "C",
-                "text": "1.75",
-                "is_correct": false
-            },
-            {
-                "label": "D",
-                "text": "1.80",
-                "is_correct": false
-            }
-        ],
-        "solution": {
-            "steps": [
+            "topic": "Expected Value of a Continuous Random Variable",
+            "title": "Expected Value of a Continuous Random Variable",
+            "question": "A continuous random variable $X$ has a probability density function $f(x) = \\frac{3}{8}x^2$ for $0 \\le x \\le 2$ and $f(x) = 0$ otherwise. Find the expected value of $X$.",
+            "question_image": "",
+            "options": [
                 {
-                    "title": "Write down the formula for Expected Value",
-                    "content": "The expected value $E[X]$ of a continuous random variable with probability density function $f(x)$ is given by: $E[X] = \\int_{-\\infty}^{\\infty} x f(x) \\, dx$."
+                    "label": "A",
+                    "text": "1.25",
+                    "is_correct": false
                 },
                 {
-                    "title": "Set up the integral with given limits",
-                    "content": "Since $f(x) = \\frac{3}{8}x^2$ only for $0 \\le x \\le 2$ and $0$ elsewhere, we can write: $E[X] = \\int_{0}^{2} x \\left( \\frac{3}{8}x^2 \\right) \\, dx = \\int_{0}^{2} \\frac{3}{8}x^3 \\, dx$."
+                    "label": "B",
+                    "text": "1.50",
+                    "is_correct": true
                 },
                 {
-                    "title": "Evaluate the integral",
-                    "content": "Integrate with respect to $x$: $E[X] = \\frac{3}{8} \\left[ \\frac{x^4}{4} \\right]_{0}^{2} = \\frac{3}{32} \\left[ x^4 \\right]_{0}^{2} = \\frac{3}{32} \\left( 2^4 - 0^4 \\right) = \\frac{3}{32} \\times 16 = \\frac{3}{2} = 1.50$."
+                    "label": "C",
+                    "text": "1.75",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "1.80",
+                    "is_correct": false
                 }
             ],
-            "final_answer": "B",
-            "solution_image": ""
-        }
-    },
-    {
-        "topic": "Measures of Central Tendencies and Dispersions",
-        "title": "Expected Value of X^2",
-        "question": "A random variable $X$ has an expected value $E[X] = 10$ and a variance $Var(X) = 4$. What is the expected value of $X^2$?",
-        "question_image": "",
-        "options": [
-            {
-                "label": "A",
-                "text": "96",
-                "is_correct": false
-            },
-            {
-                "label": "B",
-                "text": "100",
-                "is_correct": false
-            },
-            {
-                "label": "C",
-                "text": "104",
-                "is_correct": true
-            },
-            {
-                "label": "D",
-                "text": "116",
-                "is_correct": false
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Write down the formula for Expected Value",
+                        "content": "The expected value $E[X]$ of a continuous random variable with probability density function $f(x)$ is given by: $E[X] = \\int_{-\\infty}^{\\infty} x f(x) \\, dx$."
+                    },
+                    {
+                        "title": "Set up the integral with given limits",
+                        "content": "Since $f(x) = \\frac{3}{8}x^2$ only for $0 \\le x \\le 2$ and $0$ elsewhere, we can write: $E[X] = \\int_{0}^{2} x \\left( \\frac{3}{8}x^2 \\right) \\, dx = \\int_{0}^{2} \\frac{3}{8}x^3 \\, dx$."
+                    },
+                    {
+                        "title": "Evaluate the integral",
+                        "content": "Integrate with respect to $x$: $E[X] = \\frac{3}{8} \\left[ \\frac{x^4}{4} \\right]_{0}^{2} = \\frac{3}{32} \\left[ x^4 \\right]_{0}^{2} = \\frac{3}{32} \\left( 2^4 - 0^4 \\right) = \\frac{3}{32} \\times 16 = \\frac{3}{2} = 1.50$."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
             }
-        ],
-        "solution": {
-            "steps": [
+        },
+        {
+            "topic": "Measures of Central Tendencies and Dispersions",
+            "title": "Expected Value of X^2",
+            "question": "A random variable $X$ has an expected value $E[X] = 10$ and a variance $Var(X) = 4$. What is the expected value of $X^2$?",
+            "question_image": "",
+            "options": [
                 {
-                    "title": "Identify the relationship between Variance and Expected Values",
-                    "content": "The variance of a random variable $X$ is defined by the algebraic identity: $Var(X) = E[X^2] - (E[X])^2$."
+                    "label": "A",
+                    "text": "96",
+                    "is_correct": false
                 },
                 {
-                    "title": "Rearrange the formula to solve for E[X^2]",
-                    "content": "$E[X^2] = Var(X) + (E[X])^2$."
+                    "label": "B",
+                    "text": "100",
+                    "is_correct": false
                 },
                 {
-                    "title": "Substitute the given values",
-                    "content": "Given parameters: $E[X] = 10$ and $Var(X) = 4$. Substitute these values into the rearranged equation: $E[X^2] = 4 + (10)^2 = 4 + 100 = 104$."
+                    "label": "C",
+                    "text": "104",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "116",
+                    "is_correct": false
                 }
             ],
-            "final_answer": "C",
-            "solution_image": ""
-        }
-    },
-    {
-        "topic": "Probability Distributions",
-        "title": "Expected Value of a Uniformly Distributed Random Variable",
-        "question": "A continuous random variable $X$ is uniformly distributed between $a = 10$ and $b = 30$. What is the expected value $E[X]$?",
-        "question_image": "",
-        "options": [
-            {
-                "label": "A",
-                "text": "10",
-                "is_correct": false
-            },
-            {
-                "label": "B",
-                "text": "15",
-                "is_correct": false
-            },
-            {
-                "label": "C",
-                "text": "20",
-                "is_correct": true
-            },
-            {
-                "label": "D",
-                "text": "25",
-                "is_correct": false
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the relationship between Variance and Expected Values",
+                        "content": "The variance of a random variable $X$ is defined by the algebraic identity: $Var(X) = E[X^2] - (E[X])^2$."
+                    },
+                    {
+                        "title": "Rearrange the formula to solve for E[X^2]",
+                        "content": "$E[X^2] = Var(X) + (E[X])^2$."
+                    },
+                    {
+                        "title": "Substitute the given values",
+                        "content": "Given parameters: $E[X] = 10$ and $Var(X) = 4$. Substitute these values into the rearranged equation: $E[X^2] = 4 + (10)^2 = 4 + 100 = 104$."
+                    }
+                ],
+                "final_answer": "C",
+                "solution_image": ""
             }
-        ],
-        "solution": {
-            "steps": [
+        },
+        {
+            "topic": "Probability Distributions",
+            "title": "Expected Value of a Uniformly Distributed Random Variable",
+            "question": "A continuous random variable $X$ is uniformly distributed between $a = 10$ and $b = 30$. What is the expected value $E[X]$?",
+            "question_image": "",
+            "options": [
                 {
-                    "title": "Identify the Expected Value formula for a Uniform Distribution",
-                    "content": "For a continuous uniform distribution defined on the interval $[a, b]$, the probability density function is symmetric, and its expected value (mean) lies exactly at the midpoint of the interval: $E[X] = \\frac{a + b}{2}$."
+                    "label": "A",
+                    "text": "10",
+                    "is_correct": false
                 },
                 {
-                    "title": "Substitute the given boundary limits",
-                    "content": "Given limits: Lower bound ($a$) = 10, Upper bound ($b$) = 30. Substitute these values into the formula: $E[X] = \\frac{10 + 30}{2}$."
+                    "label": "B",
+                    "text": "15",
+                    "is_correct": false
                 },
                 {
-                    "title": "Simplify the expression",
-                    "content": "$E[X] = \\frac{40}{2} = 20$."
+                    "label": "C",
+                    "text": "20",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "25",
+                    "is_correct": false
                 }
             ],
-            "final_answer": "C",
-            "solution_image": ""
-        }
-    },
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Expected Value formula for a Uniform Distribution",
+                        "content": "For a continuous uniform distribution defined on the interval $[a, b]$, the probability density function is symmetric, and its expected value (mean) lies exactly at the midpoint of the interval: $E[X] = \\frac{a + b}{2}$."
+                    },
+                    {
+                        "title": "Substitute the given boundary limits",
+                        "content": "Given limits: Lower bound ($a$) = 10, Upper bound ($b$) = 30. Substitute these values into the formula: $E[X] = \\frac{10 + 30}{2}$."
+                    },
+                    {
+                        "title": "Simplify the expression",
+                        "content": "$E[X] = \\frac{40}{2} = 20$."
+                    }
+                ],
+                "final_answer": "C",
+                "solution_image": ""
+            }
+        },
         {
             "topic": "Expected Value",
             "title": "Expected Value of a Discrete Function",
@@ -10239,7 +10283,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "0.06 Ω",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -10249,7 +10293,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "0.12 Ω",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10326,12 +10370,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Zero",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "One-half of the supply voltage",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -10372,12 +10416,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "32 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "15 mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -10506,12 +10550,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "300 Hz",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "100 Hz",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -10728,7 +10772,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$A$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -10738,7 +10782,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "$\\overline{A}$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -10881,7 +10925,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "AND",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -10891,7 +10935,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "XOR",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -11313,7 +11357,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Metallic (conducting)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -11328,7 +11372,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Wooden",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -11349,7 +11393,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Magnitude (Gain) and Phase",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -11364,7 +11408,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Voltage and Current",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -11923,7 +11967,6 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
-
         {
             "topic": "Control Systems",
             "title": "PID Controller — Integral Action",
@@ -12076,12 +12119,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "No — Routh array has a sign change indicating instability",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "Yes — all coefficients are positive so it is stable",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12392,7 +12435,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The document must be intended for public distribution only.",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -12402,7 +12445,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The document must have been prepared by the licensee or under their direct supervisory control.",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17454,7 +17497,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "$3,255",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -17464,7 +17507,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$5,255",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18130,7 +18173,7 @@ const QUESTIONS = {
                         "content": "The ratio is calculated by dividing the annual benefits by the total annual costs:\\n$\\text{B/C Ratio} = \\dfrac{B}{C}$\\n$\\text{B/C Ratio} = \\dfrac{220,000}{154,616} \\approx 1.4229$\n\n*Note: Using the total cost method common in exams results in 1.42.*"
                     }
                 ],
-                "final_answer": "A",
+                "final_answer": "C",
                 "solution_image": ""
             }
         },
@@ -18795,7 +18838,7 @@ const QUESTIONS = {
         {
             "topic": "Break-Even Analysis",
             "title": "Break-Even Point Units",
-            "question": "A product has fixed costs of $120,000/year, a selling price of $80/unit, and a variable cost of $50/unit. How many units must be sold to break even?",
+            "question": "A product has fixed costs of USD 120,000/year, a selling price of USD 80/unit, and a variable cost of USD 50/unit. How many units must be sold to break even?",
             "options": [
                 {
                     "label": "A",
@@ -19224,7 +19267,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "200 Nm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -19234,7 +19277,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "100 Nm",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20713,474 +20756,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 38",
-            "question": "Two orthogonal coplanar forces $F_1 = 380$ N and $F_2 = 190$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$570.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$424.85$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$552.31$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$297.39$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{380^2 + 190^2} = 424.85$ N."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 39",
-            "question": "Two orthogonal coplanar forces $F_1 = 390$ N and $F_2 = 195$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$585.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$566.84$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$436.03$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$305.22$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{390^2 + 195^2} = 436.03$ N."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 40",
-            "question": "Two orthogonal coplanar forces $F_1 = 400$ N and $F_2 = 200$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$600.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$581.37$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$313.05$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$447.21$ N",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{400^2 + 200^2} = 447.21$ N."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 41",
-            "question": "Two orthogonal coplanar forces $F_1 = 410$ N and $F_2 = 205$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$458.39$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$615.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$595.91$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$320.87$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{410^2 + 205^2} = 458.39$ N."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 42",
-            "question": "Two orthogonal coplanar forces $F_1 = 420$ N and $F_2 = 210$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$630.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$469.57$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$610.44$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$328.70$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{420^2 + 210^2} = 469.57$ N."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 43",
-            "question": "Two orthogonal coplanar forces $F_1 = 430$ N and $F_2 = 215$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$645.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$624.98$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$480.75$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$336.52$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{430^2 + 215^2} = 480.75$ N."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 44",
-            "question": "Two orthogonal coplanar forces $F_1 = 440$ N and $F_2 = 220$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$660.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$639.51$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$344.35$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$491.93$ N",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{440^2 + 220^2} = 491.93$ N."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 45",
-            "question": "Two orthogonal coplanar forces $F_1 = 450$ N and $F_2 = 225$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$503.12$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$675.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$654.06$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$352.18$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{450^2 + 225^2} = 503.12$ N."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 46",
-            "question": "Two orthogonal coplanar forces $F_1 = 460$ N and $F_2 = 230$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$690.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$514.30$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$668.59$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$360.01$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{460^2 + 230^2} = 514.30$ N."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 47",
-            "question": "Two orthogonal coplanar forces $F_1 = 470$ N and $F_2 = 235$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$705.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$683.12$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$525.48$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$367.84$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{470^2 + 235^2} = 525.48$ N."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 48",
-            "question": "Two orthogonal coplanar forces $F_1 = 480$ N and $F_2 = 240$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$720.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$697.66$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$375.66$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$536.66$ N",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{480^2 + 240^2} = 536.66$ N."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 49",
-            "question": "Two orthogonal coplanar forces $F_1 = 490$ N and $F_2 = 245$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$547.84$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$735.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$712.19$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$383.49$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{490^2 + 245^2} = 547.84$ N."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "Resultant of Orthogonal Forces - Case 50",
-            "question": "Two orthogonal coplanar forces $F_1 = 500$ N and $F_2 = 250$ N act concurrently at a single point. What is the magnitude of the resultant force?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$750.00$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$559.02$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$726.73$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$391.31$ N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Resultant Magnitude",
-                        "content": "$R = \\sqrt{F_1^2 + F_2^2} = \\sqrt{500^2 + 250^2} = 559.02$ N."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
             "topic": "Free Body Diagrams",
             "title": "Pin-Supported Beam Reactions",
             "question": "A simply supported beam of 8 m span carries a concentrated load of 30 kN at 2 m from the left support. What is the vertical reaction at the LEFT support?",
@@ -21283,42 +20858,6 @@ const QUESTIONS = {
                     {
                         "title": "Composite Area",
                         "content": "$A = A_{rectangle} - A_{hole} = (6 \\times 4) - (2 \\times 2) = 24 - 4 = 20$ units²."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Friction",
-            "title": "Coulomb Friction — Impending Motion",
-            "question": "A 50 kg block rests on a horizontal surface with coefficient of static friction μₛ = 0.4. What is the maximum horizontal force that can be applied before the block begins to slide? (g = 9.81 m/s²)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "196.2 N",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "490.5 N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "125 N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "50 N",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Static Friction",
-                        "content": "$F_{max} = \\mu_s N = \\mu_s mg = 0.4 \\times 50 \\times 9.81 = 196.2$ N."
                     }
                 ],
                 "final_answer": "A"
@@ -29898,237 +29437,236 @@ const QUESTIONS = {
                 "solution_image": ""
             }
         },
-
         {
-    "topic": "Fluid Mechanics",
-    "title": "Reynolds Number and Flow Regime",
-    "question": "Water at 20°C (kinematic viscosity $\\nu = 1.0 \\times 10^{-6}\\text{ m}^2/\\text{s}$) flows through a pipe with a diameter of 0.05 m at a velocity of 1.5 m/s. What is the Reynolds number and the likely flow regime?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "750, Laminar",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "75,000, Turbulent",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "7,500, Turbulent",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "75,000, Laminar",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Reynolds Number Formula",
-          "content": "The Reynolds number ($Re$) for flow in a pipe is calculated using the following formula: $Re = \\frac{V \\cdot D}{\\nu}$, where $V$ = flow velocity (1.5 m/s), $D$ = pipe diameter (0.05 m), and $\\nu$ = kinematic viscosity ($1.0 \\times 10^{-6}\\text{ m}^2/\\text{s}$)."
+            "topic": "Fluid Mechanics",
+            "title": "Reynolds Number and Flow Regime",
+            "question": "Water at 20°C (kinematic viscosity $\\nu = 1.0 \\times 10^{-6}\\text{ m}^2/\\text{s}$) flows through a pipe with a diameter of 0.05 m at a velocity of 1.5 m/s. What is the Reynolds number and the likely flow regime?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "750, Laminar",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "75,000, Turbulent",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "7,500, Turbulent",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "75,000, Laminar",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Reynolds Number Formula",
+                        "content": "The Reynolds number ($Re$) for flow in a pipe is calculated using the following formula: $Re = \\frac{V \\cdot D}{\\nu}$, where $V$ = flow velocity (1.5 m/s), $D$ = pipe diameter (0.05 m), and $\\nu$ = kinematic viscosity ($1.0 \\times 10^{-6}\\text{ m}^2/\\text{s}$)."
+                    },
+                    {
+                        "title": "Substitute the Given Values and Calculate",
+                        "content": "Substituting the values into the formula: $Re = \\frac{1.5 \\times 0.05}{1.0 \\times 10^{-6}} = \\frac{0.075}{1.0 \\times 10^{-6}} = 75,000$."
+                    },
+                    {
+                        "title": "Determine the Flow Regime",
+                        "content": "For internal pipe flow, the typical classification criteria are: $Re < 2,300$ is Laminar flow, $2,300 \\le Re \\le 4,000$ is Transition flow, and $Re > 4,000$ is Turbulent flow. Since our calculated value is $75,000 > 4,000$, the flow regime is highly turbulent."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Substitute the Given Values and Calculate",
-          "content": "Substituting the values into the formula: $Re = \\frac{1.5 \\times 0.05}{1.0 \\times 10^{-6}} = \\frac{0.075}{1.0 \\times 10^{-6}} = 75,000$."
+            "topic": "Fluid Mechanics",
+            "title": "Darcy Friction Factor for Laminar Flow",
+            "question": "For a fully developed laminar flow in a circular pipe, the Reynolds number is calculated to be 1,600. What is the Darcy friction factor $f$?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "0.010",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "0.040",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "0.025",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "0.064",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Formula for Laminar Flow Friction Factor",
+                        "content": "For a fully developed laminar flow ($Re < 2,300$) in a circular pipe, the Darcy friction factor $f$ depends solely on the Reynolds number and is defined by the exact analytical relation: $f = \\frac{64}{Re}$."
+                    },
+                    {
+                        "title": "Substitute the Given Value",
+                        "content": "Given that the Reynolds number $Re = 1,600$: $f = \\frac{64}{1,600}$."
+                    },
+                    {
+                        "title": "Perform the Division",
+                        "content": "$f = \\frac{4}{100} = 0.064$."
+                    }
+                ],
+                "final_answer": "D",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Determine the Flow Regime",
-          "content": "For internal pipe flow, the typical classification criteria are: $Re < 2,300$ is Laminar flow, $2,300 \\le Re \\le 4,000$ is Transition flow, and $Re > 4,000$ is Turbulent flow. Since our calculated value is $75,000 > 4,000$, the flow regime is highly turbulent."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Fluid Mechanics",
-    "title": "Darcy Friction Factor for Laminar Flow",
-    "question": "For a fully developed laminar flow in a circular pipe, the Reynolds number is calculated to be 1,600. What is the Darcy friction factor $f$?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "0.010",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "0.040",
-        "is_correct": false
-      },
-      {
-        "label": "C",
-        "text": "0.025",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "0.064",
-        "is_correct": true
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Formula for Laminar Flow Friction Factor",
-          "content": "For a fully developed laminar flow ($Re < 2,300$) in a circular pipe, the Darcy friction factor $f$ depends solely on the Reynolds number and is defined by the exact analytical relation: $f = \\frac{64}{Re}$."
+            "topic": "Fluid Mechanics",
+            "title": "Head Loss due to Friction",
+            "question": "A 150 m long horizontal pipe with a diameter of 0.1 m has a Darcy friction factor of 0.025. If the water velocity is 2 m/s, what is the head loss due to friction?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "3.82 m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "7.65 m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "5.10 m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "10.21 m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Darcy-Weisbach Equation",
+                        "content": "The major head loss ($h_f$) due to fluid friction in a pipe can be computed using the Darcy-Weisbach equation: $h_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}$, where $f$ = 0.025, $L$ = 150 m, $D$ = 0.1 m, $V$ = 2 m/s, and $g \\approx 9.81\\text{ m}/\\text{s}^2$."
+                    },
+                    {
+                        "title": "Substitute the Given Values",
+                        "content": "$h_f = 0.025 \\cdot \\frac{150}{0.1} \\cdot \\frac{2^2}{2 \\times 9.81}$."
+                    },
+                    {
+                        "title": "Calculate the Result",
+                        "content": "$h_f = 0.025 \\cdot 1,500 \\cdot \\frac{4}{19.62} = 37.5 \\cdot 0.20387 \\approx 7.645\\text{ m}$. Rounding to two decimal places gives 7.65 m."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Substitute the Given Value",
-          "content": "Given that the Reynolds number $Re = 1,600$: $f = \\frac{64}{1,600}$."
+            "topic": "Fluid Mechanics",
+            "title": "Hydraulic Diameter of a Rectangular Duct",
+            "question": "A rectangular air duct has cross-sectional dimensions of 0.4 m by 0.2 m. What is the hydraulic diameter $D_h$ of this duct?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "0.20 m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "0.27 m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "0.30 m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "0.40 m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Formula for Hydraulic Diameter",
+                        "content": "The hydraulic diameter $D_h$ is given by $D_h = \\frac{4A}{P}$, where $A$ is the cross-sectional area and $P$ is the wetted perimeter. For a completely filled rectangular duct with width $w$ and height $h$, $A = w \\cdot h$ and $P = 2(w + h)$, simplifying the formula to: $D_h = \\frac{2(w \\cdot h)}{w + h}$."
+                    },
+                    {
+                        "title": "Substitute the Dimensions",
+                        "content": "Given $w = 0.4\\text{ m}$ and $h = 0.2\\text{ m}$: $D_h = \\frac{2(0.4 \\times 0.2)}{0.4 + 0.2}$."
+                    },
+                    {
+                        "title": "Perform the Calculation",
+                        "content": "$D_h = \\frac{2 \\times 0.08}{0.6} = \\frac{0.16}{0.6} \\approx 0.2667\\text{ m}$. Rounding to two decimal places matches the option 0.27 m."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
         {
-          "title": "Perform the Division",
-          "content": "$f = \\frac{4}{100} = 0.064$."
-        }
-      ],
-      "final_answer": "D",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Fluid Mechanics",
-    "title": "Head Loss due to Friction",
-    "question": "A 150 m long horizontal pipe with a diameter of 0.1 m has a Darcy friction factor of 0.025. If the water velocity is 2 m/s, what is the head loss due to friction?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "3.82 m",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "7.65 m",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "5.10 m",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "10.21 m",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Darcy-Weisbach Equation",
-          "content": "The major head loss ($h_f$) due to fluid friction in a pipe can be computed using the Darcy-Weisbach equation: $h_f = f \\cdot \\frac{L}{D} \\cdot \\frac{V^2}{2g}$, where $f$ = 0.025, $L$ = 150 m, $D$ = 0.1 m, $V$ = 2 m/s, and $g \\approx 9.81\\text{ m}/\\text{s}^2$."
+            "topic": "Fluid Mechanics",
+            "title": "Minor Head Loss Across a Valve",
+            "question": "Water flows through a pipe with a velocity of 3 m/s. If a valve in the line has a loss coefficient $K = 1.5$, what is the head loss associated with the valve?",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "0.46 m",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "0.69 m",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "0.23 m",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "1.38 m",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Identify the Minor Head Loss Equation",
+                        "content": "The localized head loss ($h_m$) caused by pipe components is calculated using the minor loss equation: $h_m = K \\cdot \\frac{V^2}{2g}$, where $K$ = 1.5, $V$ = 3 m/s, and $g \\approx 9.81\\text{ m}/\\text{s}^2$."
+                    },
+                    {
+                        "title": "Substitute the Given Parameters",
+                        "content": "$h_m = 1.5 \\cdot \\frac{3^2}{2 \\times 9.81}$."
+                    },
+                    {
+                        "title": "Compute the Final Value",
+                        "content": "$h_m = 1.5 \\cdot \\frac{9}{19.62} = \\frac{13.5}{19.62} \\approx 0.6881\\text{ m}$. Rounding to two decimal places yields 0.69 m."
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": ""
+            }
         },
-        {
-          "title": "Substitute the Given Values",
-          "content": "$h_f = 0.025 \\cdot \\frac{150}{0.1} \\cdot \\frac{2^2}{2 \\times 9.81}$."
-        },
-        {
-          "title": "Calculate the Result",
-          "content": "$h_f = 0.025 \\cdot 1,500 \\cdot \\frac{4}{19.62} = 37.5 \\cdot 0.20387 \\approx 7.645\\text{ m}$. Rounding to two decimal places gives 7.65 m."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Fluid Mechanics",
-    "title": "Hydraulic Diameter of a Rectangular Duct",
-    "question": "A rectangular air duct has cross-sectional dimensions of 0.4 m by 0.2 m. What is the hydraulic diameter $D_h$ of this duct?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "0.20 m",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "0.27 m",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "0.30 m",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "0.40 m",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Formula for Hydraulic Diameter",
-          "content": "The hydraulic diameter $D_h$ is given by $D_h = \\frac{4A}{P}$, where $A$ is the cross-sectional area and $P$ is the wetted perimeter. For a completely filled rectangular duct with width $w$ and height $h$, $A = w \\cdot h$ and $P = 2(w + h)$, simplifying the formula to: $D_h = \\frac{2(w \\cdot h)}{w + h}$."
-        },
-        {
-          "title": "Substitute the Dimensions",
-          "content": "Given $w = 0.4\\text{ m}$ and $h = 0.2\\text{ m}$: $D_h = \\frac{2(0.4 \\times 0.2)}{0.4 + 0.2}$."
-        },
-        {
-          "title": "Perform the Calculation",
-          "content": "$D_h = \\frac{2 \\times 0.08}{0.6} = \\frac{0.16}{0.6} \\approx 0.2667\\text{ m}$. Rounding to two decimal places matches the option 0.27 m."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
-  {
-    "topic": "Fluid Mechanics",
-    "title": "Minor Head Loss Across a Valve",
-    "question": "Water flows through a pipe with a velocity of 3 m/s. If a valve in the line has a loss coefficient $K = 1.5$, what is the head loss associated with the valve?",
-    "question_image": "",
-    "options": [
-      {
-        "label": "A",
-        "text": "0.46 m",
-        "is_correct": false
-      },
-      {
-        "label": "B",
-        "text": "0.69 m",
-        "is_correct": true
-      },
-      {
-        "label": "C",
-        "text": "0.23 m",
-        "is_correct": false
-      },
-      {
-        "label": "D",
-        "text": "1.38 m",
-        "is_correct": false
-      }
-    ],
-    "solution": {
-      "steps": [
-        {
-          "title": "Identify the Minor Head Loss Equation",
-          "content": "The localized head loss ($h_m$) caused by pipe components is calculated using the minor loss equation: $h_m = K \\cdot \\frac{V^2}{2g}$, where $K$ = 1.5, $V$ = 3 m/s, and $g \\approx 9.81\\text{ m}/\\text{s}^2$."
-        },
-        {
-          "title": "Substitute the Given Parameters",
-          "content": "$h_m = 1.5 \\cdot \\frac{3^2}{2 \\times 9.81}$."
-        },
-        {
-          "title": "Compute the Final Value",
-          "content": "$h_m = 1.5 \\cdot \\frac{9}{19.62} = \\frac{13.5}{19.62} \\approx 0.6881\\text{ m}$. Rounding to two decimal places yields 0.69 m."
-        }
-      ],
-      "final_answer": "B",
-      "solution_image": ""
-    }
-  },
         {
             "topic": "Internal Flow",
             "title": "Pressure Drop due to Friction",
@@ -31387,12 +30925,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "40.77 m",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "4 m",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -31682,7 +31220,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "$F/2$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -31692,7 +31230,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$F$",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -31877,12 +31415,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$(-2.4\\hat{i} + 1.6\\hat{j}) \\times 10^{-13}$ N",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "$(1.6\\hat{i} - 2.4\\hat{j}) \\times 10^{-13}$ N",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -31910,7 +31448,7 @@ const QUESTIONS = {
                         "content": "Multiply by $-1.6 \\times 10^{-19}$ to get vector force."
                     }
                 ],
-                "final_answer": "D"
+                "final_answer": "A"
             }
         },
         {
@@ -32007,7 +31545,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "15.36 W",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -32017,7 +31555,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "23.04 W",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -33512,12 +33050,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "17.2",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "14.7",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33562,12 +33100,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "18.2 kPa",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "10.0 kPa",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33604,12 +33142,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.75",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "0.67",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33642,12 +33180,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.25",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "0.50",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33680,12 +33218,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "78°F",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "82°F",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33718,12 +33256,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "129.7 kPa",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "120.0 kPa",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33764,12 +33302,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.2536 kJ/kg-K",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "0.2428 kJ/kg-K",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -33802,7 +33340,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "28.8 g/mol",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -33812,7 +33350,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "30.0 g/mol",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -33840,7 +33378,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "5.76 J/mol-K",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -33850,7 +33388,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "8.31 J/mol-K",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -33882,7 +33420,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "43.2%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -33892,7 +33430,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "56.8%",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -33924,7 +33462,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "2 atm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -33934,7 +33472,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "6 atm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -33966,7 +33504,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The sum of the partial volumes of all component gases at the mixture temperature and pressure",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -33976,7 +33514,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "The volume of the largest component gas",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -34004,7 +33542,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "2.857 kJ/kg-K",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34014,7 +33552,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "3.524 kJ/kg-K",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -34042,7 +33580,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "84.2%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34052,7 +33590,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "88.9%",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -34080,7 +33618,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "81.3%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34095,7 +33633,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "92.0%",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34118,7 +33656,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.947",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34133,7 +33671,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "0.973",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34156,7 +33694,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "5.04 kJ/kg",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34171,7 +33709,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "2.52 kJ/kg",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34194,7 +33732,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "90.5%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34209,7 +33747,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "80.0%",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34236,7 +33774,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "80%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34251,7 +33789,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "70%",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34274,7 +33812,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.96",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34289,7 +33827,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "1.04",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34312,7 +33850,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "26.3 kJ",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34327,7 +33865,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "52.6 kJ",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -34354,7 +33892,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "59.7 kJ",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -34369,7 +33907,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "85.2 kJ",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -37494,12 +37032,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "69.1°C",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "70.0°C",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -37540,12 +37078,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Counterflow",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Parallel flow",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -37638,7 +37176,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Effectiveness Formula",
-                        "content": "$\epsilon = \frac{Q_{actual}}{Q_{max}} = \frac{C_h(T_{h,in} - T_{h,out})}{C_{min}(T_{h,in} - T_{c,in})} = \frac{C_c(T_{c,out} - T_{c,in})}{C_{min}(T_{h,in} - T_{c,in})}$ where $C = \dot{m}C_p$."
+                        "content": "$epsilon = \frac{Q_{actual}}{Q_{max}} = \frac{C_h(T_{h,in} - T_{h,out})}{C_{min}(T_{h,in} - T_{c,in})} = \frac{C_c(T_{c,out} - T_{c,in})}{C_{min}(T_{h,in} - T_{c,in})}$ where $C = dot{m}C_p$."
                     }
                 ],
                 "final_answer": "A",
@@ -37654,7 +37192,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "80 kW",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -37664,7 +37202,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "120 kW",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -37696,7 +37234,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$\frac{1}{U_{dirty}} = \frac{1}{U_{clean}} + R_f$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -37711,7 +37249,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$U_{dirty} = U_{clean} \times R_f$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -37733,23 +37271,23 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\epsilon = 1 - e^{-NTU}$",
-                    "is_correct": false
+                    "text": "$epsilon = 1 - e^{-NTU}$",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$\epsilon = NTU / (1 + NTU)$",
+                    "text": "$epsilon = NTU / (1 + NTU)$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$\epsilon = 1$",
+                    "text": "$epsilon = 1$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$\epsilon = e^{-NTU}$",
-                    "is_correct": true
+                    "text": "$epsilon = e^{-NTU}$",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -37899,7 +37437,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "400 W",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -37909,7 +37447,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "800 W",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -37983,7 +37521,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "12,500 W/m",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -37993,7 +37531,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "19,608 W/m",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -38562,7 +38100,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Color / Pressure",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -38572,7 +38110,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Area / Temperature gradient",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -39529,12 +39067,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "≈ 49.7°C",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "≈ 50°C",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -39789,7 +39327,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "0.50 mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -39799,7 +39337,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "0.75 mm",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -39834,12 +39372,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.0245 rad",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "0.0124 rad",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -39880,12 +39418,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "9.68 N/mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "4.84 N/mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40064,12 +39602,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "64",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "16",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40260,12 +39798,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "40.2 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "49.3 mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40306,12 +39844,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Shear failure",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Bearing failure",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40490,12 +40028,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.997",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "0.850",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40824,12 +40362,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "216",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "6",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40866,12 +40404,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "3.52 kN",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "3.20 kN",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40908,12 +40446,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$f = 2pi^2 left(\frac{mu N}{P}\right)left(\frac{r}{c}\right)$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "$f = \frac{mu N}{P}$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40946,12 +40484,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$S = left(\frac{r}{c}\right)^2 \frac{mu N}{P}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "$S = left(\frac{c}{r}\right)^2 \frac{mu N}{P}$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -40984,12 +40522,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Roller bearings have higher load capacity but lower speed limits",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Roller bearings have lower friction at all speeds",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41022,12 +40560,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Heavy radial loads and moderate axial thrust loads in both directions",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Purely axial thrust loads only",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41060,12 +40598,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Shaft misalignment or dynamic deflection is expected",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Heavy shock and impact axial loads are present",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41098,12 +40636,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Centrifugal forces cause balls to slide outward, causing heat and wear",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "They cannot support any axial load at high speeds",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41136,12 +40674,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Viscosity changes very little with temperature variations",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "The oil is extremely thick at all temperatures",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41174,12 +40712,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "89.4 rad/s",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "150.0 rad/s",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41216,12 +40754,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Compressive (crushing) stress is exactly twice the shear stress",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Shear stress is twice the compressive stress",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41254,12 +40792,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Slightly lower and more conservative for design",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Slightly higher",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41292,12 +40830,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "2.57",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "1.57",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41334,12 +40872,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Accommodate minor axial, radial, or angular misalignments while transmitting torque",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "Increase the torque output through speed reduction",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41372,12 +40910,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The square of the rotational speed ($omega^2$)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "The rotational speed ($omega$)",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41410,12 +40948,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "4%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
                     "text": "2%",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -41448,7 +40986,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Lame's thick-walled cylinder equations",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41458,7 +40996,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Hertzian contact stress",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41486,7 +41024,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "30 kN/mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41496,7 +41034,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "15 kN/mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41524,7 +41062,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "250 N-m/rad",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41534,7 +41072,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "500 N-m/rad",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41562,7 +41100,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.041 rad",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41572,7 +41110,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "0.020 rad",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41604,7 +41142,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "45.0 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41614,7 +41152,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "90.0 mm",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41646,7 +41184,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Deflections and slopes of linearly elastic structures by taking the partial derivative of total strain energy",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41656,7 +41194,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "The ultimate tensile strength of brittle materials",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41684,7 +41222,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$U = \frac{P^2 L}{2 A E}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41694,7 +41232,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "$U = \frac{P^2 L}{A E}$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41722,7 +41260,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "EI",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41732,7 +41270,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "GJ",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41760,7 +41298,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The deflection at point A due to a load at point B equals the deflection at B due to the same load at A",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41770,7 +41308,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Stress is always proportional to strain",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41798,7 +41336,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Straightness",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41808,7 +41346,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Profile of a line",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41836,7 +41374,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Maximum Material Condition",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41846,7 +41384,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Regardless of Feature Size",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41874,7 +41412,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The maximum allowable hole diameter (largest hole)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41884,7 +41422,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "The nominal hole diameter",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41912,7 +41450,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "A theoretically exact point, axis, line, or plane derived from the true geometric counterpart",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41922,7 +41460,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "A manufacturing tolerance tolerance zone",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41950,7 +41488,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Cylindrical",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41960,7 +41498,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Two parallel planes",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -41988,7 +41526,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Two parallel diagonal arrows pointing up and right, connected by a horizontal segment",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -41998,7 +41536,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "A circle with a slash through it",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42026,7 +41564,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "To the right of the front view",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42036,7 +41574,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Directly above the front view",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42064,7 +41602,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Slightly larger than the root (minor) area but smaller than the nominal (major) area",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42074,7 +41612,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Exactly equal to the nominal area",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42102,7 +41640,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.707 w",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42112,7 +41650,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "1.414 w",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42140,7 +41678,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Proportional to its radial distance from the centroid of the rivet group",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42150,7 +41688,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "Inversely proportional to its distance from the centroid",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42178,7 +41716,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$C = \frac{K_b}{K_b + K_m}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42188,7 +41726,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "$C = \frac{K_b}{K_m}$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42216,7 +41754,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The maximum stress a bolt can withstand without acquiring permanent set",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42226,7 +41764,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "The ultimate tensile strength",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42254,7 +41792,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The thread engagement length is too short or the female thread material is weaker than the bolt",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42264,7 +41802,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "The pitch of the thread is too fine",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -42292,7 +41830,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$sigma = \frac{P}{t L}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42307,7 +41845,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$sigma = \frac{P}{2 t L}$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42330,7 +41868,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Peel stress (cleavage)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42345,7 +41883,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Torsional stress",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42368,7 +41906,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Holes are harder to size dynamically; standard drills and reamers produce fixed hole sizes, whereas shaft diameters can be easily turned or ground to any size",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42383,7 +41921,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Hole-basis requires no calculations",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42406,7 +41944,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Interference fit",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42421,7 +41959,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Bilateral tolerance fit",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42444,7 +41982,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "±0.054 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42459,7 +41997,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "±0.150 mm",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42486,7 +42024,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "±0.090 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42501,7 +42039,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "±0.120 mm",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42524,7 +42062,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Specify generous internal corner radii that match standard milling tool diameters, and avoid deep blind holes",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42539,7 +42077,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Minimize tolerance sizes to under 0.001 mm",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42562,7 +42100,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Minimize the number of individual parts, and ensure parts are self-aligning and symmetric",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42577,7 +42115,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Eliminate quality control steps",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42600,7 +42138,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Bilateral unequal tolerance",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42615,7 +42153,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Bilateral equal tolerance",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42638,7 +42176,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Defines cylindrical (circular) tolerance zones that match function, yielding up to 57% more usable tolerance area",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42653,7 +42191,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Reduces the number of datum dimensions needed",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42675,23 +42213,23 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$T_R = \frac{F d_m}{2} \left[ \frac{l + \pi \mu d_m}{\pi d_m - \mu l} \right]$",
-                    "is_correct": false
+                    "text": "$T_R = \frac{F d_m}{2} left[ \frac{l + pi mu d_m}{pi d_m - mu l} \right]$",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$T_R = \frac{F d_m}{2} \left[ \frac{\pi \mu d_m - l}{\pi d_m + \mu l} \right]$",
+                    "text": "$T_R = \frac{F d_m}{2} left[ \frac{pi mu d_m - l}{pi d_m + mu l} \right]$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$T_R = F d_m \mu$",
+                    "text": "$T_R = F d_m mu$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$T_R = \frac{F d_m}{2} \tan \lambda$",
-                    "is_correct": true
+                    "text": "$T_R = \frac{F d_m}{2} \tan lambda$",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42714,7 +42252,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$mu geq \tanlambda$ (where λ is the lead angle)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42729,7 +42267,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$mu = 0$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42752,7 +42290,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Less than 50%",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42767,7 +42305,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "100%",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42790,7 +42328,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Are easier to machine, stronger in shear, and allow the use of split nuts for wear compensation, despite slightly higher friction",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42805,7 +42343,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Have higher efficiency than square threads",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42828,7 +42366,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$Tc = mu_c F \frac{d_o + d_i}{4}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42843,7 +42381,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$Tc = 0$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42866,7 +42404,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The major diameter (D) of the nut threads",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42881,7 +42419,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The pitch diameter (dp)",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42904,7 +42442,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "9 mm",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42919,7 +42457,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "6 mm",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42946,7 +42484,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "It converts sliding friction to rolling friction, achieving efficiencies of 90% or higher and reducing backlash",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42961,7 +42499,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "It requires no lubrication",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -42984,7 +42522,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.25",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -42999,7 +42537,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "2.00",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -43026,7 +42564,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "18",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -43041,7 +42579,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "32",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -43064,7 +42602,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Doubled",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -43079,7 +42617,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Halved",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -43102,7 +42640,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Can achieve extremely high gear reductions in a single step and are self-locking from the output side",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -43117,7 +42655,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Can run at the highest speeds",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -44273,12 +43811,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "6,900",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "3,623",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -44349,12 +43887,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Poor",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "Very Good",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -44463,7 +44001,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "570 ft",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -44473,7 +44011,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "440 ft",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -44501,7 +44039,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "604 ft",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -44511,7 +44049,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "302 ft",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -44615,7 +44153,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Counteract the centrifugal force on a vehicle and reduce the lateral friction demand",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -44625,7 +44163,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Reduce the required sight distance",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -44691,7 +44229,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Design speed, traffic volume (AADT), and embankment slope",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -44701,7 +44239,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The posted speed limit only",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -44729,7 +44267,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Speed of the 26th ranked vehicle in the ordered sample",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -44739,7 +44277,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Maximum recorded speed",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -44805,7 +44343,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Trip Generation → Trip Distribution → Mode Choice → Trip Assignment",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -44815,7 +44353,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Trip Assignment → Mode Choice → Trip Distribution → Trip Generation",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -46744,7 +46282,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "306 kPa",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -46754,7 +46292,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "180 kPa",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -46787,12 +46325,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The frost depth (to prevent frost heave) or a minimum of 18 in below undisturbed soil",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "The height of the building above grade",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -46825,12 +46363,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The surrounding soil settles more than the pile, dragging the pile downward and adding to axial load",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "The pile is installed in tension (uplift) conditions",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -46863,12 +46401,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "0.5 inch + pile elastic compression + B/120 (where B = pile diameter in inches)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "10% of pile diameter",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -46901,12 +46439,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "82.9 kN/m",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "150.0 kN/m",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -46981,12 +46519,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "1.86",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "2.50",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -47019,12 +46557,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Accounting for wall friction (δ) and sloped backfills, unlike Rankine's assumption of smooth vertical walls with horizontal backfill",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "Applying only to cohesive soils",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -47057,7 +46595,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Circular failure surfaces; satisfies moment equilibrium only, neglecting interslice shear forces",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47067,7 +46605,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Non-circular failure surfaces for clay slopes",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47095,7 +46633,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "9.2 m",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47105,7 +46643,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "3.5 m",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47128,7 +46666,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Yes — FS = 2.625 ≥ 2.0, adequate",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -47143,7 +46681,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Cannot determine without knowing wall height",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47171,7 +46709,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Resist tensile forces that develop within the retained soil mass, converting an unstable steep slope into a stable composite structure",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47181,7 +46719,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Replace the need for soil compaction during construction",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47209,7 +46747,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "0.577",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47219,7 +46757,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "0.423",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47247,7 +46785,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "2.94 m",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47257,7 +46795,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "0.74 m",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47280,7 +46818,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "626 kPa",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -47295,7 +46833,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "312 kPa",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47492,7 +47030,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "At z = B/2 below the footing for a square/circular footing",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47502,7 +47040,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Uniformly distributed to z = 4B",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47606,7 +47144,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Total footing area would exceed 50% of building footprint, or differential settlement must be minimized",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47616,7 +47154,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The site has no groundwater concerns",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47644,7 +47182,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Allows double drainage, reducing the consolidation TIME but not the magnitude of settlement",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47654,7 +47192,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Has no effect on either settlement magnitude or rate",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47758,7 +47296,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "60 kPa",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47768,7 +47306,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "240 kPa",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47796,7 +47334,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Drained strength is larger, because the clay can dilate and gain strength when drainage is allowed",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47806,7 +47344,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Undrained strength is larger because water carries part of the load",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47834,7 +47372,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "St = 4",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47844,7 +47382,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "St = 60",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47910,7 +47448,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "48.7 kPa",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47920,7 +47458,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "24.3 kPa",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47952,7 +47490,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Peak friction angle φ' ≥ residual friction angle φr; φr controls long-term stability of pre-existing failure planes",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -47962,7 +47500,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Residual friction angle is only relevant for sand, not clay",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -47990,7 +47528,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "c' = 0 (cohesionless soil by definition)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -48000,7 +47538,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "c' equals the capillary pressure in the sand",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -50816,7 +50354,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "400 $gpd/ft^2$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -50826,7 +50364,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "696 $gpd/ft^2$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -50862,12 +50400,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Chlorine gas ($Cl_2$)",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "Aluminum sulfate (Alum, $Al_2(SO_4)_3$)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -50904,12 +50442,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "The concentration of Mixed Liquor Suspended Solids (MLSS) in the aeration tank",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "The mass of Biochemical Oxygen Demand (BOD) entering the aeration tank per day",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -50996,12 +50534,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Non-carbonate (permanent) hardness caused by calcium",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "Carbonate (temporary) hardness caused by calcium and magnesium",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51084,12 +50622,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "To rapidly oxidize ammonia into nitrate using high concentrations of dissolved oxygen",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "To stabilize waste sludge, reduce its volume, and produce methane gas",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51210,12 +50748,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Suspended growth process",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "Attached growth (fixed-film) process",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51303,7 +50841,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Neutralize acids and resist sudden changes in pH",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51313,7 +50851,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Form hard scale in pipes due to high calcium concentrations",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51345,7 +50883,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "0.45 $\\mu$m",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51355,7 +50893,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "10 $\\mu$m",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51387,7 +50925,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Calcium ($Ca^{2+}$) and Magnesium ($Mg^{2+}$)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51397,7 +50935,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Aluminum ($Al^{3+}$) and Zinc ($Zn^{2+}$)",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51513,7 +51051,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The light-scattering properties of suspended particles",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51523,7 +51061,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The aesthetic color of the water caused by humic acids",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51555,7 +51093,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "COD is usually greater than BOD because it measures both biodegradable and non-biodegradable organic matter.",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51565,7 +51103,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "There is no correlation between COD and BOD.",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51731,7 +51269,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Rainwater entering the sewer through a direct connection from a roof downspout",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51741,7 +51279,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Water leaking into the pipe from a nearby high water table",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51773,7 +51311,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Low wastewater velocity, high temperature, and anaerobic conditions",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51783,7 +51321,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Low wastewater velocity, low temperature, and high dissolved oxygen",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51815,7 +51353,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Convert the average daily wastewater flow to the peak hourly flow",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51825,7 +51363,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Determine the ratio of storm flow to sanitary flow in a combined sewer",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51857,7 +51395,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "400 feet",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51867,7 +51405,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "2,500 feet",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51899,7 +51437,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "333 gallons",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -51909,7 +51447,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "500 gallons",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -51991,7 +51529,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "A pressurized sewer line that carries wastewater from a lift station to a higher elevation",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52001,7 +51539,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "A designated pipe used only to flush out blocked gravity sewers",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -52075,7 +51613,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Combined Sewer Overflows (CSOs) discharging untreated sewage into receiving waters during heavy rainfall",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52085,7 +51623,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "High maintenance costs due to rapid pipe corrosion from pure rainwater",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -52121,7 +51659,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The flow rate through both pipes is the same.",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52131,7 +51669,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The equivalent diameter is the sum of the individual diameters.",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -52255,7 +51793,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "To maintain system pressure and meet peak hourly demands",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52265,7 +51803,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "To increase the Hazen-Williams C-factor of the distribution lines",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -52297,7 +51835,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "35 psi",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52307,7 +51845,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "100 psi",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -52339,7 +51877,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "20 psi",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52349,7 +51887,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "50 psi",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -52469,7 +52007,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Rapidly closing a valve on a main transmission line",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -52479,7 +52017,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Opening a fire hydrant slowly during routine flushing",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -55258,12 +54796,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Open cut with 1H:1V slopes only",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "Steel sheet pile or soldier pile and lagging system with cross bracing",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55296,12 +54834,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Basement excavations in urban areas",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "River or harbor construction where a dry working area must be created in open water",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55334,12 +54872,12 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Only the dead weight of wet concrete",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "Weight of concrete, forms, equipment, personnel, impact, and wind loads during construction",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55453,12 +54991,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Settlement of adjacent buildings due to increased effective stress from groundwater drawdown",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "Reduced seismic risk during construction",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -55567,12 +55105,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "At the perimeter of the site where they don't interfere with construction operations and have easy access",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "Adjacent to the overhead power lines for easy connection",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -55643,12 +55181,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "6 feet above the lower level",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "10 feet above the lower level",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -55681,12 +55219,12 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Entry permit, atmospheric testing, authorized entrant(s), attendant, and entry supervisor",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
                     "text": "Only PPE for the worker entering the space",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -55719,7 +55257,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Top impact and penetration, with electrical protection up to 20,000 volts",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55729,7 +55267,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Top and lateral impact, with no electrical protection",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -55757,7 +55295,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "16 sections including identification, hazard(s) identification, composition, first-aid, PPE, and disposal",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55767,7 +55305,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "7 sections covering the most critical hazard information",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -55833,7 +55371,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Unconfined compressive strength: Type A ≥ 1.5 tsf, Type B = 0.5 to 1.5 tsf",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55843,7 +55381,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The plasticity index from Atterberg limit tests",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -55871,7 +55409,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Welding, cutting, grinding, or brazing operations that produce sparks or open flame",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -55881,7 +55419,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Concrete poured within 10 feet of a fuel storage tank",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -55991,12 +55529,12 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "2.0",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
                     "text": "10.0",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -56024,7 +55562,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "500 psi",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -56034,7 +55572,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "1000 psi",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -56138,7 +55676,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The percentage of total sample mass that passed through the No. 4 sieve opening (4.75 mm)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -56148,7 +55686,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The fineness modulus of the aggregate",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58149,7 +57687,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "1190 psi",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58159,7 +57697,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "1647 psi",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -58188,7 +57726,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "80 in³",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58198,7 +57736,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "120 in³",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -58270,7 +57808,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Higher design bending values and greater availability in large sizes",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58280,7 +57818,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Lower stiffness (E) because of the layered construction",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58309,7 +57847,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Three or more parallel members spaced ≤ 24 in on-center are connected by load-distributing elements (e.g., sheathing)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58319,7 +57857,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The member is a glulam beam",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58348,7 +57886,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "$f_v = \\frac{3V}{2bd}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58358,7 +57896,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$f_v = \\frac{3V}{bd}$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58382,7 +57920,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "225 psi — adequate (< 625 psi)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58397,7 +57935,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "625 psi — exactly at limit",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58421,7 +57959,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "Deeper members have proportionally more defects and greater variability in material properties",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58436,7 +57974,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "NDS requires a reduction for all members regardless of size",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58465,7 +58003,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The dowel bearing strength of the wood (embedment strength), in psi",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58475,7 +58013,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The fastener bending yield strength",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58504,7 +58042,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "The compression edge is continuously braced against lateral displacement and rotation",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58514,7 +58052,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The span exceeds 20 feet",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58542,7 +58080,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "74 kips",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58552,7 +58090,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "80 kips",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58575,7 +58113,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "$b/t \\leq 0.38\\sqrt{E/F_y} \\approx 9.15$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58590,7 +58128,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$b/t \\leq 0.25\\sqrt{E/F_y} \\approx 6.0$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58613,7 +58151,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "5000 kip·in (417 kip·ft)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58628,7 +58166,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "2500 kip·in",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58651,7 +58189,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "101.25 kips",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -58666,7 +58204,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "202.50 kips",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -58930,7 +58468,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "1 (indeterminate to 1st degree)",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -58940,7 +58478,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "3",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -59085,7 +58623,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "$\\frac{5wL}{4}$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -59095,7 +58633,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "$\\frac{3wL}{4}$",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -59124,7 +58662,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Geometric compatibility — the deflection at the redundant's location must match the actual boundary condition",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -59134,7 +58672,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "The principle of virtual forces only without any displacement condition",
-                    "is_correct": true
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -79415,3046 +78953,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D"
             }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Nyquist Rate for Bandlimited Signal",
-            "question": "A continuous-time signal is given by $x(t) = 5 \\cos(1000\\pi t) + 12 \\sin(3000\\pi t) - 2 \\cos(5000\\pi t)$. What is the minimum sampling frequency (Nyquist rate) in Hertz required to avoid aliasing?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$5.0\\ \\text{kHz}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$2.5\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$10.0\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$3.0\\ \\text{kHz}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Identify Maximum Frequency Component",
-                        "content": "The signal consists of three frequency components:\n1. $\\omega_1 = 1000\\pi\\ \\text{rad/s} \\implies f_1 = 500\\ \\text{Hz}$\n2. $\\omega_2 = 3000\\pi\\ \\text{rad/s} \\implies f_2 = 1500\\ \\text{Hz}$\n3. $\\omega_3 = 5000\\pi\\ \\text{rad/s} \\implies f_3 = 2500\\ \\text{Hz}$\nThe maximum frequency in the signal is $f_{max} = 2500\\ \\text{Hz}$."
-                    },
-                    {
-                        "title": "Calculate Nyquist Rate",
-                        "content": "The Nyquist rate $f_s$ to avoid aliasing must be at least twice the highest frequency:\n$f_s \\ge 2 f_{max}$\n$f_s \\ge 2 \\times 2500 = 5000\\ \\text{Hz} = 5.0\\ \\text{kHz}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Aliased Frequency Calculation",
-            "question": "A continuous-time sinusoidal signal with a frequency of $f_0 = 8\\ \\text{kHz}$ is sampled at a rate of $f_s = 6\\ \\text{kHz}$. What is the apparent frequency of the reconstructed signal in the first Nyquist zone ($0$ to $3\\ \\text{kHz}$)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2\\ \\text{kHz}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$1\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$3\\ \\text{kHz}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Aliasing",
-                        "content": "When a signal is sampled, its spectrum is replicated at integer multiples of the sampling frequency $f_s$. The resulting frequencies in the sampled signal are:\n$f_{alias} = |f_0 - k f_s|\\quad \\text{for } k \\in \\mathbb{Z}$"
-                    },
-                    {
-                        "title": "Find Aliased Frequency",
-                        "content": "For $f_0 = 8\\ \\text{kHz}$ and $f_s = 6\\ \\text{kHz}$:\n- $k = 1 \\implies |8 - 6 \\times 1| = 2\\ \\text{kHz}$\nSince $2\\ \\text{kHz}$ lies within the first Nyquist zone ($[0, f_s/2] = [0, 3\\ \\text{kHz}]$), this is the apparent frequency of the reconstructed sinus."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Nyquist Interval Calculation",
-            "question": "A signal is given by $x(t) = \\text{sinc}^2(100t)$. What is the Nyquist sampling interval (maximum allowable sampling time step $T_s$) in seconds for this signal?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$0.0100\\ \\text{seconds}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$0.0628\\ \\text{seconds}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0.0314\\ \\text{seconds}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0.0050\\ \\text{seconds}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Find the Bandwidth of Sinc Function",
-                        "content": "The signal is $x(t) = \\text{sinc}^2(100t)$.\nWe know that $\\text{sinc}(100t) = \\frac{\\sin(100t)}{100t}$, which has a maximum frequency of $\\omega_0 = 100\\ \\text{rad/s}$.\nSquaring in the time domain corresponds to convolution in the frequency domain, which doubles the bandwidth:\n$\\omega_{max} = 2 \\omega_0 = 200\\ \\text{rad/s}$"
-                    },
-                    {
-                        "title": "Convert to Hertz",
-                        "content": "$f_{max} = \\frac{\\omega_{max}}{2\\pi} = \\frac{200}{2\\pi} = \\frac{100}{\\pi}\\ \\text{Hz}$"
-                    },
-                    {
-                        "title": "Calculate Nyquist Interval $T_s$",
-                        "content": "The maximum sampling interval $T_s$ is the reciprocal of the Nyquist rate $2 f_{max}$:\n$T_s = \\frac{1}{2 f_{max}} = \\frac{1}{2 \\times (100/\\pi)} = \\frac{\\pi}{200} \\approx 0.0157\\ \\text{s}$\nWait, let's recalculate the sinc definitions: If $\\text{sinc}(u) = \\frac{\\sin(\\pi u)}{\\pi u}$ is the normalized sinc, then $\\text{sinc}(100t)$ has a maximum frequency of $f_0 = 50\\ \\text{Hz}$. Squaring doubles it to $f_{max} = 100\\ \\text{Hz}$. The Nyquist rate is then $200\\ \\text{Hz}$, giving $T_s = 1/200 = 0.005\\ \\text{s}$.\nLet's check if the unnormalized $\\text{sinc}(x) = \\sin(x)/x$ is used: then $\\omega_0 = 100\\ \\text{rad/s}$, so $\\omega_{max} = 200\\ \\text{rad/s}$. Nyquist rate is $200\\ \\text{rad/s} = 31.83\\ \\text{Hz}$, which gives $T_s = 1/31.83 = 0.0314\\ \\text{s}$ (which matches option A perfectly!)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Anti-Aliasing Filter Cutoff",
-            "question": "A digital voice recording system samples audio at $f_s = 44.1\\ \\text{kHz}$. To prevent aliasing, the input signal should pass through a low-pass anti-aliasing filter. What is the ideal cutoff frequency ($f_c$) of this filter?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$44.10\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$20.00\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$11.025\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$22.05\\ \\text{kHz}$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State Nyquist Sampling Limit",
-                        "content": "To completely avoid aliasing, the input signal must be bandlimited to less than half of the sampling frequency (the Nyquist frequency):\n$f_{max} < \\frac{f_s}{2}$"
-                    },
-                    {
-                        "title": "Calculate Cutoff Frequency",
-                        "content": "$f_c = \\frac{f_s}{2} = \\frac{44.1\\ \\text{kHz}}{2} = 22.05\\ \\text{kHz}$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Sampling of Bandpass Signals",
-            "question": "A bandpass signal is non-zero only in the frequency range $20\\ \\text{MHz} < f < 22\\ \\text{MHz}$. What is the absolute minimum sampling rate ($f_{s,min}$) in Hertz required to reconstruct this signal without aliasing?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$4\\ \\text{MHz}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$44\\ \\text{MHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2\\ \\text{MHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$22\\ \\text{MHz}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Bandpass Sampling Theorem",
-                        "content": "For a bandpass signal with bandwidth $B = f_H - f_L$, the minimum sampling rate is $2B$ if the boundaries are integer multiples of the bandwidth. Here, $f_L = 20\\ \\text{MHz}$ and $f_H = 22\\ \\text{MHz}$.\n$B = 22 - 20 = 2\\ \\text{MHz}$"
-                    },
-                    {
-                        "title": "Calculate Minimum Sampling Rate",
-                        "content": "$f_{s,min} = 2 B = 2 \\times 2\\ \\text{MHz} = 4\\ \\text{MHz}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Discrete-Time Sinusoid Periodicity",
-            "question": "A discrete-time signal is given by $x[n] = 3 \\cos(0.12\\pi n)$. Is this signal periodic, and if so, what is its fundamental period $N_0$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Yes, $N_0 = 25$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Yes, $N_0 = 50$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "No, it is not periodic",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Yes, $N_0 = 100$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Periodicity Condition",
-                        "content": "A discrete-time sinusoid $x[n] = A \\cos(\\Omega_0 n)$ is periodic if and only if its frequency $\\Omega_0$ is a rational multiple of $2\\pi$:\n$\\frac{\\Omega_0}{2\\pi} = \\frac{m}{N_0}$"
-                    },
-                    {
-                        "title": "Find Fundamental Period $N_0$",
-                        "content": "$\\frac{0.12\\pi}{2\\pi} = 0.06 = \\frac{6}{100} = \\frac{3}{50}$\nSince this is in irreducible form, the fundamental period is the denominator $N_0 = 50$ (and $m = 3$)."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Sampling",
-            "title": "Downsampling of Digital Signal",
-            "question": "A digital signal is sampled at $8\\ \\text{kHz}$. It is then downsampled by a factor of $M = 2$. What is the new sampling rate, and what is the maximum frequency component that can be represented without aliasing in the downsampled signal?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "New rate: $4\\ \\text{kHz}$, Max frequency: $4\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "New rate: $16\\ \\text{kHz}$, Max frequency: $8\\ \\text{kHz}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "New rate: $4\\ \\text{kHz}$, Max frequency: $2\\ \\text{kHz}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "New rate: $2\\ \\text{kHz}$, Max frequency: $1\\ \\text{kHz}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Calculate New Sampling Rate",
-                        "content": "Downsampling by $M=2$ discards every second sample. The new sampling rate is:\n$f_{s,new} = \\frac{f_s}{M} = \\frac{8\\ \\text{kHz}}{2} = 4\\ \\text{kHz}$"
-                    },
-                    {
-                        "title": "Determine Nyquist Boundary",
-                        "content": "The maximum frequency component that can be safely represented without aliasing is the new Nyquist frequency:\n$f_{Nyq} = \\frac{f_{s,new}}{2} = \\frac{4\\ \\text{kHz}}{2} = 2\\ \\text{kHz}$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Z-Transforms",
-            "title": "Z-Transform of Unit Step",
-            "question": "What is the z-transform and Region of Convergence (ROC) of the causal sequence $x[n] = u[n]$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\frac{1}{z-1}$, $|z| > 1$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{z}{z-1}$, $|z| < 1$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{z}{z+1}$, $|z| > 1$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{z}{z-1}$, $|z| > 1$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Z-Transform Summation",
-                        "content": "$X(z) = \\sum_{n=-\\infty}^{\\infty} x[n] z^{-n} = \\sum_{n=0}^{\\infty} (1) z^{-n} = \\sum_{n=0}^{\\infty} (z^{-1})^n$"
-                    },
-                    {
-                        "title": "Apply Infinite Geometric Series Sum",
-                        "content": "The geometric series converges if $|z^{-1}| < 1 \\implies |z| > 1$. The sum is:\n$X(z) = \\frac{1}{1 - z^{-1}} = \\frac{z}{z - 1}$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Z-Transforms",
-            "title": "Z-Transform of Exponential Sequence",
-            "question": "Given the causal sequence $x[n] = (0.5)^n u[n]$, what is its z-transform $X(z)$ and its pole location?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$X(z) = \\frac{z}{z - 0.5}$, Pole at $z = 0.5$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$X(z) = \\frac{1}{z - 0.5}$, Pole at $z = 0.5$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$X(z) = \\frac{z}{z + 0.5}$, Pole at $z = -0.5$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$X(z) = \\frac{z-0.5}{z}$, Pole at $z = 0$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Formula for Exponential Z-Transform",
-                        "content": "For any causal sequence of the form $a^n u[n]$:\n$\\mathcal{Z}\\{a^n u[n]\\} = \\frac{z}{z-a}\\quad \\text{with ROC: } |z| > |a|$"
-                    },
-                    {
-                        "title": "Substitute Given Values",
-                        "content": "Substituting $a = 0.5$:\n$X(z) = \\frac{z}{z - 0.5}$\nThe denominator has a root at $z = 0.5$, which represents a pole."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Z-Transforms",
-            "title": "Region of Convergence (ROC) properties",
-            "question": "If a discrete-time sequence $x[n]$ is stable and two-sided (extends from $-\\infty$ to $+\\infty$), its z-transform's Region of Convergence (ROC) must be:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The entire z-plane except $z=0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "A ring in the z-plane containing the unit circle",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The region outside a circle of radius $R$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The region inside a circle of radius $R$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Relate Stability to Unit Circle",
-                        "content": "A discrete-time system is stable if and only if its impulse response is absolutely summable. This condition requires that the DTFT exists, meaning the Region of Convergence of its z-transform must include the unit circle ($|z| = 1$)."
-                    },
-                    {
-                        "title": "Analyze ROC for Two-Sided Signals",
-                        "content": "For a two-sided signal, the causal part bounds the ROC from inside ($|z| > R_1$) and the anti-causal part bounds it from outside ($|z| < R_2$). The resulting ROC is an annular ring $R_1 < |z| < R_2$ which must contain the unit circle for stability."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Z-Transforms",
-            "title": "Inverse Z-Transform of Delay",
-            "question": "A z-transform is given by $Y(z) = z^{-2} X(z)$. What is the time-domain relation between the sequences $y[n]$ and $x[n]$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$y[n] = x[n+2]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$y[n] = 2 x[n]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$y[n] = x[n-2]$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$y[n] = x[2n]$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Time-Shifting Property",
-                        "content": "The time-shifting property of the z-transform states:\n$\\mathcal{Z}\\{x[n - n_0]\\} = z^{-n_0} X(z)$\nFor $n_0 = 2$:\n$\\mathcal{Z}^{-1}\\{z^{-2} X(z)\\} = x[n - 2]$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Z-Transforms",
-            "title": "Stability of Discrete-Time System",
-            "question": "A causal discrete-time system has a transfer function $H(z) = \\frac{z^2}{(z - 0.4)(z - 1.2)}$. Is this system stable?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Yes, because it is causal",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Yes, because the zero is at the origin",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "No, because the pole is negative",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "No, because a pole lies outside the unit circle ($z = 1.2$)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Find Pole Locations",
-                        "content": "The poles of $H(z)$ are the roots of the denominator:\n$z_1 = 0.4$\n$z_2 = 1.2$"
-                    },
-                    {
-                        "title": "Apply Causal Stability Condition",
-                        "content": "A causal discrete-time system is stable if and only if **all** of its poles lie strictly **inside** the unit circle in the z-plane ($|z| < 1$).\nSince the pole at $z = 1.2$ has a magnitude greater than 1, the system is unstable."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Z-Transforms",
-            "title": "Difference Equation from Z-Transform",
-            "question": "A system's transfer function is $H(z) = \\frac{z - 0.5}{z - 0.8}$. What is the corresponding difference equation relating output $y[n]$ to input $x[n]$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$y[n] + 0.8 y[n-1] = x[n] + 0.5 x[n-1]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$y[n] - 0.5 y[n-1] = x[n] - 0.8 x[n-1]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$y[n] - 0.8 y[n-2] = x[n]$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Express $H(z)$ in Negative Powers of $z$",
-                        "content": "Divide numerator and denominator by $z$:\n$H(z) = \\frac{Y(z)}{X(z)} = \\frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1}}$"
-                    },
-                    {
-                        "title": "Cross-Multiply terms",
-                        "content": "$Y(z)(1 - 0.8 z^{-1}) = X(z)(1 - 0.5 z^{-1})$\n$Y(z) - 0.8 z^{-1} Y(z) = X(z) - 0.5 z^{-1} X(z)$"
-                    },
-                    {
-                        "title": "Take Inverse Z-Transform",
-                        "content": "Using the time shift property:\n$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Filters",
-            "title": "FIR vs IIR Filter Structures",
-            "question": "Which of the following characteristics distinguishes a Finite Impulse Response (FIR) filter from an Infinite Impulse Response (IIR) filter?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "FIR filters require feedback loops to operate",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "FIR filters are always stable and can have perfectly linear phase",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "IIR filters have a finite duration impulse response",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "FIR filters are computationally more efficient for steep cutoff transitions",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Compare Digital Filter Types",
-                        "content": "FIR: No feedback (poles only at origin). Guaranteed stability, can be easily designed to have exact linear phase. Slower/requires more coefficients for sharp cutoff.\nIIR: Uses feedback. Slower to design, can be unstable, non-linear phase, but highly efficient (needs fewer coefficients for sharp cutoff)."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Filters",
-            "title": "Filter Type: Butterworth Characteristics",
-            "question": "Which analog filter type is characterized by having a maximally flat magnitude response in both the passband and the stopband?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Chebyshev Type I filter",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Chebyshev Type II filter",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Butterworth filter",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Elliptic filter",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Compare Standard Filter Profiles",
-                        "content": "Butterworth: Maximally flat in passband/stopband, slow roll-off.\nChebyshev Type I: Ripple in passband, flat in stopband, faster roll-off.\nChebyshev Type II: Flat in passband, ripple in stopband.\nElliptic (Cauer): Ripple in both passband and stopband, steepest roll-off."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Filters",
-            "title": "Windowing Method for FIR Design",
-            "question": "In the windowing method of designing FIR filters, which window type offers the highest stopband attenuation compared to a rectangular window?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Hanning window",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Hamming window",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Bartlett (Triangular) window",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Blackman window",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze Window Attenuations",
-                        "content": "- Rectangular: $-21\\ \\text{dB}$ stopband attenuation (fastest roll-off but high ripple).\n- Hanning: $-44\\ \\text{dB}$\n- Hamming: $-53\\ \\text{dB}$\n- Blackman: $-74\\ \\text{dB}$ (highest attenuation, widest transition band)."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Filters",
-            "title": "Group Delay in Filters",
-            "question": "What is the physical meaning of the 'group delay' of a filter?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The rate of change of phase shift with respect to frequency",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The time taken for the filter coefficients to converge",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The amplitude attenuation of a group of signals",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The phase velocity at zero frequency",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Group Delay",
-                        "content": "Group delay $\\tau_g(\\omega)$ is the negative derivative of the phase response with respect to angular frequency:\n$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$\nIt measures the average envelope delay experienced by a narrow band of frequency components passing through the filter."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Filters",
-            "title": "Bilinear Transformation Frequency Warping",
-            "question": "In the bilinear transformation method of designing digital filters from analog prototypes, the frequency relationship is non-linear. This effect is known as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Aliasing",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Frequency warping",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Phase distortion",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Quantization noise",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Bilinear Warping",
-                        "content": "The bilinear transformation maps the entire continuous-time frequency axis ($-\\infty < \\Omega < \\infty$) non-linearly to the discrete-time frequency range ($-\\pi < \\omega < \\pi$). This compression/distortion of the frequency axis is called 'frequency warping' and is resolved by 'pre-warping' the analog specifications."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "Discrete Fourier Transform (DFT) Definition",
-            "question": "For an N-point sequence $x[n]$, what is the formula for computing its Discrete Fourier Transform $X[k]$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$X[k] = \\sum_{n=0}^{N-1} x[n] e^{j \\frac{2\\pi}{N} k n}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$X[k] = \\frac{1}{N} \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$X[k] = \\sum_{n=0}^{N-1} x[n] z^{-n}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State DFT Equation",
-                        "content": "The Discrete Fourier Transform (DFT) maps an N-point time-domain sequence $x[n]$ to an N-point frequency-domain representation $X[k]$:\n$X[k] = \\sum_{n=0}^{N-1} x[n] W_N^{k n}$\nwhere $W_N = e^{-j 2\\pi / N}$ is the twiddle factor. Thus:\n$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-j \\frac{2\\pi}{N} k n}$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "FFT Computational Speedup",
-            "question": "A direct computation of a 1024-point DFT requires approximately $N^2$ complex multiplications. Using the radix-2 Cooley-Tukey Fast Fourier Transform (FFT) algorithm, what is the approximate number of complex multiplications?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "10,240",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "1,048,576",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "512",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "5120",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall FFT Complexity",
-                        "content": "The radix-2 FFT algorithm reduces the computational complexity of an N-point DFT from $O(N^2)$ to $O(N \\log_2 N)$. Specifically, it requires:\n$M \\approx \\frac{N}{2} \\log_2 N\\ \\text{complex multiplications}$"
-                    },
-                    {
-                        "title": "Substitute $N = 1024$",
-                        "content": "$\\log_2 1024 = 10$\n$M = \\frac{1024}{2} \\times 10 = 512 \\times 10 = 5120$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "Spectral Resolution of DFT",
-            "question": "A signal is sampled at $f_s = 8\\ \\text{kHz}$. A 512-point DFT is computed. What is the frequency spacing (spectral resolution) between adjacent bins in the DFT output?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "15.625 Hz",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "7.813 Hz",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "31.250 Hz",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "8.000 Hz",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Spectral Resolution Formula",
-                        "content": "The frequency resolution $\\Delta f$ of an N-point DFT is:\n$\\Delta f = \\frac{f_s}{N}$"
-                    },
-                    {
-                        "title": "Calculate Resolution",
-                        "content": "$\\Delta f = \\frac{8000\\ \\text{Hz}}{512} = 15.625\\ \\text{Hz}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "Zero-Padding in DFT",
-            "question": "What is the primary effect of appending trailing zeros to a time-domain sequence before computing its DFT (zero-padding)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It improves the physical resolution of the sensor",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It interpolates the spectrum in the frequency domain, increasing the apparent resolution",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "It prevents spectral leakage completely",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It reduces the size of the FFT computations",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Zero-Padding",
-                        "content": "Zero-padding increases the number of points $N$ in the DFT, which decreases the frequency spacing $\\Delta f = f_s/N$. However, this does not add new information or improve the physical resolution of the data (which is bound by the observation time $T$). It merely interpolates the DTFT envelope, giving a smoother visual representation."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "Circular vs. Linear Convolution",
-            "question": "To compute the linear convolution of two sequences of lengths $L = 100$ and $M = 50$ using DFTs, what is the minimum size $N$ of the DFTs required to avoid circular aliasing?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "150",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "100",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "149",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "200",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Length of Linear Convolution",
-                        "content": "The linear convolution of a sequence of length $L$ with a sequence of length $M$ has a total length of:\n$N_{linear} = L + M - 1$"
-                    },
-                    {
-                        "title": "Calculate Minimum Size",
-                        "content": "Given $L = 100$, $M = 50$:\n$N \\ge 100 + 50 - 1 = 149$\nTo perform this efficiently via FFTs, we typically pad to a power of 2 like 256, but the absolute minimum size is 149."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "Symmetry of DFT for Real Signals",
-            "question": "For a real-valued time-domain sequence $x[n]$, the DFT output $X[k]$ exhibits conjugate symmetry. This symmetry is represented by which of the following equations?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$X[N - k] = X[k]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$X[N - k] = -X[k]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$X[k] = X^*[k]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$X[N - k] = X^*[k]$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Formulate Conjugate Symmetry",
-                        "content": "Since $x[n]$ is real-valued, its DFT Twiddle factor satisfies $W_N^{n(N-k)} = e^{-j 2\\pi n(N-k)/N} = e^{j 2\\pi nk/N} = (W_N^{kn})^*$. This leads to the conjugate symmetry property:\n$X[N - k] = X^*[k]$\nThis implies the magnitude is even ($|X[N-k]| = |X[k]|$) and the phase is odd."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "Spectral Leakage and Windows",
-            "question": "Spectral leakage in DFT analysis occurs primarily due to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Abrupt truncation of the time-domain signal by a finite window",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Sampling below the Nyquist rate",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Round-off errors in floating point arithmetic",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Non-periodic nature of continuous sinusoids",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Spectral Leakage",
-                        "content": "A DFT assumes that the finite-length block of $N$ samples repeats periodically. If the signal does not contain an integer number of cycles within the window, the boundary discontinuities create high frequency components that leak energy into adjacent frequency bins."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "DFT",
-            "title": "DFT energy conservation Parseval",
-            "question": "According to Parseval's theorem for the N-point DFT, the relation between time-domain energy and frequency-domain energy is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "\\sum_{n=0}^{N-1} |x[n]|^2 = \\sum_{k=0}^{N-1} |X[k]|^2",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "\\sum_{n=0}^{N-1} |x[n]|^2 = \\frac{1}{N} \\sum_{k=0}^{N-1} |X[k]|^2",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "\\sum_{n=0}^{N-1} x[n] = \\frac{1}{N} \\sum_{k=0}^{N-1} X[k]",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "\\sum_{n=0}^{N-1} |x[n]|^2 = N \\sum_{k=0}^{N-1} |X[k]|^2",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State Parseval's DFT Identity",
-                        "content": "Parseval's relation states that the total energy calculated in the time domain is equal to the scaled total energy in the DFT domain:\n$\\sum_{n=0}^{N-1} |x[n]|^2 = \\frac{1}{N} \\sum_{k=0}^{N-1} |X[k]|^2$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Energy vs Power Signals",
-            "question": "A signal is classified as a 'power signal' if its total energy ($E$) and average power ($P$) satisfy which of the following?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$0 < E < \\infty$ and $P = 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$E = \\infty$ and $P = \\infty$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$E = \\infty$ and $0 < P < \\infty$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$E = 0$ and $P = 0$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Signal Energy and Power Classes",
-                        "content": "Energy Signal: Has finite, non-zero energy ($0 < E < \\infty$) which implies its average power is $P = 0$.\nPower Signal: Has finite, non-zero average power ($0 < P < \\infty$) which implies its total energy is $E = \\infty$ (typically periodic signals)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Even and Odd Parts of Signal",
-            "question": "Given a signal $x(t) = e^{-2t} u(t)$, what is its even part $x_e(t)$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$e^{-2t}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{1}{2} (e^{-2t} + e^{2t})$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{1}{2} e^{-2t} u(t)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{1}{2} e^{-2|t|}$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Even Part Formula",
-                        "content": "The even part $x_e(t)$ of any signal is:\n$x_e(t) = \\frac{x(t) + x(-t)}{2}$"
-                    },
-                    {
-                        "title": "Substitute $x(t)$",
-                        "content": "Given $x(t) = e^{-2t} u(t)$:\n$x_e(t) = \\frac{e^{-2t} u(t) + e^{2t} u(-t)}{2}$\nSince $u(t)$ and $u(-t)$ are mutually exclusive except at $t=0$, this can be compactified as:\n$x_e(t) = \\frac{1}{2} e^{-2|t|}\\quad \\text{for all } t$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Unit Impulse Sifting Property",
-            "question": "What is the value of the integral $\\int_{-\\infty}^{\\infty} (t^3 + 5t^2 + 2) \\delta(t - 2)\\, dt$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "30",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "2",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "16",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Sifting Property of Delta Function",
-                        "content": "The sifting property states:\n$\\int_{-\\infty}^{\\infty} g(t) \\delta(t - t_0)\\, dt = g(t_0)$"
-                    },
-                    {
-                        "title": "Evaluate at $t_0 = 2$",
-                        "content": "Given $g(t) = t^3 + 5t^2 + 2$ and $t_0 = 2$:\n$g(2) = 2^3 + 5(2)^2 + 2 = 8 + 20 + 2 = 30$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Causal vs Anti-Causal Signals",
-            "question": "A continuous-time signal $x(t)$ is classified as strictly anti-causal if:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$x(t) = 0$ for all $t < 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$x(t) = 0$ for all $t > 0$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$x(t) = x(-t)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$x(t)$ has no real parts",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Signal Causality Classes",
-                        "content": "Causal Signal: $x(t) = 0$ for $t < 0$.\nAnti-Causal Signal: $x(t) = 0$ for $t > 0$ (exists only in the past).\nNon-Causal Signal: Exists in both positive and negative time."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Orthogonal Signals Definition",
-            "question": "Two continuous-time signals $x_1(t)$ and $x_2(t)$ are said to be orthogonal over an interval $[t_1, t_2]$ if:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\int_{t_1}^{t_2} [x_1(t) + x_2(t)]\\, dt = 0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$x_1(t) = x_2(t - t_0)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\int_{t_1}^{t_2} x_1(t) x_2^*(t)\\, dt = 0$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$x_1(t) \\cdot x_2(t) = 1$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Orthogonality",
-                        "content": "Two signals are orthogonal if their inner product over the specified interval is exactly zero. For complex signals, the inner product is:\n$\\langle x_1, x_2 \\rangle = \\int_{t_1}^{t_2} x_1(t) x_2^*(t)\\, dt = 0$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Determinism in Signals",
-            "question": "A signal whose future values can be predicted exactly with a mathematical formula is classified as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Random (stochastic) signal",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Power signal",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Causal signal",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Deterministic signal",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Determinism",
-                        "content": "Deterministic Signal: Values are completely specified at any time instant by a formula (e.g., $x(t) = A \\sin(\\omega t)$).\nRandom Signal: Values exhibit uncertainty and must be analyzed statistically (e.g., thermal noise)."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Energy of Exponential Pulse",
-            "question": "What is the total energy $E$ of the signal $x(t) = e^{-3t} u(t)$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1/6$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$1/3$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Infinity",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$1/9$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Write Energy Integral",
-                        "content": "$E = \\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{0}^{\\infty} (e^{-3t})^2\\, dt = \\int_{0}^{\\infty} e^{-6t}\\, dt$"
-                    },
-                    {
-                        "title": "Evaluate Integral",
-                        "content": "$E = \\left[ -\\frac{1}{6} e^{-6t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{6} \\right) = \\frac{1}{6}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Signal Scaling and Time Compression",
-            "question": "If a signal $x(t)$ is replaced by $x(3t)$, this operation is known as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Time expansion by a factor of 3",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Time compression by a factor of 3",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Time delay of 3 seconds",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Amplitude scaling by a factor of 3",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Time Scaling",
-                        "content": "In time scaling $x(at)$:\n- If $|a| > 1$, the signal is compressed in time by a factor of $a$.\n- If $|a| < 1$, the signal is expanded/stretched in time.\nHere, $a = 3$, so it is a time compression."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Signal Types",
-            "title": "Unit Step and Impulse Relation",
-            "question": "The relationship between the unit impulse function $\\delta(t)$ and the unit step function $u(t)$ is represented by which of the following?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$u(t) = \\frac{d\\delta(t)}{dt}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\delta(t) = \\int_{-\\infty}^{t} u(\\tau)\\, d\\tau$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\delta(t) = \\frac{du(t)}{dt}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$\\delta(t) = u(t) * u(t)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Relate Step and Impulse",
-                        "content": "The unit step function $u(t)$ is the integral of the unit impulse function:\n$u(t) = \\int_{-\\infty}^{t} \\delta(\\tau)\\, d\\tau$\nBy the Fundamental Theorem of Calculus, the derivative of $u(t)$ is the impulse function:\n$\\frac{du(t)}{dt} = \\delta(t)$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Fourier Series Symmetry: Even Function",
-            "question": "If a periodic signal $x(t)$ is an even function ($x(-t) = x(t)$), what can be concluded about its trigonometric Fourier series coefficients?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "All cosine coefficients $a_n$ are zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The DC coefficient $a_0$ must be zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Both $a_n$ and $b_n$ are zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "All sine coefficients $b_n$ are zero",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze Coefficients",
-                        "content": "The trigonometric coefficients are:\n$a_n = \\frac{2}{T} \\int_{T} x(t) \\cos(n\\omega_0 t)\\, dt$\n$b_n = \\frac{2}{T} \\int_{T} x(t) \\sin(n\\omega_0 t)\\, dt$"
-                    },
-                    {
-                        "title": "Apply Symmetry",
-                        "content": "If $x(t)$ is even:\n- $x(t) \\cos(n\\omega_0 t)$ is even (product of two evens), so $a_n$ is non-zero.\n- $x(t) \\sin(n\\omega_0 t)$ is odd (product of even and odd), so its integral over a symmetric period is zero. Thus, $b_n = 0$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Half-Wave Symmetry Coefficients",
-            "question": "A periodic signal has half-wave symmetry, meaning $x(t - T/2) = -x(t)$. Which harmonics are present in its Fourier series?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Only odd harmonics",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Only even harmonics",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "All harmonics are present",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "No harmonics are present ($a_0$ only)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze Half-Wave Symmetry",
-                        "content": "The half-wave symmetry condition $x(t - T/2) = -x(t)$ causes the positive and negative halves of the cycle to cancel out for all even harmonics during integration. Consequently, all even harmonics ($n = 2, 4, 6...$) and the DC coefficient $a_0$ are exactly zero. Only odd harmonics ($n = 1, 3, 5...$) are present."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Fundamental Frequency Calculation",
-            "question": "A periodic signal is represented by $x(t) = 4 + 6 \\cos(10\\pi t) + 8 \\sin(15\\pi t)$. What is the fundamental frequency ($f_0$) of this signal in Hertz?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "5.0 Hz",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "2.5 Hz",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "10.0 Hz",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1.25 Hz",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Find Component Frequencies",
-                        "content": "1. DC term: 0 Hz\n2. First AC term: $\\omega_1 = 10\\pi\\ \\text{rad/s} \\implies f_1 = 5\\ \\text{Hz}$\n3. Second AC term: $\\omega_2 = 15\\pi\\ \\text{rad/s} \\implies f_2 = 7.5\\ \\text{Hz}$"
-                    },
-                    {
-                        "title": "Find Greatest Common Divisor",
-                        "content": "The fundamental frequency $f_0$ is the Greatest Common Divisor (GCD) of the component frequencies:\n$f_0 = \\text{GCD}(5, 7.5) = 2.5\\ \\text{Hz}$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Exponential Fourier Series Coeffs",
-            "question": "In the exponential Fourier series $x(t) = \\sum_{n=-\\infty}^{\\infty} c_n e^{j n \\omega_0 t}$, if $x(t)$ is real-valued, how are the negative coefficients $c_{-n}$ related to the positive coefficients $c_n$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$c_{-n} = -c_n$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$c_{-n} = c_n$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$c_{-n} = c_n^*$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$c_{-n} = -c_n^*$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall Coefficient Formula",
-                        "content": "$c_n = \\frac{1}{T} \\int_{T} x(t) e^{-j n \\omega_0 t}\\, dt$"
-                    },
-                    {
-                        "title": "Evaluate Conjugate",
-                        "content": "Taking the complex conjugate of $c_n$ when $x(t)$ is real:\n$c_n^* = \\frac{1}{T} \\int_{T} x(t) e^{j n \\omega_0 t}\\, dt = c_{-n}$\nThus, $c_{-n} = c_n^*$ (conjugate symmetry)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Parseval's Theorem for Periodic Signals",
-            "question": "According to Parseval's theorem for periodic signals, the average power $P$ of a signal is related to its exponential Fourier series coefficients $c_n$ by:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$P = \\sum_{n=-\\infty}^{\\infty} c_n$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$P = |c_0|^2$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$P = \\sqrt{\\sum |c_n|^2}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$P = \\sum_{n=-\\infty}^{\\infty} |c_n|^2$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State Power Conservation",
-                        "content": "Parseval's theorem states that the total average power of a periodic signal is equal to the sum of the powers of all its individual harmonic components:\n$P = \\frac{1}{T} \\int_{T} |x(t)|^2\\, dt = \\sum_{n=-\\infty}^{\\infty} |c_n|^2$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Dirichlet Conditions for Convergence",
-            "question": "Which of the following is NOT one of the Dirichlet conditions required for a periodic signal $x(t)$ to be representable by a Fourier series?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The signal must be continuously differentiable",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The signal must be absolutely integrable over one period",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The signal must have a finite number of maxima and minima in any single period",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The signal must have a finite number of discontinuities in any single period",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "List Dirichlet Conditions",
-                        "content": "For a periodic function to have a valid Fourier series:\n1. Absolute integrability: $\\int_T |x(t)| dt < \\infty$.\n2. Finite extrema: Finite number of local maxima/minima in a period.\n3. Finite discontinuities: Finite number of step discontinuities in a period.\nContinuous differentiability is not required; step functions (like square waves) have Fourier series."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Gibbs Phenomenon Overshoot",
-            "question": "The Gibbs phenomenon describes the behavior of a truncated Fourier series near a step discontinuity. The peak overshoot near the discontinuity does not disappear as the number of terms $N \\to \\infty$, but instead converges to approximately:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "1% of the step height",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "9% of the step height",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "50% of the step height",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0% (overshoot disappears)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Gibbs Phenomenon",
-                        "content": "Near a point of step discontinuity, the Fourier series approximation exhibits oscillatory overshoot. As the number of terms $N$ increases, the oscillations compress closer to the discontinuity, but the amplitude of the first peak overshoot remains constant at approximately 8.95% (about 9%) of the total discontinuity step height."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Fourier Series of Square Wave",
-            "question": "A zero-mean symmetric square wave of amplitude $A$ and period $T$ contains which frequency components?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Even harmonics only, decaying as $1/n^2$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "All harmonics, decaying as $1/n$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Odd harmonics only, with amplitudes decaying as $1/n$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Odd harmonics only, decaying as $1/n^2$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze Symmetry and Harmonic decay",
-                        "content": "A zero-mean symmetric square wave has odd symmetry and half-wave symmetry. Therefore, it only contains sine terms of odd harmonics ($n = 1, 3, 5...$). The coefficients are $b_n = \\frac{4A}{n\\pi}$, which decay as $1/n$."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fourier Series",
-            "title": "Trigonometric to Exponential Coeffs",
-            "question": "If a trigonometric Fourier series has coefficients $a_n$ and $b_n$, how are the exponential Fourier series coefficients $c_n$ (for $n > 0$) related to them?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$c_n = a_n - j b_n$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$c_n = \\frac{a_n + j b_n}{2}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$c_n = \\sqrt{a_n^2 + b_n^2}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$c_n = \\frac{a_n - j b_n}{2}$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Relate Series Terms",
-                        "content": "By Euler's formulas, we can rewrite the cosines and sines as exponentials:\n$a_n \\cos(n\\omega_0 t) + b_n \\sin(n\\omega_0 t) = c_n e^{j n \\omega_0 t} + c_{-n} e^{-j n \\omega_0 t}$\nSolving this yields:\n$c_n = \\frac{a_n - j b_n}{2}\\quad \\text{and } c_{-n} = \\frac{a_n + j b_n}{2}$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "ADC Quantization Noise Power",
-            "question": "For an ideal N-bit Analog-to-Digital Converter (ADC) with a step size $\\Delta$, what is the average power of the quantization noise (assuming uniform distribution between $-\\Delta/2$ and $\\Delta/2$)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\frac{\\Delta^2}{12}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{\\Delta^2}{4}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{\\Delta}{2}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{\\Delta^2}{8}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Quantization Error PDF",
-                        "content": "The quantization error $e$ is modeled as a random variable uniformly distributed over $[-\\Delta/2, \\Delta/2]$. The Probability Density Function (PDF) is:\n$p(e) = \\frac{1}{\\Delta}\\quad \\text{for } -\\frac{\\Delta}{2} \\le e \\le \\frac{\\Delta}{2}$\nand zero elsewhere."
-                    },
-                    {
-                        "title": "Calculate Mean Square Error (Power)",
-                        "content": "The average noise power is the variance (since mean is zero):\n$\\sigma_e^2 = \\int_{-\\Delta/2}^{\\Delta/2} e^2 p(e)\\, de = \\frac{1}{\\Delta} \\left[ \\frac{e^3}{3} \\right]_{-\\Delta/2}^{\\Delta/2}$\n$\\sigma_e^2 = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{8} - \\left(-\\frac{\\Delta^3}{8}\\right) \\right) = \\frac{1}{3\\Delta} \\left( \\frac{\\Delta^3}{4} \\right) = \\frac{\\Delta^2}{12}$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "ADC Signal-to-Quantization Noise Ratio",
-            "question": "What is the theoretical maximum Signal-to-Quantization-Noise Ratio (SQNR) in decibels for a 12-bit ADC subjected to a full-scale sinusoidal input?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "72.0 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "73.8 dB",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "75.6 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "48.2 dB",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall the standard SQNR Formula",
-                        "content": "For a full-scale sinusoidal input, the SQNR for an N-bit quantizer is:\n$\\text{SQNR (dB)} \\approx 6.02 N + 1.76$"
-                    },
-                    {
-                        "title": "Substitute $N = 12$",
-                        "content": "$\\text{SQNR} = 6.02 \\times 12 + 1.76 = 72.24 + 1.76 = 74.0\\ \\text{dB}$\nWait, let's use precise values: $6.02 \\times 12 + 1.76 = 74.0$. Let's check which option is closest or recalculate with $1.8$: $6.02 \\times 12 + 1.76 = 74.0$. Option 73.8 dB is extremely close and matches typical ADC specs."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "Resolution of 10-Bit ADC",
-            "question": "A 10-bit analog-to-digital converter has an input voltage range of 0 to 5.0 V. What is the voltage resolution (LSB weight) of this converter?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "9.77 mV",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "5.00 mV",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "4.88 mV",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "2.44 mV",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Identify Number of Levels",
-                        "content": "A 10-bit ADC has $2^{10} = 1024$ quantization levels."
-                    },
-                    {
-                        "title": "Calculate Resolution",
-                        "content": "The step size $\\Delta$ is:\n$\\Delta = \\frac{V_{max} - V_{min}}{2^N} = \\frac{5.0\\ \\text{V}}{1024} \\approx 0.0048828\\ \\text{V} \\approx 4.88\\ \\text{mV}$\n(Sometimes $2^N - 1 = 1023$ is used in denominator: $5.0/1023 = 4.89\\ \\text{mV}$, but $4.88\\ \\text{mV}$ matches the standard binary power definition)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "SQNR Gain per Bit",
-            "question": "If we increase the resolution of an ADC by exactly 2 bits, what is the resulting theoretical increase in the Signal-to-Quantization-Noise Ratio (SQNR)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "6.02 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "2.00 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "4.00 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "12.04 dB",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall SQNR scaling factor",
-                        "content": "The SQNR increases by approximately $6.02\\ \\text{dB}$ for every additional bit of resolution added to the ADC."
-                    },
-                    {
-                        "title": "Calculate Increase for 2 bits",
-                        "content": "$\\Delta \\text{SQNR} = 2 \\times 6.02\\ \\text{dB} = 12.04\\ \\text{dB}$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "Mid-Tread vs Mid-Riser Quantizers",
-            "question": "What is the distinguishing structural difference between a mid-tread quantizer and a mid-riser quantizer?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Mid-tread has a quantization level at exactly zero, while mid-riser has a decision threshold at zero",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Mid-tread is non-linear, while mid-riser is linear",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Mid-tread is used for analog signals, while mid-riser is for digital",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Mid-tread has half as many levels as mid-riser",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Compare Quantizer Types",
-                        "content": "Mid-Tread: The origin ($0$) lies in the middle of a representation level (tread). The output can be exactly zero. Extremely useful for voice signals to suppress idle channel noise.\nMid-Riser: The origin ($0$) lies on a transition boundary (riser). The output cannot be zero (it is either $+\\Delta/2$ or $-\\Delta/2$)."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "Quantization Error Range",
-            "question": "If a rounding quantizer has a step size $\\Delta = 0.2\\ \\text{V}$, what is the maximum possible absolute error introduced during quantization of any input?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "0.2 V",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "0.1 V",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "0.05 V",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0.4 V",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Find Maximum Rounding Error",
-                        "content": "For a rounding quantizer, the input is rounded to the nearest quantization level. The maximum error occurs when the input is exactly halfway between two levels. This maximum absolute error is:\n$\\epsilon_{max} = \\frac{\\Delta}{2} = \\frac{0.2\\ \\text{V}}{2} = 0.1\\ \\text{V}$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "Non-uniform Quantization: A-law and mu-law",
-            "question": "Why are non-uniform companding quantizers (like $\\mu$-law and A-law) standardly used in digital telephony?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To speed up the ADC conversion time",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To reduce the required transmission bandwidth",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To provide a higher SQNR for weak signals at the expense of stronger signals",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "To make the filter phase linear",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Companding",
-                        "content": "Speech signals have a large dynamic range, but low-amplitude sounds occur most frequently. Non-uniform quantization uses smaller step sizes for weak signals and larger steps for strong signals. This keeps the signal-to-distortion ratio high and constant over a wide range of input amplitudes."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "Dynamic Range of ADC",
-            "question": "What is the dynamic range (DR) in decibels of a 16-bit audio ADC? (Use the definition $DR = 6.02 \\times N$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "98.0 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "48.2 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "120.0 dB",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "96.3 dB",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Calculate Dynamic Range",
-                        "content": "The dynamic range of a digital system is the ratio of the maximum measurable signal to the smallest step, which is approximately:\n$\\text{DR} = 6.02 \\times N = 6.02 \\times 16 = 96.32\\ \\text{dB}$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Quantization",
-            "title": "Dither in Quantizers",
-            "question": "In audio engineering, why is a small amount of random noise (dither) intentionally added to a high-resolution signal before quantization?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To decorrelate the quantization noise from the signal, converting harmonic distortion to harmless white noise",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "To increase the maximum signal power",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To speed up the digital filtering",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "To reduce the total average noise power",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Dithering",
-                        "content": "Without dither, the quantization error is highly correlated with the input signal, producing harsh harmonic distortion (especially for low-level signals). Adding a small amount of random noise (dither) breaks this correlation, converting the structured distortion into a constant, benign background white noise floor."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "LTI System Frequency Response Definition",
-            "question": "The frequency response $H(j\\omega)$ of an LTI system is the Fourier transform of its:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Step response $s(t)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Impulse response $h(t)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Input signal $x(t)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Transfer function $H(s)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Frequency Response",
-                        "content": "The frequency response $H(j\\omega)$ describes the system behavior in the frequency domain. It is defined as the Fourier transform of the time-domain impulse response $h(t)$:\n$H(j\\omega) = \\mathcal{F}\\{h(t)\\} = \\int_{-\\infty}^{\\infty} h(t) e^{-j\\omega t}\\, dt$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Phase Delay vs Group Delay",
-            "question": "A system has a phase response $\\theta(\\omega) = -3\\omega$. What are the phase delay ($\\tau_p$) and group delay ($\\tau_g$) of this system?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\tau_p = 3\\ \\text{s}$, $\\tau_g = 0\\ \\text{s}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\tau_p = 0\\ \\text{s}$, $\\tau_g = 3\\ \\text{s}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\tau_p = 3\\ \\text{s}$, $\\tau_g = 3\\ \\text{s}$ (Linear Phase)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$\\tau_p = -3\\ \\text{s}$, $\\tau_g = -3\\ \\text{s}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Phase and Group Delays",
-                        "content": "$\\tau_p(\\omega) = -\\frac{\\theta(\\omega)}{\\omega}$\n$\\tau_g(\\omega) = -\\frac{d\\theta(\\omega)}{d\\omega}$"
-                    },
-                    {
-                        "title": "Substitute Given Phase",
-                        "content": "Given $\\theta(\\omega) = -3\\omega$:\n$\\tau_p(\\omega) = -\\frac{-3\\omega}{\\omega} = 3\\ \\text{seconds}$\n$\\tau_g(\\omega) = -\\frac{d(-3\\omega)}{d\\omega} = 3\\ \\text{seconds}$\nSince both are equal and constant, the system exhibits linear phase (perfect delay without phase distortion)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Matched Filter SNR Maximization",
-            "question": "A matched filter is a specialized linear filter designed to maximize the:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Bandwidth of the incoming communication channel",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Flatness of the filter magnitude response",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Phase linearity of the output signal",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Signal-to-noise ratio (SNR) at a specific sampling instant in the presence of noise",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Matched Filter Goal",
-                        "content": "In communications and radar, the matched filter's impulse response is a time-reversed and delayed version of the target signal: $h(t) = s^*(T - t)$. This shape maximizes the peak output signal-to-noise ratio in the presence of additive white Gaussian noise."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Zero-Phase Filtering (Forward-Backward)",
-            "question": "To achieve zero-phase filtering of a digital signal $x[n]$ (so that no phase distortion is introduced), the signal is:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Filtered forward through the filter, then the time-reversed output is filtered again and time-reversed back",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Filtered through an all-pass filter",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Differentiated before standard filtering",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Windowed using a symmetric Hamming window",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Zero-Phase Filtering",
-                        "content": "Zero-phase filtering (e.g. `filtfilt` in Matlab) works by:\n1. Filtering the sequence $x[n]$ forward through $H(z)$ to get $y_1[n]$.\n2. Reversing $y_1[n]$ to get $y_1[-n]$ and filtering it through $H(z)$ again to get $y_2[n]$.\n3. Reversing $y_2[n]$ back.\nThe overall transfer function magnitude is $|H(e^{j\\omega})|^2$ and the net phase shift is exactly zero."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Energy Spectral Density vs Power Spectral Density",
-            "question": "For a power signal, the Power Spectral Density (PSD) is the Fourier transform of the signal's:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Cross-correlation function $R_{xy}(\\tau)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Autocorrelation function $R_{xx}(\\tau)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Impulse response $h(t)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Time-domain envelope",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State Wiener-Khinchin Theorem",
-                        "content": "The Wiener-Khinchin theorem states that the Power Spectral Density $S_{xx}(f)$ of a wide-sense stationary random process (or a power signal) is the Fourier transform of its temporal autocorrelation function $R_{xx}(\\tau)$:\n$S_{xx}(f) = \\mathcal{F}\\{R_{xx}(\\tau)\\} = \\int_{-\\infty}^{\\infty} R_{xx}(\\tau) e^{-j 2\\pi f \\tau}\\, d\\tau$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Convolution Sum Matrix Representation",
-            "question": "If we represent the discrete-time convolution $y = h * x$ of finite vectors in matrix form as $\\mathbf{y} = \\mathbf{H}\\mathbf{x}$, the matrix $\\mathbf{H}$ has which structural property?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Diagonal matrix",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Symmetric matrix",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Toeplitz matrix",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Hermitian matrix",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Convolution Matrix Structure",
-                        "content": "The convolution matrix $\\mathbf{H}$ has constant diagonals (each diagonal element $H_{i,j}$ depends only on $i - j$). A matrix where each descending diagonal from left to right is constant is called a Toeplitz matrix."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Autocorrelation Peak",
-            "question": "The autocorrelation function $R_{xx}(\\tau)$ of any signal $x(t)$ always achieves its absolute maximum value at:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\tau = \\infty$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\tau$ equal to the fundamental period",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The first zero-crossing of the signal",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\tau = 0$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Prove Autocorrelation Maximum",
-                        "content": "By the Cauchy-Schwarz inequality:\n$|R_{xx}(\\tau)| = \\left| \\int x(t) x(t-\\tau)\\, dt \\right| \\le \\int x^2(t)\\, dt = R_{xx}(0)$\nThus, $|R_{xx}(\\tau)| \\le R_{xx}(0)$ for all $\\tau$, meaning the peak always occurs at zero lag (which represents the signal's total energy or power)."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "Normalized Frequency in DSP",
-            "question": "In discrete-time signal processing, a normalized digital angular frequency of $\\omega = \\pi\\ \\text{rad/sample}$ corresponds to what physical frequency in Hertz if the sampling rate is $f_s$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$f_s / 2$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$f_s$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2 f_s$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$f_s / 4$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Relate Digital and Physical Frequencies",
-                        "content": "The relation between digital angular frequency $\\omega$ and physical frequency $f$ is:\n$\\omega = 2\\pi \\frac{f}{f_s}$"
-                    },
-                    {
-                        "title": "Solve for $f$ at $\\omega = \\pi$",
-                        "content": "$\\pi = 2\\pi \\frac{f}{f_s} \\implies \\frac{1}{2} = \\frac{f}{f_s} \\implies f = \\frac{f_s}{2}$\nThis is the Nyquist boundary frequency."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Signal Processing",
-            "title": "DSP Limit Cycles",
-            "question": "In recursive digital filters (IIR), the phenomenon of 'limit cycles' refers to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The frequency range of stable phase oscillations",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Oscillatory outputs that persist even when the input becomes zero, caused by quantization and rounding overflow",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The feedback delay loops in parallel structures",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The periodic scaling of filter taps",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Limit Cycles",
-                        "content": "Under infinite-precision arithmetic, a stable IIR filter output will decay to zero when the input becomes zero. However, under finite-precision fixed-point arithmetic, rounding or truncation errors can prevent the output from decaying, trapping it in low-amplitude periodic oscillations called limit cycles."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Fourier Transform of Exponential Pulse",
-            "question": "What is the continuous-time Fourier transform of the signal $x(t) = e^{-3t} u(t)$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\frac{1}{3 - j\\omega}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{1}{9 + \\omega^2}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{1}{3 + j\\omega}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{3}{3 + j\\omega}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Write Fourier Transform Integral",
-                        "content": "$X(j\\omega) = \\int_{-\\infty}^{\\infty} x(t) e^{-j\\omega t}\\, dt = \\int_{0}^{\\infty} e^{-3t} e^{-j\\omega t}\\, dt$"
-                    },
-                    {
-                        "title": "Evaluate Integral",
-                        "content": "$X(j\\omega) = \\int_{0}^{\\infty} e^{-(3 + j\\omega)t}\\, dt = \\left[ -\\frac{1}{3 + j\\omega} e^{-(3 + j\\omega)t} \\right]_{0}^{\\infty} = 0 - \\left( -\\frac{1}{3 + j\\omega} \\right) = \\frac{1}{3 + j\\omega}$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Duality Property of Fourier Transform",
-            "question": "The duality property of the continuous Fourier transform states that if $\\mathcal{F}\\{x(t)\\} = X(f)$, then what is the Fourier transform of the frequency-domain shape in the time domain, $\\mathcal{F}\\{X(t)\\}$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$x(f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$X(-f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$-x(f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$x(-f)$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State Duality Property",
-                        "content": "The symmetry (duality) of the forward and inverse Fourier transform integrals implies:\n$\\mathcal{F}\\{X(t)\\} = x(-f)$\nor in terms of angular frequency $\\omega$:\n$\\mathcal{F}\\{X(t)\\} = 2\\pi x(-\\omega)$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Fourier Transform of Rectangular Pulse",
-            "question": "What is the Fourier transform $X(f)$ of a rectangular pulse of width $T$ and amplitude $A$, centered at the origin ($t=0$)?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$A T \\text{sinc}(f T)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$A \\text{sinc}(f T)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$A T \\text{sinc}^2(f T)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{A}{j 2\\pi f}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Write Integral",
-                        "content": "$X(f) = \\int_{-T/2}^{T/2} A e^{-j 2\\pi f t}\\, dt$"
-                    },
-                    {
-                        "title": "Evaluate Integral",
-                        "content": "$X(f) = A \\left[ \\frac{e^{-j 2\\pi f t}}{-j 2\\pi f} \\right]_{-T/2}^{T/2} = A \\frac{e^{j \\pi f T} - e^{-j \\pi f T}}{j 2\\pi f}$\nUsing Euler's identity:\n$X(f) = A \\frac{\\sin(\\pi f T)}{\\pi f} = A T \\frac{\\sin(\\pi f T)}{\\pi f T} = A T \\text{sinc}(f T)$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Fourier Transform of Unit Impulse",
-            "question": "What is the continuous Fourier transform of the unit impulse function $x(t) = \\delta(t)$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\delta(f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "1 (constant for all frequencies)",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$j 2\\pi f$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Delta Integral Property",
-                        "content": "$X(f) = \\int_{-\\infty}^{\\infty} \\delta(t) e^{-j 2\\pi f t}\\, dt$"
-                    },
-                    {
-                        "title": "Sift at $t = 0$",
-                        "content": "The sifting property evaluates the integrand at $t = 0$:\n$X(f) = e^{-j 2\\pi f (0)} = e^0 = 1$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Frequency Shifting (Modulation)",
-            "question": "Multiplying a time-domain signal by a complex exponential $e^{j 2\\pi f_0 t}$ corresponds in the frequency domain to:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Shifting the spectrum by $-f_0$, $X(f + f_0)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Scaling the frequency axis, $X(f / f_0)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Shifting the spectrum by $f_0$, $X(f - f_0)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Convolving the spectrum with $f_0$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Frequency Shifting Property",
-                        "content": "The modulation property states:\n$\\mathcal{F}\\{x(t) e^{j 2\\pi f_0 t}\\} = \\int_{-\\infty}^{\\infty} x(t) e^{j 2\\pi f_0 t} e^{-j 2\\pi f t}\\, dt$\n$= \\int_{-\\infty}^{\\infty} x(t) e^{-j 2\\pi (f - f_0) t}\\, dt = X(f - f_0)$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Parseval's Relation for Fourier Transform",
-            "question": "Parseval's theorem for the continuous Fourier transform states that the total energy of a signal is conserved. This is mathematically written as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(\\omega)|^2\\, d\\omega$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\int_{-\\infty}^{\\infty} x(t)\\, dt = \\int_{-\\infty}^{\\infty} X(f)\\, df$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "State Energy Conservation",
-                        "content": "Parseval's identity states that the signal energy in the time domain is equal to the signal energy in the frequency domain:\n$\\int_{-\\infty}^{\\infty} |x(t)|^2\\, dt = \\int_{-\\infty}^{\\infty} |X(f)|^2\\, df = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |X(j\\omega)|^2\\, d\\omega$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Fourier Transform of DC Signal",
-            "question": "What is the continuous Fourier transform of a constant DC voltage $x(t) = V_0$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$V_0 \\delta(f)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$V_0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{V_0}{j 2\\pi f}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Duality to Impulse",
-                        "content": "We know that $\\mathcal{F}\\{\\delta(t)\\} = 1$. By the duality property:\n$\\mathcal{F}\\{1\\} = \\delta(-f) = \\delta(f)$"
-                    },
-                    {
-                        "title": "Scale by $V_0$",
-                        "content": "Since the Fourier transform is a linear operator:\n$\\mathcal{F}\\{V_0\\} = V_0 \\delta(f)$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Fourier Transform Time Scaling Property",
-            "question": "If the Fourier transform of $x(t)$ is $X(f)$, what is the Fourier transform of the time-scaled signal $y(t) = x(a t)$ for $a \\ne 0$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$|a| X(a f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{1}{|a|} X\\left(\\frac{f}{a}\\right)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{1}{a} X(a f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$X\\left(\\frac{f}{a}\\right)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Time Scaling Integral",
-                        "content": "$\\mathcal{F}\\{x(at)\\} = \\int_{-\\infty}^{\\infty} x(at) e^{-j 2\\pi f t}\\, dt$"
-                    },
-                    {
-                        "title": "Evaluate by Substitution",
-                        "content": "Let $u = at \\implies dt = du/a$. If $a > 0$, limits are unchanged. If $a < 0$, limits are swapped, multiplying by $-1$. Combining both cases using absolute value:\n$\\mathcal{F}\\{x(at)\\} = \\frac{1}{|a|} \\int_{-\\infty}^{\\infty} x(u) e^{-j 2\\pi (f/a) u}\\, du = \\frac{1}{|a|} X\\left(\\frac{f}{a}\\right)$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fourier Transform",
-            "title": "Fourier Transform Differentiation Property",
-            "question": "If $X(f)$ is the Fourier transform of $x(t)$, what is the Fourier transform of the derivative $\\frac{dx(t)}{dt}$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\frac{X(f)}{j 2\\pi f}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$j\\omega X(f)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$j 2\\pi f X(f)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$-j 2\\pi f X(f)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Derivative Property",
-                        "content": "Differentiating in the time domain corresponds to multiplying by $j 2\\pi f$ (or $j\\omega$) in the frequency domain:\n$\\mathcal{F}\\left\\{\\frac{dx(t)}{dt}\\right\\} = j 2\\pi f X(f)$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "Distortionless Transmission Conditions",
-            "question": "For a linear system to achieve distortionless transmission of an input signal, its frequency response $H(j\\omega)$ must satisfy which of the following?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Constant magnitude gain and constant phase shift",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Decaying magnitude gain and linear phase shift",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Linear magnitude gain and quadratic phase shift",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Constant magnitude gain and linear phase shift",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Define Distortionless Output",
-                        "content": "Distortionless transmission means the output is a scaled and delayed copy of the input:\n$y(t) = K x(t - t_0)$"
-                    },
-                    {
-                        "title": "Find System Frequency Response",
-                        "content": "Taking the Fourier transform:\n$Y(f) = K e^{-j 2\\pi f t_0} X(f) \\implies H(f) = K e^{-j 2\\pi f t_0}$\nThis requires:\n1. Constant amplitude response: $|H(f)| = K$.\n2. Linear phase response: $\\theta(f) = -2\\pi f t_0$."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "Total Harmonic Distortion (THD) Calculation",
-            "question": "A power amplifier output contains a fundamental component of $10\\ \\text{V}$ and harmonic components of $0.8\\ \\text{V}$ (second harmonic) and $0.6\\ \\text{V}$ (third harmonic). What is the Total Harmonic Distortion (THD) of the amplifier?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "10.0%",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "14.0%",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "1.0%",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "7.0%",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Recall THD Formula",
-                        "content": "The THD is defined as the ratio of the RMS voltage of the harmonics to the RMS voltage of the fundamental component:\n$\\text{THD} = \\frac{\\sqrt{V_2^2 + V_3^2 + \\dots}}{V_1}$"
-                    },
-                    {
-                        "title": "Substitute Given Values",
-                        "content": "Given $V_1 = 10\\ \\text{V}$, $V_2 = 0.8\\ \\text{V}$, and $V_3 = 0.6\\ \\text{V}$:\n$\\text{RMS of Harmonics} = \\sqrt{0.8^2 + 0.6^2} = \\sqrt{0.64 + 0.36} = \\sqrt{1.0} = 1.0\\ \\text{V}$"
-                    },
-                    {
-                        "title": "Calculate Percentage",
-                        "content": "$\\text{THD} = \\frac{1.0\\ \\text{V}}{10\\ \\text{V}} = 0.10 = 10.0\\%$"
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "System Bandwidth and Rise Time",
-            "question": "According to the empirical rule of thumb in signal integrity, the 10%-90% rise time ($t_r$) of a first-order system is related to its 3 dB bandwidth ($B_w$ in Hertz) by which approximation?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$t_r \\approx \\frac{1}{B_w}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$t_r \\approx \\frac{0.35}{B_w}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$t_r \\approx \\frac{2.2}{B_w}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$t_r \\approx 0.35 B_w$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Derive Rise Time - Bandwidth Relation",
-                        "content": "For a first-order low-pass system, the cutoff frequency in Hertz is $B_w = \\frac{1}{2\\pi \\tau}$.\nWe also know the rise time is $t_r = 2.2 \\tau$.\nSubstituting $\\tau = \\frac{1}{2\\pi B_w}$:\n$t_r = \\frac{2.2}{2\\pi B_w} \\approx \\frac{2.2}{6.283 B_w} \\approx \\frac{0.35}{B_w}$\nThis is the standard bandwidth-rise time relationship used in high-speed circuit design."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "Convolution of LTI System",
-            "question": "An LTI system with impulse response $h(t) = u(t) - u(t-2)$ is excited by input $x(t) = u(t)$. What is the output $y(t)$ at time $t = 1$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "2.0",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "0.5",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "1.0",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "0.0",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Write Convolution Integral",
-                        "content": "$y(t) = \\int_{-\\infty}^{\\infty} x(t-\\tau) h(\\tau)\\, d\\tau = \\int_{0}^{2} u(t-\\tau)\\, d\\tau$"
-                    },
-                    {
-                        "title": "Evaluate at $t = 1$",
-                        "content": "For $t = 1$:\n$y(1) = \\int_{0}^{2} u(1-\\tau)\\, d\\tau$\nSince $u(1-\\tau) = 1$ for $\\tau \\le 1$ and 0 for $\\tau > 1$, the integral limits are restricted to:\n$y(1) = \\int_{0}^{1} 1\\, d\\tau = [\\tau]_0^1 = 1.0$"
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "Causal LTI System Response",
-            "question": "If a causal LTI system has impulse response $h(t) = e^{-2t} u(t)$ and the input is a step $x(t) = u(t)$, what is the steady-state output $y(\\infty)$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "1.0",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "2.0",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "0.0",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0.5",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Find System DC Gain",
-                        "content": "The steady state response to a unit step is equal to the DC gain of the system $H(0)$:\n$H(0) = \\int_{-\\infty}^{\\infty} h(t)\\, dt$"
-                    },
-                    {
-                        "title": "Integrate Impulse Response",
-                        "content": "$H(0) = \\int_{0}^{\\infty} e^{-2t}\\, dt = \\left[ -\\frac{1}{2} e^{-2t} \\right]_{0}^{\\infty} = 0 - \\left(-\\frac{1}{2}\\right) = 0.5$"
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "Stable System Pole Boundaries",
-            "question": "A continuous-time system has a transfer function $H(s)$ with poles located at $s = -1$ and $s = -5$. This system is classified as:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Stable",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Unstable",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Marginally stable",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Undamped",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze Pole Locations",
-                        "content": "All poles ($s = -1, -5$) are located strictly in the Left-Half of the s-plane (negative real parts). Therefore, the system is stable."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "Linear Time-Invariant Cascade Output",
-            "question": "If system 1 has response $h_1(t) = \\delta(t-2)$ and system 2 has response $h_2(t) = \\delta(t-3)$, what is the output $y(t)$ of the cascaded system for an input $x(t)$?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$x(t-6)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$x(t-5)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$x(t-1)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$x(t) * \\delta(t-5)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Find Combined Impulse Response",
-                        "content": "$h_{total}(t) = h_1(t) * h_2(t) = \\delta(t-2) * \\delta(t-3) = \\delta(t-5)$"
-                    },
-                    {
-                        "title": "Find Output",
-                        "content": "$y(t) = x(t) * h_{total}(t) = x(t) * \\delta(t-5) = x(t-5)$"
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "System Memory: Integrator",
-            "question": "An LTI system with impulse response $h(t) = u(t)$ represents an ideal integrator. Is this system memoryless?",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Yes, because it has no inductors or capacitors",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Yes, because the impulse response is causal",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "No, because the output depends on all past values of the input",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Only if the input is a delta pulse",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Analyze Memory Condition",
-                        "content": "Since the impulse response $h(t) = u(t)$ is non-zero for $t > 0$, the output $y(t) = \\int_{-\\infty}^t x(\\tau) d\\tau$ depends on past values of the input signal. Thus, the system is dynamic (possesses memory)."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Linear Systems",
-            "title": "LTI Convolution Associative Property",
-            "question": "The associative property of convolution, $x * (h_1 * h_2) = (x * h_1) * h_2$, physically states that:",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The order of parallel systems can be summed",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The input signal can be scaled without altering the system",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The system is stable under all cascade connections",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The cascading of systems can be modeled as a single system with an impulse response equal to the convolution of individual ones",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Explain Associative Meaning",
-                        "content": "The associative property means that passing an input $x(t)$ through a cascade of two systems $h_1(t)$ and $h_2(t)$ is mathematically identical to passing $x(t)$ through a single equivalent system with impulse response $h_{eq}(t) = h_1(t) * h_2(t)$."
-                    }
-                ],
-                "final_answer": "D"
-            }
         }
     ],
     "electronics": [
@@ -85077,7 +81575,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Line inductance",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -85087,7 +81585,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Voltage magnitudes",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -94518,7 +91016,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "User interface",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -94528,7 +91026,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Framing and MAC addressing",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -94662,7 +91160,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "32",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -94672,7 +91170,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "128",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -96852,7 +93350,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Run without memory",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -96862,7 +93360,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Use disk space as if it were RAM",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -101064,7 +97562,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "250 N",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -101074,7 +97572,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "217.9 N",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -103358,7 +99856,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "x",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -103368,7 +99866,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": ".*",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -136328,7 +132826,7 @@ const QUESTIONS = {
                 {
                     "label": "A",
                     "text": "0.90",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -136338,7 +132836,7 @@ const QUESTIONS = {
                 {
                     "label": "C",
                     "text": "1.00",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -149719,7 +146217,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "Volume of solids to volume of voids",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -149729,7 +146227,7 @@ const QUESTIONS = {
                 {
                     "label": "D",
                     "text": "Volume of voids ($V_v$) to Total volume ($V$)",
-                    "is_correct": false
+                    "is_correct": true
                 }
             ],
             "solution": {

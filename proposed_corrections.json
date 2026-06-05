@@ -1,0 +1,1458 @@
+[
+    {
+        "subject": "math",
+        "index": 5,
+        "title": "Classification of a Conic Section",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "stats",
+        "index": 1,
+        "title": "Probability of Drawing Specific Colored Balls",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "stats",
+        "index": 3,
+        "title": "Continuous Uniform Distribution",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 0,
+        "title": "Strain Gauge",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 2,
+        "title": "LVDT Output at Null Position",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 3,
+        "title": "Linear Potentiometer Displacement Calculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 6,
+        "title": "Aliased Frequency Calculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 11,
+        "title": "Simplify Boolean Expression",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 15,
+        "title": "AND Gate",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 27,
+        "title": "Proximity Sensor - Inductive",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 28,
+        "title": "Bode Plot",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "instr-controls",
+        "index": 47,
+        "title": "Stability — Routh-Hurwitz",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "ethics",
+        "index": 2,
+        "title": "NCEES Sealing Requirements",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "econ",
+        "index": 3,
+        "title": "Equivalent Uniform Annual Cost (EUAC)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "econ",
+        "index": 17,
+        "title": "Benefit-Cost Ratio Analysis",
+        "action": "UPDATE_FINAL_ANSWER",
+        "details": "Change final_answer from \"A\" to \"C\""
+    },
+    {
+        "subject": "statics",
+        "index": 2,
+        "title": "Force-Couple System at Origin",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "fluids",
+        "index": 57,
+        "title": "Darcy-Weisbach Head Loss",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "electricity",
+        "index": 0,
+        "title": "Electrostatic Force Calculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "electricity",
+        "index": 5,
+        "title": "Magnetic Force- Vector Value",
+        "action": "UPDATE_IS_CORRECT_AND_FINAL_ANSWER",
+        "details": "Change is_correct option from \"B\" to \"A\", and change final_answer from \"D\" to \"A\""
+    },
+    {
+        "subject": "electricity",
+        "index": 8,
+        "title": "Power Dissipation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "thermo",
+        "index": 0,
+        "title": "Stoichiometric Air-Fuel Ratio for Methane",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 1,
+        "title": "Dew Point of Combustion Products",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 2,
+        "title": "Sensible Heat Ratio (SHR)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 3,
+        "title": "Cooling and Dehumidification Bypass Factor",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 4,
+        "title": "Mixed Air Temperature",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 6,
+        "title": "Equivalent Gas Constant",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 7,
+        "title": "Apparent Molar Mass of Air",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 8,
+        "title": "Entropy of Mixing",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 9,
+        "title": "Volumetric Analysis to Mass Fraction",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 10,
+        "title": "Partial Pressure in Gas Mixture",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 11,
+        "title": "Amagat's Law of Additive Volumes",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 12,
+        "title": "Specific Heat of Mixture",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 14,
+        "title": "Isentropic Efficiency of Compressor",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 15,
+        "title": "Nozzle Velocity Coefficient",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 16,
+        "title": "Pump Work in Rankine Cycle",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 17,
+        "title": "Volumetric Efficiency of Reciprocating Compressor",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 18,
+        "title": "Combined Heat and Power (CHP) Efficiency",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 19,
+        "title": "Nozzle Discharge Coefficient",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 20,
+        "title": "Polytropic Expansion Work",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "thermo",
+        "index": 21,
+        "title": "Isothermal Work Done",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "heat",
+        "index": 0,
+        "title": "LMTD for Counterflow Heat Exchanger",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "heat",
+        "index": 1,
+        "title": "Parallel vs. Counterflow Heat Exchanger",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "heat",
+        "index": 4,
+        "title": "Maximum Possible Heat Transfer Rate",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "heat",
+        "index": 5,
+        "title": "Fouling Factor Effect",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "heat",
+        "index": 6,
+        "title": "Condenser Effectiveness",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "heat",
+        "index": 10,
+        "title": "Fourier’s Law of Heat Conduction",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "heat",
+        "index": 12,
+        "title": "Heat Loss through a Pipe",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "heat",
+        "index": 26,
+        "title": "Fourier's Law",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "heat",
+        "index": 53,
+        "title": "Log Mean Temperature Difference (LMTD)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "design",
+        "index": 0,
+        "title": "Total Elongation of Stepped Rod",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "design",
+        "index": 1,
+        "title": "Angle of Twist in Hollow Shaft",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 2,
+        "title": "Spring Constant of a Helical Spring",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 6,
+        "title": "Ball Bearing Rated Life Calculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 10,
+        "title": "Minimum Steel Shaft Diameter Calculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 11,
+        "title": "Riveted Joint Shear Failure",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 15,
+        "title": "Parallel System Reliability Calculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 22,
+        "title": "L10 Fatigue Life of Ball Bearing",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 23,
+        "title": "Bearing Life with Variable Load",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 24,
+        "title": "Petroff's Equation for Journal Bearing",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 25,
+        "title": "Sommerfeld Number (Bearing Characteristic Number)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 26,
+        "title": "Ball vs. Roller Bearings",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 27,
+        "title": "Deep Groove Ball Bearing Load Capabilities",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 28,
+        "title": "Self-Aligning Ball Bearings",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 29,
+        "title": "Thrust Ball Bearing Limitation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 30,
+        "title": "Viscosity Index for Lubrication",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 31,
+        "title": "Shaft Critical Speed — Dunkerley's Formula",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 32,
+        "title": "Key Stress Analysis — Shear vs. Crushing",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 33,
+        "title": "Clutch Torque Capacity — Uniform Wear vs. Uniform Pressure",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 34,
+        "title": "Band Brake Tension Ratio",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 35,
+        "title": "Flexible Coupling Purpose",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 36,
+        "title": "Centrifugal Clutch Engagement",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 37,
+        "title": "Flywheel Energy Storage",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 38,
+        "title": "Interference Fit Pressure",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 39,
+        "title": "Stiffness of Beams in Parallel",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 40,
+        "title": "Stiffness of Shafts in Series",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 41,
+        "title": "Torsional Deflection of Shaft",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 42,
+        "title": "Deflection of Cantilever Beam with Point Load",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 43,
+        "title": "Castigliano's Theorem Purpose",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 44,
+        "title": "Strain Energy in Tension",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 45,
+        "title": "Bending Rigidity Definition",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 46,
+        "title": "Maxwell's Reciprocal Theorem",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 47,
+        "title": "Flatness vs. Straightness Symbols",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 48,
+        "title": "Maximum Material Condition (MMC)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 49,
+        "title": "Least Material Condition (LMC)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 50,
+        "title": "GD&T Datum Reference Frame",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 51,
+        "title": "Position Tolerance Zone Shape",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 52,
+        "title": "Runout vs. Total Runout GD&T Symbols",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 53,
+        "title": "First vs. Third Angle Projection",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 54,
+        "title": "Tensile Stress Area of Bolt",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 55,
+        "title": "Throat Size of Filglobal.Weld",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 56,
+        "title": "Stress in Eccentric Riveted Joint",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 57,
+        "title": "Bolt Joint Constant (Stiffness Ratio)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 58,
+        "title": "Bolt Proof Strength",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 59,
+        "title": "Thread Stripping Failure Mode",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 60,
+        "title": "Welded Joints — Butt Weld Stress",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 61,
+        "title": "Adhesive Joint Failures — Peeling vs. Shear",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 62,
+        "title": "Limits, Fits, and Tolerances — Hole vs Shaft Basis",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 63,
+        "title": "Clearance vs. Interference Fit Classes",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 64,
+        "title": "Tolerance Stack-up — Worst Case vs. RSS",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 65,
+        "title": "Worst-Case Tolerance Stack-up",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 66,
+        "title": "Design for Manufacturing (DFM) — Machining",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 67,
+        "title": "Design for Assembly (DFA) — Part Reduction",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 68,
+        "title": "Bilateral vs. Unilateral Tolerances",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 69,
+        "title": "Geometric Dimensioning and Tolerancing (GD&T) Advantage",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 70,
+        "title": "Torque to Raise Load in Power Screw",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 71,
+        "title": "Self-Locking Condition",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 72,
+        "title": "Power Screw Efficiency",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 73,
+        "title": "Acme vs. Square Threads",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 74,
+        "title": "Collar Friction Torque",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 75,
+        "title": "Shear Stress in Power Screw Thread",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 76,
+        "title": "Lead vs Pitch in Multi-start Screws",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 77,
+        "title": "Recirculating Ball Screw Purpose",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 78,
+        "title": "Gear Train Velocity Ratio",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 79,
+        "title": "Gear Interference and Minimum Teeth",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 80,
+        "title": "Belt Drive Power Capacity",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "design",
+        "index": 81,
+        "title": "Worm Gear Self-Locking",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "transport",
+        "index": 1,
+        "title": "Equivalent Single Axle Load (ESAL)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 3,
+        "title": "Pavement Condition Index (PCI)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 6,
+        "title": "SSD Calculation at 60 mph",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 7,
+        "title": "Sight Distance — Crest Vertical Curve",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 10,
+        "title": "Superelevation Purpose",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 12,
+        "title": "Clear Zone Width",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 13,
+        "title": "85th Percentile Speed",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "transport",
+        "index": 15,
+        "title": "Four-Step Travel Demand Model",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 0,
+        "title": "Spread Footing on Cohesive Soil — Bearing Capacity",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "geotech",
+        "index": 1,
+        "title": "Minimum Footing Depth",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 2,
+        "title": "Negative Skin Friction on Piles",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 3,
+        "title": "Pile Load Test — Static",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 4,
+        "title": "Active Earth Pressure — Rankine Theory",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 6,
+        "title": "Factor of Safety — Infinite Slope",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 7,
+        "title": "Coulomb Active Earth Pressure — Wall Friction",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 8,
+        "title": "Bishop's Simplified Method",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 9,
+        "title": "Taylor's Stability Number",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 10,
+        "title": "Cantilever Retaining Wall — Overturning Check",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "geotech",
+        "index": 11,
+        "title": "Geotextile Reinforced Retaining Wall",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 12,
+        "title": "At-Rest Earth Pressure — Ko",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 13,
+        "title": "Tension Crack in Cohesive Backfill",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 14,
+        "title": "Bearing Capacity — Terzaghi Equation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "geotech",
+        "index": 19,
+        "title": "Schmertmann Method — Elastic Settlement in Sand",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 22,
+        "title": "Mat Foundation vs. Isolated Footings",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 23,
+        "title": "Consolidation Settlement — Sand Layer Effect",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 26,
+        "title": "Unconfined Compressive Strength — Clay",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 27,
+        "title": "Drained vs. Undrained Shear Strength",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 28,
+        "title": "Sensitivity of Clay",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 30,
+        "title": "Vane Shear Test — Undrained Shear Strength",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 31,
+        "title": "Peak vs. Residual Friction Angle",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "geotech",
+        "index": 32,
+        "title": "Effective Cohesion in Sand",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 0,
+        "title": "Surface Overflow Rate (Primary Clarifier)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"C\""
+    },
+    {
+        "subject": "water-res",
+        "index": 1,
+        "title": "Coagulation and Flocculation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 2,
+        "title": "Activated Sludge Process - F/M Ratio",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 4,
+        "title": "Water Softening",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 6,
+        "title": "Sludge Digestion",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 9,
+        "title": "Trickling Filters",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 11,
+        "title": "Alkalinity",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 12,
+        "title": "Total Suspended Solids (TSS) vs. Total Dissolved Solids (TDS)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 13,
+        "title": "Hardness",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 16,
+        "title": "Turbidity",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 17,
+        "title": "Chemical Oxygen Demand (COD) vs. BOD",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 21,
+        "title": "Infiltration and Inflow (I/I)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 22,
+        "title": "Hydrogen Sulfide Generation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 23,
+        "title": "Peaking Factor",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 24,
+        "title": "Manhole Placement",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 25,
+        "title": "Lift Station Wet Well Sizing",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 27,
+        "title": "Force Mains",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 29,
+        "title": "Combined Sewer Systems",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 30,
+        "title": "Equivalent Pipes (Series)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 33,
+        "title": "Elevated Storage Tanks",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 34,
+        "title": "Pressure Requirements",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 35,
+        "title": "Fire Flow Minimum Pressure",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "water-res",
+        "index": 38,
+        "title": "Water Hammer (Hydraulic Transient)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 0,
+        "title": "Shoring System Selection",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 1,
+        "title": "Cofferdams — Purpose and Type",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 2,
+        "title": "Falsework Design Load",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 5,
+        "title": "Dewatering — Drawdown Effects",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 8,
+        "title": "Site Layout — Construction Trailer Placement",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 10,
+        "title": "OSHA Fall Protection — Threshold Height",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 11,
+        "title": "Confined Space Entry Requirements",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 12,
+        "title": "Personal Protective Equipment (PPE) — Hard Hats",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 13,
+        "title": "Hazard Communication — SDS",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 15,
+        "title": "Excavation Safety — Cave-In Prevention",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 16,
+        "title": "Fire Prevention — Hot Work Permit",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 19,
+        "title": "Incident Rate Calculation — OSHA Recordable Rate",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"D\""
+    },
+    {
+        "subject": "construction",
+        "index": 20,
+        "title": "Concrete Compressive Strength Acceptance",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "construction",
+        "index": 23,
+        "title": "Aggregate Gradation — Sieve Analysis",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 0,
+        "title": "Reference Design Value Adjustment — Wet Service",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 1,
+        "title": "Timber Beam — Section Modulus Required",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"C\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 3,
+        "title": "Glulam vs. Sawn Lumber",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 4,
+        "title": "Repetitive Member Factor Cr",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 5,
+        "title": "Shear Parallel to Grain (Horizontal Shear)",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 6,
+        "title": "Bearing Stress Perpendicular to Grain",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 7,
+        "title": "Size Factor CF for Wide Lumber",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 8,
+        "title": "Timber Connection — Dowel Bearing Strength",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 9,
+        "title": "Beam Stability Factor CL",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 10,
+        "title": "LRFD Factored Load Combination",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 11,
+        "title": "Compact Section — Width-to-Thickness Ratio",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 12,
+        "title": "Nominal Flexural Strength — Compact Beam",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 13,
+        "title": "Shear Strength of Steel Beam",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"A\""
+    },
+    {
+        "subject": "structural",
+        "index": 20,
+        "title": "Degree of Indeterminacy — Beam",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 24,
+        "title": "Two-Span Continuous Beam — Center Support Reaction",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "structural",
+        "index": 25,
+        "title": "Force Method — Compatibility Equation",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"D\" to \"B\""
+    },
+    {
+        "subject": "power",
+        "index": 7,
+        "title": "Reactive Power Flow",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "networks",
+        "index": 1,
+        "title": "Layer 2",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "networks",
+        "index": 5,
+        "title": "IPv6 Size",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "computer-systems",
+        "index": 5,
+        "title": "Virtual Memory",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "eng-sciences",
+        "index": 0,
+        "title": "Resultant Force",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "comp-tools",
+        "index": 2,
+        "title": "Matrix Multiplication",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    },
+    {
+        "subject": "quality",
+        "index": 51,
+        "title": "Cp and Cpk Index",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"A\" to \"C\""
+    },
+    {
+        "subject": "groundwater-soils",
+        "index": 1,
+        "title": "Porosity",
+        "action": "UPDATE_IS_CORRECT",
+        "details": "Change is_correct option from \"B\" to \"D\""
+    }
+]
