@@ -1317,7 +1317,7 @@ const QUESTIONS = {
             "topic": "Analytic geometry and trigonometry",
             "title": "Equation of a Perpendicular Line",
             "question": "What is the equation of the line passing through the point $(2, -3)$ and perpendicular to the line defined by $3x - 4y + 7 = 0$?",
-            "question_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.1.PNG",
+            "question_image": "https://drive.google.com/file/d/1R4HykwR8DrZzq7bb2plVztUaM3_vdAef/preview",
             "options": [
                 {
                     "label": "A",
@@ -1582,7 +1582,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.6A.PNG"
+                "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview"
             }
         },
         {
@@ -1624,7 +1624,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.7A.PNG"
+                "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview"
             }
         },
         {
@@ -1670,7 +1670,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.8A.PNG"
+                "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview"
             }
         },
         {
@@ -1716,7 +1716,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.9A.PNG"
+                "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview"
             }
         },
         {
@@ -1762,7 +1762,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.10A.PNG"
+                "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview"
             }
         },
         {
@@ -1808,7 +1808,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "assets/images/questions/1. Math/1A. Analytic Geometry/1.11A.PNG"
+                "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview"
             }
         },
         {
@@ -2180,7 +2180,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "assets/images/questions/tikz_3a2b8434ca.svg"
+                "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview"
             }
         },
         {
@@ -2233,7 +2233,7 @@ const QUESTIONS = {
             "topic": "Calculus",
             "title": "Area of Region Bounded by Curves",
             "question": "Calculate the area of the region bounded by the parabola $y = x^2$ and the line $y = 2x + 3$.",
-            "question_image": "assets/images/questions/tikz_5c96d892a0.svg",
+            "question_image": "https://drive.google.com/file/d/1GhFyJObffD0mFcknXYEJo_MXZ0CJ0jdW/preview",
             "options": [
                 {
                     "label": "A",
@@ -23593,7 +23593,7 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Shear Force with Concentrated Moment",
             "question": "A simply supported beam of length $L = 6$ m is subjected to a clockwise concentrated moment of $M_0 = 30$ kNm at its midpoint. What is the magnitude of the constant shear force along the length of the beam?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1AMR3hS64hzTMZNdrTA8QRsA0DogfNt4S/preview",
             "options": [
                 {
                     "label": "A",
@@ -23635,7 +23635,7 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Location of Maximum Bending Moment",
             "question": "For a beam with a shear force diagram described by the function $V(x) = 20 - 5x$ (where $x$ is in meters and $V$ is in kN), at what distance $x$ from the origin ($x = 0$) does the maximum bending moment occur?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1UMeVWHNgwz92p7obvDHwftNHmEbyqknz/preview",
             "options": [
                 {
                     "label": "A",
@@ -23677,7 +23677,7 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Shear Force in Cantilever Beam",
             "question": "A cantilever beam of length $L = 5$ m is subjected to a uniformly distributed load of $w = 4$ kN/m across its entire length. What is the magnitude of the shear force at the fixed support?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1KJgqu9p6RZyN2Nm391YI89mhNRaBe94E/preview",
             "options": [
                 {
                     "label": "A",
@@ -23719,7 +23719,7 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Maximum Bending Moment of Beam",
             "question": "A simply supported beam of length $L = 8$ m carries a single concentrated load of $P = 40$ kN at its midpoint. What is the maximum bending moment in the beam?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1FFyOZY1AOQOu2ngqH6V6stw5zBJg5mng/preview",
             "options": [
                 {
                     "label": "A",
@@ -23761,7 +23761,7 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Maximum Shear Force in Beam",
             "question": "A simply supported beam of length $L = 6$ m is subjected to a point load of $10$ kN at a distance $x = 2$ m from the left support. What is the maximum shear force magnitude $|V|_{max}$ in the beam?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1IHaqwnneL4Z8_Q8QxPiEI9hMgQZfV2N-/preview",
             "options": [
                 {
                     "label": "A",
@@ -23796,7 +23796,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview"
             }
         },
         {
@@ -23838,14 +23838,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview"
             }
         },
         {
             "topic": "Shear and Moment Diagrams",
             "title": "Shear Force in Overhanging Beam",
             "question": "An overhanging beam is $8$ m long. It is supported at the left end ($x = 0$) and at $x = 6$ m. A downward point load of $12$ kN is applied at the rightmost free end ($x = 8$ m). What is the value of the shear force in the segment between the two supports ($0 < x < 6$ m)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1pGtXyHXw0gfkxtQ5aML7IFXrnlpykwR-/preview",
             "options": [
                 {
                     "label": "A",
@@ -23887,7 +23887,7 @@ const QUESTIONS = {
             "topic": "Stress Transformations and Mohr Circle",
             "title": "Principal Stresses",
             "question": "A plane stress element is subjected to normal stresses $\\sigma_x = 120 \\text{ MPa}$ and $\\sigma_y = 40 \\text{ MPa}$, and a shear stress $\\tau_{xy} = 30 \\text{ MPa}$. Using Mohr's circle, what are the principal stresses $\\sigma_1$ and $\\sigma_2$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1edw6gpnfP3uDr_elZf8qTVoo0jUmXtg0/preview",
             "options": [
                 {
                     "label": "A",
@@ -23926,7 +23926,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview"
             }
         },
         {
@@ -23968,7 +23968,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview"
             }
         },
         {
@@ -24010,7 +24010,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview"
             }
         },
         {
@@ -24052,14 +24052,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview"
             }
         },
         {
             "topic": "Stress/Strain Caused by Axial Loads",
             "title": "Axial Deformation",
             "question": "A solid circular shaft with a diameter of $d = 50 \\text{ mm}$ and a length of $L = 2 \\text{ m}$ is subjected to an axial compressive load of $P = 150 \\text{ kN}$. If the modulus of elasticity is $E = 200 \\text{ GPa}$, what is the total axial deformation $\\delta$ of the shaft?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1i4rEAN-N33_nX-G68mPVs2xQkV5p8jDi/preview",
             "options": [
                 {
                     "label": "A",
@@ -24105,7 +24105,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Axial Loads",
             "title": "Poisson’s Ratio",
             "question": "A steel rod with a Young's modulus of $E = 200 \\text{ GPa}$ and a Poisson's ratio of $\\\nu = 0.30$ is subjected to an axial tensile stress of $\\sigma_z = 150 \\text{ MPa}$. What is the resulting lateral strain $\\epsilon_x$ in the rod?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1k85o51cD6BOi0L0EBVmtIPOlix6jzQMQ/preview",
             "options": [
                 {
                     "label": "A",
@@ -24147,7 +24147,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Axial Loads",
             "title": "Poisson’s Ratio",
             "question": "A cylindrical specimen of a steel alloy with an original diameter of $12.8 \\text{ mm}$ is pulled in tension. A force of $35,000 \\text{ N}$ produces an elastic reduction in diameter of $2.8 \\times 10^{-3} \\text{ mm}$. Given that the modulus of elasticity $E$ is $205 \\text{ GPa}$, what is the Poisson's ratio $\\\nu$ of the material?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Hhwf1qYvy6kHDLMmpsj2o8Ow8Vz1d8hX/preview",
             "options": [
                 {
                     "label": "A",
@@ -24415,7 +24415,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Bending Moment at Specific Distance",
             "question": "A simply supported beam of length $L = 10$ m carries a uniformly distributed load of $w = 2$ kN/m. What is the bending moment at a distance $x = 2$ m from the left support?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/12BJNjdnlCiHBi-5wDKO9RPXtulX-zLUn/preview",
             "options": [
                 {
                     "label": "A",
@@ -24461,7 +24461,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Maximum Bending Stress in a Beam",
             "question": "A rectangular beam with a width $b = 100 \\text{ mm}$ and height $h = 200 \\text{ mm}$ is subjected to a maximum bending moment of $M = 10 \\text{ kN} \\cdot \\text{m}$. What is the maximum bending stress $\\sigma_{\\max}$ in the beam?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/14Jv9SiqcwxhFs0i-APhufJPHHe29lgGV/preview",
             "options": [
                 {
                     "label": "A",
@@ -24542,14 +24542,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview"
             }
         },
         {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Maximum Bending Moment Calculation",
             "question": "A simply supported beam of length $L = 10$ m carries a point load of $20$ kN at a distance of $4$ m from the left support. What is the maximum bending moment in the beam?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1dethLsdEoFoeOH6B1Ng40FRruj8cedvs/preview",
             "options": [
                 {
                     "label": "A",
@@ -24588,14 +24588,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview"
             }
         },
         {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Bending Stress in Steel Plate",
             "question": "A steel plate is bent into a circular arc of radius $10\\text{ m}$. If the plate section be $120\\text{ mm}$ wide and $20\\text{ mm}$ thick, with $E = 2 \\times 10^5\\text{ N/mm}^2$, then the maximum bending stress-induced is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Cto_yDxkETbmLv7xdSA6ATOU3-V1_6hq/preview",
             "options": [
                 {
                     "label": "A",

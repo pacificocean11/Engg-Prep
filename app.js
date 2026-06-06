@@ -266,6 +266,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return text;
     }
 
+    /**
+     * Converts any Google Drive URL (share link, /preview, /view, uc?export)
+     * into a direct embeddable image URL using lh3.googleusercontent.com.
+     * Falls back to the original URL if no Drive file ID is detected.
+     */
+    function toDriveImgUrl(url) {
+        if (!url) return url;
+        // Match /file/d/FILE_ID/ pattern
+        const m = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+        if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
+        // Match id=FILE_ID query param (uc?export=view&id=...)
+        const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+        if (m2) return `https://lh3.googleusercontent.com/d/${m2[1]}`;
+        return url;
+    }
+
     const formulaPopup = document.getElementById('formula-popup');
     const formulaTitle = document.getElementById('formula-title');
     const formulaLatex = document.getElementById('formula-latex');
@@ -1743,12 +1759,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (question.question_image) {
                 const imgDiv = document.createElement('div');
                 imgDiv.className = 'question-image-container';
-                imgDiv.innerHTML = `<img src="${question.question_image}" alt="Question Diagram" class="quiz-image">`;
+                imgDiv.innerHTML = `<img src="${toDriveImgUrl(question.question_image)}" alt="Question Diagram" class="quiz-image">`;
                 questionText.appendChild(imgDiv);
             } else if (question.image) {
                 const imgDiv = document.createElement('div');
                 imgDiv.className = 'question-image-container';
-                imgDiv.innerHTML = `<img src="${question.image}" alt="Question Diagram" class="quiz-image">`;
+                imgDiv.innerHTML = `<img src="${toDriveImgUrl(question.image)}" alt="Question Diagram" class="quiz-image">`;
                 questionText.appendChild(imgDiv);
             } else if (question.tikz) {
                 const tikzDiv = document.createElement('div');
@@ -1917,7 +1933,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (solImg) {
                 const globalImgDiv = document.createElement('div');
                 globalImgDiv.className = 'solution-image-container';
-                globalImgDiv.innerHTML = `<img src="${solImg}" alt="Solution Overview" class="quiz-image">`;
+                globalImgDiv.innerHTML = `<img src="${toDriveImgUrl(solImg)}" alt="Solution Overview" class="quiz-image">`;
                 explanationText.appendChild(globalImgDiv);
             }
         } else if (solImg) {
