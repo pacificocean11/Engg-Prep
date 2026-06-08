@@ -24641,7 +24641,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Torsional Loads",
             "title": "Maximum Shear Stress in a Shaft",
             "question": "A solid circular steel shaft with a diameter of $d = 40 \\text{ mm}$ and a length of $L = 1.5 \\text{ m}$ is subjected to an applied torque of $T = 500 \\text{ N} \\cdot \\text{m}$. What is the maximum shear stress, $\\tau_{max}$, induced in the shaft?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1V-smo_bZF3HJUgGfj8fjCLUkEYG7HSZF/preview",
             "options": [
                 {
                     "label": "A",
@@ -24685,55 +24685,9 @@ const QUESTIONS = {
         },
         {
             "topic": "Stress/Strain Caused by Torsional Loads",
-            "title": "Maximum Shear Stress in Shaft",
-            "question": "A solid circular steel shaft with a diameter of $d = 40 \\text{ mm}$ and a length of $L = 1.5 \\text{ m}$ is subjected to an applied torque of $T = 500 \\text{ N} \\cdot \\text{m}$. What is the maximum shear stress, $\\tau_{max}$, induced in the shaft?",
-            "question_image": "Shaft.png",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$19.90 \\text{ MPa}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$12.50 \\text{ MPa}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$79.58 \\text{ MPa}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$39.79 \\text{ MPa}$",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Identify Given Data",
-                        "content": "$d = 40 \\text{ mm}$, $c = 20 \\text{ mm}$, $T = 500,000 \\text{ N} \\cdot \\text{mm}$."
-                    },
-                    {
-                        "title": "Calculate J",
-                        "content": "$J = \\dfrac{\\pi d^4}{32} \\approx 251,327.41 \\text{ mm}^4$."
-                    },
-                    {
-                        "title": "Calculate Shear Stress",
-                        "content": "$\\tau_{max} = \\dfrac{T \\cdot c}{J} = \\dfrac{10,000,000}{251,327.41} \\approx 39.79 \\text{ MPa}$."
-                    }
-                ],
-                "final_answer": "D",
-                "solution_image": ""
-            }
-        },
-        {
-            "topic": "Stress/Strain Caused by Torsional Loads",
             "title": "Angle of Twist due to Torsion",
             "question": "A $2\\text{ m}$ long solid aluminum shaft with a diameter of $50\\text{ mm}$ is subjected to a torque of $800\\text{ N} \\cdot \\text{m}$. Given the shear modulus $G = 27\\text{ GPa}$, what is the angle of twist in degrees?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vvpCJk8nwbsoHwuCHXvKPs1nR_9VqDpm/preview",
             "options": [
                 {
                     "label": "A",
@@ -24783,7 +24737,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Torsional Loads",
             "title": "Maximum Torque Transmitted by a Hollow Shaft",
             "question": "A hollow shaft has an outer diameter of $100 \\text{ mm}$ and an inner diameter of $80 \\text{ mm}$. If the allowable shear stress is $60 \\text{ MPa}$, what is the maximum torque the shaft can transmit?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1SEPNKTXLzFMS4fyjplDyLxnhpCq058iF/preview",
             "options": [
                 {
                     "label": "A",
@@ -24829,7 +24783,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Shear",
             "title": "Average Shear Stress in a Bolt",
             "question": "A steel bolt with a diameter of $20\\text{ mm}$ is used to join two plates. If the plates are pulled apart with a force of $50\\text{ kN}$, creating a single shear condition on the bolt, what is the average shear stress in the bolt?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1EynYUzchCRrpVji0_8cFb6y-zO9Ew-mo/preview",
             "options": [
                 {
                     "label": "A",
@@ -24971,7 +24925,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Shear",
             "title": "Horizontal Displacement from Shear Strain",
             "question": "A square block of material is subjected to a shear stress that results in a shear strain of $0.0005$ radians. If the block has a height of $50\\text{ mm}$, what is the horizontal displacement of the top surface relative to the bottom surface?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jLT8RTTKIubjh_Y2HcYQQc5AexI3vWjs/preview",
             "options": [
                 {
                     "label": "A",
@@ -25017,7 +24971,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Shear",
             "title": "Shear Stress in a Clevis Pin",
             "question": "A clevis joint connects two rods with a $15\\text{ mm}$ diameter pin. The assembly is subjected to a tensile load of $60\\text{ kN}$. Assuming the pin is in double shear, determine the average shear stress in the pin.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1W5r-IpUiE03drqam9e1afP05oeOrBm-i/preview",
             "options": [
                 {
                     "label": "A",
@@ -25063,7 +25017,7 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Shear",
             "title": "Average Shear Stress in Bolt",
             "question": "A bolt with a diameter of $20$ mm is used in a double-lap joint to connect three plates. If the joint is subjected to a tensile force of $100$ kN, what is the average shear stress in the bolt?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1H9NcUVrypI5Xj3m0N-w7RxwinNNkZNqM/preview",
             "options": [
                 {
                     "label": "A",
@@ -25148,14 +25102,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview"
             }
         },
         {
             "topic": "Stress/Strain Caused by Temp. Changes",
             "title": "Thermal Expansion",
             "question": "A copper rod has an initial length of $2.5 \\text{ m}$ at a temperature of $20^\\circ\\text{C}$. The coefficient of linear thermal expansion for copper is $17.0 \\times 10^{-6} / ^\\circ\\text{C}$. Determine the total change in length, $\\Delta L$, if the rod is heated to a final temperature of $150^\\circ\\text{C}$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1dPVTtYjNE2KLtUj1QZAP2ZEoQbkE4AIq/preview",
             "options": [
                 {
                     "label": "A",
@@ -25201,7 +25155,7 @@ const QUESTIONS = {
             "topic": "Combined Loading",
             "title": "Maximum Stress in Eccentric Column",
             "question": "A rectangular short column with cross-sectional dimensions of $200\\text{ mm} \\times 100\\text{ mm}$ is subjected to a compressive load of $P = 500\\text{ kN}$. The load is applied at an eccentricity of $20\\text{ mm}$ from the centroidal axis along the $200\\text{ mm}$ dimension. Calculate the maximum compressive stress in the column.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1K9VQQ2LKilYATNcHQI9Ljr3G_j8xi0tU/preview",
             "options": [
                 {
                     "label": "A",
@@ -25251,7 +25205,7 @@ const QUESTIONS = {
             "topic": "Combined Loading",
             "title": "Maximum Eccentricity in Square Column",
             "question": "To prevent tension from occurring in a square column of side length $a = 150\\text{ mm}$ under a compressive load, what is the maximum allowable eccentricity $e$ from the centroidal axis (along one of the principal axes)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vAQZGJPWIZLLgM0ySQdPdZ6eQDIoe3PG/preview",
             "options": [
                 {
                     "label": "A",
@@ -25301,7 +25255,7 @@ const QUESTIONS = {
             "topic": "Combined Loading",
             "title": "Maximum Stress in Circular Shaft",
             "question": "A solid circular shaft with a diameter of $80\\text{ mm}$ is subjected to a compressive load of $100\\text{ kN}$ applied at an eccentricity of $5\\text{ mm}$ from the center. What is the maximum compressive stress in the shaft?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1AYopFjwLOuW9LR-jRHMFZCsQtZ89ZgAo/preview",
             "options": [
                 {
                     "label": "A",
