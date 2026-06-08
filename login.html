@@ -526,7 +526,9 @@
             localStorage.setItem('enggtv_show_intro', 'true');
             localStorage.setItem('enggtv_authenticated', 'true');
             localStorage.setItem('enggtv_user', JSON.stringify(userData));
-            localStorage.setItem('enggtv_discipline', userData.discipline);
+            // Default to 'Mechanical' if discipline is missing/undefined in the Firestore doc
+            const discipline = (userData.discipline && userData.discipline !== 'undefined') ? userData.discipline : 'Mechanical';
+            localStorage.setItem('enggtv_discipline', discipline);
             window.location.href = 'index.html';
         }
 

@@ -25305,7 +25305,7 @@ const QUESTIONS = {
             "topic": "Deformations",
             "title": "Deflection of Beam",
             "question": "A cantilever beam of length $L = 4 \\text{ m}$ is fixed at the left support ($x = 0$) and free at the right end ($x = 4 \\text{ m}$). The beam has a constant flexural rigidity $EI = 5000 \\text{ kNm}^2$. It is subjected to a downward vertical point load $P = 10 \\text{ kN}$ at the free end and a clockwise concentrated moment $M = 20 \\text{ kNm}$ at its midpoint ($x = 2 \\text{ m}$). What is the total downward deflection at the free end?",
-            "question_image": "Deflection of Beam.png",
+            "question_image": "https://drive.google.com/file/d/19sB7QvCf0rVcDTOnNysWWID69ThrXXCJ/preview",
             "options": [
                 {
                     "label": "A",
@@ -25351,7 +25351,7 @@ const QUESTIONS = {
             "topic": "Deformations",
             "title": "Deflection in Cantilever Beam",
             "question": "A free end of a cantilever beam rotates by $0.001$ radians under a point load of $10\\text{ kN}$. Then deflection at the free end due to a moment of $100\\text{ kN} \\cdot \\text{m}$ is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Sk2jiTUcm326qcSQ6vArXmRFyZ_nI_zR/preview",
             "options": [
                 {
                     "label": "A",
@@ -25443,7 +25443,7 @@ const QUESTIONS = {
             "topic": "Column Buckling",
             "title": "Critical Euler Buckling Load",
             "question": "A steel column with a length of $L = 4.5 \\text{ m}$ has a rectangular cross-section of $100 \\text{ mm} \\times 150 \\text{ mm}$. The column is fixed at one end and pinned at the other. Assuming the modulus of elasticity for steel is $E = 200 \\text{ GPa}$, what is the critical Euler buckling load, $P_{cr}$, for this column?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1gwJvSfjKp5s9zX0Qi5Txk4hwlLlKxmHp/preview",
             "options": [
                 {
                     "label": "A",

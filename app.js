@@ -1142,14 +1142,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 initAccountInfo();
                 const adminSelector = document.getElementById('admin-discipline-selector');
                 if (adminSelector) {
-                    if ((state.user.username && state.user.username.toLowerCase() === 'admin')) {
-                        adminSelector.classList.remove('hidden');
-                        const selectDisc = document.getElementById('select-discipline');
-                        if (selectDisc) {
-                            selectDisc.value = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-                        }
-                    } else {
-                        adminSelector.classList.add('hidden');
+                    adminSelector.classList.remove('hidden');
+                    adminSelector.style.display = 'block'; // Force visible for all users
+                    const selectDisc = document.getElementById('select-discipline');
+                    if (selectDisc) {
+                        selectDisc.value = localStorage.getItem('enggtv_discipline') || 'Mechanical';
                     }
                 }
             }
@@ -2643,11 +2640,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backFromSupportBtn) backFromSupportBtn.addEventListener('click', () => navigateTo('settings'));
 
     function initAccountInfo() {
+        // Force-show the discipline selector for ALL users regardless of CSS classes
+        const disciplineSelector = document.getElementById('admin-discipline-selector');
+        if (disciplineSelector) {
+            disciplineSelector.classList.remove('hidden');
+            disciplineSelector.style.display = 'block';
+        }
+
         // Display Discipline (Static)
         const savedDiscipline = localStorage.getItem('enggtv_discipline') || state.user.discipline || 'Mechanical';
         if (userDisciplineDisplay) userDisciplineDisplay.textContent = savedDiscipline;
         if (document.getElementById('discipline-profile-display')) {
             document.getElementById('discipline-profile-display').textContent = savedDiscipline;
+        }
+
+        // Pre-select current discipline in the dropdown
+        const selectDisc = document.getElementById('select-discipline');
+        if (selectDisc) {
+            selectDisc.value = savedDiscipline;
         }
 
         // Load/Set Date Joined
