@@ -19165,7 +19165,7 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Resultant of Concurrent Forces",
             "question": "Three concurrent forces act on a particle at the origin. Force $\\vec{F}_1 = 50 \\text{ N}$ is directed at an angle of $30^\\circ$ from the positive $x$-axis. Force $\\vec{F}_2 = 80 \\text{ N}$ is directed at an angle of $135^\\circ$ from the positive $x$-axis. Force $\\vec{F}_3 = 60 \\text{ N}$ is directed at an angle of $240^\\circ$ from the positive $x$-axis. Determine the magnitude of the resultant force $R$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1UeVb7dBEpS4AlQfuMvxGuMQaubPJTshQ/preview",
             "options": [
                 {
                     "label": "A",
@@ -19211,7 +19211,7 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Vector Addition",
             "question": "Two forces act on a point: $\\vec{F}_1 = 50\\text{ N}$ at an angle of $30^{\\circ}$ and $\\vec{F}_2 = 80\\text{ N}$ at an angle of $120^{\\circ}$, both measured counter-clockwise from the positive x-axis. What is the magnitude of the resultant force?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1CzkOTiTZ4GRP4R-08hkijxriHWa7raNf/preview",
             "options": [
                 {
                     "label": "A",
@@ -19643,7 +19643,7 @@ const QUESTIONS = {
             "topic": "Concurrent Force Systems",
             "title": "Tension in Static Equilibrium",
             "question": "A ring is held in equilibrium by three ropes. Rope A exerts a tension of 500 lb at an angle of $30^\\circ$ from the positive $x$-axis. Rope B exerts a tension at an angle of $150^\\circ$ from the positive $x$-axis. Rope C pulls vertically downward ($-y$ direction). What is the tension in Rope C?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1T9hRMlUZe9VbQpp-OPbT64LN5fBsRz7U/preview",
             "options": [
                 {
                     "label": "A",
@@ -19731,7 +19731,7 @@ const QUESTIONS = {
             "topic": "Concurrent Force Systems",
             "title": "Tension in Suspended Weight",
             "question": "A weight of 1000 N is suspended by two identical cables. Each cable makes an angle of $45^\\circ$ with the vertical. What is the tension in each cable?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1L4BgeVZSZjhIajb59DpfHoa6fgn0eVib/preview",
             "options": [
                 {
                     "label": "A",
@@ -19777,7 +19777,7 @@ const QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Beam Reaction Force Calculation",
             "question": "A horizontal beam of length $L = 6$ m is supported by a pin at $A$ and a roller at $B$. A vertical downward force of $12$ kN is applied at a distance of $2$ m from $A$. Additionally, a clockwise couple moment of $20$ kNm is applied at a distance of $4$ m from $A$. Determine the vertical reaction force at support $B$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1MZ6fy66rLhjOvhLkGWS7dYJSYHMXIhuY/preview",
             "options": [
                 {
                     "label": "A",
@@ -19823,7 +19823,7 @@ const QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Reaction of Triangular Distributed Load",
             "question": "A $6$ m simply supported beam is subjected to a distributed triangular load that varies linearly from $0$ at support $A$ to $10$ kN/m at support $B$. Calculate the vertical reaction at support $B$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1_UpTP6IrwCZ14ihSoxAEMpLs2zIE8t49/preview",
             "options": [
                 {
                     "label": "A",
@@ -19869,7 +19869,7 @@ const QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Equilibrium of a Leaning Ladder",
             "question": "A uniform ladder of weight $W = 200$ N and length $L$ leans against a frictionless vertical wall at an angle of $\\theta = 60^\\circ$ with the horizontal ground. Determine the magnitude of the friction force exerted by the ground on the ladder to maintain equilibrium.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1a4HS8Mba06OXdjVxPJ-FGddn9yR7tbS3/preview",
             "options": [
                 {
                     "label": "A",
@@ -19915,7 +19915,7 @@ const QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Beam Reactions",
             "question": "A simply supported beam of length $L = 6\\text{ m}$ is subjected to a concentrated load $F = 12\\text{ kN}$ acting at a distance $a = 2\\text{ m}$ from the left support ($A$). What is the vertical reaction force at the right support ($B$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1FXBFxBBvRtM6y8RdV6S0XnSSTOh4sq7p/preview",
             "options": [
                 {
                     "label": "A",
@@ -20003,7 +20003,7 @@ const QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Equilibrium of a Particle",
             "question": "A crate weighing $W = 1000\\text{ N}$ is supported by two cables. Cable $AC$ makes an angle of $30^{\\circ}$ with the horizontal, and cable $BC$ makes an angle of $60^{\\circ}$ with the horizontal. What is the magnitude of the tension $T_{AC}$ in cable $AC$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/16Svp8e0715mggKWuxP_zETUzr9a2hIFa/preview",
             "options": [
                 {
                     "label": "A",
@@ -20045,7 +20045,7 @@ const QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Beam Equilibrium",
             "question": "A $100\\text{ lb}$ uniform beam of length $10\\text{ ft}$ is supported by a pin at $A$ and a cable at $B$. A $200\\text{ lb}$ load is applied at the midpoint of the beam. The beam is horizontal. What is the tension $T$ in the cable if it makes an angle of $30^\\circ$ with the horizontal beam?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1p_lFMQTaU0Hzkw2Wp53hbw1RRfHF09fQ/preview",
             "options": [
                 {
                     "label": "A",
