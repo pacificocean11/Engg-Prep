@@ -138,17 +138,42 @@ document.addEventListener('DOMContentLoaded', () => {
             user.tier = 'premium';
             localStorage.setItem('enggtv_user', JSON.stringify(user));
             
-            // Force Mechanical for demo user
+            // Set default Mechanical for demo user only if not already set
             if (user.username === 'demo') {
-                user.discipline = 'Mechanical';
-                localStorage.setItem('enggtv_user', JSON.stringify(user));
-                localStorage.setItem('enggtv_discipline', 'Mechanical');
+                const storedDiscipline = localStorage.getItem('enggtv_discipline') || user.discipline;
+                if (!storedDiscipline) {
+                    user.discipline = 'Mechanical';
+                    localStorage.setItem('enggtv_user', JSON.stringify(user));
+                    localStorage.setItem('enggtv_discipline', 'Mechanical');
+                } else {
+                    user.discipline = storedDiscipline;
+                    localStorage.setItem('enggtv_user', JSON.stringify(user));
+                    localStorage.setItem('enggtv_discipline', storedDiscipline);
+                }
             }
             return user;
         } catch (e) {
             return { tier: 'premium', username: 'guest' };
         }
     })();
+
+    // Helper to conditionally get advanced questions source
+    function getQuestionsSource() {
+        const isAdvancedMode = localStorage.getItem('enggtv_advanced_mode') === 'true';
+        if (isAdvancedMode) {
+            return typeof ADVANCED_QUESTIONS !== 'undefined' ? ADVANCED_QUESTIONS : QUESTIONS;
+        }
+        return QUESTIONS;
+    }
+
+    // Helper to partition standard and advanced mode progress
+    function getSubjectProgressKey(subjectId) {
+        const isAdvancedMode = localStorage.getItem('enggtv_advanced_mode') === 'true';
+        if (isAdvancedMode) {
+            return subjectId + '_advanced';
+        }
+        return subjectId;
+    }
 
     // State Management
     const state = {
@@ -466,8 +491,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (data.discipline) {
-                    localStorage.setItem('enggtv_discipline', data.discipline);
-                    state.user.discipline = data.discipline;
+                    const localDisc = localStorage.getItem('enggtv_discipline');
+                    if (!localDisc) {
+                        localStorage.setItem('enggtv_discipline', data.discipline);
+                        state.user.discipline = data.discipline;
+                    } else {
+                        state.user.discipline = localDisc;
+                    }
                 }
                 if (data.dateJoined) {
                     localStorage.setItem('enggtv_date_joined', data.dateJoined);
@@ -595,6 +625,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initTilt() {
         if (typeof VanillaTilt === 'undefined') return;
+        
+        // Do not initialize tilt effects on touchscreens to prevent double-click issues
+        const isTouch = window.matchMedia("(pointer: coarse)").matches || 'ontouchstart' in window;
+        if (isTouch) return;
         
         // Target specific cards for 3D tilt effect
         const tiltElements = document.querySelectorAll('.glass-card, .tilt-card, #announcement-section, .subject-card-tilt');
@@ -1198,8 +1232,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const color = colors[idx % colors.length];
             
             // Calculate progress
-            const questionsInSubject = (QUESTIONS[subject.id] || []).length;
-            const completed = (state.userProgress[subject.id] && state.userProgress[subject.id].completed) || 0;
+            const questionsInSubject = (getQuestionsSource()[subject.id] || []).length;
+            const completedKey = getSubjectProgressKey(subject.id);
+            const completed = (state.userProgress[completedKey] && state.userProgress[completedKey].completed) || 0;
             const percentage = questionsInSubject > 0 ? Math.round((completed / questionsInSubject) * 100) : 0;
             
             const subjectCard = document.createElement('div');
@@ -1241,8 +1276,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let coursesStarted = 0;
 
         state.subjects.forEach(subject => {
-            const questionsInSubject = (QUESTIONS[subject.id] || []).length;
-            const completed = (state.userProgress[subject.id] && state.userProgress[subject.id].completed) || 0;
+            const questionsInSubject = (getQuestionsSource()[subject.id] || []).length;
+            const completedKey = getSubjectProgressKey(subject.id);
+            const completed = (state.userProgress[completedKey] && state.userProgress[completedKey].completed) || 0;
             
             if (completed > 0) coursesStarted++;
             totalQuestions += questionsInSubject;
@@ -1620,19 +1656,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!activity.stateSnapshot && activity.minimalSnapshot) {
             console.log("��️ Reconstructing activity from minimal snapshot...", activityId);
             const min = activity.minimalSnapshot;
+            const isAdv = activity.isAdvanced || min.isAdvanced;
+            const source = typeof ADVANCED_QUESTIONS !== 'undefined' && isAdv ? ADVANCED_QUESTIONS : QUESTIONS;
             
             // Rebuild quizQuestions from indices or per-question refs
             let rebuiltQuestions = [];
             try {
                 if (min.questions) {
                     rebuiltQuestions = min.questions.map(qRef => {
-                        const masterList = QUESTIONS[qRef.sid] || [];
+                        const masterList = source[qRef.sid] || [];
                         const q = masterList[qRef.idx];
                         if (q) return { ...JSON.parse(JSON.stringify(q)), subjectId: qRef.sid };
                         return null;
                     }).filter(q => q);
                 } else if (min.questionIndices) {
-                    const masterList = QUESTIONS[min.subjectId] || [];
+                    const masterList = source[min.subjectId] || [];
                     rebuiltQuestions = min.questionIndices.map(idx => {
                         const q = masterList[idx];
                         if (q) return { ...JSON.parse(JSON.stringify(q)), subjectId: min.subjectId };
@@ -1710,7 +1748,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.updateBackgroundTheme) window.updateBackgroundTheme(subjectId);
 
         const subject = SUBJECTS.find(s => s.id === subjectId);
-        let questions = QUESTIONS[subjectId] || [];
+        let questions = getQuestionsSource()[subjectId] || [];
         
         if (topicName) {
             questions = questions.filter(q => q.topic === topicName);
@@ -2218,6 +2256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Save to recent activity
         const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || state.currentSubject.name);
+        const isActivityAdvanced = !state.isMockExam && localStorage.getItem('enggtv_advanced_mode') === 'true';
         const newActivity = {
             id: Date.now().toString(),
             title: activityTitle,
@@ -2225,6 +2264,7 @@ document.addEventListener('DOMContentLoaded', () => {
             accuracy: accuracy,
             attempted: attempted,
             isMockExam: state.isMockExam,
+            isAdvanced: isActivityAdvanced,
             timestamp: Date.now(),
             stateSnapshot: {
                 quizQuestions: JSON.parse(JSON.stringify(state.quizQuestions)),
@@ -2235,11 +2275,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentTopic: state.currentTopic
             },
             minimalSnapshot: {
+                isAdvanced: isActivityAdvanced,
                 subjectId: state.currentSubject.id,
                 topic: state.currentTopic,
                 questions: state.quizQuestions.map(q => {
                     const sId = q.subjectId || state.currentSubject.id;
-                    const masterList = QUESTIONS[sId] || [];
+                    const masterList = (isActivityAdvanced ? ADVANCED_QUESTIONS : QUESTIONS)[sId] || [];
                     return {
                         sid: sId,
                         idx: masterList.findIndex(item => item.title === q.title)
@@ -2357,17 +2398,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateProgress(subjectId, newlyCompleted) {
-        if (!state.userProgress[subjectId]) {
-            state.userProgress[subjectId] = { completed: 0 };
+        const compKey = getSubjectProgressKey(subjectId);
+        if (!state.userProgress[compKey]) {
+            state.userProgress[compKey] = { completed: 0 };
         }
         
         // Add newly completed questions to cumulative total
-        state.userProgress[subjectId].completed += newlyCompleted;
+        state.userProgress[compKey].completed += newlyCompleted;
         
         // Cap at total questions (calculated from QUESTIONS object)
-        const questionsInSubject = (QUESTIONS[subjectId] || []).length;
-        if (state.userProgress[subjectId].completed > questionsInSubject) {
-            state.userProgress[subjectId].completed = questionsInSubject;
+        const questionsInSubject = (getQuestionsSource()[subjectId] || []).length;
+        if (state.userProgress[compKey].completed > questionsInSubject) {
+            state.userProgress[compKey].completed = questionsInSubject;
         }
 
         const progressKey = `enggtv_progress_${state.user.username}`;
@@ -2528,6 +2570,23 @@ document.addEventListener('DOMContentLoaded', () => {
             settingsPoints.textContent = `${points} Points`;
         }
 
+        // Advanced Mode lock/unlock state handling
+        const toggleAdvanced = document.getElementById('toggle-advanced-mode');
+        const advancedStatusText = document.getElementById('advanced-mode-status-text');
+        if (toggleAdvanced && advancedStatusText) {
+            if (points < 250) {
+                toggleAdvanced.disabled = true;
+                toggleAdvanced.checked = false;
+                localStorage.setItem('enggtv_advanced_mode', 'false');
+                advancedStatusText.textContent = "Locked (Requires 250 points)";
+            } else {
+                toggleAdvanced.disabled = false;
+                const isAdvancedActive = localStorage.getItem('enggtv_advanced_mode') === 'true';
+                toggleAdvanced.checked = isAdvancedActive;
+                advancedStatusText.textContent = isAdvancedActive ? "Active" : "Ready to activate";
+            }
+        }
+
         // --- Dynamic Streak Calculation ---
         // Counts consecutive calendar days (today + backwards) that had activity
         const streakDisplay = document.getElementById('settings-streak-display');
@@ -2676,6 +2735,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const newDiscipline = e.target.value;
             localStorage.setItem('enggtv_discipline', newDiscipline);
             state.user.discipline = newDiscipline;
+            try {
+                const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
+                localUser.discipline = newDiscipline;
+                localStorage.setItem('enggtv_user', JSON.stringify(localUser));
+            } catch (err) {}
             
             // Reload subjects
             if (newDiscipline === 'Mechanical') state.subjects = MECHANICAL_SUBJECTS;
@@ -2689,6 +2753,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateUIForTier();
             renderSubjects();
             updateDashboardStats();
+            updateGamificationUI();
             syncToFirebase(); // Sync discipline change to cloud
             
             // Update labels in account info view immediately
@@ -2829,13 +2894,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const toggleAdvanced = document.getElementById('toggle-advanced-mode');
+    if (toggleAdvanced) {
+        toggleAdvanced.addEventListener('change', (e) => {
+            const isActive = e.target.checked;
+            localStorage.setItem('enggtv_advanced_mode', isActive ? 'true' : 'false');
+            
+            const advancedStatusText = document.getElementById('advanced-mode-status-text');
+            if (advancedStatusText) {
+                advancedStatusText.textContent = isActive ? "Active" : "Ready to activate";
+            }
+            
+            // Re-render subjects and update stats since total questions / progress counts change
+            renderSubjects();
+            updateDashboardStats();
+        });
+    }
+
     const ACHIEVEMENTS = [
         { id: 'first_point', name: 'First Step', points: 1, icon: 'bolt', description: 'Earn your first point.' },
         { id: 'consistent', name: 'Consistent Learner', points: 10, icon: 'auto_stories', description: 'Reach 10 points.' },
         { id: 'dedicated', name: 'Dedicated Engineer', points: 25, icon: 'engineering', description: 'Reach 25 points.' },
         { id: 'announcement_unlocked', name: 'Insider Access', points: 50, icon: 'campaign', description: 'Unlock the Announcements section.' },
         { id: 'scholar', name: 'Senior Engineer', points: 100, icon: 'school', description: 'Unlock the full-length Mock Exam simulation.' },
-        { id: 'master', name: 'Lead Engineer', points: 250, icon: 'workspace_premium', description: 'Commanding a strong grasp of FE fundamentals.' },
+        { id: 'master', name: 'Lead Engineer', points: 250, icon: 'workspace_premium', description: 'Unlock Advanced Mode and command a strong grasp of FE fundamentals.' },
         { id: 'senior', name: 'Concept Master', points: 500, icon: 'military_tech', description: 'Exhibiting advanced mastery of core engineering principles.' },
         { id: 'professional', name: 'Official Exam Ready', points: 1000, icon: 'verified', description: 'Our Professors say Go ahead and be successful in your actual exam' }
     ];
@@ -2921,6 +3003,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         let realUsers = [];
+        let firestoreError = null;
         if (window.firebaseDb) {
             try {
                 const querySnapshot = await window.firebaseDb.collection("users").get();
@@ -2937,9 +3020,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         trend: 'same'
                     });
                 });
+                console.log(`✅ Leaderboard: fetched ${realUsers.length} users from Firestore.`);
             } catch (e) {
+                firestoreError = e.message || String(e);
                 console.error("Error fetching leaderboard users from Firestore:", e);
             }
+        } else {
+            firestoreError = 'Firebase not initialized';
         }
 
         const userCountry = state.user.country || 'Other';
@@ -2964,21 +3051,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             // Filter out users with zero or negative points (no activity)
             if (u.points <= 0) return false;
-            // Filter out extremely long/bot usernames
-            if (u.username.length > 20) return false;
-            // Filter out raw Firebase UIDs
-            const isUid = /^[a-zA-Z0-9]{28}$/.test(u.username);
-            if (isUid) return false;
+            // Filter out raw Firebase UIDs (28 alphanumeric chars, no @ or .)
+            // Real usernames/emails always contain @, ., _, or are short words
+            const isRawUid = /^[a-zA-Z0-9]{20,}$/.test(u.username) && !u.username.includes('@') && !u.username.includes('.');
+            if (isRawUid) return false;
             
             return true;
         });
 
-        let allUsers = [...filteredRealUsers, currentUserData];
+        // If Firestore threw an error, show it in the UI clearly
+        if (firestoreError) {
+            list.innerHTML = `
+                <div class="flex flex-col items-center justify-center py-12 text-slate-400 gap-3">
+                    <span class="material-symbols-outlined text-4xl text-red-400">cloud_off</span>
+                    <p class="text-sm font-bold text-red-500">Could not load standings</p>
+                    <p class="text-xs text-slate-400 text-center px-4">Firestore error: ${firestoreError}</p>
+                    <p class="text-xs text-slate-400 text-center px-4">Check Firestore security rules — the leaderboard query requires read access to the <code class="bg-slate-100 px-1 rounded">users</code> collection.</p>
+                    <button onclick="renderLeaderboard()" class="mt-2 text-xs font-bold text-primary underline">Retry</button>
+                </div>
+            `;
+            return;
+        }
+
+        // If Firestore returned no real users (empty DB), fall back to mock
+        const baseUsers = filteredRealUsers.length > 0 ? filteredRealUsers : MOCK_LEADERBOARD;
+        let allUsers = [...baseUsers, currentUserData];
 
         // Sort by points descending
         allUsers.sort((a, b) => b.points - a.points);
 
-        // Take top 100 real users
+        // Take top 100
         const top100 = allUsers.slice(0, 100);
 
         const isAdmin = state.user.username && state.user.username.toLowerCase() === 'admin';

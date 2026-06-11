@@ -238,7 +238,7 @@
     </div>
 </div>
 <!-- Announcements Card (B-1) -->
-<div id="announcement-section" onclick="navigateTo('announcements-view')" class="col-span-1 md:col-span-2 glass-card rounded-3xl p-6 cursor-pointer hover:scale-[1.02] transition-all duration-300">
+<div id="announcement-section" onclick="navigateTo('announcements-view')" class="col-span-1 md:col-span-2 glass-card rounded-3xl p-6 cursor-pointer transition-all duration-300">
   <div class="flex justify-between items-center">
     <div class="flex items-center gap-2">
       <span class="material-symbols-outlined text-secondary" data-icon="campaign">campaign</span>
@@ -391,6 +391,23 @@
 <label class="relative inline-flex items-center cursor-pointer">
 <input id="toggle-dark-mode" class="sr-only peer" type="checkbox" value=""/>
 <div class="w-11 h-6 bg-slate-200 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+
+<!-- Advanced Mode -->
+<div id="advanced-mode-settings-card" class="w-full glass-card p-4 mb-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<div class="text-left">
+    <span class="font-title-sm text-title-sm dark:text-slate-100 block">Advanced Mode</span>
+    <span id="advanced-mode-status-text" class="text-[11px] font-medium text-slate-400">Locked (Requires 250 points)</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input id="toggle-advanced-mode" class="sr-only peer" type="checkbox" value="" disabled />
+<div class="w-11 h-6 bg-slate-200 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-disabled:opacity-50"></div>
 </label>
 </div>
 
@@ -880,25 +897,26 @@
 
 <!-- Bottom Navigation Bar -->
 <nav id="bottom-nav" class="fixed glass-card rounded-full shadow-2xl border border-white/20 px-10 py-3">
-    <li data-page="dashboard" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+    <li data-page="dashboard" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
         <span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
         <span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
     </li>
-    <li data-page="study" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+    <li data-page="study" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
         <span class="material-symbols-outlined text-2xl" data-icon="menu_book">menu_book</span>
         <span class="text-[10px] font-bold uppercase tracking-widest">Study</span>
     </li>
-    <li data-page="exam" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+    <li data-page="exam" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
         <span class="material-symbols-outlined text-2xl" data-icon="assignment">assignment</span>
         <span class="text-[10px] font-bold uppercase tracking-widest">Exam</span>
     </li>
-    <li data-page="settings" class="flex flex-col items-center gap-1 cursor-pointer transition-all hover:scale-110 list-none">
+    <li data-page="settings" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
         <span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
         <span class="text-[10px] font-bold uppercase tracking-widest">Settings</span>
     </li>
 </nav>
 
     <script src="questions.js"></script>
+    <script src="advanced_questions.js"></script>
     <!-- Firebase Compat SDK (must load before firebase-config.js) -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'enggtv-cache-v2.3';
+const CACHE_NAME = 'enggtv-cache-v3.3';
 const urlsToCache = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const urlsToCache = [
   './style.css',
   './app.js',
   './questions.js',
+  './advanced_questions.js',
   './engg_tv_logo.png',
   './pwa-icon.png'
 ];
