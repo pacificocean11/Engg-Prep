@@ -20187,7 +20187,7 @@ const QUESTIONS = {
             "topic": "Frames and Trusses",
             "title": "Truss",
             "question": "A simple truss consists of three members forming an isosceles right triangle. Joint $A$ (pin support) is located at $(0, 0)$, joint $B$ (roller support) is located at $(4 \\text{ m}, 0)$, and joint $C$ is located at $(2 \\text{ m}, 2 \\text{ m})$. A vertical downward load of $P = 10 \\text{ kN}$ is applied at joint $C$. Determine the internal force in member $AC$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1mVoKSQjhFoD0DUFDem_JvYRQekjM0Guy/preview",
             "options": [
                 {
                     "label": "A",
@@ -20229,7 +20229,7 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Parallel Axis Theorem for Circles",
             "question": "A circular area has a radius of $r = 10$ cm. Using the parallel axis theorem, determine the moment of inertia about an axis parallel to the centroidal $x$-axis and located at a distance $d = 20$ cm from the centroid.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/13cRmegLLRIpgsFZV4hNZeYVVqqRCX5fo/preview",
             "options": [
                 {
                     "label": "A",
@@ -20271,7 +20271,7 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Moment of Inertia of a Rectangle",
             "question": "A rectangular area has a base width $b = 5$ cm and a height $h = 12$ cm. What is the moment of inertia $I_{x}$ of this area about its base?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/13AXOvx4omasO4KSuTeF3YPuAnyeFtGgK/preview",
             "options": [
                 {
                     "label": "A",
@@ -20313,7 +20313,7 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Area Moment of Inertia",
             "question": "An inverted T-shaped beam cross-section consists of a flange and a web. The flange has a width of $100 \\text{ mm}$ and a thickness of $20 \\text{ mm}$. The web has a width of $20 \\text{ mm}$ and a height of $80 \\text{ mm}$ (measured from the top surface of the flange). What is the area moment of inertia of the section about its horizontal centroidal axis ($I_x$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1NbPVPrCfGLj1aCgbkwT-ipxi64vRvvd8/preview",
             "options": [
                 {
                     "label": "A",
@@ -20359,7 +20359,7 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Centroid of Composite Area",
             "question": "A composite area consists of a rectangle and a right triangle. The rectangle has a width of $8 \\text{ cm}$ and a height of $6 \\text{ cm}$, with its bottom-left corner at the origin $(0, 0)$. The right triangle has a base of $4 \\text{ cm}$ and a height of $6 \\text{ cm}$, and is attached to the right side of the rectangle such that its vertical leg is coincident with the rectangle's right edge at $x = 8 \\text{ cm}$ and its base lies on the x-axis from $x = 8 \\text{ cm}$ to $x = 12 \\text{ cm}$. Determine the x-coordinate of the centroid, $\\bar{x}$, for the composite area.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1m3tHvArXgjAxq8TulrByJ-OmzYlpWls6/preview",
             "options": [
                 {
                     "label": "A",
@@ -20405,7 +20405,7 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Centroid",
             "question": "Determine the $x$-coordinate of the centroid $(\\bar{x})$ for a semi-circular area with radius $r = 6$ in positioned such that the flat base lies on the $y$-axis and the curve extends into the positive $x$ direction.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1lwypMaHsL1WH9s2mhZRcF32wRa5wP0OF/preview",
             "options": [
                 {
                     "label": "A",
@@ -28519,7 +28519,7 @@ const QUESTIONS = {
             "topic": "Fluid Properties",
             "title": "Shear Stress on a Newtonian Fluid",
             "question": "A Newtonian fluid flows between two large parallel plates. The lower plate is fixed, and the upper plate moves at a constant velocity $U = 3 \\text{ m/s}$. The plates are separated by a distance $y = 0.75 \\text{ mm}$. If the dynamic viscosity of the fluid is $\\mu = 0.4 \\text{ Pa} \\cdot \\text{s}$, what is the magnitude of the shear stress $\\tau$ acting on the plates?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Ltodhu8I_Zq1m_EyTrx6Av3jjaWyanPU/preview",
             "options": [
                 {
                     "label": "A",
@@ -28565,7 +28565,7 @@ const QUESTIONS = {
             "topic": "Fluid Properties",
             "title": "Capilliary Rise",
             "question": "A clean glass tube with a diameter of $d = 2 \\text{ mm}$ is inserted into a container of water at $20^\\circ\\text{C}$ (surface tension $\\sigma = 0.0728 \\text{ N/m}$, density $\\rho = 1000 \\text{ kg/m}^3$). Assuming a contact angle of $\\theta = 0^\\circ$ and $g = 9.81 \\text{ m/s}^2$, what is the expected capillary rise ($h$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1qUXw7JPcMDL3SmnDKxzrTmnndZ2EdACm/preview",
             "options": [
                 {
                     "label": "A",
@@ -28821,7 +28821,7 @@ const QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Hydrostatic Forces on Submerged Bodies",
             "question": "A vertical rectangular gate is $4 \\text{ m}$ wide and $2 \\text{ m}$ high. The top edge of the gate is located $3 \\text{ m}$ below the water surface. What is the total hydrostatic force acting on one side of the gate? Use $\\gamma_{water} = 9.81 \\text{ kN/m}^3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1AXE-1xiHOm5dHJ21GouXT3kj3a4QsomQ/preview",
             "options": [
                 {
                     "label": "A",
@@ -28867,7 +28867,7 @@ const QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Gauge Pressure",
             "question": "A storage tank contains oil with a specific gravity ($SG$) of $0.82$ to a depth of $3 \\text{ m}$ resting on top of $2 \\text{ m}$ of water. What is the gauge pressure at the bottom of the tank? Use $g = 9.81 \\text{ m/s}^2$ and $\\rho_{water} = 1000 \\text{ kg/m}^3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1I8QT2TLPGeDCgWNcq4wxcLlIti4BTPf2/preview",
             "options": [
                 {
                     "label": "A",
@@ -28913,7 +28913,7 @@ const QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "U-tube Manometer",
             "question": "A U-tube manometer containing mercury ($SG = 13.6$) is connected to a water pipe. The mercury level in the open-to-atmosphere arm is $15 \\text{ cm}$ higher than the level in the arm connected to the pipe. If the water-mercury interface is $10 \\text{ cm}$ below the pipe centerline, calculate the gauge pressure in the pipe. Use $\\gamma_{water} = 9.81 \\text{ kN/m}^3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1R6l6oFN7_vqll4CPweskHe9Az101ICVM/preview",
             "options": [
                 {
                     "label": "A",
@@ -28955,7 +28955,7 @@ const QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Archimedes’ Principle",
             "question": "A rectangular wooden block with a specific gravity of $0.60$ measures $1.0 \\text{ m}$ wide, $1.0 \\text{ m}$ long, and $0.50 \\text{ m}$ high. If the block is floating in fresh water ($\\rho = 1000 \\text{ kg/m}^3$), what is the submerged depth (draft) of the block?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/16ymt0cAGfkE1WFPLjKnBNWXkEowhrtnI/preview",
             "options": [
                 {
                     "label": "A",
@@ -29001,7 +29001,7 @@ const QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Hydrostatic Pressure at a Depth",
             "question": "Assuming the density of water is $1,000\\text{ kg/m}^3$ and the acceleration due to gravity is $9.81\\text{ m/s}^2$. What is the hydrostatic pressure at a depth of $20\\text{ meters}$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1FtRL6ve-T0_5Pg12YlaPa9wkDGYCYsmN/preview",
             "options": [
                 {
                     "label": "A",
