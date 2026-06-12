@@ -30441,7 +30441,7 @@ const QUESTIONS = {
         },
         {
             "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 41",
+            "title": "Hydrostatic Pressure",
             "question": "What is the hydrostatic pressure at a depth of $205$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
             "options": [
                 {
