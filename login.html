@@ -418,12 +418,63 @@
             const discipline = document.getElementById('discipline').value;
 
             if (mode === 'login') {
-                if (email === 'demo@engg.tv' && pass === 'habit-tracker') {
-                    loginSuccess({ username: 'demo', email: 'demo@engg.tv', tier: 'premium', discipline: 'Mechanical' });
-                    return;
-                }
-                if (email === 'admin@engg.tv' && pass === 'tiptop007') {
-                    loginSuccess({ username: 'admin', email: 'admin@engg.tv', tier: 'premium', discipline: 'Mechanical' });
+                if ((email === 'demo@engg.tv' && pass === 'habit-tracker') || (email === 'admin@engg.tv' && pass === 'tiptop007')) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Signing in...';
+                    try {
+                        let userCredential;
+                        try {
+                            userCredential = await firebase.auth().signInWithEmailAndPassword(email, pass);
+                        } catch (err) {
+                            if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-login-credentials') {
+                                userCredential = await firebase.auth().createUserWithEmailAndPassword(email, pass);
+                            } else {
+                                throw err;
+                            }
+                        }
+                        
+                        const uid = userCredential.user.uid;
+                        const username = email === 'admin@engg.tv' ? 'admin' : 'demo';
+                        
+                        // Check if document exists in Firestore under this uid
+                        const userDoc = await firebaseDb.collection('users').doc(uid).get();
+                        let userData = userDoc.exists ? userDoc.data() : null;
+                        
+                        if (!userData) {
+                            userData = {
+                                uid: uid,
+                                username: username,
+                                email: email,
+                                tier: 'premium',
+                                discipline: 'Mechanical',
+                                userPoints: username === 'admin' ? 421 : 0
+                            };
+                            await firebaseDb.collection('users').doc(uid).set(userData);
+                        } else {
+                            let updated = false;
+                            if (userData.username !== username) {
+                                userData.username = username;
+                                updated = true;
+                            }
+                            if (userData.tier !== 'premium') {
+                                userData.tier = 'premium';
+                                updated = true;
+                            }
+                            if (username === 'admin' && (userData.userPoints === undefined || userData.userPoints < 421)) {
+                                userData.userPoints = 421;
+                                updated = true;
+                            }
+                            if (updated) {
+                                await firebaseDb.collection('users').doc(uid).set(userData, { merge: true });
+                            }
+                        }
+                        
+                        loginSuccess(userData);
+                    } catch (error) {
+                        showError(error.message);
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Sign In <span class="material-symbols-outlined">arrow_forward</span>';
+                    }
                     return;
                 }
                 
@@ -437,7 +488,7 @@
                     if (userDoc.exists) {
                         loginSuccess(userDoc.data());
                     } else {
-                        loginSuccess({ username: email.split('@')[0], email: email, tier: 'free', discipline: 'Mechanical' });
+                        loginSuccess({ username: email.split('@')[0], email: email, uid: userCredential.user.uid, tier: 'free', discipline: 'Mechanical' });
                     }
                 } catch (error) {
                     showError(error.message);

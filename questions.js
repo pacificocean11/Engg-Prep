@@ -1,4 +1,4 @@
-const OTHER_SUBJECTS = [
+﻿const OTHER_SUBJECTS = [
     {
         "id": "math",
         "name": "Mathematics",
@@ -29219,7 +29219,7 @@ const QUESTIONS = {
             "topic": "Energy, Impulse, and Momentum",
             "title": "Continuity Equation",
             "question": "Water flows through a horizontal pipe that undergoes a reduction in diameter. At section 1, the diameter is $D_1 = 10$ cm, the pressure is $P_1 = 200$ kPa, and the velocity is $v_1 = 2$ m/s. At section 2, the diameter is $D_2 = 5$ cm. Assuming incompressible, inviscid flow and neglecting changes in elevation, what is the pressure $P_2$ at section 2? (Density of water $\\rho = 1,000$ kg/m$^3$)",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1caCwWqkMSVwjqCC-XU0YCnyh6nNILMSs/preview",
             "options": [
                 {
                     "label": "A",
@@ -29261,7 +29261,7 @@ const QUESTIONS = {
             "topic": "Energy, Impulse, and Momentum",
             "title": "Force Required to Hold a Bend",
             "question": "Water flows through a $90^\\circ$ horizontal pipe bend at a rate of $0.1\\text{ m}^3/\\text{s}$. The pipe diameter is constant at $20\\text{ cm}$ and the gauge pressure throughout the bend is $150\\text{ kPa}$. What is the magnitude of the horizontal force component (in the direction of the initial flow) required to hold the bend in place?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1s9d4SeVlwEcxlfy2DZY383dnCfMJ79RS/preview",
             "options": [
                 {
                     "label": "A",
@@ -29353,7 +29353,7 @@ const QUESTIONS = {
             "topic": "Internal Flow",
             "title": "Reynold’s Number",
             "question": "A circular pipe with a diameter of $D = 0.5 \\text{ m}$ carries water at a velocity of $V = 2 \\text{ m/s}$. If the dynamic viscosity of water is $\\mu = 1.0 \\times 10^{-3} \\text{ Pa} \\cdot \\text{s}$ and its density is $\\rho = 1000 \\text{ kg/m}^3$, calculate the Reynolds number ($Re$) and determine the type of flow.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1JarXLmk5tfSpx9pZAnSPBrDXrU99K-_v/preview",
             "options": [
                 {
                     "label": "A",
@@ -29625,7 +29625,7 @@ const QUESTIONS = {
             "topic": "Internal Flow",
             "title": "Pressure Drop due to Friction",
             "question": "Water flows through a horizontal $100 \\text{ mm}$ diameter pipe at a velocity of $2 \\text{ m/s}$. If the pipe length is $50 \\text{ m}$ and the Darcy friction factor is $0.02$, what is the pressure drop due to friction? (Assume density of water $\\rho = 1000 \\text{ kg/m}^3$)",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vaYYDreeYZ9JNn7B0C8HArLc8t_fMRRL/preview",
             "options": [
                 {
                     "label": "A",
@@ -29671,7 +29671,7 @@ const QUESTIONS = {
             "topic": "Internal Flow",
             "title": "Venturi Meter",
             "question": "A horizontal Venturi meter is used to measure water flow. The inlet diameter is $200\\text{ mm}$ and the throat diameter is $100\\text{ mm}$. If the pressure difference between the inlet and the throat is $50\\text{ kPa}$, find the ideal volumetric flow rate. Assume $\\rho = 1000\\text{ kg/m}^3$ and neglect losses.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/19pGDfg36t26XzmNxX2vT-4qFYZRzruas/preview",
             "options": [
                 {
                     "label": "A",
@@ -29713,7 +29713,7 @@ const QUESTIONS = {
             "topic": "Internal Flow",
             "title": "Bernoulli Principle in Narrowing Pipe",
             "question": "Water at 20°C ($\\rho = 1000$ kg/m$^3$) flows through a horizontal pipe that narrows from a diameter of 10 cm at section 1 to 5 cm at section 2. If the velocity at section 1 is 2 m/s and the gauge pressure is 200 kPa, what is the gauge pressure at section 2, assuming inviscid, incompressible flow?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1OZw69JzlAgn1_7whshvip-ZlniOxrQx-/preview",
             "options": [
                 {
                     "label": "A",
@@ -29755,7 +29755,7 @@ const QUESTIONS = {
             "topic": "External Flow",
             "title": "Airfoil Lift Per Unit Span",
             "question": "An airfoil with a chord length of $1.5$ m is tested in a wind tunnel at a flow velocity of $50$ m/s and air density $\\rho = 1.225 \\text{ kg/m}^3$. If the lift coefficient $C_L$ is $0.8$, what is the lift force per unit span (width) of the airfoil?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1WwtxLPN_UksxIbKEwFI4Uy2637ZfzCxh/preview",
             "options": [
                 {
                     "label": "A",
@@ -29797,7 +29797,7 @@ const QUESTIONS = {
             "topic": "External Flow",
             "title": "Drag Force on a Submerged Sphere",
             "question": "A smooth sphere with a diameter of $0.05$ m is submerged in water ($\\rho = 1000 \\text{ kg/m}^3$) and moves at a constant velocity of $2$ m/s. If the drag coefficient for the sphere is $C_D = 0.5$, what is the total drag force acting on the sphere?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/14wSjVFouf_lt2IpXPv-cB8D2YigTLDmF/preview",
             "options": [
                 {
                     "label": "A",
@@ -29843,7 +29843,7 @@ const QUESTIONS = {
             "topic": "Compressible Flow",
             "title": "Nozzle Flow Stagnation Temperature",
             "question": "A gas flows through a nozzle where the temperature is $250$ K and the Mach number is $M = 2.0$. If the ratio of specific heats is $k = 1.4$, what is the stagnation temperature ($T_0$) of the flow?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1wyHskdogLj4sc2KKmI14rgS52Z8gl6Tq/preview",
             "options": [
                 {
                     "label": "A",
@@ -29889,7 +29889,7 @@ const QUESTIONS = {
             "topic": "Compressible Flow",
             "title": "Mach Number",
             "question": "An aircraft is flying at a speed of $250 \\text{ m/s}$ in air where the ambient temperature is $15^\\circ\\text{C}$. Assuming air behaves as an ideal gas with $k = 1.4$ and $R = 287 \\text{ J/kg} \\cdot \\text{K}$, what is the Mach number of the flow?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1v71Ps4eIKZr-0eRKTAF5BxY3nP0lzhEs/preview",
             "options": [
                 {
                     "label": "A",
@@ -29931,7 +29931,7 @@ const QUESTIONS = {
             "topic": "Compressible Flow",
             "title": "Stagnation Temperature of Air",
             "question": "Air ($k = 1.4$) flows at a Mach number of $0.80$ with a static temperature of $300 \\text{ K}$. What is the stagnation (total) temperature of the air?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1FKNrsXz2CWtC4ZMdKfPT8hwLLgcL6xAk/preview",
             "options": [
                 {
                     "label": "A",
@@ -30012,7 +30012,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview"
             }
         },
         {
@@ -30054,7 +30054,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview"
             }
         },
         {
@@ -30473,330 +30473,6 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 42",
-            "question": "What is the hydrostatic pressure at a depth of $210$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3090.1$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2060.1$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$1030.0$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(210) = 2060100$ Pa = 2060.1$ kPa."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 43",
-            "question": "What is the hydrostatic pressure at a depth of $215$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3163.8$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1054.6$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2109.2$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(215) = 2109200$ Pa = 2109.2$ kPa."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 44",
-            "question": "What is the hydrostatic pressure at a depth of $220$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3237.3$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1079.1$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2158.2$ kPa",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(220) = 2158200$ Pa = 2158.2$ kPa."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 45",
-            "question": "What is the hydrostatic pressure at a depth of $225$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$2207.3$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$3311.0$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$1103.7$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(225) = 2207300$ Pa = 2207.3$ kPa."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 46",
-            "question": "What is the hydrostatic pressure at a depth of $230$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3384.5$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2256.3$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$1128.2$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(230) = 2256300$ Pa = 2256.3$ kPa."
-                    }
-                ],
-                "final_answer": "B"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 47",
-            "question": "What is the hydrostatic pressure at a depth of $235$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3458.0$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1152.7$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$2305.3$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(235) = 2305300$ Pa = 2305.3$ kPa."
-                    }
-                ],
-                "final_answer": "C"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 48",
-            "question": "What is the hydrostatic pressure at a depth of $240$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3531.6$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1177.2$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$2354.4$ kPa",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(240) = 2354400$ Pa = 2354.4$ kPa."
-                    }
-                ],
-                "final_answer": "D"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 49",
-            "question": "What is the hydrostatic pressure at a depth of $245$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$2403.4$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$3605.1$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$1201.7$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(245) = 2403400$ Pa = 2403.4$ kPa."
-                    }
-                ],
-                "final_answer": "A"
-            }
-        },
-        {
-            "topic": "Fluid Statics",
-            "title": "Hydrostatic Pressure - Case 50",
-            "question": "What is the hydrostatic pressure at a depth of $250$ meters below the free surface of a water reservoir? (Assume density of water is $1000$ kg/m$^3$ and $g = 9.81$ m/s$^2$)",
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3678.8$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$2452.5$ kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$1226.3$ kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$101.3$ kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Pressure Equation",
-                        "content": "$P = \\rho g h = (1000)(9.81)(250) = 2452500$ Pa = 2452.5$ kPa."
-                    }
-                ],
-                "final_answer": "B"
             }
         },
         {

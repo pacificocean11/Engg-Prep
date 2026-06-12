@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // --- DYNAMIC BACKGROUND PARTICLE SYSTEM (A-1) ---
     class Particle {
         constructor(canvas, type = 'default') {
@@ -136,24 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const user = JSON.parse(localStorage.getItem('enggtv_user')) || { tier: 'premium', username: 'guest' };
             // Ensure the user is always premium
             user.tier = 'premium';
-            localStorage.setItem('enggtv_user', JSON.stringify(user));
             
-            // Set default Mechanical for demo user only if not already set
-            if (user.username === 'demo') {
-                const storedDiscipline = localStorage.getItem('enggtv_discipline') || user.discipline;
-                if (!storedDiscipline) {
-                    user.discipline = 'Mechanical';
-                    localStorage.setItem('enggtv_user', JSON.stringify(user));
-                    localStorage.setItem('enggtv_discipline', 'Mechanical');
-                } else {
-                    user.discipline = storedDiscipline;
-                    localStorage.setItem('enggtv_user', JSON.stringify(user));
-                    localStorage.setItem('enggtv_discipline', storedDiscipline);
-                }
-            }
+            // Sync user's discipline with localStorage or default to user.discipline / Mechanical
+            const storedDiscipline = localStorage.getItem('enggtv_discipline') || user.discipline || 'Mechanical';
+            user.discipline = storedDiscipline;
+            
+            localStorage.setItem('enggtv_user', JSON.stringify(user));
+            localStorage.setItem('enggtv_discipline', storedDiscipline);
+            
             return user;
         } catch (e) {
-            return { tier: 'premium', username: 'guest' };
+            return { tier: 'premium', username: 'guest', discipline: 'Mechanical' };
         }
     })();
 
@@ -300,10 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!url) return url;
         // Match /file/d/FILE_ID/ pattern
         const m = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
-        if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
+        if (m) return `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000`;
         // Match id=FILE_ID query param (uc?export=view&id=...)
         const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-        if (m2) return `https://lh3.googleusercontent.com/d/${m2[1]}`;
+        if (m2) return `https://drive.google.com/thumbnail?id=${m2[1]}&sz=w1000`;
         return url;
     }
 
@@ -413,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        console.log(`�� Syncing data for ${state.user.username} to Firebase...`);
+        console.log(`🚀 Syncing data for ${state.user.username} to Firebase...`);
 
         try {
             const lightActivity = (state.recentActivity || []).map(a => ({
@@ -443,8 +436,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 country: country
             };
             if (avatar) payload.avatar = avatar;
+            if (state.user.uid) payload.uid = state.user.uid;
 
-            await window.saveUserProgress(state.user.username, payload);
+            const docId = state.user.uid || state.user.username;
+            await window.saveUserProgress(docId, payload);
             console.log("✅ Firebase sync successful.");
         } catch (error) {
             console.error("❌ Firebase sync failed:", error);
@@ -458,9 +453,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (!state.user.username || state.user.username === 'guest') return;
 
-        console.log(`�� Loading data for ${state.user.username} from Firebase...`);
+        const docId = state.user.uid || state.user.username;
+        console.log(`🚀 Loading data for ${state.user.username} (doc: ${docId}) from Firebase...`);
         try {
-            const data = await window.getUserProgress(state.user.username);
+            const data = await window.getUserProgress(docId);
             if (data) {
                 if (data.userPoints !== undefined) {
                     // Always keep the HIGHER value — never let cloud overwrite a higher local score
@@ -498,6 +494,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         state.user.discipline = localDisc;
                     }
+                    try {
+                        const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
+                        localUser.discipline = state.user.discipline;
+                        localStorage.setItem('enggtv_user', JSON.stringify(localUser));
+                    } catch (e) {}
                 }
                 if (data.dateJoined) {
                     localStorage.setItem('enggtv_date_joined', data.dateJoined);
@@ -597,6 +598,41 @@ document.addEventListener('DOMContentLoaded', () => {
         // startFreeTrialTimer();
         updateDashboardStats();
         updateGamificationUI();
+        
+        // Listen for Firebase Auth state changes to restore missing UIDs or update active session info
+        if (window.firebase) {
+            firebase.auth().onAuthStateChanged(async (user) => {
+                if (user) {
+                    console.log("🔥 Firebase Auth state restored:", user.email, user.uid);
+                    if (state.user && state.user.username !== 'guest') {
+                        let updated = false;
+                        if (!state.user.uid || state.user.uid !== user.uid) {
+                            state.user.uid = user.uid;
+                            updated = true;
+                        }
+                        const email = user.email;
+                        const expectedUsername = email === 'admin@engg.tv' ? 'admin' : (email === 'demo@engg.tv' ? 'demo' : email.split('@')[0]);
+                        if (state.user.username !== expectedUsername) {
+                            state.user.username = expectedUsername;
+                            updated = true;
+                        }
+                        if (updated) {
+                            localStorage.setItem('enggtv_user', JSON.stringify(state.user));
+                            console.log("🔄 Updated local user state with restored Firebase UID:", user.uid);
+                            await loadFromFirebase();
+                            syncToFirebase();
+                            if (state.currentPage === 'dashboard') {
+                                updateDashboardStats();
+                                updateGamificationUI();
+                            } else if (state.currentPage === 'leaderboard') {
+                                renderLeaderboard();
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
         // Load cloud data, then do an initial sync to push any localStorage data not yet in Firebase
         loadFromFirebase().then(() => {
             syncToFirebase();
@@ -1788,7 +1824,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         questionText.innerHTML = `<p>${injectFormulaTriggers(question.question)}</p>`;
         
-        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
+        const diagramsUnlocked = true; // Images unlocked for all users
         
         if (diagramsUnlocked) {
             if (question.question_image) {
@@ -1961,7 +1997,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         explanationText.innerHTML = '';
 
-        const diagramsUnlocked = state.userPoints >= 150 || state.user.tier === 'premium' || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
+        const diagramsUnlocked = true; // Images unlocked for all users
         const solImg = question.solution_image || (question.solution && question.solution.solution_image);
         
         if (diagramsUnlocked) {
@@ -3059,6 +3095,16 @@ document.addEventListener('DOMContentLoaded', () => {
             return true;
         });
 
+        // Deduplicate real users by username (case-insensitive), keeping the one with the highest points
+        const uniqueUsersMap = new Map();
+        filteredRealUsers.forEach(u => {
+            const lowerUsername = u.username.toLowerCase();
+            if (!uniqueUsersMap.has(lowerUsername) || u.points > uniqueUsersMap.get(lowerUsername).points) {
+                uniqueUsersMap.set(lowerUsername, u);
+            }
+        });
+        const deduplicatedRealUsers = Array.from(uniqueUsersMap.values());
+
         // If Firestore threw an error, show it in the UI clearly
         if (firestoreError) {
             list.innerHTML = `
@@ -3074,7 +3120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // If Firestore returned no real users (empty DB), fall back to mock
-        const baseUsers = filteredRealUsers.length > 0 ? filteredRealUsers : MOCK_LEADERBOARD;
+        const baseUsers = deduplicatedRealUsers.length > 0 ? deduplicatedRealUsers : MOCK_LEADERBOARD;
         let allUsers = [...baseUsers, currentUserData];
 
         // Sort by points descending
