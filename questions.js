@@ -21127,7 +21127,7 @@ const QUESTIONS = {
             "topic": "Kinematics of Particles",
             "title": "Projectile Motion",
             "question": "A projectile is launched from ground level with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance and assuming $g = 9.81\\text{ m/s}^2$, what is the maximum height $h_{max}$ reached by the projectile?",
-            "question_image": "assets/images/questions/tikz_5a65a21612.svg",
+            "question_image": "https://drive.google.com/file/d/1eWlr558xcagxBqg4qSH0SJvg7t3H3Brq/preview",
             "options": [
                 {
                     "label": "A",
@@ -21169,7 +21169,7 @@ const QUESTIONS = {
             "topic": "Kinematics of Particles",
             "title": "Maximum Speed on a Curve",
             "question": "A car with a mass of $1500$ kg travels around a flat circular curve with a radius of $100$ m. If the coefficient of static friction between the tires and the road is $\\mu_s = 0.6$, what is the maximum speed the car can maintain without sliding?",
-            "question_image": "assets/images/questions/tikz_dd0fec48f5.svg",
+            "question_image": "https://drive.google.com/file/d/189lCjWRw9V2G4efDTy24Gvk_9leVaFLv/preview",
             "options": [
                 {
                     "label": "A",
@@ -21211,7 +21211,7 @@ const QUESTIONS = {
             "topic": "Kinematics of Particles",
             "title": "Projectile Motion",
             "question": "A projectile is launched from a height of $h = 10\\text{ m}$ with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance, what is the horizontal distance $x$ traveled by the projectile when it hits the ground? Use $g = 9.81\\text{ m/s}^2$.",
-            "question_image": "assets/images/questions/tikz_6ca6b20627.svg",
+            "question_image": "https://drive.google.com/file/d/1IdV8PGRsf0opflJOADfqSR4fzmq9l1xH/preview",
             "options": [
                 {
                     "label": "A",
@@ -21292,14 +21292,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "assets/images/questions/tikz_70485aae89.svg"
+                "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview"
             }
         },
         {
             "topic": "Kinematics of Particles",
             "title": "Tangential and Normal Acceleration",
             "question": "A particle moves along a circular path with a radius of $\\rho = 50 \\text{ m}$. At a given instant, the particle has a speed of $v = 10 \\text{ m/s}$ and its tangential acceleration is $a_t = 2 \\text{ m/s}^2$. What is the magnitude of the total acceleration vector of the particle at this instant?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/130LZ2EaZ2tRsrdEJRScKEOWhYbNJ081E/preview",
             "options": [
                 {
                     "label": "A",
@@ -21380,14 +21380,14 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview"
             }
         },
         {
             "topic": "Kinematics of Particles",
             "title": "Relative Velocity of Two Cars",
             "question": "Car A travels East at a constant speed of $60$ km/h. Car B travels North at a constant speed of $80$ km/h. What is the magnitude of the velocity of Car B relative to Car A?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/10KDnbj2kY_NShxS3Sj2jZBdV7_NsBOwD/preview",
             "options": [
                 {
                     "label": "A",
@@ -21433,17 +21433,17 @@ const QUESTIONS = {
             "topic": "Rigid Body Kinematics",
             "title": "Acceleration of Rolling Disk Point",
             "question": "A disk of radius $r = 0.5$ m rolls without slipping on a horizontal surface. The center of the disk $O$ has a velocity $v_O = 10$ m/s and an acceleration $a_O = 5$ m/s$^2$ to the right. What is the magnitude of the total acceleration of the point $P$ at the very top of the disk?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1w-92MShepnLrmYj5VeUodSPLz8g0Ba3_/preview",
             "options": [
                 {
                     "label": "A",
                     "text": "200.06 m/s$^2$",
-                    "is_correct": true
+                    "is_correct": false
                 },
                 {
                     "label": "B",
                     "text": "200.25 m/s$^2$",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21471,7 +21471,7 @@ const QUESTIONS = {
                         "content": "$a_{Px} = a_O + r\\alpha = 10$; $a_{Py} = 200$. Total magnitude $a_P = \\sqrt{10^2 + 200^2} \\approx 200.06 \\text{ m/s}^2$."
                     }
                 ],
-                "final_answer": "A",
+                "final_answer": "B",
                 "solution_image": ""
             }
         },
@@ -21659,7 +21659,7 @@ const QUESTIONS = {
             "topic": "Kinetic Friction",
             "title": "Kinetic Friction of a Sliding Object",
             "question": "A crate with a mass of $m = 50 \\text{ kg}$ is placed on a ramp inclined at an angle of $\\theta = 20^\\circ$ to the horizontal. The coefficient of static friction between the crate and the ramp is $\\mu_s = 0.35$, and the coefficient of kinetic friction is $\\mu_k = 0.25$. A force $P = 100 \\text{ N}$ is applied to the crate parallel to the ramp and directed upwards. Determine the magnitude of the friction force acting on the crate. Assume the acceleration due to gravity is $g = 9.81 \\text{ m/s}^2$.",
-            "question_image": "assets/images/questions/tikz_f54431105b.svg",
+            "question_image": "https://drive.google.com/file/d/1MfnlhjMVyCzm2_J-VvfagA4TBBMNcTW0/preview",
             "options": [
                 {
                     "label": "A",
@@ -21797,7 +21797,7 @@ const QUESTIONS = {
             "topic": "Work-Energy of Particles",
             "title": "Work-Energy Principle",
             "question": "A $10 \\text{ kg}$ block is released from rest at the top of a $30^\\circ$ incline. The coefficient of kinetic friction is $\\mu_k = 0.25$. If the block slides $d = 5 \\text{ m}$ down the incline, what is its velocity $v$ at that point?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1zhlK-JDI-CTgJqx3uU2J0oVi1JGtRhyt/preview",
             "options": [
                 {
                     "label": "A",

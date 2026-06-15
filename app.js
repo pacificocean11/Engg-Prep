@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // --- DYNAMIC BACKGROUND PARTICLE SYSTEM (A-1) ---
     class Particle {
         constructor(canvas, type = 'default') {
@@ -451,22 +451,54 @@
             console.warn("⚠️ Firebase load function not available.");
             return;
         }
-        if (!state.user.username || state.user.username === 'guest') return;
+        if (!state.user.username || state.user.username === 'guest') {
+            if (!state.user.uid) return;
+        }
 
         const docId = state.user.uid || state.user.username;
-        console.log(`🚀 Loading data for ${state.user.username} (doc: ${docId}) from Firebase...`);
+        console.log(`🚀 Loading data for ${state.user.username || 'unknown'} (doc: ${docId}) from Firebase...`);
         try {
             const data = await window.getUserProgress(docId);
             if (data) {
+                // Restore username from cloud if there's a mismatch or it was missing
+                if (data.username && state.user.username !== data.username) {
+                    console.log(`🔄 Restored username from Firestore: ${data.username}`);
+                    state.user.username = data.username;
+                    localStorage.setItem('enggtv_user', JSON.stringify(state.user));
+                    
+                    // Reload local state for the restored username so we don't carry over stale points/progress
+                    state.userPoints = parseInt(localStorage.getItem(`enggtv_points_${data.username}`)) || 0;
+                    try {
+                        state.userProgress = JSON.parse(localStorage.getItem(`enggtv_progress_${data.username}`)) || {};
+                    } catch(e) { state.userProgress = {}; }
+                    try {
+                        state.recentActivity = JSON.parse(localStorage.getItem(`enggtv_recent_activity_${data.username}`)) || [];
+                    } catch(e) { state.recentActivity = []; }
+                }
+
                 if (data.userPoints !== undefined) {
-                    // Always keep the HIGHER value — never let cloud overwrite a higher local score
                     const cloudPoints = Number(data.userPoints);
-                    if (cloudPoints > state.userPoints) {
+                    
+                    // Sanity check: if cloud points are extremely high compared to progress, it's corrupt.
+                    let completedCount = 0;
+                    if (data.userProgress) {
+                        Object.values(data.userProgress).forEach(subj => {
+                            if (subj && subj.completed) completedCount += Number(subj.completed);
+                        });
+                    }
+                    
+                    // If cloud points > 50 but completedCount is 0, or points/completed ratio is > 15
+                    const isPointsCorrupted = (cloudPoints > 50 && completedCount === 0) || 
+                                              (completedCount > 0 && (cloudPoints / completedCount) > 15);
+                    
+                    if (isPointsCorrupted) {
+                        console.warn(`⚠️ Detected corrupted/polluted cloud points (${cloudPoints} for ${completedCount} completed). Ignoring cloud points.`);
+                    } else if (cloudPoints > state.userPoints) {
                         state.userPoints = cloudPoints;
                         localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
                     } else {
                         // Local is higher — sync it back up to cloud
-                        console.log(`�� Local points (${state.userPoints}) > Cloud (${cloudPoints}). Will sync local to cloud.`);
+                        console.log(` Local points (${state.userPoints}) >= Cloud (${cloudPoints}).`);
                     }
                 }
                 if (data.userProgress) {
@@ -604,30 +636,44 @@
             firebase.auth().onAuthStateChanged(async (user) => {
                 if (user) {
                     console.log("🔥 Firebase Auth state restored:", user.email, user.uid);
-                    if (state.user && state.user.username !== 'guest') {
+                    if (state.user) {
                         let updated = false;
                         if (!state.user.uid || state.user.uid !== user.uid) {
                             state.user.uid = user.uid;
                             updated = true;
                         }
-                        const email = user.email;
-                        const expectedUsername = email === 'admin@engg.tv' ? 'admin' : (email === 'demo@engg.tv' ? 'demo' : email.split('@')[0]);
-                        if (state.user.username !== expectedUsername) {
-                            state.user.username = expectedUsername;
+                        // Do NOT force email-derived expectedUsername. The user's actual username
+                        // is saved in their Firestore document (which loadFromFirebase will restore if there's a mismatch).
+                        if (state.user.username === 'guest') {
+                            const email = user.email || '';
+                            state.user.username = email === 'admin@engg.tv' ? 'admin' : (email === 'demo@engg.tv' ? 'demo' : (email ? email.split('@')[0] : 'FE Candidate'));
                             updated = true;
                         }
                         if (updated) {
                             localStorage.setItem('enggtv_user', JSON.stringify(state.user));
                             console.log("🔄 Updated local user state with restored Firebase UID:", user.uid);
-                            await loadFromFirebase();
-                            syncToFirebase();
-                            if (state.currentPage === 'dashboard') {
-                                updateDashboardStats();
-                                updateGamificationUI();
-                            } else if (state.currentPage === 'leaderboard') {
-                                renderLeaderboard();
-                            }
                         }
+                        
+                        await loadFromFirebase();
+                        syncToFirebase();
+                        if (state.currentPage === 'dashboard') {
+                            updateDashboardStats();
+                            updateGamificationUI();
+                        } else if (state.currentPage === 'leaderboard') {
+                            renderLeaderboard();
+                        }
+                    } else {
+                        // Initialize state.user if it was somehow empty/guest
+                        const email = user.email || '';
+                        state.user = {
+                            uid: user.uid,
+                            username: email === 'admin@engg.tv' ? 'admin' : (email === 'demo@engg.tv' ? 'demo' : (email ? email.split('@')[0] : 'FE Candidate')),
+                            tier: 'premium',
+                            discipline: 'Mechanical'
+                        };
+                        localStorage.setItem('enggtv_user', JSON.stringify(state.user));
+                        await loadFromFirebase();
+                        syncToFirebase();
                     }
                 }
             });
@@ -2907,12 +2953,53 @@
     }
 
     if (btnSub) btnSub.addEventListener('click', () => navigateTo('plans-view'));
-    if (btnLogout) btnLogout.addEventListener('click', () => { 
-        if(confirm('Are you sure you want to log out?')) {
-            localStorage.removeItem('enggtv_authenticated');
+    const logoutModal = document.getElementById('logout-confirm-modal');
+    const btnLogoutCancel = document.getElementById('btn-logout-cancel');
+    const btnLogoutConfirm = document.getElementById('btn-logout-confirm');
+
+    if (btnLogout) {
+        btnLogout.addEventListener('click', () => {
+            if (logoutModal) {
+                logoutModal.classList.remove('hidden');
+                logoutModal.classList.add('flex');
+            }
+        });
+    }
+
+    if (btnLogoutCancel) {
+        btnLogoutCancel.addEventListener('click', () => {
+            if (logoutModal) {
+                logoutModal.classList.add('hidden');
+                logoutModal.classList.remove('flex');
+            }
+        });
+    }
+
+    if (btnLogoutConfirm) {
+        btnLogoutConfirm.addEventListener('click', async () => {
+            try {
+                if (window.firebase) {
+                    await firebase.auth().signOut();
+                }
+            } catch (e) {
+                console.error("Error signing out from Firebase Auth:", e);
+            }
+            // Clear all user session keys except theme preference
+            const theme = localStorage.getItem('enggtv_theme');
+            localStorage.clear();
+            if (theme) localStorage.setItem('enggtv_theme', theme);
             window.location.href = 'login.html';
-        }
-    });
+        });
+    }
+
+    if (logoutModal) {
+        logoutModal.addEventListener('click', (e) => {
+            if (e.target === logoutModal) {
+                logoutModal.classList.add('hidden');
+                logoutModal.classList.remove('flex');
+            }
+        });
+    }
 
     if (toggleDark) {
         // Initialize toggle state based on body classes
@@ -3000,6 +3087,17 @@
     if (btnPointsInfo) btnPointsInfo.addEventListener('click', () => navigateTo('achievements-view'));
     if (backFromAchievements) backFromAchievements.addEventListener('click', () => navigateTo('settings'));
 
+    // ============================================================
+    // B-3: Avatar Picker Logic
+    // ============================================================
+    const AVATAR_PRESETS = [
+        { id: 'scholar',   emoji: '🎓', gradient: 'linear-gradient(135deg, #FDA60A, #FF006E)',   label: 'Scholar'   },
+        { id: 'engineer',  emoji: '⚙️',  gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',   label: 'Engineer'  },
+        { id: 'scientist', emoji: '🔬', gradient: 'linear-gradient(135deg, #10B981, #06B6D4)',   label: 'Scientist' },
+        { id: 'architect', emoji: '📐', gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)',   label: 'Architect' },
+        { id: 'pioneer',   emoji: '🚀', gradient: 'linear-gradient(135deg, #EF4444, #F97316)',   label: 'Pioneer'   },
+    ];
+
     const MOCK_LEADERBOARD = [
         { username: 'Sara', points: 482, discipline: 'Civil', country: 'United States', avatar: 'https://i.pravatar.cc/150?u=sara', trend: 'up', streak: 12 },
         { username: 'MikeEng', points: 395, discipline: 'Mechanical', country: 'Canada', avatar: 'https://i.pravatar.cc/150?u=mike', trend: 'down', streak: 5 },
@@ -3045,9 +3143,21 @@
                 const querySnapshot = await window.firebaseDb.collection("users").get();
                 querySnapshot.forEach(doc => {
                     const data = doc.data();
+                    // Skip the guest placeholder doc
                     if (doc.id === 'guest' || !data) return;
+
+                    const username = data.username || doc.id;
+
+                    // Only skip usernames that are raw Firebase UIDs:
+                    // 28+ char strings made of only letters/numbers with no separators (@, ., _)
+                    const isRawUid = /^[a-zA-Z0-9]{28,}$/.test(username)
+                        && !username.includes('@')
+                        && !username.includes('.')
+                        && !username.includes('_');
+                    if (isRawUid) return;
+
                     realUsers.push({
-                        username: data.username || doc.id,
+                        username: username,
                         points: data.userPoints !== undefined ? Number(data.userPoints) : 0,
                         discipline: data.discipline || 'FE Candidate',
                         country: data.country || 'Other',
@@ -3056,7 +3166,7 @@
                         trend: 'same'
                     });
                 });
-                console.log(`✅ Leaderboard: fetched ${realUsers.length} users from Firestore.`);
+                console.log(`✅ Leaderboard: loaded ${realUsers.length} users from Firestore.`);
             } catch (e) {
                 firestoreError = e.message || String(e);
                 console.error("Error fetching leaderboard users from Firestore:", e);
@@ -3068,7 +3178,7 @@
         const userCountry = state.user.country || 'Other';
         const userStreak = calculateStreak();
 
-        // Combine mock data with current user
+        // Add current user entry
         const currentUserData = {
             username: state.user.username === 'demo' ? 'You (Alex)' : `You (${state.user.username})`,
             points: state.userPoints,
@@ -3079,31 +3189,25 @@
             streak: userStreak,
             avatar: localStorage.getItem('enggtv_avatar') || null
         };
-        const currentUsername = state.user.username;
-        const filteredRealUsers = realUsers.filter(u => {
-            // Remove the current user (they're added back below as "You (...)")
-            if (u.username === currentUsername || u.username.startsWith('You (')) {
-                return false;
-            }
-            // Filter out users with zero or negative points (no activity)
-            if (u.points <= 0) return false;
-            // Filter out raw Firebase UIDs (28 alphanumeric chars, no @ or .)
-            // Real usernames/emails always contain @, ., _, or are short words
-            const isRawUid = /^[a-zA-Z0-9]{20,}$/.test(u.username) && !u.username.includes('@') && !u.username.includes('.');
-            if (isRawUid) return false;
-            
-            return true;
-        });
 
-        // Deduplicate real users by username (case-insensitive), keeping the one with the highest points
+        // Remove the current user from fetched list (re-added below with "You (...)" label)
+        const currentUsername = state.user.username;
+        const filteredRealUsers = realUsers.filter(u =>
+            u.username !== currentUsername && !u.username.startsWith('You (')
+        );
+
+        // Deduplicate by username (case-insensitive), keep highest points
         const uniqueUsersMap = new Map();
         filteredRealUsers.forEach(u => {
-            const lowerUsername = u.username.toLowerCase();
-            if (!uniqueUsersMap.has(lowerUsername) || u.points > uniqueUsersMap.get(lowerUsername).points) {
-                uniqueUsersMap.set(lowerUsername, u);
+            const key = u.username.toLowerCase();
+            if (!uniqueUsersMap.has(key) || u.points > uniqueUsersMap.get(key).points) {
+                uniqueUsersMap.set(key, u);
             }
         });
         const deduplicatedRealUsers = Array.from(uniqueUsersMap.values());
+
+
+
 
         // If Firestore threw an error, show it in the UI clearly
         if (firestoreError) {
@@ -3206,16 +3310,7 @@
     window.closeMockPreview = closeMockPreview;
     window.confirmStartMock = confirmStartMock;
 
-    // ============================================================
-    // B-3: Avatar Picker Logic
-    // ============================================================
-    const AVATAR_PRESETS = [
-        { id: 'scholar',   emoji: '��', gradient: 'linear-gradient(135deg, #FDA60A, #FF006E)',   label: 'Scholar'   },
-        { id: 'engineer',  emoji: '⚙️',  gradient: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',   label: 'Engineer'  },
-        { id: 'scientist', emoji: '��', gradient: 'linear-gradient(135deg, #10B981, #06B6D4)',   label: 'Scientist' },
-        { id: 'architect', emoji: '��', gradient: 'linear-gradient(135deg, #8B5CF6, #EC4899)',   label: 'Architect' },
-        { id: 'pioneer',   emoji: '��', gradient: 'linear-gradient(135deg, #EF4444, #F97316)',   label: 'Pioneer'   },
-    ];
+    // AVATAR_PRESETS is defined above renderLeaderboard() to ensure it is in scope when the leaderboard renders.
 
     let pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
 
@@ -3302,6 +3397,8 @@
             avatarModal.classList.remove('open');
         });
     }
+
+
 
     function triggerConfetti() {
         if (typeof confetti === 'function') {
