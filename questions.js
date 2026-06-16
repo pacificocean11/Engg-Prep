@@ -1218,7 +1218,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1264,7 +1265,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1310,7 +1312,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1356,7 +1359,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1402,7 +1406,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1448,7 +1453,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1494,7 +1500,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1540,7 +1547,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1582,7 +1590,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview"
+                "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -1624,7 +1633,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview"
+                "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -1670,7 +1680,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview"
+                "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -1716,7 +1727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview"
+                "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -1762,7 +1774,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview"
+                "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -1808,7 +1821,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview"
+                "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -1858,7 +1872,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1908,7 +1923,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -1954,7 +1970,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2000,7 +2017,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2046,7 +2064,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2092,7 +2111,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2134,7 +2154,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2180,7 +2201,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview"
+                "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -2226,7 +2248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2272,7 +2295,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2318,7 +2342,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2368,7 +2393,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2414,7 +2440,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2460,7 +2487,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2506,7 +2534,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2552,7 +2581,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2598,7 +2628,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2644,7 +2675,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2690,7 +2722,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2736,7 +2769,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2782,7 +2816,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2828,7 +2863,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2874,7 +2910,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2920,7 +2957,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -2962,7 +3000,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3012,7 +3051,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3066,7 +3106,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3112,7 +3153,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3162,7 +3204,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3216,7 +3259,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3262,7 +3306,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3308,7 +3353,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3354,7 +3400,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3400,7 +3447,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3446,7 +3494,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3488,7 +3537,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3538,7 +3588,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3584,7 +3635,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3630,7 +3682,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3672,7 +3725,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3718,7 +3772,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -3756,7 +3811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5384,7 +5440,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5430,7 +5487,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5476,7 +5534,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5518,7 +5577,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5560,7 +5620,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5602,7 +5663,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5644,7 +5706,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5686,7 +5749,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5728,7 +5792,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5770,7 +5835,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5816,7 +5882,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5858,7 +5925,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5900,7 +5968,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5942,7 +6011,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -5984,7 +6054,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6026,7 +6097,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6068,7 +6140,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6110,7 +6183,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6148,7 +6222,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6194,7 +6269,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6240,7 +6316,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6286,7 +6363,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6328,7 +6406,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6370,7 +6449,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6412,7 +6492,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6454,7 +6535,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6496,7 +6578,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6538,7 +6621,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6580,7 +6664,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6622,7 +6707,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6664,7 +6750,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6706,7 +6793,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6748,7 +6836,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6790,7 +6879,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -6832,7 +6922,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -7928,7 +8019,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -7974,7 +8066,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8020,7 +8113,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8062,7 +8156,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8104,7 +8199,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8150,7 +8246,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8192,7 +8289,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8234,7 +8332,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8276,7 +8375,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8322,7 +8422,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8372,7 +8473,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8418,7 +8520,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8464,7 +8567,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8510,7 +8614,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8556,7 +8661,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8602,7 +8708,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8648,7 +8755,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8694,7 +8802,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8740,7 +8849,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8790,7 +8900,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8836,7 +8947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8882,7 +8994,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -8928,7 +9041,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10312,7 +10426,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10358,7 +10473,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10404,7 +10520,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10450,7 +10567,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10492,7 +10610,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10538,7 +10657,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10580,7 +10700,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10622,7 +10743,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10668,7 +10790,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10714,7 +10837,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10760,7 +10884,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -10806,7 +10931,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11568,7 +11694,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11610,7 +11737,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11652,7 +11780,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11690,7 +11819,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11732,7 +11862,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11770,7 +11901,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11808,7 +11940,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11846,7 +11979,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11888,7 +12022,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11926,7 +12061,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -11964,7 +12100,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12372,7 +12509,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12418,7 +12556,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12464,7 +12603,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12510,7 +12650,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12556,7 +12697,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12602,7 +12744,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12644,7 +12787,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12690,7 +12834,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12732,7 +12877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12778,7 +12924,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12824,7 +12971,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12866,7 +13014,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12908,7 +13057,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12950,7 +13100,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -12992,7 +13143,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -13038,7 +13190,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -13084,7 +13237,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -14968,7 +15122,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15010,7 +15165,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15056,7 +15212,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15098,7 +15255,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15140,7 +15298,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15186,7 +15345,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15228,7 +15388,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15270,7 +15431,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15316,7 +15478,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15362,7 +15525,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15404,7 +15568,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15450,7 +15615,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15492,7 +15658,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15538,7 +15705,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15584,7 +15752,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15630,7 +15799,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15676,7 +15846,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15718,7 +15889,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15760,7 +15932,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15802,7 +15975,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15844,7 +16018,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15890,7 +16065,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15932,7 +16108,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -15974,7 +16151,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16020,7 +16198,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16066,7 +16245,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16112,7 +16292,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16154,7 +16335,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16196,7 +16378,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16238,7 +16421,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16280,7 +16464,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16322,7 +16507,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -16368,7 +16554,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17388,7 +17575,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17434,7 +17622,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17480,7 +17669,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17526,7 +17716,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17568,7 +17759,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17610,7 +17802,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17656,7 +17849,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17702,7 +17896,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17748,7 +17943,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17794,7 +17990,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17836,7 +18033,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17886,7 +18084,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17936,7 +18135,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -17982,7 +18182,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18028,7 +18229,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18078,7 +18280,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18124,7 +18327,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18174,7 +18378,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18220,7 +18425,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18266,7 +18472,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18312,7 +18519,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18358,7 +18566,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -18400,7 +18609,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19204,7 +19414,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19250,7 +19461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19296,7 +19508,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19342,7 +19555,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19384,7 +19598,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19426,7 +19641,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19468,7 +19684,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19510,7 +19727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19552,7 +19770,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19590,7 +19809,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19636,7 +19856,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19682,7 +19903,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19724,7 +19946,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19770,7 +19993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19816,7 +20040,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19862,7 +20087,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19908,7 +20134,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19950,7 +20177,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -19996,7 +20224,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20038,7 +20267,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20084,7 +20314,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20130,7 +20361,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20180,7 +20412,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20222,7 +20455,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20264,7 +20498,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20306,7 +20541,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20352,7 +20588,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20398,7 +20635,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20440,7 +20678,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20486,7 +20725,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -20532,7 +20772,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21120,7 +21361,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21162,7 +21404,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21204,7 +21447,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21250,7 +21494,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21292,7 +21537,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview"
+                "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -21334,7 +21580,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21380,7 +21627,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview"
+                "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -21426,7 +21674,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21472,7 +21721,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21518,7 +21768,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21564,7 +21815,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21606,7 +21858,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21652,7 +21905,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21702,7 +21956,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21748,7 +22003,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21790,7 +22046,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21836,7 +22093,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21878,7 +22136,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21924,7 +22183,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -21970,7 +22230,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22016,7 +22277,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22058,7 +22320,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22100,7 +22363,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22142,7 +22406,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22184,7 +22449,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22226,7 +22492,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22268,7 +22535,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22310,7 +22578,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22352,7 +22621,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22394,7 +22664,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22436,7 +22707,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22482,7 +22754,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22528,7 +22801,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22574,7 +22848,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22620,7 +22895,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22666,7 +22942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22712,7 +22989,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22758,7 +23036,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22804,7 +23083,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22846,7 +23126,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22888,7 +23169,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22930,7 +23212,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -22972,7 +23255,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -23628,7 +23912,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -23670,7 +23955,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -23712,7 +23998,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -23754,7 +24041,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -23796,7 +24084,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview"
+                "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -23838,7 +24127,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview"
+                "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -23880,7 +24170,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -23926,7 +24217,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview"
+                "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -23968,7 +24260,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview"
+                "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -24010,7 +24303,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview"
+                "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -24052,7 +24346,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview"
+                "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -24098,7 +24393,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24140,7 +24436,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24186,7 +24483,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24228,7 +24526,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24274,7 +24573,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24320,7 +24620,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24366,7 +24667,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24408,7 +24710,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24454,7 +24757,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24500,7 +24804,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24542,7 +24847,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview"
+                "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -24588,7 +24894,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview"
+                "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -24634,7 +24941,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24680,7 +24988,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24730,7 +25039,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24776,7 +25086,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24822,7 +25133,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24868,7 +25180,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24918,7 +25231,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -24964,7 +25278,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25010,7 +25325,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25056,7 +25372,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25102,7 +25419,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview"
+                "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -25148,7 +25466,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25198,7 +25517,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25248,7 +25568,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25298,7 +25619,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25344,7 +25666,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25390,7 +25713,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25436,7 +25760,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25486,7 +25811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25532,7 +25858,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25578,7 +25905,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25624,7 +25952,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26176,7 +26505,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26222,7 +26552,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26268,7 +26599,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26314,7 +26646,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26364,7 +26697,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26406,7 +26740,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26448,7 +26783,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26494,7 +26830,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26540,7 +26877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26586,7 +26924,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26632,7 +26971,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26674,7 +27014,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26716,7 +27057,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26762,7 +27104,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26808,7 +27151,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26854,7 +27198,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26900,7 +27245,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26946,7 +27292,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -26992,7 +27339,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28512,7 +28860,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28558,7 +28907,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28604,7 +28954,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28650,7 +29001,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28688,7 +29040,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28730,7 +29083,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28768,7 +29122,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28814,7 +29169,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28860,7 +29216,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28906,7 +29263,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28948,7 +29306,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28994,7 +29353,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29036,7 +29396,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29078,7 +29439,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29120,7 +29482,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29166,7 +29529,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29212,7 +29576,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29254,7 +29619,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29300,7 +29666,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29346,7 +29713,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29388,7 +29756,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29434,7 +29803,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29480,7 +29850,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29526,7 +29897,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29572,7 +29944,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29618,7 +29991,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29664,7 +30038,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29706,7 +30081,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29748,7 +30124,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29790,7 +30167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29836,7 +30214,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29882,7 +30261,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29924,7 +30304,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -29966,7 +30347,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30012,7 +30394,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview"
+                "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -30054,7 +30437,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview"
+                "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview",
+                "video_explanation": ""
             }
         },
         {
@@ -30100,7 +30484,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30142,7 +30527,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30184,7 +30570,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30226,7 +30613,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30268,7 +30656,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30310,7 +30699,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30352,7 +30742,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30394,7 +30785,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -30436,7 +30828,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31200,7 +31593,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31242,7 +31636,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31284,7 +31679,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31326,7 +31722,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31368,7 +31765,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31410,7 +31808,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31452,7 +31851,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31494,7 +31894,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31536,7 +31937,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31578,7 +31980,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31620,7 +32023,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31662,7 +32066,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31704,7 +32109,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31746,7 +32152,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31788,7 +32195,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31830,7 +32238,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31872,7 +32281,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31914,7 +32324,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31956,7 +32367,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -31998,7 +32410,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32040,7 +32453,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32082,7 +32496,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32120,7 +32535,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32162,7 +32578,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32718,7 +33135,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32760,7 +33178,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32798,7 +33217,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32836,7 +33256,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32874,7 +33295,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32920,7 +33342,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32958,7 +33381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -32996,7 +33420,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33038,7 +33463,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33080,7 +33506,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33122,7 +33549,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33160,7 +33588,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33198,7 +33627,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33236,7 +33666,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33274,7 +33705,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33312,7 +33744,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33350,7 +33783,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33392,7 +33826,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33430,7 +33865,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33468,7 +33904,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33510,7 +33947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33548,7 +33986,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33586,7 +34025,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33624,7 +34064,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33662,7 +34103,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33704,7 +34146,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33742,7 +34185,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33780,7 +34224,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33818,7 +34263,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33860,7 +34306,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33902,7 +34349,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33944,7 +34392,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -33986,7 +34435,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34028,7 +34478,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34070,7 +34521,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34112,7 +34564,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34154,7 +34607,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34196,7 +34650,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34238,7 +34693,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34276,7 +34732,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34314,7 +34771,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34356,7 +34814,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34398,7 +34857,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34440,7 +34900,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34482,7 +34943,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34524,7 +34986,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34566,7 +35029,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34608,7 +35072,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34650,7 +35115,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34692,7 +35158,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34734,7 +35201,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34780,7 +35248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34822,7 +35291,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34868,7 +35338,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34910,7 +35381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34952,7 +35424,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -34994,7 +35467,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35036,7 +35510,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35078,7 +35553,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35120,7 +35596,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35162,7 +35639,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35208,7 +35686,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35254,7 +35733,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35300,7 +35780,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35346,7 +35827,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35392,7 +35874,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35434,7 +35917,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35480,7 +35964,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35522,7 +36007,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35564,7 +36050,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35610,7 +36097,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35656,7 +36144,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35698,7 +36187,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35740,7 +36230,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35782,7 +36273,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35824,7 +36316,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35862,7 +36355,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35904,7 +36398,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35942,7 +36437,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35980,7 +36476,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36022,7 +36519,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36064,7 +36562,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36106,7 +36605,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36148,7 +36648,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36190,7 +36691,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36232,7 +36734,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36274,7 +36777,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36316,7 +36820,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36358,7 +36863,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36400,7 +36906,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36442,7 +36949,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36484,7 +36992,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36526,7 +37035,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36568,7 +37078,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36606,7 +37117,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36648,7 +37160,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -36696,7 +37209,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36734,7 +37248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36772,7 +37287,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36810,7 +37326,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36852,7 +37369,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36890,7 +37408,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36928,7 +37447,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -36966,7 +37486,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37008,7 +37529,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37050,7 +37572,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37092,7 +37615,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37134,7 +37658,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37176,7 +37701,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37218,7 +37744,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37260,7 +37787,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37298,7 +37826,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37340,7 +37869,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37382,7 +37912,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37424,7 +37955,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37466,7 +37998,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37512,7 +38045,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37550,7 +38084,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37588,7 +38123,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37626,7 +38162,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37672,7 +38209,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -37714,7 +38252,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -38990,7 +39529,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39036,7 +39576,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39082,7 +39623,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39128,7 +39670,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39174,7 +39717,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39220,7 +39764,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39266,7 +39811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39316,7 +39862,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39366,7 +39913,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39416,7 +39964,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39462,7 +40011,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39508,7 +40058,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39554,7 +40105,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39600,7 +40152,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39646,7 +40199,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39696,7 +40250,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39742,7 +40297,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39792,7 +40348,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39842,7 +40399,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39888,7 +40446,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39934,7 +40493,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -39980,7 +40540,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40022,7 +40583,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40064,7 +40626,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40102,7 +40665,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40140,7 +40704,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40178,7 +40743,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40216,7 +40782,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40254,7 +40821,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40292,7 +40860,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40330,7 +40899,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40372,7 +40942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40410,7 +40981,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40448,7 +41020,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40490,7 +41063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40528,7 +41102,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40566,7 +41141,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40604,7 +41180,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40642,7 +41219,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40680,7 +41258,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40718,7 +41297,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40760,7 +41340,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40802,7 +41383,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40840,7 +41422,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40878,7 +41461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40916,7 +41500,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40954,7 +41539,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -40992,7 +41578,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41030,7 +41617,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41068,7 +41656,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41106,7 +41695,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41144,7 +41734,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41182,7 +41773,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41220,7 +41812,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41258,7 +41851,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41296,7 +41890,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41334,7 +41929,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41372,7 +41968,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41410,7 +42007,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41448,7 +42046,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41486,7 +42085,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41524,7 +42124,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41562,7 +42163,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41600,7 +42202,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41642,7 +42245,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41680,7 +42284,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41718,7 +42323,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41756,7 +42362,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41794,7 +42401,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41832,7 +42440,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41870,7 +42479,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41908,7 +42518,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41946,7 +42557,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -41984,7 +42596,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42022,7 +42635,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42060,7 +42674,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42102,7 +42717,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42140,7 +42756,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42182,7 +42799,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42220,7 +42838,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42258,7 +42877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42296,7 +42916,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42338,7 +42959,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42376,7 +42998,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42414,7 +43037,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42452,7 +43076,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42494,7 +43119,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42532,7 +43158,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42570,7 +43197,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42608,7 +43236,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42646,7 +43275,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42684,7 +43314,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42722,7 +43353,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42760,7 +43392,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42798,7 +43431,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42840,7 +43474,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42882,7 +43517,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42924,7 +43560,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -42966,7 +43603,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43004,7 +43642,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43042,7 +43681,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43080,7 +43720,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43118,7 +43759,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43156,7 +43798,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43194,7 +43837,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43232,7 +43876,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43270,7 +43915,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43308,7 +43954,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43346,7 +43993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43384,7 +44032,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -43424,7 +44073,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43462,7 +44112,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43500,7 +44151,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43538,7 +44190,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43576,7 +44229,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43614,7 +44268,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43652,7 +44307,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43690,7 +44346,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43728,7 +44385,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43766,7 +44424,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43804,7 +44463,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43842,7 +44502,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43880,7 +44541,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43918,7 +44580,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43956,7 +44619,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -43994,7 +44658,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44032,7 +44697,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44070,7 +44736,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44108,7 +44775,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44146,7 +44814,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44184,7 +44853,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44222,7 +44892,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44260,7 +44931,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44298,7 +44970,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44336,7 +45009,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44382,7 +45056,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44432,7 +45107,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44478,7 +45154,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44524,7 +45201,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44570,7 +45248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44612,7 +45291,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44654,7 +45334,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44696,7 +45377,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44742,7 +45424,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44788,7 +45471,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44834,7 +45518,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44876,7 +45561,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44918,7 +45604,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -44964,7 +45651,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45006,7 +45694,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45052,7 +45741,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45094,7 +45784,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45136,7 +45827,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45178,7 +45870,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45938,7 +46631,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -45976,7 +46670,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46014,7 +46709,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46052,7 +46748,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46094,7 +46791,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46132,7 +46830,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46170,7 +46869,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46208,7 +46908,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46246,7 +46947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46284,7 +46986,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46322,7 +47025,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46360,7 +47064,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46398,7 +47103,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46436,7 +47142,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46478,7 +47185,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46520,7 +47228,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46558,7 +47267,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46605,7 +47315,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46643,7 +47354,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46681,7 +47393,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46719,7 +47432,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46757,7 +47471,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46795,7 +47510,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46833,7 +47549,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46871,7 +47588,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46909,7 +47627,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46947,7 +47666,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -46985,7 +47705,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47023,7 +47744,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47061,7 +47783,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47103,7 +47826,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47141,7 +47865,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47179,7 +47904,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47217,7 +47943,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47259,7 +47986,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47297,7 +48025,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47339,7 +48068,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47381,7 +48111,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47419,7 +48150,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47461,7 +48193,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47499,7 +48232,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47537,7 +48271,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47575,7 +48310,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47613,7 +48349,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47655,7 +48392,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47693,7 +48431,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47731,7 +48470,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47769,7 +48509,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47811,7 +48552,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47849,7 +48591,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47887,7 +48630,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47925,7 +48669,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -47963,7 +48708,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48001,7 +48747,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48039,7 +48786,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48077,7 +48825,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48115,7 +48864,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48153,7 +48903,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48191,7 +48942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48229,7 +48981,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48267,7 +49020,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48309,7 +49063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48347,7 +49102,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48386,7 +49142,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48424,7 +49181,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48462,7 +49220,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48500,7 +49259,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48538,7 +49298,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48576,7 +49337,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48614,7 +49376,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48652,7 +49415,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48690,7 +49454,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48728,7 +49493,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48766,7 +49532,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48812,7 +49579,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48858,7 +49626,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48908,7 +49677,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48954,7 +49724,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -48996,7 +49767,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49042,7 +49814,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49084,7 +49857,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49126,7 +49900,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49168,7 +49943,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49210,7 +49986,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49260,7 +50037,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49310,7 +50088,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49360,7 +50139,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49410,7 +50190,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49460,7 +50241,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49510,7 +50292,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49560,7 +50343,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49610,7 +50394,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49660,7 +50445,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49710,7 +50496,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49760,7 +50547,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49802,7 +50590,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49844,7 +50633,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49890,7 +50680,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49928,7 +50719,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -49970,7 +50762,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -50018,7 +50811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50060,7 +50854,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50106,7 +50901,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50152,7 +50948,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50198,7 +50995,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50240,7 +51038,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50282,7 +51081,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50324,7 +51124,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50366,7 +51167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50408,7 +51210,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50454,7 +51257,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50496,7 +51300,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50538,7 +51343,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50580,7 +51386,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50622,7 +51429,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50664,7 +51472,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50706,7 +51515,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50752,7 +51562,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50794,7 +51605,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50840,7 +51652,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50882,7 +51695,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50924,7 +51738,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -50966,7 +51781,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51008,7 +51824,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51050,7 +51867,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51096,7 +51914,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51142,7 +51961,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51184,7 +52004,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51226,7 +52047,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51272,7 +52094,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51318,7 +52141,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51364,7 +52188,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51406,7 +52231,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51448,7 +52274,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51490,7 +52317,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51532,7 +52360,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51578,7 +52407,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51620,7 +52450,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51666,7 +52497,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51708,7 +52540,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51758,7 +52591,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51804,7 +52638,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51850,7 +52685,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51896,7 +52732,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51946,7 +52783,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -51996,7 +52834,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52038,7 +52877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52080,7 +52920,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52122,7 +52963,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52168,7 +53010,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52214,7 +53057,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52260,7 +53104,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52306,7 +53151,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52352,7 +53198,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52398,7 +53245,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52444,7 +53292,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52486,7 +53335,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52528,7 +53378,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52574,7 +53425,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52620,7 +53472,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52670,7 +53523,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52716,7 +53570,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52762,7 +53617,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52808,7 +53664,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52854,7 +53711,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52900,7 +53758,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52946,7 +53805,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -52992,7 +53852,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53038,7 +53899,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53084,7 +53946,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53130,7 +53993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53176,7 +54040,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53222,7 +54087,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53272,7 +54138,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53314,7 +54181,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53360,7 +54228,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53406,7 +54275,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53452,7 +54322,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53498,7 +54369,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53544,7 +54416,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53590,7 +54463,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53636,7 +54510,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53678,7 +54553,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53724,7 +54600,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53770,7 +54647,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53812,7 +54690,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53858,7 +54737,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53900,7 +54780,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53942,7 +54823,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -53984,7 +54866,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54030,7 +54913,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54076,7 +54960,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54118,7 +55003,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54160,7 +55046,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54202,7 +55089,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54244,7 +55132,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54286,7 +55175,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54328,7 +55218,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54370,7 +55261,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54412,7 +55304,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -54452,7 +55345,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54490,7 +55384,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54528,7 +55423,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54566,7 +55462,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54604,7 +55501,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54642,7 +55540,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54680,7 +55579,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54718,7 +55618,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54756,7 +55657,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54794,7 +55696,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54832,7 +55735,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54870,7 +55774,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54908,7 +55813,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54946,7 +55852,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -54984,7 +55891,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55022,7 +55930,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55060,7 +55969,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55098,7 +56008,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55137,7 +56048,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55175,7 +56087,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55213,7 +56126,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55251,7 +56165,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55289,7 +56204,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55327,7 +56243,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55365,7 +56282,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55403,7 +56321,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55441,7 +56360,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55479,7 +56399,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55517,7 +56438,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55555,7 +56477,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55593,7 +56516,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55631,7 +56555,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55669,7 +56594,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55707,7 +56633,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55745,7 +56672,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55783,7 +56711,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55821,7 +56750,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55859,7 +56789,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55909,7 +56840,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -55959,7 +56891,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56009,7 +56942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56059,7 +56993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56109,7 +57044,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56163,7 +57099,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56209,7 +57146,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56259,7 +57197,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56309,7 +57248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56359,7 +57299,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56405,7 +57346,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56447,7 +57389,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56493,7 +57436,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56535,7 +57479,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56577,7 +57522,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56619,7 +57565,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56661,7 +57608,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56699,7 +57647,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56741,7 +57690,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56779,7 +57729,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56817,7 +57768,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56859,7 +57811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56905,7 +57858,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56947,7 +57901,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -56993,7 +57948,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57039,7 +57995,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57085,7 +58042,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57131,7 +58089,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57169,7 +58128,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57215,7 +58175,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57261,7 +58222,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57303,7 +58265,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -57343,7 +58306,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57382,7 +58346,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57421,7 +58386,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57459,7 +58425,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57498,7 +58465,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57537,7 +58505,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57576,7 +58545,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57615,7 +58585,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57654,7 +58625,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57693,7 +58665,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57731,7 +58704,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57769,7 +58743,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57807,7 +58782,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57849,7 +58825,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57887,7 +58864,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57926,7 +58904,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -57965,7 +58944,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58004,7 +58984,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58042,7 +59023,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58081,7 +59063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58119,7 +59102,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58157,7 +59141,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58196,7 +59181,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58235,7 +59221,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58274,7 +59261,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58313,7 +59301,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58352,7 +59341,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58391,7 +59381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58430,7 +59421,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58469,7 +59461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58511,7 +59504,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58553,7 +59547,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58591,7 +59586,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58633,7 +59629,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58671,7 +59668,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58713,7 +59711,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58755,7 +59754,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58793,7 +59793,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58831,7 +59832,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58869,7 +59871,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58911,7 +59914,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58953,7 +59957,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -58995,7 +60000,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59037,7 +60043,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59075,7 +60082,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59113,7 +60121,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59151,7 +60160,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59189,7 +60199,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59227,7 +60238,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59269,7 +60281,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59311,7 +60324,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59353,7 +60367,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59391,7 +60406,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59433,7 +60449,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59471,7 +60488,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59509,7 +60527,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59551,7 +60570,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59593,7 +60613,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59635,7 +60656,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59673,7 +60695,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59723,7 +60746,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59773,7 +60797,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59819,7 +60844,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59865,7 +60891,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59911,7 +60938,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59957,7 +60985,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -59999,7 +61028,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60045,7 +61075,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60083,7 +61114,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60129,7 +61161,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60175,7 +61208,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60221,7 +61255,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60267,7 +61302,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60317,7 +61353,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60367,7 +61404,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60409,7 +61447,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60455,7 +61494,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60497,7 +61537,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60543,7 +61584,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60589,7 +61631,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -60637,7 +61680,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60683,7 +61727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60725,7 +61770,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60767,7 +61813,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60813,7 +61860,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60855,7 +61903,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60897,7 +61946,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60943,7 +61993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -60993,7 +62044,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -61039,7 +62091,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -61089,7 +62142,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -61135,7 +62189,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -61185,7 +62240,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -61231,7 +62287,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -68918,7 +69975,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -68963,7 +70021,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69004,7 +70063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69049,7 +70109,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69090,7 +70151,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69131,7 +70193,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69172,7 +70235,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69217,7 +70281,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69258,7 +70323,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69303,7 +70369,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69348,7 +70415,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69389,7 +70457,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69430,7 +70499,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69471,7 +70541,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69512,7 +70583,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69553,7 +70625,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69590,7 +70663,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69627,7 +70701,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69668,7 +70743,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69713,7 +70789,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69758,7 +70835,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69799,7 +70877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69840,7 +70919,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69877,7 +70957,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69922,7 +71003,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -69963,7 +71045,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70004,7 +71087,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70041,7 +71125,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70082,7 +71167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70119,7 +71205,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70160,7 +71247,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70197,7 +71285,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70242,7 +71331,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70283,7 +71373,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70324,7 +71415,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70369,7 +71461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70414,7 +71507,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70455,7 +71549,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70496,7 +71591,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70533,7 +71629,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70570,7 +71667,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70611,7 +71709,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70652,7 +71751,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70693,7 +71793,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70730,7 +71831,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70775,7 +71877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70812,7 +71915,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70853,7 +71957,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70898,7 +72003,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -70939,7 +72045,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -79344,7 +80451,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79385,7 +80493,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79430,7 +80539,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79471,7 +80581,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79512,7 +80623,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79553,7 +80665,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79590,7 +80703,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79631,7 +80745,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79672,7 +80787,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79717,7 +80833,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79758,7 +80875,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79795,7 +80913,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79836,7 +80955,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79873,7 +80993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79918,7 +81039,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -79963,7 +81085,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80008,7 +81131,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80045,7 +81169,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80086,7 +81211,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80127,7 +81253,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80168,7 +81295,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80205,7 +81333,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80250,7 +81379,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80291,7 +81421,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80328,7 +81459,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80373,7 +81505,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80414,7 +81547,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80455,7 +81589,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80496,7 +81631,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80533,7 +81669,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80574,7 +81711,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80611,7 +81749,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80652,7 +81791,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80689,7 +81829,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80730,7 +81871,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80775,7 +81917,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80820,7 +81963,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80857,7 +82001,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80894,7 +82039,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -80935,7 +82081,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -81698,7 +82845,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81739,7 +82887,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81780,7 +82929,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81825,7 +82975,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81870,7 +83021,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81911,7 +83063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81952,7 +83105,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -81993,7 +83147,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82034,7 +83189,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82075,7 +83231,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82116,7 +83273,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82157,7 +83315,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82202,7 +83361,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82239,7 +83399,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82280,7 +83441,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82321,7 +83483,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82366,7 +83529,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82407,7 +83571,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82448,7 +83613,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82489,7 +83655,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82526,7 +83693,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82563,7 +83731,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82604,7 +83773,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82645,7 +83815,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82686,7 +83857,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82727,7 +83899,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82764,7 +83937,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82805,7 +83979,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82846,7 +84021,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -82887,7 +84063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84014,7 +85191,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84055,7 +85233,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84096,7 +85275,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84137,7 +85317,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84178,7 +85359,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84219,7 +85401,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84256,7 +85439,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84293,7 +85477,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84334,7 +85519,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84375,7 +85561,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84416,7 +85603,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84461,7 +85649,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84502,7 +85691,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84547,7 +85737,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84584,7 +85775,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84625,7 +85817,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84670,7 +85863,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84707,7 +85901,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84744,7 +85939,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84781,7 +85977,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84818,7 +86015,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84855,7 +86053,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84896,7 +86095,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84937,7 +86137,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -84974,7 +86175,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85015,7 +86217,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85052,7 +86255,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85093,7 +86297,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85142,7 +86347,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85183,7 +86389,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85224,7 +86431,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85261,7 +86469,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85298,7 +86507,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85339,7 +86549,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85376,7 +86587,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85413,7 +86625,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85450,7 +86663,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85487,7 +86701,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85524,7 +86739,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -85561,7 +86777,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -86328,7 +87545,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86373,7 +87591,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86410,7 +87629,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86447,7 +87667,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86488,7 +87709,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86529,7 +87751,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86570,7 +87793,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86611,7 +87835,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86656,7 +87881,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86697,7 +87923,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86738,7 +87965,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86779,7 +88007,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86820,7 +88049,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86865,7 +88095,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86910,7 +88141,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86951,7 +88183,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -86996,7 +88229,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87041,7 +88275,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87086,7 +88321,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87131,7 +88367,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87168,7 +88405,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87205,7 +88443,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87246,7 +88485,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87291,7 +88531,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87328,7 +88569,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87365,7 +88607,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87402,7 +88645,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87439,7 +88683,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87480,7 +88725,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87517,7 +88763,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87554,7 +88801,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87599,7 +88847,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87640,7 +88889,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87681,7 +88931,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87718,7 +88969,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87763,7 +89015,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87808,7 +89061,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87853,7 +89107,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87898,7 +89153,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87943,7 +89199,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -87980,7 +89237,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88021,7 +89279,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88058,7 +89317,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88095,7 +89355,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88136,7 +89397,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88181,7 +89443,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88218,7 +89481,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88255,7 +89519,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88292,7 +89557,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -88329,7 +89595,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -89092,7 +90359,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89133,7 +90401,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89174,7 +90443,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89215,7 +90485,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89256,7 +90527,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89297,7 +90569,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89338,7 +90611,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89379,7 +90653,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89420,7 +90695,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89461,7 +90737,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89498,7 +90775,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89535,7 +90813,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89580,7 +90859,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89629,7 +90909,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89666,7 +90947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89703,7 +90985,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89740,7 +91023,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89781,7 +91065,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89826,7 +91111,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89867,7 +91153,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -89904,7 +91191,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106729,7 +108017,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106774,7 +108063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106819,7 +108109,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106864,7 +108155,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106905,7 +108197,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106950,7 +108243,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -106995,7 +108289,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107040,7 +108335,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107085,7 +108381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107130,7 +108427,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107167,7 +108465,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107212,7 +108511,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107257,7 +108557,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107294,7 +108595,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107339,7 +108641,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107380,7 +108683,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107421,7 +108725,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107466,7 +108771,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107507,7 +108813,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107552,7 +108859,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107593,7 +108901,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "C",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107638,7 +108947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107679,7 +108989,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107716,7 +109027,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107757,7 +109069,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107802,7 +109115,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107839,7 +109153,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107876,7 +109191,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107921,7 +109237,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107958,7 +109275,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -107995,7 +109313,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108036,7 +109355,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108081,7 +109401,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108122,7 +109443,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108159,7 +109481,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108200,7 +109523,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108237,7 +109561,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108274,7 +109599,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108311,7 +109637,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108356,7 +109683,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108393,7 +109721,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108434,7 +109763,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108479,7 +109809,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108520,7 +109851,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108557,7 +109889,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108598,7 +109931,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108643,7 +109977,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108688,7 +110023,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108725,7 +110061,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -108762,7 +110099,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -109521,7 +110859,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109566,7 +110905,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109607,7 +110947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109644,7 +110985,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109681,7 +111023,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109718,7 +111061,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109759,7 +111103,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109796,7 +111141,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109833,7 +111179,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -109870,7 +111217,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -113967,7 +115315,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114004,7 +115353,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114041,7 +115391,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114078,7 +115429,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114123,7 +115475,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114168,7 +115521,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114209,7 +115563,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114254,7 +115609,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114295,7 +115651,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -114340,7 +115697,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -116187,7 +117545,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -116228,7 +117587,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -116265,7 +117625,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -116302,7 +117663,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -116343,7 +117705,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": ""
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {

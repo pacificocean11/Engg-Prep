@@ -1270,6 +1270,59 @@ mjx-container svg {
     color: var(--accent-navy);
 }
 
+/* Video Explanation (Vimeo embed) */
+.video-explanation-container {
+    margin-top: 1.5rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #0a0a0a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.video-explanation-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(255, 0, 110, 0.06);
+    border-bottom: 1px solid rgba(255, 0, 110, 0.15);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #FF006E;
+}
+
+.video-explanation-header .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.video-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+}
+
+.video-iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+html.dark .video-explanation-container {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .video-explanation-header {
+    background: rgba(255, 0, 110, 0.12);
+    border-bottom-color: rgba(255, 0, 110, 0.2);
+}
+
+
 /* Results View */
 .results-container {
     max-width: 600px;

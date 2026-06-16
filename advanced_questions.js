@@ -16,7 +16,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Find the Particular Solution", "content": "Assume a particular solution of the form $y_p = Ae^x$. Substituting into the ODE: $Ae^x - 5Ae^x + 6Ae^x = 2e^x \\Rightarrow 2Ae^x = 2e^x \\Rightarrow A=1$. So, $y_p = e^x$." },
                     { "title": "Apply Initial Conditions", "content": "The general solution is $y = C_1 e^{2x} + C_2 e^{3x} + e^x$. Using $y(0) = C_1 + C_2 + 1 = 2 \\Rightarrow C_1 + C_2 = 1$. The derivative is $y' = 2C_1 e^{2x} + 3C_2 e^{3x} + e^x$. Using $y'(0) = 2C_1 + 3C_2 + 1 = 3 \\Rightarrow 2C_1 + 3C_2 = 2$. Solving these yields $C_1 = 1, C_2 = 0$." },
                     { "title": "Evaluate at y(1)", "content": "The final solution is $y(x) = e^{2x} + e^x$. At $x=1$, we get $y(1) = e^2 + e$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -35,7 +37,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Set Up the Polar Integral", "content": "$$\\int_{0}^{\\pi/2} \\int_{0}^{2} r^2 \\cdot r \\, dr \\, d\\theta = \\int_{0}^{\\pi/2} \\int_{0}^{2} r^3 \\, dr \\, d\\theta$$" },
                     { "title": "Evaluate the Inner Integral", "content": "$$\\int_{0}^{2} r^3 \\, dr = \\left[ \\frac{r^4}{4} \\right]_{0}^{2} = \\frac{16}{4} = 4$$" },
                     { "title": "Evaluate the Outer Integral", "content": "$$\\int_{0}^{\\pi/2} 4 \\, d\\theta = [4\\theta]_{0}^{\\pi/2} = 4 \\left( \\frac{\\pi}{2} \\right) = 2\\pi$$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": "https://vimeo.com/1003086591?share=copy&fl=sv&fe=ci"
             }
         },
         {
@@ -54,7 +58,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Expand Determinant", "content": "$$(4 - \\lambda)(1 - \\lambda) - (-2)(1) = 0 \\Rightarrow \\lambda^2 - 5\\lambda + 4 + 2 = 0 \\Rightarrow \\lambda^2 - 5\\lambda + 6 = 0$$" },
                     { "title": "Find Roots", "content": "Factor the quadratic equation: $(\\lambda - 2)(\\lambda - 3) = 0$. The eigenvalues are $\\lambda_1 = 2$ and $\\lambda_2 = 3$." },
                     { "title": "Identify Largest", "content": "The largest eigenvalue is $\\lambda_{max} = 3$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -74,7 +80,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Calculate Angular Frequency", "content": "$\\omega = 2\\pi f = 2\\pi(60) \\approx 377\\text{ rad/s}$." },
                     { "title": "Calculate Reactances", "content": "Inductive reactance: $X_L = \\omega L = 377 \\times 0.1 = 37.7\\ \\Omega$.\\nCapacitive reactance: $X_C = \\frac{1}{\\omega C} = \\frac{1}{377 \\times 100 \\times 10^{-6}} \\approx 26.5\\ \\Omega$." },
                     { "title": "Determine Impedance", "content": "$Z = \\sqrt{R^2 + (X_L - X_C)^2} = \\sqrt{10^2 + (37.7 - 26.5)^2} = \\sqrt{100 + 11.2^2} = \\sqrt{225.4} \\approx 15.0\\ \\Omega$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -94,7 +102,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Define Moment Vector", "content": "The moment about the origin is given by the cross product: $\\vec{M} = \\vec{r} \\times \\vec{F}$, where position vector $\\vec{r} = \\vec{i} - 2\\vec{j} + 3\\vec{k}$." },
                     { "title": "Calculate Cross Product", "content": "$$\\vec{M} = \\det \\begin{bmatrix} \\vec{i} & \\vec{j} & \\vec{k} \\\\ 1 & -2 & 3 \\\\ 2 & -3 & 4 \\end{bmatrix}$$\\n$\\vec{M} = \\vec{i}[(-2)(4) - (3)(-3)] - \\vec{j}[(1)(4) - (3)(2)] + \\vec{k}[(1)(-3) - (-2)(2)]$\\n$\\vec{M} = \\vec{i}[-8 + 9] - \\vec{j}[4 - 6] + \\vec{k}[-3 + 4] = \\vec{i} + 2\\vec{j} + \\vec{k}$." },
                     { "title": "Calculate Magnitude", "content": "$|\\vec{M}| = \\sqrt{1^2 + 2^2 + 1^2} = \\sqrt{6} \\approx 2.45\\text{ kN-m}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -112,7 +122,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Determine Diagonal Angle", "content": "The diagonal member has a vertical rise of $3\\text{ m}$ and horizontal run of $4\\text{ m}$, forming a $3$-$4$-$5$ triangle. Thus, $\\sin\\theta = \\frac{3}{5} = 0.6$." },
                     { "title": "Relate Member Force to Shear", "content": "By the method of sections, the vertical components of the cut diagonal members must balance the vertical shear force $V = 6\\text{ kN}$. Since only one diagonal member crosses the section, $F \\sin\\theta = V$." },
                     { "title": "Calculate Member Force", "content": "$F = \\frac{V}{\\sin\\theta} = \\frac{6\\text{ kN}}{0.6} = 10.0\\text{ kN}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -132,13 +144,15 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Determine Moment of Inertia", "content": "For a slender rod pivoting about one end, $I_O = \\frac{1}{3}ML^2 = \\frac{1}{3}(3)(2^2) = 4\\text{ kg-m}^2$." },
                     { "title": "Determine Torque About Hinge", "content": "The torque is caused by the weight acting at the center of gravity (distance $L/2$): $\\tau_O = Mg \\cdot \\frac{L}{2} = 3(9.81) \\cdot 1 = 29.43\\text{ N-m}$." },
                     { "title": "Solve for Angular Acceleration", "content": "Using $\\tau_O = I_O \\alpha \\Rightarrow 29.43 = 4\\alpha \\Rightarrow \\alpha = 7.3575\\text{ rad/s}^2$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
             "topic": "Impulse-Momentum of Rigid Bodies",
             "title": "Advanced Conservation of Angular Momentum",
-            "question": "A uniform circular disk of mass $m = 10\\text{ kg}$ and radius $r = 0.5\\text{ m}$ rotates freely about its central vertical axis at $\\omega_1 = 20\\text{ rad/s}$. A non-rotating ring of mass $m_{ring} = 5\\text{ kg}$ and radius $r = 0.5\\text{ m}$ is dropped concentrically onto the disk. Determine the final common angular velocity $\\omega_2$.",
+            "question": "A uniform circular disk of mass $m = 10\\text{ kg}$ and radius $r = 0.5\\text{ m}$ rotates freely about its central vertical axis at $\\omega_1 = 20\\text{ rad/s}$. A non-rotating ring of mass $m_{ring} = 5\\text{ kg}$ and radius $r = 0.5\\text{ m}$ is dropped concentrically onto the disk. Determine the final common angular velocity $\\omega_2.",
             "options": [
                 { "label": "A", "text": "$10.0\\text{ rad/s}$", "is_correct": true },
                 { "label": "B", "text": "$13.3\\text{ rad/s}$", "is_correct": false },
@@ -151,7 +165,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Calculate Added Moment of Inertia", "content": "The moment of inertia of the ring is $I_{ring} = m_{ring} r^2 = 5 (0.5^2) = 1.25\\text{ kg-m}^2$." },
                     { "title": "Apply Conservation of Angular Momentum", "content": "Since there are no external torques, $I_{disk} \\omega_1 = (I_{disk} + I_{ring}) \\omega_2$." },
                     { "title": "Solve for Final Angular Velocity", "content": "$\\omega_2 = \\frac{I_{disk}}{I_{disk} + I_{ring}} \\omega_1 = \\frac{1.25}{1.25 + 1.25} \\times 20 = 10.0\\text{ rad/s}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -169,8 +185,10 @@ const ADVANCED_QUESTIONS = {
             "solution": {
                 "steps": [
                     { "title": "Formula for Max In-Plane Shear Stress", "content": "$\\tau_{max} = \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}$." },
-                    { "title": "Substitute Values", "content": "$\\tau_{max} = \\sqrt{\\left(\\frac{80 - (-20)}{2}\\right)^2 + 40^2} = \\sqrt{50^2 + 40^2} = \\sqrt{2500 + 1600} = \\sqrt{4100} \\approx 64.03\\text{ MPa}$." }
-                ]
+                    { "title": "Substitute Values", "content": "$\\tau_{max} = \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + 40^2} = \\sqrt{50^2 + 40^2} = \\sqrt{2500 + 1600} = \\sqrt{4100} \\approx 64.03\\text{ MPa}$." }
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -188,7 +206,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Calculate Moment of Inertia", "content": "For a circular cross-section, $I = \\frac{\\pi r^4}{4} = \\frac{\\pi (0.02)^4}{4} = 4\\pi \\times 10^{-8} \\approx 1.2566 \\times 10^{-7}\\text{ m}^4$." },
                     { "title": "Apply Euler's Buckling Formula", "content": "For a column pinned at both ends, the effective length factor $K = 1$. The critical load is: $$P_{cr} = \\frac{\\pi^2 E I}{L^2}$$" },
                     { "title": "Substitute Values and Compute", "content": "$$P_{cr} = \\frac{\\pi^2 \\times (200 \\times 10^9) \\times (1.2566 \\times 10^{-7})}{2^2} \\approx \\frac{248050}{4} \\approx 62.0\\text{ kN}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -207,7 +227,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Examine Time-Temperature-Transformation (TTT) Path", "content": "Quenching to 350 °C bypasses the pearlite nose. Holding at 350 °C for 1 hour allows isothermal transformation of austenite into bainite." },
                     { "title": "Determine Final Phase", "content": "Since bainite is formed isothermally before the final quench, the resulting structure is primarily Bainite." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -227,7 +249,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Calculate Major Loss Term", "content": "$K_{major} = \\frac{f L}{D} = \\frac{0.02 \\times 150}{0.15} = 20$." },
                     { "title": "Calculate Minor Loss Term", "content": "$K_{minor} = 3 \\times 0.5 + 0.25 = 1.75$." },
                     { "title": "Apply Darcy-Weisbach Equation", "content": "$h_L = (K_{major} + K_{minor}) \\frac{v^2}{2g} = (20 + 1.75) \\frac{3^2}{2 \\times 9.81} = 21.75 \\times \\frac{9}{19.62} \\approx 9.97\\text{ m}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -245,7 +269,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Identify Equilibrium Condition", "content": "For a floating body, the buoyant force equals the weight of the body: $F_B = W_{block}$." },
                     { "title": "Write Force Equations", "content": "$$\\rho_{water} g V_{submerged} = \\rho_{wood} g V_{total} \\Rightarrow 1000 \\times (a^2 \\cdot d) = 600 \\times a^3$$" },
                     { "title": "Solve for Draft", "content": "$$d = \\frac{600}{1000} a = 0.6 a = 0.6(1) = 0.60\\text{ m}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -265,7 +291,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Understand Regenerator Role", "content": "A regenerator recaptures heat from the exhaust gases leaving the turbine and preheats the air exiting the compressor." },
                     { "title": "Effect on Heat Input", "content": "Preheating the air reduces the external heat addition required in the combustor, thereby increasing thermal efficiency." },
                     { "title": "Analyze Pressure Ratio Limit", "content": "For low to moderate pressure ratios, regeneration always increases Brayton cycle efficiency." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -283,7 +311,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Determine Turbine Work", "content": "$W_t = h_1 - h_2 = 3214 - 2144 = 1070\\text{ kJ/kg}$." },
                     { "title": "Determine Heat Added", "content": "$Q_{in} = h_1 - h_f = 3214 - 192 = 3022\\text{ kJ/kg}$." },
                     { "title": "Calculate Thermal Efficiency", "content": "$\\eta = \\frac{W_t}{Q_{in}} = \\frac{1070}{3022} \\approx 0.354 = 35.4\\%$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -303,7 +333,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Identify Cylinder Critical Radius Formula", "content": "$r_c = \\frac{k}{h}$." },
                     { "title": "Substitute Values", "content": "$r_c = \\frac{0.15}{5} = 0.03\\text{ m} = 30\\text{ mm}$." },
                     { "title": "Evaluate result", "content": "Since $r_c > r_i$ (30 mm > 20 mm), adding insulation up to 30 mm radius will actually increase heat transfer." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -322,7 +354,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Analyze Self-View Factor", "content": "Since the plates are flat, Plate 1 cannot see itself: $F_{11} = 0$. Thus, $F_{12} + F_{13} = 1$." },
                     { "title": "Apply Symmetry", "content": "Since the triangular enclosure is equilateral (equal plate widths), by symmetry: $F_{12} = F_{13}$." },
                     { "title": "Solve for View Factor", "content": "$2 F_{12} = 1 \\Rightarrow F_{12} = 0.50$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -342,7 +376,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Identify Op-Amp Configuration", "content": "The gain of an inverting amplifier is $A_v = -\\frac{R_f}{R_i}$." },
                     { "title": "Calculate Gain", "content": "$A_v = -\\frac{100\\ \\text{k}\\Omega}{10\\ \\text{k}\\Omega} = -10$." },
                     { "title": "Determine Output Amplitude", "content": "The output amplitude is $|A_v| \\times V_{in} = 10 \\times 0.5\\text{ V} = 5.0\\text{ V}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -360,9 +396,11 @@ const ADVANCED_QUESTIONS = {
             "solution": {
                 "steps": [
                     { "title": "Calculate Mean and Alternating Stresses", "content": "$\\sigma_m = \\frac{\\sigma_{max} + \\sigma_{min}}{2} = \\frac{300 + 100}{2} = 200\\text{ MPa}$.\\n$\\sigma_a = \\frac{\\sigma_{max} - \\sigma_{min}}{2} = \\frac{300 - 100}{2} = 100\\text{ MPa}$." },
-                    { "title": "Apply Goodman Criterion", "content": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{N_f}$$\\n$$\\frac{100}{200} + \\frac{200}{600} = 0.5 + 0.333 = 0.833$$" },
+                    { "title": "Apply Goodman Criterion", "content": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{N_f}$$\\n$$\frac{100}{200} + \\frac{200}{600} = 0.5 + 0.333 = 0.833$$" },
                     { "title": "Solve for Factor of Safety", "content": "$N_f = \\frac{1}{0.833} \\approx 1.2$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -380,7 +418,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Calculate Hoop Stress", "content": "$\\sigma_t = \\frac{p d}{2 t} = \\frac{2\\text{ MPa} \\times 1000\\text{ mm}}{2 \\times 10\\text{ mm}} = 100\\text{ MPa}$." },
                     { "title": "Calculate Longitudinal Stress", "content": "$\\sigma_a = \\frac{p d}{4 t} = 50\\text{ MPa}$." },
                     { "title": "Calculate Maximum In-Plane Shear Stress", "content": "$\\tau_{max} = \\frac{\\sigma_t - \\sigma_a}{2} = \\frac{100 - 50}{2} = 25.0\\text{ MPa}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -400,7 +440,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Determine Normalization Constant c", "content": "The total volume under the PDF must equal 1: $\\int_0^1 \\int_0^2 c(x+y) \\, dy \\, dx = 1$. The inner integral is $[c(xy + y^2/2)]_0^2 = c(2x + 2)$. The outer integral is $\\int_0^1 c(2x + 2) \\, dx = c[x^2 + 2x]_0^1 = 3c$. Thus, $3c = 1 \\Rightarrow c = 1/3$." },
                     { "title": "Set Up Probability Region", "content": "The region for $X+Y \\le 1$ within the support is bounded by $0 \\le x \\le 1$ and $0 \\le y \\le 1-x$." },
                     { "title": "Calculate P(X+Y <= 1)", "content": "$$P(X+Y \\le 1) = \\int_0^1 \\int_0^{1-x} \\frac{1}{3}(x+y) \\, dy \\, dx = \\frac{1}{3} \\int_0^1 [xy + y^2/2]_0^{1-x} \\, dx$$$$= \\frac{1}{3} \\int_0^1 \\left(x(1-x) + \\frac{(1-x)^2}{2}\\right) \\, dx = \\frac{1}{3} \\int_0^1 \\left(\\frac{1}{2} - \\frac{1}{2}x^2\\right) \\, dx$$$$= \\frac{1}{6} \\left[x - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{6} \\left(1 - \\frac{1}{3}\\right) = \\frac{1}{9}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -420,7 +462,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Identify Relation Formula", "content": "The relation between the pressure and concentration equilibrium constants is: $K_p = K_c(RT)^{\\Delta n}$." },
                     { "title": "Determine change in moles", "content": "$\\Delta n = \\text{moles of gaseous products} - \\text{moles of gaseous reactants} = 2 - (1 + 3) = -2$." },
                     { "title": "Compute Kp", "content": "$$K_p = 0.291 \\times (0.0821 \\times 500)^{-2} = 0.291 \\times (41.05)^{-2} \\approx 1.73 \\times 10^{-4}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -440,7 +484,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Apply Concentration Decay Formula", "content": "For a well-mixed space under dilution ventilation, the concentration decreases exponentially: $C(t) = C_0 e^{-\\frac{Q}{V} t}$." },
                     { "title": "Set Up Equation", "content": "$50 = 500 e^{-\\frac{10}{100} t} \\Rightarrow 0.1 = e^{-0.1 t}$." },
                     { "title": "Solve for Time", "content": "Take the natural logarithm of both sides: $\\ln(0.1) = -0.1 t \\Rightarrow -2.3026 = -0.1 t \\Rightarrow t \\approx 23.0\\text{ minutes}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -460,7 +506,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Identify Capitalized Cost Formula", "content": "Capitalized Cost ($CC$) is the present value of an infinite series of renewals: $CC = \\text{Initial Cost} + \\frac{\\text{Annual Cost}}{i} + \\frac{\\text{Overhaul Cost}}{(1+i)^n - 1}$." },
                     { "title": "Substitute Maintenance and Overhaul Terms", "content": "Annual maintenance capitalized value: $\\frac{\\$5,000}{0.08} = \\$62,500$. Periodic overhaul capitalized value: $\\frac{\\$40,000}{(1.08)^{10} - 1} = \\frac{\\$40,000}{2.1589 - 1} \\approx \\$34,515$." },
                     { "title": "Calculate Total Capitalized Cost", "content": "$CC = \\$100,000 + \\$62,500 + \\$34,515 = \\$197,015 \\approx \\$197,100$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -479,7 +527,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Identify Professional Responsibility", "content": "Under NCEES Model Rules, engineers must not violate the intellectual property rights of others. Doing so constitutes unethical professional conduct." },
                     { "title": "Determine Mandatory Course of Action", "content": "The engineer must refuse to use the unauthorized source code, advise the employer of the ethical violation, and report the matter to higher authorities or the state board if the employer persists." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -499,7 +549,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Identify Terzaghi's Equation for a Square Footing", "content": "Terzaghi's ultimate bearing capacity equation for a square footing is: $q_u = 1.3 c' N_c + q N_q + 0.4 B \\gamma' N_\\gamma$, where $B$ is the footing width, and $q$ is the effective surcharge at the footing base." },
                     { "title": "Determine Effective Surcharge q", "content": "Since the water table is at the ground surface, the soil above the footing base is fully submerged. The effective unit weight is: $\\gamma' = \\gamma_{sat} - \\gamma_w = 20 - 9.81 = 10.19\\text{ kN/m}^3$. Thus, the effective surcharge is: $q = D_f \\gamma' = 1.5\\text{ m} \\times 10.19\\text{ kN/m}^3 = 15.285\\text{ kPa}$." },
                     { "title": "Calculate Ultimate Bearing Capacity qu", "content": "The effective unit weight of the soil below the footing (wedge zone) is also $\\gamma' = 10.19\\text{ kN/m}^3$. Substitute the values into the equation:$$q_u = 1.3(20)(25.1) + (15.285)(12.7) + 0.4(2)(10.19)(9.7)$$$$= 652.6 + 194.12 + 79.07 = 925.79\\text{ kPa} \\approx 926\\text{ kPa}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -520,7 +572,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Determine the Expansion Factor", "content": "For reaction $A \\rightarrow 3B$, the change in moles per mole of $A$ reacted is $\\delta = 3 - 1 = 2$. With $50\\%$ inert, the fractional change in volume is: $\\epsilon = y_{A0} \\delta = 0.5 \\times 2 = 1.0$." },
                     { "title": "Set Up PFR Volume Integration", "content": "For a first-order variable-volume gas-phase reaction: $V = F_{A0} \\int_0^X \\frac{dX}{k C_A} = \\frac{v_0}{k} \\int_0^X \\frac{1+\\epsilon X}{1-X} dX$. Substituting $\\epsilon = 1.0$, the integral becomes: $\\int_0^{0.8} \\frac{1+X}{1-X} dX = [-X - 2\\ln(1-X)]_0^{0.8} = -0.8 - 2\\ln(0.2) \\approx 2.4189$." },
                     { "title": "Compute the Final Reactor Volume", "content": "$$V = \\frac{821\\text{ L/min}}{2.0\\text{ min}^{-1}} \\times 2.4189 \\approx 993\\text{ L}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -541,7 +595,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Apply MCRT Design Equation", "content": "The relation for MCRT is: $\\frac{1}{\\theta_c} = \\frac{Y(S_0 - S)}{\\theta X} - k_d$, where $\\theta$ is the hydraulic retention time $\\theta = V / Q$, $S_0$ is influent BOD ($200\\text{ mg/L}$), and $S$ is effluent BOD ($10\\text{ mg/L}$)." },
                     { "title": "Solve for Hydraulic Retention Time (theta)", "content": "Rearranging the equation: $\\theta = \\frac{Y(S_0 - S)}{X(1/\\theta_c + k_d)} = \\frac{0.5(200 - 10)}{2400(1/10 + 0.06)} = \\frac{95}{2400 \\times 0.16} = 0.2474\\text{ days}$." },
                     { "title": "Calculate Aeration Tank Volume", "content": "$$V = Q \\times \\theta = 10,000\\text{ m}^3/\\text{day} \\times 0.2474\\text{ days} \\approx 2,474\\text{ m}^3$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -561,7 +617,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Solve the Primal Problem", "content": "Plotting the constraints: the intersection of $x_1 + 2x_2 = 8$ and $3x_1 + 2x_2 = 12$ is $(x_1, x_2) = (2, 3)$. Evaluating corner points shows this is the optimal solution, yielding $Z_{max} = 3(2) + 5(3) = 21$." },
                     { "title": "Apply Complementary Slackness", "content": "Since both primal constraints are strictly binding at the optimal point (slack variables are zero), the corresponding dual variables $y_1$ and $y_2$ must be positive. Also, since $x_1 > 0$ and $x_2 > 0$, the dual constraints must be binding:$$y_1 + 3y_2 = 3$$$$2y_1 + 2y_2 = 5$$." },
                     { "title": "Solve for Dual Variables", "content": "From $2y_1 + 2y_2 = 5$, we get $y_1 + y_2 = 2.5 \\Rightarrow y_1 = 2.5 - y_2$. Substituting into the first equation: $(2.5 - y_2) + 3y_2 = 3 \\Rightarrow 2y_2 = 0.5 \\Rightarrow y_2 = 0.25$. Then, $y_1 = 2.5 - 0.25 = 2.25$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -581,7 +639,9 @@ const ADVANCED_QUESTIONS = {
                     { "title": "Calculate Initial Apparent and Reactive Power", "content": "The initial apparent power is: $S_1 = \\frac{P}{\\cos(\\theta_1)} = \\frac{12\\text{ kW}}{0.75} = 16\\text{ kVA}$. The initial reactive power is: $Q_1 = S_1 \\sin(\\theta_1) = 16 \\times \\sin(\\arccos(0.75)) = 16 \\times 0.6614 = 10.583\\text{ kVAR}$." },
                     { "title": "Calculate Target Reactive Power", "content": "The target phase angle is $\\theta_2 = \\arccos(0.95) = 18.19^\\circ$. The target reactive power is: $Q_2 = P \\tan(\\theta_2) = 12\\text{ kW} \\times \\tan(18.19^\\circ) = 12 \\times 0.3287 = 3.944\\text{ kVAR}$." },
                     { "title": "Calculate Required Capacitance", "content": "The required reactive power reduction from the capacitor is: $\\Delta Q = Q_1 - Q_2 = 10.583 - 3.944 = 6.639\\text{ kVAR} = 6,639\\text{ VAR}$. Since $Q_c = \\omega C V_{rms}^2$, we get:$$C = \\frac{\\Delta Q}{2\\pi f V_{rms}^2} = \\frac{6,639}{2\\pi(60)(240)^2} = \\frac{6,639}{377 \\times 57,600} \\approx 305.7\\ \\mu\\text{F} \\approx 306\\ \\mu\\text{F}$$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -600,7 +660,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Compute Linear Closure Error", "content": "The linear closure error (LCE) is: $\\text{LCE} = \\sqrt{(\\sum \\Delta E)^2 + (\\sum \\Delta N)^2} = \\sqrt{(0.45)^2 + (-0.30)^2} = \\sqrt{0.2025 + 0.09} = \\sqrt{0.2925} \\approx 0.5408\\text{ ft}$." },
                     { "title": "Compute Precision Ratio", "content": "$\\text{Precision} = \\frac{\\text{LCE}}{\\text{Total Length}} = \\frac{0.5408}{3000} \\approx \\frac{1}{5,545}$. Rounding to standard form gives approximately 1 in 5,455." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -619,7 +681,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply the Rational Formula", "content": "The Rational Method formula is $Q = CIA$, where $C$ is dimensionless, $I$ is in in/hr, and $A$ is in acres. The result $Q$ is in $\\text{ft}^3/\\text{s}$ (cfs)." },
                     { "title": "Substitute Values", "content": "$Q = CIA = 0.70 \\times 3.2\\text{ in/hr} \\times 50\\text{ acres} = 112\\text{ cfs}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -638,7 +702,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Determine Nominal Plastic Moment", "content": "For a compact section with full lateral bracing, the plastic moment controls: $M_n = M_p = F_y Z_x = 50\\text{ ksi} \\times 73.0\\text{ in}^3 = 3,650\\text{ kip-in}$." },
                     { "title": "Apply LRFD Resistance Factor", "content": "The LRFD resistance factor for bending is $\\phi_b = 0.90$. Thus: $\\phi_b M_n = 0.90 \\times 3,650\\text{ kip-in} = 3,285\\text{ kip-in} = \\frac{3,285}{12} \\approx 273.8\\text{ kip-ft}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -657,7 +723,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Convert Volume to Equivalent Passenger Cars", "content": "The flow rate in passenger car equivalents (PCE) is: $v_p = \\frac{V}{PHF \\times N \\times f_{HV} \\times f_p}$. Using PHF=1 (already peak-hour volume per lane) and $N=1$: $v_p = \\frac{1800}{1 \\times 0.909} \\approx 1,981\\text{ pc/hr/lane}$." },
                     { "title": "Calculate v/c Ratio", "content": "$v/c = \\frac{v_p}{c} = \\frac{1,981}{2,300} \\approx 0.861$. Per HCM thresholds, a v/c of 0.86 corresponds to **LOS D** (0.80 < v/c ≤ 0.90)." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -676,7 +744,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Total Float", "content": "$TF = LS - ES = 11 - 8 = 3\\text{ days}$. (Equivalently, $TF = LF - EF = 16 - 13 = 3$ days.)" },
                     { "title": "Calculate Free Float", "content": "$FF = ES_{\\text{successor}} - EF_{\\text{activity}} = 14 - 13 = 1\\text{ day}$. Free Float is the amount an activity can be delayed without delaying the early start of any successor." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ]
@@ -696,7 +766,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "First Iteration", "content": "$f(x) = x^3 - 2x - 5$; $f'(x) = 3x^2 - 2$. At $x_0=2$: $f(2)=8-4-5=-1$; $f'(2)=12-2=10$. $x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)} = 2 - \\frac{-1}{10} = 2.1$" },
                     { "title": "Second Iteration", "content": "At $x_1=2.1$: $f(2.1)=9.261-4.2-5=0.061$; $f'(2.1)=3(4.41)-2=11.23$. $x_2 = 2.1 - \\frac{0.061}{11.23} \\approx 2.0946$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -714,7 +786,9 @@ const ADVANCED_QUESTIONS = {
             "solution": {
                 "steps": [
                     { "title": "Apply Michaelis-Menten Equation", "content": "$v = \\frac{V_{max}[S]}{K_m + [S]} = \\frac{120 \\times 0.20}{0.05 + 0.20} = \\frac{24}{0.25} = 96\\text{ μmol/min}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -733,7 +807,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Moles Reacted per Minute", "content": "Moles of A reacted = $F_{A0} \\times X = 5\\text{ mol/min} \\times 0.70 = 3.5\\text{ mol/min}$." },
                     { "title": "Apply Energy Balance", "content": "Heat generated by reaction = $F_{A0} X \\times (-\\Delta H_{rxn}) = 3.5 \\times 80 = 280\\text{ kJ/min}$ (exothermic, heat released). To maintain isothermal operation, this heat must be removed: $\\dot{Q} = -280\\text{ kJ/min}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -752,7 +828,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Locate the Pinch Point", "content": "For a saturated liquid feed ($q=1$), the pinch occurs at the feed plate. The pinch-point vapor and liquid compositions are: $y^* = 0.65$ and $x^* = z_F = 0.45$." },
                     { "title": "Apply Minimum Reflux Equation", "content": "The slope of the operating line at minimum reflux equals $\\frac{R_{min}}{R_{min}+1}$. From the enriching operating line passing through $(x_D, x_D)$ and the pinch $(x^*, y^*)$:$\\frac{R_{min}}{R_{min}+1} = \\frac{x_D - y^*}{x_D - x^*} = \\frac{0.95 - 0.65}{0.95 - 0.45} = \\frac{0.30}{0.50} = 0.60$Solving: $R_{min} = \\frac{0.60}{1-0.60} = \\frac{0.60}{0.40} = 1.50$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -771,7 +849,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Substitute Into Cut Diameter Formula", "content": "$d_{pc}^2 = \\frac{9\\mu B}{\\pi N_e v_i (\\rho_p - \\rho_g)} = \\frac{9 \\times 2\\times10^{-5} \\times 0.1}{\\pi \\times 5 \\times 15 \\times (1800-1.2)}$" },
                     { "title": "Calculate", "content": "Numerator: $9 \\times 2\\times10^{-5} \\times 0.1 = 1.8\\times10^{-5}$. Denominator: $\\pi \\times 5 \\times 15 \\times 1798.8 \\approx 424,100$. $d_{pc}^2 = \\frac{1.8\\times10^{-5}}{424,100} \\approx 4.24\\times10^{-11}\\text{ m}^2 \\Rightarrow d_{pc} \\approx 6.5\\text{ μm}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -790,7 +870,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Identify Terminal Temperature Differences", "content": "Counter-current: Hot enters ($150^\\circ$) meets Cold exits ($80^\\circ$): $\\Delta T_1 = 150 - 80 = 70^\\circ\\text{C}$. Hot exits ($90^\\circ$) meets Cold enters ($40^\\circ$): $\\Delta T_2 = 90 - 40 = 50^\\circ\\text{C}$." },
                     { "title": "Calculate LMTD", "content": "$LMTD = \\frac{\\Delta T_1 - \\Delta T_2}{\\ln(\\Delta T_1 / \\Delta T_2)} = \\frac{70 - 50}{\\ln(70/50)} = \\frac{20}{\\ln(1.4)} = \\frac{20}{0.3365} \\approx 59.4^\\circ\\text{C}$. Using exact values: $\\approx 59.4°C$. The closest answer is $63.5°C$ using $\\Delta T_1=70, \\Delta T_2=50 \\Rightarrow LMTD \\approx 59.4$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -809,7 +891,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply Ziegler-Nichols PID Formulas", "content": "The Z-N rules for a PID controller are: $K_c = 0.6 K_u$, $\\tau_I = 0.5 P_u$, $\\tau_D = 0.125 P_u$." },
                     { "title": "Calculate Each Parameter", "content": "$K_c = 0.6 \\times 4.0 = 2.4$$\\tau_I = 0.5 \\times 8 = 4\\text{ min}$$\\tau_D = 0.125 \\times 8 = 1\\text{ min}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ]
@@ -829,7 +913,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Convert Alkalinity to meq/L", "content": "$150\\text{ mg/L as CaCO}_3 \\div 50\\text{ g/eq} = 3.0\\text{ meq/L}$." },
                     { "title": "Convert meq/L to mg/L of HCO3-", "content": "$3.0\\text{ meq/L} \\times 61\\text{ mg/meq} = 183\\text{ mg/L HCO}_3^-$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -848,7 +934,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Chronic Daily Intake (CDI)", "content": "$CDI = \\frac{C \\times IR \\times EF \\times ED}{BW \\times AT} = \\frac{0.005 \\times 20 \\times 365 \\times 70}{70 \\times (70 \\times 365)} = \\frac{2,555}{1,788,500} = 7.14\\times10^{-4}\\text{ mg/kg/day}$" },
                     { "title": "Calculate ELCR", "content": "$ELCR = CDI \\times SF = 7.14\\times10^{-4} \\times 0.1 = 7.14\\times10^{-5}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -867,7 +955,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Compute Area and Wetted Perimeter", "content": "$A = (b + zy)y = (3 + 1.5\\times1.2)\\times1.2 = (3+1.8)\\times1.2 = 5.76\\text{ m}^2$. $P = b + 2y\\sqrt{1+z^2} = 3 + 2(1.2)\\sqrt{1+2.25} = 3 + 2.4\\times1.803 = 7.327\\text{ m}$." },
                     { "title": "Compute Hydraulic Radius and Apply Manning's", "content": "$R = A/P = 5.76/7.327 = 0.786\\text{ m}$. $Q = \\frac{1}{n}AR^{2/3}S^{1/2} = \\frac{1}{0.014}\\times5.76\\times(0.786)^{2/3}\\times(0.001)^{1/2}$ $= 71.4 \\times 5.76 \\times 0.844 \\times 0.03162 \\approx 10.8\\text{ m}^3/\\text{s}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -886,7 +976,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Maximum Potential Retention S", "content": "$S = \\frac{1000}{CN} - 10 = \\frac{1000}{80} - 10 = 12.5 - 10 = 2.5\\text{ in}$. Initial abstraction $I_a = 0.2S = 0.5\\text{ in}$." },
                     { "title": "Apply SCS Runoff Equation", "content": "$Q = \\frac{(P - I_a)^2}{P - I_a + S} = \\frac{(5 - 0.5)^2}{5 - 0.5 + 2.5} = \\frac{(4.5)^2}{7.0} = \\frac{20.25}{7.0} \\approx 2.89\\text{ in}$. (Closest answer: 2.72 in using $I_a=0.2S$ standard formulation.)" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -905,7 +997,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Compute Transmissivity", "content": "$T = Kb = 15\\text{ m/day} \\times 20\\text{ m} = 300\\text{ m}^2/\\text{day}$." },
                     { "title": "Apply Darcy's Law", "content": "$Q = T \\times W \\times (dh/dl) = 300 \\times 500 \\times 0.003 = 450\\text{ m}^3/\\text{day}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -924,7 +1018,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Write Gaussian Plume Centerline Formula", "content": "$C = \\frac{Q}{\\pi \\sigma_y \\sigma_z \\bar{u}} \\exp\\left(-\\frac{H^2}{2\\sigma_z^2}\\right)$" },
                     { "title": "Evaluate", "content": "Numerator: $Q = 80\\text{ g/s} = 80\\times10^6\\text{ μg/s}$. Denominator: $\\pi\\times50\\times20\\times4 = 12,566$. Exponential: $\\exp(-50^2/(2\\times400)) = \\exp(-3.125) = 0.0439$. $C = \\frac{80\\times10^6}{12,566} \\times 0.0439 \\approx 6,366 \\times 0.0439 \\approx 279\\text{ μg/m}^3$. Dividing by approx factor for unit reconciliation: $\\approx 29\\text{ μg/m}^3$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -943,7 +1039,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Infiltration Fraction", "content": "Infiltration fraction = $1 - R - ET = 1 - 0.25 - 0.40 = 0.35$." },
                     { "title": "Compute Volume", "content": "$V = P \\times \\text{Infiltration fraction} \\times A = (36/12\\text{ ft}) \\times 0.35 \\times (10 \\times 43,560\\text{ ft}^2) = 3\\text{ ft} \\times 0.35 \\times 435,600\\text{ ft}^2 \\approx 457,380\\text{ ft}^3$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -962,7 +1060,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Compute Swept Area", "content": "$A = \\pi r^2 = \\pi (40)^2 = 5,027\\text{ m}^2$." },
                     { "title": "Apply Wind Power Formula", "content": "$P = C_p \\times \\frac{1}{2}\\rho A v^3 = 0.40 \\times \\frac{1}{2}\\times1.225\\times5,027\\times10^3 = 0.40 \\times 3,853,175 \\approx 1,541,270\\text{ W} \\approx 1.54\\text{ MW}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -981,7 +1081,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Sum Vertical Forces", "content": "Taking down as positive: $R = +500 - 300 = +200\\text{ N}$ (downward)." },
                     { "title": "Sum Moments About O", "content": "500 N at 2 m right ’ CW moment: $-500\\times2 = -1000\\text{ N·m}$. 300 N upward at 1 m left ’ CCW moment (upward force to the left of O creates CCW): $300\\times(-1)\\times(-1) = +300\\text{ N·m}$. Wait”300 N upward at left means it creates CW moment? Let's be careful. Positive = CCW. 500 N down at +2m: $M = -500(2) = -1000$. 300 N up at -1m: $M = -(-300)(-1) = -(+300) = -300$. Total $M_O = -1000 - (-300)$... Using sign convention: $M_O = -(500)(2) + (300)(1) = -1000 + 300 = -700\\text{ N·m}$ = 700 N·m CW... Actually let's reconsider. 300 N upward at x=-1m: torque = $F_y \\times x_{position} = (+300)(-1) = -300$ (CW). 500 N downward at x=+2m: torque = $(-500)(+2) = -1000$ (CW). $M_O = -1300$ N·m... Hmm. Let me recalculate properly. Using $\\vec{M} = \\vec{r}\\times\\vec{F}$: For 500N down at x=2: $M = (2)(’500) = ’1000$ N·m (CW). For 300N up at x=’1: $M = (’1)(+300) = ’300$ N·m (CW). But wait, the answer says 700 N·m CCW. Let me try: if 300 N is at x=+1 to the left meaning x=-1: moment = r x F = (-1 i) x (-300 j) = (-1)(-300)(i x j) = 300 k (CCW). And for 500 N: (2 i) x (-500 j) = (2)(-500)(i x j) = -1000 k (CW). Total = -1000 + 300 = -700 k = 700 N·m CW. So the answer should be 700 N·m CW. But choice A says CCW. Let me just make this work as a valid question by fixing the answer. The correct answer is R=200N down, M_O=700 N·m CW. Let me just accept the question as written and note the correct calculation." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ]
@@ -1001,7 +1103,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Moment of Inertia", "content": "$I = \\frac{1}{2}mR^2 = \\frac{1}{2}(10)(0.5)^2 = \\frac{1}{2}(10)(0.25) = 1.25\\text{ kg·m}^2$." },
                     { "title": "Apply Angular Impulse-Momentum Theorem", "content": "$\\tau \\cdot t = I \\omega \\Rightarrow \\omega = \\frac{\\tau t}{I} = \\frac{25 \\times 4}{1.25} = \\frac{100}{1.25} = 80\\text{ rad/s}$. Hmm, let me recheck: $I = 0.5 \\times 10 \\times 0.25 = 1.25$. $\\omega = 100/1.25 = 80$ rad/s. So the correct answer is 80 rad/s." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1020,7 +1124,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate CPI", "content": "$CPI = \\frac{BCWP}{ACWP} = \\frac{100,000}{115,000} = 0.870$. A CPI < 1.0 means the project is over budget." },
                     { "title": "Calculate SPI", "content": "$SPI = \\frac{BCWP}{BCWS} = \\frac{100,000}{120,000} = 0.833$. An SPI < 1.0 means the project is behind schedule." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1039,7 +1145,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply EOQ Formula", "content": "$EOQ = \\sqrt{\\frac{2DS}{H}} = \\sqrt{\\frac{2 \\times 5000 \\times 40}{2}} = \\sqrt{200,000} \\approx 447\\text{ units}$." },
                     { "title": "Compute Total Inventory Cost", "content": "$TC = \\frac{D}{Q}S + \\frac{Q}{2}H = \\frac{5000}{447}(40) + \\frac{447}{2}(2) = 447.4 + 447 \\approx \\$895/\\text{yr}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1058,7 +1166,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply Weighted Centroid Formula", "content": "$\\bar{x} = \\frac{\\sum W_i x_i}{\\sum W_i} = \\frac{200(2)+300(8)+100(5)}{200+300+100} = \\frac{400+2400+500}{600} = \\frac{3300}{600} = 5.5$" },
                     { "title": "Calculate y-Coordinate", "content": "$\\bar{y} = \\frac{200(5)+300(3)+100(9)}{600} = \\frac{1000+900+900}{600} = \\frac{2800}{600} \\approx 4.67 \\approx 4.7$. Optimal location: $(5.5, 4.7)$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1077,7 +1187,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply NIOSH RWL Formula", "content": "$RWL = LC \\times HM \\times VM \\times DM \\times AM \\times FM \\times CM$" },
                     { "title": "Calculate", "content": "$RWL = 23 \\times 0.71 \\times 0.93 \\times 0.91 \\times 1.00 \\times 0.84 \\times 1.00 = 23 \\times 0.5395 \\approx 12.4\\text{ kg}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1096,7 +1208,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Normal Time", "content": "$NT = OT \\times RF = 0.85\\text{ min} \\times 1.10 = 0.935\\text{ min}$." },
                     { "title": "Calculate Standard Time", "content": "$ST = NT \\times (1 + Allowances) = 0.935 \\times (1 + 0.15) = 0.935 \\times 1.15 = 1.0753 \\approx 1.076\\text{ min}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1115,7 +1229,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate X-bar UCL", "content": "$UCL_{\\bar{X}} = \\bar{\\bar{X}} + A_2 \\bar{R} = 25.0 + 0.729 \\times 2.4 = 25.0 + 1.750 = 26.75$." },
                     { "title": "Calculate R-chart UCL", "content": "$UCL_R = D_4 \\bar{R} = 2.282 \\times 2.4 = 5.477 \\approx 5.48$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1134,7 +1250,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Parallel Block Reliability (B and C)", "content": "$R_{BC} = 1 - (1-R_B)(1-R_C) = 1 - (0.20)(0.15) = 1 - 0.030 = 0.970$." },
                     { "title": "Calculate System Reliability (Series with A)", "content": "$R_{sys} = R_A \\times R_{BC} = 0.95 \\times 0.970 = 0.9215 \\approx 0.921$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ]
@@ -1154,7 +1272,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply Mass Action Law", "content": "For a semiconductor: $np = n_i^2$. Since $N_D \\gg n_i$, the majority carrier concentration $n \\approx N_D = 10^{16}\\text{ cm}^{-3}$." },
                     { "title": "Solve for Minority Carriers", "content": "$p = \\frac{n_i^2}{n} = \\frac{(1.5\\times10^{10})^2}{10^{16}} = \\frac{2.25\\times10^{20}}{10^{16}} = 2.25\\times10^4\\text{ cm}^{-3}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1173,7 +1293,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Standard Form Comparison", "content": "Standard form: $H(s) = \\frac{\\omega_n^2}{s^2 + 2\\zeta\\omega_n s + \\omega_n^2}$. Matching coefficients: $\\omega_n^2 = 36 \\Rightarrow \\omega_n = 6\\text{ rad/s}$." },
                     { "title": "Find Damping Ratio", "content": "$2\\zeta\\omega_n = 4.8 \\Rightarrow \\zeta = \\frac{4.8}{2 \\times 6} = \\frac{4.8}{12} = 0.4$. Since $ < \\zeta < 1$, the system is **underdamped** (oscillatory response)." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1192,7 +1314,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply Nyquist Theorem", "content": "The Nyquist sampling theorem requires $f_s \\ge 2 f_{max} = 2 \\times 8 = 16\\text{ kHz}$." },
                     { "title": "Calculate Aliased Frequency", "content": "When sampled at $f_s = 12\\text{ kHz}$, a $10\\text{ kHz}$ component aliases to: $f_{alias} = |f - f_s| = |10 - 12| = 2\\text{ kHz}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1211,7 +1335,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Inverting Amplifier Gain Formula", "content": "For an ideal inverting op-amp: $A_v = -\\frac{R_f}{R_1} = -\\frac{100\\text{ k}\\Omega}{10\\text{ k}\\Omega} = -10$." },
                     { "title": "Calculate Output Voltage", "content": "$v_{out} = A_v \\times v_{in} = -10 \\times 0.5\\text{ V} = -5\\text{ V}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1230,7 +1356,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Change of Base Formula", "content": "$X_{pu,new} = X_{pu,old} \\times \\frac{S_{base,new}}{S_{base,old}} \\times \\left(\\frac{V_{base,old}}{V_{base,new}}\\right)^2$" },
                     { "title": "Apply (Same Voltage Base)", "content": "Since the voltage bases are unchanged: $X_{pu,new} = 0.08 \\times \\frac{100\\text{ MVA}}{10\\text{ MVA}} = 0.08 \\times 10 = 0.80\\text{ pu}$" }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1249,7 +1377,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply Reflection Coefficient Formula", "content": "$\\Gamma = \\frac{Z_L - Z_0}{Z_L + Z_0} = \\frac{(150+j75) - 75}{(150+j75) + 75} = \\frac{75 + j75}{225 + j75}$" },
                     { "title": "Simplify", "content": "Divide numerator and denominator: $\\Gamma = \\frac{75(1+j)}{75(3+j)} = \\frac{1+j}{3+j}$. Multiply by conjugate: $\\frac{(1+j)(3-j)}{(3+j)(3-j)} = \\frac{3-j+3j-j^2}{9+1} = \\frac{4+2j}{10} = 0.4+j0.2$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1268,7 +1398,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Build Routh Array", "content": "Row $s^4$: 1, 3, 5. Row $s^3$: 2, 4, 0. Row $s^2$: $b_1 = (3\\cdot2 - 1\\cdot4)/2 = (6-4)/2 = 1$; $b_2 = (5\\cdot2-0)/2=5$. Row $s^1$: $c_1 = (4\\cdot1 - 2\\cdot5)/1 = (4-10)/1 = -6$. Row $s^0$: 5." },
                     { "title": "Count Sign Changes", "content": "First column: $1, 2, 1, -6, 5$. Sign changes: $1 \\to +2$ (none), $2 \\to +1$ (none), $1 \\to -6$ (**change**), $-6 \\to +5$ (**change**). There are **2 sign changes**, so the system has **2 roots in the RHP** (unstable)." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1287,7 +1419,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Total AM Power", "content": "$P_T = P_c\\left(1 + \\frac{m^2}{2}\\right) = 100\\left(1 + \\frac{0.64}{2}\\right) = 100(1+0.32) = 132\\text{ W}$." },
                     { "title": "Calculate Power Efficiency", "content": "Useful sideband power = $P_T - P_c = 32\\text{ W}$. $\\eta = \\frac{P_T - P_c}{P_T} = \\frac{32}{132} \\approx 24.2\\%$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1306,7 +1440,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Run Dijkstra from A", "content": "Initial: dist(A)=0, rest=∞. Step 1: Visit A. Update: dist(B)=4, dist(C)=2. Step 2: Visit C (dist=2). Update: dist(B)=min(4, 2+1)=3; dist(D)=min(∞, 2+8)=10." },
                     { "title": "Continue to Find Shortest Path to D", "content": "Step 3: Visit B (dist=3). Update: dist(D)=min(10, 3+5)=8. Step 4: Visit D (dist=8). Final shortest path to D: **A’C’B’D = 2+1+5 = 8**." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1325,7 +1461,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Map Minterms on K-Map", "content": "Minterms 1,3,5,7 in binary: 001, 011, 101, 111. All have $C=1$. On the 3-variable K-map, they form a complete column where $C=1$." },
                     { "title": "Identify and Minimize Group", "content": "The four cells $\\{1,3,5,7\\}$ form a single group of 4. The common factor is $C=1$. Therefore, the minimized expression is $\\boxed{F = C}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1344,7 +1482,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Apply AMAT Formula", "content": "$AMAT = \\text{Hit Time} + \\text{Miss Rate} \\times \\text{Miss Penalty}$. Miss Rate = $1 - 0.90 = 0.10$. Miss Penalty = Main Memory Time = $100\\text{ ns}$." },
                     { "title": "Calculate", "content": "$AMAT = 2 + 0.10 \\times 100 = 2 + 10 = 12\\text{ ns}$. Using the alternative formulation: $AMAT = 0.90\\times2 + 0.10\\times(2+100) = 1.8 + 10.2 = 12\\text{ ns} \\approx 11.8\\text{ ns}$." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -1363,7 +1503,9 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     { "title": "Calculate Operation Counts", "content": "Algorithm X: $n \\log n = 10^6 \\times 20 = 2\\times10^7$ operations. Algorithm Y: $n^2 = (10^6)^2 = 10^{12}$ operations." },
                     { "title": "Compute Speedup Ratio", "content": "$\\text{Speedup} = \\frac{n^2}{n\\log n} = \\frac{10^{12}}{2\\times10^7} = \\frac{10^{12}}{2\\times10^7} = 50,000$. Algorithm X is approximately **50,000 times faster**." }
-                ]
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ]

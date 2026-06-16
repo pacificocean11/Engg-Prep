@@ -2103,8 +2103,38 @@ document.addEventListener('DOMContentLoaded', () => {
         finalDiv.className = 'final-answer';
         finalDiv.innerHTML = `<strong>Final Answer:</strong> ${question.solution.final_answer}`;
         explanationText.appendChild(finalDiv);
-        
+
+        // --- Video Explanation (Vimeo) ---
+        const videoField = question.solution && question.solution.video_explanation;
+        if (videoField && videoField.trim() !== '') {
+            // Accept full URL (https://vimeo.com/123456789) or bare numeric ID
+            const vimeoIdMatch = videoField.trim().match(/(?:vimeo\.com\/|^)(\d+)/);
+            const vimeoId = vimeoIdMatch ? vimeoIdMatch[1] : null;
+            if (vimeoId) {
+                const videoDiv = document.createElement('div');
+                videoDiv.className = 'video-explanation-container';
+                videoDiv.innerHTML = `
+                    <div class="video-explanation-header">
+                        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1; color: #FF006E;">play_circle</span>
+                        <span>Video Explanation</span>
+                    </div>
+                    <div class="video-iframe-wrapper">
+                        <iframe
+                            src="https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                            allowfullscreen
+                            title="Video Explanation"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                `;
+                explanationText.appendChild(videoDiv);
+            }
+        }
+
         explanationContainer.classList.remove('hidden');
+
 
         if (window.MathJax && window.MathJax.typesetPromise) {
             window.MathJax.typesetPromise();
@@ -3247,15 +3277,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const trendColor = user.trend === 'up' ? 'text-green-500' : (user.trend === 'down' ? 'text-red-500' : 'text-slate-400');
 
             let displayName = user.username;
-            if (!isAdmin) {
-                if (displayName.includes('@')) {
-                    displayName = displayName.split('@')[0];
-                }
-                if (displayName.startsWith('You (') && displayName.endsWith(')') && displayName.includes('@')) {
-                    const emailPart = displayName.slice(5, -1);
-                    displayName = `You (${emailPart.split('@')[0]})`;
+            // Always strip email domain for privacy — show only the part before @
+            if (displayName.includes('@')) {
+                displayName = displayName.split('@')[0];
+            }
+            // Handle "You (user@email.com)" format
+            if (displayName.startsWith('You (') && displayName.endsWith(')')) {
+                const inner = displayName.slice(5, -1);
+                if (inner.includes('@')) {
+                    displayName = `You (${inner.split('@')[0]})`;
                 }
             }
+
 
             const preset = AVATAR_PRESETS.find(p => p.id === user.avatar);
             let avatarHTML = '';
