@@ -17536,7 +17536,7 @@ const QUESTIONS = {
             "topic": "Time Value of Money",
             "title": "Capital Recovery",
             "question": "A company borrows 50,000 to purchase equipment. The loan is to be repaid in equal annual installments over 5 years at an interest rate of 8% per year. What is the annual payment amount?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1LF1ArYMJUF2_CwI9D6_4FcU-2akBBUHZ/preview",
             "options": [
                 {
                     "label": "A",
@@ -17583,7 +17583,7 @@ const QUESTIONS = {
             "topic": "Time Value of Money",
             "title": "Equivalent Present Worth",
             "question": "Maintenance costs for a machine are expected to be 1,000 at the end of the first year and increase by 200 each year for the next 4 years (for a total of 5 years). If the interest rate is 10% per year, what is the equivalent present worth (P) of these costs?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1tNHl9is47E1aSTySyf0rUkso7_qhGT1U/preview",
             "options": [
                 {
                     "label": "A",
@@ -17677,7 +17677,7 @@ const QUESTIONS = {
             "topic": "Time Value of Money",
             "title": "Equivalent Uniform Annual Cost (EUAC)",
             "question": "An industrial heater costs USD 20,000 and has an expected life of 10 years with no salvage value. The annual operating and maintenance costs are USD 2,000. If the interest rate is 10%, what is the equivalent uniform annual cost (EUAC)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1AMfo3sDC49yWsDS0dJMStZrkU0T9devT/preview",
             "options": [
                 {
                     "label": "A",
@@ -17759,7 +17759,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "A",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w/preview",
                 "video_explanation": ""
             }
         },
@@ -17810,7 +17810,7 @@ const QUESTIONS = {
             "topic": "Time Value of Money",
             "title": "Net Present Value (NPV)",
             "question": "A mechanical engineer is considering an investment in a new high-efficiency pump that costs 15,000 today. The pump is expected to save 3,500 per year in energy costs for the next 6 years. If the interest rate is 8% per year, what is the net present value (NPV) of this investment?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1KspmRFO2F5MXz1-nr4vJAhuDUA6b12qT/preview",
             "options": [
                 {
                     "label": "A",
@@ -17904,7 +17904,7 @@ const QUESTIONS = {
             "topic": "Time Value of Money",
             "title": "Capitalized Cost of Perpetual Maintenance",
             "question": "An engineering firm must provide for the perpetual maintenance of a bridge. The maintenance costs are estimated to be $5,000 every 3 years. If the interest rate is 6% per year, what is the capitalized cost of this maintenance schedule?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1HDASr1MpighFnkY-ukLw4Fnl0q1ENqCT/preview",
             "options": [
                 {
                     "label": "A",
@@ -17990,7 +17990,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/19-wekixZcSS97Vlrm7-4f97apZDscbwK/preview",
                 "video_explanation": ""
             }
         },
@@ -30445,7 +30445,7 @@ const QUESTIONS = {
             "topic": "Power and Efficiency",
             "title": "Pump Power",
             "question": "A pump is used to move water between two open reservoirs with a surface elevation difference of $20\\text{ m}$. The total head loss in the system is $5\\text{ m}$. If the flow rate is $0.1\\text{ m}^3/\\text{s}$, what is the required power delivered to the fluid by the pump? Use $g = 9.81\\text{ m/s}^2$ and $\\rho = 1000\\text{ kg/m}^3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1zo9OIPjadc5le-NqFuLzy4_HXb8PJ4BK/preview",
             "options": [
                 {
                     "label": "A",
@@ -30492,7 +30492,7 @@ const QUESTIONS = {
             "topic": "Power and Efficiency",
             "title": "Pump Power Requirement Calculation",
             "question": "A water pump delivers $500 \\text{ gpm}$ against a total dynamic head of $120 \\text{ ft}$. If the pump efficiency is $75\\%$, what is the required brake horsepower (BHP)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1HKGKUXX_qNNpTRbHRhhkEbBQBIh9tE5N/preview",
             "options": [
                 {
                     "label": "A",
@@ -30535,7 +30535,7 @@ const QUESTIONS = {
             "topic": "Performance Curves",
             "title": "Pump and System Curve Intersection",
             "question": "A system curve is defined by the equation $H_s = 25 + 0.05Q^2$ and a pump performance curve is defined by $H_p = 100 - 0.10Q^2$, where $H$ is in feet and $Q$ is in gallons per minute (gpm). At what flow rate $Q$ will the pump operate in this system?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1OBmm0vMficdOuf3bxgc2IQJDyQzeYth9/preview",
             "options": [
                 {
                     "label": "A",
@@ -30613,7 +30613,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ/preview",
                 "video_explanation": ""
             }
         },
@@ -30656,7 +30656,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3/preview",
                 "video_explanation": ""
             }
         },
@@ -30699,7 +30699,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy/preview",
                 "video_explanation": ""
             }
         },
