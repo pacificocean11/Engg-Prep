@@ -177,6 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
         answers: [],
         submitted: [],
         flagged: [],
+        confidence: [],
+        questionTimes: [],
+        questionEnteredAt: null,
         score: 0,
         timer: null,
         secondsElapsed: 0,
@@ -1195,6 +1198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.navigateTo = function(pageId) {
+        if (typeof stopSpeech === 'function') stopSpeech();
         state.currentPage = pageId;
         
         // Reset theme to default when navigating between main pages
@@ -1853,6 +1857,9 @@ document.addEventListener('DOMContentLoaded', () => {
         state.answers = new Array(state.quizQuestions.length).fill(null);
         state.submitted = new Array(state.quizQuestions.length).fill(false);
         state.flagged = new Array(state.quizQuestions.length).fill(false);
+        state.confidence = new Array(state.quizQuestions.length).fill(null);
+        state.questionTimes = new Array(state.quizQuestions.length).fill(0);
+        state.questionEnteredAt = Date.now();
         state.score = 0;
         state.secondsElapsed = 0;
         state.isFinished = false;
@@ -1865,6 +1872,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadQuestion() {
+        if (typeof stopSpeech === 'function') stopSpeech();
+        // Record time spent on previous question before loading new one
+        if (state.questionEnteredAt && !state.isFinished) {
+            // We don't record here because time is recorded on submit; just reset the entry timestamp
+        }
+        state.questionEnteredAt = Date.now();
+
         const question = state.quizQuestions[state.currentQuestionIndex];
         questionMeta.textContent = `Question ${state.currentQuestionIndex + 1} of ${state.quizQuestions.length} • ${state.currentTopic || state.currentSubject.name}`;
         
@@ -1909,6 +1923,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
         explanationContainer.classList.add('hidden');
         explanationText.innerHTML = '';
+
+        // --- Confidence Slider ---
+        const existingConfBar = document.getElementById('confidence-bar');
+        if (existingConfBar) existingConfBar.remove();
+        // Remove stale review badges to prevent stacking on question navigation
+        document.querySelectorAll('.confidence-review-badge').forEach(el => el.remove());
+
+        if (!state.isFinished && !state.submitted[state.currentQuestionIndex]) {
+            const confBar = document.createElement('div');
+            confBar.id = 'confidence-bar';
+            confBar.className = 'confidence-bar';
+            const savedConf = state.confidence[state.currentQuestionIndex];
+            confBar.innerHTML = `
+                <div class="confidence-label">How confident are you?</div>
+                <div class="confidence-options">
+                    ${[1,2,3,4,5].map(level => {
+                        const emojis = ['😰','🤔','😐','😊','😎'];
+                        const labels = ['Guessing','Unsure','Neutral','Fairly Sure','Certain'];
+                        return `<button class="conf-btn ${savedConf === level ? 'conf-active' : ''}" data-conf="${level}" title="${labels[level-1]}">
+                            <span class="conf-emoji">${emojis[level-1]}</span>
+                            <span class="conf-text">${labels[level-1]}</span>
+                        </button>`;
+                    }).join('')}
+                </div>
+            `;
+            // Insert before the quiz footer
+            const quizFooter = document.querySelector('.quiz-footer');
+            if (quizFooter) {
+                quizFooter.parentNode.insertBefore(confBar, quizFooter);
+            }
+            confBar.querySelectorAll('.conf-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const level = parseInt(btn.getAttribute('data-conf'));
+                    state.confidence[state.currentQuestionIndex] = level;
+                    confBar.querySelectorAll('.conf-btn').forEach(b => b.classList.remove('conf-active'));
+                    btn.classList.add('conf-active');
+                });
+            });
+        } else if (state.isFinished || state.submitted[state.currentQuestionIndex]) {
+            // Show confidence badge in review mode if one was recorded
+            const confLevel = state.confidence[state.currentQuestionIndex];
+            if (confLevel) {
+                const emojis = ['😰','🤔','😐','😊','😎'];
+                const labels = ['Guessing','Unsure','Neutral','Fairly Sure','Certain'];
+                const badge = document.createElement('div');
+                badge.className = 'confidence-review-badge';
+                badge.innerHTML = `<span>${emojis[confLevel-1]}</span> You felt: <strong>${labels[confLevel-1]}</strong>`;
+                const quizFooter = document.querySelector('.quiz-footer');
+                if (quizFooter) {
+                    quizFooter.parentNode.insertBefore(badge, quizFooter);
+                }
+            }
+        }
 
         optionsContainer.innerHTML = '';
         question.options.forEach((option, index) => {
@@ -2144,7 +2211,228 @@ document.addEventListener('DOMContentLoaded', () => {
         nextBtn.classList.remove('hidden');
     }
 
+    // ================================================================
+    // TEXT-TO-SPEECH (TTS) STATE & UTILITIES
+    // ================================================================
+    const ttsState = {
+        activeUtterance: null,
+        isPlayingQuestion: false,
+        isPlayingExplanation: false
+    };
+
+    window.stopSpeech = function() {
+        if (window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+        }
+        ttsState.activeUtterance = null;
+        ttsState.isPlayingQuestion = false;
+        ttsState.isPlayingExplanation = false;
+        updateTTSButtonsState();
+    };
+
+    function updateTTSButtonsState() {
+        const speakQBtn = document.getElementById('speak-question-btn');
+        if (speakQBtn) {
+            if (ttsState.isPlayingQuestion) {
+                speakQBtn.classList.add('tts-playing');
+                speakQBtn.innerHTML = `<span class="material-symbols-outlined">volume_off</span><span>Stop</span>`;
+            } else {
+                speakQBtn.classList.remove('tts-playing');
+                speakQBtn.innerHTML = `<span class="material-symbols-outlined">volume_up</span><span>Listen</span>`;
+            }
+        }
+
+        const speakEBtn = document.getElementById('speak-explanation-btn');
+        if (speakEBtn) {
+            if (ttsState.isPlayingExplanation) {
+                speakEBtn.classList.add('tts-playing');
+                speakEBtn.innerHTML = `<span class="material-symbols-outlined">volume_off</span><span>Stop</span>`;
+            } else {
+                speakEBtn.classList.remove('tts-playing');
+                speakEBtn.innerHTML = `<span class="material-symbols-outlined">volume_up</span><span>Listen</span>`;
+            }
+        }
+    }
+
+    function cleanTextForSpeech(htmlOrText) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlOrText;
+        let text = tempDiv.textContent || tempDiv.innerText || '';
+
+        // Translate common LaTeX mathematical notations to plain words
+        text = text.replace(/\\frac\s*{(.*?)}{(.*?)}/g, '($1 divided by $2)');
+        text = text.replace(/\\sqrt\s*{(.*?)}/g, 'square root of $1');
+        text = text.replace(/([a-zA-Z0-9]+)_([a-zA-Z0-9]+)/g, '$1 sub $2');
+        text = text.replace(/([a-zA-Z0-9]+)_{([a-zA-Z0-9\s+-]+)}/g, '$1 sub $2');
+        text = text.replace(/([a-zA-Z0-9]+)\^2/g, '$1 squared');
+        text = text.replace(/([a-zA-Z0-9]+)\^3/g, '$1 cubed');
+        text = text.replace(/([a-zA-Z0-9]+)\^{([a-zA-Z0-9\s+-]+)}/g, '$1 to the power of $2');
+        text = text.replace(/([a-zA-Z0-9]+)\^([a-zA-Z0-9]+)/g, '$1 to the power of $2');
+
+        const mathReplacements = {
+            '\\\\Delta': 'delta',
+            '\\\\delta': 'delta',
+            '\\\\pi': 'pi',
+            '\\\\theta': 'theta',
+            '\\\\alpha': 'alpha',
+            '\\\\beta': 'beta',
+            '\\\\gamma': 'gamma',
+            '\\\\sigma': 'sigma',
+            '\\\\mu': 'mu',
+            '\\\\lambda': 'lambda',
+            '\\\\omega': 'omega',
+            '\\\\phi': 'phi',
+            '\\\\cdot': ' times ',
+            '\\\\times': ' times ',
+            '\\\\approx': ' approximately ',
+            '\\\\infty': 'infinity',
+            '\\\\le': ' less than or equal to ',
+            '\\\\ge': ' greater than or equal to ',
+            '\\\\pm': ' plus or minus ',
+            '\\\\neq': ' not equal to ',
+            '\\\\partial': 'partial',
+            '\\\\int': 'integral',
+            '\\\\sum': 'summation',
+            '\\*': ' times ',
+            '\\+': ' plus ',
+            '\\-': ' minus ',
+            '\\/': ' divided by ',
+            '\\\\rho': 'rho',
+            '\\\\tau': 'tau',
+            '\\\\eta': 'eta',
+            '\\\\epsilon': 'epsilon',
+            '\\\\nabla': 'nabla',
+            '\\\\to': ' goes to ',
+            '\\\\rightarrow': ' goes to ',
+            '\\\\ln': 'natural log of ',
+            '\\\\log': 'log of ',
+            '\\\\sin': 'sine ',
+            '\\\\cos': 'cosine ',
+            '\\\\tan': 'tangent ',
+            '\\\\cot': 'cotangent ',
+            '\\\\sec': 'secant ',
+            '\\\\csc': 'cosecant ',
+            '\\\\sinh': 'hyperbolic sine ',
+            '\\\\cosh': 'hyperbolic cosine ',
+            '\\\\tanh': 'hyperbolic tangent '
+        };
+
+        for (const [pattern, replacement] of Object.entries(mathReplacements)) {
+            const regex = new RegExp(pattern, 'g');
+            text = text.replace(regex, replacement);
+        }
+
+        text = text.replace(/[\$\{\}\\\(\)\[\]]/g, ' ');
+        text = text.replace(/\s+/g, ' ').trim();
+        return text;
+    }
+
+    function speakText(text, onEndCallback, onErrorCallback) {
+        if (!window.speechSynthesis) {
+            alert("Text-to-speech is not supported in this browser.");
+            if (onErrorCallback) onErrorCallback();
+            return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice = voices.find(v => 
+            v.lang.startsWith('en') && 
+            (v.name.includes('Google') || v.name.includes('Natural'))
+        ) || voices.find(v => v.lang.startsWith('en'));
+        
+        if (preferredVoice) {
+            utterance.voice = preferredVoice;
+        }
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+
+        utterance.onend = () => {
+            if (onEndCallback) onEndCallback();
+        };
+
+        utterance.onerror = (e) => {
+            console.error("TTS error:", e);
+            if (onErrorCallback) onErrorCallback();
+        };
+
+        ttsState.activeUtterance = utterance;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function toggleSpeakQuestion() {
+        if (ttsState.isPlayingQuestion) {
+            window.stopSpeech();
+        } else {
+            window.stopSpeech();
+            const question = state.quizQuestions[state.currentQuestionIndex];
+            if (!question) return;
+
+            let textToSpeak = "Question: " + cleanTextForSpeech(question.question) + ". ";
+            if (question.options && question.options.length > 0) {
+                textToSpeak += "Options: ";
+                question.options.forEach((opt) => {
+                    textToSpeak += "Option " + opt.label + ": " + cleanTextForSpeech(opt.text) + ". ";
+                });
+            }
+
+            ttsState.isPlayingQuestion = true;
+            updateTTSButtonsState();
+
+            speakText(textToSpeak, () => {
+                ttsState.isPlayingQuestion = false;
+                updateTTSButtonsState();
+            }, () => {
+                ttsState.isPlayingQuestion = false;
+                updateTTSButtonsState();
+            });
+        }
+    }
+
+    function toggleSpeakExplanation() {
+        if (ttsState.isPlayingExplanation) {
+            window.stopSpeech();
+        } else {
+            window.stopSpeech();
+            const question = state.quizQuestions[state.currentQuestionIndex];
+            if (!question) return;
+
+            let textToSpeak = "Solution Explanation. ";
+            if (question.solution && question.solution.steps) {
+                question.solution.steps.forEach((step, idx) => {
+                    textToSpeak += "Step " + (idx + 1) + ": " + cleanTextForSpeech(step.title) + ". " + cleanTextForSpeech(step.content) + ". ";
+                });
+            }
+            if (question.solution && question.solution.final_answer) {
+                textToSpeak += "Final Answer: " + cleanTextForSpeech(question.solution.final_answer) + ".";
+            }
+
+            ttsState.isPlayingExplanation = true;
+            updateTTSButtonsState();
+
+            speakText(textToSpeak, () => {
+                ttsState.isPlayingExplanation = false;
+                updateTTSButtonsState();
+            }, () => {
+                ttsState.isPlayingExplanation = false;
+                updateTTSButtonsState();
+            });
+        }
+    }
+
     function setupQuizListeners() {
+        const speakQBtn = document.getElementById('speak-question-btn');
+        if (speakQBtn) {
+            speakQBtn.addEventListener('click', toggleSpeakQuestion);
+        }
+
+        const speakEBtn = document.getElementById('speak-explanation-btn');
+        if (speakEBtn) {
+            speakEBtn.addEventListener('click', toggleSpeakExplanation);
+        }
+
         if (finishBtn) {
             finishBtn.addEventListener('click', () => {
                 if (confirm("Are you sure you want to finish the quiz and see your results?")) {
@@ -2169,6 +2457,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
                 
+                // Record time spent on this question
+                if (state.questionEnteredAt) {
+                    const timeSpent = (Date.now() - state.questionEnteredAt) / 1000; // seconds
+                    state.questionTimes[state.currentQuestionIndex] = Math.round(timeSpent);
+                }
+
+                // Default confidence to 3 (Neutral) if not set
+                if (state.confidence[state.currentQuestionIndex] === null) {
+                    state.confidence[state.currentQuestionIndex] = 3;
+                }
+
                 const question = state.quizQuestions[state.currentQuestionIndex];
                 const isCorrect = question.options[selectedIdx].is_correct;
                 
@@ -2334,6 +2633,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Record time for the currently viewed question if not yet submitted
+        if (state.questionEnteredAt && !state.submitted[state.currentQuestionIndex]) {
+            const timeSpent = (Date.now() - state.questionEnteredAt) / 1000;
+            state.questionTimes[state.currentQuestionIndex] = Math.round(timeSpent);
+        }
+
         const prevPoints = state.userPoints;
         let attempted = 0;
         let correct = 0;
@@ -2492,6 +2797,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // ================================================================
+        // SESSION AUTOPSY — Post-Quiz Performance Breakdown
+        // ================================================================
+        renderSessionAutopsy(attempted, correct, accuracy);
 
         // Save Progress
         if (!state.isMockExam) {
@@ -2507,6 +2816,181 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.showToast(`+${correct} ${pointText} gained!`, `Total: ${newPoints} points`, 'stars');
             }
         }, 1000);
+    }
+
+    // ================================================================
+    // SESSION AUTOPSY RENDERER
+    // ================================================================
+    function renderSessionAutopsy(attempted, correct, accuracy) {
+        let autopsyContainer = document.getElementById('session-autopsy');
+        if (!autopsyContainer) {
+            // Create the autopsy section inside results-view
+            const resultsReviewSection = document.querySelector('.results-review-section');
+            if (!resultsReviewSection) return;
+            autopsyContainer = document.createElement('div');
+            autopsyContainer.id = 'session-autopsy';
+            autopsyContainer.className = 'session-autopsy';
+            resultsReviewSection.parentNode.insertBefore(autopsyContainer, resultsReviewSection);
+        }
+
+        const times = state.questionTimes;
+        const totalTimeSec = times.reduce((a, b) => a + b, 0);
+        const avgTimeSec = attempted > 0 ? (totalTimeSec / state.quizQuestions.length) : 0;
+        const maxTime = Math.max(...times, 1);
+        const fastestIdx = times.indexOf(Math.min(...times.filter(t => t > 0)));
+        const slowestIdx = times.indexOf(Math.max(...times));
+
+        // Build Confidence vs Accuracy matrix data
+        let matrix = { confRight: 0, confWrong: 0, unsureRight: 0, unsureWrong: 0 };
+        state.quizQuestions.forEach((q, idx) => {
+            if (!state.submitted[idx]) return;
+            const selectedIndex = state.answers[idx];
+            const isCorrect = selectedIndex !== null && q.options[selectedIndex].is_correct;
+            const conf = state.confidence[idx] || 3;
+            const isConfident = conf >= 4;
+            if (isConfident && isCorrect) matrix.confRight++;
+            else if (isConfident && !isCorrect) matrix.confWrong++;
+            else if (!isConfident && isCorrect) matrix.unsureRight++;
+            else matrix.unsureWrong++;
+        });
+
+        const totalMatrix = matrix.confRight + matrix.confWrong + matrix.unsureRight + matrix.unsureWrong;
+
+        // Insight generation
+        let speedInsight = '';
+        if (avgTimeSec < 30) speedInsight = '⚡ Lightning fast! Make sure you\'re reading carefully.';
+        else if (avgTimeSec < 60) speedInsight = '✅ Good pace — well-balanced speed and thought.';
+        else if (avgTimeSec < 120) speedInsight = '🧠 Thoughtful approach. Practice will increase speed.';
+        else speedInsight = '🐢 Taking your time. Focus on pattern recognition to speed up.';
+
+        let blindSpotInsight = '';
+        if (matrix.confWrong > 0) {
+            const pct = Math.round((matrix.confWrong / totalMatrix) * 100);
+            blindSpotInsight = `<div class="autopsy-alert autopsy-alert-danger">
+                <span class="material-symbols-outlined">warning</span>
+                <div>
+                    <strong>Blind Spot Detected!</strong>
+                    <p>${matrix.confWrong} question${matrix.confWrong > 1 ? 's' : ''} (${pct}%) — you felt confident but answered incorrectly. These are the most dangerous gaps in your knowledge.</p>
+                </div>
+            </div>`;
+        } else {
+            blindSpotInsight = `<div class="autopsy-alert autopsy-alert-success">
+                <span class="material-symbols-outlined">verified</span>
+                <div>
+                    <strong>No Blind Spots!</strong>
+                    <p>Your confidence aligned well with your accuracy. Great self-awareness!</p>
+                </div>
+            </div>`;
+        }
+
+        autopsyContainer.innerHTML = `
+            <div class="autopsy-header">
+                <div class="autopsy-icon">🔬</div>
+                <div>
+                    <h3>Session Autopsy</h3>
+                    <p class="autopsy-subtitle">Deep-dive into your performance patterns</p>
+                </div>
+            </div>
+
+            <!-- Quick Stats Row -->
+            <div class="autopsy-quick-stats">
+                <div class="autopsy-stat-pill">
+                    <span class="material-symbols-outlined">timer</span>
+                    <div>
+                        <span class="pill-value">${formatTimeCompact(totalTimeSec)}</span>
+                        <span class="pill-label">Total Time</span>
+                    </div>
+                </div>
+                <div class="autopsy-stat-pill">
+                    <span class="material-symbols-outlined">speed</span>
+                    <div>
+                        <span class="pill-value">${formatTimeCompact(Math.round(avgTimeSec))}</span>
+                        <span class="pill-label">Avg / Question</span>
+                    </div>
+                </div>
+                <div class="autopsy-stat-pill">
+                    <span class="material-symbols-outlined">bolt</span>
+                    <div>
+                        <span class="pill-value">${formatTimeCompact(times[fastestIdx] || 0)}</span>
+                        <span class="pill-label">Fastest (Q${fastestIdx + 1})</span>
+                    </div>
+                </div>
+                <div class="autopsy-stat-pill">
+                    <span class="material-symbols-outlined">hourglass_top</span>
+                    <div>
+                        <span class="pill-value">${formatTimeCompact(times[slowestIdx] || 0)}</span>
+                        <span class="pill-label">Slowest (Q${slowestIdx + 1})</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="autopsy-speed-insight">${speedInsight}</p>
+
+            <!-- Time Per Question Histogram -->
+            <div class="autopsy-section">
+                <h4><span class="material-symbols-outlined">bar_chart</span> Time Per Question</h4>
+                <div class="autopsy-histogram">
+                    ${state.quizQuestions.map((q, idx) => {
+                        const t = times[idx] || 0;
+                        const pct = Math.max(4, (t / maxTime) * 100);
+                        const selectedIndex = state.answers[idx];
+                        const isCorrect = state.submitted[idx] && selectedIndex !== null && q.options[selectedIndex].is_correct;
+                        const isWrong = state.submitted[idx] && !isCorrect;
+                        const barClass = !state.submitted[idx] ? 'bar-unanswered' : isCorrect ? 'bar-correct' : 'bar-wrong';
+                        return `
+                            <div class="hist-col" title="Q${idx+1}: ${t}s — ${!state.submitted[idx] ? 'Unanswered' : isCorrect ? 'Correct' : 'Wrong'}">
+                                <div class="hist-bar ${barClass}" style="height:${pct}%">
+                                    <span class="hist-time">${t}s</span>
+                                </div>
+                                <span class="hist-label">Q${idx+1}</span>
+                            </div>`;
+                    }).join('')}
+                </div>
+                <div class="hist-legend">
+                    <span><span class="hist-dot bar-correct"></span> Correct</span>
+                    <span><span class="hist-dot bar-wrong"></span> Wrong</span>
+                    <span><span class="hist-dot bar-unanswered"></span> Unanswered</span>
+                </div>
+            </div>
+
+            <!-- Confidence vs Accuracy Matrix -->
+            <div class="autopsy-section">
+                <h4><span class="material-symbols-outlined">psychology</span> Confidence vs. Accuracy</h4>
+                <div class="conf-matrix">
+                    <div class="matrix-corner"></div>
+                    <div class="matrix-col-header">✅ Correct</div>
+                    <div class="matrix-col-header">❌ Incorrect</div>
+                    
+                    <div class="matrix-row-header">😎 Confident<br><span>(4-5)</span></div>
+                    <div class="matrix-cell cell-good">
+                        <span class="matrix-count">${matrix.confRight}</span>
+                        <span class="matrix-label">Mastered</span>
+                    </div>
+                    <div class="matrix-cell cell-danger">
+                        <span class="matrix-count">${matrix.confWrong}</span>
+                        <span class="matrix-label">Blind Spot ⚠️</span>
+                    </div>
+                    
+                    <div class="matrix-row-header">🤔 Unsure<br><span>(1-3)</span></div>
+                    <div class="matrix-cell cell-lucky">
+                        <span class="matrix-count">${matrix.unsureRight}</span>
+                        <span class="matrix-label">Lucky / Intuitive</span>
+                    </div>
+                    <div class="matrix-cell cell-expected">
+                        <span class="matrix-count">${matrix.unsureWrong}</span>
+                        <span class="matrix-label">Learning Zone</span>
+                    </div>
+                </div>
+                ${blindSpotInsight}
+            </div>
+        `;
+    }
+
+    function formatTimeCompact(seconds) {
+        if (seconds < 60) return seconds + 's';
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return mins + 'm ' + secs + 's';
     }
 
     function updateProgress(subjectId, newlyCompleted) {
@@ -3463,6 +3947,295 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply saved avatar immediately on load
     applyAvatar();
+
+    // ================================================================
+    // FEATURE 1: EXAM COUNTDOWN CLOCK
+    // ================================================================
+    (function initExamCountdown() {
+        const STORAGE_KEY = 'enggtv_exam_date';
+        let countdownInterval = null;
+
+        const noDateEl      = document.getElementById('countdown-no-date');
+        const activeEl      = document.getElementById('countdown-active');
+        const cdDays        = document.getElementById('cd-days');
+        const cdHours       = document.getElementById('cd-hours');
+        const cdMins        = document.getElementById('cd-mins');
+        const cdBar         = document.getElementById('cd-progress-bar');
+        const cdUrgency     = document.getElementById('cd-urgency-msg');
+        const examDateLabel = document.getElementById('exam-date-label');
+        const examDateInput = document.getElementById('exam-date-input');
+        const btnSave       = document.getElementById('btn-save-exam-date');
+        const btnClear      = document.getElementById('btn-clear-exam-date');
+        const modal         = document.getElementById('exam-date-modal');
+
+        function formatDateLabel(dateStr) {
+            if (!dateStr) return 'Tap to set your exam date';
+            const d = new Date(dateStr + 'T00:00:00');
+            return d.toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
+        }
+
+        function tick(examDateStr) {
+            const now     = new Date();
+            const examEnd = new Date(examDateStr + 'T00:00:00');
+            const diffMs  = examEnd - now;
+
+            if (diffMs <= 0) {
+                // Exam day has passed
+                cdDays.textContent  = '0';
+                cdHours.textContent = '0';
+                cdMins.textContent  = '0';
+                cdBar.style.width   = '100%';
+                cdBar.style.background = '#EF4444';
+                cdUrgency.textContent  = '🎉 Good luck on your exam!';
+                cdUrgency.style.color  = '#EF4444';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const totalDays  = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            const hours      = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins       = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+
+            cdDays.textContent  = totalDays;
+            cdHours.textContent = hours;
+            cdMins.textContent  = mins;
+
+            // Progress bar: assume user started studying 90 days before exam
+            const STUDY_HORIZON_DAYS = 90;
+            const studyStartMs  = examEnd - STUDY_HORIZON_DAYS * 24 * 60 * 60 * 1000;
+            const elapsed       = Math.max(0, now - studyStartMs);
+            const total         = examEnd - studyStartMs;
+            const pct           = Math.min(100, Math.round((elapsed / total) * 100));
+            cdBar.style.width   = pct + '%';
+
+            // Urgency colour + message
+            if (totalDays <= 7) {
+                cdDays.style.color      = '#EF4444';
+                cdBar.style.background  = 'linear-gradient(to right, #EF4444, #F97316)';
+                cdUrgency.textContent   = '⚠️ Final week! Focus on weak spots!';
+                cdUrgency.style.color   = '#EF4444';
+            } else if (totalDays <= 30) {
+                cdDays.style.color      = '#F59E0B';
+                cdBar.style.background  = 'linear-gradient(to right, #F59E0B, #EF4444)';
+                cdUrgency.textContent   = '📅 ' + totalDays + ' days to go — keep the momentum!';
+                cdUrgency.style.color   = '#F59E0B';
+            } else {
+                cdDays.style.color      = '';
+                cdBar.style.background  = '';
+                cdUrgency.textContent   = '✅ ' + totalDays + ' days left — you\'re on track!';
+                cdUrgency.style.color   = '#22C55E';
+            }
+        }
+
+        function startCountdown(dateStr) {
+            clearInterval(countdownInterval);
+            if (!dateStr) {
+                noDateEl && noDateEl.classList.remove('hidden');
+                activeEl && activeEl.classList.add('hidden');
+                if (examDateLabel) examDateLabel.textContent = 'Tap to set your exam date';
+                return;
+            }
+            noDateEl && noDateEl.classList.add('hidden');
+            activeEl && activeEl.classList.remove('hidden');
+            if (examDateLabel) examDateLabel.textContent = formatDateLabel(dateStr);
+            tick(dateStr);
+            countdownInterval = setInterval(() => tick(dateStr), 30000); // update every 30s
+        }
+
+        // Initialise from stored value
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (examDateInput && stored) examDateInput.value = stored;
+        startCountdown(stored || null);
+
+        // Save button
+        if (btnSave) {
+            btnSave.addEventListener('click', () => {
+                const val = examDateInput ? examDateInput.value : '';
+                if (!val) { window.showToast('No date selected', 'Please pick a date first.', 'event'); return; }
+                localStorage.setItem(STORAGE_KEY, val);
+                startCountdown(val);
+                modal && modal.classList.add('hidden');
+                window.showToast('Exam Date Set! 🎯', formatDateLabel(val), 'event_upcoming');
+                confetti({ particleCount: 80, spread: 60, origin: { y: 0.6 }, colors: ['#FF006E', '#FDA60A'] });
+            });
+        }
+
+        // Clear button
+        if (btnClear) {
+            btnClear.addEventListener('click', () => {
+                localStorage.removeItem(STORAGE_KEY);
+                if (examDateInput) examDateInput.value = '';
+                startCountdown(null);
+                modal && modal.classList.add('hidden');
+                window.showToast('Exam date cleared', 'You can set a new date any time.', 'event_busy');
+            });
+        }
+
+        // Close modal on backdrop click
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.add('hidden');
+            });
+        }
+    })();
+
+    // ================================================================
+    // FEATURE 2: SMART WEAKNESS ANALYZER
+    // ================================================================
+    const WEAKNESS_KEY = () => `enggtv_weakness_${state.user.username}`;
+
+    /**
+     * Called at the end of finishQuiz (hooked below).
+     * Records wrong-answer topic data into localStorage per user.
+     */
+    function recordWeaknessData() {
+        const rawData = (() => {
+            try { return JSON.parse(localStorage.getItem(WEAKNESS_KEY())) || {}; }
+            catch (e) { return {}; }
+        })();
+
+        state.quizQuestions.forEach((q, idx) => {
+            if (!state.submitted[idx]) return;
+            const topicKey  = (q.topic || 'General').trim();
+            const subjectId = q.subjectId || (state.currentSubject && state.currentSubject.id) || 'unknown';
+            const key       = subjectId + '::' + topicKey;
+
+            if (!rawData[key]) rawData[key] = { topic: topicKey, subjectId, wrong: 0, total: 0 };
+            rawData[key].total++;
+            const selectedIdx = state.answers[idx];
+            const isCorrect   = selectedIdx !== null && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
+            if (!isCorrect) rawData[key].wrong++;
+        });
+
+        localStorage.setItem(WEAKNESS_KEY(), JSON.stringify(rawData));
+    }
+
+    /**
+     * Renders the Focus Zone card on the dashboard.
+     * Shows the top 3 weakest topics (highest wrong-rate with at least 2 attempts).
+     */
+    function renderFocusZone() {
+        const card      = document.getElementById('focus-zone-card');
+        const listEl    = document.getElementById('weak-topics-list');
+        if (!card || !listEl) return;
+
+        const rawData = (() => {
+            try { return JSON.parse(localStorage.getItem(WEAKNESS_KEY())) || {}; }
+            catch (e) { return {}; }
+        })();
+
+        // Filter: at least 2 attempts, compute error rate
+        const entries = Object.entries(rawData)
+            .filter(([, v]) => v.total >= 2)
+            .map(([key, v]) => ({ key, ...v, rate: v.wrong / v.total }))
+            .sort((a, b) => b.rate - a.rate)
+            .slice(0, 3);
+
+        if (entries.length === 0) {
+            card.classList.add('hidden');
+            return;
+        }
+
+        card.classList.remove('hidden');
+        listEl.innerHTML = entries.map((entry, i) => {
+            const pct   = Math.round(entry.rate * 100);
+            const color = pct >= 70 ? 'bg-red-500' : pct >= 40 ? 'bg-amber-500' : 'bg-yellow-400';
+            const textColor = pct >= 70 ? 'text-red-500' : pct >= 40 ? 'text-amber-500' : 'text-yellow-500';
+            return `
+                <div class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+                    <div class="w-7 h-7 rounded-xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center shrink-0">
+                        <span class="text-sm font-black text-amber-600">${i + 1}</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-slate-800 dark:text-slate-100 truncate">${entry.topic}</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <div class="flex-1 h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="${color} h-full rounded-full" style="width:${pct}%"></div>
+                            </div>
+                            <span class="text-[10px] font-black ${textColor}">${pct}% errors</span>
+                        </div>
+                    </div>
+                    <span class="text-[9px] text-slate-400 font-medium shrink-0">${entry.wrong}/${entry.total}</span>
+                </div>
+            `;
+        }).join('');
+
+        // Store current weak topics for the focus quiz
+        window._weakTopicEntries = entries;
+    }
+
+    /**
+     * Starts a targeted "Focus Quiz" pulling questions from the weak topics.
+     */
+    function startFocusQuiz() {
+        const entries = window._weakTopicEntries || [];
+        if (entries.length === 0) {
+            window.showToast('No weak topics yet!', 'Complete a few quizzes first.', 'psychology');
+            return;
+        }
+
+        const questionsSource = getQuestionsSource();
+        let focusPool = [];
+
+        entries.forEach(entry => {
+            const subjectQuestions = questionsSource[entry.subjectId] || [];
+            const topicQs = subjectQuestions
+                .filter(q => (q.topic || 'General').trim() === entry.topic)
+                .map(q => ({ ...q, subjectId: entry.subjectId }));
+            focusPool = focusPool.concat(topicQs);
+        });
+
+        if (focusPool.length === 0) {
+            window.showToast('No questions found', 'Try practicing more topics first.', 'quiz');
+            return;
+        }
+
+        // Shuffle and cap at 10
+        const selected = focusPool.sort(() => 0.5 - Math.random()).slice(0, 10);
+
+        // Re-use the existing quiz engine
+        state.currentSubject = { id: 'focus', name: 'Focus Quiz' };
+        state.currentTopic   = 'Weak Topics';
+        state.quizQuestions  = prepareQuestions(selected);
+        state.currentQuestionIndex = 0;
+        state.answers   = new Array(state.quizQuestions.length).fill(null);
+        state.submitted = new Array(state.quizQuestions.length).fill(false);
+        state.flagged   = new Array(state.quizQuestions.length).fill(false);
+        state.confidence = new Array(state.quizQuestions.length).fill(null);
+        state.questionTimes = new Array(state.quizQuestions.length).fill(0);
+        state.questionEnteredAt = Date.now();
+        state.score     = 0;
+        state.secondsElapsed = 0;
+        state.isFinished    = false;
+        state.isMockExam    = false;
+
+        navigateTo('quiz-view');
+        updateQuestionMap();
+        loadQuestion();
+        startTimer();
+    }
+
+    // Hook weakness recording — intercept submit button handler to record data after each answer
+    // We patch finishQuiz by wrapping the activityKey save in a post-hook via a MutationObserver
+    // on the results-view section appearing. Simpler: hook into navigateTo results.
+    const _origNav = window.navigateTo;
+    window.navigateTo = function(pageId) {
+        if (pageId === 'results-view') {
+            // Capture weakness data just before results are shown
+            recordWeaknessData();
+        }
+        _origNav(pageId);
+        if (pageId === 'dashboard') {
+            renderFocusZone();
+        }
+    };
+
+    // Wire up the Focus Quiz button
+    const btnFocusQuiz = document.getElementById('btn-start-focus-quiz');
+    if (btnFocusQuiz) btnFocusQuiz.addEventListener('click', startFocusQuiz);
+
+    // Initial render of Focus Zone on dashboard load
+    renderFocusZone();
 
     // Run Init
     init();
