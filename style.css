@@ -2848,6 +2848,84 @@ html.dark .cell-danger { background: rgba(239, 68, 68, 0.15); border-color: rgba
 html.dark .cell-lucky { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.2); }
 html.dark .cell-expected { background: rgba(253, 166, 10, 0.15); border-color: rgba(253, 166, 10, 0.2); }
 
+/* Matrix Question Number Badges */
+.matrix-q-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+html.dark .matrix-q-badges {
+    border-top-color: rgba(255,255,255,0.08);
+}
+
+.matrix-q-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+.matrix-q-badge:hover {
+    transform: scale(1.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.matrix-q-badge.badge-good {
+    background: rgba(5, 150, 105, 0.12);
+    border: 1px solid rgba(5, 150, 105, 0.25);
+    color: #059669;
+}
+html.dark .matrix-q-badge.badge-good {
+    background: rgba(5, 150, 105, 0.2);
+    border-color: rgba(5, 150, 105, 0.35);
+    color: #34d399;
+}
+
+.matrix-q-badge.badge-danger {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #ef4444;
+}
+html.dark .matrix-q-badge.badge-danger {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.35);
+    color: #f87171;
+}
+
+.matrix-q-badge.badge-lucky {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+}
+html.dark .matrix-q-badge.badge-lucky {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+}
+
+.matrix-q-badge.badge-expected {
+    background: rgba(253, 166, 10, 0.1);
+    border: 1px solid rgba(253, 166, 10, 0.2);
+    color: #d97706;
+}
+html.dark .matrix-q-badge.badge-expected {
+    background: rgba(253, 166, 10, 0.2);
+    border-color: rgba(253, 166, 10, 0.3);
+    color: #fbbf24;
+}
+
 /* Autopsy Alerts */
 .autopsy-alert {
     display: flex;
@@ -2907,6 +2985,114 @@ html.dark .autopsy-alert-success {
     background: rgba(5, 150, 105, 0.1);
     border-color: rgba(5, 150, 105, 0.2);
     color: #6ee7b7;
+}
+
+/* Blind Spot Question List */
+.blind-spot-list {
+    margin-top: 12px;
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(239, 68, 68, 0.02);
+}
+
+html.dark .blind-spot-list {
+    background: rgba(239, 68, 68, 0.04);
+    border-color: rgba(239, 68, 68, 0.18);
+}
+
+.blind-spot-list-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #b91c1c;
+    background: rgba(239, 68, 68, 0.05);
+    border-bottom: 1px solid rgba(239, 68, 68, 0.08);
+}
+
+html.dark .blind-spot-list-header {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.08);
+    border-bottom-color: rgba(239, 68, 68, 0.12);
+}
+
+.blind-spot-list-header .material-symbols-outlined {
+    font-size: 16px;
+    color: #ef4444;
+}
+
+.blind-spot-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.06);
+}
+
+.blind-spot-item:last-child {
+    border-bottom: none;
+}
+
+.blind-spot-item:hover {
+    background: rgba(239, 68, 68, 0.06);
+    padding-left: 20px;
+}
+
+html.dark .blind-spot-item:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.blind-spot-q-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 28px;
+    padding: 0 8px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+html.dark .blind-spot-q-num {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.blind-spot-q-text {
+    flex: 1;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.blind-spot-arrow {
+    font-size: 16px;
+    color: rgba(239, 68, 68, 0.4);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.blind-spot-item:hover .blind-spot-arrow {
+    color: #ef4444;
+    transform: translateX(3px);
 }
 
 /* Responsive: Session Autopsy */

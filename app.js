@@ -1498,6 +1498,8 @@ document.addEventListener('DOMContentLoaded', () => {
         state.answers = activity.stateSnapshot.answers;
         state.submitted = activity.stateSnapshot.submitted;
         state.flagged = activity.stateSnapshot.flagged;
+        state.confidence = activity.stateSnapshot.confidence || new Array(state.quizQuestions.length).fill(null);
+        state.questionTimes = activity.stateSnapshot.questionTimes || new Array(state.quizQuestions.length).fill(0);
         state.currentSubject = activity.stateSnapshot.currentSubject;
         state.currentTopic = activity.stateSnapshot.currentTopic;
         state.isMockExam = activity.isMockExam;
@@ -1788,6 +1790,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 answers: [...(min.answers || [])],
                 submitted: [...(min.submitted || [])],
                 flagged: [...(min.flagged || [])],
+                confidence: [...(min.confidence || [])],
+                questionTimes: [...(min.questionTimes || [])],
                 currentSubject: subObj || { id: min.subjectId, name: activity.title },
                 currentTopic: min.topic
             };
@@ -1799,6 +1803,8 @@ document.addEventListener('DOMContentLoaded', () => {
         state.answers = activity.stateSnapshot.answers;
         state.submitted = activity.stateSnapshot.submitted;
         state.flagged = activity.stateSnapshot.flagged;
+        state.confidence = activity.stateSnapshot.confidence || new Array(state.quizQuestions.length).fill(null);
+        state.questionTimes = activity.stateSnapshot.questionTimes || new Array(state.quizQuestions.length).fill(0);
         state.currentSubject = activity.stateSnapshot.currentSubject;
         state.currentTopic = activity.stateSnapshot.currentTopic;
         
@@ -1808,14 +1814,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Display results
         let attempted = activity.attempted || 0;
+        let correct = activity.score || 0;
+        const accuracy = activity.accuracy || 0;
         
         resTotal.textContent = state.quizQuestions.length;
         resAttempted.textContent = attempted;
         resCorrect.textContent = state.score;
-        resAccuracy.textContent = `${activity.accuracy}%`;
+        resAccuracy.textContent = `${accuracy}%`;
         resultsSubjectName.textContent = state.currentTopic || state.currentSubject.name;
 
         updateQuestionMap();
+
+        // Render Session Autopsy for past quizzes too
+        renderSessionAutopsy(attempted, correct, accuracy);
 
         if (window.MathJax && window.MathJax.typesetPromise) {
             window.MathJax.typesetPromise();
@@ -2688,6 +2699,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 answers: [...state.answers],
                 submitted: [...state.submitted],
                 flagged: [...state.flagged],
+                confidence: [...state.confidence],
+                questionTimes: [...state.questionTimes],
                 currentSubject: JSON.parse(JSON.stringify(state.currentSubject)),
                 currentTopic: state.currentTopic
             },
@@ -2709,7 +2722,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     return state.quizQuestions[qIdx].options[ansIdx].originalIndex;
                 }),
                 submitted: [...state.submitted],
-                flagged: [...state.flagged]
+                flagged: [...state.flagged],
+                confidence: [...state.confidence],
+                questionTimes: [...state.questionTimes]
             }
         };
         state.recentActivity.unshift(newActivity);
@@ -2840,21 +2855,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const fastestIdx = times.indexOf(Math.min(...times.filter(t => t > 0)));
         const slowestIdx = times.indexOf(Math.max(...times));
 
-        // Build Confidence vs Accuracy matrix data
-        let matrix = { confRight: 0, confWrong: 0, unsureRight: 0, unsureWrong: 0 };
+        // Build Confidence vs Accuracy matrix data with per-question tracking
+        let matrix = { confRight: [], confWrong: [], unsureRight: [], unsureWrong: [] };
         state.quizQuestions.forEach((q, idx) => {
             if (!state.submitted[idx]) return;
             const selectedIndex = state.answers[idx];
             const isCorrect = selectedIndex !== null && q.options[selectedIndex].is_correct;
             const conf = state.confidence[idx] || 3;
             const isConfident = conf >= 4;
-            if (isConfident && isCorrect) matrix.confRight++;
-            else if (isConfident && !isCorrect) matrix.confWrong++;
-            else if (!isConfident && isCorrect) matrix.unsureRight++;
-            else matrix.unsureWrong++;
+            if (isConfident && isCorrect) matrix.confRight.push(idx);
+            else if (isConfident && !isCorrect) matrix.confWrong.push(idx);
+            else if (!isConfident && isCorrect) matrix.unsureRight.push(idx);
+            else matrix.unsureWrong.push(idx);
         });
 
-        const totalMatrix = matrix.confRight + matrix.confWrong + matrix.unsureRight + matrix.unsureWrong;
+        const totalMatrix = matrix.confRight.length + matrix.confWrong.length + matrix.unsureRight.length + matrix.unsureWrong.length;
+
+        // Helper to render clickable question number badges for a matrix cell
+        function renderMatrixQBadges(indices, cssClass) {
+            if (indices.length === 0) return '';
+            return `<div class="matrix-q-badges">${indices.map(i =>
+                `<span class="matrix-q-badge ${cssClass}" data-q-index="${i}">Q${i + 1}</span>`
+            ).join('')}</div>`;
+        }
 
         // Insight generation
         let speedInsight = '';
@@ -2864,13 +2887,13 @@ document.addEventListener('DOMContentLoaded', () => {
         else speedInsight = '🐢 Taking your time. Focus on pattern recognition to speed up.';
 
         let blindSpotInsight = '';
-        if (matrix.confWrong > 0) {
-            const pct = Math.round((matrix.confWrong / totalMatrix) * 100);
+        if (matrix.confWrong.length > 0) {
+            const pct = Math.round((matrix.confWrong.length / totalMatrix) * 100);
             blindSpotInsight = `<div class="autopsy-alert autopsy-alert-danger">
                 <span class="material-symbols-outlined">warning</span>
                 <div>
                     <strong>Blind Spot Detected!</strong>
-                    <p>${matrix.confWrong} question${matrix.confWrong > 1 ? 's' : ''} (${pct}%) — you felt confident but answered incorrectly. These are the most dangerous gaps in your knowledge.</p>
+                    <p>${matrix.confWrong.length} question${matrix.confWrong.length > 1 ? 's' : ''} (${pct}%) — you felt confident but answered incorrectly. These are the most dangerous gaps in your knowledge.</p>
                 </div>
             </div>`;
         } else {
@@ -2963,27 +2986,43 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     <div class="matrix-row-header">😎 Confident<br><span>(4-5)</span></div>
                     <div class="matrix-cell cell-good">
-                        <span class="matrix-count">${matrix.confRight}</span>
+                        <span class="matrix-count">${matrix.confRight.length}</span>
                         <span class="matrix-label">Mastered</span>
+                        ${renderMatrixQBadges(matrix.confRight, 'badge-good')}
                     </div>
                     <div class="matrix-cell cell-danger">
-                        <span class="matrix-count">${matrix.confWrong}</span>
+                        <span class="matrix-count">${matrix.confWrong.length}</span>
                         <span class="matrix-label">Blind Spot ⚠️</span>
+                        ${renderMatrixQBadges(matrix.confWrong, 'badge-danger')}
                     </div>
                     
                     <div class="matrix-row-header">🤔 Unsure<br><span>(1-3)</span></div>
                     <div class="matrix-cell cell-lucky">
-                        <span class="matrix-count">${matrix.unsureRight}</span>
+                        <span class="matrix-count">${matrix.unsureRight.length}</span>
                         <span class="matrix-label">Lucky / Intuitive</span>
+                        ${renderMatrixQBadges(matrix.unsureRight, 'badge-lucky')}
                     </div>
                     <div class="matrix-cell cell-expected">
-                        <span class="matrix-count">${matrix.unsureWrong}</span>
+                        <span class="matrix-count">${matrix.unsureWrong.length}</span>
                         <span class="matrix-label">Learning Zone</span>
+                        ${renderMatrixQBadges(matrix.unsureWrong, 'badge-expected')}
                     </div>
                 </div>
                 ${blindSpotInsight}
             </div>
         `;
+
+        // Attach click handlers to all question badges in matrix cells
+        autopsyContainer.querySelectorAll('.matrix-q-badge').forEach(badge => {
+            badge.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const qIdx = parseInt(badge.getAttribute('data-q-index'));
+                state.currentQuestionIndex = qIdx;
+                state.isFinished = true;
+                navigateTo('quiz-view');
+                loadQuestion();
+            });
+        });
     }
 
     function formatTimeCompact(seconds) {
