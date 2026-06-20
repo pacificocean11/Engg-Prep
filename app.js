@@ -510,14 +510,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 if (data.recentActivity) {
                     const localActivity = JSON.parse(localStorage.getItem(`enggtv_recent_activity_${state.user.username}`)) || [];
-                    // Merge: Keep local stateSnapshot if cloud version doesn't have it
-                    state.recentActivity = data.recentActivity.map(cloudAct => {
-                        const localAct = localActivity.find(l => l.id === cloudAct.id);
-                        if (localAct && localAct.stateSnapshot && !cloudAct.stateSnapshot) {
-                            return { ...cloudAct, stateSnapshot: localAct.stateSnapshot };
+                    
+                    // Robust merge: combine local and cloud activities to prevent discarding unsynced local quizzes
+                    const mergedMap = new Map();
+                    
+                    // Load local activities first
+                    localActivity.forEach(act => {
+                        if (act && act.id) {
+                            mergedMap.set(act.id, act);
                         }
-                        return cloudAct;
                     });
+                    
+                    // Merge cloud activities, preserving local stateSnapshot where appropriate
+                    data.recentActivity.forEach(cloudAct => {
+                        if (!cloudAct || !cloudAct.id) return;
+                        const localAct = mergedMap.get(cloudAct.id);
+                        if (localAct) {
+                            const mergedAct = { ...cloudAct };
+                            if (localAct.stateSnapshot && !cloudAct.stateSnapshot) {
+                                mergedAct.stateSnapshot = localAct.stateSnapshot;
+                            }
+                            mergedMap.set(cloudAct.id, mergedAct);
+                        } else {
+                            mergedMap.set(cloudAct.id, cloudAct);
+                        }
+                    });
+                    
+                    // Sort by timestamp descending and keep at most 5 items
+                    state.recentActivity = Array.from(mergedMap.values())
+                        .filter(act => act && act.timestamp)
+                        .sort((a, b) => b.timestamp - a.timestamp)
+                        .slice(0, 5);
+                        
                     localStorage.setItem(`enggtv_recent_activity_${state.user.username}`, JSON.stringify(state.recentActivity));
                 }
 
