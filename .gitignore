@@ -1,0 +1,42 @@
+# Node modules and package lock
+node_modules/
+package-lock.json
+
+# Local development and screenshot helper scripts
+capture_mockups.js
+capture_screenshot.js
+catch_errors.js
+count_all.js
+count_std.js
+dump_html.js
+dump_nav.js
+get_topics.js
+restore_subjects.js
+test_click.js
+test_nav.js
+fill_chem_std_batch2.js
+fill_ind_batch2.js
+server.ps1
+
+# Temporary logs, reports, and database correction logs
+classification_results.json
+discrepancy_report.json
+proposed_corrections.json
+verification_details.json
+
+# Raw viewport screenshots (Only multi_device_mockups.png is used on the login page)
+desktop.png
+tablet.png
+mobile.png
+app_dashboard_preview.png
+www/desktop.png
+www/tablet.png
+www/mobile.png
+www/app_dashboard_preview.png
+www/mockup_generator.html
+
+# Mistakenly created directory from npx CLI commands
+-y/
+
+# Workspace agent files
+brain/

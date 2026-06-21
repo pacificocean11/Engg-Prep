@@ -7,13 +7,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$e$",
-                    "is_correct": false
+                    "text": "$e^2 + e$",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$e^2 + e$",
-                    "is_correct": true
+                    "text": "$e$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -110,13 +110,13 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "$3$",
-                    "is_correct": true
+                    "text": "$4$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$4$",
-                    "is_correct": false
+                    "text": "$3$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -153,24 +153,24 @@ const ADVANCED_QUESTIONS = {
             "question": "The area of the region enclosed between the circles $x^2 + y^2 = 4$ and $x^2 + (y - 2)^2 = 4$ is:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "$\\frac{4}{3}(2\\pi - 3\\sqrt{3})$",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "$\\frac{2}{3}(2\\pi - 3\\sqrt{3})$",
                     "is_correct": false
                 },
                 {
-                    "label": "3",
-                    "text": "$\\frac{2}{3}(4\\pi - 3\\sqrt{3})$",
-                    "is_correct": true
-                },
-                {
-                    "label": "4",
+                    "label": "C",
                     "text": "$\\frac{4}{3}(2\\pi - \\sqrt{3})$",
                     "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{2}{3}(4\\pi - 3\\sqrt{3})$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -198,24 +198,24 @@ const ADVANCED_QUESTIONS = {
             "question": "Let $P(10, 2\\sqrt{15})$ be a point on the hyperbola $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$, whose foci are $S$ and $S'$. If the length of its latus rectum is 8, then the square of the area of $\\Delta PSS'$ is equal to :",
             "options": [
                 {
-                    "label": "1",
-                    "text": "900",
-                    "is_correct": false
+                    "label": "A",
+                    "text": "2700",
+                    "is_correct": true
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "4200",
                     "is_correct": false
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "1462",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
-                    "text": "2700",
-                    "is_correct": true
+                    "label": "D",
+                    "text": "900",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -299,13 +299,13 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "-13",
-                    "is_correct": false
+                    "text": "-15",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
-                    "text": "-15",
-                    "is_correct": true
+                    "text": "-13",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -334,8 +334,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\pi$",
-                    "is_correct": true
+                    "text": "$-\\pi$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -349,8 +349,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$-\\pi$",
-                    "is_correct": false
+                    "text": "$\\pi$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -432,13 +432,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$7$",
-                    "is_correct": true
+                    "text": "$10$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$10$",
-                    "is_correct": false
+                    "text": "$7$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -479,8 +479,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$15.0\\ \\Omega$",
-                    "is_correct": true
+                    "text": "$22.3\\ \\Omega$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -489,8 +489,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$22.3\\ \\Omega$",
-                    "is_correct": false
+                    "text": "$15.0\\ \\Omega$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -523,22 +523,22 @@ const ADVANCED_QUESTIONS = {
             "question": "For the series LCR circuit connected with 220 V, 50 Hz a.c source as shown in the figure, the power factor is $\\frac{\\alpha}{10}$. The value of $\\alpha$ is:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "10",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "4",
                     "is_correct": false
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "6",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "8",
                     "is_correct": true
                 }
@@ -568,22 +568,22 @@ const ADVANCED_QUESTIONS = {
             "question": "The electric current in the circuit is given as $i = i_o(t/T)$. The r.m.s current for the period $t = 0$ to $t = T$ is:",
             "options": [
                 {
-                    "label": "1",
-                    "text": "$i_o$",
-                    "is_correct": false
-                },
-                {
-                    "label": "2",
-                    "text": "$\\frac{i_o}{\\sqrt{6}}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "3",
+                    "label": "A",
                     "text": "$\\frac{i_o}{\\sqrt{3}}$",
                     "is_correct": true
                 },
                 {
-                    "label": "4",
+                    "label": "B",
+                    "text": "$\\frac{i_o}{\\sqrt{6}}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$i_o$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
                     "text": "$\\frac{i_o}{\\sqrt{2}}$",
                     "is_correct": false
                 }
@@ -613,22 +613,22 @@ const ADVANCED_QUESTIONS = {
             "question": "A wire of uniform resistance $\\lambda\\ \\Omega/m$ is bent into a circle of radius r and another piece of wire with length $2r$ is connected between points A and B passing through center O as shown in figure. The equivalent resistance between points A and B is ______ $\\Omega$:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "$\\frac{3\\pi\\lambda r}{8}$",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "$\\frac{6\\pi\\lambda r}{3\\pi+16}$",
                     "is_correct": true
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "2$\\pi\\lambda r$",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "$(\\pi + 1)2r\\lambda$",
                     "is_correct": false
                 }
@@ -658,22 +658,22 @@ const ADVANCED_QUESTIONS = {
             "question": "Two resistors of $100\\ \\Omega$ each are connected in series with a 9 V battery. A voltmeter of $400\\ \\Omega$ resistance is connected to measure the voltage drop across one of the resistors. The voltmeter reading is ______ V:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "2",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "3",
                     "is_correct": false
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "4",
                     "is_correct": true
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "4.5",
                     "is_correct": false
                 }
@@ -703,24 +703,24 @@ const ADVANCED_QUESTIONS = {
             "question": "The heat generated in 1 minute between points A and B in the given circuit, when a battery of 9 V with internal resistance of $1\\ \\Omega$ is connected across these points is ______ J:",
             "options": [
                 {
-                    "label": "1",
-                    "text": "432",
-                    "is_correct": true
+                    "label": "A",
+                    "text": "360",
+                    "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "216",
                     "is_correct": false
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "500",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
-                    "text": "360",
-                    "is_correct": false
+                    "label": "D",
+                    "text": "432",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -749,8 +749,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$i_0$",
-                    "is_correct": false
+                    "text": "$\\frac{i_{0}}{\\sqrt{3}}$",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -759,8 +759,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\frac{i_{0}}{\\sqrt{3}}$",
-                    "is_correct": true
+                    "text": "$i_0$",
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -839,8 +839,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\vec{A} = -\\frac{\\mu_0 I}{2\\pi} \\ln(s) \\hat{k} + C \\hat{k}$",
-                    "is_correct": true
+                    "text": "$\\vec{A} = -\\frac{\\mu_0 I}{4\\pi} s^2 \\hat{k}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -849,8 +849,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\vec{A} = -\\frac{\\mu_0 I}{4\\pi} s^2 \\hat{k}$",
-                    "is_correct": false
+                    "text": "$\\vec{A} = -\\frac{\\mu_0 I}{2\\pi} \\ln(s) \\hat{k} + C \\hat{k}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -884,8 +884,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{V I}{2\\pi R d}$",
-                    "is_correct": true
+                    "text": "$0$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -899,8 +899,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0$",
-                    "is_correct": false
+                    "text": "$\\frac{V I}{2\\pi R d}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -931,13 +931,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "1.50 kN-m",
-                    "is_correct": false
+                    "text": "2.45 kN-m",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "2.45 kN-m",
-                    "is_correct": true
+                    "text": "1.50 kN-m",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -976,13 +976,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$10.0\\text{ kN}$",
-                    "is_correct": true
+                    "text": "$7.5\\text{ kN}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$7.5\\text{ kN}$",
-                    "is_correct": false
+                    "text": "$10.0\\text{ kN}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -1021,8 +1021,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$P = mg \\cot\\theta$",
-                    "is_correct": true
+                    "text": "$P = \\frac{1}{2} mg \\cot\\theta$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1031,8 +1031,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$P = \\frac{1}{2} mg \\cot\\theta$",
-                    "is_correct": false
+                    "text": "$P = mg \\cot\\theta$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -1070,8 +1070,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6 / 29$",
-                    "is_correct": true
+                    "text": "$8 / 29$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1085,8 +1085,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$8 / 29$",
-                    "is_correct": false
+                    "text": "$6 / 29$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -1164,13 +1164,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.577$",
-                    "is_correct": true
+                    "text": "$0.500$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.500$",
-                    "is_correct": false
+                    "text": "$0.577$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -1209,8 +1209,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{4R}{3\\pi}$",
-                    "is_correct": true
+                    "text": "$\\frac{\\pi R}{4}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1219,8 +1219,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\frac{\\pi R}{4}$",
-                    "is_correct": false
+                    "text": "$\\frac{4R}{3\\pi}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -1250,8 +1250,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{bh^3}{3}$",
-                    "is_correct": true
+                    "text": "$\\frac{bh^3}{2}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1265,8 +1265,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\frac{bh^3}{2}$",
-                    "is_correct": false
+                    "text": "$\\frac{bh^3}{3}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -1336,13 +1336,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Magnitude $= \\frac{w_0 L}{2}$, Location $= \\frac{2L}{3}$",
-                    "is_correct": true
+                    "text": "Magnitude $= \\frac{w_0 L}{2}$, Location $= \\frac{L}{3}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Magnitude $= \\frac{w_0 L}{2}$, Location $= \\frac{L}{3}$",
-                    "is_correct": false
+                    "text": "Magnitude $= \\frac{w_0 L}{2}$, Location $= \\frac{2L}{3}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -1377,8 +1377,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{dM}{dx} = V(x)$",
-                    "is_correct": true
+                    "text": "$\\frac{d^2M}{dx^2} = -V(x)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1387,8 +1387,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\frac{d^2M}{dx^2} = -V(x)$",
-                    "is_correct": false
+                    "text": "$\\frac{dM}{dx} = V(x)$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -1420,8 +1420,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "7.36 rad/s^2",
-                    "is_correct": true
+                    "text": "14.72 rad/s^2",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1435,8 +1435,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "14.72 rad/s^2",
-                    "is_correct": false
+                    "text": "7.36 rad/s^2",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -1513,24 +1513,24 @@ const ADVANCED_QUESTIONS = {
             "question": "A body of mass 2 kg is moving along x-direction such that its displacement as function of time is given by $x(t) = \\alpha t^2 + \\beta t + \\gamma$ m where $\\alpha = 1\\ m/s^2$, $\\beta = 1\\ m/s$ and $\\gamma = 1\\ m$. The work done on the body during the time interval $t = 2\\ s$ to $t = 3\\ s$ is:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "12 J",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
-                    "text": "49 J",
-                    "is_correct": false
+                    "label": "B",
+                    "text": "24 J",
+                    "is_correct": true
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "42 J",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
-                    "text": "24 J",
-                    "is_correct": true
+                    "label": "D",
+                    "text": "49 J",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -1558,22 +1558,22 @@ const ADVANCED_QUESTIONS = {
             "question": "A small bob A of mass m is attached to a massless rigid rod of length 1 m pivoted at point P and kept at an angle of 60° with vertical. At a distance of 1 m below point P, an identical bob B is kept at rest on a smooth horizontal surface that extends to a circular track of radius R. If bob B just manages to complete the circular path of radius R after being hit elastically by bob A, then radius R is:",
             "options": [
                 {
-                    "label": "1",
-                    "text": "$\\frac{1}{5}\\ m$",
-                    "is_correct": true
-                },
-                {
-                    "label": "2",
-                    "text": "$\\frac{2-\\sqrt{3}}{5}\\ m$",
-                    "is_correct": false
-                },
-                {
-                    "label": "3",
+                    "label": "A",
                     "text": "$\\frac{3}{5}\\ m$",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "B",
+                    "text": "$\\frac{2-\\sqrt{3}}{5}\\ m$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{1}{5}\\ m$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
                     "text": "$\\frac{2+\\sqrt{3}}{5}\\ m$",
                     "is_correct": false
                 }
@@ -1603,22 +1603,22 @@ const ADVANCED_QUESTIONS = {
             "question": "In case of vertical circular motion of a particle by a thread of length r, if the tension in the thread is zero at an angle 30° with the upper horizontal as shown in the figure, the velocity at the bottom point (A) of the circular path is:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "$\\sqrt{\\frac{7}{2}gr}$",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "$\\sqrt{5gr}$",
                     "is_correct": false
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "$\\sqrt{4gr}$",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "$\\sqrt{\\frac{5}{2}gr}$",
                     "is_correct": true
                 }
@@ -1648,22 +1648,22 @@ const ADVANCED_QUESTIONS = {
             "question": "Two circular discs of radius each 10 cm are joined at their centres by a rod of length 30 cm and mass 600 gm as shown in figure. If the mass of each disc is 600 gm and applied torque between two discs is $43 \\times 10^5\\ \\text{dyne}\\cdot\\text{cm}$, the angular acceleration of the discs about the given axis AB is ______ $rad/s^2$:",
             "options": [
                 {
-                    "label": "1",
-                    "text": "11",
-                    "is_correct": false
-                },
-                {
-                    "label": "2",
+                    "label": "A",
                     "text": "22",
                     "is_correct": true
                 },
                 {
-                    "label": "3",
+                    "label": "B",
+                    "text": "11",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
                     "text": "44",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "272",
                     "is_correct": false
                 }
@@ -1693,24 +1693,24 @@ const ADVANCED_QUESTIONS = {
             "question": "An air bubble of volume $2.9\\ cm^3$ rises from the bottom of a swimming pool 5 m deep. At the bottom of the pool water temperature is $17^{\\circ}C$. The volume of the bubble when it reaches the surface, where the water temperature is $27^{circ}C$, is ______ $cm^3$:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "4.5",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
-                    "text": "2.0",
-                    "is_correct": false
+                    "label": "B",
+                    "text": "3.2",
+                    "is_correct": true
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "4.2",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
-                    "text": "3.2",
-                    "is_correct": true
+                    "label": "D",
+                    "text": "2.0",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -1749,13 +1749,13 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\frac{3}{5}\\ m$",
-                    "is_correct": false
+                    "text": "$\\frac{1}{10}\\ m$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
-                    "text": "$\\frac{1}{10}\\ m$",
-                    "is_correct": true
+                    "text": "$\\frac{3}{5}\\ m$",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -1785,8 +1785,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "$9.5 \\times 10^{-3}\\ kg\\cdot m^2$",
-                    "is_correct": true
+                    "text": "$8.3 \\times 10^{-3}\\ kg\\cdot m^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -1795,8 +1795,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$8.3 \\times 10^{-3}\\ kg\\cdot m^2$",
-                    "is_correct": false
+                    "text": "$9.5 \\times 10^{-3}\\ kg\\cdot m^2$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -1821,13 +1821,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "11 $rad/s^2$",
-                    "is_correct": false
+                    "text": "22 $rad/s^2$",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "22 $rad/s^2$",
-                    "is_correct": true
+                    "text": "11 $rad/s^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -1862,13 +1862,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1.47\\text{ rad/s}$",
-                    "is_correct": true
+                    "text": "$2.94\\text{ rad/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$2.94\\text{ rad/s}$",
-                    "is_correct": false
+                    "text": "$1.47\\text{ rad/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -1911,8 +1911,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{1}{2}(M+m)\\dot{x}^2 + \\frac{1}{2}ml^2\\dot{\\theta}^2 + ml\\dot{x}\\dot{\\theta}\\cos\\theta + mgl\\cos\\theta$",
-                    "is_correct": true
+                    "text": "$\\frac{1}{2}M\\dot{x}^2 + \\frac{1}{2}ml^2\\dot{\\theta}^2 + ml\\dot{x}\\dot{\\theta}\\sin\\theta + mgl\\sin\\theta$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1921,8 +1921,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\frac{1}{2}M\\dot{x}^2 + \\frac{1}{2}ml^2\\dot{\\theta}^2 + ml\\dot{x}\\dot{\\theta}\\sin\\theta + mgl\\sin\\theta$",
-                    "is_correct": false
+                    "text": "$\\frac{1}{2}(M+m)\\dot{x}^2 + \\frac{1}{2}ml^2\\dot{\\theta}^2 + ml\\dot{x}\\dot{\\theta}\\cos\\theta + mgl\\cos\\theta$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -1956,8 +1956,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$220.7\\text{ m}$",
-                    "is_correct": true
+                    "text": "$441.4\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -1971,8 +1971,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$441.4\\text{ m}$",
-                    "is_correct": false
+                    "text": "$220.7\\text{ m}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -2046,13 +2046,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.316\\text{ m}$",
-                    "is_correct": true
+                    "text": "$0.100\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.100\\text{ m}$",
-                    "is_correct": false
+                    "text": "$0.316\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -2091,8 +2091,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$3.0\\text{ rad/s}$",
-                    "is_correct": true
+                    "text": "$1.73\\text{ rad/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2101,8 +2101,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1.73\\text{ rad/s}$",
-                    "is_correct": false
+                    "text": "$3.0\\text{ rad/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -2136,8 +2136,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{1}{2} m r^2$",
-                    "is_correct": true
+                    "text": "$\\frac{1}{12} m L^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2151,8 +2151,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\frac{1}{12} m L^2$",
-                    "is_correct": false
+                    "text": "$\\frac{1}{2} m r^2$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -2222,13 +2222,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.693$",
-                    "is_correct": true
+                    "text": "$0.500$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.500$",
-                    "is_correct": false
+                    "text": "$0.693$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -2265,8 +2265,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "64.0 MPa",
-                    "is_correct": true
+                    "text": "40.0 MPa",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2275,8 +2275,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "40.0 MPa",
-                    "is_correct": false
+                    "text": "64.0 MPa",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -2306,8 +2306,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$62.0\\text{ kN}$",
-                    "is_correct": true
+                    "text": "$15.5\\text{ kN}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2321,8 +2321,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$15.5\\text{ kN}$",
-                    "is_correct": false
+                    "text": "$62.0\\text{ kN}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -2400,13 +2400,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$148\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$170\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$170\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$148\\text{ MPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -2445,8 +2445,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$93.5\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$187.0\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2455,8 +2455,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$187.0\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$93.5\\text{ MPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -2490,8 +2490,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{P}{A} + \\frac{M}{Z}$",
-                    "is_correct": true
+                    "text": "$\\frac{P}{A} + \\frac{M y}{I}$ (where $y$ is the neutral axis)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2505,8 +2505,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\frac{P}{A} + \\frac{M y}{I}$ (where $y$ is the neutral axis)",
-                    "is_correct": false
+                    "text": "$\\frac{P}{A} + \\frac{M}{Z}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -2568,13 +2568,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$G = \\frac{E}{2(1 + \\nu)}$",
-                    "is_correct": true
+                    "text": "$G = \\frac{E}{3(1 - 2\\nu)}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$G = \\frac{E}{3(1 - 2\\nu)}$",
-                    "is_correct": false
+                    "text": "$G = \\frac{E}{2(1 + \\nu)}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -2609,8 +2609,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\langle x-a \\rangle^1$",
-                    "is_correct": true
+                    "text": "$\\frac{1}{2} \\langle x-a \\rangle^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2619,8 +2619,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\frac{1}{2} \\langle x-a \\rangle^2$",
-                    "is_correct": false
+                    "text": "$\\langle x-a \\rangle^1$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -2650,8 +2650,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\sqrt{M^2 + T^2}$",
-                    "is_correct": true
+                    "text": "$\\sqrt{M^2 - T^2}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2665,8 +2665,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\sqrt{M^2 - T^2}$",
-                    "is_correct": false
+                    "text": "$\\sqrt{M^2 + T^2}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -2738,13 +2738,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Bainite",
-                    "is_correct": true
+                    "text": "Martensite",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Martensite",
-                    "is_correct": false
+                    "text": "Bainite",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -2824,8 +2824,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$4.18 \\times 10^{-11}\\text{ m}^2\\text{/s}$",
-                    "is_correct": true
+                    "text": "$1.12 \\times 10^{-9}\\text{ m}^2\\text{/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2839,8 +2839,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$1.12 \\times 10^{-9}\\text{ m}^2\\text{/s}$",
-                    "is_correct": false
+                    "text": "$4.18 \\times 10^{-11}\\text{ m}^2\\text{/s}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -2914,13 +2914,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Solid austenite into solid ferrite and solid cementite",
-                    "is_correct": true
+                    "text": "Liquid iron into solid austenite and solid cementite",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Liquid iron into solid austenite and solid cementite",
-                    "is_correct": false
+                    "text": "Solid austenite into solid ferrite and solid cementite",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -2955,8 +2955,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\sigma_T = \\sigma_E (1 + \\epsilon_E)$",
-                    "is_correct": true
+                    "text": "$\\sigma_T = \\sigma_E \\ln(1 + \\epsilon_E)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -2965,8 +2965,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\sigma_T = \\sigma_E \\ln(1 + \\epsilon_E)$",
-                    "is_correct": false
+                    "text": "$\\sigma_T = \\sigma_E (1 + \\epsilon_E)$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -2996,8 +2996,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Rapid quenching of austenite to bypass the 'nose' of the TTT diagram",
-                    "is_correct": true
+                    "text": "Rapid quenching of cementite into a brine solution",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3011,8 +3011,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Rapid quenching of cementite into a brine solution",
-                    "is_correct": false
+                    "text": "Rapid quenching of austenite to bypass the 'nose' of the TTT diagram",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -3078,13 +3078,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$K_I = Y \\sigma \\sqrt{\\pi a}$",
-                    "is_correct": true
+                    "text": "$K_I = Y \\sigma^2 \\sqrt{a}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$K_I = Y \\sigma^2 \\sqrt{a}$",
-                    "is_correct": false
+                    "text": "$K_I = Y \\sigma \\sqrt{\\pi a}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -3119,8 +3119,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Amorphous regions of the polymer become hard and brittle like glass",
-                    "is_correct": true
+                    "text": "The material transitions from a solid to a liquid state",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3129,8 +3129,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The material transitions from a solid to a liquid state",
-                    "is_correct": false
+                    "text": "Amorphous regions of the polymer become hard and brittle like glass",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -3162,8 +3162,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "10.0 m",
-                    "is_correct": true
+                    "text": "4.6 m",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3177,8 +3177,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "4.6 m",
-                    "is_correct": false
+                    "text": "10.0 m",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -3251,22 +3251,22 @@ const ADVANCED_QUESTIONS = {
             "question": "Water flows through a horizontal tube as shown in the figure. The difference in height between the water columns in vertical tubes is 5 cm and the area of cross-sections at A and B are $6\\ cm^2$ and $3\\ cm^2$ respectively. The rate of flow will be ______ $cm^3/s$ (take $g=10\\ m/s^2$):",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "$\\frac{200}{\\sqrt{3}}$",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "200 $\\sqrt{6}$",
                     "is_correct": true
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "100 $\\sqrt{3}$",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "200 $\\sqrt{3}$",
                     "is_correct": false
                 }
@@ -3297,8 +3297,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\delta \\propto x^{1/2}$, $\\tau_w \\propto x^{-1/2}$, $C_f \\propto x^{-1/2}$",
-                    "is_correct": true
+                    "text": "$\\delta \\propto x^{1/2}$, $\\tau_w \\propto x^{1/2}$, $C_f \\propto x^{-1/2}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3307,8 +3307,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\delta \\propto x^{1/2}$, $\\tau_w \\propto x^{1/2}$, $C_f \\propto x^{-1/2}$",
-                    "is_correct": false
+                    "text": "$\\delta \\propto x^{1/2}$, $\\tau_w \\propto x^{-1/2}$, $C_f \\propto x^{-1/2}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -3342,8 +3342,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.577$",
-                    "is_correct": true
+                    "text": "$0.812$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3357,8 +3357,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.812$",
-                    "is_correct": false
+                    "text": "$0.577$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -3440,13 +3440,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$50\\text{ m/s}$",
-                    "is_correct": true
+                    "text": "$0.5\\text{ m/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.5\\text{ m/s}$",
-                    "is_correct": false
+                    "text": "$50\\text{ m/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -3485,8 +3485,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$20.4\\text{ m/s}$",
-                    "is_correct": true
+                    "text": "$10.2\\text{ m/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3495,8 +3495,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$10.2\\text{ m/s}$",
-                    "is_correct": false
+                    "text": "$20.4\\text{ m/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -3530,8 +3530,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\delta / 2$",
-                    "is_correct": true
+                    "text": "$\\delta$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3545,8 +3545,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\delta$",
-                    "is_correct": false
+                    "text": "$\\delta / 2$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -3616,13 +3616,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The hydrostatic force on the vertical projection of the curved surface.",
-                    "is_correct": true
+                    "text": "The weight of the fluid vertically above the gate.",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The weight of the fluid vertically above the gate.",
-                    "is_correct": false
+                    "text": "The hydrostatic force on the vertical projection of the curved surface.",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -3657,8 +3657,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1017\\text{ m/s}$",
-                    "is_correct": true
+                    "text": "$32.2\\text{ m/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3667,8 +3667,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$32.2\\text{ m/s}$",
-                    "is_correct": false
+                    "text": "$1017\\text{ m/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -3704,8 +3704,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "It is higher than the standard cycle efficiency at the same pressure ratio.",
-                    "is_correct": true
+                    "text": "It is dependent only on the compressor efficiency.",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3719,8 +3719,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "It is dependent only on the compressor efficiency.",
-                    "is_correct": false
+                    "text": "It is higher than the standard cycle efficiency at the same pressure ratio.",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -3793,22 +3793,22 @@ const ADVANCED_QUESTIONS = {
             "question": "A thermodynamic system is taken through the cyclic process ABC as shown in the figure. The total work done by the system during the cycle ABC is:",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "200 J",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
+                    "label": "B",
                     "text": "400 J",
                     "is_correct": true
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "600 J",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
+                    "label": "D",
                     "text": "300 J",
                     "is_correct": false
                 }
@@ -3849,13 +3849,13 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "4.2 $cm^3$",
-                    "is_correct": false
+                    "text": "3.5 $cm^3$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
-                    "text": "3.5 $cm^3$",
-                    "is_correct": true
+                    "text": "4.2 $cm^3$",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -3880,8 +3880,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$68.2\\text{ kW}$",
-                    "is_correct": true
+                    "text": "$22.1\\text{ kW}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -3895,8 +3895,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$22.1\\text{ kW}$",
-                    "is_correct": false
+                    "text": "$68.2\\text{ kW}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -3978,13 +3978,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$149\\text{ kJ/kg}$",
-                    "is_correct": true
+                    "text": "$596\\text{ kJ/kg}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$596\\text{ kJ/kg}$",
-                    "is_correct": false
+                    "text": "$149\\text{ kJ/kg}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -4023,8 +4023,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.375$",
-                    "is_correct": true
+                    "text": "$2.667$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4033,8 +4033,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$2.667$",
-                    "is_correct": false
+                    "text": "$0.375$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -4068,8 +4068,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$39.8\\%$",
-                    "is_correct": true
+                    "text": "$39.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4083,8 +4083,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$39.0\\%$",
-                    "is_correct": false
+                    "text": "$39.8\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -4158,13 +4158,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0\\text{ g/kg}$",
-                    "is_correct": true
+                    "text": "$5\\text{ g/kg}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$5\\text{ g/kg}$",
-                    "is_correct": false
+                    "text": "$0\\text{ g/kg}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -4199,8 +4199,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$59.5\\text{ moles}$",
-                    "is_correct": true
+                    "text": "$47.0\\text{ moles}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4209,8 +4209,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$47.0\\text{ moles}$",
-                    "is_correct": false
+                    "text": "$59.5\\text{ moles}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -4244,8 +4244,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6.50$",
-                    "is_correct": true
+                    "text": "$5.50$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4259,8 +4259,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$5.50$",
-                    "is_correct": false
+                    "text": "$6.50$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -4336,13 +4336,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.50$",
-                    "is_correct": true
+                    "text": "$0.33$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.33$",
-                    "is_correct": false
+                    "text": "$0.50$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -4390,13 +4390,13 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "$204\\text{ }^\\circ\\text{C}$",
-                    "is_correct": true
+                    "text": "$248\\text{ }^\\circ\\text{C}$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$248\\text{ }^\\circ\\text{C}$",
-                    "is_correct": false
+                    "text": "$204\\text{ }^\\circ\\text{C}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -4434,8 +4434,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$10\\text{ mm}$",
-                    "is_correct": true
+                    "text": "$5\\text{ mm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4449,8 +4449,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$5\\text{ mm}$",
-                    "is_correct": false
+                    "text": "$10\\text{ mm}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -4516,13 +4516,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.3$",
-                    "is_correct": true
+                    "text": "$1.2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$1.2$",
-                    "is_correct": false
+                    "text": "$0.3$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -4561,8 +4561,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$Bi < 0.1$",
-                    "is_correct": true
+                    "text": "$Bi = 1.0$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4571,8 +4571,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$Bi = 1.0$",
-                    "is_correct": false
+                    "text": "$Bi < 0.1$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -4602,8 +4602,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.632$",
-                    "is_correct": true
+                    "text": "$0.368$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4617,8 +4617,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.368$",
-                    "is_correct": false
+                    "text": "$0.632$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -4680,13 +4680,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$56.7\\text{ kW/m}^2$",
-                    "is_correct": true
+                    "text": "$5.67\\text{ kW/m}^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$5.67\\text{ kW/m}^2$",
-                    "is_correct": false
+                    "text": "$56.7\\text{ kW/m}^2$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -4727,8 +4727,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "5.0 V",
-                    "is_correct": true
+                    "text": "0.5 V",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4737,8 +4737,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "0.5 V",
-                    "is_correct": false
+                    "text": "5.0 V",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -4772,8 +4772,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6.6\\text{ min}$",
-                    "is_correct": true
+                    "text": "$8.0\\text{ min}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4787,8 +4787,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$8.0\\text{ min}$",
-                    "is_correct": false
+                    "text": "$6.6\\text{ min}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -4858,13 +4858,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$u(t) = K_p e(t) + K_i \\int e(t) dt + K_d \\frac{de(t)}{dt}$",
-                    "is_correct": true
+                    "text": "$u(t) = K_p e(t) \\times K_i \\int e(t) dt \\times K_d \\frac{de(t)}{dt}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$u(t) = K_p e(t) \\times K_i \\int e(t) dt \\times K_d \\frac{de(t)}{dt}$",
-                    "is_correct": false
+                    "text": "$u(t) = K_p e(t) + K_i \\int e(t) dt + K_d \\frac{de(t)}{dt}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -4899,8 +4899,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$63.2\\%$",
-                    "is_correct": true
+                    "text": "$95.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4909,8 +4909,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$95.0\\%$",
-                    "is_correct": false
+                    "text": "$63.2\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -4944,8 +4944,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Characteristic equation",
-                    "is_correct": true
+                    "text": "Nyquist contour diagram",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -4959,8 +4959,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Nyquist contour diagram",
-                    "is_correct": false
+                    "text": "Characteristic equation",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5030,13 +5030,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Zero",
-                    "is_correct": true
+                    "text": "Infinity",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Infinity",
-                    "is_correct": false
+                    "text": "Zero",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5075,8 +5075,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The temperature difference between the hot and cold junctions of two dissimilar metals",
-                    "is_correct": true
+                    "text": "The specific heat capacity of the welded junction",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5085,8 +5085,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The specific heat capacity of the welded junction",
-                    "is_correct": false
+                    "text": "The temperature difference between the hot and cold junctions of two dissimilar metals",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -5116,8 +5116,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$-180^\\circ$",
-                    "is_correct": true
+                    "text": "$+90^\\circ$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5131,8 +5131,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$+90^\\circ$",
-                    "is_correct": false
+                    "text": "$-180^\\circ$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5204,13 +5204,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$25.0\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$50.0\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$50.0\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$25.0\\text{ MPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5254,13 +5254,13 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "$31.4\\text{ mm}$",
-                    "is_correct": true
+                    "text": "$45.2\\text{ mm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$45.2\\text{ mm}$",
-                    "is_correct": false
+                    "text": "$31.4\\text{ mm}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -5298,8 +5298,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$300\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$450\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5313,8 +5313,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$450\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$300\\text{ MPa}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5384,13 +5384,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Bending fatigue at the root of the tooth",
-                    "is_correct": true
+                    "text": "Surface pitting due to contact stress",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Surface pitting due to contact stress",
-                    "is_correct": false
+                    "text": "Bending fatigue at the root of the tooth",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5421,8 +5421,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$18.5\\text{ mm}$",
-                    "is_correct": true
+                    "text": "$25.0\\text{ mm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5431,8 +5431,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$25.0\\text{ mm}$",
-                    "is_correct": false
+                    "text": "$18.5\\text{ mm}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -5466,8 +5466,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Direct transverse shear and wire curvature stress concentration",
-                    "is_correct": true
+                    "text": "Thermal expansion and stress relaxation",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5481,8 +5481,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Thermal expansion and stress relaxation",
-                    "is_correct": false
+                    "text": "Direct transverse shear and wire curvature stress concentration",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5544,13 +5544,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "A very small fraction of the applied load",
-                    "is_correct": true
+                    "text": "Almost the entirety of the applied load",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Almost the entirety of the applied load",
-                    "is_correct": false
+                    "text": "A very small fraction of the applied load",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5587,8 +5587,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$c = 1/3$ and $P(X+Y \\le 1) = 1/9$",
-                    "is_correct": true
+                    "text": "$c = 1/6$ and $P(X+Y \\le 1) = 1/12$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5597,8 +5597,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$c = 1/6$ and $P(X+Y \\le 1) = 1/12$",
-                    "is_correct": false
+                    "text": "$c = 1/3$ and $P(X+Y \\le 1) = 1/9$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -5631,24 +5631,24 @@ const ADVANCED_QUESTIONS = {
             "question": "Let Ajay will not appear in JEE exam with probability $p = \\frac{2}{7}$, while both Ajay and Vijay will appear in the exam with probability $q = \\frac{1}{5}$. Then the probability that Ajay will appear in the exam and Vijay will not appear is :",
             "options": [
                 {
-                    "label": "1",
+                    "label": "A",
                     "text": "$\\frac{9}{35}$",
                     "is_correct": false
                 },
                 {
-                    "label": "2",
-                    "text": "$\\frac{18}{35}$",
-                    "is_correct": true
+                    "label": "B",
+                    "text": "$\\frac{12}{35}$",
+                    "is_correct": false
                 },
                 {
-                    "label": "3",
+                    "label": "C",
                     "text": "$\\frac{24}{35}$",
                     "is_correct": false
                 },
                 {
-                    "label": "4",
-                    "text": "$\\frac{12}{35}$",
-                    "is_correct": false
+                    "label": "D",
+                    "text": "$\\frac{18}{35}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5676,22 +5676,22 @@ const ADVANCED_QUESTIONS = {
             "question": "An urn contains 6 white and 9 black balls. Two successive draws of 4 balls are made without replacement. The probability that the first draw gives all white balls and the second draw gives all black balls is :",
             "options": [
                 {
-                    "label": "1",
-                    "text": "$\\frac{5}{256}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "2",
-                    "text": "$\\frac{5}{715}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "3",
+                    "label": "A",
                     "text": "$\\frac{3}{715}$",
                     "is_correct": true
                 },
                 {
-                    "label": "4",
+                    "label": "B",
+                    "text": "$\\frac{5}{715}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{5}{256}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
                     "text": "$\\frac{3}{256}$",
                     "is_correct": false
                 }
@@ -5722,13 +5722,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$50\\%$",
-                    "is_correct": true
+                    "text": "$99\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$99\\%$",
-                    "is_correct": false
+                    "text": "$50\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5767,8 +5767,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$e^{-3}$ (approx $4.98\\%$)",
-                    "is_correct": true
+                    "text": "$0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5777,8 +5777,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$0\\%$",
-                    "is_correct": false
+                    "text": "$e^{-3}$ (approx $4.98\\%$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -5812,8 +5812,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$30$",
-                    "is_correct": true
+                    "text": "There is no minimum limit",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5827,8 +5827,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "There is no minimum limit",
-                    "is_correct": false
+                    "text": "$30$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -5890,13 +5890,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$64\\%$",
-                    "is_correct": true
+                    "text": "$80\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$80\\%$",
-                    "is_correct": false
+                    "text": "$64\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -5931,8 +5931,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$720$",
-                    "is_correct": true
+                    "text": "$1000$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5941,8 +5941,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1000$",
-                    "is_correct": false
+                    "text": "$720$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -5976,8 +5976,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.729$",
-                    "is_correct": true
+                    "text": "$2.700$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -5991,8 +5991,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$2.700$",
-                    "is_correct": false
+                    "text": "$0.729$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6073,8 +6073,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "71",
-                    "is_correct": false
+                    "text": "7.1",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -6083,8 +6083,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "7.1",
-                    "is_correct": true
+                    "text": "71",
+                    "is_correct": false
                 }
             ],
             "solution": {
@@ -6109,8 +6109,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$3.9 \\times 10^{-9}\\text{ M}$",
-                    "is_correct": true
+                    "text": "$3.9 \\times 10^{-10}\\text{ M}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6119,8 +6119,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$3.9 \\times 10^{-10}\\text{ M}$",
-                    "is_correct": false
+                    "text": "$3.9 \\times 10^{-9}\\text{ M}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -6154,8 +6154,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$53.6\\text{ kJ/mol}$",
-                    "is_correct": true
+                    "text": "$5.36\\text{ kJ/mol}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6169,8 +6169,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$5.36\\text{ kJ/mol}$",
-                    "is_correct": false
+                    "text": "$53.6\\text{ kJ/mol}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6248,13 +6248,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$5.46$",
-                    "is_correct": true
+                    "text": "$4.06$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$4.06$",
-                    "is_correct": false
+                    "text": "$5.46$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -6293,8 +6293,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$-20.2\\text{ kJ/mol}$, Yes, it is spontaneous",
-                    "is_correct": true
+                    "text": "$+20.2\\text{ kJ/mol}$, No, it is not spontaneous",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6303,8 +6303,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$+20.2\\text{ kJ/mol}$, No, it is not spontaneous",
-                    "is_correct": false
+                    "text": "$-20.2\\text{ kJ/mol}$, Yes, it is spontaneous",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -6342,8 +6342,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$9.85\\text{ atm}$",
-                    "is_correct": true
+                    "text": "$24.6\\text{ atm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6357,8 +6357,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$24.6\\text{ atm}$",
-                    "is_correct": false
+                    "text": "$9.85\\text{ atm}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6432,13 +6432,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "SN1 mechanism",
-                    "is_correct": true
+                    "text": "SN2 mechanism",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "SN2 mechanism",
-                    "is_correct": false
+                    "text": "SN1 mechanism",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -6475,8 +6475,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$23.0\\text{ minutes}$",
-                    "is_correct": true
+                    "text": "$46.0\\text{ minutes}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6485,8 +6485,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$46.0\\text{ minutes}$",
-                    "is_correct": false
+                    "text": "$23.0\\text{ minutes}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -6520,8 +6520,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.069$",
-                    "is_correct": true
+                    "text": "$0.350$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6535,8 +6535,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.350$",
-                    "is_correct": false
+                    "text": "$0.069$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6610,13 +6610,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "AND gate",
-                    "is_correct": true
+                    "text": "OR gate",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "OR gate",
-                    "is_correct": false
+                    "text": "AND gate",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -6647,8 +6647,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Uninhibited chemical chain reaction",
-                    "is_correct": true
+                    "text": "Carbon Monoxide off-gassing",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6657,8 +6657,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Carbon Monoxide off-gassing",
-                    "is_correct": false
+                    "text": "Uninhibited chemical chain reaction",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -6688,8 +6688,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$50\\%$ of the tested animal population",
-                    "is_correct": true
+                    "text": "A subject when exposed to $50\\%$ concentration in the air",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6703,8 +6703,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "A subject when exposed to $50\\%$ concentration in the air",
-                    "is_correct": false
+                    "text": "$50\\%$ of the tested animal population",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6770,13 +6770,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Hot (ungrounded) and Neutral (grounded) conductors",
-                    "is_correct": true
+                    "text": "Voltage and Amperage sine waves",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Voltage and Amperage sine waves",
-                    "is_correct": false
+                    "text": "Hot (ungrounded) and Neutral (grounded) conductors",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -6811,8 +6811,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Too lean to burn",
-                    "is_correct": true
+                    "text": "In the highly explosive range",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6821,8 +6821,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "In the highly explosive range",
-                    "is_correct": false
+                    "text": "Too lean to burn",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -6852,8 +6852,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$19.5\\%$",
-                    "is_correct": true
+                    "text": "$5.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -6867,8 +6867,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$5.0\\%$",
-                    "is_correct": false
+                    "text": "$19.5\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -6940,13 +6940,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$11.35\\%$",
-                    "is_correct": true
+                    "text": "$12.50\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$12.50\\%$",
-                    "is_correct": false
+                    "text": "$11.35\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -7034,8 +7034,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$12.68\\%$",
-                    "is_correct": true
+                    "text": "$1.00\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7049,8 +7049,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$1.00\\%$",
-                    "is_correct": false
+                    "text": "$12.68\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -7128,13 +7128,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exactly zero",
-                    "is_correct": true
+                    "text": "The Minimum Attractive Rate of Return (MARR)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The Minimum Attractive Rate of Return (MARR)",
-                    "is_correct": false
+                    "text": "Exactly zero",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -7169,8 +7169,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$CC = P + \\frac{A}{i}$",
-                    "is_correct": true
+                    "text": "$CC = \\frac{P}{i} + A$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7179,8 +7179,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$CC = \\frac{P}{i} + A$",
-                    "is_correct": false
+                    "text": "$CC = P + \\frac{A}{i}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -7210,8 +7210,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$5,000\\text{ units}$",
-                    "is_correct": true
+                    "text": "$10,000\\text{ units}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7225,8 +7225,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$10,000\\text{ units}$",
-                    "is_correct": false
+                    "text": "$5,000\\text{ units}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -7300,13 +7300,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "They should be completely ignored, as they cannot be recovered regardless of the decision made",
-                    "is_correct": true
+                    "text": "They must be added to the capital cost of the new alternative to ensure fairness",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "They must be added to the capital cost of the new alternative to ensure fairness",
-                    "is_correct": false
+                    "text": "They should be completely ignored, as they cannot be recovered regardless of the decision made",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -7339,8 +7339,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Refuse the assignment and notify the client or employer; if ignored, report to the licensing board.",
-                    "is_correct": true
+                    "text": "Use it as long as the engineer doesn't sign or seal the code.",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7349,8 +7349,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Use it as long as the engineer doesn't sign or seal the code.",
-                    "is_correct": false
+                    "text": "Refuse the assignment and notify the client or employer; if ignored, report to the licensing board.",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -7385,8 +7385,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "Escalate the issue to higher management or a designated ethics compliance officer within the company.",
-                    "is_correct": true
+                    "text": "Resign from the company without further action.",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -7395,8 +7395,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Resign from the company without further action.",
-                    "is_correct": false
+                    "text": "Escalate the issue to higher management or a designated ethics compliance officer within the company.",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -7425,8 +7425,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Sell the stock before making the recommendation.",
-                    "is_correct": false
+                    "text": "Fully disclose the financial interest to all relevant parties and recuse themselves from the decision-making process.",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
@@ -7435,8 +7435,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Fully disclose the financial interest to all relevant parties and recuse themselves from the decision-making process.",
-                    "is_correct": true
+                    "text": "Sell the stock before making the recommendation.",
+                    "is_correct": false
                 },
                 {
                     "label": "D",
@@ -7470,13 +7470,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Public",
-                    "is_correct": true
+                    "text": "Employer or Client",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Employer or Client",
-                    "is_correct": false
+                    "text": "Public",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -7511,8 +7511,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The situation poses a severe, imminent, and direct threat to public health or safety",
-                    "is_correct": true
+                    "text": "The engineer is angry about being denied a promotion",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7521,8 +7521,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The engineer is angry about being denied a promotion",
-                    "is_correct": false
+                    "text": "The situation poses a severe, imminent, and direct threat to public health or safety",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -7548,8 +7548,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Fully disclose the conflict of interest to the city and recuse themselves from the evaluation process",
-                    "is_correct": true
+                    "text": "Award the bid to a competitor to avoid suspicion",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7563,8 +7563,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Award the bid to a competitor to avoid suspicion",
-                    "is_correct": false
+                    "text": "Fully disclose the conflict of interest to the city and recuse themselves from the evaluation process",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -7626,13 +7626,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "An illegal bribe, and must be completely refused, even if it is customary in that country",
-                    "is_correct": true
+                    "text": "A standard business expense, provided it is documented",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "A standard business expense, provided it is documented",
-                    "is_correct": false
+                    "text": "An illegal bribe, and must be completely refused, even if it is customary in that country",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -7663,8 +7663,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Sharing or using Company A's proprietary trade secrets, designs, or confidential client data at Company B",
-                    "is_correct": true
+                    "text": "Telling their new boss what their salary was at Company A",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7673,8 +7673,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Telling their new boss what their salary was at Company A",
-                    "is_correct": false
+                    "text": "Sharing or using Company A's proprietary trade secrets, designs, or confidential client data at Company B",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -7700,8 +7700,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Compromising the ability of future generations to meet their own needs",
-                    "is_correct": true
+                    "text": "Altering the natural landscape in any physical way",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7715,8 +7715,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Altering the natural landscape in any physical way",
-                    "is_correct": false
+                    "text": "Compromising the ability of future generations to meet their own needs",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -7784,13 +7784,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$180\\text{ mm}$",
-                    "is_correct": true
+                    "text": "$90\\text{ mm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$90\\text{ mm}$",
-                    "is_correct": false
+                    "text": "$180\\text{ mm}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -7829,8 +7829,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$120.8\\text{ kPa}$",
-                    "is_correct": true
+                    "text": "$84.8\\text{ kPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7839,8 +7839,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$84.8\\text{ kPa}$",
-                    "is_correct": false
+                    "text": "$120.8\\text{ kPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -7874,8 +7874,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$4.0 \\times 10^{-5}\\text{ m}^3\\text{/s/m}$",
-                    "is_correct": true
+                    "text": "$8.0 \\times 10^{-5}\\text{ m}^3\\text{/s/m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -7889,8 +7889,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$8.0 \\times 10^{-5}\\text{ m}^3\\text{/s/m}$",
-                    "is_correct": false
+                    "text": "$4.0 \\times 10^{-5}\\text{ m}^3\\text{/s/m}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -7964,13 +7964,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$502.6\\text{ kN}$",
-                    "is_correct": true
+                    "text": "$251.3\\text{ kN}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$251.3\\text{ kN}$",
-                    "is_correct": false
+                    "text": "$502.6\\text{ kN}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -8009,8 +8009,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$16\\text{ years}$",
-                    "is_correct": true
+                    "text": "$2\\text{ years}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8019,8 +8019,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$2\\text{ years}$",
-                    "is_correct": false
+                    "text": "$16\\text{ years}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -8054,8 +8054,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$K_a = 0.333$, $P_a = 30\\text{ kPa}$",
-                    "is_correct": true
+                    "text": "$K_a = 0.333$, $P_a = 90\\text{ kPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8069,8 +8069,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$K_a = 0.333$, $P_a = 90\\text{ kPa}$",
-                    "is_correct": false
+                    "text": "$K_a = 0.333$, $P_a = 30\\text{ kPa}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -8140,13 +8140,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$160\\text{ kPa}$",
-                    "is_correct": true
+                    "text": "$100\\text{ kPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$100\\text{ kPa}$",
-                    "is_correct": false
+                    "text": "$160\\text{ kPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -8191,8 +8191,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$993\\text{ L}$",
-                    "is_correct": true
+                    "text": "$1205\\text{ L}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8201,8 +8201,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1205\\text{ L}$",
-                    "is_correct": false
+                    "text": "$993\\text{ L}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -8240,8 +8240,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$16\\text{ min}$",
-                    "is_correct": true
+                    "text": "$24\\text{ min}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8255,8 +8255,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$24\\text{ min}$",
-                    "is_correct": false
+                    "text": "$16\\text{ min}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -8334,13 +8334,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$V = \\frac{F_{A0} X_A}{-r_A}$",
-                    "is_correct": true
+                    "text": "$V = \\int_0^{X_A} \\frac{F_{A0}}{-r_A} dX$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$V = \\int_0^{X_A} \\frac{F_{A0}}{-r_A} dX$",
-                    "is_correct": false
+                    "text": "$V = \\frac{F_{A0} X_A}{-r_A}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -8379,8 +8379,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The PFR volume will always be strictly less than the CSTR volume",
-                    "is_correct": true
+                    "text": "They will require the exact same volume",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8389,8 +8389,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "They will require the exact same volume",
-                    "is_correct": false
+                    "text": "The PFR volume will always be strictly less than the CSTR volume",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -8420,8 +8420,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Plug Flow Reactor (PFR)",
-                    "is_correct": true
+                    "text": "Membrane Reactor",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8435,8 +8435,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Membrane Reactor",
-                    "is_correct": false
+                    "text": "Plug Flow Reactor (PFR)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -8502,13 +8502,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exactly $1.0$",
-                    "is_correct": true
+                    "text": "The mean residence time $\\tau$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The mean residence time $\\tau$",
-                    "is_correct": false
+                    "text": "Exactly $1.0$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -8543,8 +8543,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$t = \\frac{C_{A0}}{k}$",
-                    "is_correct": true
+                    "text": "$t = \\frac{1}{k C_{A0}}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8553,8 +8553,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$t = \\frac{1}{k C_{A0}}$",
-                    "is_correct": false
+                    "text": "$t = \\frac{C_{A0}}{k}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -8592,8 +8592,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The negative heat of reaction ($\\Delta H_{rxn}$) divided by the mixture heat capacity",
-                    "is_correct": true
+                    "text": "The total volume of the reactor",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8607,8 +8607,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The total volume of the reactor",
-                    "is_correct": false
+                    "text": "The negative heat of reaction ($\\Delta H_{rxn}$) divided by the mixture heat capacity",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -8684,13 +8684,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$170\\text{ mg/L}$",
-                    "is_correct": true
+                    "text": "$125\\text{ mg/L}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$125\\text{ mg/L}$",
-                    "is_correct": false
+                    "text": "$170\\text{ mg/L}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -8729,8 +8729,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.46\\text{ min}^{-1}$",
-                    "is_correct": true
+                    "text": "$0.99\\text{ min}^{-1}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8739,8 +8739,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$0.99\\text{ min}^{-1}$",
-                    "is_correct": false
+                    "text": "$0.46\\text{ min}^{-1}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -8774,8 +8774,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$150\\text{ mg/L}$",
-                    "is_correct": true
+                    "text": "$30\\text{ mg/L}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8789,8 +8789,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$30\\text{ mg/L}$",
-                    "is_correct": false
+                    "text": "$150\\text{ mg/L}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -8864,13 +8864,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.20\\text{ d}^{-1}$",
-                    "is_correct": true
+                    "text": "$0.50\\text{ d}^{-1}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.50\\text{ d}^{-1}$",
-                    "is_correct": false
+                    "text": "$0.20\\text{ d}^{-1}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -8905,8 +8905,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$200\\text{ minutes}$",
-                    "is_correct": true
+                    "text": "$32\\text{ minutes}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8915,8 +8915,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$32\\text{ minutes}$",
-                    "is_correct": false
+                    "text": "$200\\text{ minutes}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -8950,8 +8950,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$7.8\\text{ days}$",
-                    "is_correct": true
+                    "text": "$6.0\\text{ days}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -8965,8 +8965,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$6.0\\text{ days}$",
-                    "is_correct": false
+                    "text": "$7.8\\text{ days}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -9040,13 +9040,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$150\\text{ mg/L as } CaCO_3$",
-                    "is_correct": true
+                    "text": "$300\\text{ mg/L as } CaCO_3$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$300\\text{ mg/L as } CaCO_3$",
-                    "is_correct": false
+                    "text": "$150\\text{ mg/L as } CaCO_3$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -9087,8 +9087,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$y_1 = 2.25$ and $y_2 = 0.25$",
-                    "is_correct": true
+                    "text": "$y_1 = 2.00$ and $y_2 = 1.00$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9097,8 +9097,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$y_1 = 2.00$ and $y_2 = 1.00$",
-                    "is_correct": false
+                    "text": "$y_1 = 2.25$ and $y_2 = 0.25$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -9132,8 +9132,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\begin{bmatrix} 0 & -2 \\\\ 1 & -3 \\end{bmatrix}$",
-                    "is_correct": true
+                    "text": "$\\begin{bmatrix} -2 & 0 \\\\ -3 & 1 \\end{bmatrix}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9147,8 +9147,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\begin{bmatrix} -2 & 0 \\\\ -3 & 1 \\end{bmatrix}$",
-                    "is_correct": false
+                    "text": "$\\begin{bmatrix} 0 & -2 \\\\ 1 & -3 \\end{bmatrix}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -9177,13 +9177,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$h^4$",
-                    "is_correct": false
+                    "text": "$h^5$",
+                    "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$h^5$",
-                    "is_correct": true
+                    "text": "$h^4$",
+                    "is_correct": false
                 },
                 {
                     "label": "C",
@@ -9218,13 +9218,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "System matrix (or State matrix)",
-                    "is_correct": true
+                    "text": "Input matrix",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Input matrix",
-                    "is_correct": false
+                    "text": "System matrix (or State matrix)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -9259,8 +9259,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$h^2$ (Order 2)",
-                    "is_correct": true
+                    "text": "$h^3$ (Order 3)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9269,8 +9269,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$h^3$ (Order 3)",
-                    "is_correct": false
+                    "text": "$h^2$ (Order 2)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -9300,8 +9300,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "A vertex (extreme point) of the feasible region polygon",
-                    "is_correct": true
+                    "text": "An interior point determined by taking the partial derivative",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9315,8 +9315,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "An interior point determined by taking the partial derivative",
-                    "is_correct": false
+                    "text": "A vertex (extreme point) of the feasible region polygon",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -9382,13 +9382,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$n - m$",
-                    "is_correct": true
+                    "text": "$n + m$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$n + m$",
-                    "is_correct": false
+                    "text": "$n - m$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -9423,8 +9423,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Repeated random number generation (sampling from probability distributions)",
-                    "is_correct": true
+                    "text": "Finding the exact analytical closed-form solution to integrals",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9433,8 +9433,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Finding the exact analytical closed-form solution to integrals",
-                    "is_correct": false
+                    "text": "Repeated random number generation (sampling from probability distributions)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -9464,8 +9464,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Critical damping coefficient $c_c$",
-                    "is_correct": true
+                    "text": "Natural frequency $\\omega_n$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9479,8 +9479,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Natural frequency $\\omega_n$",
-                    "is_correct": false
+                    "text": "Critical damping coefficient $c_c$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -9552,13 +9552,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$10$",
-                    "is_correct": true
+                    "text": "$100$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$100$",
-                    "is_correct": false
+                    "text": "$10$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -9597,8 +9597,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$95.0\\%$",
-                    "is_correct": true
+                    "text": "$86.5\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9607,8 +9607,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$86.5\\%$",
-                    "is_correct": false
+                    "text": "$95.0\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -9642,8 +9642,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Volt-Amperes Reactive (VAR)",
-                    "is_correct": true
+                    "text": "Joules per second (J/s)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9657,8 +9657,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Joules per second (J/s)",
-                    "is_correct": false
+                    "text": "Volt-Amperes Reactive (VAR)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -9724,13 +9724,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\tau = R \\times C$",
-                    "is_correct": true
+                    "text": "$\\tau = R / C$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$\\tau = R / C$",
-                    "is_correct": false
+                    "text": "$\\tau = R \\times C$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -9765,8 +9765,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Absolutely zero current flows into either the inverting or non-inverting input terminals",
-                    "is_correct": true
+                    "text": "The internal gain ($A_v$) of the op-amp is exactly $1.0$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9775,8 +9775,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The internal gain ($A_v$) of the op-amp is exactly $1.0$",
-                    "is_correct": false
+                    "text": "Absolutely zero current flows into either the inverting or non-inverting input terminals",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -9806,8 +9806,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$f_c = \\frac{1}{2\\pi R C}$",
-                    "is_correct": true
+                    "text": "$f_c = \\frac{1}{R C}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9821,8 +9821,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$f_c = \\frac{1}{R C}$",
-                    "is_correct": false
+                    "text": "$f_c = \\frac{1}{2\\pi R C}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -9888,13 +9888,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Apparent power ($S$), mathematically expressed as the cosine of the phase angle difference between voltage and current",
-                    "is_correct": true
+                    "text": "Reactive power ($Q$), expressed as the sine of the phase angle",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Reactive power ($Q$), expressed as the sine of the phase angle",
-                    "is_correct": false
+                    "text": "Apparent power ($S$), mathematically expressed as the cosine of the phase angle difference between voltage and current",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -9931,8 +9931,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "1 in 5,455",
-                    "is_correct": true
+                    "text": "1 in 10,000",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9941,8 +9941,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "1 in 10,000",
-                    "is_correct": false
+                    "text": "1 in 5,455",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -9972,8 +9972,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$+0.75\\text{ mm}$",
-                    "is_correct": true
+                    "text": "$-1.5\\text{ mm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -9987,8 +9987,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$-1.5\\text{ mm}$",
-                    "is_correct": false
+                    "text": "$+0.75\\text{ mm}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10054,13 +10054,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.269\\text{ m}$",
-                    "is_correct": true
+                    "text": "$0.067\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.067\\text{ m}$",
-                    "is_correct": false
+                    "text": "$0.269\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -10099,8 +10099,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$-0.10\\text{ m}$",
-                    "is_correct": true
+                    "text": "$-0.25\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10109,8 +10109,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$-0.25\\text{ m}$",
-                    "is_correct": false
+                    "text": "$-0.10\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -10144,8 +10144,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1 : 16,447$",
-                    "is_correct": true
+                    "text": "$1 : 23,026$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10159,8 +10159,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$1 : 23,026$",
-                    "is_correct": false
+                    "text": "$1 : 16,447$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10234,13 +10234,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6\\text{ m}$",
-                    "is_correct": true
+                    "text": "$1.5\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$1.5\\text{ m}$",
-                    "is_correct": false
+                    "text": "$6\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -10275,8 +10275,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$300.052\\text{ m}$",
-                    "is_correct": true
+                    "text": "$300.174\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10285,8 +10285,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$300.174\\text{ m}$",
-                    "is_correct": false
+                    "text": "$300.052\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -10324,8 +10324,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$165\\text{ m}^2$",
-                    "is_correct": true
+                    "text": "$180\\text{ m}^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10339,8 +10339,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$180\\text{ m}^2$",
-                    "is_correct": false
+                    "text": "$165\\text{ m}^2$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10412,13 +10412,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1.37\\text{ m}$",
-                    "is_correct": true
+                    "text": "$0.86\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.86\\text{ m}$",
-                    "is_correct": false
+                    "text": "$1.37\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -10453,8 +10453,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.83\\text{ m}^3\\text{/s}$",
-                    "is_correct": true
+                    "text": "$0.08\\text{ m}^3\\text{/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10463,8 +10463,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$0.08\\text{ m}^3\\text{/s}$",
-                    "is_correct": false
+                    "text": "$0.83\\text{ m}^3\\text{/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -10494,8 +10494,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$10.0\\text{ m}^3\\text{/s}$",
-                    "is_correct": true
+                    "text": "$6.0\\text{ m}^3\\text{/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10509,8 +10509,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$6.0\\text{ m}^3\\text{/s}$",
-                    "is_correct": false
+                    "text": "$10.0\\text{ m}^3\\text{/s}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10584,13 +10584,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$46.7\\text{ L/s}$",
-                    "is_correct": true
+                    "text": "$77.8\\text{ L/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$77.8\\text{ L/s}$",
-                    "is_correct": false
+                    "text": "$46.7\\text{ L/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -10629,8 +10629,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$52.3\\text{ minutes}$",
-                    "is_correct": true
+                    "text": "$89.5\\text{ minutes}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10639,8 +10639,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$89.5\\text{ minutes}$",
-                    "is_correct": false
+                    "text": "$52.3\\text{ minutes}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -10674,8 +10674,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1.89\\text{ m}$",
-                    "is_correct": true
+                    "text": "$0.85\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10689,8 +10689,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.85\\text{ m}$",
-                    "is_correct": false
+                    "text": "$1.89\\text{ m}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10764,13 +10764,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6.92 \\times 10^{-4}\\text{ m/s}$",
-                    "is_correct": true
+                    "text": "$3.46 \\times 10^{-4}\\text{ m/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$3.46 \\times 10^{-4}\\text{ m/s}$",
-                    "is_correct": false
+                    "text": "$6.92 \\times 10^{-4}\\text{ m/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -10811,8 +10811,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$273\\text{ kip-ft}$",
-                    "is_correct": true
+                    "text": "$250\\text{ kip-ft}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10821,8 +10821,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$250\\text{ kip-ft}$",
-                    "is_correct": false
+                    "text": "$273\\text{ kip-ft}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -10852,8 +10852,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.5 k$",
-                    "is_correct": true
+                    "text": "$0 k$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10867,8 +10867,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0 k$",
-                    "is_correct": false
+                    "text": "$0.5 k$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -10942,13 +10942,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.8\\text{ mm}$",
-                    "is_correct": true
+                    "text": "$1.0\\text{ mm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$1.0\\text{ mm}$",
-                    "is_correct": false
+                    "text": "$0.8\\text{ mm}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -10987,8 +10987,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.40$",
-                    "is_correct": true
+                    "text": "$0.50$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -10997,8 +10997,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$0.50$",
-                    "is_correct": false
+                    "text": "$0.40$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -11032,8 +11032,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$700\\text{ kNm}$",
-                    "is_correct": true
+                    "text": "$525\\text{ kNm}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11047,8 +11047,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$525\\text{ kNm}$",
-                    "is_correct": false
+                    "text": "$700\\text{ kNm}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -11122,13 +11122,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$90\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$150\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$150\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$90\\text{ MPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -11167,8 +11167,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$20\\text{ rad/s}$",
-                    "is_correct": true
+                    "text": "$400\\text{ rad/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11177,8 +11177,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$400\\text{ rad/s}$",
-                    "is_correct": false
+                    "text": "$20\\text{ rad/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -11212,8 +11212,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$467.5\\text{ kN}$",
-                    "is_correct": true
+                    "text": "$233.7\\text{ kN}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11227,8 +11227,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$233.7\\text{ kN}$",
-                    "is_correct": false
+                    "text": "$467.5\\text{ kN}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -11300,13 +11300,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Density (pc/mi/ln)",
-                    "is_correct": true
+                    "text": "Speed (mph)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Speed (mph)",
-                    "is_correct": false
+                    "text": "Density (pc/mi/ln)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -11341,8 +11341,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$183\\text{ m}$",
-                    "is_correct": true
+                    "text": "$250\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11351,8 +11351,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$250\\text{ m}$",
-                    "is_correct": false
+                    "text": "$183\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -11390,8 +11390,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$285.5\\text{ m}$",
-                    "is_correct": true
+                    "text": "$325.8\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11405,8 +11405,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$325.8\\text{ m}$",
-                    "is_correct": false
+                    "text": "$285.5\\text{ m}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -11476,13 +11476,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$16$",
-                    "is_correct": true
+                    "text": "$2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$2$",
-                    "is_correct": false
+                    "text": "$16$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -11517,8 +11517,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$15\\text{ veh/km/lane}$",
-                    "is_correct": true
+                    "text": "$60\\text{ veh/km/lane}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11527,8 +11527,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$60\\text{ veh/km/lane}$",
-                    "is_correct": false
+                    "text": "$15\\text{ veh/km/lane}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -11562,8 +11562,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$154.4\\text{ m}$",
-                    "is_correct": true
+                    "text": "$62.5\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11577,8 +11577,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$62.5\\text{ m}$",
-                    "is_correct": false
+                    "text": "$154.4\\text{ m}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -11652,13 +11652,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$43.2\\text{ m}$",
-                    "is_correct": true
+                    "text": "$86.4\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$86.4\\text{ m}$",
-                    "is_correct": false
+                    "text": "$43.2\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -11699,8 +11699,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$TF = 3$ days; $FF = 1$ day",
-                    "is_correct": true
+                    "text": "$TF = 1$ day; $FF = 1$ day",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11709,8 +11709,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$TF = 1$ day; $FF = 1$ day",
-                    "is_correct": false
+                    "text": "$TF = 3$ days; $FF = 1$ day",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -11740,8 +11740,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$3\\text{ days}$",
-                    "is_correct": true
+                    "text": "$8\\text{ days}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11755,8 +11755,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$8\\text{ days}$",
-                    "is_correct": false
+                    "text": "$3\\text{ days}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -11822,13 +11822,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$2\\text{ days}$",
-                    "is_correct": true
+                    "text": "$3\\text{ days}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$3\\text{ days}$",
-                    "is_correct": false
+                    "text": "$2\\text{ days}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -11863,8 +11863,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\$26,667$",
-                    "is_correct": true
+                    "text": "$\\$20,000$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11873,8 +11873,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\$20,000$",
-                    "is_correct": false
+                    "text": "$\\$26,667$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -11908,8 +11908,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$62.5\\text{ BCM/h}$",
-                    "is_correct": true
+                    "text": "$50.0\\text{ BCM/h}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -11923,8 +11923,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$50.0\\text{ BCM/h}$",
-                    "is_correct": false
+                    "text": "$62.5\\text{ BCM/h}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -11998,13 +11998,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "CPI = 0.75, Over Budget",
-                    "is_correct": true
+                    "text": "CPI = 0.90, Behind Schedule",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "CPI = 0.90, Behind Schedule",
-                    "is_correct": false
+                    "text": "CPI = 0.75, Over Budget",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12043,8 +12043,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$13,500\\text{ kg}$",
-                    "is_correct": true
+                    "text": "$14,000\\text{ kg}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12053,8 +12053,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$14,000\\text{ kg}$",
-                    "is_correct": false
+                    "text": "$13,500\\text{ kg}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -12088,8 +12088,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$91.7\\%$",
-                    "is_correct": true
+                    "text": "$96.5\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12103,8 +12103,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$96.5\\%$",
-                    "is_correct": false
+                    "text": "$91.7\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -12176,13 +12176,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$x_{n+1} = x_n - \\frac{x_n^3 - 2x_n - 5}{3x_n^2 - 2}$",
-                    "is_correct": true
+                    "text": "$x_{n+1} = x_n + \\frac{x_n^3 - 2x_n - 5}{3x_n^2 - 2}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$x_{n+1} = x_n + \\frac{x_n^3 - 2x_n - 5}{3x_n^2 - 2}$",
-                    "is_correct": false
+                    "text": "$x_{n+1} = x_n - \\frac{x_n^3 - 2x_n - 5}{3x_n^2 - 2}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12221,8 +12221,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$O(n^2)$",
-                    "is_correct": true
+                    "text": "$O(n)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12231,8 +12231,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$O(n)$",
-                    "is_correct": false
+                    "text": "$O(n^2)$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -12262,8 +12262,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$O(n)$ (Linear time)",
-                    "is_correct": true
+                    "text": "$O(\\log n)$ (Logarithmic time)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12277,8 +12277,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$O(\\log n)$ (Logarithmic time)",
-                    "is_correct": false
+                    "text": "$O(n)$ (Linear time)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -12344,13 +12344,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "LIFO (Last-In, First-Out)",
-                    "is_correct": true
+                    "text": "FIFO (First-In, First-Out)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "FIFO (First-In, First-Out)",
-                    "is_correct": false
+                    "text": "LIFO (Last-In, First-Out)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12385,8 +12385,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Primary Key",
-                    "is_correct": true
+                    "text": "Candidate Index",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12395,8 +12395,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Candidate Index",
-                    "is_correct": false
+                    "text": "Primary Key",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -12426,8 +12426,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$",
-                    "is_correct": true
+                    "text": "$x_{n+1} = x_n - \\frac{f'(x_n)}{f(x_n)}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12441,8 +12441,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$x_{n+1} = x_n - \\frac{f'(x_n)}{f(x_n)}$",
-                    "is_correct": false
+                    "text": "$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -12508,13 +12508,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Pull Request (or Merge Request)",
-                    "is_correct": true
+                    "text": "Force Push",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Force Push",
-                    "is_correct": false
+                    "text": "Pull Request (or Merge Request)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12551,8 +12551,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$96\\text{ μmol/min}$",
-                    "is_correct": true
+                    "text": "$120\\text{ μmol/min}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12561,8 +12561,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$120\\text{ μmol/min}$",
-                    "is_correct": false
+                    "text": "$96\\text{ μmol/min}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -12588,8 +12588,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.5 V_{max}$",
-                    "is_correct": true
+                    "text": "$2 V_{max}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12603,8 +12603,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$2 V_{max}$",
-                    "is_correct": false
+                    "text": "$0.5 V_{max}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -12670,13 +12670,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exactly half of the maximum velocity ($V_{max}/2$)",
-                    "is_correct": true
+                    "text": "Equal to the maximum velocity ($V_{max}$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Equal to the maximum velocity ($V_{max}$)",
-                    "is_correct": false
+                    "text": "Exactly half of the maximum velocity ($V_{max}/2$)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12715,8 +12715,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Substrate",
-                    "is_correct": true
+                    "text": "Dissolved oxygen solely",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12725,8 +12725,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Dissolved oxygen solely",
-                    "is_correct": false
+                    "text": "Substrate",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -12756,8 +12756,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$90\\%$ (or exactly one logarithmic cycle)",
-                    "is_correct": true
+                    "text": "$100\\%$ (absolute sterility)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12771,8 +12771,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$100\\%$ (absolute sterility)",
-                    "is_correct": false
+                    "text": "$90\\%$ (or exactly one logarithmic cycle)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -12838,13 +12838,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Antibody-antigen or Enzyme-substrate interactions",
-                    "is_correct": true
+                    "text": "Separation based strictly on molecular size or weight",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Separation based strictly on molecular size or weight",
-                    "is_correct": false
+                    "text": "Antibody-antigen or Enzyme-substrate interactions",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -12879,8 +12879,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$dX/dt = \\mu X$",
-                    "is_correct": true
+                    "text": "$dX/dt = -k X^2$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12889,8 +12889,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$dX/dt = -k X^2$",
-                    "is_correct": false
+                    "text": "$dX/dt = \\mu X$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -12920,8 +12920,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Dilution rate ($D$), which is the volumetric flow rate divided by the reactor volume",
-                    "is_correct": true
+                    "text": "Oxygen mass transfer coefficient ($k_L a$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -12935,8 +12935,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Oxygen mass transfer coefficient ($k_L a$)",
-                    "is_correct": false
+                    "text": "Dilution rate ($D$), which is the volumetric flow rate divided by the reactor volume",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -13008,13 +13008,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$2.17$",
-                    "is_correct": true
+                    "text": "$3.17$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$3.17$",
-                    "is_correct": false
+                    "text": "$2.17$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -13057,8 +13057,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Sum of $\\Delta H_f^\\circ$ of products minus sum of $\\Delta H_f^\\circ$ of reactants (scaled by stoichiometric coefficients)",
-                    "is_correct": true
+                    "text": "The integral of $C_p$ from reactants to products",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13067,8 +13067,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The integral of $C_p$ from reactants to products",
-                    "is_correct": false
+                    "text": "Sum of $\\Delta H_f^\\circ$ of products minus sum of $\\Delta H_f^\\circ$ of reactants (scaled by stoichiometric coefficients)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -13098,8 +13098,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.40$",
-                    "is_correct": true
+                    "text": "$1.40$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13113,8 +13113,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$1.40$",
-                    "is_correct": false
+                    "text": "$0.40$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -13184,13 +13184,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$2257\\text{ kW}$",
-                    "is_correct": true
+                    "text": "$4180\\text{ kW}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$4180\\text{ kW}$",
-                    "is_correct": false
+                    "text": "$2257\\text{ kW}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -13225,8 +13225,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Wet-bulb temperature (and nearly constant enthalpy)",
-                    "is_correct": true
+                    "text": "Specific humidity",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13235,8 +13235,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Specific humidity",
-                    "is_correct": false
+                    "text": "Wet-bulb temperature (and nearly constant enthalpy)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -13266,8 +13266,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$100\\%$",
-                    "is_correct": true
+                    "text": "$0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13281,8 +13281,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0\\%$",
-                    "is_correct": false
+                    "text": "$100\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -13348,13 +13348,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$501.6\\text{ kW}$",
-                    "is_correct": true
+                    "text": "$668.8\\text{ kW}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$668.8\\text{ kW}$",
-                    "is_correct": false
+                    "text": "$501.6\\text{ kW}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -13395,8 +13395,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$R_{min} = 1.50$",
-                    "is_correct": true
+                    "text": "$R_{min} = 0.95$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13405,8 +13405,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$R_{min} = 0.95$",
-                    "is_correct": false
+                    "text": "$R_{min} = 1.50$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -13436,8 +13436,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$4.06 \\times 10^{-7}\\text{ mol/(cm}^2\\text{ s)}$",
-                    "is_correct": true
+                    "text": "$8.12 \\times 10^{-7}\\text{ mol/(cm}^2\\text{ s)}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13451,8 +13451,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$8.12 \\times 10^{-7}\\text{ mol/(cm}^2\\text{ s)}$",
-                    "is_correct": false
+                    "text": "$4.06 \\times 10^{-7}\\text{ mol/(cm}^2\\text{ s)}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -13530,13 +13530,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Diffusion coefficient (or diffusivity)",
-                    "is_correct": true
+                    "text": "Mass transfer coefficient",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Mass transfer coefficient",
-                    "is_correct": false
+                    "text": "Diffusion coefficient (or diffusivity)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -13571,8 +13571,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Separation by ordinary distillation is impossible because an azeotrope exists",
-                    "is_correct": true
+                    "text": "The minimum reflux ratio is exactly zero",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13581,8 +13581,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The minimum reflux ratio is exactly zero",
-                    "is_correct": false
+                    "text": "Separation by ordinary distillation is impossible because an azeotrope exists",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -13616,8 +13616,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Pinch point, requiring an infinite number of theoretical stages",
-                    "is_correct": true
+                    "text": "Feed line discontinuity requiring a subcooled feed",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13631,8 +13631,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Feed line discontinuity requiring a subcooled feed",
-                    "is_correct": false
+                    "text": "Pinch point, requiring an infinite number of theoretical stages",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -13698,13 +13698,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Concentration in the extract phase to its concentration in the raffinate phase",
-                    "is_correct": true
+                    "text": "Vapor pressure to its liquid molar density",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Vapor pressure to its liquid molar density",
-                    "is_correct": false
+                    "text": "Concentration in the extract phase to its concentration in the raffinate phase",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -13739,8 +13739,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Thin stagnant fluid films on either side of the phase interface",
-                    "is_correct": true
+                    "text": "The precise geometric surface of the physical interface itself",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13749,8 +13749,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The precise geometric surface of the physical interface itself",
-                    "is_correct": false
+                    "text": "Thin stagnant fluid films on either side of the phase interface",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -13780,8 +13780,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Wet-bulb temperature of the drying air",
-                    "is_correct": true
+                    "text": "Boiling point of the liquid at atmospheric pressure",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13795,8 +13795,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Boiling point of the liquid at atmospheric pressure",
-                    "is_correct": false
+                    "text": "Wet-bulb temperature of the drying air",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -13864,13 +13864,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$480\\mu$",
-                    "is_correct": true
+                    "text": "$550\\mu$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$550\\mu$",
-                    "is_correct": false
+                    "text": "$480\\mu$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -13909,8 +13909,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$30.0\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$45.0\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13919,8 +13919,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$45.0\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$30.0\\text{ MPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -13954,8 +13954,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$116\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$30\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -13969,8 +13969,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$30\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$116\\text{ MPa}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -14044,13 +14044,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{P L^3}{3 E I}$",
-                    "is_correct": true
+                    "text": "$\\frac{P L^3}{48 E I}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$\\frac{P L^3}{48 E I}$",
-                    "is_correct": false
+                    "text": "$\\frac{P L^3}{3 E I}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -14085,8 +14085,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$877.3\\text{ kN}$",
-                    "is_correct": true
+                    "text": "$3509.2\\text{ kN}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14095,8 +14095,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$3509.2\\text{ kN}$",
-                    "is_correct": false
+                    "text": "$877.3\\text{ kN}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -14130,8 +14130,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$100\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$20\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14145,8 +14145,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$20\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$100\\text{ MPa}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -14220,13 +14220,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\sqrt{\\sigma_1^2 - \\sigma_1\\sigma_2 + \\sigma_2^2}$",
-                    "is_correct": true
+                    "text": "$\\sqrt{\\sigma_1^2 + \\sigma_2^2}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$\\sqrt{\\sigma_1^2 + \\sigma_2^2}$",
-                    "is_correct": false
+                    "text": "$\\sqrt{\\sigma_1^2 - \\sigma_1\\sigma_2 + \\sigma_2^2}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -14263,8 +14263,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$63.5^\\circ\\text{C}$",
-                    "is_correct": true
+                    "text": "$70.0^\\circ\\text{C}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14273,8 +14273,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$70.0^\\circ\\text{C}$",
-                    "is_correct": false
+                    "text": "$63.5^\\circ\\text{C}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -14304,8 +14304,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6$",
-                    "is_correct": true
+                    "text": "$3$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14319,8 +14319,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$3$",
-                    "is_correct": false
+                    "text": "$6$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -14390,13 +14390,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The most volatile component, or the component with the largest molar fraction",
-                    "is_correct": true
+                    "text": "The heaviest component with the highest boiling point",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The heaviest component with the highest boiling point",
-                    "is_correct": false
+                    "text": "The most volatile component, or the component with the largest molar fraction",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -14427,8 +14427,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "No heat should be transferred across the pinch point",
-                    "is_correct": true
+                    "text": "Cold utilities should only be applied above the pinch point",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14437,8 +14437,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Cold utilities should only be applied above the pinch point",
-                    "is_correct": false
+                    "text": "No heat should be transferred across the pinch point",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -14468,8 +14468,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Average annual net cash flow",
-                    "is_correct": true
+                    "text": "Gross profit before taxes and depreciation",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14483,8 +14483,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Gross profit before taxes and depreciation",
-                    "is_correct": false
+                    "text": "Average annual net cash flow",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -14550,13 +14550,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "'More of', 'Less of', 'None', 'Reverse'",
-                    "is_correct": true
+                    "text": "'Cheap', 'Expensive', 'Fast', 'Slow'",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "'Cheap', 'Expensive', 'Fast', 'Slow'",
-                    "is_correct": false
+                    "text": "'More of', 'Less of', 'None', 'Reverse'",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -14591,8 +14591,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Severe mineral scaling and accelerated fouling inside the heat exchangers",
-                    "is_correct": true
+                    "text": "Thermal cracking of the plastic fill inside the cooling tower",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14601,8 +14601,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Thermal cracking of the plastic fill inside the cooling tower",
-                    "is_correct": false
+                    "text": "Severe mineral scaling and accelerated fouling inside the heat exchangers",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -14632,8 +14632,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Use a lower temperature to favor equilibrium conversion, and recycle unreacted materials",
-                    "is_correct": true
+                    "text": "Operate the reactor at a vacuum to shift the equilibrium toward products",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14647,8 +14647,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Operate the reactor at a vacuum to shift the equilibrium toward products",
-                    "is_correct": false
+                    "text": "Use a lower temperature to favor equilibrium conversion, and recycle unreacted materials",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -14716,13 +14716,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0 < K < 4$",
-                    "is_correct": true
+                    "text": "$K > 4$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$K > 4$",
-                    "is_correct": false
+                    "text": "$0 < K < 4$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -14765,8 +14765,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$27.7\\text{ s}$",
-                    "is_correct": true
+                    "text": "$15.5\\text{ s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14775,8 +14775,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$15.5\\text{ s}$",
-                    "is_correct": false
+                    "text": "$27.7\\text{ s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -14810,8 +14810,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Fail open",
-                    "is_correct": true
+                    "text": "Cycle continuously between open and closed",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14825,8 +14825,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Cycle continuously between open and closed",
-                    "is_correct": false
+                    "text": "Fail open",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -14892,13 +14892,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Reject severe disturbances in the secondary (inner) loop before they can significantly affect the primary (outer) controlled variable",
-                    "is_correct": true
+                    "text": "Ensure two different physical valves can be moved simultaneously by one operator",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Ensure two different physical valves can be moved simultaneously by one operator",
-                    "is_correct": false
+                    "text": "Reject severe disturbances in the secondary (inner) loop before they can significantly affect the primary (outer) controlled variable",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -14933,8 +14933,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$e^{-\\theta s}$",
-                    "is_correct": true
+                    "text": "$\\theta s$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14943,8 +14943,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\theta s$",
-                    "is_correct": false
+                    "text": "$e^{-\\theta s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -14974,8 +14974,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Ultimate gain ($K_u$)",
-                    "is_correct": true
+                    "text": "Integral windup limit ($I_u$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -14989,8 +14989,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Integral windup limit ($I_u$)",
-                    "is_correct": false
+                    "text": "Ultimate gain ($K_u$)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -15056,13 +15056,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "A Right-Half Plane (RHP) zero",
-                    "is_correct": true
+                    "text": "A Right-Half Plane (RHP) pole",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "A Right-Half Plane (RHP) pole",
-                    "is_correct": false
+                    "text": "A Right-Half Plane (RHP) zero",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -15099,8 +15099,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$183\\text{ mg/L}$",
-                    "is_correct": true
+                    "text": "$122\\text{ mg/L}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15109,8 +15109,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$122\\text{ mg/L}$",
-                    "is_correct": false
+                    "text": "$183\\text{ mg/L}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -15140,8 +15140,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$4\\text{ moles}$",
-                    "is_correct": true
+                    "text": "$6\\text{ moles}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15155,8 +15155,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$6\\text{ moles}$",
-                    "is_correct": false
+                    "text": "$4\\text{ moles}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -15222,13 +15222,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$50\\text{ mg/L}$",
-                    "is_correct": true
+                    "text": "$5.0\\text{ mg/L}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$5.0\\text{ mg/L}$",
-                    "is_correct": false
+                    "text": "$50\\text{ mg/L}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -15267,8 +15267,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Bicarbonate ($HCO_3^-$) and Carbonate ($CO_3^{2-}$)",
-                    "is_correct": true
+                    "text": "Sulfate ($SO_4^{2-}$) and Chloride ($Cl^-$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15277,8 +15277,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Sulfate ($SO_4^{2-}$) and Chloride ($Cl^-$)",
-                    "is_correct": false
+                    "text": "Bicarbonate ($HCO_3^-$) and Carbonate ($CO_3^{2-}$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -15308,8 +15308,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The rate of microbial deoxygenation (BOD decay) and the rate of atmospheric reaeration",
-                    "is_correct": true
+                    "text": "The rate of nitrification and the rate of denitrification",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15323,8 +15323,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The rate of nitrification and the rate of denitrification",
-                    "is_correct": false
+                    "text": "The rate of microbial deoxygenation (BOD decay) and the rate of atmospheric reaeration",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -15390,13 +15390,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Nitrogen Oxides ($NO_x$)",
-                    "is_correct": true
+                    "text": "Sulfur Dioxide ($SO_2$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Sulfur Dioxide ($SO_2$)",
-                    "is_correct": false
+                    "text": "Nitrogen Oxides ($NO_x$)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -15431,8 +15431,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Calcium ($Ca^{2+}$) and Magnesium ($Mg^{2+}$)",
-                    "is_correct": true
+                    "text": "Sodium ($Na^+$) and Potassium ($K^+$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15441,8 +15441,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Sodium ($Na^+$) and Potassium ($K^+$)",
-                    "is_correct": false
+                    "text": "Calcium ($Ca^{2+}$) and Magnesium ($Mg^{2+}$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -15472,8 +15472,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Negatively charged clay minerals and organic humus",
-                    "is_correct": true
+                    "text": "Nitrifying and denitrifying bacteria",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15487,8 +15487,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Nitrifying and denitrifying bacteria",
-                    "is_correct": false
+                    "text": "Negatively charged clay minerals and organic humus",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -15556,13 +15556,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$2.5 \\times 10^{-6}\\text{ per year}$",
-                    "is_correct": true
+                    "text": "$1.0 \\times 10^{-5}\\text{ per year}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$1.0 \\times 10^{-5}\\text{ per year}$",
-                    "is_correct": false
+                    "text": "$2.5 \\times 10^{-6}\\text{ per year}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -15601,8 +15601,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The cost of further risk reduction is grossly disproportionate to the safety benefit gained.",
-                    "is_correct": true
+                    "text": "The company has exhausted its annual safety budget.",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15611,8 +15611,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The company has exhausted its annual safety budget.",
-                    "is_correct": false
+                    "text": "The cost of further risk reduction is grossly disproportionate to the safety benefit gained.",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -15644,8 +15644,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$Q \\approx 10.8\\text{ m}^3/\\text{s}$",
-                    "is_correct": true
+                    "text": "$Q \\approx 6.3\\text{ m}^3/\\text{s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15659,8 +15659,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$Q \\approx 6.3\\text{ m}^3/\\text{s}$",
-                    "is_correct": false
+                    "text": "$Q \\approx 10.8\\text{ m}^3/\\text{s}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -15730,13 +15730,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\Delta Q = -\\frac{\\sum K Q|Q|^{n-1}}{\\sum n K |Q|^{n-1}}$",
-                    "is_correct": true
+                    "text": "$\\Delta Q = -\\frac{\\sum K Q^n}{\\sum K |Q|^{n-1}}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$\\Delta Q = -\\frac{\\sum K Q^n}{\\sum K |Q|^{n-1}}$",
-                    "is_correct": false
+                    "text": "$\\Delta Q = -\\frac{\\sum K Q|Q|^{n-1}}{\\sum n K |Q|^{n-1}}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -15775,8 +15775,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The pipe diameter $D$ and gravitational acceleration $2g$",
-                    "is_correct": true
+                    "text": "The pipe absolute roughness $\\epsilon$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15785,8 +15785,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The pipe absolute roughness $\\epsilon$",
-                    "is_correct": false
+                    "text": "The pipe diameter $D$ and gravitational acceleration $2g$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -15816,8 +15816,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Inertial forces to gravitational forces",
-                    "is_correct": true
+                    "text": "Pressure forces to inertial forces",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15831,8 +15831,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Pressure forces to inertial forces",
-                    "is_correct": false
+                    "text": "Inertial forces to gravitational forces",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -15898,13 +15898,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Hydraulic gradient ($dh/dL$)",
-                    "is_correct": true
+                    "text": "Aquifer transmissivity ($T$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Aquifer transmissivity ($T$)",
-                    "is_correct": false
+                    "text": "Hydraulic gradient ($dh/dL$)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -15939,8 +15939,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Greater than the required Net Positive Suction Head ($NPSH_R$) specified by the manufacturer",
-                    "is_correct": true
+                    "text": "Less than the frictional head loss in the suction pipe",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15949,8 +15949,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Less than the frictional head loss in the suction pipe",
-                    "is_correct": false
+                    "text": "Greater than the required Net Positive Suction Head ($NPSH_R$) specified by the manufacturer",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -15980,8 +15980,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The specific force (or momentum function) is conserved",
-                    "is_correct": true
+                    "text": "The absolute fluid velocity remains constant",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -15995,8 +15995,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The absolute fluid velocity remains constant",
-                    "is_correct": false
+                    "text": "The specific force (or momentum function) is conserved",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -16064,13 +16064,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$Q \\approx 2.72\\text{ in}$",
-                    "is_correct": true
+                    "text": "$Q \\approx 3.50\\text{ in}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$Q \\approx 3.50\\text{ in}$",
-                    "is_correct": false
+                    "text": "$Q \\approx 2.72\\text{ in}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -16105,8 +16105,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0$",
-                    "is_correct": true
+                    "text": "$1$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16115,8 +16115,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1$",
-                    "is_correct": false
+                    "text": "$0$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -16150,8 +16150,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$30.5\\%$",
-                    "is_correct": true
+                    "text": "$60.5\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16165,8 +16165,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$60.5\\%$",
-                    "is_correct": false
+                    "text": "$30.5\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -16240,13 +16240,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exactly 2 hours",
-                    "is_correct": true
+                    "text": "Exactly 1 hour",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Exactly 1 hour",
-                    "is_correct": false
+                    "text": "Exactly 2 hours",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -16277,8 +16277,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Specific yield ($S_y$)",
-                    "is_correct": true
+                    "text": "Storativity ($S$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16287,8 +16287,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Storativity ($S$)",
-                    "is_correct": false
+                    "text": "Specific yield ($S_y$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -16318,8 +16318,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The depth of rainfall at any point is exactly equal to the depth measured at the closest rain gauge",
-                    "is_correct": true
+                    "text": "The storm moves at a constant velocity across the entire basin",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16333,8 +16333,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The storm moves at a constant velocity across the entire basin",
-                    "is_correct": false
+                    "text": "The depth of rainfall at any point is exactly equal to the depth measured at the closest rain gauge",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -16400,13 +16400,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The hydraulically most distant point in the watershed to the outlet",
-                    "is_correct": true
+                    "text": "The geometric centroid of the watershed to the outlet",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The geometric centroid of the watershed to the outlet",
-                    "is_correct": false
+                    "text": "The hydraulically most distant point in the watershed to the outlet",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -16441,8 +16441,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Decay exponentially from an initial maximum rate to a constant, steady-state minimum rate",
-                    "is_correct": true
+                    "text": "Remain perfectly constant regardless of the duration of the storm",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16451,8 +16451,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Remain perfectly constant regardless of the duration of the storm",
-                    "is_correct": false
+                    "text": "Decay exponentially from an initial maximum rate to a constant, steady-state minimum rate",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -16484,8 +16484,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$Q = 450\\text{ m}^3/\\text{day}$",
-                    "is_correct": true
+                    "text": "$Q = 1500\\text{ m}^3/\\text{day}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16499,8 +16499,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$Q = 1500\\text{ m}^3/\\text{day}$",
-                    "is_correct": false
+                    "text": "$Q = 450\\text{ m}^3/\\text{day}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -16570,13 +16570,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The aquifer is infinite in radial extent.",
-                    "is_correct": true
+                    "text": "The pumping rate varies with time.",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The pumping rate varies with time.",
-                    "is_correct": false
+                    "text": "The aquifer is infinite in radial extent.",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -16611,8 +16611,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Saturated thickness ($b$)",
-                    "is_correct": true
+                    "text": "Effective porosity ($n_e$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16621,8 +16621,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Effective porosity ($n_e$)",
-                    "is_correct": false
+                    "text": "Saturated thickness ($b$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -16652,8 +16652,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Pore water pressure ($u$)",
-                    "is_correct": true
+                    "text": "Preconsolidation pressure ($\\sigma_p'$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16667,8 +16667,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Preconsolidation pressure ($\\sigma_p'$)",
-                    "is_correct": false
+                    "text": "Pore water pressure ($u$)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -16734,13 +16734,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "At exactly right angles (orthogonally)",
-                    "is_correct": true
+                    "text": "At $45^\\circ$ angles",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "At $45^\\circ$ angles",
-                    "is_correct": false
+                    "text": "At exactly right angles (orthogonally)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -16775,8 +16775,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Pore water from the microscopic soil voids",
-                    "is_correct": true
+                    "text": "Organic gases decomposing under pressure",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16785,8 +16785,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Organic gases decomposing under pressure",
-                    "is_correct": false
+                    "text": "Pore water from the microscopic soil voids",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -16816,8 +16816,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Plastic Limit (PL)",
-                    "is_correct": true
+                    "text": "Liquidity Index (LI)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16831,8 +16831,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Liquidity Index (LI)",
-                    "is_correct": false
+                    "text": "Plastic Limit (PL)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -16900,13 +16900,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$C \\approx 29\\text{ μg/m}^3$",
-                    "is_correct": true
+                    "text": "$C \\approx 58\\text{ μg/m}^3$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$C \\approx 58\\text{ μg/m}^3$",
-                    "is_correct": false
+                    "text": "$C \\approx 29\\text{ μg/m}^3$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -16941,8 +16941,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\sigma_z = H / \\sqrt{2}$",
-                    "is_correct": true
+                    "text": "$\\sigma_z = H$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -16951,8 +16951,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\sigma_z = H$",
-                    "is_correct": false
+                    "text": "$\\sigma_z = H / \\sqrt{2}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -16986,8 +16986,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$99\\%$",
-                    "is_correct": true
+                    "text": "$81\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17001,8 +17001,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$81\\%$",
-                    "is_correct": false
+                    "text": "$99\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17076,13 +17076,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Grounded collection plates",
-                    "is_correct": true
+                    "text": "The high-voltage discharge wires",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The high-voltage discharge wires",
-                    "is_correct": false
+                    "text": "Grounded collection plates",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -17117,8 +17117,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Wet scrubber (using an alkaline liquid spray)",
-                    "is_correct": true
+                    "text": "Cyclone separator",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17127,8 +17127,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Cyclone separator",
-                    "is_correct": false
+                    "text": "Wet scrubber (using an alkaline liquid spray)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17158,8 +17158,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "A layer of warm air traps a layer of colder, denser air beneath it",
-                    "is_correct": true
+                    "text": "Cold air rapidly rises into the upper stratosphere",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17173,8 +17173,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Cold air rapidly rises into the upper stratosphere",
-                    "is_correct": false
+                    "text": "A layer of warm air traps a layer of colder, denser air beneath it",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17240,13 +17240,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Secondary pollutant, because it is never emitted directly but forms via complex chemical reactions in the atmosphere",
-                    "is_correct": true
+                    "text": "Primary pollutant, because it comes directly out of car tailpipes",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Primary pollutant, because it comes directly out of car tailpipes",
-                    "is_correct": false
+                    "text": "Secondary pollutant, because it is never emitted directly but forms via complex chemical reactions in the atmosphere",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -17281,8 +17281,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "National Ambient Air Quality Standards (NAAQS) short-term health limit",
-                    "is_correct": true
+                    "text": "Absolute zero emission baseline limit",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17291,8 +17291,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Absolute zero emission baseline limit",
-                    "is_correct": false
+                    "text": "National Ambient Air Quality Standards (NAAQS) short-term health limit",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17324,8 +17324,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\approx 1,307,400\\text{ ft}^3/\\text{yr}$",
-                    "is_correct": true
+                    "text": "$\\approx 980,000\\text{ ft}^3/\\text{yr}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17339,8 +17339,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\approx 980,000\\text{ ft}^3/\\text{yr}$",
-                    "is_correct": false
+                    "text": "$\\approx 1,307,400\\text{ ft}^3/\\text{yr}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17410,13 +17410,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$99.9\\%$",
-                    "is_correct": true
+                    "text": "$99.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$99.0\\%$",
-                    "is_correct": false
+                    "text": "$99.9\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -17455,8 +17455,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Methane ($CH_4$) and Carbon Dioxide ($CO_2$)",
-                    "is_correct": true
+                    "text": "Oxygen ($O_2$) and Nitrogen ($N_2$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17465,8 +17465,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Oxygen ($O_2$) and Nitrogen ($N_2$)",
-                    "is_correct": false
+                    "text": "Methane ($CH_4$) and Carbon Dioxide ($CO_2$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17496,8 +17496,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Toxicity",
-                    "is_correct": true
+                    "text": "Carcinogenicity",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17511,8 +17511,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Carcinogenicity",
-                    "is_correct": false
+                    "text": "Toxicity",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17578,13 +17578,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Prevent the hydraulic head of toxic leachate from building up and driving fluids through the liner into the groundwater",
-                    "is_correct": true
+                    "text": "Provide a steady supply of liquid to keep the waste perfectly saturated for faster decomposition",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Provide a steady supply of liquid to keep the waste perfectly saturated for faster decomposition",
-                    "is_correct": false
+                    "text": "Prevent the hydraulic head of toxic leachate from building up and driving fluids through the liner into the groundwater",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -17619,8 +17619,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$25:1$ to $30:1$",
-                    "is_correct": true
+                    "text": "$100:1$ to $150:1$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17629,8 +17629,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$100:1$ to $150:1$",
-                    "is_correct": false
+                    "text": "$25:1$ to $30:1$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17660,8 +17660,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Spent nuclear reactor fuel and the chemical reprocessing of nuclear weapons materials",
-                    "is_correct": true
+                    "text": "Discarded industrial smoke detectors and exit signs",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17675,8 +17675,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Discarded industrial smoke detectors and exit signs",
-                    "is_correct": false
+                    "text": "Spent nuclear reactor fuel and the chemical reprocessing of nuclear weapons materials",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17744,13 +17744,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\approx 1.54\\text{ MW}$",
-                    "is_correct": true
+                    "text": "$\\approx 3.85\\text{ MW}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$\\approx 3.85\\text{ MW}$",
-                    "is_correct": false
+                    "text": "$\\approx 1.54\\text{ MW}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -17785,8 +17785,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$16/27 \\approx 59.3\\%$",
-                    "is_correct": true
+                    "text": "$2/3 \\approx 66.7\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17795,8 +17795,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$2/3 \\approx 66.7\\%$",
-                    "is_correct": false
+                    "text": "$16/27 \\approx 59.3\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17826,8 +17826,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.90\\text{ kg/kWh}$",
-                    "is_correct": true
+                    "text": "$0.55\\text{ kg/kWh}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17841,8 +17841,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.55\\text{ kg/kWh}$",
-                    "is_correct": false
+                    "text": "$0.90\\text{ kg/kWh}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -17916,13 +17916,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$59.3\\%$",
-                    "is_correct": true
+                    "text": "$100.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$100.0\\%$",
-                    "is_correct": false
+                    "text": "$59.3\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -17957,8 +17957,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1.1\\text{ eV}$",
-                    "is_correct": true
+                    "text": "$0.1\\text{ eV}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -17967,8 +17967,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$0.1\\text{ eV}$",
-                    "is_correct": false
+                    "text": "$1.1\\text{ eV}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -17998,8 +17998,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Rankine cycle steam turbine driven entirely by the gas turbine's hot exhaust gases",
-                    "is_correct": true
+                    "text": "Nuclear fission reactor core",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18013,8 +18013,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Nuclear fission reactor core",
-                    "is_correct": false
+                    "text": "Rankine cycle steam turbine driven entirely by the gas turbine's hot exhaust gases",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18080,13 +18080,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Carbon Dioxide ($CO_2$)",
-                    "is_correct": true
+                    "text": "Methane ($CH_4$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Methane ($CH_4$)",
-                    "is_correct": false
+                    "text": "Carbon Dioxide ($CO_2$)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -18121,8 +18121,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Pumped-storage hydroelectricity",
-                    "is_correct": true
+                    "text": "Molten salt thermal storage",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18131,8 +18131,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Molten salt thermal storage",
-                    "is_correct": false
+                    "text": "Pumped-storage hydroelectricity",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -18164,8 +18164,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$R = 200\\text{ N}$ down; $M_O = 700\\text{ N·m CCW}$",
-                    "is_correct": true
+                    "text": "$R = 200\\text{ N}$ down; $M_O = 1300\\text{ N·m CCW}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18179,8 +18179,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$R = 200\\text{ N}$ down; $M_O = 1300\\text{ N·m CCW}$",
-                    "is_correct": false
+                    "text": "$R = 200\\text{ N}$ down; $M_O = 700\\text{ N·m CCW}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18250,13 +18250,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Resistor",
-                    "is_correct": true
+                    "text": "Capacitor",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Capacitor",
-                    "is_correct": false
+                    "text": "Resistor",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -18295,8 +18295,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Maximizes the overall net utility or happiness for the greatest number of people",
-                    "is_correct": true
+                    "text": "Prioritizes the financial profit of the corporation above all else",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18305,8 +18305,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Prioritizes the financial profit of the corporation above all else",
-                    "is_correct": false
+                    "text": "Maximizes the overall net utility or happiness for the greatest number of people",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -18336,8 +18336,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Cycle back through previous steps (testing, evaluating, redesigning) to rigorously refine and improve the solution based on new data",
-                    "is_correct": true
+                    "text": "Rely entirely on computer simulations without building physical prototypes",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18351,8 +18351,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Rely entirely on computer simulations without building physical prototypes",
-                    "is_correct": false
+                    "text": "Cycle back through previous steps (testing, evaluating, redesigning) to rigorously refine and improve the solution based on new data",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18418,13 +18418,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Maximum allowable working load (or design stress)",
-                    "is_correct": true
+                    "text": "Minimum expected load during its lifespan",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Minimum expected load during its lifespan",
-                    "is_correct": false
+                    "text": "Maximum allowable working load (or design stress)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -18459,8 +18459,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Float (or slack) time, meaning any delay in these tasks will directly delay the entire project completion date",
-                    "is_correct": true
+                    "text": "Risk of failure or safety incidents",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18469,8 +18469,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Risk of failure or safety incidents",
-                    "is_correct": false
+                    "text": "Float (or slack) time, meaning any delay in these tasks will directly delay the entire project completion date",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -18500,8 +18500,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "How closely the average of the measurements aligns with the true, actual target value",
-                    "is_correct": true
+                    "text": "The absolute minimum value the instrument can physically detect",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18515,8 +18515,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The absolute minimum value the instrument can physically detect",
-                    "is_correct": false
+                    "text": "How closely the average of the measurements aligns with the true, actual target value",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18584,13 +18584,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$40\\text{ rad/s}$",
-                    "is_correct": true
+                    "text": "$20\\text{ rad/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$20\\text{ rad/s}$",
-                    "is_correct": false
+                    "text": "$40\\text{ rad/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -18625,8 +18625,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.702\\text{ kJ/K}$",
-                    "is_correct": true
+                    "text": "$-2.298\\text{ kJ/K}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18635,8 +18635,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$-2.298\\text{ kJ/K}$",
-                    "is_correct": false
+                    "text": "$0.702\\text{ kJ/K}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -18674,8 +18674,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\frac{\\mu_s mg}{\\sqrt{1 + \\mu_s^2}}$",
-                    "is_correct": true
+                    "text": "$\\mu_s mg \\cos(\\theta)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18689,8 +18689,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\mu_s mg \\cos(\\theta)$",
-                    "is_correct": false
+                    "text": "$\\frac{\\mu_s mg}{\\sqrt{1 + \\mu_s^2}}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18764,13 +18764,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Remains perfectly constant in both magnitude and direction",
-                    "is_correct": true
+                    "text": "Slowly decays to zero due to internal friction and heat",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Slowly decays to zero due to internal friction and heat",
-                    "is_correct": false
+                    "text": "Remains perfectly constant in both magnitude and direction",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -18805,8 +18805,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Conservation of Energy (energy can neither be created nor destroyed, only altered in form)",
-                    "is_correct": true
+                    "text": "Entropy Increase (the disorder of the universe always increases)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18815,8 +18815,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Entropy Increase (the disorder of the universe always increases)",
-                    "is_correct": false
+                    "text": "Conservation of Energy (energy can neither be created nor destroyed, only altered in form)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -18846,8 +18846,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Modulus of Elasticity (or Young's Modulus, $E$)",
-                    "is_correct": true
+                    "text": "Poisson's Ratio ($\\nu$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18861,8 +18861,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Poisson's Ratio ($\\nu$)",
-                    "is_correct": false
+                    "text": "Modulus of Elasticity (or Young's Modulus, $E$)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -18928,13 +18928,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Thermal conductivity ($k$)",
-                    "is_correct": true
+                    "text": "Specific heat capacity ($C_p$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Specific heat capacity ($C_p$)",
-                    "is_correct": false
+                    "text": "Thermal conductivity ($k$)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -18969,8 +18969,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$V = I \\times R$",
-                    "is_correct": true
+                    "text": "$I = V \\times R$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -18979,8 +18979,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$I = V \\times R$",
-                    "is_correct": false
+                    "text": "$V = I \\times R$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -19012,8 +19012,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$CPI = 0.870$; $SPI = 0.833$",
-                    "is_correct": true
+                    "text": "$CPI = 1.000$; $SPI = 0.900$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19027,8 +19027,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$CPI = 1.000$; $SPI = 0.900$",
-                    "is_correct": false
+                    "text": "$CPI = 0.870$; $SPI = 0.833$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -19098,13 +19098,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$5,000\\text{ units}$",
-                    "is_correct": true
+                    "text": "$2,000\\text{ units}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$2,000\\text{ units}$",
-                    "is_correct": false
+                    "text": "$5,000\\text{ units}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -19143,8 +19143,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Annual or Equivalent Uniform Annual Worth (EUAW) method, or evaluate them over a common multiple of their lifespans",
-                    "is_correct": true
+                    "text": "Internal Rate of Return (IRR) method, ignoring the lifespan",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19153,8 +19153,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Internal Rate of Return (IRR) method, ignoring the lifespan",
-                    "is_correct": false
+                    "text": "Annual or Equivalent Uniform Annual Worth (EUAW) method, or evaluate them over a common multiple of their lifespans",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -19184,8 +19184,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Decreases by a constant percentage every time the cumulative production volume doubles",
-                    "is_correct": true
+                    "text": "Remains perfectly constant once the initial prototype is finished",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19199,8 +19199,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Remains perfectly constant once the initial prototype is finished",
-                    "is_correct": false
+                    "text": "Decreases by a constant percentage every time the cumulative production volume doubles",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -19266,13 +19266,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Liabilities + Shareholders' Equity",
-                    "is_correct": true
+                    "text": "Revenue - Expenses",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Revenue - Expenses",
-                    "is_correct": false
+                    "text": "Liabilities + Shareholders' Equity",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -19307,8 +19307,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Multiplying the monetary payoff of each possible outcome by its exact probability of occurrence, and summing the results",
-                    "is_correct": true
+                    "text": "Selecting the single highest payoff and ignoring all other probabilities",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19317,8 +19317,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Selecting the single highest payoff and ignoring all other probabilities",
-                    "is_correct": false
+                    "text": "Multiplying the monetary payoff of each possible outcome by its exact probability of occurrence, and summing the results",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -19348,8 +19348,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The annual holding (carrying) costs exactly equal the annual ordering (setup) costs",
-                    "is_correct": true
+                    "text": "The warehouse storage capacity is perfectly $100\\%$ utilized",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19363,8 +19363,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The warehouse storage capacity is perfectly $100\\%$ utilized",
-                    "is_correct": false
+                    "text": "The annual holding (carrying) costs exactly equal the annual ordering (setup) costs",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -19432,13 +19432,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$EOQ = 447\\text{ units}$; Total cost $= \\$895/\\text{yr}$",
-                    "is_correct": true
+                    "text": "$EOQ = 200\\text{ units}$; Total cost $= \\$1,000/\\text{yr}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$EOQ = 200\\text{ units}$; Total cost $= \\$1,000/\\text{yr}$",
-                    "is_correct": false
+                    "text": "$EOQ = 447\\text{ units}$; Total cost $= \\$895/\\text{yr}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -19473,8 +19473,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$16\\text{ min}$",
-                    "is_correct": true
+                    "text": "$8\\text{ min}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19483,8 +19483,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$8\\text{ min}$",
-                    "is_correct": false
+                    "text": "$16\\text{ min}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -19518,8 +19518,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$-0.693$",
-                    "is_correct": true
+                    "text": "$-0.346$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19533,8 +19533,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$-0.346$",
-                    "is_correct": false
+                    "text": "$-0.693$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -19604,13 +19604,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Available net production time by the customer demand quantity",
-                    "is_correct": true
+                    "text": "Total number of employees by the number of active machines",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Total number of employees by the number of active machines",
-                    "is_correct": false
+                    "text": "Available net production time by the customer demand quantity",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -19645,8 +19645,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Volume-to-surface area ratio ($V/A$)",
-                    "is_correct": true
+                    "text": "Absolute mass",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19655,8 +19655,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Absolute mass",
-                    "is_correct": false
+                    "text": "Volume-to-surface area ratio ($V/A$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -19686,8 +19686,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Line efficiency (or equivalently, minimizes the balance delay)",
-                    "is_correct": true
+                    "text": "Cycle time of the bottleneck station",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19701,8 +19701,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Cycle time of the bottleneck station",
-                    "is_correct": false
+                    "text": "Line efficiency (or equivalently, minimizes the balance delay)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -19768,13 +19768,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The physical motion and tool path geometry (e.g., linear interpolation, circular interpolation, rapid positioning)",
-                    "is_correct": true
+                    "text": "The spindle speed RPM and the cutting fluid coolant pumps",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The spindle speed RPM and the cutting fluid coolant pumps",
-                    "is_correct": false
+                    "text": "The physical motion and tool path geometry (e.g., linear interpolation, circular interpolation, rapid positioning)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -19809,8 +19809,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Pull-based visual signaling system that entirely controls the flow of materials to prevent overproduction",
-                    "is_correct": true
+                    "text": "Statistical process control (SPC) chart for tracking defect rates",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19819,8 +19819,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Statistical process control (SPC) chart for tracking defect rates",
-                    "is_correct": false
+                    "text": "Pull-based visual signaling system that entirely controls the flow of materials to prevent overproduction",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -19852,8 +19852,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$(5.5, 4.7)$",
-                    "is_correct": true
+                    "text": "$(6.0, 4.0)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19867,8 +19867,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$(6.0, 4.0)$",
-                    "is_correct": false
+                    "text": "$(5.5, 4.7)$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -19938,13 +19938,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$126$",
-                    "is_correct": true
+                    "text": "$134$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$134$",
-                    "is_correct": false
+                    "text": "$126$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -19983,8 +19983,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Demand uncertainty (variable customer orders) and lead time uncertainty (variable supplier delivery times)",
-                    "is_correct": true
+                    "text": "Machine breakdowns and employee labor strikes",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -19993,8 +19993,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Machine breakdowns and employee labor strikes",
-                    "is_correct": false
+                    "text": "Demand uncertainty (variable customer orders) and lead time uncertainty (variable supplier delivery times)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -20024,8 +20024,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The actual observed demand from the most recent period (creating a naive forecast)",
-                    "is_correct": true
+                    "text": "The forecast from the previous period (completely ignoring new data)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20039,8 +20039,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The forecast from the previous period (completely ignoring new data)",
-                    "is_correct": false
+                    "text": "The actual observed demand from the most recent period (creating a naive forecast)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20110,13 +20110,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Distributing a single commodity product from multiple specific supply origins to multiple specific demand destinations",
-                    "is_correct": true
+                    "text": "Routing a single salesman through every city exactly once (The Traveling Salesman Problem)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Routing a single salesman through every city exactly once (The Traveling Salesman Problem)",
-                    "is_correct": false
+                    "text": "Distributing a single commodity product from multiple specific supply origins to multiple specific demand destinations",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -20151,8 +20151,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Entirely eliminate or drastically minimize storage time and inventory holding costs in the warehouse",
-                    "is_correct": true
+                    "text": "Store products for months until seasonal demand peaks",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20161,8 +20161,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Store products for months until seasonal demand peaks",
-                    "is_correct": false
+                    "text": "Entirely eliminate or drastically minimize storage time and inventory holding costs in the warehouse",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -20192,8 +20192,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Zero fixed costs and high variable unit costs of purchasing from an outside supplier",
-                    "is_correct": true
+                    "text": "The marketing and advertising costs of the final product",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20207,8 +20207,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "The marketing and advertising costs of the final product",
-                    "is_correct": false
+                    "text": "Zero fixed costs and high variable unit costs of purchasing from an outside supplier",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20276,13 +20276,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$RWL \\approx 12.4\\text{ kg}$",
-                    "is_correct": true
+                    "text": "$RWL \\approx 16.0\\text{ kg}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$RWL \\approx 16.0\\text{ kg}$",
-                    "is_correct": false
+                    "text": "$RWL \\approx 12.4\\text{ kg}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -20317,8 +20317,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$51\\text{ lbs } (23\\text{ kg})$",
-                    "is_correct": true
+                    "text": "$75\\text{ lbs } (34\\text{ kg})$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20327,8 +20327,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$75\\text{ lbs } (34\\text{ kg})$",
-                    "is_correct": false
+                    "text": "$51\\text{ lbs } (23\\text{ kg})$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -20358,8 +20358,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "95th percentile male stature",
-                    "is_correct": true
+                    "text": "99th percentile female stature",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20373,8 +20373,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "99th percentile female stature",
-                    "is_correct": false
+                    "text": "95th percentile male stature",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20444,13 +20444,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "95th percentile male stature (to ensure the vast majority fit without ducking or hitting their knees)",
-                    "is_correct": true
+                    "text": "5th percentile female stature",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "5th percentile female stature",
-                    "is_correct": false
+                    "text": "95th percentile male stature (to ensure the vast majority fit without ducking or hitting their knees)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -20485,8 +20485,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The L5 and S1 vertebrae (Lumbosacral joint)",
-                    "is_correct": true
+                    "text": "The T1 and T2 vertebrae (Thoracic spine)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20495,8 +20495,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The T1 and T2 vertebrae (Thoracic spine)",
-                    "is_correct": false
+                    "text": "The L5 and S1 vertebrae (Lumbosacral joint)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -20526,8 +20526,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Distance to the target and the physical width (or size) of the target",
-                    "is_correct": true
+                    "text": "Screen resolution and the mouse DPI",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20541,8 +20541,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Screen resolution and the mouse DPI",
-                    "is_correct": false
+                    "text": "Distance to the target and the physical width (or size) of the target",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20608,13 +20608,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The person forms an incorrect intention or plan based on a faulty cognitive assessment of the situation",
-                    "is_correct": true
+                    "text": "The person accidentally pushes the wrong button due to poor lighting",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The person accidentally pushes the wrong button due to poor lighting",
-                    "is_correct": false
+                    "text": "The person forms an incorrect intention or plan based on a faulty cognitive assessment of the situation",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -20649,8 +20649,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The indicator on the display to move UP, or the controlled value to logically INCREASE",
-                    "is_correct": true
+                    "text": "The indicator to move DOWN, creating a reverse cognitive challenge to keep operators alert",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20659,8 +20659,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The indicator to move DOWN, creating a reverse cognitive challenge to keep operators alert",
-                    "is_correct": false
+                    "text": "The indicator on the display to move UP, or the controlled value to logically INCREASE",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -20692,8 +20692,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1.076\\text{ min}$",
-                    "is_correct": true
+                    "text": "$.935\\text{ min}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20707,8 +20707,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$.935\\text{ min}$",
-                    "is_correct": false
+                    "text": "$1.076\\text{ min}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20778,13 +20778,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$64\\text{ hours}$",
-                    "is_correct": true
+                    "text": "$80\\text{ hours}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$80\\text{ hours}$",
-                    "is_correct": false
+                    "text": "$64\\text{ hours}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -20823,8 +20823,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Worker's performance rating factor",
-                    "is_correct": true
+                    "text": "Number of cycles observed",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20833,8 +20833,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Number of cycles observed",
-                    "is_correct": false
+                    "text": "Worker's performance rating factor",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -20864,8 +20864,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Personal, Fatigue, and Delay allowances",
-                    "is_correct": true
+                    "text": "Profit, Fixed, and Direct costs",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20879,8 +20879,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Profit, Fixed, and Direct costs",
-                    "is_correct": false
+                    "text": "Personal, Fatigue, and Delay allowances",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -20946,13 +20946,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Therbligs",
-                    "is_correct": true
+                    "text": "Ergons",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Ergons",
-                    "is_correct": false
+                    "text": "Therbligs",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -20987,8 +20987,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Unit time of the specific $N$th unit produced",
-                    "is_correct": true
+                    "text": "First unit's time only",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -20997,8 +20997,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "First unit's time only",
-                    "is_correct": false
+                    "text": "Unit time of the specific $N$th unit produced",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -21028,8 +21028,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Family of parts with highly similar geometric and processing requirements (Group Technology)",
-                    "is_correct": true
+                    "text": "Massive, immovable product like a cruise ship or airplane",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21043,8 +21043,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Massive, immovable product like a cruise ship or airplane",
-                    "is_correct": false
+                    "text": "Family of parts with highly similar geometric and processing requirements (Group Technology)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -21112,13 +21112,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$UCL_{\\bar{X}} = 26.75$; $UCL_R = 5.48$",
-                    "is_correct": true
+                    "text": "$UCL_{\\bar{X}} = 27.40$; $UCL_R = 4.80$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$UCL_{\\bar{X}} = 27.40$; $UCL_R = 4.80$",
-                    "is_correct": false
+                    "text": "$UCL_{\\bar{X}} = 26.75$; $UCL_R = 5.48$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21153,8 +21153,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$[47, 53]$",
-                    "is_correct": true
+                    "text": "$[48.5, 51.5]$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21163,8 +21163,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$[48.5, 51.5]$",
-                    "is_correct": false
+                    "text": "$[47, 53]$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -21198,8 +21198,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1.33$",
-                    "is_correct": true
+                    "text": "$0.67$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21213,8 +21213,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.67$",
-                    "is_correct": false
+                    "text": "$1.33$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -21288,13 +21288,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The process variation exceeds the specification limits, and defective parts are actively being produced",
-                    "is_correct": true
+                    "text": "The process is perfectly centered and generating zero defects",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The process is perfectly centered and generating zero defects",
-                    "is_correct": false
+                    "text": "The process variation exceeds the specification limits, and defective parts are actively being produced",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21329,8 +21329,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Numerical production quotas, mass end-of-line inspection, and management by objectives",
-                    "is_correct": true
+                    "text": "On-the-job employee training programs",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21339,8 +21339,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "On-the-job employee training programs",
-                    "is_correct": false
+                    "text": "Numerical production quotas, mass end-of-line inspection, and management by objectives",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -21370,8 +21370,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "A constant, random failure rate",
-                    "is_correct": true
+                    "text": "Exactly zero failures",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21385,8 +21385,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Exactly zero failures",
-                    "is_correct": false
+                    "text": "A constant, random failure rate",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -21452,13 +21452,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exact nominal target value, even if it is still well within the acceptable specification limits",
-                    "is_correct": true
+                    "text": "Upper specification limit",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Upper specification limit",
-                    "is_correct": false
+                    "text": "Exact nominal target value, even if it is still well within the acceptable specification limits",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21493,8 +21493,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Fishbone diagram",
-                    "is_correct": true
+                    "text": "Pareto chart",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21503,8 +21503,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Pareto chart",
-                    "is_correct": false
+                    "text": "Fishbone diagram",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -21536,8 +21536,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$R_{sys} \\approx 0.921$",
-                    "is_correct": true
+                    "text": "$R_{sys} \\approx 0.760$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21551,8 +21551,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$R_{sys} \\approx 0.760$",
-                    "is_correct": false
+                    "text": "$R_{sys} \\approx 0.921$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -21622,13 +21622,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$42.1\\text{ hours}$",
-                    "is_correct": true
+                    "text": "$40.0\\text{ hours}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$40.0\\text{ hours}$",
-                    "is_correct": false
+                    "text": "$42.1\\text{ hours}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21671,8 +21671,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$500\\text{ hours}$",
-                    "is_correct": true
+                    "text": "$50\\text{ hours}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21681,8 +21681,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$50\\text{ hours}$",
-                    "is_correct": false
+                    "text": "$500\\text{ hours}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -21712,8 +21712,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$60.6\\%$",
-                    "is_correct": true
+                    "text": "$100.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21727,8 +21727,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$100.0\\%$",
-                    "is_correct": false
+                    "text": "$60.6\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -21802,13 +21802,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Trade Study (or Pugh Matrix)",
-                    "is_correct": true
+                    "text": "Failure Mode and Effects Analysis (FMEA)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Failure Mode and Effects Analysis (FMEA)",
-                    "is_correct": false
+                    "text": "Trade Study (or Pugh Matrix)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21839,8 +21839,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Validation",
-                    "is_correct": true
+                    "text": "Integration",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21849,8 +21849,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Integration",
-                    "is_correct": false
+                    "text": "Validation",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -21876,8 +21876,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Useful life period",
-                    "is_correct": true
+                    "text": "Burn-in phase",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -21891,8 +21891,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Burn-in phase",
-                    "is_correct": false
+                    "text": "Useful life period",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -21956,13 +21956,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$p = 2.25\\times10^4\\text{ cm}^{-3}$",
-                    "is_correct": true
+                    "text": "$p = 1.5\\times10^{10}\\text{ cm}^{-3}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$p = 1.5\\times10^{10}\\text{ cm}^{-3}$",
-                    "is_correct": false
+                    "text": "$p = 2.25\\times10^4\\text{ cm}^{-3}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -21997,8 +21997,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$2.25 \\times 10^{4}\\text{ cm}^{-3}$",
-                    "is_correct": true
+                    "text": "$2.25 \\times 10^{10}\\text{ cm}^{-3}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22007,8 +22007,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$2.25 \\times 10^{10}\\text{ cm}^{-3}$",
-                    "is_correct": false
+                    "text": "$2.25 \\times 10^{4}\\text{ cm}^{-3}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -22042,8 +22042,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$25\\text{ pF}$",
-                    "is_correct": true
+                    "text": "$100\\text{ pF}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22057,8 +22057,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$100\\text{ pF}$",
-                    "is_correct": false
+                    "text": "$25\\text{ pF}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -22128,13 +22128,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Increase linearly, because greater thermal lattice vibrations more frequently scatter the drifting conduction electrons",
-                    "is_correct": true
+                    "text": "Decrease exponentially, because the heat frees up more valence electrons for conduction",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Decrease exponentially, because the heat frees up more valence electrons for conduction",
-                    "is_correct": false
+                    "text": "Increase linearly, because greater thermal lattice vibrations more frequently scatter the drifting conduction electrons",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -22169,8 +22169,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Magnetic domains",
-                    "is_correct": true
+                    "text": "Eddy currents",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22179,8 +22179,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Eddy currents",
-                    "is_correct": false
+                    "text": "Magnetic domains",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -22210,8 +22210,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Meissner effect",
-                    "is_correct": true
+                    "text": "Piezoelectric effect",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22225,8 +22225,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Piezoelectric effect",
-                    "is_correct": false
+                    "text": "Meissner effect",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -22292,13 +22292,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Depletion region",
-                    "is_correct": true
+                    "text": "Ohmic contact",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Ohmic contact",
-                    "is_correct": false
+                    "text": "Depletion region",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -22333,8 +22333,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Energy bandgap ($E_g$) of the specific semiconductor crystal material used",
-                    "is_correct": true
+                    "text": "Physical size and thickness of the plastic LED lens",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22343,8 +22343,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Physical size and thickness of the plastic LED lens",
-                    "is_correct": false
+                    "text": "Energy bandgap ($E_g$) of the specific semiconductor crystal material used",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -22376,8 +22376,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\omega_n = 6\\text{ rad/s}$; $\\zeta = 0.4$; Underdamped",
-                    "is_correct": true
+                    "text": "$\\omega_n = 4.8\\text{ rad/s}$; $\\zeta = 0.4$; Underdamped",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22391,8 +22391,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\omega_n = 4.8\\text{ rad/s}$; $\\zeta = 0.4$; Underdamped",
-                    "is_correct": false
+                    "text": "$\\omega_n = 6\\text{ rad/s}$; $\\zeta = 0.4$; Underdamped",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -22462,13 +22462,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "It is strictly stable (overdamped)",
-                    "is_correct": true
+                    "text": "It is unstable",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "It is unstable",
-                    "is_correct": false
+                    "text": "It is strictly stable (overdamped)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -22507,8 +22507,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Convolution integral ($y(t) = x(t) * h(t)$)",
-                    "is_correct": true
+                    "text": "Cross-correlation function",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22517,8 +22517,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Cross-correlation function",
-                    "is_correct": false
+                    "text": "Convolution integral ($y(t) = x(t) * h(t)$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -22548,8 +22548,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Region of Convergence (ROC)",
-                    "is_correct": true
+                    "text": "Critical damping threshold",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22563,8 +22563,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Critical damping threshold",
-                    "is_correct": false
+                    "text": "Region of Convergence (ROC)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -22630,13 +22630,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Magnitude (or voltage gain) strictly plotted in decibels (dB) versus logarithmic frequency",
-                    "is_correct": true
+                    "text": "Time delay plotted in seconds versus linear frequency",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Time delay plotted in seconds versus linear frequency",
-                    "is_correct": false
+                    "text": "Magnitude (or voltage gain) strictly plotted in decibels (dB) versus logarithmic frequency",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -22671,8 +22671,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Inside the unit circle ($|z| < 1$) in the complex z-plane",
-                    "is_correct": true
+                    "text": "Outside the unit circle ($|z| > 1$) in the complex z-plane",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22681,8 +22681,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Outside the unit circle ($|z| > 1$) in the complex z-plane",
-                    "is_correct": false
+                    "text": "Inside the unit circle ($|z| < 1$) in the complex z-plane",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -22712,8 +22712,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Fourier Transform (frequency domain) representation $X(f)$",
-                    "is_correct": true
+                    "text": "Autocorrelation function evaluated at infinity",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22727,8 +22727,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Autocorrelation function evaluated at infinity",
-                    "is_correct": false
+                    "text": "Fourier Transform (frequency domain) representation $X(f)$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -22796,13 +22796,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$f_s^{min} = 16\\text{ kHz}$; aliased at $2\\text{ kHz}$",
-                    "is_correct": true
+                    "text": "$f_s^{min} = 8\\text{ kHz}$; aliased at $4\\text{ kHz}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$f_s^{min} = 8\\text{ kHz}$; aliased at $4\\text{ kHz}$",
-                    "is_correct": false
+                    "text": "$f_s^{min} = 16\\text{ kHz}$; aliased at $2\\text{ kHz}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -22837,8 +22837,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\sum_{k=-\\infty}^{\\infty} |c_k|^2$",
-                    "is_correct": true
+                    "text": "$\\int_{-\\infty}^{\\infty} |c_k| dk$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22847,8 +22847,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$\\int_{-\\infty}^{\\infty} |c_k| dk$",
-                    "is_correct": false
+                    "text": "$\\sum_{k=-\\infty}^{\\infty} |c_k|^2$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -22882,8 +22882,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$600\\text{ Hz}$",
-                    "is_correct": true
+                    "text": "$800\\text{ Hz}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -22897,8 +22897,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$800\\text{ Hz}$",
-                    "is_correct": false
+                    "text": "$600\\text{ Hz}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -22968,13 +22968,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Discontinuities and a finite number of maxima/minima within any single time period",
-                    "is_correct": true
+                    "text": "Harmonic resonant frequencies extending to infinity",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Harmonic resonant frequencies extending to infinity",
-                    "is_correct": false
+                    "text": "Discontinuities and a finite number of maxima/minima within any single time period",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -23009,8 +23009,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Feedback from past *output* values",
-                    "is_correct": true
+                    "text": "A delay line memory buffer",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23019,8 +23019,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "A delay line memory buffer",
-                    "is_correct": false
+                    "text": "Feedback from past *output* values",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -23050,8 +23050,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$O(N \\log N)$",
-                    "is_correct": true
+                    "text": "$O(1)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23065,8 +23065,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$O(1)$",
-                    "is_correct": false
+                    "text": "$O(N \\log N)$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -23132,13 +23132,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exactly zero",
-                    "is_correct": true
+                    "text": "Infinity",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Infinity",
-                    "is_correct": false
+                    "text": "Exactly zero",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -23173,8 +23173,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Upper sideband (USB) and Lower sideband (LSB)",
-                    "is_correct": true
+                    "text": "Harmonic overtone and Subharmonic tone",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23183,8 +23183,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Harmonic overtone and Subharmonic tone",
-                    "is_correct": false
+                    "text": "Upper sideband (USB) and Lower sideband (LSB)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -23216,8 +23216,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$v_{out} = -5\\text{ V}$; $A_v = -10$",
-                    "is_correct": true
+                    "text": "$v_{out} = -50\\text{ V}$; $A_v = -100$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23231,8 +23231,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$v_{out} = -50\\text{ V}$; $A_v = -100$",
-                    "is_correct": false
+                    "text": "$v_{out} = -5\\text{ V}$; $A_v = -10$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -23302,13 +23302,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$69\\text{ mA}$",
-                    "is_correct": true
+                    "text": "$120\\text{ mA}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$120\\text{ mA}$",
-                    "is_correct": false
+                    "text": "$69\\text{ mA}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -23351,8 +23351,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Voltage regulator (clamping and maintaining a perfectly constant voltage despite massive current fluctuations)",
-                    "is_correct": true
+                    "text": "Variable capacitor (acting as a varactor for RF tuning)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23361,8 +23361,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Variable capacitor (acting as a varactor for RF tuning)",
-                    "is_correct": false
+                    "text": "Voltage regulator (clamping and maintaining a perfectly constant voltage despite massive current fluctuations)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -23392,8 +23392,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Reverse-biased",
-                    "is_correct": true
+                    "text": "Shorted directly to ground",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23407,8 +23407,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Shorted directly to ground",
-                    "is_correct": false
+                    "text": "Reverse-biased",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -23474,13 +23474,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$180^\\circ$ (exactly half) of the full $360^\\circ$ input AC sine wave cycle",
-                    "is_correct": true
+                    "text": "The full $360^\\circ$ of the cycle",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The full $360^\\circ$ of the cycle",
-                    "is_correct": false
+                    "text": "$180^\\circ$ (exactly half) of the full $360^\\circ$ input AC sine wave cycle",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -23515,8 +23515,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$360^\\circ$ (or $0^\\circ$, or an integer multiple of $2\\pi$ radians)",
-                    "is_correct": true
+                    "text": "$90^\\circ$ (exactly $\\pi/2$ radians)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23525,8 +23525,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$90^\\circ$ (exactly $\\pi/2$ radians)",
-                    "is_correct": false
+                    "text": "$360^\\circ$ (or $0^\\circ$, or an integer multiple of $2\\pi$ radians)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -23556,8 +23556,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Four diodes",
-                    "is_correct": true
+                    "text": "Six diodes",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23571,8 +23571,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Six diodes",
-                    "is_correct": false
+                    "text": "Four diodes",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -23640,13 +23640,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$X_{pu} = 0.80\\text{ pu}$",
-                    "is_correct": true
+                    "text": "$X_{pu} = 0.08\\text{ pu}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$X_{pu} = 0.08\\text{ pu}$",
-                    "is_correct": false
+                    "text": "$X_{pu} = 0.80\\text{ pu}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -23681,8 +23681,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$8.31\\text{ kVAR}$",
-                    "is_correct": true
+                    "text": "$13.85\\text{ kVAR}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23691,8 +23691,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$13.85\\text{ kVAR}$",
-                    "is_correct": false
+                    "text": "$8.31\\text{ kVAR}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -23730,8 +23730,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$1000\\text{ }\\Omega$",
-                    "is_correct": true
+                    "text": "$0.1\\text{ }\\Omega$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23745,8 +23745,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.1\\text{ }\\Omega$",
-                    "is_correct": false
+                    "text": "$1000\\text{ }\\Omega$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -23816,13 +23816,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$N_s = \\frac{120 f}{P}$",
-                    "is_correct": true
+                    "text": "$N_s = f \\times P$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$N_s = f \\times P$",
-                    "is_correct": false
+                    "text": "$N_s = \\frac{120 f}{P}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -23857,8 +23857,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The resistive $I^2R$ power losses (joule heating) in the transmission cables",
-                    "is_correct": true
+                    "text": "The physical weight of the steel transmission towers",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23867,8 +23867,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The physical weight of the steel transmission towers",
-                    "is_correct": false
+                    "text": "The resistive $I^2R$ power losses (joule heating) in the transmission cables",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -23898,8 +23898,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$180\\text{ Hz}$",
-                    "is_correct": true
+                    "text": "$360\\text{ Hz}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -23913,8 +23913,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$360\\text{ Hz}$",
-                    "is_correct": false
+                    "text": "$180\\text{ Hz}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -23980,13 +23980,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Slip",
-                    "is_correct": true
+                    "text": "Lag",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Lag",
-                    "is_correct": false
+                    "text": "Slip",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -24021,8 +24021,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Can be safely mechanically reset and reused multiple times after clearing a fault, whereas a fuse contains a metal element that physically melts and is permanently destroyed",
-                    "is_correct": true
+                    "text": "Responds much faster than any fuse",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24031,8 +24031,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Responds much faster than any fuse",
-                    "is_correct": false
+                    "text": "Can be safely mechanically reset and reused multiple times after clearing a fault, whereas a fuse contains a metal element that physically melts and is permanently destroyed",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -24064,8 +24064,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\Gamma = 0.4 + j0.2$",
-                    "is_correct": true
+                    "text": "$\\Gamma = 0.2 - j0.4$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24079,8 +24079,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\Gamma = 0.2 - j0.4$",
-                    "is_correct": false
+                    "text": "$\\Gamma = 0.4 + j0.2$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -24146,13 +24146,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$50\\text{ }\\Omega$",
-                    "is_correct": true
+                    "text": "$75\\text{ }\\Omega$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$75\\text{ }\\Omega$",
-                    "is_correct": false
+                    "text": "$50\\text{ }\\Omega$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -24195,8 +24195,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Magnetic monopoles (meaning magnetic field lines must always form closed continuous loops)",
-                    "is_correct": true
+                    "text": "Superconductors",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24205,8 +24205,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Superconductors",
-                    "is_correct": false
+                    "text": "Magnetic monopoles (meaning magnetic field lines must always form closed continuous loops)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -24236,8 +24236,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Square of the physical distance between them ($1/r^2$)",
-                    "is_correct": true
+                    "text": "Cube of the distance between them ($1/r^3$)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24251,8 +24251,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Cube of the distance between them ($1/r^3$)",
-                    "is_correct": false
+                    "text": "Square of the physical distance between them ($1/r^2$)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -24318,13 +24318,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$Z_0 = \\sqrt{\\frac{L}{C}}$",
-                    "is_correct": true
+                    "text": "$Z_0 = \\sqrt{L \\times C}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$Z_0 = \\sqrt{L \\times C}$",
-                    "is_correct": false
+                    "text": "$Z_0 = \\sqrt{\\frac{L}{C}}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -24359,8 +24359,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Donut (or toroid), with zero radiation shooting directly out the ends of the wire",
-                    "is_correct": true
+                    "text": "Narrow laser beam pointing in one single direction",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24369,8 +24369,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Narrow laser beam pointing in one single direction",
-                    "is_correct": false
+                    "text": "Donut (or toroid), with zero radiation shooting directly out the ends of the wire",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -24400,8 +24400,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$c = \\frac{1}{\\sqrt{\\mu_0 \\epsilon_0}}$",
-                    "is_correct": true
+                    "text": "$c = \\frac{\\mu_0}{\\epsilon_0}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24415,8 +24415,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$c = \\frac{\\mu_0}{\\epsilon_0}$",
-                    "is_correct": false
+                    "text": "$c = \\frac{1}{\\sqrt{\\mu_0 \\epsilon_0}}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -24484,13 +24484,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "2 unstable roots",
-                    "is_correct": true
+                    "text": "0 unstable roots (stable)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "0 unstable roots (stable)",
-                    "is_correct": false
+                    "text": "2 unstable roots",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -24525,8 +24525,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0$",
-                    "is_correct": true
+                    "text": "$1/K$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24535,8 +24535,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1/K$",
-                    "is_correct": false
+                    "text": "$0$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -24570,8 +24570,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$60^\\circ, 180^\\circ, 300^\\circ$",
-                    "is_correct": true
+                    "text": "$45^\\circ, 135^\\circ, 225^\\circ, 315^\\circ$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24585,8 +24585,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$45^\\circ, 135^\\circ, 225^\\circ, 315^\\circ$",
-                    "is_correct": false
+                    "text": "$60^\\circ, 180^\\circ, 300^\\circ$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -24656,13 +24656,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "In the right half of the complex s-plane (which would instantly cause exponential instability)",
-                    "is_correct": true
+                    "text": "Exactly on the real axis",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Exactly on the real axis",
-                    "is_correct": false
+                    "text": "In the right half of the complex s-plane (which would instantly cause exponential instability)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -24697,8 +24697,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Additional gain or phase lag the system can physically tolerate before becoming strictly mathematically unstable",
-                    "is_correct": true
+                    "text": "Error exactly at a frequency of zero",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24707,8 +24707,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Error exactly at a frequency of zero",
-                    "is_correct": false
+                    "text": "Additional gain or phase lag the system can physically tolerate before becoming strictly mathematically unstable",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -24738,8 +24738,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Full row rank (its mathematical determinant is not zero)",
-                    "is_correct": true
+                    "text": "More columns than rows",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24753,8 +24753,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "More columns than rows",
-                    "is_correct": false
+                    "text": "Full row rank (its mathematical determinant is not zero)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -24820,13 +24820,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Improve the transient response (make the system faster and reduce overshoot) by aggressively increasing the phase margin",
-                    "is_correct": true
+                    "text": "Eliminate steady-state error completely",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Eliminate steady-state error completely",
-                    "is_correct": false
+                    "text": "Improve the transient response (make the system faster and reduce overshoot) by aggressively increasing the phase margin",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -24861,8 +24861,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$T(s) = \\frac{G(s)}{1 + G(s)H(s)}$",
-                    "is_correct": true
+                    "text": "$T(s) = \\frac{G(s)}{1 - G(s)H(s)}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24871,8 +24871,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$T(s) = \\frac{G(s)}{1 - G(s)H(s)}$",
-                    "is_correct": false
+                    "text": "$T(s) = \\frac{G(s)}{1 + G(s)H(s)}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -24904,8 +24904,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$P_T = 132\\text{ W}$; $\\eta = 24.2\\%$",
-                    "is_correct": true
+                    "text": "$P_T = 164\\text{ W}$; $\\eta = 39.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -24919,8 +24919,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$P_T = 164\\text{ W}$; $\\eta = 39.0\\%$",
-                    "is_correct": false
+                    "text": "$P_T = 132\\text{ W}$; $\\eta = 24.2\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -24990,13 +24990,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.50$",
-                    "is_correct": true
+                    "text": "$0.33$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$0.33$",
-                    "is_correct": false
+                    "text": "$0.50$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -25035,8 +25035,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Signal-to-Noise Ratio (SNR)",
-                    "is_correct": true
+                    "text": "Carrier frequency of the modulation",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25045,8 +25045,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Carrier frequency of the modulation",
-                    "is_correct": false
+                    "text": "Signal-to-Noise Ratio (SNR)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -25076,8 +25076,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Amplitude of the radio wave, which FM receivers are mathematically designed to entirely ignore (using a limiter)",
-                    "is_correct": true
+                    "text": "Magnetic field of the wave but not the electric field",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25091,8 +25091,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Magnetic field of the wave but not the electric field",
-                    "is_correct": false
+                    "text": "Amplitude of the radio wave, which FM receivers are mathematically designed to entirely ignore (using a limiter)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -25158,13 +25158,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Time slot, sharing the exact same full frequency bandwidth sequentially",
-                    "is_correct": true
+                    "text": "Geographic physical wire",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Geographic physical wire",
-                    "is_correct": false
+                    "text": "Time slot, sharing the exact same full frequency bandwidth sequentially",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -25199,8 +25199,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "An even number",
-                    "is_correct": true
+                    "text": "Exactly equal to the number of zeros",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25209,8 +25209,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Exactly equal to the number of zeros",
-                    "is_correct": false
+                    "text": "An even number",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -25240,8 +25240,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Perfectly equally in all three-dimensional directions (forming a perfect sphere)",
-                    "is_correct": true
+                    "text": "Using purely magnetic waves without an electric component",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25255,8 +25255,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Using purely magnetic waves without an electric component",
-                    "is_correct": false
+                    "text": "Perfectly equally in all three-dimensional directions (forming a perfect sphere)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -25328,13 +25328,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Distance = 8; Path A’C’B’D",
-                    "is_correct": true
+                    "text": "Distance = 9; Path A’B’D",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Distance = 9; Path A’B’D",
-                    "is_correct": false
+                    "text": "Distance = 8; Path A’C’B’D",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -25369,8 +25369,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$62$",
-                    "is_correct": true
+                    "text": "$254$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25379,8 +25379,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$254$",
-                    "is_correct": false
+                    "text": "$62$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -25414,8 +25414,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Distance Vector Routing",
-                    "is_correct": true
+                    "text": "Source Routing",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25429,8 +25429,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Source Routing",
-                    "is_correct": false
+                    "text": "Distance Vector Routing",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -25496,13 +25496,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$128\\text{ bits}$ long",
-                    "is_correct": true
+                    "text": "$64\\text{ bits}$ long",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$64\\text{ bits}$ long",
-                    "is_correct": false
+                    "text": "$128\\text{ bits}$ long",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -25537,8 +25537,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Any guarantee of delivery, order, or error recovery (making it much faster but unreliable, ideal for live video streaming)",
-                    "is_correct": true
+                    "text": "Source and destination port numbers",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25547,8 +25547,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Source and destination port numbers",
-                    "is_correct": false
+                    "text": "Any guarantee of delivery, order, or error recovery (making it much faster but unreliable, ideal for live video streaming)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -25578,8 +25578,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Central hub or switch",
-                    "is_correct": true
+                    "text": "Every other computer on the network (Full Mesh topology)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25593,8 +25593,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Every other computer on the network (Full Mesh topology)",
-                    "is_correct": false
+                    "text": "Central hub or switch",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -25660,13 +25660,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Network ID (the neighborhood), and which portion represents the specific Host ID (the house)",
-                    "is_correct": true
+                    "text": "MAC address of the destination computer",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "MAC address of the destination computer",
-                    "is_correct": false
+                    "text": "Network ID (the neighborhood), and which portion represents the specific Host ID (the house)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -25701,8 +25701,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)",
-                    "is_correct": true
+                    "text": "Token Ring Passing",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25711,8 +25711,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Token Ring Passing",
-                    "is_correct": false
+                    "text": "CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -25744,8 +25744,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$F = C$",
-                    "is_correct": true
+                    "text": "$F = A'B'C + A'BC + AB'C + ABC$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25759,8 +25759,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$F = A'B'C + A'BC + AB'C + ABC$",
-                    "is_correct": false
+                    "text": "$F = C$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -25826,13 +25826,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$16$",
-                    "is_correct": true
+                    "text": "$8$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$8$",
-                    "is_correct": false
+                    "text": "$16$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -25867,8 +25867,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\overline{A} \\cdot \\overline{B}$ (the inverted variables ANDed together)",
-                    "is_correct": true
+                    "text": "$A \\cdot B$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25877,8 +25877,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$A \\cdot B$",
-                    "is_correct": false
+                    "text": "$\\overline{A} \\cdot \\overline{B}$ (the inverted variables ANDed together)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -25908,8 +25908,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Any possible complex boolean logic circuit (AND, OR, NOT, XOR) can be built entirely using only that single type of gate",
-                    "is_correct": true
+                    "text": "They are the only gates found in a CPU",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -25923,8 +25923,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "They are the only gates found in a CPU",
-                    "is_correct": false
+                    "text": "Any possible complex boolean logic circuit (AND, OR, NOT, XOR) can be built entirely using only that single type of gate",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -25990,13 +25990,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Edge-triggered (it only updates its output state at the exact microsecond the clock signal physically transitions from low to high, or high to low)",
-                    "is_correct": true
+                    "text": "Completely asynchronous and requires no clock signal at all",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Completely asynchronous and requires no clock signal at all",
-                    "is_correct": false
+                    "text": "Edge-triggered (it only updates its output state at the exact microsecond the clock signal physically transitions from low to high, or high to low)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -26031,8 +26031,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Invert every single bit (change 1s to 0s and vice versa) and then mathematically add 1 to the result",
-                    "is_correct": true
+                    "text": "Subtract the number from $255$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26041,8 +26041,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Subtract the number from $255$",
-                    "is_correct": false
+                    "text": "Invert every single bit (change 1s to 0s and vice versa) and then mathematically add 1 to the result",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -26072,8 +26072,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Current inputs",
-                    "is_correct": true
+                    "text": "Speed of the clock",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26087,8 +26087,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Speed of the clock",
-                    "is_correct": false
+                    "text": "Current inputs",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -26156,13 +26156,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$AMAT = 11.8\\text{ ns}$",
-                    "is_correct": true
+                    "text": "$AMAT = 50\\text{ ns}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$AMAT = 50\\text{ ns}$",
-                    "is_correct": false
+                    "text": "$AMAT = 11.8\\text{ ns}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -26197,8 +26197,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$90\\%$",
-                    "is_correct": true
+                    "text": "$85\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26207,8 +26207,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$85\\%$",
-                    "is_correct": false
+                    "text": "$90\\%$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -26238,8 +26238,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$5.0$",
-                    "is_correct": true
+                    "text": "$10.0$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26253,8 +26253,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$10.0$",
-                    "is_correct": false
+                    "text": "$5.0$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -26320,13 +26320,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "If a memory address is accessed, the addresses immediately physically adjacent to it will likely be accessed very soon",
-                    "is_correct": true
+                    "text": "Data should be scattered randomly across the hard drive to prevent overheating",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Data should be scattered randomly across the hard drive to prevent overheating",
-                    "is_correct": false
+                    "text": "If a memory address is accessed, the addresses immediately physically adjacent to it will likely be accessed very soon",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -26361,8 +26361,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "An instruction mathematically requires the result of a previous instruction that has not yet physically finished executing through the pipeline",
-                    "is_correct": true
+                    "text": "The CPU runs out of electrical power",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26371,8 +26371,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The CPU runs out of electrical power",
-                    "is_correct": false
+                    "text": "An instruction mathematically requires the result of a previous instruction that has not yet physically finished executing through the pipeline",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -26402,8 +26402,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Hard drive or SSD (in a swap file or pagefile)",
-                    "is_correct": true
+                    "text": "Motherboard BIOS ROM",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26417,8 +26417,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Motherboard BIOS ROM",
-                    "is_correct": false
+                    "text": "Hard drive or SSD (in a swap file or pagefile)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -26484,13 +26484,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Requiring the CPU to actively manage the transfer, freeing the CPU to execute other tasks",
-                    "is_correct": true
+                    "text": "Using the motherboard traces",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Using the motherboard traces",
-                    "is_correct": false
+                    "text": "Requiring the CPU to actively manage the transfer, freeing the CPU to execute other tasks",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -26525,8 +26525,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Execute highly complex, multi-step operations (like memory-to-memory multiplication) directly in hardware using single, dense instructions of variable length",
-                    "is_correct": true
+                    "text": "Run entirely without a system clock",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26535,8 +26535,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Run entirely without a system clock",
-                    "is_correct": false
+                    "text": "Execute highly complex, multi-step operations (like memory-to-memory multiplication) directly in hardware using single, dense instructions of variable length",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -26568,8 +26568,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\approx 50,000\\times$ faster",
-                    "is_correct": true
+                    "text": "$\\approx 1,000,000\\times$ faster",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26583,8 +26583,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$\\approx 1,000,000\\times$ faster",
-                    "is_correct": false
+                    "text": "$\\approx 50,000\\times$ faster",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -26646,13 +26646,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Preemption",
-                    "is_correct": true
+                    "text": "Mutual Exclusion",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Mutual Exclusion",
-                    "is_correct": false
+                    "text": "Preemption",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -26687,8 +26687,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Quadruple (increase by a factor of $4$)",
-                    "is_correct": true
+                    "text": "Increase by exactly $2$ seconds",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26697,8 +26697,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Increase by exactly $2$ seconds",
-                    "is_correct": false
+                    "text": "Quadruple (increase by a factor of $4$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -26728,8 +26728,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Exact memory array index where the data is stored, allowing the CPU to jump directly to it without searching",
-                    "is_correct": true
+                    "text": "Shortest path through a binary tree",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26743,8 +26743,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Shortest path through a binary tree",
-                    "is_correct": false
+                    "text": "Exact memory array index where the data is stored, allowing the CPU to jump directly to it without searching",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -26810,13 +26810,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Durability (meaning once a transaction is committed, it remains permanently saved even if the server violently crashes seconds later)",
-                    "is_correct": true
+                    "text": "Duplication (meaning the data is copied to a backup server)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Duplication (meaning the data is copied to a backup server)",
-                    "is_correct": false
+                    "text": "Durability (meaning once a transaction is committed, it remains permanently saved even if the server violently crashes seconds later)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -26851,8 +26851,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "PUT",
-                    "is_correct": true
+                    "text": "GET",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26861,8 +26861,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "GET",
-                    "is_correct": false
+                    "text": "PUT",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -26892,8 +26892,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Tokens (e.g., keywords, identifiers, math operators)",
-                    "is_correct": true
+                    "text": "Memory addresses",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -26907,8 +26907,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Memory addresses",
-                    "is_correct": false
+                    "text": "Tokens (e.g., keywords, identifiers, math operators)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -26976,13 +26976,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$8 M_p / L$",
-                    "is_correct": true
+                    "text": "$4 M_p / L$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$4 M_p / L$",
-                    "is_correct": false
+                    "text": "$8 M_p / L$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -27025,8 +27025,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$567\\text{ m}$",
-                    "is_correct": true
+                    "text": "$820\\text{ m}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27035,8 +27035,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$820\\text{ m}$",
-                    "is_correct": false
+                    "text": "$567\\text{ m}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -27066,8 +27066,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.85$",
-                    "is_correct": true
+                    "text": "$0.90$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27081,8 +27081,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.90$",
-                    "is_correct": false
+                    "text": "$0.85$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -27144,13 +27144,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Notify the appropriate regulatory authorities to protect public safety.",
-                    "is_correct": true
+                    "text": "Resign from the company to avoid legal liability.",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Resign from the company to avoid legal liability.",
-                    "is_correct": false
+                    "text": "Notify the appropriate regulatory authorities to protect public safety.",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -27185,8 +27185,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Hydration of calcium silicates",
-                    "is_correct": true
+                    "text": "Carbonation of calcium hydroxide",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27195,8 +27195,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Carbonation of calcium hydroxide",
-                    "is_correct": false
+                    "text": "Hydration of calcium silicates",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -27226,8 +27226,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Increases yield strength, decreases ductility",
-                    "is_correct": true
+                    "text": "Decreases hardness and increases toughness",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27241,8 +27241,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Decreases hardness and increases toughness",
-                    "is_correct": false
+                    "text": "Increases yield strength, decreases ductility",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -27312,13 +27312,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$(100, 200)$",
-                    "is_correct": true
+                    "text": "$(150, 300)$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$(150, 300)$",
-                    "is_correct": false
+                    "text": "$(100, 200)$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -27353,8 +27353,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$72\\text{ MPa}$",
-                    "is_correct": true
+                    "text": "$144\\text{ MPa}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27363,8 +27363,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$144\\text{ MPa}$",
-                    "is_correct": false
+                    "text": "$72\\text{ MPa}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -27400,8 +27400,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$10$",
-                    "is_correct": true
+                    "text": "$1$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27415,8 +27415,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$1$",
-                    "is_correct": false
+                    "text": "$10$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -27490,13 +27490,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$39.15^\\circ\\text{C}$",
-                    "is_correct": true
+                    "text": "$40.00^\\circ\\text{C}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$40.00^\\circ\\text{C}$",
-                    "is_correct": false
+                    "text": "$39.15^\\circ\\text{C}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -27531,8 +27531,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Oscillatory behavior (overshoot and ringing) before finally settling to a steady state",
-                    "is_correct": true
+                    "text": "Immediate exponential decay to zero",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27541,8 +27541,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Immediate exponential decay to zero",
-                    "is_correct": false
+                    "text": "Oscillatory behavior (overshoot and ringing) before finally settling to a steady state",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -27572,8 +27572,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Change that would absolutely occur if the vapor leaving the tray was in perfect thermodynamic equilibrium with the liquid leaving the tray",
-                    "is_correct": true
+                    "text": "Total molar flow rate of the internal reflux liquid",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27587,8 +27587,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Total molar flow rate of the internal reflux liquid",
-                    "is_correct": false
+                    "text": "Change that would absolutely occur if the vapor leaving the tray was in perfect thermodynamic equilibrium with the liquid leaving the tray",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -27654,13 +27654,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Drastically increase (shear-thickening behavior)",
-                    "is_correct": true
+                    "text": "Drastically decrease (shear-thinning behavior)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Drastically decrease (shear-thinning behavior)",
-                    "is_correct": false
+                    "text": "Drastically increase (shear-thickening behavior)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -27695,8 +27695,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Film boiling",
-                    "is_correct": true
+                    "text": "Natural convection boiling",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27705,8 +27705,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Natural convection boiling",
-                    "is_correct": false
+                    "text": "Film boiling",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -27736,8 +27736,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Mass diffusivity (diffusion coefficient)",
-                    "is_correct": true
+                    "text": "Surface tension of the fluid",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27751,8 +27751,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Surface tension of the fluid",
-                    "is_correct": false
+                    "text": "Mass diffusivity (diffusion coefficient)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -27824,13 +27824,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$9.0\\text{ mm/s}$",
-                    "is_correct": true
+                    "text": "$4.5\\text{ mm/s}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$4.5\\text{ mm/s}$",
-                    "is_correct": false
+                    "text": "$9.0\\text{ mm/s}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -27873,8 +27873,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$150\\text{ mg/L as } CaCO_3$",
-                    "is_correct": true
+                    "text": "$100\\text{ mg/L as } CaCO_3$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27883,8 +27883,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$100\\text{ mg/L as } CaCO_3$",
-                    "is_correct": false
+                    "text": "$150\\text{ mg/L as } CaCO_3$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -27918,8 +27918,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$2855\\text{ }\\mu\\text{g/m}^3$",
-                    "is_correct": true
+                    "text": "$1427\\text{ }\\mu\\text{g/m}^3$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -27933,8 +27933,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$1427\\text{ }\\mu\\text{g/m}^3$",
-                    "is_correct": false
+                    "text": "$2855\\text{ }\\mu\\text{g/m}^3$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -28000,13 +28000,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The active microbial biomass (and inert suspended solids) vigorously aerated inside the main aeration basin",
-                    "is_correct": true
+                    "text": "The raw, untreated organic solids entering the plant headworks",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The raw, untreated organic solids entering the plant headworks",
-                    "is_correct": false
+                    "text": "The active microbial biomass (and inert suspended solids) vigorously aerated inside the main aeration basin",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -28041,8 +28041,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Phosphorus and Nitrogen nutrients (often from agricultural fertilizer runoff or wastewater)",
-                    "is_correct": true
+                    "text": "Radioactive isotopes from nuclear power plant cooling water",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28051,8 +28051,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Radioactive isotopes from nuclear power plant cooling water",
-                    "is_correct": false
+                    "text": "Phosphorus and Nitrogen nutrients (often from agricultural fertilizer runoff or wastewater)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -28082,8 +28082,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$5$ to $10\\text{ micrometers}$",
-                    "is_correct": true
+                    "text": "$0.01$ to $0.1\\text{ nanometers}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28097,8 +28097,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$0.01$ to $0.1\\text{ nanometers}$",
-                    "is_correct": false
+                    "text": "$5$ to $10\\text{ micrometers}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -28164,13 +28164,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "The combined exposure is highly unlikely to cause adverse non-cancer health effects",
-                    "is_correct": true
+                    "text": "The individual is guaranteed to develop terminal cancer",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "The individual is guaranteed to develop terminal cancer",
-                    "is_correct": false
+                    "text": "The combined exposure is highly unlikely to cause adverse non-cancer health effects",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -28205,8 +28205,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Environmental Impact Statement (EIS)",
-                    "is_correct": true
+                    "text": "Categorical Exclusion (CATEX) waiver",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28215,8 +28215,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Categorical Exclusion (CATEX) waiver",
-                    "is_correct": false
+                    "text": "Environmental Impact Statement (EIS)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -28248,8 +28248,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$20\\text{ minutes}$",
-                    "is_correct": true
+                    "text": "$30\\text{ minutes}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28263,8 +28263,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$30\\text{ minutes}$",
-                    "is_correct": false
+                    "text": "$20\\text{ minutes}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -28334,13 +28334,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$3.4\\text{ DPMO}$",
-                    "is_correct": true
+                    "text": "$2.0\\text{ DPMO}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$2.0\\text{ DPMO}$",
-                    "is_correct": false
+                    "text": "$3.4\\text{ DPMO}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -28375,8 +28375,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Average arrival rate ($\\lambda$) multiplied by the average time an item spends in the system ($W$)",
-                    "is_correct": true
+                    "text": "Total capacity of the waiting room minus the number of servers",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28385,8 +28385,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Total capacity of the waiting room minus the number of servers",
-                    "is_correct": false
+                    "text": "Average arrival rate ($\\lambda$) multiplied by the average time an item spends in the system ($W$)",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -28416,8 +28416,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Iteratively swapping the physical locations of adjacent departments to mathematically reduce the sum of the flow-times-distance metric",
-                    "is_correct": true
+                    "text": "Placing all heavy machinery strictly in the center of the building",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28431,8 +28431,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Placing all heavy machinery strictly in the center of the building",
-                    "is_correct": false
+                    "text": "Iteratively swapping the physical locations of adjacent departments to mathematically reduce the sum of the flow-times-distance metric",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -28498,13 +28498,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$70-80\\%$ of the total annual dollar usage value",
-                    "is_correct": true
+                    "text": "$100\\%$ of the total volume and weight",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$100\\%$ of the total volume and weight",
-                    "is_correct": false
+                    "text": "$70-80\\%$ of the total annual dollar usage value",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -28539,8 +28539,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Total life-cycle Cost",
-                    "is_correct": true
+                    "text": "Aesthetic design appeal",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28549,8 +28549,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Aesthetic design appeal",
-                    "is_correct": false
+                    "text": "Total life-cycle Cost",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -28580,8 +28580,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Fatigue allowance multiplier",
-                    "is_correct": true
+                    "text": "Machine feed rate",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28595,8 +28595,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Machine feed rate",
-                    "is_correct": false
+                    "text": "Fatigue allowance multiplier",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -28664,13 +28664,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$|z| > 0.5$",
-                    "is_correct": true
+                    "text": "$|z| < 0.5$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$|z| < 0.5$",
-                    "is_correct": false
+                    "text": "$|z| > 0.5$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -28713,8 +28713,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.60\\text{ ms}$",
-                    "is_correct": true
+                    "text": "$1.20\\text{ ms}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28723,8 +28723,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1.20\\text{ ms}$",
-                    "is_correct": false
+                    "text": "$0.60\\text{ ms}$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -28762,8 +28762,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Program Counter (PC)",
-                    "is_correct": true
+                    "text": "Accumulator (ACC)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28777,8 +28777,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Accumulator (ACC)",
-                    "is_correct": false
+                    "text": "Program Counter (PC)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -28840,13 +28840,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Conduct electrical signals or power traces vertically between different physical copper layers of the board",
-                    "is_correct": true
+                    "text": "Mount massive, heavy components physically to the board (like a mounting hole)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Mount massive, heavy components physically to the board (like a mounting hole)",
-                    "is_correct": false
+                    "text": "Conduct electrical signals or power traces vertically between different physical copper layers of the board",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -28881,8 +28881,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Electromagnetic parasitic capacitive and inductive coupling between the two parallel traces",
-                    "is_correct": true
+                    "text": "Quantum tunneling of electrons through the fiberglass PCB material",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28891,8 +28891,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Quantum tunneling of electrons through the fiberglass PCB material",
-                    "is_correct": false
+                    "text": "Electromagnetic parasitic capacitive and inductive coupling between the two parallel traces",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -28922,8 +28922,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Step down a higher DC input voltage to a stable, lower DC output voltage",
-                    "is_correct": true
+                    "text": "Convert $120\\text{V}$ AC wall power directly into $5\\text{V}$ DC USB power",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -28937,8 +28937,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Convert $120\\text{V}$ AC wall power directly into $5\\text{V}$ DC USB power",
-                    "is_correct": false
+                    "text": "Step down a higher DC input voltage to a stable, lower DC output voltage",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -29004,13 +29004,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Serial Clock Line (SCL)",
-                    "is_correct": true
+                    "text": "Chip Select Line (CS)",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Chip Select Line (CS)",
-                    "is_correct": false
+                    "text": "Serial Clock Line (SCL)",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -29045,8 +29045,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Double every two years, drastically driving down the cost and increasing the speed of computing power",
-                    "is_correct": true
+                    "text": "Remain perfectly constant due to silicon heat limitations",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29055,8 +29055,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Remain perfectly constant due to silicon heat limitations",
-                    "is_correct": false
+                    "text": "Double every two years, drastically driving down the cost and increasing the speed of computing power",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -29086,8 +29086,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Higher index of refraction ($n_1$) than the surrounding outer cladding layer ($n_2$)",
-                    "is_correct": true
+                    "text": "Vacuum inside a hollow tube",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29101,8 +29101,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Vacuum inside a hollow tube",
-                    "is_correct": false
+                    "text": "Higher index of refraction ($n_1$) than the surrounding outer cladding layer ($n_2$)",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -29168,13 +29168,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Return address on the execution call stack, mathematically hijacking the program's execution flow to run their own injected virus code",
-                    "is_correct": true
+                    "text": "Read-Only Memory (ROM) BIOS chip",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "Read-Only Memory (ROM) BIOS chip",
-                    "is_correct": false
+                    "text": "Return address on the execution call stack, mathematically hijacking the program's execution flow to run their own injected virus code",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -29211,8 +29211,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$0.992$",
-                    "is_correct": true
+                    "text": "$0.512$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29221,8 +29221,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$0.512$",
-                    "is_correct": false
+                    "text": "$0.992$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -29260,8 +29260,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Acceptance Testing",
-                    "is_correct": true
+                    "text": "System Testing",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29275,8 +29275,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "System Testing",
-                    "is_correct": false
+                    "text": "Acceptance Testing",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -29346,13 +29346,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\$67,100$",
-                    "is_correct": true
+                    "text": "$\\$100,000$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$\\$100,000$",
-                    "is_correct": false
+                    "text": "$\\$67,100$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -29391,8 +29391,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Conflict of Interest",
-                    "is_correct": true
+                    "text": "Practicing outside area of competence",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29401,8 +29401,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Practicing outside area of competence",
-                    "is_correct": false
+                    "text": "Conflict of Interest",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -29428,8 +29428,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$95.4\\%$",
-                    "is_correct": true
+                    "text": "$50.0\\%$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29443,8 +29443,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$50.0\\%$",
-                    "is_correct": false
+                    "text": "$95.4\\%$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -29514,13 +29514,13 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$6\\text{ dB}$",
-                    "is_correct": true
+                    "text": "$3\\text{ dB}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$3\\text{ dB}$",
-                    "is_correct": false
+                    "text": "$6\\text{ dB}$",
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -29559,8 +29559,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$5.0$",
-                    "is_correct": true
+                    "text": "$1.0$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29569,8 +29569,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "$1.0$",
-                    "is_correct": false
+                    "text": "$5.0$",
+                    "is_correct": true
                 },
                 {
                     "label": "D",
@@ -29604,8 +29604,8 @@ const ADVANCED_QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$y(t) = (C_1 + C_2 t)e^{-2t}$",
-                    "is_correct": true
+                    "text": "$y(t) = C_1 e^{-4t} + C_2 e^{-t}$",
+                    "is_correct": false
                 },
                 {
                     "label": "B",
@@ -29619,8 +29619,8 @@ const ADVANCED_QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$y(t) = C_1 e^{-4t} + C_2 e^{-t}$",
-                    "is_correct": false
+                    "text": "$y(t) = (C_1 + C_2 t)e^{-2t}$",
+                    "is_correct": true
                 }
             ],
             "solution": {
@@ -29644,3 +29644,4 @@ const ADVANCED_QUESTIONS = {
         }
     ]
 };
+
