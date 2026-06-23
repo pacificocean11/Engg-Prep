@@ -4003,8 +4003,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // If Firestore returned no real users (empty DB), fall back to mock
-        const baseUsers = deduplicatedRealUsers.length > 0 ? deduplicatedRealUsers : MOCK_LEADERBOARD;
+        // Do not fall back to dummy users. If offline and cache is empty, only show the current user.
+        const baseUsers = deduplicatedRealUsers;
         let allUsers = [...baseUsers, currentUserData];
 
         // Sort by points descending
