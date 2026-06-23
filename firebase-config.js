@@ -55,7 +55,7 @@ window.getUserProgress = async function(userId) {
         }
     } catch (e) {
         console.error("❌ Firebase load error:", e);
-        return null;
+        throw e;
     }
 };
 

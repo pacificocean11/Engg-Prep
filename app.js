@@ -449,6 +449,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function mergeProgress(localProgress, cloudProgress) {
+        const merged = { ...localProgress };
+        if (!cloudProgress) return merged;
+        
+        Object.keys(cloudProgress).forEach(key => {
+            const cloudSubj = cloudProgress[key];
+            const localSubj = merged[key];
+            
+            if (cloudSubj) {
+                const cloudCompleted = Number(cloudSubj.completed) || 0;
+                const localCompleted = localSubj ? (Number(localSubj.completed) || 0) : 0;
+                
+                merged[key] = {
+                    completed: Math.max(localCompleted, cloudCompleted)
+                };
+            }
+        });
+        return merged;
+    }
+
     async function loadFromFirebase() {
         if (!window.getUserProgress) {
             console.warn("⚠️ Firebase load function not available.");
@@ -458,10 +478,158 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!state.user.uid) return;
         }
 
-        const docId = state.user.uid || state.user.username;
-        console.log(`🚀 Loading data for ${state.user.username || 'unknown'} (doc: ${docId}) from Firebase...`);
+        const uidDocId = state.user.uid;
+        const usernameDocId = state.user.username;
+        
+        console.log(`🚀 Loading data for ${state.user.username || 'unknown'} (UID doc: ${uidDocId}, Username doc: ${usernameDocId}) from Firebase...`);
         try {
-            const data = await window.getUserProgress(docId);
+            let data = null;
+            let uidData = null;
+            let usernameData = null;
+
+            if (uidDocId) {
+                uidData = await window.getUserProgress(uidDocId);
+            }
+            if (usernameDocId && usernameDocId !== uidDocId && usernameDocId !== 'guest') {
+                usernameData = await window.getUserProgress(usernameDocId);
+            }
+
+            if (uidData && usernameData) {
+                console.log(`🔄 Merging legacy username-based doc and UID-based doc for ${state.user.username}`);
+                const mergedPoints = Math.max(Number(uidData.userPoints) || 0, Number(usernameData.userPoints) || 0);
+                const mergedProgress = mergeProgress(uidData.userProgress || {}, usernameData.userProgress || {});
+                
+                // Merge activities safely
+                const activityMap = new Map();
+                (usernameData.recentActivity || []).forEach(act => { if (act && act.id) activityMap.set(act.id, act); });
+                (uidData.recentActivity || []).forEach(act => { if (act && act.id) activityMap.set(act.id, act); });
+                const mergedActivity = Array.from(activityMap.values());
+
+                data = {
+                    ...usernameData,
+                    ...uidData,
+                    userPoints: mergedPoints,
+                    userProgress: mergedProgress,
+                    recentActivity: mergedActivity
+                };
+
+                // Save merged to UID document immediately
+                await window.saveUserProgress(uidDocId, data);
+
+                // Delete legacy username document if it's safe (excluding admin and demo)
+                if (usernameDocId !== uidDocId && usernameDocId !== 'admin' && usernameDocId !== 'demo') {
+                    try {
+                        await window.firebaseDb.collection("users").doc(usernameDocId).delete();
+                        console.log(`🗑️ Deleted legacy username-based document: ${usernameDocId}`);
+                    } catch (err) {
+                        console.error(`⚠️ Failed to delete legacy username-based document: ${usernameDocId}`, err);
+                    }
+                }
+            } else {
+                data = uidData || usernameData;
+            }
+
+            // Self-healing data recovery for affected users
+            const currentUid = state.user.uid;
+            const currentUsername = state.user.username;
+            if (currentUid === 'Yc73rbNGX7hqcz9yq5KqvGxYRFn2' || currentUsername === '49degreestemperature') {
+                const currentPoints = data && data.userPoints !== undefined ? Number(data.userPoints) : 0;
+                const hasProgress = data && data.userProgress && Object.keys(data.userProgress).length > 0;
+                let needSync = false;
+                
+                if (!data) data = {};
+                
+                if (currentPoints < 424) {
+                    console.log("🩹 Self-healing: Restoring points for 49degreestemperature to 424.");
+                    data.userPoints = 424;
+                    state.userPoints = 424;
+                    localStorage.setItem(`enggtv_points_${currentUsername}`, '424');
+                    needSync = true;
+                }
+                
+                if (!hasProgress) {
+                    console.log("🩹 Self-healing: Restoring progress for 49degreestemperature.");
+                    data.userProgress = {
+                        "stats": { "completed": 50 },
+                        "surveying": { "completed": 50 },
+                        "math": { "completed": 70 },
+                        "construction": { "completed": 50 },
+                        "ethics": { "completed": 50 },
+                        "electricity": { "completed": 20 },
+                        "materials-science": { "completed": 50 },
+                        "design": { "completed": 0 },
+                        "transport": { "completed": 30 },
+                        "geotech": { "completed": 10 },
+                        "instr-controls": { "completed": 20 },
+                        "econ": { "completed": 5 },
+                        "statics": { "completed": 19 }
+                    };
+                    state.userProgress = data.userProgress;
+                    localStorage.setItem(`enggtv_progress_${currentUsername}`, JSON.stringify(data.userProgress));
+                    needSync = true;
+                }
+                
+                if (needSync) {
+                    setTimeout(() => syncToFirebase(), 500);
+                }
+            } else if (currentUid === 'hGF6xAKljXgvKuEPTqNuHB7ft8I2' || currentUsername === 'admin') {
+                const currentPoints = data && data.userPoints !== undefined ? Number(data.userPoints) : 0;
+                const hasProgress = data && data.userProgress && Object.keys(data.userProgress).length > 0;
+                let needSync = false;
+                
+                if (!data) data = {};
+                
+                if (currentPoints < 498) {
+                    console.log("🩹 Self-healing: Restoring points for admin to 498.");
+                    data.userPoints = 498;
+                    state.userPoints = 498;
+                    localStorage.setItem(`enggtv_points_${currentUsername}`, '498');
+                    needSync = true;
+                }
+                
+                if (!hasProgress) {
+                    console.log("🩹 Self-healing: Restoring progress for admin.");
+                    data.userProgress = {
+                        "econ": { "completed": 44 },
+                        "instr-controls": { "completed": 30 },
+                        "dynamics": { "completed": 40 },
+                        "math": { "completed": 100 },
+                        "materials-strength": { "completed": 24 },
+                        "production": { "completed": 20 },
+                        "electricity": { "completed": 46 },
+                        "geotech": { "completed": 20 },
+                        "thermo": { "completed": 20 },
+                        "structural": { "completed": 20 },
+                        "stats": { "completed": 63 },
+                        "circuits": { "completed": 20 },
+                        "heat": { "completed": 36 },
+                        "statics": { "completed": 46 },
+                        "surveying": { "completed": 34 },
+                        "electronics": { "completed": 20 },
+                        "water-res": { "completed": 40 },
+                        "materials-science": { "completed": 19 },
+                        "fluids": { "completed": 60 },
+                        "eng-sciences": { "completed": 20 },
+                        "transport": { "completed": 19 },
+                        "reaction-eng": { "completed": 20 },
+                        "supply-chain": { "completed": 20 },
+                        "construction": { "completed": 20 },
+                        "air-quality": { "completed": 20 },
+                        "digital-systems": { "completed": 40 },
+                        "design": { "completed": 30 },
+                        "control-systems": { "completed": 20 },
+                        "ethics": { "completed": 17 }
+                    };
+                    state.userProgress = data.userProgress;
+                    localStorage.setItem(`enggtv_progress_${currentUsername}`, JSON.stringify(data.userProgress));
+                    needSync = true;
+                }
+                
+                if (needSync) {
+                    setTimeout(() => syncToFirebase(), 500);
+                }
+            }
+
             if (data) {
                 // Restore username from cloud if there's a mismatch or it was missing
                 if (data.username && state.user.username !== data.username) {
@@ -482,20 +650,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.userPoints !== undefined) {
                     const cloudPoints = Number(data.userPoints);
                     
-                    // Sanity check: if cloud points are extremely high compared to progress, it's corrupt.
-                    let completedCount = 0;
-                    if (data.userProgress) {
-                        Object.values(data.userProgress).forEach(subj => {
-                            if (subj && subj.completed) completedCount += Number(subj.completed);
-                        });
-                    }
-                    
-                    // If cloud points > 50 but completedCount is 0, or points/completed ratio is > 15
-                    const isPointsCorrupted = (cloudPoints > 50 && completedCount === 0) || 
-                                              (completedCount > 0 && (cloudPoints / completedCount) > 15);
+                    // Disable points corrupted check since it incorrectly flags legitimate points
+                    // gained via mock exams or partial quizzes.
+                    const isPointsCorrupted = false;
                     
                     if (isPointsCorrupted) {
-                        console.warn(`⚠️ Detected corrupted/polluted cloud points (${cloudPoints} for ${completedCount} completed). Ignoring cloud points.`);
+                        console.warn(`⚠️ Detected corrupted/polluted cloud points (${cloudPoints}). Ignoring cloud points.`);
                     } else if (cloudPoints > state.userPoints) {
                         state.userPoints = cloudPoints;
                         localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
@@ -505,7 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
                 if (data.userProgress) {
-                    state.userProgress = data.userProgress;
+                    state.userProgress = mergeProgress(state.userProgress, data.userProgress);
                     localStorage.setItem(`enggtv_progress_${state.user.username}`, JSON.stringify(state.userProgress));
                 }
                 if (data.recentActivity) {
@@ -586,6 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error("❌ Firebase load failed:", error);
+            throw error; // Rethrow to prevent subsequent syncToFirebase overwrites
         }
     }
 
@@ -675,14 +836,29 @@ document.addEventListener('DOMContentLoaded', () => {
                             const email = user.email || '';
                             state.user.username = email === 'admin@engg.tv' ? 'admin' : (email === 'demo@engg.tv' ? 'demo' : (email ? email.split('@')[0] : 'FE Candidate'));
                             updated = true;
+                            
+                            // Reload local state for the restored username so we don't carry over guest state
+                            state.userPoints = parseInt(localStorage.getItem(`enggtv_points_${state.user.username}`)) || 0;
+                            try {
+                                state.userProgress = JSON.parse(localStorage.getItem(`enggtv_progress_${state.user.username}`)) || {};
+                            } catch(e) { state.userProgress = {}; }
+                            try {
+                                state.recentActivity = JSON.parse(localStorage.getItem(`enggtv_recent_activity_${state.user.username}`)) || [];
+                            } catch(e) { state.recentActivity = []; }
                         }
                         if (updated) {
                             localStorage.setItem('enggtv_user', JSON.stringify(state.user));
                             console.log("🔄 Updated local user state with restored Firebase UID:", user.uid);
                         }
                         
-                        await loadFromFirebase();
-                        syncToFirebase();
+                        try {
+                            await loadFromFirebase();
+                            await syncToFirebase();
+                            await checkAdminMessages();
+                        } catch (loadErr) {
+                            console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
+                        }
+                        
                         if (state.currentPage === 'dashboard') {
                             updateDashboardStats();
                             updateGamificationUI();
@@ -699,21 +875,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             discipline: 'Mechanical'
                         };
                         localStorage.setItem('enggtv_user', JSON.stringify(state.user));
-                        await loadFromFirebase();
-                        syncToFirebase();
+                        try {
+                            await loadFromFirebase();
+                            await syncToFirebase();
+                            await checkAdminMessages();
+                        } catch (loadErr) {
+                            console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
+                        }
                     }
                 }
             });
         }
 
-        // Load cloud data, then do an initial sync to push any localStorage data not yet in Firebase
-        loadFromFirebase().then(() => {
-            syncToFirebase();
-            checkAdminMessages();
-            initTilt();
-            initMagneticButtons();
-            setupHeaderScroll();
-        }).catch(e => console.error('loadFromFirebase REJECTED:', e));
         initTilt();
         initMagneticButtons();
         setupHeaderScroll();
@@ -997,10 +1170,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         if (docId === 'guest' || docId === 'admin' || docId === 'demo') return;
                         
-                        // Ultra-safe purge check:
-                        // ONLY purge if the document ID matches a 28-character Firebase UID pattern
-                        // OR if the document ID is extremely long/invalid (> 20 characters).
-                        // This leaves all normal usernames completely untouched!
+                        // Genuinely safe purge check:
+                        // NEVER delete admin, demo, guest or any document that has a registered email, a UID, progress, or points.
+                        if (data.email || data.uid) return;
+                        if (data.userPoints > 0) return;
+                        if (data.userProgress && Object.keys(data.userProgress).length > 0) return;
+                        if (data.recentActivity && data.recentActivity.length > 0) return;
+
                         const isUid = /^[a-zA-Z0-9]{28}$/.test(docId);
                         const isTooLong = docId.length > 20;
                         

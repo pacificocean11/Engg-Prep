@@ -464,6 +464,10 @@
                             await firebaseDb.collection('users').doc(uid).set(userData);
                         } else {
                             let updated = false;
+                            if (!userData.uid) {
+                                userData.uid = uid;
+                                updated = true;
+                            }
                             if (userData.username !== username) {
                                 userData.username = username;
                                 updated = true;
@@ -498,7 +502,9 @@
                     const userDoc = await firebaseDb.collection('users').doc(userCredential.user.uid).get();
                     
                     if (userDoc.exists) {
-                        loginSuccess(userDoc.data());
+                        const data = userDoc.data();
+                        if (!data.uid) data.uid = userCredential.user.uid;
+                        loginSuccess(data);
                     } else {
                         loginSuccess({ username: email.split('@')[0], email: email, uid: userCredential.user.uid, tier: 'free', discipline: 'Mechanical' });
                     }
