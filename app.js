@@ -811,6 +811,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setupQuizListeners();
         setupDashboardListeners();
         setupAdminListeners();
+        
+        // Robust Offline Mode Listeners
+        window.addEventListener('online', () => {
+            window.showToast("Back Online", "Your progress will now sync with the cloud.", "wifi");
+        });
+        window.addEventListener('offline', () => {
+            window.showToast("Offline Mode Active", "You are offline. Progress is saved locally and will sync when reconnected.", "wifi_off");
+        });
+
         renderSubjects();
         setupNavigation();
         setupMobileMenu();
@@ -2246,9 +2255,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectOption(index) {
         if (state.isFinished || state.submitted[state.currentQuestionIndex]) return; 
         
+        if (navigator.vibrate) navigator.vibrate(10);
+        
         const options = document.querySelectorAll('.option');
-        options.forEach(opt => opt.classList.remove('selected'));
-        options[index].classList.add('selected');
+        options.forEach(opt => opt.classList.remove('selected', 'tap-bounce'));
+        
+        const selectedOpt = options[index];
+        selectedOpt.classList.add('selected', 'tap-bounce');
+        setTimeout(() => selectedOpt.classList.remove('tap-bounce'), 200);
         
         state.answers[state.currentQuestionIndex] = index;
         updateQuestionMap();
@@ -2685,8 +2699,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.submitted[state.currentQuestionIndex] = true;
                 state.flagged[state.currentQuestionIndex] = false;
                 
+                const selectedEl = document.querySelector('.option.selected');
+                
                 if (isCorrect) {
                     addPoints(1);
+                    if (navigator.vibrate) navigator.vibrate([30, 50, 30]); // Success vibration
+                    if (selectedEl) {
+                        selectedEl.classList.add('correct-pulse');
+                        setTimeout(() => selectedEl.classList.remove('correct-pulse'), 400);
+                    }
+                } else {
+                    if (navigator.vibrate) navigator.vibrate([100, 50, 100]); // Failure vibration
+                    if (selectedEl) {
+                        selectedEl.classList.add('shake-error');
+                        setTimeout(() => selectedEl.classList.remove('shake-error'), 400);
+                    }
                 }
                 
                 updateQuestionMap();
@@ -4475,6 +4502,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render of Focus Zone on dashboard load
     renderFocusZone();
+
+    // Offline Sync Trigger
+    window.triggerOfflineSync = function() {
+        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            window.showToast("Caching Assets", "Downloading resources for offline mode...", "cloud_download");
+            
+            const messageChannel = new MessageChannel();
+            messageChannel.port1.onmessage = (event) => {
+                if (event.data && event.data.success) {
+                    window.showToast("Offline Ready", "Study materials are now available offline.", "cloud_done");
+                }
+            };
+            
+            navigator.serviceWorker.controller.postMessage({
+                type: 'CACHE_ASSETS',
+                urls: [
+                    '/',
+                    '/index.html',
+                    '/app.js',
+                    '/questions.js',
+                    '/advanced_questions.js',
+                    '/firebase-config.js',
+                    '/style.css'
+                ]
+            }, [messageChannel.port2]);
+        } else {
+            window.showToast("Cannot Sync", "Service Worker is not active. Please reload the page first.", "error");
+        }
+    };
 
     // Run Init
     init();

@@ -15,6 +15,19 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+// Enable offline persistence
+db.enablePersistence({ synchronizeTabs: true })
+  .then(() => {
+    console.log("💾 Firestore offline persistence enabled!");
+  })
+  .catch((err) => {
+    if (err.code === 'failed-precondition') {
+      console.warn("⚠️ Offline persistence can only be enabled in one tab at a time.");
+    } else if (err.code === 'unimplemented') {
+      console.warn("⚠️ Browser does not support offline persistence features.");
+    }
+  });
+
 console.log("🔥 Firebase Initialized successfully!");
 
 // --- HELPER FUNCTIONS (synchronously available to app.js) ---
