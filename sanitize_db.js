@@ -3,6 +3,16 @@ const fs = require('fs');
 const EXCLUSION_LIST = [
     "double integr",
     "eigen",
+    "triple integr",
+    "stokes' theorem",
+    "stokes theorem",
+    "divergence theorem",
+    "tensor",
+    "residue theorem",
+    "partial differential equation",
+    "green's theorem",
+    "quantum",
+    "relativity"
 ];
 
 function sanitizeDatabase(filename, varName) {

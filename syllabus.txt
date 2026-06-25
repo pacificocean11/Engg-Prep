@@ -1,0 +1,6793 @@
+S/-oG: Output scan in normal, XML, s|: Output in the three major formats at once
+open: Only show open (or possibly open) ports
+packet-trace: Show all packets sent and received
+Misc.
+6: Enable IPv6 scanning
+A: Enable OS detection, version detection, script scanning, and traceroute
+V: Print version number
+h: Print this help summary page.
+Examples
+nmap -v -A scanme.nmap.org
+nmap -v -sn 192.168.0.0/16 10.0.0.0/8
+nmap -v -iR 10000 -Pn -p 80
+
+Electrical and Computer Engineering
+©2020 NCEES                                                                                              420
+Port Scanning
+Generally either TCP or UDP ports are scanned. Types of TCP scans include SYN, TCP Connect, NULL, FIN, XMAS
+Common TCP Ports
+Protocol Port Number
+FTP  20,  21
+Telnet                             23
+HTTP  80
+HTTPS  443
+POP3                             110
+SMTP                             25
+TLS                               587
+Web Vulnerability Testing
+Open Web Application Security Project (OWASP) – Online community that provides many open source resources for 
+web application security
+Cross-Site Scripting (XSS) – script injection attack, using a web application to send an attack to another user
+Cross-Site Request Forgery (CRSF) – an attack that forces user to perform unwanted actions with current 
+authorizations. Usually coupled with a social engineering attack.
+SQL Injection (SQLi) – injection attack, by inserting SQL query via input data from the client to the application for 
+execution. The statements usually insert, select, delete or update stored data in the SQL database.
+Endpoint Detection – collection and storage of endpoint data activity to help network administrators analyze, 
+investigate and prevent cyber threats on a network.
+WEP – Wired Equivalent Privacy – Uses 40 bit(10 hex digits) or 104(26 hex digits) bit key
+WPA– Wifi Protected Access – Replacement for WPA, added TKIP and MIC 
+WPA2 – Replaced WPA and implements all mandatory elements of 802.11i, particularly mandatory support for 
+CCMP(AES encryption mode)
+WPA3 – Replaces WPA2. Replaces PSK with Simultaneous Exchange of Equals
+Penetration Testing—Authorized Vulnerability Testing
+Phases
+1.    Reconnaissance
+2.    Scanning
+3. Gaining Access
+4. Maintaining Access
+5. Covering Tracks
+Methods
+External testing—Only systems and assets that are visible on the internet, such as the web application itself, are 
+targeted. The goal of the testing is to gain access to the application and its data.
+Internal testing—The pen tester has access to the application behind the firewall. 
+Blind testing—The pen tester is given the name of the company, but nothing else. This simulates an actual application 
+attack in real time.
+Double-blind testing—This is similar to a blind test, but the security team is not made aware of the simulation. 
+Targeted testing—The penetration tester and security team work together, informing each other of steps taken to attack 
+the application and to defend against the attack. (Red Team vs Blue Team)
+
+Electrical and Computer Engineering
+                                                                                                                    421                                                                                                                     ©2020 NCEES
+Security Triad
+AIC—Availability, Integrity, Confidentiality (also referred to as CIA Triad)
+Availability—guarantee of reliable access to information by authorized entities
+Integrity—assurance information is trustworthy and accurate
+Confidentiality—set of rules that limits access to information
+Authentication 
+Three factors for authentication
+Something you know (password, PIN, etc)
+Something you have (token, smart card, etc)
+Something you are (biometrics, etc)
+AAA protocols (Authentication, Authorization, Accounting)
+TACACS, XTACACS, TACACS+—Terminal Access Controller Access Control System
+RADIUS—Remote Authentication Dial In User Service 
+DIAMETER—Enhancement for RADIUS.  
+PPP protocols
+PAP—Password Authentication Protocol
+CHAP—Challenge Handshake Authentication Protocol  
+EAP—Extensible Authentication Protocol
+Other protocols
+Kerberos—authentication system using a Key Distribution Center
+Key Equations
+McCabe's Cyclomatic Complexity
+c = e – n + 2
+where for a single program graph, n is the number of nodes, e is the number of edges, and c is the cyclomatic complexity.
+The RSA Public-Key Cryptosystem
+n = p × q 
+where p and q are both primes.
+e × d = 1 (mod t)
+where 
+t = least common multiple (p – 1, q – 1)
+mod t = modulo function (remainder of the division)
+• The encrypted cyphertext c of a message m is c = m
+e
+ (mod n)
+• The decrypted message is m = c
+d
+ (mod n)
+• The signature s of a message m is s = m
+d
+ (mod n)
+Diffie-Hellman Key-Exchange Protocol
+A sender and receiver separately select private keys x and y. Generator value g and prime number p is shared between the two. 
+Their shared secret key k is: 
+k = (g
+x
+)
+y
+ (mod p) = (g
+y
+)
+x
+ (mod p)
+
+©2020 NCEES                                                                                              422
+Industrial and Systems Engineering
+Linear Programming
+The general linear programming (LP) problem is:
+Maximize Z = c
+1
+x
+1
+ + c
+2
+x
+2
+ + ... + c
+n
+x
+n
+Subject to:
+a
+11
+x
+1
+ + a
+12
+x
+2
+ + ... + a
+1n
+x
+n
+ ≤ b
+1
+a
+21
+x
+1
+ + a
+22
+x
+2
+ + ... + a
+2n
+x
+n
+ ≤ b
+2
+h
+a
+m1
+x
+1
+ + a
+m2
+x
+2
+ + ... + a
+mn
+x
+n
+ ≤ b
+m
+                         x
+1
+, ... , x
+n
+ ≥ 0
+An LP problem is frequently reformulated by inserting non-negative slack and surplus variables. Although these variables 
+usually have zero costs (depending on the application), they can have non-zero cost coefficients in the objective function. A 
+slack variable is used with a "less than" inequality and transforms it into an equality. For example, the inequality  
+5x
+1
+ + 3x
+2
+ + 2x
+3
+ ≤ 5 could be changed to 5x
+1
+ + 3x
+2
+ + 2x
+3
+ + s
+1
+ = 5 if s
+1
+ were chosen as a slack variable. The inequality  
+3x
+1
+ + x
+2
+ – 4x
+3
+ ≥ 10 might be transformed into 3x
+1
+ + x
+2
+ – 4x
+3
+ – s
+2
+ = 10 by the addition of the surplus variable s
+2
+. Computer 
+printouts of the results of processing an LP usually include values for all slack and surplus variables, the dual prices, and the 
+reduced costs for each variable.
+Dual Linear Program
+Associated with the above linear programming problem is another problem called the dual linear programming problem. If we 
+take the previous problem and call it the primal problem, then in matrix form the primal and dual problems are respectively:
+Primal Dual
+Maximize Z = cx Minimize W = yb
+Subject to: Ax ≤ b Subject to: yA ≥ c
+                     x                     ≥ 0 y ≥ 0
+It is assumed that if A is a matrix of size [m × n], then y is a [1 × m] vector, c is a [1 × n] vector, b is an [m × 1] vector,  
+and x is an [n × 1] vector.
+Network Optimization
+Assume we have a graph G(N, A) with a finite set of nodes N and a finite set of arcs A. Furthermore, let
+N = {1, 2, ... , n}
+x
+ij
+ = flow from node i to node j
+c
+ij
+ = cost per unit flow from i to j
+u
+ij 
+= capacity of arc (i, j)
+b
+i
+ = net flow generated at node i
+We wish to minimize the total cost of sending the available supply through the network to satisfy the given demand. The 
+minimal cost flow model is formulated as follows:
+Minimize 
+Zcx
+ij
+j
+n
+i
+n
+ij
+11
+=
+==
+!!
+subject to
+xxbiNforeachnode
+ij
+j
+n
+ji
+j
+n
+i
+11
+!
+-=
+==
+//
+and
+0 ≤ x
+ij
+ ≤ u
+ij
+ for each arc (i, j)∈A
+
+Industrial and Systems Engineering
+                                                                                                                    423                                                                                                                     ©2020 NCEES
+The constraints on the nodes represent a conservation of flow relationship. The first summation represents total flow out of node 
+i, and the second summation represents total flow into node i. The net difference generated at node i is equal to b
+i
+.
+Many models, such as shortest-path, maximal-flow, assignment and transportation models, can be reformulated as minimal-cost 
+network flow models.
+Process Capability
+Actual Capability
+,minPCRC
+LSLUSL
+33
+kpk
+==
+--
+v
+n
+v
+n
+cm
+Potential Capability (i.e., Centered Process)
+PCRC
+USLLSL
+6
+p
+
+
+
+where
+μ and σ are the process mean and standard deviation, respectively, and LSL and USL are the lower and upper specification 
+limits, respectively.
+Queueing Models
+Definitions
+P
+n
+ = probability of n units in system
+L = expected number of units in the system
+L
+q
+ = expected number of units in the queue
+W    = expected waiting time in system
+W
+q
+ = expected waiting time in queue
+λ = mean arrival rate (constant)
+m
+u
+  = effective arrival rate
+μ = mean service rate (constant)
+ρ = server utilization factor
+s = number of servers
+Kendall notation for describing a queueing system:
+A / B / s / M
+A = the arrival process
+B = the service time distribution
+s = the number of servers
+M    = the total number of customers including those in service
+Fundamental Relationships
+L     =     λW
+L
+q
+ = λW
+q
+W = W
+q
+ + 1/μ
+ρ = λ/(sμ)
+
+Industrial and Systems Engineering
+©2020 NCEES                                                                                              424
+Single Server Models (s = 1)
+Poisson Input—Exponential Service Time: M = ∞
+P
+0
+ = 1 – λ/μ = 1 – ρ
+P
+n
+ = (1 – ρ)ρ
+n
+ = P
+0
+ρ
+n
+L     =     ρ/(1 – ρ) = λ/(μ – λ)
+L
+q
+ = λ
+2
+/[μ (μ– λ)]
+W    = 1/[μ (1 – ρ)] = 1/(μ – λ)
+W
+q
+ = W – 1/μ = λ/[μ (μ – λ)]
+Finite queue: M < ∞
+
+u
+    =    
+P1
+m
+m
+−
+_
+j
+P
+0
+ = (1 – ρ)/(1 – ρ
+M+1
+)
+P
+n
+ = [(1 – ρ)/(1 – ρ
+M+1
+)]ρ
+n
+L     =     ρ/(1 – ρ) – (M + 1)ρ
+M+1
+/(1 – ρ
+M+1
+)
+L
+q
+ = L – (1 – P
+0
+)
+W
+   =   
+/L
+u
+W = W
+q
+ + 1/μ
+Poisson Input—Arbitrary Service Time
+Variance σ
+2
+ is known. For constant service time, σ
+2
+ = 0.
+P
+0
+ = 1 – ρ
+L
+q
+ = (λ
+2
+σ
+2
+ + ρ
+2
+)/[2 (1 – ρ)]
+L     =     ρ + L
+q
+W
+q
+ = L
+q
+ / λ
+W    =    W
+q
+ + 1/μ
+Poisson Input—Erlang Service Times, σ
+2
+ = 1/(kμ
+2
+)
+L
+q
+ = [(1 + k)/(2k)][(λ
+2
+)/(μ (μ– λ))]
+ = [λ
+2
+/(kμ
+2
+) + ρ
+2
+]/[2(1 – ρ)]
+W
+q
+ = [(1 + k)/(2k)]{λ /[μ (μ – λ)]}
+W    =    W
+q
+ + 1/μ
+
+Industrial and Systems Engineering
+                                                                                                                    425                                                                                                                     ©2020 NCEES
+Multiple Server Model (s > 1)
+Poisson Input—Exponential Service Times
+Because calculations for P
+0
+ and L
+q
+ can be time consuming, the following table gives formulas for 1, 2, and 3 servers.
+s
+1
+2
+3
+P
+0
+1 – ρ
+(1 – ρ)/(1 + ρ
+()
+2
+342
+12
+ρ+ρ+
+ρ−
+L
+q
+ρ
+2
+/(1 – ρ)
+2ρ
+3
+/(1 – ρ
+2
+)
+32
+4
+322
+9
+ρ−ρ−ρ+
+ρ
+)
+/!
+/!
+PPnns
+PPssns
+WL
+WW
+LL
+0
+1
+n
+n
+n
+n
+ns
+qq
+q
+q
+0
+0
+##
+$
+mn
+mn
+m
+n
+mn
+
+
+
+
+
+
+_
+_
+_
+i
+i
+i
+Simulation
+1. Random Variate Generation
+The linear congruential method of generating pseudo-random numbers U
+i
+ between 0 and 1 is obtained using Z
+n
+ = (aZ
+n–1
++C) 
+(mod m) where a, C, m, and Z
+0
+ are given nonnegative integers and where U
+i
+ = Z
+i
+ /m. Two integers are equal (mod m) if their 
+remainders are the same when divided by m.
+2. Inverse Transform Method
+If X is a continuous random variable with cumulative distribution function F(x), and Ui is a random number between 0 and 1, 
+then the value of X
+i
+ corresponding to U
+i
+ can be calculated by solving U
+i 
+= F(x
+i
+) for x
+i
+. The solution obtained is  
+x
+i
+ = F
+–1
+(U
+i
+), where F
+–1
+ is the inverse function of F(x).
+F(x)
+X
+U
+1
+X
+2
+X
+2
+U
+2
+1
+0
+Inverse Transform Method for Continuous Random Variables
+
+Industrial and Systems Engineering
+©2020 NCEES                                                                                              426
+Forecasting
+Moving Average
+d
+n
+d
+t
+ti
+i
+n
+1
+=
+
+
+t
+/
+where
+d
+t
+t
+ = forecasted demand for period t
+d
+t – i
+ = actual demand for ith period preceding t
+n = number of time periods to include in the moving average
+Exponentially Weighted Moving Average
+ddd1
+ttt11
+
+
+
+tt
+_i
+where
+d
+t
+t
+    = forecasted demand for t
+α = smoothing constant, 0 ≤ α ≤ 1
+2
+n
+ Factorial Experiments
+EYY
+E
+YY
+YY
+2
+i
+ii
+ij
+ijijijij
+21
+22211211
+=-
+=
+---
+ccmm
+where
+Factors: X
+1
+, X
+2
+, ..., X
+n
+Levels of each factor: 1, 2 (sometimes these levels are represented by the symbols – and +, respectively)
+r = number of observations for each experimental condition (treatment)
+E
+i
+ = estimate of the effect of factor X
+i
+, i = 1, 2, ..., n
+E
+ij
+ = estimate of the effect of the interaction between factors X
+i
+ and X
+j
+Y
+ik
+  = average response value for all r2
+n – 1
+ observations having X
+i
+ set at level k, k = 1, 2
+Y
+ij
+km
+ = average response value for all r2
+n – 2
+ observations having X
+i
+ set at level k, k = 1, 2, and X
+j
+ set at level m,  
+              m = 1, 2.
+Analysis of Variance for 2
+n
+ Factorial Designs
+Main Effects
+Let E be the estimate of the effect of a given factor, let L be the orthogonal contrast belonging to this effect. It can be proved that
+E
+L
+La
+Y
+SS
+rL
+2
+2
+n
+c
+c
+m
+c
+L
+n
+1
+1
+2
+=
+=
+=
+
+
+^
+^
+h
+h
+/
+
+Industrial and Systems Engineering
+                                                                                                                    427                                                                                                                     ©2020 NCEES
+where
+m    = number of experimental conditions (m = 2
+n
+ for n factors)
+a
+(c)
+ = –1 if the factor is set at its low level (Level 1) in experimental condition c
+a
+(c)
+ = +1 if the factor is set at its high level (Level 2) in experimental condition c
+r  = number of replications for each experimental condition
+Y
+c
+^h
+ = average response value for experimental condition c
+SS
+L
+ = sum of squares associated with the factor
+Interaction Effects
+Consider any group of two or more factors.
+a
+(c)
+ = +1 if there is an even number (or zero) of factors in the group set at the low level (Level 1) in experimental condition  
+c = 1, 2, ..., m
+a
+(c)
+ = –1 if there is an odd number of factors in the group set at the low level (Level 1) in experimental condition  
+c = 1, 2, ..., m
+It can be proved that the interaction effect E for the factors in the group and the corresponding sum of squares SS
+L
+ can be 
+determined as follows:
+E
+L
+La
+Y
+SS
+rL
+2
+2
+n
+c
+c
+m
+c
+L
+n
+1
+1
+2
+
+
+
+
+
+^
+^
+h
+h
+/
+Sum of Squares of Random Error
+The sum of the squares due to the random error can be computed as
+SS
+error
+ = SS
+total
+ – Σ
+i
+SS
+i
+ – Σ
+i
+Σ
+j
+SS
+ij
+  – ... – SS
+12 ...n
+where SS
+i
+ is the sum of squares due to factor X
+i
+, SS
+ij
+ is the sum of squares due to the interaction of factors X
+i
+ and X
+j
+, and so on. 
+The total sum of squares is equal to
+SSY
+N
+T
+ck
+k
+r
+c
+m
+2
+11
+2
+total
+=-
+==
+!!
+where Y
+ck
+ is the kth observation taken for the cth experimental condition, m = 2
+n
+, T is the grand total of all observations,  
+and N = r2
+n
+.
+Reliability
+If P
+i
+ is the probability that component i is functioning, a reliability function R(P
+1
+, P
+2
+, ..., P
+n
+) represents the probability that a 
+system consisting of n components will work.
+For n independent components connected in series,
+,,RPPPP
+ni
+i
+n
+12
+1
+f
+=
+=
+_i
+%
+For n independent components connected in parallel,
+,,RPPPP11
+ni
+i
+n
+12
+1
+f
+=--
+=
+__ii
+%
+
+Industrial and Systems Engineering
+©2020 NCEES                                                                                              428
+Learning Curves
+The time to do the repetition N of a task is given by
+T
+N
+ = KN
+ s
+where
+K = constant
+s = ln (learning rate, as a decimal)/ln 2; or, learning rate = 2
+s
+If N units are to be produced, the average time per unit is given by
+..T
+Ns
+K
+N
+1
+0505
+s
+s
+1
+1
+avg
+=
++
++-
++
++
+^
+^
+^
+^
+h
+h
+h
+h
+8
+B
+Inventory Models
+For instantaneous replenishment (with constant demand rate, known holding and ordering costs, and an infinite stockout cost), 
+the economic order quantity is given by
+where
+A = cost to place one order
+D    = number of units used per year
+h = holding cost per unit per year
+Under the same conditions as above with a finite replenishment rate, the economic manufacturing quantity is given by
+where  R = the replenishment rate
+Facility Planning
+Equipment Requirements
+M
+C
+PT
+j
+ij
+ijij
+i
+n
+1
+=
+=
+/
+where
+M
+j
+ = number of machines of type j required per production period 
+P
+ij
+ = desired production rate for product i on machine j, measured in pieces per production period
+T
+ij
+ = production time for product i on machine j, measured in hours per piece
+C
+ij
+ = number of hours in the production period available for the production of product i on machine j
+n = number of products
+People Requirements
+A
+C
+PT
+j
+ij
+ijij
+i
+n
+1
+=
+=
+/
+where
+A
+j
+ = number of crews required for assembly operation j
+P
+ij
+ = desired production rate for product i and assembly operation j (pieces per day)
+T
+ij
+ = standard time to perform operation j on product i (minutes per piece)
+C
+ij
+ = number of minutes available per day for assembly operation j on product i
+n = number of products
+
+Industrial and Systems Engineering
+                                                                                                                    429                                                                                                                     ©2020 NCEES
+Standard Time Determination
+ST = NT × AF
+where
+            NT  = normal time
+            AF  = allowance factor
+Case 1: Allowances are based on the job time.
+         AF
+job
+  = 1 + A
+job
+           A
+job
+ = allowance fraction (percentage/100) based on job time.
+Case 2: Allowances are based on workday.
+        AF
+time  
+= 1/(1 – A
+day
+)
+           A
+day
+ = allowance fraction (percentage/100) based on workday.
+ Predetermined time systems are useful in cases where either (1) the task does not yet exist or (2) changes to a task are being 
+designed and normal times have not yet been established for all elements of the new task or changed task. In such cases 
+no opportunity exists to measure the element time. Unfortunately, there is no scientific basis for predicting element times 
+without breaking them down into motion-level parts. A task consists of elements. An organization may develop its own 
+database of normal element durations, and normal times for new or changed tasks may be predicted if the tasks consist 
+entirely of elements whose normal times are already in the database. But new elements can be decomposed into motions, 
+for which scientifically predetermined times exist in databases called MTM-1, MTM-2, and MTM-3. These databases and 
+software to manipulate them are commercially available. To use one of them effectively requires about 50 hours of training.
+Plant Location
+The following is one formulation of a discrete plant location problem.
+Minimize
+zcyfx
+ij
+j
+n
+i
+m
+ijjj
+j
+n
+111
+=+
+===
+///
+subject to
+,,,
+,,,
+,,
+,,
+ymxjn
+yim
+yij
+xj
+1
+11
+0
+01
+forall
+forall
+ij
+i
+m
+j
+ij
+j
+n
+ij
+j
+1
+1
+f
+f
+#
+$
+=
+==
+=
+=
+=
+_i
+/
+/
+Source: Kennedy, W.J., and Daniel P. Rogers. Review for the Professional Engineers' Examination in Industrial Engineering. Published by authors, 2012.
+where
+m    = number of customers
+n = number of possible plant sites
+y
+ij
+ = fraction or proportion of the demand of customer i which is satisfied by a plant located at site j;  
+ i = 1, ..., m; j = 1, ..., n
+x
+j
+ = 1, if a plant is located at site j
+x
+j
+ = 0, otherwise
+c
+ij
+ = cost of supplying the entire demand of customer i from a plant located at site j
+f
+j
+ = fixed cost resulting from locating a plant at site j
+
+Industrial and Systems Engineering
+©2020 NCEES                                                                                              430
+Material Handling
+Distances between two points (x
+1
+, y
+1
+) and (x
+2
+, y
+2
+) under different metrics:
+Euclidean:
+Rectilinear (or Manhattan):
+Dxxyy
+1212
+=-+-
+Chebyshev (simultaneous x and y movement):
+,maxDxxyy
+1212
+=--
+_i
+Line Balancing
+NORtOT
+CTST
+CTST
+theoreticalminimumnumberofstations
+IdleTime/Station
+IdleTime/Cycle
+mini
+i
+#
+
+
+
+
+b
+_
+l
+i
+/
+/
+NCT
+100PercentIdleTime
+IdleTime/Cycle
+actual
+#
+#
+=
+where
+CT  = cycle time (time between units)
+OT  = operating time/period
+OR  = output rate/period
+ST   = station time (time to complete task at each station)
+t
+i
+ = individual task times
+N = number of stations
+Job Sequencing
+Two Work Centers—Johnson's Rule
+1. Select the job with the shortest time, from the list of jobs, and its time at each work center.
+2.  If the shortest job time is the time at the first work center, schedule it first, otherwise schedule it last. Break ties arbitrarily.
+3. Eliminate that job from consideration.
+4. Repeat 1, 2, and 3 until all jobs have been scheduled.
+Critical Path Method (CPM)
+T     =     
+d
+,
+ij
+ijCP!
+_i
+/
+where 
+d
+ij
+ = duration of activity (i, j)
+CP  = critical path (longest path)
+T = duration of project
+
+Industrial and Systems Engineering
+                                                                                                                    431                                                                                                                     ©2020 NCEES
+PERT
+abc
+ca
+6
+4
+6
+,
+,
+ij
+ijijij
+ij
+ijij
+ij
+ijCP
+ij
+ijCP
+22
+
+
+
+
+
+
+
+
+
+
+!
+!
+_
+_
+i
+i
+/
+/
+where 
+(a
+ij
+, b
+ij
+, c
+ij
+) = (optimistic, most likely, pessimistic) durations for activity (i, j)
+μ
+ij
+ = mean duration of activity (i, j)
+σ
+ij
+ = standard deviation of the duration of activity (i, j)
+μ = project mean duration
+σ = standard deviation of project duration
+Taylor Tool Life Formula
+VT 
+n
+ = C
+where
+V = speed in surface feet per minute
+T = tool life in minutes
+C, n  = constants that depend on the material and on the tool
+Work Sampling Formulas
+where
+p = proportion of observed time in an activity
+D    = absolute error
+R = relative error = D/p
+n = sample size
+
+Industrial and Systems Engineering
+©2020 NCEES                                                                                              432
+THIGH CLEARANCE
+HEIGHT
+ELBOW-TO-ELBO
+W
+BREADTH
+SITTING HEIGHT (NORMAL)
+ANTHROPOMETRIC MEASUREMENTS
+SEAT BREADTH
+ELBOW REST
+HEIGHT
+SITTING HEIGHT
+(ERECT)
+BUTTOCK
+POPLITEAL
+LENGTH
+BUTTOCK
+KNEE LENGTH
+POPLITEAL 
+HEIGHT
+KNEE HEIGHT
+Source: Adapted from Sanders, Mark. S. and Ernest J. McCormick. Human Factors In Engineering and Design. McGraw-Hill, 1993, p. 417.
+
+Industrial and Systems Engineering
+                                                                                                                    433                                                                                                                     ©2020 NCEES
+U.S. Civilian Body Dimensions, Female/Male, for Ages 20 to 60 Years 
+(Centimeters)
+Percentiles
+(See Anthropometric 
+ Measurements Figure) 
+5th50th95thStd. Dev.
+HEIGHTS
+Stature (height) 
+Eye height 
+Shoulder (acromion) height 
+Elbow height 
+Knuckle height 
+Height, sitting (erect) 
+Eye height, sitting 
+Shoulder height, sitting 
+Elbow rest height, sitting 
+Knee height, sitting 
+Popliteal height, sitting 
+Thigh clearance height 
+DEPTHS
+Chest depth 
+Elbow-fingertip distance 
+Buttock-knee length, sitting 
+Buttock-popliteal length, sitting 
+Forward reach, functional 
+BREADTHS
+Elbow-to-elbow breadth 
+Seat (hip) breadth, sitting 
+HEAD DIMENSIONS
+Head breadth 
+Head circumference 
+Interpupillary distance 
+HAND DIMENSIONS
+Hand length 
+Breadth, metacarpal 
+Circumference, metacarpal 
+Thickness, metacarpal III 
+Digit 1 
+Breadth, interphalangeal 
+Crotch-tip length 
+Digit 2 
+Breadth, distal joint 
+Crotch-tip length 
+Digit 3 
+Breadth, distal joint 
+Crotch-tip length 
+Digit 4 
+Breadth, distal joint 
+Crotch-tip length 
+Digit 5 
+Breadth, distal joint 
+Crotch-tip length 
+FOOT DIMENSIONS
+Foot length 
+Foot breadth 
+Lateral malleolus height 
+Weight (kg) 
+149.5 / 161.8 
+138.3 / 151.1 
+121.1 / 132.3 
+93.6 / 100.0 
+64.3 / 69.8 
+78.6 / 84.2 
+67.5 / 72.6 
+49.2 / 52.7 
+18.1 / 19.0 
+45.2 / 49.3 
+35.5 / 39.2 
+10.6 / 11.4 
+21.4 / 21.4 
+38.5 / 44.1 
+51.8 / 54.0 
+43.0 / 44.2 
+64.0 / 76.3 
+31.5 / 35.0 
+31.2 / 30.8 
+13.6 / 14.4 
+52.3 / 53.8 
+5.1 / 5.5 
+16.4 / 17.6 
+7.0 / 8.2 
+16.9 / 19.9 
+2.5 / 2.4 
+1.7 / 2.1 
+4.7 / 5.1 
+1.4 / 1.7 
+6.1 / 6.8 
+1.4 / 1.7 
+7.0 / 7.8 
+1.3 / 1.6 
+6.5 / 7.4 
+1.2 / 1.4 
+4.8 / 5.4 
+22.3 / 24.8 
+8.1 / 9.0 
+5.8 / 6.2 
+46.2 / 56.2 
+160.5 / 173.6 
+148.9 / 162.4 
+131.1 / 142.8 
+101.2 / 109.9 
+70.2 / 75.4 
+85.0 / 90.6 
+73.3 / 78.6 
+55.7 / 59.4 
+23.3 / 24.3 
+49.8 / 54.3 
+39.8 / 44.2 
+13.7 / 14.4 
+24.2 / 24.2 
+42.1 / 47.9 
+56.9 / 59.4 
+48.1 / 49.5 
+71.0 / 82.5 
+38.4 / 41.7 
+36.4 / 35.4 
+14.54 / 15.42 
+54.9 / 56.8 
+5.83 / 6.20 
+17.95 / 19.05 
+7.66 / 8.88 
+18.36 / 21.55 
+2.77 / 2.76 
+1.98 / 2.29 
+5.36 / 5.88 
+1.55 / 1.85 
+6.88 / 7.52 
+1.53 / 1.85 
+7.77 / 8.53 
+1.42 / 1.70 
+7.29 / 7.99 
+1.32 / 1.57 
+5.44 / 6.08 
+24.1 / 26.9 
+8.84 / 9.79 
+6.78 / 7.03 
+61.1 / 74.0 
+171.3 / 184.4 
+159.3 / 172.7 
+141.9 / 152.4 
+108.8 / 119.0 
+75.9 / 80.4 
+90.7 / 96.7 
+78.5 / 84.4 
+61.7 / 65.8 
+28.1 / 29.4 
+54.5 / 59.3 
+44.3 / 48.8 
+17.5 / 17.7 
+29.7 / 27.6 
+46.0 / 51.4 
+62.5 / 64.2 
+53.5 / 54.8 
+79.0 / 88.3 
+49.1 / 50.6 
+43.7 / 40.6 
+15.5 / 16.4 
+57.7 / 59.3 
+6.5 / 6.8 
+19.8 / 20.6 
+8.4 / 9.8 
+19.9 / 23.5 
+3.1 / 3.1 
+2.1 / 2.5 
+6.1 / 6.6 
+1.7 / 2.0 
+7.8 / 8.2 
+1.7 / 2.0 
+8.7 / 9.5 
+1.6 / 1.9 
+8.2 / 8.9 
+1.5 / 1.8 
+6.2 / 6.99 
+26.2 / 29.0 
+9.7 / 10.7 
+7.8 / 8.0 
+89.9 / 97.1 
+6.6 / 6.9 
+6.4 / 6.6 
+6.1 / 6.1 
+4.6 / 5.8 
+3.5 / 3.2 
+3.5 / 3.7 
+3.3 / 3.6 
+3.8 / 4.0 
+2.9 / 3.0 
+2.7 / 2.9 
+2.6 / 2.8 
+1.8 / 1.7 
+2.5 / 1.9 
+2.2 / 2.2 
+3.1 / 3.0 
+3.1 / 3.0 
+4.5 / 5.0 
+5.4 / 4.6 
+3.7 / 2.8 
+0.57 / 0.59 
+1.63 / 1.68 
+0.4 / 0.39 
+1.04 / 0.93 
+0.41 / 0.47 
+0.89 / 1.09 
+0.18 / 0.21 
+0.12 / 0.13 
+0.44 / 0.45 
+0.10 / 0.12 
+0.52 / 0.46 
+0.09 / 0.12 
+0.51 / 0.51 
+0.09 / 0.11 
+0.53 / 0.47 
+0.09/0.12
+0.44/0.47
+1.19 / 1.28 
+0.50 / 0.53 
+0.59 / 0.54 
+13.8 / 12.6 
+Source: Kroemer, Karl H. E., "Engineering Anthropometry," Ergonomics, Vol. 32, No. 7, pp. 779-780, 1989.
+
+Industrial and Systems Engineering
+©2020 NCEES                                                                                              434
+Ergonomics—Hearing
+The average shifts with age of the threshold of hearing for pure tones of persons with "normal" hearing, using a 25-year-old 
+group as a reference group.
+Equivalent sound-level contours used in determining the A-weighted sound level on the basis of an octave-band analysis. The 
+curve at the point of the highest penetration of the noise spectrum reflects the A-weighted sound level.
+-
+Estimated average trend curves for net hearing loss at 1,000, 2,000, and 4,000 Hz after continuous exposure to steady noise. 
+Data are corrected for age, but not for temporary threshold shift. Dotted portions of curves represent extrapolation from 
+available data.
+
+Industrial and Systems Engineering
+                                                                                                                    435                                                                                                                     ©2020 NCEES
+–
+–
+–
+–
+–
+–
+Source: "The Relations of Hearing Loss to Noise Exposure," Exploratory Subcommittee Z24-X-2 of the American Standards Association Z24 Special Committee on Acoustics, Vibration,  
+and Mechanical Shock, sponsored by the Acoustical Society of America, American Standards Association, 1954, pp. 31–33.
+Tentative upper limit of effective temperature (ET) for unimpaired mental performance as related to exposure time; data are 
+based on an analysis of 15 studies. Comparative curves of tolerable and marginal physiological limits are also given.
+Effective temperature (ET) is the dry-bulb temperature at 50% relative humidity, which results in the same physiological effect 
+as the present conditions.
+
+©2020 NCEES                                                                                              436
+Mechanical Engineering
+Mechanical Design and Analysis
+Springs
+Mechanical Springs
+Helical Linear Springs: The shear stress in a helical linear spring is
+K
+d
+FD
+8
+s
+x
+r
+=
+3
+where
+d = wire diameter
+F = applied force
+D    = mean spring diameter
+K
+s
+ = (2C + 1)/(2C)
+C = D/d
+The deflection and force are related by F = kx where the spring rate (spring constant) k is given by
+8
+k
+DN
+d
+3
+=
+4
+G
+where G is the shear modulus of elasticity and N is the number of active coils. 
+Equivalent Spring Constant
+Springs in series:
+ 
+kk
+11
+eqi
+i
+=
+/
+ 
+k
+1
+k
+2
+k
+i
+Springs in parallel:
+ 
+kk
+eqi
+i
+=
+/
+ 
+k
+1
+k
+2
+k
+i
+Spring Material: The minimum tensile strength of common spring steels may be determined from
+S
+ut
+ = A/d
+m
+where S
+ut  
+is the tensile strength in MPa, d is the wire diameter in millimeters, and A and m are listed in the following table:
+MaterialASTM
+mA
+Music wire 
+Oil-tempered wire 
+Hard-drawn wire 
+Chrome vanadium 
+Chrome silicon 
+A228
+A229
+A227
+A232
+A401
+0.163
+0.193
+0.201
+0.155
+0.091
+2060
+1610
+1510
+1790
+1960
+Maximum allowable torsional stress for static applications may be approximated as
+S
+sy
+ = τ =  0.45S
+ut 
+cold-drawn carbon steel (A227, A228, A229)
+S
+sy
+ = τ =  0.50S
+ut
+ hardened and tempered carbon and low-alloy steels (A232, A401)
+
+Mechanical Engineering
+                                                                                                                    437                                                                                                                     ©2020 NCEES
+Compression Spring Dimensions
+Term
+Squared or 
+Closed
+Squared and 
+Ground
+End coils, N
+e
+Total coils, N
+t
+Free length, L
+0
+Solid length, L
+s
+Pitch,p
+2
+N + 2 
+pN + 3d
+d   (N
+t
+ + 1) 
+(L
+0
+ – 3d)/N
+2
+N + 2 
+pN + 2d
+dN
+t
+(L
+0
+ – 2d)/N
+Type of Spring Ends
+Term
+Plain
+Plain and 
+Ground
+End coils, N
+e
+Total coils, N
+t
+Free length, L
+0
+Solid length, L
+s
+Pitch,p
+0
+N
+pN + d
+d   (N
+t
+ + 1) 
+(L
+0
+ – d)/N
+1
+N + 1 
+p   (N + 1) 
+dN
+t
+L
+0
+/(N + 1) 
+Helical Torsion Springs: The bending stress is given as 
+σ = K
+i
+ [32Fr/(πd 
+3
+)]
+where F is the applied load and r is the radius from the center of the coil to the load.
+K
+i
+ = correction factor
+    = (4C
+2
+ – C – 1) / [4C (C – 1)]
+C = D/d
+The deflection θ and moment Fr are related by
+Fr = kθ
+where the spring rate k is given by
+64
+k
+DN
+d
+=
+4
+E
+where k has units of N
+•
+m/rad and θ is in radians.
+Spring Material: The strength of the spring wire may be found as shown in the section on linear springs. The allowable stress σ 
+is then given by
+S
+y
+ = σ = 0.78S
+ut
+  cold-drawn carbon steel (A227, A228, A229)
+S
+y
+ = σ = 0.87S
+ut
+  hardened and tempered carbon and low-alloy steel (A232, A401)
+Bearings
+Ball/Roller Bearing Selection
+The minimum required basic load rating (load for which 90% of the bearings from a given population will survive 1 million 
+revolutions) is given by
+CPL
+a1
+=
+where
+C  = minimum required basic load rating
+P = design radial load
+L = design life (in millions of revolutions)
+a   = 3 for ball bearings, 10/3 for roller bearings
+
+Mechanical Engineering
+©2020 NCEES                                                                                              438
+When a ball bearing is subjected to both radial and axial loads, an equivalent radial load must be used in the equation above. 
+The equivalent radial load is
+P
+eq
+ = XVF
+r
+ + YF
+a
+where
+P
+eq
+ = equivalent radial load
+F
+r
+ = applied constant radial load
+F
+a
+ = applied constant axial (thrust) load
+For radial contact, deep-groove ball bearings:
+V   =   1 if inner ring rotating, 1.2 if outer ring rotating,
+If F
+a
+ /(VF
+r
+) > e,
+.,.XY
+C
+F
+0560840and
+.
+a
+0
+0247
+
+
+eo
+.e
+C
+F
+0513where
+.
+a
+0
+0236
+=
+eo
+C
+0
+ = basic static load rating from bearing catalog
+If F
+a
+/(VF
+r
+) ≤ e, X = 1 and Y = 0.
+Power Screws
+Square Thread Power Screws: The torque required to raise, T
+R
+, or to lower, T
+L
+, a load is given by
+T
+Fd
+dl
+ld
+Fd
+T
+Fd
+dl
+dl
+Fd
+22
+22
+R
+m
+m
+mcc
+L
+m
+m
+mc
+c
+
+
+
+
+
+
+
+
+
+
+
+
+e
+e
+o
+o
+where
+d
+c
+ = mean collar diameter
+d
+m
+ = mean thread diameter = d
+o
+ – 
+p
+2
+p = pitch of thread
+d
+o
+ = outside diameter of screw
+l = lead 
+p for single-start thread
+np for n-start thread
+F = load
+μ = coefficient of friction for thread
+μ
+c
+ = coefficient of friction for collar
+The efficiency of a power screw in raising a load may be expressed as
+η = Fl/(2πT
+R
+)
+Power Transmission
+Shafts and Axles
+Static Loading: The maximum shear stress and the von Mises stress may be calculated in terms of the loads from
+d
+MF
+dT
+d
+MFdT
+2
+88
+4
+848
+max
+2
+2
+12
+2
+2
+12
+x
+r
+v
+r
+
+
+3
+3
+l
+_
+_
+^
+i
+i
+h
+9
+9
+C
+C
+
+Mechanical Engineering
+                                                                                                                    439                                                                                                                     ©2020 NCEES
+where
+M  = bending moment
+F = axial load
+T = torque
+d = diameter
+Fatigue Loading: Using the maximum-shear-stress theory combined with the Soderberg line for fatigue, Westinghouse code 
+formula, the diameter and safety factor are related by
+32
+d
+n
+S
+M
+S
+KM
+S
+T
+S
+KT
+3
+22
+12
+y
+m
+e
+fa
+y
+m
+e
+fsa
+r
+
+ffpp
+>H
+where
+d = diameter
+n   = safety factor
+M
+a
+ = alternating moment
+M
+m
+ = mean moment
+T
+a
+ = alternating torque
+T
+m
+ = mean torque
+S
+e
+ = fatigue limit
+Sy = yield strength
+K
+f  
+= fatigue stress concentration factor for bending
+K
+fs
+ = fatigue stress concentration factor for shear
+Gearing
+Involute Gear Tooth Nomenclature
+Circular pitch p
+c
+ = πd/N
+Base pitch p
+b
+ = p
+c
+ cos φ
+Module m = d/N
+Center distance C = (d
+1
+ + d
+2
+)/2
+where
+N = number of teeth on pinion or gear
+d = pitch circle diameter
+φ = pressure angle
+Gear Trains: Velocity ratio, m
+v
+, is the ratio of the output velocity to the input velocity. Thus, m
+v
+ = ω
+out
+/ω
+in
+. For a  
+two-gear train, m
+v
+ = –N
+in
+/N
+out
+ where N
+in 
+is the number of teeth on the input gear and N
+out
+ is the number of teeth on the output 
+gear. The negative sign indicates that the output gear rotates in the opposite sense with respect to the input gear. In a compound 
+gear train, at least one shaft carries more than one gear (rotating at the same speed). The velocity ratio for a compound train is:
+m
+productofnumberofteethondrivengears
+productofnumberofteethondrivergears
+v
+!
+=
+A simple planetary gearset has a sun gear, an arm that rotates about the sun gear axis, one or more gears (planets) that rotate 
+about a point on the arm, and a ring (internal) gear that is concentric with the sun gear. The planet gear(s) mesh with the sun 
+gear on one side and with the ring gear on the other. A planetary gearset has two independent inputs and one output (or two 
+outputs and one input, as in a differential gearset).
+Often one of the inputs is zero, which is achieved by grounding either the sun or the ring gear. The velocities in a planetary set 
+are related by
+m
+f
+L
+v
+arm
+arm
+!
+
+
+
+
+
+
+Mechanical Engineering
+©2020 NCEES                                                                                              440
+where
+ω
+f
+ = speed of the first gear in the train
+ω
+L
+ = speed of the last gear in the train
+ω
+arm
+ = speed of the arm
+Neither the first nor the last gear can be one that has planetary motion. In determining m
+v
+, it is helpful to invert the mechanism 
+by grounding the arm and releasing any gears that are grounded.
+Dynamics of Mechanisms
+Gearing
+Loading on Straight Spur Gears: The load, W, on straight spur gears is transmitted along a plane that, in edge view, is called 
+the line of action. This line makes an angle with a tangent line to the pitch circle that is called the pressure angle φ. Thus, the 
+contact force has two components: one in the tangential direction, W
+t
+, and one in the radial direction, W
+r
+. These components are 
+related to the pressure angle by 
+W
+r
+ = W
+t
+ tan(φ)
+W
+t
+W
+t
+F
+l
+l
+φ
+t
+t
+x
+a
+r
+f
+W
+r
+W
+Source: Budynas, Richard G., and J. Keith Nisbett, Shigley's Mechanical Engineering Design, 8th ed., New York: McGraw-Hill, 2008, p. 717.
+Only the tangential component W
+t
+  transmits torque from one gear to another. Neglecting friction, the transmitted force may be 
+found if either the transmitted torque or power is known:
+W
+d
+T
+mN
+T
+W
+d
+H
+mN
+H
+22
+22
+t
+t
+ω
+ω
+==
+==
+where
+W
+t
+ = transmitted force (newtons)
+T = torque on the gear (newton-mm)
+d = pitch diameter of the gear (mm)
+N  = number of teeth on the gear
+m  = gear module (mm) (same for both gears in mesh)
+H  = power (kW)
+ω = speed of gear (rad/s)
+Lewis Equation
+FY
+WP
+t
+v
+=
+where
+P =  
+d
+N
+ = diameter pitch (teeth/mm)
+F = face width (mm)
+Y = Lewis form factor
+
+Mechanical Engineering
+                                                                                                                    441                                                                                                                     ©2020 NCEES
+Joining Methods
+Threaded Fasteners: The load carried by a bolt in a threaded connection is given by
+F
+b
+ = CP + F
+i
+   F
+m
+ < 0
+while the load carried by the members is
+F
+m
+ = (1 – C) P – F
+i
+  F
+m
+ < 0
+where
+C  = joint coefficient
+       =       k
+b
+/(k
+b
+ + k
+m
+)
+F
+b
+ = total bolt load
+F
+i
+ = bolt preload
+F
+m
+ = total material load
+P   = externally applied load
+k
+b
+ = effective stiffness of the bolt or fastener in the grip
+k
+m
+ = effective stiffness of the members in the grip
+Bolt stiffness may be calculated from
+k
+AlAl
+AAE
+b
+dttd
+dt
+=
++
+where
+A
+d
+ = major-diameter area
+A
+t
+ = tensile-stress area
+E   = modulus of elasticity
+l
+d
+ = length of unthreaded shank
+l
+t
+ = length of threaded shank contained within the grip
+If all members within the grip are of the same material, member stiffness may be obtained from
+k
+m
+ = dEAe
+b(d/l)
+where
+d   = bolt diameter
+E   = modulus of elasticity of members
+l = grip length
+Coefficients A and b are given in the table below for various joint member materials.
+Material
+Ab
+Steel 0.78715 0.62873 
+Aluminum 0.79670 0.63816 
+Copper 0.79568 0.63553 
+Gray cast iron 0.77871 0.61616 
+The approximate tightening torque required for a given preload F
+i
+ and for a steel bolt in a steel member is given by 
+T = KF
+i
+d
+where 
+K = torque coefficient which is typically 0.2
+Threaded Fasteners – Design Factors: The bolt load factor is
+n
+b
+ = (S
+p
+A
+t
+ – F
+i
+)/CP
+where
+S
+p
+ = proof strength
+
+Mechanical Engineering
+©2020 NCEES                                                                                              442
+The factor of safety guarding against joint separation is
+n
+s
+ = F
+i 
+/ [P (1 – C)]
+Threaded Fasteners – Fatigue Loading: If the externally applied load varies between zero and P, the alternating stress is
+σ
+a
+ = CP/(2A
+t
+)
+and the mean stress is
+σ
+m
+ = σ
+a
+ + F
+i
+ /A
+t
+Bolted and Riveted Joints Loaded in Shear:
+Failure by Pure Shear
+τ = F/A 
+FASTENER IN SHEAR
+F
+F
+where
+F = shear load
+A   = cross-sectional area of bolt or rivet
+Failure by Rupture
+σ = F/A 
+MEMBER RUPTURE
+where
+F = load
+A   = net cross-sectional area of thinnest member
+Failure by Crushing of Rivet or Fastener
+σ = F/A 
+MEMBER OR FASTENER CRUSHING
+where
+F = load
+A = (d)(t) = projected area of a single rivet or fastener
+where
+d   = projected diameter of rivet
+t   = thickness of thinnest plate
+Fastener Groups in Shear
+FASTENER GROUPS
+
+Mechanical Engineering
+                                                                                                                    443                                                                                                                     ©2020 NCEES
+The location of the centroid of a fastener group with respect to any convenient coordinate frame is:
+,x
+A
+Ax
+y
+A
+Ay
+i
+i
+n
+ii
+i
+n
+i
+i
+n
+ii
+i
+n
+1
+1
+1
+1
+==
+=
+=
+=
+=
+/
+/
+/
+/
+where
+n   = total number of fasteners
+i   = the index number of a particular fastener
+A
+i
+ = cross-sectional area of the ith fastener
+x
+i
+ = x-coordinate of the center of the ith fastener
+y
+i
+ = y-coordinate of the center of the ith fastener
+The total shear force on a fastener is the vector sum of the force due to direct shear P and the force due to the moment M acting 
+on the group at its centroid.
+The magnitude of the direct shear force due to P is
+.F
+n
+P
+i1
+=
+This force acts in the same direction as P.
+The magnitude of the shear force due to M is
+.F
+r
+Mr
+i
+i
+i
+n
+i
+2
+2
+1
+=
+=
+!
+This force acts perpendicular to a line drawn from the group centroid to the center of a particular fastener. Its sense is such that 
+its moment is in the same direction (CW or CCW) as M.
+Press/Shrink Fits
+The interface pressure induced by a press/shrink fit is
+.
+p
+E
+r
+rr
+rr
+v
+E
+r
+rr
+rr
+v
+05
+o
+o
+o
+o
+i
+i
+i
+i
+22
+22
+22
+22
+=
++
+++
++
+d
+--
+-
+ffpp
+where the subscripts i and o stand for the inner and outer member, respectively, and
+p   = inside pressure on the outer member and outside pressure on the inner member
+δ = diametral interference
+r = nominal interference radius
+r
+i
+ = inside radius of inner member
+r
+o
+ = outside radius of outer member
+E   = Young's modulus of respective member
+ν   = Poisson's ratio of respective member
+The maximum torque that can be transmitted by a press fit joint is approximately
+T = 2πr
+2
+μpl,
+where r and p are defined above,
+T   = torque capacity of the joint
+μ = coefficient of friction at the interface
+l   = length of hub engagement
+
+Mechanical Engineering
+©2020 NCEES                                                                                              444
+Manufacturability
+Limits and Fits
+The designer is free to adopt any geometry of fit for shafts and holes that will ensure intended function. Over time,  
+sufficient experience with common situations has resulted in the development of a standard. The metric version of the  
+standard is newer and will be presented. The standard specifies that uppercase letters always refer to the hole, while  
+lowercase letters always refer to the shaft.
+d
+min
+d
+d
+l
+δ
+δ
+∆
+D
+∆
+u
+max
+D
+D
+max
+Definitions
+Basic Size or nominal size, D or d, is the size to which the limits or deviations are applied. It is the same for both  
+components.
+Deviation is the algebraic difference between the actual size and the corresponding basic size.
+Upper Deviation, δ
+u
+, is the algebraic difference between the maximum limit and the corresponding basic size.
+Lower Deviation, δ
+l
+, is the algebraic difference between the minimum limit and the corresponding basic size.
+Fundamental Deviation, δ
+F
+, is the upper or lower deviation, depending on which is closer to the basic size.
+Tolerance, ∆
+D
+ or ∆
+d
+, is the difference between the maximum and minimum size limits of a part.
+International tolerance (IT) grade numbers designate groups of tolerances such that the tolerance for a particular IT number 
+will have the same relative accuracy for a basic size.
+Hole basis represents a system of fits corresponding to a basic hole size. The fundamental deviation is H. 
+
+Mechanical Engineering
+                                                                                                                    445                                                                                                                     ©2020 NCEES
+Some Preferred Fits
+Clearance
+Free running fit: not used where accuracy 
+is essential but good for large temperature 
+variations, high running speeds, or heavy 
+journal loads.
+H9/d9
+Sliding fit: where parts are not intended to 
+run freely but must move and turn freely and 
+locate accurately.
+H7/g6
+Locational clearance fit: provides snug fit 
+for location of stationary parts, but can be 
+freely assembled and disassembled.
+H7/h6
+Loose running fit: for wide commercial 
+tolerances or allowances on external members
+H11/c11
+Close running fit: for running on accurate 
+machines and for accurate location at 
+moderate speeds and journal pressures
+H8/f7
+Transition
+Locational transition fit: for accurate location, 
+a compromise between clearance and 
+interference
+H7/k6
+Locational transition fit: for more accurate 
+location where greater interface is permissible
+H7/n6
+Interference
+Location interference fit: for parts requiring 
+rigidity and alignment with prime accuracy 
+of location but without special bore pressure 
+requirements.
+H7/p6
+Medium drive fit: for ordinary steel parts or 
+shrink fits on light sections. The tightest fit 
+usable on cast iron.
+H7/s6
+Force fit: suitable for parts which can be 
+highly stressed or for shrink fits where the 
+heavy pressing forces required are impractical.
+H7/u6
+For the hole
+DD
+DD
+max
+min
+D
+=+
+=
+D
+For a shaft with clearance fits d, g, h, c, or f
+dd
+dd
+max
+minmax
+F
+d
+=+
+=-
+d
+D
+
+Mechanical Engineering
+©2020 NCEES                                                                                              446
+For a shaft with transition or interference fits k, p, s, u, or n
+d
+min
+ = d + δ
+F
+d
+max
+ = d
+min
+ + ∆
+d
+where 
+D  = basic size of hole
+d   = basic size of shaft
+δ
+u
+   = upper deviation
+δ
+l
+ = lower deviation
+δ
+F
+   = fundamental deviation
+∆
+D
+  = tolerance grade for hole
+∆
+d
+   = tolerance grade for shaft
+International Tolerance (IT) Grades  
+Lower limit < Basic Size ≤ Upper Limit
+All values in mm
+Basic Size
+Tolerance Grade, (∆
+D
+ or ∆
+d
+)
+IT6IT7IT9
+0–30.0060.0100.025
+3–60.0080.0120.030
+6–100.0090.0150.036
+10–180.0110.0180.043
+18–300.0130.0210.052
+30–500.0160.0250.062
+Source: Preferred Metric Limits and Fits, ANSI B4.2-1978
+Deviations for Shafts 
+Lower limit < Basic Size ≤ Upper Limit
+All values in mm
+Basic 
+Size
+0−3
+3−6
+6−10
+10−14
+14−18
+18−24
+24−30
+30−40
+40−50
+d
+−0.020
+−0.030
+−0.040
+−0.050
+−0.050
+−0.065
+−0.065
+−0.080
+−0.080
+g
+−0.002
+−0.004
+−0.005
+−0.006
+−0.006
+−0.007
+−0.007
+−0.009
+−0.009
+h
+0
+0
+0
+0
+0
+0
+0
+0
+0
+p
++0.006
++0.012
++0.015
++0.018
++0.018
++0.022
++0.022
++0.026
++0.026
+k
+0
++0.001
++0.001
++0.001
++0.001
++0.002
++0.002
++0.002
++0.002
+s
++0.014
++0.019
++0.023
++0.028
++0.028
++0.035
++0.035
++0.043
++0.043
+u
++0.018
++0.023
++0.028
++0.033
++0.033
++0.041
++0.048
++0.060
++0.070
+c
+−0.060
+−0.070
+−0.080
+−0.095
+−0.095
+−0.110
+−0.110
+−0.120
+−0.130
+f
+−0.006
+−0.010
+−0.013
+−0.016
+−0.016
+−0.020
+−0.020
+−0.025
+−0.025
+n
++0.004
++0.008
++0.010
++0.012
++0.012
++0.015
++0.015
++0.017
++0.017
+Upper Deviation Letter, (δ
+u
+)Lower Deviation Letter, (δ
+l
+)
+Source: ASME B4.2:2009
+As an example, 34H7/s6 denotes a basic size of D = d = 34 mm, an IT class of 7 for the hole, and an IT class of 6 and an "s" fit 
+class for the shaft.
+
+Mechanical Engineering
+                                                                                                                    447                                                                                                                     ©2020 NCEES
+Geometric Dimensioning and Tolerancing (GD&T)
+GD&T is used to communicate design intent. This reference provides materials drawn from the ASME Y14.5 standard: 
+"GD&T is an essential tool for communicating design intent—that parts from technical drawings have the desired form, fit, 
+function and interchangeability."
+GD&T helps the designer provide information about the size, geometry, and location of features for mechanical parts.
+Definitions used in ASME Y14.5
+Regardless of Feature Size (RFS)
+This is the default condition for geometric tolerances.
+Least Material Condition (LMC)
+This is a modifier for the geometric tolerance. The modifier defines the tolerance or acceptability where the part has the 
+least amount of material or weighs the least.
+Maximum Material Condition (MMC)
+This is a modifier for the geometric tolerance. The modifier defines the tolerance or acceptability where the part has the 
+most amount of material or weighs the most.
+Feature Control Frame
+From the ASME Y14.5 standard: "A feature control frame is a rectangle divided into compartments containing the 
+geometric characteristic symbol followed by the tolerance value or description, modifiers, and any applicable datum 
+reference features."
+Datum
+A datum is a plane, axis, point, or other reference geometry with respect to which the tolerance is specified.
+Virtual Condition
+The virtual condition is used to determine the clearance between mating parts. For an external feature, the virtual condition 
+is equal to the MMC plus the related geometric tolerance. For an internal feature, it is equal to the MMC minus the related 
+geometric tolerance.
+
+Mechanical Engineering
+©2020 NCEES                                                                                              448
+Modifying Symbols
+DIMENSION ORIGIN 
+SQUARE 
+Term
+ 
+ 
+AT MAXIMUM MATERIAL CONDITION  
+(When applied to a tolerance value) 
+AT MAXIMUM MATERIAL BOUNDARY 
+(When applied to a datum reference)  
+ 
+PROJECTED TOLERANCE 
+ZONE  
+ 
+DIAMETER 
+ 
+RADIUS 
+ 
+SPHERICAL RADIUS 
+ 
+SPHERICAL DIAMETER 
+ 
+ 
+(   )
+ 
+ARC LENGTH 
+REFERENCE 
+SymbolDefinitions
+The symbols used to indicate diameter, 
+spherical diameter, radius, spherical radius,
+and controlled radius shall precede the 
+value of a dimension or tolerance given
+as a diameter or radius, as applicable. 
+The condition in which a feature of size 
+contains the maximum amount of material within
+the stated limits of size, e.g., minimum hole 
+diameter or maximum shaft diameter. 
+An MMB and an LMB, where at least one 
+boundary is a specified shape that is not a 
+uniform offset from true profile.
+The symbolic means of indicating a projected 
+tolerance zone.
+The symbolic means of indicating a dimension
+or other dimensional data as reference shall be to 
+enclose the dimension (or dimensional data) 
+within parentheses.
+The symbolic means of indicating a dimension 
+is an arch length measured on a curved outline.
+The symbolic means of indicating a toleranced 
+dimension between two features originates from 
+one of these features and not the other. 
+Feature nominal size is square.
+AT LEAST MATERIAL CONDITION  
+(When applied to a tolerance value) 
+AT LEAST MATERIAL BOUNDARY 
+(When applied to a datum reference)  
+Source: Adapted from ASME Y14.5–2018, American Society of Mechanical Engineers, 2018. 
+
+Mechanical Engineering
+                                                                                                                    449                                                                                                                     ©2020 NCEES
+Geometric Dimensioning and Tolerancing (GD&T)
+A uniform boundary 
+equally disposed along 
+the true (theoretically 
+exact) profile, within 
+which the surface 
+elements of each cross-
+section must lie
+Parallel planes, within 
+which the elements of 
+both surfaces must lie 
+simultaneously
+A uniform boundary 
+equally disposed along 
+the true (theoretically 
+exact) profile within 
+which the elements of 
+the surface must lie
+Concentric cylinders, 
+within which all surface 
+elements must lie
+Concentric circles, within 
+which each circular 
+element of the surface 
+must lie
+Parallel planes, within 
+which the elements of a 
+surface must lie
+Cylindrical boundary, 
+within which the axis of 
+the feature must lie 
+(derived median line)
+   Used to control form, or combination of size, form, 
+orientation, and location.
+
+   Tolerance zone can be bilateral or unilateral.
+
+   Can be used as refinement of size.
+
+   Datums can be used where necessary to define 
+design intent differently.
+
+   Used as a refinement of size, the profile tolerance 
+must be contained within the size limits.
+
+   Also controls flatness of each individual surface.
+
+   If a datum was used with a linear dimension it 
+would also control parallelism.
+
+   Datum with a basic dimension would control the 
+tolerance around the true profile.
+
+   Used to control form or combinations of size, form, 
+orientation, and location.
+
+   Tolerance zone can be bilateral or unilateral.
+
+   Basic dimensions must be used to establish the 
+true profile.
+
+   Refinement of size.
+
+   Tolerance value must be less than the size 
+tolerance.
+
+   Cylindricity is a composite control of form which 
+includes circularity, straightness and taper of a 
+cylindrical feature.
+
+   Refinement of size.
+
+   Does not control straightness or taper.
+
+   Tolerance value must be less than the size 
+tolerance.
+
+   Refinement of size.
+
+   Tolerance value must be less than the size 
+tolerance.
+
+   Not a refinement of size.
+
+   Rule #1 only applies to each circular 
+element.
+
+   MMC or RFS only.
+
+   Where necessary the geometric tolerance may be 
+greater than the size tolerance.
+
+   Refinement of size.
+
+   Tolerance value must be less than the size 
+tolerance.
+Additional Comments
+No
+(In this 
+example)
+No
+(In this 
+example)
+No
+No
+No
+No
+Yes
+No
+Datums
+Used
+Yes
+(Axis)
+No
+No
+No
+No
+No
+No
+No
+(Surface)
+Zone
+Modifiers
+Allowed
+Tolerance
+Types
+Profile
+Form
+Straightness
+Flatness
+Circularity
+Cylindricity
+Profile of
+a Line
+Profile of
+a Surface
+ASME
+Symbol
+Drawing Callout
+Meaning
+0.1  Tol.  Zone
+Ø0.1 Tol. Zone
+at  MMC (Ø10.2)
+Ø0.5 Tol. Zone
+at  LMC (Ø9.8)
+0.1  Tol.  Zone
+0.1  Tol.  Zone
+R  0.1  Tol.  Zone
+0.1  Tol.  Zone
+(0.05 Each Side)
+R  5
+15
+Datum  B
+0.1  Tol.  Zone
+(0.05  Each
+Side)
+R  0.1  Tol.  Zone
+Tolerance Zone
+Definition
+(for Example)
+Parallel lines, within 
+which the surface 
+element must lie
+Drawing Callout
+Example
+Ø10±0.2
+Ø
+0.1
+M
+10±0.2
+0.1
+Ø10±0.2
+0.1
+10±0.2
+0.1
+2  Surfaces
+10
+B
+A
+15
+C
+D
+R 5
+0.1
+A
+B
+C
+D
+20±1
+10
+0.1
+Ø10±0.2
+0.1
+Ø10±0.2
+0.1
+
+Mechanical Engineering
+©2020 NCEES                                                                                              450
+Geometric Dimensioning and Tolerancing (GD&T)
+(continued)
+Two concentric cylinders, 
+within which all circular 
+elements must lie 
+(simultaneously) in 
+relationship to the datum 
+axis
+
+   An axis to surface control.
+
+   Provides composite control of all surface 
+elements.  Used to control cumulative variations 
+of circularity, straightness, taper, and axis offset.
+
+   Datum applied on an RFS basis only.
+Runout
+Two concentric circles, 
+within which each 
+circular element must lie 
+in relationship to the 
+datum axis
+
+   An axis to surface control.
+
+   A composite control which includes roundness 
+and axis offset.
+
+   Applies to each circular element independently.
+
+   Datum applied on an RFS basis only.
+Parallel planes, within 
+which the center plane of 
+a slot is permitted to vary 
+from the true 
+(theoretically exact) 
+position
+Cylindrical boundary, 
+within which the center 
+axis of a cylindrical 
+feature of size is 
+permitted to vary from 
+the true (theoretically 
+exact) position
+Parallel planes, parallel 
+to a datum plane (or 
+axis) within which the 
+elements of a surface 
+must lie
+No
+(Surface)
+   Refinement of size.
+
+   Also controls surface flatness.
+
+   Can be applied to an axis of a feature in which the 
+zone could be parallel planes or a cylindrical 
+tolerance zone.
+
+   MMC can be used when parallelism is applied to 
+an axis or centerplane of a feature.
+Cylindrical boundary, at 
+90 degrees basic 
+(perpendicular) to a 
+datum plane within which 
+the axis of the feature 
+must lie
+Yes
+(Axis)
+
+ Not a refinement of size.
+
+ Hole must also be within size limits.
+
+ Calculation
+Parallel planes, at 90 
+degrees basic 
+(perpendicular) to a 
+datum plane(s) within 
+which the elements of a 
+surface must lie
+No
+(Surface)
+   A refinement of size.
+
+   Also controls surface flatness.
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+No
+No
+Yes
+Yes
+Location
+Orientation
+Perpendicularity
+Parallelism
+Position
+Circular
+Runout
+Total
+Runout
+ 
+   Primary control for features of size.
+
+   Tolerance zone also defines the limits of variation 
+in attitude (perpendicularity) of the axis of a 
+cylinder or slot in relationship to a datum(s).
+
+   Where feature control frames contain the same 
+datums in the same order of precedence with the 
+same modifying symbols, they are considered a 
+single composite pattern.  If not required, it must 
+state 'SEPARATE REQUIREMENT.'
+ 
+  
+10±0.2
+A
+0.1
+A
+A
+10±0.2
+A
+M
+0.1
+Ø5±0.2
+Ø
+Ø5±0.2
+Ø10±0.2
+A
+A
+0.1
+0.1  Tol.  Zone
+Datum  A
+90°
+Datum  A
+0.1  Tol.  Zone
+ 0.1  Tol.  Zone
+ at  MMC  (4.8)
+ 0.5  Tol.  Zone
+ at  LMC  (5.2)
+Datum  B
+10±0.2
+A
+A
+0.1
+10±0.2
+5±0.2
+B
+A
+0.1
+A
+B
+MM
+Ø0.1 Tol. Zone
+at MMC (Ø4.8)
+Ø0.5 Tol. Zone
+at LMC (Ø5.2)
+Datum  A
+Ø0.1 Tol. Zone
+at MMC (Ø4.8)
+Ø0.5 Tol. Zone
+at LMC (Ø5.2)
+Datum  B
+Datum  C
+5
+15
+Datum  A
+R  0.1  Tol.  Zone
+Datum  A
+R  0.1  Tol.  
+     Zone
+Ø5±0.2
+M
+0.1
+B
+5
+C
+15
+A
+A
+B
+C
+Ø
+Ø10±0.2
+A
+0.1
+Ø5±0.2
+A
+Yes
+Parallel planes, at a 
+specified basic angle 
+from a datum plane(s) 
+within which all surface 
+elements must lie
+No
+(Surface)
+   Also controls surface flatness.
+
+   A basic angle must be used from the toleranced 
+feature to the datum referenced.
+
+   MMC can be used when angularity is applied to an 
+axis or centerplane of a feature.
+Yes
+Angularity
+30°
+0.1  Tol.  Zone
+Datum  A
+Datum  B
+10±0.2
+30°
+B
+A
+0.1
+A B
+Additional Comments
+Datums
+Used
+Zone
+Modifiers
+Allowed
+Drawing Callout
+Meaning
+Tolerance
+Types
+Drawing Callout
+Example
+ASME
+Symbol
+Tolerance Zone
+Definition
+(for Example)
+22.2
+22.1
+Ø
+AT  Ø22.2  (MMC)
+FORM  SHALL
+BE PERFECT
+EXTERNAL
+FEATURE
+Ø22.2
+Ø22.1
+Ø22.2
+Ø22.1
+GAGE
+INTERNAL
+FEATURE
+22.4
+22.3
+Ø
+AT  Ø22.3  (MMC)
+FORM SHALL
+BE  PERFECT
+Ø22.4
+Ø22.4
+Ø22.3
+Ø22.3
+Ø22.4
+GAGE
+Variations  of  Form (Envelope  Principle) A feature  shall  not  extend  
+beyond  a  boundary  (envelope)  of  perfect  form  at  MMC.  
+Rule #1
+Individual Feature of Size
+Where only a tolerance of 
+size is specified, the limits 
+of size of an individual feature
+prescribe the extent to which 
+variations in its geometric form,
+as well as size, are allowed. 
+Rule #2
+All Applicable Geometric Tolerances
+RFS applies, with respect to the individual tolerance,
+datum reference, or both, where no modifying symbol
+is specified. MMC and LMC must be specified on the 
+drawing where it is required.
+Variations of Size
+The actual local size of an individual feature at
+each cross section shall be within the specified
+tolerance of size.
+Perfect Form at MMC Not Required
+Where it is desired to permit a surface or
+surfaces of a feature to exceed the boundary
+of perfect form at MMC, a note such as 
+PERFECT FORM AT MMC NOT REQUIRED
+is specifiied.
+Source: Courtesy of Dr. Greg Hetland, International Institute of Geometric Dimensioning & Tolerancing, www.iigdt.com. 
+
+Mechanical Engineering
+                                                                                                                    451                                                                                                                     ©2020 NCEES
+Intermediate- and Long-Length Columns
+For both intermediate and long columns, the effective column length depends on the end conditions. The AISC recommended 
+design values for the effective lengths of columns are, for: rounded-rounded or pinned-pinned ends,  
+l
+eff
+ = l; fixed-free, l
+eff 
+= 2.1l; fixed-pinned, l
+eff 
+= 0.80l; fixed-fixed, l
+eff
+ = 0.65l. The effective column length should be used when 
+calculating the slenderness ratio.
+The slenderness ratio of a column is S
+r
+ = l
+eff
+ /r, where l is the length of the column and r is the radius of gyration. The radius  
+of gyration of a column cross-section is,  where I is the area moment of inertia and A is the cross-sectional area of the 
+column. A column is considered to be intermediate if its slenderness ratio is less than or equal to (S
+r
+)
+D
+, where
+E   = Young's modulus of respective member
+S
+y
+ = yield strength of the column material
+For intermediate columns, the critical load is
+PAS
+E
+SS
+1
+2
+cry
+yr
+2
+r
+
+dn
+>H
+where
+P
+cr
+ = critical buckling load
+A = cross-sectional area of the column
+S
+y
+ = yield strength of the column material
+E   = Young's modulus of respective member
+S
+r
+ = slenderness ratio
+For long columns, the critical load is
+P
+S
+EA
+cr
+r
+2
+2
+=
+r
+where the variables are as defined above.
+Static Loading Failure Theories
+Brittle Materials
+Maximum-Normal-Stress Theory
+The maximum-normal-stress theory states that failure occurs when one of the three principal stresses equals the strength of the 
+material. If σ
+1 
+≥ σ
+2 
+≥ σ
+3
+, then the theory predicts that failure occurs whenever σ
+1 
+≥ S
+ut
+ or σ
+3 
+≤ – S
+uc
+ where S
+ut
+ and S
+uc
+ are the 
+tensile and compressive strengths, respectively.
+Coulomb-Mohr Theory
+The Coulomb-Mohr theory is based upon the results of tensile and compression tests. On the σ, τ coordinate system, one circle 
+is plotted for S
+ut
+ and one for S
+uc
+. As shown in the figure, lines are then drawn tangent to these circles. The Coulomb-Mohr theory 
+then states that fracture will occur for any stress situation that produces a circle that is either tangent to or crosses the envelope 
+defined by the lines tangent to the S
+ut 
+and S
+uc
+ circles.
+σ
+τ
+S
+ut
+σ
+1
+σ
+3
+-S
+uc
+
+Mechanical Engineering
+©2020 NCEES                                                                                              452
+If σ
+1 
+≥ σ
+2 
+≥ σ
+3 
+ and σ
+3 
+< 0, then the theory predicts that yielding will occur whenever
+SS
+1
+utuc
+1
+3
+$
+
+
+
+Ductile Materials
+Maximum-Shear-Stress Theory
+The maximum-shear-stress theory states that yielding begins when the maximum shear stress equals the maximum shear stress 
+in a tension-test specimen of the same material when that specimen begins to yield. If σ
+1 
+≥ σ
+2 
+≥ σ
+3
+, then the theory predicts that 
+yielding will occur whenever τ
+max
+ ≥ S
+y
+ /2 where S
+y
+ is the yield strength.
+.
+2
+13
+max
+
+
+
+
+Distortion-Energy Theory
+The distortion-energy theory states that yielding begins whenever the distortion energy in a unit volume equals the distortion 
+energy in the same volume when uniaxially stressed to the yield strength. The theory predicts that yielding will occur whenever
+S
+2
+y
+12
+2
+23
+2
+13
+2
+12
+$
+
+
+_
+``
+i
+jj
+>H
+The term on the left side of the inequality is known as the effective or von Mises stress. For a biaxial stress state the effective 
+stress becomes
+3
+or
+AABB
+xxyyxy
+22
+12
+222
+12
+
+
+
+
+l
+l
+`
+a
+j
+k
+where σ
+A
+ and σ
+B
+ are the two nonzero principal stresses and σ
+x
+, σ
+y
+, and τ
+xy
+ are the stresses in orthogonal directions.
+Variable Loading Failure Theories
+Modified Goodman Theory
+The modified Goodman criterion states that a fatigue failure will occur whenever
+,,
+SSS
+110or
+max
+e
+a
+ut
+m
+y
+m
+$$$
+
+
+
+ (without a factor of safety)
+,
+SS
+n
+S
+n
+11
+0or
+max
+e
+a
+ut
+m
+y
+m
+$$$
+
+
+
+ (with a factor of safety)
+where
+S
+e
+ = endurance limit
+S
+ut
+ = ultimate strength
+S
+y
+ = yield strength
+σ
+a
+ = alternating stress
+σ
+m
+ = mean stress
+σ
+max
+ = σ
+m
+ + σ
+a
+n   = factor of safety
+Soderberg Theory
+The Soderberg theory states that a fatigue failure will occur whenever
+SS
+10
+e
+a
+y
+m
+m
+$$
+
+
+
+
+Mechanical Engineering
+                                                                                                                    453                                                                                                                     ©2020 NCEES
+Endurance Limit for Steels
+When test data is unavailable, the endurance limit for steels may be estimated as
+.,,
+>,
+S
+SS
+S
+051400
+7001400
+MPa
+MPa,MPa
+e
+utut
+ut
+#
+=
+l
+*4
+Endurance Limit Modifying Factors
+Endurance limit modifying factors are used to account for the differences between the endurance limit as determined from a 
+rotating beam test, 
+S
+e
+l
+, and that which would result in the real part, S
+e
+.
+SkkkkkS
+eabcdee
+=
+l
+where
+Surface Factor, k
+a
+ = 
+aS
+ut
+b
+Factora
+Surface
+Finish
+kpsiMPa
+Ground 1.34 1.58 –0.085 
+Machined or 
+CD
+2.70 4.51 –0.265 
+Hot rolled 14.4 57.7 –0.718 
+As forged 39.9 272.0 –0.995 
+Exponent b
+Size Factor, k
+b
+:
+For bending and torsion:
+d ≤ 8 mm; k
+b
+ = 1
+8 mm ≤ d ≤ 250 mm; k
+b
+ = 
+.d1189
+.
+eff
+0097
+-
+d > 250 mm;  0.6 ≤ k
+b
+ ≤ 0.75
+For axial loading:  k
+b
+ = 1
+Load Factor, k
+c
+:
+k
+c
+ = 0.923  axial loading, S
+ut  
+≤ 1,520 MPa
+k
+c
+ = 1  axial loading, S
+ut  
+> 1,520 MPa
+k
+c
+ = 1  bending
+k
+c
+ = 0.577  torsion
+Temperature Factor, k
+d
+:
+for T ≤ 450°C, k
+d 
+= 1
+Miscellaneous Effects Factor, k
+e
+: Used to account for strength reduction effects such as corrosion, plating, and residual stresses. 
+In the absence of known effects, use k
+e
+ = 1.
+
+Mechanical Engineering
+©2020 NCEES                                                                                              454
+Kinematics, Dynamics, and Vibrations
+Kinematics of Mechanisms
+Fourbar Linkage
+The fourbar linkage shown above consists of a reference (usually grounded) link (1), a crank (input) link (2), a coupler link 
+(3), and an output link (4). Links 2 and 4 rotate about the fixed pivots O
+2
+ and O
+4
+, respectively. Link 3 is joined to link 2 at the 
+moving pivot A and to link 4 at the moving pivot B. The lengths of links 2, 3, 4, and 1 are a, b, c, and d, respectively. 
+Taking link 1 (ground) as the reference (X-axis), the angles that links 2, 3, and 4 make with the axis are θ
+2
+, θ
+3
+, and θ
+4
+, 
+respectively. It is possible to assemble a fourbar in two different configurations for a given position of the input link (2). These 
+are known as the "open" and "crossed" positions or circuits.
+Position Analysis. Given a, b, c, and d, and θ
+2
+where
+A = cos θ
+2
+ – K
+1
+ – K
+2
+ cos θ
+2
+ + K
+3
+B = – 2sin θ
+2
+C = K
+1
+ – (K
+2
+ + 1) cos θ
+2
+ + K
+3
+,,K
+a
+d
+K
+c
+d
+K
+ac
+abcd
+2
+123
+22
+22
+===
+-++
+In the equation for θ
+4
+, using the minus sign in front of the radical yields the open solution. Using the plus sign yields the  
+crossed solution.
+where 
+D = cos θ
+2
+ – K
+1
+ + K
+4
+ cos θ
+2
+ + K
+5
+E = –2sin θ
+2
+F = K
+1
+ + (K
+4
+ – 1) cos θ
+2
+ + K
+5
+,K
+b
+d
+K
+ab
+cdab
+2
+45
+2222
+==
+---
+In the equation for θ
+3
+, using the minus sign in front of the radical yields the open solution. Using the plus sign yields the  
+crossed solution.
+
+Mechanical Engineering
+                                                                                                                    455                                                                                                                     ©2020 NCEES
+Velocity Analysis. Given a, b, c, and d, θ
+2
+, θ
+3
+, θ
+4
+, and ω
+2
+,
+,
+,
+sin
+sin
+sin
+sin
+si
+ncos
+si
+ncos
+si
+ncos
+b
+a
+c
+a
+VaVa
+VbVb
+VcVc
+AxAy
+BA
+xBAy
+BxBy
+3
+2
+34
+42
+4
+2
+43
+23
+22
+22
+3333
+4444
+=
+-
+-
+=
+-
+-
+=-=
+=-=
+=-=
+~
+~
+ii
+ii
+~
+~
+ii
+ii
+~i
+~i
+~i~i
+~i~i
+_
+_
+_
+_
+i
+i
+i
+i
+Acceleration Analysis. Given a, b, c, and d, θ
+2
+, θ
+3
+, θ
+4
+, and ω
+2
+, ω
+3
+, ω
+4
+, and α
+2
+,
+AEBD
+CDAF
+AEBD
+CEBF
+34
+
+
+
+
+
+
+
+A = csinθ
+4
+, B = bsinθ
+3
+sincoscoscosCaabc
+22
+2
+2
+2
+3
+2
+3
+4
+2
+4
+=++-
+ai~i~i~i
+D = ccosθ
+4
+, E = bcosθ
+3
+cossinsinsinFaabc
+22
+2
+2
+2
+3
+2
+3
+4
+2
+4
+=--+
+ai~i~i~i
+Symbols commonly used to represent hydraulic pneumatic and electromechanical components.
+
+Mechanical Engineering
+©2020 NCEES                                                                                              456
+ANSI Symbols for Hydraulic Power
+M
+(a) spring (spring-loaded)
+or
+two windingone winding
+(b) solenoid
+(c) adjustable symbol
+(d) directional arrow (oil)
+(e) directional arrow (air or gas)
+(g) shaft or lever
+(h) reservoir (open)
+(i) reservoir (closed)
+(j) filter or strainer
+(k) pump, fixed capacity
+(one direction of flow)
+(l) pump, variable capacity
+(two directions of flow)
+(m) hydraulic motor, fixed capacity
+(two directions of flow)
+(n) hydraulic motor, variable capacity
+(one direction of flow)
+(o) actuating cylinder (single acting)
+(p) actuating cylinder (double acting)
+(q) two-way, two-position control valve
+(normally closed)
+(r) two-way, two-position control valve
+(normally open)
+(s) three-way, two-position control valve
+(normally open)
+(t) four-way, two-position control valve
+(u) check (nonreturn) valve
+(v) shuttle valve
+(w) pressure control valve
+(x) pressure relief valve
+(y) flow control valve
+(z) shutoff valve
+M
+(aa) electric motor
+(bb) internal combustion engine
+(cc) coupling
+(dd) accumulator
+(ee) cooler
+(ff) heater
+(gg) pressure gage
+(hh) temperature gage
+(ii) flowmeter
+(f) fluid line flow
+Source: MIL-STD-17B-1: Military Standard Mechanical Symbols, U.S. Department of Defense, 1963.
+
+Mechanical Engineering
+                                                                                                                    457                                                                                                                     ©2020 NCEES
+HVAC
+Nomenclature
+h   = specific enthalpy
+h
+f
+  = specific enthalpy of saturated liquid
+m
+a
+o
+  = mass flow rate of dry air
+m
+w
+o
+  = mass flow rate of water
+Q
+o
+   = rate of heat transfer
+T
+wb
+ = wet-bulb temperature
+ω  = specific humidity (absolute humidity, humidity ratio)
+HVAC—Pure Heating and Cooling
+MOIST
+ AIR
+m
+a
+Q
+1
+2
+Qmhh
+21a
+=-
+o
+o
+_i
+ 
+or
+1
+2
+1
+2
+T
+ω
+
+Mechanical Engineering
+©2020 NCEES                                                                                              458
+Cooling and Dehumidification
+Qmhhh
+mm
+af
+wa
+12312
+12
+out
+~~
+~~
+
+
+
+o
+o
+oo
+_
+__
+i
+ii
+9C
+ 
+MOIST
+ AIR
+m
+a
+Q
+out
+1
+3
+m
+w
+LIQUID OUT
+2
+ω
+T
+1
+2
+Heating and Humidification
+MOIST
+ AIR
+m
+a
+Q
+in
+1
+2
+WATER OR STEAM
+4, 4
+3
+'
+m
+w
+                                          
+ 
+ω
+T
+1
+2
+4'
+4
+Qmhh
+mmmmor
+a
+wawa
+21
+4242
+in
+=
+==
+~~~~
+-
+--
+l
+o
+o
+oooo
+_
+__
+i
+ii
+
+Mechanical Engineering
+                                                                                                                    459                                                                                                                     ©2020 NCEES
+Adiabatic Humidification (evaporative cooling)
+ 
+MOIST
+ AIR
+m
+a
+1
+2
+WAT E R
+3
+m
+w
+ 
+ω
+T
+1
+2
+T
+wb
+ = CONST
+ANT
+hhh
+mm
+hhTat
+21321
+21
+3wb
+wa
+f
+~~
+~~
+
+
+
+oo
+_
+_
+i
+i
+Adiabatic Mixing
+1
+2
+m
+a1
+m
+a2
+MOIST AIR
+MOIST AIR
+m
+a3
+3
+mmm
+h
+m
+mhmh
+m
+mm
+aaa
+a
+aa
+a
+aa
+312
+3
+3
+1122
+3
+3
+11
+22
+=+
+=
++
+=
++
+~
+~~
+ooo
+o
+oo
+o
+oo
+ 
+ω
+T
+1
+2
+3
+
+Mechanical Engineering
+©2020 NCEES                                                                                              460
+Cycles and Processes
+Internal Combustion Engines
+Diesel Cycle
+ 
+P
+23
+s = C
+s = C
+4
+1
+v
+rVV
+rVV
+r
+kr
+r
+kcc
+1
+1
+1
+1
+coldairstandard
+c
+k
+c
+c
+k
+pv
+12
+32
+1
+h
+
+
+
+
+
+
+
+_
+^
+j
+h
+>H
+ 
+T
+s
+1
+2
+3
+4
+P = C
+v = C
+Brake Power
+W
+b
+=
+o
+ 2πTN = 2πFRN 
+ 
+R
+N
+F
+where
+W
+b
+o
+  = brake power (W)
+T = torque (N•m)
+N = rotation speed (rev/s)
+F   = force at end of brake arm (N)
+R   = length of brake arm (m)
+
+Mechanical Engineering
+                                                                                                                    461                                                                                                                     ©2020 NCEES
+Indicated Power
+WWW
+ibf
+=+
+ooo
+where
+W
+i
+o
+ = indicated power (W)
+W
+f
+o
+  = friction power (W)
+Brake Thermal Efficiency
+mHV
+W
+b
+f
+b
+
+=
+o
+o
+^h
+where
+η
+b
+ = brake thermal efficiency
+m
+f
+o
+  = fuel consumption rate (kg/s)
+HV = heating value of fuel (J/kg)
+Indicated Thermal Efficiency
+mHV
+W
+i
+f
+i
+=
+h
+o
+o
+^h
+Mechanical Efficiency
+W
+W
+i
+i
+b
+i
+b
+==
+h
+h
+h
+o
+o
+Displacement Volume 
+B
+Cylinder
+S
+Piston
+V
+c
+,V
+BS
+4
+mforeachcylinder
+d
+2
+3
+=
+r
+Total volume (m
+3
+) = V
+t
+ = V
+d
+ + V
+c
+              V
+c
+ = clearance volume (m
+3
+)
+Compression Ratio
+r
+c
+ = V
+t
+ /V
+c
+
+Mechanical Engineering
+©2020 NCEES                                                                                              462
+Mean Effective Pressure (mep)
+mep
+VnN
+Wn
+dc
+s
+=
+o
+where
+n
+s
+ = number of crank revolutions per power stroke
+n
+c
+ = number of cylinders
+V
+d 
+= displacement volume per cylinder
+mep can be based on brake power (bmep), indicated power (imep), or friction power (fmep).
+Volumetric Efficiency
+VnN
+m2
+v
+adc
+a
+=
+h
+t
+o
+    (four-stroke cycles only)
+where
+(/)
+(/)
+kgs
+kg
+mmassflowrateofairintoengine
+densityofairm
+a
+a
+3
+t
+=
+=
+o
+Specific Fuel Consumption (SFC)
+,sfc
+W
+m
+HV
+1
+kgJ
+f
+==
+h
+o
+o
+.WbsfcWisfcUseandforandandfor
+bbii
+hh
+oo
+Gas Turbines
+Brayton Cycle (Steady-Flow Cycle)
+COMBUSTOR
+COMPRESSOR
+14
+TURBINE
+23
+w
+12
+ = h
+1
+ – h
+2
+ = c
+p
+ (T
+1
+ – T
+2
+)
+w
+34
+ = h
+3
+ – h
+4
+ = c
+p
+ (T
+3
+ – T
+4
+)
+w
+net
+ = w
+12
+ + w
+34
+q
+23
+ = h
+3
+ – h
+2
+ = c
+p
+ (T
+3
+ – T
+2
+)
+q
+41
+ = h
+1
+ – h
+4
+ = c
+p
+ (T
+1
+ – T
+4
+)
+q
+net
+ = q
+23
+ + q
+41
+η = w
+net
+ /q
+23
+
+Mechanical Engineering
+                                                                                                                    463                                                                                                                     ©2020 NCEES
+P
+2
+W = 0
+3
+s = c
+41
+v
+W = 0
+s = c
+Q = 0
+Q = 0
+P = c
+P = c
+2
+3
+4
+1
+T
+s
+Steam Power Plants
+Feedwater Heaters
+•  Open  (mixing)
+m
+1
+m
+2
++
+m
+1
+h
+1
+m
+1
+()h
+3
+m
+2
+h
+2
+m
+2
+++=
+31
+2
+m
+2
+m
+1
+
+Mechanical Engineering
+©2020 NCEES                                                                                              464
+•   Closed (no mixing)
+3
+4
+1
+2
+m
+1
+m
+1
+h
+1
+m
+1
+h
+3
+m
+2
+h
+2
+m
+2
+h
+4
+++=
+m
+2
+m
+2
+m
+1
+Steam Trap
+A steam trap removes condensate from steam piping or a heat exchanger.
+LIQUID
+LIQUID  + VAPOR
+1
+2
+h
+1 
+(if adiabatic)h
+2
+=
+m
+1
+m
+2
+Junction
+m
+1
+m
+2
++
+m
+1
+h
+1
+m
+1
+()h
+3
+m
+2
+h
+2
+m
+2
+++=
+31
+2m
+2
+m
+1
+
+Mechanical Engineering
+                                                                                                                    465                                                                                                                     ©2020 NCEES
+Pump
+2
+1
+w
+η
+p
+η
+p
+w = h
+1 
+–
+ 
+h
+2  
+=
+ 
+(h
+1
+ – h
+2S
+)/η
+p
+ 
+w =
+h
+2S
+h
+1
+P
+1
+P
+2
+)(v––
+P
+2
+P
+1
+)(v–
+=
+
+©2020 NCEES                                                                                              466
+This page was intentionally left blank.
+
+INDEX
+                                                                                                                    467                                                                                                                     ©2020 NCEES
+Index
+Symbols
+2n factorial design and experiments 426
+χ2 - distribution 69
+A
+AASHTO 272
+absorption (packed columns) 253
+ac circuits 365
+acids, bases, and pH 87
+ac machines 371
+ac power 368
+activated carbon adsorption 343
+activated sludge 339
+addition of two matrices 59
+aerobic digestion 341
+aerodynamics 203
+affinity laws 199
+airfoil/wing theory 203
+air infiltration rates 326
+air pollution 318
+air refrigeration cycle 178
+air stripping 344
+alcohols 90
+aldehydes 90
+algebra of complex numbers 38
+algorithm efficiency (Big-O) 416
+algorithms 415
+allowable stress design 278
+amorphous materials 127
+amplitude modulation 380
+anaerobic digestion 342
+analog filter circuits 384
+analog-to-digital conversion 230
+analysis of variance for 2n factorial designs 426
+angle modulation 380
+angle of repose 262
+angular momentum or moment of momentum 108
+anion 93
+anode 93
+anode reaction (oxidation) of a typical metal, M 117
+ANOVA table 72, 73
+ANSI symbols for hydraulic power 456
+anthropometric measurements 432
+approximate solution for solid with sudden convection 212
+approximations 84
+aqueous solutions 87
+Archimedes principle and buoyancy 184
+area formulas 316
+area moment of inertia 99
+arithmetic progression 52
+Arrhenius equation 243
+ASD 278, 287
+ASHRAE Psychrometric Chart No. 1 (English units) 180
+ASHRAE Psychrometric Chart No. 1 (metric units) 179
+ASME Y14.5 447
+associative law 65
+ASTM grain size 123
+ASTM standard reinforcement bars 283
+atmospheric dispersion modeling (Gaussian) 318
+atomic bonding 117
+atomic number 86
+authentication, computer network security 421
+automatic request for retransmission (ARQ) 383
+available strength in axial compression, W shapes 295
+average and range charts 83
+average value, ac circuits 365
+Avogadro's number 86
+B
+baghouse 324
+balanced three-phase systems 368
+bases 87
+basic cycles 149
+basic freeway segment highway capacity 310
+basic heat transfer rate equations 209
+Basquin equation 122
+batch reactor, constant volume 243
+batch reactor, variable volume 245
+Bayes' theorem 66
+beams 135, 274, 287
+beams--flexure 281
+beams--shear 282
+beam stiffness and moment carryover 274
+bearings 437
+belt friction 98
+bending moment sign conventions 135
+benefit-cost analysis 237
+Bernoulli equation 185, 186
+binary number system 394
+binary phase diagrams 128
+binomial distribution 67
+bioconversion 87
+biology 86
+biomass as an energy source 355
+biomechanics of the human body 33
+biotower 341
+bipolar junction transistor (BJT) 391
+blowers 198
+BOD5 for mixed lagoons in series 338
+BOD test solution and seeding procedures 339
+boiling, convection 216
+boiling point elevation 86
+bonds 236
+book value 236
+breakeven analysis 236
+break-through time for leachate to penetrate a clay liner 333
+brittle materials 451
+bulk (volume) modulus of elasticity 131
+bus, network topologies 410
+
+INDEX
+Index
+©2020 NCEES                                                                                              468
+C
+cantilevered beam slopes and deflections 141
+capacitors and inductors 364
+capacitors and inductors in parallel and series 365
+capillary rise 182
+capitalized costs 236
+carboxylic acids 90
+carcinogens 25
+Carnot cycle 149, 176
+Cartesian coordinates 102
+catalyst 86
+cathode 93
+cathode reactions (reduction) 117
+cation 93
+cellular biology 94
+centrifugal pump characteristics 195
+centroids and moments of inertia 100
+centroids of masses, areas, lengths, and volumes 96
+characteristics of a static liquid 182
+characteristics of selected flow configurations 189
+chemical compatibility chart 27
+chemical engineering 243
+chemical reaction engineering 243
+chemical reaction equilibria 155
+chemical reaction equilibrium 156
+chemical sensors 230
+chemistry and biology definitions 86
+circular pipe head loss equation 304
+circular sector 42
+circular segment 42
+circular sewers 301
+civil engineering 265
+Clapeyron equation 155
+clarifier 345
+classifiers: wet and dry operations 261
+Clausius-Clapeyron equation 155
+Clausius' statement of second law 151
+closed-system exergy (availability) 152
+closed thermodynamic system 147
+coagulation equations 348
+code of ethics 4
+coefficient of performance (COP) 149
+columns 137, 287
+combinations of random variables 67
+combustion 354
+combustion processes 153
+common mode rejection ratio 386
+communication methodologies 412
+communication theory and concepts 377
+compaction 334
+complex power 368
+composite materials 124
+composite plane wall 211
+composite sections 137
+compressibility factor 175
+compressible flow 193
+compressible fluid 200
+compressors 197
+computer engineering 361
+computer networking 397
+computer network security 418
+computer systems 413
+concentrations of vaporized liquids 31
+concept of weight 106
+concrete 126
+concurrent forces 98
+conduction 209
+conduction through a cylindrical wall 210
+conduction through a plane wall 209
+confidence interval for intercept 71
+confidence interval for slope 71
+confidence interval for the difference between two means  
+μ1 and μ2 76
+confidence interval for the mean of a normal distribution 75
+confidence intervals for the variance of a normal 
+distribution 76
+confidence intervals, sample distributions and sample size 75
+confined space safety 22
+conic section equation 47
+conic sections 45
+consequences of fluid flow 187
+conservation of angular momentum 112
+conservation of mass 185
+constant acceleration 105
+constant fluid temperature 211
+construction 316
+continuity equation 185
+continuous-stirred tank reactor (CSTR) 31
+control network security 418
+control systems 231
+convection 209, 214, 249
+conversion 155
+conversion factors 2, 3
+convolution 375
+copyrights 13
+corrosion 117
+cost estimation 262
+cost performance index 317
+coupling multiplier (CM) 33
+CPM precedence relationships 316
+creep, mechanical properties 122
+critical insulation radius 210
+critical path method 430
+critical stress for compression members 294
+critical values of the F distribution 79
+critical values of X distribution 80
+crystallization processes 262
+cumulative binomial probabilities 81
+cumulative distribution functions 66
+current, electric 362
+cycles and processes 460
+cycles, refrigeration and HVAC 177
+
+INDEX
+Index
+                                                                                                                    469                                                                                                                     ©2020 NCEES
+cyclone 322, 323
+cylindrical pressure vessel 131
+D
+Darcy's law 298
+Darcy-Weisbach equation 187
+data quality objectives (DQO) for sampling soils and 
+solids 336
+data structures 416
+dc machines 372
+dechlorination of sulfite compounds 339
+decibels and Bode plots 378
+definition of safety 15
+definitions used in ASME Y14.5 447
+deflection of beams 136
+deflectors and blades 192
+delays in computer networks 383
+De Morgan's law 65
+De Morgan's theorems 395
+density 181
+density, specific volume, specific weight, and specific 
+gravity 181
+depletion MOSFETs (low and medium frequency) 392
+depreciation 236
+derivative for defferential calculus 47
+derivatives 50
+design column strength, tied columns 284
+design compressive strength 287
+design flexural strength 287
+design of reinforced concrete components  
+(ACI 318-14) 280
+design of steel components (ANSI/AISC 360-16)  
+LRFD, ASD 287
+design shear strength 287
+determinants 60
+deviations for shafts 446
+dew-point temperature 150
+difference equations 62, 374
+differential amplifier 388
+differential calculus 47
+differential equations 53
+Diffie-Hellman key-exchange protocol 421
+diffusion 117, 247
+diffusion coefficient 117
+digital signal processing 376
+dimensional analysis 202
+dimensional homogeneity 202
+diodes 390
+directed graphs, or digraphs, of relation 36
+discrete math 36
+disinfection 352
+dispersion, mean, median, and mode values 64
+distillation, mass transfer 250
+distributive law 65
+Dittus-Boelter equation 216
+dose-response curves 23
+double-sideband modulation 380
+drag coefficient 207
+drag coefficient for spheres, disks, and cylinders 207
+drag force 188
+dual linear program 422
+ductile materials 452
+Dupuit's formula 299
+dynamics 102, 454
+dynamics of mechanisms 440
+E
+earned-value analysis 316
+earthwork formulas 315
+effective half-life 335
+effective length factor, K 293
+effective or RMS values 365
+effective stack height 320, 321
+effect of overburden pressure 333
+elastic strain energy 138
+electrical and computer engineering 361
+electrical properties of materials 118
+electrical safety 23
+electrical units 361
+electrochemistry 93
+electromagnetic dynamic fields 373
+electrostatic fields 361
+electrostatic precipitator efficiency 325
+electrostatics 361
+elementary statically indeterminate structures by force method 
+of analysis 276
+ellipse 41
+endianness 415
+endurance limit for steels 453
+endurance limit modifying factors 453
+energy 354
+energy equation 185
+energy line (Bernoulli equation) 186
+energy sources and conversion processes 354
+engineering economics 235
+engineering strain 130
+enhancement MOSFET (low and medium frequency) 392
+enthalpy 150
+enthalpy curves 165
+entropy 151
+environmental engineering 318
+equations of state (EOS) 146
+equilibrium constant of a chemical reaction 86
+equilibrium requirements, system of forces 95
+ergonomics 32
+ergonomics: hearing 434
+error coding 382
+essential prime implicant 396
+ethers 90
+ethics 4
+Euler's approximation 63
+Euler's equation 186
+Euler's Identity 39
+
+INDEX
+Index
+©2020 NCEES                                                                                              470
+Euler's or forward rectangular rule 63
+evapotranspiration rates for grasses 297
+exergy (availability) 151
+expected values 66
+exponentially weighted moving average 426
+exposure 29
+external flow 215
+F
+facility planning 428
+facultative pond 340
+families of organic compounds 91
+fan characteristics 197
+fans, pumps, and compressors 199
+Faraday's law 86
+fate and transport 327
+fatigue 122
+FE exam specifications 476
+Fick's First Law 247
+Fick's Second Law 247
+film boiling 218
+film condensation of a pure vapor 219
+filtration equations 347
+finite queue, single server models 424
+finite state machine 36
+fins 214
+fire hydrant: calculating rated capacity 305
+fire hydrant discharging to atmosphere 305
+fire sprinkler discharge 305
+firewalls 418
+first law of thermodynamics 147
+first-order control system model 233
+first-order linear difference equation 62, 374
+first-order linear homogeneous differential equations 
+with constant coefficients 53
+first-order linear nonhomogeneous differential 
+equations 53
+fits, manufacturability 445
+fixed blade 192
+flammability 21
+flammable gases 22
+flat bars or angles, bolted or welded steel 288
+flat roof snow loads 279
+flip-flops 395
+flowchart definition 418
+flow in closed circuits 206
+flow in noncircular conduits 188
+flow reactors, steady state 246
+flow through a packed bed 189
+fluid flow characterization 186
+fluid flow machinery 195
+fluid flow measurement 200
+fluid mechanics 181
+force 95
+forced convection boiling 216
+forced vibration 113
+force method of analysis 276
+forces on submerged surfaces and the center of pressure 184
+forecasting 317, 426
+Fourier series 55
+Fourier transform 54
+Fourier transform and its inverse 377
+Fourier transform pairs 57
+Fourier transform theorems 57
+fracture toughness 123
+frame deflection by unit load method 275
+free convection boiling 217
+free flow speed 310
+free vibration 112
+freezing point depression 86
+frequency modulation 381
+frequency response and impulse response 377
+Freundlich isotherm 343
+friction 97, 109
+full duplex (Duplex) 412
+fundamental constants 2
+fundamental relationships 423
+G
+gamma function 69
+gas flux 333
+gauge factor (GF) 227
+Gaussian distribution 68
+Gauss' law 361
+general requirements for licensure 8
+geometric dimensioning and tolerancing (GD&T) 447, 449
+geometric progression 52
+geotechnical 265
+Gibbs free energy 152
+Gibbs phase rule 155
+Globally Harmonized System (GHS) of Classification 17
+Goodman theory, modified 452
+grade line, hydraulic gradient 186
+granular storage and process safety 22
+graph traversal 416
+gravity model 312
+Greenshields model 312
+H
+half-duplex 412
+half-life 335
+hardenability 124
+hazard assessments 16
+hazardous materials classification 16
+Hazen-Williams equation 189, 303
+head loss due to flow 187
+heat 254
+heat exchangers 220
+heats of reaction 152
+heats of reaction, solution, formation, and combustion 86
+heat transfer 209
+heat-transfer rate equations 209
+Helmholtz free energy 152
+Henry's law at constant temperature 153
+
+INDEX
+Index
+                                                                                                                    471                                                                                                                     ©2020 NCEES
+highway pavement design 314
+hollow, thin-walled shafts 135
+Hooke's law 134
+horizontal curves 308
+horizontal stress profiles and forces 269
+humid volume, psychrometics 150
+HVAC 177, 457
+hydraulic conductivity 297
+hydraulic elements graph 300
+hydraulic gradient (grade line) 186
+hydraulic jump 303
+hydraulic permeability 297
+hydraulic residence time 340
+hydrologic mass balance (budget) 296
+hydrology/water resources 296
+hydropower 355
+hypothesis testing 71
+I
+ICMP type and code values 408
+ICMPv6 type and code values 409
+ideal gas constants 2
+ideal gas mixtures 145
+ideal-impulse sampling 381
+identity matrix 59
+impact 109
+impact test 126
+impulse and momentum 108
+impulse-momentum principle 191
+impulse turbine 193
+incidence variable values 34
+incineration 325
+indefinite integrals 51
+indoor air quality 325
+induced voltage 362
+induction machines 371
+industrial and systems engineering 422
+inflation 236
+influence lines for beams and trusses 274
+instrumental methods of analysis 88
+instrumentation 225
+intake rates 30
+integral calculus 49
+intellectual property 13
+interaction effects 427
+interest rate tables 238
+intermediate- and long-length columns 451
+internal flow 215
+international tolerance grades 446
+internet control message protocol 408
+internet protocol addressing 399
+internet protocol version 4 header 401
+internet protocol version 6 header 404
+inventory models 428
+inverse transform method 425
+IPv4 special address blocks 400
+IPv6 special address blocks 401
+iron-iron carbide phase diagram 129
+irreversibility 152
+isentropic flow relationships 194
+J
+jet propulsion 192
+job safety analysis 16
+job sequencing 430
+joining methods 441
+junction field effect transistors (JFETs) 392
+K
+Kelvin-Planck statement of second law 150
+ketones 90
+kiln formula 325
+kinematics, dynamics, and vibrations 454
+kinematics of a rigid body 110
+kinematics of mechanisms 454
+kinetic energy 107, 112
+Kirchhoff's laws 363
+Kline-McClintock equation 231
+L
+lake classification 297
+landfill 332
+Langmuir isotherm 343
+Laplace transforms 58
+lateral-torsional buckling 287
+law of compound or joint probability 66
+laws of probability 65
+learning curves 428
+least squares 70
+Le Chatelier's principle for chemical equilibrium 86
+Le Chatelier's Rule 22
+level of service (LOS) 311
+lever rule 128
+Lewis equation 440
+L'Hospital's Rule 49
+life-cycle analysis 14
+lime-soda softening equations 348
+limiting reactant 155
+limits and fits, manufacturability 444
+limits for longitudinal reinforcements 284
+linear combinations 69
+linear momentum 108
+linear programming 422
+linear regression and goodness of fit 70
+line balancing 430
+live load reduction 278
+load combinations using allowable stress design 
+(ASD) 278
+load combinations using strength design (LRFD) 278
+loads: exposure factor 279
+loads: importance factor 279
+loads, structural design 278
+loads: thermal factor 279
+local area network (LAN) 410
+
+INDEX
+Index
+©2020 NCEES                                                                                              472
+logarithm identities 38
+logarithms 37
+logic operations and Boolean algebra 395
+logit models 313
+lossless transmission lines 374
+LRFD 278, 287
+M
+Mach number 193
+magnetic fields 362
+Manning's equation 189, 303
+manometers 183
+manufacturability 444
+mass calculations 327
+mass moment of inertia 111
+mass transfer 247
+mass-transfer analogy 254
+material balance 325
+material handling 430
+material properties 138
+materials science/structure of matter 117
+mathematics 36
+matrices 59
+matrix of relation 36
+matrix properties 60
+matrix transpose 59
+maximum power-transfer theorem 366
+maxterm, switching function terminology 396
+McCabe's cyclomatic complexity 421
+McCabe-Thiele 252
+mean 64
+mean particle sizes calculated from particle size 
+distributions (PSDs) 259
+measurement 225
+measurement error 69
+measurement uncertainty 70, 231
+mechanical design and analysis 436
+mechanical engineering 436
+mechanical properties of materials 119
+median 64
+member fixed-end moments (magnitudes) 277
+memory/storage types 413
+mensuration of areas and volumes 41
+mesh, network topologies 411
+methanol requirement for biologically treated 
+wastewater 339
+metric prefixes 1
+microbial kinetics 327
+microprocessor architecture 414
+minimum heat flux 218
+minor losses in pipe fittings, contractions, and 
+expansions 187
+minterm, switching function terminology 396
+mode 64
+model law 6
+model rules 4
+modified accelerated cost recovery system (MACRS) 236
+Mohr's Circle--Stress, 2D 133
+molality of solutions 86
+molar volume of an ideal gas 86
+Mollier (h, s) diagram for steam 163
+moment of inertia 96
+moment of inertia parallel axis theorem 96
+moment of momentum 108
+moments (couples) 95
+momentum depth diagram 302
+Monod kinetics 328
+Moody, Darcy, or Stanton friction factor diagram 206
+moving average 426
+moving blade 193
+moving concentrated load sets 274
+multicore, computer systems 414
+multipath pipeline problems 191
+multiple server model 425
+multiplication of two matrices 59
+municipal solid wastes (MSW) 359
+N
+National Research Council (NRC) trickling filter 
+performance 338
+natural (free) convection 219
+Natural Resources Conservation Service (NRCS) 296
+Nernst equation 87
+net energy exchange by radiation between two black 
+bodies 223
+net tensile strain 281
+network optimization 422
+network topologies 410
+Newton's method for root extraction 62
+Newton's method of minimization 62
+Newton's second law for a particle 106
+NIOSH formula 32
+nmap 418
+NOAEL 26
+noise pollution 34
+nomenclature for areas and volumes 41
+non-annual compounding 236
+noncarcinogens 26
+non-constant acceleration 106
+normal and tangential components 104
+normal and tangential kinetics for planar problems 107
+normal distribution (Gaussian distribution) 68
+normality of solutions 86
+normal shock relationships 195
+Norton equivalent 363
+nuclear energy 356
+nucleate boiling 217
+number systems and codes 393
+numerical integration 63
+numerical methods 62
+numerical solution of ordinary differential equations 63
+
+INDEX
+Index
+                                                                                                                    473                                                                                                                     ©2020 NCEES
+O
+one-dimensional fluid flow 185
+one-dimensional motion of a particle (constant 
+mass) 106
+one-way analysis of variance (ANOVA) 71
+open-channel flow and/or pipe flow of water 189
+open-system exergy (availability) 152
+open thermodynamic system 147
+operational amplifiers 386
+orifice discharging freely into atmosphere 190
+orifices, fluid flow measurement 201
+Otto cycle 176
+outdoor air changes per hour 326
+overburden pressure 333
+oxidation 93
+P
+pan evaporation 296
+parabola 41
+parabolic rule 63
+paraboloid of revolution 44
+parallel, communication methodologies 412
+parallelogram 43
+parallel resonance 368
+Parseval's theorem 378
+particle curvilinear motion 103
+particle kinematics 102
+particle kinetics 106
+particle rectilinear motion 103
+partition coefficients 329
+patents 13
+peak heat flux 217
+peak hour factor (PHF) 306
+penetration testing---authorized vulnerability testing 420
+people requirements, facility planning 428
+percent elongation 130
+percent of outdoor air 326
+percent reduction in area (RA) 130
+performance of components 199
+periodic table of elements 89
+permissible noise exposure 35
+permutations and combinations 65
+PERT 431
+pH 87
+phase relations 155
+phasor transforms of sinusoids 366
+P-h diagrams 164, 165, 169
+phosphorus removal equations 348
+photoelectric effect 118
+photosynthesis 88
+pH sensors 229
+pictograms, GHS 18, 19
+piezoelectric effect 118, 227
+piezoresistive effect 227
+pin fin 214
+pipe bends, enlargements, and contractions 191
+pipe flow of water 189
+pipeline type 414
+plane circular motion 104
+plane frame 277
+plane motion of a rigid body 110
+plane truss 277
+plane truss: method of joints 98
+plane truss: method of sections 98
+plant location 429
+pointers, software engineering 415
+polar coordinate system 38
+polymer additives 127
+polymers 127
+pool boiling 216
+population modeling 334
+population projection equations 334
+port scanning 420
+possible cathode reactions (reduction) 117
+potential energy 107
+pound-force 1
+pound-mass 1
+power absorbed by a resistive element 363
+power and efficiency 108
+power conversion 389
+power screws 438
+power series 52
+power transmission 438
+pressure 181
+pressure curves 165
+pressure drop for laminar flow 188
+pressure field in a static liquid 182
+pressure sensors 229
+pressure versus enthalpy curves for Refrigerant 134a 165
+pressure versus enthalpy curves for Refrigerant 410A 169
+primary bonds 117
+prime implicant 396
+principal stresses 132
+principle of angular impulse and momentum 112
+principle of superposition 136
+principle of work and energy 107
+principles of one-dimensional fluid flow 185
+prismoid 43
+probability and density functions: means and variances 85
+probability density function 66
+probability functions, distributions, and expected values 66
+process capability 423
+product of inertia 97, 99
+professional practice 4
+progressions and series 52
+projectile motion 105
+propagation of error 69
+properties for two-phase (vapor-liquid) systems 144
+properties of air 319
+properties of liquid 170
+properties of materials 118
+properties of materials: electrical 118
+
+INDEX
+Index
+©2020 NCEES                                                                                              474
+properties of materials: mechanical 119
+properties of metals 120
+properties of saturated liquid and saturated vapor 166
+properties of series 52
+properties of single-component systems 143
+properties of water 204, 205
+protocol definitions 398
+psychrometric charts 179, 180
+psychrometrics 150
+pulse-amplitude modulation--natural sampling 382
+pulse-code modulation 382
+pump power equation 197
+PVT behavior 144
+Q
+quadratic equation 37
+quadric surface (sphere) 37
+queueing models 423
+R
+radial and transverse components for planar motion 102
+radiation 209, 222, 335
+radiation: types of bodies 222
+radius of gyration 97
+rainfall 296
+randomized complete block design 72
+random variate generation 425
+Rankine cycle 176
+Raoult's law for vapor-liquid equilibrium 153
+rapid mix and flocculator design 349
+rate-of-return 236
+rate of transfer as a function of gradients at the wall 255
+rational formula 296
+RC and RL transients 367
+real gas 146
+recommended weight limit (RWL) 32
+rectangular fin 214
+reduction, electrochemistry 93
+reference dose (RfD) 26
+Refrigerant 134a (1,1,1,2-Tetrafluoroethane) properties 
+of saturated liquid and saturated vapor 166
+Refrigerant 410A [R-32/125 (50/50)] properties of liquid 
+on bubble line and vapor on dew line 170
+refrigeration and HVAC 177
+refrigeration cycle 176
+regular polygon 43
+reinforced concrete beams 281
+relationship between hardness and tensile strength 123
+relative humidity 150
+relative motion 103
+reliability 427
+removal and inactivation requirements 352
+removal credits and inactivation requirements for 
+various treatment technologies 353
+representative values of fracture toughness 123
+residual, linear regression and goodness of fit 70
+resistance factors 281
+resistance temperature detector (RTD) 225
+resistivity 362
+resistors in series and parallel 363
+resolution of a force 95
+resonance 367
+resultant force (two dimensions) 95
+retaining walls 270
+reversed Carnot cycle 176
+reverse osmosis 350
+Reynolds number 186
+right circular cone 44
+right circular cylinder 44
+rigid body motion about a fixed axis 112
+rigorous vapor-liquid equilibrium 154
+risk 15
+risk assessment/toxicology 23
+RMS values 365
+roots 39
+rotating machines 370
+RSA public-key cryptosystem 421
+runoff 296
+S
+safety 15
+safety and prevention 15
+safety data sheet (SDS) 20
+sample correlation coefficient and coefficient of 
+determination 71
+sampled messages 381
+sample size 76
+sampling 230
+sampling and monitoring 336
+saturated boiling 216
+scaling laws; affinity laws 199
+schedule performance index 317
+screw thread 98
+SCS rainfall-runoff 296
+second law of thermodynamics 150
+second-order control system models 233
+second-order linear homogeneous differential equations with 
+constant coefficients 54
+security triad 421
+selected properties of air 319
+selected rules of nomenclature in organic chemistry 90
+selectivity, chemical reaction equilibria 155
+semiconductors 121
+serial, communications methodologies 412
+series resonance 367
+servomotors and generators 373
+settling equations 346
+sewage flow ratio curves 300
+Shannon channel capacity formula 384
+shape factor (view factor, configuration factor) relations 222
+shear 287
+shearing force and bending moment sign conventions 135
+shear stress-strain 130
+
+INDEX
+Index
+                                                                                                                    475                                                                                                                     ©2020 NCEES
+short columns 284
+Sieder-Tate equation 216
+sieve conversion table 258
+signal conditioning 231
+signal words 21
+significant figures 2
+similitude 202
+simplex, communication methodologies 412
+simply supported beam slopes and deflections 140
+Simpson's 1/3 Rule, area formula 316
+Simpson's Rule/Parabolic Rule 63
+simulation 425
+sine-cosine relations and trigonometric identities 366
+single server models 424
+single-sideband modulation 380
+singly-reinforced beams 281
+slope failure along planar surface 271
+societal considerations 14
+Soderberg theory 452
+software engineering 415
+software process flows 417
+software syntax guidelines 417
+software testing 418
+soil classification 271, 272
+Soil Conservation Service (SCS) 296
+soil landfill cover water balance 333
+solar energy 358
+solids handling 256
+solids processing 259
+solid-state electronics and devices 387
+solid with sudden convection 212
+solubility product 86
+sorption zone 343
+source equivalents 363
+specific energy diagram 302
+specific gravity 181
+specific gravity for a solids slurry 338
+specific humidity 150
+specific volume 181
+specific weight 181
+sphere 42
+spherical particles 208
+springs 436
+sprinkler K factors 305
+stability, determinacy, and classification of structures 277
+standard deviation charts 83
+standard error of estimate 70
+standard time determination 429
+star, network topologies 411
+state functions (properties) 143
+statically determinate truss 98
+static liquid 182
+static loading failure theories 451
+statics 95
+statistical quality control 83
+statistics 64
+steady-flow systems 148
+steam tables 157
+steel beams 287
+steel columns 287
+steel tension members 288
+Steinhart-Hart equation 226
+Stokes's law 346
+stopping sight distance 306
+storativity 298
+straight line equation 37
+strain gauge 227
+strength design 278
+stress 122, 181
+stress and strain 132
+stresses in beams 135
+stress, pressure, and viscosity 181
+stress-strain curve for mild steel 130
+structural analysis 274
+structural design 278
+student's t-distribution 78
+sub-cooled boiling 216
+submerged orifice operating under steady-flow conditions 190
+sum of squares of random error 427
+superheated water tables 160
+surface tension and capillarity 182
+surface water system hydrologic budget 296
+sustainability 360
+sweep-through concentration change in a Vessel [also known 
+as unsteady-state dilution in a continuous-stirred tank 
+reactor (CSTR)] 31
+switching function terminology 396
+synchronous machines 371
+system performance studies 232
+systems engineering 422
+systems of forces 95
+T
+taxation 236
+Taylor's series 53
+Taylor tool life formula 431
+t-distribution 69
+temperature conversion 1
+temperature sensors 225
+tension members 288
+terminal velocities 208
+tests for out of control 84
+tests on means of normal distribution---variance known 74
+tests on means of normal distribution---variance unknown 74
+tests on variances of normal distribution with unknown 
+mean 75
+test statistics 76
+Theim equation 299
+thermal and mechanical processing 117
+thermal and physical property tables 173
+thermal deformations 131
+thermal properties 127
+thermal resistance (R) 210
+
+INDEX
+Index
+©2020 NCEES                                                                                              476
+thermistors 226
+thermocouple (TC) 226
+thermodynamics 143
+Thévenin equivalent 363
+threading, computer systems 414
+three-phase transformer connection diagrams 370
+threshold limit value (TLV) 25
+thyristor or silicon controlled rectifier (SCR) 390
+torsion 134
+torsional strain 134
+torsional vibration 114
+toxicity 20, 21, 24, 25
+toxicology 23
+trademarks 13
+trade secrets 13
+traffic flow relationships 312
+traffic safety equations 313
+traffic signal timing 306
+transducer 225
+transformers 369
+transient conduction using the lumped capacitance 
+model 211
+transition boiling 218
+transmission algorithms 383
+Transmission Control Protocol 405
+transmissivity 298
+transportation 305
+transport phenomena--momentum, heat, and mass-
+transfer analogy 254
+trapezoidal rule, area formulas 316
+trapezoidal rule, numerical integration 63
+tree, network topologies 411
+tree traversal 416
+trigonometric identities 366
+trigonometry 39
+trigonometry identities 40
+truss deflection by unit load method 274
+turbines 199
+turns ratio 369
+two-factor factorial designs 72
+two first-order irreversible reactions in series 246
+two irreversible reactions in parallel 246
+two-stage cycle 177
+U
+ultimate bearing capacity 270
+ultrafiltration 351
+uniaxial loading and deformation 131
+uniaxial stress-strain 130
+unified design provisions 283
+Unified Soil Classification System 273
+unit hydrograph 298
+unit normal distribution 77
+units in FE exam 1
+unsaturated acyclic hydrocarbons 90
+unsteady-state dilution 31
+user datagram protocol 407
+V
+Vadose zone penetration 330
+vaporized liquids 31
+vapor-liquid equilibrium (VLE) 153, 252
+variable loading failure theories 452
+variances 316
+vectors 60
+vectors: gradient, divergence, and curl 61
+vectors: identities 61
+velocity pressure exposure 280
+Venturi meters 200
+vertical curve formulas 315
+vertical curves 307
+vertical stress profiles 270
+vertical stress profiles with surcharge 270
+vibrations 454
+viscosity 181
+voltage 361
+voltage regulation 373
+volume flow rate of outdoor air 326
+W
+wastes with fuel value 359
+wastewater treatment and technologies 338
+water resources 296
+water treatment technologies 343
+web vulnerability testing 420
+weir formulas 303
+well drawdown 298
+wet-bulb temperature 150
+wet solids: equilibrium moisture curves 257
+Wheatstone bridge 229
+wind energy 356
+wind loads 280
+wind turbines 357
+work 108
+work sampling formulas 431
+W shapes available moment vs. unbraced length 292
+W shapes dimensions and properties 290
+X
+Y
+yield, chemical reaction equilibria 155
+yielding 287
+Z
+z-transforms 375
+
+                                                                                                                    477                                                                                                                     ©2020 NCEES
+Appendix: FE Exam Specifications
+Chemical ......................................................................................................................................478
+Civil..............................................................................................................................................482
+Electrical and Computer ..............................................................................................................485
+Environmental ..............................................................................................................................488
+Industrial and Systems .................................................................................................................491
+Mechanical ...................................................................................................................................494
+Other Disciplines .........................................................................................................................498
+
+©2020 NCEES                                                                                              478
+Fundamentals of Engineering (FE)
+CHEMICAL CBT Exam Specifications
+Effective Beginning with the July 2020 Examinations
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an optional scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+KnowledgeNumber of Questions
+1.Mathematics6–9
+A.Analytic geometry, logarithms, and trigonometry
+B.Calculus (e.g., single-variable, integral, differential)
+C.Differential equations (e.g., ordinary, partial, Laplace)
+D.Numerical methods (e.g., error propagation, Taylor’s series, curve fitting,
+Newton-Raphson, Fourier series)
+E.Algebra (e.g., fundamentals, matrix algebra, systems of equations)
+F.Accuracy, precision, and significant figures
+2.Probability and Statistics4–6
+A.Probability distributions (e.g., discrete, continuous, normal, binomial)
+B.Expected value (weighted average) in decision making
+C.Hypothesis testing and design of experiments (e.g., t-test, outlier testing,
+analysis of the variance)
+D.Measures of central tendencies and dispersions (e.g., mean, mode,
+standard deviation, confidence intervals)
+E.Regression and curve fitting
+F.Statistical control (e.g., control limits)
+3.Engineering Sciences4–6
+A.Basic dynamics (e.g., friction, force, mass, acceleration, momentum)
+B.Work, energy, and power (as applied to particles or rigid bodies)
+C.Electricity, current, and voltage laws (e.g., charge, energy, current,
+voltage, power, Kirchhoff's law, Ohm's law)
+4.Materials Science4–6
+A.Chemical, electrical, mechanical, and physical properties (e.g., effect
+of temperature, pressure, stress, strain, failure)
+B.Material types and compatibilities (e.g., engineered materials, ferrous
+and nonferrous metals)
+C.Corrosionmechanisms and control
+D.Polymers, ceramics, and composites
+
+                                                                                                                    479                                                                                                                     ©2020 NCEES
+5.Chemistry and Biology7–11
+A.Inorganic chemistry (e.g., molarity, normality, molality, acids, bases,
+redox reactions, valence, solubility product, pH, pK, electrochemistry,
+periodic table)
+B.Organic chemistry (e.g., nomenclature, structure, balanced equations,
+reactions, synthesis)
+C.Analytical chemistry (e.g., wet chemistry and instrumental chemistry)
+D.Biochemistry, microbiology, and molecular biology (e.g., organization
+and function of the cell; Krebs, glycolysis, Calvin cycles; enzymes and
+protein chemistry; genetics; protein synthesis, translation, transcription)
+E.Bioprocessing (e.g., fermentation, biological treatment systems, aerobic,
+anaerobic process, nutrient removal)
+6.Fluid Mechanics/Dynamics8–12
+A.Fluid properties
+B.Dimensionless numbers (e.g., Reynolds number)
+C.Mechanical energy balance (e.g., pipes, valves, fittings, pressure losses
+across packed beds, pipe networks)
+D.Bernoulli equation (hydrostatic pressure, velocity head)
+E.Laminar and turbulent flow
+F.Flow measurement (e.g., orifices, Venturi meters)
+G.Pumps, turbines, compressors, and vacuum systems
+H.Compressible flow and non-Newtonian fluids
+7.Thermodynamics8–12
+A.Thermodynamic properties of pure components and mixtures
+(e.g., specific volume, internal energy, enthalpy, entropy, free energy,
+ideal gas law)
+B.Properties data and phase diagrams of pure components and mixtures
+(e.g., steam tables, psychrometric charts, T-s, P-h, x-y, T-x-y)
+C.Thermodynamic laws (e.g., first law, second law)
+D.Thermodynamic processes (e.g., isothermal, adiabatic, isentropic,
+phase changes)
+E.Cyclic processes and efficiencies (e.g., power, refrigeration, heat pump)
+F.Phase equilibrium (e.g., fugacity, activity coefficient, Raoult's law)
+G.Chemical equilibrium
+H.Heats of reaction and mixing
+8.Material/Energy Balances10–15
+A.Steady-state mass balance
+B.Unsteady-state mass balance
+C.Steady-state energy balance
+D.Unsteady-  state energy balance
+E.Recycle/bypass processes
+F.Reactive systems (e.g., combustion)
+
+©2020 NCEES                                                                                              480
+8–12
+8–12
+3–5
+7–11
+4–6
+9.Heat Transfer
+A.Conductive heat transfer
+B.Convective heat transfer (natural andforced)
+C.Radiation heat transfer
+D.Heat-transfercoefficients(e.g., overall, local, fouling)
+E.Heat-transferequipment, operation, and design(e.g., double pipe, shell
+and tube, fouling, number oftransfer units, log-mean temperature difference,
+flowconfiguration)
+10.Mass Transfer and Separation
+A.Molecular diffusion (e.g., steady and unsteady state, physical property 
+estimation)
+B.Convective mass transfer (e.g., mass-transfer coefficient, eddy diffusion)
+C.Separation systems (e.g., distillation, absorption, extraction, membrane 
+processes, adsorption)
+D.Equilibriumstage methods (e.g., graphical methods, McCabe-Thiele, 
+efficiency)
+E.Continuous contact methods (e.g., number oftransferunits, height equivalent 
+to a theoretical plate, height oftransfer unit, numberoftheoreticalplates)
+F.Humidification, drying, and evaporation
+11.Solids Handling
+A.Particle properties (e.g., surface and bulk forces,particle size distribution)
+B.Processing(e.g., crushing, grinding, crystallization)
+C.Transportation and storage (e.g., belts, pneumatic, slurries, tanks, hoppers)
+12.Chemical Reaction Engineering
+A.Reaction rates and order
+B.Rate constant (e.g., Arrhenius function)
+C.Conversion, yield, and selectivity
+D.Type of reactions (e.g., series, parallel, forward, reverse, homogeneous, 
+heterogeneous, biological)
+E.Reactor types (e.g., batch, semibatch, continuous stirred tank, plug flow, gas
+phase,liquid phase)
+F.Catalysis (e.g., mechanisms, biocatalysis, physicalproperties)
+13.Economics
+A.Time value of money(e.g.,presentworth, annual worth, future worth,
+rate of return)
+B.Economic analyses (e.g., breakeven, benefit-cost, optimal economic life)
+C.Uncertainty(e.g., expected value and risk)
+D.Project selection (e.g., comparison of projects with unequal lives,
+lease/buy/make, depreciation, discounted cash flow)
+
+                                                                                                                    481                                                                                                                     ©2020 NCEES
+14.Process Design7–11
+A.Process flow diagrams and piping and instrumentation diagrams
+B.Equipment selection (e.g., sizing and scale-up)
+C.Equipment and facilitiescost estimation (e.g., cost indices, equipment
+costing)
+D.Process design and optimization (e.g., sustainability, efficiency, green
+engineering, inherently safer design, evaluation of specifications, product
+design)
+E.Design standards (e.g., regulatory, ASTM, ISO, OSHA)
+15.Process Control4–6
+A.Dynamics (e.g., first- and second-order processes, gains and time
+constants, stability, damping, and transfer functions)
+B.Control strategies (e.g., feedback, feedforward, cascade, ratio, PID
+controller tuning, alarms, other safety equipment)
+C.Control loop design and hardware (e.g., matching measured and
+manipulated variables, sensors, control valves, conceptual process control,
+distributed control system [DCS] programming, programmable logic
+controller [PLC] programming, interlocks)
+16.Safety, Health, and Environment5–8
+A.Hazardous properties of materials, including SDS (e.g., corrosivity,
+flammability, toxicity, reactivity, handling, storage, transportation)
+B.Industrial hygiene (e.g., toxicity, noise, PPE, ergonomics)
+C.Process safety, risk assessment, and hazard analysis (e.g., layer of
+protection analysis, hazard and operability [HAZOP] studies, fault and
+event tree analysis, dispersion modeling)
+D.Overpressure and underpressure protection (e.g., relief, redundant control,
+inherently safe)
+E.Waste minimization, waste treatment, and regulation (e.g., air, water,
+solids, RCRA, CWA, other EPA, OSHA)
+F.Reactivity hazards (e.g., inerting, runaway reactions, compatibility)
+17.Ethics and Professional Practice3–5
+A.Codes of ethics (professional and technicalsocieties)
+B.Agreements, contracts, and contract law (e.g., noncompete, nondisclosure,
+memorandum of understanding)
+C.Public health, safety, and welfare (e.g., public protection issues, licensing,
+professional liability, regulatory issues)
+D.Intellectual property (e.g., copyright, trade secrets, patents, trademarks)
+
+©2020 NCEES                                                                                              482
+Fundamentals of Engineering (FE) 
+CIVIL CBT Exam Specifications 
+Effective Beginning with the July 2020 Examinations 
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an optional scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+Knowledge Number of Questions 
+8–12 
+4–6 
+5–8 
+8–12 
+1.Mathematics and Statistics
+A.Analytic geometry
+B.Single-variable calculus
+C.Vector operations
+D.Statistics (e.g., distributions, mean, mode, standard deviation, confidence
+interval, regression and curve fitting)
+2.Ethics and Professional Practice
+A.Codes of ethics (professional and technical societies)
+B.Professional liability
+C.Licensure
+D.Contracts and contract law
+3.Engineering Economics
+A.Time value of money (e.g., equivalence, present worth, equivalent annual
+worth, future worth, rate of return)
+B.Cost (e.g.,  fixed, variable, direct and indirect labor, incremental, average, sunk)
+C.Analyses (e.g., breakeven, benefit-cost, life cycle, sustainability, renewable energy)
+D.Uncertainty (e.g., expected value and risk)
+4.Statics
+A.Resultants of force systems
+B.Equivalent force systems
+C.Equilibrium of rigid bodies
+D.Frames and trusses
+E.Centroid of area
+F.Area moments of inertia
+G.Static friction
+
+                                                                                                                    483                                                                                                                     ©2020 NCEES
+5.  Dynamics4–6 
+A. Kinem atics (e.g., particles, rigid bodies)
+B. Mass moments of inertia
+C.
+Force acceleration (e.g., particles, rigid bodies)
+D. Work, energy, and power (e.g., particles, rigid bodies)
+6.  Mechanics of Materials7–11 
+A.  Shear and moment diagrams
+B. Stresses and strains (e.g., diagrams, axial, torsion, bending, shear, thermal)
+C. Deformations (e.g., axial, torsion, bending, thermal)
+D. Combined stresses, principal stresses, and Mohr's circle
+E.
+Elastic and plastic deformations
+7.
+Materials5–8 
+A. Mix design of concrete and asphalt
+B.  Test methods and specifications of metals, concrete, aggregates, asphalt, and wood
+C.
+Physical and mechanical properties of metals, concrete, aggregates, asphalt, and wood
+8.  Fluid Mechanics6–9 
+A.
+Flow measurement
+B. Fluid properties
+C. Fluid statics
+D. Energy, impulse, and momentum of fluids
+9.
+Surve   ying6–9 
+A. Angles, distances, and trigonometry
+B. Area computations
+C. Earthwork and volume computations
+D. Coordinate systems (e.g., state plane, latitude/longitude)
+E. Leveling (e.g., differential, elevations, percent grades)
+10. Water Resources and Environmental Engineering10–15 
+A. Basic hydrology (e.g., infiltration, rainfall, runoff, watersheds)
+B. Basic hydraulics (e.g., Manning equation, Bernoulli theorem, open-channel flow)
+C. Pum ps
+D.
+Water distribution systems
+E. Flood control (e.g., dams, routing, spillways)
+F. Stormwater (e.g., detention, routing, quality)
+G. Collection systems (e.g., wastewater, stormwater)
+H. Groundwater (e.g., flow, wells, drawdown)
+I.
+Water quality (e.g., ground and surface, basic water chemistry
+)
+J.
+Testing and standards (e.g., water, wastewater, air, noise)
+K. Water and wastewater treatment (e.g., biological processes, softening,
+drinking water treatment)
+
+©2020 NCEES                                                                                              484
+11. Structural Engineering10–15 
+A. Analysis of statically determinant beams, columns, trusses, and frames
+B.  Deflection of statically determinant beams, trusses, and frames
+C. Column analysis (e.g., buckling, boundary conditions)
+D. Structural determinacy and stability analysis of beams, trusses, and frames
+E.  Elementary statically indeterminate structures
+F.
+Loads, load combinations, and load paths (e.g., dead, live, 
+lateral, influence
+lines and moving loads, tributary areas)
+G. Design of steel components (e.g., codes and design philosophies, beams, columns,
+tension members, connections)
+H. Design of reinforced concrete components (e.g., codes and design
+philosophies, bea
+ms, colum
+ns)
+12.
+Geotechnical Engineering10–15 
+A. Index properties and soil classifications
+B. Phase relations
+C. Laboratory and field tests
+D.
+Effective stress
+E.  Stability of retaining structures (e.g., active/passive/at-rest pressure)
+F. Shear strength
+G. Bearing capacity
+H. Foundation types (e.g., spread footings, deep foundations, wall footings, mats)
+I. Consolidation and differential settlement
+J. Slope stability (e.g., fills, embankments, cuts, dams)
+K.  Soil stabilization (e.g., chemical additives, geosynthetics)
+13. Transportation Engineering9–14 
+A.
+Geometric design (e.g., str
+eets, highways, intersections)
+B.
+Pavement system design (e.g., thickness, subgrade, drainage, rehabilitation)
+C. Traffic capacity and flow theory
+D. Traffic control devices
+E. Transportation planning (e.g., travel forecast modeling, safety, trip
+generation)
+14. Construction Engineering8–12 
+A. Project administration (e.g., documents, management, procurement,
+project delivery methods)
+B. Construction operations and methods (e.g., safety, equipment, productivity
+analysis, temporary erosion control)
+C. Project controls (e.g., earned value, scheduling, allocation of resources,
+activity relationships)
+D. Construction estimating
+E. Interpretation of engineering drawings
+
+                                                                                                                    485                                                                                                                     ©2020 NCEES
+Fundamentals of Engineering (FE)
+ELECTRICAL AND COMPUTER CBT Exam Specifications
+Effective Beginning with the July 2020 Examinations
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an optional scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+KnowledgeNumber of Questions
+11–17
+4–6
+4–6
+5–8
+1.Mathematics
+A.Algebra and trigonometry
+B.Complex numbers
+C.Discrete mathematics
+D.Analytic geometry
+E.Calculus (e.g., differential, integral, single-variable, multivariable)
+F.Ordinarydifferentialequations
+G.Linearalgebra
+H.Vectoranalysis
+2.Probability and Statistics
+A.Measures of centraltendencies and dispersions (e.g., mean, mode,
+standarddeviation)
+B.Probabilitydistributions(e.g., discrete, continuous,normal, binomial, 
+conditionalprobability)
+C.Expected value (weighted average)
+3.Ethics and Professional Practice
+A.Codesof ethics (e.g., professional andtechnical societies, NCEES ModelLaw 
+andModelRules)
+B.Intellectualproperty(e.g., copyright, trade secrets, patents, trademarks)
+C.Safety(e.g., grounding, material safetydata, PPE, radiation protection)
+4.Engineering Economics
+A.Time value of money(e.g., present value, future value, annuities)
+B.Costestimation
+C.Riskidentification
+D.Analysis (e.g., cost-benefit, trade-off, breakeven)
+
+©2020 NCEES                                                                                              486
+4–6
+11–17
+5–8
+5–8
+7–11
+8–12
+4–6
+5.Properties of Electrical Materials
+A.Semiconductormaterials(e.g., tunneling, diffusion/drift current,energy 
+bands, doping bands, p-n theory)
+B.Electrical(e.g., conductivity, resistivity, permittivity, magnetic permeability, 
+noise)
+C.Thermal(e.g., conductivity, expansion)
+6.Circuit Analysis (DC and AC Steady State)
+A.KCL, KVL
+B.Series/parallelequivalent circuits
+C.Thévenin and Norton theorems
+D.Node and loop analysis
+E.Waveformanalysis (e.g., RMS, average, frequency, phase, wavelength)
+F.Phasors
+G.Impedance
+7.Linear Systems
+A.Frequency/transientresponse
+B.Resonance
+C.Laplace transforms
+D.Transferfunctions
+8.Signal Processing
+A.Sampling(e.g., aliasing, Nyquist theorem)
+B.Analogfilters
+C.Digital filters (e.g., difference equations,Z-transforms)
+9.Electronics
+A.Models, biasing, and performance of discrete devices (e.g., diodes, 
+transistors, thyristors)
+B.Amplifiers (e.g., single-stage/common emitter, differential, biasing)
+C.Operational amplifiers (e.g., ideal, nonideal)
+D.Instrumentation (e.g., measurements, data acquisition,transducers)
+E.Powerelectronics (e.g., rectifiers, inverters, converters)
+10.Power Systems
+A.Powertheory(e.g., power factor, single and three phase, voltage regulation)
+B.Transmission and distribution (e.g., real andreactive losses, efficiency, 
+voltage drop, delta and wye connections)
+C.Transformers (e.g., single-phase and three-phase connections,
+reflected impedance)
+D.Motors and generators (e.g., synchronous, induction, dc)
+11.Electromagnetics
+A.Electrostatics/magnetostatics(e.g., spatial relationships, vector analysis)
+B.Electrodynamics (e.g., Maxwell equations, wave propagation)
+C.Transmission lines (high frequency)
+
+                                                                                                                    487                                                                                                                     ©2020 NCEES
+12.Control Systems6–9
+A.Block diagrams (e.g. feedforward, feedback)
+B.Bode plots
+C.Closed-loop response, open-loop response, and stability
+D.Controller performance (e.g., steady-state errors, settling time, overshoot)
+13.Communications5–8
+A.Basic modulation/demodulation concepts (e.g., AM, FM, PCM)
+B.Fourier transforms/Fourier series
+C.Multiplexing (e.g., time division, frequency division, code division)
+D.Digital communications
+14.Computer Networks4–6
+A.Routing and switching
+B.Network topologies (e.g., mesh, ring, star)
+C.Network types (e.g., LAN, WAN, internet)
+D.Network models (e.g., OSI, TCP/IP)
+E.Network intrusion detection and prevention (e.g., firewalls, endpoint
+detection, network detection)
+F.Security (e.g., port scanning, network vulnerability testing, web
+vulnerability testing, penetration testing, security triad)
+15.Digital Systems8–12
+A.Number systems
+B.Boolean logic
+C.Logic gates and circuits
+D.Logic minimization (e.g., SOP, POS, Karnaugh maps)
+E.Flip-flops and counters
+F.Programmable logic devices and gate arrays
+G.State machine design
+H.Timing (e.g., diagrams, asynchronous inputs, race conditions and
+other hazards)
+16.Computer Systems5–8
+A.Microprocessors
+B.Memory technology and systems
+C.Interfacing
+17.SoftwareEngineering4–6
+A.Algorithms (e.g., sorting, searching, complexity, big-O)
+B.Data structures (e.g., lists, trees, vectors, structures, arrays)
+C.Software implementation (e.g., iteration, conditionals, recursion, control
+flow, scripting, testing)
+
+©2020 NCEES                                                                                              488
+Fundamentals of Engineering (FE)
+ENVIRONMENTAL CBT Exam Specifications
+Effective Beginning with the July 2020 Examinations 
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an optional scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+KnowledgeNumber of Questions
+5–8
+4–6
+5–8
+5–8
+1.Mathematics
+A.Analytic geometry andtrigonometry
+B.Algebraic equations androots
+C.Calculus (e.g., differential, integral, differential equations)
+D.Numericalmethods (e.g., numerical integration, approximations, precision 
+limits, error propagation)
+2.Probability and Statistics
+A.Measures of centraltendencies and dispersions (e.g., mean, mode,
+standarddeviation)
+B.Probabilitydistributions(e.g., discrete, continuous,normal, binomial)
+C.Estimation for a singlemean (e.g., point, confidence intervals)
+D.Regression (linear, multiple), curve fitting, and goodness offit (e.g., 
+correlation coefficient, least squares)
+E.Hypothesistesting(e.g., t-test, outlier testing, analysis of the variance)
+3.Ethics and Professional Practice
+A.Codesof ethics (e.g., professional andtechnical societies, ethical and
+legalconsiderations)
+B.Public health, safety, and welfare (e.g., public protection issues, licensing 
+boards, professional liability)
+C.Compliance with codes, standards, and regulations (e.g., CWA, CAA, RCRA, 
+CERCLA, SDWA, NEPA, OSHA)
+D.Engineer’s role in society (e.g., sustainability, resiliency, long-term viability)
+4.Engineering Economics
+A.Time value of money(e.g.,equivalence, present worth,equivalentannual 
+worth, future worth, rate of return, annuities)
+B.Costtypesand breakdowns (e.g., fixed, variable, direct and indirect labor, 
+incremental, average, sunk, O&M)
+C.Economic analyses (e.g., benefit-cost, breakeven, minimum cost,
+overhead, life cycle)
+D.Project selection (e.g., comparison of projects with unequal lives,
+lease/buy/make, depreciation, discounted cash flow)
+
+                                                                                                                    489                                                                                                                     ©2020 NCEES
+5.Fundamental Principles7–11
+A.Population projections and demand calculations (e.g., water, wastewater,
+solid waste, energy)
+B.Reactors
+C.Materials science (e.g., properties, corrosion, compatibility, stress strain)
+6.Environmental Chemistry7–11
+A.Stoichiometry and chemical reactions (e.g., equilibrium, acid-base,
+oxidation-reduction, precipitation, pC-pH)
+B.Kinetics (e.g., chemical conversion, growth and decay)
+C.Organic chemistry (e.g., nomenclature, functional group reactions)
+D.Multimedia equilibrium partitioning (e.g., Henry’s law, octanol
+partitioning coefficient)
+7.Health Hazards and Risk Assessment4–6
+A.Dose-response toxicity (e.g., carcinogen, noncarcinogen)
+B.Exposure routes and pathways
+C.Occupational health (e.g., PPE, noise pollution, safety screening)
+8.Fluid Mechanics and Hydraulics12–18
+A.Fluid statics (e.g., pressure, force analysis)
+B.Closed conduits (e.g., Darcy-Weisbach, Hazen-Williams, Moody)
+C.Open channel (e.g., Manning, supercritical/subcritical, culverts,
+hydraulic elements)
+D.Pumps (e.g., power, operating point, parallel, series)
+E.Flow measurement (e.g., weirs, orifices, flumes)
+F.Blowers (e.g., power, inlet/outlet pressure, efficiency, operating point,
+parallel, series)
+G.Fluid dynamics (e.g., Bernoulli, laminar flow, turbulent flow,
+continuity equation)
+H.Steady and unsteady flow
+9.Thermodynamics3–5
+A.Thermodynamic laws (e.g., first law, second law)
+B.Energy, heat, and work (e.g., efficiencies, coefficient of performance,
+energy cycles, energy conversion, conduction, convection, radiation)
+C.Behavior of ideal gases
+10.Surface Water Resources and Hydrology9–14
+A.Runoff calculations (e.g., land use, land cover, time of concentration,
+duration, intensity, frequency, runoff control, runoff management)
+B.Water storage sizing (e.g., reservoir, detention and retention basins)
+C.Routing (e.g., channel, reservoir)
+D.Water quality and modeling (e.g., erosion, channel stability, stormwater
+quality management, wetlands, Streeter-Phelps, eutrophication)
+E.Water budget (e.g., evapotranspiration, precipitation, infiltration, soil
+moisture, storage)
+
+©2020 NCEES                                                                                              490
+11.Groundwater, Soils, and Sediments8–12
+A.Basic hydrogeology (e.g., aquifer properties, soil characteristics, subsurface)
+B.Groundwater flow (e.g., Darcy’s law, specific capacity, velocity,gradient,
+transport mechanisms)
+C.Drawdown (e.g., Dupuit, Jacob, Theis, Thiem)
+D.Remediation of soil, sediment, and/or groundwater (e.g., recovery,
+ex-situ/in-situ treatment)
+12.Water and Wastewater12–18
+A.Water and wastewater characteristics (e.g., physical, chemical,
+biological, nutrients)
+B.Mass balance and loading rates (e.g., removal efficiencies)
+C.Physical processes (e.g., sedimentation/clarification, filtration,
+adsorption, membrane, flocculation, headworks, flow equalization, air
+stripping, activated carbon)
+D.Chemical processes (e.g., disinfection, ion exchange, softening,
+coagulation, precipitation)
+E.Biological processes (e.g., activated sludge, fixed film, lagoons,
+phytoremediation, aerobic, anaerobic, anoxic)
+F.Sludge treatment and handling (e.g., land application, digestion,
+sludge dewatering, composting)
+G.Water conservation and reuse
+13.Air Quality and Control8–12
+A.Ambient and indoor air quality (e.g., criteria, toxic and hazardous air
+pollutants)
+B.   Mass and energy balances (e.g., STP basis, loading rates, heating values)
+C.Emissions (e.g., factors, rates)
+D.Atmospheric modeling and meteorology (e.g., stability classes, dispersion
+modeling, lapse rates)
+E.Gas treatment technologies (e.g., biofiltration, scrubbers, adsorbers,
+incineration, catalytic reducers)
+F.Particle treatment technologies (e.g., baghouses, cyclones,
+electrostatic precipitators)
+G.Indoor air quality modeling and controls (e.g., air exchanges, steady-
+and nonsteady-state reactor model)
+14.Solid and Hazardous Waste7–11
+A.Mass and energy balances
+B.Solid waste management (e.g., collection, transportation, storage,
+composting, recycling, waste to energy)
+C.Solid waste disposal (e.g., landfills, leachate and gas collection)
+D.Hazardous waste compatibility
+E.Site characterization (e.g., sampling, monitoring, remedial investigation)
+F.Hazardous and radioactive waste treatment and disposal (e.g., physical,
+chemical, thermal, biological)
+15.Energy and Environment4–6
+A.Energy sources concepts (e.g., conventional and alternative)
+B.Environmental impact of energy sources and production (e.g., greenhouse
+gas production, carbon footprint, thermal, water needs)
+
+                                                                                                                    491                                                                                                                     ©2020 NCEES
+Fundamentals of Engineering (FE)
+INDUSTRIAL AND SYSTEMS CBT Exam Specifications
+Effective Beginning with the July 2020 Examinations
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an optional scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+KnowledgeNumber of Questions
+6–9
+4–6
+4–6
+9–14
+10–15
+1.Mathematics
+A.Analytic geometry (e.g., areas, volumes)
+B.Calculus (e.g., derivatives, integrals, progressions, series)
+C.Linearalgebra(e.g., matrix operations, vector analysis)
+2.Engineering Sciences
+A.Thermodynamicsandfluid mechanics
+B.Statics, dynamics, and materials
+C.Electricity and electrical circuits
+3.Ethics and Professional Practice
+A.Codesof ethics and licensure
+B.Agreements and contracts
+C.Professional, ethical, and legalresponsibility
+D.Public protection and regulatory issues
+4.Engineering Economics
+A.Discountedcash flows (e.g., nonannual compounding, time value of money)
+B.Evaluation of alternatives(e.g., PW, EAC, FW, IRR, benefit-cost)
+C.Costanalyses(e.g., fixed/variable, breakeven, estimating, overhead,
+inflation,incremental, sunk, replacement)
+D.Depreciation and taxes (e.g., MACRS, straight line,after-tax cash flow,
+recapture)
+5.Probability and Statistics
+A.Probabilities (e.g., permutations and combinations, sets, laws of probability)
+B.Probabilitydistributionsand functions (e.g., types, statistics, central limit 
+theorem, expected value, linear combinations)
+C.Estimation, confidence intervals, and hypothesis testing (e.g., normal,
+t, chi-square, types oferror,sample size)
+D.Linearregression(e.g., parameter estimation, residual analysis, correlation)
+E.Design of experiments(e.g., ANOVA, factorial designs)
+
+©2020 NCEES                                                                                              492
+6.Modeling andQuantitative Analysis9–14
+A.Data, logic development, and analytics (e.g., databases, flowcharts,
+algorithms, data science techniques)
+B.Linear programming and optimization (e.g., formulation,
+solution, interpretation)
+C.Stochastic models and simulation (e.g., queuing, Markov processes,
+inverse probability functions)
+7.Engineering Management8–12
+A.Principles and tools (e.g., planning, organizing, motivational theory,
+organizational structure)
+B.Project management (e.g., WBS, scheduling, PERT, CPM, earned value, agile)
+C.Performance measurement (e.g.,KPIs, productivity, wage scales,
+balance scorecard, customer satisfaction)
+D.Decision making and risk (e.g., uncertainty, utility, decision trees, financial risk)
+8.Manufacturing, Service, and Other Production Systems9–1  4
+A.Manufacturing processes (e.g., machining, casting, welding, forming,
+dimensioning, new technologies)
+B.Manufacturing and service systems (e.g., throughput, measurement,
+automation, line balancing, energy management)
+C.Forecasting (e.g.,movingaverage, exponential smoothing, tracking signals)
+D.Planning and scheduling (e.g., inventory, aggregate planning, MRP,
+theory of constraints, sequencing)
+E.Process improvements (e.g.,lean systems, sustainability, value engineering)
+9.Facilities andSupply Chain9–14
+A.Flow, layout, and location analysis (e.g., from/to charts, layout types,
+distance metrics)
+B.Capacity analysis (e.g., number of machines and people, trade-offs,
+material handling)
+C.Supply chain management and design (e.g., pooling, transportation,
+network design, single-level/multilevel distribution models)
+10.Human Factors, Ergonomics, and Safety8–12
+A.Human factors (e.g., displays, controls, usability, cognitive engineering)
+B.Safety and industrial hygiene (e.g., workplace hazards, safety
+programs, regulations, environmental hazards)
+C.Ergonomics (e.g., biomechanics, cumulative trauma disorders,
+anthropometry, workplace design, macroergonomics)
+11.Work Design7–11
+A.Methods analysis (e.g., charting, workstation design, motion economy)
+B.Work measurement (e.g., time study, predetermined time systems,
+work sampling, standards)
+C.Learning curves
+
+                                                                                                                    493                                                                                                                     ©2020 NCEES
+12.Quality9–14
+A.Quality management, planning, assurance, and systems (e.g., Six Sigma,
+QFD, TQM, houseof quality, fishbone, Taguchi loss function)
+B.Quality control (e.g., control charts, process capability, sampling plans,
+OC curves, DOE)
+13.Systems Engineering, Analysis, and Design8–12
+A.Requirements analysis and system design
+B.Functional analysis and configuration management
+C.Risk management (e.g., FMEA, fault trees, uncertainty)
+D.Life-cycle engineering
+E.Reliability engineering (e.g., MTTF, MTBR, availability, parallel and series failure)
+
+©2020 NCEES                                                                                              494
+Fundamentals of Engineering (FE) 
+MECHANICAL CBT Exam Specifications 
+Effective Beginning with the July 2020 Examinations 
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an optional scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+Knowledge Number of Questions 
+6–9 
+4–6 
+4–6 
+4–6 
+1.Mathematics
+A.Analytic geometry
+B.Calculus (e.g., differential, integral, single-variable, multivariable)
+C.Ordinary differential equations (e.g., homogeneous, nonhomogeneous, 
+Laplace transforms)
+D.Lin ear alg   ebra (e.g., matrix operations, vector analysis)
+E.Numerical methods (e.g., approximations, precision limits, error 
+propagation, Taylor's series, Newton's method)
+F.Algorithm and logic development (e.g., flowcharts, pseudocode)
+2.Probability and Statistics
+A.Probability distributions (e.g., normal, binomial, empirical, discrete, 
+continuous)
+B.Measures of central tendencies and dispersions (e.g., mean, mode, standard 
+deviation, confidence intervals)
+C.Expected value (weighted average) in decision making
+D.Regression (linear, multiple), curve fitting, and goodness of fit
+(e.g., correlation coefficient, least squares)
+3.Ethics and Professional Practice
+A.Codes of ethics (e.g., NCEES Model Law, professional and technical 
+societies, ethical and legal considerations)
+B.Public health, safety, and welfare
+C.Intellectual property (e.g., copyright, trade secrets, patents, trademarks)
+D.Societal considerations  (e. g., economic, sustainability, life-cycle
+analysis, environmental)
+4.Engineering Economics
+A.Time value of money (e.g., equivalence, present worth, equivalent annual 
+worth, future worth, rate of return, annuities)
+B.Cost types and breakdowns (e.g., fixed, variable, incremental, average, sunk)
+C.Economic analyses (e.g., cost-benefit, breakeven, minimum cost, overhead, 
+life cycle)
+
+                                                                                                                    495                                                                                                                     ©2020 NCEES
+5.  Electricity and Magnetism5–8 
+A. Electrical fundamentals (e.g., charge, current, voltage, resistance,
+power, energy, magnetic flux)
+B. DC circuit analysis (e.g., Kirchhoff's laws, Ohm's law, series, parallel)
+C. AC circuit analysis (e.g., resistors, capacitors, inductors)
+D. Motors and generators
+6.  Statics9–14 
+A. Resultants of force systems
+B. Concurrent force systems
+C. Equilibrium of rigid bodies
+D. Frames and trusses
+E. Centroids and moments of inertia
+F. S
+tatic friction
+7.
+Dynamics, Kinematics, and Vibrations10–15 
+A.
+Kinematics of particles
+B. Kinetic friction
+C. Newton’s second law for particles
+D. Work-energy of particles
+E. Impulse-momentum of particles
+F.
+Kinemati
+cs of rigid bodies
+G.
+Kinematics of mechanisms
+H. Newton’s second law for rigid bodies
+I.
+Work-energy of rigid bodies
+J. Impulse-momentum of rigid bodies
+K. Free and forced vibrations
+8.  Mechanics of Materials9–14 
+A. Shear and moment diagrams
+B. Stress transformations and Mohr's circle
+C. Stress and strain caused by axial loads
+D.
+Stress and strain caused by bending loads
+E. Stress and strain caused by torsional loads
+F.
+Stress and strain caused by shear
+G. Stress and strain caused by temperature changes
+H. Combined loading
+I. Deformations
+J. Column buckling
+K.
+Statically indeterminat
+e systems
+
+©2020 NCEES                                                                                              496
+9.  Material Properties and Processing7–11 
+A. Properties (e.g., chemical, electrical, mechanical, physical, thermal)
+B.
+Stress-strain diagrams
+C. Ferrous metals
+D. Nonferrous metals
+E. Engineered materials (e.g., composites, polymers)
+F. Manufacturing processes
+G. Phase diagrams, phase transformation, and heat treating
+H.
+Materials selection
+I. Corrosion mechanisms and control
+J. Failure mechanisms (e.g., thermal failure, fatigue, fracture, creep)
+10. Fluid Mechanics10–15 
+A.
+Fluid propertie
+s
+B.
+Fluid statics
+C. Energy, impulse, and momentum
+D. Internal flow
+E. External flow
+F.
+Compressible flow (e.g., Mach number, isentropic flow relati
+onships,
+normal shock)
+G. Power and efficiency
+H. Performance curves
+I. Scaling laws for fans, pumps, and compressors
+11. Thermodynamics10–15 
+A. Properties of ideal gases and pure substances
+B  Energy transfers
+C. Laws of thermodynamics
+D. Processes
+E. Performance of components
+F. Power cycles
+G. Refrigeration and heat pump cycles
+H. Nonreacting mixtures of gases
+I. Psychrometrics
+J. Heating, ventilation, and air-conditioning (HVAC) processes
+K. Combustion and combustion products
+12.
+Heat Transfer7–11 
+A. Conduction
+B.
+Convection
+C. Radiation
+D. Transient processes
+E. Heat exchangers
+13. Measurements, Instrumentation, and Controls5–8 
+A. Sensors and transducers
+B. Control systems (e.g., feedback, block diagrams)
+C. Dynamic system response
+D. Measurement uncertainty (e.g., error propagation, accuracy, precision,
+significant figures)
+
+                                                                                                                    497                                                                                                                     ©2020 NCEES
+14. Mechanical Design and Analysis10–15 
+A. Stress analysis of machine elements
+B. Failure theories and analysis
+C.
+Deformation and stiffness
+D. Springs
+E. Pressure vessels and piping
+F. Bearings
+G. Power screws
+H. Power transmission
+I. Joining methods (e.g., welding, adhesives, mechanical fasteners)
+J. Manufacturability (e.g., limits, fits)
+K. Quality and reliability
+L. Components (e.g., hydraulic, pneumatic, electromechanical)
+M. Engineering drawing interpretations and geometric dimensioning and
+tolerancing (GD&T)
+
+©2020 NCEES                                                                                              498
+Fundamentals of Engineering (FE) 
+OTHER DISCIPLINES CBT Exam Specifications 
+Effective Beginning with the July 2020 Examinations 
+•The FE exam is a computer-based test (CBT). It is closed book with an electronic reference.
+•Examinees have 6 hours to complete the exam, which contains 110 questions. The 6-hour time also includes a
+tutorial and an opti onal scheduled break.
+•The FE exam uses both the International System of Units (SI) and the U.S. Customary System (USCS).
+Knowledge Number of Questions 
+1.  Mathematics 8–12 
+A. Analytic geometry and trigonometry
+B. Differential equations
+C. Numerical methods (e.g., algebraic equations, roots of equations,
+approximations, precision limits, convergence)
+D. Linear algebra (e.g., matrix operations)
+E. Single-variable calculus
+2.
+Probability 
+and Statistics
+6–9 
+A. Estimation (e.g., point, confidence intervals)
+B. Expected value and expected error in decision making
+C.
+Sample distributions and sizes (e.g., significance, hypothesis testing,
+non-normal distributions)
+D. Goodness of fit (e.g., correlation coefficient, standard errors, R
+2
+)
+3.  Chemistry 5–8 
+A. Oxidation and reduction (e.g., reactions, corrosion control)
+B. Acids and bases (e.g., pH, buffers)
+C. Chemical reactions (e.g., stoichiometry, equilibrium, bioconversion)
+4.  Instrumentation and Controls4–6 
+A. Sensors (e.g., temperature, pressure, motion, pH, chemical constituents)
+B. Data acquisition (e.g., logging, sampling rate, sampling range, filtering,
+amplification, signal interface, signal processing, analog/digital [A/D],
+digital/analog [D/A]
+, digital)
+C. Logic diagrams
+5.  Engineering Ethics and Societal Impacts 5–8 
+A. Codes of ethics (e.g., identifying and solving ethical dilemmas)
+B. Public protection issues (e.g., licensing boards)
+C. Societal impacts (e.g., economic, sustainability, life-cycle analy   sis,
+environmental, public safety)
+
+                                                                                                                    499                                                                                                                     ©2020 NCEES
+6–9 
+ 6–9 
+9–14 
+ 9–14 
+9–14 
+6.Safety, Health, and Environment
+A.Industrial hygiene (e.g., carcinogens, toxicology, exposure    limits, radiation 
+exposure, biohazards, half-life)
+B.Basic safety equipment (e.g., pressure-relief valves, emergency shutoffs, 
+fire prevention and control, personal protective equipment)
+C.Gas detection and monitoring (e.g., O
+2
+, CO, CO
+2
+, CH
+4
+, H
+2
+S, radon)
+D.Electrical safety
+E.Confined space entry and ventilation rates
+F.Hazard communications (e.g., SDS, proper labeling, concentrations, fire 
+ratings, safety equipment)
+7.Engineering Economics
+A.Time value of money  (e.g., present worth, annual worth, future worth, rate 
+of return)
+B.Cost analysis (e.g., incremental, average, sunk, estimating)
+C.Economic analyses (e.g., breakeven, benefit-cost, optimal economic life)
+D.Uncertainty (e.g., expected value and risk)
+E.Project selection (e.g., comparison of projects with unequal lives,
+lease/buy/make, depreciation, discounted cash flow, decision trees)
+8.Statics
+A.Vector analysis
+B.Force systems (e.g., resultants, concurrent, distributed)
+C.Force couple systems
+D.Equilibrium of rigid bodies (e.g., support reactions)
+E.Internal forces in rigid bodies (e.g., trusses, frames, machines)
+F.Area properties (e.g., centroids, moments of inertia, radius of gyration, 
+parallel axis theorem)
+G.Static friction
+H.Free-body diagrams
+I.Weight and mass computations (e.g., slug, lb
+m
+, lb
+f
+, kg, N, ton, dyne, g, g
+c
+)
+9.Dynamics
+A.Particle and rigid-body kinematics
+B.Linear motion (e.g., force, mass, acceleration)
+C.Angular motion (e.g., torque, inertia, acceleration)
+D.Mass moment of inertia
+E.Impulse and momentum (e.g., linear, angular)
+F.Work, energy, and power
+G.Dynamic friction
+H.Vibrations (e.g., natural frequency)
+10.Strength of Materials
+A.Stress types (e.g., normal, shear)
+B.Combined loading–principle of superposition
+C.Stress and strain caused by axial loads, bending loads, torsion, or 
+transverse shear forces
+D.Shear and moment diagrams
+E.Analysis of beams, trusses, frames, and columns
+F.Loads and deformations (e.g., axial-extension, torque-angle of twist, 
+moment-rotation)
+
+©2020 NCEES                                                                                              500
+G. Stress transformation and principal stresses, including stress-based
+yielding and fracture criteria (e.g., Mohr's circle, maximum norma  l
+stress, Tresca, von Mises)
+H. Material failure (e.g., Euler buckling, creep, fatigue, brittle fracture,
+stress concentration factors, factor of safety, and allowable stress)
+11. Materials6–9 
+A. Physical (phase diagrams) properties of materials (e.g., alloy phase diagrams,
+phase equilibrium, and phase change)
+B. Mechanical properties of materials
+C.  Chemical properties of materials
+D. Thermal properties of materials
+E.  Electrical properties of materials
+F. Material selection
+12. Fluid Mechanics12–18 
+A. Fluid properties (e.g., Newtonian, non-Newtonian, liquids and gases)
+B. Dimensionless numbers (e.g., Reynolds number, Froude number,
+Mach number)
+C. Laminar and turbulent flow
+D.  Fluid statics (e.g., hydrostatic head)
+E.
+Energy, impulse, and momentum equations (e.g., Bernoulli equation)
+F.  Pipe and duct flow and friction losses (e.g., pipes, valves, fittings, laminar,
+transitional and turbulent fl
+ow)
+G.
+Open-channel flow (e.g., Manning's equation, drag)
+H. Fluid transport systems (e.g., series and parallel operations)
+I. Flow measurement (e.g., pitot tube, venturi meter, weir)
+J. Turbomachinery (e.g., pumps, turbines, fans, compressors)
+K. Ideal gas law (e.g., mixtures of nonreactive gases)
+L. Real gas law (e.g., z factor)
+13. Basic Electrical Engineering6–9 
+A. Electrical fundamentals (e.g., charge, current, voltage, resistance, power,
+energy   )
+B. Current and voltage laws (e.g., Kirchhoff, Ohm)
+C. AC and DC circuits (e.g., real and imaginary components, complex
+numbers, power factor, reactance and impedance, series, parallel,
+capacitance and inductance, RLC circuits)
+D. Measuring devices (e.g., voltmeter, ammeter, wattmeter)
+E.
+Three-phase power (e.g., motor efficiency, balanced loads, power equation)
+14. Thermodynamics and Heat Transfer9–14 
+A. Thermodynamic laws (e.g., first law, second law)
+B. Thermodynamic equilibrium
+C. Thermodynamic properties (e.g., entropy, enthalpy, heat capacity)
+D. Thermodynamic processes (e.g., isothermal, adiabatic, reversible, irreversible)
+E. Heat transfer (e.g., conduction, convection, radiation)
+F. Mass and energy balances
+G.  Property and phase diagrams (e.g., T-s, P-h, P-v)
+H.
+Combustion and combustion products (e.g., CO, CO
+2
+, NO
+X
+, ash, particulates)
+I. Psychrometrics (e.g., relative humidity, wet bulb)
