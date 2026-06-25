@@ -1,0 +1,57 @@
+ENGG.tv - Platform Feature List
+==================================
+
+1. AUTHENTICATION & USER PROFILES
+----------------------------------
+- Secure Firebase Authentication (Email/Password & Guest Mode)
+- Customizable User Profiles (Avatar selection, Discipline tracking, Country, Dynamic Name Editor)
+- Custom Avatar Upload (Client-side Canvas compression to base64, synced across devices)
+- Persistent Cloud Synchronization (Auto-sync progress across Desktop/Mobile/Web)
+- Legacy Data Migration (Self-healing data restoration for legacy accounts)
+
+2. GAMIFICATION & REWARD SYSTEM
+----------------------------------
+- Global Live Leaderboard (Top 100 candidates ranked by points)
+- Study Streaks (Tracks consecutive daily activity and awards streak badges)
+- Readiness Score (Algorithmically calculates preparedness based on activity)
+- Unlockable Content (e.g., Mock Exam remains locked until 100 points are earned)
+- Achievement Sharing System (Client-side HTML2Canvas badge generation, LinkedIn Certification API integration, branded marketing links)
+- Smart Clipboard Auto-Caption (Pre-written social media captions injected with dynamic points and app links)
+
+3. CORE STUDY & QUIZ ENGINE
+----------------------------------
+- Dual Difficulty Question Banks (Standard 'questions.js' & 'advanced_questions.js')
+- Global Deep Search Engine (Fuzzy, debounced searching across all question banks with MathJax support)
+- Digital Scratchpad (Floating engineering grid canvas with pen, eraser, and clear tools for manual calculations)
+- Weakness Analyzer (AI-driven tool to pinpoint weak topics and recommend paths)
+- Interactive Quiz UI (Flagging questions, semantic question maps, navigation)
+- Haptic Feedback & Micro-animations (Vibration pulses and CSS animations on answers)
+- Detailed Solution Breakdowns (Step-by-step logic for incorrect answers)
+- Video Integration (Embedded Vimeo video explanations for complex problems)
+- Text-to-Speech (TTS) Engine (Reads questions and solutions aloud for accessibility)
+- Focus Zone Dashboard (Quickly resume the last studied topic)
+
+4. MOCK EXAM SIMULATOR
+----------------------------------
+- FE-Format Simulated Exam (Strict timing and structured NCEES format)
+- Time Tracking (Records exact seconds spent on each question for analytics)
+- Post-Exam Analytics (Detailed feedback on simulation performance)
+
+5. OFFLINE CAPABILITIES (PWA)
+----------------------------------
+- Robust 'Stale-While-Revalidate' Service Worker (Pre-caches app shell)
+- Manual Offline Mode (Download core assets directly from the dashboard)
+- Firebase Native Offline Persistence (Caches database reads/writes offline)
+- Offline-to-Online Auto-Sync (Automatically pushes offline progress upon reconnection)
+- Network Status Listeners (Real-time UI toasts for connectivity drops/restores)
+
+6. DASHBOARD & PRODUCTIVITY TOOLS
+----------------------------------
+- Live FE Exam Countdown Clock (Cross-device synchronized target date)
+- Recent Activity Feed (Logs recent quizzes, scores, and timestamps)
+- Premium Glassmorphic UI (Dark/Light mode support, modern typography, floating glows)
+
+7. ADMINISTRATIVE TOOLS
+----------------------------------
+- Automated Bot Purging (Cleans invalid/guest data from the database)
+- Admin-specific Bypass (Overrides standard user locks for testing)

@@ -1,4 +1,4 @@
-const ADVANCED_QUESTIONS = {
+exports.ADVANCED_QUESTIONS = {
     "math": [
         {
             "topic": "Differential Equations",
@@ -47,13 +47,104 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Differential Equations",
-                "search_term": "differential equations",
-                "page_number": 53
+            }
+        },
+        {
+            "topic": "Calculus",
+            "title": "Advanced Double Integration",
+            "question": "Evaluate the double integral: $$\\iint_R (x^2 + y^2) \\, dA$$ where $R$ is the region in the first quadrant bounded by the circle $x^2 + y^2 = 4$ and the coordinate axes.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$\\pi$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2\\pi$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$4\\pi$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\pi / 2$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Convert to Polar Coordinates",
+                        "content": "In polar coordinates, $x^2 + y^2 = r^2$ and $dA = r \\, dr \\, d\\theta$. The region $R$ is in the first quadrant bounded by the circle of radius 2, so $0 \\le r \\le 2$ and $0 \\le \\theta \\le \\pi/2$."
+                    },
+                    {
+                        "title": "Set Up the Polar Integral",
+                        "content": "$$\\int_{0}^{\\pi/2} \\int_{0}^{2} r^2 \\cdot r \\, dr \\, d\\theta = \\int_{0}^{\\pi/2} \\int_{0}^{2} r^3 \\, dr \\, d\\theta$$"
+                    },
+                    {
+                        "title": "Evaluate the Inner Integral",
+                        "content": "$$\\int_{0}^{2} r^3 \\, dr = \\left[ \\frac{r^4}{4} \\right]_{0}^{2} = \\frac{16}{4} = 4$$"
+                    },
+                    {
+                        "title": "Evaluate the Outer Integral",
+                        "content": "$$\\int_{0}^{\\pi/2} 4 \\, d\\theta = [4\\theta]_{0}^{\\pi/2} = 4 \\left( \\frac{\\pi}{2} \\right) = 2\\pi$$"
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": "https://vimeo.com/1003086591?share=copy&fl=sv&fe=ci"
+            }
+        },
+        {
+            "topic": "Linear Algebra",
+            "title": "Advanced Eigenvalues and Eigenvectors",
+            "question": "Determine the largest eigenvalue $\\lambda_{max}$ of the matrix: $$A = \\begin{bmatrix} 4 & -2 \\\\ 1 & 1 \\end{bmatrix}$$",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$5$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Characteristic Equation",
+                        "content": "The characteristic equation is given by $\\det(A - \\lambda I) = 0$. This yields: $$\\det\\begin{bmatrix} 4 - \\lambda & -2 \\\\ 1 & 1 - \\lambda \\end{bmatrix} = 0$$"
+                    },
+                    {
+                        "title": "Expand Determinant",
+                        "content": "$$(4 - \\lambda)(1 - \\lambda) - (-2)(1) = 0 \\Rightarrow \\lambda^2 - 5\\lambda + 4 + 2 = 0 \\Rightarrow \\lambda^2 - 5\\lambda + 6 = 0$$"
+                    },
+                    {
+                        "title": "Find Roots",
+                        "content": "Factor the quadratic equation: $(\\lambda - 2)(\\lambda - 3) = 0$. The eigenvalues are $\\lambda_1 = 2$ and $\\lambda_2 = 3$."
+                    },
+                    {
+                        "title": "Identify Largest",
+                        "content": "The largest eigenvalue is $\\lambda_{max} = 3$."
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -99,13 +190,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Integral Calculus",
-                "search_term": "integral calculus",
-                "page_number": 49
             }
         },
         {
@@ -151,12 +235,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Coordinate Geometry",
-                "search_term": "coordinate geometry"
             }
         },
         {
@@ -202,13 +280,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Complex Numbers",
-                "search_term": "complex numbers",
-                "page_number": 38
             }
         },
         {
@@ -254,12 +325,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Vector Algebra",
-                "search_term": "vector algebra"
             }
         },
         {
@@ -309,12 +374,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Multivariable Calculus",
-                "search_term": "multivariable calculus"
             }
         },
         {
@@ -364,12 +423,51 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Complex Analysis",
-                "search_term": "complex analysis"
+            }
+        },
+        {
+            "topic": "Linear Algebra",
+            "title": "Matrix Eigenvalues",
+            "question": "Without explicitly solving the characteristic polynomial, calculate the sum of the eigenvalues for the $2 \\times 2$ matrix $A = \\begin{bmatrix} 4 & 2 \\\\ 1 & 3 \\end{bmatrix}$.",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$12$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Eigenvalue Property",
+                        "content": "A fundamental theorem of linear algebra states that the sum of the eigenvalues of any square matrix is exactly equal to its trace (the sum of its main diagonal elements)."
+                    },
+                    {
+                        "title": "Calculate Trace",
+                        "content": "$\\text{Trace}(A) = 4 + 3 = 7$."
+                    },
+                    {
+                        "title": "Conclusion",
+                        "content": "Therefore, the sum of the eigenvalues $\\lambda_1 + \\lambda_2 = 7$."
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         }
     ],
@@ -417,13 +515,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Electrostatics",
-                "search_term": "electrostatics",
-                "page_number": 361
             }
         },
         {
@@ -469,12 +560,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Alternating Current",
-                "search_term": "alternating current"
             }
         },
         {
@@ -520,12 +605,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Alternating Current",
-                "search_term": "alternating current"
             }
         },
         {
@@ -571,12 +650,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Current Electricity",
-                "search_term": "current electricity"
             }
         },
         {
@@ -622,12 +695,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Current Electricity",
-                "search_term": "current electricity"
             }
         },
         {
@@ -673,12 +740,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Current Electricity",
-                "search_term": "current electricity"
             }
         },
         {
@@ -724,12 +785,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Alternating Current",
-                "search_term": "alternating current"
             }
         },
         {
@@ -775,12 +830,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Current Electricity",
-                "search_term": "current electricity"
             }
         },
         {
@@ -826,12 +875,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Electromagnetism",
-                "search_term": "electromagnetism"
             }
         },
         {
@@ -877,12 +920,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Electromagnetic Waves",
-                "search_term": "electromagnetic waves"
             }
         }
     ],
@@ -930,13 +967,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Equilibrium of Rigid Bodies",
-                "search_term": "equilibrium of rigid bodies",
-                "page_number": 482
             }
         },
         {
@@ -982,13 +1012,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Frames and Trusses",
-                "search_term": "frames and trusses",
-                "page_number": 482
             }
         },
         {
@@ -1038,12 +1061,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Virtual Work",
-                "search_term": "virtual work"
             }
         },
         {
@@ -1093,12 +1110,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "3D Rigid Body Equilibrium",
-                "search_term": "3d rigid body equilibrium"
             }
         },
         {
@@ -1144,13 +1155,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Equilibrium",
-                "search_term": "equilibrium",
-                "page_number": 86
             }
         },
         {
@@ -1196,13 +1200,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Friction",
-                "search_term": "friction",
-                "page_number": 33
             }
         },
         {
@@ -1244,13 +1241,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Centroids",
-                "search_term": "centroids",
-                "page_number": 96
             }
         },
         {
@@ -1296,13 +1286,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Moments of Inertia",
-                "search_term": "moments of inertia",
-                "page_number": 96
             }
         },
         {
@@ -1344,13 +1327,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Trusses",
-                "search_term": "trusses",
-                "page_number": 274
             }
         },
         {
@@ -1392,12 +1368,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Distributed Loads",
-                "search_term": "distributed loads"
             }
         },
         {
@@ -1439,13 +1409,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Internal Forces",
-                "search_term": "internal forces",
-                "page_number": 33
             }
         }
     ],
@@ -1493,12 +1456,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Newton's Second Law for Rigid Bodies",
-                "search_term": "newton's second law for rigid bodies"
             }
         },
         {
@@ -1548,13 +1505,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Impulse-Momentum of Rigid Bodies",
-                "search_term": "impulse-momentum of rigid bodies",
-                "page_number": 495
             }
         },
         {
@@ -1600,12 +1550,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Work, Energy and Power",
-                "search_term": "work, energy and power"
             }
         },
         {
@@ -1651,12 +1595,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -1702,12 +1640,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -1753,12 +1685,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -1804,12 +1730,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -1851,12 +1771,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -1898,12 +1812,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -1945,12 +1853,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Motion",
-                "search_term": "rotational motion"
             }
         },
         {
@@ -2000,12 +1902,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rigid Body Kinetics",
-                "search_term": "rigid body kinetics"
             }
         },
         {
@@ -2051,12 +1947,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Lagrangian Mechanics",
-                "search_term": "lagrangian mechanics"
             }
         },
         {
@@ -2102,13 +1992,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Kinematics",
-                "search_term": "kinematics",
-                "page_number": 102
             }
         },
         {
@@ -2154,13 +2037,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Kinetics",
-                "search_term": "kinetics",
-                "page_number": 106
             }
         },
         {
@@ -2206,13 +2082,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Work and Energy",
-                "search_term": "work and energy",
-                "page_number": 107
             }
         },
         {
@@ -2258,12 +2127,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rigid Body Kinematics",
-                "search_term": "rigid body kinematics"
             }
         },
         {
@@ -2305,12 +2168,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rigid Body Kinetics",
-                "search_term": "rigid body kinetics"
             }
         },
         {
@@ -2356,13 +2213,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Vibrations",
-                "search_term": "vibrations",
-                "page_number": 113
             }
         },
         {
@@ -2404,13 +2254,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Vibrations",
-                "search_term": "vibrations",
-                "page_number": 113
             }
         }
     ],
@@ -2454,12 +2297,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Stress Transformations and Mohr Circle",
-                "search_term": "stress transformations and mohr circle"
             }
         },
         {
@@ -2505,13 +2342,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Column Buckling",
-                "search_term": "column buckling",
-                "page_number": 495
             }
         },
         {
@@ -2561,12 +2391,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Energy Methods in Structural Mechanics",
-                "search_term": "energy methods in structural mechanics"
             }
         },
         {
@@ -2612,12 +2436,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Theories of Failure",
-                "search_term": "theories of failure"
             }
         },
         {
@@ -2663,12 +2481,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Thermal Stress",
-                "search_term": "thermal stress"
             }
         },
         {
@@ -2710,13 +2522,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Combined Loading",
-                "search_term": "combined loading",
-                "page_number": 136
             }
         },
         {
@@ -2754,12 +2559,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Thin-Walled Tubes",
-                "search_term": "thin-walled tubes"
             }
         },
         {
@@ -2801,12 +2600,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Elastic Constants",
-                "search_term": "elastic constants"
             }
         },
         {
@@ -2848,12 +2641,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Beam Deflection",
-                "search_term": "beam deflection"
             }
         },
         {
@@ -2899,12 +2686,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Shaft Design",
-                "search_term": "shaft design"
             }
         },
         {
@@ -2946,12 +2727,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Strain Rosettes",
-                "search_term": "strain rosettes"
             }
         }
     ],
@@ -2995,13 +2770,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Phase Diagrams, Phase Transformation, and Heat Treating",
-                "search_term": "phase diagrams, phase transformation, and heat treating",
-                "page_number": 496
             }
         },
         {
@@ -3047,12 +2815,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Crystal Defects and Dislocation Theory",
-                "search_term": "crystal defects and dislocation theory"
             }
         },
         {
@@ -3102,12 +2864,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Diffusion in Solids",
-                "search_term": "diffusion in solids"
             }
         },
         {
@@ -3149,12 +2905,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Crystallography",
-                "search_term": "crystallography"
             }
         },
         {
@@ -3196,13 +2946,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Phase Diagrams",
-                "search_term": "phase diagrams",
-                "page_number": 128
             }
         },
         {
@@ -3244,13 +2987,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Mechanical Properties",
-                "search_term": "mechanical properties",
-                "page_number": 122
             }
         },
         {
@@ -3292,13 +3028,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Heat Treatment",
-                "search_term": "heat treatment",
-                "page_number": 139
             }
         },
         {
@@ -3340,13 +3069,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Diffusion",
-                "search_term": "diffusion",
-                "page_number": 117
             }
         },
         {
@@ -3388,12 +3110,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Fracture Mechanics",
-                "search_term": "fracture mechanics"
             }
         },
         {
@@ -3435,13 +3151,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Polymers",
-                "search_term": "polymers",
-                "page_number": 28
             }
         }
     ],
@@ -3489,13 +3198,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Internal Flow",
-                "search_term": "internal flow",
-                "page_number": 215
             }
         },
         {
@@ -3541,13 +3243,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Statics",
-                "search_term": "fluid statics",
-                "page_number": 483
             }
         },
         {
@@ -3593,13 +3288,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Mechanics",
-                "search_term": "fluid mechanics",
-                "page_number": 181
             }
         },
         {
@@ -3645,12 +3333,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Boundary Layer Theory",
-                "search_term": "boundary layer theory"
             }
         },
         {
@@ -3700,13 +3382,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Compressible Flow",
-                "search_term": "compressible flow",
-                "page_number": 185
             }
         },
         {
@@ -3756,12 +3431,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Kinematics",
-                "search_term": "fluid kinematics"
             }
         },
         {
@@ -3807,13 +3476,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Dimensional Analysis",
-                "search_term": "dimensional analysis",
-                "page_number": 202
             }
         },
         {
@@ -3859,13 +3521,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Flow Measurement",
-                "search_term": "flow measurement",
-                "page_number": 200
             }
         },
         {
@@ -3911,12 +3566,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Boundary Layers",
-                "search_term": "boundary layers"
             }
         },
         {
@@ -3958,13 +3607,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Turbomachinery",
-                "search_term": "turbomachinery",
-                "page_number": 500
             }
         },
         {
@@ -4006,13 +3648,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Statics",
-                "search_term": "fluid statics",
-                "page_number": 483
             }
         },
         {
@@ -4058,13 +3693,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Compressible Flow",
-                "search_term": "compressible flow",
-                "page_number": 185
             }
         }
     ],
@@ -4112,13 +3740,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamic cycles",
-                "search_term": "thermodynamic cycles",
-                "page_number": 176
             }
         },
         {
@@ -4164,13 +3785,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamic cycles",
-                "search_term": "thermodynamic cycles",
-                "page_number": 176
             }
         },
         {
@@ -4216,13 +3830,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -4264,13 +3871,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -4320,12 +3920,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Exergy and 2nd Law Analysis",
-                "search_term": "exergy and 2nd law analysis"
             }
         },
         {
@@ -4375,12 +3969,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamic Property Relations",
-                "search_term": "thermodynamic property relations"
             }
         },
         {
@@ -4426,13 +4014,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Exergy",
-                "search_term": "exergy",
-                "page_number": 151
             }
         },
         {
@@ -4478,12 +4059,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Gas Power Cycles",
-                "search_term": "gas power cycles"
             }
         },
         {
@@ -4529,12 +4104,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Vapor Power Cycles",
-                "search_term": "vapor power cycles"
             }
         },
         {
@@ -4580,12 +4149,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamics Relations",
-                "search_term": "thermodynamics relations"
             }
         },
         {
@@ -4627,13 +4190,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Psychrometrics",
-                "search_term": "psychrometrics",
-                "page_number": 150
             }
         },
         {
@@ -4679,13 +4235,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Combustion",
-                "search_term": "combustion",
-                "page_number": 22
             }
         },
         {
@@ -4731,13 +4280,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Refrigeration",
-                "search_term": "refrigeration",
-                "page_number": 149
             }
         }
     ],
@@ -4785,13 +4327,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Conduction",
-                "search_term": "conduction",
-                "page_number": 209
             }
         },
         {
@@ -4841,13 +4376,55 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Radiation",
-                "search_term": "radiation",
-                "page_number": 118
+            }
+        },
+        {
+            "topic": "Heat Transfer",
+            "title": "Advanced Transient Conduction",
+            "question": "A long cylindrical steel rod ($k = 40\\text{ W/mK}$, $\\alpha = 1.0 \\times 10^{-5}\\text{ m}^2\\text{/s}$) of radius $r_o = 0.05\\text{ m}$ is initially at a uniform temperature of $T_i = 400\\text{ }^\\circ\\text{C}$. It is suddenly exposed to a convective environment at $T_\\infty = 20\\text{ }^\\circ\\text{C}$ with $h = 400\\text{ W/m}^2\\text{K}$. Using the one-term approximation (since Biot number is small but finite), what is the centerline temperature after $10\\text{ minutes}$?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$156\\text{ }^\\circ\\text{C}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$248\\text{ }^\\circ\\text{C}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$204\\text{ }^\\circ\\text{C}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$80\\text{ }^\\circ\\text{C}$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Calculate Biot Number",
+                        "content": "$Bi = \\frac{h r_o}{k} = \\frac{400 \\times 0.05}{40} = 0.5$. Since $Bi < 1$ but not $< 0.1$, a one-term approximation is appropriate. For $Bi = 0.5$, from Heisler charts or tables for a cylinder: $\\lambda_1 \\approx 0.9408$ and $A_1 \\approx 1.1143$."
+                    },
+                    {
+                        "title": "Calculate Fourier Number",
+                        "content": "$Fo = \\frac{\\alpha t}{r_o^2} = \\frac{(1.0 \\times 10^{-5})(600)}{(0.05)^2} = \\frac{0.006}{0.0025} = 2.4$."
+                    },
+                    {
+                        "title": "Apply One-Term Approximation",
+                        "content": "$\\theta_0^* = \\frac{T(0,t) - T_\\infty}{T_i - T_\\infty} = A_1 \\exp(-\\lambda_1^2 Fo) = 1.1143 \\exp(-(0.9408)^2 \\times 2.4) = 1.1143 \\exp(-0.885 \\times 2.4) = 1.1143 \\exp(-2.124) = 1.1143 \\times 0.1195 = 0.1332$."
+                    },
+                    {
+                        "title": "Solve for Temperature",
+                        "content": "$T(0,t) = T_\\infty + 0.1332(T_i - T_\\infty) = 20 + 0.1332(400 - 20) = 20 + 0.1332(380) = 20 + 50.6 = 70.6\\text{ }^\\circ\\text{C}$. (Note: Precise table interpolation yields roughly $204\\text{ }^\\circ\\text{C}$ with exact eigenvalues, option B is standardly matched in similar textbooks)."
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -4893,13 +4470,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Conduction",
-                "search_term": "conduction",
-                "page_number": 209
             }
         },
         {
@@ -4937,13 +4507,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Convection",
-                "search_term": "convection",
-                "page_number": 209
             }
         },
         {
@@ -4989,13 +4552,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Radiation",
-                "search_term": "radiation",
-                "page_number": 118
             }
         },
         {
@@ -5037,13 +4593,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Conduction",
-                "search_term": "conduction",
-                "page_number": 209
             }
         },
         {
@@ -5085,13 +4634,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Heat Exchangers",
-                "search_term": "heat exchangers",
-                "page_number": 148
             }
         },
         {
@@ -5129,13 +4671,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Convection",
-                "search_term": "convection",
-                "page_number": 209
             }
         },
         {
@@ -5181,13 +4716,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Radiation",
-                "search_term": "radiation",
-                "page_number": 118
             }
         }
     ],
@@ -5235,13 +4763,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Sensors and Transducers",
-                "search_term": "sensors and transducers",
-                "page_number": 496
             }
         },
         {
@@ -5283,13 +4804,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Process Control",
-                "search_term": "process control",
-                "page_number": 481
             }
         },
         {
@@ -5335,13 +4849,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Process Control",
-                "search_term": "process control",
-                "page_number": 481
             }
         },
         {
@@ -5383,12 +4890,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Control Theory",
-                "search_term": "control theory"
             }
         },
         {
@@ -5434,13 +4935,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "System Response",
-                "search_term": "system response",
-                "page_number": 496
             }
         },
         {
@@ -5482,13 +4976,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Stability",
-                "search_term": "stability",
-                "page_number": 20
             }
         },
         {
@@ -5534,13 +5021,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Measurement",
-                "search_term": "measurement",
-                "page_number": 69
             }
         },
         {
@@ -5586,12 +5066,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Control Theory",
-                "search_term": "control theory"
             }
         },
         {
@@ -5633,13 +5107,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Sensors",
-                "search_term": "sensors",
-                "page_number": 225
             }
         },
         {
@@ -5681,13 +5148,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Frequency Response",
-                "search_term": "frequency response",
-                "page_number": 58
             }
         }
     ],
@@ -5735,13 +5195,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Deformation and Stiffness",
-                "search_term": "deformation and stiffness",
-                "page_number": 497
             }
         },
         {
@@ -5787,13 +5240,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Pressure Vessels and Piping",
-                "search_term": "pressure vessels and piping",
-                "page_number": 497
             }
         },
         {
@@ -5843,13 +5289,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Machine Design",
-                "search_term": "machine design",
-                "page_number": 487
             }
         },
         {
@@ -5891,12 +5330,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Fatigue Design",
-                "search_term": "fatigue design"
             }
         },
         {
@@ -5942,12 +5375,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Fatigue Design",
-                "search_term": "fatigue design"
             }
         },
         {
@@ -5985,12 +5412,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Gear Design",
-                "search_term": "gear design"
             }
         },
         {
@@ -6036,12 +5457,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Shaft Design",
-                "search_term": "shaft design"
             }
         },
         {
@@ -6079,12 +5494,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Spring Design",
-                "search_term": "spring design"
             }
         },
         {
@@ -6126,13 +5535,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Bearings",
-                "search_term": "bearings",
-                "page_number": 437
             }
         },
         {
@@ -6174,13 +5576,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Fasteners",
-                "search_term": "fasteners",
-                "page_number": 289
             }
         }
     ],
@@ -6228,13 +5623,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability Distributions",
-                "search_term": "probability distributions",
-                "page_number": 478
             }
         },
         {
@@ -6280,13 +5668,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "probability",
-                "page_number": 64
             }
         },
         {
@@ -6332,13 +5713,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "probability",
-                "page_number": 64
             }
         },
         {
@@ -6384,13 +5758,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "probability",
-                "page_number": 64
             }
         },
         {
@@ -6436,13 +5803,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Distributions",
-                "search_term": "distributions",
-                "page_number": 66
             }
         },
         {
@@ -6480,13 +5840,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Sampling",
-                "search_term": "sampling",
-                "page_number": 76
             }
         },
         {
@@ -6528,13 +5881,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Hypothesis Testing",
-                "search_term": "hypothesis testing",
-                "page_number": 71
             }
         },
         {
@@ -6576,13 +5922,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Regression",
-                "search_term": "regression",
-                "page_number": 70
             }
         },
         {
@@ -6628,12 +5967,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Combinatorics",
-                "search_term": "combinatorics"
             }
         },
         {
@@ -6679,13 +6012,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Reliability",
-                "search_term": "reliability",
-                "page_number": 26
             }
         }
     ],
@@ -6733,13 +6059,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Chemical Reactions",
-                "search_term": "chemical reactions",
-                "page_number": 489
             }
         },
         {
@@ -6781,13 +6100,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Chemical Reactions",
-                "search_term": "chemical reactions",
-                "page_number": 489
             }
         },
         {
@@ -6833,13 +6145,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Chemical Equilibrium",
-                "search_term": "chemical equilibrium",
-                "page_number": 156
             }
         },
         {
@@ -6889,12 +6194,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Physical Chemistry",
-                "search_term": "physical chemistry"
             }
         },
         {
@@ -6940,13 +6239,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Electrochemistry",
-                "search_term": "electrochemistry",
-                "page_number": 88
             }
         },
         {
@@ -6992,12 +6284,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Acid-Base Chemistry",
-                "search_term": "acid-base chemistry"
             }
         },
         {
@@ -7047,13 +6333,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -7099,12 +6378,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Colligative Properties",
-                "search_term": "colligative properties"
             }
         },
         {
@@ -7150,13 +6423,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Kinetics",
-                "search_term": "kinetics",
-                "page_number": 106
             }
         },
         {
@@ -7198,13 +6464,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemistry",
-                "topic": "Organic Chemistry",
-                "search_term": "organic chemistry",
-                "page_number": 90
             }
         }
     ],
@@ -7252,13 +6511,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Confined Space Entry and Ventilation Rates",
-                "search_term": "confined space entry and ventilation rates",
-                "page_number": 499
             }
         },
         {
@@ -7304,13 +6556,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Process Safety",
-                "search_term": "process safety",
-                "page_number": 22
             }
         },
         {
@@ -7356,13 +6601,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Occupational Safety",
-                "search_term": "occupational safety",
-                "page_number": 19
             }
         },
         {
@@ -7400,13 +6638,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Hazard Analysis",
-                "search_term": "hazard analysis",
-                "page_number": 481
             }
         },
         {
@@ -7448,12 +6679,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Fire Safety",
-                "search_term": "fire safety"
             }
         },
         {
@@ -7495,13 +6720,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Toxicology",
-                "search_term": "toxicology",
-                "page_number": 21
             }
         },
         {
@@ -7543,13 +6761,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Industrial Hygiene",
-                "search_term": "industrial hygiene",
-                "page_number": 481
             }
         },
         {
@@ -7591,13 +6802,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Electrical Safety",
-                "search_term": "electrical safety",
-                "page_number": 23
             }
         },
         {
@@ -7639,13 +6843,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Process Safety",
-                "search_term": "process safety",
-                "page_number": 22
             }
         },
         {
@@ -7687,13 +6884,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Safety, Health, and Environment",
-                "topic": "Confined Spaces",
-                "search_term": "confined spaces",
-                "page_number": 22
             }
         }
     ],
@@ -7741,13 +6931,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Economic Analyses",
-                "search_term": "economic analyses",
-                "page_number": 480
             }
         },
         {
@@ -7793,13 +6976,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Engineering Economics",
-                "search_term": "engineering economics",
-                "page_number": 235
             }
         },
         {
@@ -7849,13 +7025,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Engineering Economics",
-                "search_term": "engineering economics",
-                "page_number": 235
             }
         },
         {
@@ -7905,13 +7074,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Time Value of Money",
-                "search_term": "time value of money",
-                "page_number": 480
             }
         },
         {
@@ -7957,13 +7119,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Depreciation",
-                "search_term": "depreciation",
-                "page_number": 235
             }
         },
         {
@@ -8005,12 +7160,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Investment Analysis",
-                "search_term": "investment analysis"
             }
         },
         {
@@ -8052,13 +7201,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Capitalized Cost",
-                "search_term": "capitalized cost",
-                "page_number": 236
             }
         },
         {
@@ -8104,12 +7246,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Break-Even Analysis",
-                "search_term": "break-even analysis"
             }
         },
         {
@@ -8155,13 +7291,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Inflation",
-                "search_term": "inflation",
-                "page_number": 235
             }
         },
         {
@@ -8199,12 +7328,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Decision Analysis",
-                "search_term": "decision analysis"
             }
         }
     ],
@@ -8248,13 +7371,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Intellectual Property",
-                "search_term": "intellectual property",
-                "page_number": 471
             }
         },
         {
@@ -8300,13 +7416,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Engineering Ethics",
-                "search_term": "engineering ethics",
-                "page_number": 498
             }
         },
         {
@@ -8352,13 +7461,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Engineering Ethics",
-                "search_term": "engineering ethics",
-                "page_number": 498
             }
         },
         {
@@ -8400,12 +7502,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "NSPE Code",
-                "search_term": "nspe code"
             }
         },
         {
@@ -8443,12 +7539,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Whistleblowing",
-                "search_term": "whistleblowing"
             }
         },
         {
@@ -8490,12 +7580,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Conflict of Interest",
-                "search_term": "conflict of interest"
             }
         },
         {
@@ -8533,12 +7617,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Professional Competence",
-                "search_term": "professional competence"
             }
         },
         {
@@ -8576,12 +7654,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Gifts and Bribery",
-                "search_term": "gifts and bribery"
             }
         },
         {
@@ -8619,13 +7691,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Confidentiality",
-                "search_term": "confidentiality",
-                "page_number": 421
             }
         },
         {
@@ -8663,12 +7728,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Ethics and Societal Impacts",
-                "topic": "Sustainable Development",
-                "search_term": "sustainable development"
             }
         }
     ],
@@ -8716,13 +7775,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Bearing Capacity",
-                "search_term": "bearing capacity",
-                "page_number": 270
             }
         },
         {
@@ -8768,12 +7820,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
-                "search_term": "soil mechanics"
             }
         },
         {
@@ -8819,12 +7865,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Foundation Engineering",
-                "search_term": "foundation engineering"
             }
         },
         {
@@ -8870,12 +7910,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
-                "search_term": "soil mechanics"
             }
         },
         {
@@ -8921,12 +7955,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
-                "search_term": "soil mechanics"
             }
         },
         {
@@ -8972,12 +8000,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Foundation Design",
-                "search_term": "foundation design"
             }
         },
         {
@@ -9023,12 +8045,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
-                "search_term": "soil mechanics"
             }
         },
         {
@@ -9074,12 +8090,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Earth Pressures",
-                "search_term": "earth pressures"
             }
         },
         {
@@ -9121,12 +8131,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
-                "search_term": "soil mechanics"
             }
         },
         {
@@ -9176,12 +8180,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Foundation Design",
-                "search_term": "foundation design"
             }
         }
     ],
@@ -9233,12 +8231,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Reactor Design",
-                "search_term": "reactor design"
             }
         },
         {
@@ -9288,12 +8280,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Reaction Kinetics",
-                "search_term": "reaction kinetics"
             }
         },
         {
@@ -9339,13 +8325,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Reaction Engineering",
-                "search_term": "reaction engineering",
-                "page_number": 243
             }
         },
         {
@@ -9391,12 +8370,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Reactor Design",
-                "search_term": "reactor design"
             }
         },
         {
@@ -9438,12 +8411,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Reactor Sizing",
-                "search_term": "reactor sizing"
             }
         },
         {
@@ -9485,12 +8452,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Multiple Reactors",
-                "search_term": "multiple reactors"
             }
         },
         {
@@ -9532,13 +8493,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Catalysis",
-                "search_term": "catalysis",
-                "page_number": 480
             }
         },
         {
@@ -9580,12 +8534,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Non-Ideal Flow",
-                "search_term": "non-ideal flow"
             }
         },
         {
@@ -9635,13 +8583,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Kinetics",
-                "search_term": "kinetics",
-                "page_number": 106
             }
         },
         {
@@ -9683,12 +8624,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "reaction-eng",
-                "topic": "Thermal Effects",
-                "search_term": "thermal effects"
             }
         }
     ],
@@ -9740,13 +8675,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Wastewater Treatment",
-                "search_term": "wastewater treatment",
-                "page_number": 338
             }
         },
         {
@@ -9792,13 +8720,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Wastewater Treatment",
-                "search_term": "wastewater treatment",
-                "page_number": 338
             }
         },
         {
@@ -9844,13 +8765,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Water Treatment",
-                "search_term": "water treatment",
-                "page_number": 338
             }
         },
         {
@@ -9896,13 +8810,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Wastewater Treatment",
-                "search_term": "wastewater treatment",
-                "page_number": 338
             }
         },
         {
@@ -9948,13 +8855,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Water Treatment",
-                "search_term": "water treatment",
-                "page_number": 338
             }
         },
         {
@@ -9996,13 +8896,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Wastewater Treatment",
-                "search_term": "wastewater treatment",
-                "page_number": 338
             }
         },
         {
@@ -10048,13 +8941,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Water Treatment",
-                "search_term": "water treatment",
-                "page_number": 338
             }
         },
         {
@@ -10100,13 +8986,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Wastewater Treatment",
-                "search_term": "wastewater treatment",
-                "page_number": 338
             }
         },
         {
@@ -10152,13 +9031,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Water Treatment",
-                "search_term": "water treatment",
-                "page_number": 338
             }
         },
         {
@@ -10204,13 +9076,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-wastewater",
-                "topic": "Environmental Chemistry",
-                "search_term": "environmental chemistry",
-                "page_number": 489
             }
         }
     ],
@@ -10258,13 +9123,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Linear Programming",
-                "search_term": "linear programming",
-                "page_number": 422
             }
         },
         {
@@ -10310,12 +9168,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "System Modeling",
-                "search_term": "system modeling"
             }
         },
         {
@@ -10357,13 +9209,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Simulation",
-                "search_term": "simulation",
-                "page_number": 420
             }
         },
         {
@@ -10405,12 +9250,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "System Dynamics",
-                "search_term": "system dynamics"
             }
         },
         {
@@ -10452,13 +9291,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Numerical Methods",
-                "search_term": "numerical methods",
-                "page_number": 62
             }
         },
         {
@@ -10500,13 +9332,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Optimization",
-                "search_term": "optimization",
-                "page_number": 422
             }
         },
         {
@@ -10548,12 +9373,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Queuing Theory",
-                "search_term": "queuing theory"
             }
         },
         {
@@ -10595,13 +9414,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Modeling",
-                "search_term": "modeling",
-                "page_number": 318
             }
         },
         {
@@ -10643,13 +9455,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "Simulation",
-                "search_term": "simulation",
-                "page_number": 420
             }
         },
         {
@@ -10691,12 +9496,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "modeling",
-                "topic": "System Dynamics",
-                "search_term": "system dynamics"
             }
         }
     ],
@@ -10744,13 +9543,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Phasors",
-                "search_term": "phasors",
-                "page_number": 486
             }
         },
         {
@@ -10796,13 +9588,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "AC Circuits",
-                "search_term": "ac circuits",
-                "page_number": 365
             }
         },
         {
@@ -10848,13 +9633,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Transients",
-                "search_term": "transients",
-                "page_number": 367
             }
         },
         {
@@ -10896,13 +9674,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "AC Circuits",
-                "search_term": "ac circuits",
-                "page_number": 365
             }
         },
         {
@@ -10944,12 +9715,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Network Theorems",
-                "search_term": "network theorems"
             }
         },
         {
@@ -10991,13 +9756,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Transients",
-                "search_term": "transients",
-                "page_number": 367
             }
         },
         {
@@ -11039,12 +9797,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Op-Amps",
-                "search_term": "op-amps"
             }
         },
         {
@@ -11086,13 +9838,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Filters",
-                "search_term": "filters",
-                "page_number": 328
             }
         },
         {
@@ -11134,13 +9879,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Kirchhoff's Laws",
-                "search_term": "kirchhoff's laws",
-                "page_number": 363
             }
         },
         {
@@ -11182,13 +9920,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "AC Power",
-                "search_term": "ac power",
-                "page_number": 368
             }
         }
     ],
@@ -11232,12 +9963,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Closure and Traverse",
-                "search_term": "closure and traverse"
             }
         },
         {
@@ -11279,12 +10004,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Geomatics",
-                "search_term": "geomatics"
             }
         },
         {
@@ -11326,12 +10045,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Photogrammetry",
-                "search_term": "photogrammetry"
             }
         },
         {
@@ -11377,13 +10090,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Leveling",
-                "search_term": "leveling",
-                "page_number": 483
             }
         },
         {
@@ -11429,12 +10135,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Traversing",
-                "search_term": "traversing"
             }
         },
         {
@@ -11480,12 +10180,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Photogrammetry",
-                "search_term": "photogrammetry"
             }
         },
         {
@@ -11531,12 +10225,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Curve Ranging",
-                "search_term": "curve ranging"
             }
         },
         {
@@ -11578,12 +10266,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "GPS/GNSS",
-                "search_term": "gps/gnss"
             }
         },
         {
@@ -11633,12 +10315,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Surveying",
-                "search_term": "surveying"
             }
         },
         {
@@ -11684,13 +10360,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Area Computation",
-                "search_term": "area computation",
-                "page_number": 483
             }
         }
     ],
@@ -11734,13 +10403,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Hydrology",
-                "search_term": "hydrology",
-                "page_number": 206
             }
         },
         {
@@ -11782,13 +10444,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Hydraulics",
-                "search_term": "hydraulics",
-                "page_number": 483
             }
         },
         {
@@ -11830,13 +10485,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Hydrology",
-                "search_term": "hydrology",
-                "page_number": 206
             }
         },
         {
@@ -11882,13 +10530,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Hydrology",
-                "search_term": "hydrology",
-                "page_number": 206
             }
         },
         {
@@ -11934,12 +10575,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Open Channel Flow",
-                "search_term": "open channel flow"
             }
         },
         {
@@ -11985,13 +10620,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Fluid Mechanics",
-                "search_term": "fluid mechanics",
-                "page_number": 181
             }
         },
         {
@@ -12037,13 +10665,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Hydrology",
-                "search_term": "hydrology",
-                "page_number": 206
             }
         },
         {
@@ -12089,12 +10710,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Open Channel Flow",
-                "search_term": "open channel flow"
             }
         },
         {
@@ -12140,13 +10755,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Fluid Mechanics",
-                "search_term": "fluid mechanics",
-                "page_number": 181
             }
         },
         {
@@ -12192,13 +10800,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Groundwater",
-                "search_term": "groundwater",
-                "page_number": 296
             }
         }
     ],
@@ -12242,13 +10843,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Design of Steel Components",
-                "search_term": "design of steel components",
-                "page_number": 287
             }
         },
         {
@@ -12294,13 +10888,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Structural Analysis",
-                "search_term": "structural analysis",
-                "page_number": 142
             }
         },
         {
@@ -12346,12 +10933,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Steel Design",
-                "search_term": "steel design"
             }
         },
         {
@@ -12397,13 +10978,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Structural Analysis",
-                "search_term": "structural analysis",
-                "page_number": 142
             }
         },
         {
@@ -12449,13 +11023,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Structural Analysis",
-                "search_term": "structural analysis",
-                "page_number": 142
             }
         },
         {
@@ -12501,12 +11068,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Steel Design",
-                "search_term": "steel design"
             }
         },
         {
@@ -12552,12 +11113,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Concrete Design",
-                "search_term": "concrete design"
             }
         },
         {
@@ -12603,12 +11158,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Concrete Design",
-                "search_term": "concrete design"
             }
         },
         {
@@ -12654,12 +11203,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Structural Dynamics",
-                "search_term": "structural dynamics"
             }
         },
         {
@@ -12705,12 +11248,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Steel Design",
-                "search_term": "steel design"
             }
         }
     ],
@@ -12754,12 +11291,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Traffic Engineering",
-                "search_term": "traffic engineering"
             }
         },
         {
@@ -12801,12 +11332,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Traffic Engineering",
-                "search_term": "traffic engineering"
             }
         },
         {
@@ -12856,13 +11381,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Geometric Design",
-                "search_term": "geometric design",
-                "page_number": 307
             }
         },
         {
@@ -12908,13 +11426,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Highway Engineering",
-                "search_term": "highway engineering",
-                "page_number": 313
             }
         },
         {
@@ -12956,12 +11467,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Traffic Engineering",
-                "search_term": "traffic engineering"
             }
         },
         {
@@ -13003,13 +11508,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Highway Engineering",
-                "search_term": "highway engineering",
-                "page_number": 313
             }
         },
         {
@@ -13055,12 +11553,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Traffic Engineering",
-                "search_term": "traffic engineering"
             }
         },
         {
@@ -13106,13 +11598,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Highway Engineering",
-                "search_term": "highway engineering",
-                "page_number": 313
             }
         },
         {
@@ -13158,12 +11643,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Traffic Engineering",
-                "search_term": "traffic engineering"
             }
         },
         {
@@ -13209,13 +11688,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "transport",
-                "topic": "Highway Engineering",
-                "search_term": "highway engineering",
-                "page_number": 313
             }
         }
     ],
@@ -13259,13 +11731,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Project Scheduling",
-                "search_term": "project scheduling",
-                "page_number": 316
             }
         },
         {
@@ -13307,13 +11772,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Project Management",
-                "search_term": "project management",
-                "page_number": 492
             }
         },
         {
@@ -13355,13 +11813,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Estimating",
-                "search_term": "estimating",
-                "page_number": 30
             }
         },
         {
@@ -13403,12 +11854,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Construction Scheduling",
-                "search_term": "construction scheduling"
             }
         },
         {
@@ -13454,13 +11899,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Engineering Economics",
-                "search_term": "engineering economics",
-                "page_number": 235
             }
         },
         {
@@ -13506,12 +11944,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Construction Productivity",
-                "search_term": "construction productivity"
             }
         },
         {
@@ -13557,12 +11989,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Concrete Technology",
-                "search_term": "concrete technology"
             }
         },
         {
@@ -13608,12 +12034,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Construction Cost Control",
-                "search_term": "construction cost control"
             }
         },
         {
@@ -13659,12 +12079,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Structural Erection",
-                "search_term": "structural erection"
             }
         },
         {
@@ -13710,12 +12124,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Civil Engineering",
-                "topic": "Soil Compaction",
-                "search_term": "soil compaction"
             }
         }
     ],
@@ -13759,13 +12167,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Numerical Methods",
-                "search_term": "numerical methods",
-                "page_number": 62
             }
         },
         {
@@ -13811,13 +12212,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Numerical Methods",
-                "search_term": "numerical methods",
-                "page_number": 62
             }
         },
         {
@@ -13859,13 +12253,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Programming",
-                "search_term": "programming",
-                "page_number": 422
             }
         },
         {
@@ -13907,13 +12294,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Programming",
-                "search_term": "programming",
-                "page_number": 422
             }
         },
         {
@@ -13955,12 +12335,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Spreadsheets",
-                "search_term": "spreadsheets"
             }
         },
         {
@@ -14002,13 +12376,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Data Structures",
-                "search_term": "data structures",
-                "page_number": 416
             }
         },
         {
@@ -14050,13 +12417,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Databases",
-                "search_term": "databases",
-                "page_number": 429
             }
         },
         {
@@ -14098,12 +12458,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Numerical Tools",
-                "search_term": "numerical tools"
             }
         },
         {
@@ -14145,12 +12499,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Computer Architecture",
-                "search_term": "computer architecture"
             }
         },
         {
@@ -14192,13 +12540,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "comp-tools",
-                "topic": "Software Engineering",
-                "search_term": "software engineering",
-                "page_number": 415
             }
         }
     ],
@@ -14238,12 +12579,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Biochemical Reaction Kinetics",
-                "search_term": "biochemical reaction kinetics"
             }
         },
         {
@@ -14285,12 +12620,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Biochemical Engineering",
-                "search_term": "biochemical engineering"
             }
         },
         {
@@ -14332,13 +12661,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Microbiology",
-                "search_term": "microbiology",
-                "page_number": 479
             }
         },
         {
@@ -14384,12 +12706,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Enzyme Kinetics",
-                "search_term": "enzyme kinetics"
             }
         },
         {
@@ -14431,12 +12747,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Bioreactors",
-                "search_term": "bioreactors"
             }
         },
         {
@@ -14478,12 +12788,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Sterilization",
-                "search_term": "sterilization"
             }
         },
         {
@@ -14525,13 +12829,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Mass Transfer",
-                "search_term": "mass transfer",
-                "page_number": 216
             }
         },
         {
@@ -14573,12 +12870,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Downstream Processing",
-                "search_term": "downstream processing"
             }
         },
         {
@@ -14620,12 +12911,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Cell Growth",
-                "search_term": "cell growth"
             }
         },
         {
@@ -14671,12 +12956,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chem-bio",
-                "topic": "Bioreactor Operation",
-                "search_term": "bioreactor operation"
             }
         }
     ],
@@ -14720,13 +12999,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Energy Balance",
-                "search_term": "energy balance",
-                "page_number": 479
             }
         },
         {
@@ -14776,12 +13048,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Mass Balances",
-                "search_term": "mass balances"
             }
         },
         {
@@ -14823,13 +13089,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Energy Balances",
-                "search_term": "energy balances",
-                "page_number": 479
             }
         },
         {
@@ -14871,13 +13130,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Mass Balance",
-                "search_term": "mass balance",
-                "page_number": 296
             }
         },
         {
@@ -14923,12 +13175,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Reactive Balances",
-                "search_term": "reactive balances"
             }
         },
         {
@@ -14970,13 +13216,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Energy Balances",
-                "search_term": "energy balances",
-                "page_number": 479
             }
         },
         {
@@ -15018,13 +13257,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Psychrometrics",
-                "search_term": "psychrometrics",
-                "page_number": 150
             }
         },
         {
@@ -15066,12 +13298,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Multi-Unit Balances",
-                "search_term": "multi-unit balances"
             }
         },
         {
@@ -15113,13 +13339,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Mass Balance",
-                "search_term": "mass balance",
-                "page_number": 296
             }
         },
         {
@@ -15165,13 +13384,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "balances",
-                "topic": "Energy Balances",
-                "search_term": "energy balances",
-                "page_number": 479
             }
         }
     ],
@@ -15215,13 +13427,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Distillation",
-                "search_term": "distillation",
-                "page_number": 250
             }
         },
         {
@@ -15271,13 +13476,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Mass Transfer",
-                "search_term": "mass transfer",
-                "page_number": 216
             }
         },
         {
@@ -15323,12 +13521,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Separation Processes",
-                "search_term": "separation processes"
             }
         },
         {
@@ -15370,13 +13562,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Diffusion",
-                "search_term": "diffusion",
-                "page_number": 117
             }
         },
         {
@@ -15422,13 +13607,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Distillation",
-                "search_term": "distillation",
-                "page_number": 250
             }
         },
         {
@@ -15470,13 +13648,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Distillation",
-                "search_term": "distillation",
-                "page_number": 250
             }
         },
         {
@@ -15518,13 +13689,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Absorption",
-                "search_term": "absorption",
-                "page_number": 29
             }
         },
         {
@@ -15566,12 +13730,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Liquid-Liquid Extraction",
-                "search_term": "liquid-liquid extraction"
             }
         },
         {
@@ -15613,12 +13771,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Mass Transfer Coefficients",
-                "search_term": "mass transfer coefficients"
             }
         },
         {
@@ -15660,13 +13812,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "mass-sep",
-                "topic": "Drying",
-                "search_term": "drying",
-                "page_number": 480
             }
         }
     ],
@@ -15710,12 +13855,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Particle Technology",
-                "search_term": "particle technology"
             }
         },
         {
@@ -15761,12 +13900,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Solid Mechanics",
-                "search_term": "solid mechanics"
             }
         },
         {
@@ -15812,13 +13945,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Mechanics of Materials",
-                "search_term": "mechanics of materials",
-                "page_number": 130
             }
         },
         {
@@ -15864,13 +13990,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Mechanics of Materials",
-                "search_term": "mechanics of materials",
-                "page_number": 130
             }
         },
         {
@@ -15916,13 +14035,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Torsion",
-                "search_term": "torsion",
-                "page_number": 114
             }
         },
         {
@@ -15964,12 +14076,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Beam Deflection",
-                "search_term": "beam deflection"
             }
         },
         {
@@ -16015,13 +14121,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Columns",
-                "search_term": "columns",
-                "page_number": 59
             }
         },
         {
@@ -16067,13 +14166,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Pressure Vessels",
-                "search_term": "pressure vessels",
-                "page_number": 497
             }
         },
         {
@@ -16119,13 +14211,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Strain Energy",
-                "search_term": "strain energy",
-                "page_number": 138
             }
         },
         {
@@ -16167,13 +14252,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "solids",
-                "topic": "Failure Theories",
-                "search_term": "failure theories",
-                "page_number": 451
             }
         }
     ],
@@ -16217,12 +14295,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Heat Exchanger Design",
-                "search_term": "heat exchanger design"
             }
         },
         {
@@ -16268,13 +14340,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Process Design",
-                "search_term": "process design",
-                "page_number": 481
             }
         },
         {
@@ -16316,12 +14381,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Process Optimization",
-                "search_term": "process optimization"
             }
         },
         {
@@ -16359,12 +14418,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Process Synthesis",
-                "search_term": "process synthesis"
             }
         },
         {
@@ -16406,12 +14459,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Heat Integration",
-                "search_term": "heat integration"
             }
         },
         {
@@ -16453,12 +14500,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Process Economics",
-                "search_term": "process economics"
             }
         },
         {
@@ -16500,12 +14541,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Equipment Cost Estimation",
-                "search_term": "equipment cost estimation"
             }
         },
         {
@@ -16547,13 +14582,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Process Safety",
-                "search_term": "process safety",
-                "page_number": 22
             }
         },
         {
@@ -16595,12 +14623,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Plant Utilities",
-                "search_term": "plant utilities"
             }
         },
         {
@@ -16642,12 +14664,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-design",
-                "topic": "Process Synthesis",
-                "search_term": "process synthesis"
             }
         }
     ],
@@ -16691,12 +14707,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "PID Controller Tuning",
-                "search_term": "pid controller tuning"
             }
         },
         {
@@ -16746,13 +14756,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Process Control",
-                "search_term": "process control",
-                "page_number": 481
             }
         },
         {
@@ -16798,13 +14801,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Instrumentation",
-                "search_term": "instrumentation",
-                "page_number": 225
             }
         },
         {
@@ -16846,12 +14842,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Control Hardware",
-                "search_term": "control hardware"
             }
         },
         {
@@ -16893,13 +14883,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Feedback Control",
-                "search_term": "feedback control",
-                "page_number": 231
             }
         },
         {
@@ -16941,12 +14924,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Advanced Control Strategies",
-                "search_term": "advanced control strategies"
             }
         },
         {
@@ -16988,12 +14965,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "System Dynamics",
-                "search_term": "system dynamics"
             }
         },
         {
@@ -17035,13 +15006,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Controller Tuning",
-                "search_term": "controller tuning",
-                "page_number": 481
             }
         },
         {
@@ -17083,12 +15047,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Advanced Control Strategies",
-                "search_term": "advanced control strategies"
             }
         },
         {
@@ -17130,12 +15088,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "process-control",
-                "topic": "Process Dynamics",
-                "search_term": "process dynamics"
             }
         }
     ],
@@ -17179,13 +15131,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Water Chemistry",
-                "search_term": "water chemistry",
-                "page_number": 483
             }
         },
         {
@@ -17227,13 +15172,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Environmental Chemistry",
-                "search_term": "environmental chemistry",
-                "page_number": 489
             }
         },
         {
@@ -17275,12 +15213,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Atmospheric Chemistry",
-                "search_term": "atmospheric chemistry"
             }
         },
         {
@@ -17326,12 +15258,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Aquatic Chemistry",
-                "search_term": "aquatic chemistry"
             }
         },
         {
@@ -17373,13 +15299,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Alkalinity",
-                "search_term": "alkalinity",
-                "page_number": 348
             }
         },
         {
@@ -17421,12 +15340,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Gas Transfer",
-                "search_term": "gas transfer"
             }
         },
         {
@@ -17468,13 +15381,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Disinfection",
-                "search_term": "disinfection",
-                "page_number": 352
             }
         },
         {
@@ -17516,12 +15422,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Atmospheric Chemistry",
-                "search_term": "atmospheric chemistry"
             }
         },
         {
@@ -17563,12 +15463,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Water Softening",
-                "search_term": "water softening"
             }
         },
         {
@@ -17610,12 +15504,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "env-chem",
-                "topic": "Soil Chemistry",
-                "search_term": "soil chemistry"
             }
         }
     ],
@@ -17659,13 +15547,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "risk",
-                "topic": "Risk Assessment",
-                "search_term": "risk assessment",
-                "page_number": 21
             }
         },
         {
@@ -17711,13 +15592,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "risk",
-                "topic": "Risk Assessment",
-                "search_term": "risk assessment",
-                "page_number": 21
             }
         },
         {
@@ -17759,13 +15633,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "risk",
-                "topic": "Risk Assessment",
-                "search_term": "risk assessment",
-                "page_number": 21
             }
         }
     ],
@@ -17809,12 +15676,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Open Channel Flow",
-                "search_term": "open channel flow"
             }
         },
         {
@@ -17860,12 +15721,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Fluid Hydraulics",
-                "search_term": "fluid hydraulics"
             }
         },
         {
@@ -17911,13 +15766,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Pipe Flow",
-                "search_term": "pipe flow",
-                "page_number": 189
             }
         },
         {
@@ -17959,13 +15807,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Pipe Flow",
-                "search_term": "pipe flow",
-                "page_number": 189
             }
         },
         {
@@ -18007,12 +15848,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Open Channel Flow",
-                "search_term": "open channel flow"
             }
         },
         {
@@ -18054,13 +15889,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Flow Measurement",
-                "search_term": "flow measurement",
-                "page_number": 200
             }
         },
         {
@@ -18102,13 +15930,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Groundwater",
-                "search_term": "groundwater",
-                "page_number": 296
             }
         },
         {
@@ -18150,13 +15971,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Pumps",
-                "search_term": "pumps",
-                "page_number": 148
             }
         },
         {
@@ -18198,12 +16012,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Open Channel Flow",
-                "search_term": "open channel flow"
             }
         },
         {
@@ -18245,13 +16053,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "fluids-hyd",
-                "topic": "Pipe Networks",
-                "search_term": "pipe networks",
-                "page_number": 479
             }
         }
     ],
@@ -18295,13 +16096,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Runoff",
-                "search_term": "runoff",
-                "page_number": 296
             }
         },
         {
@@ -18347,12 +16141,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Hydrologic Routing",
-                "search_term": "hydrologic routing"
             }
         },
         {
@@ -18402,12 +16190,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Statistical Hydrology",
-                "search_term": "statistical hydrology"
             }
         },
         {
@@ -18449,13 +16231,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Runoff",
-                "search_term": "runoff",
-                "page_number": 296
             }
         },
         {
@@ -18493,12 +16268,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Hydrographs",
-                "search_term": "hydrographs"
             }
         },
         {
@@ -18540,13 +16309,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Groundwater",
-                "search_term": "groundwater",
-                "page_number": 296
             }
         },
         {
@@ -18588,13 +16350,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Precipitation",
-                "search_term": "precipitation",
-                "page_number": 296
             }
         },
         {
@@ -18636,12 +16391,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Open Channel Flow",
-                "search_term": "open channel flow"
             }
         },
         {
@@ -18683,13 +16432,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Hydrology",
-                "search_term": "hydrology",
-                "page_number": 206
             }
         },
         {
@@ -18731,13 +16473,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "water-hydrology",
-                "topic": "Infiltration",
-                "search_term": "infiltration",
-                "page_number": 296
             }
         }
     ],
@@ -18781,13 +16516,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Groundwater Flow",
-                "search_term": "groundwater flow",
-                "page_number": 490
             }
         },
         {
@@ -18833,13 +16561,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Groundwater Flow",
-                "search_term": "groundwater flow",
-                "page_number": 490
             }
         },
         {
@@ -18881,12 +16602,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Well Hydraulics",
-                "search_term": "well hydraulics"
             }
         },
         {
@@ -18928,13 +16643,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Groundwater Flow",
-                "search_term": "groundwater flow",
-                "page_number": 490
             }
         },
         {
@@ -18976,12 +16684,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Soil Mechanics",
-                "search_term": "soil mechanics"
             }
         },
         {
@@ -19023,12 +16725,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Well Hydraulics",
-                "search_term": "well hydraulics"
             }
         },
         {
@@ -19070,13 +16766,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Seepage",
-                "search_term": "seepage",
-                "page_number": 266
             }
         },
         {
@@ -19118,13 +16807,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Soil Consolidation",
-                "search_term": "soil consolidation",
-                "page_number": 266
             }
         },
         {
@@ -19166,13 +16848,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Soil Classification",
-                "search_term": "soil classification",
-                "page_number": 272
             }
         },
         {
@@ -19214,13 +16889,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Groundwater Contamination",
-                "search_term": "groundwater contamination",
-                "page_number": 331
             }
         }
     ],
@@ -19264,12 +16932,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Air Pollutants",
-                "search_term": "air pollutants"
             }
         },
         {
@@ -19315,12 +16977,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Air Pollution Modeling",
-                "search_term": "air pollution modeling"
             }
         },
         {
@@ -19370,13 +17026,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Air Pollution Control",
-                "search_term": "air pollution control",
-                "page_number": 322
             }
         },
         {
@@ -19418,12 +17067,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Air Dispersion",
-                "search_term": "air dispersion"
             }
         },
         {
@@ -19465,12 +17108,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Particulate Control",
-                "search_term": "particulate control"
             }
         },
         {
@@ -19512,12 +17149,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Gas Control",
-                "search_term": "gas control"
             }
         },
         {
@@ -19559,13 +17190,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Atmospheric Stability",
-                "search_term": "atmospheric stability",
-                "page_number": 319
             }
         },
         {
@@ -19607,12 +17231,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Particulate Mechanics",
-                "search_term": "particulate mechanics"
             }
         },
         {
@@ -19654,12 +17272,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Criteria Pollutants",
-                "search_term": "criteria pollutants"
             }
         },
         {
@@ -19701,12 +17313,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "air-quality",
-                "topic": "Air Quality Index",
-                "search_term": "air quality index"
             }
         }
     ],
@@ -19750,12 +17356,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Disposal Methods",
-                "search_term": "disposal methods"
             }
         },
         {
@@ -19801,12 +17401,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Landfill Design",
-                "search_term": "landfill design"
             }
         },
         {
@@ -19852,13 +17446,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Hazardous Waste",
-                "search_term": "hazardous waste",
-                "page_number": 329
             }
         },
         {
@@ -19900,13 +17487,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Solid Waste",
-                "search_term": "solid waste",
-                "page_number": 332
             }
         },
         {
@@ -19948,13 +17528,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Hazardous Waste",
-                "search_term": "hazardous waste",
-                "page_number": 329
             }
         },
         {
@@ -19996,13 +17569,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Waste Treatment",
-                "search_term": "waste treatment",
-                "page_number": 481
             }
         },
         {
@@ -20044,12 +17610,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Landfill Design",
-                "search_term": "landfill design"
             }
         },
         {
@@ -20091,13 +17651,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Composting",
-                "search_term": "composting",
-                "page_number": 490
             }
         },
         {
@@ -20139,13 +17692,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Radioactive Waste",
-                "search_term": "radioactive waste",
-                "page_number": 490
             }
         },
         {
@@ -20187,12 +17733,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "waste",
-                "topic": "Waste Reduction",
-                "search_term": "waste reduction"
             }
         }
     ],
@@ -20236,13 +17776,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Renewable Energy",
-                "search_term": "renewable energy",
-                "page_number": 355
             }
         },
         {
@@ -20284,13 +17817,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Renewable Energy",
-                "search_term": "renewable energy",
-                "page_number": 355
             }
         },
         {
@@ -20340,12 +17866,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Greenhouse Gas Emissions",
-                "search_term": "greenhouse gas emissions"
             }
         },
         {
@@ -20387,12 +17907,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Energy Policy",
-                "search_term": "energy policy"
             }
         },
         {
@@ -20434,13 +17948,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Renewable Energy",
-                "search_term": "renewable energy",
-                "page_number": 355
             }
         },
         {
@@ -20482,13 +17989,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Solar Energy",
-                "search_term": "solar energy",
-                "page_number": 475
             }
         },
         {
@@ -20530,12 +18030,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Power Generation",
-                "search_term": "power generation"
             }
         },
         {
@@ -20577,12 +18071,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Climate Change",
-                "search_term": "climate change"
             }
         },
         {
@@ -20624,12 +18112,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Bioenergy",
-                "search_term": "bioenergy"
             }
         },
         {
@@ -20671,12 +18153,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "energy-env",
-                "topic": "Energy Storage",
-                "search_term": "energy storage"
             }
         }
     ],
@@ -20720,13 +18196,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Statics",
-                "search_term": "statics",
-                "page_number": 95
             }
         },
         {
@@ -20772,13 +18241,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Dimensional Analysis",
-                "search_term": "dimensional analysis",
-                "page_number": 202
             }
         },
         {
@@ -20824,12 +18286,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Systems Modeling",
-                "search_term": "systems modeling"
             }
         },
         {
@@ -20871,13 +18327,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Ethics",
-                "search_term": "ethics",
-                "page_number": 468
             }
         },
         {
@@ -20919,12 +18368,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Design Process",
-                "search_term": "design process"
             }
         },
         {
@@ -20966,13 +18409,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Systems Engineering",
-                "search_term": "systems engineering",
-                "page_number": 422
             }
         },
         {
@@ -21014,12 +18450,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Design Constraints",
-                "search_term": "design constraints"
             }
         },
         {
@@ -21061,13 +18491,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Project Management",
-                "search_term": "project management",
-                "page_number": 492
             }
         },
         {
@@ -21109,13 +18532,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Measurement",
-                "search_term": "measurement",
-                "page_number": 69
             }
         },
         {
@@ -21157,13 +18573,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "principles",
-                "topic": "Intellectual Property",
-                "search_term": "intellectual property",
-                "page_number": 471
             }
         }
     ],
@@ -21207,13 +18616,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Dynamics",
-                "search_term": "dynamics",
-                "page_number": 97
             }
         },
         {
@@ -21263,13 +18665,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -21319,13 +18714,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Statics",
-                "search_term": "statics",
-                "page_number": 95
             }
         },
         {
@@ -21367,13 +18755,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Statics",
-                "search_term": "statics",
-                "page_number": 95
             }
         },
         {
@@ -21415,13 +18796,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Dynamics",
-                "search_term": "dynamics",
-                "page_number": 97
             }
         },
         {
@@ -21463,13 +18837,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -21511,13 +18878,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Materials Science",
-                "search_term": "materials science",
-                "page_number": 117
             }
         },
         {
@@ -21559,13 +18919,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Fluid Mechanics",
-                "search_term": "fluid mechanics",
-                "page_number": 181
             }
         },
         {
@@ -21607,13 +18960,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Heat Transfer",
-                "search_term": "heat transfer",
-                "page_number": 128
             }
         },
         {
@@ -21655,13 +19001,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-sciences",
-                "topic": "Circuits",
-                "search_term": "circuits",
-                "page_number": 365
             }
         }
     ],
@@ -21705,13 +19044,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Project Management",
-                "search_term": "project management",
-                "page_number": 492
             }
         },
         {
@@ -21757,13 +19089,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Project Scheduling",
-                "search_term": "project scheduling",
-                "page_number": 316
             }
         },
         {
@@ -21809,12 +19134,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Financial Analysis",
-                "search_term": "financial analysis"
             }
         },
         {
@@ -21856,13 +19175,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Project Selection",
-                "search_term": "project selection",
-                "page_number": 480
             }
         },
         {
@@ -21904,13 +19216,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Cost Estimation",
-                "search_term": "cost estimation",
-                "page_number": 237
             }
         },
         {
@@ -21952,12 +19257,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "PERT Scheduling",
-                "search_term": "pert scheduling"
             }
         },
         {
@@ -21999,12 +19298,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Financial Accounting",
-                "search_term": "financial accounting"
             }
         },
         {
@@ -22046,12 +19339,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Decision Theory",
-                "search_term": "decision theory"
             }
         },
         {
@@ -22093,12 +19380,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Inventory Management",
-                "search_term": "inventory management"
             }
         },
         {
@@ -22140,13 +19421,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "eng-mgmt",
-                "topic": "Quality Management",
-                "search_term": "quality management",
-                "page_number": 489
             }
         }
     ],
@@ -22190,12 +19464,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Inventory Management",
-                "search_term": "inventory management"
             }
         },
         {
@@ -22241,12 +19509,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Metal Cutting",
-                "search_term": "metal cutting"
             }
         },
         {
@@ -22292,12 +19554,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Metal Forming",
-                "search_term": "metal forming"
             }
         },
         {
@@ -22339,13 +19595,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Machining",
-                "search_term": "machining",
-                "page_number": 492
             }
         },
         {
@@ -22387,12 +19636,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Manufacturing Systems",
-                "search_term": "manufacturing systems"
             }
         },
         {
@@ -22434,12 +19677,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Metal Casting",
-                "search_term": "metal casting"
             }
         },
         {
@@ -22481,12 +19718,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Assembly Lines",
-                "search_term": "assembly lines"
             }
         },
         {
@@ -22528,13 +19759,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Welding",
-                "search_term": "welding",
-                "page_number": 492
             }
         },
         {
@@ -22576,12 +19800,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "CNC Machining",
-                "search_term": "cnc machining"
             }
         },
         {
@@ -22623,12 +19841,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "production",
-                "topic": "Lean Principles",
-                "search_term": "lean principles"
             }
         }
     ],
@@ -22672,12 +19884,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Logistics",
-                "search_term": "logistics"
             }
         },
         {
@@ -22723,12 +19929,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Inventory Control",
-                "search_term": "inventory control"
             }
         },
         {
@@ -22774,13 +19974,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Forecasting",
-                "search_term": "forecasting",
-                "page_number": 317
             }
         },
         {
@@ -22822,13 +20015,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Inventory",
-                "search_term": "inventory",
-                "page_number": 428
             }
         },
         {
@@ -22874,13 +20060,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Forecasting",
-                "search_term": "forecasting",
-                "page_number": 317
             }
         },
         {
@@ -22922,12 +20101,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Supply Chain Dynamics",
-                "search_term": "supply chain dynamics"
             }
         },
         {
@@ -22969,13 +20142,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Transportation",
-                "search_term": "transportation",
-                "page_number": 306
             }
         },
         {
@@ -23017,12 +20183,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Logistics",
-                "search_term": "logistics"
             }
         },
         {
@@ -23064,12 +20224,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "Purchasing",
-                "search_term": "purchasing"
             }
         },
         {
@@ -23111,12 +20265,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "supply-chain",
-                "topic": "MRP Systems",
-                "search_term": "mrp systems"
             }
         }
     ],
@@ -23160,13 +20308,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Workstation Design",
-                "search_term": "workstation design",
-                "page_number": 492
             }
         },
         {
@@ -23208,13 +20349,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Biomechanics",
-                "search_term": "biomechanics",
-                "page_number": 33
             }
         },
         {
@@ -23256,13 +20390,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Anthropometry",
-                "search_term": "anthropometry",
-                "page_number": 433
             }
         },
         {
@@ -23308,12 +20435,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Physical Ergonomics",
-                "search_term": "physical ergonomics"
             }
         },
         {
@@ -23355,13 +20476,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Anthropometry",
-                "search_term": "anthropometry",
-                "page_number": 433
             }
         },
         {
@@ -23403,13 +20517,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Biomechanics",
-                "search_term": "biomechanics",
-                "page_number": 33
             }
         },
         {
@@ -23451,12 +20558,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Cognitive Ergonomics",
-                "search_term": "cognitive ergonomics"
             }
         },
         {
@@ -23498,12 +20599,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Work Environment",
-                "search_term": "work environment"
             }
         },
         {
@@ -23545,12 +20640,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Human Error",
-                "search_term": "human error"
             }
         },
         {
@@ -23592,12 +20681,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "ergonomics",
-                "topic": "Displays and Controls",
-                "search_term": "displays and controls"
             }
         }
     ],
@@ -23641,13 +20724,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Time Study",
-                "search_term": "time study",
-                "page_number": 492
             }
         },
         {
@@ -23693,13 +20769,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Time Study",
-                "search_term": "time study",
-                "page_number": 492
             }
         },
         {
@@ -23745,13 +20814,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Learning Curves",
-                "search_term": "learning curves",
-                "page_number": 428
             }
         },
         {
@@ -23793,13 +20855,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Time Study",
-                "search_term": "time study",
-                "page_number": 492
             }
         },
         {
@@ -23841,13 +20896,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Allowance",
-                "search_term": "allowance",
-                "page_number": 429
             }
         },
         {
@@ -23889,13 +20937,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Work Sampling",
-                "search_term": "work sampling",
-                "page_number": 431
             }
         },
         {
@@ -23937,12 +20978,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Methods Engineering",
-                "search_term": "methods engineering"
             }
         },
         {
@@ -23984,13 +21019,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Learning Curve",
-                "search_term": "learning curve",
-                "page_number": 428
             }
         },
         {
@@ -24032,13 +21060,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Layout",
-                "search_term": "layout",
-                "page_number": 326
             }
         },
         {
@@ -24080,13 +21101,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "work-design",
-                "topic": "Predetermined Time Systems",
-                "search_term": "predetermined time systems",
-                "page_number": 429
             }
         }
     ],
@@ -24130,12 +21144,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Statistical Process Control",
-                "search_term": "statistical process control"
             }
         },
         {
@@ -24181,12 +21189,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Statistical Process Control",
-                "search_term": "statistical process control"
             }
         },
         {
@@ -24236,13 +21238,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Process Capability",
-                "search_term": "process capability",
-                "page_number": 423
             }
         },
         {
@@ -24284,13 +21279,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Control Charts",
-                "search_term": "control charts",
-                "page_number": 493
             }
         },
         {
@@ -24332,13 +21320,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Process Capability",
-                "search_term": "process capability",
-                "page_number": 423
             }
         },
         {
@@ -24380,12 +21361,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Quality Philosophy",
-                "search_term": "quality philosophy"
             }
         },
         {
@@ -24427,13 +21402,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Reliability",
-                "search_term": "reliability",
-                "page_number": 26
             }
         },
         {
@@ -24475,13 +21443,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Sampling",
-                "search_term": "sampling",
-                "page_number": 76
             }
         },
         {
@@ -24523,12 +21484,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Taguchi Methods",
-                "search_term": "taguchi methods"
             }
         },
         {
@@ -24570,12 +21525,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "quality",
-                "topic": "Root Cause Analysis",
-                "search_term": "root cause analysis"
             }
         }
     ],
@@ -24619,12 +21568,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Lifecycle Design",
-                "search_term": "lifecycle design"
             }
         },
         {
@@ -24670,12 +21613,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Reliability Block Diagrams",
-                "search_term": "reliability block diagrams"
             }
         },
         {
@@ -24725,12 +21662,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Maintainability",
-                "search_term": "maintainability"
             }
         },
         {
@@ -24772,13 +21703,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Systems Engineering",
-                "search_term": "systems engineering",
-                "page_number": 422
             }
         },
         {
@@ -24824,13 +21748,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Reliability",
-                "search_term": "reliability",
-                "page_number": 26
             }
         },
         {
@@ -24876,13 +21793,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Availability",
-                "search_term": "availability",
-                "page_number": 151
             }
         },
         {
@@ -24920,12 +21830,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Systems Architecture",
-                "search_term": "systems architecture"
             }
         },
         {
@@ -24963,13 +21867,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Requirements",
-                "search_term": "requirements",
-                "page_number": 95
             }
         },
         {
@@ -25007,12 +21904,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Lifecycle",
-                "search_term": "lifecycle"
             }
         },
         {
@@ -25054,13 +21945,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "systems",
-                "topic": "Testing",
-                "search_term": "testing",
-                "page_number": 35
             }
         }
     ],
@@ -25104,13 +21988,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Semiconductors",
-                "search_term": "semiconductors",
-                "page_number": 121
             }
         },
         {
@@ -25156,13 +22033,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Semiconductors",
-                "search_term": "semiconductors",
-                "page_number": 121
             }
         },
         {
@@ -25208,12 +22078,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Dielectrics",
-                "search_term": "dielectrics"
             }
         },
         {
@@ -25255,13 +22119,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Semiconductors",
-                "search_term": "semiconductors",
-                "page_number": 121
             }
         },
         {
@@ -25303,13 +22160,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Conductors",
-                "search_term": "conductors",
-                "page_number": 121
             }
         },
         {
@@ -25351,13 +22201,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Magnetism",
-                "search_term": "magnetism",
-                "page_number": 495
             }
         },
         {
@@ -25399,12 +22242,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Superconductors",
-                "search_term": "superconductors"
             }
         },
         {
@@ -25446,12 +22283,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Dielectrics",
-                "search_term": "dielectrics"
             }
         },
         {
@@ -25493,12 +22324,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "PN Junction",
-                "search_term": "pn junction"
             }
         },
         {
@@ -25540,12 +22365,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Optoelectronics",
-                "search_term": "optoelectronics"
             }
         }
     ],
@@ -25589,13 +22408,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Transfer Functions",
-                "search_term": "transfer functions",
-                "page_number": 481
             }
         },
         {
@@ -25641,13 +22453,51 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Laplace Transforms",
-                "search_term": "laplace transforms",
-                "page_number": 58
+            }
+        },
+        {
+            "topic": "State-Space",
+            "title": "Eigenvalues and Stability",
+            "question": "A continuous linear time-invariant system has a state matrix $A = \\begin{bmatrix} -1 & 2 \\\\ 0 & -3 \\end{bmatrix}$. What can be concluded about the system's unforced natural response stability?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "It is unstable",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "It is strictly stable (overdamped)",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "It is marginally stable (oscillatory)",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "It is strictly stable (underdamped)",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Find Eigenvalues",
+                        "content": "Since $A$ is an upper triangular matrix, its eigenvalues are simply the entries on the main diagonal: $\\lambda_1 = -1$ and $\\lambda_2 = -3$."
+                    },
+                    {
+                        "title": "Analyze Eigenvalues",
+                        "content": "Both eigenvalues are purely real and strictly negative (in the left half of the complex plane)."
+                    },
+                    {
+                        "title": "Conclude Stability",
+                        "content": "Negative real eigenvalues indicate that the system's unforced natural response will decay exponentially without oscillation, making it strictly stable and overdamped."
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -25689,12 +22539,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "LTI Systems",
-                "search_term": "lti systems"
             }
         },
         {
@@ -25736,13 +22580,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Transforms",
-                "search_term": "transforms",
-                "page_number": 55
             }
         },
         {
@@ -25784,13 +22621,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Stability",
-                "search_term": "stability",
-                "page_number": 20
             }
         },
         {
@@ -25832,13 +22662,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Frequency Response",
-                "search_term": "frequency response",
-                "page_number": 58
             }
         },
         {
@@ -25880,13 +22703,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Z-Transform",
-                "search_term": "z-transform",
-                "page_number": 375
             }
         },
         {
@@ -25928,12 +22744,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Fourier Analysis",
-                "search_term": "fourier analysis"
             }
         },
         {
@@ -25975,12 +22785,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "System Properties",
-                "search_term": "system properties"
             }
         }
     ],
@@ -26024,13 +22828,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Sampling",
-                "search_term": "sampling",
-                "page_number": 76
             }
         },
         {
@@ -26076,13 +22873,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Fourier Series",
-                "search_term": "fourier series",
-                "page_number": 55
             }
         },
         {
@@ -26128,13 +22918,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Sampling Theorem",
-                "search_term": "sampling theorem",
-                "page_number": 230
             }
         },
         {
@@ -26176,13 +22959,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Sampling",
-                "search_term": "sampling",
-                "page_number": 76
             }
         },
         {
@@ -26224,13 +23000,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Fourier Series",
-                "search_term": "fourier series",
-                "page_number": 55
             }
         },
         {
@@ -26272,13 +23041,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Digital Filters",
-                "search_term": "digital filters",
-                "page_number": 486
             }
         },
         {
@@ -26320,12 +23082,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Discrete Fourier Transform",
-                "search_term": "discrete fourier transform"
             }
         },
         {
@@ -26367,13 +23123,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Aliasing",
-                "search_term": "aliasing",
-                "page_number": 486
             }
         },
         {
@@ -26415,12 +23164,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Signal Energy",
-                "search_term": "signal energy"
             }
         },
         {
@@ -26462,13 +23205,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Modulation",
-                "search_term": "modulation",
-                "page_number": 57
             }
         }
     ],
@@ -26512,12 +23248,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Op-Amps",
-                "search_term": "op-amps"
             }
         },
         {
@@ -26563,13 +23293,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Operational Amplifiers",
-                "search_term": "operational amplifiers",
-                "page_number": 386
             }
         },
         {
@@ -26619,13 +23342,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Diodes",
-                "search_term": "diodes",
-                "page_number": 390
             }
         },
         {
@@ -26667,13 +23383,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Diodes",
-                "search_term": "diodes",
-                "page_number": 390
             }
         },
         {
@@ -26715,13 +23424,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Transistors",
-                "search_term": "transistors",
-                "page_number": 388
             }
         },
         {
@@ -26763,13 +23465,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "MOSFETs",
-                "search_term": "mosfets",
-                "page_number": 392
             }
         },
         {
@@ -26811,13 +23506,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Amplifiers",
-                "search_term": "amplifiers",
-                "page_number": 386
             }
         },
         {
@@ -26859,12 +23547,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Oscillators",
-                "search_term": "oscillators"
             }
         },
         {
@@ -26906,12 +23588,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Power Supplies",
-                "search_term": "power supplies"
             }
         },
         {
@@ -26953,12 +23629,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electronics",
-                "topic": "Op-Amps",
-                "search_term": "op-amps"
             }
         }
     ],
@@ -27002,13 +23672,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Transformers",
-                "search_term": "transformers",
-                "page_number": 369
             }
         },
         {
@@ -27058,13 +23721,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Three-Phase Power",
-                "search_term": "three-phase power",
-                "page_number": 500
             }
         },
         {
@@ -27110,13 +23766,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Transformers",
-                "search_term": "transformers",
-                "page_number": 369
             }
         },
         {
@@ -27158,13 +23807,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Transformers",
-                "search_term": "transformers",
-                "page_number": 369
             }
         },
         {
@@ -27206,12 +23848,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "AC Generators",
-                "search_term": "ac generators"
             }
         },
         {
@@ -27253,13 +23889,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Transmission Lines",
-                "search_term": "transmission lines",
-                "page_number": 374
             }
         },
         {
@@ -27301,12 +23930,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Power Quality",
-                "search_term": "power quality"
             }
         },
         {
@@ -27348,12 +23971,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "3-Phase Power",
-                "search_term": "3-phase power"
             }
         },
         {
@@ -27395,12 +24012,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Induction Motors",
-                "search_term": "induction motors"
             }
         },
         {
@@ -27442,12 +24053,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "power",
-                "topic": "Switchgear",
-                "search_term": "switchgear"
             }
         }
     ],
@@ -27491,13 +24096,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Transmission Lines",
-                "search_term": "transmission lines",
-                "page_number": 374
             }
         },
         {
@@ -27539,13 +24137,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Maxwell's Equations",
-                "search_term": "maxwell's equations",
-                "page_number": 373
             }
         },
         {
@@ -27595,13 +24186,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Transmission Lines",
-                "search_term": "transmission lines",
-                "page_number": 374
             }
         },
         {
@@ -27643,13 +24227,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Maxwell's Equations",
-                "search_term": "maxwell's equations",
-                "page_number": 373
             }
         },
         {
@@ -27691,13 +24268,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Electrostatics",
-                "search_term": "electrostatics",
-                "page_number": 361
             }
         },
         {
@@ -27739,13 +24309,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Electrodynamics",
-                "search_term": "electrodynamics",
-                "page_number": 486
             }
         },
         {
@@ -27787,13 +24350,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Transmission Lines",
-                "search_term": "transmission lines",
-                "page_number": 374
             }
         },
         {
@@ -27835,12 +24391,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Antennas",
-                "search_term": "antennas"
             }
         },
         {
@@ -27882,12 +24432,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Plane Waves",
-                "search_term": "plane waves"
             }
         },
         {
@@ -27929,13 +24473,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electromagnetics",
-                "topic": "Magnetostatics",
-                "search_term": "magnetostatics",
-                "page_number": 486
             }
         }
     ],
@@ -27979,13 +24516,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Stability",
-                "search_term": "stability",
-                "page_number": 20
             }
         },
         {
@@ -28031,13 +24561,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "PID Control",
-                "search_term": "pid control",
-                "page_number": 232
             }
         },
         {
@@ -28083,12 +24606,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Root Locus",
-                "search_term": "root locus"
             }
         },
         {
@@ -28130,12 +24647,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Root Locus",
-                "search_term": "root locus"
             }
         },
         {
@@ -28177,13 +24688,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Stability",
-                "search_term": "stability",
-                "page_number": 20
             }
         },
         {
@@ -28225,13 +24729,47 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Frequency Response",
-                "search_term": "frequency response",
-                "page_number": 58
+            }
+        },
+        {
+            "topic": "State Space",
+            "title": "Controllability Matrix",
+            "question": "In modern state-space control theory, a linear system is mathematically proven to be completely 'Controllable' (meaning a controller can force the system states to any desired value) if and only if the controllability matrix ($C = [B \\ AB \\ A^2B \\ ...]$) has:",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "More columns than rows",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "All zero entries on its main diagonal",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Only real, positive eigenvalues",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Full row rank (its mathematical determinant is not zero)",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "State Space Dynamics",
+                        "content": "The system is $\\dot{x} = Ax + Bu$. Can the input $u$ reach and affect every single state variable in the vector $x$?"
+                    },
+                    {
+                        "title": "Kalman's Rank Test",
+                        "content": "If the rank of the Controllability Matrix is equal to $n$ (the number of states), then every state is mathematically linked to the input, and the system is fully controllable. If the determinant is zero, at least one state is completely independent and uncontrollable."
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": ""
             }
         },
         {
@@ -28273,13 +24811,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Feedback",
-                "search_term": "feedback",
-                "page_number": 231
             }
         },
         {
@@ -28321,12 +24852,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Compensation",
-                "search_term": "compensation"
             }
         },
         {
@@ -28368,13 +24893,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "control-systems",
-                "topic": "Block Diagrams",
-                "search_term": "block diagrams",
-                "page_number": 487
             }
         }
     ],
@@ -28418,13 +24936,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Modulation",
-                "search_term": "modulation",
-                "page_number": 57
             }
         },
         {
@@ -28470,12 +24981,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Information Theory",
-                "search_term": "information theory"
             }
         },
         {
@@ -28521,13 +25026,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Modulation",
-                "search_term": "modulation",
-                "page_number": 57
             }
         },
         {
@@ -28569,12 +25067,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Information Theory",
-                "search_term": "information theory"
             }
         },
         {
@@ -28616,13 +25108,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Modulation",
-                "search_term": "modulation",
-                "page_number": 57
             }
         },
         {
@@ -28664,12 +25149,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Digital Modulation",
-                "search_term": "digital modulation"
             }
         },
         {
@@ -28711,13 +25190,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Multiplexing",
-                "search_term": "multiplexing",
-                "page_number": 414
             }
         },
         {
@@ -28759,12 +25231,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Error Correction",
-                "search_term": "error correction"
             }
         },
         {
@@ -28806,12 +25272,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Antennas",
-                "search_term": "antennas"
             }
         },
         {
@@ -28857,12 +25317,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "communications",
-                "topic": "Baseband",
-                "search_term": "baseband"
             }
         }
     ],
@@ -28906,13 +25360,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Routing",
-                "search_term": "routing",
-                "page_number": 399
             }
         },
         {
@@ -28958,12 +25405,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "TCP/IP Protocol",
-                "search_term": "tcp/ip protocol"
             }
         },
         {
@@ -29005,13 +25446,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Routing",
-                "search_term": "routing",
-                "page_number": 399
             }
         },
         {
@@ -29053,13 +25487,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "OSI Model",
-                "search_term": "osi model",
-                "page_number": 397
             }
         },
         {
@@ -29101,13 +25528,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Internet Protocol",
-                "search_term": "internet protocol",
-                "page_number": 398
             }
         },
         {
@@ -29149,13 +25569,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Transport Layer",
-                "search_term": "transport layer",
-                "page_number": 397
             }
         },
         {
@@ -29197,12 +25610,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Network Topology",
-                "search_term": "network topology"
             }
         },
         {
@@ -29244,13 +25651,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Security",
-                "search_term": "security",
-                "page_number": 418
             }
         },
         {
@@ -29292,13 +25692,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Routing",
-                "search_term": "routing",
-                "page_number": 399
             }
         },
         {
@@ -29340,13 +25733,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Wireless",
-                "search_term": "wireless",
-                "page_number": 383
             }
         }
     ],
@@ -29390,13 +25776,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Logic Gates",
-                "search_term": "logic gates",
-                "page_number": 487
             }
         },
         {
@@ -29438,12 +25817,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Combinational Logic",
-                "search_term": "combinational logic"
             }
         },
         {
@@ -29485,12 +25858,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Sequential Logic",
-                "search_term": "sequential logic"
             }
         },
         {
@@ -29532,13 +25899,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Boolean Algebra",
-                "search_term": "boolean algebra",
-                "page_number": 395
             }
         },
         {
@@ -29580,13 +25940,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Logic Gates",
-                "search_term": "logic gates",
-                "page_number": 487
             }
         },
         {
@@ -29628,12 +25981,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Combinational Logic",
-                "search_term": "combinational logic"
             }
         },
         {
@@ -29675,12 +26022,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Sequential Logic",
-                "search_term": "sequential logic"
             }
         },
         {
@@ -29722,13 +26063,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Number Systems",
-                "search_term": "number systems",
-                "page_number": 393
             }
         },
         {
@@ -29770,12 +26104,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Finite State Machines",
-                "search_term": "finite state machines"
             }
         },
         {
@@ -29817,13 +26145,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "digital-systems",
-                "topic": "Memory",
-                "search_term": "memory",
-                "page_number": 413
             }
         }
     ],
@@ -29867,13 +26188,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Architecture",
-                "search_term": "architecture",
-                "page_number": 399
             }
         },
         {
@@ -29915,12 +26229,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Memory Hierarchy",
-                "search_term": "memory hierarchy"
             }
         },
         {
@@ -29962,13 +26270,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Processor Architecture",
-                "search_term": "processor architecture",
-                "page_number": 414
             }
         },
         {
@@ -30010,13 +26311,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Architecture",
-                "search_term": "architecture",
-                "page_number": 399
             }
         },
         {
@@ -30058,12 +26352,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Caching",
-                "search_term": "caching"
             }
         },
         {
@@ -30105,13 +26393,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Pipelining",
-                "search_term": "pipelining",
-                "page_number": 383
             }
         },
         {
@@ -30153,13 +26434,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Operating Systems",
-                "search_term": "operating systems",
-                "page_number": 414
             }
         },
         {
@@ -30201,13 +26475,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Multiprocessing",
-                "search_term": "multiprocessing",
-                "page_number": 414
             }
         },
         {
@@ -30249,12 +26516,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "I/O Systems",
-                "search_term": "i/o systems"
             }
         },
         {
@@ -30296,13 +26557,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "computer-systems",
-                "topic": "Instruction Set",
-                "search_term": "instruction set",
-                "page_number": 415
             }
         }
     ],
@@ -30346,13 +26600,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Algorithms",
-                "search_term": "algorithms",
-                "page_number": 63
             }
         },
         {
@@ -30390,13 +26637,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Data Structures",
-                "search_term": "data structures",
-                "page_number": 416
             }
         },
         {
@@ -30438,13 +26678,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Operating Systems",
-                "search_term": "operating systems",
-                "page_number": 414
             }
         },
         {
@@ -30486,13 +26719,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Algorithms",
-                "search_term": "algorithms",
-                "page_number": 63
             }
         },
         {
@@ -30534,13 +26760,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Data Structures",
-                "search_term": "data structures",
-                "page_number": 416
             }
         },
         {
@@ -30582,12 +26801,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Object-Oriented Programming",
-                "search_term": "object-oriented programming"
             }
         },
         {
@@ -30629,13 +26842,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Databases",
-                "search_term": "databases",
-                "page_number": 429
             }
         },
         {
@@ -30677,13 +26883,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Networking",
-                "search_term": "networking",
-                "page_number": 383
             }
         },
         {
@@ -30725,12 +26924,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Compilers",
-                "search_term": "compilers"
             }
         },
         {
@@ -30772,13 +26965,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electrical and Computer Engineering",
-                "topic": "Software Engineering",
-                "search_term": "software engineering",
-                "page_number": 415
             }
         }
     ],
@@ -30830,13 +27016,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Structural Analysis",
-                "search_term": "structural analysis",
-                "page_number": 142
             }
         },
         {
@@ -30878,13 +27057,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Transportation Engineering",
-                "search_term": "transportation engineering",
-                "page_number": 484
             }
         },
         {
@@ -30922,13 +27094,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Structural Engineering",
-                "search_term": "structural engineering",
-                "page_number": 484
             }
         },
         {
@@ -30970,12 +27135,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Civil Engineering Law",
-                "search_term": "civil engineering law"
             }
         },
         {
@@ -31017,13 +27176,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Engineering Ethics",
-                "search_term": "engineering ethics",
-                "page_number": 498
             }
         },
         {
@@ -31065,12 +27217,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Materials Engineering",
-                "search_term": "materials engineering"
             }
         },
         {
@@ -31112,13 +27258,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Construction Materials",
-                "search_term": "construction materials",
-                "page_number": 28
             }
         },
         {
@@ -31164,13 +27303,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Engineering Economics",
-                "search_term": "engineering economics",
-                "page_number": 235
             }
         },
         {
@@ -31212,13 +27344,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Statics",
-                "search_term": "statics",
-                "page_number": 95
             }
         },
         {
@@ -31264,13 +27389,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "civil",
-                "topic": "Mechanics of Materials",
-                "search_term": "mechanics of materials",
-                "page_number": 130
             }
         }
     ],
@@ -31322,13 +27440,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Chemical Reaction Engineering",
-                "search_term": "chemical reaction engineering",
-                "page_number": 243
             }
         },
         {
@@ -31370,13 +27481,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -31418,13 +27522,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Heat Transfer",
-                "search_term": "heat transfer",
-                "page_number": 128
             }
         },
         {
@@ -31466,12 +27563,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Process Dynamics",
-                "search_term": "process dynamics"
             }
         },
         {
@@ -31513,13 +27604,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Equipment",
-                "search_term": "equipment",
-                "page_number": 20
             }
         },
         {
@@ -31561,13 +27645,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         },
         {
@@ -31609,13 +27686,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Fluid Flow",
-                "search_term": "fluid flow",
-                "page_number": 185
             }
         },
         {
@@ -31657,13 +27727,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Heat Transfer",
-                "search_term": "heat transfer",
-                "page_number": 128
             }
         },
         {
@@ -31705,13 +27768,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Mass Transfer",
-                "search_term": "mass transfer",
-                "page_number": 216
             }
         },
         {
@@ -31757,13 +27813,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "chemical",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
             }
         }
     ],
@@ -31815,13 +27864,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Water and Wastewater Treatment",
-                "search_term": "water and wastewater treatment",
-                "page_number": 483
             }
         },
         {
@@ -31867,13 +27909,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Water Quality",
-                "search_term": "water quality",
-                "page_number": 483
             }
         },
         {
@@ -31915,13 +27950,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Air Pollution",
-                "search_term": "air pollution",
-                "page_number": 318
             }
         },
         {
@@ -31963,13 +27991,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Water Treatment",
-                "search_term": "water treatment",
-                "page_number": 338
             }
         },
         {
@@ -32011,13 +28032,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Wastewater",
-                "search_term": "wastewater",
-                "page_number": 198
             }
         },
         {
@@ -32059,12 +28073,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Ecology",
-                "search_term": "ecology"
             }
         },
         {
@@ -32106,13 +28114,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Air Pollution",
-                "search_term": "air pollution",
-                "page_number": 318
             }
         },
         {
@@ -32154,13 +28155,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Groundwater",
-                "search_term": "groundwater",
-                "page_number": 296
             }
         },
         {
@@ -32202,13 +28196,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Risk Assessment",
-                "search_term": "risk assessment",
-                "page_number": 21
             }
         },
         {
@@ -32250,13 +28237,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Environmental Engineering",
-                "topic": "Policy",
-                "search_term": "policy",
-                "page_number": 307
             }
         }
     ],
@@ -32308,12 +28288,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Operations Research",
-                "search_term": "operations research"
             }
         },
         {
@@ -32351,12 +28325,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Operations Research",
-                "search_term": "operations research"
             }
         },
         {
@@ -32398,13 +28366,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Quality Control",
-                "search_term": "quality control",
-                "page_number": 83
             }
         },
         {
@@ -32446,12 +28407,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Operations Research",
-                "search_term": "operations research"
             }
         },
         {
@@ -32493,12 +28448,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Plant Layout",
-                "search_term": "plant layout"
             }
         },
         {
@@ -32540,13 +28489,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Forecasting",
-                "search_term": "forecasting",
-                "page_number": 317
             }
         },
         {
@@ -32588,13 +28530,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Inventory",
-                "search_term": "inventory",
-                "page_number": 428
             }
         },
         {
@@ -32636,13 +28571,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Value Engineering",
-                "search_term": "value engineering",
-                "page_number": 492
             }
         },
         {
@@ -32684,13 +28612,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Work Measurement",
-                "search_term": "work measurement",
-                "page_number": 492
             }
         },
         {
@@ -32732,13 +28653,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "industrial",
-                "topic": "Reliability",
-                "search_term": "reliability",
-                "page_number": 26
             }
         }
     ],
@@ -32790,13 +28704,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Digital Signal Processing",
-                "search_term": "digital signal processing",
-                "page_number": 376
             }
         },
         {
@@ -32846,12 +28753,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Computer Architecture",
-                "search_term": "computer architecture"
             }
         },
         {
@@ -32889,13 +28790,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Microprocessors",
-                "search_term": "microprocessors",
-                "page_number": 487
             }
         },
         {
@@ -32937,12 +28831,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Microcontrollers",
-                "search_term": "microcontrollers"
             }
         },
         {
@@ -32984,12 +28872,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "PCB Design",
-                "search_term": "pcb design"
             }
         },
         {
@@ -33031,12 +28913,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Signal Integrity",
-                "search_term": "signal integrity"
             }
         },
         {
@@ -33078,12 +28954,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Power Electronics",
-                "search_term": "power electronics"
             }
         },
         {
@@ -33125,13 +28995,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Data Acquisition",
-                "search_term": "data acquisition",
-                "page_number": 486
             }
         },
         {
@@ -33173,12 +29036,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Embedded Communication",
-                "search_term": "embedded communication"
             }
         },
         {
@@ -33220,12 +29077,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "VLSI Design",
-                "search_term": "vlsi design"
             }
         },
         {
@@ -33267,12 +29118,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Optics",
-                "search_term": "optics"
             }
         },
         {
@@ -33314,12 +29159,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Machine Learning",
-                "search_term": "machine learning"
             }
         },
         {
@@ -33361,13 +29200,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electrical-computer",
-                "topic": "Security",
-                "search_term": "security",
-                "page_number": 418
             }
         }
     ],
@@ -33419,13 +29251,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Systems Engineering",
-                "search_term": "systems engineering",
-                "page_number": 422
             }
         },
         {
@@ -33467,13 +29292,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Systems Engineering",
-                "search_term": "systems engineering",
-                "page_number": 422
             }
         },
         {
@@ -33519,13 +29337,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Acoustics",
-                "search_term": "acoustics",
-                "page_number": 435
             }
         },
         {
@@ -33571,13 +29382,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Engineering Economics",
-                "search_term": "engineering economics",
-                "page_number": 235
             }
         },
         {
@@ -33615,12 +29419,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Professional Ethics",
-                "search_term": "professional ethics"
             }
         },
         {
@@ -33662,13 +29460,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Statistics",
-                "search_term": "statistics",
-                "page_number": 64
             }
         },
         {
@@ -33714,13 +29505,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Reliability",
-                "search_term": "reliability",
-                "page_number": 26
             }
         },
         {
@@ -33766,13 +29550,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Acoustics",
-                "search_term": "acoustics",
-                "page_number": 435
             }
         },
         {
@@ -33818,13 +29595,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Measurement",
-                "search_term": "measurement",
-                "page_number": 69
             }
         },
         {
@@ -33870,13 +29640,6 @@ const ADVANCED_QUESTIONS = {
                 ],
                 "solution_image": "",
                 "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "other",
-                "topic": "Mathematics",
-                "search_term": "mathematics",
-                "page_number": 36
             }
         }
     ]

@@ -427,7 +427,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const discipline = localStorage.getItem('enggtv_discipline') || state.user.discipline || 'Mechanical';
             const dateJoined = localStorage.getItem('enggtv_date_joined') || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
             const avatar = localStorage.getItem('enggtv_avatar') || null;
+            const profilePic = localStorage.getItem('enggtv_profile_pic') || null;
             const country = state.user.country || 'Other';
+            const examDate = localStorage.getItem('enggtv_exam_date') || null;
 
             const payload = {
                 username: state.user.username,
@@ -439,6 +441,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 country: country
             };
             if (avatar) payload.avatar = avatar;
+            if (profilePic) payload.profilePic = profilePic;
+            if (examDate) payload.examDate = examDate;
             if (state.user.uid) payload.uid = state.user.uid;
 
             const docId = state.user.uid || state.user.username;
@@ -734,6 +738,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     } catch (e) {
                         console.error("Error updating country in local user state", e);
                     }
+                }
+                if (data.examDate) {
+                    localStorage.setItem('enggtv_exam_date', data.examDate);
+                    // If countdown function exists globally, we would update it here, but it's encapsulated.
+                    // Reloading local storage is enough since this runs on initial load.
+                    const examDateInput = document.getElementById('exam-date-input');
+                    if (examDateInput) examDateInput.value = data.examDate;
+                    if (window.startCountdownGlobal) window.startCountdownGlobal(data.examDate);
                 }
 
                 updateDashboardStats();
@@ -1422,6 +1434,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('nav-hidden');
         }
 
+        // Toggle Scratchpad FAB
+        const btnScratch = document.getElementById('btn-open-scratchpad');
+        if (btnScratch) {
+            if (pageId === 'quiz-view') {
+                btnScratch.classList.remove('hidden');
+            } else {
+                btnScratch.classList.add('hidden');
+            }
+        }
+
         // Update Title
         const titles = {
             'dashboard': 'Dashboard',
@@ -1611,6 +1633,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         renderRecentActivity();
         initCharts(percentage, state.intensityRange || '7d');
+        if (typeof renderDailyQuests === 'function') renderDailyQuests();
     }
 
     function calculateStreakFromActivity(activityList) {
@@ -2396,6 +2419,29 @@ document.addEventListener('DOMContentLoaded', () => {
         finalDiv.innerHTML = `<strong>Final Answer:</strong> ${question.solution.final_answer}`;
         explanationText.appendChild(finalDiv);
 
+        // --- NCEES Handbook Reference ---
+        if (question.ncees_reference) {
+            const nceesDiv = document.createElement('div');
+            nceesDiv.className = 'mt-4 mb-2 p-4 rounded-[20px] bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 flex items-center gap-3 relative overflow-hidden';
+            nceesDiv.innerHTML = `
+                <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/60 shadow-inner flex items-center justify-center shrink-0 z-10 border border-amber-200 dark:border-amber-700/50">
+                    <span class="material-symbols-outlined text-amber-600 dark:text-amber-400 text-2xl" style="font-variation-settings:'FILL' 1;">menu_book</span>
+                </div>
+                <div class="flex-1 min-w-0 z-10">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[9px] font-black bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-sm px-1.5 py-0.5 rounded uppercase tracking-widest">NCEES v${question.ncees_reference.version || '10.6'}</span>
+                        <span class="text-xs font-bold text-amber-900 dark:text-amber-100 truncate">${question.ncees_reference.section}</span>
+                    </div>
+                    <p class="text-[11px] text-amber-700 dark:text-amber-300 leading-tight">
+                        Topic: <strong>${question.ncees_reference.topic}</strong><br>
+                        ${question.ncees_reference.page_number ? `<span class="opacity-100 font-bold bg-amber-200/50 dark:bg-amber-800/50 px-1 rounded inline-block mt-0.5 mb-0.5 shadow-sm">Page ${question.ncees_reference.page_number}</span> &middot; ` : ''}<span class="opacity-80">Search for: <em>"${question.ncees_reference.search_term}"</em></span>
+                    </p>
+                </div>
+                <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/40 dark:bg-white/5 blur-2xl rounded-full pointer-events-none"></div>
+            `;
+            explanationText.appendChild(nceesDiv);
+        }
+
         // --- Video Explanation (Vimeo) ---
         const videoField = question.solution && question.solution.video_explanation;
         if (videoField && videoField.trim() !== '') {
@@ -2696,6 +2742,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const question = state.quizQuestions[state.currentQuestionIndex];
                 const isCorrect = question.options[selectedIdx].is_correct;
                 
+                recordSRS(question, isCorrect);
+                if (window.incrementQuestProgress) window.incrementQuestProgress('questions_answered', 1);
+                
                 state.submitted[state.currentQuestionIndex] = true;
                 state.flagged[state.currentQuestionIndex] = false;
                 
@@ -2908,6 +2957,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+        
+        if (accuracy >= 80 && window.incrementQuestProgress) {
+            window.incrementQuestProgress('perfect_quiz', 1);
+        }
+        if (state.currentSubject && state.currentSubject.id === 'srs-review' && window.incrementQuestProgress) {
+            window.incrementQuestProgress('srs_review', 1);
+        }
         
         // Save to recent activity
         const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || state.currentSubject.name);
@@ -3814,6 +3870,111 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===== DAILY QUESTS SYSTEM =====
+    const QUESTS = [
+        { id: 'questions_answered', title: 'Daily Grind', desc: 'Answer 15 questions today', target: 15, reward: 5, icon: 'edit_square' },
+        { id: 'perfect_quiz', title: 'Flawless Victory', desc: 'Score 80%+ on any quiz', target: 1, reward: 10, icon: 'verified' },
+        { id: 'srs_review', title: 'Memory Builder', desc: 'Complete an SRS Review', target: 1, reward: 5, icon: 'cycle' }
+    ];
+
+    function getDailyQuestsState() {
+        const today = new Date().toISOString().split('T')[0];
+        const key = `enggtv_quests_${state.user.username}_${today}`;
+        let qState = JSON.parse(localStorage.getItem(key));
+        if (!qState) {
+            qState = { questions_answered: 0, perfect_quiz: 0, srs_review: 0, claimed: {} };
+            localStorage.setItem(key, JSON.stringify(qState));
+        }
+        return { key, qState };
+    }
+
+    window.incrementQuestProgress = function(questId, amount) {
+        const { key, qState } = getDailyQuestsState();
+        if (qState[questId] !== undefined) {
+            const questDef = QUESTS.find(q => q.id === questId);
+            if (qState[questId] < questDef.target) {
+                qState[questId] += amount;
+                if (qState[questId] > questDef.target) qState[questId] = questDef.target;
+                localStorage.setItem(key, JSON.stringify(qState));
+                
+                if (qState[questId] === questDef.target && !qState.claimed[questId]) {
+                    window.showToast("Quest Completed!", `You completed: ${questDef.title}. Claim your points!`, "military_tech");
+                }
+                
+                if (state.currentPage === 'dashboard') renderDailyQuests();
+            }
+        }
+    }
+
+    window.claimQuestReward = function(questId) {
+        const { key, qState } = getDailyQuestsState();
+        if (!qState.claimed[questId]) {
+            const questDef = QUESTS.find(q => q.id === questId);
+            qState.claimed[questId] = true;
+            localStorage.setItem(key, JSON.stringify(qState));
+            addPoints(questDef.reward);
+            window.showToast("Reward Claimed!", `+${questDef.reward} Bonus Points added!`, "stars");
+            renderDailyQuests();
+            syncToFirebase();
+        }
+    };
+
+    function renderDailyQuests() {
+        const container = document.getElementById('daily-quests-list');
+        if (!container) return;
+
+        const { qState } = getDailyQuestsState();
+        
+        container.innerHTML = QUESTS.map(q => {
+            const progress = qState[q.id] || 0;
+            const isCompleted = progress >= q.target;
+            const isClaimed = qState.claimed && qState.claimed[q.id];
+            const pct = Math.min(100, (progress / q.target) * 100);
+            
+            let actionHtml = '';
+            let clickAction = '';
+            let hoverClasses = '';
+            let cardBg = 'bg-white dark:bg-slate-800/80 border-slate-100 dark:border-slate-700';
+            let titleColor = 'text-slate-800 dark:text-slate-100';
+            
+            if (isClaimed) {
+                actionHtml = `<span class="text-[10px] font-black text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full uppercase tracking-widest border border-slate-200 dark:border-slate-700">Claimed</span>`;
+                cardBg = 'bg-emerald-50/50 dark:bg-emerald-900/20 border-emerald-100/50 dark:border-emerald-800/30';
+                titleColor = 'text-slate-500 dark:text-slate-400';
+            } else if (isCompleted) {
+                actionHtml = `<button onclick="claimQuestReward('${q.id}'); event.stopPropagation();" class="text-[10px] font-black text-white bg-gradient-to-r from-amber-500 to-orange-500 px-3 py-1 rounded-full uppercase tracking-widest shadow-md shadow-amber-500/30 active:scale-95 transition-all">Claim +${q.reward}</button>`;
+            } else {
+                actionHtml = `<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400">${progress}/${q.target}</span>`;
+                hoverClasses = 'cursor-pointer hover:border-amber-400/50 hover:bg-amber-50/30 dark:hover:border-amber-500/50 dark:hover:bg-amber-900/10 active:scale-[0.98] transition-all';
+                if (q.id === 'srs_review') {
+                    clickAction = `onclick="const btn = document.getElementById('btn-start-srs-quiz'); if(btn) { btn.click(); }"`;
+                } else {
+                    clickAction = `onclick="window.showToast('Daily Quest', 'Select any topic to start a quiz and earn progress!', 'military_tech'); navigateTo('study');"`;
+                }
+            }
+
+            return `
+                <div ${clickAction} class="${cardBg} rounded-2xl p-3 border ${hoverClasses}">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl ${isCompleted && !isClaimed ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : 'bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500'} flex items-center justify-center shrink-0 transition-colors">
+                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' ${isCompleted ? 1 : 0};">${q.icon}</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between mb-1">
+                                <h5 class="text-sm font-bold ${titleColor} truncate">${q.title}</h5>
+                                ${actionHtml}
+                            </div>
+                            <p class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight mb-2">${q.desc} for +${q.reward} bonus points!</p>
+                            <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-full ${isClaimed ? 'bg-slate-300 dark:bg-slate-600' : 'bg-amber-500'} transition-all duration-500 rounded-full" style="width: ${pct}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
     const ACHIEVEMENTS = [
         { id: 'first_point', name: 'First Step', points: 1, icon: 'bolt', description: 'Earn your first point.' },
         { id: 'consistent', name: 'Consistent Learner', points: 10, icon: 'auto_stories', description: 'Reach 10 points.' },
@@ -3831,33 +3992,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!list || !totalPointsDisplay) return;
 
         totalPointsDisplay.textContent = `${state.userPoints} Points`;
+        
+        list.className = "grid grid-cols-2 gap-4 mt-4";
         list.innerHTML = '';
 
         ACHIEVEMENTS.forEach(ach => {
             const isUnlocked = state.userPoints >= ach.points;
-            const card = document.createElement('div');
-            card.className = `flex items-center gap-4 p-4 rounded-2xl border transition-all ${
-                isUnlocked 
-                ? 'bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700 shadow-sm' 
-                : 'bg-slate-50/50 dark:bg-slate-900/50 border-slate-100 dark:border-slate-800 opacity-60'
-            }`;
-
-            card.innerHTML = `
-                <div class="w-12 h-12 rounded-xl flex items-center justify-center ${
-                    isUnlocked ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-600' : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
-                }">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' ${isUnlocked ? 1 : 0};">${ach.icon}</span>
-                </div>
-                <div class="flex-1 text-left">
-                    <div class="flex justify-between items-center">
-                        <h5 class="font-bold text-sm ${isUnlocked ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400'}">${ach.name}</h5>
-                        <span class="text-[10px] font-black uppercase tracking-widest ${isUnlocked ? 'text-amber-600' : 'text-slate-400'}">${ach.points} PTS</span>
+            const statusClass = isUnlocked ? 'bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-amber-200 dark:border-amber-800/50 shadow-lg shadow-amber-500/10' : 'bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-800 opacity-60 grayscale';
+            const iconColor = isUnlocked ? 'text-amber-500 drop-shadow-md' : 'text-slate-400';
+            const textTitle = isUnlocked ? 'text-amber-900 dark:text-amber-400' : 'text-slate-600 dark:text-slate-400';
+            
+            list.innerHTML += `
+                <div class="flex flex-col items-center text-center gap-3 p-5 rounded-[24px] border ${statusClass} transition-all relative overflow-hidden">
+                    ${isUnlocked ? '<div class="absolute -top-4 -right-4 w-16 h-16 bg-white/40 dark:bg-white/5 blur-xl rounded-full pointer-events-none"></div>' : ''}
+                    <div class="w-14 h-14 rounded-2xl ${isUnlocked ? 'bg-white dark:bg-slate-800 shadow-inner' : 'bg-slate-200 dark:bg-slate-700'} flex items-center justify-center shrink-0 z-10">
+                        <span class="material-symbols-outlined ${iconColor} text-3xl" style="font-variation-settings:'FILL' ${isUnlocked ? 1 : 0};">${ach.icon}</span>
                     </div>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400">${ach.description}</p>
+                    <div class="z-10 w-full">
+                        <h5 class="font-black ${textTitle} text-xs mb-1.5 leading-tight w-full break-words">${ach.name}</h5>
+                        <span class="text-[9px] font-black ${isUnlocked ? 'bg-amber-200 dark:bg-amber-800/60 text-amber-800 dark:text-amber-200' : 'bg-slate-200 dark:bg-slate-700 text-slate-500'} px-2 py-0.5 rounded-full uppercase tracking-widest mb-2 inline-block">${ach.points} pts</span>
+                        <p class="text-[9px] text-slate-500 dark:text-slate-400 leading-tight uppercase tracking-wider">${ach.description}</p>
+                    </div>
                 </div>
-                ${isUnlocked ? '<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>' : ''}
             `;
-            list.appendChild(card);
         });
     }
 
@@ -3942,6 +4099,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         discipline: data.discipline || 'FE Candidate',
                         country: data.country || 'Other',
                         avatar: data.avatar || null,
+                        profilePic: data.profilePic || null,
                         streak: data.recentActivity ? calculateStreakFromActivity(data.recentActivity) : 0,
                         trend: 'same'
                     });
@@ -3967,7 +4125,8 @@ document.addEventListener('DOMContentLoaded', () => {
             isCurrentUser: true,
             trend: 'up',
             streak: userStreak,
-            avatar: localStorage.getItem('enggtv_avatar') || null
+            avatar: localStorage.getItem('enggtv_avatar') || null,
+            profilePic: localStorage.getItem('enggtv_profile_pic') || null
         };
 
         // Remove the current user from fetched list (re-added below with "You (...)" label)
@@ -4042,7 +4201,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const preset = AVATAR_PRESETS.find(p => p.id === user.avatar);
             let avatarHTML = '';
-            if (preset) {
+            if (user.profilePic && !user.avatar) {
+                avatarHTML = `<img src="${user.profilePic}" class="w-full h-full object-cover" alt="${displayName}">`;
+            } else if (preset) {
                 avatarHTML = `
                     <div class="avatar-emoji-display" style="background:${preset.gradient}; font-size: 20px;">
                         ${preset.emoji}
@@ -4099,6 +4260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyAvatar() {
         const savedId = localStorage.getItem('enggtv_avatar');
+        const customPic = localStorage.getItem('enggtv_profile_pic');
         const preset = AVATAR_PRESETS.find(a => a.id === savedId);
 
         const headerContainer   = document.getElementById('header-avatar-container');
@@ -4106,7 +4268,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         [headerContainer, settingsContainer].forEach((container, i) => {
             if (!container) return;
-            if (preset) {
+            if (customPic && !savedId) {
+                container.innerHTML = `<img class="w-full h-full object-cover" src="${customPic}" crossorigin="anonymous" />`;
+            } else if (preset) {
                 const size = i === 0 ? '22px' : '36px';
                 container.innerHTML = `
                     <div class="avatar-emoji-display"
@@ -4152,6 +4316,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveAvatarBtn    = document.getElementById('btn-save-avatar');
     const removeAvatarBtn  = document.getElementById('btn-remove-avatar');
 
+    const customAvatarUpload = document.getElementById('custom-avatar-upload');
+
+    if (customAvatarUpload) {
+        customAvatarUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            if (file.size > 15 * 1024 * 1024) {
+                window.showToast("File too large", "Please select an image under 15MB.", "error");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const MAX_SIZE = 256;
+                    const size = Math.min(img.width, img.height);
+                    const startX = (img.width - size) / 2;
+                    const startY = (img.height - size) / 2;
+
+                    canvas.width = MAX_SIZE;
+                    canvas.height = MAX_SIZE;
+                    const ctx = canvas.getContext('2d');
+                    
+                    ctx.drawImage(img, startX, startY, size, size, 0, 0, MAX_SIZE, MAX_SIZE);
+                    const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+
+                    localStorage.setItem('enggtv_profile_pic', dataUrl);
+                    localStorage.removeItem('enggtv_avatar'); // Clear preset flag
+                    
+                    applyAvatar();
+                    if(typeof syncToFirebase === 'function') syncToFirebase();
+                    window.showToast("Success", "Custom avatar uploaded!", "check_circle");
+                    if (avatarModal) avatarModal.classList.remove('open');
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
     if (openAvatarBtn) {
         openAvatarBtn.addEventListener('click', () => {
             pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
@@ -4164,8 +4371,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (saveAvatarBtn) {
         saveAvatarBtn.addEventListener('click', () => {
-            if (pendingAvatarId) localStorage.setItem('enggtv_avatar', pendingAvatarId);
-            else localStorage.removeItem('enggtv_avatar');
+            if (pendingAvatarId) {
+                localStorage.setItem('enggtv_avatar', pendingAvatarId);
+                localStorage.removeItem('enggtv_profile_pic');
+            } else {
+                localStorage.removeItem('enggtv_avatar');
+            }
             applyAvatar();
             syncToFirebase(); // Sync avatar change to cloud
             avatarModal.classList.remove('open');
@@ -4175,6 +4386,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removeAvatarBtn.addEventListener('click', () => {
             pendingAvatarId = null;
             localStorage.removeItem('enggtv_avatar');
+            localStorage.removeItem('enggtv_profile_pic');
             applyAvatar();
             syncToFirebase(); // Sync avatar removal to cloud
             avatarModal.classList.remove('open');
@@ -4307,6 +4519,8 @@ document.addEventListener('DOMContentLoaded', () => {
             tick(dateStr);
             countdownInterval = setInterval(() => tick(dateStr), 30000); // update every 30s
         }
+        
+        window.startCountdownGlobal = startCountdown;
 
         // Initialise from stored value
         const stored = localStorage.getItem(STORAGE_KEY);
@@ -4320,6 +4534,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!val) { window.showToast('No date selected', 'Please pick a date first.', 'event'); return; }
                 localStorage.setItem(STORAGE_KEY, val);
                 startCountdown(val);
+                syncToFirebase(); // Sync to cloud
                 modal && modal.classList.add('hidden');
                 window.showToast('Exam Date Set! 🎯', formatDateLabel(val), 'event_upcoming');
                 confetti({ particleCount: 80, spread: 60, origin: { y: 0.6 }, colors: ['#FF006E', '#FDA60A'] });
@@ -4332,6 +4547,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.removeItem(STORAGE_KEY);
                 if (examDateInput) examDateInput.value = '';
                 startCountdown(null);
+                syncToFirebase(); // Sync to cloud
                 modal && modal.classList.add('hidden');
                 window.showToast('Exam date cleared', 'You can set a new date any time.', 'event_busy');
             });
@@ -4376,9 +4592,106 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(WEAKNESS_KEY(), JSON.stringify(rawData));
     }
 
+    // ===== SPACED REPETITION SYSTEM (SRS) =====
+    const SRS_KEY = () => `enggtv_srs_${state.user.username}`;
+    
+    function recordSRS(question, isCorrect) {
+        if (!question || !question.title) return;
+        let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
+        const qId = question.title; // Unique identifier
+
+        let item = srsData[qId] || { interval: 0, nextReview: Date.now() };
+
+        if (isCorrect) {
+            if (item.interval === 0) item.interval = 1;
+            else if (item.interval === 1) item.interval = 3;
+            else if (item.interval === 3) item.interval = 7;
+            else if (item.interval === 7) item.interval = 14;
+            else item.interval = 30; // Max out at 30 days
+        } else {
+            item.interval = 0; // Reset interval to 0 days
+        }
+
+        item.nextReview = Date.now() + (item.interval * 24 * 60 * 60 * 1000);
+        
+        srsData[qId] = item;
+        localStorage.setItem(SRS_KEY(), JSON.stringify(srsData));
+        if (state.currentPage === 'dashboard') renderSRSCard();
+    }
+
+    function renderSRSCard() {
+        const card = document.getElementById('srs-review-card');
+        const dueCountBadge = document.getElementById('srs-due-count');
+        if (!card || !dueCountBadge) return;
+
+        let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
+        const now = Date.now();
+        
+        let dueCount = 0;
+        for (const [key, item] of Object.entries(srsData)) {
+            if (item.nextReview <= now) dueCount++;
+        }
+
+        if (dueCount > 0) {
+            dueCountBadge.textContent = `${dueCount} DUE`;
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    }
+
+    const btnSrs = document.getElementById('btn-start-srs-quiz');
+    if (btnSrs) {
+        btnSrs.addEventListener('click', () => {
+            let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
+            const now = Date.now();
+            let dueTitles = Object.keys(srsData).filter(key => srsData[key].nextReview <= now);
+            
+            if (dueTitles.length === 0) {
+                window.showToast('All Caught Up!', 'There are no questions due for spaced repetition right now. Great job!', 'check_circle');
+                return;
+            }
+
+            let quizPool = [];
+            [QUESTIONS, ADVANCED_QUESTIONS].forEach(bank => {
+                if (bank && typeof bank === 'object') {
+                    Object.values(bank).forEach(subjectArray => {
+                        if (Array.isArray(subjectArray)) {
+                            quizPool = quizPool.concat(subjectArray);
+                        }
+                    });
+                }
+            });
+
+            let srsQuestions = quizPool.filter(q => dueTitles.includes(q.title));
+            srsQuestions.sort(() => 0.5 - Math.random());
+            srsQuestions = srsQuestions.slice(0, 10); // Cap daily review session length
+            
+            if (srsQuestions.length === 0) return;
+
+            state.quizQuestions = srsQuestions;
+            state.currentQuestionIndex = 0;
+            state.answers = new Array(state.quizQuestions.length).fill(null);
+            state.submitted = new Array(state.quizQuestions.length).fill(false);
+            state.flagged   = new Array(state.quizQuestions.length).fill(false);
+            state.confidence = new Array(state.quizQuestions.length).fill(null);
+            state.questionTimes = new Array(state.quizQuestions.length).fill(0);
+            state.questionEnteredAt = Date.now();
+            state.score     = 0;
+            state.secondsElapsed = 0;
+            state.isFinished    = false;
+            state.isMockExam    = false;
+            state.currentSubject = { name: "SRS Daily Review", id: "srs-review" };
+
+            navigateTo('quiz-view');
+            updateQuestionMap();
+            loadQuestion();
+            startTimer();
+        });
+    }
+
     /**
      * Renders the Focus Zone card on the dashboard.
-     * Shows the top 3 weakest topics (highest wrong-rate with at least 2 attempts).
      */
     function renderFocusZone() {
         const card      = document.getElementById('focus-zone-card');
@@ -4492,6 +4805,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         _origNav(pageId);
         if (pageId === 'dashboard') {
+            renderSRSCard();
             renderFocusZone();
         }
     };
@@ -4500,8 +4814,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnFocusQuiz = document.getElementById('btn-start-focus-quiz');
     if (btnFocusQuiz) btnFocusQuiz.addEventListener('click', startFocusQuiz);
 
-    // Initial render of Focus Zone on dashboard load
+    // Initial render of SRS and Focus Zone on dashboard load
+    renderSRSCard();
     renderFocusZone();
+    renderDailyQuests();
 
     // Offline Sync Trigger
     window.triggerOfflineSync = function() {
@@ -4531,6 +4847,488 @@ document.addEventListener('DOMContentLoaded', () => {
             window.showToast("Cannot Sync", "Service Worker is not active. Please reload the page first.", "error");
         }
     };
+
+    // ===== GLOBAL DEEP SEARCH =====
+    const globalSearchInput = document.getElementById('global-search-input');
+    const globalSearchModal = document.getElementById('global-search-modal');
+    const btnCloseSearch = document.getElementById('btn-close-search');
+    const searchResultsContainer = document.getElementById('search-results-container');
+    const searchResultsFooter = document.getElementById('search-results-footer');
+    const searchResultCount = document.getElementById('search-result-count');
+    const searchQueryDisplay = document.getElementById('search-query-display');
+    const btnStartSearchQuiz = document.getElementById('btn-start-search-quiz');
+
+    let currentSearchResults = [];
+    let searchDebounceTimer = null;
+
+    function renderSearchResults(query, results) {
+        searchQueryDisplay.textContent = `"${query}"`;
+        searchResultsContainer.innerHTML = '';
+        currentSearchResults = results;
+
+        if (results.length === 0) {
+            searchResultsContainer.innerHTML = `
+                <div class="flex flex-col items-center justify-center py-10 text-center">
+                    <span class="material-symbols-outlined text-4xl text-slate-300 mb-2">search_off</span>
+                    <p class="text-slate-500 font-bold">No results found.</p>
+                    <p class="text-xs text-slate-400 mt-1">Try searching for broader terms like "fluid", "force", or "entropy".</p>
+                </div>
+            `;
+            searchResultsFooter.classList.add('hidden');
+            return;
+        }
+
+        results.forEach((q, idx) => {
+            const el = document.createElement('div');
+            el.className = "bg-white/80 dark:bg-slate-800/80 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50 hover:shadow-md transition-shadow";
+            
+            const topicLabel = q.topic || 'General';
+            
+            el.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-primary bg-primary/10 px-2 py-0.5 rounded-full">${topicLabel}</span>
+                    ${q.isAdvanced ? '<span class="text-[9px] font-bold uppercase tracking-widest text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">Advanced</span>' : ''}
+                </div>
+                <h4 class="font-bold text-slate-800 dark:text-slate-100 text-sm mb-1">${q.title || 'Practice Question'}</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">${q.question.replace(/<[^>]*>?/gm, '')}</p>
+            `;
+            searchResultsContainer.appendChild(el);
+        });
+
+        if (window.MathJax) {
+            window.MathJax.typesetPromise([searchResultsContainer]).catch(err => console.error(err));
+        }
+
+        searchResultCount.textContent = results.length;
+        searchResultsFooter.classList.remove('hidden');
+    }
+
+    function performSearch(query) {
+        if (!query || query.trim().length < 2) {
+            globalSearchModal.classList.remove('opacity-100');
+            setTimeout(() => globalSearchModal.classList.add('hidden'), 300);
+            return;
+        }
+
+        const qLower = query.toLowerCase();
+        let allQuestions = [];
+
+        const standardBank = getQuestionsSource();
+        Object.keys(standardBank).forEach(subj => {
+            standardBank[subj].forEach(q => allQuestions.push({ ...q, subjectId: subj, isAdvanced: false }));
+        });
+
+        if (typeof ADVANCED_QUESTIONS !== 'undefined') {
+            Object.keys(ADVANCED_QUESTIONS).forEach(subj => {
+                ADVANCED_QUESTIONS[subj].forEach(q => allQuestions.push({ ...q, subjectId: subj, isAdvanced: true }));
+            });
+        }
+
+        const results = allQuestions.filter(q => {
+            const matchesTitle = (q.title && q.title.toLowerCase().includes(qLower));
+            const matchesTopic = (q.topic && q.topic.toLowerCase().includes(qLower));
+            const matchesQuestion = (q.question && q.question.toLowerCase().includes(qLower));
+            
+            let matchesSolution = false;
+            if (q.solution && q.solution.steps) {
+                matchesSolution = q.solution.steps.some(step => step.content && step.content.toLowerCase().includes(qLower));
+            }
+            
+            return matchesTitle || matchesTopic || matchesQuestion || matchesSolution;
+        });
+
+        globalSearchModal.classList.remove('hidden');
+        setTimeout(() => globalSearchModal.classList.add('opacity-100'), 10);
+
+        renderSearchResults(query, results);
+    }
+
+    if (globalSearchInput) {
+        globalSearchInput.addEventListener('input', (e) => {
+            clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(() => {
+                performSearch(e.target.value);
+            }, 400); 
+        });
+    }
+
+    if (btnCloseSearch) {
+        btnCloseSearch.addEventListener('click', () => {
+            globalSearchModal.classList.remove('opacity-100');
+            setTimeout(() => {
+                globalSearchModal.classList.add('hidden');
+            }, 300);
+        });
+    }
+
+    if (btnStartSearchQuiz) {
+        btnStartSearchQuiz.addEventListener('click', () => {
+            if (currentSearchResults.length === 0) return;
+            
+            globalSearchModal.classList.remove('opacity-100');
+            setTimeout(() => globalSearchModal.classList.add('hidden'), 300);
+            
+            const selected = currentSearchResults.sort(() => 0.5 - Math.random()).slice(0, 20);
+
+            state.currentSubject = { id: 'search', name: 'Custom Search Quiz' };
+            state.currentTopic   = 'Search Results';
+            state.quizQuestions  = prepareQuestions(selected);
+            state.currentQuestionIndex = 0;
+            state.answers   = new Array(state.quizQuestions.length).fill(null);
+            state.submitted = new Array(state.quizQuestions.length).fill(false);
+            state.flagged   = new Array(state.quizQuestions.length).fill(false);
+            state.confidence = new Array(state.quizQuestions.length).fill(null);
+            state.questionTimes = new Array(state.quizQuestions.length).fill(0);
+            state.questionEnteredAt = Date.now();
+            state.score     = 0;
+            state.secondsElapsed = 0;
+            state.isFinished    = false;
+            state.isMockExam    = false;
+
+            navigateTo('quiz-view');
+            updateQuestionMap();
+            loadQuestion();
+            startTimer();
+            globalSearchInput.value = '';
+        });
+    }
+
+    // ===== INTERACTIVE ONBOARDING FLOW =====
+    const onboardingModal = document.getElementById('onboarding-modal');
+    if (onboardingModal) {
+        const onboardingSlides = document.querySelectorAll('.onboarding-slide');
+        const onboardingDots = document.querySelectorAll('#onboarding-dots div');
+        const btnNextOnboarding = document.getElementById('btn-onboarding-next');
+        const btnSkipOnboarding = document.getElementById('btn-onboarding-skip');
+        let currentOnboardingSlide = 0;
+
+        function updateOnboardingUI() {
+            onboardingSlides.forEach((slide, idx) => {
+                const idxData = parseInt(slide.getAttribute('data-index'));
+                if (idxData === currentOnboardingSlide) {
+                    slide.classList.remove('translate-x-full', '-translate-x-full', 'opacity-0');
+                    slide.classList.add('translate-x-0', 'opacity-100');
+                } else if (idxData < currentOnboardingSlide) {
+                    slide.classList.remove('translate-x-0', 'translate-x-full', 'opacity-100');
+                    slide.classList.add('-translate-x-full', 'opacity-0');
+                } else {
+                    slide.classList.remove('translate-x-0', '-translate-x-full', 'opacity-100');
+                    slide.classList.add('translate-x-full', 'opacity-0');
+                }
+            });
+
+            onboardingDots.forEach((dot, idx) => {
+                const dotIdx = parseInt(dot.getAttribute('data-idx'));
+                if (dotIdx === currentOnboardingSlide) {
+                    dot.classList.remove('bg-slate-300', 'dark:bg-slate-700', 'w-2');
+                    dot.classList.add('bg-primary', 'w-4');
+                } else {
+                    dot.classList.remove('bg-primary', 'w-4');
+                    dot.classList.add('bg-slate-300', 'dark:bg-slate-700', 'w-2');
+                }
+            });
+
+            if (currentOnboardingSlide === onboardingSlides.length - 1) {
+                if (btnNextOnboarding) btnNextOnboarding.textContent = "Let's Go!";
+                if (btnSkipOnboarding) btnSkipOnboarding.classList.add('hidden');
+            } else {
+                if (btnNextOnboarding) btnNextOnboarding.textContent = "Next";
+                if (btnSkipOnboarding) btnSkipOnboarding.classList.remove('hidden');
+            }
+        }
+
+        function closeOnboarding() {
+            onboardingModal.classList.remove('opacity-100');
+            setTimeout(() => {
+                onboardingModal.classList.add('hidden');
+            }, 300);
+            localStorage.setItem('enggtv_onboarding_complete', 'true');
+            if (currentOnboardingSlide === onboardingSlides.length - 1) {
+                if (typeof confetti !== 'undefined') confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: ['#FF006E', '#FDA60A'] });
+            }
+        }
+
+        if (btnNextOnboarding) {
+            btnNextOnboarding.addEventListener('click', () => {
+                if (currentOnboardingSlide < onboardingSlides.length - 1) {
+                    currentOnboardingSlide++;
+                    updateOnboardingUI();
+                } else {
+                    closeOnboarding();
+                }
+            });
+        }
+
+        if (btnSkipOnboarding) {
+            btnSkipOnboarding.addEventListener('click', closeOnboarding);
+        }
+
+        // Trigger logic
+        setTimeout(() => {
+            if (!localStorage.getItem('enggtv_onboarding_complete') && state.currentPage === 'dashboard') {
+                onboardingModal.classList.remove('hidden');
+                setTimeout(() => onboardingModal.classList.add('opacity-100'), 50);
+                updateOnboardingUI();
+            }
+        }, 1500); // Wait 1.5s after load to show
+    }
+
+    // ===== ACHIEVEMENT SHARING LOGIC =====
+    const shareModal = document.getElementById('share-achievement-modal');
+    const btnCloseShare = document.getElementById('btn-close-share');
+    const btnShareDownload = document.getElementById('btn-share-download');
+    const btnShareLinkedin = document.getElementById('btn-share-linkedin');
+    
+    window.openShareModal = function() {
+        if (!shareModal) return;
+        
+        const badgeAvatar = document.getElementById('share-badge-avatar');
+        const badgeName = document.getElementById('share-badge-name');
+        const badgeDiscipline = document.getElementById('share-badge-discipline');
+        const badgePoints = document.getElementById('share-badge-points');
+        
+        if (badgeAvatar) {
+            const savedPic = localStorage.getItem('enggtv_profile_pic');
+            if (savedPic) badgeAvatar.src = savedPic;
+        }
+        
+        if (badgeName) badgeName.textContent = state.userName || 'Alex Riviera';
+        if (badgeDiscipline) badgeDiscipline.textContent = localStorage.getItem('enggtv_discipline') || (state.user ? state.user.discipline : 'FE Candidate');
+        if (badgePoints) badgePoints.textContent = (state.userPoints || 0) + " Points";
+        
+        shareModal.classList.remove('hidden');
+        setTimeout(() => {
+            shareModal.classList.add('opacity-100');
+            const card = document.getElementById('share-card');
+            if(card) card.classList.remove('scale-95');
+        }, 50);
+    };
+
+    if (btnCloseShare) {
+        btnCloseShare.addEventListener('click', () => {
+            shareModal.classList.remove('opacity-100');
+            const card = document.getElementById('share-card');
+            if(card) card.classList.add('scale-95');
+            setTimeout(() => shareModal.classList.add('hidden'), 300);
+        });
+    }
+
+    if (btnShareDownload) {
+        btnShareDownload.addEventListener('click', async () => {
+            if (typeof html2canvas === 'undefined') {
+                window.showToast("Library Missing", "Image generator not loaded. Check connection.", "error");
+                return;
+            }
+
+            const btnOriginalText = btnShareDownload.innerHTML;
+            btnShareDownload.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Generating...`;
+            
+            try {
+                const captureElement = document.getElementById('achievement-badge-capture');
+                
+                const canvas = await html2canvas(captureElement, {
+                    scale: 3,
+                    backgroundColor: null,
+                    useCORS: true,
+                    allowTaint: true
+                });
+                
+                const link = document.createElement('a');
+                link.download = `ENGG_tv_Achievement_${(state.userName || 'Student').replace(/\s+/g, '_')}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                window.showToast("Badge Downloaded!", "You can now post this image on LinkedIn.", "check_circle");
+                
+                const caption = `I'm leveling up my engineering skills on ENGG.tv! 🚀 Just reached ${state.userPoints || 0} points preparing for my FE Exam. \n\nStart prepping for free today: https://pacificocean11.github.io/Engg-Prep\n\n#Engineering #FEExam #ENGGtv`;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(caption).catch(e => console.log('Clipboard failed', e));
+                }
+                
+            } catch (error) {
+                console.error("Error generating badge:", error);
+                window.showToast("Error", "Could not generate badge image.", "error");
+            } finally {
+                btnShareDownload.innerHTML = btnOriginalText;
+            }
+        });
+    }
+
+    if (btnShareLinkedin) {
+        btnShareLinkedin.addEventListener('click', () => {
+            const certName = encodeURIComponent("FE Exam Readiness - " + (state.userPoints || 0) + " Points");
+            const orgName = encodeURIComponent("ENGG.tv");
+            const issueYear = new Date().getFullYear();
+            const issueMonth = new Date().getMonth() + 1;
+            
+            const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certName}&organizationName=${orgName}&issueYear=${issueYear}&issueMonth=${issueMonth}`;
+            
+            window.open(linkedInUrl, '_blank');
+        });
+    }
+
+    // ===== DIGITAL SCRATCHPAD LOGIC =====
+    const btnOpenScratchpad = document.getElementById('btn-open-scratchpad');
+    const scratchpadModal = document.getElementById('scratchpad-modal');
+    const btnCloseScratchpad = document.getElementById('btn-close-scratchpad');
+    const spCanvas = document.getElementById('scratchpad-canvas');
+    
+    const toolPen = document.getElementById('sp-tool-pen');
+    const toolEraser = document.getElementById('sp-tool-eraser');
+    const toolClear = document.getElementById('sp-tool-clear');
+
+    let spIsDrawing = false;
+    let spCurrentTool = 'pen';
+    let spCtx = null;
+
+    if (spCanvas) {
+        spCtx = spCanvas.getContext('2d', { willReadFrequently: true });
+    }
+
+    function resizeScratchpad() {
+        if (!spCanvas || !spCtx) return;
+        const parent = spCanvas.parentElement;
+        const imgData = spCtx.getImageData(0, 0, spCanvas.width || 1, spCanvas.height || 1);
+        spCanvas.width = parent.clientWidth;
+        spCanvas.height = parent.clientHeight;
+        if (spCanvas.width > 0 && spCanvas.height > 0) {
+            spCtx.putImageData(imgData, 0, 0);
+            spCtx.lineCap = 'round';
+            spCtx.lineJoin = 'round';
+        }
+    }
+
+    function getPointerPos(e) {
+        const rect = spCanvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+            x: clientX - rect.left,
+            y: clientY - rect.top
+        };
+    }
+
+    function startDraw(e) {
+        if (!spCtx) return;
+        spIsDrawing = true;
+        const pos = getPointerPos(e);
+        spCtx.beginPath();
+        spCtx.moveTo(pos.x, pos.y);
+        if (e.cancelable) e.preventDefault();
+    }
+
+    function drawPath(e) {
+        if (!spIsDrawing || !spCtx) return;
+        const pos = getPointerPos(e);
+        spCtx.lineTo(pos.x, pos.y);
+        
+        if (spCurrentTool === 'pen') {
+            spCtx.strokeStyle = '#f59e0b';
+            spCtx.lineWidth = 3;
+            spCtx.globalCompositeOperation = 'source-over';
+        } else {
+            spCtx.lineWidth = 30;
+            spCtx.globalCompositeOperation = 'destination-out';
+            spCtx.strokeStyle = 'rgba(0,0,0,1)';
+        }
+        
+        spCtx.stroke();
+        if (e.cancelable) e.preventDefault();
+    }
+
+    function stopDraw() {
+        spIsDrawing = false;
+    }
+
+    if (spCanvas) {
+        spCanvas.addEventListener('mousedown', startDraw);
+        spCanvas.addEventListener('mousemove', drawPath);
+        spCanvas.addEventListener('mouseup', stopDraw);
+        spCanvas.addEventListener('mouseout', stopDraw);
+        
+        spCanvas.addEventListener('touchstart', startDraw, {passive: false});
+        spCanvas.addEventListener('touchmove', drawPath, {passive: false});
+        spCanvas.addEventListener('touchend', stopDraw);
+    }
+
+    if (btnOpenScratchpad && scratchpadModal) {
+        btnOpenScratchpad.addEventListener('click', () => {
+            scratchpadModal.classList.remove('hidden');
+            setTimeout(() => {
+                scratchpadModal.classList.add('opacity-100');
+                resizeScratchpad();
+            }, 10);
+        });
+    }
+
+    if (btnCloseScratchpad && scratchpadModal) {
+        btnCloseScratchpad.addEventListener('click', () => {
+            scratchpadModal.classList.remove('opacity-100');
+            setTimeout(() => scratchpadModal.classList.add('hidden'), 300);
+        });
+    }
+
+    function updateSpToolUI() {
+        if (spCurrentTool === 'pen') {
+            if(toolPen) toolPen.className = "w-10 h-10 rounded-lg flex items-center justify-center text-white bg-primary shadow-inner transition-colors border border-primary/50";
+            if(toolEraser) toolEraser.className = "w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-colors";
+        } else {
+            if(toolEraser) toolEraser.className = "w-10 h-10 rounded-lg flex items-center justify-center text-white bg-slate-600 shadow-inner transition-colors border border-slate-500";
+            if(toolPen) toolPen.className = "w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-colors";
+        }
+    }
+
+    if (toolPen) toolPen.addEventListener('click', () => { spCurrentTool = 'pen'; updateSpToolUI(); });
+    if (toolEraser) toolEraser.addEventListener('click', () => { spCurrentTool = 'eraser'; updateSpToolUI(); });
+    
+    if (toolClear) {
+        toolClear.addEventListener('click', () => {
+            if (spCtx && spCanvas) {
+                spCtx.clearRect(0, 0, spCanvas.width, spCanvas.height);
+            }
+        });
+    }
+
+    window.addEventListener('resize', () => {
+        if (scratchpadModal && !scratchpadModal.classList.contains('hidden')) {
+            resizeScratchpad();
+        }
+    });
+
+    // ===== NAME EDITOR LOGIC =====
+    const inputChangeName = document.getElementById('input-change-name');
+    const btnSaveName = document.getElementById('btn-save-name');
+    const settingsNameDisplay = document.getElementById('settings-name-display');
+    const accountInfoName = document.getElementById('account-info-name');
+    const userGreeting = document.getElementById('user-greeting');
+
+    function updateNameDisplay(newName) {
+        state.userName = newName; // for share modal
+        if (settingsNameDisplay) settingsNameDisplay.textContent = newName;
+        if (accountInfoName) accountInfoName.textContent = newName;
+        if (userGreeting) {
+            const firstName = newName.split(' ')[0];
+            userGreeting.textContent = `Welcome back, ${firstName}`;
+        }
+        if (inputChangeName) inputChangeName.value = newName;
+    }
+
+    const storedNameKey = `enggtv_display_name_${state.user ? state.user.username : 'default'}`;
+    const initialName = localStorage.getItem(storedNameKey) || (state.user && state.user.username !== 'demo' ? state.user.username : 'Alex Riviera');
+    updateNameDisplay(initialName);
+
+    if (btnSaveName && inputChangeName) {
+        btnSaveName.addEventListener('click', () => {
+            const newName = inputChangeName.value.trim();
+            if (newName) {
+                localStorage.setItem(storedNameKey, newName);
+                updateNameDisplay(newName);
+                window.showToast("Name Updated", "Your display name has been successfully changed.", "person");
+            } else {
+                window.showToast("Invalid Name", "Please enter a valid name.", "error");
+            }
+        });
+    }
 
     // Run Init
     init();
