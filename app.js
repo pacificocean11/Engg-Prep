@@ -440,8 +440,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 dateJoined: dateJoined,
                 country: country
             };
-            if (avatar) payload.avatar = avatar;
-            if (profilePic) payload.profilePic = profilePic;
+            if (avatar) payload.avatar = avatar; else payload.avatar = null;
+            if (profilePic) payload.profilePic = profilePic; else payload.profilePic = null;
             if (examDate) payload.examDate = examDate;
             if (state.user.uid) payload.uid = state.user.uid;
 
@@ -700,11 +700,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                     
-                    // Sort by timestamp descending and keep at most 5 items
+                    // Sort by timestamp descending and keep at most 100 items (for 30d chart)
                     state.recentActivity = Array.from(mergedMap.values())
                         .filter(act => act && act.timestamp)
                         .sort((a, b) => b.timestamp - a.timestamp)
-                        .slice(0, 5);
+                        .slice(0, 100);
                         
                     localStorage.setItem(`enggtv_recent_activity_${state.user.username}`, JSON.stringify(state.recentActivity));
                 }
@@ -726,8 +726,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.dateJoined) {
                     localStorage.setItem('enggtv_date_joined', data.dateJoined);
                 }
-                if (data.avatar) {
-                    localStorage.setItem('enggtv_avatar', data.avatar);
+                if (data.avatar !== undefined) {
+                    if (data.avatar) {
+                        localStorage.setItem('enggtv_avatar', data.avatar);
+                    } else {
+                        localStorage.removeItem('enggtv_avatar');
+                    }
+                }
+                if (data.profilePic !== undefined) {
+                    if (data.profilePic) {
+                        localStorage.setItem('enggtv_profile_pic', data.profilePic);
+                    } else {
+                        localStorage.removeItem('enggtv_profile_pic');
+                    }
                 }
                 if (data.country) {
                     state.user.country = data.country;
@@ -1692,7 +1703,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        list.innerHTML = state.recentActivity.map((activity, idx) => {
+        list.innerHTML = state.recentActivity.slice(0, 5).map((activity, idx) => {
             const date = new Date(activity.timestamp);
             const timeStr = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             const dateStr = date.toLocaleDateString([], { month: 'short', day: 'numeric' });
@@ -1933,7 +1944,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        container.innerHTML = state.recentActivity.map((activity, idx) => {
+        container.innerHTML = state.recentActivity.slice(0, 5).map((activity, idx) => {
             const timeAgo = getTimeAgo(activity.timestamp);
             return `
                 <div class="stagger-item glass-card p-4 flex items-center gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" onclick="window.loadRecentActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
@@ -3011,7 +3022,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         state.recentActivity.unshift(newActivity);
-        if (state.recentActivity.length > 5) {
+        
+        // Strip huge stateSnapshot from older activities to save space
+        state.recentActivity.forEach((act, idx) => {
+            if (idx >= 5 && act.stateSnapshot) {
+                delete act.stateSnapshot;
+            }
+        });
+
+        if (state.recentActivity.length > 100) {
             state.recentActivity.pop();
         }
         const activityKey = `enggtv_recent_activity_${state.user.username}`;
