@@ -439,7 +439,7 @@
                         try {
                             userCredential = await firebase.auth().signInWithEmailAndPassword(email, pass);
                         } catch (err) {
-                            if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-login-credentials') {
+                            if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-login-credentials' || err.code === 'auth/invalid-credential') {
                                 userCredential = await firebase.auth().createUserWithEmailAndPassword(email, pass);
                             } else {
                                 throw err;

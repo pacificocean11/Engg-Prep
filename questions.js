@@ -6053,7 +6053,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6105,7 +6106,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6157,7 +6159,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6209,7 +6212,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6261,7 +6265,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6313,7 +6318,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6361,7 +6367,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6409,7 +6416,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6457,7 +6465,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6509,7 +6518,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6557,7 +6567,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6609,7 +6620,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6656,7 +6668,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6703,7 +6716,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6755,7 +6769,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6802,7 +6817,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6850,7 +6866,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6897,7 +6914,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6945,7 +6963,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -6993,7 +7012,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7040,7 +7060,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7085,7 +7106,8 @@ const QUESTIONS = {
                         "title": "The Integral",
                         "content": "The definition is $L\\{f(t)\\} = \\int_0^\\infty f(t) e^{-st} dt$. It takes a time-domain differential equation and converts it into a simple algebra problem in the s-domain."
                     }
-                ]
+                ],
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7132,7 +7154,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7184,7 +7207,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7235,7 +7259,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7287,7 +7312,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7334,7 +7360,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7382,7 +7409,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7429,7 +7457,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7476,7 +7505,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7524,7 +7554,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7571,7 +7602,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7618,7 +7650,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7666,7 +7699,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7713,7 +7747,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7760,7 +7795,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7807,7 +7843,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -7855,7 +7892,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10445,7 +10483,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10492,7 +10531,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10540,7 +10580,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10588,7 +10629,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10636,7 +10678,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10684,7 +10727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10732,7 +10776,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10780,7 +10825,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10828,7 +10874,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10876,7 +10923,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10924,7 +10972,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -10972,7 +11021,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11020,7 +11070,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11068,7 +11119,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11115,7 +11167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11163,7 +11216,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11211,7 +11265,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11259,7 +11314,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11307,7 +11363,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11355,7 +11412,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11403,7 +11461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11450,7 +11509,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11498,7 +11558,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11546,7 +11607,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -11594,7 +11656,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13602,7 +13665,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13650,7 +13714,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13698,7 +13763,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13745,7 +13811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13792,7 +13859,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13839,7 +13907,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13887,7 +13956,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13935,7 +14005,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -13983,7 +14054,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14030,7 +14102,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14077,7 +14150,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14124,7 +14198,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14172,7 +14247,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14220,7 +14296,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14267,7 +14344,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14314,7 +14392,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14362,7 +14441,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14409,7 +14489,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14457,7 +14538,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14505,7 +14587,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14553,7 +14636,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14601,7 +14685,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14649,7 +14734,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -14696,7 +14782,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17196,7 +17283,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17244,7 +17332,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17292,7 +17381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17340,7 +17430,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17388,7 +17479,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17436,7 +17528,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17484,7 +17577,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17532,7 +17626,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17579,7 +17674,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17626,7 +17722,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17678,7 +17775,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17726,7 +17824,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17774,7 +17873,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17822,7 +17922,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17870,7 +17971,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17918,7 +18020,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -17966,7 +18069,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -18014,7 +18118,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -18062,7 +18167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -18110,7 +18216,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21237,7 +21344,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21285,7 +21393,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21333,7 +21442,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21381,7 +21491,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21429,7 +21540,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21477,7 +21589,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21525,7 +21638,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21573,7 +21687,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21620,7 +21735,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21668,7 +21784,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21716,7 +21833,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21764,7 +21882,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21812,7 +21931,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21860,7 +21980,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21908,7 +22029,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -21956,7 +22078,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22003,7 +22126,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22051,7 +22175,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22099,7 +22224,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22147,7 +22273,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22195,7 +22322,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22243,7 +22371,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22291,7 +22420,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22339,7 +22469,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22387,7 +22518,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22435,7 +22567,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -22483,7 +22616,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -24842,7 +24976,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -24890,7 +25025,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -24938,7 +25074,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -24985,7 +25122,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25033,7 +25171,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25081,7 +25220,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25129,7 +25269,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25177,7 +25318,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25225,7 +25367,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25273,7 +25416,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25321,7 +25465,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25369,7 +25514,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25417,7 +25563,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25464,7 +25611,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25511,7 +25659,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25559,7 +25708,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25607,7 +25757,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25655,7 +25806,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25703,7 +25855,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25750,7 +25903,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25798,7 +25952,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25845,7 +26000,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25893,7 +26049,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -25941,7 +26098,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28134,7 +28292,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28182,7 +28341,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28229,7 +28389,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28276,7 +28437,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28324,7 +28486,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28371,7 +28534,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28418,7 +28582,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28465,7 +28630,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28512,7 +28678,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28559,7 +28726,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28607,7 +28775,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28654,7 +28823,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28702,7 +28872,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28750,7 +28921,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28798,7 +28970,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28845,7 +29018,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28893,7 +29067,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -28941,7 +29116,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -29515,7 +29691,7 @@ const QUESTIONS = {
                 "section": "Statics",
                 "topic": "Concurrent Force Systems",
                 "search_term": "concurrent force systems",
-                "page_number": 495
+                "page_number": 98
             }
         },
         {
@@ -29569,7 +29745,7 @@ const QUESTIONS = {
                 "section": "Statics",
                 "topic": "Concurrent Force Systems",
                 "search_term": "concurrent force systems",
-                "page_number": 495
+                "page_number": 98
             }
         },
         {
@@ -29619,7 +29795,7 @@ const QUESTIONS = {
                 "section": "Statics",
                 "topic": "Concurrent Force Systems",
                 "search_term": "concurrent force systems",
-                "page_number": 495
+                "page_number": 98
             }
         },
         {
@@ -29673,7 +29849,7 @@ const QUESTIONS = {
                 "section": "Statics",
                 "topic": "Concurrent Force Systems",
                 "search_term": "concurrent force systems",
-                "page_number": 495
+                "page_number": 98
             }
         },
         {
@@ -31215,7 +31391,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31262,7 +31439,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31310,7 +31488,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31357,7 +31536,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31405,7 +31585,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31453,7 +31634,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31501,7 +31683,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31549,7 +31732,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31597,7 +31781,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31645,7 +31830,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31693,7 +31879,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31741,7 +31928,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31789,7 +31977,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31837,7 +32026,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31885,7 +32075,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31932,7 +32123,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -31980,7 +32172,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -32027,7 +32220,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -32085,7 +32279,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32135,7 +32329,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32185,7 +32379,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32239,7 +32433,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32289,7 +32483,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32339,7 +32533,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32393,7 +32587,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32447,7 +32641,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32554,7 +32748,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32608,7 +32802,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32658,7 +32852,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32712,7 +32906,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -32824,7 +33018,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Newton’s Second Law for Particles",
                 "search_term": "newton’s second law for particles",
-                "page_number": 495
+                "page_number": 106
             }
         },
         {
@@ -32874,7 +33068,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Particles",
                 "search_term": "work-energy of particles",
-                "page_number": 495
+                "page_number": 107
             }
         },
         {
@@ -32928,7 +33122,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Particles",
                 "search_term": "work-energy of particles",
-                "page_number": 495
+                "page_number": 107
             }
         },
         {
@@ -32978,7 +33172,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Particles",
                 "search_term": "work-energy of particles",
-                "page_number": 495
+                "page_number": 107
             }
         },
         {
@@ -33032,7 +33226,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Particles",
                 "search_term": "work-energy of particles",
-                "page_number": 495
+                "page_number": 107
             }
         },
         {
@@ -33086,7 +33280,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Impulse-Momentum of Particles",
                 "search_term": "impulse-momentum of particles",
-                "page_number": 495
+                "page_number": 108
             }
         },
         {
@@ -33633,7 +33827,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Newton’s Second Law for Rigid Bodies",
                 "search_term": "newton’s second law for rigid bodies",
-                "page_number": 495
+                "page_number": 110
             }
         },
         {
@@ -33687,7 +33881,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Rigid Bodies",
                 "search_term": "work-energy of rigid bodies",
-                "page_number": 495
+                "page_number": 111
             }
         },
         {
@@ -33741,7 +33935,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Rigid Bodies",
                 "search_term": "work-energy of rigid bodies",
-                "page_number": 495
+                "page_number": 111
             }
         },
         {
@@ -33795,7 +33989,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Rigid Bodies",
                 "search_term": "work-energy of rigid bodies",
-                "page_number": 495
+                "page_number": 111
             }
         },
         {
@@ -33849,7 +34043,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Rigid Bodies",
                 "search_term": "work-energy of rigid bodies",
-                "page_number": 495
+                "page_number": 111
             }
         },
         {
@@ -33903,7 +34097,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Work-Energy of Rigid Bodies",
                 "search_term": "work-energy of rigid bodies",
-                "page_number": 495
+                "page_number": 111
             }
         },
         {
@@ -33957,7 +34151,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Impulse-Momentum of Rigid Bodies",
                 "search_term": "impulse-momentum of rigid bodies",
-                "page_number": 495
+                "page_number": 112
             }
         },
         {
@@ -34011,7 +34205,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Impulse-Momentum of Rigid Bodies",
                 "search_term": "impulse-momentum of rigid bodies",
-                "page_number": 495
+                "page_number": 112
             }
         },
         {
@@ -34065,7 +34259,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Impulse-Momentum of Rigid Bodies",
                 "search_term": "impulse-momentum of rigid bodies",
-                "page_number": 495
+                "page_number": 112
             }
         },
         {
@@ -34115,7 +34309,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Free and Forced Vibrations",
                 "search_term": "free and forced vibrations",
-                "page_number": 495
+                "page_number": 113
             }
         },
         {
@@ -34165,7 +34359,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Free and Forced Vibrations",
                 "search_term": "free and forced vibrations",
-                "page_number": 495
+                "page_number": 113
             }
         },
         {
@@ -34215,7 +34409,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Free and Forced Vibrations",
                 "search_term": "free and forced vibrations",
-                "page_number": 495
+                "page_number": 113
             }
         },
         {
@@ -34265,7 +34459,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Free and Forced Vibrations",
                 "search_term": "free and forced vibrations",
-                "page_number": 495
+                "page_number": 113
             }
         },
         {
@@ -34521,7 +34715,7 @@ const QUESTIONS = {
                 "section": "Dynamics",
                 "topic": "Kinematics of Particles",
                 "search_term": "kinematics of particles",
-                "page_number": 495
+                "page_number": 102
             }
         },
         {
@@ -34733,7 +34927,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -34781,7 +34976,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -34829,7 +35025,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -34877,7 +35074,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -34925,7 +35123,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -34973,7 +35172,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35021,7 +35221,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35069,7 +35270,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35116,7 +35318,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35163,7 +35366,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35210,7 +35414,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35257,7 +35462,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35305,7 +35511,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35352,7 +35559,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35400,7 +35608,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35448,7 +35657,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35496,7 +35706,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35544,7 +35755,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35592,7 +35804,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35640,7 +35853,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35688,7 +35902,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35736,7 +35951,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35783,7 +35999,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -35831,7 +36048,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -37990,7 +38208,7 @@ const QUESTIONS = {
                 "section": "materials-strength",
                 "topic": "Column Buckling",
                 "search_term": "column buckling",
-                "page_number": 495
+                "page_number": 137
             }
         },
         {
@@ -38048,7 +38266,7 @@ const QUESTIONS = {
                 "section": "materials-strength",
                 "topic": "Column Buckling",
                 "search_term": "column buckling",
-                "page_number": 495
+                "page_number": 137
             }
         },
         {
@@ -38102,7 +38320,7 @@ const QUESTIONS = {
                 "section": "materials-strength",
                 "topic": "Column Buckling",
                 "search_term": "column buckling",
-                "page_number": 495
+                "page_number": 137
             }
         },
         {
@@ -38156,7 +38374,7 @@ const QUESTIONS = {
                 "section": "materials-strength",
                 "topic": "Column Buckling",
                 "search_term": "column buckling",
-                "page_number": 495
+                "page_number": 137
             }
         },
         {
@@ -38594,7 +38812,7 @@ const QUESTIONS = {
                 "section": "materials-strength",
                 "topic": "Stress Transformation",
                 "search_term": "stress transformation",
-                "page_number": 495
+                "page_number": 133
             }
         },
         {
@@ -38677,7 +38895,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -38725,7 +38944,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -38773,7 +38993,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -38821,7 +39042,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -38869,7 +39091,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -38917,7 +39140,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -38965,7 +39189,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39013,7 +39238,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39061,7 +39287,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39108,7 +39335,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39156,7 +39384,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39204,7 +39433,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39252,7 +39482,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39300,7 +39531,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39348,7 +39580,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39396,7 +39629,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39444,7 +39678,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39492,7 +39727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39540,7 +39776,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39588,7 +39825,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39635,7 +39873,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39683,7 +39922,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39731,7 +39971,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -39779,7 +40020,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42132,7 +42374,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42179,7 +42422,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42226,7 +42470,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42274,7 +42519,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42322,7 +42568,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42370,7 +42617,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42417,7 +42665,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42464,7 +42713,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42512,7 +42762,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42560,7 +42811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42607,7 +42859,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42655,7 +42908,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42703,7 +42957,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42751,7 +43006,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42799,7 +43055,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42846,7 +43103,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42894,7 +43152,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42942,7 +43201,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -42990,7 +43250,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -43038,7 +43299,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -43085,7 +43347,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -43132,7 +43395,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -43180,7 +43444,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -43228,7 +43493,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46076,7 +46342,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46124,7 +46391,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46172,7 +46440,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46220,7 +46489,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46268,7 +46538,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46316,7 +46587,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46364,7 +46636,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46412,7 +46685,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46460,7 +46734,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46508,7 +46783,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46556,7 +46832,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46604,7 +46881,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46652,7 +46930,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46700,7 +46979,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46748,7 +47028,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46796,7 +47077,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46844,7 +47126,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46892,7 +47175,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46940,7 +47224,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -46988,7 +47273,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -47036,7 +47322,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -47279,7 +47566,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -47330,7 +47617,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -47473,7 +47760,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47523,7 +47810,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47573,7 +47860,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47623,7 +47910,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47673,7 +47960,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47723,7 +48010,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47773,7 +48060,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47823,7 +48110,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "DC Circuit Analysis",
                 "search_term": "dc circuit analysis",
-                "page_number": 495
+                "page_number": 366
             }
         },
         {
@@ -47873,7 +48160,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -47923,7 +48210,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -47973,7 +48260,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48023,7 +48310,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48073,7 +48360,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48123,7 +48410,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48173,7 +48460,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48223,7 +48510,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48273,7 +48560,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -48323,7 +48610,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "AC Circuit Analysis",
                 "search_term": "ac circuit analysis",
-                "page_number": 495
+                "page_number": 367
             }
         },
         {
@@ -49006,7 +49293,7 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -49262,7 +49549,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49310,7 +49598,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49357,7 +49646,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49405,7 +49695,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49452,14 +49743,15 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
                 "section": "electricity",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -49500,14 +49792,15 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
                 "section": "electricity",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -49548,7 +49841,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49595,7 +49889,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49642,7 +49937,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49690,7 +49986,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49737,7 +50034,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49784,7 +50082,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49832,14 +50131,15 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
                 "section": "electricity",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -49880,7 +50180,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49928,7 +50229,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -49975,7 +50277,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50023,7 +50326,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50071,7 +50375,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50118,7 +50423,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50166,7 +50472,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50214,7 +50521,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50262,7 +50570,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50310,7 +50619,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50358,7 +50668,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50406,7 +50717,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50454,7 +50766,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50502,7 +50815,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50550,7 +50864,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50598,7 +50913,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50646,7 +50962,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50694,7 +51011,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50742,7 +51060,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50790,7 +51109,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50838,7 +51158,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50886,7 +51207,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50934,7 +51256,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -50982,7 +51305,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -51030,7 +51354,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -51078,7 +51403,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -51126,7 +51452,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -51174,7 +51501,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -55961,7 +56289,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56009,7 +56338,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56057,7 +56387,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56105,7 +56436,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56153,7 +56485,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56201,7 +56534,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56249,7 +56583,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56297,7 +56632,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56345,7 +56681,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56393,7 +56730,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56441,7 +56779,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56489,7 +56828,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56537,7 +56877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56585,7 +56926,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56633,7 +56975,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56681,7 +57024,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56729,7 +57073,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56777,7 +57122,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56825,7 +57171,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56873,7 +57220,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56921,7 +57269,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -56969,7 +57318,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57017,7 +57367,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57065,7 +57416,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57113,7 +57465,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57160,7 +57513,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57207,7 +57561,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57254,7 +57609,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57301,7 +57657,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57348,7 +57705,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57395,7 +57753,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57442,7 +57801,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57489,7 +57849,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57537,7 +57898,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57585,7 +57947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57633,7 +57996,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57681,7 +58045,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -57729,7 +58094,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68652,7 +69018,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68700,7 +69067,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68748,7 +69116,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68796,7 +69165,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68844,7 +69214,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68891,7 +69262,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68939,7 +69311,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -68987,7 +69360,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69034,7 +69408,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69082,7 +69457,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69130,7 +69506,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69178,7 +69555,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69225,7 +69603,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69273,7 +69652,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69321,7 +69701,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69369,7 +69750,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69416,7 +69798,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69463,7 +69846,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69511,7 +69895,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69558,7 +69943,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69606,7 +69992,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69653,7 +70040,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69700,7 +70088,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69748,7 +70137,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69796,7 +70186,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -69844,7 +70235,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74704,7 +75096,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74752,7 +75145,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74799,7 +75193,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74847,7 +75242,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74895,7 +75291,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74943,7 +75340,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -74991,7 +75389,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75038,7 +75437,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75086,7 +75486,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75134,7 +75535,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75182,7 +75584,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75230,7 +75633,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75278,7 +75682,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75326,7 +75731,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75374,7 +75780,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75421,7 +75828,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75468,7 +75876,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75516,7 +75925,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75564,7 +75974,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75611,7 +76022,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75658,7 +76070,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75705,7 +76118,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75753,7 +76167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75800,7 +76215,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75848,7 +76264,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75895,7 +76312,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75942,7 +76360,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -75990,7 +76409,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76038,7 +76458,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76085,7 +76506,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76132,7 +76554,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76179,7 +76602,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76227,7 +76651,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76274,7 +76699,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76322,7 +76748,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76369,7 +76796,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76417,7 +76845,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76465,7 +76894,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76512,7 +76942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -76560,7 +76991,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -81829,7 +82261,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -81876,7 +82309,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -81923,7 +82357,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -81970,7 +82405,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82018,7 +82454,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82066,7 +82503,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82114,7 +82552,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82162,7 +82601,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82210,7 +82650,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82258,7 +82699,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82305,7 +82747,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82353,7 +82796,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82400,7 +82844,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82448,7 +82893,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82496,7 +82942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82544,7 +82991,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82591,7 +83039,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82639,7 +83088,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82687,7 +83137,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82735,7 +83186,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82782,7 +83234,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82830,7 +83283,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82878,7 +83332,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82925,7 +83380,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -82973,7 +83429,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83021,7 +83478,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83068,7 +83526,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83116,7 +83575,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83164,7 +83624,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83212,7 +83673,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83259,7 +83721,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83307,7 +83770,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83355,7 +83819,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83403,7 +83868,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83451,7 +83917,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83499,7 +83966,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83546,7 +84014,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83594,7 +84063,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83642,7 +84112,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -83689,7 +84160,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87158,7 +87630,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87206,7 +87679,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87254,7 +87728,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87302,7 +87777,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87349,7 +87825,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87401,7 +87878,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87449,7 +87927,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87497,7 +87976,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87545,7 +88025,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87592,7 +88073,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87639,7 +88121,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87687,7 +88170,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87735,7 +88219,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87782,7 +88267,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87830,7 +88316,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87878,7 +88365,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87926,7 +88414,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -87974,7 +88463,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88022,7 +88512,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88070,7 +88561,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88118,7 +88610,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88166,7 +88659,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88214,7 +88708,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88262,7 +88757,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88310,7 +88806,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88358,7 +88855,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88406,7 +88904,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -88454,7 +88953,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -90814,7 +91314,7 @@ const QUESTIONS = {
                 {
                     "label": "B",
                     "text": "12 kips",
-                    "is_correct": false
+                    "is_correct": true
                 },
                 {
                     "label": "C",
@@ -92388,7 +92888,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92436,7 +92937,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92483,7 +92985,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92530,7 +93033,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92577,7 +93081,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92624,7 +93129,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92672,7 +93178,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92720,7 +93227,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92767,7 +93275,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92814,7 +93323,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92861,14 +93371,15 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
                 "topic": "Column Buckling",
                 "search_term": "column buckling",
-                "page_number": 495
+                "page_number": 137
             }
         },
         {
@@ -92909,7 +93420,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -92957,7 +93469,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93004,7 +93517,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93052,7 +93566,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93099,7 +93614,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93146,7 +93662,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93194,7 +93711,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93241,7 +93759,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93288,7 +93807,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93336,7 +93856,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93383,7 +93904,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93430,7 +93952,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93477,7 +94000,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93524,7 +94048,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93571,7 +94096,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93618,7 +94144,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93666,7 +94193,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93713,7 +94241,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93761,7 +94290,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -93808,7 +94338,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96020,7 +96551,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96067,7 +96599,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96114,7 +96647,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96161,7 +96695,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96208,7 +96743,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96255,7 +96791,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96302,7 +96839,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96350,7 +96888,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96397,7 +96936,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96444,7 +96984,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96491,7 +97032,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96538,7 +97080,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96586,7 +97129,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96633,7 +97177,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96680,7 +97225,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96727,7 +97273,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96774,7 +97321,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96822,7 +97370,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96869,7 +97418,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96917,7 +97467,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -96964,7 +97515,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -97011,7 +97563,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -97058,7 +97611,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -97105,7 +97659,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -102644,7 +103199,7 @@ const QUESTIONS = {
                 "section": "elec-materials",
                 "topic": "Magnetism",
                 "search_term": "magnetism",
-                "page_number": 495
+                "page_number": 361
             }
         },
         {
@@ -102942,7 +103497,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -102990,7 +103546,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103038,7 +103595,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103086,7 +103644,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103134,7 +103693,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103182,7 +103742,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103230,7 +103791,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103277,7 +103839,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103324,7 +103887,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103371,7 +103935,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103419,7 +103984,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103467,7 +104033,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103515,7 +104082,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103563,7 +104131,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103611,7 +104180,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103659,7 +104229,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103707,7 +104278,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103755,7 +104327,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103803,7 +104376,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103851,7 +104425,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103899,7 +104474,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103947,7 +104523,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -103995,7 +104572,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107327,7 +107905,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107374,7 +107953,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107421,7 +108001,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107468,7 +108049,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107516,7 +108098,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107563,7 +108146,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107610,7 +108194,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107658,7 +108243,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107706,7 +108292,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107754,7 +108341,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107801,7 +108389,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107849,7 +108438,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107897,7 +108487,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -107945,7 +108536,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112369,7 +112961,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112416,7 +113009,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112463,7 +113057,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112511,7 +113106,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112559,7 +113155,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112607,7 +113204,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112655,7 +113253,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112702,7 +113301,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112750,7 +113350,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112798,7 +113399,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112846,7 +113448,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112894,7 +113497,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112941,7 +113545,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -112988,7 +113593,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113035,7 +113641,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113083,7 +113690,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113130,7 +113738,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113177,7 +113786,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113225,7 +113835,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113273,7 +113884,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113321,7 +113933,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113369,7 +113982,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -113417,7 +114031,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -117907,7 +118522,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -117954,7 +118570,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118002,7 +118619,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118050,7 +118668,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118098,7 +118717,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118146,7 +118766,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118194,7 +118815,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118242,7 +118864,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118290,7 +118913,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118338,7 +118962,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118385,7 +119010,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118433,7 +119059,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118481,7 +119108,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118529,7 +119157,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118577,7 +119206,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118624,7 +119254,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118671,7 +119302,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118719,7 +119351,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118767,7 +119400,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -118815,7 +119449,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127099,7 +127734,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127147,7 +127783,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127195,7 +127832,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127243,7 +127881,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127291,7 +127930,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127338,7 +127978,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127386,7 +128027,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127434,7 +128076,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127482,7 +128125,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127530,7 +128174,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127578,7 +128223,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127626,7 +128272,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127674,7 +128321,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127722,7 +128370,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127770,7 +128419,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127818,7 +128468,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127866,7 +128517,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127914,7 +128566,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -127962,7 +128615,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -128010,7 +128664,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -128058,7 +128713,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -128106,7 +128762,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -128154,7 +128811,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -128202,7 +128860,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -138851,7 +139510,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -138898,7 +139558,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -138945,7 +139606,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -138992,7 +139654,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139039,7 +139702,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139086,7 +139750,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139133,7 +139798,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139180,7 +139846,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139228,7 +139895,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139275,7 +139943,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139323,7 +139992,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139370,7 +140040,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139417,7 +140088,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139465,7 +140137,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139513,7 +140186,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139561,7 +140235,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139608,7 +140283,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139656,7 +140332,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139704,7 +140381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139752,7 +140430,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139800,7 +140479,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139848,7 +140528,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139896,7 +140577,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139944,7 +140626,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -139992,7 +140675,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -140040,7 +140724,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -140088,7 +140773,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -140136,7 +140822,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144555,7 +145242,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144602,7 +145290,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144650,7 +145339,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144697,7 +145387,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144745,7 +145436,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144792,7 +145484,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144840,7 +145533,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144888,7 +145582,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144936,7 +145631,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -144983,7 +145679,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145030,7 +145727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145077,7 +145775,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145125,7 +145824,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145172,7 +145872,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145220,7 +145921,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145268,7 +145970,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145316,7 +146019,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145364,7 +146068,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145412,7 +146117,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145460,7 +146166,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145508,7 +146215,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145556,7 +146264,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -145604,7 +146313,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149041,7 +149751,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149088,7 +149799,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149135,7 +149847,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149183,7 +149896,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149230,7 +149944,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149277,7 +149992,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149325,7 +150041,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149373,7 +150090,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149420,7 +150138,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149468,7 +150187,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149516,7 +150236,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149563,7 +150284,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149610,7 +150332,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149658,7 +150381,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149705,7 +150429,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149753,7 +150478,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149800,7 +150526,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149847,7 +150574,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149894,7 +150622,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149942,7 +150671,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -149990,7 +150720,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150037,7 +150768,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150084,7 +150816,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150132,7 +150865,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150179,7 +150913,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150227,7 +150962,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150275,7 +151011,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150323,7 +151060,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150371,7 +151109,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150419,7 +151158,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150467,7 +151207,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150515,7 +151256,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150563,7 +151305,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -150611,7 +151354,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -157340,7 +158084,7 @@ const QUESTIONS = {
                 "section": "solids",
                 "topic": "Stress Transformation",
                 "search_term": "stress transformation",
-                "page_number": 495
+                "page_number": 133
             }
         },
         {
@@ -159216,7 +159960,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159263,7 +160008,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159310,7 +160056,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159357,7 +160104,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159404,7 +160152,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159451,7 +160200,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159498,7 +160248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159545,7 +160296,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159592,7 +160344,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159639,7 +160392,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159686,7 +160440,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159733,7 +160488,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159780,7 +160536,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159827,7 +160584,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159874,7 +160632,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159921,7 +160680,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -159968,7 +160728,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160015,7 +160776,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160062,7 +160824,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160109,7 +160872,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160156,7 +160920,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160204,7 +160969,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160251,7 +161017,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -160298,7 +161065,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162192,7 +162960,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162239,7 +163008,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162286,7 +163056,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162333,7 +163104,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162380,7 +163152,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162427,7 +163200,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162475,7 +163249,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162522,7 +163297,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162569,7 +163345,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162617,7 +163394,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162665,7 +163443,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162713,7 +163492,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162761,7 +163541,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162809,7 +163590,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162857,7 +163639,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162905,7 +163688,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -162953,7 +163737,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -163001,7 +163786,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -163049,7 +163835,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -163097,7 +163884,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -163145,7 +163933,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -163193,7 +163982,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -163241,7 +164031,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -166827,7 +167618,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -166875,7 +167667,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -166923,7 +167716,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -166970,7 +167764,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167017,7 +167812,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167064,7 +167860,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167111,7 +167908,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167158,7 +167956,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167206,7 +168005,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167253,7 +168053,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167301,7 +168102,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167349,7 +168151,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167396,7 +168199,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167444,7 +168248,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167492,7 +168297,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167540,7 +168346,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167587,7 +168394,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167634,7 +168442,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167681,7 +168490,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167728,7 +168538,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167776,7 +168587,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167824,7 +168636,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167872,7 +168685,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -167919,7 +168733,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173062,7 +173877,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173110,7 +173926,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173158,7 +173975,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173205,7 +174023,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173253,7 +174072,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173300,7 +174120,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173348,7 +174169,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173396,7 +174218,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173443,7 +174266,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173491,7 +174315,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173539,7 +174364,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173586,7 +174412,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173634,7 +174461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173682,7 +174510,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173730,7 +174559,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173778,7 +174608,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173826,7 +174657,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173874,7 +174706,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173922,7 +174755,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -173970,7 +174804,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -174018,7 +174853,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -174066,7 +174902,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -174114,7 +174951,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -174162,7 +175000,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180304,7 +181143,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180351,7 +181191,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180399,7 +181240,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180447,7 +181289,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180494,7 +181337,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180542,7 +181386,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180590,7 +181435,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180638,7 +181484,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180686,7 +181533,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180733,7 +181581,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180781,7 +181630,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180829,7 +181679,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180876,7 +181727,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180924,7 +181776,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -180972,7 +181825,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181020,7 +181874,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181068,7 +181923,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181116,7 +181972,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181164,7 +182021,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181212,7 +182070,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181259,7 +182118,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181307,7 +182167,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181355,7 +182216,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -181402,7 +182264,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -184974,7 +185837,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185021,7 +185885,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185068,7 +185933,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185115,7 +185981,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185162,7 +186029,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185209,7 +186077,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185256,7 +186125,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185303,7 +186173,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185350,7 +186221,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185397,7 +186269,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185444,7 +186317,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185491,7 +186365,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185538,7 +186413,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185585,7 +186461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185632,7 +186509,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185679,7 +186557,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185726,7 +186605,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185773,7 +186653,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185820,7 +186701,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185868,7 +186750,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185915,7 +186798,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -185962,7 +186846,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -186009,7 +186894,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -186056,7 +186942,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191378,7 +192265,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191426,7 +192314,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191474,7 +192363,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191522,7 +192412,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191570,7 +192461,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191618,7 +192510,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191666,7 +192559,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191714,7 +192608,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191762,7 +192657,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191810,7 +192706,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191857,7 +192754,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191904,7 +192802,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191951,7 +192850,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -191998,7 +192898,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192046,7 +192947,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192094,7 +192996,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192142,7 +193045,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192190,7 +193094,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192238,7 +193143,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192286,7 +193192,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192334,7 +193241,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192382,7 +193290,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192430,7 +193339,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -192478,7 +193388,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197531,7 +198442,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197579,7 +198491,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197627,7 +198540,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197675,7 +198589,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197723,7 +198638,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197771,7 +198687,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197819,7 +198736,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197867,7 +198785,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197915,7 +198834,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -197963,7 +198883,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198011,7 +198932,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198059,7 +198981,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198107,7 +199030,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198155,7 +199079,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198203,7 +199128,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198251,7 +199177,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198299,7 +199226,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198346,7 +199274,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198393,7 +199322,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198441,7 +199371,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198488,7 +199419,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198536,7 +199468,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "D"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198584,7 +199517,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -198632,7 +199566,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200243,7 +201178,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200290,7 +201226,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200337,7 +201274,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200385,7 +201323,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200433,7 +201372,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200480,7 +201420,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200528,7 +201469,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200576,7 +201518,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200624,7 +201567,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200672,7 +201616,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200720,7 +201665,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200768,7 +201714,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200816,7 +201763,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200864,7 +201812,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200912,7 +201861,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -200960,7 +201910,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "B"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201008,7 +201959,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201056,7 +202008,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201103,7 +202056,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201151,7 +202105,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201199,7 +202154,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201247,7 +202203,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201295,7 +202252,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -201343,7 +202301,8 @@ const QUESTIONS = {
                     }
                 ],
                 "solution_image": "",
-                "video_explanation": ""
+                "video_explanation": "",
+                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -204736,4 +205695,3 @@ const QUESTIONS = {
         }
     ]
 };
-
