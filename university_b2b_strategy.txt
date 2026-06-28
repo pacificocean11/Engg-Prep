@@ -1,0 +1,33 @@
+Title: ENGG.tv University B2B Pricing Strategy
+
+This document outlines the strategy for selling the ENGG.tv platform and live coaching packages directly to universities (US and Canada) offering Mechanical Engineering undergraduate degrees.
+
+### 1. The Value Proposition (How to pitch it)
+When speaking to the Dean of Engineering or the Head of the Mechanical Engineering Department, package the offering as an "Enterprise FE Success Program."
+* The Software: Unlimited premium access to the ENGG.tv platform for all seniors and recent alumni.
+* The Live Coaching (The Anchor Value): 16 hours of live Zoom coaching twice a year (timed right before the Spring and Fall testing windows). This is equivalent to bringing in a guest lecturer/expert.
+* The Hidden Value (Future Feature): Provide the department with an "Analytics Report" at the end of the year showing how many students actively studied and which topics they struggled with most. Universities love data for ABET accreditation maintenance.
+
+### 2. Pricing Tiers (What you can collect)
+Recommend a tiered, flat-fee annual pricing model based on the size of their graduating class:
+
+* Tier 1: Small Programs (Less than 100 graduating ME seniors/year)
+  - Price: $2,500 - $3,500 / year
+  - Why? This is often within a Department Head's credit card or discretionary limit. It breaks down to about $25-$35 per student, which is cheaper than a single textbook.
+
+* Tier 2: Medium Programs (100 - 300 graduating ME seniors/year)
+  - Price: $5,000 - $7,500 / year
+  - Why? Medium-sized state schools have a strong need to keep their pass rates up to compete with elite schools.
+
+* Tier 3: Large Programs (300+ graduating ME seniors/year)
+  - Price: $10,000 - $15,000 / year
+  - Why? Massive programs (like Texas A&M, Purdue, or large Canadian universities like Waterloo) have massive budgets. 16 hours of dedicated live coaching for hundreds of students is highly valuable to them.
+
+### 3. Your Profit Margin
+* Your Cost: 32 hours total of your time per year (16 hours x 2) per university.
+* Your Revenue: If you sign just 5 medium-sized universities, you are collecting $25,000 to $37,500 in Annual Recurring Revenue (ARR) for teaching 32 hours a year via Zoom. The software scales infinitely for free.
+
+### 4. How to Execute the Outreach
+1. Who to contact: Do not email general admissions. Find the Department Chair of Mechanical Engineering or the Director of Undergraduate Studies for Mechanical Engineering on the university staff directory.
+2. The Hook: Send a short email saying: "Hi [Name], I noticed [University] has a great ME program. I've built a modern, AI-assisted FE Exam prep platform (ENGG.tv) and I am looking for 3 universities to partner with for our pilot Enterprise program this Fall. We include 16 hours of live expert coaching for your seniors. Do you have 10 minutes next Tuesday to see if this could boost your department's ABET outcomes?"
+3. Leverage your Alumni Success: Mention Sabrish, Linjo, and Adarsh. Say, "We've already successfully helped candidates pass the exam using our methodology."

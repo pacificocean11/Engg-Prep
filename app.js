@@ -2581,7 +2581,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (submitBtn) {
             submitBtn.addEventListener('click', () => {
                 const selectedIdx = state.answers[state.currentQuestionIndex];
-                if (selectedIdx === null) {
+                if (selectedIdx === null || selectedIdx === undefined) {
                     alert("Please select an option first.");
                     return;
                 }
@@ -2600,7 +2600,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 const question = state.quizQuestions[state.currentQuestionIndex];
                 const isCorrect = question.options[selectedIdx].is_correct;
                 
-                recordSRS(question, isCorrect);
+                if (window.recordSRS) window.recordSRS(question, isCorrect);
                 if (window.incrementQuestProgress) window.incrementQuestProgress('questions_answered', 1);
                 
                 state.submitted[state.currentQuestionIndex] = true;
