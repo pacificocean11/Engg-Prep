@@ -1,0 +1,33 @@
+Custom Domain Setup Guide (prep.engg.tv -> GitHub Pages)
+=========================================================
+
+By using a subdomain (like prep.engg.tv), you are adding a traffic rule in GoDaddy that says: "If someone types prep.engg.tv, send them to GitHub instead of Heroku." This has zero impact on your existing engg.tv Django website.
+
+### Step 1: Tell GoDaddy where to point the subdomain
+1. Log into your GoDaddy account and go to your DNS Management page for engg.tv.
+2. Click the button to Add a New Record.
+3. Fill out the record exactly like this:
+   * Type: CNAME
+   * Name (or Host): prep (Just type 'prep' or 'app'. Do NOT type the full 'prep.engg.tv')
+   * Value (or Points to): pacificocean11.github.io
+   * TTL: Leave as Default (or 1 Hour)
+4. Click Save.
+
+### Step 2: Tell GitHub to accept the traffic
+1. Open a new tab and go to your Engg-Prep repository on GitHub (pacificocean11/Engg-Prep).
+2. Click on the Settings tab (the gear icon near the top right of the repo).
+3. On the left sidebar, scroll down and click on Pages.
+4. Scroll down to the Custom domain section.
+5. In the text box, type your full new address: prep.engg.tv
+6. Click Save.
+
+### Step 3: Secure the connection (HTTPS)
+After you click Save in GitHub, GitHub will start checking GoDaddy to see if the DNS rule is active. 
+* Right below where you clicked Save, there is a checkbox that says "Enforce HTTPS".
+* You must check this box so your app gets the secure padlock icon in the browser. 
+* Note: It might be grayed out for about 5 to 15 minutes while GitHub requests a free SSL certificate from Let's Encrypt. Just refresh the page after making a coffee, and check the box once it becomes clickable.
+
+### PWA and URL Sharing Notes
+- Once the domain is set up, users just type `prep.engg.tv` and it secretly loads your GitHub code. 
+- You can use QR codes linking to this new domain on physical materials or use bit.ly for social media bios.
+- Since it is a Progressive Web App (PWA), users visiting the new domain can "Install" the app on their mobile or desktop devices. Once installed, it behaves like a native app and the URL is completely hidden from them!

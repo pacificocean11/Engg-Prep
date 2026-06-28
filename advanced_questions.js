@@ -842,7 +842,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Statics",
                 "topic": "Equilibrium of Rigid Bodies",
                 "search_term": "equilibrium of rigid bodies",
-                "page_number": 482
+                "page_number": null
             }
         },
         {
@@ -895,7 +895,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Statics",
                 "topic": "Frames and Trusses",
                 "search_term": "frames and trusses",
-                "page_number": 482
+                "page_number": null
             }
         },
         {
@@ -2948,7 +2948,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "materials-science",
                 "topic": "Phase Diagrams, Phase Transformation, and Heat Treating",
                 "search_term": "phase diagrams, phase transformation, and heat treating",
-                "page_number": 496
+                "page_number": null
             }
         },
         {
@@ -3505,7 +3505,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Fluid Mechanics",
                 "topic": "Fluid Statics",
                 "search_term": "fluid statics",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -3930,7 +3930,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Fluid Mechanics",
                 "topic": "Turbomachinery",
                 "search_term": "turbomachinery",
-                "page_number": 500
+                "page_number": null
             }
         },
         {
@@ -3979,7 +3979,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Fluid Mechanics",
                 "topic": "Fluid Statics",
                 "search_term": "fluid statics",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -5232,7 +5232,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "instr-controls",
                 "topic": "Sensors and Transducers",
                 "search_term": "sensors and transducers",
-                "page_number": 496
+                "page_number": null
             }
         },
         {
@@ -5281,7 +5281,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "instr-controls",
                 "topic": "Process Control",
                 "search_term": "process control",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -5334,7 +5334,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "instr-controls",
                 "topic": "Process Control",
                 "search_term": "process control",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -5435,7 +5435,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "instr-controls",
                 "topic": "System Response",
                 "search_term": "system response",
-                "page_number": 496
+                "page_number": null
             }
         },
         {
@@ -5742,7 +5742,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "design",
                 "topic": "Deformation and Stiffness",
                 "search_term": "deformation and stiffness",
-                "page_number": 497
+                "page_number": null
             }
         },
         {
@@ -5795,7 +5795,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "design",
                 "topic": "Pressure Vessels and Piping",
                 "search_term": "pressure vessels and piping",
-                "page_number": 497
+                "page_number": null
             }
         },
         {
@@ -5852,7 +5852,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "design",
                 "topic": "Machine Design",
                 "search_term": "machine design",
-                "page_number": 487
+                "page_number": null
             }
         },
         {
@@ -6245,7 +6245,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Engineering Probability and Statistics",
                 "topic": "Probability Distributions",
                 "search_term": "probability distributions",
-                "page_number": 478
+                "page_number": null
             }
         },
         {
@@ -6760,7 +6760,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "chemistry",
                 "topic": "Chemical Reactions",
                 "search_term": "chemical reactions",
-                "page_number": 489
+                "page_number": null
             }
         },
         {
@@ -6809,7 +6809,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "chemistry",
                 "topic": "Chemical Reactions",
                 "search_term": "chemical reactions",
-                "page_number": 489
+                "page_number": null
             }
         },
         {
@@ -7289,7 +7289,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Safety, Health, and Environment",
                 "topic": "Confined Space Entry and Ventilation Rates",
                 "search_term": "confined space entry and ventilation rates",
-                "page_number": 499
+                "page_number": null
             }
         },
         {
@@ -7440,7 +7440,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Safety, Health, and Environment",
                 "topic": "Hazard Analysis",
                 "search_term": "hazard analysis",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -7586,7 +7586,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Safety, Health, and Environment",
                 "topic": "Industrial Hygiene",
                 "search_term": "industrial hygiene",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -7788,7 +7788,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Engineering Economics",
                 "topic": "Economic Analyses",
                 "search_term": "economic analyses",
-                "page_number": 480
+                "page_number": null
             }
         },
         {
@@ -7955,7 +7955,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Engineering Economics",
                 "topic": "Time Value of Money",
                 "search_term": "time value of money",
-                "page_number": 480
+                "page_number": null
             }
         },
         {
@@ -8358,7 +8358,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Engineering Ethics and Societal Impacts",
                 "topic": "Engineering Ethics",
                 "search_term": "engineering ethics",
-                "page_number": 498
+                "page_number": null
             }
         },
         {
@@ -8411,7 +8411,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Engineering Ethics and Societal Impacts",
                 "topic": "Engineering Ethics",
                 "search_term": "engineering ethics",
-                "page_number": 498
+                "page_number": null
             }
         },
         {
@@ -9615,7 +9615,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "reaction-eng",
                 "topic": "Catalysis",
                 "search_term": "catalysis",
-                "page_number": 480
+                "page_number": null
             }
         },
         {
@@ -10300,7 +10300,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "water-wastewater",
                 "topic": "Environmental Chemistry",
                 "search_term": "environmental chemistry",
-                "page_number": 489
+                "page_number": null
             }
         }
     ],
@@ -10802,7 +10802,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Electrical and Computer Engineering",
                 "topic": "Phasors",
                 "search_term": "phasors",
-                "page_number": 486
+                "page_number": null
             }
         },
         {
@@ -11448,7 +11448,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Civil Engineering",
                 "topic": "Leveling",
                 "search_term": "leveling",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -11761,7 +11761,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Civil Engineering",
                 "topic": "Area Computation",
                 "search_term": "area computation",
-                "page_number": 483
+                "page_number": null
             }
         }
     ],
@@ -11861,7 +11861,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Civil Engineering",
                 "topic": "Hydraulics",
                 "search_term": "hydraulics",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -13416,7 +13416,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Civil Engineering",
                 "topic": "Project Management",
                 "search_term": "project management",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -14462,7 +14462,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "chem-bio",
                 "topic": "Microbiology",
                 "search_term": "microbiology",
-                "page_number": 479
+                "page_number": null
             }
         },
         {
@@ -14858,7 +14858,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "balances",
                 "topic": "Energy Balance",
                 "search_term": "energy balance",
-                "page_number": 479
+                "page_number": null
             }
         },
         {
@@ -14963,7 +14963,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "balances",
                 "topic": "Energy Balances",
                 "search_term": "energy balances",
-                "page_number": 479
+                "page_number": null
             }
         },
         {
@@ -15113,7 +15113,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "balances",
                 "topic": "Energy Balances",
                 "search_term": "energy balances",
-                "page_number": 479
+                "page_number": null
             }
         },
         {
@@ -15312,7 +15312,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "balances",
                 "topic": "Energy Balances",
                 "search_term": "energy balances",
-                "page_number": 479
+                "page_number": null
             }
         }
     ],
@@ -15817,7 +15817,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "mass-sep",
                 "topic": "Drying",
                 "search_term": "drying",
-                "page_number": 480
+                "page_number": null
             }
         }
     ],
@@ -16232,7 +16232,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "solids",
                 "topic": "Pressure Vessels",
                 "search_term": "pressure vessels",
-                "page_number": 497
+                "page_number": null
             }
         },
         {
@@ -16437,7 +16437,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "process-design",
                 "topic": "Process Design",
                 "search_term": "process design",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -16925,7 +16925,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "process-control",
                 "topic": "Process Control",
                 "search_term": "process control",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -17220,7 +17220,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "process-control",
                 "topic": "Controller Tuning",
                 "search_term": "controller tuning",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -17367,7 +17367,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "env-chem",
                 "topic": "Water Chemistry",
                 "search_term": "water chemistry",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -17416,7 +17416,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "env-chem",
                 "topic": "Environmental Chemistry",
                 "search_term": "environmental chemistry",
-                "page_number": 489
+                "page_number": null
             }
         },
         {
@@ -18455,7 +18455,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "fluids-hyd",
                 "topic": "Pipe Networks",
                 "search_term": "pipe networks",
-                "page_number": 479
+                "page_number": null
             }
         }
     ],
@@ -19002,7 +19002,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "groundwater-soils",
                 "topic": "Groundwater Flow",
                 "search_term": "groundwater flow",
-                "page_number": 490
+                "page_number": null
             }
         },
         {
@@ -19055,7 +19055,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "groundwater-soils",
                 "topic": "Groundwater Flow",
                 "search_term": "groundwater flow",
-                "page_number": 490
+                "page_number": null
             }
         },
         {
@@ -19152,7 +19152,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "groundwater-soils",
                 "topic": "Groundwater Flow",
                 "search_term": "groundwater flow",
-                "page_number": 490
+                "page_number": null
             }
         },
         {
@@ -20242,7 +20242,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "waste",
                 "topic": "Waste Treatment",
                 "search_term": "waste treatment",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -20339,7 +20339,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "waste",
                 "topic": "Composting",
                 "search_term": "composting",
-                "page_number": 490
+                "page_number": null
             }
         },
         {
@@ -20388,7 +20388,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "waste",
                 "topic": "Radioactive Waste",
                 "search_term": "radioactive waste",
-                "page_number": 490
+                "page_number": null
             }
         },
         {
@@ -20738,7 +20738,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "energy-env",
                 "topic": "Solar Energy",
                 "search_term": "solar energy",
-                "page_number": 475
+                "page_number": null
             }
         },
         {
@@ -21329,7 +21329,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "principles",
                 "topic": "Project Management",
                 "search_term": "project management",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -21986,7 +21986,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "eng-mgmt",
                 "topic": "Project Management",
                 "search_term": "project management",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -22140,7 +22140,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "eng-mgmt",
                 "topic": "Project Selection",
                 "search_term": "project selection",
-                "page_number": 480
+                "page_number": null
             }
         },
         {
@@ -22430,7 +22430,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "eng-mgmt",
                 "topic": "Quality Management",
                 "search_term": "quality management",
-                "page_number": 489
+                "page_number": null
             }
         }
     ],
@@ -22633,7 +22633,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "production",
                 "topic": "Machining",
                 "search_term": "machining",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -22826,7 +22826,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "production",
                 "topic": "Welding",
                 "search_term": "welding",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -23471,7 +23471,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "ergonomics",
                 "topic": "Workstation Design",
                 "search_term": "workstation design",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -23962,7 +23962,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "work-design",
                 "topic": "Time Study",
                 "search_term": "time study",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -24015,7 +24015,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "work-design",
                 "topic": "Time Study",
                 "search_term": "time study",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -24117,7 +24117,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "work-design",
                 "topic": "Time Study",
                 "search_term": "time study",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -24618,7 +24618,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "quality",
                 "topic": "Control Charts",
                 "search_term": "control charts",
-                "page_number": 493
+                "page_number": null
             }
         },
         {
@@ -25804,7 +25804,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "linear-systems",
                 "topic": "Transfer Functions",
                 "search_term": "transfer functions",
-                "page_number": 481
+                "page_number": null
             }
         },
         {
@@ -26501,7 +26501,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "signals",
                 "topic": "Digital Filters",
                 "search_term": "digital filters",
-                "page_number": 486
+                "page_number": null
             }
         },
         {
@@ -26598,7 +26598,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "signals",
                 "topic": "Aliasing",
                 "search_term": "aliasing",
-                "page_number": 486
+                "page_number": null
             }
         },
         {
@@ -27254,7 +27254,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "power",
                 "topic": "Three-Phase Power",
                 "search_term": "three-phase power",
-                "page_number": 500
+                "page_number": null
             }
         },
         {
@@ -27949,7 +27949,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "electromagnetics",
                 "topic": "Electrodynamics",
                 "search_term": "electrodynamics",
-                "page_number": 486
+                "page_number": null
             }
         },
         {
@@ -28143,7 +28143,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "electromagnetics",
                 "topic": "Magnetostatics",
                 "search_term": "magnetostatics",
-                "page_number": 486
+                "page_number": null
             }
         }
     ],
@@ -28591,7 +28591,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "control-systems",
                 "topic": "Block Diagrams",
                 "search_term": "block diagrams",
-                "page_number": 487
+                "page_number": null
             }
         }
     ],
@@ -29634,7 +29634,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "digital-systems",
                 "topic": "Logic Gates",
                 "search_term": "logic gates",
-                "page_number": 487
+                "page_number": null
             }
         },
         {
@@ -29828,7 +29828,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "digital-systems",
                 "topic": "Logic Gates",
                 "search_term": "logic gates",
-                "page_number": 487
+                "page_number": null
             }
         },
         {
@@ -31153,7 +31153,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "civil",
                 "topic": "Transportation Engineering",
                 "search_term": "transportation engineering",
-                "page_number": 484
+                "page_number": null
             }
         },
         {
@@ -31198,7 +31198,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "civil",
                 "topic": "Structural Engineering",
                 "search_term": "structural engineering",
-                "page_number": 484
+                "page_number": null
             }
         },
         {
@@ -31295,7 +31295,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "civil",
                 "topic": "Engineering Ethics",
                 "search_term": "engineering ethics",
-                "page_number": 498
+                "page_number": null
             }
         },
         {
@@ -32109,7 +32109,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Environmental Engineering",
                 "topic": "Water and Wastewater Treatment",
                 "search_term": "water and wastewater treatment",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -32162,7 +32162,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "Environmental Engineering",
                 "topic": "Water Quality",
                 "search_term": "water quality",
-                "page_number": 483
+                "page_number": null
             }
         },
         {
@@ -32947,7 +32947,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "industrial",
                 "topic": "Value Engineering",
                 "search_term": "value engineering",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -32996,7 +32996,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "industrial",
                 "topic": "Work Measurement",
                 "search_term": "work measurement",
-                "page_number": 492
+                "page_number": null
             }
         },
         {
@@ -33205,7 +33205,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "electrical-computer",
                 "topic": "Microprocessors",
                 "search_term": "microprocessors",
-                "page_number": 487
+                "page_number": null
             }
         },
         {
@@ -33398,7 +33398,7 @@ const ADVANCED_QUESTIONS = {
                 "section": "electrical-computer",
                 "topic": "Data Acquisition",
                 "search_term": "data acquisition",
-                "page_number": 486
+                "page_number": null
             }
         },
         {

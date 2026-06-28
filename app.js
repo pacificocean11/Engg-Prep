@@ -1072,6 +1072,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             }
 
         } catch(e) { console.error('[AdminMsg] Error:', e); }
+
+        // Also render the inbox into the dashboard immediately
+        await renderAdminInbox();
     }
     /** Render inbox in the support-view page */
     /** Render inbox in the support-view page */
@@ -1132,49 +1135,70 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     /** Admin: send a message to a specific user — dual-write for guaranteed delivery */
     async function sendAdminMessage(recipient, body) {
         if (!window.firebaseDb) { alert('Database not connected.'); return; }
-        if (!recipient || !body) { alert('Please fill in both recipient username and message.'); return; }
+        if (!recipient || !body) { alert('Please fill in both recipient username/email and message.'); return; }
 
         const recipientLower = recipient.trim().toLowerCase();
         const newMsg = { body: body.trim(), timestamp: Date.now(), read: false, id: Date.now().toString() };
         const docsUpdated = [];
 
         try {
-            // 1. Scan collection for any doc with matching username field
-            const querySnapshot = await window.firebaseDb.collection('users').get();
+            // 1. Query specifically by username (case-sensitive and lowercase)
+            const userSnap = await window.firebaseDb.collection('users').where('username', '==', recipient).get();
+            const userSnapLower = await window.firebaseDb.collection('users').where('username', '==', recipientLower).get();
+            
+            // 2. Query specifically by email
+            const emailSnap = await window.firebaseDb.collection('users').where('email', '==', recipientLower).get();
+            
             const updatePromises = [];
+            const processedDocs = new Set();
 
-            querySnapshot.forEach(doc => {
-                const data = doc.data();
-                if (data && data.username && data.username.toLowerCase() === recipientLower) {
-                    const existing = data.adminMessages || [];
-                    let updated = [...existing, newMsg];
-                    if (updated.length > 5) updated = updated.slice(-5);
-                    updatePromises.push(doc.ref.update({ adminMessages: updated }));
-                    docsUpdated.push(doc.id);
+            const processSnap = (snap) => {
+                if (snap && !snap.empty) {
+                    snap.forEach(doc => {
+                        if (!processedDocs.has(doc.id)) {
+                            const data = doc.data();
+                            const existing = data.adminMessages || [];
+                            let updated = [...existing, newMsg];
+                            if (updated.length > 5) updated = updated.slice(-5);
+                            updatePromises.push(doc.ref.set({ adminMessages: updated }, { merge: true }));
+                            docsUpdated.push(doc.id);
+                            processedDocs.add(doc.id);
+                        }
+                    });
                 }
-            });
+            };
 
-            // 2. ALSO write to the username-keyed document directly (dual-write)
-            const usernameDoc = await window.firebaseDb.collection('users').doc(recipientLower).get();
-            if (usernameDoc.exists && !docsUpdated.includes(usernameDoc.id)) {
-                const existing = usernameDoc.data().adminMessages || [];
+            processSnap(userSnap);
+            processSnap(userSnapLower);
+            processSnap(emailSnap);
+
+            // 2. ALSO write to the direct document ID (dual-write backup)
+            const recipientDoc = await window.firebaseDb.collection('users').doc(recipientLower).get();
+            if (recipientDoc.exists && !docsUpdated.includes(recipientDoc.id)) {
+                const existing = recipientDoc.data().adminMessages || [];
                 let updated = [...existing, newMsg];
                 if (updated.length > 5) updated = updated.slice(-5);
-                updatePromises.push(usernameDoc.ref.update({ adminMessages: updated }));
-                docsUpdated.push(usernameDoc.id);
+                updatePromises.push(recipientDoc.ref.set({ adminMessages: updated }, { merge: true }));
+                docsUpdated.push(recipientDoc.id);
             }
 
             if (updatePromises.length === 0) {
-                alert('User "' + recipient + '" not found. Make sure the username is spelled exactly as registered.');
+                alert('User "' + recipient + '" not found. Make sure the username or email is spelled correctly.');
                 return;
             }
 
             await Promise.all(updatePromises);
             console.log('[AdminMsg] Message written to docs:', docsUpdated);
-            alert('✅ Message sent to ' + recipient + ' successfully! (Written to ' + docsUpdated.length + ' document(s))');
+            alert('✅ Message sent to ' + recipient + ' successfully! (Delivered to ' + docsUpdated.length + ' profile(s))');
         } catch(e) {
             console.error('Error sending admin message:', e);
-            alert('Error sending message: ' + e.message);
+            let diagUid = "NULL (Not logged into Firebase)";
+            let diagEmail = "NULL";
+            if (window.firebase && window.firebase.auth && window.firebase.auth().currentUser) {
+                diagUid = window.firebase.auth().currentUser.uid;
+                diagEmail = window.firebase.auth().currentUser.email;
+            }
+            alert('Firebase rejected the message due to rules.\n\nError: ' + e.message + '\n\nYOUR CURRENT LOGIN STATE:\nUID: ' + diagUid + '\nEmail: ' + diagEmail + '\n\nIf your UID does not match the rules, or is NULL, Firebase will block you.');
         }
     }
         function setupAdminListeners() {
@@ -1885,6 +1909,54 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     }
                 });
             }
+        }
+
+        // Diagnostic Performance Report (NCEES Style)
+        const diagnosticTbody = document.getElementById('diagnostic-report-body');
+        if (diagnosticTbody) {
+            const subjectStats = {};
+            state.subjects.forEach(s => {
+                subjectStats[s.id] = { name: s.name, correct: 0, attempted: 0 };
+            });
+
+            state.recentActivity.forEach(a => {
+                if (a.isMockExam) return;
+                const sid = a.minimalSnapshot?.subjectId;
+                if (sid && subjectStats[sid]) {
+                    subjectStats[sid].correct += (a.score || 0);
+                    subjectStats[sid].attempted += (a.attempted || 0);
+                }
+            });
+
+            const diagnosticSubjects = state.subjects.map(s => subjectStats[s.id]);
+            let html = '';
+
+            if (!diagnosticSubjects.some(s => s.attempted > 0)) {
+                html = `<tr><td colspan="3" class="text-center py-12 text-slate-400 dark:text-slate-500 text-sm font-medium">No diagnostic data available.<br>Complete a quiz to generate your report.</td></tr>`;
+            } else {
+                diagnosticSubjects.forEach(s => {
+                    const accuracy = s.attempted > 0 ? Math.round((s.correct / s.attempted) * 100) : 0;
+                    const barColor = accuracy >= 70 ? 'bg-emerald-500' : (accuracy >= 50 ? 'bg-amber-500' : 'bg-red-500');
+                    const widthVal = s.attempted === 0 ? 0 : accuracy; // 0 if unattempted
+                    
+                    html += `
+                    <tr class="border-b border-slate-100 dark:border-slate-800/30 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors group">
+                        <td class="py-4 px-2 text-sm font-bold text-slate-800 dark:text-slate-200">${s.name}</td>
+                        <td class="py-4 px-2 text-sm text-slate-600 dark:text-slate-400 text-center font-mono font-bold">${s.attempted}</td>
+                        <td class="py-4 px-2 relative">
+                            <!-- Continuous Dashed Target Line -->
+                            <div class="absolute top-0 bottom-0 left-[70%] w-0 border-l-2 border-dashed border-black dark:border-white z-20 opacity-80 ml-2 pointer-events-none"></div>
+                            
+                            <!-- Progress Bar Container -->
+                            <div class="w-full h-3 bg-slate-200 dark:bg-slate-700/50 rounded-full relative overflow-hidden shadow-inner z-10">
+                                <!-- Performance Bar -->
+                                <div class="h-full ${barColor} rounded-full relative transition-all duration-1000 ease-out" style="width: ${widthVal}%"></div>
+                            </div>
+                        </td>
+                    </tr>`;
+                });
+            }
+            diagnosticTbody.innerHTML = html;
         }
     }
     
@@ -4387,6 +4459,73 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         }
     })();
 
+    window.shareDiagnosticReport = async function() {
+        try {
+            if (typeof html2canvas === 'undefined') {
+                window.showToast("Error", "Screenshot tool is still loading...", "error");
+                return;
+            }
+            
+            window.showToast("Generating...", "Creating a snapshot of your report...", "refresh");
+            
+            const captureElement = document.getElementById('diagnostic-report-card');
+            
+            // Briefly hide the share button from the screenshot
+            const shareBtn = captureElement.querySelector('button');
+            if(shareBtn) shareBtn.style.opacity = '0';
+
+            const canvas = await html2canvas(captureElement, {
+                scale: 2,
+                backgroundColor: null,
+                useCORS: true,
+                allowTaint: true
+            });
+            
+            if(shareBtn) shareBtn.style.opacity = '1';
+
+            canvas.toBlob(async (blob) => {
+                if (!blob) return;
+                
+                const file = new File([blob], `ENGG_tv_Diagnostic_${(state.user.username || 'Student').replace(/\s+/g, '_')}.png`, { type: 'image/png' });
+                const shareData = {
+                    title: 'My FE Exam Diagnostic Report',
+                    text: `I am tracking my FE Exam readiness using the NCEES diagnostic format on ENGG.tv! 🚀\n\nStart studying for free: https://pacificocean11.github.io/Engg-Prep\n\n#FEExam #Engineering #ENGGtv`,
+                    files: [file]
+                };
+
+                if (navigator.canShare && navigator.canShare(shareData)) {
+                    try {
+                        await navigator.share(shareData);
+                        window.showToast("Shared!", "Report shared successfully.", "check_circle");
+                    } catch (err) {
+                        if (err.name !== 'AbortError') {
+                            downloadCanvasAsImage(canvas, file.name);
+                        }
+                    }
+                } else {
+                    downloadCanvasAsImage(canvas, file.name);
+                }
+            });
+            
+            function downloadCanvasAsImage(canvas, filename) {
+                const link = document.createElement('a');
+                link.download = filename;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                window.showToast("Report Downloaded!", "You can now post this image on LinkedIn.", "check_circle");
+                
+                const caption = `I am tracking my FE Exam readiness using the NCEES diagnostic format on ENGG.tv! 🚀\n\nStart studying for free: https://pacificocean11.github.io/Engg-Prep\n\n#FEExam #Engineering #ENGGtv`;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(caption).catch(e => console.log('Clipboard failed', e));
+                }
+            }
+            
+        } catch (error) {
+            console.error("Error generating report snapshot:", error);
+            window.showToast("Error", "Could not generate report image.", "error");
+        }
+    };
+
 
     // Offline Sync Trigger
     window.triggerOfflineSync = function() {
@@ -4418,6 +4557,28 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     };
 
     
+    // ===== NATIVE SHARE API =====
+    window.shareApp = async function() {
+        const shareData = {
+            title: 'Engg.tv - Engineering Exam Prep',
+            text: 'I\'m using Engg.tv to study for my FE Exam! It has thousands of practice questions, step-by-step solutions, and it\'s completely free. Check it out:',
+            url: 'https://pacificocean11.github.io/Engg-Prep'
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+                showToast('Shared successfully!', 'Thanks for spreading the word.', 'celebration');
+            } else {
+                // Fallback: Copy to clipboard
+                await navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+                showToast('Link copied!', 'Share it with your classmates.', 'content_copy');
+            }
+        } catch (err) {
+            console.error('Error sharing:', err);
+        }
+    };
+
 // Extracted to js/global-search.js
 
 
