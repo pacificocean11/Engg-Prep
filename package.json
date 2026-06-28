@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "npx http-server -p 8000 -c-1",
+    "sync": "node scripts/sync-assets.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

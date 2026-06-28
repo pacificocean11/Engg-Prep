@@ -5,7 +5,7 @@ ENGG.tv - Platform Feature List
 ----------------------------------
 - Secure Firebase Authentication (Email/Password & Guest Mode)
 - Customizable User Profiles (Avatar selection, Discipline tracking, Country, Dynamic Name Editor)
-- Custom Avatar Upload (Client-side Canvas compression to base64, synced across devices)
+- Custom Avatar Upload & Rendering (Client-side Canvas compression to base64, dynamically synchronized across Header, Settings, and Account Info panels)
 - Persistent Cloud Synchronization (Auto-sync progress across Desktop/Mobile/Web)
 - Legacy Data Migration (Self-healing data restoration for legacy accounts)
 
@@ -20,13 +20,13 @@ ENGG.tv - Platform Feature List
 
 3. CORE STUDY & QUIZ ENGINE
 ----------------------------------
-- Dual Difficulty Question Banks (Standard 'questions.js' & 'advanced_questions.js')
+- Dual Difficulty Question Banks (Standard 'questions.js' & 'advanced_questions.js' synced with unified correctness metadata)
 - Global Deep Search Engine (Fuzzy, debounced searching across all question banks with MathJax support)
 - Digital Scratchpad (Floating engineering grid canvas with pen, eraser, and clear tools for manual calculations)
 - Weakness Analyzer (AI-driven tool to pinpoint weak topics and recommend paths)
 - Interactive Quiz UI (Flagging questions, semantic question maps, navigation)
 - Haptic Feedback & Micro-animations (Vibration pulses and CSS animations on answers)
-- Detailed Solution Breakdowns (Step-by-step logic for incorrect answers)
+- Detailed Solution Breakdowns (Step-by-step logic for incorrect answers, with guaranteed final_answer metadata resolution)
 - Video Integration (Embedded Vimeo video explanations for complex problems)
 - Text-to-Speech (TTS) Engine (Reads questions and solutions aloud for accessibility)
 - Focus Zone Dashboard (Quickly resume the last studied topic)

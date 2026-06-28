@@ -2,6 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
 // Extracted to js/particles.js
 
+    // ==========================================================
+    // ANNOUNCEMENT CONFIGURATION
+    // Update this block for every new upcoming lecture/event
+    // ==========================================================
+    const ANNOUNCEMENT_CONFIG = {
+        expiryDate: '2026-06-07T00:00:00', // Set to the day AFTER the event
+        dateLabel: 'Saturday, 6th June 2026',
+        title: 'FE Exam Revision Series: Fluid Mechanics',
+        posterUrl: 'https://drive.google.com/file/d/1EJYL07_m1vetRmmnz96TVA5P4tTs7AKC/preview',
+        registrationMessage: 'Registration link will be sent to your email 24 hours before the lecture.'
+    };
+
 // Determine the logged-in user first to use for specific storage keys
     const loggedInUser = (() => {
         try {
@@ -283,6 +295,103 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     const circleBg = document.getElementById('overall-progress-circle');
     const textDisplay = document.getElementById('overall-progress-text');
     const circleDisplay = document.getElementById('overall-progress-circle-text');
+
+    // Cloud Sync DOM Elements
+    const syncIndicator = document.getElementById('cloud-sync-indicator');
+    const syncIcon = document.getElementById('sync-icon');
+    const syncText = document.getElementById('sync-text');
+    const syncDot = document.getElementById('sync-dot');
+
+    function updateSyncStatus(status) {
+        if (!syncIndicator || !syncIcon || !syncText || !syncDot) return;
+        
+        // Reset animation/color classes
+        syncIcon.className = "material-symbols-outlined text-[16px]";
+        syncText.className = "hidden sm:inline text-[10px] tracking-wider uppercase font-bold";
+        syncDot.className = "w-2.5 h-2.5 rounded-full border border-white dark:border-slate-800 transition-all duration-300";
+        
+        if (status === 'synced') {
+            syncIcon.textContent = "cloud_done";
+            syncIcon.classList.add("text-green-500", "dark:text-green-400");
+            syncText.textContent = "Synced";
+            syncText.classList.add("text-green-600", "dark:text-green-400");
+            syncDot.classList.add("bg-green-500", "shadow-[0_0_8px_#22c55e]");
+            syncIndicator.title = "Your progress is fully synchronized with Firebase.";
+        } else if (status === 'syncing') {
+            syncIcon.textContent = "sync";
+            syncIcon.classList.add("text-amber-500", "dark:text-amber-400", "animate-spin");
+            syncText.textContent = "Saving...";
+            syncText.classList.add("text-amber-600", "dark:text-amber-400");
+            syncDot.classList.add("bg-amber-500", "animate-pulse");
+            syncIndicator.title = "Saving your quiz progress to Firebase...";
+        } else if (status === 'offline') {
+            syncIcon.textContent = "cloud_off";
+            syncIcon.classList.add("text-slate-400", "dark:text-slate-500");
+            syncText.textContent = "Offline";
+            syncText.classList.add("text-slate-500", "dark:text-slate-400");
+            syncDot.classList.add("bg-slate-400", "dark:bg-slate-600");
+            syncIndicator.title = "You are offline. Progress is saved locally in your browser.";
+        } else if (status === 'error') {
+            syncIcon.textContent = "cloud_off";
+            syncIcon.classList.add("text-rose-500", "dark:text-rose-400");
+            syncText.textContent = "Sync Error";
+            syncText.classList.add("text-rose-600", "dark:text-rose-400");
+            syncDot.classList.add("bg-rose-500", "animate-pulse");
+            syncIndicator.title = "Failed to sync progress with Firebase. Check your connection.";
+        } else if (status === 'local') {
+            syncIcon.textContent = "cloud_off";
+            syncIcon.classList.add("text-slate-400", "dark:text-slate-500");
+            syncText.textContent = "Local Only";
+            syncText.classList.add("text-slate-500", "dark:text-slate-400");
+            syncDot.classList.add("bg-slate-300", "dark:bg-slate-700");
+            syncIndicator.title = "Guest mode. Progress is saved locally in your browser.";
+        }
+    }
+
+    let firestoreSyncUnsubscribe = null;
+
+    function setupFirestoreSyncListener(docId) {
+        if (firestoreSyncUnsubscribe) {
+            firestoreSyncUnsubscribe();
+            firestoreSyncUnsubscribe = null;
+        }
+
+        if (!docId || docId === 'guest') {
+            updateSyncStatus('local');
+            return;
+        }
+
+        if (!window.firebaseDb) {
+            console.warn("⚠️ Firebase DB not initialized yet for sync listener.");
+            updateSyncStatus('local');
+            return;
+        }
+
+        console.log(`📡 Setting up Firestore sync listener for document: ${docId}`);
+        
+        try {
+            updateSyncStatus(navigator.onLine ? 'syncing' : 'offline');
+            firestoreSyncUnsubscribe = window.firebaseDb.collection("users").doc(docId)
+                .onSnapshot({ includeMetadataChanges: true }, (docSnap) => {
+                    if (!navigator.onLine) {
+                        updateSyncStatus('offline');
+                        return;
+                    }
+                    
+                    if (docSnap.metadata.hasPendingWrites) {
+                        updateSyncStatus('syncing');
+                    } else {
+                        updateSyncStatus('synced');
+                    }
+                }, (error) => {
+                    console.error("❌ Firestore sync listener error:", error);
+                    updateSyncStatus('error');
+                });
+        } catch (e) {
+            console.error("❌ Failed to attach Firestore sync listener:", e);
+            updateSyncStatus('error');
+        }
+    }
 
     // Firebase Data Synchronization
     async function syncToFirebase() {
@@ -714,6 +823,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             });
         }
     }
+    window.addPoints = addPoints;
 
     // Initialization
     function init() {
@@ -724,9 +834,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Robust Offline Mode Listeners
         window.addEventListener('online', () => {
             window.showToast("Back Online", "Your progress will now sync with the cloud.", "wifi");
+            if (state.user) {
+                setupFirestoreSyncListener(state.user.uid || state.user.username);
+                syncToFirebase();
+            }
         });
         window.addEventListener('offline', () => {
             window.showToast("Offline Mode Active", "You are offline. Progress is saved locally and will sync when reconnected.", "wifi_off");
+            updateSyncStatus('offline');
         });
 
         renderSubjects();
@@ -769,6 +884,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             console.log("🔄 Updated local user state with restored Firebase UID:", user.uid);
                         }
                         
+                        setupFirestoreSyncListener(state.user.uid || state.user.username);
                         try {
                             await loadFromFirebase();
                             await syncToFirebase();
@@ -793,6 +909,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             discipline: 'Mechanical'
                         };
                         localStorage.setItem('enggtv_user', JSON.stringify(state.user));
+                        setupFirestoreSyncListener(state.user.uid || state.user.username);
                         try {
                             await loadFromFirebase();
                             await syncToFirebase();
@@ -801,8 +918,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
                         }
                     }
+                } else {
+                    updateSyncStatus('local');
                 }
             });
+        } else {
+            updateSyncStatus('local');
         }
 
         initTilt();
@@ -1388,6 +1509,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             }
             if (pageId === 'account-info-view') {
                 initAccountInfo();
+                applyAvatar(); // Refresh avatar on account info page
                 const adminSelector = document.getElementById('admin-discipline-selector');
                 if (adminSelector) {
                     adminSelector.classList.remove('hidden');
@@ -1640,58 +1762,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         loadQuestion();
     };
 
-    function updateGamificationUI() {
-        const pointsDisplay = document.getElementById('user-points-display');
-        const levelDisplay = document.getElementById('user-level-display');
-        const levelBadge = document.getElementById('level-badge-display');
-        
-        if (pointsDisplay) pointsDisplay.textContent = state.userPoints;
-        
-        // Mock levels
-        let level = 'Apprentice';
-        if (state.userPoints >= 1000) level = 'Exam Ready';
-        else if (state.userPoints >= 500) level = 'Master';
-        else if (state.userPoints >= 250) level = 'Lead Engineer';
-        else if (state.userPoints >= 100) level = 'Senior Engineer';
-        else if (state.userPoints >= 50) level = 'Dedicated';
-        
-        if (levelDisplay) levelDisplay.textContent = level;
-        if (levelBadge) levelBadge.textContent = level;
 
-        // Update Exam Lock status
-        const examLock = document.getElementById('exam-lock-overlay');
-        const examNav = document.querySelector('[data-page="exam"]');
-        const examUnlockProgress = document.getElementById('exam-unlock-progress');
-        const examUnlockText = document.getElementById('exam-unlock-text');
-        
-        const examThreshold = 100;
-        const isExamUnlocked = state.userPoints >= examThreshold;
-        
-        if (examLock) {
-            if (isExamUnlocked) {
-                examLock.classList.add('hidden');
-            } else {
-                examLock.classList.remove('hidden');
-                if (examUnlockProgress) {
-                    const progress = Math.min(100, Math.round((state.userPoints / examThreshold) * 100));
-                    examUnlockProgress.style.width = `${progress}%`;
-                }
-                if (examUnlockText) {
-                    examUnlockText.textContent = `${state.userPoints}/${examThreshold} PTS to Unlock`;
-                }
-            }
-        }
-        
-        if (examNav) {
-            if (isExamUnlocked) {
-                examNav.style.opacity = "1";
-                examNav.style.pointerEvents = "auto";
-            } else {
-                examNav.style.opacity = "0.5";
-                examNav.style.pointerEvents = "none";
-            }
-        }
-    }
 
     function initCharts(overallPercentage, range = '7d') {
         state.intensityRange = range;
@@ -2418,228 +2489,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         nextBtn.classList.remove('hidden');
     }
 
-    // ================================================================
-    // TEXT-TO-SPEECH (TTS) STATE & UTILITIES
-    // ================================================================
-    const ttsState = {
-        activeUtterance: null,
-        isPlayingQuestion: false,
-        isPlayingExplanation: false
-    };
-
-    window.stopSpeech = function() {
-        if (window.speechSynthesis) {
-            window.speechSynthesis.cancel();
-        }
-        ttsState.activeUtterance = null;
-        ttsState.isPlayingQuestion = false;
-        ttsState.isPlayingExplanation = false;
-        updateTTSButtonsState();
-    };
-
-    function updateTTSButtonsState() {
-        const speakQBtn = document.getElementById('speak-question-btn');
-        if (speakQBtn) {
-            if (ttsState.isPlayingQuestion) {
-                speakQBtn.classList.add('tts-playing');
-                speakQBtn.innerHTML = `<span class="material-symbols-outlined">volume_off</span><span>Stop</span>`;
-            } else {
-                speakQBtn.classList.remove('tts-playing');
-                speakQBtn.innerHTML = `<span class="material-symbols-outlined">volume_up</span><span>Listen</span>`;
-            }
-        }
-
-        const speakEBtn = document.getElementById('speak-explanation-btn');
-        if (speakEBtn) {
-            if (ttsState.isPlayingExplanation) {
-                speakEBtn.classList.add('tts-playing');
-                speakEBtn.innerHTML = `<span class="material-symbols-outlined">volume_off</span><span>Stop</span>`;
-            } else {
-                speakEBtn.classList.remove('tts-playing');
-                speakEBtn.innerHTML = `<span class="material-symbols-outlined">volume_up</span><span>Listen</span>`;
-            }
-        }
-    }
-
-    function cleanTextForSpeech(htmlOrText) {
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlOrText;
-        let text = tempDiv.textContent || tempDiv.innerText || '';
-
-        // Translate common LaTeX mathematical notations to plain words
-        text = text.replace(/\\frac\s*{(.*?)}{(.*?)}/g, '($1 divided by $2)');
-        text = text.replace(/\\sqrt\s*{(.*?)}/g, 'square root of $1');
-        text = text.replace(/([a-zA-Z0-9]+)_([a-zA-Z0-9]+)/g, '$1 sub $2');
-        text = text.replace(/([a-zA-Z0-9]+)_{([a-zA-Z0-9\s+-]+)}/g, '$1 sub $2');
-        text = text.replace(/([a-zA-Z0-9]+)\^2/g, '$1 squared');
-        text = text.replace(/([a-zA-Z0-9]+)\^3/g, '$1 cubed');
-        text = text.replace(/([a-zA-Z0-9]+)\^{([a-zA-Z0-9\s+-]+)}/g, '$1 to the power of $2');
-        text = text.replace(/([a-zA-Z0-9]+)\^([a-zA-Z0-9]+)/g, '$1 to the power of $2');
-
-        const mathReplacements = {
-            '\\\\Delta': 'delta',
-            '\\\\delta': 'delta',
-            '\\\\pi': 'pi',
-            '\\\\theta': 'theta',
-            '\\\\alpha': 'alpha',
-            '\\\\beta': 'beta',
-            '\\\\gamma': 'gamma',
-            '\\\\sigma': 'sigma',
-            '\\\\mu': 'mu',
-            '\\\\lambda': 'lambda',
-            '\\\\omega': 'omega',
-            '\\\\phi': 'phi',
-            '\\\\cdot': ' times ',
-            '\\\\times': ' times ',
-            '\\\\approx': ' approximately ',
-            '\\\\infty': 'infinity',
-            '\\\\le': ' less than or equal to ',
-            '\\\\ge': ' greater than or equal to ',
-            '\\\\pm': ' plus or minus ',
-            '\\\\neq': ' not equal to ',
-            '\\\\partial': 'partial',
-            '\\\\int': 'integral',
-            '\\\\sum': 'summation',
-            '\\*': ' times ',
-            '\\+': ' plus ',
-            '\\-': ' minus ',
-            '\\/': ' divided by ',
-            '\\\\rho': 'rho',
-            '\\\\tau': 'tau',
-            '\\\\eta': 'eta',
-            '\\\\epsilon': 'epsilon',
-            '\\\\nabla': 'nabla',
-            '\\\\to': ' goes to ',
-            '\\\\rightarrow': ' goes to ',
-            '\\\\ln': 'natural log of ',
-            '\\\\log': 'log of ',
-            '\\\\sin': 'sine ',
-            '\\\\cos': 'cosine ',
-            '\\\\tan': 'tangent ',
-            '\\\\cot': 'cotangent ',
-            '\\\\sec': 'secant ',
-            '\\\\csc': 'cosecant ',
-            '\\\\sinh': 'hyperbolic sine ',
-            '\\\\cosh': 'hyperbolic cosine ',
-            '\\\\tanh': 'hyperbolic tangent '
-        };
-
-        for (const [pattern, replacement] of Object.entries(mathReplacements)) {
-            const regex = new RegExp(pattern, 'g');
-            text = text.replace(regex, replacement);
-        }
-
-        text = text.replace(/[\$\{\}\\\(\)\[\]]/g, ' ');
-        text = text.replace(/\s+/g, ' ').trim();
-        return text;
-    }
-
-    function speakText(text, onEndCallback, onErrorCallback) {
-        if (!window.speechSynthesis) {
-            alert("Text-to-speech is not supported in this browser.");
-            if (onErrorCallback) onErrorCallback();
-            return;
-        }
-
-        window.speechSynthesis.cancel();
-
-        const utterance = new SpeechSynthesisUtterance(text);
-        const voices = window.speechSynthesis.getVoices();
-        const preferredVoice = voices.find(v => 
-            v.lang.startsWith('en') && 
-            (v.name.includes('Google') || v.name.includes('Natural'))
-        ) || voices.find(v => v.lang.startsWith('en'));
-        
-        if (preferredVoice) {
-            utterance.voice = preferredVoice;
-        }
-        utterance.rate = 1.0;
-        utterance.pitch = 1.0;
-
-        utterance.onend = () => {
-            if (onEndCallback) onEndCallback();
-        };
-
-        utterance.onerror = (e) => {
-            console.error("TTS error:", e);
-            if (onErrorCallback) onErrorCallback();
-        };
-
-        ttsState.activeUtterance = utterance;
-        window.speechSynthesis.speak(utterance);
-    }
-
-    function toggleSpeakQuestion() {
-        if (ttsState.isPlayingQuestion) {
-            window.stopSpeech();
-        } else {
-            window.stopSpeech();
-            const question = state.quizQuestions[state.currentQuestionIndex];
-            if (!question) return;
-
-            let textToSpeak = "Question: " + cleanTextForSpeech(question.question) + ". ";
-            if (question.options && question.options.length > 0) {
-                textToSpeak += "Options: ";
-                question.options.forEach((opt) => {
-                    textToSpeak += "Option " + opt.label + ": " + cleanTextForSpeech(opt.text) + ". ";
-                });
-            }
-
-            ttsState.isPlayingQuestion = true;
-            updateTTSButtonsState();
-
-            speakText(textToSpeak, () => {
-                ttsState.isPlayingQuestion = false;
-                updateTTSButtonsState();
-            }, () => {
-                ttsState.isPlayingQuestion = false;
-                updateTTSButtonsState();
-            });
-        }
-    }
-
-    function toggleSpeakExplanation() {
-        if (ttsState.isPlayingExplanation) {
-            window.stopSpeech();
-        } else {
-            window.stopSpeech();
-            const question = state.quizQuestions[state.currentQuestionIndex];
-            if (!question) return;
-
-            let textToSpeak = "Solution Explanation. ";
-            if (question.solution && question.solution.steps) {
-                question.solution.steps.forEach((step, idx) => {
-                    textToSpeak += "Step " + (idx + 1) + ": " + cleanTextForSpeech(step.title) + ". " + cleanTextForSpeech(step.content) + ". ";
-                });
-            }
-            if (question.solution && question.solution.final_answer) {
-                textToSpeak += "Final Answer: " + cleanTextForSpeech(question.solution.final_answer) + ".";
-            }
-
-            ttsState.isPlayingExplanation = true;
-            updateTTSButtonsState();
-
-            speakText(textToSpeak, () => {
-                ttsState.isPlayingExplanation = false;
-                updateTTSButtonsState();
-            }, () => {
-                ttsState.isPlayingExplanation = false;
-                updateTTSButtonsState();
-            });
-        }
-    }
-
     function setupQuizListeners() {
-        const speakQBtn = document.getElementById('speak-question-btn');
-        if (speakQBtn) {
-            speakQBtn.addEventListener('click', toggleSpeakQuestion);
-        }
-
-        const speakEBtn = document.getElementById('speak-explanation-btn');
-        if (speakEBtn) {
-            speakEBtn.addEventListener('click', toggleSpeakExplanation);
-        }
-
         if (finishBtn) {
             finishBtn.addEventListener('click', () => {
                 if (confirm("Are you sure you want to finish the quiz and see your results?")) {
@@ -3360,6 +3210,26 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     }
 
     function updateGamificationUI() {
+        const points = state.userPoints;
+
+        const pointsDisplay = document.getElementById('user-points-display');
+        const levelDisplay = document.getElementById('user-level-display');
+        const levelBadgeDisplay = document.getElementById('level-badge-display');
+        
+        if (pointsDisplay) pointsDisplay.textContent = points;
+        
+        // Mock levels
+        let levelName = 'Apprentice';
+        if (points >= 1000) levelName = 'Exam Ready';
+        else if (points >= 500) levelName = 'Master';
+        else if (points >= 250) levelName = 'Lead Engineer';
+        else if (points >= 100) levelName = 'Senior Engineer';
+        else if (points >= 50) levelName = 'Dedicated';
+        
+        if (levelDisplay) levelDisplay.textContent = levelName;
+        if (levelBadgeDisplay) levelBadgeDisplay.textContent = levelName;
+
+
         const annSection = document.getElementById('announcement-section');
         const annLocked = document.getElementById('announcement-locked');
         const pointsProgress = document.getElementById('points-progress-bar');
@@ -3367,27 +3237,72 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         const settingsPoints = document.getElementById('settings-points-display');
         const pointsToNextLevel = document.getElementById('points-to-next-level');
 
-        const points = state.userPoints;
+        // Use the global ANNOUNCEMENT_CONFIG defined at the top of the file
+        const isAnnouncementExpired = new Date() > new Date(ANNOUNCEMENT_CONFIG.expiryDate);
+
         const required = 50;
 
         // Note: Removed state.user.tier === 'premium' bypass to make point-based progression meaningful
         const isUnlocked = points >= required || (state.user.username && state.user.username.toLowerCase() === 'admin') || state.user.role === 'admin';
 
         if (annSection && annLocked) {
-            if (isUnlocked) {
-                annSection.classList.remove('hidden');
+            if (isAnnouncementExpired) {
+                // If expired, completely hide the announcement cards from the dashboard
+                annSection.classList.add('hidden');
                 annLocked.classList.add('hidden');
             } else {
-                annSection.classList.add('hidden');
-                annLocked.classList.remove('hidden');
-                
-                if (pointsProgress) {
-                    const percent = Math.min(100, (points / required) * 100);
-                    pointsProgress.style.width = `${percent}%`;
+                // Dynamically update dashboard announcement title
+                const annTitleDisplay = annSection.querySelector('.font-body-sm');
+                if (annTitleDisplay) annTitleDisplay.textContent = `Next Lecture: ${ANNOUNCEMENT_CONFIG.title.split(':')[0]}`; // Keep it short for dashboard
+                if (isUnlocked) {
+                    annSection.classList.remove('hidden');
+                    annLocked.classList.add('hidden');
+                } else {
+                    annSection.classList.add('hidden');
+                    annLocked.classList.remove('hidden');
+                    
+                    if (pointsProgress) {
+                        const percent = Math.min(100, (points / required) * 100);
+                        pointsProgress.style.width = `${percent}%`;
+                    }
+                    if (pointsNeededText) {
+                        pointsNeededText.textContent = `${points}/${required} Points`;
+                    }
                 }
-                if (pointsNeededText) {
-                    pointsNeededText.textContent = `${points}/${required} Points`;
-                }
+            }
+        }
+        
+        // Handle the actual announcements view content based on expiry
+        const annPosterContainer = document.querySelector('.announcement-poster-container');
+        if (annPosterContainer) {
+            if (isAnnouncementExpired && !annPosterContainer.dataset.expiredHandled) {
+                annPosterContainer.dataset.expiredHandled = 'true';
+                annPosterContainer.innerHTML = `
+                    <div class="glass-card rounded-[32px] p-12 text-center border border-white/20 shadow-xl flex flex-col items-center justify-center">
+                        <div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-[28px] flex items-center justify-center mb-6 shadow-inner">
+                            <span class="material-symbols-outlined text-slate-400 text-4xl">event_busy</span>
+                        </div>
+                        <h3 class="font-display-lg text-2xl text-slate-800 dark:text-white mb-2">No Upcoming Events</h3>
+                        <p class="text-slate-500 dark:text-slate-400 max-w-sm mx-auto">There are currently no scheduled live lectures. We will notify you when the next revision series is announced!</p>
+                    </div>
+                `;
+            } else if (!isAnnouncementExpired && annPosterContainer.dataset.expiredHandled !== 'false') {
+                // Dynamically render the active poster from config
+                annPosterContainer.dataset.expiredHandled = 'false';
+                annPosterContainer.innerHTML = `
+                    <div class="glass-card overflow-hidden rounded-[32px] border-4 border-white/20 shadow-2xl relative">
+                        <iframe id="announcement-poster-img" src="${ANNOUNCEMENT_CONFIG.posterUrl}" allow="autoplay" class="w-full h-auto min-h-[480px] border-0 transition-transform duration-700 group-hover:scale-105"></iframe>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pointer-events-none">
+                            <p class="text-white font-display-lg text-2xl drop-shadow-md">${ANNOUNCEMENT_CONFIG.dateLabel}</p>
+                            <p class="text-white/90 font-body-sm drop-shadow-md">${ANNOUNCEMENT_CONFIG.title}</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex justify-center">
+                        <button class="bg-secondary text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-pink-500/20 active:scale-95 transition-all hover:brightness-110 hover:shadow-pink-500/40" onclick="alert('${ANNOUNCEMENT_CONFIG.registrationMessage}')">
+                            Register for Lecture
+                        </button>
+                    </div>
+                `;
             }
         }
 
@@ -3561,6 +3476,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             }
         }
     }
+    window.updateGamificationUI = updateGamificationUI;
 
     // Settings Functionality
     const btnAccount = document.getElementById('btn-account-info');
@@ -3837,110 +3753,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         });
     }
 
-    // ===== DAILY QUESTS SYSTEM =====
-    const QUESTS = [
-        { id: 'questions_answered', title: 'Daily Grind', desc: 'Answer 15 questions today', target: 15, reward: 5, icon: 'edit_square' },
-        { id: 'perfect_quiz', title: 'Flawless Victory', desc: 'Score 80%+ on any quiz', target: 1, reward: 10, icon: 'verified' },
-        { id: 'srs_review', title: 'Memory Builder', desc: 'Complete an SRS Review', target: 1, reward: 5, icon: 'cycle' }
-    ];
-
-    function getDailyQuestsState() {
-        const today = new Date().toISOString().split('T')[0];
-        const key = `enggtv_quests_${state.user.username}_${today}`;
-        let qState = JSON.parse(localStorage.getItem(key));
-        if (!qState) {
-            qState = { questions_answered: 0, perfect_quiz: 0, srs_review: 0, claimed: {} };
-            localStorage.setItem(key, JSON.stringify(qState));
-        }
-        return { key, qState };
-    }
-
-    window.incrementQuestProgress = function(questId, amount) {
-        const { key, qState } = getDailyQuestsState();
-        if (qState[questId] !== undefined) {
-            const questDef = QUESTS.find(q => q.id === questId);
-            if (qState[questId] < questDef.target) {
-                qState[questId] += amount;
-                if (qState[questId] > questDef.target) qState[questId] = questDef.target;
-                localStorage.setItem(key, JSON.stringify(qState));
-                
-                if (qState[questId] === questDef.target && !qState.claimed[questId]) {
-                    window.showToast("Quest Completed!", `You completed: ${questDef.title}. Claim your points!`, "military_tech");
-                }
-                
-                if (state.currentPage === 'dashboard') renderDailyQuests();
-            }
-        }
-    }
-
-    window.claimQuestReward = function(questId) {
-        const { key, qState } = getDailyQuestsState();
-        if (!qState.claimed[questId]) {
-            const questDef = QUESTS.find(q => q.id === questId);
-            qState.claimed[questId] = true;
-            localStorage.setItem(key, JSON.stringify(qState));
-            addPoints(questDef.reward);
-            window.showToast("Reward Claimed!", `+${questDef.reward} Bonus Points added!`, "stars");
-            renderDailyQuests();
-            syncToFirebase();
-        }
-    };
-
-    function renderDailyQuests() {
-        const container = document.getElementById('daily-quests-list');
-        if (!container) return;
-
-        const { qState } = getDailyQuestsState();
-        
-        container.innerHTML = QUESTS.map(q => {
-            const progress = qState[q.id] || 0;
-            const isCompleted = progress >= q.target;
-            const isClaimed = qState.claimed && qState.claimed[q.id];
-            const pct = Math.min(100, (progress / q.target) * 100);
-            
-            let actionHtml = '';
-            let clickAction = '';
-            let hoverClasses = '';
-            let cardBg = 'bg-white dark:bg-slate-800/80 border-slate-100 dark:border-slate-700';
-            let titleColor = 'text-slate-800 dark:text-slate-100';
-            
-            if (isClaimed) {
-                actionHtml = `<span class="text-[10px] font-black text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full uppercase tracking-widest border border-slate-200 dark:border-slate-700">Claimed</span>`;
-                cardBg = 'bg-emerald-50/50 dark:bg-emerald-900/20 border-emerald-100/50 dark:border-emerald-800/30';
-                titleColor = 'text-slate-500 dark:text-slate-400';
-            } else if (isCompleted) {
-                actionHtml = `<button onclick="claimQuestReward('${q.id}'); event.stopPropagation();" class="text-[10px] font-black text-white bg-gradient-to-r from-amber-500 to-orange-500 px-3 py-1 rounded-full uppercase tracking-widest shadow-md shadow-amber-500/30 active:scale-95 transition-all">Claim +${q.reward}</button>`;
-            } else {
-                actionHtml = `<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400">${progress}/${q.target}</span>`;
-                hoverClasses = 'cursor-pointer hover:border-amber-400/50 hover:bg-amber-50/30 dark:hover:border-amber-500/50 dark:hover:bg-amber-900/10 active:scale-[0.98] transition-all';
-                if (q.id === 'srs_review') {
-                    clickAction = `onclick="const btn = document.getElementById('btn-start-srs-quiz'); if(btn) { btn.click(); }"`;
-                } else {
-                    clickAction = `onclick="window.showToast('Daily Quest', 'Select any topic to start a quiz and earn progress!', 'military_tech'); navigateTo('study');"`;
-                }
-            }
-
-            return `
-                <div ${clickAction} class="${cardBg} rounded-2xl p-3 border ${hoverClasses}">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl ${isCompleted && !isClaimed ? 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400' : 'bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500'} flex items-center justify-center shrink-0 transition-colors">
-                            <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' ${isCompleted ? 1 : 0};">${q.icon}</span>
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <div class="flex items-center justify-between mb-1">
-                                <h5 class="text-sm font-bold ${titleColor} truncate">${q.title}</h5>
-                                ${actionHtml}
-                            </div>
-                            <p class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight mb-2">${q.desc} for +${q.reward} bonus points!</p>
-                            <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full ${isClaimed ? 'bg-slate-300 dark:bg-slate-600' : 'bg-amber-500'} transition-all duration-500 rounded-full" style="width: ${pct}%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
 
     const ACHIEVEMENTS = [
         { id: 'first_point', name: 'First Step', points: 1, icon: 'bolt', description: 'Earn your first point.' },
@@ -4243,8 +4055,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         [headerContainer, settingsContainer, accountInfoContainer].forEach((container, i) => {
             if (!container) return;
+            
+            const isSettings = i > 0;
+            const clickAttrs = isSettings ? 'cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.showPhotoLightbox(this.src)"' : '"';
+
             if (customPic && !savedId) {
-                container.innerHTML = `<img class="w-full h-full object-cover" src="${customPic}" crossorigin="anonymous" />`;
+                container.innerHTML = `<img class="w-full h-full object-cover ${clickAttrs} src="${customPic}" crossorigin="anonymous" />`;
             } else if (preset) {
                 const size = i === 0 ? '22px' : (i === 1 ? '36px' : '48px');
                 container.innerHTML = `
@@ -4255,15 +4071,50 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             } else {
                 // Restore original imgs if no avatar chosen
                 if (i === 0) {
-                    container.innerHTML = `<img id="header-avatar-img" class="w-full h-full object-cover"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4"/>`;
+                    container.innerHTML = `<img id="header-avatar-img" class="w-full h-full object-cover ${clickAttrs}
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4" />`;
                 } else {
-                    container.innerHTML = `<img class="w-full h-full object-cover" alt="Profile"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KvXfnOr12k5SzP6fbV0MWcvNYjQppUc89dWdHwtt0LrMrxWc1UtbF12daBvTIvDM4-Pbiso8pORGGDZgEp95bsmWYDbPdggsVh89FcxWsuzHhPxhY9KM5FxwbYYVVJlRdHw1eVngYCCJYLEwkE1OZnwygR0y-za4B_I1aACLrZJ5_SsP0Uundq_5ePMlIxpXJi2YoSsNZnCF4Mp0shocQ1xiC60lxWTjsK-CY3Md962fc6vAc6Csv8KEhV8gBTOGs4jAoTC5mKjN"/>`;
+                    container.innerHTML = `<img class="w-full h-full object-cover ${clickAttrs} alt="Profile"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KvXfnOr12k5SzP6fbV0MWcvNYjQppUc89dWdHwtt0LrMrxWc1UtbF12daBvTIvDM4-Pbiso8pORGGDZgEp95bsmWYDbPdggsVh89FcxWsuzHhPxhY9KM5FxwbYYVVJlRdHw1eVngYCCJYLEwkE1OZnwygR0y-za4B_I1aACLrZJ5_SsP0Uundq_5ePMlIxpXJi2YoSsNZnCF4Mp0shocQ1xiC60lxWTjsK-CY3Md962fc6vAc6Csv8KEhV8gBTOGs4jAoTC5mKjN" />`;
                 }
             }
         });
     }
+
+    // Photo Lightbox modal functions
+    window.showPhotoLightbox = function(src) {
+        const modal = document.getElementById('photo-lightbox-modal');
+        const img = document.getElementById('photo-lightbox-img');
+        const card = document.getElementById('photo-lightbox-card');
+        if (!modal || !img) return;
+
+        img.src = src;
+        modal.classList.remove('hidden');
+        // Force reflow
+        modal.offsetHeight;
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+        if (card) {
+            card.classList.remove('scale-95');
+            card.classList.add('scale-100');
+        }
+    };
+
+    window.hidePhotoLightbox = function() {
+        const modal = document.getElementById('photo-lightbox-modal');
+        const card = document.getElementById('photo-lightbox-card');
+        if (!modal) return;
+
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        if (card) {
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+        }
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    };
 
     function renderAvatarGrid() {
         const grid = document.getElementById('avatar-options-grid');
@@ -4536,263 +4387,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         }
     })();
 
-    // ================================================================
-    // FEATURE 2: SMART WEAKNESS ANALYZER
-    // ================================================================
-    const WEAKNESS_KEY = () => `enggtv_weakness_${state.user.username}`;
-
-    /**
-     * Called at the end of finishQuiz (hooked below).
-     * Records wrong-answer topic data into localStorage per user.
-     */
-    function recordWeaknessData() {
-        const rawData = (() => {
-            try { return JSON.parse(localStorage.getItem(WEAKNESS_KEY())) || {}; }
-            catch (e) { return {}; }
-        })();
-
-        state.quizQuestions.forEach((q, idx) => {
-            if (!state.submitted[idx]) return;
-            const topicKey  = (q.topic || 'General').trim();
-            const subjectId = q.subjectId || (state.currentSubject && state.currentSubject.id) || 'unknown';
-            const key       = subjectId + '::' + topicKey;
-
-            if (!rawData[key]) rawData[key] = { topic: topicKey, subjectId, wrong: 0, total: 0 };
-            rawData[key].total++;
-            const selectedIdx = state.answers[idx];
-            const isCorrect   = selectedIdx !== null && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
-            if (!isCorrect) rawData[key].wrong++;
-        });
-
-        localStorage.setItem(WEAKNESS_KEY(), JSON.stringify(rawData));
-    }
-
-    // ===== SPACED REPETITION SYSTEM (SRS) =====
-    const SRS_KEY = () => `enggtv_srs_${state.user.username}`;
-    
-    function recordSRS(question, isCorrect) {
-        if (!question || !question.title) return;
-        let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
-        const qId = question.title; // Unique identifier
-
-        let item = srsData[qId] || { interval: 0, nextReview: Date.now() };
-
-        if (isCorrect) {
-            if (item.interval === 0) item.interval = 1;
-            else if (item.interval === 1) item.interval = 3;
-            else if (item.interval === 3) item.interval = 7;
-            else if (item.interval === 7) item.interval = 14;
-            else item.interval = 30; // Max out at 30 days
-        } else {
-            item.interval = 0; // Reset interval to 0 days
-        }
-
-        item.nextReview = Date.now() + (item.interval * 24 * 60 * 60 * 1000);
-        
-        srsData[qId] = item;
-        localStorage.setItem(SRS_KEY(), JSON.stringify(srsData));
-        if (state.currentPage === 'dashboard') renderSRSCard();
-    }
-
-    function renderSRSCard() {
-        const card = document.getElementById('srs-review-card');
-        const dueCountBadge = document.getElementById('srs-due-count');
-        if (!card || !dueCountBadge) return;
-
-        let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
-        const now = Date.now();
-        
-        let dueCount = 0;
-        for (const [key, item] of Object.entries(srsData)) {
-            if (item.nextReview <= now) dueCount++;
-        }
-
-        if (dueCount > 0) {
-            dueCountBadge.textContent = `${dueCount} DUE`;
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    }
-
-    const btnSrs = document.getElementById('btn-start-srs-quiz');
-    if (btnSrs) {
-        btnSrs.addEventListener('click', () => {
-            let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
-            const now = Date.now();
-            let dueTitles = Object.keys(srsData).filter(key => srsData[key].nextReview <= now);
-            
-            if (dueTitles.length === 0) {
-                window.showToast('All Caught Up!', 'There are no questions due for spaced repetition right now. Great job!', 'check_circle');
-                return;
-            }
-
-            let quizPool = [];
-            [QUESTIONS, ADVANCED_QUESTIONS].forEach(bank => {
-                if (bank && typeof bank === 'object') {
-                    Object.values(bank).forEach(subjectArray => {
-                        if (Array.isArray(subjectArray)) {
-                            quizPool = quizPool.concat(subjectArray);
-                        }
-                    });
-                }
-            });
-
-            let srsQuestions = quizPool.filter(q => dueTitles.includes(q.title));
-            srsQuestions.sort(() => 0.5 - Math.random());
-            srsQuestions = srsQuestions.slice(0, 10); // Cap daily review session length
-            
-            if (srsQuestions.length === 0) return;
-
-            state.quizQuestions = srsQuestions;
-            state.currentQuestionIndex = 0;
-            state.answers = new Array(state.quizQuestions.length).fill(null);
-            state.submitted = new Array(state.quizQuestions.length).fill(false);
-            state.flagged   = new Array(state.quizQuestions.length).fill(false);
-            state.confidence = new Array(state.quizQuestions.length).fill(null);
-            state.questionTimes = new Array(state.quizQuestions.length).fill(0);
-            state.questionEnteredAt = Date.now();
-            state.score     = 0;
-            state.secondsElapsed = 0;
-            state.isFinished    = false;
-            state.isMockExam    = false;
-            state.currentSubject = { name: "SRS Daily Review", id: "srs-review" };
-
-            navigateTo('quiz-view');
-            updateQuestionMap();
-            loadQuestion();
-            startTimer();
-        });
-    }
-
-    /**
-     * Renders the Focus Zone card on the dashboard.
-     */
-    function renderFocusZone() {
-        const card      = document.getElementById('focus-zone-card');
-        const listEl    = document.getElementById('weak-topics-list');
-        if (!card || !listEl) return;
-
-        const rawData = (() => {
-            try { return JSON.parse(localStorage.getItem(WEAKNESS_KEY())) || {}; }
-            catch (e) { return {}; }
-        })();
-
-        // Filter: at least 2 attempts, compute error rate
-        const entries = Object.entries(rawData)
-            .filter(([, v]) => v.total >= 2)
-            .map(([key, v]) => ({ key, ...v, rate: v.wrong / v.total }))
-            .sort((a, b) => b.rate - a.rate)
-            .slice(0, 3);
-
-        if (entries.length === 0) {
-            card.classList.add('hidden');
-            return;
-        }
-
-        card.classList.remove('hidden');
-        listEl.innerHTML = entries.map((entry, i) => {
-            const pct   = Math.round(entry.rate * 100);
-            const color = pct >= 70 ? 'bg-red-500' : pct >= 40 ? 'bg-amber-500' : 'bg-yellow-400';
-            const textColor = pct >= 70 ? 'text-red-500' : pct >= 40 ? 'text-amber-500' : 'text-yellow-500';
-            return `
-                <div class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
-                    <div class="w-7 h-7 rounded-xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center shrink-0">
-                        <span class="text-sm font-black text-amber-600">${i + 1}</span>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-bold text-slate-800 dark:text-slate-100 truncate">${entry.topic}</p>
-                        <div class="flex items-center gap-2 mt-1">
-                            <div class="flex-1 h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                                <div class="${color} h-full rounded-full" style="width:${pct}%"></div>
-                            </div>
-                            <span class="text-[10px] font-black ${textColor}">${pct}% errors</span>
-                        </div>
-                    </div>
-                    <span class="text-[9px] text-slate-400 font-medium shrink-0">${entry.wrong}/${entry.total}</span>
-                </div>
-            `;
-        }).join('');
-
-        // Store current weak topics for the focus quiz
-        window._weakTopicEntries = entries;
-    }
-
-    /**
-     * Starts a targeted "Focus Quiz" pulling questions from the weak topics.
-     */
-    function startFocusQuiz() {
-        const entries = window._weakTopicEntries || [];
-        if (entries.length === 0) {
-            window.showToast('No weak topics yet!', 'Complete a few quizzes first.', 'psychology');
-            return;
-        }
-
-        const questionsSource = getQuestionsSource();
-        let focusPool = [];
-
-        entries.forEach(entry => {
-            const subjectQuestions = questionsSource[entry.subjectId] || [];
-            const topicQs = subjectQuestions
-                .filter(q => (q.topic || 'General').trim() === entry.topic)
-                .map(q => ({ ...q, subjectId: entry.subjectId }));
-            focusPool = focusPool.concat(topicQs);
-        });
-
-        if (focusPool.length === 0) {
-            window.showToast('No questions found', 'Try practicing more topics first.', 'quiz');
-            return;
-        }
-
-        // Shuffle and cap at 10
-        const selected = focusPool.sort(() => 0.5 - Math.random()).slice(0, 10);
-
-        // Re-use the existing quiz engine
-        state.currentSubject = { id: 'focus', name: 'Focus Quiz' };
-        state.currentTopic   = 'Weak Topics';
-        state.quizQuestions  = prepareQuestions(selected);
-        state.currentQuestionIndex = 0;
-        state.answers   = new Array(state.quizQuestions.length).fill(null);
-        state.submitted = new Array(state.quizQuestions.length).fill(false);
-        state.flagged   = new Array(state.quizQuestions.length).fill(false);
-        state.confidence = new Array(state.quizQuestions.length).fill(null);
-        state.questionTimes = new Array(state.quizQuestions.length).fill(0);
-        state.questionEnteredAt = Date.now();
-        state.score     = 0;
-        state.secondsElapsed = 0;
-        state.isFinished    = false;
-        state.isMockExam    = false;
-
-        navigateTo('quiz-view');
-        updateQuestionMap();
-        loadQuestion();
-        startTimer();
-    }
-
-    // Hook weakness recording — intercept submit button handler to record data after each answer
-    // We patch finishQuiz by wrapping the activityKey save in a post-hook via a MutationObserver
-    // on the results-view section appearing. Simpler: hook into navigateTo results.
-    const _origNav = window.navigateTo;
-    window.navigateTo = function(pageId) {
-        if (pageId === 'results-view') {
-            // Capture weakness data just before results are shown
-            recordWeaknessData();
-        }
-        _origNav(pageId);
-        if (pageId === 'dashboard') {
-            renderSRSCard();
-            renderFocusZone();
-        }
-    };
-
-    // Wire up the Focus Quiz button
-    const btnFocusQuiz = document.getElementById('btn-start-focus-quiz');
-    if (btnFocusQuiz) btnFocusQuiz.addEventListener('click', startFocusQuiz);
-
-    // Initial render of SRS and Focus Zone on dashboard load
-    renderSRSCard();
-    renderFocusZone();
-    renderDailyQuests();
 
     // Offline Sync Trigger
     window.triggerOfflineSync = function() {

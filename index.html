@@ -165,7 +165,12 @@
 
 
 </div>
-
+<!-- Cloud Sync Status Indicator -->
+<div id="cloud-sync-indicator" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-xs font-semibold cursor-default transition-all duration-300 shadow-sm" title="Checking sync status...">
+    <span id="sync-icon" class="material-symbols-outlined text-[16px] animate-pulse">cloud_sync</span>
+    <span id="sync-text" class="hidden sm:inline text-[10px] tracking-wider uppercase font-bold text-slate-400 dark:text-slate-500">Checking...</span>
+    <span id="sync-dot" class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+</div>
 </div>
 </header>
     <main class="px-4 md:px-6 pt-20 pb-28 flex flex-col gap-stack-lg w-full max-w-xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto overflow-x-hidden">
@@ -822,7 +827,7 @@
                         <div class="glass-card tilt-card rounded-[32px] p-8 shadow-xl border border-slate-50 dark:border-slate-800">
                             <div class="flex flex-col items-center mb-8">
                                 <div id="account-info-avatar-container" class="w-24 h-24 rounded-3xl bg-surface-container-highest flex items-center justify-center overflow-hidden card-shadow mb-4">
-                                    <img alt="Alex Riviera" class="w-full h-full object-cover" data-alt="Close-up profile photo of Alex Riviera, a professional young man, studio lighting, clear high quality aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KvXfnOr12k5SzP6fbV0MWcvNYjQppUc89dWdHwtt0LrMrxWc1UtbF12daBvTIvDM4-Pbiso8pORGGDZgEp95bsmWYDbPdggsVh89FcxWsuzHhPxhY9KM5FxwbYYVVJlRdHw1eVngYCCJYLEwkE1OZnwygR0y-za4B_I1aACLrZJ5_SsP0Uundq_5ePMlIxpXJi2YoSsNZnCF4Mp0shocQ1xiC60lxWTjsK-CY3Md962fc6vAc6Csv8KEhV8gBTOGs4jAoTC5mKjN"/>
+                                    <img id="account-info-avatar-img" alt="Alex Riviera" class="w-full h-full object-cover" data-alt="Close-up profile photo of Alex Riviera, a professional young man, studio lighting, clear high quality aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5KvXfnOr12k5SzP6fbV0MWcvNYjQppUc89dWdHwtt0LrMrxWc1UtbF12daBvTIvDM4-Pbiso8pORGGDZgEp95bsmWYDbPdggsVh89FcxWsuzHhPxhY9KM5FxwbYYVVJlRdHw1eVngYCCJYLEwkE1OZnwygR0y-za4B_I1aACLrZJ5_SsP0Uundq_5ePMlIxpXJi2YoSsNZnCF4Mp0shocQ1xiC60lxWTjsK-CY3Md962fc6vAc6Csv8KEhV8gBTOGs4jAoTC5mKjN"/>
                                 </div>
                                 <h3 id="account-info-name" class="text-xl font-bold text-slate-800 dark:text-slate-100">Alex Riviera</h3>
                                 <p id="discipline-profile-display" class="text-slate-500 dark:text-slate-400">Civil Engineer</p>
@@ -1083,10 +1088,13 @@
     <script src="firebase-config.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js?v=4"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
+    <script src="js/tts.js"></script>
+    <script src="js/weakness-srs.js"></script>
+    <script src="js/daily-quests.js"></script>
 
 <div id="avatar-picker-modal" class="fixed inset-0 z-[10002] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
   <div id="avatar-picker-sheet" class="glass-card w-full max-w-xl rounded-[40px] p-8 overflow-hidden shadow-2xl border border-white/20">
@@ -1406,6 +1414,18 @@
                     <button id="btn-logout-confirm" class="flex-1 px-6 py-4 rounded-2xl font-bold bg-red-600 text-white shadow-lg shadow-red-600/20 hover:bg-red-700 transition-all">Logout</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Photo Lightbox Modal -->
+    <div id="photo-lightbox-modal" class="fixed inset-0 z-[10007] hidden flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="window.hidePhotoLightbox()">
+        <div class="relative w-72 h-72 md:w-80 md:h-80 bg-white dark:bg-slate-900 p-2.5 rounded-3xl shadow-2xl border border-slate-200/50 dark:border-slate-800/50 transform transition-all duration-300 scale-95 flex items-center justify-center overflow-hidden" id="photo-lightbox-card" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <button id="close-photo-lightbox" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 active:scale-90 transition-all z-10" onclick="window.hidePhotoLightbox()" title="Close">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+            <!-- Image -->
+            <img id="photo-lightbox-img" src="" alt="Enlarged Photo" class="w-full h-full rounded-[1.25rem] object-cover" />
         </div>
     </div>
 

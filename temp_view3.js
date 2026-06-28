@@ -53439,6 +53439,52 @@ const QUESTIONS = {
             }
         },
         {
+            "topic": "Properties of Ideal Gases and Pure Substances",
+            "title": "Specific Volume of Saturated Mixture",
+            "question": "Calculate the specific volume of a saturated liquid-vapor mixture of water at $P = 200 \\text{ kPa}$ with a quality of $x = 0.40$. Given properties at $200 \\text{ kPa}$ are $v_f = 0.001061 \\text{ m}^3/\\text{kg}$ and $v_g = 0.8857 \\text{ m}^3/\\text{kg}$.",
+            "question_image": "",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8857 \\text{ m}^3/\\text{kg}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.001061 \\text{ m}^3/\\text{kg}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.4434 \\text{ m}^3/\\text{kg}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.3549 \\text{ m}^3/\\text{kg}$",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Calculation",
+                        "content": "$v = 0.001061 + 0.40(0.8857 - 0.001061) = 0.3549166 \\approx 0.3549 \\text{ m}^3/\\text{kg}$."
+                    }
+                ],
+                "final_answer": "D",
+                "solution_image": "",
+                "video_explanation": ""
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Thermodynamics",
+                "topic": "Properties of Ideal Gases and Pure Substances",
+                "search_term": "properties of ideal gases and pure substances",
+                "page_number": 496
+            }
+        },
+        {
             "topic": "Laws of Thermodynamics",
             "title": "First Law of Thermodynamics for a Closed System",
             "question": "A closed piston-cylinder system undergoes a process where $50 \\text{ kJ}$ of heat is transferred into the system. During this process, the gas expands from an initial volume of $V_1 = 0.05 \\text{ m}^3$ to a final volume of $V_2 = 0.15 \\text{ m}^3$ against a constant pressure of $P = 200 \\text{ kPa}$. Neglecting changes in kinetic and potential energy, the change in internal energy ($\\Delta U$) of the gas is most nearly:",
@@ -139172,6 +139218,49 @@ const QUESTIONS = {
             }
         },
         {
+            "topic": "Operating Systems",
+            "title": "Deadlock Conditions",
+            "question": "Which of the following is NOT one of Coffman's four necessary conditions for system deadlock?",
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Preemption of resources",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Mutual exclusion",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Hold and wait",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Circular wait",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Coffman Conditions",
+                        "content": "The four conditions are: Mutual exclusion, Hold and wait, No preemption (resources cannot be forcibly taken), and Circular wait. Preemption is a solution/prevention mechanism, not a cause."
+                    }
+                ],
+                "final_answer": "A"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "computer-systems",
+                "topic": "Operating Systems",
+                "search_term": "operating systems",
+                "page_number": 414
+            }
+        },
+        {
             "topic": "Pipelining",
             "title": "Pipeline Speedup",
             "question": "An ideal 5-stage instruction pipeline has a cycle time of 2 ns. Ignoring hazards, what is the theoretical speedup compared to a non-pipelined processor with execution time of 10 ns?",
@@ -205606,4 +205695,3 @@ const QUESTIONS = {
         }
     ]
 };
-
