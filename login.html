@@ -388,6 +388,117 @@
 
     </main>
 
+    <!-- FE Exam Info Section -->
+    <section class="w-full bg-white/40 border-t border-slate-100 py-16 mt-8 relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Clickable Banner -->
+            <div id="fe-info-banner" class="mb-4 text-center max-w-3xl mx-auto cursor-pointer bg-white/60 hover:bg-white/90 transition-colors p-6 rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] group">
+                <span class="inline-block px-4 py-1.5 bg-pink-50 text-accent-pink text-xs font-bold uppercase tracking-wider rounded-full border border-pink-100 mb-4 shadow-sm group-hover:scale-105 transition-transform">
+                    Getting Started
+                </span>
+                <h2 class="font-space text-2xl sm:text-3xl lg:text-4xl font-black text-dark-slate leading-tight mb-2">What is the FE Exam?</h2>
+                <p class="text-slate-500 text-sm sm:text-base font-medium mb-4">Your first step toward professional engineering licensure.</p>
+                <div class="flex items-center justify-center gap-2 mx-auto text-accent-yellow font-bold text-xs sm:text-sm uppercase tracking-widest group-hover:text-amber-500 transition-colors">
+                    Learn More <span class="material-symbols-outlined transition-transform duration-300" id="fe-info-icon">expand_more</span>
+                </div>
+            </div>
+
+            <div id="fe-info-details" class="hidden grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 mt-8">
+                <!-- Main Overview -->
+                <div class="col-span-1 md:col-span-12 lg:col-span-8 bg-white/80 backdrop-blur-md rounded-[2rem] p-8 lg:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col gap-6 transition-transform hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-700 shadow-sm border border-slate-100">
+                            <span class="material-symbols-outlined text-2xl">info</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 font-space">Overview</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+                        The Fundamentals of Engineering (FE) exam is generally your first step in the process to becoming a professional licensed engineer (P.E.). It is designed for recent graduates and students who are close to finishing an undergraduate engineering degree from an EAC/ABET-accredited program.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+                        Earning your EIT (Engineer In Training) certification proves your technical competency, drastically increases your starting salary, and makes you significantly more employable across all engineering disciplines.
+                    </p>
+                </div>
+                
+                <!-- Quick Facts -->
+                <div class="col-span-1 md:col-span-12 lg:col-span-4 bg-gradient-to-br from-pink-50/80 to-amber-50/80 backdrop-blur-md rounded-[2rem] p-8 lg:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col gap-6 transition-transform hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-accent-pink shadow-sm border border-pink-100/50">
+                            <span class="material-symbols-outlined text-2xl">list_alt</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 font-space">Exam Format</h3>
+                    </div>
+                    <ul class="flex flex-col gap-5 text-sm sm:text-base text-slate-700 font-medium mt-2">
+                        <li class="flex items-center gap-4 bg-white/40 p-3 rounded-xl border border-white/60">
+                            <span class="material-symbols-outlined text-accent-pink text-xl bg-white w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">timer</span> 
+                            <span><strong>Length:</strong> 6 hours</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-white/40 p-3 rounded-xl border border-white/60">
+                            <span class="material-symbols-outlined text-accent-pink text-xl bg-white w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">format_list_numbered</span> 
+                            <span><strong>Questions:</strong> 110 items</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-white/40 p-3 rounded-xl border border-white/60">
+                            <span class="material-symbols-outlined text-accent-pink text-xl bg-white w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">computer</span> 
+                            <span><strong>Format:</strong> Computer (CBT)</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-white/40 p-3 rounded-xl border border-white/60">
+                            <span class="material-symbols-outlined text-accent-pink text-xl bg-white w-8 h-8 rounded-lg flex items-center justify-center shadow-sm">payments</span> 
+                            <span><strong>Cost:</strong> $225</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Disciplines -->
+                <div class="col-span-1 md:col-span-12 lg:col-span-8 bg-white/80 backdrop-blur-md rounded-[2rem] p-8 lg:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col gap-6 transition-transform hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-accent-yellow shadow-sm border border-amber-100/50">
+                            <span class="material-symbols-outlined text-2xl">category</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 font-space">Seven Exam Disciplines</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium mb-2">
+                        The FE Exam is administered in seven distinct disciplines. You should choose the one that aligns closest to your engineering degree:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Chemical</span></div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Civil</span></div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Electrical and Computer</span></div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Environmental</span></div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Industrial and Systems</span></div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Mechanical</span></div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100 hover:bg-slate-50 transition-colors"><span class="material-symbols-outlined text-accent-yellow text-xl">check_circle</span> <span class="text-sm font-bold text-slate-700">Other Disciplines</span></div>
+                    </div>
+                </div>
+
+                <!-- Official Resources & Disclaimer -->
+                <div class="col-span-1 md:col-span-12 lg:col-span-4 bg-white/80 backdrop-blur-md rounded-[2rem] p-8 lg:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col gap-6 transition-transform hover:-translate-y-1 duration-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-500 shadow-sm border border-blue-100/50">
+                            <span class="material-symbols-outlined text-2xl">public</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 font-space">Official Resources</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+                        For official registration, testing dates, and the reference handbook, visit:
+                    </p>
+                    <a href="https://ncees.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 bg-slate-50 hover:bg-slate-100 rounded-xl text-accent-pink font-bold transition-colors border border-slate-100 w-fit">
+                        www.ncees.org
+                        <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                    </a>
+                    
+                    <div class="mt-auto pt-6 border-t border-slate-100">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1.5">Disclaimer</p>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">ENGG.tv is an independent educational platform. We are neither affiliated with nor endorsed by NCEES®.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="w-full py-6 mt-12 bg-white/20 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs font-semibold tracking-wider uppercase">
@@ -673,6 +784,29 @@
         
         // Initialize view mode
         setMode('login');
+
+        // FE Exam Info Expand/Collapse Logic
+        const feBanner = document.getElementById('fe-info-banner');
+        const feDetails = document.getElementById('fe-info-details');
+        const feIcon = document.getElementById('fe-info-icon');
+
+        if (feBanner && feDetails && feIcon) {
+            feBanner.addEventListener('click', () => {
+                const isHidden = feDetails.classList.contains('hidden');
+                if (isHidden) {
+                    feDetails.classList.remove('hidden');
+                    feIcon.textContent = 'expand_less';
+                    feIcon.classList.add('rotate-180');
+                    setTimeout(() => {
+                        feDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 50);
+                } else {
+                    feDetails.classList.add('hidden');
+                    feIcon.textContent = 'expand_more';
+                    feIcon.classList.remove('rotate-180');
+                }
+            });
+        }
     </script>
 </body>
 </html>
