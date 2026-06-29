@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v5';
+const CACHE_NAME = 'engg-prep-cache-v6';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -7,7 +7,11 @@ const APP_SHELL = [
   '/questions.js',
   '/advanced_questions.js',
   '/firebase-config.js',
-  '/manifest.json'
+  '/manifest.json',
+  '/js/global-search.js',
+  '/js/onboarding.js',
+  '/js/achievements.js',
+  '/js/report-card.js'
 ];
 
 // Install Event - Precache App Shell

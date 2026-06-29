@@ -2809,10 +2809,17 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         ACHIEVEMENTS.forEach(ach => {
             if (prevPoints < ach.points && newPoints >= ach.points) {
                 setTimeout(() => {
-                    window.showToast('Milestone Unlocked! ��', ach.name, ach.icon);
+                    window.showToast('Milestone Unlocked! 🏆', ach.name, ach.icon);
+                    if (window.confetti) window.confetti({ particleCount: 250, spread: 100, origin: { y: 0.4 }, zIndex: 10005 });
                 }, 1000);
             }
         });
+
+        if (state.isMockExam) {
+            setTimeout(() => {
+                if (window.confetti) window.confetti({ particleCount: 400, spread: 120, origin: { y: 0.5 }, zIndex: 10000 });
+            }, 500);
+        }
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
         

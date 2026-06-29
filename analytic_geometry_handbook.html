@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FE Mechanical Reference Handbook - Analytic Geometry</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        :root {
+            --primary: #FF006E;
+            --primary-light: #ffd6e5;
+            --secondary: #3b82f6;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px;
+            background: #fff;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            border-bottom: 4px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        h2 {
+            color: var(--secondary);
+            font-size: 24px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: var(--text-main);
+            font-size: 18px;
+            margin-top: 30px;
+        }
+        .concept-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .concept-box.important {
+            border-left-color: var(--primary);
+            background: var(--primary-light);
+        }
+        .concept-title {
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .math-block {
+            overflow-x: auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .diagram-placeholder {
+            width: 100%;
+            height: 150px;
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h1 class="title">FE Mechanical Handbook</h1>
+            <p class="subtitle">Mathematics: Analytic Geometry</p>
+        </div>
+
+        <p>This compact handbook is specifically designed for Mechanical Engineering FE Exam candidates. It provides detailed, highly-visual, and essential formulas for <strong>Analytic Geometry</strong>, bridging the gap between a dense textbook and the sparse official FE Reference Handbook.</p>
+
+        <h2>1. Coordinate Systems</h2>
+        <div class="grid-2">
+            <div>
+                <h3>Rectangular (Cartesian) Coordinates</h3>
+                <p>Coordinates are given by \((x, y, z)\). Distance between two points \(P_1(x_1, y_1, z_1)\) and \(P_2(x_2, y_2, z_2)\):</p>
+                <div class="math-block">
+                    \( d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} \)
+                </div>
+            </div>
+            <div>
+                <h3>Polar Coordinates (2D)</h3>
+                <p>Coordinates are given by \((r, \theta)\).</p>
+                <ul>
+                    <li>\( x = r \cos\theta \)</li>
+                    <li>\( y = r \sin\theta \)</li>
+                    <li>\( r = \sqrt{x^2 + y^2} \)</li>
+                    <li>\( \theta = \arctan(y/x) \)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="concept-box important">
+            <div class="concept-title">Pro Tip for the FE Exam</div>
+            <p>Always watch your units for angles! The FE Exam will try to trick you by mixing degrees and radians when converting from rectangular to polar coordinates.</p>
+        </div>
+
+        <h2>2. Straight Lines</h2>
+        <p>The general equation of a straight line in 2D is \(Ax + By + C = 0\).</p>
+        
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Form</th>
+                    <th>Equation</th>
+                    <th>When to use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Slope-Intercept</strong></td>
+                    <td>\(y = mx + b\)</td>
+                    <td>When slope \(m\) and y-intercept \(b\) are known.</td>
+                </tr>
+                <tr>
+                    <td><strong>Point-Slope</strong></td>
+                    <td>\(y - y_1 = m(x - x_1)\)</td>
+                    <td>When one point and slope are known.</td>
+                </tr>
+                <tr>
+                    <td><strong>Two-Point</strong></td>
+                    <td>\(\frac{y - y_1}{x - x_1} = \frac{y_2 - y_1}{x_2 - x_1}\)</td>
+                    <td>When two points on the line are known.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Distance from a Point to a Line</h3>
+        <p>The perpendicular distance \(d\) from a point \((x_1, y_1)\) to the line \(Ax + By + C = 0\) is:</p>
+        <div class="math-block">
+            \( d = \frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}} \)
+        </div>
+
+        <h2>3. Conic Sections</h2>
+        <p>The general form of a conic section is: \(Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0\).</p>
+        <div class="concept-box">
+            <div class="concept-title">Discriminant Test</div>
+            <p>You can instantly identify the conic geometry by evaluating the discriminant \(B^2 - 4AC\):</p>
+            <ul>
+                <li>If \(B^2 - 4AC < 0\), it's an <strong>Ellipse</strong> (or circle if \(A=C\) and \(B=0\)).</li>
+                <li>If \(B^2 - 4AC = 0\), it's a <strong>Parabola</strong>.</li>
+                <li>If \(B^2 - 4AC > 0\), it's a <strong>Hyperbola</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="grid-2">
+            <div>
+                <h3>Circle</h3>
+                <p>Standard equation with center \((h, k)\) and radius \(r\):</p>
+                <div class="math-block">\( (x - h)^2 + (y - k)^2 = r^2 \)</div>
+                <div class="diagram-placeholder">[ Diagram: Circle Geometry ]</div>
+            </div>
+            <div>
+                <h3>Parabola</h3>
+                <p>Standard equation opening vertically (vertex at \((h, k)\)):</p>
+                <div class="math-block">\( (x - h)^2 = 4p(y - k) \)</div>
+                <p><em>Focus:</em> \((h, k+p)\) <br> <em>Directrix:</em> \(y = k-p\)</p>
+                <div class="diagram-placeholder">[ Diagram: Parabola Focus/Directrix ]</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;" class="grid-2">
+            <div>
+                <h3>Ellipse</h3>
+                <p>Standard equation (horizontal major axis):</p>
+                <div class="math-block">\( \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1 \)</div>
+                <p>Eccentricity: \(e = \frac{c}{a} < 1\) where \(c^2 = a^2 - b^2\)</p>
+                <div class="diagram-placeholder">[ Diagram: Ellipse Geometry ]</div>
+            </div>
+            <div>
+                <h3>Hyperbola</h3>
+                <p>Standard equation (horizontal transverse axis):</p>
+                <div class="math-block">\( \frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1 \)</div>
+                <p>Eccentricity: \(e = \frac{c}{a} > 1\) where \(c^2 = a^2 + b^2\)</p>
+                <div class="diagram-placeholder">[ Diagram: Hyperbola Asymptotes ]</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
