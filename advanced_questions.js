@@ -4,6 +4,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Differential Equations",
             "title": "Advanced Second-Order Non-Homogeneous ODE",
             "question": "Solve the second-order non-homogeneous differential equation: $$y'' - 5y' + 6y = 2e^{x}$$ with initial conditions $y(0) = 2$ and $y'(0) = 3$. Determine the value of $y(1)$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -61,6 +62,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Integral Calculus",
             "title": "Area Enclosed Between Two Overlapping Circles",
             "question": "The area of the region enclosed between the circles $x^2 + y^2 = 4$ and $x^2 + (y - 2)^2 = 4$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -114,6 +116,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Coordinate Geometry",
             "title": "Area of Triangle Formed with Hyperbola Foci",
             "question": "Let $P(10, 2\\sqrt{15})$ be a point on the hyperbola $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$, whose foci are $S$ and $S'$. If the length of its latus rectum is 8, then the square of the area of $\\Delta PSS'$ is equal to :",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -166,6 +169,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Complex Numbers",
             "title": "Powers of Complex Numbers",
             "question": "If $z = \\frac{\\sqrt{3}}{2} + \\frac{i}{2}$ where $i = \\sqrt{-1}$, then $(z^{201} - i)^8$ is equal to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -219,6 +223,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Vector Algebra",
             "title": "Dot Product with Repeated Cross Product Vector",
             "question": "Let $\\vec{a} = -5\\hat{i} + \\hat{j} - 3\\hat{k}$, $\\vec{b} = \\hat{i} + 2\\hat{j} - 4\\hat{k}$ and $\\vec{c} = ((((\\vec{a} \\times \\vec{b}) \\times \\hat{i}) \\times \\hat{i}) \\times \\hat{i})$. Then $\\vec{c} \\cdot (-\\hat{i} + \\hat{j} + \\hat{k})$ is equal to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -273,6 +278,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electrostatics",
             "title": "Advanced AC RLC Circuit Impedance",
             "question": "An AC circuit consists of a resistor $R = 10\\ \\Omega$, an inductor $L = 0.1\\text{ H}$, and a capacitor $C = 100\\ \\mu\\text{F}$ in series. If the voltage source operates at 60 Hz, what is the total impedance $Z$ of the circuit?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -326,6 +332,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Alternating Current",
             "title": "Power Factor of Series LCR Circuit",
             "question": "For the series LCR circuit connected with 220 V, 50 Hz a.c source as shown in the figure, the power factor is $\\frac{\\alpha}{10}$. The value of $\\alpha$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -378,6 +385,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Alternating Current",
             "title": "Root Mean Square Current for Linearly Increasing Current",
             "question": "The electric current in the circuit is given as $i = i_o(t/T)$. The r.m.s current for the period $t = 0$ to $t = T$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -430,6 +438,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Current Electricity",
             "title": "Equivalent Resistance of Complex Circular Wire Loop",
             "question": "A wire of uniform resistance $\\lambda\\ \\Omega/m$ is bent into a circle of radius r and another piece of wire with length $2r$ is connected between points A and B passing through center O as shown in figure. The equivalent resistance between points A and B is ______ $\\Omega$:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -482,6 +491,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Current Electricity",
             "title": "Voltmeter Voltage Drop Reading",
             "question": "Two resistors of $100\\ \\Omega$ each are connected in series with a 9 V battery. A voltmeter of $400\\ \\Omega$ resistance is connected to measure the voltage drop across one of the resistors. The voltmeter reading is ______ V:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -534,6 +544,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Current Electricity",
             "title": "Joule Heat Generation in a Bridge Circuit",
             "question": "The heat generated in 1 minute between points A and B in the given circuit, when a battery of 9 V with internal resistance of $1\\ \\Omega$ is connected across these points is ______ J:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -586,6 +597,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Alternating Current",
             "title": "Root Mean Square (RMS) Current",
             "question": "The electric current in a circuit is given as $i = i_{o}(t/T)$. The r.m.s current for the period $t = 0$ to $t = T$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -638,6 +650,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Current Electricity",
             "title": "Equivalent Resistance with Unknown Resistor",
             "question": "Two known resistances of $R\\ \\Omega$ and $2R\\ \\Omega$ and one unknown resistance $X\\ \\Omega$ are connected in a circuit as shown in the figure. If the equivalent resistance between points A and B in the circuit is $X\\ \\Omega$, then the value of $X$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -690,6 +703,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electromagnetism",
             "title": "Advanced Magnetic Vector Potential",
             "question": "An infinitely long straight wire carrying a steady current $I$ lies along the z-axis. Which of the following is a valid expression for the magnetic vector potential $\\vec{A}$ at a radial distance $s$ from the wire? (Assume $\\mu_0$ is the vacuum permeability and $C$ is a constant.)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -742,6 +756,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electromagnetic Waves",
             "title": "Advanced Poynting Vector in a Capacitor",
             "question": "A parallel-plate capacitor with circular plates of radius $R$ and separation $d$ is being charged by a steady current $I$. What is the magnitude of the Poynting vector $\\vec{S}$ at the edge of the capacitor plates (at radius $R$) inside the gap, where $V$ is the voltage across the plates?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -796,6 +811,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Equilibrium of Rigid Bodies",
             "title": "Advanced 3D Moment of a Force",
             "question": "A force $\\vec{F} = 2\\vec{i} - 3\\vec{j} + 4\\vec{k}$ (kN) acts at a point $P(1, -2, 3)$ relative to the origin. What is the magnitude of the moment of this force about the origin?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -849,6 +865,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Frames and Trusses",
             "title": "Advanced Method of Sections for Truss Analysis",
             "question": "A Warren truss with height $h = 3\\text{ m}$ and panel width of $8\\text{ m}$ (making half-panel $d = 4\\text{ m}$) is loaded. If the vertical shear in a panel is $6\\text{ kN}$, determine the force in the diagonal member $F$ using the $3$-$4$-$5$ member geometry.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -902,6 +919,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Virtual Work",
             "title": "Virtual Work in a Multi-link Mechanism",
             "question": "A mechanism consists of two identical uniform rods of mass $m$ and length $L$, hinged together. One end is hinged to a fixed wall, and the other end is restricted to move horizontally. A horizontal force $P$ is applied to the sliding end to maintain an angle $\\theta$ between the rods and the horizontal. Determine $P$ using the principle of virtual work.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -958,6 +976,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "3D Rigid Body Equilibrium",
             "title": "Equivalent Wrench System",
             "question": "A system of forces on a rigid body is reduced to a single force $\\vec{R} = 4\\hat{i} - 3\\hat{j} + 2\\hat{k}$ and a moment about the origin $\\vec{M}_O = 5\\hat{i} + 2\\hat{j} - 4\\hat{k}$. What is the pitch $p$ of the equivalent wrench? ($p = \\frac{\\vec{M}_{parallel}}{|\\vec{R}|}$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1014,6 +1033,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Equilibrium",
             "title": "Cable Tension",
             "question": "A $100\\text{ kg}$ rigid mass is completely suspended by two cables, A and B. Cable A is strictly horizontal, and Cable B makes an angle of $45^\\circ$ with the vertical ceiling. What is the static tension in Cable B? (Use $g=9.81\\text{ m/s}^2$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1067,6 +1087,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Friction",
             "title": "Block on Incline",
             "question": "A heavy $50\\text{ kg}$ block rests on a $30^\\circ$ inclined plane. What is the absolute minimum coefficient of static friction $\\mu_s$ required between the block and the plane to prevent the block from sliding down?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1120,6 +1141,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Centroids",
             "title": "Semicircular Area",
             "question": "What is the theoretical distance $\\bar{y}$ measured from the flat diametral base edge to the centroid of a semicircular geometric area of radius $R$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1169,6 +1191,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Moments of Inertia",
             "title": "Parallel Axis Theorem",
             "question": "A solid rectangular area has a base $b$ and height $h$. The moment of inertia about its own horizontal centroidal axis is $\\frac{bh^3}{12}$. Using the parallel axis theorem, what is the moment of inertia about the bottom base edge?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1222,6 +1245,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Trusses",
             "title": "Zero-Force Members",
             "question": "In a planar pin-connected truss structure, if a single joint connects exactly two non-collinear members and there is absolutely no external applied load or support reaction at that joint, what can be definitively concluded about the internal forces in those two members?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1271,6 +1295,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Distributed Loads",
             "title": "Triangular Load Resultant",
             "question": "A cantilever beam of length $L$ is subjected to a linearly varying distributed load that is zero at the left end ($x=0$) and has a peak magnitude of $w_0$ at the right end ($x=L$). What is the magnitude and location (measured from the left end) of the equivalent resultant point load?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1319,6 +1344,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Internal Forces",
             "title": "Shear and Moment Relationship",
             "question": "According to the fundamental differential equations governing beam equilibrium, what is the exact mathematical relationship between the internal shear force $V(x)$ and the internal bending moment $M(x)$ along the beam's longitudinal axis?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1370,6 +1396,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Newton's Second Law for Rigid Bodies",
             "title": "Advanced Hinge Acceleration of a Slender Rod",
             "question": "A uniform slender rod of mass $M = 3\\text{ kg}$ and length $L = 2\\text{ m}$ is hinge-supported at one end. If it is released from rest in the horizontal position, what is the initial angular acceleration $\\alpha$ of the rod?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1422,6 +1449,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Impulse-Momentum of Rigid Bodies",
             "title": "Advanced Conservation of Angular Momentum",
             "question": "A uniform circular disk of mass $m = 10\\text{ kg}$ and radius $r = 0.5\\text{ m}$ rotates freely about its central vertical axis at $\\omega_1 = 20\\text{ rad/s}$. A non-rotating ring of mass $m_{ring} = 5\\text{ kg}$ and radius $r = 0.5\\text{ m}$ is dropped concentrically onto the disk. Determine the final common angular velocity $\\omega_2.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1479,6 +1507,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Work, Energy and Power",
             "title": "Work Done on a Body via Displacement Function",
             "question": "A body of mass 2 kg is moving along x-direction such that its displacement as function of time is given by $x(t) = \\alpha t^2 + \\beta t + \\gamma$ m where $\\alpha = 1\\ m/s^2$, $\\beta = 1\\ m/s$ and $\\gamma = 1\\ m$. The work done on the body during the time interval $t = 2\\ s$ to $t = 3\\ s$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1531,6 +1560,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Circular Track Loop Completion via Bob Collision",
             "question": "A small bob A of mass m is attached to a massless rigid rod of length 1 m pivoted at point P and kept at an angle of 60° with vertical. At a distance of 1 m below point P, an identical bob B is kept at rest on a smooth horizontal surface that extends to a circular track of radius R. If bob B just manages to complete the circular path of radius R after being hit elastically by bob A, then radius R is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1583,6 +1613,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Critical Velocity in Vertical Circular Motion with Zero Tension",
             "question": "In case of vertical circular motion of a particle by a thread of length r, if the tension in the thread is zero at an angle 30° with the upper horizontal as shown in the figure, the velocity at the bottom point (A) of the circular path is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1635,6 +1666,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Angular Acceleration of Connected Disc System",
             "question": "Two circular discs of radius each 10 cm are joined at their centres by a rod of length 30 cm and mass 600 gm as shown in figure. If the mass of each disc is 600 gm and applied torque between two discs is $43 \\times 10^5\\ \\text{dyne}\\cdot\\text{cm}$, the angular acceleration of the discs about the given axis AB is ______ $rad/s^2$:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1687,6 +1719,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Volume Shift of Rising Air Bubble in Pool",
             "question": "An air bubble of volume $2.9\\ cm^3$ rises from the bottom of a swimming pool 5 m deep. At the bottom of the pool water temperature is $17^{\\circ}C$. The volume of the bubble when it reaches the surface, where the water temperature is $27^{circ}C$, is ______ $cm^3$:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1739,6 +1772,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Collisions and Circular Motion Track",
             "question": "A small bob A of mass m is attached to a massless rigid rod of length 1 m pivoted at point P and kept at an angle of $60^{\\circ}$ with the vertical. At a distance of 1 m below point P, an identical bob B is kept at rest on a smooth horizontal surface that extends to a circular track of radius R. If bob B just manages to complete the circular path of radius R after being hit elastically by bob A, then the radius R is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1787,6 +1821,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Rotational Inertia of Pulley Systems",
             "question": "Two masses 400 g and 350 g are suspended from the ends of a light string passing over a heavy pulley of radius 2 cm. When released from rest, the heavier mass is observed to fall 81 cm in 9 s. The rotational inertia of the pulley is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1835,6 +1870,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rotational Motion",
             "title": "Angular Acceleration of Connected Discs",
             "question": "Two circular discs of radius each 10 cm are joined at their centres by a rod of length 30 cm and mass 600 gm as shown in figure. If the mass of each disc is 600 gm and applied torque between two discs is $43 \\times 10^{5}\\ dyne\\cdot cm$, the angular acceleration of the discs about the given axis AB is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1883,6 +1919,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rigid Body Kinetics",
             "title": "Advanced Gyroscopic Precession",
             "question": "A solid disk of mass $m=2\\text{ kg}$ and radius $r=0.2\\text{ m}$ spins about its geometric axis with an angular velocity of $\\omega=100\\text{ rad/s}$. The axis is supported horizontally at one end, at a distance $L=0.3\\text{ m}$ from the disk's center of mass. What is the precessional angular velocity $\\Omega$ of the disk? (Use $g = 9.81\\text{ m/s}^2$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1939,6 +1976,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Lagrangian Mechanics",
             "title": "Equation of Motion for a Simple Pendulum on a Moving Cart",
             "question": "A pendulum of mass $m$ and length $l$ hangs from a cart of mass $M$ that moves horizontally on a frictionless track. Let $x$ be the cart's position, and $\\theta$ the pendulum's angle with the vertical. What is the Lagrangian $L$ of this system?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -1991,6 +2029,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Kinematics",
             "title": "Projectile Range",
             "question": "A projectile is launched from a perfectly flat ground level with an initial velocity of $50\\text{ m/s}$ at an angle of $30^\\circ$ to the horizontal. Assuming $g = 9.81\\text{ m/s}^2$ and neglecting air resistance, what is the maximum horizontal range before impacting the ground?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2044,6 +2083,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Kinetics",
             "title": "Impulse and Momentum",
             "question": "A $1000\\text{ kg}$ automobile traveling at $20\\text{ m/s}$ crashes into a rigid barrier and is brought to a complete stop in exactly $0.1\\text{ seconds}$. What is the average impact force exerted on the vehicle?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2097,6 +2137,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Work and Energy",
             "title": "Spring Conservation of Energy",
             "question": "A $2.0\\text{ kg}$ block moving at $5.0\\text{ m/s}$ on a frictionless horizontal surface strikes a linear, uncompressed spring with a stiffness of $k = 500\\text{ N/m}$. What is the maximum compression of the spring?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2150,6 +2191,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rigid Body Kinematics",
             "title": "Instantaneous Center of Zero Velocity",
             "question": "A $2.0\\text{ m}$ long slender rod AB leans against a vertical wall at end A and a horizontal floor at end B. If end A slides directly down the wall at $3.0\\text{ m/s}$ at the exact instant when the rod makes a $60^\\circ$ angle with the floor, what is the angular velocity of the rod?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2202,6 +2244,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Rigid Body Kinetics",
             "title": "Mass Moment of Inertia",
             "question": "What is the theoretical mass moment of inertia ($I$) of a uniform solid homogeneous cylinder of mass $m$ and radius $r$ rotating directly about its central longitudinal axis?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2250,6 +2293,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Vibrations",
             "title": "Damped Natural Frequency",
             "question": "A mechanical spring-mass-damper system possesses an undamped natural frequency $\\omega_n = 10\\text{ rad/s}$ and a damping ratio $\\zeta = 0.6$. What is the system's actual damped natural frequency $\\omega_d$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2303,6 +2347,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Vibrations",
             "title": "Logarithmic Decrement",
             "question": "In a free-vibration test of an underdamped mechanical system, the absolute amplitude of successive peak cycles drops from exactly $10\\text{ mm}$ to $5\\text{ mm}$. What is the logarithmic decrement $\\delta$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2354,6 +2399,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Stress Transformations and Mohr Circle",
             "title": "Advanced Principal Stress Calculation",
             "question": "A material is subjected to biaxial stress $\\sigma_x = 80\\text{ MPa}$, $\\sigma_y = -20\\text{ MPa}$, and shear stress $\\tau_{xy} = 40\\text{ MPa}$. Find the maximum in-plane shear stress $\\tau_{max}$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2402,6 +2448,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Column Buckling",
             "title": "Advanced Euler Column Buckling",
             "question": "A solid steel rod ($E = 200\\text{ GPa}$) with length $L = 2\\text{ m}$ and circular cross-section of radius $r = 20\\text{ mm}$ is pinned at both ends. What is the critical buckling load $P_{cr}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2455,6 +2502,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Methods in Structural Mechanics",
             "title": "Castigliano's Theorem for a Curved Beam",
             "question": "A thin curved beam forming a quarter circle of radius $R$ is fixed at one end and free at the other. A vertical point load $P$ is applied at the free end. Determine the vertical deflection at the free end using Castigliano's Theorem. (Assume constant flexural rigidity $EI$ and neglect shear and axial deformations).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2511,6 +2559,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Theories of Failure",
             "title": "Von Mises Yield Criterion",
             "question": "A shaft is subjected to a bending stress of $\\sigma = 120\\text{ MPa}$ and a torsional shear stress of $\\tau = 50\\text{ MPa}$. According to the Distortion Energy Theory (Von Mises), what is the equivalent stress $\\sigma_{VM}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2563,6 +2612,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermal Stress",
             "title": "Restrained Expansion",
             "question": "A solid copper rod ($E=110\\text{ GPa}, \\alpha=17 \\times 10^{-6}\\text{ /}^\\circ\\text{C}$) is held tightly between two absolutely rigid and immovable walls. If the ambient temperature is raised uniformly by exactly $50^\\circ\\text{C}$, what is the magnitude of the compressive thermal stress developed in the rod?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2615,6 +2665,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Combined Loading",
             "title": "Superposition of Normal Stresses",
             "question": "A cantilever beam of cross-sectional area $A$ and section modulus $Z$ is simultaneously subjected to a compressive axial load $P$ at its centroid and a bending moment $M$. What is the expression for the maximum absolute compressive stress?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2664,6 +2715,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thin-Walled Tubes",
             "title": "Torsion of Closed Tubes",
             "question": "According to Bredt's fundamental formula for thin-walled closed tubes under torsion, the average shear stress $\\tau$ is given by $\\tau = \\frac{T}{2 A_m t}$. What exactly does the geometric term $A_m$ represent?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2708,6 +2760,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Elastic Constants",
             "title": "Poisson's Ratio Relation",
             "question": "For a linearly elastic, completely isotropic material, the shear modulus $G$, the elastic modulus $E$, and Poisson's ratio $\\nu$ are fundamentally related by which mathematical equation?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2756,6 +2809,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Beam Deflection",
             "title": "Macaulay's Method",
             "question": "When using Macaulay's method (singularity functions) to mathematically determine beam deflections, the integration of a point load step function $\\langle x-a \\rangle^0$ with respect to $x$ yields:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2804,6 +2858,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Shaft Design",
             "title": "Maximum Shear Stress Theory",
             "question": "A solid circular shaft is subjected to a bending moment $M$ and a torsional moment $T$. According to the maximum shear stress theory (Tresca), the equivalent torque $T_e$ that would produce the identical maximum shear stress is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2856,6 +2911,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Strain Rosettes",
             "title": "Delta Rosette Configuration",
             "question": "A delta strain rosette is used to completely resolve the 2D strain state on a free surface. It consists of exactly three strain gauges permanently arranged at relative angles of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2906,6 +2962,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Phase Diagrams, Phase Transformation, and Heat Treating",
             "title": "Advanced Austenite Transformation Kinetics",
             "question": "A steel sample is heated into the austenite region and then quenched in a bath at 350 °C, held for 1 hour, and then quenched to room temperature. What is the resulting primary microstructural constituent?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -2955,6 +3012,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Crystal Defects and Dislocation Theory",
             "title": "Advanced Peierls-Nabarro Stress",
             "question": "The stress required to move a dislocation through a crystal lattice is given by the Peierls-Nabarro equation. If the interplanar spacing $a$ increases and the dislocation width $w$ decreases due to a temperature change, how does the Peierls stress $\\tau_{PN}$ respond?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3007,6 +3065,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Diffusion in Solids",
             "title": "Arrhenius Equation for Diffusion",
             "question": "The pre-exponential factor for diffusion of carbon in alpha-iron is $D_0 = 2.0 \\times 10^{-5}\\text{ m}^2\\text{/s}$ and the activation energy is $Q_d = 84\\text{ kJ/mol}$. What is the diffusion coefficient $D$ at $500\\text{ }^\\circ\\text{C}$? ($R = 8.314\\text{ J/(mol\\cdot K)}$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3063,6 +3122,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Crystallography",
             "title": "BCC Packing Factor",
             "question": "What is the theoretical Atomic Packing Factor (APF) of a pure elemental metal possessing a Body-Centered Cubic (BCC) crystal lattice structure?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3111,6 +3171,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Phase Diagrams",
             "title": "Eutectoid Reaction in Steel",
             "question": "In the standard iron-carbon phase diagram, the eutectoid reaction occurring at exactly $0.76\\% \\text{ C}$ and $727^\\circ\\text{C}$ involves the direct transformation of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3160,6 +3221,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mechanical Properties",
             "title": "True vs Engineering Stress",
             "question": "In a standard tensile test, the true stress $\\sigma_T$ is mathematically related to the engineering stress $\\sigma_E$ and engineering strain $\\epsilon_E$ (up to the point of necking) by which fundamental equation?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3209,6 +3271,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Treatment",
             "title": "Martensite Formation",
             "question": "Martensite in steel is formed by a rapid, diffusionless shear-type transformation. To successfully create a fully martensitic microstructure, the heat treatment process must involve:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3258,6 +3321,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Diffusion",
             "title": "Fick's First Law",
             "question": "Fick's first law of steady-state diffusion states that the atomic diffusion flux $J$ is directly proportional to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3307,6 +3371,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fracture Mechanics",
             "title": "Stress Intensity Factor",
             "question": "The plane strain fracture toughness $K_{Ic}$ of a material measures its resistance to brittle fracture when a crack is present. The general theoretical formula for the stress intensity factor $K_I$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3355,6 +3420,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Polymers",
             "title": "Glass Transition Temperature",
             "question": "The Glass Transition Temperature ($T_g$) of a polymeric material is fundamentally defined as the critical temperature below which:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3406,6 +3472,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Internal Flow",
             "title": "Advanced Head Loss with Combined Friction and Fitting Losses",
             "question": "A pipe system carrying water has a length of 150 m, diameter of 0.15 m, friction factor $f = 0.02$, and a flow velocity of 3 m/s. The system contains three 90-degree elbows ($K=0.5$ each) and a fully open gate valve ($K=0.25$). What is the total head loss?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3459,6 +3526,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Advanced Buoyancy and Stability",
             "question": "A uniform wooden block of density $\\rho_{wood} = 600\\text{ kg/m^3}$ floats in water ($\\rho_{water} = 1000\\text{ kg/m^3}$). If the block is a cube of side length $a = 1\\text{ m}$, what is the draft $d$ (submerged depth) of the block?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3512,6 +3580,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Rate of Flow Through Horizontal Venturi Tube",
             "question": "Water flows through a horizontal tube as shown in the figure. The difference in height between the water columns in vertical tubes is 5 cm and the area of cross-sections at A and B are $6\\ cm^2$ and $3\\ cm^2$ respectively. The rate of flow will be ______ $cm^3/s$ (take $g=10\\ m/s^2$):",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3565,6 +3634,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Boundary Layer Theory",
             "title": "Advanced Blasius Solution for Flat Plate",
             "question": "For a laminar boundary layer over a flat plate, the Blasius solution reveals that the boundary layer thickness $\\delta$, wall shear stress $\\tau_w$, and local drag coefficient $C_f$ vary with the longitudinal distance $x$ from the leading edge. Which set of proportionalities is correct?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3617,6 +3687,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Compressible Flow",
             "title": "Normal Shock Waves in Ideal Gases",
             "question": "Air (k = 1.4) flows through a normal shock wave. If the upstream Mach number is $M_1 = 2.0$, what is the downstream Mach number $M_2$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3674,6 +3745,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Kinematics",
             "title": "Convective Acceleration",
             "question": "A steady, incompressible, 1-Dimensional flow field has a Eulerian velocity field defined by $\\mathbf{V} = (2x)\\hat{i}\\text{ m/s}$. What is the magnitude of the convective acceleration of a fluid particle at the location $x = 3\\text{ m}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3730,6 +3802,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Dimensional Analysis",
             "title": "Reynolds Number Scaling",
             "question": "A 1:10 scale model of a submarine is tested in a fresh-water tunnel. To achieve complete dynamic similarity by matching the Reynolds number, if the real prototype speed in sea water is $5\\text{ m/s}$, what must the model speed be in the tunnel? (Assume kinematic viscosity of the water is identical).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3783,6 +3856,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Flow Measurement",
             "title": "Pitot-Static Tube",
             "question": "A pitot-static tube in an air duct reads a differential dynamic pressure (stagnation minus static) of $250\\text{ Pa}$. If the air density is $1.2\\text{ kg/m}^3$ and compressibility effects are negligible, what is the flow velocity?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3836,6 +3910,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Boundary Layers",
             "title": "Displacement Thickness",
             "question": "For a flat plate boundary layer, the velocity profile is approximated as purely linear: $u/U = y/\\delta$. What is the displacement thickness ($\\delta^*$) in terms of the total boundary layer thickness ($\\delta$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3888,6 +3963,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Turbomachinery",
             "title": "Centrifugal Pump Affinity Laws",
             "question": "A centrifugal pump delivers $100\\text{ GPM}$ when operating at $1750\\text{ RPM}$. If the impeller diameter remains constant but the rotational speed is doubled to $3500\\text{ RPM}$, what is the new theoretical volumetric flow rate according to the pump affinity laws?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3937,6 +4013,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Hydrostatic Force on Curved Surfaces",
             "question": "A semi-cylindrical gate is submerged in a static fluid. According to fundamental fluid statics principles, the horizontal component of the hydrostatic pressure force acting on this curved gate is exactly equal to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -3986,6 +4063,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Compressible Flow",
             "title": "Ideal Gas Speed of Sound",
             "question": "What is the theoretical speed of sound in ideal Helium gas (specific heat ratio $\\gamma = 1.66$, gas constant $R = 2.077\\text{ kJ/kg}\\cdot\\text{K}$) at a temperature of $300\\text{ K}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4041,6 +4119,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamic cycles",
             "title": "Advanced Brayton Cycle with Regeneration",
             "question": "In an ideal gas turbine cycle with regenerator, air enters the compressor at 100 kPa and 300 K. The pressure ratio is 8. If the regenerator has an effectiveness of 100%, what is the thermal efficiency of this cycle compared to a standard Brayton cycle at high turbine inlet temperature?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4094,6 +4173,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamic cycles",
             "title": "Advanced Rankine Cycle Efficiency",
             "question": "In an ideal Rankine cycle, steam leaves the boiler at $4\\text{ MPa}$ and $400\\text{ }^\\circ\\text{C}$ ($h_1 = 3214\\text{ kJ/kg}$) and condenses at $10\\text{ kPa}$ ($h_f = 192\\text{ kJ/kg}$). If the isentropic turbine exhaust enthalpy is $h_2 = 2144\\text{ kJ/kg}$, find the ideal thermal efficiency of the cycle (neglecting pump work).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4147,6 +4227,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Total Net Work Done in a Cyclic Process",
             "question": "A thermodynamic system is taken through the cyclic process ABC as shown in the figure. The total work done by the system during the cycle ABC is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4200,6 +4281,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Air Bubble Rising in a Deep Pool",
             "question": "An air bubble of volume $2.9\\ cm^{3}$ rises from the bottom of a swimming pool of 5 m deep. At the bottom of the pool water temperature is $17^{\\circ}C$. The volume of the bubble when it reaches the surface, where the water temperature is $27^{\\circ}C$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4249,6 +4331,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Exergy and 2nd Law Analysis",
             "title": "Exergy Destruction in a Heat Exchanger",
             "question": "Hot gas ($C_p = 1.1\\text{ kJ/kg\\cdot K}$) enters a counter-flow heat exchanger at $600\\text{ K}$ and leaves at $400\\text{ K}$ with a mass flow rate of $2\\text{ kg/s}$. Cold water ($C_p = 4.18\\text{ kJ/kg\\cdot K}$) enters at $300\\text{ K}$ with a mass flow rate of $0.5\\text{ kg/s}$. Assuming the surroundings are at $T_0 = 300\\text{ K}$, what is the rate of exergy destruction?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4305,6 +4388,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamic Property Relations",
             "title": "Advanced Maxwell Relations",
             "question": "Using Maxwell relations and property definitions, which expression is correctly identically equal to the difference in specific heats, $C_p - C_v$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4361,6 +4445,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Exergy",
             "title": "Exergy Destruction (Irreversibility)",
             "question": "A steady-flow process generates an entropy increase of $0.5\\text{ kJ/kg}\\cdot\\text{K}$ in the universe. If the dead state temperature is $T_0 = 298\\text{ K}$, what is the specific exergy destruction (irreversibility) of the process?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4414,6 +4499,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Gas Power Cycles",
             "title": "Brayton Cycle Back Work Ratio",
             "question": "In an ideal air-standard Brayton cycle, the compressor requires a specific work input of $300\\text{ kJ/kg}$ and the turbine produces a specific work output of $800\\text{ kJ/kg}$. What is the back work ratio (BWR) of this cycle?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4466,6 +4552,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Vapor Power Cycles",
             "title": "Rankine Cycle Efficiency",
             "question": "A simple Rankine cycle has a pump work input of $5\\text{ kJ/kg}$, a turbine work output of $1000\\text{ kJ/kg}$, and a boiler heat input of $2500\\text{ kJ/kg}$. What is the thermal efficiency of the cycle?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4518,6 +4605,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics Relations",
             "title": "Maxwell Relations",
             "question": "Which of the following represents the correct thermodynamic Maxwell relation derived from the exact differential of the Helmholtz free energy function ($A = U - TS$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4570,6 +4658,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Psychrometrics",
             "title": "Sensible Heating",
             "question": "Moist air at $15^\\circ\\text{C}$ dry bulb and $10\\text{ g/kg}$ specific humidity is heated sensibly via a heating coil to $30^\\circ\\text{C}$. What is the absolute change in specific (absolute) humidity of the air mass?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4619,6 +4708,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Combustion",
             "title": "Stoichiometric Air-Fuel Ratio",
             "question": "What is the stoichiometric number of moles of theoretical air required for the complete combustion of one mole of Octane ($C_8H_{18}$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4672,6 +4762,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Refrigeration",
             "title": "Ideal COP",
             "question": "An ideal Carnot refrigerator operates between a freezer compartment at $-13^\\circ\\text{C}$ and an ambient room at $27^\\circ\\text{C}$. What is its theoretical maximum Coefficient of Performance (COP)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4727,6 +4818,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Conduction",
             "title": "Advanced Cylinder Conduction with Critical Radius",
             "question": "A steam pipe of outer radius 20 mm is to be insulated with asbestos ($k = 0.15\\text{ W/m-K}$). If the outer convective heat transfer coefficient is $5\\text{ W/m^2-K}$, what is the critical radius of insulation $r_c$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4780,6 +4872,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Radiation",
             "title": "Advanced Radiation View Factor",
             "question": "An infinitely long three-sided triangular enclosure is formed by three plates of equal width. What is the view factor $F_{12}$ from Plate 1 to Plate 2?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4837,6 +4930,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Conduction",
             "title": "Critical Radius of Insulation",
             "question": "For a cylindrical pipe, the critical radius of insulation is given by $r_c = k / h$. If the insulation has a thermal conductivity $k = 0.05\\text{ W/m}\\cdot\\text{K}$ and the external convective heat transfer coefficient is $h = 5\\text{ W/m}^2\\cdot\\text{K}$, what is the critical radius?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4890,6 +4984,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Convection",
             "title": "Nusselt Number Definition",
             "question": "In forced convection over a flat plate, the local dimensionless Nusselt number ($Nu$) fundamentally characterizes the ratio of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4935,6 +5030,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Radiation",
             "title": "View Factor Reciprocity",
             "question": "Two surfaces forming an enclosure have areas $A_1 = 2\\text{ m}^2$ and $A_2 = 4\\text{ m}^2$. If the view factor from surface 1 to surface 2 is $F_{1\\rightarrow 2} = 0.6$, what is the view factor $F_{2\\rightarrow 1}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -4988,6 +5084,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Conduction",
             "title": "Biot Number and Lumped Capacitance",
             "question": "The lumped capacitance method assumes a completely uniform temperature distribution within a solid during transient heat transfer. This assumption is generally considered valid when the Biot number ($Bi$) satisfies which condition?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5037,6 +5134,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Exchangers",
             "title": "Effectiveness-NTU Method",
             "question": "For a heat exchanger with a heat capacity rate ratio $C_r = C_{min} / C_{max} = 0$ (such as an evaporator or condenser), what is the effectiveness $\\epsilon$ if the Number of Transfer Units ($NTU$) is exactly $1.0$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5086,6 +5184,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Convection",
             "title": "Free Convection Grashof Number",
             "question": "In natural (free) convection, which dimensionless parameter represents the ratio of buoyancy forces to viscous forces acting on the fluid?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5131,6 +5230,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Radiation",
             "title": "Stefan-Boltzmann Law",
             "question": "A theoretical blackbody at a temperature of $1000\\text{ K}$ emits thermal radiation. Using the Stefan-Boltzmann constant $\\sigma = 5.67 \\times 10^{-8}\\text{ W/m}^2\\cdot\\text{K}^4$, what is its total emissive power?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5186,6 +5286,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sensors and Transducers",
             "title": "Advanced Op-Amp Output Calculation",
             "question": "An inverting amplifier circuit has an input resistor $R_i = 10\\ \\text{k}\\Omega$ and a feedback resistor $R_f = 100\\ \\text{k}\\Omega$. If the input voltage is a sine wave with amplitude 0.5 V, what is the amplitude of the output voltage?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5239,6 +5340,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Control",
             "title": "PID Controller Tuning (Ziegler-Nichols)",
             "question": "An open-loop process step response gives a delay time $L = 2\\text{ min}$ and a time constant $T = 8\\text{ min}$ with a steady-state gain $K_p = 1.5$. Using Ziegler-Nichols open-loop tuning rules for a PI controller, what should the integral time $\\tau_I$ be?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5288,6 +5390,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Control",
             "title": "Advanced Bode Stability Criterion",
             "question": "A control system has an open-loop transfer function $G(s)H(s) = \\frac{K}{(s+1)(s+2)(s+3)}$. At the phase crossover frequency $\\omega_{pc}$, the phase angle is $-180^\\circ$. What is the critical gain $K_c$ for marginal stability?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5341,6 +5444,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Control Theory",
             "title": "PID Controller Equation",
             "question": "In the standard continuous time domain, the output control signal $u(t)$ of an ideal, parallel PID controller responding to an error signal $e(t)$ is mathematically given by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5389,6 +5493,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "System Response",
             "title": "First-Order Time Constant",
             "question": "For a standard first-order dynamic system subjected to a unit step input, the time constant $\\tau$ is defined as the exact elapsed time required for the system's step response to reach approximately what percentage of its final steady-state value?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5442,6 +5547,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Stability",
             "title": "Routh-Hurwitz Criterion",
             "question": "The Routh-Hurwitz stability criterion evaluates the absolute, bounded-input bounded-output (BIBO) stability of a linear time-invariant system strictly by analyzing the mathematical roots of its:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5491,6 +5597,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Measurement",
             "title": "Strain Gauge Gage Factor",
             "question": "A foil strain gauge has a nominal un-strained resistance of $120\\text{ }\\Omega$ and a manufacturer-specified Gage Factor (GF) of $2.0$. If it is subjected to a purely axial microstrain of $1000\\text{ }\\mu\\epsilon$, what is the exact change in its electrical resistance?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5544,6 +5651,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Control Theory",
             "title": "Steady-State Error",
             "question": "For a standard 'Type 1' closed-loop feedback control system (which contains exactly one pure integrator $1/s$ in its forward path), what is the theoretical steady-state error in response to a unit step input?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5596,6 +5704,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sensors",
             "title": "Thermocouple Principle",
             "question": "A standard thermocouple measures fluid temperature based on the thermoelectric Seebeck effect, which generates a tiny millivolt potential proportional directly to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5645,6 +5754,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Frequency Response",
             "title": "Bode Plot Gain Margin",
             "question": "On a classical Bode plot for frequency response analysis, the Gain Margin (GM) is strictly defined as the reciprocal of the system's magnitude (or the negative of the magnitude in decibels) evaluated at the exact frequency where the phase angle is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5696,6 +5806,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Deformation and Stiffness",
             "title": "Advanced Goodman Fatigue Failure Analysis",
             "question": "A mechanical part is made from steel with ultimate strength $S_{ut} = 600\\text{ MPa}$ and endurance limit $S_e = 200\\text{ MPa}$. If it is subjected to a fluctuating stress ranging from 100 MPa to 300 MPa, calculate the factor of safety $N_f$ against fatigue using the Goodman criterion.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5749,6 +5860,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pressure Vessels and Piping",
             "title": "Advanced Thin-Walled Pressure Vessel Stress",
             "question": "A cylindrical pressure vessel has an inner diameter of 1 m and a wall thickness of 10 mm. If it is subjected to an internal gauge pressure of $2\\text{ MPa}$, what is the maximum in-plane shear stress $\\tau_{max}$ in the cylinder wall?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5802,6 +5914,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Machine Design",
             "title": "Advanced Fatigue Failure (Goodman Criterion)",
             "question": "A steel shaft is subjected to a fluctuating bending moment varying from $200\\text{ Nm}$ to $600\\text{ Nm}$. The ultimate strength is $S_{ut} = 800\\text{ MPa}$ and the endurance limit is $S_e = 400\\text{ MPa}$. Using the modified Goodman diagram, what is the maximum permissible diameter of the shaft for a factor of safety of $2.0$? (Assume $K_f = 1$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5859,6 +5972,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fatigue Design",
             "title": "Endurance Limit",
             "question": "A steel shaft has an ultimate tensile strength ($S_{ut}$) of $600\\text{ MPa}$ and is subjected to completely reversed bending. Using standard approximations for steels under $1400\\text{ MPa}$, what is the uncorrected endurance limit ($S_e'$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5907,6 +6021,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fatigue Design",
             "title": "Modified Goodman Criterion",
             "question": "A machine component has an alternating stress of $150\\text{ MPa}$ and a mean stress of $100\\text{ MPa}$. The corrected endurance limit is $250\\text{ MPa}$ and the ultimate strength is $500\\text{ MPa}$. What is the factor of safety ($N$) using the Modified Goodman line?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -5959,6 +6074,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Gear Design",
             "title": "Lewis Bending Equation",
             "question": "The Lewis bending equation for gear teeth is fundamentally designed to evaluate the failure of a gear tooth due to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6003,6 +6119,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Shaft Design",
             "title": "Torsional Shear Stress",
             "question": "A solid steel shaft transmits $50\\text{ N}\\cdot\\text{m}$ of torque. There is absolutely no bending moment on the shaft. The allowable shear stress is $40\\text{ MPa}$. Using the simple torsion formula $\\tau = \\frac{16T}{\\pi d^3}$, what is the minimum required shaft diameter ($d$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6055,6 +6172,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Spring Design",
             "title": "Wahl Correction Factor",
             "question": "In the design of helical compression springs, the Wahl correction factor ($K_w$) is introduced primarily to account for what two localized stress amplification effects?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6099,6 +6217,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Bearings",
             "title": "Journal Bearing Sommerfeld Number",
             "question": "The Sommerfeld number is a critical dimensionless parameter used extensively in the hydrodynamic design of journal bearings. Which of the following physical variables is NOT a component of the Sommerfeld number?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6148,6 +6267,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fasteners",
             "title": "Bolt Stiffness Distribution",
             "question": "In a pre-loaded bolted joint, if the stiffness of the clamped members ($k_m$) is designed to be much greater than the stiffness of the bolt ($k_b$), how much of a newly applied external tensile load is carried by the bolt?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6199,6 +6319,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Probability Distributions",
             "title": "Advanced Joint Probability Density Function",
             "question": "A system's failure times are modeled by a joint probability density function $f(x, y) = c(x + y)$ for $0 \\le x \\le 1$ and $0 \\le y \\le 2$, and $0$ otherwise. Determine the normalization constant $c$ and the probability $P(X + Y \\le 1)$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6252,6 +6373,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Probability",
             "title": "Probability of Singular Performance Attendance",
             "question": "Let Ajay will not appear in JEE exam with probability $p = \\frac{2}{7}$, while both Ajay and Vijay will appear in the exam with probability $q = \\frac{1}{5}$. Then the probability that Ajay will appear in the exam and Vijay will not appear is :",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6305,6 +6427,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Probability",
             "title": "Successive Non-Replacement Independent Draws from an Urn",
             "question": "An urn contains 6 white and 9 black balls. Two successive draws of 4 balls are made without replacement. The probability that the first draw gives all white balls and the second draw gives all black balls is :",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6358,6 +6481,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Probability",
             "title": "Bayes' Theorem Application",
             "question": "A rare disease affects exactly $1\\%$ of a population. A diagnostic test is highly sensitive and specific, being exactly $99\\%$ accurate (meaning both the true positive rate and true negative rate are $0.99$). If a random person takes the test and receives a positive result, what is the approximate mathematical probability that they actually have the disease?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6411,6 +6535,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Distributions",
             "title": "Poisson Distribution",
             "question": "An IT server help desk receives an average of $\\lambda = 3.0$ completely random calls per minute. Assuming a Poisson distribution, what is the exact probability of receiving exactly zero calls in a given, randomly selected one-minute interval?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6464,6 +6589,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sampling",
             "title": "Central Limit Theorem",
             "question": "According to the fundamental Central Limit Theorem in statistics, as the random sample size $n$ increases, the sampling distribution of the sample mean strictly approaches a normal (Gaussian) distribution, regardless of the underlying population's original shape, provided that $n$ is generally greater than:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6509,6 +6635,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hypothesis Testing",
             "title": "Type I Error Definition",
             "question": "In rigorous statistical hypothesis testing, a 'Type I error' (commonly denoted by $\\alpha$) is formally defined as the specific probability of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6558,6 +6685,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Regression",
             "title": "Coefficient of Determination",
             "question": "In a simple linear regression analysis modeling material strength vs density, the calculated Pearson correlation coefficient is $r = 0.80$. What exact percentage of the total statistical variance in the dependent variable is mathematically explained by the linear model?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6607,6 +6735,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Combinatorics",
             "title": "Permutations Calculation",
             "question": "An engineering department has 10 qualified members. In how many distinct, mathematically unique ways can a committee consisting of exactly three distinct roles (a President, a Vice President, and a Secretary) be chosen?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6659,6 +6788,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reliability",
             "title": "Series System Reliability",
             "question": "A critical fluid control system consists of 3 distinct mechanical components placed in strict series. Each component functions entirely independently and has a tested operational reliability of $0.90$. What is the overall mathematical reliability of the entire system?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6714,6 +6844,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Chemical Reactions",
             "title": "Advanced Chemical Equilibrium (Kc to Kp)",
             "question": "For the gas-phase reaction: $$N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)$$, the equilibrium constant $K_c$ is $0.291$ at $500\\text{ K}$. Calculate the value of $K_p$ at this temperature (using gas constant $R = 0.0821\\text{ L}\\cdot\\text{atm}/(\\text{mol}\\cdot\\text{K})$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6767,6 +6898,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Chemical Reactions",
             "title": "Mass Calculation in Redox Reactions",
             "question": "Aqueous $\\text{HCl}$ reacts with $\\text{MnO}_2(\\text{s})$ to form $\\text{MnCl}_2(\\text{aq})$, $\\text{Cl}_2(\\text{g})$ and $\\text{H}_2\\text{O}(l)$. What is the weight (in g) of $\\text{Cl}_2$ liberated when $8.7\\text{ g}$ of $\\text{MnO}_2(\\text{s})$ is reacted with excess aqueous $\\text{HCl}$ solution?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6816,6 +6948,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Chemical Equilibrium",
             "title": "Advanced Solubility Product with Common Ion",
             "question": "The solubility product $K_{sp}$ of $CaF_2$ is $3.9 \\times 10^{-11}$. What is the molar solubility of $CaF_2$ in a $0.10\\text{ M}$ solution of $NaF$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6869,6 +7002,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Physical Chemistry",
             "title": "Arrhenius Equation Activation Energy",
             "question": "For a specific chemical reaction, the rate constant perfectly doubles when the temperature is raised from $300\\text{ K}$ to $310\\text{ K}$. Assuming the Arrhenius equation applies, what is the activation energy $E_a$? (Use the universal gas constant $R = 8.314\\text{ J/mol}\\cdot\\text{K}$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6925,6 +7059,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electrochemistry",
             "title": "Nernst Equation",
             "question": "A galvanic cell operates with a standard cell potential $E^\\circ = 1.10\\text{ V}$. If the reaction quotient $Q$ is exactly $10^4$ and $n=2$ moles of electrons are transferred per mole of reaction, what is the actual cell potential $E$ at $298\\text{ K}$? (Use the Nernst constant factor of $0.0592\\text{ V}$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -6978,6 +7113,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Acid-Base Chemistry",
             "title": "Buffer Solution pH",
             "question": "An aqueous buffer solution is carefully prepared containing $0.1\\text{ M}$ acetic acid ($pK_a = 4.76$) and $0.5\\text{ M}$ sodium acetate. What is the theoretical pH of this resulting buffer?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7030,6 +7166,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Gibbs Free Energy",
             "question": "For a specific reaction taking place at $298\\text{ K}$, the standard enthalpy change is $\\Delta H^\\circ = -50\\text{ kJ/mol}$ and the standard entropy change is $\\Delta S^\\circ = -100\\text{ J/mol}\\cdot\\text{K}$. What is the standard Gibbs free energy change $\\Delta G^\\circ$, and is the reaction thermodynamically spontaneous at this temperature?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7087,6 +7224,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Colligative Properties",
             "title": "Osmotic Pressure",
             "question": "What is the theoretical osmotic pressure of a $0.2\\text{ M}$ aqueous solution of Sodium Chloride ($\\text{NaCl}$) at a temperature of $300\\text{ K}$? Assume ideal behavior and complete $100\\%$ dissociation. (Use $R = 0.0821\\text{ L}\\cdot\\text{atm/mol}\\cdot\\text{K}$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7139,6 +7277,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Kinetics",
             "title": "First-Order Half-Life",
             "question": "A first-order chemical reaction has an established rate constant of $k = 0.01\\text{ s}^{-1}$. Exactly how long will it take for the reactant concentration to drop to $12.5\\%$ of its original initial value?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7192,6 +7331,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Organic Chemistry",
             "title": "Nucleophilic Substitution",
             "question": "In organic chemistry, which fundamental reaction mechanism proceeds via the formation of a distinct carbocation intermediate and characteristically results in a racemic mixture if the reacting carbon center is chiral?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7243,6 +7383,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Confined Space Entry and Ventilation Rates",
             "title": "Advanced Dilution Ventilation Rate",
             "question": "A confined space of $100\\text{ m}^3$ contains $500\\text{ ppm}$ of a toxic gas. Dilution ventilation is started at a rate of $Q = 10\\text{ m}^3/\\text{min}$ with fresh air. Assuming perfect mixing, calculate the time required to reduce the toxic gas concentration to the Permissible Exposure Limit (PEL) of $50\\text{ ppm}$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7296,6 +7437,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Safety",
             "title": "Advanced Fault Tree Analysis",
             "question": "In a fault tree analysis, the top event occurs if either Event A AND Event B occur, OR if Event C occurs. The probabilities of basic events are $P(A) = 0.1$, $P(B) = 0.2$, and $P(C) = 0.05$. Assuming all basic events are independent, what is the probability of the top event occurring?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7349,6 +7491,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Occupational Safety",
             "title": "TWA Exposure Limits",
             "question": "A worker is exposed to a solvent vapor at $50\\text{ ppm}$ for 4 hours, $100\\text{ ppm}$ for 2 hours, and $20\\text{ ppm}$ for 2 hours during an 8-hour shift. What is the 8-hour Time-Weighted Average (TWA) exposure?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7402,6 +7545,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hazard Analysis",
             "title": "Fault Tree Analysis (FTA) Gates",
             "question": "In rigorous Fault Tree Analysis (FTA), a boolean logic diagram is used to completely model system failure paths. The specific logic gate that dictates that the 'top event' (failure) will absolutely occur ONLY if ALL of the input events occur simultaneously is the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7447,6 +7591,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fire Safety",
             "title": "The Fire Tetrahedron",
             "question": "The traditional 'fire triangle' taught in basic safety consists of Heat, Fuel, and Oxygen. The more scientifically accurate modern 'fire tetrahedron' adds a fourth essential, fundamental element critically required to sustain a flaming fire, which is the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7495,6 +7640,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Toxicology",
             "title": "Definition of LD50",
             "question": "In occupational toxicology and MSDS/SDS sheets, the hazard term $LD_{50}$ explicitly stands for the 'Lethal Dose 50%'. It is scientifically and formally defined as the statistically derived single dose of a toxic substance that can be expected to cause death in:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7544,6 +7690,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Industrial Hygiene",
             "title": "Hierarchy of Hazard Controls",
             "question": "According to the internationally recognized NIOSH Hierarchy of Controls for mitigating occupational hazards in engineering design, which method is universally considered the absolute most effective and preferred first step?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7593,6 +7740,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electrical Safety",
             "title": "GFCI Functionality",
             "question": "A Ground Fault Circuit Interrupter (GFCI) outlet protects personnel from fatal electrical shocks primarily by constantly monitoring the circuit and instantly detecting a critical, tiny imbalance in current (usually around 5 mA) between the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7642,6 +7790,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Safety",
             "title": "Explosive Limits (LEL and UEL)",
             "question": "The Lower Explosive Limit (LEL) and Upper Explosive Limit (UEL) define the specific concentration range of a flammable gas mixed in air. A mixture that falls mathematically below the precise LEL is scientifically considered:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7691,6 +7840,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Confined Spaces",
             "title": "Oxygen Deficiency Threshold",
             "question": "Under rigorous OSHA occupational safety standards, a confined space environment (like a tank or manhole) is strictly legally classified as 'oxygen deficient' and extremely hazardous to enter if the atmospheric oxygen concentration falls below what precise percentage by volume?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7742,6 +7892,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Economic Analyses",
             "title": "Advanced Capitalized Cost",
             "question": "An engineering project has an initial cost of $\\$100,000$. It requires a major overhaul costing $\\$40,000$ every 10 years, and annual maintenance of $\\$5,000$. If the interest rate is $8\\%$ compounded annually, determine the capitalized cost of the project.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7795,6 +7946,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Modified Internal Rate of Return (MIRR)",
             "question": "An investment of $10,000 yields $4,000 at the end of Year 1 and $8,000 at the end of Year 2. If the reinvestment rate is 10% and the finance rate is 8%, what is the Modified Internal Rate of Return (MIRR) over the 2-year period?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7848,6 +8000,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Capitalized Cost",
             "question": "A bridge will cost $5,000,000 to construct. Annual maintenance is $50,000. It requires a major overhaul costing $1,000,000 every 10 years. If the interest rate is 5% per year, what is the capitalized cost of the bridge?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7905,6 +8058,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Time Value of Money",
             "title": "Effective Annual Rate (EAR)",
             "question": "An industrial equipment loan charges a nominal annual interest rate of exactly $12\\%$, but interest is compounded monthly. What is the true mathematical Effective Annual Rate (EAR) paid on this loan?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -7962,6 +8116,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Depreciation",
             "title": "Straight-Line Method",
             "question": "A CNC machine is purchased for a chemical plant at an initial cost of $\\$50,000$. It has a projected useful life of exactly $10\\text{ years}$, and an estimated salvage value of $\\$5,000$. Using the standard straight-line depreciation method, what is the exact annual depreciation charge?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8015,6 +8170,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Investment Analysis",
             "title": "Internal Rate of Return (IRR)",
             "question": "In capital budgeting, the Internal Rate of Return (IRR) of an engineering project is formally defined as the exact, single discount interest rate that mathematically forces the Net Present Value (NPV) of the entire cash flow to equal:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8063,6 +8219,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Capitalized Cost",
             "title": "Infinite Horizon Formula",
             "question": "The capitalized cost ($CC$) of a public works asset expected to have an effectively infinite lifespan (like a major concrete dam) is equal to its initial construction cost ($P$) plus the present worth of perpetual annual maintenance ($A$). Given an interest rate $i$, the mathematical formula is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8112,6 +8269,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Break-Even Analysis",
             "title": "Production Break-Even Volume",
             "question": "A manufacturing plant has fixed annual overhead costs of $\\$100,000$. A specific manufactured product sells for $\\$50$ per unit and has a direct variable cost of $\\$30$ per unit. What is the exact break-even production volume in units per year?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8164,6 +8322,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Inflation",
             "title": "Real vs Nominal Interest Rates",
             "question": "In a fluctuating economy, if the nominal (market-advertised) interest rate on a corporate bond is $8.0\\%$ and the general national inflation rate is measured at $3.0\\%$, the approximate 'real' interest rate (representing the actual growth in physical purchasing power) is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8217,6 +8376,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Decision Analysis",
             "title": "Treatment of Sunk Costs",
             "question": "In standard engineering economic analysis, 'sunk costs' refer to money that has already been irrevocably spent in the past. When formally evaluating future financial alternatives, how should sunk costs be mathematically treated?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8263,6 +8423,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Intellectual Property",
             "title": "Advanced Patent Infringement and Trade Secrets",
             "question": "Under the NCEES Model Rules of Professional Conduct, if an engineer is asked by an employer to use proprietary software source code obtained from a previous employer without license or permission, the engineer must:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8312,6 +8473,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Ethics",
             "title": "Whistleblowing Protocols",
             "question": "An engineer discovers that a product about to be released by their company fails to meet safety standards and could cause serious injury. The engineer informs their immediate supervisor, who dismisses the concern. According to standard engineering codes of ethics (e.g., NSPE), what is the most appropriate next step?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8365,6 +8527,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Ethics",
             "title": "Conflict of Interest",
             "question": "An engineer is responsible for recommending a vendor for a large civil project. The engineer owns a significant amount of stock in one of the bidding companies. To act ethically, the engineer MUST:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8418,6 +8581,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "NSPE Code",
             "title": "The Paramountcy Clause",
             "question": "According to the very first Fundamental Canon of the National Society of Professional Engineers (NSPE) Code of Ethics, an engineer's absolute highest, overriding professional obligation is to hold paramount the safety, health, and welfare of the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8466,6 +8630,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Whistleblowing",
             "title": "Conditions for Justified Action",
             "question": "If an engineer discovers their employer is discharging illegal toxic waste and internal management flatly refuses to act, ethical guidelines mandate that 'whistleblowing' to outside regulatory authorities is justified (and often required) primarily when:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8510,6 +8675,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Conflict of Interest",
             "title": "Mandatory Disclosure",
             "question": "If a licensed engineer acts as an independent consultant for a city evaluating construction bids, and one of the bidding companies is owned entirely by the engineer's spouse, the engineer must ethically:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8558,6 +8724,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Professional Competence",
             "title": "Sealing and Signing Plans",
             "question": "Under standard engineering registration laws and ethical codes, a Professional Engineer (PE) is strictly, legally permitted to sign and seal only those plans, reports, or documents that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8602,6 +8769,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Gifts and Bribery",
             "title": "Foreign Corrupt Practices Act (FCPA)",
             "question": "An American engineer working internationally is explicitly offered a large 'facilitation payment' (a kickback) by a foreign official to secure a lucrative municipal contract. Under both the NSPE Code and the US Foreign Corrupt Practices Act (FCPA), this is strictly considered:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8646,6 +8814,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Confidentiality",
             "title": "Proprietary Information Transfer",
             "question": "A senior engineer leaves Company A to work for a direct competitor, Company B. Regardless of whether a non-compete clause was signed, the engineer is fundamentally ethically prohibited from:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8691,6 +8860,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sustainable Development",
             "title": "Environmental Stewardship",
             "question": "Modern engineering codes of ethics globally emphasize the concept of 'sustainable development'. This term is formally defined in the Brundtland Report as fulfilling the needs of the present generation without:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8737,6 +8907,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Bearing Capacity",
             "title": "Advanced Terzaghi Bearing Capacity with Ground Water Table",
             "question": "A square footing of size $2\\text{ m} \\times 2\\text{ m}$ is placed at a depth of $1.5\\text{ m}$ in a cohesive-frictional soil. The soil properties are: cohesion $c' = 20\\text{ kPa}$, friction angle $\\phi' = 25^\\circ$, unit weight $\\gamma = 18\\text{ kN/m}^3$, and saturated unit weight $\\gamma_{sat} = 20\\text{ kN/m}^3$. The Terzaghi bearing capacity factors for $\\phi' = 25^\\circ$ are $N_c = 25.1$, $N_q = 12.7$, and $N_\\gamma = 9.7$. If the water table is located exactly at the ground surface, calculate the ultimate bearing capacity $q_u$ of the soil using Terzaghi's bearing capacity equation for a square footing (use unit weight of water $\\gamma_w = 9.81\\text{ kN/m}^3$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8790,6 +8961,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Mechanics",
             "title": "Consolidation Settlement",
             "question": "A $4\\text{ m}$ thick normally consolidated clay layer ($C_c = 0.3$, $e_0 = 1.0$) is subjected to an increase in effective stress from $100\\text{ kPa}$ to $200\\text{ kPa}$. What is the primary consolidation settlement?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8842,6 +9014,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Foundation Engineering",
             "title": "Terzaghi's Bearing Capacity",
             "question": "For a continuous strip footing of width $B = 2\\text{ m}$ placed at a depth $D_f = 1\\text{ m}$ in a cohesive soil ($c' = 20\\text{ kPa}$, $\\phi' = 0$, $\\gamma = 18\\text{ kN/m}^3$). If the bearing capacity factors for $\\phi' = 0$ are $N_c = 5.14$, $N_q = 1.0$, and $N_\\gamma = 0$, what is the ultimate bearing capacity $q_u$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8894,6 +9067,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Mechanics",
             "title": "Flow Net Seepage",
             "question": "A flow net under a sheet pile wall has $N_f = 4$ flow channels and $N_d = 10$ equipotential drops. The head difference is $5\\text{ m}$ and the isotropic soil permeability is $k = 2 \\times 10^{-5}\\text{ m/s}$. What is the seepage rate per meter width of the wall?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8946,6 +9120,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Mechanics",
             "title": "Mohr-Coulomb Failure",
             "question": "In a consolidated-drained triaxial test on a normally consolidated clay ($c' = 0$), the specimen fails at a major principal effective stress $\\sigma_1' = 300\\text{ kPa}$ and a minor principal effective stress $\\sigma_3' = 100\\text{ kPa}$. What is the effective friction angle $\\phi'$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -8998,6 +9173,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Foundation Design",
             "title": "Pile Bearing Capacity",
             "question": "A $10\\text{ m}$ long friction pile ($0.5\\text{ m}$ diameter) is driven into a uniform clay layer with undrained shear strength $c_u = 40\\text{ kPa}$. Using an alpha-method adhesion factor $\\alpha = 0.8$, what is the ultimate skin friction resistance ($Q_s$) of the pile?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9050,6 +9226,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Mechanics",
             "title": "Consolidation Time Scaling",
             "question": "A clay layer takes 4 years to reach 50% consolidation. If a new, identical clay layer is twice as thick and has the exact same double-drainage conditions, how long will it take to reach 50% consolidation?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9102,6 +9279,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Earth Pressures",
             "title": "Rankine Active Earth Pressure",
             "question": "A retaining wall holds back a dry, cohesionless backfill soil ($\\phi' = 30^\\circ, \\gamma = 18\\text{ kN/m}^3$). What is the Rankine active earth pressure coefficient $K_a$ and the lateral active earth pressure at a depth of $5\\text{ m}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9154,6 +9332,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Mechanics",
             "title": "SPT N-value Overburden Correction",
             "question": "An SPT test at a depth of $10\\text{ m}$ in sand yields a raw N-value of 20. The vertical effective stress at this depth is $\\sigma_{v0}' = 100\\text{ kPa}$. Using the Liao and Whitman correction factor $C_N = \\sqrt{\\frac{100}{\\sigma_{v0}'}}$ (where stresses are in kPa), what is the corrected $N_1$ value?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9202,6 +9381,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Foundation Design",
             "title": "Eccentric Footing Pressure",
             "question": "A $2\\text{ m} \\times 2\\text{ m}$ square footing carries a vertical load of $400\\text{ kN}$ and a bending moment of $80\\text{ kNm}$ about the center axis. What is the maximum contact pressure under the footing?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9260,6 +9440,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reactor Design",
             "title": "Advanced Variable Volume Gas-Phase PFR Design",
             "question": "A gas-phase reaction $A \\rightarrow 3B$ is carried out isothermally in a Plug Flow Reactor (PFR) at $500\\text{ K}$ and $10\\text{ atm}$. The feed contains $50\\%$ $A$ and $50\\%$ inert nitrogen. The feed rate of $A$ is $F_{A0} = 100\\text{ mol/min}$ and the rate constant is $k = 2.0\\text{ min}^{-1}$. If the rate law is first-order ($r_A = k C_A$), calculate the reactor volume $V$ required to achieve a conversion of $80\\%$ (use gas constant $R = 0.0821\\text{ L}\\cdot\\text{atm}/(\\text{mol}\\cdot\\text{K})$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9316,6 +9497,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reaction Kinetics",
             "title": "Isothermal Reactor Design",
             "question": "A first-order liquid-phase reaction ($A \\rightarrow R$) has a rate constant $k = 0.5\\text{ min}^{-1}$. Two identical CSTRs are connected in series. What total space time ($\\tau_{total}$) is required to achieve 96% conversion?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9372,6 +9554,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reaction Engineering",
             "title": "Non-Isothermal PFR Temperature Profile",
             "question": "An exothermic gas-phase reaction occurs in an adiabatic plug flow reactor. If the conversion increases, the temperature of the reaction mixture will:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9425,6 +9608,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reactor Design",
             "title": "CSTR Design Equation",
             "question": "For a standard Continuous Stirred-Tank Reactor (CSTR) operating at steady state, the fundamental design equation relating the reactor volume $V$, the initial feed molar flow rate $F_{A0}$, the fractional conversion $X_A$, and the reaction rate $-r_A$ is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9477,6 +9661,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reactor Sizing",
             "title": "PFR vs CSTR Volume",
             "question": "For a normal, isothermal, constant-density, single liquid-phase reaction with a reaction order $n > 0$, how does the required volume of an ideal Plug Flow Reactor (PFR) theoretically compare to an ideal CSTR to achieve the exact same conversion?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9525,6 +9710,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Multiple Reactors",
             "title": "CSTRs in Series",
             "question": "As the number of equal-volume CSTRs placed in series approaches mathematical infinity ($N \\rightarrow \\infty$), the overall fluid behavior and total volume required for the cascade approaches that of an ideal:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9573,6 +9759,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Catalysis",
             "title": "Thiele Modulus",
             "question": "In the analysis of heterogeneous catalysis, a large calculated Thiele modulus (e.g., $\\phi_1 > 10$) mathematically signifies that the overall observed reaction rate is severely limited by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9622,6 +9809,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Non-Ideal Flow",
             "title": "Residence Time Distribution (RTD)",
             "question": "The exit age function $E(t)$ mathematically represents the Residence Time Distribution (RTD) of molecules in a chemical reactor. By formal definition, what is the exact value of the integral $\\int_0^\\infty E(t) dt$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9670,6 +9858,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Kinetics",
             "title": "Zero-Order Batch Reaction",
             "question": "For a strictly zero-order chemical reaction ($A \\rightarrow \\text{Products}$) with a constant rate $k$, occurring inside a perfectly mixed, constant-volume batch reactor, how long does it take for the reactant concentration to reach exactly zero?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9727,6 +9916,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermal Effects",
             "title": "Adiabatic Temperature Rise",
             "question": "In a perfectly insulated (adiabatic) flow reactor, the maximum possible theoretical temperature rise ($\\Delta T_{ad}$) for a highly exothermic reaction achieving $100\\%$ conversion is directly proportional to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9777,6 +9967,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wastewater Treatment",
             "title": "Advanced Activated Sludge Aeration Tank Design",
             "question": "An activated sludge system treats $10,000\\text{ m}^3/\\text{day}$ of municipal wastewater with an influent $\\text{BOD}_5$ of $200\\text{ mg/L}$. The target effluent $\\text{BOD}_5$ is $10\\text{ mg/L}$. The aeration tank maintains a mixed liquor suspended solids (MLSS) concentration of $3,000\\text{ mg/L}$ with a mean cell residence time (MCRT or $\\theta_c$) of $10\\text{ days}$. The biomass yield coefficient is $Y = 0.5\\text{ kg VSS/kg BOD}$ and the endogenous decay coefficient is $k_d = 0.06\\text{ day}^{-1}$. Under standard assumptions where volatile suspended solids (MLVSS) is $80\\%$ of MLSS, calculate the volume of the aeration tank required.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9834,6 +10025,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wastewater Treatment",
             "title": "BOD Kinetics",
             "question": "A wastewater sample has an ultimate BOD ($L_0$) of $250\\text{ mg/L}$ and a deoxygenation rate constant $k$ (base $e$) of $0.23\\text{ d}^{-1}$. What is the 5-day BOD ($BOD_5$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9887,6 +10079,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Treatment",
             "title": "Chlorine Disinfection (Chick's Law)",
             "question": "A water treatment plant uses chlorine for disinfection. According to Chick's Law, the survival of microorganisms is $N/N_0 = e^{-kt}$. If 99% of the organisms are destroyed in 10 minutes, what is the rate constant $k$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9940,6 +10133,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wastewater Treatment",
             "title": "BOD5 Dilution Calculation",
             "question": "A wastewater sample of $10\\text{ mL}$ is diluted to a total volume of $300\\text{ mL}$ in a standard BOD bottle. The initial dissolved oxygen (DO) is $8.0\\text{ mg/L}$, and the DO after 5 days of incubation at $20^\\circ\\text{C}$ is $3.0\\text{ mg/L}$. Assuming the dilution water blank DO depletion is strictly zero, what is the $BOD_5$ of the original undiluted sample?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -9993,6 +10187,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Treatment",
             "title": "Stoke's Law Discrete Settling",
             "question": "A spherical sand particle ($diameter = 0.1\\text{ mm}$, specific gravity $= 2.65$) settles in water (dynamic viscosity $\\mu = 1.0 \\times 10^{-3}\\text{ Pa}\\cdot\\text{s}$, density $\\rho = 1000\\text{ kg/m}^3$) under Type I discrete settling conditions. Using Stoke's Law, what is the terminal settling velocity? (Use $g = 9.81\\text{ m/s}^2$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10046,6 +10241,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wastewater Treatment",
             "title": "Activated Sludge F/M Ratio",
             "question": "An activated sludge aeration tank has a volume of $2000\\text{ m}^3$ and an MLVSS concentration of $2500\\text{ mg/L}$. It receives a primary effluent flow of $5000\\text{ m}^3\\text{/d}$ with an influent BOD concentration of $200\\text{ mg/L}$. What is the Food-to-Microorganism (F/M) ratio?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10095,6 +10291,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Treatment",
             "title": "Chlorine Contact Time (CT)",
             "question": "A water treatment plant must achieve a $3\\text{-log} (99.9\\%)$ inactivation of Giardia cysts. The required CT value from regulatory tables is $120\\text{ mg}\\cdot\\text{min/L}$. If the effective chlorine concentration is maintained at $1.5\\text{ mg/L}$ and the clearwell baffling factor is $T_{10}/T = 0.4$, what is the required theoretical hydraulic residence time (HRT) of the clearwell?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10148,6 +10345,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wastewater Treatment",
             "title": "Sludge Age (SRT)",
             "question": "An aeration tank ($V = 3000\\text{ m}^3$, $X = 3000\\text{ mg/L}$) discharges effluent ($Q_e = 10000\\text{ m}^3\\text{/d}$, $X_e = 15\\text{ mg/L}$) and wastes sludge directly from the return line ($Q_w = 100\\text{ m}^3\\text{/d}$, $X_r = 10000\\text{ mg/L}$). What is the Solids Retention Time (SRT)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10201,6 +10399,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Treatment",
             "title": "Ion Exchange Softening",
             "question": "An ion exchange softener treats $1000\\text{ m}^3\\text{/d}$ of water with a hardness of $250\\text{ mg/L as } CaCO_3$. The resin capacity is $60\\text{ kg of } CaCO_3$ equivalents per cubic meter of resin. If the softener must operate for exactly 7 days between regenerations, what is the minimum required volume of resin?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10254,6 +10453,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Environmental Chemistry",
             "title": "Alkalinity Titration",
             "question": "A water sample has an initial pH of 7.0. A $100\\text{ mL}$ sample requires $15\\text{ mL}$ of a $0.02\\text{ N } H_2SO_4$ titrant to reach the methyl orange endpoint (pH 4.5). What is the total alkalinity in $\\text{mg/L as } CaCO_3$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10309,6 +10509,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Linear Programming",
             "title": "Advanced Simplex Method Duality",
             "question": "Consider the primal linear programming problem: $\\text{Maximize } Z = 3x_1 + 5x_2$ subject to: $x_1 + 2x_2 \\le 8$, $3x_1 + 2x_2 \\le 12$, and $x_1, x_2 \\ge 0$. Find the optimal values of the dual variables $y_1$ and $y_2$ associated with the two constraints.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10362,6 +10563,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "System Modeling",
             "title": "State-Space Representation",
             "question": "Given the differential equation $\\ddot{y} + 3\\dot{y} + 2y = u(t)$, what is the system matrix $A$ in the observable canonical form?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10414,6 +10616,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Simulation",
             "title": "Numerical Integration",
             "question": "Using the standard 4th order Runge-Kutta method, the local truncation error per step scales with the step size $h$ proportionally to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10463,6 +10666,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "System Dynamics",
             "title": "State Space Representation",
             "question": "In modern control theory and mathematical system modeling, a dynamic, time-invariant system is universally represented by the state equation $\\dot{x} = Ax + Bu$. The specific square matrix $A$ in this formulation is formally known as the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10511,6 +10715,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Euler's Method Truncation Error",
             "question": "Euler's method is the simplest first-order numerical procedure for solving ordinary differential equations (ODEs) with a given initial value. Mathematically, the 'local truncation error' introduced at each single step of size $h$ is strictly proportional to what power of $h$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10560,6 +10765,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Optimization",
             "title": "Linear Programming Solutions",
             "question": "In a standard mathematical linear programming problem solved via the classical Simplex algorithm, the optimal maximum or minimum solution to the linear objective function, assuming one exists and is finite, is mathematically proven to always occur exactly at:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10609,6 +10815,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Queuing Theory",
             "title": "M/M/1 Queue Notation",
             "question": "In the standard Kendall's notation used to classify queuing models in operations research, an M/M/1 queue specifically and mathematically denotes a system that processes with:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10657,6 +10864,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Modeling",
             "title": "Buckingham Pi Theorem",
             "question": "The Buckingham Pi theorem is widely used in fluid mechanics and heat transfer to logically nondimensionalize physical models. If a physical problem correctly involves $n$ relevant physical variables and $m$ independent fundamental physical dimensions, how many completely independent dimensionless Pi groups can theoretically be formed?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10706,6 +10914,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "System Dynamics",
             "title": "Damping Ratio Definition",
             "question": "For a standard second-order mathematical model of a mechanical mass-spring-damper system, the dimensionless damping ratio $\\zeta$ is strictly defined mathematically as the ratio of the actual physical damping coefficient $c$ to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10756,6 +10965,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Phasors",
             "title": "Advanced AC Circuit Power Factor Correction",
             "question": "An industrial load operating at $240\\text{ V}_{rms}$ and $60\\text{ Hz}$ draws a real power of $12\\text{ kW}$ at a lagging power factor of $0.75$. To improve the power factor to $0.95$ lagging, what value of parallel capacitance $C$ must be connected across the load?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10809,6 +11019,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "AC Circuits",
             "title": "Resonance Q-Factor",
             "question": "A series RLC circuit has $R = 10 \\Omega$, $L = 100 \\text{ mH}$, and $C = 10 \\mu\\text{F}$. What is the Q-factor at resonance?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10862,6 +11073,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transients",
             "title": "RC Circuit Charging",
             "question": "In a standard RC charging circuit with a DC source, the capacitor voltage reaches approximately what percentage of its final steady-state value after a time equal to 3 time constants ($3\\tau$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10915,6 +11127,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "AC Circuits",
             "title": "Reactive Power Units",
             "question": "In a standard AC power circuit, the reactive power ($Q$) oscillating back and forth continuously between the source and the reactive components (inductors and capacitors) does no useful physical work. It is mathematically measured in what specific SI units?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -10964,6 +11177,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Network Theorems",
             "title": "Thevenin's Theorem",
             "question": "Thevenin's theorem fundamentally states that any highly complex linear, bilateral DC network with multiple power sources and resistors can be mathematically and physically reduced to a simple equivalent circuit consisting of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11012,6 +11226,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transients",
             "title": "RC Time Constant",
             "question": "In a first-order RC (Resistor-Capacitor) circuit, the fundamental time constant ($\\tau$) mathematically dictates the exact speed of the transient voltage response when charging or discharging. It is calculated exactly as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11061,6 +11276,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Op-Amps",
             "title": "Ideal Operational Amplifier Assumptions",
             "question": "When mathematically analyzing a circuit utilizing an ideal operational amplifier (Op-Amp) with negative feedback, two fundamental 'Golden Rules' are universally assumed: the voltage difference between the input terminals is strictly zero, and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11109,6 +11325,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Filters",
             "title": "Passive RC Low-Pass Filter Cutoff",
             "question": "For a simple first-order passive RC (Resistor-Capacitor) low-pass filter, the mathematical cutoff frequency ($f_c$), defined strictly as the point where the output power drops by exactly half (the -3dB point), is calculated as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11158,6 +11375,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Kirchhoff's Laws",
             "title": "Physical Basis of KCL and KVL",
             "question": "Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) are the foundational tools of circuit analysis. They are formal, rigorous mathematical derivations of two fundamental physical principles of the universe, respectively:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11207,6 +11425,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "AC Power",
             "title": "Power Factor Definition",
             "question": "In an industrial AC electrical power system, the Power Factor ($PF$) is a critical metric for efficiency. It is formally defined mathematically as the ratio of the Real Power ($P$) to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11258,6 +11477,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Closure and Traverse",
             "title": "Traverse Closure Error and Precision",
             "question": "A closed traverse has the following departures and latitudes: $\\sum \\Delta E = +0.45\\text{ ft}$, $\\sum \\Delta N = -0.30\\text{ ft}$. The total traverse length is $3,000\\text{ ft}$. What is the precision ratio of this traverse?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11306,6 +11526,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Geomatics",
             "title": "Leveling Error",
             "question": "In differential leveling, if the line of sight is inclined upward by $1.5\\text{ mm}$ per $100\\text{ m}$, what is the vertical error introduced in a foresight reading taken at a distance of $50\\text{ m}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11354,6 +11575,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Photogrammetry",
             "title": "Aerial Scale",
             "question": "An aerial photograph is taken from a flying height of $3000\\text{ m}$ above mean sea level with a camera of focal length $150\\text{ mm}$. What is the photographic scale at a terrain elevation of $500\\text{ m}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11402,6 +11624,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Leveling",
             "title": "Curvature and Refraction Correction",
             "question": "A leveling instrument is set up on a hill. A staff is held on a benchmark $2000\\text{ m}$ away. What is the combined correction for Earth's curvature and atmospheric refraction that must be subtracted from the raw staff reading?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11455,6 +11678,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Traversing",
             "title": "Compass Rule Adjustment",
             "question": "In a closed traverse, the total error of closure in departures is $+0.50\\text{ m}$, and the total traverse perimeter is $1000\\text{ m}$. What is the required departure adjustment for a specific line that is $200\\text{ m}$ long, using the Bowditch (Compass) Rule?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11507,6 +11731,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Photogrammetry",
             "title": "Photographic Scale",
             "question": "An aerial photograph is taken with a camera having a focal length of $152\\text{ mm}$ from a flying height of $3000\\text{ m}$ above mean sea level. The average terrain elevation is $500\\text{ m}$ above MSL. What is the average photographic scale?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11559,6 +11784,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Curve Ranging",
             "title": "Horizontal Curve Tangent Length",
             "question": "A circular curve has a radius of $300\\text{ m}$ and an intersection angle ($\\Delta$) of $60^\\circ$. What is the tangent length ($T$) of the curve?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11611,6 +11837,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "GPS/GNSS",
             "title": "Dilution of Precision (DOP)",
             "question": "In GNSS positioning, if the User Equivalent Range Error (UERE) is $2\\text{ m}$ and the Positional Dilution of Precision (PDOP) due to satellite geometry is 3, what is the estimated 3D positional error?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11659,6 +11886,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Surveying",
             "title": "Tape Temperature Correction",
             "question": "A $30\\text{ m}$ steel tape is standardized at $20^\\circ\\text{C}$. A measurement of exactly $300\\text{ m}$ is made at a field temperature of $35^\\circ\\text{C}$. The coefficient of thermal expansion is $11.6 \\times 10^{-6}\\text{ /}^\\circ\\text{C}$. What is the true length of the measured line?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11715,6 +11943,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Area Computation",
             "title": "Trapezoidal Rule",
             "question": "Offsets from a straight baseline to an irregular property boundary are measured at regular $10\\text{ m}$ intervals: $3.0\\text{ m}, 4.5\\text{ m}, 5.5\\text{ m}, 4.0\\text{ m}, 2.0\\text{ m}$. What is the area bounded by the baseline, the offsets, and the boundary using the trapezoidal rule?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11770,6 +11999,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrology",
             "title": "Rational Method Peak Runoff",
             "question": "A $50\\text{-acre}$ urban watershed has a composite runoff coefficient $C = 0.70$ and a rainfall intensity of $I = 3.2\\text{ in/hr}$ for the design storm. Using the Rational Method ($Q = CIA$), what is the peak runoff rate in $\\text{ft}^3/\\text{s}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11819,6 +12049,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydraulics",
             "title": "Critical Depth in Open Channels",
             "question": "For a rectangular channel of width $b = 4\\text{ m}$, what is the critical depth $y_c$ for a discharge of $Q = 20\\text{ m}^3\\text{/s}$? ($g = 9.81\\text{ m/s}^2$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11868,6 +12099,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrology",
             "title": "Rational Method Peak Discharge",
             "question": "A $10\\text{ hectare}$ watershed has a runoff coefficient of $0.6$. If the design rainfall intensity is $50\\text{ mm/hr}$, what is the peak discharge in $\\text{m}^3\\text{/s}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11917,6 +12149,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrology",
             "title": "Rational Method Peak Discharge",
             "question": "A $50\\text{ hectare}$ urban watershed has a composite runoff coefficient $C = 0.6$. The design rainfall intensity for the calculated time of concentration is $120\\text{ mm/h}$. What is the estimated peak discharge using the Rational Method?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -11970,6 +12203,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Open Channel Flow",
             "title": "Specific Energy and Critical Depth",
             "question": "A rectangular concrete channel has a bottom width of $4\\text{ m}$ and carries a discharge of $20\\text{ m}^3\\text{/s}$. What is the critical depth of flow ($y_c$) in this channel? (Use $g = 9.81\\text{ m/s}^2$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12022,6 +12256,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Orifice Discharge",
             "question": "Water discharges from a large tank through a sharp-edged circular orifice ($diameter = 100\\text{ mm}$) located $5\\text{ m}$ below the water surface. If the coefficient of discharge is $C_d = 0.60$, what is the actual volumetric flow rate? (Use $g = 9.81\\text{ m/s}^2$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12075,6 +12310,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrology",
             "title": "Time of Concentration (Kirpich)",
             "question": "Using the Kirpich equation $t_c = 0.0195 L^{0.77} S^{-0.385}$, calculate the time of concentration in minutes for a watershed where the main channel length is $L = 3000\\text{ m}$ and the average dimensionless slope is $S = 0.01$. (Note: $3000^{0.77} \\approx 456$ and $0.01^{-0.385} \\approx 5.88$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12128,6 +12364,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Open Channel Flow",
             "title": "Hydraulic Jump Conjugate Depth",
             "question": "Water flows in a rectangular concrete channel at a supercritical depth $y_1 = 0.5\\text{ m}$ and a Froude number $Fr_1 = 3.0$. A hydraulic jump suddenly occurs. What is the downstream subcritical conjugate depth $y_2$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12180,6 +12417,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Darcy-Weisbach Friction Loss",
             "question": "Water flows through a $200\\text{ mm}$ diameter, $500\\text{ m}$ long pipe at a steady velocity of $3\\text{ m/s}$. If the dimensionless Darcy friction factor is $f = 0.02$, what is the total head loss due to pipe friction? (Use $g = 9.81\\text{ m/s}^2$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12233,6 +12471,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater",
             "title": "Steady Well Drawdown (Dupuit)",
             "question": "A fully penetrating well is pumped at a steady rate $Q = 0.05\\text{ m}^3\\text{/s}$ from an unconfined aquifer. The initial saturated thickness is $H = 20\\text{ m}$. At a monitoring well $r_1 = 10\\text{ m}$ away, the saturated thickness is $h_1 = 18\\text{ m}$. At $r_2 = 50\\text{ m}$ away, it is $h_2 = 19\\text{ m}$. What is the hydraulic conductivity $K$ of the aquifer?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12288,6 +12527,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Design of Steel Components",
             "title": "Steel Beam Flexural Capacity (LRFD)",
             "question": "A W16x40 steel beam ($Z_x = 73.0\\text{ in}^3$, $F_y = 50\\text{ ksi}$) is fully laterally braced. Using LRFD, what is the design flexural strength $\\phi_b M_n$ of the beam?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12337,6 +12577,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Analysis",
             "title": "Matrix Stiffness Method",
             "question": "For a 2D truss element oriented at an angle $\\theta = 45^\\circ$ to the global x-axis, what is the value of the $(1,2)$ entry in the element global stiffness matrix? (Let $k = EA/L$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12390,6 +12631,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Steel Design",
             "title": "Column Slenderness Ratio",
             "question": "A W-shape steel column has an effective unbraced length $KL = 4\\text{ m}$ for both axes. If the radius of gyration is $r_x = 100\\text{ mm}$ and $r_y = 50\\text{ mm}$, what is the slenderness ratio governing its buckling design?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12442,6 +12684,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Analysis",
             "title": "Virtual Work Method for Trusses",
             "question": "A determinate steel truss ($E = 200\\text{ GPa}$) is subjected to a vertical load. A specific tension member has a length of $4\\text{ m}$, cross-sectional area of $1000\\text{ mm}^2$, and carries a real internal force of $50\\text{ kN}$. If a virtual unit load applied at the joint of interest produces a virtual internal force of $0.8$ (dimensionless) in this same member, what is this member's discrete contribution to the total vertical deflection of the joint?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12495,6 +12738,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Analysis",
             "title": "Moment Distribution Method",
             "question": "In a continuous beam analysis using the moment distribution method, joint B connects members BA and BC. The bending stiffness $K$ (where $K = 4EI/L$) is $4000\\text{ kNm}$ for BA and $6000\\text{ kNm}$ for BC. What is the distribution factor for member BA at joint B?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12548,6 +12792,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Steel Design",
             "title": "Plastic Moment Capacity",
             "question": "A structural steel W-section has a plastic section modulus $Z_x = 2.0 \\times 10^6\\text{ mm}^3$ and a yield strength $F_y = 350\\text{ MPa}$. What is the nominal plastic moment capacity $M_p$ of the section?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12600,6 +12845,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Concrete Design",
             "title": "Shear Reinforcement Spacing",
             "question": "A reinforced concrete beam is subjected to a factored shear force $V_u = 300\\text{ kN}$. The nominal shear strength provided by concrete is $V_c = 100\\text{ kN}$. Using a standard shear strength reduction factor $\\phi = 0.75$, what is the required nominal shear strength $V_s$ to be provided by the steel stirrups?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12652,6 +12898,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Concrete Design",
             "title": "Pre-stressed Concrete Losses",
             "question": "In a pre-tensioned concrete beam, the initial pre-stress is $1000\\text{ MPa}$. The modular ratio $n = E_s/E_c = 6$. If the elastic shortening of the concrete at the level of the steel is $500\\mu\\epsilon$ (microstrain), what is the immediate loss of pre-stress due to elastic shortening? (Assume $E_c = 30\\text{ GPa}$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12704,6 +12951,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Dynamics",
             "title": "Natural Frequency",
             "question": "A single-degree-of-freedom water tower structure has a lumped mass of $5000\\text{ kg}$ and a lateral column stiffness of $2000\\text{ kN/m}$. What is its undamped natural circular frequency $\\omega_n$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12756,6 +13004,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Steel Design",
             "title": "Bolted Connection Shear",
             "question": "A lap joint utilizes four $20\\text{ mm}$ diameter high-strength bolts. The threads are NOT excluded from the shear planes (nominal shear stress $F_{nv} = 372\\text{ MPa}$). What is the nominal shear capacity of the entire connection?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12810,6 +13059,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Traffic Engineering",
             "title": "Level of Service from Volume-to-Capacity Ratio",
             "question": "A freeway segment has a peak-hour volume of $1,800\\text{ veh/hr/lane}$ and a base capacity of $2,300\\text{ veh/hr/lane}$. A heavy vehicle factor $f_{HV} = 0.909$ and a driver population factor $f_p = 1.00$ apply. What is the volume-to-capacity (v/c) ratio and the approximate Level of Service (LOS)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12858,6 +13108,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Traffic Engineering",
             "title": "Level of Service (LOS)",
             "question": "Which of the following measures of effectiveness is primarily used to determine the Level of Service (LOS) for a basic freeway segment according to the Highway Capacity Manual (HCM)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12906,6 +13157,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Geometric Design",
             "title": "Stopping Sight Distance",
             "question": "What is the stopping sight distance for a vehicle traveling at $100\\text{ km/h}$ on a level grade, assuming a standard perception-reaction time of $2.5\\text{ s}$ and a deceleration rate of $3.4\\text{ m/s}^2$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -12963,6 +13215,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Highway Engineering",
             "title": "Vertical Curve Length (Crest)",
             "question": "A crest vertical curve connects a $+3\\%$ grade and a $-2\\%$ grade. The design speed requires a stopping sight distance (SSD) of $150\\text{ m}$. Assuming SSD is strictly less than the length of the curve ($S < L$), what is the required length of the curve? (Use the standard AASHTO parabolic formula $L = \\frac{A S^2}{394}$ for metric dimensions).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13016,6 +13269,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Traffic Engineering",
             "title": "Greenshields Macroscopic Model",
             "question": "According to Greenshields' linear speed-density macroscopic model, a highway segment has a free-flow speed of $100\\text{ km/h}$ and a jam density of $120\\text{ veh/km}$. What is the absolute maximum theoretical capacity (flow rate) of this segment?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13064,6 +13318,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Highway Engineering",
             "title": "Flexible Pavement Design (ESAL)",
             "question": "In the AASHTO flexible pavement design method, the damage caused by heavy axles is normalized to a standard $18\\text{ kip}$ ($80\\text{ kN}$) single axle using the generalized 'fourth power law'. Approximately how many Equivalent Single Axle Loads (ESALs) are generated by a single pass of a truck axle weighing $36\\text{ kips}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13113,6 +13368,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Traffic Engineering",
             "title": "Level of Service (LOS) Density",
             "question": "A multilane highway has an observed traffic volume of $2400\\text{ veh/h}$ evenly distributed across two lanes. The space-mean speed of the vehicles is measured at $80\\text{ km/h}$. What is the average traffic density per lane?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13165,6 +13421,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Highway Engineering",
             "title": "Stopping Sight Distance",
             "question": "A vehicle is traveling at $90\\text{ km/h}$ ($25\\text{ m/s}$) on a level grade. The driver's standard perception-reaction time is $2.5\\text{ seconds}$, and the AASHTO comfortable deceleration rate is $3.4\\text{ m/s}^2$. What is the total theoretical Stopping Sight Distance (SSD)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13218,6 +13475,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Traffic Engineering",
             "title": "Webster's Optimum Cycle Length",
             "question": "An intersection's traffic signal is being timed using Webster's empirical method. The sum of the critical flow ratios for all phases is $Y = 0.60$. The total lost time per cycle is $L = 12\\text{ seconds}$. What is the optimum cycle length ($C_o$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13270,6 +13528,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Highway Engineering",
             "title": "Superelevation Runoff Length",
             "question": "A two-lane highway (lane width $= 3.6\\text{ m}$) is transitioning from a normal crown to a full superelevation of $e = 6\\%$. The maximum allowable relative gradient between the pavement edge and centerline is exactly $1/200$ (or $0.5\\%$). Assuming the pavement revolves around the centerline, what is the required length of the superelevation runoff?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13325,6 +13584,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Project Scheduling",
             "title": "Critical Path Method (CPM) Float Calculation",
             "question": "A project network has the following activities. Activity D has an Early Start (ES) of Day 8, Early Finish (EF) of Day 13, Late Start (LS) of Day 11, and Late Finish (LF) of Day 16. What is the Total Float (TF) and Free Float (FF) of Activity D, if the Early Start of its successor activity is Day 14?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13374,6 +13634,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Project Management",
             "title": "Critical Path Method (Total Float)",
             "question": "Activity A has an early start (ES) of day 2, a duration of 5 days, and a late finish (LF) of day 10. What is the total float for Activity A?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13423,6 +13684,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Estimating",
             "title": "Earthwork Volume",
             "question": "Using the average end area method, what is the volume of earth excavated between two stations located $50\\text{ m}$ apart, with cross-sectional areas of $20\\text{ m}^2$ and $30\\text{ m}^2$ respectively?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13472,6 +13734,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Construction Scheduling",
             "title": "Critical Path Free Float",
             "question": "In a CPM network, Activity E has an early start (ES) of day 10, an early finish (EF) of day 15, a late start (LS) of day 13, and a late finish (LF) of day 18. Activity F directly succeeds E and has an early start (ES) of day 17. What is the free float (FF) of Activity E?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13520,6 +13783,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Equipment Depreciation (SOYD)",
             "question": "A bulldozer is purchased for $\\$120,000$. It has an estimated salvage value of $\\$20,000$ and a useful life of 5 years. Using the Sum-of-the-Years'-Digits (SOYD) depreciation method, what is the specific depreciation amount in the SECOND year?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13573,6 +13837,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Construction Productivity",
             "title": "Earthmoving Production Rate",
             "question": "A scraper has a heaped capacity of $15\\text{ m}^3$ (measured loose). The soil has a swell factor of $20\\%$. The scraper cycle time is $10\\text{ minutes}$, and the site operating efficiency is $50\\text{ min/hour}$. What is the theoretical production rate in Bank Cubic Meters (BCM) per hour?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13625,6 +13890,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Concrete Technology",
             "title": "Water-Cement Ratio Adjustment",
             "question": "A concrete mix design requires $350\\text{ kg/m}^3$ of cement and a water-cement ratio of $0.45$. The aggregates are saturated surface dry (SSD) except for the sand, which contains $4\\%$ free surface moisture by weight. If the required dry weight of sand is $800\\text{ kg}$, how much mixing water must be physically added per cubic meter?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13677,6 +13943,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Construction Cost Control",
             "title": "Earned Value Analysis (EVA)",
             "question": "At the end of month 3, a project has a Planned Value (PV) of $\\$50,000$, an Earned Value (EV) of $\\$45,000$, and an Actual Cost (AC) of $\\$60,000$. What is the Cost Performance Index (CPI) and what does it indicate about the project status?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13729,6 +13996,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Erection",
             "title": "Crane Load Chart Capacity",
             "question": "A mobile crane has a boom length of $30\\text{ m}$ at a $60^\\circ$ angle to the horizontal. From the manufacturer's load chart, at this configuration, the gross lifting capacity is $15,000\\text{ kg}$. The heavy block and rigging weigh $1,000\\text{ kg}$, and the jib (stowed but attached) deductions are $500\\text{ kg}$. What is the maximum net load the crane can lift safely?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13781,6 +14049,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Compaction",
             "title": "Proctor Test Relative Compaction",
             "question": "A field sand cone test reveals an in-situ wet unit weight of $19.0\\text{ kN/m}^3$ at a moisture content of $12\\%$. The laboratory modified Proctor test yields a maximum dry unit weight of $18.5\\text{ kN/m}^3$. What is the relative compaction of the fill?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13835,6 +14104,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Newton-Raphson Convergence Rate",
             "question": "Use the Newton-Raphson method to find the root of $f(x) = x^3 - 2x - 5 = 0$, starting from $x_0 = 2$. What is the value of $x$ after **two** iterations?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13884,6 +14154,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Newton-Raphson Iteration",
             "question": "To find the root of $f(x) = x^3 - 2x - 5$, what is the iterative update formula for $x_{n+1}$ using the Newton-Raphson method?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13937,6 +14208,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Programming",
             "title": "Algorithm Complexity",
             "question": "What is the worst-case time complexity of the QuickSort algorithm?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -13986,6 +14258,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Programming",
             "title": "Big O Notation (Linear Time)",
             "question": "In computer science algorithm analysis, Big O notation is utilized to mathematically describe efficiency bounds. An algorithm whose absolute worst-case execution time grows perfectly proportionately with the size of the input data set $n$ is said to have a time complexity of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14035,6 +14308,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Spreadsheets",
             "title": "Absolute Referencing in Excel",
             "question": "In modern spreadsheet software formulas like Microsoft Excel, strategically placing a dollar sign before both the column letter and row number (for example, $\\$B\\$5$) strictly creates an:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14083,6 +14357,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Data Structures",
             "title": "Stack Data Structure Principle",
             "question": "In software engineering, a 'Stack' is a fundamental abstract data type and data structure. It mathematically operates on a strict principle where the last element added to the structure is always the very first one to be removed. This principle is formally known by the acronym:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14132,6 +14407,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Databases",
             "title": "Relational Primary Keys",
             "question": "In the rigorous design of a relational database (SQL), a specific designated column (or set of columns) that uniquely identifies each individual row or record in a table is strictly mathematically defined as the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14181,6 +14457,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Numerical Tools",
             "title": "Newton-Raphson Iteration Formula",
             "question": "The Newton-Raphson method is a massive, widely used computational algorithm for rapidly finding the numerical roots of a differentiable function (where $f(x) = 0$). The fundamental mathematical iterative update formula is defined as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14229,6 +14506,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Computer Architecture",
             "title": "IEEE 754 Floating Point Standard",
             "question": "According to the internationally recognized IEEE 754 standard for computer arithmetic hardware, a standard 'double-precision' floating-point number occupies exactly how many bits in physical computer memory?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14277,6 +14555,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Software Engineering",
             "title": "Git Version Control",
             "question": "In modern collaborative software development, Git is universally utilized as a distributed version control system. When a developer wants to formally integrate their completed, peer-reviewed feature branch back into the main production codebase, they initiate a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14328,6 +14607,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Biochemical Reaction Kinetics",
             "title": "Michaelis-Menten Enzyme Kinetics",
             "question": "An enzyme-catalyzed reaction follows Michaelis-Menten kinetics with $V_{max} = 120\\text{ μmol/min}$ and $K_m = 0.05\\text{ mol/L}$. At a substrate concentration of $[S] = 0.20\\text{ mol/L}$, what is the reaction rate $v$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14372,6 +14652,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Biochemical Engineering",
             "title": "Michaelis-Menten Kinetics",
             "question": "In Michaelis-Menten enzyme kinetics, if the substrate concentration $[S]$ is exactly equal to the Michaelis constant $K_m$, the reaction velocity $v$ is equal to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14420,6 +14701,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Microbiology",
             "title": "Cell Growth Dynamics",
             "question": "During the exponential growth phase of a bacterial batch culture, the specific growth rate $\\mu$ is determined to be $0.693\\text{ h}^{-1}$. What is the cell doubling time?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14469,6 +14751,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Enzyme Kinetics",
             "title": "Michaelis-Menten Equation",
             "question": "In the standard Michaelis-Menten model of enzyme kinetics, the Michaelis constant ($K_m$) is experimentally and mathematically defined as the exact substrate concentration at which the reaction velocity is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14521,6 +14804,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Bioreactors",
             "title": "Monod Growth Equation",
             "question": "The Monod equation for modeling microbial growth rate is mathematically analogous to the Michaelis-Menten equation. It specifically relates the specific growth rate $\\mu$ of a population to the concentration of a single limiting:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14569,6 +14853,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sterilization",
             "title": "Decimal Reduction Time (D-value)",
             "question": "In the thermal sterilization of industrial fermentation media, the decimal reduction time (commonly known as the D-value) is formally defined as the exact time required at a specific constant temperature to reduce the viable microbial population by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14617,6 +14902,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Transfer",
             "title": "Oxygen Transfer Rate (OTR)",
             "question": "In large-scale aerobic bioreactors, the Oxygen Transfer Rate (OTR) is almost always the limiting factor for cellular growth. It is primarily characterized and quantified by the volumetric mass transfer coefficient, which is standardly denoted by the symbol:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14666,6 +14952,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Downstream Processing",
             "title": "Affinity Chromatography",
             "question": "In the downstream bioseparation of complex proteins, affinity chromatography is utilized because it relies on highly specific, reversible biological interactions between a stationary phase ligand and the target molecule. Which of the following is a classic example of this specific interaction?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14714,6 +15001,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Cell Growth",
             "title": "Exponential Growth Kinetics",
             "question": "During the pure exponential (logarithmic) phase of a batch microbial culture, the rate of increase of the active cell biomass concentration $X$ is mathematically described by which first-order ordinary differential equation?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14762,6 +15050,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Bioreactor Operation",
             "title": "Chemostat Steady State",
             "question": "In a perfectly mixed, continuous-flow microbial culture (known as a chemostat) operating at strict steady state, the specific microbial growth rate $\\mu$ of the cells is mathematically forced to be exactly equal to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14816,6 +15105,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Balance",
             "title": "Non-Adiabatic Reactor Energy Balance",
             "question": "A continuous stirred-tank reactor (CSTR) operates at steady state. The feed enters at $25^\\circ\\text{C}$ with $F_{A0} = 5\\text{ mol/min}$. The heat of reaction is $\\Delta H_{rxn} = -80\\text{ kJ/mol}$ and conversion is $X=0.70$. If no heat exchange occurs, how much heat $\\dot{Q}$ (kJ/min) must be removed to maintain isothermal operation at $25^\\circ\\text{C}$? Assume the feed's sensible heat change is zero (isothermal feed).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14865,6 +15155,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Balances",
             "title": "Recycle Stream Ratio",
             "question": "In a reactor system with a recycle stream, the overall conversion of reactant A is $95\\%$, while the single-pass conversion across the reactor is $30\\%$. What is the ratio of the recycle flow rate to the fresh feed flow rate? (Assume the feed is pure A and the recycle stream is pure unreacted A).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14921,6 +15212,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Balances",
             "title": "Standard Heat of Reaction",
             "question": "Which of the following describes how the standard heat of reaction $\\Delta H_r^\\circ$ is calculated from standard heats of formation $\\Delta H_f^\\circ$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -14970,6 +15262,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Balance",
             "title": "Recycle Ratio",
             "question": "In a continuous chemical process, exactly $100\\text{ kg/h}$ of fresh feed enters the system. A product stream leaves, and a recycle stream of $40\\text{ kg/h}$ is returned to mix directly with the fresh feed before entering the reactor. What is the process recycle ratio?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15019,6 +15312,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reactive Balances",
             "title": "Limiting Reactant Conversion",
             "question": "In the chemical reaction $A + 2B \\rightarrow C$, a reactor is fed with $10\\text{ moles}$ of A and $15\\text{ moles}$ of B. If $5\\text{ moles}$ of C are ultimately produced, what is the fractional conversion of the specifically limiting reactant?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15071,6 +15365,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Balances",
             "title": "Heat of Vaporization",
             "question": "A continuous liquid stream of water flowing at $1.0\\text{ kg/s}$ at $100^\\circ\\text{C}$ is completely vaporized to saturated steam at $100^\\circ\\text{C}$ inside a boiler. If the latent heat of vaporization is $2257\\text{ kJ/kg}$, what is the required constant thermal heat input rate?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15120,6 +15415,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Psychrometrics",
             "title": "Adiabatic Humidification",
             "question": "In an adiabatic humidifier, liquid water is continuously sprayed into a flowing air stream. Assuming the liquid water enters at exactly the wet-bulb temperature of the incoming air, the process path on a psychrometric chart follows a line of constant:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15169,6 +15465,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Multi-Unit Balances",
             "title": "Overall vs Single Pass Conversion",
             "question": "A chemical reactor in a closed loop has a single-pass reactant conversion of only $20\\%$. The unreacted material leaving the reactor is perfectly separated and $100\\%$ of it is recycled back to the feed. Assuming no side reactions, what is the overall conversion of the entire process?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15217,6 +15514,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Balance",
             "title": "Purge Stream Function",
             "question": "In a continuous chemical process, why is a 'purge stream' absolutely necessary in a recycle loop that returns unreacted feed which happens to contain a small amount of an inert, non-reactive gaseous impurity?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15266,6 +15564,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Balances",
             "title": "Specific Heat Capacity",
             "question": "Liquid water flows steadily through an industrial heater at $2.0\\text{ kg/s}$. It enters at $20^\\circ\\text{C}$ and leaves at $80^\\circ\\text{C}$. Assuming a constant specific heat capacity $C_p = 4.18\\text{ kJ/kg}\\cdot^\\circ\\text{C}$, what is the total rate of sensible heat added?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15321,6 +15620,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Distillation",
             "title": "McCabe-Thiele Minimum Reflux Ratio",
             "question": "A distillation column separates a binary mixture with a feed mole fraction $z_F = 0.45$ (feed quality $q=1$, saturated liquid). The distillate composition is $x_D = 0.95$ and the bottoms composition is $x_B = 0.05$. At the feed condition, the equilibrium vapor composition is $y_F^* = 0.65$. Using the Underwood equation for saturated liquid feed, what is the minimum reflux ratio $R_{min}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15370,6 +15670,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Transfer",
             "title": "Fick's Law of Diffusion",
             "question": "A gas mixture contains components A and B at a total pressure of $1\\text{ atm}$ and temperature of $300\\text{ K}$. If the diffusivity of A in B is $0.20\\text{ cm}^2\\text{/s}$ and the partial pressure gradient of A is $-0.05\\text{ atm/cm}$, what is the molar flux of A? (Assume ideal gas behavior, $R = 82.06\\text{ cm}^3\\text{ atm / (mol K)}$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15427,6 +15728,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Separation Processes",
             "title": "McCabe-Thiele Method",
             "question": "In the McCabe-Thiele method for binary distillation, the q-line (feed line) equation depends on the thermal state of the feed. If the feed is a saturated vapor, what is the slope of the q-line?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15479,6 +15781,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Diffusion",
             "title": "Fick's Law of Diffusion",
             "question": "According to Fick's first law of steady-state molecular diffusion, the fundamental molar flux of species A is directly proportional to its concentration gradient. The specific constant of proportionality governing this transport is called the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15528,6 +15831,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Distillation",
             "title": "Relative Volatility Limit",
             "question": "In the analysis of a binary distillation column, if the relative volatility $\\alpha_{AB}$ mathematically equals exactly $1.0$, what does this strictly imply about the separation process?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15581,6 +15885,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Distillation",
             "title": "McCabe-Thiele Minimum Reflux",
             "question": "On a classical McCabe-Thiele diagram for binary continuous distillation, the minimum mathematical reflux ratio ($R_{min}$) geometrically corresponds to the specific operating condition where the operating lines exactly intersect the equilibrium curve. This geometric intersection creates a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15630,6 +15935,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Absorption",
             "title": "Henry's Law Application",
             "question": "Henry's Law is heavily utilized to model vapor-liquid equilibrium in dilute gas absorption processes. The fundamental law assumes that at low concentrations, the partial pressure of a solute gas in the vapor phase is directly mathematically proportional to its:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15679,6 +15985,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Liquid-Liquid Extraction",
             "title": "Distribution Coefficient",
             "question": "In the fundamental theory of liquid-liquid extraction, the distribution (or partition) coefficient $K$ is rigorously defined at thermodynamic equilibrium as the ratio of the solute's:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15727,6 +16034,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Transfer Coefficients",
             "title": "Two-Film Theory",
             "question": "The classic 'two-film theory' developed by Lewis and Whitman for interphase mass transfer mathematically assumes that the entire total resistance to mass transfer between two distinct fluid phases is concentrated entirely within:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15775,6 +16083,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Drying",
             "title": "Constant Drying Rate Period",
             "question": "During the constant-rate period of drying a wet solid in a convection dryer, the surface of the solid is completely saturated with free liquid. The temperature of this wet surface remains approximately constant and is essentially equal to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15826,6 +16135,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Particle Technology",
             "title": "Cyclone Separator Cut Diameter",
             "question": "A standard cyclone separator handles gas with viscosity $\\mu = 2\\times10^{-5}\\text{ Pa·s}$ and density $\\rho_g = 1.2\\text{ kg/m}^3$. Particle density is $\\rho_p = 1800\\text{ kg/m}^3$. The cyclone inlet width $B = 0.1\\text{ m}$, and inlet gas velocity $v_i = 15\\text{ m/s}$. Using the standard formula for cut diameter: $d_{pc} = \\sqrt{\\frac{9\\mu B}{\\pi N_e v_i (\\rho_p - \\rho_g)}}$ with $N_e = 5$ effective turns, what is $d_{pc}$ in micrometers?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15874,6 +16184,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Solid Mechanics",
             "title": "Principal Strains",
             "question": "At a point on the surface of a loaded machine part, the strains are measured by a strain rosette as $\\varepsilon_x = 400\\mu$, $\\varepsilon_y = 200\\mu$, and $\\gamma_{xy} = 300\\mu$. What is the maximum in-plane principal strain $\\varepsilon_1$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15926,6 +16237,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Torsion of Thin-Walled Tubes",
             "question": "A thin-walled hollow rectangular steel tube ($G = 80\\text{ GPa}$) has cross-sectional center-line dimensions of $100\\text{ mm}$ by $50\\text{ mm}$, with a uniform wall thickness of $5\\text{ mm}$. What is the torsional shear stress induced by a torque of $1.5\\text{ kN}\\cdot\\text{m}$? (Use Bredt's Formula).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -15979,6 +16291,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Principal Stresses (Mohr's Circle)",
             "question": "A state of plane stress at a point has normal stresses $\\sigma_x = 100\\text{ MPa}$, $\\sigma_y = -40\\text{ MPa}$, and shear stress $\\tau_{xy} = 50\\text{ MPa}$. Using Mohr's Circle principles, what is the maximum principal stress $\\sigma_1$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16032,6 +16345,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Torsion",
             "title": "Angle of Twist",
             "question": "A solid steel circular shaft ($G = 80\\text{ GPa}$) is $2.0\\text{ m}$ long and has a uniform diameter of $50\\text{ mm}$. A constant torsional moment of $1000\\text{ N}\\cdot\\text{m}$ is applied. What is the total angle of twist in radians?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16085,6 +16399,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Beam Deflection",
             "title": "Cantilever Point Load",
             "question": "A cantilever beam of length $L$ and constant flexural rigidity $EI$ is rigidly fixed at the left end and subjected to a vertically downward point load $P$ at the completely free right end. What is the maximum deflection?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16133,6 +16448,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Columns",
             "title": "Euler Buckling Load",
             "question": "An ideal, pin-ended structural steel column ($E = 200\\text{ GPa}$) is exactly $3.0\\text{ m}$ long. Its cross-section has a minimum area moment of inertia $I = 4.0 \\times 10^{-6}\\text{ m}^4$. What is the critical Euler buckling load?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16186,6 +16502,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pressure Vessels",
             "title": "Thin-Walled Hoop Stress",
             "question": "A thin-walled cylindrical pressure vessel has an internal diameter of $1.0\\text{ m}$ and a wall thickness of $10\\text{ mm}$. It is subjected to an internal fluid pressure of $2.0\\text{ MPa}$. What is the developed hoop (circumferential) stress in the vessel wall?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16239,6 +16556,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Strain Energy",
             "title": "Axial Loading",
             "question": "A uniform metallic bar of length $L$, constant cross-sectional area $A$, and linear elastic modulus $E$ is subjected to a purely axial tensile load $P$. What is the total elastic strain energy ($U$) stored in the bar?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16292,6 +16610,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Failure Theories",
             "title": "Von Mises Yield Criterion",
             "question": "According to the von Mises (maximum distortion energy) theory, macroscopic yielding occurs in a 2D plane stress state when the equivalent stress equals the tensile yield strength $S_y$. What is the expression for the von Mises effective stress $\\sigma'$ in terms of the principal stresses $\\sigma_1$ and $\\sigma_2$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16343,6 +16662,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Exchanger Design",
             "title": "LMTD for Counter-Current Heat Exchanger",
             "question": "In a counter-current shell-and-tube heat exchanger, hot fluid enters at $150^\\circ\\text{C}$ and exits at $90^\\circ\\text{C}$. Cold fluid enters at $40^\\circ\\text{C}$ and exits at $80^\\circ\\text{C}$. What is the Log Mean Temperature Difference (LMTD)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16391,6 +16711,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Design",
             "title": "Degrees of Freedom Analysis",
             "question": "In a process design flowsheet, a simple mixing node has 3 input streams and 1 output stream. Assuming all streams are binary mixtures of the same two components and isothermal/isobaric conditions, what is the number of degrees of freedom (DOF) for this node?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16444,6 +16765,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Optimization",
             "title": "Economic Pipe Diameter",
             "question": "The optimum economic pipe diameter $D_{opt}$ for pumping a fluid scales with the volumetric flow rate $Q$ according to the proportionality $D_{opt} \\propto Q^n$. For turbulent flow in standard industrial applications, what is the widely accepted approximate value for the exponent $n$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16492,6 +16814,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Synthesis",
             "title": "Heuristics for Separation Networks",
             "question": "According to standard chemical engineering process design heuristics, when designing a multi-column distillation sequence to cleanly separate a multicomponent mixture, which component should generally be removed in the very first column?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16536,6 +16859,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Integration",
             "title": "Pinch Analysis Principle",
             "question": "In rigorous pinch analysis for optimizing chemical heat exchanger networks, what is the most fundamental, unbreakable thermodynamic rule regarding the transfer of heat across the defined pinch point?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16584,6 +16908,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Economics",
             "title": "Simple Payback Period",
             "question": "In process economics, the simple, un-discounted payback period of a chemical plant capital investment is fundamentally defined mathematically as the fixed capital investment divided by the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16632,6 +16957,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Equipment Cost Estimation",
             "title": "The Six-Tenths Factor Rule",
             "question": "The 'six-tenths rule' ($C_2 = C_1 (S_2/S_1)^{0.6}$) is a highly common empirical mathematical method utilized in preliminary chemical process design primarily to roughly estimate:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16680,6 +17006,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Safety",
             "title": "HAZOP Study Methodology",
             "question": "A Hazard and Operability (HAZOP) study systematically identifies potential safety hazards in a process design. It relies heavily on a strict framework of specific 'guide words' applied to process parameters. Which of the following sets contains standard HAZOP guide words?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16729,6 +17056,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Plant Utilities",
             "title": "Cooling Water Temperature Limits",
             "question": "In standard chemical process plant design, the return temperature of industrial cooling water to the atmospheric cooling tower is almost universally limited to a maximum of about $40-45^\\circ\\text{C}$ primarily in order to successfully prevent:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16777,6 +17105,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Synthesis",
             "title": "Reactor-Separator Networks",
             "question": "When a highly exothermic, thermodynamically reversible reaction is carried out continuously, a common overall design heuristic utilized to maximize the economic yield of the plant is to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16827,6 +17156,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "PID Controller Tuning",
             "title": "Ziegler-Nichols PID Tuning from Ultimate Gain",
             "question": "A process has an ultimate gain $K_u = 4.0$ and an ultimate period $P_u = 8\\text{ min}$. Using the Ziegler-Nichols closed-loop tuning method, what are the PID controller parameters: proportional gain $K_c$, integral time $\\tau_I$, and derivative time $\\tau_D$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16875,6 +17205,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Control",
             "title": "Routh-Hurwitz Stability Criterion",
             "question": "A closed-loop system has the characteristic equation $s^3 + 4s^2 + s + K = 0$. For what range of $K$ is the system strictly stable?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16932,6 +17263,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Instrumentation",
             "title": "First-Order Sensor Response",
             "question": "A thermocouple with a time constant of $\\tau = 10\\text{ s}$ is suddenly immersed in a bath at $100\\text{ }^\\circ\\text{C}$ (initially at $20\\text{ }^\\circ\\text{C}$). How long will it take for the thermocouple to read $95\\text{ }^\\circ\\text{C}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -16985,6 +17317,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Control Hardware",
             "title": "Control Valve Failure Action",
             "question": "A pneumatic process control valve that requires air pressure to compress its spring and close the valve is classified as 'Air-to-Close' (ATC). In the event of a catastrophic, plant-wide instrument air failure, this specific valve will:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17033,6 +17366,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Feedback Control",
             "title": "Integral Windup Phenomenon",
             "question": "Integral windup in a classic PID controller typically occurs when there is a massive, sustained error (such as during a huge setpoint change or physical valve saturation). The controller mathematically responds inappropriately by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17082,6 +17416,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Advanced Control Strategies",
             "title": "Cascade Control Architecture",
             "question": "A cascade control system utilizes two controllers in series (a master and a slave). The primary, fundamental purpose of implementing this specific multi-loop architecture is to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17130,6 +17465,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "System Dynamics",
             "title": "Dead Time Laplace Transfer Function",
             "question": "In chemical process dynamics, 'dead time' (or transport delay) represents a finite time period where the system output exhibits absolutely no response to an input change. Mathematically, in the Laplace domain, dead time $\\theta$ is correctly represented by the transfer function:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17178,6 +17514,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Controller Tuning",
             "title": "Ziegler-Nichols Ultimate-Cycle Method",
             "question": "The classic Ziegler-Nichols ultimate-cycle closed-loop tuning method strictly requires the engineer to bring a proportional-only controller to the exact verge of continuous, sustained oscillation. The numerical proportional gain at this precise point is formally called the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17227,6 +17564,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Advanced Control Strategies",
             "title": "Feedforward Control Fundamentals",
             "question": "Unlike standard feedback control, which relies entirely on reacting to measured errors, a pure feedforward control system attempts to proactively maintain the setpoint by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17275,6 +17613,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Dynamics",
             "title": "Inverse Response Characteristics",
             "question": "A chemical process exhibiting an 'inverse response' will bizarrely initially move in the opposite direction of its final steady-state value when subjected to a step change (e.g., boiler level drops when feed water is increased). In the Laplace domain, this is mathematically indicated by a transfer function containing:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17325,6 +17664,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Chemistry",
             "title": "Carbonate System Alkalinity",
             "question": "A water sample at pH 8.3 has a total alkalinity of $150\\text{ mg/L as CaCO}_3$. At pH 8.3, essentially all alkalinity is due to bicarbonate ($\\text{HCO}_3^-$). Convert the total alkalinity to $\\text{mg/L}$ of $\\text{HCO}_3^-$ (MW of $\\text{HCO}_3^- = 61$, MW of $\\text{CaCO}_3 = 100$, equivalent weight of $\\text{CaCO}_3 = 50$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17374,6 +17714,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Environmental Chemistry",
             "title": "Acid Mine Drainage Thermodynamics",
             "question": "The oxidation of pyrite ($FeS_2$) produces severe acid mine drainage. In the overall balanced chemical reaction where 1 mole of pyrite reacts with oxygen and water to produce iron(III) hydroxide and sulfate ions, how many moles of $H^+$ are produced?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17423,6 +17764,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Atmospheric Chemistry",
             "title": "Ozone Depletion Kinetics",
             "question": "Chlorofluorocarbons (CFCs) catalyze the destruction of stratospheric ozone. The catalytic cycle involves chlorine atoms. If the reaction $Cl + O_3 \\rightarrow ClO + O_2$ is the rate-determining step, what type of catalyst is the chlorine atom classified as in this homogeneous mechanism?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17471,6 +17813,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Aquatic Chemistry",
             "title": "Biochemical Oxygen Demand (BOD)",
             "question": "An industrial wastewater sample is diluted by a factor of exactly $10$ with pure oxygenated water. The initial Dissolved Oxygen (DO) reading is $8.0\\text{ mg/L}$. After exactly 5 days of dark incubation at $20^\\circ\\text{C}$, the final DO reading is $3.0\\text{ mg/L}$. What is the $BOD_5$ of the original undiluted wastewater sample?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17523,6 +17866,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Alkalinity",
             "title": "Carbonate Buffer System",
             "question": "Total alkalinity in natural surface waters is primarily a measure of the water's chemical capacity to safely neutralize strong acids. In most freshwater systems, this capacity is predominantly governed by the molar concentrations of which specific dissolved chemical species?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17572,6 +17916,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Gas Transfer",
             "title": "Streeter-Phelps Oxygen Sag",
             "question": "The classical Streeter-Phelps oxygen sag curve mathematically models the critical dissolved oxygen deficit in a river downstream of a point-source organic pollution discharge. The differential equation balances two primary competing physical/biological rates:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17620,6 +17965,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Disinfection",
             "title": "Chlorination Breakpoint",
             "question": "In municipal drinking water treatment, 'breakpoint chlorination' is defined as the chemical process of adding exactly enough chlorine to completely oxidize all organic matter and specifically chemically destroy all dissolved:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17669,6 +18015,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Atmospheric Chemistry",
             "title": "Photochemical Smog Generation",
             "question": "Photochemical smog is formed in the lower troposphere primarily through highly complex, sunlight-driven photochemical reactions involving primarily Volatile Organic Compounds (VOCs) and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17717,6 +18064,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Softening",
             "title": "Hardness Ions",
             "question": "Total water hardness is traditionally defined chemically as the sum of the equivalent concentrations of all multivalent metallic cations in solution, but practically, it is almost entirely dominated by the concentrations of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17765,6 +18113,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Chemistry",
             "title": "Cation Exchange Capacity (CEC)",
             "question": "The Cation Exchange Capacity (CEC) of a soil is a critical quantitative measure of its ability to hold onto essential positively-charged agricultural nutrients (like $K^+$ and $Ca^{2+}$). This capacity is primarily dictated by the soil's content of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17815,6 +18164,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Risk Assessment",
             "title": "Excess Cancer Risk from Chemical Exposure",
             "question": "A person is exposed to a carcinogen at an air concentration of $.005\\text{ mg/m}^3$ over a 70-year lifetime, breathing $20\\text{ m}^3/\\text{day}$ for 365 days/year. Body weight is $70\\text{ kg}$. The inhalation slope factor (SF) is $.1\\text{ (mg/kg/day)}^{-1}$. Calculate the Excess Lifetime Cancer Risk (ELCR).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17864,6 +18214,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Risk Assessment",
             "title": "Quantitative Risk Calculation",
             "question": "A chemical plant operates a hazardous unit that has an estimated failure frequency of $2 \times 10^{-4}$ per year. If a failure occurs, there is a 10% chance that it will lead to a toxic release. Given a toxic release, the probability of an operator fatality is 50%. What is the Individual Risk (IR) of fatality for an operator who spends 25% of their year continuously working near this unit?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17917,6 +18268,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Risk Assessment",
             "title": "ALARP Principle",
             "question": "In the context of industrial risk management, the ALARP principle implies that risks should be reduced to a level that is 'As Low As Reasonably Practicable'. Which of the following best describes the condition under which further risk reduction is NOT required under ALARP?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -17968,6 +18320,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Open Channel Flow",
             "title": "Manning's Equation for Trapezoidal Channel",
             "question": "A trapezoidal channel has a bottom width $b=3\\text{ m}$, side slopes $z=1.5:1$ (H:V), and a normal depth $y_n = 1.2\\text{ m}$. Manning's $n = 0.014$ and channel slope $S = 0.001$. Calculate the flow rate $Q$ using Manning's equation.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18016,6 +18369,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Hydraulics",
             "title": "Pump Cavitation (NPSH)",
             "question": "Water at $20\\text{ }^\\circ\\text{C}$ (vapor pressure $P_v = 2.34\\text{ kPa}$, density $\\rho = 998\\text{ kg/m}^3$) is drawn from an open reservoir by a centrifugal pump. The pump inlet is $z = 3.0\\text{ m}$ above the reservoir surface. If atmospheric pressure is $101.3\\text{ kPa}$ and total head losses in the suction pipe are $1.5\\text{ m}$, what is the Net Positive Suction Head Available ($NPSH_A$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18068,6 +18422,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pipe Flow",
             "title": "Hardy-Cross Method",
             "question": "In the Hardy-Cross analysis of water distribution networks, the head loss correction factor $\\Delta Q$ for a given loop is derived from balancing the algebraic sum of head losses. For a pipe where head loss $h_f = K Q^n$, what is the expression for $\\Delta Q$ in a single loop?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18121,6 +18476,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pipe Flow",
             "title": "Darcy-Weisbach Equation",
             "question": "According to the fundamental Darcy-Weisbach equation for full incompressible pipe flow, the major frictional head loss $h_f$ is directly proportional to the pipe length $L$ and the velocity squared $V^2$, and strictly inversely proportional to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18170,6 +18526,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Open Channel Flow",
             "title": "Froude Number Definition",
             "question": "In open channel hydraulics, the dimensionless Froude number ($Fr$) mathematically characterizes the flow regime (subcritical vs. supercritical) by forming a fundamental ratio of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18218,6 +18575,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Flow Measurement",
             "title": "Sharp-Crested Weir",
             "question": "For a standard rectangular sharp-crested weir spanning the entire full width of an open channel (a suppressed weir), the volumetric flow rate $Q$ over the weir is theoretically proportional to the driving head $H$ raised to exactly what mathematical power?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18267,6 +18625,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater",
             "title": "Darcy's Law for Porous Media",
             "question": "Darcy's Law for the steady, laminar flow of water through a porous soil medium states that the specific discharge velocity $v$ is equal to the soil's hydraulic conductivity $K$ mathematically multiplied by the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18316,6 +18675,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pumps",
             "title": "Net Positive Suction Head",
             "question": "To mathematically guarantee the prevention of destructive boiling and vapor cavitation from occurring inside the eye of a centrifugal pump impeller, the available Net Positive Suction Head ($NPSH_A$) at the pump inlet must strictly be:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18365,6 +18725,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Open Channel Flow",
             "title": "Hydraulic Jump Conservation",
             "question": "A hydraulic jump is a sudden, violently turbulent vertical transition from a fast supercritical flow regime to a slow subcritical flow regime. Mathematically, across the span of an ideal hydraulic jump in a horizontal channel, what specific quantity is perfectly conserved?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18413,6 +18774,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pipe Networks",
             "title": "Hardy Cross Method Principles",
             "question": "The Hardy Cross mathematical iterative method for analyzing steady flow distribution in complex closed-loop pipe networks fundamentally relies on two strict principles: continuity of flow must be maintained at every node, and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18464,6 +18826,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Runoff",
             "title": "SCS Curve Number Runoff Depth",
             "question": "A watershed receives $P = 5\\text{ inches}$ of rainfall. The SCS Curve Number is $CN = 80$. Calculate the direct runoff depth $Q$ using the SCS method.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18513,6 +18876,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrologic Routing",
             "title": "Muskingum Method",
             "question": "In the Muskingum method of flood routing, the storage equation is $S = K[xI + (1-x)O]$. If a channel reach behaves as a pure linear reservoir, what is the value of the weighting factor $x$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18565,6 +18929,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statistical Hydrology",
             "title": "Return Period",
             "question": "A river has a $1\\%$ chance of exceeding a specific flood stage in any given year. What is the probability that this flood stage will be exceeded exactly once over a 50-year period?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18621,6 +18986,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Runoff",
             "title": "Rational Method Calculation",
             "question": "Using the standard Rational Method ($Q = \\frac{CiA}{360}$ for metric units), calculate the peak runoff in $m^3/s$ for a $50$-hectare paved watershed with a runoff coefficient $C = 0.60$ experiencing a uniform rainfall intensity of $120\\text{ mm/hr}$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18670,6 +19036,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrographs",
             "title": "Unit Hydrograph Duration",
             "question": "By fundamental hydrological definition, a perfectly derived 2-hour unit hydrograph represents the direct surface runoff response at the watershed outlet from exactly $1\\text{ cm}$ (or $1\\text{ inch}$) of effective excess rainfall that occurs completely uniformly over a duration of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18714,6 +19081,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater",
             "title": "Specific Yield",
             "question": "In an unconfined aquifer, the precise volume of water that drains freely from the rock matrix by gravity alone, per unit horizontal surface area per unit decline in the water table, is formally called the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18763,6 +19131,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Precipitation",
             "title": "Thiessen Polygons",
             "question": "When calculating the spatial average precipitation over a large basin from multiple distributed rain gauges, the geometric Thiessen Polygon method mathematically assumes that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18812,6 +19181,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Open Channel Flow",
             "title": "Manning's Equation",
             "question": "According to Manning's highly utilized empirical equation for steady uniform flow in open channels, the average flow velocity ($V$) is strictly inversely proportional to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18860,6 +19230,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hydrology",
             "title": "Time of Concentration",
             "question": "The Time of Concentration ($T_c$) for a watershed is strictly defined in hydrological modeling as the exact time required for surface runoff to physically travel from:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18909,6 +19280,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Infiltration",
             "title": "Horton's Equation",
             "question": "Horton's standard empirical infiltration equation accurately dictates that as a continuous, heavy rainstorm progresses over time, the maximum possible infiltration capacity of the soil will:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -18960,6 +19332,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater Flow",
             "title": "Darcy's Law for Aquifer Discharge",
             "question": "A confined aquifer has hydraulic conductivity $K = 15\\text{ m/day}$, saturated thickness $b = 20\\text{ m}$, and a hydraulic gradient $dh/dl = 0.003$. The aquifer width perpendicular to flow is $W = 500\\text{ m}$. Calculate the total groundwater discharge $Q$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19009,6 +19382,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater Flow",
             "title": "Darcy's Law in 3D",
             "question": "In a homogeneous, isotropic unconfined aquifer, the steady-state groundwater flow equation (Boussinesq equation) neglecting recharge is best approximated by which of the following expressions for the hydraulic head $h$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19062,6 +19436,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Well Hydraulics",
             "title": "Theis Equation",
             "question": "The Theis equation is used to predict the drawdown in a confined aquifer due to pumping. Which of the following is a primary assumption made in the derivation of the Theis equation?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19110,6 +19485,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater Flow",
             "title": "Aquifer Transmissivity",
             "question": "In groundwater hydrogeology, the transmissivity ($T$) of a completely confined horizontal aquifer is mathematically defined as the direct product of the aquifer's intrinsic hydraulic conductivity ($K$) and its:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19159,6 +19535,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Mechanics",
             "title": "Effective Stress Principle",
             "question": "According to Karl Terzaghi's fundamental principle of effective stress, the effective stress ($\\sigma'$) that actively supports the structural soil skeleton and controls consolidation is equal to the total vertical stress ($\\sigma$) mathematically minus the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19207,6 +19584,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Well Hydraulics",
             "title": "Cone of Depression",
             "question": "When groundwater is continuously pumped from a well penetrating an unconfined aquifer at a constant high flow rate, the resulting localized drawdown of the water table forms a distinct 3D geometric shape known universally as the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19255,6 +19633,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Seepage",
             "title": "Flow Net Geometry",
             "question": "In a perfectly constructed graphical 2D flow net utilized to model steady-state seepage under a concrete dam, the drawn flow lines and the equipotential lines must always mathematically intersect:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19304,6 +19683,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Consolidation",
             "title": "Primary Consolidation Mechanism",
             "question": "Primary consolidation settlement in fully saturated, highly cohesive clay soils is a heavily time-dependent process that is fundamentally governed by the extremely slow expulsion of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19353,6 +19733,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Soil Classification",
             "title": "Atterberg Limits",
             "question": "The Plasticity Index (PI) of a fine-grained cohesive soil, which indicates the numerical range of moisture contents over which the soil behaves plastically, is calculated simply as the Liquid Limit (LL) minus the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19402,6 +19783,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater Contamination",
             "title": "Retardation Factor",
             "question": "During contaminant transport in flowing groundwater, advection carries the chemical plume downstream. However, chemical adsorption to soil particles significantly slows the plume down. This slowing effect is formally quantified by the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19453,6 +19835,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Pollutants",
             "title": "Gaussian Plume Dispersion Model",
             "question": "A point source emits pollutants at $Q = 80\\text{ g/s}$ from a stack of effective height $H = 50\\text{ m}$. Wind speed $\\bar{u} = 4\\text{ m/s}$. At a downwind distance $x = 1\\text{ km}$, the dispersion coefficients are $\\sigma_y = 50\\text{ m}$ and $\\sigma_z = 20\\text{ m}$. Using the Gaussian plume equation, what is the centerline ground-level concentration $C$ (at $y=0$, $z=0$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19501,6 +19884,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Pollution Modeling",
             "title": "Gaussian Plume Model",
             "question": "In the standard Gaussian plume dispersion model, the maximum ground-level concentration of a pollutant emitted from an elevated stack of effective height $H$ occurs when which of the following conditions is met?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19553,6 +19937,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Pollution Control",
             "title": "Electrostatic Precipitator Efficiency",
             "question": "An electrostatic precipitator (ESP) operating with a collection area $A$ and gas flow rate $Q$ has a collection efficiency of $90\\%$. If the collection area is doubled ($2A$) while the gas flow rate remains constant, what is the new theoretical collection efficiency according to the Deutsch-Anderson equation?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19610,6 +19995,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Dispersion",
             "title": "Gaussian Plume Model",
             "question": "In the standard Gaussian Plume dispersion model, the calculated maximum ground-level concentration of a pollutant emitted from a tall smokestack depends heavily on the 'effective stack height'. The effective stack height is the physical stack height plus the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19658,6 +20044,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Particulate Control",
             "title": "Electrostatic Precipitator (ESP)",
             "question": "An Electrostatic Precipitator (ESP) removes fine particulate matter from an industrial gas stream by applying a massive high voltage to ionize the gas. The newly charged dust particles are then electromagnetically driven to and collected solidly on:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19706,6 +20093,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Gas Control",
             "title": "Absorption Scrubbing",
             "question": "To efficiently and legally remove a highly soluble, extremely acidic gas like Sulfur Dioxide ($SO_2$) from a hot industrial combustion exhaust stream, the most appropriate and common air pollution control device is a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19754,6 +20142,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Atmospheric Stability",
             "title": "Temperature Inversion",
             "question": "A severe atmospheric temperature inversion, which drastically traps air pollution near the ground and often creates lethal, intense photochemical smog events over cities, meteorologically occurs when:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19803,6 +20192,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Particulate Mechanics",
             "title": "Terminal Settling Velocity",
             "question": "According to the fundamental fluid mechanics of Stokes' Law, the terminal settling velocity of a microscopic spherical dust particle falling through perfectly stagnant air under gravity is directly mathematically proportional to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19851,6 +20241,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Criteria Pollutants",
             "title": "Primary vs Secondary Pollutants",
             "question": "Under the stringent US EPA Clean Air Act, Ground-Level Ozone ($O_3$) is heavily monitored and regulated. Unlike Carbon Monoxide ($CO$), Ozone is legally and scientifically classified strictly as a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19899,6 +20290,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Quality Index",
             "title": "AQI Health Scale",
             "question": "The US EPA utilizes the Air Quality Index (AQI) to publicly report daily air quality to citizens. An AQI numerical value of exactly $100$ specifically and legally corresponds to the concentration of at least one criteria pollutant exactly matching the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19949,6 +20341,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Disposal Methods",
             "title": "Landfill Leachate Generation by Water Balance",
             "question": "A $10\\text{-acre}$ municipal solid waste landfill cell receives annual precipitation of $P = 36\\text{ in/yr}$. The runoff fraction is $R = 0.25$, the evapotranspiration fraction is $ET = 0.40$, and the field capacity of the waste is negligible for this analysis. Estimate the annual leachate generation volume in $\\text{ft}^3/\\text{yr}$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -19997,6 +20390,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Landfill Design",
             "title": "Leachate Generation (Water Balance)",
             "question": "Using the water balance method, if annual precipitation is $1000\\text{ mm}$, surface runoff is $200\\text{ mm}$, and actual evapotranspiration is $500\\text{ mm}$, what is the approximate annual leachate generation rate per square meter of an active, un-capped landfill cell?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20049,6 +20443,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hazardous Waste",
             "title": "Incinerator Destruction Efficiency",
             "question": "A hazardous waste incinerator is fed $1000\\text{ kg/hr}$ of a waste stream containing $5\\%$ by weight of a specific Principal Organic Hazardous Constituent (POHC). If the stack emissions contain $0.05\\text{ kg/hr}$ of the POHC, what is the Destruction and Removal Efficiency (DRE)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20102,6 +20497,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Solid Waste",
             "title": "Landfill Gas Composition",
             "question": "As organic municipal solid waste decomposes strictly anaerobically deep inside a mature sanitary landfill, the two primary bulk gases produced in roughly equal massive volumes are:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20151,6 +20547,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Hazardous Waste",
             "title": "RCRA Characteristic Waste",
             "question": "Under the stringent US EPA RCRA regulations, a solid waste is legally classified as a 'characteristic hazardous waste' if it exhibits any of four specific, strictly defined physical or chemical properties: Ignitability, Corrosivity, Reactivity, or:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20200,6 +20597,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Waste Treatment",
             "title": "Incineration Operating Temperature",
             "question": "To absolutely mathematically guarantee the $99.99\\%$ or $99.9999\\%$ complete thermal destruction of highly hazardous, stable organic compounds (like PCBs) in a commercial hazardous waste incinerator, the primary combustion chamber must typically operate at extreme temperatures exceeding:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20249,6 +20647,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Landfill Design",
             "title": "Leachate Collection System Function",
             "question": "Modern sanitary landfills are heavily engineered with a thick, impermeable composite bottom liner system. The primary environmental engineering purpose of the engineered leachate collection system sitting directly above this bottom liner is to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20297,6 +20696,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Composting",
             "title": "Carbon to Nitrogen (C:N) Ratio",
             "question": "For optimal, rapid aerobic composting of organic municipal solid waste without producing severe odors, the initial elemental Carbon-to-Nitrogen (C:N) ratio of the mixed waste pile should ideally be maintained in the approximate range of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20346,6 +20746,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Radioactive Waste",
             "title": "Sources of High-Level Waste",
             "question": "High-Level Radioactive Waste (HLW), which emits extreme radiation and heat and requires permanent deep geological isolation, is legally and primarily generated directly from:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20395,6 +20796,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Waste Reduction",
             "title": "Waste Management Hierarchy",
             "question": "According to the internationally recognized Pollution Prevention Act waste management hierarchy, what is universally considered the single most preferred and sustainable approach to dealing with solid waste?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20445,6 +20847,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Renewable Energy",
             "title": "Wind Turbine Power Output",
             "question": "A wind turbine with a rotor diameter of $80\\text{ m}$ operates at a wind speed of $10\\text{ m/s}$. Air density is $\\rho = 1.225\\text{ kg/m}^3$ and the turbine efficiency (power coefficient) $C_p = 0.40$. What is the electrical power output of the turbine?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20494,6 +20897,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Renewable Energy",
             "title": "Wind Turbine Power Limit",
             "question": "According to Betz's Law, what is the theoretical maximum aerodynamic efficiency (power coefficient, $C_p$) that a wind turbine can achieve in extracting kinetic energy from the wind?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20543,6 +20947,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Greenhouse Gas Emissions",
             "title": "Carbon Intensity of Power Generation",
             "question": "A coal power plant operates at a thermal efficiency of $35\\%$. The coal has an energy content of $24\\text{ MJ/kg}$ and a carbon content of $72\\%$ by mass. Assuming complete combustion, what is the approximate $CO_2$ emission rate in $\\text{kg } CO_2 \\text{ per kWh}$ of electricity generated?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20599,6 +21004,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Policy",
             "title": "Energy Return on Investment (EROI)",
             "question": "In advanced energy systems analysis, the metric known as Energy Return on Investment (EROI) is fundamentally defined mathematically as the ratio of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20647,6 +21053,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Renewable Energy",
             "title": "Betz Limit for Wind Power",
             "question": "According to the famous Betz's Law derived from fluid aerodynamics, what is the absolute maximum theoretical thermodynamic efficiency limit for extracting kinetic energy from a free-flowing wind stream using any wind turbine?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20696,6 +21103,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Solar Energy",
             "title": "Photovoltaic Semiconductor Bandgap",
             "question": "In a standard silicon photovoltaic solar cell, the 'bandgap' energy physically dictates the minimum amount of solar photon energy required to completely free an electron from the crystal lattice to generate current. For crystalline silicon, this specific bandgap is approximately:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20745,6 +21153,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Power Generation",
             "title": "Combined Cycle Efficiency",
             "question": "A modern Combined Cycle Gas Turbine (CCGT) power plant achieves incredibly high overall thermal efficiencies (often over $60\\%$) primarily by coupling a highly efficient Brayton cycle gas turbine with a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20793,6 +21202,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Climate Change",
             "title": "Global Warming Potential (GWP)",
             "question": "The Global Warming Potential (GWP) of a greenhouse gas is a critical relative policy metric comparing its atmospheric heat-trapping ability over a specific time horizon (usually 100 years) to the exact heat-trapping ability of exactly 1 unit of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20841,6 +21251,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Bioenergy",
             "title": "Ethanol Fermentation Byproducts",
             "question": "During the massive industrial biological production of bioethanol from agricultural corn starch or sugarcane, yeast organisms anaerobically ferment sugars (like glucose) directly into liquid ethanol and what other primary, massive gaseous byproduct?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20889,6 +21300,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Energy Storage",
             "title": "Grid-Scale Storage Technologies",
             "question": "Currently, the vast physical majority (well over $90\\%$) of the entire world's active, utility-scale bulk energy storage capacity is provided practically and economically by which single proven technology?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20939,6 +21351,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statics",
             "title": "Equivalent Force-Couple System",
             "question": "A $500\\text{ N}$ force acts downward at a point $2\\text{ m}$ to the right of point O. A $300\\text{ N}$ force acts upward at $1\\text{ m}$ to the left of O. What is the resultant force and the resultant moment about O?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -20988,6 +21401,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Dimensional Analysis",
             "title": "Buckingham Pi Theorem",
             "question": "In analyzing the drag force $F_D$ on a smooth sphere moving through a viscous fluid, the variables involved are fluid density $\\rho$, fluid viscosity $\\mu$, sphere diameter $D$, and velocity $V$. How many independent dimensionless Pi groups are required to describe this phenomenon?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21041,6 +21455,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Systems Modeling",
             "title": "Analogous Systems (Force-Voltage)",
             "question": "In the force-voltage analogy for dynamic systems, what electrical component is analogous to a mechanical viscous damper (dashpot)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21093,6 +21508,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Ethics",
             "title": "Utilitarian Philosophy",
             "question": "The foundational ethical philosophy of Utilitarianism, which is deeply and often implicitly applied in engineering cost-benefit analysis and risk management, fundamentally dictates that the 'right' moral action is strictly the one that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21142,6 +21558,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Design Process",
             "title": "Iterative Design Methodology",
             "question": "The modern engineering design process is almost universally described as highly 'iterative'. In systems engineering, this specifically and procedurally means that the design team must continuously:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21190,6 +21607,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Systems Engineering",
             "title": "Requirements Traceability",
             "question": "In rigorous aerospace and defense systems engineering, 'Requirements Traceability' is the critical, legally mandated project management process of maintaining a documented, unbroken mathematical link between the high-level stakeholder needs and the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21239,6 +21657,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Design Constraints",
             "title": "Factor of Safety Definition",
             "question": "In structural and mechanical design engineering, the mathematical Factor of Safety (FS) is formally and universally calculated as the ratio of the component's absolute ultimate failure load (or ultimate material strength) to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21287,6 +21706,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Project Management",
             "title": "Critical Path Method (CPM)",
             "question": "In advanced project management scheduling (such as PERT or CPM), the 'Critical Path' through a massive project network diagram is strictly mathematically defined as the sequence of dependent tasks that has exactly zero:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21336,6 +21756,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Measurement",
             "title": "Accuracy vs Precision",
             "question": "In scientific measurement theory and metrology, 'Precision' refers strictly to the degree of repeatability, resolution, or tight scatter among multiple measurements. Conversely, 'Accuracy' refers fundamentally and strictly to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21385,6 +21806,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Intellectual Property",
             "title": "Utility Patents",
             "question": "In the United States legal system, a standard utility patent formally grants the inventor the exclusive federal right to completely exclude others from making, using, or selling the invention for a maximum legal period of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21436,6 +21858,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Dynamics",
             "title": "Rotation of Rigid Body - Angular Impulse-Momentum",
             "question": "A solid disk (mass $m=10\\text{ kg}$, radius $R=0.5\\text{ m}$) is initially at rest. A constant torque of $\\tau=25\\text{ N·m}$ is applied for $4\\text{ s}$. What is the final angular velocity $\\omega$ of the disk? ($I_{disk} = \\frac{1}{2}mR^2$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21485,6 +21908,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Entropy Generation in Heat Transfer",
             "question": "A $10\\text{ kg}$ block of iron at $500\\text{ K}$ ($C = 0.45\\text{ kJ/kg}\\cdot\\text{K}$) is dropped into a large lake at $300\\text{ K}$. What is the total entropy generation for the universe once the block cools to $300\\text{ K}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21542,6 +21966,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statics",
             "title": "Friction and Minimum Force",
             "question": "A block of mass $m$ rests on a rough horizontal plane with a static coefficient of friction $\\mu_s$. What is the absolute minimum applied force $P_{min}$ required to initiate motion if the force can be applied at any optimal angle $\\theta$ relative to the horizontal?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21599,6 +22024,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statics",
             "title": "Two-Force Members",
             "question": "In the rigorous mathematical static analysis of a pin-jointed truss, a 'two-force member' is defined as a structural element loaded entirely by pins at its two ends with absolutely no intermediate loads or moments. For the member to remain in perfect static equilibrium, the two forces must be equal in magnitude, opposite in direction, and strictly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21648,6 +22074,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Dynamics",
             "title": "Conservation of Linear Momentum",
             "question": "According to Newton's fundamental laws and the principle of conservation of linear momentum, if the net external force vector acting on a closed system of interacting particles is exactly zero, the total vector momentum of the entire system:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21697,6 +22124,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "The First Law of Thermodynamics",
             "question": "The First Law of Thermodynamics ($Q - W = \\Delta U$) is a formal, rigorous mathematical statement of the fundamental universal principle of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21746,6 +22174,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Materials Science",
             "title": "Hooke's Law and Young's Modulus",
             "question": "In the purely linear elastic region of a solid material's stress-strain curve, Hooke's Law states that the normal stress ($\\sigma$) is directly mathematically proportional to the normal strain ($\\epsilon$). The fundamental constant of proportionality governing this relationship is formally called the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21795,6 +22224,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Bernoulli's Equation Origins",
             "question": "Bernoulli's equation ($P + \\frac{1}{2}\\rho v^2 + \\rho g h = \\text{constant}$) for steady, incompressible, perfectly frictionless fluid flow along a streamline states that the sum of pressure energy, kinetic energy, and potential energy is constant. It is fundamentally and mathematically derived from the physical principle of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21844,6 +22274,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Transfer",
             "title": "Fourier's Law of Conduction",
             "question": "Fourier's Law of Heat Conduction mathematically states that the conductive heat transfer rate ($q$) through a solid material is directly proportional to the cross-sectional area ($A$) and the temperature gradient ($dT/dx$). This rate strictly relies on an intrinsic material property known as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21893,6 +22324,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Circuits",
             "title": "Ohm's Law Fundamentals",
             "question": "Ohm's Law, arguably the most fundamental and ubiquitous relationship in electrical engineering, mathematically relates voltage potential ($V$), electrical current ($I$), and pure resistance ($R$) in a standard linear DC circuit via the exact equation:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21944,6 +22376,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Project Management",
             "title": "Earned Value Analysis - CPI and SPI",
             "question": "A project has the following earned value data at the status date: Budgeted Cost of Work Scheduled (BCWS) = $120,000$; Budgeted Cost of Work Performed (BCWP) = $100,000$; Actual Cost of Work Performed (ACWP) = $115,000$. Calculate the Cost Performance Index (CPI) and Schedule Performance Index (SPI).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -21993,6 +22426,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Project Scheduling",
             "title": "PERT Expected Duration",
             "question": "In a PERT chart network analysis, an activity has an optimistic time of 4 days, a most likely time of 6 days, and a pessimistic time of 14 days. What is the expected duration ($t_e$) of the activity?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22046,6 +22480,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Financial Analysis",
             "title": "Breakeven Point Volume",
             "question": "A manufacturing company produces widgets with a fixed cost of $50,000, a variable cost of $15 per unit, and a selling price of $25 per unit. What is the breakeven production volume?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22098,6 +22533,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Project Selection",
             "title": "Unequal Lifespans (EUAW)",
             "question": "If two mutually exclusive engineering projects have vastly different, unequal lifespans (e.g., $5\\text{ years}$ vs $15\\text{ years}$), the standard Net Present Value (NPV) method cannot be used directly and fairly to compare them. Instead, management engineers must mathematically use the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22147,6 +22583,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Cost Estimation",
             "title": "Manufacturing Learning Curve",
             "question": "The manufacturing learning curve (or experience curve) theory mathematically models the well-documented industrial phenomenon where the direct labor hours required to physically produce a single unit:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22196,6 +22633,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "PERT Scheduling",
             "title": "Expected Task Time",
             "question": "In PERT (Program Evaluation and Review Technique) project scheduling under uncertainty, if the optimistic time is $O$, the most likely time is $M$, and the pessimistic time is $P$, the weighted expected duration ($t_e$) of a specific task is mathematically calculated as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22244,6 +22682,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Financial Accounting",
             "title": "The Balance Sheet Equation",
             "question": "The fundamental accounting equation that governs double-entry bookkeeping and strictly dictates the mathematical structure of every corporate balance sheet states that a company's Total Assets must ALWAYS exactly equal:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22292,6 +22731,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Decision Theory",
             "title": "Expected Monetary Value (EMV)",
             "question": "In a formal decision tree analysis under risk, the Expected Monetary Value (EMV) of a chance node is mathematically calculated by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22340,6 +22780,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Inventory Management",
             "title": "Economic Order Quantity (EOQ)",
             "question": "The classic Economic Order Quantity (EOQ) formula ($Q = \\sqrt{\\frac{2DS}{H}}$) is used to calculate the optimal batch size to purchase. Mathematically, the EOQ minimizes total annual inventory costs by finding the exact point where:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22388,6 +22829,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Quality Management",
             "title": "Six Sigma Statistical Definition",
             "question": "A true 'Six Sigma' manufacturing process mathematically and statistically implies a highly rigorous defect rate of no more than:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22439,6 +22881,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Inventory Management",
             "title": "Economic Order Quantity (EOQ) with Quantity Discount",
             "question": "Annual demand is $D = 5000\\text{ units/yr}$. Ordering cost is $S = \\$40$/order. Holding cost is $H = \\$2$/unit/yr. Calculate the Economic Order Quantity (EOQ) and the total annual inventory cost.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22487,6 +22930,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Metal Cutting",
             "title": "Taylor Tool Life Equation",
             "question": "In a machining operation, Taylor's tool life equation $V T^n = C$ applies, with $n = 0.5$ and $C = 400$. If the cutting speed $V$ is $100\\text{ m/min}$, what is the expected tool life $T$ in minutes?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22539,6 +22983,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Metal Forming",
             "title": "True Strain",
             "question": "A cylindrical billet of initial length $L_0 = 100\\text{ mm}$ is compressed to a final length of $L_f = 50\\text{ mm}$ without bulging. What is the true (logarithmic) strain in the longitudinal direction?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22591,6 +23036,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Machining",
             "title": "Taylor Tool Life Equation",
             "question": "The empirical Taylor tool life equation ($v T^n = C$) mathematically relates the cutting speed $v$ to the tool life $T$ in minutes. For a given physical tool-workpiece combination, the exponent $n$ primarily and physically depends on the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22640,6 +23086,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Manufacturing Systems",
             "title": "Takt Time Calculation",
             "question": "In Lean Manufacturing systems, 'Takt time' is the crucial, mathematically calculated heartbeat rate at which a product must be completed to perfectly satisfy market demand. It is formally calculated by dividing the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22688,6 +23135,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Metal Casting",
             "title": "Chvorinov's Rule",
             "question": "According to the empirical Chvorinov's Rule for the solidification of molten metal in a casting mold, the total solidification time ($t_s$) of a casting is mathematically directly proportional to the square of its:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22736,6 +23184,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Assembly Lines",
             "title": "Line Balancing Objectives",
             "question": "The primary mathematical objective of assembly line balancing is to assign tasks to individual workstations such that the total idle time is minimized and the workload is perfectly smooth across all workers. This directly maximizes the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22784,6 +23233,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Welding",
             "title": "Heat Affected Zone (HAZ)",
             "question": "In arc welding and thermal cutting processes, the Heat Affected Zone (HAZ) is a highly critical region. It is scientifically and metallurgically defined strictly as the specific volume of the base metal that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22833,6 +23283,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "CNC Machining",
             "title": "G-Code Functions",
             "question": "In standard alphanumeric CNC (Computer Numerical Control) machine programming, 'G-codes' (Preparatory Codes) are primarily utilized to computationally control:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22881,6 +23332,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Lean Principles",
             "title": "Kanban System Mechanics",
             "question": "A classical 'Kanban' system, developed by Toyota for lean manufacturing, functions strictly and physically as a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22931,6 +23383,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Logistics",
             "title": "Facility Location by Weighted Centroid Method",
             "question": "Three customers have coordinates and annual shipment volumes: Customer A at $(2, 5)$ with $200\\text{ tons/yr}$; Customer B at $(8, 3)$ with $300\\text{ tons/yr}$; Customer C at $(5, 9)$ with $100\\text{ tons/yr}$. Using the weighted centroid method, find the optimal warehouse location $(\\bar{x}, \\bar{y})$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -22979,6 +23432,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Inventory Control",
             "title": "Economic Order Quantity (EOQ)",
             "question": "A factory requires $10,000\\text{ units}$ of a component annually. The fixed ordering cost is $200 per order, and the annual holding cost is $4 per unit. What is the Economic Order Quantity (EOQ)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23031,6 +23485,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Forecasting",
             "title": "Exponential Smoothing",
             "question": "The forecast for period $t$ was 120 units, but the actual demand was 140 units. Using simple exponential smoothing with a smoothing constant $\\alpha = 0.3$, what is the forecast for period $t+1$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23084,6 +23539,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Inventory",
             "title": "Safety Stock Fundamentals",
             "question": "In rigorous stochastic inventory management, extra inventory known as 'safety stock' is held physically in the warehouse to mathematically protect the system against two specific types of uncertainty during the supplier replenishment cycle:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23133,6 +23589,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Forecasting",
             "title": "Exponential Smoothing Extremes",
             "question": "In the simple exponential smoothing time-series forecasting model ($F_{t+1} = \\alpha A_t + (1-\\alpha) F_t$), if the smoothing constant $\\alpha$ is intentionally set mathematically to exactly $1.0$, the forecast for the next period will strictly equal:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23186,6 +23643,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Supply Chain Dynamics",
             "title": "The Bullwhip Effect",
             "question": "The 'Bullwhip Effect' (or Forrester Effect) is a highly critical, destructive supply chain phenomenon where tiny, seemingly insignificant fluctuations in retail consumer demand cause:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23234,6 +23692,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transportation",
             "title": "The Transportation Problem",
             "question": "In operations research, the classic mathematical 'Transportation Problem' is a specialized, highly constrained linear programming model designed specifically to minimize the total cost of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23283,6 +23742,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Logistics",
             "title": "Cross-Docking Strategy",
             "question": "Cross-docking is a highly efficient, fast-paced logistics strategy where incoming materials from suppliers are unloaded from inbound trucks and loaded almost directly onto outbound delivery trucks. The primary objective of this system is to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23331,6 +23791,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Purchasing",
             "title": "Quantitative Make-or-Buy Decision",
             "question": "When a manufacturing firm conducts a quantitative 'Make-or-Buy' break-even analysis to decide whether to produce a part themselves or outsource it, it mathematically compares the high fixed costs and low variable costs of in-house production against the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23379,6 +23840,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "MRP Systems",
             "title": "Bill of Materials (BOM)",
             "question": "In a computerized Material Requirements Planning (MRP) system, the Bill of Materials (BOM) file serves fundamentally and structurally as the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23429,6 +23891,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Workstation Design",
             "title": "NIOSH Lifting Equation - Recommended Weight Limit",
             "question": "Using the Revised NIOSH Lifting Equation, calculate the Recommended Weight Limit (RWL) given: Load Constant $LC = 23\\text{ kg}$, Horizontal Multiplier $HM = 0.71$, Vertical Multiplier $VM = 0.93$, Distance Multiplier $DM = 0.91$, Asymmetric Multiplier $AM = 1.00$, Frequency Multiplier $FM = 0.84$, Coupling Multiplier $CM = 1.00$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23478,6 +23941,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Biomechanics",
             "title": "NIOSH Lifting Equation",
             "question": "In the revised NIOSH Lifting Equation, the Recommended Weight Limit (RWL) is derived from a Load Constant (LC) multiplied by six task variable multipliers. What is the standard value of the Load Constant (LC) for ideal lifting conditions?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23527,6 +23991,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Anthropometry",
             "title": "Percentile Design Dimensions",
             "question": "When designing the clearance height of a doorway to accommodate the vast majority of the population without them hitting their heads, which anthropometric percentile and demographic is most appropriate to use as the minimum design limit?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23576,6 +24041,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Physical Ergonomics",
             "title": "NIOSH Lifting Equation Multipliers",
             "question": "The widely used NIOSH Lifting Equation calculates a Recommended Weight Limit (RWL) for manual lifting tasks. It mathematically begins with a Load Constant (LC) of $51\\text{ lbs}$ and reduces it using six fractional multipliers. If a lifting task is completely perfect in every single ergonomic aspect, what is the calculated RWL?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23628,6 +24094,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Anthropometry",
             "title": "Design Percentiles",
             "question": "In rigorous ergonomic workstation and architectural design, if a physical clearance dimension (like a doorway height or a desk legroom height) is being determined, it should be designed for 'extreme individuals' by accommodating at least the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23677,6 +24144,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Biomechanics",
             "title": "Lumbar Compression Location",
             "question": "During manual material lifting, complex biomechanical lever models demonstrate that the absolute greatest compressive forces, which often lead to severe and debilitating lower back injuries, occur specifically at the spinal disc located between:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23726,6 +24194,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Cognitive Ergonomics",
             "title": "Fitts's Law Formulation",
             "question": "Fitts's Law is a highly accurate predictive mathematical model of human movement used heavily in UI/UX and human-computer interaction. It explicitly states that the time required to rapidly move to a target area is a mathematical logarithmic function of the ratio between the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23774,6 +24243,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Work Environment",
             "title": "Thermal Comfort Parameters",
             "question": "According to rigorous ASHRAE standards, human thermal comfort in an indoor work environment is completely physically dictated by metabolic rate, clothing insulation, and four specific environmental parameters: air temperature, mean radiant temperature, air velocity, and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23822,6 +24292,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Human Error",
             "title": "Slips vs Mistakes",
             "question": "In human factors engineering and safety analysis, human errors are rigidly classified. A 'slip' occurs when a person has the correct intention but performs an incorrect physical execution. In contrast, a 'mistake' formally occurs when:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23870,6 +24341,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Displays and Controls",
             "title": "Stimulus-Response Compatibility",
             "question": "In ergonomic control panel design, the principle of 'stimulus-response compatibility' dictates that the physical layout and movement of controls should logically match human expectations and the physical displays. For example, moving a physical joystick UP should ideally cause:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23920,6 +24392,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Time Study",
             "title": "Normal Time and Standard Time Calculation",
             "question": "A time study of a repetitive manual task yields an observed average cycle time of $.85\\text{ min}$. The worker is rated at $110\\%$ performance. Allowances (personal, fatigue, delay) total $15\\%$ of normal time. What is the Standard Time?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -23969,6 +24442,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Time Study",
             "title": "Standard Time Calculation",
             "question": "A worker's average observed task time is $5.0\\text{ minutes}$. Their performance rating is $110\\%$, and the total allowance fraction is $15\\%$. What is the final standard time for the task?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24022,6 +24496,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Learning Curves",
             "title": "Wright's Learning Model",
             "question": "Using an $80\\%$ cumulative average learning curve, if the first unit of production takes $100\\text{ hours}$, how many cumulative average hours per unit will it take to produce the first 4 units?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24075,6 +24550,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Time Study",
             "title": "Normal Time Calculation",
             "question": "In a direct stopwatch time study, the 'Normal Time' for a task represents the time it would take a qualified worker working at a standard pace. It is calculated by multiplying the mathematically observed raw time strictly by the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24124,6 +24600,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Allowance",
             "title": "PFD Allowances",
             "question": "To calculate the final, formal 'Standard Time' for a manufacturing task, the normalized 'Normal Time' must be mathematically increased to account for PFD. In work design, PFD strictly stands for:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24173,6 +24650,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Work Sampling",
             "title": "Sample Size Determination",
             "question": "In statistical work sampling, the required number of random observations ($N$) to achieve a desired statistical confidence level (e.g., $95\\%$) depends heavily on the absolute error accuracy desired and mathematically on the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24222,6 +24700,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Methods Engineering",
             "title": "Therbligs",
             "question": "Frank and Lillian Gilbreth developed a comprehensive system of 18 fundamental micromotions to thoroughly analyze manual work processes and eliminate inefficiency. These basic elemental physical motions are formally and universally called:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24270,6 +24749,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Learning Curve",
             "title": "Crawford vs Wright Models",
             "question": "In industrial engineering, the Wright learning curve model applies the constant reduction percentage to the cumulative average time. In strict mathematical contrast, the Crawford model applies the reduction percentage specifically to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24319,6 +24799,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Layout",
             "title": "Cellular Manufacturing",
             "question": "In facility layout design, a 'Cellular Layout' specifically groups entirely different types of machines (lathes, mills, drills) tightly together into a single 'cell' specifically to completely and efficiently manufacture a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24368,6 +24849,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Predetermined Time Systems",
             "title": "MTM (Methods-Time Measurement)",
             "question": "Methods-Time Measurement (MTM) is a rigorously tested predetermined motion time system. In standard MTM, all task times are fundamentally quantified in TMUs (Time Measurement Units). One TMU is mathematically exactly equal to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24419,6 +24901,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statistical Process Control",
             "title": "Control Chart - X-bar and R Chart Limits",
             "question": "A process is monitored using an $\\bar{X}$-chart with subgroup size $n=4$. From 20 subgroups, the grand average is $\\bar{\\bar{X}} = 25.0$ and the average range is $\\bar{R} = 2.4$. For $n=4$, the control chart constants are $A_2 = 0.729$, $D_3 = 0$ and $D_4 = 2.282$. Calculate the Upper Control Limit (UCL) for the $\\bar{X}$-chart and the UCL for the R-chart.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24467,6 +24950,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statistical Process Control",
             "title": "X-bar Chart Control Limits",
             "question": "A manufacturing process has a known standard deviation $\\sigma = 2.0$. Samples of size $n = 4$ are taken periodically. If the historical process mean is $\\mu = 50$, what are the standard $3\\sigma$ control limits (UCL and LCL) for the X-bar chart?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24519,6 +25003,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Capability",
             "title": "Cpk Capability Index",
             "question": "A manufacturing process has specification limits of $100 \\pm 10\\text{ mm}$. The process mean is currently centered at $102\\text{ mm}$ with a standard deviation of $2\\text{ mm}$. What is the $C_{pk}$ index for this process?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24576,6 +25061,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Control Charts",
             "title": "X-bar and R Charts",
             "question": "In standard Statistical Process Control (SPC), an $\\overline{X}$ (X-bar) chart monitors the process average or mean. To ensure full statistical control, it is paired with an $R$ (Range) chart. What specific process parameter does the $R$ chart mathematically monitor?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24625,6 +25111,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Capability",
             "title": "Cpk Index Interpretation",
             "question": "The rigorous statistical process capability index $C_{pk}$ measures how tightly a process fits within its engineering specification limits while accounting for centering. A calculated $C_{pk}$ value strictly less than $1.0$ mathematically indicates that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24674,6 +25161,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Quality Philosophy",
             "title": "Deming's 14 Points",
             "question": "W. Edwards Deming, arguably the most influential pioneer of modern quality control in Japan and the US, heavily advocated for statistical methods. However, he famously argued in his '14 Points' that corporate management should entirely eliminate:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24722,6 +25210,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reliability",
             "title": "The Bathtub Curve",
             "question": "In reliability engineering, the classic 'Bathtub Curve' models the statistical failure rate of a manufactured product over its total lifespan. The long, flat, bottom portion of the curve represents the 'useful life' phase, which is characterized strictly mathematically by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24771,6 +25260,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sampling",
             "title": "Acceptable Quality Level (AQL)",
             "question": "In statistical acceptance sampling plans (like the military standard MIL-STD-105E), the term Acceptable Quality Level (AQL) is formally defined as the exact maximum percentage or proportion of defective items in a batch that can be considered:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24820,6 +25310,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Taguchi Methods",
             "title": "Quality Loss Function",
             "question": "Genichi Taguchi revolutionized quality engineering with his Quality Loss Function. It fundamentally argues mathematically that the financial loss to society caused by a manufactured product begins to continuously increase as a quadratic function the exact moment the product deviates from the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24868,6 +25359,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Root Cause Analysis",
             "title": "Ishikawa Diagram",
             "question": "The Ishikawa diagram, heavily used in quality management circles for rigorous root cause analysis of failures, is commonly referred to by its visual shape as a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24918,6 +25410,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Lifecycle Design",
             "title": "System Reliability with Mixed Series-Parallel",
             "question": "A system has three subsystems. Subsystem A ($R_A = 0.95$) is in series with a parallel block of subsystems B ($R_B = 0.80$) and C ($R_C = 0.85$). What is the overall system reliability?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -24966,6 +25459,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reliability Block Diagrams",
             "title": "Series-Parallel Systems",
             "question": "A system consists of two main subsystems connected in series. Subsystem A has a reliability of $0.90$. Subsystem B consists of two identical redundant components in parallel, each with a reliability of $0.80$. What is the overall system reliability?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25018,6 +25512,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Maintainability",
             "title": "Mean Time to Repair (MTTR)",
             "question": "A system has a Mean Time Between Failures (MTBF) of 800 hours and an operational availability of 0.95. Assuming constant failure and repair rates, what is the required Mean Time To Repair (MTTR)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25074,6 +25569,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Systems Engineering",
             "title": "Mean Time Between Failures",
             "question": "An electronic system has a constant, exponential failure rate of $\\lambda = 0.002\\text{ failures per hour}$. What is the theoretical Mean Time Between Failures (MTBF)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25123,6 +25619,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reliability",
             "title": "Exponential Reliability",
             "question": "For a complex system exhibiting an MTBF of $1000\\text{ hours}$ with a constant failure rate, what is the statistical probability that it will survive for $500\\text{ hours}$ without a single failure? (Given: $e^{-0.5} \\approx 0.606$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25176,6 +25673,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Availability",
             "title": "Steady-State Availability",
             "question": "A network server has a Mean Time Between Failures (MTBF) of $99\\text{ hours}$ and a Mean Time To Repair (MTTR) of $1.0\\text{ hour}$. What is its operational steady-state availability?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25229,6 +25727,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Systems Architecture",
             "title": "Trade Study Analysis",
             "question": "In systems engineering methodology, what structured, multi-criteria decision-making tool is formally used to evaluate, score, and compare alternative design solutions against weighted technical criteria?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25273,6 +25772,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Requirements",
             "title": "Verification vs Validation",
             "question": "In the standard Systems Engineering V-model lifecycle, the process of ensuring that the 'right system was built' (i.e., that it actually fulfills the end-user's operational needs in the real world) is formally called:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25318,6 +25818,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Lifecycle",
             "title": "Bathtub Reliability Curve",
             "question": "In the classic reliability 'bathtub curve' plotting failure rate over time, the long middle period characterized by a constant, random, and relatively low failure rate is known as the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25362,6 +25863,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Testing",
             "title": "Accelerated Life Testing",
             "question": "The Arrhenius mathematical equation is commonly utilized in Accelerated Life Testing (ALT) of electronics and materials to model the effect of which specific environmental stressor on failure rates?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25413,6 +25915,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Semiconductors",
             "title": "Intrinsic Carrier Concentration and Fermi Level",
             "question": "For silicon at $T=300\\text{ K}$, the intrinsic carrier concentration is $n_i = 1.5\\times10^{10}\\text{ cm}^{-3}$. The silicon is doped with donor atoms at $N_D = 10^{16}\\text{ cm}^{-3}$ (n-type). Assuming complete ionization, what is the minority carrier (hole) concentration $p$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25462,6 +25965,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Semiconductors",
             "title": "Intrinsic Carrier Concentration",
             "question": "In an intrinsic silicon semiconductor at $300\\text{ K}$, the electron and hole concentrations are both $1.5 \\times 10^{10}\\text{ cm}^{-3}$. If it is doped with a donor impurity to a concentration of $10^{16}\\text{ cm}^{-3}$, what is the approximate minority carrier (hole) concentration? (Assume complete ionization).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25515,6 +26019,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Dielectrics",
             "title": "Capacitance Scaling",
             "question": "A parallel-plate air capacitor has a capacitance of $10\\text{ pF}$. If the space between the plates is completely filled with a dielectric material of relative permittivity $\\epsilon_r = 5$, and the distance between the plates is simultaneously doubled, what is the new capacitance?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25567,6 +26072,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Conductors",
             "title": "Metallic Resistivity vs Temperature",
             "question": "For most standard pure metallic electrical conductors (like copper, gold, or aluminum), as the absolute thermal temperature of the material increases, its physical electrical resistivity will strictly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25616,6 +26122,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Dielectrics",
             "title": "Relative Permittivity",
             "question": "The relative permittivity ($\\epsilon_r$), heavily utilized and commonly called the 'dielectric constant' of an insulating material, mathematically indicates exactly how much it can increase the physical capacitance of a capacitor compared to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25664,6 +26171,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "PN Junction",
             "title": "The Depletion Region",
             "question": "When a P-type and N-type semiconductor are metallurgically joined to form a standard diode, highly mobile free electrons and holes rapidly diffuse across the junction boundary and violently recombine. This thermodynamic process creates a highly specific, narrow zone essentially devoid of mobile charge carriers, known as the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25712,6 +26220,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Optoelectronics",
             "title": "LED Photon Wavelength",
             "question": "In a Light Emitting Diode (LED), when an electron drops from the conduction band into a hole in the valence band, it releases its excess energy as a single photon of light. The exact wavelength (and thus the visible color) of this emitted photon is fundamentally and mathematically determined directly by the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25762,6 +26271,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transfer Functions",
             "title": "Second-Order System Damping and Natural Frequency",
             "question": "A second-order linear system has the closed-loop transfer function: $H(s) = \\frac{36}{s^2 + 4.8s + 36}$. Determine the natural frequency $\\omega_n$, damping ratio $\\zeta$, and classify the response.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25811,6 +26321,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Laplace Transforms",
             "title": "Final Value Theorem",
             "question": "For a system whose response to a unit step input in the s-domain is given by $Y(s) = \\frac{10}{s(s+2)(s+5)}$, what is the steady-state value of the response $y(t)$ as $t \\rightarrow \\infty$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25864,6 +26375,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "LTI Systems",
             "title": "The Convolution Integral",
             "question": "For any completely continuous-time Linear Time-Invariant (LTI) system, if you mathematically know the system's exact impulse response function $h(t)$, you can analytically calculate the exact output $y(t)$ for ANY arbitrary input signal $x(t)$ by strictly utilizing the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25912,6 +26424,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transforms",
             "title": "Laplace Region of Convergence",
             "question": "When taking the rigorous bilateral Laplace transform of a continuous-time signal $x(t)$ to move it into the frequency domain, the mathematical infinite integral is only valid, finite, and mathematically stable within a specific physical region of the complex s-plane. This bounded region is formally called the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -25961,6 +26474,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Stability",
             "title": "BIBO Stability Definition",
             "question": "In rigorous control theory, a linear dynamic system is formally mathematically classified as Bounded-Input Bounded-Output (BIBO) stable if and only if:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26010,6 +26524,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Frequency Response",
             "title": "Bode Plot Components",
             "question": "A standard Bode plot is an absolutely essential graphical engineering tool used for designing and analyzing the frequency response of a linear system. It visually consists of two separate but related graphs: the phase angle strictly plotted versus logarithmic frequency, and the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26059,6 +26574,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Z-Transform",
             "title": "Discrete System Stability",
             "question": "In the rigorous mathematical analysis of discrete-time (digital) linear systems using the Z-transform, the system is strictly proven to be mathematically BIBO stable if and only if all the poles of its transfer function $H(z)$ lie completely:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26108,6 +26624,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fourier Analysis",
             "title": "Parseval's Theorem",
             "question": "Parseval's Theorem (and Rayleigh's Energy Theorem) is a fundamental mathematical principle in advanced signal processing. It states unequivocally that the total mathematical energy contained within a continuous-time signal $x(t)$ is exactly equal to the total energy contained in its:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26156,6 +26673,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "System Properties",
             "title": "Time Invariance Definition",
             "question": "In systems theory, a mathematical system is rigorously and formally classified as 'Time-Invariant' if, and only if, an arbitrary time delay or time shift introduced into the input signal strictly causes:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26206,6 +26724,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sampling",
             "title": "Nyquist Sampling Theorem and Aliasing",
             "question": "A continuous-time signal contains frequency components up to $f_{max} = 8\\text{ kHz}$. According to the Nyquist theorem, what is the minimum sampling rate $f_s$ required to avoid aliasing? If the signal is instead sampled at $f_s = 12\\text{ kHz}$, what aliased frequency will a $10\\text{ kHz}$ component appear at?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26255,6 +26774,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fourier Series",
             "title": "Parseval's Theorem",
             "question": "According to Parseval's Theorem, the total average power of a periodic signal $x(t)$ with complex exponential Fourier coefficients $c_k$ is mathematically equivalent to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26308,6 +26828,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sampling Theorem",
             "title": "Nyquist Rate",
             "question": "A continuous-time signal $x(t) = \\cos(200\\pi t) + \\sin(600\\pi t)$ is to be sampled. What is the absolute minimum Nyquist sampling frequency required to perfectly reconstruct the signal and avoid aliasing?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26361,6 +26882,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sampling",
             "title": "Nyquist-Shannon Sampling Theorem",
             "question": "According to the fundamental Nyquist-Shannon sampling theorem, to mathematically and perfectly reconstruct a continuous-time, band-limited analog signal without any destructive 'aliasing' distortion, the absolute minimum sampling frequency of the ADC must be exactly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26410,6 +26932,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fourier Series",
             "title": "Dirichlet Conditions",
             "question": "The Dirichlet conditions represent the sufficient mathematical requirements for an arbitrary periodic signal to have a valid, convergent Fourier series representation. One of these strict mathematical conditions dictates that the signal must have a finite number of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26459,6 +26982,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Digital Filters",
             "title": "FIR vs IIR Filters",
             "question": "In advanced digital signal processing (DSP), an FIR (Finite Impulse Response) filter is fundamentally distinct from an IIR (Infinite Impulse Response) filter because the FIR difference equation relies entirely on current and past *input* values, and mathematically completely lacks:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26508,6 +27032,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Discrete Fourier Transform",
             "title": "Fast Fourier Transform (FFT) Efficiency",
             "question": "The Fast Fourier Transform (FFT) is not a new mathematical transform, but rather a highly optimized algorithmic trick (like the Cooley-Tukey algorithm) designed to rapidly compute the Discrete Fourier Transform (DFT). For an $N$-point data sequence, the FFT mathematically slashes the computational complexity from $O(N^2)$ down to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26556,6 +27081,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Aliasing",
             "title": "The Anti-Aliasing Filter",
             "question": "Before a continuous-time analog audio or sensor signal is passed into an Analog-to-Digital Converter (ADC) to be digitally sampled, it absolutely must physically pass through a strict analog low-pass filter. In DSP engineering, this critical hardware component is formally known as an:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26605,6 +27131,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Signal Energy",
             "title": "Energy vs Power Signals",
             "question": "In formal mathematical signal analysis, a signal is rigorously classified as an 'Energy Signal' if its total integral energy is a finite, non-zero number (e.g., a single pulse of light). Consequently, the calculated average *power* of an Energy Signal over an infinite time horizon is strictly evaluated to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26653,6 +27180,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Modulation",
             "title": "Amplitude Modulation (AM) Spectrum",
             "question": "In standard traditional Amplitude Modulation (AM) broadcast radio, the mathematical multiplication process of modulation generates an RF frequency spectrum consisting of a massive central high-frequency carrier wave accompanied by two distinct, mirror-image bands of information. These are formally called the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26704,6 +27232,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Op-Amps",
             "title": "Inverting Op-Amp Gain with Non-Ideal Input Bias Current",
             "question": "An inverting amplifier uses $R_1 = 10\\text{ k}\\Omega$ and $R_f = 100\\text{ k}\\Omega$. An input signal $v_{in} = 0.5\\text{ V}$ is applied. Assuming an ideal op-amp (infinite open-loop gain, infinite input impedance), what is the output voltage $v_{out}$ and the closed-loop voltage gain $A_v$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26752,6 +27281,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Operational Amplifiers",
             "title": "Inverting Amplifier Gain",
             "question": "An ideal operational amplifier is configured as an inverting amplifier with an input resistor $R_{in} = 10\\text{ k}\\Omega$ and a feedback resistor $R_f = 47\\text{ k}\\Omega$. If a DC input voltage of $200\\text{ mV}$ is applied, what is the output voltage?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26805,6 +27335,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Diodes",
             "title": "Zener Regulator Current",
             "question": "A $5.1\\text{ V}$ Zener diode is used in a simple shunt regulator circuit with a $12\\text{ V}$ DC source and a $100\\text{ }\\Omega$ series current-limiting resistor. Assuming the load is currently disconnected (no load current), what is the current flowing through the Zener diode?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26862,6 +27393,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transistors",
             "title": "BJT Active Region Biasing",
             "question": "For a standard NPN Bipolar Junction Transistor (BJT) to operate smoothly in the linear 'active' region—functioning correctly as an analog signal amplifier rather than a digital switch—the Base-Emitter (BE) junction must be forward-biased and the Base-Collector (BC) junction must strictly be:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26911,6 +27443,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "MOSFETs",
             "title": "Enhancement-Mode Threshold",
             "question": "In an 'Enhancement-mode' N-channel MOSFET, the physical conductive N-channel between the source and drain does not naturally exist at rest. To physically invert the silicon, turn the device ON, and allow current to flow, the applied Gate-to-Source voltage ($V_{GS}$) must be mathematically:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -26960,6 +27493,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Amplifiers",
             "title": "Class B Operation",
             "question": "In the standard classification of heavy audio power amplifiers, a 'Class B' amplifier achieves vastly higher thermal efficiency than a Class A amplifier. It does this by mathematically biasing the output transistors so that each individual transistor conducts current for exactly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27009,6 +27543,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Oscillators",
             "title": "The Barkhausen Criterion",
             "question": "The Barkhausen criterion defines the strict mathematical conditions required for a linear electronic feedback circuit to become unstable and sustain continuous, perfect sine-wave oscillations. It demands two things: the total loop gain magnitude must equal exactly $1.0$, and the total phase shift around the feedback loop must equal exactly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27057,6 +27592,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Power Supplies",
             "title": "Bridge Rectifier Topology",
             "question": "In a standard linear AC-to-DC power supply, a 'bridge rectifier' topology is almost universally utilized to convert the raw AC mains voltage into pulsating DC. This specific 'bridge' design requires exactly how many individual PN-junction diodes to achieve full-wave rectification?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27105,6 +27641,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Op-Amps",
             "title": "Common-Mode Rejection Ratio (CMRR)",
             "question": "The Common-Mode Rejection Ratio (CMRR) is a highly critical datasheet performance metric for differential operational amplifiers. It mathematically measures the amplifier's physical ability to successfully:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27155,6 +27692,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transformers",
             "title": "Three-Phase Transformer Per-Unit Analysis",
             "question": "A three-phase $\\Delta$-Y transformer is rated $10\\text{ MVA}$, $13.8\\text{ kV}/69\\text{ kV}$, with a leakage reactance of $8\\%$ on the transformer's own base. The primary-side base is $13.8\\text{ kV}$ and system base is $100\\text{ MVA}$. What is the transformer's per-unit reactance on the $100\\text{ MVA}$ system base?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27204,6 +27742,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Three-Phase Power",
             "title": "Reactive Power Calculation",
             "question": "A balanced three-phase, wye-connected load draws a line current of $20\\text{ A}$ from a $400\\text{ V}$ (line-to-line) source at a power factor of $0.8$ lagging. What is the total reactive power drawn by the load?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27261,6 +27800,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transformers",
             "title": "Impedance Reflection",
             "question": "An ideal single-phase transformer has a primary voltage of $2400\\text{ V}$ and a secondary voltage of $240\\text{ V}$. If a $10\\text{ }\\Omega$ resistive load is connected to the secondary, what is the reflected impedance seen by the source at the primary side?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27314,6 +27854,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transformers",
             "title": "Ideal Turns Ratio",
             "question": "An ideal electrical power transformer mathematically operates entirely on Faraday's law of induction. If the primary input winding has $N_1$ turns and the secondary output winding has $N_2$ turns, the voltage ratio $V_1/V_2$ is perfectly mathematically equal to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27363,6 +27904,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "AC Generators",
             "title": "Synchronous Speed Equation",
             "question": "The mathematical synchronous speed ($N_s$ in RPM) of a massive AC synchronous generator is strictly and rigidly dictated by the frequency of the electrical grid ($f$ in Hz) and the physical number of magnetic poles ($P$) built into the rotor. The exact governing equation is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27411,6 +27953,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transmission Lines",
             "title": "High Voltage Advantage",
             "question": "In bulk national electrical power transmission networks, power is intentionally and universally transmitted across the country at extremely high voltages (e.g., $345\\text{ kV}$ or $765\\text{ kV}$) primarily to mathematically minimize:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27460,6 +28003,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Power Quality",
             "title": "Harmonic Distortion Frequencies",
             "question": "In modern power systems analysis, non-linear loads (like switching computer power supplies and VFDs) violently distort the pure sine wave. This distortion is mathematically quantified by the Total Harmonic Distortion (THD). The problematic '3rd harmonic' of a standard US $60\\text{ Hz}$ power system is exactly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27508,6 +28052,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "3-Phase Power",
             "title": "Line vs Phase Voltage in Wye",
             "question": "In a balanced, perfectly symmetric 3-phase Y-connected (Star) power system, the line-to-line voltage magnitude ($V_{LL}$) is mathematically related to the line-to-neutral phase voltage magnitude ($V_{LN}$) strictly by a factor of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27556,6 +28101,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Induction Motors",
             "title": "Motor Slip Definition",
             "question": "In a 3-phase AC induction motor, the rotor physically cannot spin as fast as the rotating magnetic field, because if it did, no magnetic lines would be cut and zero torque would be produced. The percentage difference in speed between the synchronous stator field and the physical rotor is strictly mathematically defined as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27604,6 +28150,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Switchgear",
             "title": "Circuit Breakers vs Fuses",
             "question": "While both circuit breakers and fuses are critical protection devices designed to violently interrupt massive fault currents, a heavy-duty industrial circuit breaker fundamentally differs physically and operationally from a standard fuse because it:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27654,6 +28201,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transmission Lines",
             "title": "Reflection Coefficient on a Transmission Line",
             "question": "A transmission line with characteristic impedance $Z_0 = 75\\text{ Ω}$ is terminated with a load impedance $Z_L = 150 + j75\\text{ Ω}$. Calculate the voltage reflection coefficient $\\Gamma$ at the load.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27703,6 +28251,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Maxwell's Equations",
             "title": "Displacement Current",
             "question": "Which of the original empirical electromagnetism equations was theoretically modified by James Clerk Maxwell to include the displacement current term $\\frac{\\partial \\mathbf{D}}{\\partial t}$, thereby fixing a continuity paradox and predicting the existence of electromagnetic waves?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27752,6 +28301,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transmission Lines",
             "title": "Characteristic Impedance",
             "question": "A lossless radio-frequency transmission line has an inductance per unit length of $0.25\\text{ }\\mu\\text{H/m}$ and a capacitance per unit length of $100\\text{ pF/m}$. What is the characteristic impedance of the line?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27809,6 +28359,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Maxwell's Equations",
             "title": "Gauss's Law for Magnetism",
             "question": "Maxwell's four equations completely define classical electromagnetism. Gauss's Law for Magnetism ($\\nabla \\cdot \\mathbf{B} = 0$) mathematically proves the absolute physical impossibility of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27858,6 +28409,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electrostatics",
             "title": "Coulomb's Law Formula",
             "question": "According to Coulomb's Law, the electrostatic force mathematically exerted between two stationary point charges in a vacuum is directly proportional to the product of their charges ($q_1 q_2$) and strictly inversely proportional to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27907,6 +28459,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Electrodynamics",
             "title": "Faraday's Law of Induction",
             "question": "Faraday's Law of Induction mathematically dictates that the induced electromotive force (EMF) generated within a closed conducting wire loop is strictly equal to the negative rate of change of the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -27956,6 +28509,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transmission Lines",
             "title": "Characteristic Impedance",
             "question": "For a mathematically lossless, infinitely long RF coaxial transmission line, the fundamental characteristic impedance ($Z_0$) is not a physical resistor, but is defined strictly by the line's distributed series inductance ($L$) and distributed shunt capacitance ($C$) via the exact equation:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28005,6 +28559,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Antennas",
             "title": "Half-Wave Dipole Pattern",
             "question": "A standard half-wave dipole antenna is physically constructed to have an overall metallic length perfectly equal to exactly half the wavelength ($\\lambda/2$) of its target operating frequency. Its theoretical 3D radiation pattern in free space roughly physically resembles a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28053,6 +28608,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Plane Waves",
             "title": "Speed of Light Derivation",
             "question": "In a perfect vacuum, the fundamental speed of light ($c$) is mathematically derived directly from Maxwell's wave equations as entirely dependent on two universal constants: the permittivity of free space ($\\epsilon_0$) and the permeability of free space ($\\mu_0$), exactly via the equation:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28101,6 +28657,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Magnetostatics",
             "title": "Ampere's Law",
             "question": "Ampere's Circuital Law mathematically relates the integrated magnetic field exactly around a completely closed loop to the total physical amount of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28152,6 +28709,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Stability",
             "title": "Routh-Hurwitz Stability Criterion",
             "question": "A closed-loop system has the characteristic equation: $s^4 + 2s^3 + 3s^2 + 4s + 5 = 0$. Using the Routh-Hurwitz criterion, how many roots have positive real parts (i.e., are in the right-half plane)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28201,6 +28759,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "PID Control",
             "title": "Steady-State Error for Type 1 Systems",
             "question": "A unity feedback control system has an open-loop transfer function $G(s) = \\frac{K}{s(s+5)}$. What is the steady-state error of this closed-loop system in response to a unit step input?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28254,6 +28813,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Root Locus",
             "title": "Asymptote Angles",
             "question": "A control system has an open-loop transfer function with 3 poles and 0 zeros. At what angles do the root locus branches approach infinity?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28306,6 +28866,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Root Locus",
             "title": "Number of Asymptotes",
             "question": "In formal Root Locus analysis, as the system gain $K$ approaches infinity, the branches of the locus mathematically approach open-loop zeros. If the transfer function has more poles ($n$) than zeros ($m$), the remaining branches go to infinity along straight asymptotes. Exactly how many asymptotes exist?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28354,6 +28915,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Stability",
             "title": "Routh-Hurwitz Criterion Function",
             "question": "The rigorous Routh-Hurwitz stability criterion is a highly efficient mathematical test performed on a system's characteristic polynomial to quickly determine absolute stability without calculating roots. It explicitly verifies whether any system poles lie:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28403,6 +28965,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Frequency Response",
             "title": "Gain and Phase Margins",
             "question": "In robust control system design, the 'Gain Margin' and 'Phase Margin' mathematically quantified on a Bode or Nyquist plot physically represent the specific amount of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28452,6 +29015,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Feedback",
             "title": "Steady-State Error of Type 1 Systems",
             "question": "For a standard Type-1 feedback control system (which is mathematically defined as having exactly one pure integrator pole at the origin, such as $1/s$ in the open-loop transfer function), the mathematical steady-state error resulting from a standard constant step input will theoretically be exactly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28501,6 +29065,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Compensation",
             "title": "Lead Compensator Purpose",
             "question": "In control loop tuning, adding a mathematical 'Lead Compensator' network ($C(s) = K \\frac{s+z}{s+p}$ where $z < p$) specifically introduces a phase lead bump into the system. Its primary engineering purpose is physically to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28549,6 +29114,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Block Diagrams",
             "title": "Closed-Loop Transfer Function",
             "question": "For a standard, simple single-loop feedback control system with a forward path transfer function $G(s)$ and a negative feedback path transfer function $H(s)$, the overall closed-loop mathematical transfer function $T(s) = \\frac{Y(s)}{R(s)}$ is strictly derived and defined as:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28600,6 +29166,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Modulation",
             "title": "AM Modulation Index and Power",
             "question": "An AM signal has a carrier power of $P_c = 100\\text{ W}$ and a modulation index of $m = 0.80$. Calculate the total transmitted power $P_T$ and the power efficiency $\\eta$.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28649,6 +29216,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Information Theory",
             "title": "Shannon Channel Capacity",
             "question": "According to the Shannon-Hartley theorem, what is the maximum theoretical data capacity of an Additive White Gaussian Noise (AWGN) channel with a bandwidth of $1\\text{ MHz}$ and a Signal-to-Noise Ratio (SNR) of 31 (expressed in linear scale)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28701,6 +29269,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Modulation",
             "title": "AM Modulation Index",
             "question": "An Amplitude Modulated (AM) signal is observed on an oscilloscope. The maximum peak-to-peak envelope voltage is measured as $12\\text{ V}$, and the minimum peak-to-peak envelope voltage is $4\\text{ V}$. What is the modulation index ($m$) of this signal?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28754,6 +29323,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Information Theory",
             "title": "Shannon-Hartley Theorem",
             "question": "The Shannon-Hartley theorem mathematically calculates the absolute maximum theoretical data rate (the channel capacity $C$ in bits per second) that can be transmitted perfectly over a noisy analog channel. The capacity is fundamentally bounded by the channel bandwidth ($B$) and the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28802,6 +29372,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Modulation",
             "title": "FM Noise Immunity",
             "question": "In analog radio broadcasting, Frequency Modulation (FM) provides significantly better audio quality and noise immunity than traditional Amplitude Modulation (AM). This is physically and electronically true because most atmospheric static, lightning, and electrical interference primarily randomly affects the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28851,6 +29422,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Digital Modulation",
             "title": "Quadrature Amplitude Modulation (QAM)",
             "question": "Quadrature Amplitude Modulation (QAM), the bedrock of modern Wi-Fi and cable modems, is a highly efficient digital modulation scheme that mathematically transmits massive amounts of binary data by simultaneously varying two physical properties of the carrier wave:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28899,6 +29471,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Multiplexing",
             "title": "FDM vs TDM Systems",
             "question": "In telecommunications, Frequency Division Multiplexing (FDM) separates user channels by assigning each user a completely different frequency band (like FM radio stations). In strict operational contrast, Time Division Multiplexing (TDM) separates users by assigning each user a specific:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28948,6 +29521,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Error Correction",
             "title": "Even Parity Bit Logic",
             "question": "The absolute simplest form of error detection in digital data transmission is the 'Parity Bit'. In a strict 'Even Parity' system, the parity bit is mathematically calculated and set to 1 or 0 by the transmitter specifically to ensure that the total number of 1s in the entire transmitted packet is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -28996,6 +29570,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Antennas",
             "title": "Isotropic Radiator Model",
             "question": "In RF communication link budgets, antenna gain is almost universally expressed in 'dBi'. The 'i' specifically stands for an 'Isotropic Radiator', which is a theoretical, physically impossible mathematical point source that radiates RF power:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29044,6 +29619,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Baseband",
             "title": "Pulse Code Modulation (PCM) Steps",
             "question": "In Pulse Code Modulation (PCM), which is the absolute standard method for digitizing continuous analog voice signals in modern telephony, the analog wave is mathematically subjected to three distinct sequential processing steps before digital transmission: Sampling, Quantizing, and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29098,6 +29674,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Routing",
             "title": "Dijkstra Shortest Path Algorithm",
             "question": "A network has 4 nodes (A, B, C, D). Edge weights: A-B=4, A-C=2, B-D=5, C-B=1, C-D=8. Using Dijkstra's algorithm starting from node A, what is the shortest path distance to node D and which path achieves it?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29147,6 +29724,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "TCP/IP Protocol",
             "title": "Subnet Masking (CIDR)",
             "question": "A network segment is assigned the CIDR block 192.168.1.0/26. How many usable host IP addresses are available in this specific subnet?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29199,6 +29777,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Routing",
             "title": "Distance Vector Vulnerabilities",
             "question": "The 'Count-to-Infinity' problem, where routers continuously loop routing updates with incrementally increasing distance metrics until reaching a predefined maximum limit, is a known vulnerability of which specific type of routing protocol?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29248,6 +29827,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "OSI Model",
             "title": "Layer 2 vs Layer 3 Addressing",
             "question": "In the standard 7-layer OSI conceptual networking model, a basic local network Switch fundamentally operates at Layer 2 (Data Link) exclusively using physical MAC addresses. In strict operational contrast, a standard Router physically and logically operates at Layer 3 (Network) using:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29297,6 +29877,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Internet Protocol",
             "title": "IPv4 vs IPv6 Address Length",
             "question": "The older legacy IPv4 protocol mathematically utilizes 32-bit addresses, which limits the entire internet to roughly 4.3 billion unique IP addresses. The modern, heavily deployed IPv6 protocol completely solves this exhaustion by utilizing massive, complex addresses that are exactly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29346,6 +29927,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transport Layer",
             "title": "TCP vs UDP Reliability",
             "question": "In the TCP/IP stack, TCP (Transmission Control Protocol) is mathematically connection-oriented and rigorously guarantees data delivery via sequences and acknowledgments. UDP (User Datagram Protocol) is 'connectionless', meaning it completely lacks:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29395,6 +29977,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Network Topology",
             "title": "The Star Topology",
             "question": "In modern commercial Ethernet LAN wiring, almost all physical networks utilize a 'Star' topology. In this specific mathematical graph structure, every single end-user computer is connected by its own dedicated cable directly to a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29443,6 +30026,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Security",
             "title": "Public Key Cryptography (RSA)",
             "question": "In asymmetrical Public Key Cryptography (like the RSA algorithm), mathematically establishing a secure network connection over the open internet requires two distinct keys. A secure message encrypted by a sender using the receiver's Public Key can only be successfully decrypted by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29492,6 +30076,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Routing",
             "title": "Subnet Mask Function",
             "question": "In IP networking, the 'Subnet Mask' (e.g., $255.255.255.0$) is a rigorous mathematical 32-bit number used specifically by a router's logic circuits to physically determine which exact portion of an IP address represents the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29541,6 +30126,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wireless",
             "title": "CSMA/CA Protocol in Wi-Fi",
             "question": "Standard Wi-Fi (IEEE 802.11) wireless networks are inherently half-duplex (radios cannot transmit and receive on the same frequency simultaneously) and highly susceptible to unseen collisions. To mathematically and operationally minimize data collisions in the air, Wi-Fi networks strictly utilize an access protocol known by the acronym:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29592,6 +30178,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Logic Gates",
             "title": "Karnaugh Map Simplification",
             "question": "A 3-variable Boolean function $F(A,B,C)$ has minterms at $m(1,3,5,7)$. Using a Karnaugh map, what is the minimized Sum of Products (SOP) expression?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29641,6 +30228,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Combinational Logic",
             "title": "Multiplexer Logic",
             "question": "To implement a general 3-variable Boolean function using a single multiplexer without any external logic gates (not even NOT gates), what is the minimum required size of the MUX?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29689,6 +30277,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sequential Logic",
             "title": "FSM Maximum States",
             "question": "A synchronous sequential circuit uses exactly 4 D flip-flops. What is the theoretical maximum number of distinct states the finite state machine (FSM) can possess?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29737,6 +30326,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Boolean Algebra",
             "title": "De Morgan's Laws",
             "question": "De Morgan's Laws are extremely fundamental mathematical theorems in Boolean algebra. One of the primary laws strictly states that the completely inverted OR function of two variables ($\\overline{A + B}$) is physically and logically mathematically equivalent to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29786,6 +30376,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Logic Gates",
             "title": "Universal Gates",
             "question": "In digital hardware design, the NAND gate and the NOR gate are uniquely classified mathematically as 'Universal Gates'. This specific, powerful designation mathematically means that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29835,6 +30426,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Combinational Logic",
             "title": "Multiplexers (MUX)",
             "question": "A standard digital Multiplexer (MUX) is a highly common combinational logic circuit. It is physically and mathematically designed strictly to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29883,6 +30475,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Sequential Logic",
             "title": "Flip-Flops vs Latches",
             "question": "The fundamental architectural difference between a digital Latch and a Flip-Flop is that a Latch is mathematically 'level-sensitive' (it changes state freely as long as the enable pin is held high). In strict contrast, a true Flip-Flop is mathematically:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29931,6 +30524,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Number Systems",
             "title": "Two's Complement Arithmetic",
             "question": "In digital computer arithmetic, the elegant 'Two's Complement' mathematical system is almost universally utilized by CPUs to represent negative binary integers. To mathematically convert a positive binary number to its exact negative Two's Complement equivalent, you must:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -29980,6 +30574,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Finite State Machines",
             "title": "Mealy vs Moore Machines",
             "question": "In the rigorous design of synchronous Finite State Machines (FSMs), a 'Moore' machine is defined such that its output mathematically depends strictly on the current state alone. In contrast, a 'Mealy' machine's output mathematically and instantaneously depends on both the current state and the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30028,6 +30623,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Memory",
             "title": "SRAM vs DRAM Cells",
             "question": "While standard Dynamic RAM (DRAM) requires constant, power-hungry periodic refreshing to mathematically maintain its data due to leaky microscopic capacitors, Static RAM (SRAM) does not require refreshing and is vastly faster. This is because each single bit of SRAM is physically constructed using a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30079,6 +30675,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Architecture",
             "title": "Cache Memory Miss Penalty Calculation",
             "question": "A processor has an L1 cache with a hit time of $2\\text{ ns}$, a hit rate of $90\\%$, and main memory access time of $100\\text{ ns}$. Using the Average Memory Access Time (AMAT) formula, calculate AMAT.",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30128,6 +30725,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Memory Hierarchy",
             "title": "Cache Hit Ratio",
             "question": "A processor has a primary cache with an access time of $2\\text{ ns}$ and a main memory access time of $50\\text{ ns}$. If the required average memory access time (AMAT) is $6.8\\text{ ns}$, what is the required cache hit ratio?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30176,6 +30774,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Processor Architecture",
             "title": "Amdahl's Law",
             "question": "According to Amdahl's Law, if $80\\%$ of a program can be perfectly parallelized, what is the theoretical maximum speedup achievable regardless of how many processors are used?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30225,6 +30824,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Architecture",
             "title": "Von Neumann Bottleneck",
             "question": "The classic Von Neumann computer architecture (upon which almost all modern PCs are based) is fundamentally and physically characterized by the fact that the CPU mathematically shares a single, common data bus and memory space for both:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30274,6 +30874,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Caching",
             "title": "Principle of Locality",
             "question": "Ultra-fast CPU cache memory drastically improves execution speed by exploiting the mathematical 'Principle of Locality'. This principle relies on Temporal Locality (if a variable is accessed, it will likely be accessed again soon) and Spatial Locality, which assumes that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30322,6 +30923,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Pipelining",
             "title": "Pipeline Data Hazards",
             "question": "In a modern pipelined CPU architecture (where multiple instructions are overlapped in execution, like an assembly line), a 'Data Hazard' mathematically and physically occurs strictly when:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30371,6 +30973,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Operating Systems",
             "title": "Virtual Memory Mechanics",
             "question": "The Virtual Memory management system inside a modern OS mathematically creates the illusion to the user of massive, infinite RAM. It does this by moving inactive 'pages' of memory out of the physical RAM chips and storing them temporarily on the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30420,6 +31023,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Multiprocessing",
             "title": "Amdahl's Law",
             "question": "Amdahl's Law mathematically calculates the absolute theoretical maximum speedup of a computer system when multiple processors/cores are added. It rigidly proves that the overall speedup is fundamentally and mathematically limited by the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30469,6 +31073,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "I/O Systems",
             "title": "Direct Memory Access (DMA)",
             "question": "Direct Memory Access (DMA) is an absolutely critical hardware feature that drastically improves overall system performance by physically allowing hardware peripherals (like a sound card, network card, or NVMe drive) to mathematically transfer data directly into the system RAM without:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30517,6 +31122,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Instruction Set",
             "title": "RISC vs CISC Architecture",
             "question": "A RISC (Reduced Instruction Set Computer) architecture, like the ARM chips in smartphones, is mathematically optimized to execute simple, uniform instructions in exactly a single clock cycle. In contrast, a CISC (Complex Instruction Set Computer) architecture, like Intel x86 desktop chips, is historically designed to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30568,6 +31174,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Algorithms",
             "title": "Big-O Complexity of Sorting Algorithms",
             "question": "A software engineer must sort $n = 1,000,000$ records. Algorithm X has time complexity $O(n \\log n)$ and Algorithm Y has complexity $O(n^2)$. Approximately how many times faster is Algorithm X than Algorithm Y for this input size? (Use $\\log_2(10^6) \\approx 20$.)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30617,6 +31224,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Data Structures",
             "title": "Binary Search Tree Complexity",
             "question": "In a perfectly balanced Binary Search Tree (BST) containing $n$ nodes, what is the worst-case time complexity to search for a specific element?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30662,6 +31270,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Operating Systems",
             "title": "Deadlock Conditions",
             "question": "Which of the following is NOT one of the four Coffman conditions necessary for a deadlock to occur in an operating system?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30711,6 +31320,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Algorithms",
             "title": "Big O Notation ($O(n^2)$)",
             "question": "In computer science, Big O notation is a mathematical tool used to rigorously describe the asymptotic worst-case time complexity of an algorithm. An algorithm with a time complexity of exactly $O(n^2)$ mathematically means that if the size of the input data ($n$) doubles, the execution time will:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30760,6 +31370,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Data Structures",
             "title": "Hash Table Mechanics",
             "question": "A Hash Table (or Dictionary/Map) is a highly efficient data structure that maps 'keys' to 'values'. Mathematically, it achieves an incredibly fast average time complexity of exactly $O(1)$ (constant time) for lookups and insertions by utilizing a 'hash function' to physically compute the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30809,6 +31420,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Object-Oriented Programming",
             "title": "Polymorphism Concept",
             "question": "In Object-Oriented Programming (OOP) architectures, the fundamental principle of 'Polymorphism' allows software engineers to mathematically and logically write robust code where a single generic function or method name can physically:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30857,6 +31469,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Databases",
             "title": "ACID Database Properties",
             "question": "In highly secure relational database management systems (RDBMS) like PostgreSQL or MySQL, a financial transaction must rigorously satisfy the ACID mathematical properties to guarantee data integrity. ACID strictly stands for Atomicity, Consistency, Isolation, and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30906,6 +31519,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Networking",
             "title": "RESTful API Methods",
             "question": "A RESTful (Representational State Transfer) Web API mathematically utilizes standard HTTP protocol methods to logically interact with data resources. According to strict REST conventions, which specific HTTP method is explicitly designed to mathematically 'Idempotently' update or completely replace an existing resource on the server?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -30955,6 +31569,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Compilers",
             "title": "Lexical Analysis Phase",
             "question": "During the highly complex compilation of human-readable source code (like C++) into raw machine binary code, the very first mathematical phase is called 'Lexical Analysis'. In this specific phase, the compiler reads the raw text string characters and rigidly groups them together into meaningful atomic units formally called:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31003,6 +31618,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Software Engineering",
             "title": "Agile Sprints",
             "question": "In modern software engineering project management, the classic 'Waterfall' model is a strict, linear, sequential life cycle. In stark contrast, 'Agile' methodologies (like the Scrum framework) mathematically organize the development process into iterative, time-boxed cycles where working software is delivered frequently. These fast cycles are formally called:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31054,6 +31670,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Analysis",
             "title": "Plastic Collapse Mechanism",
             "question": "A continuous steel beam is analyzed for its ultimate load capacity using plastic theory. If the uniform plastic moment capacity of the section is $M_p$, what is the point collapse load $W_c$ for a beam of length $L$ that is fixed at both ends and subjected to a single concentrated load at the center?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31111,6 +31728,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Transportation Engineering",
             "title": "Horizontal Curve Radius",
             "question": "For a highway curve with a design speed of $120\\text{ km/h}$ and a maximum superelevation of $0.08$, what is the absolute minimum radius of the horizontal curve? (Assume a side friction factor $f = 0.12$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31160,6 +31778,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Structural Engineering",
             "title": "Reinforced Concrete Beta Factor",
             "question": "In the ultimate strength design of a singly reinforced rectangular concrete beam, what is the assumed equivalent rectangular compressive stress block depth factor ($\\beta_1$) for concrete with $f_c' = 28\\text{ MPa}$ ($4000\\text{ psi}$) according to ACI 318?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31205,6 +31824,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Civil Engineering Law",
             "title": "Standard of Care",
             "question": "Under common law, an engineer's professional liability for negligence is judged based on whether they failed to exercise the degree of skill and care ordinarily exercised by other reputable engineers practicing in the same field and geographic area. What is this specific legal standard called?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31253,6 +31873,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Ethics",
             "title": "Whistleblowing",
             "question": "An engineer discovers a critical design flaw in a structure under construction that poses an imminent, catastrophic threat to public safety. The employer refuses to halt construction due to extreme cost overruns. What is the engineer's primary ethical obligation according to ASCE and NSPE codes?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31302,6 +31923,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Materials Engineering",
             "title": "Concrete Curing Chemistry",
             "question": "What is the primary, exothermic chemical reaction fundamentally responsible for the strength gain and rigid hardening of Portland cement concrete when it is mixed with water?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31350,6 +31972,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Construction Materials",
             "title": "Steel Carbon Content Effects",
             "question": "In structural steel metallurgy, how does deliberately increasing the carbon content (up to about $0.3\\%$) typically affect the mechanical properties of the steel alloy?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31399,6 +32022,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Equivalent Uniform Annual Cost (EUAC)",
             "question": "A bridge requires a $\\$500,000$ initial investment and $\\$10,000$ in annual maintenance. The salvage value after 50 years is negligible. At a discount rate of $5\\%$, what is the approximate Equivalent Uniform Annual Cost (EUAC)? (Given: $(A/P, 5\\%, 50) = 0.0548$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31452,6 +32076,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statics",
             "title": "Centroid of a Triangle",
             "question": "A right-angled triangular steel plate has a base of $b = 300\\text{ mm}$ (on the x-axis) and a height of $h = 600\\text{ mm}$ (on the y-axis), with the right angle at the origin $(0,0)$. At what coordinates $(x,y)$ is the geometric centroid located?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31501,6 +32126,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Thermal Stress",
             "question": "A rigidly fixed steel bar ($E = 200\\text{ GPa}, \\alpha = 12 \\times 10^{-6}\\text{ /}^\\circ\\text{C}$) is subjected to a temperature drop of $30^\\circ\\text{C}$. What is the magnitude of the thermal stress developed in the bar?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31556,6 +32182,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Chemical Reaction Engineering",
             "title": "Reactor Volume Optimization",
             "question": "For a liquid-phase second-order reaction ($A \\rightarrow P$) with a rate constant $k$, the volume of a Continuous Stirred Tank Reactor ($V_{CSTR}$) is compared to a Plug Flow Reactor ($V_{PFR}$) required to achieve 90% conversion of A. What is the ratio $V_{CSTR}/V_{PFR}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31613,6 +32240,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Fugacity Coefficient",
             "question": "For an ideal gas at constant temperature and pressure, what is the exact value of its fugacity coefficient ($\\phi$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31662,6 +32290,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Transfer",
             "title": "Log Mean Temperature Difference",
             "question": "In a counter-flow double-pipe heat exchanger, the hot fluid cools from $100^\\circ\\text{C}$ to $60^\\circ\\text{C}$, while the cold fluid heats from $30^\\circ\\text{C}$ to $50^\\circ\\text{C}$. What is the Log Mean Temperature Difference (LMTD)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31711,6 +32340,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Process Dynamics",
             "title": "Second-Order Underdamped System",
             "question": "A standard second-order dynamic process is mathematically described by its damping ratio, $\\zeta$. If $0 < \\zeta < 1$, the system is strictly defined as 'underdamped', meaning its physical mathematical step response will specifically exhibit:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31759,6 +32389,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Equipment",
             "title": "Murphree Tray Efficiency",
             "question": "In the rigorous design of a staged distillation column, the Murphree tray efficiency is heavily utilized. It is mathematically defined as the ratio of the actual measured change in vapor composition across a single tray to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31808,6 +32439,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Fugacity Coefficient Limit",
             "question": "The fugacity coefficient $\\phi$ of a real, non-ideal gas represents its strict thermodynamic deviation from perfect ideal gas behavior. As the system absolute pressure approaches a perfect vacuum ($P \\rightarrow 0$), the value of the fugacity coefficient strictly mathematically approaches:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31857,6 +32489,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Fluid Flow",
             "title": "Dilatant Fluid Rheology",
             "question": "A heavily concentrated starch-water slurry or wet beach sand is classified rheologically as a 'dilatant' (non-Newtonian) fluid. This strictly means that as the applied mechanical shear rate abruptly increases, its apparent dynamic viscosity will:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31906,6 +32539,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Heat Transfer",
             "title": "Pool Boiling Regimes",
             "question": "In the pool boiling of saturated water on a hot metal surface, if the surface temperature is aggressively increased too far past the critical heat flux (CHF) point, the heat transfer coefficient plummets severely and dangerously because a continuous insulating blanket of vapor forms. This highly dangerous regime is called:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -31955,6 +32589,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mass Transfer",
             "title": "Schmidt Number Definition",
             "question": "The dimensionless Schmidt number ($Sc$) is critically and fundamentally used in chemical mass transfer boundary layer analysis. It is mathematically defined simply as the direct ratio of the momentum diffusivity (kinematic viscosity) to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32004,6 +32639,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Carnot Engine Efficiency",
             "question": "A completely reversible, ideal Carnot heat engine operates between a high-temperature heat reservoir at exactly $1000\\text{ K}$ and a cold sink at $300\\text{ K}$. What is its absolute maximum theoretical thermodynamic efficiency limit?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32059,6 +32695,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water and Wastewater Treatment",
             "title": "Terminal Settling Velocity in Clarifiers",
             "question": "A spherical silica sand particle (density $\\rho_p = 2650\\text{ kg/m}^3$, diameter $d = 0.1\\text{ mm}$) settles in water (density $\\rho_w = 1000\\text{ kg/m}^3$, dynamic viscosity $\\mu = 1.0 \\times 10^{-3}\\text{ Pa}\\cdot\\text{s}$) within the Stokes' flow regime. What is its terminal settling velocity? (Assume $g=9.81\\text{ m/s}^2$)",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32116,6 +32753,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Quality",
             "title": "Hardness Calculation",
             "question": "A water sample contains $40\\text{ mg/L}$ of $Ca^{2+}$ and $12\\text{ mg/L}$ of $Mg^{2+}$. What is the total hardness of the water expressed in $\\text{mg/L as } CaCO_3$? (Atomic weights: $Ca=40$, $Mg=24$, $CaCO_3=100$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32169,6 +32807,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Pollution",
             "title": "PPM to Microgram Conversion",
             "question": "At Standard Temperature and Pressure ($0^\\circ\\text{C}, 1\\text{ atm}$), an air sample contains $1\\text{ ppm}$ by volume of $SO_2$ (Molecular weight $= 64\\text{ g/mol}$). What is the equivalent concentration in $\\mu\\text{g/m}^3$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32218,6 +32857,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Water Treatment",
             "title": "Coagulation Mechanism",
             "question": "In municipal drinking water treatment plants, the addition of a chemical coagulant like aluminum sulfate (alum) primarily serves to rapidly destabilize microscopic colloidal particles in the raw water by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32267,6 +32907,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Wastewater",
             "title": "Mixed Liquor Suspended Solids (MLSS)",
             "question": "In a standard suspended-growth activated sludge biological wastewater treatment plant, the highly critical operational parameter known as 'Mixed Liquor Suspended Solids' (MLSS) refers strictly to the total concentration of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32316,6 +32957,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Ecology",
             "title": "Freshwater Cultural Eutrophication",
             "question": "Severe cultural eutrophication of a freshwater lake, which commonly leads to massive toxic algal blooms and subsequent deadly anoxic fish kills, is most frequently triggered by an excessive anthropogenic influx of:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32364,6 +33006,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Air Pollution",
             "title": "Cyclone Separator Efficiency",
             "question": "A centrifugal cyclone separator is highly efficient and economical at removing large, dense dust particles from an industrial air stream. However, its collection efficiency drops off dramatically for fine, low-mass particles with aerodynamic diameters smaller than approximately:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32413,6 +33056,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Groundwater",
             "title": "DNAPL Contamination",
             "question": "Dense Non-Aqueous Phase Liquids (DNAPLs), such as the notorious chlorinated solvent trichloroethylene (TCE), are exceptionally difficult to clean up from a contaminated aquifer primarily because they sink deep into the water table and:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32462,6 +33106,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Risk Assessment",
             "title": "Hazard Index (HI)",
             "question": "In standard EPA human health risk assessments evaluating non-cancer toxic effects, if the mathematically calculated Hazard Index (HI) for simultaneous exposure to multiple chemicals is strictly less than $1.0$, it scientifically indicates that:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32511,6 +33156,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Policy",
             "title": "NEPA Environmental Impact Statement",
             "question": "Under the stringent US National Environmental Policy Act (NEPA), if an initial Environmental Assessment (EA) legally indicates that a proposed major federal project will likely have a significant, adverse impact on the human environment, the lead agency is strictly legally required to prepare a massive, comprehensive:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32562,6 +33208,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Operations Research",
             "title": "Queuing Theory (M/M/1 System)",
             "question": "In an M/M/1 queuing system, customers arrive following a Poisson distribution at a rate of 12 per hour. The service rate follows an exponential distribution at 15 per hour. What is the average total time a customer spends in the system ($W$)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32618,6 +33265,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Operations Research",
             "title": "Linear Programming Shadow Price",
             "question": "In the optimal solution of a maximization Linear Programming model, the 'shadow price' (or dual price) of a less-than-or-equal-to constraint represents:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32662,6 +33310,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Quality Control",
             "title": "Six Sigma DPMO",
             "question": "A process operating exactly at a Six Sigma quality level (incorporating the standard $1.5\\sigma$ empirical mean shift) will produce approximately how many Defects Per Million Opportunities (DPMO)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32711,6 +33360,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Operations Research",
             "title": "Little's Law",
             "question": "In mathematical queuing theory, the incredibly robust Little's Law ($L = \\lambda W$) fundamentally dictates that the long-term average number of items physically sitting in a stationary system ($L$) is directly equal to the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32759,6 +33409,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Plant Layout",
             "title": "CRAFT Algorithm",
             "question": "The CRAFT (Computerized Relative Allocation of Facilities Technique) algorithm is a classic heuristic used to computationally optimize facility layouts. It mathematically attempts to minimize total material transportation costs by:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32807,6 +33458,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Forecasting",
             "title": "MAD vs MSE Penalties",
             "question": "When evaluating the mathematical accuracy of a time-series forecasting model, the Mean Absolute Deviation (MAD) strictly weights all errors equally. In contrast, the Mean Squared Error (MSE) metric heavily and mathematically penalizes:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32856,6 +33508,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Inventory",
             "title": "ABC Inventory Classification",
             "question": "In standard ABC inventory classification (which mathematically relies on the Pareto principle or 80/20 rule), 'Class A' items typically represent approximately $10-20\\%$ of the total physical items in the warehouse, but critically account for roughly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32905,6 +33558,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Value Engineering",
             "title": "Definition of Value Ratio",
             "question": "In the formal discipline of Value Engineering (VE) and Value Analysis (VA), 'Value' is strictly and mathematically defined as the ratio of a product's primary intended physical Function (or utility) to its:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -32954,6 +33608,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Work Measurement",
             "title": "Fatigue Allowances",
             "question": "When conducting a formal time and motion study, if a factory worker is subjected to excessive environmental heat, heavy lifting, or extremely poor lighting, the industrial engineer will mathematically compensate for this by strictly increasing the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33003,6 +33658,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reliability",
             "title": "MTTF vs MTBF",
             "question": "In rigorous reliability engineering metrics, Mean Time To Failure (MTTF) strictly applies to non-repairable items (like a lightbulb or satellite). However, for repairable mechanical systems (like an engine), the mathematically appropriate and encompassing metric that includes the repair time is:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33054,6 +33710,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Digital Signal Processing",
             "title": "Z-Transform and Region of Convergence",
             "question": "A discrete-time Linear Time-Invariant (LTI) system has a transfer function $H(z) = \\frac{1}{1 - 0.5z^{-1}}$. Which of the following defines the Region of Convergence (ROC) for the system to be both causal and stable?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33111,6 +33768,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Computer Architecture",
             "title": "Advanced Pipeline Performance",
             "question": "A 5-stage instruction pipeline runs at a clock frequency of 2 GHz. If a program has $10^6$ instructions and the pipeline stalls for 1 cycle on 20% of the instructions due to data hazards, what is the total execution time? (Assume an ideal base CPI of 1 and ignore pipeline fill time).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33167,6 +33825,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Microprocessors",
             "title": "Instruction Cycle Architecture",
             "question": "During the execution of an instruction cycle in a standard von Neumann architecture, which CPU register explicitly holds the memory address of the very next instruction to be fetched?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33212,6 +33871,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Microcontrollers",
             "title": "Watchdog Timer Purpose",
             "question": "In deeply embedded microcontroller systems operating in critical environments, a 'Watchdog Timer' (WDT) is a critical physical hardware counter specifically designed to mathematically prevent total system lockups. If the software crashes or gets trapped in an infinite loop and fails to 'kick' or reset the counter before it overflows to zero, the Watchdog hardware will forcibly:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33260,6 +33920,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "PCB Design",
             "title": "Vias in PCBs",
             "question": "In the physical layout and design of multilayer Printed Circuit Boards (PCBs), a 'Via' is a mathematically drilled, microscopically copper-plated hole specifically engineered to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33308,6 +33969,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Power Electronics",
             "title": "Buck Converter Function",
             "question": "A standard 'Buck Converter' is a highly efficient Switch-Mode Power Supply (SMPS) topology mathematically and physically designed strictly to:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33356,6 +34018,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Data Acquisition",
             "title": "Quantization Error",
             "question": "When an Analog-to-Digital Converter (ADC) digitizes a continuous sensor signal, it must mathematically round the infinite analog voltage values to the nearest discrete, finite digital step allowed by its bit resolution. The mathematical difference between the true analog voltage and the rounded digital value is a form of irreducible noise formally called:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33405,6 +34068,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Embedded Communication",
             "title": "I2C Bus Architecture",
             "question": "The I2C (Inter-Integrated Circuit) protocol is a massively popular synchronous serial communication bus invented by Philips. It mathematically and physically requires only two physical wires to connect potentially dozens of different microchips together on a single board: the Serial Data Line (SDA) and the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33453,6 +34117,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Optics",
             "title": "Total Internal Reflection in Fiber",
             "question": "In optical fiber telecommunications, laser light pulses are mathematically and physically trapped inside the microscopic glass core and travel for miles without escaping out the sides. This is achieved via the physical principle of 'Total Internal Reflection', which requires the inner core glass to mathematically have a:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33501,6 +34166,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Machine Learning",
             "title": "Neural Network Activation Function",
             "question": "In Artificial Neural Networks and Deep Learning, the mathematical 'Activation Function' (such as ReLU, Sigmoid, or Tanh) applied to the output sum of a perceptron neuron is absolutely critical because it physically introduces:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33549,6 +34215,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Security",
             "title": "Buffer Overflow Exploits",
             "question": "A 'Buffer Overflow' is a severe, historically devastating mathematical software vulnerability (especially in languages like C/C++) where a program writes more data to a block of memory than it was physically allocated to hold. This allows malicious hackers to directly overwrite adjacent memory, often specifically targeting the:",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33600,6 +34267,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Systems Engineering",
             "title": "Reliability of Parallel Systems",
             "question": "An emergency cooling system consists of three identical pumps placed in parallel redundancy. Each pump has an individual reliability of $R = 0.80$ over the mission time. The system will function successfully if at least one pump works. What is the overall system reliability?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33657,6 +34325,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Systems Engineering",
             "title": "Requirements Traceability",
             "question": "In standard Systems Engineering V-model methodology, which late-stage testing phase is directly intended to verify and validate the initial Stakeholder/User Requirements?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33706,6 +34375,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Acoustics",
             "title": "Decibel Addition",
             "question": "If two independent, completely identical industrial noise sources each produce a sound pressure level of $80\\text{ dB}$, what is the total combined sound pressure level when both operate simultaneously?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33759,6 +34429,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Present Worth Analysis",
             "question": "An engineering investment pays exactly $\\$10,000$ per year for 10 years, starting one year from now. If the Minimum Attractive Rate of Return (MARR) is $8\\%$ compounded annually, what is the Present Worth of this cash flow? (Use the series present worth factor $P/A, 8\\%, 10 = 6.710$).",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33812,6 +34483,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Professional Ethics",
             "title": "Conflict of Interest",
             "question": "If an independent consulting engineer is hired by a municipality to inspect a manufacturing facility that is entirely owned by a corporation in which the engineer holds significant stock, what is the primary ethical issue at play according to standard engineering codes of ethics?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33856,6 +34528,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Statistics",
             "title": "Normal Distribution Probability",
             "question": "A manufacturing process produces precision shafts with a mean length of $100\\text{ mm}$ and a standard deviation of $2\\text{ mm}$. Assuming a perfect normal distribution, approximately what percentage of the produced shafts will fall between $96\\text{ mm}$ and $104\\text{ mm}$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33905,6 +34578,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Reliability",
             "title": "Parallel System Reliability",
             "question": "A critical system contains two independent, redundant components arranged in parallel. Component A has a reliability of $0.90$, and Component B has a reliability of $0.90$. What is the overall reliability of this parallel system?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -33958,6 +34632,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Acoustics",
             "title": "Sound Pressure Level (SPL)",
             "question": "If the absolute sound pressure (in Pascals) generated by a machine is exactly doubled, what is the corresponding theoretical increase in the Sound Pressure Level (SPL) measured in decibels (dB)?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -34011,6 +34686,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Measurement",
             "title": "Error Propagation",
             "question": "In a laboratory experiment, a derived quantity $z$ is calculated as $z = x + y$. If the measured variables $x$ and $y$ are completely independent and have standard uncertainties of $u_x = 3.0$ and $u_y = 4.0$ respectively, what is the combined standard uncertainty $u_z$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
@@ -34064,6 +34740,7 @@ const ADVANCED_QUESTIONS = {
             "topic": "Mathematics",
             "title": "Differential Equation Roots",
             "question": "For the linear, second-order, homogeneous ordinary differential equation $y'' + 4y' + 4y = 0$, what is the mathematical form of the general solution $y(t)$?",
+            "times_presented": 0,
             "options": [
                 {
                     "label": "A",
