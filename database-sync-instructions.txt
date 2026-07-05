@@ -1,0 +1,33 @@
+HOW TO UPDATE QUESTIONS IN ENGG.tv
+====================================
+
+Because the live app now fetches quizzes dynamically from Firebase Firestore to improve load times and save mobile memory, the app NO LONGER automatically reads the heavy `questions.js` or `advanced_questions.js` files directly.
+
+However, your local `questions.js` files are still the "Master Source of Truth"! 
+
+Whenever you (or the AI) add new questions, fix typos, or update image links in `questions.js` or `advanced_questions.js`, follow these steps to push those changes live:
+
+---
+
+STEP 1: EDIT LOCALLY
+1. Open `www/questions.js` or `www/advanced_questions.js`.
+2. Make your edits exactly like you always have (add a question, fix a typo, update a link).
+3. Save the file.
+
+STEP 2: SYNC TO DATABASE
+1. Open your terminal in VS Code (or PowerShell).
+2. Ensure you are in the root directory of your project (where package.json is).
+3. Run the following command:
+
+   npm run sync-db
+
+WHAT HAPPENS WHEN YOU RUN THIS?
+The script will do two things automatically:
+1. It reads your updated `.js` files and regenerates the lightweight `questions_index.js` files that the app uses for fast loading.
+2. It pushes the updated question data directly to your Firestore database in batches. (Note: Because it uses deterministic IDs like 'math_0', it will safely OVERWRITE the old data with your new edits, without creating any duplicates).
+
+Once the terminal says "ALL UPLOADS COMPLETE!", your live app will instantly start fetching your updated questions. You can then push your code changes to GitHub Pages as normal.
+
+---
+Troubleshooting:
+If `npm run sync-db` fails, ensure your `service-account.json` key is still located in the `scripts/` folder.

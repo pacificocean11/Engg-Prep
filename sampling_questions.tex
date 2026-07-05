@@ -1,0 +1,254 @@
+\subsection{Nyquist Sampling Theorem}
+
+According to the Nyquist theorem, to avoid aliasing when sampling a signal with a maximum frequency of 500 Hz, the minimum sampling rate must be:
+
+\begin{choices}
+    \correctchoice 1000 Hz
+    \choice 500 Hz
+    \choice 250 Hz
+    \choice 2000 Hz
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Nyquist Rate}
+Sampling rate $f_s \geq 2 f_{max} = 2 \times 500 = 1000$ Hz.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Normalized Frequency in DSP}
+
+In discrete-time signal processing, a normalized digital angular frequency of $\omega = \pi\ \text{rad/sample}$ corresponds to what physical frequency in Hertz if the sampling rate is $f_s$?
+
+\begin{choices}
+    \correctchoice $f_s / 2$
+    \choice $f_s$
+    \choice $2 f_s$
+    \choice $f_s / 4$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Relate Digital and Physical Frequencies}
+The relation between digital angular frequency $\omega$ and physical frequency $f$ is:
+$\omega = 2\pi \frac{f}{f_s}$
+
+\subsection*{Step 2: Solve for $f$ at $\omega = \pi$}
+$\pi = 2\pi \frac{f}{f_s} \implies \frac{1}{2} = \frac{f}{f_s} \implies f = \frac{f_s}{2}$
+This is the Nyquist boundary frequency.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Discrete Fourier Transform (DFT)}
+
+A computer records $1024$ audio samples of a guitar string. The engineer runs a Discrete Fourier Transform (DFT). The DFT mathematically takes the 1024 Time-domain numbers and physically outputs exactly:
+
+\begin{choices}
+    \choice A text file of lyrics
+    \choice A photograph of the guitar
+    \correctchoice Exactly $1024$ new, complex numbers in the Frequency-domain, perfectly representing the exact physical Volume and Phase delay of $1024$ specific, distinct sine-wave frequencies
+    \choice A single number representing the average
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Bins}
+A computer cannot draw a smooth, continuous line. It must put data into digital 'Bins'.
+
+\subsection*{Step 2: The Output}
+The DFT algorithm mathematically crushes the chaotic audio and sorts it into 1024 perfectly spaced frequency bins. Bin #1 might represent $10\text{ Hz}$. Bin #100 might represent $1000\text{ Hz}$. If the guitar played a $1000\text{ Hz}$ note, Bin #100 will mathematically contain a massive number, while the other 1023 bins contain zeros. This is how Spotify compresses music.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Fast Fourier Transform (FFT)}
+
+The DFT equation ($X[k] = \sum x[n] e^{-j2\pi kn/N}$) is brutally slow. For $1,000,000$ audio samples, a standard DFT requires $1$ Trillion mathematical multiplications ($N^2$). In 1965, the 'Fast Fourier Transform' (FFT) algorithm was invented, completely changing human civilization. How did the FFT mathematically fix this?
+
+\begin{choices}
+    \choice It uses faster electricity
+    \correctchoice It mathematically exploits massive repeating symmetries in the sine waves to violently slash the required computer math from a horrific $O(N^2)$ down to a blistering $O(N \log_2 N)$
+    \choice It deletes half the audio
+    \choice It turns the computer off
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The $N^2$ Problem}
+To calculate a $1,000,000$ point DFT, the computer has to do $1,000,000 \times 1,000,000$ math problems. It would take a 1960s computer 3 weeks to process 1 second of audio.
+
+\subsection*{Step 2: The FFT Magic}
+The FFT algorithm mathematically noticed that $99\%$ of the sine wave math was just repeating the exact same numbers. By splitting the data into 'Evens' and 'Odds' and combining them smartly, the math drops to $N log_2 N$. The exact same 1 million points suddenly only requires $20,000,000$ multiplications. It finishes in $0.01$ seconds. Without the FFT, WiFi, MRI machines, and Cell Phones would physically not exist.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Quantization Error}
+
+Sampling turns continuous Time into discrete steps. 'Quantization' turns continuous Voltage into discrete binary steps. If a 3-bit ADC reads $4.2\text{ Volts}$, but the closest binary step is $4.0\text{ Volts}$, the computer mathematically records exactly $4.0$. This missing $0.2\text{V}$ is called 'Quantization Error'. Physically, what does this mathematical error sound like?
+
+\begin{choices}
+    \choice It sounds like a perfect echo
+    \choice It sounds like the audio is playing in reverse
+    \correctchoice It physically acts exactly like randomly injected white noise (static hiss) layered permanently underneath the music
+    \choice It mutes the audio completely
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Rounding Math}
+A computer cannot store '$4.21543...$'. It must round it to exactly $4.0$ or $5.0$. The difference between the real universe and the rounded binary number is a chaotic, random mathematical mistake at every single millisecond.
+
+\subsection*{Step 2: The White Noise}
+A completely random mathematical signal translates physically into pure white noise static. To make the static quieter, engineers buy $16\text{-bit}$ or $24\text{-bit}$ chips, which mathematically cuts the voltage into 16 million microscopic steps instead of 8, making the rounding error virtually zero.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Zero Padding in the FFT}
+
+An engineer only has 500 samples of data, but the FFT algorithm mathematically demands the array length be a perfect power of two (like 512). The engineer 'Zero-Pads' the array by just adding twelve $0.0$s to the very end. What does adding fake zeros physically do to the mathematical output?
+
+\begin{choices}
+    \choice It completely destroys the frequency data
+    \choice It turns the audio into silence
+    \correctchoice It mathematically creates perfectly smooth, interpolated points between the real frequency spikes, visually increasing the 'resolution' of the graph without actually adding any real new physics to the system
+    \choice It doubles the frequency
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Illusion}
+You didn't record any more real data. The microphone was turned off for those 12 zeros.
+
+\subsection*{Step 2: The Interpolation}
+However, mathematically, the FFT sees a longer time signal, so it spits out tighter, closer-together frequency bins. The original spikes are still exactly where they were, but the mathematical line connecting them is smoother. It's exactly like using Photoshop to digitally 'upscale' an image; it looks smoother, but it doesn't physically reveal any new hidden details.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Windowing (Hamming/Hanning)}
+
+When taking 1024 samples for an FFT, the computer mathematically treats the data as if it perfectly repeats in an infinite loop. If Sample 1 is at $0\text{V}$ and Sample 1024 is at $5\text{V}$, the computer mathematically hallucinates a violent $5\text{V}$ cliff when the loop restarts. This causes horrific 'Spectral Leakage'. How do engineers physically fix this?
+
+\begin{choices}
+    \choice By unplugging the microphone
+    \choice By adding more RAM
+    \correctchoice They mathematically multiply the data array by a 'Window' function (like a Hamming bell-curve) that physically crushes the edges of the data exactly down to zero, ensuring the loop connects perfectly smoothly without a sharp cliff
+    \choice By making the signal louder
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The False Cliff}
+A sharp, instant $5\text{V}$ vertical cliff requires a billion infinite sine waves to physically draw (Fourier Series). The FFT graph will instantly be corrupted with massive amounts of fake, high-frequency static that doesn't actually exist.
+
+\subsection*{Step 2: The Squeeze}
+The Window function is $1.0$ in the middle, and $0.0$ at the edges. When you multiply, the middle of the audio is untouched, but the start and end are smoothly faded to absolute silence. When the math loops the signal, it connects $0\text{V}$ to $0\text{V}$ flawlessly. The fake static is mathematically eliminated.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Quantization Noise SQNR of ADC Sizing}
+
+An analog-to-digital converter (ADC) uses $N = 8$ bits to quantize a signal. What is the maximum Signal-to-Quantization-Noise Ratio ($SQNR$) in dB for a full-scale sinusoidal input?
+
+\begin{choices}
+    \correctchoice 49.8 dB
+    \choice 48.0 dB
+    \choice 55.8 dB
+    \choice 42.5 dB
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Identify Sinusoidal SQNR Equation}
+$SQNR_{dB} = 6.02 N + 1.76\text{ dB}$
+
+\subsection*{Step 2: Calculate SQNR}
+$SQNR_{dB} = (6.02 \times 8) + 1.76 = 48.16 + 1.76 = 49.92\text{ dB} \approx 49.8\text{ dB}$.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Nyquist Shannon Sampling Theorem}
+
+To reconstruct a continuous signal of maximum frequency component fm without aliasing, the sampling rate (fs) must be:
+
+\begin{choices}
+    \correctchoice fs ≥ 2 fm
+    \choice fs ≤ 2 fm
+    \choice fs = fm
+    \choice fs ≥ fm / 2
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Nyquist Rate}
+The minimum sampling rate that avoids spectrum overlap (aliasing) is the Nyquist rate: $f_s = 2 f_m$.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Thermal Noise (Johnson-Nyquist)}
+
+Thermal noise voltage across a resistor depends on which parameter set?
+
+\begin{choices}
+    \correctchoice Temperature, resistance, and bandwidth
+    \choice Current, voltage, and capacitance
+    \choice Permittivity, frequency, and length
+    \choice Power factor and inductance
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Thermal Noise}
+$v_n^2 = 4 k T R B$. Noise voltage increases with absolute temperature $T$, resistance $R$, and frequency bandwidth $B$.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Quantization Noise}
+
+In Pulse Code Modulation (PCM), increasing the number of quantization bits by 1 bit increases the Signal-to-Quantization Noise Ratio (SQNR) by approximately:
+
+\begin{choices}
+    \correctchoice 6 dB
+    \choice 3 dB
+    \choice 1 dB
+    \choice 20 dB
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: SQNR Rule}
+$SQNR = 1.76 + 6.02 n$ dB where $n$ is number of bits. Adding 1 bit increases SQNR by $6.02$ dB (factor of 4 in power).
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+

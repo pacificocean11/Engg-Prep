@@ -1,0 +1,702 @@
+\subsection{Transform of a Derivative}
+
+In the $s$-domain, what is the exact mathematical Laplace Transform of the first derivative of a function, $L\{f'(t)\}$?
+
+\begin{choices}
+    \choice $F(s) - f(0)$
+    \correctchoice $s F(s) - f(0)$
+    \choice $s^2 F(s) - s f(0)$
+    \choice $\frac{F(s)}{s}$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Power of Laplace}
+Laplace magically turns complex calculus derivatives into simple algebraic multiplication by the variable '$s$'.
+
+\subsection*{Step 2: Initial Conditions}
+However, you must subtract the initial condition of the system at time zero, $f(0)$. This makes Laplace incredibly powerful for solving dynamic mechanical vibration problems where the initial starting position of the spring is known.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Definition}
+
+The Z-transform is the discrete-time equivalent of the:
+
+\begin{choices}
+    \choice Fourier transform
+    \choice Hilbert transform
+    \correctchoice Laplace transform
+    \choice Wavelet transform
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Analogy}
+Maps discrete sequences to a complex variable $z$.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{FIR vs IIR}
+
+Which type of filter is guaranteed to be stable?
+
+\begin{choices}
+    \choice IIR (Infinite Impulse Response)
+    \choice All digital filters
+    \correctchoice FIR (Finite Impulse Response)
+    \choice None of the above
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Reason}
+FIR filters only have poles at the origin ($z=0$).
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{ROC Stability}
+
+A discrete-time LTI system is stable if the Region of Convergence (ROC) of $H(z)$:
+
+\begin{choices}
+    \choice Lies outside the unit circle
+    \correctchoice Contains the unit circle ($|z|=1$)
+    \choice Lies inside the unit circle
+    \choice Is the entire z-plane
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Condition}
+Ensures the impulse response is absolutely summable.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Delay Property}
+
+The Z-transform of $x[n-k]$ is:
+
+\begin{choices}
+    \correctchoice $z^{-k} X(z)$
+    \choice $X(z-k)$
+    \choice $k X(z)$
+    \choice $z^k X(z)$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Property}
+Time delay corresponds to multiplication by $z^{-k}$.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Initial Value Theorem}
+
+The initial value $x[0]$ is given by:
+
+\begin{choices}
+    \choice $lim_{z 	o 0} X(z)$
+    \correctchoice $lim_{z 	o infty} X(z)$
+    \choice $lim_{z 	o 1} X(z)$
+    \choice $X(0)$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Formula}
+Analogous to the Laplace initial value theorem.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Digital Filter Order}
+
+The 'order' of a digital filter is determined by:
+
+\begin{choices}
+    \choice The sampling frequency
+    \choice The phase shift
+    \correctchoice The number of delay elements
+    \choice The input amplitude
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Nature}
+Refers to the degree of the transfer function polynomial.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Z-Transform of Unit Step}
+
+What is the z-transform and Region of Convergence (ROC) of the causal sequence $x[n] = u[n]$?
+
+\begin{choices}
+    \choice $\frac{1}{z-1}$, $|z| > 1$
+    \choice $\frac{z}{z-1}$, $|z| < 1$
+    \choice $\frac{z}{z+1}$, $|z| > 1$
+    \correctchoice $\frac{z}{z-1}$, $|z| > 1$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Apply Z-Transform Summation}
+$X(z) = \sum_{n=-\infty}^{\infty} x[n] z^{-n} = \sum_{n=0}^{\infty} (1) z^{-n} = \sum_{n=0}^{\infty} (z^{-1})^n$
+
+\subsection*{Step 2: Apply Infinite Geometric Series Sum}
+The geometric series converges if $|z^{-1}| < 1 \implies |z| > 1$. The sum is:
+$X(z) = \frac{1}{1 - z^{-1}} = \frac{z}{z - 1}$
+
+Correct Answer: D
+\end{solution}
+
+\clearpage
+
+\subsection{Z-Transform of Exponential Sequence}
+
+Given the causal sequence $x[n] = (0.5)^n u[n]$, what is its z-transform $X(z)$ and its pole location?
+
+\begin{choices}
+    \correctchoice $X(z) = \frac{z}{z - 0.5}$, Pole at $z = 0.5$
+    \choice $X(z) = \frac{1}{z - 0.5}$, Pole at $z = 0.5$
+    \choice $X(z) = \frac{z}{z + 0.5}$, Pole at $z = -0.5$
+    \choice $X(z) = \frac{z-0.5}{z}$, Pole at $z = 0$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Apply Formula for Exponential Z-Transform}
+For any causal sequence of the form $a^n u[n]$:
+$\mathcal{Z}\{a^n u[n]\} = \frac{z}{z-a}\quad \text{with ROC: } |z| > |a|$
+
+\subsection*{Step 2: Substitute Given Values}
+Substituting $a = 0.5$:
+$X(z) = \frac{z}{z - 0.5}$
+The denominator has a root at $z = 0.5$, which represents a pole.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Region of Convergence (ROC) properties}
+
+If a discrete-time sequence $x[n]$ is stable and two-sided (extends from $-\infty$ to $+\infty$), its z-transform's Region of Convergence (ROC) must be:
+
+\begin{choices}
+    \choice The entire z-plane except $z=0$
+    \correctchoice A ring in the z-plane containing the unit circle
+    \choice The region outside a circle of radius $R$
+    \choice The region inside a circle of radius $R$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Relate Stability to Unit Circle}
+A discrete-time system is stable if and only if its impulse response is absolutely summable. This condition requires that the DTFT exists, meaning the Region of Convergence of its z-transform must include the unit circle ($|z| = 1$).
+
+\subsection*{Step 2: Analyze ROC for Two-Sided Signals}
+For a two-sided signal, the causal part bounds the ROC from inside ($|z| > R_1$) and the anti-causal part bounds it from outside ($|z| < R_2$). The resulting ROC is an annular ring $R_1 < |z| < R_2$ which must contain the unit circle for stability.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Inverse Z-Transform of Delay}
+
+A z-transform is given by $Y(z) = z^{-2} X(z)$. What is the time-domain relation between the sequences $y[n]$ and $x[n]$?
+
+\begin{choices}
+    \choice $y[n] = x[n+2]$
+    \choice $y[n] = 2 x[n]$
+    \correctchoice $y[n] = x[n-2]$
+    \choice $y[n] = x[2n]$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Apply Time-Shifting Property}
+The time-shifting property of the z-transform states:
+$\mathcal{Z}\{x[n - n_0]\} = z^{-n_0} X(z)$
+For $n_0 = 2$:
+$\mathcal{Z}^{-1}\{z^{-2} X(z)\} = x[n - 2]$
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Stability of Discrete-Time System}
+
+A causal discrete-time system has a transfer function $H(z) = \frac{z^2}{(z - 0.4)(z - 1.2)}$. Is this system stable?
+
+\begin{choices}
+    \choice Yes, because it is causal
+    \choice Yes, because the zero is at the origin
+    \choice No, because the pole is negative
+    \correctchoice No, because a pole lies outside the unit circle ($z = 1.2$)
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Find Pole Locations}
+The poles of $H(z)$ are the roots of the denominator:
+$z_1 = 0.4$
+$z_2 = 1.2$
+
+\subsection*{Step 2: Apply Causal Stability Condition}
+A causal discrete-time system is stable if and only if **all** of its poles lie strictly **inside** the unit circle in the z-plane ($|z| < 1$).
+Since the pole at $z = 1.2$ has a magnitude greater than 1, the system is unstable.
+
+Correct Answer: D
+\end{solution}
+
+\clearpage
+
+\subsection{Difference Equation from Z-Transform}
+
+A system's transfer function is $H(z) = \frac{z - 0.5}{z - 0.8}$. What is the corresponding difference equation relating output $y[n]$ to input $x[n]$?
+
+\begin{choices}
+    \correctchoice $y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$
+    \choice $y[n] + 0.8 y[n-1] = x[n] + 0.5 x[n-1]$
+    \choice $y[n] - 0.5 y[n-1] = x[n] - 0.8 x[n-1]$
+    \choice $y[n] - 0.8 y[n-2] = x[n]$
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Express $H(z)$ in Negative Powers of $z$}
+Divide numerator and denominator by $z$:
+$H(z) = \frac{Y(z)}{X(z)} = \frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1}}$
+
+\subsection*{Step 2: Cross-Multiply terms}
+$Y(z)(1 - 0.8 z^{-1}) = X(z)(1 - 0.5 z^{-1})$
+$Y(z) - 0.8 z^{-1} Y(z) = X(z) - 0.5 z^{-1} X(z)$
+
+\subsection*{Step 3: Take Inverse Z-Transform}
+Using the time shift property:
+$y[n] - 0.8 y[n-1] = x[n] - 0.5 x[n-1]$
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{FIR vs IIR Filter Structures}
+
+Which of the following characteristics distinguishes a Finite Impulse Response (FIR) filter from an Infinite Impulse Response (IIR) filter?
+
+\begin{choices}
+    \choice FIR filters require feedback loops to operate
+    \correctchoice FIR filters are always stable and can have perfectly linear phase
+    \choice IIR filters have a finite duration impulse response
+    \choice FIR filters are computationally more efficient for steep cutoff transitions
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Compare Digital Filter Types}
+FIR: No feedback (poles only at origin). Guaranteed stability, can be easily designed to have exact linear phase. Slower/requires more coefficients for sharp cutoff.
+IIR: Uses feedback. Slower to design, can be unstable, non-linear phase, but highly efficient (needs fewer coefficients for sharp cutoff).
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Windowing Method for FIR Design}
+
+In the windowing method of designing FIR filters, which window type offers the highest stopband attenuation compared to a rectangular window?
+
+\begin{choices}
+    \choice Hanning window
+    \choice Hamming window
+    \choice Bartlett (Triangular) window
+    \correctchoice Blackman window
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Analyze Window Attenuations}
+- Rectangular: $-21\ \text{dB}$ stopband attenuation (fastest roll-off but high ripple).
+- Hanning: $-44\ \text{dB}$
+- Hamming: $-53\ \text{dB}$
+- Blackman: $-74\ \text{dB}$ (highest attenuation, widest transition band).
+
+Correct Answer: D
+\end{solution}
+
+\clearpage
+
+\subsection{Bilinear Transformation Frequency Warping}
+
+In the bilinear transformation method of designing digital filters from analog prototypes, the frequency relationship is non-linear. This effect is known as:
+
+\begin{choices}
+    \choice Aliasing
+    \correctchoice Frequency warping
+    \choice Phase distortion
+    \choice Quantization noise
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Explain Bilinear Warping}
+The bilinear transformation maps the entire continuous-time frequency axis ($-\infty < \Omega < \infty$) non-linearly to the discrete-time frequency range ($-\pi < \omega < \pi$). This compression/distortion of the frequency axis is called 'frequency warping' and is resolved by 'pre-warping' the analog specifications.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{Zero-Phase Filtering (Forward-Backward)}
+
+To achieve zero-phase filtering of a digital signal $x[n]$ (so that no phase distortion is introduced), the signal is:
+
+\begin{choices}
+    \correctchoice Filtered forward through the filter, then the time-reversed output is filtered again and time-reversed back
+    \choice Filtered through an all-pass filter
+    \choice Differentiated before standard filtering
+    \choice Windowed using a symmetric Hamming window
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Explain Zero-Phase Filtering}
+Zero-phase filtering (e.g. `filtfilt` in Matlab) works by:
+1. Filtering the sequence $x[n]$ forward through $H(z)$ to get $y_1[n]$.
+2. Reversing $y_1[n]$ to get $y_1[-n]$ and filtering it through $H(z)$ again to get $y_2[n]$.
+3. Reversing $y_2[n]$ back.
+The overall transfer function magnitude is $|H(e^{j\omega})|^2$ and the net phase shift is exactly zero.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
+\subsection{Convolution Sum Matrix Representation}
+
+If we represent the discrete-time convolution $y = h * x$ of finite vectors in matrix form as $\mathbf{y} = \mathbf{H}\mathbf{x}$, the matrix $\mathbf{H}$ has which structural property?
+
+\begin{choices}
+    \choice Diagonal matrix
+    \choice Symmetric matrix
+    \correctchoice Toeplitz matrix
+    \choice Hermitian matrix
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Explain Convolution Matrix Structure}
+The convolution matrix $\mathbf{H}$ has constant diagonals (each diagonal element $H_{i,j}$ depends only on $i - j$). A matrix where each descending diagonal from left to right is constant is called a Toeplitz matrix.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{DSP Limit Cycles}
+
+In recursive digital filters (IIR), the phenomenon of 'limit cycles' refers to:
+
+\begin{choices}
+    \choice The frequency range of stable phase oscillations
+    \correctchoice Oscillatory outputs that persist even when the input becomes zero, caused by quantization and rounding overflow
+    \choice The feedback delay loops in parallel structures
+    \choice The periodic scaling of filter taps
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Explain Limit Cycles}
+Under infinite-precision arithmetic, a stable IIR filter output will decay to zero when the input becomes zero. However, under finite-precision fixed-point arithmetic, rounding or truncation errors can prevent the output from decaying, trapping it in low-amplitude periodic oscillations called limit cycles.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{The Discrete Domain}
+
+In continuous-time analog calculus, engineers use the Laplace Transform ($s$-domain). To mathematically solve horrific digital discrete-time sequences in a computer, they MUST use the Z-Transform ($z$-domain). What is the exact mathematical definition of '$z$'?
+
+\begin{choices}
+    \choice It represents gravity
+    \choice It represents temperature
+    \correctchoice It is a complex variable physically acting as a strict 'Time-Shift' operator; multiplying a signal by $z^{-1}$ mathematically forces the digital signal to be delayed by exactly ONE physical clock tick
+    \choice It represents light speed
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Digital Delay}
+In a computer, you can't use calculus derivatives ($ds/dt$). You can only look at 'Current Memory' and 'Past Memory'.
+
+\subsection*{Step 2: The Operator}
+If you have a digital signal $X(z)$, and you mathematically multiply it by $z^{-1}$, the silicon logic gates physically lock the data in a D-Flip-Flop for exactly 1 clock cycle. $z^{-2}$ delays it 2 cycles. The Z-transform turns complex digital feedback loops into simple algebraic multiplication.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Region of Convergence (ROC)}
+
+When solving a Z-Transform, the mathematical formula $X(z) = \sum x[n] z^{-n}$ is an infinite series. It can easily explode to infinity. The 'Region of Convergence' (ROC) is the specific mathematical area on the complex plane where:
+
+\begin{choices}
+    \choice The computer screen turns off
+    \choice The battery dies
+    \correctchoice The infinite mathematical sum actually peacefully settles down to a finite, real number, physically guaranteeing the math is actually solvable and the digital filter won't instantly crash
+    \choice The temperature drops
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Infinite Sum}
+If you add $1 + 2 + 4 + 8...$ infinitely, the answer is Infinity. It 'Diverges'.
+
+\subsection*{Step 2: The Convergence}
+If you add $1 + 0.5 + 0.25 + 0.125...$ infinitely, the answer is exactly 2.0. It 'Converges'. The ROC is a shaded circle on the graph telling the engineer EXACTLY what numbers they are legally allowed to plug into the Z-Transform before the computer processor hits an overflow error and explodes.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{FIR vs IIR Filters}
+
+Digital signal processors (DSPs) use two types of filters: FIR (Finite Impulse Response) and IIR (Infinite Impulse Response). What is the absolute, defining mathematical architectural difference between them?
+
+\begin{choices}
+    \choice FIR is for video, IIR is for audio
+    \choice FIR uses AC power, IIR uses DC power
+    \correctchoice IIR filters physically contain a mathematical FEEDBACK LOOP (they use previous outputs to calculate new outputs). FIR filters strictly use only current and past INPUTS, guaranteeing they can NEVER physically go unstable
+    \choice IIR requires a laser
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The FIR Filter}
+FIR equation: $y[n] = x[n] + x[n-1]$. It just averages the last two inputs. If you stop the input, the output hits exactly zero in 2 clock ticks. It is perfectly mathematically stable forever.
+
+\subsection*{Step 2: The IIR Filter}
+IIR equation: $y[n] = x[n] + 0.5 cdot y[n-1]$. It feeds its own output BACK into its input. Like a microphone too close to a speaker, if the multiplier is $> 1.0$, the math violently snowballs to infinity and crashes the computer. But because of the loop, IIR filters can achieve massive filtering power using $10\times$ less RAM.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Poles in the Z-Domain (Stability)}
+
+In the analog $s$-domain, Poles MUST be perfectly locked in the Left-Half Plane (negative) to prevent explosions. In the digital $z$-domain, the mathematical geometry completely changes. For a digital IIR filter to physically survive without exploding, ALL of its mathematical Poles MUST be strictly located:
+
+\begin{choices}
+    \choice On the X-axis
+    \correctchoice Inside the exact boundary of the 'Unit Circle' (a geometric circle perfectly centered at the origin with a strict mathematical radius of exactly 1.0)
+    \choice Outside the circle
+    \choice In the Right-Half plane
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Transformation}
+The mathematical translation from Analog to Digital is $z = e^{sT}$. The entire infinite, massive left-half of the $s$-plane physically gets crushed and wrapped up to fit completely INSIDE a tiny circle in the $z$-plane.
+
+\subsection*{Step 2: The Limit}
+If a pole has a magnitude of $0.99$ (inside), the digital feedback loop multiplier is $0.99$. The echo slowly fades to zero (Stable). If the pole hits $1.01$ (outside the circle), the digital loop is multiplying by $1.01$ infinitely. The computer hits a massive overflow error and blue-screens in less than a second.
+
+Correct Answer: B
+\end{solution}
+
+\clearpage
+
+\subsection{The Difference Equation}
+
+In analog systems, hardware uses Differential Equations ($dy/dt$). In digital computer code, an IIR filter is physically programmed using a 'Difference Equation'. What does a mathematical Difference Equation explicitly look like in computer code?
+
+\begin{choices}
+    \choice $y = x^2$
+    \choice It uses calculus limits
+    \correctchoice It is just basic algebra violently pulling from past memory arrays: $y[n] = 0.5 cdot x[n] + 0.2 cdot x[n-1] - 0.1 cdot y[n-1]$
+    \choice It only uses letters
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Digital Reality}
+A CPU cannot do continuous calculus. It can only multiply and add.
+
+\subsection*{Step 2: The Algorithm}
+The Difference Equation is the final, physical C++ code running on the chip. $y[n]$ is the 'Output right now'. $x[n-1]$ is 'What the sensor said 1 millisecond ago'. $y[n-1]$ is 'What I output 1 millisecond ago'. By doing $3$ simple multiplications, the computer mathematically perfectly simulates a massive physical analog hardware filter.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Convolution in Discrete Time}
+
+The analog Convolution Integral requires calculus. In discrete digital time, the Convolution Sum ($y[n] = \sum x[k]h[n-k]$) is just a loop of multiplication. If $x$ has exactly $10$ data points, and the filter $h$ has exactly $5$ data points, mathematically EXACTLY how many data points will the physical output $y$ contain?
+
+\begin{choices}
+    \choice $5$ points
+    \choice $10$ points
+    \correctchoice Exactly $14$ points; the mathematical formula for digital convolution length is strictly $L = N + M - 1$ ($10 + 5 - 1 = 14$)
+    \choice $50$ points
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Train Entering the Tunnel}
+Think of signal $x$ (Length 10) as a train, and filter $h$ (Length 5) as a tunnel.
+
+\subsection*{Step 2: The Overlap}
+At $T=1$, the nose of the train hits the tunnel. The train slowly slides through. It isn't completely 'out' of the tunnel until the very last car of the train finally leaves the very end of the tunnel. This takes exactly $10 + 5 - 1 = 14$ total steps to completely slide past each other. If the computer array is only size $10$, it will violently chop off the 'echo tail' of the sound.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Impulse Invariance Method}
+
+When an engineer designs an amazing Analog filter on paper, they want to put it into a Digital computer. The 'Impulse Invariance Method' is a math trick to translate the $s$-domain equation into a $z$-domain equation. What is the absolute strict mathematical goal of this specific method?
+
+\begin{choices}
+    \choice To change the frequency of the filter
+    \choice To make the math simpler
+    \correctchoice To violently force the Digital computer's discrete Impulse Response ($h[n]$) to be a flawless, perfectly identical carbon-copy match of the physical Analog filter's continuous Impulse Response ($h(t)$) exactly at the sampling points
+    \choice To turn it into an FIR filter
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Mapping}
+You want the digital code to physically behave exactly like the analog capacitor.
+
+\subsection*{Step 2: The Tradeoff}
+If you lock the Impulse responses to be perfectly identical, the Time Domain behaves flawlessly. However, because of digital Aliasing limits, the Frequency Domain will be slightly mathematically warped near the Nyquist limit. Engineers use different math tricks (like the Bilinear Transform) depending on whether they care more about perfect Time physics or perfect Frequency physics.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Bilinear Transform}
+
+The Bilinear Transform is the most powerful math trick to translate an Analog filter ($s$-domain) into a Digital filter ($z$-domain). It mathematically squishes the ENTIRE infinite analog frequency spectrum ($0$ to $\infty\text{ Hz}$) perfectly into the finite digital spectrum ($0$ to $f_s/2$). What physical side-effect does this massive squishing cause?
+
+\begin{choices}
+    \choice The computer catches fire
+    \choice It creates massive amounts of static
+    \correctchoice Frequency 'Warping'; the low frequencies are perfectly translated, but the extremely high frequencies are violently mathematically compressed and bent, requiring the engineer to 'Pre-Warp' the analog filter to physically compensate
+    \choice It makes the signal louder
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Rubber Band}
+You are stretching an infinitely long mathematical string (analog space) to fit exactly onto a 12-inch ruler (digital space).
+
+\subsection*{Step 2: The Distortion}
+To make infinity fit inside 12 inches, you have to violently stretch and distort the far end of the string. A $10,000\text{ Hz}$ cutoff on the analog paper might mathematically warp and accidentally become an $8,000\text{ Hz}$ cutoff in the C++ code. The engineer mathematically 'Pre-Warps' the analog paper to $12,000\text{ Hz}$ first, so when the computer squishes it, it lands perfectly on $10,000\text{ Hz}$.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Final Value Theorem (Digital)}
+
+Just like the continuous $s$-domain, the digital $z$-domain has a Final Value Theorem to find exactly where a digital output permanently settles at $n \rightarrow \infty$. In the $z$-domain, the mathematical theorem requires you to multiply by $(1 - z^{-1})$ and evaluate the limit exactly as $z$ approaches:
+
+\begin{choices}
+    \choice Zero
+    \choice Infinity
+    \correctchoice Exactly $1.0$; because the physical 'steady state' DC line mathematically maps exactly to the far-right edge of the Unit Circle ($z=1$)
+    \choice Negative One
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Mapping}
+In analog, steady-state DC power is $0\text{ Hz}$, which is exactly $s=0$ (the origin). In digital, the math transforms $s=0$ using $z = e^{sT}$. $z = e^0 = 1.0$.
+
+\subsection*{Step 2: The Limit}
+Therefore, the absolute physical 'stop' point of any digital system equation is locked perfectly at $z=1$. You just multiply the massive digital transfer function by $(1 - z^{-1})$ and replace all remaining $z$'s with a $1$. The resulting basic math instantly spits out the final resting voltage of the digital algorithm.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{Parseval's Theorem}
+
+An engineer has a $1,000,000$ point digital signal in the Time Domain. They want to calculate the TOTAL physical Joules of Energy mathematically trapped in the wave. They could sum up $x[n]^2$. But if they only have the FFT Frequency Domain data ($X[k]$), 'Parseval's Theorem' mathematically proves:
+
+\begin{choices}
+    \choice The energy is lost in the transform
+    \choice The energy is multiplied by 10
+    \correctchoice The physical Energy calculated in the Frequency Domain is mathematically EXACTLY, flawlessly identical to the physical Energy calculated in the Time Domain; energy is universally conserved across all mathematical domains
+    \choice It is impossible to find
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: The Conservation}
+A Fourier Transform doesn't invent new physics. It just looks at the exact same physical reality through a different mathematical lens.
+
+\subsection*{Step 2: The Proof}
+Parseval mathematically proved that $\sum |x[n]|^2$ is strictly equal to $\frac{1}{N} \sum |X[k]|^2$. If a battery dumped $500\text{ Joules}$ into a speaker wire, you can mathematically prove it was $500\text{ Joules}$ by looking at the Time oscilloscope, OR by looking at the Frequency spectrum analyzer. The laws of thermodynamics are mathematically immortal.
+
+Correct Answer: C
+\end{solution}
+
+\clearpage
+
+\subsection{High-Pass Filter Cutoff}
+
+A passive first-order RC high-pass filter has R = 1 kΩ and C = 0.1 μF. What is the cutoff frequency in Hz?
+
+\begin{choices}
+    \correctchoice ≈ 1592 Hz
+    \choice ≈ 1000 Hz
+    \choice ≈ 10,000 Hz
+    \choice ≈ 2513 Hz
+\end{choices}
+
+\begin{solution}
+
+\subsection*{Step 1: Cutoff Frequency}
+$f_c = \dfrac{1}{2\pi R C} = \dfrac{1}{2\pi \times 1000 \times 0.1 \times 10^{-6}} = \dfrac{1}{2\pi \times 10^{-4}} \approx 1592$ Hz.
+
+Correct Answer: A
+\end{solution}
+
+\clearpage
+
