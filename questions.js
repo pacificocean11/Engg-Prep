@@ -48598,7 +48598,8 @@ const QUESTIONS = {
             "topic": "DC Circuit Analysis",
             "title": "Power Dissipation",
             "question": "A 24 V DC source is connected to a network of resistors. $R_1 = 10 \\Omega$ and $R_2 = 15 \\Omega$ are in parallel. This combination is in series with $R_3 = 4 \\Omega$. What is the power dissipated by $R_3$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1eLxHyK0yGl7llJ9x_DlEyG19yPUukIsQ/preview",
+            "local_question_image": "assets/quiz-images/img_1eLxHyK0yGl7llJ9x_DlEyG19yPUukIsQ.jpg",
             "times_presented": 0,
             "options": [
                 {

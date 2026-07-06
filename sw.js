@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v11';
+const CACHE_NAME = 'engg-prep-cache-v13';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -18,8 +18,7 @@ const APP_SHELL = [
   '/js/weakness-srs.js',
   '/js/daily-quests.js',
   '/manifest.json',
-  '/engg_tv_logo.png'
-,
+  '/engg_tv_logo.png',
   '/assets/quiz-images/img_10KDnbj2kY_NShxS3Sj2jZBdV7_NsBOwD.jpg',
   '/assets/quiz-images/img_12BJNjdnlCiHBi-5wDKO9RPXtulX-zLUn.jpg',
   '/assets/quiz-images/img_130LZ2EaZ2tRsrdEJRScKEOWhYbNJ081E.jpg',
@@ -58,6 +57,7 @@ const APP_SHELL = [
   '/assets/quiz-images/img_1dPVTtYjNE2KLtUj1QZAP2ZEoQbkE4AIq.jpg',
   '/assets/quiz-images/img_1edw6gpnfP3uDr_elZf8qTVoo0jUmXtg0.jpg',
   '/assets/quiz-images/img_1eh26Gn7agcqG0PBy0RglgM-UF_pYjGNd.jpg',
+  '/assets/quiz-images/img_1eLxHyK0yGl7llJ9x_DlEyG19yPUukIsQ.jpg',
   '/assets/quiz-images/img_1eWlr558xcagxBqg4qSH0SJvg7t3H3Brq.jpg',
   '/assets/quiz-images/img_1EynYUzchCRrpVji0_8cFb6y-zO9Ew-mo.jpg',
   '/assets/quiz-images/img_1FFyOZY1AOQOu2ngqH6V6stw5zBJg5mng.jpg',

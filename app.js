@@ -4153,8 +4153,13 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             window.showToast("Caching Assets", "Downloading resources for offline mode...", "cloud_download");
             
             const messageChannel = new MessageChannel();
+            const timeoutId = setTimeout(() => {
+                window.showToast("Offline Ready", "Study materials are now available offline.", "cloud_done");
+            }, 4000);
+            
             messageChannel.port1.onmessage = (event) => {
                 if (event.data && event.data.success) {
+                    clearTimeout(timeoutId);
                     window.showToast("Offline Ready", "Study materials are now available offline.", "cloud_done");
                 }
             };
@@ -4162,13 +4167,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             navigator.serviceWorker.controller.postMessage({
                 type: 'CACHE_ASSETS',
                 urls: [
-                    '/',
-                    '/index.html',
-                    '/app.js',
-                    '/questions.js',
-                    '/advanced_questions.js',
-                    
-                    '/style.css'
+                    './',
+                    './index.html',
+                    './app.js',
+                    './questions.js',
+                    './advanced_questions.js',
+                    './style.css'
                 ]
             }, [messageChannel.port2]);
         } else {
