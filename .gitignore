@@ -40,3 +40,13 @@ www/mockup_generator.html
 
 # Workspace agent files
 brain/
+
+# Large backup and reference files
+*.zip
+*_backup*.js
+*.pdf
+
+# Android build artifacts
+android/app/build/
+android/app/.cxx/
+.gradle/

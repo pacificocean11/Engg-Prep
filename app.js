@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let questionStats = JSON.parse(localStorage.getItem('enggtv_question_stats') || '{}');
+    [typeof QUESTIONS !== 'undefined' ? QUESTIONS : {}, typeof ADVANCED_QUESTIONS !== 'undefined' ? ADVANCED_QUESTIONS : {}].forEach(source => {
+        for (let subject in source) {
+            if (Array.isArray(source[subject])) {
+                source[subject].forEach((q, index) => {
+                    if (!q.id) q.id = subject + '_' + index;
+                    q.times_presented = questionStats[q.id] || 0;
+                });
+            }
+        }
+    });
+
+    function incrementQuestionStats(questionsArray) {
+        questionsArray.forEach(q => {
+            if (q.id) {
+                questionStats[q.id] = (questionStats[q.id] || 0) + 1;
+                q.times_presented = questionStats[q.id];
+            }
+        });
+        localStorage.setItem('enggtv_question_stats', JSON.stringify(questionStats));
+    }
     
 // Extracted to js/particles.js
 
@@ -296,478 +317,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     const textDisplay = document.getElementById('overall-progress-text');
     const circleDisplay = document.getElementById('overall-progress-circle-text');
 
-    // Cloud Sync DOM Elements
-    const syncIndicator = document.getElementById('cloud-sync-indicator');
-    const syncIcon = document.getElementById('sync-icon');
-    const syncText = document.getElementById('sync-text');
-    const syncDot = document.getElementById('sync-dot');
-
-    function updateSyncStatus(status) {
-        if (!syncIndicator || !syncIcon || !syncText || !syncDot) return;
-        
-        // Reset animation/color classes
-        syncIcon.className = "material-symbols-outlined text-[16px]";
-        syncText.className = "hidden sm:inline text-[10px] tracking-wider uppercase font-bold";
-        syncDot.className = "w-2.5 h-2.5 rounded-full border border-white dark:border-slate-800 transition-all duration-300";
-        
-        if (status === 'synced') {
-            syncIcon.textContent = "cloud_done";
-            syncIcon.classList.add("text-green-500", "dark:text-green-400");
-            syncText.textContent = "Synced";
-            syncText.classList.add("text-green-600", "dark:text-green-400");
-            syncDot.classList.add("bg-green-500", "shadow-[0_0_8px_#22c55e]");
-            syncIndicator.title = "Your progress is fully synchronized with Firebase.";
-        } else if (status === 'syncing') {
-            syncIcon.textContent = "sync";
-            syncIcon.classList.add("text-amber-500", "dark:text-amber-400", "animate-spin");
-            syncText.textContent = "Saving...";
-            syncText.classList.add("text-amber-600", "dark:text-amber-400");
-            syncDot.classList.add("bg-amber-500", "animate-pulse");
-            syncIndicator.title = "Saving your quiz progress to Firebase...";
-        } else if (status === 'offline') {
-            syncIcon.textContent = "cloud_off";
-            syncIcon.classList.add("text-slate-400", "dark:text-slate-500");
-            syncText.textContent = "Offline";
-            syncText.classList.add("text-slate-500", "dark:text-slate-400");
-            syncDot.classList.add("bg-slate-400", "dark:bg-slate-600");
-            syncIndicator.title = "You are offline. Progress is saved locally in your browser.";
-        } else if (status === 'error') {
-            syncIcon.textContent = "cloud_off";
-            syncIcon.classList.add("text-rose-500", "dark:text-rose-400");
-            syncText.textContent = "Sync Error";
-            syncText.classList.add("text-rose-600", "dark:text-rose-400");
-            syncDot.classList.add("bg-rose-500", "animate-pulse");
-            syncIndicator.title = "Failed to sync progress with Firebase. Check your connection.";
-        } else if (status === 'local') {
-            syncIcon.textContent = "cloud_off";
-            syncIcon.classList.add("text-slate-400", "dark:text-slate-500");
-            syncText.textContent = "Local Only";
-            syncText.classList.add("text-slate-500", "dark:text-slate-400");
-            syncDot.classList.add("bg-slate-300", "dark:bg-slate-700");
-            syncIndicator.title = "Guest mode. Progress is saved locally in your browser.";
-        }
-    }
-
-    let firestoreSyncUnsubscribe = null;
-
-    function setupFirestoreSyncListener(docId) {
-        if (firestoreSyncUnsubscribe) {
-            firestoreSyncUnsubscribe();
-            firestoreSyncUnsubscribe = null;
-        }
-
-        if (!docId || docId === 'guest') {
-            updateSyncStatus('local');
-            return;
-        }
-
-        if (!window.firebaseDb) {
-            console.warn("⚠️ Firebase DB not initialized yet for sync listener.");
-            updateSyncStatus('local');
-            return;
-        }
-
-        console.log(`📡 Setting up Firestore sync listener for document: ${docId}`);
-        
-        try {
-            updateSyncStatus(navigator.onLine ? 'syncing' : 'offline');
-            firestoreSyncUnsubscribe = window.firebaseDb.collection("users").doc(docId)
-                .onSnapshot({ includeMetadataChanges: true }, (docSnap) => {
-                    if (!navigator.onLine) {
-                        updateSyncStatus('offline');
-                        return;
-                    }
-                    
-                    if (docSnap.metadata.hasPendingWrites) {
-                        updateSyncStatus('syncing');
-                    } else {
-                        updateSyncStatus('synced');
-                    }
-                }, (error) => {
-                    console.error("❌ Firestore sync listener error:", error);
-                    updateSyncStatus('error');
-                });
-        } catch (e) {
-            console.error("❌ Failed to attach Firestore sync listener:", e);
-            updateSyncStatus('error');
-        }
-    }
-
-    // Firebase Data Synchronization
-    async function syncToFirebase() {
-        if (!window.saveUserProgress) {
-            console.warn("⚠️ Firebase save function not available.");
-            return;
-        }
-        if (!state.user.username || state.user.username === 'guest') {
-            console.log("ℹ️ Skipping sync for guest user.");
-            return;
-        }
-
-        console.log(`🚀 Syncing data for ${state.user.username} to Firebase...`);
-
-        try {
-            const lightActivity = (state.recentActivity || []).map(a => ({
-                id: a.id,
-                title: a.title,
-                score: a.score,
-                accuracy: a.accuracy,
-                attempted: a.attempted,
-                isMockExam: a.isMockExam,
-                timestamp: a.timestamp,
-                minimalSnapshot: a.minimalSnapshot
-            }));
-
-            // Gather all profile data
-            const discipline = localStorage.getItem('enggtv_discipline') || state.user.discipline || 'Mechanical';
-            const dateJoined = localStorage.getItem('enggtv_date_joined') || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-            const avatar = localStorage.getItem('enggtv_avatar') || null;
-            const profilePic = localStorage.getItem('enggtv_profile_pic') || null;
-            const country = state.user.country || 'Other';
-            const examDate = localStorage.getItem('enggtv_exam_date') || null;
-
-            const payload = {
-                username: state.user.username,
-                userPoints: state.userPoints,
-                userProgress: state.userProgress,
-                recentActivity: lightActivity,
-                discipline: discipline,
-                dateJoined: dateJoined,
-                country: country
-            };
-            if (avatar) payload.avatar = avatar; else payload.avatar = null;
-            if (profilePic) payload.profilePic = profilePic; else payload.profilePic = null;
-            if (examDate) payload.examDate = examDate;
-            if (state.user.uid) payload.uid = state.user.uid;
-
-            const docId = state.user.uid || state.user.username;
-            await window.saveUserProgress(docId, payload);
-            console.log("✅ Firebase sync successful.");
-        } catch (error) {
-            console.error("❌ Firebase sync failed:", error);
-        }
-    }
-
-    function mergeProgress(localProgress, cloudProgress) {
-        const merged = { ...localProgress };
-        if (!cloudProgress) return merged;
-        
-        Object.keys(cloudProgress).forEach(key => {
-            const cloudSubj = cloudProgress[key];
-            const localSubj = merged[key];
-            
-            if (cloudSubj) {
-                const cloudCompleted = Number(cloudSubj.completed) || 0;
-                const localCompleted = localSubj ? (Number(localSubj.completed) || 0) : 0;
-                
-                merged[key] = {
-                    completed: Math.max(localCompleted, cloudCompleted)
-                };
-            }
-        });
-        return merged;
-    }
-
-    async function loadFromFirebase() {
-        if (!window.getUserProgress) {
-            console.warn("⚠️ Firebase load function not available.");
-            return;
-        }
-        if (!state.user.username || state.user.username === 'guest') {
-            if (!state.user.uid) return;
-        }
-
-        const uidDocId = state.user.uid;
-        const usernameDocId = state.user.username;
-        
-        console.log(`🚀 Loading data for ${state.user.username || 'unknown'} (UID doc: ${uidDocId}, Username doc: ${usernameDocId}) from Firebase...`);
-        try {
-            let data = null;
-            let uidData = null;
-            let usernameData = null;
-
-            if (uidDocId) {
-                uidData = await window.getUserProgress(uidDocId);
-            }
-            if (usernameDocId && usernameDocId !== uidDocId && usernameDocId !== 'guest') {
-                usernameData = await window.getUserProgress(usernameDocId);
-            }
-
-            if (uidData && usernameData) {
-                console.log(`🔄 Merging legacy username-based doc and UID-based doc for ${state.user.username}`);
-                const mergedPoints = Math.max(Number(uidData.userPoints) || 0, Number(usernameData.userPoints) || 0);
-                const mergedProgress = mergeProgress(uidData.userProgress || {}, usernameData.userProgress || {});
-                
-                // Merge activities safely
-                const activityMap = new Map();
-                (usernameData.recentActivity || []).forEach(act => { if (act && act.id) activityMap.set(act.id, act); });
-                (uidData.recentActivity || []).forEach(act => { if (act && act.id) activityMap.set(act.id, act); });
-                const mergedActivity = Array.from(activityMap.values());
-
-                data = {
-                    ...usernameData,
-                    ...uidData,
-                    userPoints: mergedPoints,
-                    userProgress: mergedProgress,
-                    recentActivity: mergedActivity
-                };
-
-                // Save merged to UID document immediately
-                await window.saveUserProgress(uidDocId, data);
-
-                // Delete legacy username document if it's safe (excluding admin and demo)
-                if (usernameDocId !== uidDocId && usernameDocId !== 'admin' && usernameDocId !== 'demo') {
-                    try {
-                        await window.firebaseDb.collection("users").doc(usernameDocId).delete();
-                        console.log(`🗑️ Deleted legacy username-based document: ${usernameDocId}`);
-                    } catch (err) {
-                        console.error(`⚠️ Failed to delete legacy username-based document: ${usernameDocId}`, err);
-                    }
-                }
-            } else {
-                data = uidData || usernameData;
-            }
-
-            // Self-healing data recovery for affected users
-            const currentUid = state.user.uid;
-            const currentUsername = state.user.username;
-            if (currentUid === 'Yc73rbNGX7hqcz9yq5KqvGxYRFn2' || currentUsername === '49degreestemperature') {
-                const currentPoints = data && data.userPoints !== undefined ? Number(data.userPoints) : 0;
-                const hasProgress = data && data.userProgress && Object.keys(data.userProgress).length > 0;
-                let needSync = false;
-                
-                if (!data) data = {};
-                
-                if (currentPoints < 424) {
-                    console.log("🩹 Self-healing: Restoring points for 49degreestemperature to 424.");
-                    data.userPoints = 424;
-                    state.userPoints = 424;
-                    localStorage.setItem(`enggtv_points_${currentUsername}`, '424');
-                    needSync = true;
-                }
-                
-                if (!hasProgress) {
-                    console.log("🩹 Self-healing: Restoring progress for 49degreestemperature.");
-                    data.userProgress = {
-                        "stats": { "completed": 50 },
-                        "surveying": { "completed": 50 },
-                        "math": { "completed": 70 },
-                        "construction": { "completed": 50 },
-                        "ethics": { "completed": 50 },
-                        "electricity": { "completed": 20 },
-                        "materials-science": { "completed": 50 },
-                        "design": { "completed": 0 },
-                        "transport": { "completed": 30 },
-                        "geotech": { "completed": 10 },
-                        "instr-controls": { "completed": 20 },
-                        "econ": { "completed": 5 },
-                        "statics": { "completed": 19 }
-                    };
-                    state.userProgress = data.userProgress;
-                    localStorage.setItem(`enggtv_progress_${currentUsername}`, JSON.stringify(data.userProgress));
-                    needSync = true;
-                }
-                
-                if (needSync) {
-                    setTimeout(() => syncToFirebase(), 500);
-                }
-            } else if (currentUid === 'hGF6xAKljXgvKuEPTqNuHB7ft8I2' || currentUsername === 'admin') {
-                const currentPoints = data && data.userPoints !== undefined ? Number(data.userPoints) : 0;
-                const hasProgress = data && data.userProgress && Object.keys(data.userProgress).length > 0;
-                let needSync = false;
-                
-                if (!data) data = {};
-                
-                if (currentPoints < 498) {
-                    console.log("🩹 Self-healing: Restoring points for admin to 498.");
-                    data.userPoints = 498;
-                    state.userPoints = 498;
-                    localStorage.setItem(`enggtv_points_${currentUsername}`, '498');
-                    needSync = true;
-                }
-                
-                if (!hasProgress) {
-                    console.log("🩹 Self-healing: Restoring progress for admin.");
-                    data.userProgress = {
-                        "econ": { "completed": 44 },
-                        "instr-controls": { "completed": 30 },
-                        "dynamics": { "completed": 40 },
-                        "math": { "completed": 100 },
-                        "materials-strength": { "completed": 24 },
-                        "production": { "completed": 20 },
-                        "electricity": { "completed": 46 },
-                        "geotech": { "completed": 20 },
-                        "thermo": { "completed": 20 },
-                        "structural": { "completed": 20 },
-                        "stats": { "completed": 63 },
-                        "circuits": { "completed": 20 },
-                        "heat": { "completed": 36 },
-                        "statics": { "completed": 46 },
-                        "surveying": { "completed": 34 },
-                        "electronics": { "completed": 20 },
-                        "water-res": { "completed": 40 },
-                        "materials-science": { "completed": 19 },
-                        "fluids": { "completed": 60 },
-                        "eng-sciences": { "completed": 20 },
-                        "transport": { "completed": 19 },
-                        "reaction-eng": { "completed": 20 },
-                        "supply-chain": { "completed": 20 },
-                        "construction": { "completed": 20 },
-                        "air-quality": { "completed": 20 },
-                        "digital-systems": { "completed": 40 },
-                        "design": { "completed": 30 },
-                        "control-systems": { "completed": 20 },
-                        "ethics": { "completed": 17 }
-                    };
-                    state.userProgress = data.userProgress;
-                    localStorage.setItem(`enggtv_progress_${currentUsername}`, JSON.stringify(data.userProgress));
-                    needSync = true;
-                }
-                
-                if (needSync) {
-                    setTimeout(() => syncToFirebase(), 500);
-                }
-            }
-
-            if (data) {
-                // Restore username from cloud if there's a mismatch or it was missing
-                if (data.username && state.user.username !== data.username) {
-                    console.log(`🔄 Restored username from Firestore: ${data.username}`);
-                    state.user.username = data.username;
-                    localStorage.setItem('enggtv_user', JSON.stringify(state.user));
-                    
-                    // Reload local state for the restored username so we don't carry over stale points/progress
-                    state.userPoints = parseInt(localStorage.getItem(`enggtv_points_${data.username}`)) || 0;
-                    try {
-                        state.userProgress = JSON.parse(localStorage.getItem(`enggtv_progress_${data.username}`)) || {};
-                    } catch(e) { state.userProgress = {}; }
-                    try {
-                        state.recentActivity = JSON.parse(localStorage.getItem(`enggtv_recent_activity_${data.username}`)) || [];
-                    } catch(e) { state.recentActivity = []; }
-                }
-
-                if (data.userPoints !== undefined) {
-                    const cloudPoints = Number(data.userPoints);
-                    
-                    // Disable points corrupted check since it incorrectly flags legitimate points
-                    // gained via mock exams or partial quizzes.
-                    const isPointsCorrupted = false;
-                    
-                    if (isPointsCorrupted) {
-                        console.warn(`⚠️ Detected corrupted/polluted cloud points (${cloudPoints}). Ignoring cloud points.`);
-                    } else if (cloudPoints > state.userPoints) {
-                        state.userPoints = cloudPoints;
-                        localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
-                    } else {
-                        // Local is higher — sync it back up to cloud
-                        console.log(` Local points (${state.userPoints}) >= Cloud (${cloudPoints}).`);
-                    }
-                }
-                if (data.userProgress) {
-                    state.userProgress = mergeProgress(state.userProgress, data.userProgress);
-                    localStorage.setItem(`enggtv_progress_${state.user.username}`, JSON.stringify(state.userProgress));
-                }
-                if (data.recentActivity) {
-                    const localActivity = JSON.parse(localStorage.getItem(`enggtv_recent_activity_${state.user.username}`)) || [];
-                    
-                    // Robust merge: combine local and cloud activities to prevent discarding unsynced local quizzes
-                    const mergedMap = new Map();
-                    
-                    // Load local activities first
-                    localActivity.forEach(act => {
-                        if (act && act.id) {
-                            mergedMap.set(act.id, act);
-                        }
-                    });
-                    
-                    // Merge cloud activities, preserving local stateSnapshot where appropriate
-                    data.recentActivity.forEach(cloudAct => {
-                        if (!cloudAct || !cloudAct.id) return;
-                        const localAct = mergedMap.get(cloudAct.id);
-                        if (localAct) {
-                            const mergedAct = { ...cloudAct };
-                            if (localAct.stateSnapshot && !cloudAct.stateSnapshot) {
-                                mergedAct.stateSnapshot = localAct.stateSnapshot;
-                            }
-                            mergedMap.set(cloudAct.id, mergedAct);
-                        } else {
-                            mergedMap.set(cloudAct.id, cloudAct);
-                        }
-                    });
-                    
-                    // Sort by timestamp descending and keep at most 100 items (for 30d chart)
-                    state.recentActivity = Array.from(mergedMap.values())
-                        .filter(act => act && act.timestamp)
-                        .sort((a, b) => b.timestamp - a.timestamp)
-                        .slice(0, 100);
-                        
-                    localStorage.setItem(`enggtv_recent_activity_${state.user.username}`, JSON.stringify(state.recentActivity));
-                }
-
-                if (data.discipline) {
-                    const localDisc = localStorage.getItem('enggtv_discipline');
-                    if (!localDisc) {
-                        localStorage.setItem('enggtv_discipline', data.discipline);
-                        state.user.discipline = data.discipline;
-                    } else {
-                        state.user.discipline = localDisc;
-                    }
-                    try {
-                        const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
-                        localUser.discipline = state.user.discipline;
-                        localStorage.setItem('enggtv_user', JSON.stringify(localUser));
-                    } catch (e) {}
-                }
-                if (data.dateJoined) {
-                    localStorage.setItem('enggtv_date_joined', data.dateJoined);
-                }
-                if (data.avatar !== undefined) {
-                    if (data.avatar) {
-                        localStorage.setItem('enggtv_avatar', data.avatar);
-                    } else {
-                        localStorage.removeItem('enggtv_avatar');
-                    }
-                }
-                if (data.profilePic !== undefined) {
-                    if (data.profilePic) {
-                        localStorage.setItem('enggtv_profile_pic', data.profilePic);
-                    } else {
-                        localStorage.removeItem('enggtv_profile_pic');
-                    }
-                }
-                if (data.country) {
-                    state.user.country = data.country;
-                    try {
-                        const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
-                        localUser.country = data.country;
-                        localStorage.setItem('enggtv_user', JSON.stringify(localUser));
-                    } catch (e) {
-                        console.error("Error updating country in local user state", e);
-                    }
-                }
-                if (data.examDate) {
-                    localStorage.setItem('enggtv_exam_date', data.examDate);
-                    // If countdown function exists globally, we would update it here, but it's encapsulated.
-                    // Reloading local storage is enough since this runs on initial load.
-                    const examDateInput = document.getElementById('exam-date-input');
-                    if (examDateInput) examDateInput.value = data.examDate;
-                    if (window.startCountdownGlobal) window.startCountdownGlobal(data.examDate);
-                }
-
-                updateDashboardStats();
-                updateGamificationUI();
-                renderRecentActivity();
-                renderSubjects();
-                applyAvatar();
-                updateUIForTier();
-                console.log("✅ Data restored from Firebase.");
-            }
-        } catch (error) {
-            console.error("❌ Firebase load failed:", error);
-            throw error; // Rethrow to prevent subsequent syncToFirebase overwrites
-        }
-    }
-
     // --- UI UTILITIES ---
     window.showToast = function(title, message, icon = 'stars', duration = 4000) {
         const container = document.getElementById('toast-container');
@@ -810,7 +359,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         state.userPoints += points;
         localStorage.setItem(`enggtv_points_${state.user.username}`, state.userPoints.toString());
         updateGamificationUI();
-        syncToFirebase();
+        
         
         window.showToast(`+${points} ${points === 1 ? 'point' : 'points'}`, reason, 'military_tech');
         
@@ -835,8 +384,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         window.addEventListener('online', () => {
             window.showToast("Back Online", "Your progress will now sync with the cloud.", "wifi");
             if (state.user) {
-                setupFirestoreSyncListener(state.user.uid || state.user.username);
-                syncToFirebase();
+                
+                
             }
         });
         window.addEventListener('offline', () => {
@@ -884,10 +433,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             console.log("🔄 Updated local user state with restored Firebase UID:", user.uid);
                         }
                         
-                        setupFirestoreSyncListener(state.user.uid || state.user.username);
+                        
                         try {
-                            await loadFromFirebase();
-                            await syncToFirebase();
+                            
+                            await 
                             await checkAdminMessages();
                         } catch (loadErr) {
                             console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
@@ -909,10 +458,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             discipline: 'Mechanical'
                         };
                         localStorage.setItem('enggtv_user', JSON.stringify(state.user));
-                        setupFirestoreSyncListener(state.user.uid || state.user.username);
+                        
                         try {
-                            await loadFromFirebase();
-                            await syncToFirebase();
+                            
+                            await 
                             await checkAdminMessages();
                         } catch (loadErr) {
                             console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
@@ -979,7 +528,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     state.recentActivity = [];
                     const activityKey = `enggtv_recent_activity_${state.user.username}`;
                     localStorage.removeItem(activityKey);
-                    syncToFirebase();
+                    
                     renderRecentActivity();
                 }
             }
@@ -1042,17 +591,17 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
             // 1. UID-keyed document
             if (uid) {
-                const uidDoc = await window.firebaseDb.collection('users').doc(uid).get(opts);
+                const uidDoc = await null('users').doc(uid).get(opts);
                 if (uidDoc.exists) docsToCheck.push(uidDoc);
             }
 
             // 2. Username-keyed document
-            const userDoc = await window.firebaseDb.collection('users').doc(state.user.username).get(opts);
+            const userDoc = await null('users').doc(state.user.username).get(opts);
             if (userDoc.exists && (!uid || userDoc.id !== uid)) docsToCheck.push(userDoc);
 
             // 3. Full collection scan (catches any remaining edge case)
             if (docsToCheck.length === 0) {
-                const snap = await window.firebaseDb.collection('users').where('username', '==', state.user.username).limit(1).get(opts);
+                const snap = await null('users').where('username', '==', state.user.username).limit(1).get(opts);
                 if (!snap.empty) docsToCheck.push(snap.docs[0]);
             }
 
@@ -1095,10 +644,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             };
 
             if (uid) {
-                const d = await window.firebaseDb.collection('users').doc(uid).get();
+                const d = await null('users').doc(uid).get();
                 if (d.exists) addMessages(d.data().adminMessages || []);
             }
-            const d2 = await window.firebaseDb.collection('users').doc(state.user.username).get();
+            const d2 = await null('users').doc(state.user.username).get();
             if (d2.exists && (!uid || d2.id !== uid)) addMessages(d2.data().adminMessages || []);
 
             if (allMessages.length === 0) { container.classList.add('hidden'); return; }
@@ -1143,11 +692,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         try {
             // 1. Query specifically by username (case-sensitive and lowercase)
-            const userSnap = await window.firebaseDb.collection('users').where('username', '==', recipient).get();
-            const userSnapLower = await window.firebaseDb.collection('users').where('username', '==', recipientLower).get();
+            const userSnap = await null('users').where('username', '==', recipient).get();
+            const userSnapLower = await null('users').where('username', '==', recipientLower).get();
             
             // 2. Query specifically by email
-            const emailSnap = await window.firebaseDb.collection('users').where('email', '==', recipientLower).get();
+            const emailSnap = await null('users').where('email', '==', recipientLower).get();
             
             const updatePromises = [];
             const processedDocs = new Set();
@@ -1173,7 +722,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             processSnap(emailSnap);
 
             // 2. ALSO write to the direct document ID (dual-write backup)
-            const recipientDoc = await window.firebaseDb.collection('users').doc(recipientLower).get();
+            const recipientDoc = await null('users').doc(recipientLower).get();
             if (recipientDoc.exists && !docsUpdated.includes(recipientDoc.id)) {
                 const existing = recipientDoc.data().adminMessages || [];
                 let updated = [...existing, newMsg];
@@ -1194,9 +743,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             console.error('Error sending admin message:', e);
             let diagUid = "NULL (Not logged into Firebase)";
             let diagEmail = "NULL";
-            if (window.firebase && window.firebase.auth && window.firebase.auth().currentUser) {
-                diagUid = window.firebase.auth().currentUser.uid;
-                diagEmail = window.firebase.auth().currentUser.email;
+            if (window.firebase && window.firebase.auth && null.currentUser) {
+                diagUid = null.currentUser.uid;
+                diagEmail = null.currentUser.email;
             }
             alert('Firebase rejected the message due to rules.\n\nError: ' + e.message + '\n\nYOUR CURRENT LOGIN STATE:\nUID: ' + diagUid + '\nEmail: ' + diagEmail + '\n\nIf your UID does not match the rules, or is NULL, Firebase will block you.');
         }
@@ -1223,7 +772,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 btnPurgeBots.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">sync</span> Purging Database...';
                 
                 try {
-                    const querySnapshot = await window.firebaseDb.collection("users").get();
+                    const querySnapshot = await null("users").get();
                     let deleteCount = 0;
                     let promises = [];
                     
@@ -1245,7 +794,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                         
                         if (isUid || isTooLong) {
                             console.log('�� Purging bot/duplicate account: ' + docId, data);
-                            const p = window.firebaseDb.collection("users").doc(docId).delete();
+                            const p = null("users").doc(docId).delete();
                             promises.push(p);
                             deleteCount++;
                         }
@@ -1941,11 +1490,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     
                     html += `
                     <tr class="border-b border-slate-100 dark:border-slate-800/30 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors group">
-                        <td class="py-4 px-2 text-sm font-bold text-slate-800 dark:text-slate-200">${s.name}</td>
-                        <td class="py-4 px-2 text-sm text-slate-600 dark:text-slate-400 text-center font-mono font-bold">${s.attempted}</td>
-                        <td class="py-4 px-2 relative">
+                        <td class="py-4 px-1 sm:px-2 text-[10px] sm:text-xs font-bold text-slate-800 dark:text-slate-200 break-words">${s.name}</td>
+                        <td class="py-4 px-1 sm:px-2 text-[10px] sm:text-xs text-slate-600 dark:text-slate-400 text-center font-mono font-bold">${s.attempted}</td>
+                        <td class="py-4 px-1 sm:px-2 relative">
                             <!-- Continuous Dashed Target Line -->
-                            <div class="absolute top-0 bottom-0 left-[70%] w-0 border-l-2 border-dashed border-black dark:border-white z-20 opacity-80 ml-2 pointer-events-none"></div>
+                            <div class="absolute top-0 bottom-0 left-[70%] w-0 border-l-2 border-dashed border-black dark:border-white z-20 opacity-80 pointer-events-none"></div>
                             
                             <!-- Progress Bar Container -->
                             <div class="w-full h-3 bg-slate-200 dark:bg-slate-700/50 rounded-full relative overflow-hidden shadow-inner z-10">
@@ -2112,7 +1661,15 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     };
     
     // Quiz Engine
-    function startQuiz(subjectId, topicName) {
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    async function startQuiz(subjectId, topicName) {
         // Update background theme for the subject (A-1)
         if (window.updateBackgroundTheme) window.updateBackgroundTheme(subjectId);
 
@@ -2131,7 +1688,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         state.currentSubject = subject;
         state.currentTopic = topicName;
         
-        const selectedRaw = [...questions].sort(() => 0.5 - Math.random()).slice(0, 10);
+        let shuffledQuestions = shuffleArray([...questions]);
+        shuffledQuestions.sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
+        let selectedRaw = shuffledQuestions.slice(0, 10);
+        incrementQuestionStats(selectedRaw);
+        
         // Tag each question with its subjectId for persistence
         const taggedQuestions = selectedRaw.map(q => ({ ...q, subjectId: subjectId }));
         state.quizQuestions = prepareQuestions(taggedQuestions);
@@ -2711,7 +2272,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         startMockExam();
     }
 
-    function startMockExam() {
+    async function startMockExam() {
         const totalExamQuestions = 20;
         let selectedQuestions = [];
         let availablePools = [];
@@ -2721,7 +2282,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (subjectQuestions.length > 0) {
                 // Tag each question with its subjectId
                 const taggedPool = [...subjectQuestions].map(q => ({ ...q, subjectId: subject.id }));
-                availablePools.push(taggedPool.sort(() => 0.5 - Math.random()));
+                let shuffledPool = shuffleArray([...taggedPool]);
+                shuffledPool.sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
+                availablePools.push(shuffledPool);
             }
         });
 
@@ -2746,8 +2309,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             }
         }
 
+
         state.currentSubject = { name: "Full Mock Exam", id: "mock" };
         state.currentTopic = "All Subjects";
+        incrementQuestionStats(selectedQuestions);
         state.quizQuestions = prepareQuestions(selectedQuestions);
         state.currentQuestionIndex = 0;
         state.answers = new Array(state.quizQuestions.length).fill(null);
@@ -2809,17 +2374,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         ACHIEVEMENTS.forEach(ach => {
             if (prevPoints < ach.points && newPoints >= ach.points) {
                 setTimeout(() => {
-                    window.showToast('Milestone Unlocked! 🏆', ach.name, ach.icon);
-                    if (window.confetti) window.confetti({ particleCount: 250, spread: 100, origin: { y: 0.4 }, zIndex: 10005 });
+                    window.showToast('Milestone Unlocked! ��', ach.name, ach.icon);
                 }, 1000);
             }
         });
-
-        if (state.isMockExam) {
-            setTimeout(() => {
-                if (window.confetti) window.confetti({ particleCount: 400, spread: 120, origin: { y: 0.5 }, zIndex: 10000 });
-            }, 500);
-        }
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
         
@@ -2891,7 +2449,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         localStorage.setItem(activityKey, JSON.stringify(state.recentActivity));
 
         // Final Cloud Sync
-        syncToFirebase();
+        
         updateGamificationUI();
 
         resTotal.textContent = state.quizQuestions.length;
@@ -3228,7 +2786,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         const progressKey = `enggtv_progress_${state.user.username}`;
         localStorage.setItem(progressKey, JSON.stringify(state.userProgress));
-        syncToFirebase();
+        
         renderSubjects();
     }
 
@@ -3634,7 +3192,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             renderSubjects();
             updateDashboardStats();
             updateGamificationUI();
-            syncToFirebase(); // Sync discipline change to cloud
+             // Sync discipline change to cloud
             
             // Update labels in account info view immediately
             if (userDisciplineDisplay) userDisciplineDisplay.textContent = newDiscipline;
@@ -3775,17 +3333,23 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     if (btnLogoutConfirm) {
         btnLogoutConfirm.addEventListener('click', async () => {
-            try {
-                if (window.firebase) {
-                    await firebase.auth().signOut();
-                }
-            } catch (e) {
-                console.error("Error signing out from Firebase Auth:", e);
-            }
-            // Clear all user session keys except theme preference
-            const theme = localStorage.getItem('enggtv_theme');
+            // Preserve tracking, theme, and settings
+            const keysToPreserve = ['enggtv_theme', 'enggtv_question_stats', 'enggtv_advanced_mode', 'enggtv_has_reviewed_app'];
+            const preservedData = {};
+            keysToPreserve.forEach(key => {
+                preservedData[key] = localStorage.getItem(key);
+            });
+            
+            // Clear all user session data
             localStorage.clear();
-            if (theme) localStorage.setItem('enggtv_theme', theme);
+            
+            // Restore preserved keys
+            keysToPreserve.forEach(key => {
+                if (preservedData[key] !== null) {
+                    localStorage.setItem(key, preservedData[key]);
+                }
+            });
+            
             window.location.href = 'login.html';
         });
     }
@@ -3931,45 +3495,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             </div>
         `;
 
-        let realUsers = [];
+        let realUsers = [...MOCK_LEADERBOARD];
         let firestoreError = null;
-        if (window.firebaseDb) {
-            try {
-                const querySnapshot = await window.firebaseDb.collection("users").get();
-                querySnapshot.forEach(doc => {
-                    const data = doc.data();
-                    // Skip the guest placeholder doc
-                    if (doc.id === 'guest' || !data) return;
-
-                    const username = data.username || doc.id;
-
-                    // Only skip usernames that are raw Firebase UIDs:
-                    // 28+ char strings made of only letters/numbers with no separators (@, ., _)
-                    const isRawUid = /^[a-zA-Z0-9]{28,}$/.test(username)
-                        && !username.includes('@')
-                        && !username.includes('.')
-                        && !username.includes('_');
-                    if (isRawUid) return;
-
-                    realUsers.push({
-                        username: username,
-                        points: data.userPoints !== undefined ? Number(data.userPoints) : 0,
-                        discipline: data.discipline || 'FE Candidate',
-                        country: data.country || 'Other',
-                        avatar: data.avatar || null,
-                        profilePic: data.profilePic || null,
-                        streak: data.recentActivity ? calculateStreakFromActivity(data.recentActivity) : 0,
-                        trend: 'same'
-                    });
-                });
-                console.log(`✅ Leaderboard: loaded ${realUsers.length} users from Firestore.`);
-            } catch (e) {
-                firestoreError = e.message || String(e);
-                console.error("Error fetching leaderboard users from Firestore:", e);
-            }
-        } else {
-            firestoreError = 'Firebase not initialized';
-        }
 
         const userCountry = state.user.country || 'Other';
         const userStreak = calculateStreak();
@@ -4254,7 +3781,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     localStorage.removeItem('enggtv_avatar'); // Clear preset flag
                     
                     applyAvatar();
-                    if(typeof syncToFirebase === 'function') syncToFirebase();
+                    if(typeof syncToFirebase === 'function') 
                     window.showToast("Success", "Custom avatar uploaded!", "check_circle");
                     if (avatarModal) avatarModal.classList.remove('open');
                 };
@@ -4283,7 +3810,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 localStorage.removeItem('enggtv_avatar');
             }
             applyAvatar();
-            syncToFirebase(); // Sync avatar change to cloud
+             // Sync avatar change to cloud
             avatarModal.classList.remove('open');
         });
     }
@@ -4293,7 +3820,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             localStorage.removeItem('enggtv_avatar');
             localStorage.removeItem('enggtv_profile_pic');
             applyAvatar();
-            syncToFirebase(); // Sync avatar removal to cloud
+             // Sync avatar removal to cloud
             avatarModal.classList.remove('open');
         });
     }
@@ -4439,7 +3966,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 if (!val) { window.showToast('No date selected', 'Please pick a date first.', 'event'); return; }
                 localStorage.setItem(STORAGE_KEY, val);
                 startCountdown(val);
-                syncToFirebase(); // Sync to cloud
+                 // Sync to cloud
                 modal && modal.classList.add('hidden');
                 window.showToast('Exam Date Set! 🎯', formatDateLabel(val), 'event_upcoming');
                 confetti({ particleCount: 80, spread: 60, origin: { y: 0.6 }, colors: ['#FF006E', '#FDA60A'] });
@@ -4452,7 +3979,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 localStorage.removeItem(STORAGE_KEY);
                 if (examDateInput) examDateInput.value = '';
                 startCountdown(null);
-                syncToFirebase(); // Sync to cloud
+                 // Sync to cloud
                 modal && modal.classList.add('hidden');
                 window.showToast('Exam date cleared', 'You can set a new date any time.', 'event_busy');
             });
@@ -4481,12 +4008,25 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             const shareBtn = captureElement.querySelector('button');
             if(shareBtn) shareBtn.style.opacity = '0';
 
+            // Temporarily expand width to prevent clipping on mobile devices
+            const originalWidth = captureElement.style.width;
+            const originalMaxWidth = captureElement.style.maxWidth;
+            captureElement.style.width = 'max-content';
+            captureElement.style.maxWidth = 'none';
+            // Allow DOM to reflow
+            await new Promise(r => setTimeout(r, 50));
+
             const canvas = await html2canvas(captureElement, {
                 scale: 2,
                 backgroundColor: null,
                 useCORS: true,
-                allowTaint: true
+                allowTaint: true,
+                windowWidth: captureElement.scrollWidth
             });
+            
+            // Restore width
+            captureElement.style.width = originalWidth;
+            captureElement.style.maxWidth = originalMaxWidth;
             
             if(shareBtn) shareBtn.style.opacity = '1';
 
@@ -4533,7 +4073,75 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         }
     };
 
+    window.exportDiagnosticPDF = async function() {
+        try {
+            if (typeof html2pdf === 'undefined') {
+                window.showToast("Error", "PDF tool is still loading...", "error");
+                return;
+            }
+            
+            window.showToast("Generating...", "Creating a styled PDF report...", "picture_as_pdf");
+            
+            const captureElement = document.getElementById('diagnostic-report-card');
+            
+            // Briefly hide the buttons from the screenshot
+            const buttons = captureElement.querySelectorAll('button');
+            const originalDisplays = [];
+            buttons.forEach(btn => {
+                originalDisplays.push(btn.style.display);
+                btn.style.display = 'none';
+            });
+            
+            // Temporarily remove dark mode for a printer-friendly PDF
+            const htmlElement = document.documentElement;
+            const wasDark = htmlElement.classList.contains('dark');
+            if (wasDark) {
+                htmlElement.classList.remove('dark');
+                // Wait for styles to apply
+                await new Promise(r => setTimeout(r, 100));
+            }
 
+            const username = (state.user.username || 'Student').replace(/\s+/g, '_');
+            
+            // Temporarily expand width to prevent clipping on mobile devices
+            const originalWidth = captureElement.style.width;
+            const originalMaxWidth = captureElement.style.maxWidth;
+            captureElement.style.width = 'max-content';
+            captureElement.style.maxWidth = 'none';
+            
+            const opt = {
+              margin:       0.5,
+              filename:     `ENGG_tv_Diagnostic_${username}.pdf`,
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#ffffff', windowWidth: captureElement.scrollWidth },
+              jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+            };
+
+            await html2pdf().set(opt).from(captureElement).save();
+            
+            // Restore state
+            captureElement.style.width = originalWidth;
+            captureElement.style.maxWidth = originalMaxWidth;
+            
+            buttons.forEach((btn, index) => {
+                btn.style.display = originalDisplays[index];
+            });
+            if (wasDark) {
+                htmlElement.classList.add('dark');
+            }
+            
+            window.showToast("Success!", "Your PDF report has been downloaded.", "check_circle");
+        } catch (error) {
+            console.error("Error generating PDF:", error);
+            window.showToast("Error", "Could not generate PDF.", "error");
+            
+            // Ensure restore even on error
+            const htmlElement = document.documentElement;
+            if (htmlElement && !htmlElement.classList.contains('dark') && localStorage.getItem('enggtv_theme') === 'dark') {
+                htmlElement.classList.add('dark');
+            }
+        }
+    };
     // Offline Sync Trigger
     window.triggerOfflineSync = function() {
         if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -4554,7 +4162,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     '/app.js',
                     '/questions.js',
                     '/advanced_questions.js',
-                    '/firebase-config.js',
+                    
                     '/style.css'
                 ]
             }, [messageChannel.port2]);

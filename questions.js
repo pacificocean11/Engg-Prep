@@ -75650,10 +75650,10 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Soil Mechanics Void Ratio Calculation",
             "question": "A soil sample has a specific gravity of solids ($G_s$) of 2.65, a water content ($w$) of 20%, and a degree of saturation ($S$) of 80%. What is the void ratio ($e$) of the soil?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1J_p1rYA4DRJgD3_Aijf7FB1Ktq2tQMnr/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -75703,15 +75703,15 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Soil Void Ratio from Porosity",
             "question": "A saturated soil sample has a porosity ($n$) of 0.40. Calculate the void ratio ($e$).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1kAofVihQK66htKLodeyDZoAanKIl7ng1/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -75761,15 +75761,15 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Bulk Unit Weight of Soil",
             "question": "A soil sample has a total weight of 38 lb and a total volume of 0.33 $ft^3$. What is the bulk unit weight ($\\gamma$) of the soil in pcf?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1aLzXVGaP2cod2ItEqapm51QiSZbmvpGw/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -75819,15 +75819,15 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Saturated Unit Weight",
             "question": "Calculate the saturated unit weight ($\\gamma_{sat}$) of a soil with $G_s = 2.70$ and a void ratio $e = 0.50$. Use $\\gamma_w = 62.4$ pcf.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1SLTK1y0akmAnrRgUr1FNcMqc_yqd3vOE/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -75877,15 +75877,15 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Soil Dry Unit Weight",
             "question": "If a soil sample has a bulk unit weight of 120 pcf and a water content of 15%, what is its dry unit weight ($\\gamma_d$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/17cdtATSqye1BOQt-iFn8NECm63dNes5R/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -75935,15 +75935,15 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Specific Gravity of Soil",
             "question": "A soil has a bulk unit weight of $18.5\\text{ kN/m}^3$ at a water content of 12%. If the void ratio is 0.65, determine the specific gravity ($G_s$) of the soil solids. (Assume $\\gamma_w = 9.81\\text{kN/m}^3$)",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1JLek3BVnh578nanfzgpR_K-KPHgFpIHf/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -75993,12 +75993,12 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Effective Unit Weight",
             "question": "Determine the effective (submerged) unit weight ($\\gamma'$) of a soil that has a saturated unit weight of 125 pcf. Use $\\gamma_w = 62.4$ pcf.",
             "question_image": "",
@@ -76051,12 +76051,12 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Volume of Soil Solids Calculation",
             "question": "A borrow pit soil has a void ratio of 1.0. If $1.0\\text{ m}^3$ of this soil is excavated, what is the volume of the solids ($V_s$)?",
             "question_image": "",
@@ -76109,12 +76109,12 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Soil Water Content Calculation",
             "question": "A laboratory test on a soil sample yielded a wet mass of 200 g. After oven drying, the mass was 160 g. Calculate the water content ($w$).",
             "question_image": "",
@@ -76167,12 +76167,12 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Calculating Soil Degree of Saturation",
             "question": "A soil sample has a dry unit weight ($\\gamma_d$) of 100 pcf, a bulk unit weight ($\\gamma$) of 110 pcf, and a specific gravity ($G_s$) of 2.65. What is the degree of saturation ($S$)? Use $\\gamma_w = 62.4$ pcf.",
             "question_image": "",
@@ -76225,7 +76225,7 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "Civil Engineering",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
@@ -94251,7 +94251,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Dead Weight of Concrete Beam",
             "question": "A reinforced concrete beam has cross-sectional dimensions of 12 in $\\times$ 24 in. If the unit weight of reinforced concrete is 150 pcf, what is the dead weight of the beam per linear foot?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1xAZsSaIwP9_f8Ja03HW2LJ0VD6K8VU1d/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94306,7 +94306,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Reduced Live Load Calculation",
             "question": "According to ASCE 7, the reduced live load $L$ for a member with a tributary area $A_{t}$ and live load element factor $K_{LL}$ is given by $L = L_{0}[0.25 + 15/\\sqrt{K_{LL}A_{t}}]$. Given $L_{0} = 100$ psf, $K_{LL} = 4$ for an interior column, and $A_{t} = 400$ sq ft, calculate the reduced live load.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1zphySDOweGcWBenbjgOgozlB7mYUW1K5/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94365,7 +94365,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Maximum Shear at Midspan (Moving Load)",
             "question": "A simply supported beam has a span of 20 ft. A single concentrated moving load of 10 kips travels across the beam. What is the maximum shear force that can occur at the midspan (point $C, x = 10$ ft)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Gfx0id4LDTJVgYJRd2Yrlnu_NoXd1K-e/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94424,7 +94424,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Flat Roof Snow Load",
             "question": "Calculate the flat roof snow load ($p_{f}$) for a building given a ground snow load $p_{g} = 40$ psf, exposure factor $C_{e} = 1.0$, thermal factor $C_{t} = 1.0$, and importance factor $I_{s} = 1.1$. Use the formula $p_{f} = 0.7C_{e}C_{t}I_{s}p_{g}$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Scf5YDzB-SMkjr8ZP06hv906YrGufOby/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94475,7 +94475,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Maximum Bending Moment (Moving Load)",
             "question": "What is the maximum bending moment in a 30 ft simply supported beam caused by a moving concentrated load of 20 kips?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1a_M1B3TAJsEzZmu8CuDCcrSSx0zeP0EV/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94530,7 +94530,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Wind Velocity Pressure Calculation",
             "question": "Determine the wind velocity pressure ($q_{z}$) in psf at height $z$ using the formula $q_{z} = 0.00256 K_{z} K_{zt} K_{d} V^2$ where $K_{z} = 0.85, K_{zt} = 1.0, K_{d} = 0.85$, and the basic wind speed $V = 120$ mph.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1YlK1YY1obGPk17KjoPqqVvyGqivk2fQ7/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94581,7 +94581,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Distributed Live Load on a Joist",
             "question": "A floor system has floor joists spaced at 4 ft on center (OC) that span 20 ft to a supporting girder. If the floor live load is 60 psf, what is the distributed live load ($w_{L}$) acting on an interior joist?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1S8XrE3cr4zkMM-KTumpSFq3oM-SuPM1P/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -94636,7 +94636,7 @@ const QUESTIONS = {
             "topic": "Loads, Load Combinations, and Load Paths",
             "title": "Maximum Reaction (Moving Wheel Loads)",
             "question": "Two wheel loads, spaced 6 ft apart, move across a simply supported beam with a 20 ft span. Each wheel load is 5 kips. What is the maximum vertical reaction at a support?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1uHAmoNcV9k7O1gcEyxatx6rjV-yEa69e/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -200565,7 +200565,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Soil Mechanics",
+            "topic": "Phase Relations",
             "title": "Phase Relations — Void Ratio",
             "question": "A soil sample has a porosity of 0.40. What is its void ratio (e)?",
             "times_presented": 0,
@@ -200603,7 +200603,7 @@ const QUESTIONS = {
             "ncees_reference": {
                 "version": "10.6",
                 "section": "groundwater-soils",
-                "topic": "Soil Mechanics",
+                "topic": "Phase Relations",
                 "search_term": "soil mechanics"
             }
         },
