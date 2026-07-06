@@ -435,8 +435,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                         
                         
                         try {
-                            
-                            await 
+                            if (typeof window.loadFromFirebase === 'function') await window.loadFromFirebase();
+                            if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
                             await checkAdminMessages();
                         } catch (loadErr) {
                             console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
@@ -460,8 +460,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                         localStorage.setItem('enggtv_user', JSON.stringify(state.user));
                         
                         try {
-                            
-                            await 
+                            if (typeof window.loadFromFirebase === 'function') await window.loadFromFirebase();
+                            if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
                             await checkAdminMessages();
                         } catch (loadErr) {
                             console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
@@ -1734,7 +1734,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (question.question_image) {
                 const imgDiv = document.createElement('div');
                 imgDiv.className = 'question-image-container';
-                imgDiv.innerHTML = `<img src="${toDriveImgUrl(question.question_image)}" alt="Question Diagram" class="quiz-image">`;
+                let fallbackAttr = question.local_question_image ? ` onerror="this.onerror=null; this.src='${question.local_question_image}'"` : '';
+                imgDiv.innerHTML = `<img src="${toDriveImgUrl(question.question_image)}" alt="Question Diagram" class="quiz-image"${fallbackAttr}>`;
                 questionText.appendChild(imgDiv);
             } else if (question.image) {
                 const imgDiv = document.createElement('div');
@@ -1961,12 +1962,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         const diagramsUnlocked = true; // Images unlocked for all users
         const solImg = question.solution_image || (question.solution && question.solution.solution_image);
+        const localSolImg = question.local_solution_image || (question.solution && question.solution.local_solution_image);
         
         if (diagramsUnlocked) {
             if (solImg) {
                 const globalImgDiv = document.createElement('div');
                 globalImgDiv.className = 'solution-image-container';
-                globalImgDiv.innerHTML = `<img src="${toDriveImgUrl(solImg)}" alt="Solution Overview" class="quiz-image">`;
+                let fallbackAttr = localSolImg ? ` onerror="this.onerror=null; this.src='${localSolImg}'"` : '';
+                globalImgDiv.innerHTML = `<img src="${toDriveImgUrl(solImg)}" alt="Solution Overview" class="quiz-image"${fallbackAttr}>`;
                 explanationText.appendChild(globalImgDiv);
             }
         } else if (solImg) {
@@ -1985,12 +1988,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 <p>${injectFormulaTriggers(step.content)}</p>
             `;
             const stepImg = step.solution_image || step.image;
+            const localStepImg = step.local_solution_image || step.local_image;
             
             if (diagramsUnlocked) {
                 if (stepImg) {
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'step-image-container';
-                    imgDiv.innerHTML = `<img src="${stepImg}" alt="Step ${idx + 1} Diagram" class="quiz-image">`;
+                    let fallbackAttr = localStepImg ? ` onerror="this.onerror=null; this.src='${localStepImg}'"` : '';
+                    imgDiv.innerHTML = `<img src="${stepImg}" alt="Step ${idx + 1} Diagram" class="quiz-image"${fallbackAttr}>`;
                     stepDiv.appendChild(imgDiv);
                 } else if (step.tikz) {
                     const tikzDiv = document.createElement('div');

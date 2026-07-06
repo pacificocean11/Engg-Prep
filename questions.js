@@ -4,7 +4,7 @@ const OTHER_SUBJECTS = [
         "name": "Mathematics",
         "icon": "📐",
         "topics": [
-            "Analytic geometry and trigonometry",
+            "Analytic Geometry",
             "Differential Equations",
             "Numerical Methods",
             "Linear Algebra",
@@ -19,7 +19,9 @@ const OTHER_SUBJECTS = [
             "Measures of Central Tendencies and Dispersions",
             "Expected Value",
             "Regression and Curve Fitting",
-            "Probability Distributions"
+            "Probability Distributions",
+            "Probability",
+            "Statistics"
         ]
     },
     {
@@ -187,196 +189,13 @@ const OTHER_SUBJECTS = [
         ]
     }
 ];
-
-const MECHANICAL_SUBJECTS = [
-    {
-        "id": "math",
-        "name": "Mathematics",
-        "icon": "📐",
-        "topics": [
-            "Analytic geometry and trigonometry",
-            "Differential Equations",
-            "Numerical Methods",
-            "Linear Algebra",
-            "Calculus"
-        ]
-    },
-    {
-        "id": "stats",
-        "name": "Probability and Statistics",
-        "icon": "📊",
-        "topics": [
-            "Measures of Central Tendencies and Dispersions",
-            "Expected Value",
-            "Regression and Curve Fitting",
-            "Probability Distributions"
-        ]
-    },
-    {
-        "id": "ethics",
-        "name": "Engineering Ethics and Societal Impacts",
-        "icon": "🤝",
-        "topics": [
-            "Codes of Ethics",
-            "Public Health, Safety, and Welfare",
-            "Intellectual Property",
-            "Societal Considerations"
-        ]
-    },
-    {
-        "id": "econ",
-        "name": "Engineering Economics",
-        "icon": "💰",
-        "topics": [
-            "Time Value of Money",
-            "Cost Types and Breakdowns",
-            "Economic Analyses"
-        ]
-    },
-    {
-        "id": "electricity",
-        "name": "Electricity, Power, and Magnetism",
-        "icon": "⚡",
-        "topics": [
-            "Electrostatics"
-        ]
-    },
-    {
-        "id": "statics",
-        "name": "Statics",
-        "icon": "⚖️",
-        "topics": [
-            "Resultants of Force Systems",
-            "Concurrent Force Systems",
-            "Equilibrium of Rigid Bodies",
-            "Frames and Trusses",
-            "Centroids and Moments of Inertia",
-            "Static Friction"
-        ]
-    },
-    {
-        "id": "dynamics",
-        "name": "Dynamics",
-        "icon": "🏎️",
-        "topics": [
-            "Kinematics of Particles",
-            "Kinetic Friction",
-            "Newton's Second Law for Particles",
-            "Work-Energy of Particles",
-            "Impulse-Momentum of Particles",
-            "Kinematics of Rigid Bodies",
-            "Kinematics of Mechanisms",
-            "Newton's Second Law for Rigid Bodies",
-            "Work-Energy of Rigid Bodies",
-            "Impulse-Momentum of Rigid Bodies",
-            "Free and Forced Vibrations"
-        ]
-    },
-    {
-        "id": "materials-strength",
-        "name": "Strength of Materials",
-        "icon": "🏗️",
-        "topics": [
-            "Shear and Moment Diagrams",
-            "Stress Transformations and Mohr Circle",
-            "Stress/Strain Caused by Axial Loads",
-            "Stress/Strain Caused by Bending Loads",
-            "Stress/Strain Caused by Torsional Loads",
-            "Stress/Strain Caused by Shear",
-            "Stress/Strain Caused by Temp. Changes",
-            "Combined Loading",
-            "Deformations",
-            "Column Buckling",
-            "Statically Indeterminate Systems"
-        ]
-    },
-    {
-        "id": "materials-science",
-        "name": "Materials Science",
-        "icon": "🔬",
-        "topics": [
-            "Properties",
-            "Stress-Strain Diagrams",
-            "Ferrous Metals",
-            "Nonferrous Metals",
-            "Engineered Materials",
-            "Manufacturing Processes",
-            "Phase Diagrams, Phase Transformation, and Heat Treating",
-            "Materials Selection",
-            "Corrosion Mechanisms and Control",
-            "Failure Mechanisms"
-        ]
-    },
-    {
-        "id": "fluids",
-        "name": "Fluid Mechanics",
-        "icon": "🌊",
-        "topics": [
-            "Fluid Properties",
-            "Fluid Statics",
-            "Energy, Impulse, and Momentum",
-            "Internal Flow",
-            "External Flow",
-            "Compressible Flow",
-            "Power and Efficiency",
-            "Performance Curves",
-            "Scaling Laws"
-        ]
-    },
-    {
-        "id": "thermo",
-        "name": "Thermodynamics",
-        "icon": "🔥",
-        "topics": [
-            "Laws of thermodynamics",
-            "Properties of substances",
-            "Heat transfer mechanisms",
-            "Thermodynamic cycles"
-        ]
-    },
-    {
-        "id": "heat",
-        "name": "Heat Transfer",
-        "icon": "🔥",
-        "topics": [
-            "Conduction",
-            "Convection",
-            "Radiation"
-        ]
-    },
-    {
-        "id": "instr-controls",
-        "name": "Instrumentation and Controls",
-        "icon": "🕹️",
-        "topics": [
-            "Sensors and Transducers"
-        ]
-    },
-    {
-        "id": "design",
-        "name": "Mechanical Design and Analysis",
-        "icon": "🕹️",
-        "topics": [
-            "Deformation and Stiffness",
-            "Springs",
-            "Pressure Vessels and Piping",
-            "Bearings",
-            "Power Transmission",
-            "Manufacturability",
-            "Quality and Reliability",
-            "Components",
-            "Engineering Drawing Interpretations and GD & T"
-        ]
-    }
-];
-
 const CIVIL_SUBJECTS = [
     {
         "id": "math",
         "name": "Mathematics",
         "icon": "📐",
         "topics": [
-            "Analytic geometry and trigonometry",
+            "Analytic Geometry",
             "Numerical Methods",
             "Linear Algebra",
             "Calculus"
@@ -1338,10 +1157,11 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Equation of a Perpendicular Line",
             "question": "What is the equation of the line passing through the point $(2, -3)$ and perpendicular to the line defined by $3x - 4y + 7 = 0$?",
             "question_image": "https://drive.google.com/file/d/1R4HykwR8DrZzq7bb2plVztUaM3_vdAef/preview",
+            "local_question_image": "assets/quiz-images/img_1R4HykwR8DrZzq7bb2plVztUaM3_vdAef.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1393,7 +1213,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Point of Intersection of Two Lines",
             "question": "Find the point of intersection for the two lines given by $y = 2x + 1$ and $3x + 2y = 16$.",
             "question_image": "",
@@ -1448,7 +1268,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Classification of a Conic Section",
             "question": "A conic section is represented by the general equation $2x^2 - 4xy + 2y^2 + 5x - 7 = 0$. Which type of conic section does this equation represent?",
             "question_image": "",
@@ -1503,7 +1323,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Equation of a Circle",
             "question": "What is the equation of a circle with its center at $(-1, 4)$ and a radius of $5$?",
             "question_image": "",
@@ -1557,7 +1377,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Center and Radius of a Circle",
             "question": "Determine the center $(h, k)$ and radius $r$ of the circle defined by the equation $x^2 + y^2 - 6x + 8y + 9 = 0$.",
             "question_image": "",
@@ -1611,7 +1431,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Eccentricity of an Ellipse",
             "question": "Calculate the eccentricity, $e$, of the ellipse defined by the equation $\\dfrac{x^2}{16} + \\dfrac{y^2}{9} = 1$.",
             "question_image": "",
@@ -1651,6 +1471,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview",
+            "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1661,7 +1482,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Focus of a Parabola",
             "question": "Find the coordinates of the focus for the parabola defined by the equation $y^2 = 12x$.",
             "question_image": "",
@@ -1701,6 +1522,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview",
+            "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1711,7 +1533,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Distance between Foci of a Hyperbola",
             "question": "A hyperbola is defined by the equation: $9x^2 - 16y^2 - 36x - 64y - 172 = 0$. What is the distance between the two foci of this hyperbola?",
             "question_image": "",
@@ -1755,6 +1577,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview",
+            "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1765,7 +1588,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Vertex of a Parabola",
             "question": "What is the vertex of the parabola defined by the equation $y^2 - 8x + 4y + 20 = 0$?",
             "question_image": "",
@@ -1809,6 +1632,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview",
+            "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1819,7 +1643,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Eccentricity of an Ellipse",
             "question": "An ellipse is defined by the equation $9x^2 + 25y^2 = 225$. What is its eccentricity?",
             "question_image": "",
@@ -1863,6 +1687,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview",
+            "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1873,7 +1698,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Intersection of Line and Circle",
             "question": "Which of the following points represents an intersection of the line $y = x + 1$ and the circle $x^2 + y^2 = 5$?",
             "question_image": "",
@@ -1917,6 +1742,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview",
+            "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1928,7 +1754,7 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Analytic geometry and trigonometry",
+            "topic": "Analytic Geometry",
             "title": "Equation of a Perpendicular Line",
             "question": "Find the equation of a line that passes through point $(4, -2)$ and is perpendicular to the line $3x + 4y - 8 = 0$.",
             "question_image": "",
@@ -2359,6 +2185,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview",
+            "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -2427,6 +2254,7 @@ const QUESTIONS = {
             "title": "Area of Region Bounded by Curves",
             "question": "Calculate the area of the region bounded by the parabola $y = x^2$ and the line $y = 2x + 3$.",
             "question_image": "https://drive.google.com/file/d/1GhFyJObffD0mFcknXYEJo_MXZ0CJ0jdW/preview",
+            "local_question_image": "assets/quiz-images/img_1GhFyJObffD0mFcknXYEJo_MXZ0CJ0jdW.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4229,137 +4057,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Probability",
-            "title": "Standard Deviation",
-            "question": "The square root of the variance of a dataset is known as the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Standard Deviation",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Mode",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Mean",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Median",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition",
-                        "content": "$\\sigma = \\sqrt{\\sigma^2}$."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Standard Deviation",
-                "search_term": "Standard Deviation",
-                "page_number": 64
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Independent Events",
-            "question": "If events A and B are independent, the probability of both occurring $P(A \\cap B)$ is:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$P(A) \\times P(B)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$P(A) / P(B)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$P(A) + P(B)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Formula",
-                        "content": "Definition of independence for two events."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Independent Events",
-                "search_term": "Independent Events"
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Normal Distribution",
-            "question": "In a standard normal distribution, what percentage of values approximately fall within one standard deviation of the mean?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "99.7%",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "50%",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "68%",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "95%",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Rule",
-                        "content": "The 68-95-99.7 rule (Empirical Rule)."
-                    }
-                ],
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Normal Distribution",
-                "search_term": "Normal Distribution",
-                "page_number": 68
-            }
-        },
-        {
             "topic": "Statistics",
             "title": "Correlation Coefficient",
             "question": "A correlation coefficient of -1 indicates a:",
@@ -4401,94 +4098,6 @@ const QUESTIONS = {
                 "topic": "Correlation Coefficient",
                 "search_term": "Correlation Coefficient",
                 "page_number": 71
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Mutually Exclusive",
-            "question": "If two events are mutually exclusive, $P(A \\cap B)$ is:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "1",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$P(A)P(B)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "0.5",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition",
-                        "content": "Mutually exclusive events cannot happen at the same time."
-                    }
-                ],
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Mutually Exclusive",
-                "search_term": "Mutually Exclusive",
-                "page_number": 313
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Null Hypothesis",
-            "question": "In hypothesis testing, the $p$-value represents the probability of obtaining results as extreme as the observed results, assuming the _____ is true.",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Null hypothesis",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Researcher",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Conclusion",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Alternative hypothesis",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition",
-                        "content": "A small p-value (typically < 0.05) leads to rejection of the null hypothesis."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Null Hypothesis",
-                "search_term": "Null Hypothesis",
-                "page_number": 73
             }
         },
         {
@@ -4669,94 +4278,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Statistics",
-            "title": "Median",
-            "question": "In a skewed distribution, which measure of central tendency is generally most robust to outliers?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Mean",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Median",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Mode",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Range",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition",
-                        "content": "The median is the middle value and is not pulled by extreme values like the mean."
-                    }
-                ],
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Median",
-                "search_term": "Median",
-                "page_number": 64
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Combinations",
-            "question": "The number of ways to choose 2 items from a set of 5 where order does NOT matter is:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "5",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "10",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "20",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "25",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Formula",
-                        "content": "$5C2 = 5! / (2! 3!) = (5 \\times 4) / (2 \\times 1) = 10$."
-                    }
-                ],
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Combinations",
-                "search_term": "Combinations",
-                "page_number": 65
-            }
-        },
-        {
-            "topic": "Statistics",
             "title": "Confidence Interval",
             "question": "A 95% confidence interval means that:",
             "times_presented": 0,
@@ -4884,50 +4405,6 @@ const QUESTIONS = {
                 "section": "Mathematics",
                 "topic": "Taylor Series",
                 "search_term": "Taylor Series"
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Expected Value",
-            "question": "The expected value $E[X]$ of a discrete random variable is the _____ of the possible values weighted by their probabilities.",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Difference",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Sum",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Product",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Maximum",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Formula",
-                        "content": "$E[X] = \\sum x_i P(x_i)$."
-                    }
-                ],
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Expected Value",
-                "search_term": "Expected Value",
-                "page_number": 66
             }
         },
         {
@@ -5060,50 +4537,6 @@ const QUESTIONS = {
                 "topic": "Trigonometry",
                 "search_term": "Trigonometry",
                 "page_number": 39
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Central Limit Theorem",
-            "question": "The Central Limit Theorem states that the distribution of the sample mean approaches a _____ distribution as the sample size becomes large, regardless of the population distribution shape.",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Binomial",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Poisson",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Normal (Gaussian)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Uniform",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Theorem",
-                        "content": "Fundamental theorem in statistics allowing for inference on means."
-                    }
-                ],
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Central Limit Theorem",
-                "search_term": "Central Limit Theorem",
-                "page_number": 68
             }
         },
         {
@@ -5758,356 +5191,6 @@ const QUESTIONS = {
                 "section": "Mathematics",
                 "topic": "Bisection Method",
                 "search_term": "Bisection Method"
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Independent Events",
-            "question": "If events $A$ and $B$ are independent, what is $P(A \\cap B)$?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$P(A) \\cdot P(B)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$P(A) + P(B)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$P(A) - P(B)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$P(A|B)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition of Independence",
-                        "content": "By definition, the joint probability of independent events is the product of their marginal probabilities."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Independent Events",
-                "search_term": "Independent Events"
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Mutually Exclusive Events",
-            "question": "If a single card is drawn from a deck, what is the probability it is both a Heart and a Spade?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "1/52",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "0",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "1/4",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1/2",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Mutually Exclusive",
-                        "content": "A card cannot be both a Heart and a Spade simultaneously."
-                    }
-                ],
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Mutually Exclusive Events",
-                "search_term": "Mutually Exclusive Events"
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Conditional Probability",
-            "question": "Given $P(A) = 0.5$, $P(B) = 0.4$, and $P(A \\cap B) = 0.2$, find $P(A|B)$.",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "0.2",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "0.4",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "0.5",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "0.8",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Bayes Rule",
-                        "content": "$P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{0.2}{0.4} = 0.5$."
-                    }
-                ],
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "Probability Functions",
-                "page_number": 66
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Combinations",
-            "question": "How many ways can a committee of 3 be chosen from a group of 5 people?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "60",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "15",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "5",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "10",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Calculate Combinations",
-                        "content": "$C(5,3) = \\frac{5!}{3!(5-3)!} = \\frac{5 \\times 4}{2} = 10$."
-                    }
-                ],
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Combinations",
-                "search_term": "Combinations",
-                "page_number": 65
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Binomial Distribution",
-            "question": "In a binomial experiment with $n=3$ trials and success probability $p=0.5$, what is the probability of getting exactly 2 successes?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "0.375",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "0.125",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "0.500",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0.250",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Binomial Formula",
-                        "content": "$P(X=2) = \\binom{3}{2} (0.5)^2 (0.5)^1 = 3 \\times 0.25 \\times 0.5 = 0.375$."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Binomial Distribution",
-                "search_term": "Binomial Distribution",
-                "page_number": 67
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Sample Mean",
-            "question": "Find the sample mean of the dataset: 2, 4, 6, 8, 10.",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "5",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "6",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "7",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "8",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Calculation",
-                        "content": "$(2+4+6+8+10)/5 = 30/5 = 6$."
-                    }
-                ],
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "Probability Functions",
-                "page_number": 66
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Standard Deviation",
-            "question": "If the variance of a dataset is 16, what is its standard deviation?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "8",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "256",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "4",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "16",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Calculation",
-                        "content": "Standard deviation is the square root of variance: $\\sqrt{16} = 4$."
-                    }
-                ],
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Standard Deviation",
-                "search_term": "Standard Deviation",
-                "page_number": 64
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Median vs Mean",
-            "question": "In a positively (right) skewed distribution, how do the mean and median typically relate?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Mean < Median",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Mean = Median",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Cannot be determined",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Mean > Median",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Skewness",
-                        "content": "In a right-skewed distribution, the long tail pulls the mean to the right of the median."
-                    }
-                ],
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "Probability Functions",
-                "page_number": 66
             }
         },
         {
@@ -7938,56 +7021,6 @@ const QUESTIONS = {
                 "section": "Mathematics",
                 "topic": "Euler's Method",
                 "search_term": "Euler's Method"
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Permutations",
-            "question": "In combinatorial mathematics, you need to select a president, a vice-president, and a secretary from a committee of 10 people. Because the order/position strictly matters, this is a Permutation. The exact mathematical calculation is:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$10! / 3! = 604,800$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$10 \\times 9 \\times 8 = 720$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$10^3 = 1000$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$10! / (7! 3!) = 120$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Logic",
-                        "content": "You have 10 choices for President. Once selected, you have 9 people left for VP. Then 8 people left for Secretary."
-                    },
-                    {
-                        "title": "The Formula",
-                        "content": "The permutation formula is $P(n,r) = n! / (n-r)! = 10! / 7! = 10 \\times 9 \\times 8 = 720$ mathematically distinct ways to form the leadership team."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Permutations",
-                "search_term": "Permutations",
-                "page_number": 65
             }
         },
         {
@@ -11880,6 +10913,801 @@ const QUESTIONS = {
                 "topic": "Hypothesis Testing",
                 "search_term": "hypothesis testing",
                 "page_number": 71
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Standard Deviation",
+            "question": "The square root of the variance of a dataset is known as the:",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Standard Deviation",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Mode",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Mean",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Median",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Definition",
+                        "content": "$\\sigma = \\sqrt{\\sigma^2}$."
+                    }
+                ],
+                "final_answer": "A"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Standard Deviation",
+                "search_term": "Standard Deviation",
+                "page_number": 64
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Independent Events",
+            "question": "If events A and B are independent, the probability of both occurring $P(A \\cap B)$ is:",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$P(A) \\times P(B)$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$P(A) / P(B)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$P(A) + P(B)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "0",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Formula",
+                        "content": "Definition of independence for two events."
+                    }
+                ],
+                "final_answer": "A"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Independent Events",
+                "search_term": "Independent Events"
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Normal Distribution",
+            "question": "In a standard normal distribution, what percentage of values approximately fall within one standard deviation of the mean?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "99.7%",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "50%",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "68%",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "95%",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Rule",
+                        "content": "The 68-95-99.7 rule (Empirical Rule)."
+                    }
+                ],
+                "final_answer": "C"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Normal Distribution",
+                "search_term": "Normal Distribution",
+                "page_number": 68
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Mutually Exclusive",
+            "question": "If two events are mutually exclusive, $P(A \\cap B)$ is:",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "1",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$P(A)P(B)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "0.5",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "0",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Definition",
+                        "content": "Mutually exclusive events cannot happen at the same time."
+                    }
+                ],
+                "final_answer": "D"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Mutually Exclusive",
+                "search_term": "Mutually Exclusive",
+                "page_number": 313
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Null Hypothesis",
+            "question": "In hypothesis testing, the $p$-value represents the probability of obtaining results as extreme as the observed results, assuming the _____ is true.",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Null hypothesis",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Researcher",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Conclusion",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Alternative hypothesis",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Definition",
+                        "content": "A small p-value (typically < 0.05) leads to rejection of the null hypothesis."
+                    }
+                ],
+                "final_answer": "A"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Null Hypothesis",
+                "search_term": "Null Hypothesis",
+                "page_number": 73
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Median",
+            "question": "In a skewed distribution, which measure of central tendency is generally most robust to outliers?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Mean",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Median",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "Mode",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Range",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Definition",
+                        "content": "The median is the middle value and is not pulled by extreme values like the mean."
+                    }
+                ],
+                "final_answer": "B"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Median",
+                "search_term": "Median",
+                "page_number": 64
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Combinations",
+            "question": "The number of ways to choose 2 items from a set of 5 where order does NOT matter is:",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "5",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "10",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "20",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "25",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Formula",
+                        "content": "$5C2 = 5! / (2! 3!) = (5 \\times 4) / (2 \\times 1) = 10$."
+                    }
+                ],
+                "final_answer": "B"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Combinations",
+                "search_term": "Combinations",
+                "page_number": 65
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Expected Value",
+            "question": "The expected value $E[X]$ of a discrete random variable is the _____ of the possible values weighted by their probabilities.",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Difference",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Sum",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "Product",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Maximum",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Formula",
+                        "content": "$E[X] = \\sum x_i P(x_i)$."
+                    }
+                ],
+                "final_answer": "B"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Expected Value",
+                "search_term": "Expected Value",
+                "page_number": 66
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Central Limit Theorem",
+            "question": "The Central Limit Theorem states that the distribution of the sample mean approaches a _____ distribution as the sample size becomes large, regardless of the population distribution shape.",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Binomial",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Poisson",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Normal (Gaussian)",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "Uniform",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Theorem",
+                        "content": "Fundamental theorem in statistics allowing for inference on means."
+                    }
+                ],
+                "final_answer": "C"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Central Limit Theorem",
+                "search_term": "Central Limit Theorem",
+                "page_number": 68
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Independent Events",
+            "question": "If events $A$ and $B$ are independent, what is $P(A \\cap B)$?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$P(A) \\cdot P(B)$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$P(A) + P(B)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$P(A) - P(B)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$P(A|B)$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Definition of Independence",
+                        "content": "By definition, the joint probability of independent events is the product of their marginal probabilities."
+                    }
+                ],
+                "final_answer": "A"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Independent Events",
+                "search_term": "Independent Events"
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Mutually Exclusive Events",
+            "question": "If a single card is drawn from a deck, what is the probability it is both a Heart and a Spade?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "1/52",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "0",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "1/4",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "1/2",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Mutually Exclusive",
+                        "content": "A card cannot be both a Heart and a Spade simultaneously."
+                    }
+                ],
+                "final_answer": "B"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Mutually Exclusive Events",
+                "search_term": "Mutually Exclusive Events"
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Conditional Probability",
+            "question": "Given $P(A) = 0.5$, $P(B) = 0.4$, and $P(A \\cap B) = 0.2$, find $P(A|B)$.",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "0.2",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "0.4",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "0.5",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "0.8",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Bayes Rule",
+                        "content": "$P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{0.2}{0.4} = 0.5$."
+                    }
+                ],
+                "final_answer": "C"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Engineering Probability and Statistics",
+                "topic": "Probability",
+                "search_term": "Probability Functions",
+                "page_number": 66
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Combinations",
+            "question": "How many ways can a committee of 3 be chosen from a group of 5 people?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "60",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "15",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "5",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "10",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Calculate Combinations",
+                        "content": "$C(5,3) = \\frac{5!}{3!(5-3)!} = \\frac{5 \\times 4}{2} = 10$."
+                    }
+                ],
+                "final_answer": "D"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Combinations",
+                "search_term": "Combinations",
+                "page_number": 65
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Binomial Distribution",
+            "question": "In a binomial experiment with $n=3$ trials and success probability $p=0.5$, what is the probability of getting exactly 2 successes?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "0.375",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "0.125",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "0.500",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "0.250",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Binomial Formula",
+                        "content": "$P(X=2) = \\binom{3}{2} (0.5)^2 (0.5)^1 = 3 \\times 0.25 \\times 0.5 = 0.375$."
+                    }
+                ],
+                "final_answer": "A"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Binomial Distribution",
+                "search_term": "Binomial Distribution",
+                "page_number": 67
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Sample Mean",
+            "question": "Find the sample mean of the dataset: 2, 4, 6, 8, 10.",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "5",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "6",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "7",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "8",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Calculation",
+                        "content": "$(2+4+6+8+10)/5 = 30/5 = 6$."
+                    }
+                ],
+                "final_answer": "B"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Engineering Probability and Statistics",
+                "topic": "Probability",
+                "search_term": "Probability Functions",
+                "page_number": 66
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Standard Deviation",
+            "question": "If the variance of a dataset is 16, what is its standard deviation?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "8",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "256",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "4",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "16",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Calculation",
+                        "content": "Standard deviation is the square root of variance: $\\sqrt{16} = 4$."
+                    }
+                ],
+                "final_answer": "C"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Standard Deviation",
+                "search_term": "Standard Deviation",
+                "page_number": 64
+            }
+        },
+        {
+            "topic": "Statistics",
+            "title": "Median vs Mean",
+            "question": "In a positively (right) skewed distribution, how do the mean and median typically relate?",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "Mean < Median",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Mean = Median",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Cannot be determined",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Mean > Median",
+                    "is_correct": true
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Skewness",
+                        "content": "In a right-skewed distribution, the long tail pulls the mean to the right of the median."
+                    }
+                ],
+                "final_answer": "D"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Engineering Probability and Statistics",
+                "topic": "Probability",
+                "search_term": "Probability Functions",
+                "page_number": 66
+            }
+        },
+        {
+            "topic": "Probability",
+            "title": "Permutations",
+            "question": "In combinatorial mathematics, you need to select a president, a vice-president, and a secretary from a committee of 10 people. Because the order/position strictly matters, this is a Permutation. The exact mathematical calculation is:",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$10! / 3! = 604,800$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10 \\times 9 \\times 8 = 720$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$10^3 = 1000$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10! / (7! 3!) = 120$",
+                    "is_correct": false
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "The Logic",
+                        "content": "You have 10 choices for President. Once selected, you have 9 people left for VP. Then 8 people left for Secretary."
+                    },
+                    {
+                        "title": "The Formula",
+                        "content": "The permutation formula is $P(n,r) = n! / (n-r)! = 10! / 7! = 10 \\times 9 \\times 8 = 720$ mathematically distinct ways to form the leadership team."
+                    }
+                ],
+                "solution_image": "",
+                "video_explanation": "",
+                "final_answer": "B"
+            },
+            "ncees_reference": {
+                "version": "10.6",
+                "section": "Mathematics",
+                "topic": "Permutations",
+                "search_term": "Permutations",
+                "page_number": 65
             }
         }
     ],
@@ -26634,6 +26462,7 @@ const QUESTIONS = {
             "title": "Capital Recovery",
             "question": "A company borrows 50,000 to purchase equipment. The loan is to be repaid in equal annual installments over 5 years at an interest rate of 8% per year. What is the annual payment amount?",
             "question_image": "https://drive.google.com/file/d/1LF1ArYMJUF2_CwI9D6_4FcU-2akBBUHZ/preview",
+            "local_question_image": "assets/quiz-images/img_1LF1ArYMJUF2_CwI9D6_4FcU-2akBBUHZ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -26689,6 +26518,7 @@ const QUESTIONS = {
             "title": "Equivalent Present Worth",
             "question": "Maintenance costs for a machine are expected to be 1,000 at the end of the first year and increase by 200 each year for the next 4 years (for a total of 5 years). If the interest rate is 10% per year, what is the equivalent present worth (P) of these costs?",
             "question_image": "https://drive.google.com/file/d/1tNHl9is47E1aSTySyf0rUkso7_qhGT1U/preview",
+            "local_question_image": "assets/quiz-images/img_1tNHl9is47E1aSTySyf0rUkso7_qhGT1U.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -26799,6 +26629,7 @@ const QUESTIONS = {
             "title": "Equivalent Uniform Annual Cost (EUAC)",
             "question": "An industrial heater costs USD 20,000 and has an expected life of 10 years with no salvage value. The annual operating and maintenance costs are USD 2,000. If the interest rate is 10%, what is the equivalent uniform annual cost (EUAC)?",
             "question_image": "https://drive.google.com/file/d/1AMfo3sDC49yWsDS0dJMStZrkU0T9devT/preview",
+            "local_question_image": "assets/quiz-images/img_1AMfo3sDC49yWsDS0dJMStZrkU0T9devT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -26890,6 +26721,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w/preview",
+            "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -26956,6 +26788,7 @@ const QUESTIONS = {
             "title": "Net Present Value (NPV)",
             "question": "A mechanical engineer is considering an investment in a new high-efficiency pump that costs 15,000 today. The pump is expected to save 3,500 per year in energy costs for the next 6 years. If the interest rate is 8% per year, what is the net present value (NPV) of this investment?",
             "question_image": "https://drive.google.com/file/d/1KspmRFO2F5MXz1-nr4vJAhuDUA6b12qT/preview",
+            "local_question_image": "assets/quiz-images/img_1KspmRFO2F5MXz1-nr4vJAhuDUA6b12qT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -27066,6 +26899,7 @@ const QUESTIONS = {
             "title": "Capitalized Cost of Perpetual Maintenance",
             "question": "An engineering firm must provide for the perpetual maintenance of a bridge. The maintenance costs are estimated to be $5,000 every 3 years. If the interest rate is 6% per year, what is the capitalized cost of this maintenance schedule?",
             "question_image": "https://drive.google.com/file/d/1HDASr1MpighFnkY-ukLw4Fnl0q1ENqCT/preview",
+            "local_question_image": "assets/quiz-images/img_1HDASr1MpighFnkY-ukLw4Fnl0q1ENqCT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -27161,6 +26995,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/19-wekixZcSS97Vlrm7-4f97apZDscbwK/preview",
+            "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -29713,6 +29548,7 @@ const QUESTIONS = {
             "title": "Resultant of Concurrent Forces",
             "question": "Three concurrent forces act on a particle at the origin. Force $\\vec{F}_1 = 50 \\text{ N}$ is directed at an angle of $30^\\circ$ from the positive $x$-axis. Force $\\vec{F}_2 = 80 \\text{ N}$ is directed at an angle of $135^\\circ$ from the positive $x$-axis. Force $\\vec{F}_3 = 60 \\text{ N}$ is directed at an angle of $240^\\circ$ from the positive $x$-axis. Determine the magnitude of the resultant force $R$.",
             "question_image": "https://drive.google.com/file/d/1UeVb7dBEpS4AlQfuMvxGuMQaubPJTshQ/preview",
+            "local_question_image": "assets/quiz-images/img_1UeVb7dBEpS4AlQfuMvxGuMQaubPJTshQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -29768,6 +29604,7 @@ const QUESTIONS = {
             "title": "Vector Addition",
             "question": "Two forces act on a point: $\\vec{F}_1 = 50\\text{ N}$ at an angle of $30^{\\circ}$ and $\\vec{F}_2 = 80\\text{ N}$ at an angle of $120^{\\circ}$, both measured counter-clockwise from the positive x-axis. What is the magnitude of the resultant force?",
             "question_image": "https://drive.google.com/file/d/1CzkOTiTZ4GRP4R-08hkijxriHWa7raNf/preview",
+            "local_question_image": "assets/quiz-images/img_1CzkOTiTZ4GRP4R-08hkijxriHWa7raNf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30290,6 +30127,7 @@ const QUESTIONS = {
             "title": "Tension in Static Equilibrium",
             "question": "A ring is held in equilibrium by three ropes. Rope A exerts a tension of 500 lb at an angle of $30^\\circ$ from the positive $x$-axis. Rope B exerts a tension at an angle of $150^\\circ$ from the positive $x$-axis. Rope C pulls vertically downward ($-y$ direction). What is the tension in Rope C?",
             "question_image": "https://drive.google.com/file/d/1T9hRMlUZe9VbQpp-OPbT64LN5fBsRz7U/preview",
+            "local_question_image": "assets/quiz-images/img_1T9hRMlUZe9VbQpp-OPbT64LN5fBsRz7U.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30396,6 +30234,7 @@ const QUESTIONS = {
             "title": "Tension in Suspended Weight",
             "question": "A weight of 1000 N is suspended by two identical cables. Each cable makes an angle of $45^\\circ$ with the vertical. What is the tension in each cable?",
             "question_image": "https://drive.google.com/file/d/1L4BgeVZSZjhIajb59DpfHoa6fgn0eVib/preview",
+            "local_question_image": "assets/quiz-images/img_1L4BgeVZSZjhIajb59DpfHoa6fgn0eVib.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30451,6 +30290,7 @@ const QUESTIONS = {
             "title": "Beam Reaction Force Calculation",
             "question": "A horizontal beam of length $L = 6$ m is supported by a pin at $A$ and a roller at $B$. A vertical downward force of $12$ kN is applied at a distance of $2$ m from $A$. Additionally, a clockwise couple moment of $20$ kNm is applied at a distance of $4$ m from $A$. Determine the vertical reaction force at support $B$.",
             "question_image": "https://drive.google.com/file/d/1MZ6fy66rLhjOvhLkGWS7dYJSYHMXIhuY/preview",
+            "local_question_image": "assets/quiz-images/img_1MZ6fy66rLhjOvhLkGWS7dYJSYHMXIhuY.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30506,6 +30346,7 @@ const QUESTIONS = {
             "title": "Reaction of Triangular Distributed Load",
             "question": "A $6$ m simply supported beam is subjected to a distributed triangular load that varies linearly from $0$ at support $A$ to $10$ kN/m at support $B$. Calculate the vertical reaction at support $B$.",
             "question_image": "https://drive.google.com/file/d/1_UpTP6IrwCZ14ihSoxAEMpLs2zIE8t49/preview",
+            "local_question_image": "assets/quiz-images/img_1_UpTP6IrwCZ14ihSoxAEMpLs2zIE8t49.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30561,6 +30402,7 @@ const QUESTIONS = {
             "title": "Equilibrium of a Leaning Ladder",
             "question": "A uniform ladder of weight $W = 200$ N and length $L$ leans against a frictionless vertical wall at an angle of $\\theta = 60^\\circ$ with the horizontal ground. Determine the magnitude of the friction force exerted by the ground on the ladder to maintain equilibrium.",
             "question_image": "https://drive.google.com/file/d/1a4HS8Mba06OXdjVxPJ-FGddn9yR7tbS3/preview",
+            "local_question_image": "assets/quiz-images/img_1a4HS8Mba06OXdjVxPJ-FGddn9yR7tbS3.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30616,6 +30458,7 @@ const QUESTIONS = {
             "title": "Beam Reactions",
             "question": "A simply supported beam of length $L = 6\\text{ m}$ is subjected to a concentrated load $F = 12\\text{ kN}$ acting at a distance $a = 2\\text{ m}$ from the left support ($A$). What is the vertical reaction force at the right support ($B$)?",
             "question_image": "https://drive.google.com/file/d/1FXBFxBBvRtM6y8RdV6S0XnSSTOh4sq7p/preview",
+            "local_question_image": "assets/quiz-images/img_1FXBFxBBvRtM6y8RdV6S0XnSSTOh4sq7p.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30722,6 +30565,7 @@ const QUESTIONS = {
             "title": "Equilibrium of a Particle",
             "question": "A crate weighing $W = 1000\\text{ N}$ is supported by two cables. Cable $AC$ makes an angle of $30^{\\circ}$ with the horizontal, and cable $BC$ makes an angle of $60^{\\circ}$ with the horizontal. What is the magnitude of the tension $T_{AC}$ in cable $AC$?",
             "question_image": "https://drive.google.com/file/d/16Svp8e0715mggKWuxP_zETUzr9a2hIFa/preview",
+            "local_question_image": "assets/quiz-images/img_16Svp8e0715mggKWuxP_zETUzr9a2hIFa.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30773,6 +30617,7 @@ const QUESTIONS = {
             "title": "Beam Equilibrium",
             "question": "A $100\\text{ lb}$ uniform beam of length $10\\text{ ft}$ is supported by a pin at $A$ and a cable at $B$. A $200\\text{ lb}$ load is applied at the midpoint of the beam. The beam is horizontal. What is the tension $T$ in the cable if it makes an angle of $30^\\circ$ with the horizontal beam?",
             "question_image": "https://drive.google.com/file/d/1p_lFMQTaU0Hzkw2Wp53hbw1RRfHF09fQ/preview",
+            "local_question_image": "assets/quiz-images/img_1p_lFMQTaU0Hzkw2Wp53hbw1RRfHF09fQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30942,6 +30787,7 @@ const QUESTIONS = {
             "title": "Truss",
             "question": "A simple truss consists of three members forming an isosceles right triangle. Joint $A$ (pin support) is located at $(0, 0)$, joint $B$ (roller support) is located at $(4 \\text{ m}, 0)$, and joint $C$ is located at $(2 \\text{ m}, 2 \\text{ m})$. A vertical downward load of $P = 10 \\text{ kN}$ is applied at joint $C$. Determine the internal force in member $AC$.",
             "question_image": "https://drive.google.com/file/d/1mVoKSQjhFoD0DUFDem_JvYRQekjM0Guy/preview",
+            "local_question_image": "assets/quiz-images/img_1mVoKSQjhFoD0DUFDem_JvYRQekjM0Guy.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30993,6 +30839,7 @@ const QUESTIONS = {
             "title": "Parallel Axis Theorem for Circles",
             "question": "A circular area has a radius of $r = 10$ cm. Using the parallel axis theorem, determine the moment of inertia about an axis parallel to the centroidal $x$-axis and located at a distance $d = 20$ cm from the centroid.",
             "question_image": "https://drive.google.com/file/d/13cRmegLLRIpgsFZV4hNZeYVVqqRCX5fo/preview",
+            "local_question_image": "assets/quiz-images/img_13cRmegLLRIpgsFZV4hNZeYVVqqRCX5fo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -31044,6 +30891,7 @@ const QUESTIONS = {
             "title": "Moment of Inertia of a Rectangle",
             "question": "A rectangular area has a base width $b = 5$ cm and a height $h = 12$ cm. What is the moment of inertia $I_{x}$ of this area about its base?",
             "question_image": "https://drive.google.com/file/d/13AXOvx4omasO4KSuTeF3YPuAnyeFtGgK/preview",
+            "local_question_image": "assets/quiz-images/img_13AXOvx4omasO4KSuTeF3YPuAnyeFtGgK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -31095,6 +30943,7 @@ const QUESTIONS = {
             "title": "Area Moment of Inertia",
             "question": "An inverted T-shaped beam cross-section consists of a flange and a web. The flange has a width of $100 \\text{ mm}$ and a thickness of $20 \\text{ mm}$. The web has a width of $20 \\text{ mm}$ and a height of $80 \\text{ mm}$ (measured from the top surface of the flange). What is the area moment of inertia of the section about its horizontal centroidal axis ($I_x$)?",
             "question_image": "https://drive.google.com/file/d/1NbPVPrCfGLj1aCgbkwT-ipxi64vRvvd8/preview",
+            "local_question_image": "assets/quiz-images/img_1NbPVPrCfGLj1aCgbkwT-ipxi64vRvvd8.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -31150,6 +30999,7 @@ const QUESTIONS = {
             "title": "Centroid of Composite Area",
             "question": "A composite area consists of a rectangle and a right triangle. The rectangle has a width of $8 \\text{ cm}$ and a height of $6 \\text{ cm}$, with its bottom-left corner at the origin $(0, 0)$. The right triangle has a base of $4 \\text{ cm}$ and a height of $6 \\text{ cm}$, and is attached to the right side of the rectangle such that its vertical leg is coincident with the rectangle's right edge at $x = 8 \\text{ cm}$ and its base lies on the x-axis from $x = 8 \\text{ cm}$ to $x = 12 \\text{ cm}$. Determine the x-coordinate of the centroid, $\\bar{x}$, for the composite area.",
             "question_image": "https://drive.google.com/file/d/1m3tHvArXgjAxq8TulrByJ-OmzYlpWls6/preview",
+            "local_question_image": "assets/quiz-images/img_1m3tHvArXgjAxq8TulrByJ-OmzYlpWls6.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -31205,6 +31055,7 @@ const QUESTIONS = {
             "title": "Centroid",
             "question": "Determine the $x$-coordinate of the centroid $(\\bar{x})$ for a semi-circular area with radius $r = 6$ in positioned such that the flat base lies on the $y$-axis and the curve extends into the positive $x$ direction.",
             "question_image": "https://drive.google.com/file/d/1lwypMaHsL1WH9s2mhZRcF32wRa5wP0OF/preview",
+            "local_question_image": "assets/quiz-images/img_1lwypMaHsL1WH9s2mhZRcF32wRa5wP0OF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -32931,6 +32782,7 @@ const QUESTIONS = {
             "title": "Projectile Motion",
             "question": "A projectile is launched from ground level with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance and assuming $g = 9.81\\text{ m/s}^2$, what is the maximum height $h_{max}$ reached by the projectile?",
             "question_image": "https://drive.google.com/file/d/1eWlr558xcagxBqg4qSH0SJvg7t3H3Brq/preview",
+            "local_question_image": "assets/quiz-images/img_1eWlr558xcagxBqg4qSH0SJvg7t3H3Brq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -32982,6 +32834,7 @@ const QUESTIONS = {
             "title": "Maximum Speed on a Curve",
             "question": "A car with a mass of $1500$ kg travels around a flat circular curve with a radius of $100$ m. If the coefficient of static friction between the tires and the road is $\\mu_s = 0.6$, what is the maximum speed the car can maintain without sliding?",
             "question_image": "https://drive.google.com/file/d/189lCjWRw9V2G4efDTy24Gvk_9leVaFLv/preview",
+            "local_question_image": "assets/quiz-images/img_189lCjWRw9V2G4efDTy24Gvk_9leVaFLv.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33033,6 +32886,7 @@ const QUESTIONS = {
             "title": "Projectile Motion",
             "question": "A projectile is launched from a height of $h = 10\\text{ m}$ with an initial velocity of $v_0 = 50\\text{ m/s}$ at an angle of $\\theta = 30^{\\circ}$ above the horizontal. Neglecting air resistance, what is the horizontal distance $x$ traveled by the projectile when it hits the ground? Use $g = 9.81\\text{ m/s}^2$.",
             "question_image": "https://drive.google.com/file/d/1IdV8PGRsf0opflJOADfqSR4fzmq9l1xH/preview",
+            "local_question_image": "assets/quiz-images/img_1IdV8PGRsf0opflJOADfqSR4fzmq9l1xH.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33124,6 +32978,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview",
+            "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -33139,6 +32994,7 @@ const QUESTIONS = {
             "title": "Tangential and Normal Acceleration",
             "question": "A particle moves along a circular path with a radius of $\\rho = 50 \\text{ m}$. At a given instant, the particle has a speed of $v = 10 \\text{ m/s}$ and its tangential acceleration is $a_t = 2 \\text{ m/s}^2$. What is the magnitude of the total acceleration vector of the particle at this instant?",
             "question_image": "https://drive.google.com/file/d/130LZ2EaZ2tRsrdEJRScKEOWhYbNJ081E/preview",
+            "local_question_image": "assets/quiz-images/img_130LZ2EaZ2tRsrdEJRScKEOWhYbNJ081E.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33230,6 +33086,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview",
+            "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -33245,6 +33102,7 @@ const QUESTIONS = {
             "title": "Relative Velocity of Two Cars",
             "question": "Car A travels East at a constant speed of $60$ km/h. Car B travels North at a constant speed of $80$ km/h. What is the magnitude of the velocity of Car B relative to Car A?",
             "question_image": "https://drive.google.com/file/d/10KDnbj2kY_NShxS3Sj2jZBdV7_NsBOwD/preview",
+            "local_question_image": "assets/quiz-images/img_10KDnbj2kY_NShxS3Sj2jZBdV7_NsBOwD.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33300,6 +33158,7 @@ const QUESTIONS = {
             "title": "Acceleration of Rolling Disk Point",
             "question": "A disk of radius $r = 0.5$ m rolls without slipping on a horizontal surface. The center of the disk $O$ has a velocity $v_O = 10$ m/s and an acceleration $a_O = 5$ m/s$^2$ to the right. What is the magnitude of the total acceleration of the point $P$ at the very top of the disk?",
             "question_image": "https://drive.google.com/file/d/1w-92MShepnLrmYj5VeUodSPLz8g0Ba3_/preview",
+            "local_question_image": "assets/quiz-images/img_1w-92MShepnLrmYj5VeUodSPLz8g0Ba3_.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33570,6 +33429,7 @@ const QUESTIONS = {
             "title": "Kinetic Friction of a Sliding Object",
             "question": "A crate with a mass of $m = 50 \\text{ kg}$ is placed on a ramp inclined at an angle of $\\theta = 20^\\circ$ to the horizontal. The coefficient of static friction between the crate and the ramp is $\\mu_s = 0.35$, and the coefficient of kinetic friction is $\\mu_k = 0.25$. A force $P = 100 \\text{ N}$ is applied to the crate parallel to the ramp and directed upwards. Determine the magnitude of the friction force acting on the crate. Assume the acceleration due to gravity is $g = 9.81 \\text{ m/s}^2$.",
             "question_image": "https://drive.google.com/file/d/1MfnlhjMVyCzm2_J-VvfagA4TBBMNcTW0/preview",
+            "local_question_image": "assets/quiz-images/img_1MfnlhjMVyCzm2_J-VvfagA4TBBMNcTW0.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33735,6 +33595,7 @@ const QUESTIONS = {
             "title": "Work-Energy Principle",
             "question": "A $10 \\text{ kg}$ block is released from rest at the top of a $30^\\circ$ incline. The coefficient of kinetic friction is $\\mu_k = 0.25$. If the block slides $d = 5 \\text{ m}$ down the incline, what is its velocity $v$ at that point?",
             "question_image": "https://drive.google.com/file/d/1zhlK-JDI-CTgJqx3uU2J0oVi1JGtRhyt/preview",
+            "local_question_image": "assets/quiz-images/img_1zhlK-JDI-CTgJqx3uU2J0oVi1JGtRhyt.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -36786,6 +36647,7 @@ const QUESTIONS = {
             "title": "Shear Force with Concentrated Moment",
             "question": "A simply supported beam of length $L = 6$ m is subjected to a clockwise concentrated moment of $M_0 = 30$ kNm at its midpoint. What is the magnitude of the constant shear force along the length of the beam?",
             "question_image": "https://drive.google.com/file/d/1AMR3hS64hzTMZNdrTA8QRsA0DogfNt4S/preview",
+            "local_question_image": "assets/quiz-images/img_1AMR3hS64hzTMZNdrTA8QRsA0DogfNt4S.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -36837,6 +36699,7 @@ const QUESTIONS = {
             "title": "Location of Maximum Bending Moment",
             "question": "For a beam with a shear force diagram described by the function $V(x) = 20 - 5x$ (where $x$ is in meters and $V$ is in kN), at what distance $x$ from the origin ($x = 0$) does the maximum bending moment occur?",
             "question_image": "https://drive.google.com/file/d/1UMeVWHNgwz92p7obvDHwftNHmEbyqknz/preview",
+            "local_question_image": "assets/quiz-images/img_1UMeVWHNgwz92p7obvDHwftNHmEbyqknz.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -36888,6 +36751,7 @@ const QUESTIONS = {
             "title": "Shear Force in Cantilever Beam",
             "question": "A cantilever beam of length $L = 5$ m is subjected to a uniformly distributed load of $w = 4$ kN/m across its entire length. What is the magnitude of the shear force at the fixed support?",
             "question_image": "https://drive.google.com/file/d/1KJgqu9p6RZyN2Nm391YI89mhNRaBe94E/preview",
+            "local_question_image": "assets/quiz-images/img_1KJgqu9p6RZyN2Nm391YI89mhNRaBe94E.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -36939,6 +36803,7 @@ const QUESTIONS = {
             "title": "Maximum Bending Moment of Beam",
             "question": "A simply supported beam of length $L = 8$ m carries a single concentrated load of $P = 40$ kN at its midpoint. What is the maximum bending moment in the beam?",
             "question_image": "https://drive.google.com/file/d/1FFyOZY1AOQOu2ngqH6V6stw5zBJg5mng/preview",
+            "local_question_image": "assets/quiz-images/img_1FFyOZY1AOQOu2ngqH6V6stw5zBJg5mng.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -36990,6 +36855,7 @@ const QUESTIONS = {
             "title": "Maximum Shear Force in Beam",
             "question": "A simply supported beam of length $L = 6$ m is subjected to a point load of $10$ kN at a distance $x = 2$ m from the left support. What is the maximum shear force magnitude $|V|_{max}$ in the beam?",
             "question_image": "https://drive.google.com/file/d/1IHaqwnneL4Z8_Q8QxPiEI9hMgQZfV2N-/preview",
+            "local_question_image": "assets/quiz-images/img_1IHaqwnneL4Z8_Q8QxPiEI9hMgQZfV2N-.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37026,6 +36892,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview",
+            "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37077,6 +36944,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview",
+            "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37092,6 +36960,7 @@ const QUESTIONS = {
             "title": "Shear Force in Overhanging Beam",
             "question": "An overhanging beam is $8$ m long. It is supported at the left end ($x = 0$) and at $x = 6$ m. A downward point load of $12$ kN is applied at the rightmost free end ($x = 8$ m). What is the value of the shear force in the segment between the two supports ($0 < x < 6$ m)?",
             "question_image": "https://drive.google.com/file/d/1pGtXyHXw0gfkxtQ5aML7IFXrnlpykwR-/preview",
+            "local_question_image": "assets/quiz-images/img_1pGtXyHXw0gfkxtQ5aML7IFXrnlpykwR-.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37143,6 +37012,7 @@ const QUESTIONS = {
             "title": "Principal Stresses",
             "question": "A plane stress element is subjected to normal stresses $\\sigma_x = 120 \\text{ MPa}$ and $\\sigma_y = 40 \\text{ MPa}$, and a shear stress $\\tau_{xy} = 30 \\text{ MPa}$. Using Mohr's circle, what are the principal stresses $\\sigma_1$ and $\\sigma_2$?",
             "question_image": "https://drive.google.com/file/d/1edw6gpnfP3uDr_elZf8qTVoo0jUmXtg0/preview",
+            "local_question_image": "assets/quiz-images/img_1edw6gpnfP3uDr_elZf8qTVoo0jUmXtg0.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37183,6 +37053,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview",
+            "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37233,6 +37104,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview",
+            "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37283,6 +37155,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview",
+            "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37333,6 +37206,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview",
+            "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37347,6 +37221,7 @@ const QUESTIONS = {
             "title": "Axial Deformation",
             "question": "A solid circular shaft with a diameter of $d = 50 \\text{ mm}$ and a length of $L = 2 \\text{ m}$ is subjected to an axial compressive load of $P = 150 \\text{ kN}$. If the modulus of elasticity is $E = 200 \\text{ GPa}$, what is the total axial deformation $\\delta$ of the shaft?",
             "question_image": "https://drive.google.com/file/d/1i4rEAN-N33_nX-G68mPVs2xQkV5p8jDi/preview",
+            "local_question_image": "assets/quiz-images/img_1i4rEAN-N33_nX-G68mPVs2xQkV5p8jDi.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37401,6 +37276,7 @@ const QUESTIONS = {
             "title": "Poisson’s Ratio",
             "question": "A steel rod with a Young's modulus of $E = 200 \\text{ GPa}$ and a Poisson's ratio of $\\\nu = 0.30$ is subjected to an axial tensile stress of $\\sigma_z = 150 \\text{ MPa}$. What is the resulting lateral strain $\\epsilon_x$ in the rod?",
             "question_image": "https://drive.google.com/file/d/1k85o51cD6BOi0L0EBVmtIPOlix6jzQMQ/preview",
+            "local_question_image": "assets/quiz-images/img_1k85o51cD6BOi0L0EBVmtIPOlix6jzQMQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37451,6 +37327,7 @@ const QUESTIONS = {
             "title": "Poisson’s Ratio",
             "question": "A cylindrical specimen of a steel alloy with an original diameter of $12.8 \\text{ mm}$ is pulled in tension. A force of $35,000 \\text{ N}$ produces an elastic reduction in diameter of $2.8 \\times 10^{-3} \\text{ mm}$. Given that the modulus of elasticity $E$ is $205 \\text{ GPa}$, what is the Poisson's ratio $\\\nu$ of the material?",
             "question_image": "https://drive.google.com/file/d/1Hhwf1qYvy6kHDLMmpsj2o8Ow8Vz1d8hX/preview",
+            "local_question_image": "assets/quiz-images/img_1Hhwf1qYvy6kHDLMmpsj2o8Ow8Vz1d8hX.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37767,6 +37644,7 @@ const QUESTIONS = {
             "title": "Bending Moment at Specific Distance",
             "question": "A simply supported beam of length $L = 10$ m carries a uniformly distributed load of $w = 2$ kN/m. What is the bending moment at a distance $x = 2$ m from the left support?",
             "question_image": "https://drive.google.com/file/d/12BJNjdnlCiHBi-5wDKO9RPXtulX-zLUn/preview",
+            "local_question_image": "assets/quiz-images/img_12BJNjdnlCiHBi-5wDKO9RPXtulX-zLUn.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37821,6 +37699,7 @@ const QUESTIONS = {
             "title": "Maximum Bending Stress in a Beam",
             "question": "A rectangular beam with a width $b = 100 \\text{ mm}$ and height $h = 200 \\text{ mm}$ is subjected to a maximum bending moment of $M = 10 \\text{ kN} \\cdot \\text{m}$. What is the maximum bending stress $\\sigma_{\\max}$ in the beam?",
             "question_image": "https://drive.google.com/file/d/14Jv9SiqcwxhFs0i-APhufJPHHe29lgGV/preview",
+            "local_question_image": "assets/quiz-images/img_14Jv9SiqcwxhFs0i-APhufJPHHe29lgGV.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37911,6 +37790,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview",
+            "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37925,6 +37805,7 @@ const QUESTIONS = {
             "title": "Maximum Bending Moment Calculation",
             "question": "A simply supported beam of length $L = 10$ m carries a point load of $20$ kN at a distance of $4$ m from the left support. What is the maximum bending moment in the beam?",
             "question_image": "https://drive.google.com/file/d/1dethLsdEoFoeOH6B1Ng40FRruj8cedvs/preview",
+            "local_question_image": "assets/quiz-images/img_1dethLsdEoFoeOH6B1Ng40FRruj8cedvs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37965,6 +37846,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview",
+            "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37979,6 +37861,7 @@ const QUESTIONS = {
             "title": "Bending Stress in Steel Plate",
             "question": "A steel plate is bent into a circular arc of radius $10\\text{ m}$. If the plate section be $120\\text{ mm}$ wide and $20\\text{ mm}$ thick, with $E = 2 \\times 10^5\\text{ N/mm}^2$, then the maximum bending stress-induced is:",
             "question_image": "https://drive.google.com/file/d/1Cto_yDxkETbmLv7xdSA6ATOU3-V1_6hq/preview",
+            "local_question_image": "assets/quiz-images/img_1Cto_yDxkETbmLv7xdSA6ATOU3-V1_6hq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38033,6 +37916,7 @@ const QUESTIONS = {
             "title": "Maximum Shear Stress in a Shaft",
             "question": "A solid circular steel shaft with a diameter of $d = 40 \\text{ mm}$ and a length of $L = 1.5 \\text{ m}$ is subjected to an applied torque of $T = 500 \\text{ N} \\cdot \\text{m}$. What is the maximum shear stress, $\\tau_{max}$, induced in the shaft?",
             "question_image": "https://drive.google.com/file/d/1V-smo_bZF3HJUgGfj8fjCLUkEYG7HSZF/preview",
+            "local_question_image": "assets/quiz-images/img_1V-smo_bZF3HJUgGfj8fjCLUkEYG7HSZF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38087,6 +37971,7 @@ const QUESTIONS = {
             "title": "Angle of Twist due to Torsion",
             "question": "A $2\\text{ m}$ long solid aluminum shaft with a diameter of $50\\text{ mm}$ is subjected to a torque of $800\\text{ N} \\cdot \\text{m}$. Given the shear modulus $G = 27\\text{ GPa}$, what is the angle of twist in degrees?",
             "question_image": "https://drive.google.com/file/d/1vvpCJk8nwbsoHwuCHXvKPs1nR_9VqDpm/preview",
+            "local_question_image": "assets/quiz-images/img_1vvpCJk8nwbsoHwuCHXvKPs1nR_9VqDpm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38145,6 +38030,7 @@ const QUESTIONS = {
             "title": "Maximum Torque Transmitted by a Hollow Shaft",
             "question": "A hollow shaft has an outer diameter of $100 \\text{ mm}$ and an inner diameter of $80 \\text{ mm}$. If the allowable shear stress is $60 \\text{ MPa}$, what is the maximum torque the shaft can transmit?",
             "question_image": "https://drive.google.com/file/d/1SEPNKTXLzFMS4fyjplDyLxnhpCq058iF/preview",
+            "local_question_image": "assets/quiz-images/img_1SEPNKTXLzFMS4fyjplDyLxnhpCq058iF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38199,6 +38085,7 @@ const QUESTIONS = {
             "title": "Average Shear Stress in a Bolt",
             "question": "A steel bolt with a diameter of $20\\text{ mm}$ is used to join two plates. If the plates are pulled apart with a force of $50\\text{ kN}$, creating a single shear condition on the bolt, what is the average shear stress in the bolt?",
             "question_image": "https://drive.google.com/file/d/1EynYUzchCRrpVji0_8cFb6y-zO9Ew-mo/preview",
+            "local_question_image": "assets/quiz-images/img_1EynYUzchCRrpVji0_8cFb6y-zO9Ew-mo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38365,6 +38252,7 @@ const QUESTIONS = {
             "title": "Horizontal Displacement from Shear Strain",
             "question": "A square block of material is subjected to a shear stress that results in a shear strain of $0.0005$ radians. If the block has a height of $50\\text{ mm}$, what is the horizontal displacement of the top surface relative to the bottom surface?",
             "question_image": "https://drive.google.com/file/d/1jLT8RTTKIubjh_Y2HcYQQc5AexI3vWjs/preview",
+            "local_question_image": "assets/quiz-images/img_1jLT8RTTKIubjh_Y2HcYQQc5AexI3vWjs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38419,6 +38307,7 @@ const QUESTIONS = {
             "title": "Shear Stress in a Clevis Pin",
             "question": "A clevis joint connects two rods with a $15\\text{ mm}$ diameter pin. The assembly is subjected to a tensile load of $60\\text{ kN}$. Assuming the pin is in double shear, determine the average shear stress in the pin.",
             "question_image": "https://drive.google.com/file/d/1W5r-IpUiE03drqam9e1afP05oeOrBm-i/preview",
+            "local_question_image": "assets/quiz-images/img_1W5r-IpUiE03drqam9e1afP05oeOrBm-i.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38473,6 +38362,7 @@ const QUESTIONS = {
             "title": "Average Shear Stress in Bolt",
             "question": "A bolt with a diameter of $20$ mm is used in a double-lap joint to connect three plates. If the joint is subjected to a tensile force of $100$ kN, what is the average shear stress in the bolt?",
             "question_image": "https://drive.google.com/file/d/1H9NcUVrypI5Xj3m0N-w7RxwinNNkZNqM/preview",
+            "local_question_image": "assets/quiz-images/img_1H9NcUVrypI5Xj3m0N-w7RxwinNNkZNqM.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38567,6 +38457,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview",
+            "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -38581,6 +38472,7 @@ const QUESTIONS = {
             "title": "Thermal Expansion",
             "question": "A copper rod has an initial length of $2.5 \\text{ m}$ at a temperature of $20^\\circ\\text{C}$. The coefficient of linear thermal expansion for copper is $17.0 \\times 10^{-6} / ^\\circ\\text{C}$. Determine the total change in length, $\\Delta L$, if the rod is heated to a final temperature of $150^\\circ\\text{C}$.",
             "question_image": "https://drive.google.com/file/d/1dPVTtYjNE2KLtUj1QZAP2ZEoQbkE4AIq/preview",
+            "local_question_image": "assets/quiz-images/img_1dPVTtYjNE2KLtUj1QZAP2ZEoQbkE4AIq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38635,6 +38527,7 @@ const QUESTIONS = {
             "title": "Maximum Stress in Eccentric Column",
             "question": "A rectangular short column with cross-sectional dimensions of $200\\text{ mm} \\times 100\\text{ mm}$ is subjected to a compressive load of $P = 500\\text{ kN}$. The load is applied at an eccentricity of $20\\text{ mm}$ from the centroidal axis along the $200\\text{ mm}$ dimension. Calculate the maximum compressive stress in the column.",
             "question_image": "https://drive.google.com/file/d/1K9VQQ2LKilYATNcHQI9Ljr3G_j8xi0tU/preview",
+            "local_question_image": "assets/quiz-images/img_1K9VQQ2LKilYATNcHQI9Ljr3G_j8xi0tU.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38694,6 +38587,7 @@ const QUESTIONS = {
             "title": "Maximum Eccentricity in Square Column",
             "question": "To prevent tension from occurring in a square column of side length $a = 150\\text{ mm}$ under a compressive load, what is the maximum allowable eccentricity $e$ from the centroidal axis (along one of the principal axes)?",
             "question_image": "https://drive.google.com/file/d/1vAQZGJPWIZLLgM0ySQdPdZ6eQDIoe3PG/preview",
+            "local_question_image": "assets/quiz-images/img_1vAQZGJPWIZLLgM0ySQdPdZ6eQDIoe3PG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38753,6 +38647,7 @@ const QUESTIONS = {
             "title": "Maximum Stress in Circular Shaft",
             "question": "A solid circular shaft with a diameter of $80\\text{ mm}$ is subjected to a compressive load of $100\\text{ kN}$ applied at an eccentricity of $5\\text{ mm}$ from the center. What is the maximum compressive stress in the shaft?",
             "question_image": "https://drive.google.com/file/d/1AYopFjwLOuW9LR-jRHMFZCsQtZ89ZgAo/preview",
+            "local_question_image": "assets/quiz-images/img_1AYopFjwLOuW9LR-jRHMFZCsQtZ89ZgAo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38812,6 +38707,7 @@ const QUESTIONS = {
             "title": "Deflection of Beam",
             "question": "A cantilever beam of length $L = 4 \\text{ m}$ is fixed at the left support ($x = 0$) and free at the right end ($x = 4 \\text{ m}$). The beam has a constant flexural rigidity $EI = 5000 \\text{ kNm}^2$. It is subjected to a downward vertical point load $P = 10 \\text{ kN}$ at the free end and a clockwise concentrated moment $M = 20 \\text{ kNm}$ at its midpoint ($x = 2 \\text{ m}$). What is the total downward deflection at the free end?",
             "question_image": "https://drive.google.com/file/d/19sB7QvCf0rVcDTOnNysWWID69ThrXXCJ/preview",
+            "local_question_image": "assets/quiz-images/img_19sB7QvCf0rVcDTOnNysWWID69ThrXXCJ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38867,6 +38763,7 @@ const QUESTIONS = {
             "title": "Deflection in Cantilever Beam",
             "question": "A free end of a cantilever beam rotates by $0.001$ radians under a point load of $10\\text{ kN}$. Then deflection at the free end due to a moment of $100\\text{ kN} \\cdot \\text{m}$ is:",
             "question_image": "https://drive.google.com/file/d/1Sk2jiTUcm326qcSQ6vArXmRFyZ_nI_zR/preview",
+            "local_question_image": "assets/quiz-images/img_1Sk2jiTUcm326qcSQ6vArXmRFyZ_nI_zR.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38977,6 +38874,7 @@ const QUESTIONS = {
             "title": "Critical Euler Buckling Load",
             "question": "A steel column with a length of $L = 4.5 \\text{ m}$ has a rectangular cross-section of $100 \\text{ mm} \\times 150 \\text{ mm}$. The column is fixed at one end and pinned at the other. Assuming the modulus of elasticity for steel is $E = 200 \\text{ GPa}$, what is the critical Euler buckling load, $P_{cr}$, for this column?",
             "question_image": "https://drive.google.com/file/d/1gwJvSfjKp5s9zX0Qi5Txk4hwlLlKxmHp/preview",
+            "local_question_image": "assets/quiz-images/img_1gwJvSfjKp5s9zX0Qi5Txk4hwlLlKxmHp.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44433,6 +44331,7 @@ const QUESTIONS = {
             "title": "Shear Stress on a Newtonian Fluid",
             "question": "A Newtonian fluid flows between two large parallel plates. The lower plate is fixed, and the upper plate moves at a constant velocity $U = 3 \\text{ m/s}$. The plates are separated by a distance $y = 0.75 \\text{ mm}$. If the dynamic viscosity of the fluid is $\\mu = 0.4 \\text{ Pa} \\cdot \\text{s}$, what is the magnitude of the shear stress $\\tau$ acting on the plates?",
             "question_image": "https://drive.google.com/file/d/1Ltodhu8I_Zq1m_EyTrx6Av3jjaWyanPU/preview",
+            "local_question_image": "assets/quiz-images/img_1Ltodhu8I_Zq1m_EyTrx6Av3jjaWyanPU.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44488,6 +44387,7 @@ const QUESTIONS = {
             "title": "Capilliary Rise",
             "question": "A clean glass tube with a diameter of $d = 2 \\text{ mm}$ is inserted into a container of water at $20^\\circ\\text{C}$ (surface tension $\\sigma = 0.0728 \\text{ N/m}$, density $\\rho = 1000 \\text{ kg/m}^3$). Assuming a contact angle of $\\theta = 0^\\circ$ and $g = 9.81 \\text{ m/s}^2$, what is the expected capillary rise ($h$)?",
             "question_image": "https://drive.google.com/file/d/1qUXw7JPcMDL3SmnDKxzrTmnndZ2EdACm/preview",
+            "local_question_image": "assets/quiz-images/img_1qUXw7JPcMDL3SmnDKxzrTmnndZ2EdACm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44798,6 +44698,7 @@ const QUESTIONS = {
             "title": "Hydrostatic Forces on Submerged Bodies",
             "question": "A vertical rectangular gate is $4 \\text{ m}$ wide and $2 \\text{ m}$ high. The top edge of the gate is located $3 \\text{ m}$ below the water surface. What is the total hydrostatic force acting on one side of the gate? Use $\\gamma_{water} = 9.81 \\text{ kN/m}^3$.",
             "question_image": "https://drive.google.com/file/d/1AXE-1xiHOm5dHJ21GouXT3kj3a4QsomQ/preview",
+            "local_question_image": "assets/quiz-images/img_1AXE-1xiHOm5dHJ21GouXT3kj3a4QsomQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44853,6 +44754,7 @@ const QUESTIONS = {
             "title": "Gauge Pressure",
             "question": "A storage tank contains oil with a specific gravity ($SG$) of $0.82$ to a depth of $3 \\text{ m}$ resting on top of $2 \\text{ m}$ of water. What is the gauge pressure at the bottom of the tank? Use $g = 9.81 \\text{ m/s}^2$ and $\\rho_{water} = 1000 \\text{ kg/m}^3$.",
             "question_image": "https://drive.google.com/file/d/1I8QT2TLPGeDCgWNcq4wxcLlIti4BTPf2/preview",
+            "local_question_image": "assets/quiz-images/img_1I8QT2TLPGeDCgWNcq4wxcLlIti4BTPf2.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44908,6 +44810,7 @@ const QUESTIONS = {
             "title": "U-tube Manometer",
             "question": "A U-tube manometer containing mercury ($SG = 13.6$) is connected to a water pipe. The mercury level in the open-to-atmosphere arm is $15 \\text{ cm}$ higher than the level in the arm connected to the pipe. If the water-mercury interface is $10 \\text{ cm}$ below the pipe centerline, calculate the gauge pressure in the pipe. Use $\\gamma_{water} = 9.81 \\text{ kN/m}^3$.",
             "question_image": "https://drive.google.com/file/d/1R6l6oFN7_vqll4CPweskHe9Az101ICVM/preview",
+            "local_question_image": "assets/quiz-images/img_1R6l6oFN7_vqll4CPweskHe9Az101ICVM.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44959,6 +44862,7 @@ const QUESTIONS = {
             "title": "Archimedes’ Principle",
             "question": "A rectangular wooden block with a specific gravity of $0.60$ measures $1.0 \\text{ m}$ wide, $1.0 \\text{ m}$ long, and $0.50 \\text{ m}$ high. If the block is floating in fresh water ($\\rho = 1000 \\text{ kg/m}^3$), what is the submerged depth (draft) of the block?",
             "question_image": "https://drive.google.com/file/d/16ymt0cAGfkE1WFPLjKnBNWXkEowhrtnI/preview",
+            "local_question_image": "assets/quiz-images/img_16ymt0cAGfkE1WFPLjKnBNWXkEowhrtnI.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45014,6 +44918,7 @@ const QUESTIONS = {
             "title": "Hydrostatic Pressure at a Depth",
             "question": "Assuming the density of water is $1,000\\text{ kg/m}^3$ and the acceleration due to gravity is $9.81\\text{ m/s}^2$. What is the hydrostatic pressure at a depth of $20\\text{ meters}$?",
             "question_image": "https://drive.google.com/file/d/1FtRL6ve-T0_5Pg12YlaPa9wkDGYCYsmN/preview",
+            "local_question_image": "assets/quiz-images/img_1FtRL6ve-T0_5Pg12YlaPa9wkDGYCYsmN.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45277,6 +45182,7 @@ const QUESTIONS = {
             "title": "Continuity Equation",
             "question": "Water flows through a horizontal pipe that undergoes a reduction in diameter. At section 1, the diameter is $D_1 = 10$ cm, the pressure is $P_1 = 200$ kPa, and the velocity is $v_1 = 2$ m/s. At section 2, the diameter is $D_2 = 5$ cm. Assuming incompressible, inviscid flow and neglecting changes in elevation, what is the pressure $P_2$ at section 2? (Density of water $\\rho = 1,000$ kg/m$^3$)",
             "question_image": "https://drive.google.com/file/d/1caCwWqkMSVwjqCC-XU0YCnyh6nNILMSs/preview",
+            "local_question_image": "assets/quiz-images/img_1caCwWqkMSVwjqCC-XU0YCnyh6nNILMSs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45328,6 +45234,7 @@ const QUESTIONS = {
             "title": "Force Required to Hold a Bend",
             "question": "Water flows through a $90^\\circ$ horizontal pipe bend at a rate of $0.1\\text{ m}^3/\\text{s}$. The pipe diameter is constant at $20\\text{ cm}$ and the gauge pressure throughout the bend is $150\\text{ kPa}$. What is the magnitude of the horizontal force component (in the direction of the initial flow) required to hold the bend in place?",
             "question_image": "https://drive.google.com/file/d/1s9d4SeVlwEcxlfy2DZY383dnCfMJ79RS/preview",
+            "local_question_image": "assets/quiz-images/img_1s9d4SeVlwEcxlfy2DZY383dnCfMJ79RS.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45438,6 +45345,7 @@ const QUESTIONS = {
             "title": "Reynold’s Number",
             "question": "A circular pipe with a diameter of $D = 0.5 \\text{ m}$ carries water at a velocity of $V = 2 \\text{ m/s}$. If the dynamic viscosity of water is $\\mu = 1.0 \\times 10^{-3} \\text{ Pa} \\cdot \\text{s}$ and its density is $\\rho = 1000 \\text{ kg/m}^3$, calculate the Reynolds number ($Re$) and determine the type of flow.",
             "question_image": "https://drive.google.com/file/d/1JarXLmk5tfSpx9pZAnSPBrDXrU99K-_v/preview",
+            "local_question_image": "assets/quiz-images/img_1JarXLmk5tfSpx9pZAnSPBrDXrU99K-_v.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45764,6 +45672,7 @@ const QUESTIONS = {
             "title": "Pressure Drop due to Friction",
             "question": "Water flows through a horizontal $100 \\text{ mm}$ diameter pipe at a velocity of $2 \\text{ m/s}$. If the pipe length is $50 \\text{ m}$ and the Darcy friction factor is $0.02$, what is the pressure drop due to friction? (Assume density of water $\\rho = 1000 \\text{ kg/m}^3$)",
             "question_image": "https://drive.google.com/file/d/1vaYYDreeYZ9JNn7B0C8HArLc8t_fMRRL/preview",
+            "local_question_image": "assets/quiz-images/img_1vaYYDreeYZ9JNn7B0C8HArLc8t_fMRRL.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45819,6 +45728,7 @@ const QUESTIONS = {
             "title": "Venturi Meter",
             "question": "A horizontal Venturi meter is used to measure water flow. The inlet diameter is $200\\text{ mm}$ and the throat diameter is $100\\text{ mm}$. If the pressure difference between the inlet and the throat is $50\\text{ kPa}$, find the ideal volumetric flow rate. Assume $\\rho = 1000\\text{ kg/m}^3$ and neglect losses.",
             "question_image": "https://drive.google.com/file/d/19pGDfg36t26XzmNxX2vT-4qFYZRzruas/preview",
+            "local_question_image": "assets/quiz-images/img_19pGDfg36t26XzmNxX2vT-4qFYZRzruas.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45870,6 +45780,7 @@ const QUESTIONS = {
             "title": "Bernoulli Principle in Narrowing Pipe",
             "question": "Water at 20°C ($\\rho = 1000$ kg/m$^3$) flows through a horizontal pipe that narrows from a diameter of 10 cm at section 1 to 5 cm at section 2. If the velocity at section 1 is 2 m/s and the gauge pressure is 200 kPa, what is the gauge pressure at section 2, assuming inviscid, incompressible flow?",
             "question_image": "https://drive.google.com/file/d/1OZw69JzlAgn1_7whshvip-ZlniOxrQx-/preview",
+            "local_question_image": "assets/quiz-images/img_1OZw69JzlAgn1_7whshvip-ZlniOxrQx-.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45921,6 +45832,7 @@ const QUESTIONS = {
             "title": "Airfoil Lift Per Unit Span",
             "question": "An airfoil with a chord length of $1.5$ m is tested in a wind tunnel at a flow velocity of $50$ m/s and air density $\\rho = 1.225 \\text{ kg/m}^3$. If the lift coefficient $C_L$ is $0.8$, what is the lift force per unit span (width) of the airfoil?",
             "question_image": "https://drive.google.com/file/d/1WwtxLPN_UksxIbKEwFI4Uy2637ZfzCxh/preview",
+            "local_question_image": "assets/quiz-images/img_1WwtxLPN_UksxIbKEwFI4Uy2637ZfzCxh.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -45972,6 +45884,7 @@ const QUESTIONS = {
             "title": "Drag Force on a Submerged Sphere",
             "question": "A smooth sphere with a diameter of $0.05$ m is submerged in water ($\\rho = 1000 \\text{ kg/m}^3$) and moves at a constant velocity of $2$ m/s. If the drag coefficient for the sphere is $C_D = 0.5$, what is the total drag force acting on the sphere?",
             "question_image": "https://drive.google.com/file/d/14wSjVFouf_lt2IpXPv-cB8D2YigTLDmF/preview",
+            "local_question_image": "assets/quiz-images/img_14wSjVFouf_lt2IpXPv-cB8D2YigTLDmF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46027,6 +45940,7 @@ const QUESTIONS = {
             "title": "Nozzle Flow Stagnation Temperature",
             "question": "A gas flows through a nozzle where the temperature is $250$ K and the Mach number is $M = 2.0$. If the ratio of specific heats is $k = 1.4$, what is the stagnation temperature ($T_0$) of the flow?",
             "question_image": "https://drive.google.com/file/d/1wyHskdogLj4sc2KKmI14rgS52Z8gl6Tq/preview",
+            "local_question_image": "assets/quiz-images/img_1wyHskdogLj4sc2KKmI14rgS52Z8gl6Tq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46082,6 +45996,7 @@ const QUESTIONS = {
             "title": "Mach Number",
             "question": "An aircraft is flying at a speed of $250 \\text{ m/s}$ in air where the ambient temperature is $15^\\circ\\text{C}$. Assuming air behaves as an ideal gas with $k = 1.4$ and $R = 287 \\text{ J/kg} \\cdot \\text{K}$, what is the Mach number of the flow?",
             "question_image": "https://drive.google.com/file/d/1v71Ps4eIKZr-0eRKTAF5BxY3nP0lzhEs/preview",
+            "local_question_image": "assets/quiz-images/img_1v71Ps4eIKZr-0eRKTAF5BxY3nP0lzhEs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46133,6 +46048,7 @@ const QUESTIONS = {
             "title": "Stagnation Temperature of Air",
             "question": "Air ($k = 1.4$) flows at a Mach number of $0.80$ with a static temperature of $300 \\text{ K}$. What is the stagnation (total) temperature of the air?",
             "question_image": "https://drive.google.com/file/d/1FKNrsXz2CWtC4ZMdKfPT8hwLLgcL6xAk/preview",
+            "local_question_image": "assets/quiz-images/img_1FKNrsXz2CWtC4ZMdKfPT8hwLLgcL6xAk.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46224,6 +46140,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview",
+            "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46275,6 +46192,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview",
+            "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46290,6 +46208,7 @@ const QUESTIONS = {
             "title": "Pump Power",
             "question": "A pump is used to move water between two open reservoirs with a surface elevation difference of $20\\text{ m}$. The total head loss in the system is $5\\text{ m}$. If the flow rate is $0.1\\text{ m}^3/\\text{s}$, what is the required power delivered to the fluid by the pump? Use $g = 9.81\\text{ m/s}^2$ and $\\rho = 1000\\text{ kg/m}^3$.",
             "question_image": "https://drive.google.com/file/d/1zo9OIPjadc5le-NqFuLzy4_HXb8PJ4BK/preview",
+            "local_question_image": "assets/quiz-images/img_1zo9OIPjadc5le-NqFuLzy4_HXb8PJ4BK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46345,6 +46264,7 @@ const QUESTIONS = {
             "title": "Pump Power Requirement Calculation",
             "question": "A water pump delivers $500 \\text{ gpm}$ against a total dynamic head of $120 \\text{ ft}$. If the pump efficiency is $75\\%$, what is the required brake horsepower (BHP)?",
             "question_image": "https://drive.google.com/file/d/1HKGKUXX_qNNpTRbHRhhkEbBQBIh9tE5N/preview",
+            "local_question_image": "assets/quiz-images/img_1HKGKUXX_qNNpTRbHRhhkEbBQBIh9tE5N.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46396,6 +46316,7 @@ const QUESTIONS = {
             "title": "Pump and System Curve Intersection",
             "question": "A system curve is defined by the equation $H_s = 25 + 0.05Q^2$ and a pump performance curve is defined by $H_p = 100 - 0.10Q^2$, where $H$ is in feet and $Q$ is in gallons per minute (gpm). At what flow rate $Q$ will the pump operate in this system?",
             "question_image": "https://drive.google.com/file/d/1OBmm0vMficdOuf3bxgc2IQJDyQzeYth9/preview",
+            "local_question_image": "assets/quiz-images/img_1OBmm0vMficdOuf3bxgc2IQJDyQzeYth9.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46483,6 +46404,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ/preview",
+            "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46534,6 +46456,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3/preview",
+            "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46585,6 +46508,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy/preview",
+            "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -75712,6 +75636,7 @@ const QUESTIONS = {
             "title": "Calculating Soil Void Ratio from Porosity",
             "question": "A saturated soil sample has a porosity ($n$) of 0.40. Calculate the void ratio ($e$).",
             "question_image": "https://drive.google.com/file/d/1kAofVihQK66htKLodeyDZoAanKIl7ng1/preview",
+            "local_question_image": "assets/quiz-images/img_1kAofVihQK66htKLodeyDZoAanKIl7ng1.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -75770,6 +75695,7 @@ const QUESTIONS = {
             "title": "Calculating Bulk Unit Weight of Soil",
             "question": "A soil sample has a total weight of 38 lb and a total volume of 0.33 $ft^3$. What is the bulk unit weight ($\\gamma$) of the soil in pcf?",
             "question_image": "https://drive.google.com/file/d/1aLzXVGaP2cod2ItEqapm51QiSZbmvpGw/preview",
+            "local_question_image": "assets/quiz-images/img_1aLzXVGaP2cod2ItEqapm51QiSZbmvpGw.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -75828,6 +75754,7 @@ const QUESTIONS = {
             "title": "Calculating Saturated Unit Weight",
             "question": "Calculate the saturated unit weight ($\\gamma_{sat}$) of a soil with $G_s = 2.70$ and a void ratio $e = 0.50$. Use $\\gamma_w = 62.4$ pcf.",
             "question_image": "https://drive.google.com/file/d/1SLTK1y0akmAnrRgUr1FNcMqc_yqd3vOE/preview",
+            "local_question_image": "assets/quiz-images/img_1SLTK1y0akmAnrRgUr1FNcMqc_yqd3vOE.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -75886,6 +75813,7 @@ const QUESTIONS = {
             "title": "Calculating Soil Dry Unit Weight",
             "question": "If a soil sample has a bulk unit weight of 120 pcf and a water content of 15%, what is its dry unit weight ($\\gamma_d$)?",
             "question_image": "https://drive.google.com/file/d/17cdtATSqye1BOQt-iFn8NECm63dNes5R/preview",
+            "local_question_image": "assets/quiz-images/img_17cdtATSqye1BOQt-iFn8NECm63dNes5R.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93596,6 +93524,7 @@ const QUESTIONS = {
             "title": "Concrete Modulus of Elasticity",
             "question": "For a normal-weight concrete with a specified compressive strength of $f'_{c} = 4,500$ psi, what is the approximate modulus of elasticity ($E_{c}$) according to the ACI 318 code?",
             "question_image": "https://drive.google.com/file/d/14JemX_J5WVXt5e3japz3NsOIiZKqS-Nk/preview",
+            "local_question_image": "assets/quiz-images/img_14JemX_J5WVXt5e3japz3NsOIiZKqS-Nk.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93655,6 +93584,7 @@ const QUESTIONS = {
             "title": "Whitney Stress Block Depth",
             "question": "A rectangular reinforced concrete beam has a width $b = 12$ in and an effective depth $d = 20$ in. It is reinforced with 3 #9 bars ($A_{s} = 3.00 \\text{ in}^{2}$). Given $f'_{c} = 4,000$ psi and $f_{y} = 60,000$ psi, calculate the depth of the equivalent Whitney stress block ($a$).",
             "question_image": "https://drive.google.com/file/d/1RWEQ6IFugw5OIbbecDC00uQF0rZe0mXu/preview",
+            "local_question_image": "assets/quiz-images/img_1RWEQ6IFugw5OIbbecDC00uQF0rZe0mXu.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93714,6 +93644,7 @@ const QUESTIONS = {
             "title": "Design Strength of Tied Column",
             "question": "What is the design axial strength $\\phi P_{n,max}$ for a short, tied column with a gross area $A_{g} = 225 \\text{ in}^{2}$ and total steel area $A_{st} = 4.0 \\text{ in}^{2}$? Assume $f'_{c} = 4,000$ psi and $f_{y} = 60,000$ psi.",
             "question_image": "https://drive.google.com/file/d/1SmHtNjdjoqpZfV-Olmf7q2XyjMBOijD_/preview",
+            "local_question_image": "assets/quiz-images/img_1SmHtNjdjoqpZfV-Olmf7q2XyjMBOijD_.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93769,6 +93700,7 @@ const QUESTIONS = {
             "title": "Required Nominal Stirrup Shear Strength",
             "question": "A beam is subjected to a factored shear force $V_{u} = 60$ kips. The concrete shear strength is $V_{c} = 35$ kips. If the strength reduction factor $\\phi = 0.75$, what is the required nominal shear strength $V_{s}$ to be provided by stirrups?",
             "question_image": "https://drive.google.com/file/d/19rWf3wq6cWU8ZahbEVA-9VqdDVv4Hn_O/preview",
+            "local_question_image": "assets/quiz-images/img_19rWf3wq6cWU8ZahbEVA-9VqdDVv4Hn_O.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93824,6 +93756,7 @@ const QUESTIONS = {
             "title": "Flexure Strength Reduction Factor",
             "question": "In the design of a singly reinforced rectangular beam, if the net tensile strain in the extreme tension steel $\\epsilon_{t}$ is equal to 0.008, what is the appropriate strength reduction factor $\\phi$ for flexure?",
             "question_image": "https://drive.google.com/file/d/19P_cm4x99HIrOfOCfuZo9lGGtLyWIBFf/preview",
+            "local_question_image": "assets/quiz-images/img_19P_cm4x99HIrOfOCfuZo9lGGtLyWIBFf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93879,6 +93812,7 @@ const QUESTIONS = {
             "title": "Minimum Flexural Reinforcement Area",
             "question": "Calculate the minimum area of flexural reinforcement $A_{s,min}$ for a rectangular beam with $b_{w} = 14$ in, $d = 24$ in, $f'_{c} = 4,000$ psi, and $f_{y} = 60,000$ psi.",
             "question_image": "https://drive.google.com/file/d/1WHYnub1TbshHuYTgxZxs87pckM_9iMJ8/preview",
+            "local_question_image": "assets/quiz-images/img_1WHYnub1TbshHuYTgxZxs87pckM_9iMJ8.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93934,6 +93868,7 @@ const QUESTIONS = {
             "title": "Whitney Stress Block Parameter Beta1",
             "question": "For a beam with $f'_{c} = 5,000$ psi, what is the value of the stress block parameter $\\beta_{1}$ used in the Whitney stress block?",
             "question_image": "https://drive.google.com/file/d/1z3B0-aRZP5QI1MwJ7kI8Ufzy1ByyK7bq/preview",
+            "local_question_image": "assets/quiz-images/img_1z3B0-aRZP5QI1MwJ7kI8Ufzy1ByyK7bq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -93985,6 +93920,7 @@ const QUESTIONS = {
             "title": "Effective Flange Width of T-Beam",
             "question": "An interior T-beam has a slab thickness $h_{f} = 4$ in, a web width $b_{w} = 12$ in, and an effective depth $d = 18$ in. The beam span length is $L = 20$ ft, and the clear distance to the adjacent beams is $s_{w} = 8$ ft. Determine the effective flange width $b_{e}$ according to ACI 318.",
             "question_image": "https://drive.google.com/file/d/1v1pPYQRVgqndDHwOh2UVosm0H6V4ih40/preview",
+            "local_question_image": "assets/quiz-images/img_1v1pPYQRVgqndDHwOh2UVosm0H6V4ih40.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94087,6 +94023,7 @@ const QUESTIONS = {
             "title": "Nominal Moment Capacity Calculation",
             "question": "What is the nominal moment capacity $M_{n}$ of a singly reinforced beam where $A_{s} = 2.0 \\text{ in}^{2}$, $d = 15$ in, and the stress block depth $a = 4.0$ in? Use $f_{y} = 60,000$ psi.",
             "question_image": "https://drive.google.com/file/d/1LH_RseAPuoh267xXbbJK3k018zXxPc3s/preview",
+            "local_question_image": "assets/quiz-images/img_1LH_RseAPuoh267xXbbJK3k018zXxPc3s.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94142,6 +94079,7 @@ const QUESTIONS = {
             "title": "Tributary Area for an Interior Column",
             "question": "An interior column in a multi-story building supports a floor area with column spacing of 24 ft by 30 ft. What is the tributary area ($A_{t}$) for this column?",
             "question_image": "https://drive.google.com/file/d/1eh26Gn7agcqG0PBy0RglgM-UF_pYjGNd/preview",
+            "local_question_image": "assets/quiz-images/img_1eh26Gn7agcqG0PBy0RglgM-UF_pYjGNd.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94197,6 +94135,7 @@ const QUESTIONS = {
             "title": "LRFD Factored Design Floor Load",
             "question": "Using LRFD load combinations, determine the factored design floor load ($w_{u}$) given a dead load ($D$) of 50 psf and a live load ($L$) of 80 psf.",
             "question_image": "https://drive.google.com/file/d/1Te0Cr78IHsKIt_y9Kl5UmGqZancfEjxB/preview",
+            "local_question_image": "assets/quiz-images/img_1Te0Cr78IHsKIt_y9Kl5UmGqZancfEjxB.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94252,6 +94191,7 @@ const QUESTIONS = {
             "title": "Dead Weight of Concrete Beam",
             "question": "A reinforced concrete beam has cross-sectional dimensions of 12 in $\\times$ 24 in. If the unit weight of reinforced concrete is 150 pcf, what is the dead weight of the beam per linear foot?",
             "question_image": "https://drive.google.com/file/d/1xAZsSaIwP9_f8Ja03HW2LJ0VD6K8VU1d/preview",
+            "local_question_image": "assets/quiz-images/img_1xAZsSaIwP9_f8Ja03HW2LJ0VD6K8VU1d.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94307,6 +94247,7 @@ const QUESTIONS = {
             "title": "Reduced Live Load Calculation",
             "question": "According to ASCE 7, the reduced live load $L$ for a member with a tributary area $A_{t}$ and live load element factor $K_{LL}$ is given by $L = L_{0}[0.25 + 15/\\sqrt{K_{LL}A_{t}}]$. Given $L_{0} = 100$ psf, $K_{LL} = 4$ for an interior column, and $A_{t} = 400$ sq ft, calculate the reduced live load.",
             "question_image": "https://drive.google.com/file/d/1zphySDOweGcWBenbjgOgozlB7mYUW1K5/preview",
+            "local_question_image": "assets/quiz-images/img_1zphySDOweGcWBenbjgOgozlB7mYUW1K5.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94366,6 +94307,7 @@ const QUESTIONS = {
             "title": "Maximum Shear at Midspan (Moving Load)",
             "question": "A simply supported beam has a span of 20 ft. A single concentrated moving load of 10 kips travels across the beam. What is the maximum shear force that can occur at the midspan (point $C, x = 10$ ft)?",
             "question_image": "https://drive.google.com/file/d/1Gfx0id4LDTJVgYJRd2Yrlnu_NoXd1K-e/preview",
+            "local_question_image": "assets/quiz-images/img_1Gfx0id4LDTJVgYJRd2Yrlnu_NoXd1K-e.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94425,6 +94367,7 @@ const QUESTIONS = {
             "title": "Flat Roof Snow Load",
             "question": "Calculate the flat roof snow load ($p_{f}$) for a building given a ground snow load $p_{g} = 40$ psf, exposure factor $C_{e} = 1.0$, thermal factor $C_{t} = 1.0$, and importance factor $I_{s} = 1.1$. Use the formula $p_{f} = 0.7C_{e}C_{t}I_{s}p_{g}$.",
             "question_image": "https://drive.google.com/file/d/1Scf5YDzB-SMkjr8ZP06hv906YrGufOby/preview",
+            "local_question_image": "assets/quiz-images/img_1Scf5YDzB-SMkjr8ZP06hv906YrGufOby.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94476,6 +94419,7 @@ const QUESTIONS = {
             "title": "Maximum Bending Moment (Moving Load)",
             "question": "What is the maximum bending moment in a 30 ft simply supported beam caused by a moving concentrated load of 20 kips?",
             "question_image": "https://drive.google.com/file/d/1a_M1B3TAJsEzZmu8CuDCcrSSx0zeP0EV/preview",
+            "local_question_image": "assets/quiz-images/img_1a_M1B3TAJsEzZmu8CuDCcrSSx0zeP0EV.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94531,6 +94475,7 @@ const QUESTIONS = {
             "title": "Wind Velocity Pressure Calculation",
             "question": "Determine the wind velocity pressure ($q_{z}$) in psf at height $z$ using the formula $q_{z} = 0.00256 K_{z} K_{zt} K_{d} V^2$ where $K_{z} = 0.85, K_{zt} = 1.0, K_{d} = 0.85$, and the basic wind speed $V = 120$ mph.",
             "question_image": "https://drive.google.com/file/d/1YlK1YY1obGPk17KjoPqqVvyGqivk2fQ7/preview",
+            "local_question_image": "assets/quiz-images/img_1YlK1YY1obGPk17KjoPqqVvyGqivk2fQ7.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94582,6 +94527,7 @@ const QUESTIONS = {
             "title": "Distributed Live Load on a Joist",
             "question": "A floor system has floor joists spaced at 4 ft on center (OC) that span 20 ft to a supporting girder. If the floor live load is 60 psf, what is the distributed live load ($w_{L}$) acting on an interior joist?",
             "question_image": "https://drive.google.com/file/d/1S8XrE3cr4zkMM-KTumpSFq3oM-SuPM1P/preview",
+            "local_question_image": "assets/quiz-images/img_1S8XrE3cr4zkMM-KTumpSFq3oM-SuPM1P.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -94637,6 +94583,7 @@ const QUESTIONS = {
             "title": "Maximum Reaction (Moving Wheel Loads)",
             "question": "Two wheel loads, spaced 6 ft apart, move across a simply supported beam with a 20 ft span. Each wheel load is 5 kips. What is the maximum vertical reaction at a support?",
             "question_image": "https://drive.google.com/file/d/1uHAmoNcV9k7O1gcEyxatx6rjV-yEa69e/preview",
+            "local_question_image": "assets/quiz-images/img_1uHAmoNcV9k7O1gcEyxatx6rjV-yEa69e.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -111107,7 +111054,7 @@ const QUESTIONS = {
                     {
                         "title": "Note",
                         "times_presented": 0,
-            "options": [
+                        "options": [
                             "Both A and D are correct, but 3dB is standard."
                         ],
                         "content": "Also known as the half-power point."
@@ -210000,4 +209947,3 @@ const QUESTIONS = {
         }
     ]
 };
-
