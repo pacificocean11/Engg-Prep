@@ -3503,6 +3503,40 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         let realUsers = [...MOCK_LEADERBOARD];
         let firestoreError = null;
 
+        try {
+            if (window.firebaseDb) {
+                // Fetch all users to ensure we don't miss legacy accounts that only have 'points' instead of 'userPoints'
+                // This resolves the missing 22 users issue (76 total users vs 54).
+                const snapshot = await window.firebaseDb.collection("users").limit(300).get();
+                if (!snapshot.empty) {
+                    realUsers = [];
+                    snapshot.forEach(doc => {
+                        const data = doc.data();
+                        if (data.username) {
+                            realUsers.push({
+                                username: data.username,
+                                points: (data.userPoints !== undefined ? data.userPoints : data.points) || 0,
+                                discipline: data.discipline || 'Other',
+                                country: data.country || 'Other',
+                                avatar: data.avatar || null,
+                                profilePic: data.profilePic || null,
+                                trend: data.trend || 'same',
+                                streak: data.streak || 0
+                            });
+                        }
+                    });
+                    
+                    // Sort descending in memory since we fetched all
+                    realUsers.sort((a, b) => b.points - a.points);
+                    // Trim to top 100
+                    realUsers = realUsers.slice(0, 100);
+                }
+            }
+        } catch (e) {
+            console.error("Failed to fetch leaderboard from Firestore", e);
+            firestoreError = e.message;
+        }
+
         const userCountry = state.user.country || 'Other';
         const userStreak = calculateStreak();
 
@@ -3591,7 +3625,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
             const preset = AVATAR_PRESETS.find(p => p.id === user.avatar);
             let avatarHTML = '';
-            if (user.profilePic && !user.avatar) {
+            if (user.profilePic) {
                 avatarHTML = `<img src="${user.profilePic}" class="w-full h-full object-cover" alt="${displayName}">`;
             } else if (preset) {
                 avatarHTML = `

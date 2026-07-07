@@ -1,27 +1,28 @@
-const puppeteer = require('puppeteer');
-const path = require('path');
-
-(async () => {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    page.on('pageerror', error => console.log('PAGE ERROR:', error.message));
-    
-    await page.goto('file://' + path.resolve('www/index.html'));
-    
-    // wait a bit for initialization
-    await new Promise(r => setTimeout(r, 1000));
-    
-    console.log("Clicking 'study' on bottom nav...");
-    try {
-        await page.click('nav#bottom-nav li[data-page="study"]');
-        console.log("Clicked successfully.");
-    } catch (e) {
-        console.log("Click failed:", e.message);
-    }
-    
-    // wait a bit to see if there are errors
-    await new Promise(r => setTimeout(r, 1000));
-    
-    await browser.close();
-})();
+const fs = require('fs');
+const jsdom = require('jsdom');
+const html = fs.readFileSync('./www/index.html', 'utf8');
+const vc = new jsdom.VirtualConsole();
+vc.on('jsdomError', e => { 
+  if(!e.message.includes('localStorage') && !e.message.includes('implemented')) 
+    console.error('JS ERROR:', e); 
+});
+vc.on('error', e => console.error('ERR:', e));
+const dom = new jsdom.JSDOM(html, { 
+  runScripts: 'dangerously', 
+  resources: 'usable', 
+  virtualConsole: vc, 
+  url: 'http://localhost' 
+});
+dom.window.addEventListener('load', () => { 
+  console.log('Loaded.'); 
+  setTimeout(() => { 
+    try { 
+      console.log('Active page before:', dom.window.document.querySelector('.page.active')?.id);
+      console.log('Clicking study nav...'); 
+      dom.window.document.querySelector('li[data-page="study"]').click(); 
+      console.log('Active page after:', dom.window.document.querySelector('.page.active')?.id);
+    } catch(err) { 
+      console.error('Click failed:', err); 
+    } 
+  }, 2000); 
+});

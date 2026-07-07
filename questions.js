@@ -48650,7 +48650,8 @@ const QUESTIONS = {
             "topic": "DC Circuit Analysis",
             "title": "Ohm’s Law",
             "question": "A DC circuit contains a voltage source $V_s = 24 \\text{ V}$ connected to a network of resistors. Resistor $R_1 = 4 \\Omega$ is in series with a parallel combination of resistors $R_2 = 12 \\Omega$ and $R_3 = 6 \\Omega$. Determine the total current $I_s$ flowing from the voltage source.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Db2wnOJ00T5EpRiKUCOMwbzW9OdRNlBU/preview",
+            "local_question_image": "assets/quiz-images/img_1Db2wnOJ00T5EpRiKUCOMwbzW9OdRNlBU.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49007,7 +49008,8 @@ const QUESTIONS = {
             "topic": "AC Circuit Analysis",
             "title": "Capacitive Reactance",
             "question": "An AC voltage source $v(t) = 170 \\cos(120\\pi t)$ V is connected across a capacitor with a capacitance $C = 100 \\mu$F. What is the magnitude of the capacitive reactance $X_C$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1M9Lr9lYfzexQYp_MXntiRY5MC4I95M97/preview",
+            "local_question_image": "assets/quiz-images/img_1M9Lr9lYfzexQYp_MXntiRY5MC4I95M97.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49058,7 +49060,8 @@ const QUESTIONS = {
             "topic": "AC Circuit Analysis",
             "title": "RMS Value",
             "question": "A series circuit consists of a resistance $R = 10 \\Omega$, an inductance $L = 50 \\text{ mH}$, and a capacitance $C = 100 \\mu\\text{F}$. The circuit is driven by a sinusoidal voltage source $v(t) = 120\\sqrt{2} \\cos(120\\pi t) \\text{ V}$. What is the magnitude of the steady-state RMS current $I_{rms}$ in the circuit?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1e5-aLMQx1ZQTByxxUukSVk6prafZQbjD/preview",
+            "local_question_image": "assets/quiz-images/img_1e5-aLMQx1ZQTByxxUukSVk6prafZQbjD.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49109,7 +49112,8 @@ const QUESTIONS = {
             "topic": "AC Circuit Analysis",
             "title": "3-Phase Power",
             "question": "A balanced wye-connected ($Y$) load has a per-phase impedance of $Z_Y = 30 + j40 \\Omega$. The load is supplied by a balanced three-phase source with a line-to-line voltage of $V_{LL} = 450 \\text{ V}_{\\text{rms}}$. Calculate the total complex power $S$ absorbed by the load.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1mH95Hk2k14gn8O9GyRRMtgbxOsYednt4/preview",
+            "local_question_image": "assets/quiz-images/img_1mH95Hk2k14gn8O9GyRRMtgbxOsYednt4.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49211,7 +49215,8 @@ const QUESTIONS = {
             "topic": "AC Circuit Analysis",
             "title": "Impedance of an AC Circuit",
             "question": "A series AC circuit consists of a resistor $R = 30\\ \\Omega$ and an inductor $L = 0.1\\ \\text{H}$. If the circuit is driven by a voltage source at a frequency of $f = 60\\ \\text{Hz}$, what is the magnitude of the total impedance $|Z|$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/16x4ZwF5YsmKPf_IYlk6JCXhXbEaAI4On/preview",
+            "local_question_image": "assets/quiz-images/img_16x4ZwF5YsmKPf_IYlk6JCXhXbEaAI4On.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49262,7 +49267,8 @@ const QUESTIONS = {
             "topic": "AC Circuit Analysis",
             "title": "Capacitors in Series and Parallel",
             "question": "Three capacitors are arranged such that a $10\\ \\mu\\text{F}$ capacitor ($C_1$) is in series with a parallel combination of two $20\\ \\mu\\text{F}$ capacitors ($C_2$ and $C_3$). What is the equivalent capacitance ($C_{eq}$) of the network?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18Ku-DDQ_iiwcGqSztWQeQRXhwXE8vR-r/preview",
+            "local_question_image": "assets/quiz-images/img_18Ku-DDQ_iiwcGqSztWQeQRXhwXE8vR-r.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49313,7 +49319,8 @@ const QUESTIONS = {
             "topic": "AC Circuit Analysis",
             "title": "RC Transient",
             "question": "A series RC circuit consists of a $100\\ \\text{V}$ DC source, a $50\\ \\text{k}\\Omega$ resistor, and a $20\\ \\mu\\text{F}$ capacitor. If the capacitor is initially uncharged and the switch is closed at $t = 0$, what is the voltage across the capacitor after $1.0$ second?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1j4biInZi1OecPHzbiVtptQwlKAgZFlJT/preview",
+            "local_question_image": "assets/quiz-images/img_1j4biInZi1OecPHzbiVtptQwlKAgZFlJT.jpg",
             "times_presented": 0,
             "options": [
                 {
