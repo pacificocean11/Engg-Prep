@@ -436,10 +436,18 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                         
                         try {
                             if (typeof window.loadFromFirebase === 'function') await window.loadFromFirebase();
-                            if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
-                            await checkAdminMessages();
                         } catch (loadErr) {
-                            console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
+                            console.error("⚠️ loadFromFirebase failed (likely localhost restriction):", loadErr);
+                        }
+                        try {
+                            if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
+                        } catch (e) {
+                            console.error("⚠️ setupFirestoreSyncListener failed:", e);
+                        }
+                        try {
+                            await checkAdminMessages();
+                        } catch (e) {
+                            console.error("⚠️ checkAdminMessages failed:", e);
                         }
                         
                         if (state.currentPage === 'dashboard') {
@@ -461,10 +469,18 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                         
                         try {
                             if (typeof window.loadFromFirebase === 'function') await window.loadFromFirebase();
-                            if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
-                            await checkAdminMessages();
                         } catch (loadErr) {
-                            console.error("⚠️ Skipping subsequent operations because loadFromFirebase failed:", loadErr);
+                            console.error("⚠️ loadFromFirebase failed (likely localhost restriction):", loadErr);
+                        }
+                        try {
+                            if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
+                        } catch (e) {
+                            console.error("⚠️ setupFirestoreSyncListener failed:", e);
+                        }
+                        try {
+                            await checkAdminMessages();
+                        } catch (e) {
+                            console.error("⚠️ checkAdminMessages failed:", e);
                         }
                     }
                 } else {
@@ -591,17 +607,17 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
             // 1. UID-keyed document
             if (uid) {
-                const uidDoc = await null('users').doc(uid).get(opts);
+                const uidDoc = await window.firebaseDb.collection('users').doc(uid).get(opts);
                 if (uidDoc.exists) docsToCheck.push(uidDoc);
             }
 
             // 2. Username-keyed document
-            const userDoc = await null('users').doc(state.user.username).get(opts);
+            const userDoc = await window.firebaseDb.collection('users').doc(state.user.username).get(opts);
             if (userDoc.exists && (!uid || userDoc.id !== uid)) docsToCheck.push(userDoc);
 
             // 3. Full collection scan (catches any remaining edge case)
             if (docsToCheck.length === 0) {
-                const snap = await null('users').where('username', '==', state.user.username).limit(1).get(opts);
+                const snap = await window.firebaseDb.collection('users').where('username', '==', state.user.username).limit(1).get(opts);
                 if (!snap.empty) docsToCheck.push(snap.docs[0]);
             }
 
@@ -644,10 +660,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             };
 
             if (uid) {
-                const d = await null('users').doc(uid).get();
+                const d = await window.firebaseDb.collection('users').doc(uid).get();
                 if (d.exists) addMessages(d.data().adminMessages || []);
             }
-            const d2 = await null('users').doc(state.user.username).get();
+            const d2 = await window.firebaseDb.collection('users').doc(state.user.username).get();
             if (d2.exists && (!uid || d2.id !== uid)) addMessages(d2.data().adminMessages || []);
 
             if (allMessages.length === 0) { container.classList.add('hidden'); return; }
@@ -692,11 +708,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         try {
             // 1. Query specifically by username (case-sensitive and lowercase)
-            const userSnap = await null('users').where('username', '==', recipient).get();
-            const userSnapLower = await null('users').where('username', '==', recipientLower).get();
+            const userSnap = await window.firebaseDb.collection('users').where('username', '==', recipient).get();
+            const userSnapLower = await window.firebaseDb.collection('users').where('username', '==', recipientLower).get();
             
             // 2. Query specifically by email
-            const emailSnap = await null('users').where('email', '==', recipientLower).get();
+            const emailSnap = await window.firebaseDb.collection('users').where('email', '==', recipientLower).get();
             
             const updatePromises = [];
             const processedDocs = new Set();
@@ -722,7 +738,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             processSnap(emailSnap);
 
             // 2. ALSO write to the direct document ID (dual-write backup)
-            const recipientDoc = await null('users').doc(recipientLower).get();
+            const recipientDoc = await window.firebaseDb.collection('users').doc(recipientLower).get();
             if (recipientDoc.exists && !docsUpdated.includes(recipientDoc.id)) {
                 const existing = recipientDoc.data().adminMessages || [];
                 let updated = [...existing, newMsg];
@@ -1995,7 +2011,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'step-image-container';
                     let fallbackAttr = localStepImg ? ` onerror="this.onerror=null; this.src='${localStepImg}'"` : '';
-                    imgDiv.innerHTML = `<img src="${stepImg}" alt="Step ${idx + 1} Diagram" class="quiz-image"${fallbackAttr}>`;
+                    imgDiv.innerHTML = `<img src="${toDriveImgUrl(stepImg)}" alt="Step ${idx + 1} Diagram" class="quiz-image"${fallbackAttr}>`;
                     stepDiv.appendChild(imgDiv);
                 } else if (step.tikz) {
                     const tikzDiv = document.createElement('div');
@@ -3502,9 +3518,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         let realUsers = [...MOCK_LEADERBOARD];
         let firestoreError = null;
+        
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
         try {
-            if (window.firebaseDb) {
+            if (window.firebaseDb && !isLocalhost) {
                 // Fetch all users to ensure we don't miss legacy accounts that only have 'points' instead of 'userPoints'
                 // This resolves the missing 22 users issue (76 total users vs 54).
                 const snapshot = await window.firebaseDb.collection("users").limit(300).get();
@@ -4198,6 +4216,23 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 }
             };
             
+            // Collect all local images from QUESTIONS and ADVANCED_QUESTIONS
+            const imageUrls = [];
+            try {
+                if (typeof QUESTIONS !== 'undefined') {
+                    QUESTIONS.forEach(q => {
+                        if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
+                        if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
+                    });
+                }
+                if (typeof ADVANCED_QUESTIONS !== 'undefined') {
+                    ADVANCED_QUESTIONS.forEach(q => {
+                        if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
+                        if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
+                    });
+                }
+            } catch (e) { console.error("Could not collect local images", e); }
+
             navigator.serviceWorker.controller.postMessage({
                 type: 'CACHE_ASSETS',
                 urls: [
@@ -4206,7 +4241,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     './app.js',
                     './questions.js',
                     './advanced_questions.js',
-                    './style.css'
+                    './style.css',
+                    ...imageUrls
                 ]
             }, [messageChannel.port2]);
         } else {
