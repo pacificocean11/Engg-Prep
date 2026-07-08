@@ -38,7 +38,11 @@ window.saveUserProgress = async function(userId, progressData) {
         console.log(`📤 Sending data to Firestore for user: ${userId}`, progressData);
         // Firestore does not support undefined values, so we clean the object.
         const cleanData = JSON.parse(JSON.stringify(progressData));
-        await db.collection("users").doc(userId).set(cleanData, { merge: true });
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Firestore write timed out after 10s')), 10000)
+        );
+        const setPromise = db.collection("users").doc(userId).set(cleanData, { merge: true });
+        await Promise.race([setPromise, timeoutPromise]);
         console.log("✅ Progress successfully synced to Firestore!");
     } catch (e) {
         console.error("❌ Firestore sync error details:", e);

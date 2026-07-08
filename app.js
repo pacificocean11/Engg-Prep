@@ -615,19 +615,20 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
             const docsToCheck = [];
 
+            const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Admin check timeout')), 10000));
             // 1. UID-keyed document
             if (uid) {
-                const uidDoc = await window.firebaseDb.collection('users').doc(uid).get(opts);
+                const uidDoc = await Promise.race([window.firebaseDb.collection('users').doc(uid).get(opts), timeoutPromise]);
                 if (uidDoc.exists) docsToCheck.push(uidDoc);
             }
 
             // 2. Username-keyed document
-            const userDoc = await window.firebaseDb.collection('users').doc(state.user.username).get(opts);
+            const userDoc = await Promise.race([window.firebaseDb.collection('users').doc(state.user.username).get(opts), timeoutPromise]);
             if (userDoc.exists && (!uid || userDoc.id !== uid)) docsToCheck.push(userDoc);
 
             // 3. Full collection scan (catches any remaining edge case)
             if (docsToCheck.length === 0) {
-                const snap = await window.firebaseDb.collection('users').where('username', '==', state.user.username).limit(1).get(opts);
+                const snap = await Promise.race([window.firebaseDb.collection('users').where('username', '==', state.user.username).limit(1).get(opts), timeoutPromise]);
                 if (!snap.empty) docsToCheck.push(snap.docs[0]);
             }
 
@@ -671,11 +672,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 msgs.forEach(m => { if (!seenIds.has(m.id)) { seenIds.add(m.id); allMessages.push(m); } });
             };
 
+            const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Admin inbox timeout')), 10000));
             if (uid) {
-                const d = await window.firebaseDb.collection('users').doc(uid).get();
+                const d = await Promise.race([window.firebaseDb.collection('users').doc(uid).get(), timeoutPromise]);
                 if (d.exists) addMessages(d.data().adminMessages || []);
             }
-            const d2 = await window.firebaseDb.collection('users').doc(state.user.username).get();
+            const d2 = await Promise.race([window.firebaseDb.collection('users').doc(state.user.username).get(), timeoutPromise]);
             if (d2.exists && (!uid || d2.id !== uid)) addMessages(d2.data().adminMessages || []);
 
             if (allMessages.length === 0) { container.classList.add('hidden'); return; }
@@ -3382,6 +3384,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     localStorage.setItem(key, preservedData[key]);
                 }
             });
+            
+            if (window.firebase && window.firebase.auth) {
+                try {
+                    await window.firebase.auth().signOut();
+                } catch (e) {
+                    console.error("Firebase sign out error:", e);
+                }
+            }
             
             window.location.href = 'login.html';
         });

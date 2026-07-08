@@ -1,24 +1,24 @@
-const CACHE_NAME = 'engg-prep-cache-v21';
+const CACHE_NAME = 'engg-prep-cache-v24';
 const APP_SHELL = [
-  '/',
-  '/index.html',
-  '/login.html',
-  '/app.js',
-  '/questions.js',
-  '/advanced_questions.js',
-  '/style.css',
-  '/firebase-config.js',
-  '/js/firebase-sync.js',
-  '/js/particles.js',
-  '/js/scratchpad.js',
-  '/js/global-search.js',
-  '/js/onboarding.js',
-  '/js/achievements.js',
-  '/js/tts.js',
-  '/js/weakness-srs.js',
-  '/js/daily-quests.js',
-  '/manifest.json',
-  '/engg_tv_logo.png'
+  './',
+  './index.html',
+  './login.html',
+  './app.js',
+  './questions.js',
+  './advanced_questions.js',
+  './style.css',
+  './firebase-config.js',
+  './js/data-manager.js',
+  './js/particles.js',
+  './js/scratchpad.js',
+  './js/global-search.js',
+  './js/onboarding.js',
+  './js/achievements.js',
+  './js/tts.js',
+  './js/weakness-srs.js',
+  './js/daily-quests.js',
+  './manifest.json',
+  './engg_tv_logo.png'
 ];
 
 // Install Event - Precache App Shell
