@@ -189,6 +189,192 @@ const OTHER_SUBJECTS = [
         ]
     }
 ];
+const MECHANICAL_SUBJECTS = [
+    {
+        "id": "math",
+        "name": "Mathematics",
+        "icon": "📐",
+        "topics": [
+            "Analytic Geometry",
+            "Differential Equations",
+            "Numerical Methods",
+            "Linear Algebra",
+            "Calculus"
+        ]
+    },
+    {
+        "id": "stats",
+        "name": "Probability and Statistics",
+        "icon": "📊",
+        "topics": [
+            "Measures of Central Tendencies and Dispersions",
+            "Expected Value",
+            "Regression and Curve Fitting",
+            "Probability Distributions",
+            "Probability",
+            "Statistics"
+        ]
+    },
+    {
+        "id": "ethics",
+        "name": "Engineering Ethics and Societal Impacts",
+        "icon": "🤝",
+        "topics": [
+            "Codes of Ethics",
+            "Public Health, Safety, and Welfare",
+            "Intellectual Property",
+            "Societal Considerations"
+        ]
+    },
+    {
+        "id": "econ",
+        "name": "Engineering Economics",
+        "icon": "💰",
+        "topics": [
+            "Time Value of Money",
+            "Cost Types and Breakdowns",
+            "Economic Analyses"
+        ]
+    },
+    {
+        "id": "electricity",
+        "name": "Electricity, Power, and Magnetism",
+        "icon": "⚡",
+        "topics": [
+            "Electrostatics"
+        ]
+    },
+    {
+        "id": "statics",
+        "name": "Statics",
+        "icon": "⚖️",
+        "topics": [
+            "Resultants of Force Systems",
+            "Concurrent Force Systems",
+            "Equilibrium of Rigid Bodies",
+            "Frames and Trusses",
+            "Centroids and Moments of Inertia",
+            "Static Friction"
+        ]
+    },
+    {
+        "id": "dynamics",
+        "name": "Dynamics",
+        "icon": "🏎️",
+        "topics": [
+            "Kinematics of Particles",
+            "Kinetic Friction",
+            "Newton's Second Law for Particles",
+            "Work-Energy of Particles",
+            "Impulse-Momentum of Particles",
+            "Kinematics of Rigid Bodies",
+            "Kinematics of Mechanisms",
+            "Newton's Second Law for Rigid Bodies",
+            "Work-Energy of Rigid Bodies",
+            "Impulse-Momentum of Rigid Bodies",
+            "Free and Forced Vibrations"
+        ]
+    },
+    {
+        "id": "materials-strength",
+        "name": "Strength of Materials",
+        "icon": "🏗️",
+        "topics": [
+            "Shear and Moment Diagrams",
+            "Stress Transformations and Mohr Circle",
+            "Stress/Strain Caused by Axial Loads",
+            "Stress/Strain Caused by Bending Loads",
+            "Stress/Strain Caused by Torsional Loads",
+            "Stress/Strain Caused by Shear",
+            "Stress/Strain Caused by Temp. Changes",
+            "Combined Loading",
+            "Deformations",
+            "Column Buckling",
+            "Statically Indeterminate Systems"
+        ]
+    },
+    {
+        "id": "materials-science",
+        "name": "Materials Science",
+        "icon": "🔬",
+        "topics": [
+            "Properties",
+            "Stress-Strain Diagrams",
+            "Ferrous Metals",
+            "Nonferrous Metals",
+            "Engineered Materials",
+            "Manufacturing Processes",
+            "Phase Diagrams, Phase Transformation, and Heat Treating",
+            "Materials Selection",
+            "Corrosion Mechanisms and Control",
+            "Failure Mechanisms"
+        ]
+    },
+    {
+        "id": "fluids",
+        "name": "Fluid Mechanics",
+        "icon": "🌊",
+        "topics": [
+            "Fluid Properties",
+            "Fluid Statics",
+            "Energy, Impulse, and Momentum",
+            "Internal Flow",
+            "External Flow",
+            "Compressible Flow",
+            "Power and Efficiency",
+            "Performance Curves",
+            "Scaling Laws"
+        ]
+    },
+    {
+        "id": "thermo",
+        "name": "Thermodynamics",
+        "icon": "🔥",
+        "topics": [
+            "Laws of thermodynamics",
+            "Properties of substances",
+            "Thermodynamic cycles"
+        ]
+    },
+    {
+        "id": "heat",
+        "name": "Heat Transfer",
+        "icon": "🌡️",
+        "topics": [
+            "Conduction",
+            "Convection",
+            "Radiation"
+        ]
+    },
+    {
+        "id": "instr-controls",
+        "name": "Measurements, Instrumentation, and Controls",
+        "icon": "🕹️",
+        "topics": [
+            "Sensors and Transducers",
+            "Data Acquisition",
+            "Logic Diagrams"
+        ]
+    },
+    {
+        "id": "design",
+        "name": "Mechanical Design and Analysis",
+        "icon": "⚙️",
+        "topics": [
+            "Deformation and Stiffness",
+            "Springs",
+            "Pressure Vessels and Piping",
+            "Bearings",
+            "Power Screws",
+            "Power Transmission",
+            "Joining Methods",
+            "Manufacturability",
+            "Quality and Reliability",
+            "Components",
+            "Engineering Drawing Interpretations and GD & T"
+        ]
+    }
+];
 const CIVIL_SUBJECTS = [
     {
         "id": "math",

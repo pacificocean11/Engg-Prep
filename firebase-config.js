@@ -15,18 +15,22 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Enable offline persistence
-db.enablePersistence({ synchronizeTabs: true })
-  .then(() => {
-    console.log("💾 Firestore offline persistence enabled!");
-  })
-  .catch((err) => {
-    if (err.code === 'failed-precondition') {
-      console.warn("⚠️ Offline persistence can only be enabled in one tab at a time.");
-    } else if (err.code === 'unimplemented') {
-      console.warn("⚠️ Browser does not support offline persistence features.");
-    }
-  });
+// Only enable offline persistence in production (not localhost) to prevent hanging issues
+if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    db.enablePersistence({ synchronizeTabs: true })
+      .then(() => {
+        console.log("💾 Firestore offline persistence enabled!");
+      })
+      .catch((err) => {
+        if (err.code === 'failed-precondition') {
+          console.warn("⚠️ Offline persistence can only be enabled in one tab at a time.");
+        } else if (err.code === 'unimplemented') {
+          console.warn("⚠️ Browser does not support offline persistence features.");
+        }
+      });
+} else {
+    console.log("🏠 Localhost detected. Offline persistence disabled to ensure direct server connection.");
+}
 
 console.log("🔥 Firebase Initialized successfully!");
 

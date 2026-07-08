@@ -401,9 +401,17 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         updateDashboardStats();
         updateGamificationUI();
         
+        
         // Listen for Firebase Auth state changes to restore missing UIDs or update active session info
+        
         if (window.firebase) {
+            // Safety timeout: if onAuthStateChanged never fires (e.g. Firebase SDK hangs), force local mode
+            const authTimeout = setTimeout(() => {
+                if (typeof updateSyncStatus === 'function') updateSyncStatus('local');
+            }, 3000);
+            
             firebase.auth().onAuthStateChanged(async (user) => {
+                clearTimeout(authTimeout);
                 if (user) {
                     console.log("🔥 Firebase Auth state restored:", user.email, user.uid);
                     if (state.user) {
@@ -592,6 +600,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     }
     /** Check for unread admin messages on login and show toast */
     async function checkAdminMessages() {
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        if (isLocalhost) { console.log('🏠 Localhost detected. Skipping admin message check.'); return; }
         if (!window.firebaseDb) { console.warn('window.firebaseDb is NULL - Firebase not loaded!'); return; }
         if (!state.user.username) { console.warn('state.user.username is empty'); return; }
         if (state.user.username === 'guest') return;
@@ -644,6 +654,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     /** Render inbox in the support-view page */
     /** Render inbox in the support-view page */
     async function renderAdminInbox() {
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        if (isLocalhost) return;
         const container = document.getElementById('admin-inbox-container');
         const list = document.getElementById('admin-inbox-list');
         const countBadge = document.getElementById('admin-inbox-count');
@@ -1153,7 +1165,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             {bg: 'bg-green-100', text: 'text-green-700', icon: 'payments'}
         ];
         
-        SUBJECTS.forEach((subject, idx) => {
+        state.subjects.forEach((subject, idx) => {
             const color = colors[idx % colors.length];
             
             // Calculate progress
@@ -1689,7 +1701,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Update background theme for the subject (A-1)
         if (window.updateBackgroundTheme) window.updateBackgroundTheme(subjectId);
 
-        const subject = SUBJECTS.find(s => s.id === subjectId);
+        const subject = state.subjects.find(s => s.id === subjectId);
         let questions = getQuestionsSource()[subjectId] || [];
         
         if (topicName) {
@@ -3516,13 +3528,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             </div>
         `;
 
-        let realUsers = [...MOCK_LEADERBOARD];
+        let realUsers = [];
         let firestoreError = null;
         
-        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
         try {
-            if (window.firebaseDb && !isLocalhost) {
+            if (window.firebaseDb) {
                 // Fetch all users to ensure we don't miss legacy accounts that only have 'points' instead of 'userPoints'
                 // This resolves the missing 22 users issue (76 total users vs 54).
                 const snapshot = await window.firebaseDb.collection("users").limit(300).get();
