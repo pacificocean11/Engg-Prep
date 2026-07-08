@@ -15,22 +15,11 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Only enable offline persistence in production (not localhost) to prevent hanging issues
-if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-    db.enablePersistence({ synchronizeTabs: true })
-      .then(() => {
-        console.log("💾 Firestore offline persistence enabled!");
-      })
-      .catch((err) => {
-        if (err.code === 'failed-precondition') {
-          console.warn("⚠️ Offline persistence can only be enabled in one tab at a time.");
-        } else if (err.code === 'unimplemented') {
-          console.warn("⚠️ Browser does not support offline persistence features.");
-        }
-      });
-} else {
-    console.log("🏠 Localhost detected. Offline persistence disabled to ensure direct server connection.");
-}
+// Offline persistence DISABLED globally.
+// enablePersistence was corrupting IndexedDB when disk space was low,
+// causing all Firestore reads to hang indefinitely ("Checking" mode).
+// The app works perfectly without it — Firestore will simply fetch from the server each time.
+console.log("🏠 Offline persistence disabled globally for stability.");
 
 console.log("🔥 Firebase Initialized successfully!");
 
@@ -62,7 +51,12 @@ window.saveUserProgress = async function(userId, progressData) {
 window.getUserProgress = async function(userId) {
     if (!userId || userId === 'guest') return null;
     try {
-        const docSnap = await db.collection("users").doc(userId).get();
+        // 10-second timeout to prevent "Checking" mode from hanging forever
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Firestore read timed out after 10s')), 10000)
+        );
+        const fetchPromise = db.collection("users").doc(userId).get();
+        const docSnap = await Promise.race([fetchPromise, timeoutPromise]);
         if (docSnap.exists) {
             console.log("📦 Data loaded from Firebase!");
             return docSnap.data();
