@@ -3716,6 +3716,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     window.closeMockPreview = closeMockPreview;
     window.confirmStartMock = confirmStartMock;
 
+    // Expose UI update functions for data-manager.js
+    if (typeof updateDashboardStats !== 'undefined') window.updateDashboardStats = updateDashboardStats;
+    if (typeof updateGamificationUI !== 'undefined') window.updateGamificationUI = updateGamificationUI;
+    if (typeof renderRecentActivity !== 'undefined') window.renderRecentActivity = renderRecentActivity;
+    if (typeof renderSubjects !== 'undefined') window.renderSubjects = renderSubjects;
+    if (typeof applyAvatar !== 'undefined') window.applyAvatar = applyAvatar;
+    if (typeof updateUIForTier !== 'undefined') window.updateUIForTier = updateUIForTier;
+
     // AVATAR_PRESETS is defined above renderLeaderboard() to ensure it is in scope when the leaderboard renders.
 
     let pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
@@ -3736,16 +3744,24 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             }
         }
 
-        [headerContainer, settingsContainer, accountInfoContainer].forEach((container, i) => {
+        const onboardingContainer = document.getElementById('onboarding-avatar-container');
+        const announcementContainer = document.getElementById('announcement-avatar-container');
+
+        [headerContainer, settingsContainer, accountInfoContainer, onboardingContainer, announcementContainer].forEach((container, i) => {
             if (!container) return;
             
-            const isSettings = i > 0;
+            const isSettings = i === 1 || i === 2;
             const clickAttrs = isSettings ? 'cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.showPhotoLightbox(this.src)"' : '"';
 
-            if (customPic && !savedId) {
+            if (customPic) {
                 container.innerHTML = `<img class="w-full h-full object-cover ${clickAttrs} src="${customPic}" crossorigin="anonymous" />`;
             } else if (preset) {
-                const size = i === 0 ? '22px' : (i === 1 ? '36px' : '48px');
+                let size = '48px';
+                if (i === 0) size = '22px';
+                if (i === 1) size = '36px';
+                if (i === 3) size = '64px';
+                if (i === 4) size = '160px';
+                
                 container.innerHTML = `
                     <div class="avatar-emoji-display"
                          style="background:${preset.gradient}; font-size:${size};">
@@ -3858,7 +3874,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     localStorage.removeItem('enggtv_avatar'); // Clear preset flag
                     
                     applyAvatar();
-                    if(typeof syncToFirebase === 'function') 
+                    if(typeof syncToFirebase === 'function') syncToFirebase();
                     window.showToast("Success", "Custom avatar uploaded!", "check_circle");
                     if (avatarModal) avatarModal.classList.remove('open');
                 };
@@ -3887,7 +3903,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 localStorage.removeItem('enggtv_avatar');
             }
             applyAvatar();
-             // Sync avatar change to cloud
+            if(typeof syncToFirebase === 'function') syncToFirebase(); // Sync avatar change to cloud
             avatarModal.classList.remove('open');
         });
     }
@@ -3897,7 +3913,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             localStorage.removeItem('enggtv_avatar');
             localStorage.removeItem('enggtv_profile_pic');
             applyAvatar();
-             // Sync avatar removal to cloud
+            if(typeof syncToFirebase === 'function') syncToFirebase(); // Sync avatar removal to cloud
             avatarModal.classList.remove('open');
         });
     }
