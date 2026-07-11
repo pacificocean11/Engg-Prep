@@ -1764,8 +1764,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (question.question_image) {
                 const imgDiv = document.createElement('div');
                 imgDiv.className = 'question-image-container';
-                let fallbackAttr = question.local_question_image ? ` onerror="this.onerror=null; this.src='${question.local_question_image}'"` : '';
-                imgDiv.innerHTML = `<img src="${toDriveImgUrl(question.question_image)}" alt="Question Diagram" class="quiz-image"${fallbackAttr}>`;
+                let primarySrc = question.local_question_image ? question.local_question_image : toDriveImgUrl(question.question_image);
+                let fallbackAttr = question.local_question_image ? ` onerror="this.onerror=null; this.src='${toDriveImgUrl(question.question_image)}'"` : '';
+                imgDiv.innerHTML = `<img src="${primarySrc}" alt="Question Diagram" class="quiz-image"${fallbackAttr}>`;
                 questionText.appendChild(imgDiv);
             } else if (question.image) {
                 const imgDiv = document.createElement('div');
@@ -1998,8 +1999,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (solImg) {
                 const globalImgDiv = document.createElement('div');
                 globalImgDiv.className = 'solution-image-container';
-                let fallbackAttr = localSolImg ? ` onerror="this.onerror=null; this.src='${localSolImg}'"` : '';
-                globalImgDiv.innerHTML = `<img src="${toDriveImgUrl(solImg)}" alt="Solution Overview" class="quiz-image"${fallbackAttr}>`;
+                let primarySrc = localSolImg ? localSolImg : toDriveImgUrl(solImg);
+                let fallbackAttr = localSolImg ? ` onerror="this.onerror=null; this.src='${toDriveImgUrl(solImg)}'"` : '';
+                globalImgDiv.innerHTML = `<img src="${primarySrc}" alt="Solution Overview" class="quiz-image"${fallbackAttr}>`;
                 explanationText.appendChild(globalImgDiv);
             }
         } else if (solImg) {
@@ -2024,8 +2026,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 if (stepImg) {
                     const imgDiv = document.createElement('div');
                     imgDiv.className = 'step-image-container';
-                    let fallbackAttr = localStepImg ? ` onerror="this.onerror=null; this.src='${localStepImg}'"` : '';
-                    imgDiv.innerHTML = `<img src="${toDriveImgUrl(stepImg)}" alt="Step ${idx + 1} Diagram" class="quiz-image"${fallbackAttr}>`;
+                    let primarySrc = localStepImg ? localStepImg : toDriveImgUrl(stepImg);
+                    let fallbackAttr = localStepImg ? ` onerror="this.onerror=null; this.src='${toDriveImgUrl(stepImg)}'"` : '';
+                    imgDiv.innerHTML = `<img src="${primarySrc}" alt="Step ${idx + 1} Diagram" class="quiz-image"${fallbackAttr}>`;
                     stepDiv.appendChild(imgDiv);
                 } else if (step.tikz) {
                     const tikzDiv = document.createElement('div');
@@ -3716,14 +3719,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     window.closeMockPreview = closeMockPreview;
     window.confirmStartMock = confirmStartMock;
 
-    // Expose UI update functions for data-manager.js
-    if (typeof updateDashboardStats !== 'undefined') window.updateDashboardStats = updateDashboardStats;
-    if (typeof updateGamificationUI !== 'undefined') window.updateGamificationUI = updateGamificationUI;
-    if (typeof renderRecentActivity !== 'undefined') window.renderRecentActivity = renderRecentActivity;
-    if (typeof renderSubjects !== 'undefined') window.renderSubjects = renderSubjects;
-    if (typeof applyAvatar !== 'undefined') window.applyAvatar = applyAvatar;
-    if (typeof updateUIForTier !== 'undefined') window.updateUIForTier = updateUIForTier;
-
     // AVATAR_PRESETS is defined above renderLeaderboard() to ensure it is in scope when the leaderboard renders.
 
     let pendingAvatarId = localStorage.getItem('enggtv_avatar') || null;
@@ -3744,24 +3739,16 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             }
         }
 
-        const onboardingContainer = document.getElementById('onboarding-avatar-container');
-        const announcementContainer = document.getElementById('announcement-avatar-container');
-
-        [headerContainer, settingsContainer, accountInfoContainer, onboardingContainer, announcementContainer].forEach((container, i) => {
+        [headerContainer, settingsContainer, accountInfoContainer].forEach((container, i) => {
             if (!container) return;
             
-            const isSettings = i === 1 || i === 2;
+            const isSettings = i > 0;
             const clickAttrs = isSettings ? 'cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.showPhotoLightbox(this.src)"' : '"';
 
-            if (customPic) {
+            if (customPic && !savedId) {
                 container.innerHTML = `<img class="w-full h-full object-cover ${clickAttrs} src="${customPic}" crossorigin="anonymous" />`;
             } else if (preset) {
-                let size = '48px';
-                if (i === 0) size = '22px';
-                if (i === 1) size = '36px';
-                if (i === 3) size = '64px';
-                if (i === 4) size = '160px';
-                
+                const size = i === 0 ? '22px' : (i === 1 ? '36px' : '48px');
                 container.innerHTML = `
                     <div class="avatar-emoji-display"
                          style="background:${preset.gradient}; font-size:${size};">
@@ -3874,7 +3861,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     localStorage.removeItem('enggtv_avatar'); // Clear preset flag
                     
                     applyAvatar();
-                    if(typeof syncToFirebase === 'function') syncToFirebase();
+                    if(typeof syncToFirebase === 'function') 
                     window.showToast("Success", "Custom avatar uploaded!", "check_circle");
                     if (avatarModal) avatarModal.classList.remove('open');
                 };
@@ -3903,7 +3890,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 localStorage.removeItem('enggtv_avatar');
             }
             applyAvatar();
-            if(typeof syncToFirebase === 'function') syncToFirebase(); // Sync avatar change to cloud
+             // Sync avatar change to cloud
             avatarModal.classList.remove('open');
         });
     }
@@ -3913,7 +3900,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             localStorage.removeItem('enggtv_avatar');
             localStorage.removeItem('enggtv_profile_pic');
             applyAvatar();
-            if(typeof syncToFirebase === 'function') syncToFirebase(); // Sync avatar removal to cloud
+             // Sync avatar removal to cloud
             avatarModal.classList.remove('open');
         });
     }

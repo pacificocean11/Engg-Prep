@@ -33729,7 +33729,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Particles",
             "title": "Work and Energy",
             "question": "A $10\\text{ kg}$ block slides down a ramp inclined at $\\theta = 20^{\\circ}$ to the horizontal. The coefficient of kinetic friction between the block and the ramp is $\\mu_k = 0.1$. If the block starts from rest, what is its velocity $v$ after sliding a distance $d = 5\\text{ m}$ along the ramp?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/145bBvK0nQCuetdkq51Wo5TK5Z6mpMTTq/preview",
+            "local_question_image": "assets/quiz-images/img_145bBvK0nQCuetdkq51Wo5TK5Z6mpMTTq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33836,7 +33837,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Particles",
             "title": "Spring Energy",
             "question": "A spring with a stiffness $k = 800 \\text{ N/m}$ is compressed $s_1 = 0.15 \\text{ m}$. A $0.5 \\text{ kg}$ block is placed against it and released from rest on a frictionless horizontal surface. What is the block's velocity $v_2$ when the spring is compressed only $s_2 = 0.05 \\text{ m}$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Y9pPg37OuVS4KUhFGJb96pQuxlb0bG3U/preview",
+            "local_question_image": "assets/quiz-images/img_1Y9pPg37OuVS4KUhFGJb96pQuxlb0bG3U.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33887,7 +33889,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Particles",
             "title": "Average Power",
             "question": "A car of mass $m = 1,500 \\text{ kg}$ accelerates from $v_1 = 10 \\text{ m/s}$ to $v_2 = 30 \\text{ m/s}$ over a distance of $d = 200 \\text{ m}$ on a level road. Neglecting friction and drag, what is the average power $P_{avg}$ delivered by the engine?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1wBZjfIVPP2hItHUGqAneYEanbeiokMVu/preview",
+            "local_question_image": "assets/quiz-images/img_1wBZjfIVPP2hItHUGqAneYEanbeiokMVu.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -33997,7 +34000,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Rotational Kinematics",
             "question": "A uniform slender disk of mass $m = 5\\text{ kg}$ and radius $r = 0.2\\text{ m}$ starts from rest and is subjected to a constant torque of $M = 10\\text{ N} \\cdot \\text{m}$ about its center. Neglecting friction, what is the angular velocity of the disk after it has completed $2$ full revolutions?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1wCZwBDxE_a-wp9iZJz3U0MhKQfJug2V_/preview",
+            "local_question_image": "assets/quiz-images/img_1wCZwBDxE_a-wp9iZJz3U0MhKQfJug2V_.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34051,7 +34055,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Angular Velocity of a Rigid Bar",
             "question": "A rigid bar $AB$ is $1$ m long. At a given instant, the bar is horizontal (point $B$ is to the right of $A$). Point $A$ has velocity $\\vec{v}_A = 2\\hat{i}$ m/s and point $B$ has velocity $\\vec{v}_B = 2\\hat{i} + 3\\hat{j}$ m/s. Determine the angular velocity of the bar.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jC8JevizM5krvhg0wLMvbSRRB7UVUR04/preview",
+            "local_question_image": "assets/quiz-images/img_1jC8JevizM5krvhg0wLMvbSRRB7UVUR04.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49710,7 +49715,8 @@ const QUESTIONS = {
             "topic": "Motors and Generators",
             "title": "Back EMF of a DC Shunt Motor",
             "question": "A DC shunt motor is connected to a $240$ V source. The armature resistance is $0.5$ $\\Omega$ and the armature current is $20$ A. What is the back electromotive force (EMF) of the motor?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1aMDLKdub8PQo6EXCsTVFzX2QMv3LIRTb/preview",
+            "local_question_image": "assets/quiz-images/img_1aMDLKdub8PQo6EXCsTVFzX2QMv3LIRTb.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49761,7 +49767,8 @@ const QUESTIONS = {
             "topic": "Motors and Generators",
             "title": "Synchronous Speed of Induction Motor",
             "question": "A 4-pole AC induction motor is connected to a 60 Hz power supply. What is the synchronous speed of the motor in rpm?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Bb2nFC7umuxZpawKKqfDy86-Sm1PzyXl/preview",
+            "local_question_image": "assets/quiz-images/img_1Bb2nFC7umuxZpawKKqfDy86-Sm1PzyXl.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49812,7 +49819,8 @@ const QUESTIONS = {
             "topic": "Motors and Generators",
             "title": "Slip of an Induction Motor",
             "question": "An induction motor has a synchronous speed of $1200$ rpm and is operating at a full-load speed of $1140$ rpm. What is the slip of the motor?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18jgCUmOTkcl31rdJAzJnAXV0-Hl_34wN/preview",
+            "local_question_image": "assets/quiz-images/img_18jgCUmOTkcl31rdJAzJnAXV0-Hl_34wN.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -49863,7 +49871,8 @@ const QUESTIONS = {
             "topic": "Motors and Generators",
             "title": "Mechanical Power of DC Motor",
             "question": "A DC motor develops a torque of $50$ N $\\cdot$ m while rotating at $1500$ rpm. What is the mechanical power developed by the motor?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1k3A0DLPStWWHTbdAIZp53WY1GILTu365/preview",
+            "local_question_image": "assets/quiz-images/img_1k3A0DLPStWWHTbdAIZp53WY1GILTu365.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54636,7 +54645,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "First Law of Thermodynamics for a Closed System",
             "question": "A closed piston-cylinder system undergoes a process where $50 \\text{ kJ}$ of heat is transferred into the system. During this process, the gas expands from an initial volume of $V_1 = 0.05 \\text{ m}^3$ to a final volume of $V_2 = 0.15 \\text{ m}^3$ against a constant pressure of $P = 200 \\text{ kPa}$. Neglecting changes in kinetic and potential energy, the change in internal energy ($\\Delta U$) of the gas is most nearly:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1H0TGvPE4sag8QagOYtRzicrMgqV77qi2/preview",
+            "local_question_image": "assets/quiz-images/img_1H0TGvPE4sag8QagOYtRzicrMgqV77qi2.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54687,7 +54697,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Heat Engine Claim Validity",
             "question": "An inventor claims to have developed a cyclic heat engine that receives $1000\\text{ kJ}$ of heat from a reservoir at $800\\text{ K}$ and rejects $300\\text{ kJ}$ of heat to a reservoir at $300\\text{ K}$ while producing $700\\text{ kJ}$ of work. This claim violates:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1C55M9w1AT2yXhkgK3D6f31Sfvfnt1Fi9/preview",
+            "local_question_image": "assets/quiz-images/img_1C55M9w1AT2yXhkgK3D6f31Sfvfnt1Fi9.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54738,7 +54749,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Entropy Change of the Universe",
             "question": "A heat transfer of $500\\text{ kJ}$ occurs from a thermal reservoir at $1000\\text{ K}$ to another thermal reservoir at $400\\text{ K}$. What is the total entropy change of the universe resulting from this process?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/14o30W3TD3smAZmNwAg6EZ0G-uAvYlVrb/preview",
+            "local_question_image": "assets/quiz-images/img_14o30W3TD3smAZmNwAg6EZ0G-uAvYlVrb.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54789,7 +54801,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Entropy Generation",
             "question": "A heat engine receives $Q_H = 1000 \\text{ kJ}$ of heat from a high-temperature reservoir at $T_H = 800 \\text{ K}$ and rejects $Q_L = 600 \\text{ kJ}$ of heat to a low-temperature reservoir at $T_L = 300 \\text{ K}$. What is the total entropy generation ($\\Delta S_{gen}$) for this process?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1mJ37dYtNQvWf52gir3jdE09Fs5GpwR3m/preview",
+            "local_question_image": "assets/quiz-images/img_1mJ37dYtNQvWf52gir3jdE09Fs5GpwR3m.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54891,7 +54904,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Entropy Change of the Universe",
             "question": "Two large thermal reservoirs at $500$ K and $300$ K are brought into thermal contact. If $100$ kJ of heat is transferred from the hot reservoir to the cold reservoir, what is the total entropy change of the universe (kJ/K)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1hUru7VVq6stAV290o94O7yFn962OKLgg/preview",
+            "local_question_image": "assets/quiz-images/img_1hUru7VVq6stAV290o94O7yFn962OKLgg.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54942,7 +54956,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Internal Energy of Insulated Tank",
             "question": "A rigid, perfectly insulated tank contains an ideal gas. A paddle wheel inside the tank does $500$ kJ of work on the gas. What is the change in the internal energy ($\\Delta U$) of the gas?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1-cY68pOhH1_LcoAVfsgZRYKQQNvNny1y/preview",
+            "local_question_image": "assets/quiz-images/img_1-cY68pOhH1_LcoAVfsgZRYKQQNvNny1y.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55044,7 +55059,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Internal Energy Change Calculation",
             "question": "A piston-cylinder device contains $0.5$ kg of air. During a process, $15$ kJ of work is done on the system, and $7$ kJ of heat is rejected to the surroundings. Determine the change in specific internal energy ($\\Delta u$) of the air in kJ/kg.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ZgJEefVtZwTlSrxPYFAcynUOjXDOn9m4/preview",
+            "local_question_image": "assets/quiz-images/img_1ZgJEefVtZwTlSrxPYFAcynUOjXDOn9m4.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55095,7 +55111,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Isothermal Compression Entropy Change",
             "question": "Air is compressed isothermally from $100$ kPa to $500$ kPa in a steady-flow device. Assuming air behaves as an ideal gas with $R = 0.287$ kJ/kg $\\cdot$ K, what is the change in specific entropy (kJ/kg $\\cdot$ K)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1G_l8VPsvD_yA6qksy_czTE_gmxz-5T70/preview",
+            "local_question_image": "assets/quiz-images/img_1G_l8VPsvD_yA6qksy_czTE_gmxz-5T70.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55201,7 +55218,8 @@ const QUESTIONS = {
             "topic": "Laws of Thermodynamics",
             "title": "Constant Property in Throttling",
             "question": "In a throttling process (such as flow through a partially open valve), which of the following properties remains constant if kinetic and potential energy changes are negligible and the process is adiabatic?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/13B-D5YlXvAYvfqQJMkO0sL9-hHQ-l9aM/preview",
+            "local_question_image": "assets/quiz-images/img_13B-D5YlXvAYvfqQJMkO0sL9-hHQ-l9aM.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55829,7 +55847,8 @@ const QUESTIONS = {
             "topic": "Refrigeration and Heat Pump Cycles",
             "title": "Coefficient of Performance of Refrigerator",
             "question": "A refrigeration system operates on an ideal vapor-compression cycle using R-134a. The specific enthalpy of the refrigerant at the evaporator exit is $250$ kJ/kg, at the compressor exit is $285$ kJ/kg, and at the condenser exit is $100$ kJ/kg. What is the Coefficient of Performance ($COP_R$) of the refrigerator?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/151gmki8wv_F7T59YGnuj6wOgamVDyfMK/preview",
+            "local_question_image": "assets/quiz-images/img_151gmki8wv_F7T59YGnuj6wOgamVDyfMK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55939,7 +55958,8 @@ const QUESTIONS = {
             "topic": "Refrigeration and Heat Pump Cycles",
             "title": "COP of a Carnot Refrigerator",
             "question": "A Carnot refrigerator operates in a room at 25°C and maintains the refrigerated space at $-15$°C. What is the coefficient of performance (COP) of this refrigerator?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1loFfsZVFDDXiNSN8pBP_anKwRdD7_kLk/preview",
+            "local_question_image": "assets/quiz-images/img_1loFfsZVFDDXiNSN8pBP_anKwRdD7_kLk.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -56257,7 +56277,8 @@ const QUESTIONS = {
             "topic": "Psychrometrics",
             "title": "Calculating Relative Humidity",
             "question": "An air-water vapor mixture is at a total pressure of 101.325 kPa and a dry-bulb temperature of 30°C. If the partial pressure of water vapor is 2.12 kPa and the saturation pressure at 30°C is 4.24 kPa, what is the relative humidity?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1AyXGEWKQSNM9YqevjdM8OqMTIpy-CWGA/preview",
+            "local_question_image": "assets/quiz-images/img_1AyXGEWKQSNM9YqevjdM8OqMTIpy-CWGA.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -56308,7 +56329,8 @@ const QUESTIONS = {
             "topic": "Psychrometrics",
             "title": "Humidity Ratio Calculation",
             "question": "At a dry-bulb temperature of 25$^{\\circ}$C and a relative humidity of 50%, with an atmospheric pressure of 101.325 kPa, what is the humidity ratio (kg water vapor/kg dry air)? Given the saturation pressure of water at 25$^{\\circ}$C is $P_g = 3.1698$ kPa.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1darApZo9dBR8B_94UvdX1OupFs1rhKNs/preview",
+            "local_question_image": "assets/quiz-images/img_1darApZo9dBR8B_94UvdX1OupFs1rhKNs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -56359,7 +56381,8 @@ const QUESTIONS = {
             "topic": "Psychrometrics",
             "title": "Dew Point Temperature Calculation",
             "question": "A moist air sample is at 30$^{\\circ}$C and 100 kPa with a humidity ratio of 0.015 kg/kg dry air. Based on the saturation pressure of water ($P_{sat} = 2.339$ kPa at 20$^{\\circ}$C and $P_{sat} = 3.170$ kPa at 25$^{\\circ}$C), what is the approximate dew point temperature?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1rHCSMIQOHDrnKsyEyxs8WNOvAG5NOtSo/preview",
+            "local_question_image": "assets/quiz-images/img_1rHCSMIQOHDrnKsyEyxs8WNOvAG5NOtSo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -56410,7 +56433,8 @@ const QUESTIONS = {
             "topic": "Psychrometrics",
             "title": "Calculating Relative Humidity",
             "question": "Atmospheric air at 101.325 kPa has a dry-bulb temperature of 40$^{\\circ}$C and a humidity ratio of 0.012 kg/kg dry air. If the saturation pressure of water at 40$^{\\circ}$C is 7.385 kPa, what is the relative humidity?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Pj-ccs9jb3iZgdKff9fMTxQywqN1pItf/preview",
+            "local_question_image": "assets/quiz-images/img_1Pj-ccs9jb3iZgdKff9fMTxQywqN1pItf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69057,7 +69081,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Greenshields Maximum Flow",
             "question": "A freeway section is modeled using Greenshields' linear speed-density relationship. If the free-flow speed ($u_f$) is 70 mph and the jam density ($k_j$) is 130 vehicles per mile (vpm), what is the maximum flow ($q_{max}$) in vehicles per hour (vph)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1F7UAn-dby3e1MIqpGsk6AoPZk9Ggknaj/preview",
+            "local_question_image": "assets/quiz-images/img_1F7UAn-dby3e1MIqpGsk6AoPZk9Ggknaj.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69112,7 +69137,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Peak Hour Factor Calculation",
             "question": "Traffic counts for four consecutive 15-minute intervals are 350, 425, 475, and 400 vehicles. Calculate the Peak Hour Factor (PHF).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/16rZzKwgdr18QJwrEFTzEvv5m8ISqObHL/preview",
+            "local_question_image": "assets/quiz-images/img_16rZzKwgdr18QJwrEFTzEvv5m8ISqObHL.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69167,7 +69193,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Space Mean Speed",
             "question": "Three vehicles pass a point on a highway at constant speeds of 30 mph, 45 mph, and 60 mph. What is the space mean speed ($u_s$) of these vehicles?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1IVvRwiRggz-gity6eq_YExYu4rl8GEYE/preview",
+            "local_question_image": "assets/quiz-images/img_1IVvRwiRggz-gity6eq_YExYu4rl8GEYE.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69218,7 +69245,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Traffic Density from Flow",
             "question": "If the traffic flow on a segment of a highway is 1,500 vehicles per hour and the space mean speed is 50 mph, what is the density of the traffic in vehicles per mile?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1WeQbduVSKqO1WDW_GqeZEn2l7-MkArJH/preview",
+            "local_question_image": "assets/quiz-images/img_1WeQbduVSKqO1WDW_GqeZEn2l7-MkArJH.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69269,7 +69297,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Flow Rate Greenshields",
             "question": "A traffic stream follows the Greenshields model with a free-flow speed of 60 mph and a jam density of 140 vpm. What is the flow rate when the density is 40 vpm?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18ONN65KTkNXxUN8Phc2y-fKQc2hr-SYI/preview",
+            "local_question_image": "assets/quiz-images/img_18ONN65KTkNXxUN8Phc2y-fKQc2hr-SYI.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69324,7 +69353,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Hourly Flow from Headway",
             "question": "The average time headway in a single lane of traffic is measured as 2.4 seconds. What is the corresponding hourly flow rate?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1rhoyC0dGDNm4452iKXrfbCwZOEhzGT2c/preview",
+            "local_question_image": "assets/quiz-images/img_1rhoyC0dGDNm4452iKXrfbCwZOEhzGT2c.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69375,7 +69405,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Density at Maximum Flow",
             "question": "A highway segment has a speed-density relationship defined by $u = 55 - 0.5k$, where $u$ is speed in mph and $k$ is density in vpm. At what density does the maximum flow occur?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1XmgP8HjxDTwrvudANpSuxxzvtzBHPpKW/preview",
+            "local_question_image": "assets/quiz-images/img_1XmgP8HjxDTwrvudANpSuxxzvtzBHPpKW.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69430,7 +69461,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Traffic Density from Spacing",
             "question": "If the average spacing between vehicles in a single lane is 165 feet, what is the traffic density?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1I4QYsZNsWoEczEC3dy3n9OCFDQUnW8Gr/preview",
+            "local_question_image": "assets/quiz-images/img_1I4QYsZNsWoEczEC3dy3n9OCFDQUnW8Gr.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69481,7 +69513,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Level of Service (LOS)",
             "question": "According to the Highway Capacity Manual (HCM), what is the Level of Service (LOS) for a basic freeway segment with a density of 30 pc/mi/ln?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1RjyQ01jxeHqs0mZqxx8JUpjbX3JfEtZG/preview",
+            "local_question_image": "assets/quiz-images/img_1RjyQ01jxeHqs0mZqxx8JUpjbX3JfEtZG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -69532,7 +69565,8 @@ const QUESTIONS = {
             "topic": "Traffic Capacity and Flow Theory",
             "title": "Space Mean Speed from Flow",
             "question": "In a traffic stream where the flow is 1,200 vph and the density is 20 vpm, what is the space mean speed?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1LMY1k55O6rq0q7M1cSSR4X3wm_hXTYri/preview",
+            "local_question_image": "assets/quiz-images/img_1LMY1k55O6rq0q7M1cSSR4X3wm_hXTYri.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -76355,7 +76389,8 @@ const QUESTIONS = {
             "topic": "Foundation Engineering",
             "title": "Ultimate Bearing Capacity Calculation",
             "question": "A square spread footing ($2.5 \\, m \\times 2.5 \\, m$) is placed at a depth of $1.5 \\, m$ below the ground surface. The soil has a cohesion $c = 25 \\, kPa$, a friction angle $\\phi = 0^{\\circ}$, and a unit weight $\\gamma = 18.5 \\, kN/m^3$. Using Terzaghi's bearing capacity equation for general shear failure, calculate the ultimate bearing capacity $q_u$. For $\\phi = 0^{\\circ}$, $N_c = 5.7$, $N_q = 1.0$, and $N_{\\gamma} = 0$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1LK6SDYr9dBlMFAvyYRCe9_1566_HDtgk/preview",
+            "local_question_image": "assets/quiz-images/img_1LK6SDYr9dBlMFAvyYRCe9_1566_HDtgk.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -76513,7 +76548,8 @@ const QUESTIONS = {
             "topic": "Foundation Engineering",
             "title": "Factor of Safety for Wall Footing",
             "question": "A continuous wall footing is $1.2 \\, m$ wide and supports a wall load of $150 \\, kN/m$. If the footing is placed $1.0 \\, m$ below the ground surface in a purely cohesive soil ($c_u = 60 \\, kPa, \\phi = 0^{\\circ}, \\gamma = 19 \\, kN/m^3$), what is the factor of safety ($FS$) against bearing capacity failure? (Use $N_c = 5.7, N_q = 1.0, N_{\\gamma} = 0$ for a continuous footing).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/179LTwzkS1PJJqbZvrVRAmsOFaNfwu2sC/preview",
+            "local_question_image": "assets/quiz-images/img_179LTwzkS1PJJqbZvrVRAmsOFaNfwu2sC.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -82920,7 +82956,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Peak Runoff Using Rational Method",
             "question": "A 20-acre watershed has a runoff coefficient of 0.35. If the design rainfall intensity for a specific return period is $2.5 \\text{ in/hr}$, what is the peak runoff rate using the Rational Method?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1qw-OnVQkr6l5K55oTXa_v5502lgvJtjx/preview",
+            "local_question_image": "assets/quiz-images/img_1qw-OnVQkr6l5K55oTXa_v5502lgvJtjx.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -82975,7 +83012,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Horton’s Infiltration Model Calculation",
             "question": "Using Horton's infiltration model, the initial infiltration capacity is $f_0 = 5.0 \\text{ in/hr}$, the equilibrium infiltration capacity is $f_c = 1.0 \\text{ in/hr}$, and the decay constant is $k = 2.0 \\text{ hr}^{-1}$. What is the infiltration capacity at $t = 0.5 \\text{ hr}$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Oys_IiFGJ60BhnXsm7rUKzCz6kQHDbYN/preview",
+            "local_question_image": "assets/quiz-images/img_1Oys_IiFGJ60BhnXsm7rUKzCz6kQHDbYN.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83030,7 +83068,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Weighted Runoff Coefficient Calculation",
             "question": "A watershed consists of two distinct land uses: 5 acres of residential area with a runoff coefficient $C = 0.6$ and 15 acres of forested area with $C = 0.2$. What is the weighted runoff coefficient for the entire 20-acre watershed?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1rmrGDvaJsg9ryv_RJOAwfKhn6NKmT2eJ/preview",
+            "local_question_image": "assets/quiz-images/img_1rmrGDvaJsg9ryv_RJOAwfKhn6NKmT2eJ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83081,7 +83120,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Direct Runoff Depth Calculation",
             "question": "Using the NRCS (SCS) Curve Number method, calculate the direct runoff depth ($P_e$) in inches for a storm with a total precipitation of $P = 6.0$ inches and a Curve Number $CN = 75$. Assume the initial abstraction $I_a = 0.2S$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Hnm_ote6h-bzV4fCEGEYgwvkM7Ep9s5-/preview",
+            "local_question_image": "assets/quiz-images/img_1Hnm_ote6h-bzV4fCEGEYgwvkM7Ep9s5-.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83136,7 +83176,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Manning’s Equation Velocity Calculation",
             "question": "A rectangular concrete channel has a width of $10 \\text{ ft}$, a flow depth of $4 \\text{ ft}$, and a longitudinal slope of $0.01 \\text{ ft/ft}$. If Manning's roughness coefficient $n = 0.013$, what is the flow velocity ($V$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1RchAKuczhTwJMppwwStG-1eijA92F1K1/preview",
+            "local_question_image": "assets/quiz-images/img_1RchAKuczhTwJMppwwStG-1eijA92F1K1.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83191,7 +83232,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Peak Discharge of Storm Hydrograph",
             "question": "A 1-hour unit hydrograph has a peak discharge of $100 \\text{ cfs}$. If a storm event produces $2.5 \\text{ inches}$ of excess rainfall over 1 hour, what is the peak discharge of the resulting storm hydrograph?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1bqrDJZVIysBNqqoEiuAryInwZQ8STBBG/preview",
+            "local_question_image": "assets/quiz-images/img_1bqrDJZVIysBNqqoEiuAryInwZQ8STBBG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83242,7 +83284,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Reservoir Final Storage Calculation",
             "question": "A reservoir has an initial storage of $100 \\text{ acre-ft}$. Over a $24\\text{-hour}$ period, the average inflow is $10 \\text{ cfs}$ and the average outflow is $5 \\text{ cfs}$. Neglecting evaporation and seepage, what is the final storage after $24 \\text{ hours}$? ($1 \\text{ acre} = 43,560 \\text{ ft}^2$)",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1X-JB54Czc6_fycXOHTlhjSEoIGl944YG/preview",
+            "local_question_image": "assets/quiz-images/img_1X-JB54Czc6_fycXOHTlhjSEoIGl944YG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83297,7 +83340,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Soil Dry Unit Weight Calculation",
             "question": "A soil sample has a void ratio of 0.65 and a specific gravity of solids of 2.70. What is the dry unit weight of the soil in $lb/ft^3$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1OHzVaVT6h-ZGypXE4qiL25T7APXpw23T/preview",
+            "local_question_image": "assets/quiz-images/img_1OHzVaVT6h-ZGypXE4qiL25T7APXpw23T.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83348,7 +83392,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Thiessen Polygon Average Precipitation",
             "question": "A watershed has three rain gauges. Gauge A (area $100$ ac) recorded $2.0$ in, Gauge B (area $200$ ac) recorded $3.0$ in, and Gauge C (area $200$ ac) recorded $4.0$ in. Using the Thiessen Polygon method, what is the average precipitation?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jibP_shrdZqnKceei4dMYoPrzLU5O5TN/preview",
+            "local_question_image": "assets/quiz-images/img_1jibP_shrdZqnKceei4dMYoPrzLU5O5TN.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83399,7 +83444,8 @@ const QUESTIONS = {
             "topic": "Basic Hydrology",
             "title": "Infiltration Depth Using Horton’s Model",
             "question": "Using Horton's infiltration model, find the total depth of infiltration ($F$) during the first $2$ hours of a storm. Given: $f_0 = 3.0 \\text{ in/hr}$, $f_c = 0.5 \\text{ in/hr}$, and $k = 0.4 \\text{ hr}^{-1}$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1UM0G4B67eBYOAu0wNYLKuDXPLuf9VS4C/preview",
+            "local_question_image": "assets/quiz-images/img_1UM0G4B67eBYOAu0wNYLKuDXPLuf9VS4C.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83450,7 +83496,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Bernoulli's Equation Pressure Calculation",
             "question": "Water flows through a pipe. At Point 1, the pressure is $50$ kPa, velocity is $2$ m/s, and elevation is $10$ m. At Point 2, the velocity is $4$ m/s and elevation is $5$ m. Assuming no head loss and using a density of $1000$ kg/m$^3$, what is the pressure at Point 2?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Bw3dpt_gPTv3hSKPVoDackVN-XAsMjq1/preview",
+            "local_question_image": "assets/quiz-images/img_1Bw3dpt_gPTv3hSKPVoDackVN-XAsMjq1.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83505,7 +83552,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Full Pipe Discharge Calculation",
             "question": "A circular concrete pipe ($n = 0.013$) with a diameter of $1$ m is laid on a slope of $0.005$ m/m. What is the discharge ($Q$) when the pipe is flowing full under gravity?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/156HiVOTJso2FtkYlesK7w8IhiSoaqize/preview",
+            "local_question_image": "assets/quiz-images/img_156HiVOTJso2FtkYlesK7w8IhiSoaqize.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83560,7 +83608,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Rectangular Channel Critical Depth",
             "question": "A rectangular open channel has a width of $3$ m and carries a discharge of $15$ m$^3$/s. Calculate the critical depth ($y_c$) of the flow.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1cboSqZnR4Z0XUZMLLNieUmBDqKZTIWpc/preview",
+            "local_question_image": "assets/quiz-images/img_1cboSqZnR4Z0XUZMLLNieUmBDqKZTIWpc.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83611,7 +83660,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Froude Number and Regime",
             "question": "In an open channel, the flow velocity is $4$ m/s and the flow depth is $1.2$ m. Determine the Froude number ($Fr$) and classify the flow regime.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1suipwJkTlFUdUdac-9ZdeiIALFCrvt2r/preview",
+            "local_question_image": "assets/quiz-images/img_1suipwJkTlFUdUdac-9ZdeiIALFCrvt2r.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83662,7 +83712,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Darcy-Weisbach Friction Head Loss",
             "question": "A $200$ m long pipe with a diameter of $0.3$ m has a friction factor $f = 0.02$. If the flow velocity is $2.5$ m/s, calculate the head loss ($h_f$) due to friction using the Darcy-Weisbach equation.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1VWc2umNqsrsFcRZY0-2A9S6Px6f5KjIW/preview",
+            "local_question_image": "assets/quiz-images/img_1VWc2umNqsrsFcRZY0-2A9S6Px6f5KjIW.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83713,7 +83764,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Hydraulic Radius Calculation",
             "question": "A rectangular channel is $4$ m wide and has a flow depth of $2$ m. Calculate the hydraulic radius ($R$) of the channel.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fo8VYTeUnB9TG4xlBp9T6JRUdE1A03N2/preview",
+            "local_question_image": "assets/quiz-images/img_1fo8VYTeUnB9TG4xlBp9T6JRUdE1A03N2.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83764,7 +83816,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Manning's Flow Velocity",
             "question": "Using the Manning equation in SI units, calculate the flow velocity in a channel with a Manning's $n$ of $0.02$, a hydraulic radius of $0.5$ m, and a bed slope of $1%$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Xpm3lpn-TxG1MAg9S0sNM6mHh-FRmRFL/preview",
+            "local_question_image": "assets/quiz-images/img_1Xpm3lpn-TxG1MAg9S0sNM6mHh-FRmRFL.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83815,7 +83868,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Orifice Discharge Rate",
             "question": "A sharp-edged orifice with a diameter of $0.1$ m is located in the side of a tank. The head of water above the center of the orifice is $5$ m. If the coefficient of discharge $C_d$ is $0.6$, what is the discharge rate ($Q$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1XS2Jb5zvzJeFIr2824FfdWC2ktWXmPN6/preview",
+            "local_question_image": "assets/quiz-images/img_1XS2Jb5zvzJeFIr2824FfdWC2ktWXmPN6.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83866,7 +83920,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Reynolds Number Pipe Flow",
             "question": "Water flows at $2$ m/s through a $0.05$ m diameter pipe. If the kinematic viscosity of water is $1.006 \\times 10^{-6}$ m$^2$/s, determine the Reynolds number and classify the flow.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/16cujY2f-gT9Ql_vk5FP76sqq-uopTNcF/preview",
+            "local_question_image": "assets/quiz-images/img_16cujY2f-gT9Ql_vk5FP76sqq-uopTNcF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -83917,7 +83972,8 @@ const QUESTIONS = {
             "topic": "Basic Hydraulics",
             "title": "Specific Energy Calculation",
             "question": "For a rectangular channel with a flow depth of $2$ m and a velocity of $1$ m/s, what is the specific energy ($E$) of the flow?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ay2HzNEWJzIZ9m9JK_zl4dNGPvTtzAcj/preview",
+            "local_question_image": "assets/quiz-images/img_1ay2HzNEWJzIZ9m9JK_zl4dNGPvTtzAcj.jpg",
             "times_presented": 0,
             "options": [
                 {
