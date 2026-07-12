@@ -34106,7 +34106,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Acceleration of a Rotating Wheel",
             "question": "A wheel of radius $R = 0.4$ m rotates about a fixed axis through its center with a constant angular acceleration $\\alpha = 2 \\text{ rad/s}^2$. If the wheel starts from rest, what is the magnitude of the total acceleration of a point on the rim after $t = 3$ seconds?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1pxL2PqkwCt43YXAgwMPdGGyyYuVmJCxs/preview",
+            "local_question_image": "assets/quiz-images/img_1pxL2PqkwCt43YXAgwMPdGGyyYuVmJCxs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34156,7 +34157,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Rolling Motion of a Solid Disk",
             "question": "A solid disk of radius $r = 0.4$ m rolls without slipping on a flat surface. If the center of the disk has a constant velocity of $v_C = 8$ m/s to the right, determine the magnitude of the velocity at the highest point on the disk.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/14GE0HrR0cR-852XLBAnxe4f7dLU2hS-Q/preview",
+            "local_question_image": "assets/quiz-images/img_14GE0HrR0cR-852XLBAnxe4f7dLU2hS-Q.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34206,7 +34208,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Acceleration of a Rotating Rod",
             "question": "A slender rod $AB$ of length 2 m is rotating about a fixed pin at end $A$. At a certain instant, the rod has an angular velocity of $\\omega = 3$ rad/s and an angular acceleration of $\\alpha = 4$ rad/s$^2$. What is the magnitude of the total linear acceleration of end $B$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PEWiShTHVSVkXxEG_sf04tGtXxA-RGKY/preview",
+            "local_question_image": "assets/quiz-images/img_1PEWiShTHVSVkXxEG_sf04tGtXxA-RGKY.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34256,7 +34259,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Acceleration at the Contact Point",
             "question": "A wheel of radius $R = 0.5$ m rolls without slipping. At the instant shown, the center of the wheel has a velocity $v = 10$ m/s and an acceleration $a = 5$ m/s$^2$ in the positive x-direction. What is the magnitude of the acceleration of the point on the wheel currently in contact with the ground?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1xr8ACNps-db0Zfnf4G_uhsUBH_aLqCEa/preview",
+            "local_question_image": "assets/quiz-images/img_1xr8ACNps-db0Zfnf4G_uhsUBH_aLqCEa.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34306,7 +34310,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Rigid Bodies",
             "title": "Velocity Analysis of Robotic Link",
             "question": "A robotic arm link $AB$ of length 1 m has point $A$ moving down a vertical track at $v_A = 4$ m/s while point $B$ moves along a horizontal track. When the link makes an angle of 45° with the horizontal track, what is the magnitude of the velocity of point $B$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/13zOxTgUUvBysl2KX8d6ZEvmMd7V1JPu5/preview",
+            "local_question_image": "assets/quiz-images/img_13zOxTgUUvBysl2KX8d6ZEvmMd7V1JPu5.jpg",
             "times_presented": 0,
             "options": [
                 {
