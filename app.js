@@ -371,6 +371,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 colors: ['#FF006E', '#FDA60A', '#720026']
             });
         }
+        
+        if (window.syncToFirebase) window.syncToFirebase();
     }
     window.addPoints = addPoints;
 
@@ -3379,6 +3381,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             });
             
             // Clear all user session data
+            if (window.syncToFirebase) await window.syncToFirebase();
             localStorage.clear();
             
             // Restore preserved keys
@@ -3746,7 +3749,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             const clickAttrs = isSettings ? 'cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.showPhotoLightbox(this.src)"' : '"';
 
             if (customPic && !savedId) {
-                container.innerHTML = `<img class="w-full h-full object-cover ${clickAttrs} src="${customPic}" crossorigin="anonymous" />`;
+                container.innerHTML = `<img class="w-full h-full object-cover ${clickAttrs} src="${customPic}" />`;
             } else if (preset) {
                 const size = i === 0 ? '22px' : (i === 1 ? '36px' : '48px');
                 container.innerHTML = `

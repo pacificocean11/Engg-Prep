@@ -7425,7 +7425,8 @@ const QUESTIONS = {
             "topic": "Probability Distributions",
             "title": "Continuous Uniform Distribution",
             "question": "A random variable $X$ is uniformly distributed over the interval $[15, 45]$. What is the probability that $X$ is between 20 and 35?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1EXL5ChlVuM81TfiM_E_X6XomGPK7mVUt/preview",
+            "local_question_image": "assets/quiz-images/img_1EXL5ChlVuM81TfiM_E_X6XomGPK7mVUt.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -29845,7 +29846,8 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Force-Couple System at Origin",
             "question": "A force of $200\\ \\text{N}$ acts in the positive y-direction at coordinates $(0.5, 0.2)$ meters. When replacing this force with an equivalent force-couple system located at the origin $(0, 0)$, what is the magnitude of the resulting couple moment?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Y9lBtFps5BmK5ggz_4yYym8IDCGINmHo/preview",
+            "local_question_image": "assets/quiz-images/img_1Y9lBtFps5BmK5ggz_4yYym8IDCGINmHo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -29900,7 +29902,8 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Magnitude of Resultant Force",
             "question": "Two forces $F_1$ and $F_2$ act on a point. $F_1 = 100\\ \\text{lb}$ at an angle of $30^\\circ$ from the positive x-axis, and $F_2 = 150\\ \\text{lb}$ at an angle of $120^\\circ$ from the positive x-axis. What is the magnitude of the resultant force?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1YFbAxpmR2bkL419vItxAEzBBgkR_2sdk/preview",
+            "local_question_image": "assets/quiz-images/img_1YFbAxpmR2bkL419vItxAEzBBgkR_2sdk.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -29955,7 +29958,8 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Force Z-Component Calculation",
             "question": "A force of $500\\ \\text{N}$ is directed from the origin $(0, 0, 0)$ toward the point $(3, 4, 12)$. What is the z-component of this force?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1w7huZzoB89lOkEy6tVmo-Mfk65Q1IJRf/preview",
+            "local_question_image": "assets/quiz-images/img_1w7huZzoB89lOkEy6tVmo-Mfk65Q1IJRf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30006,7 +30010,8 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Magnitude of Resultant Vector Force",
             "question": "Three forces act concurrently on a particle: $\\mathbf{F}_1 = 10\\mathbf{i} + 20\\mathbf{j}$, $\\mathbf{F}_2 = -5\\mathbf{i} + 10\\mathbf{k}$, and $\\mathbf{F}_3 = -5\\mathbf{j} - 5\\mathbf{k}$. What is the magnitude of the resultant force?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1IbdCUm6Fs-Lkab5iiEOfcuOfJUwsSs_K/preview",
+            "local_question_image": "assets/quiz-images/img_1IbdCUm6Fs-Lkab5iiEOfcuOfJUwsSs_K.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30057,7 +30062,8 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Moment of a Force Couple",
             "question": "A beam is subjected to two parallel forces of $F = 350\\ \\text{N}$ each, acting in opposite directions. The perpendicular distance between the lines of action of these two forces is $1.2\\ \\text{m}$. What is the magnitude of the resulting moment produced by this force couple?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18Moqkf-T4EuU6-c7OVyO9_3mjrWMwMra/preview",
+            "local_question_image": "assets/quiz-images/img_18Moqkf-T4EuU6-c7OVyO9_3mjrWMwMra.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30141,57 +30147,6 @@ const QUESTIONS = {
                     {
                         "title": "Step 2: Calculate Net Moment",
                         "content": "$M_{net} = 120 - 125 = -5\\ \\text{lb}\\cdot\\text{ft}$ (Result is clockwise)."
-                    }
-                ],
-                "final_answer": "C",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Resultants of Force Systems",
-                "search_term": "resultants of force systems",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Resultants of Force Systems",
-            "title": "3D Force Couple Moment Vector",
-            "question": "In a 3D coordinate system, a force couple is formed by $\\vec{F} = 2\\mathbf{i} - 3\\mathbf{j} + 1\\mathbf{k}\\ \\text{N}$ acting at point $A(1, 0, 0)\\ \\text{m}$ and $-\\vec{F} = -2\\mathbf{i} + 3\\mathbf{j} - 1\\mathbf{k}\\ \\text{N}$ acting at point $B(0, 2, 0)\\ \\text{m}$. Determine the moment vector $\\vec{M}$ of the couple.",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "M = 2i + 1j + 4k Nm",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "M = -2i - 1j - 4k Nm",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "M = 2i + 1j - 4k Nm",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "M = 1i + 2j - 4k Nm",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Step 1: Determine the Position Vector",
-                        "content": "$\\vec{r}_{BA} = 1\\mathbf{i} - 2\\mathbf{j} + 0\\mathbf{k}$"
-                    },
-                    {
-                        "title": "Step 2: Calculate Cross Product",
-                        "content": "$\\vec{M} = \\vec{r}_{BA} \\times \\vec{F} = (-2\\mathbf{i} - 1\\mathbf{j} + 1\\mathbf{k})$\n*(Note: Option D selected based on typical exam structure).* "
                     }
                 ],
                 "final_answer": "C",
@@ -31292,7 +31247,8 @@ const QUESTIONS = {
             "topic": "Static Friction",
             "title": "Friction",
             "question": "A block with mass $m = 50\\text{ kg}$ rests on a horizontal plane. The coefficient of static friction between the block and the plane is $\\mu_s = 0.30$. If a horizontal force $P$ is applied to the block, what is the maximum value $P$ can reach before the block begins to slip? Use $g = 9.81\\text{ m/s}^2$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1yS2BMcCIfgnN8SZtjrLGFvkvP4BBelRi/preview",
+            "local_question_image": "assets/quiz-images/img_1yS2BMcCIfgnN8SZtjrLGFvkvP4BBelRi.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -31347,7 +31303,8 @@ const QUESTIONS = {
             "topic": "Static Friction",
             "title": "Friction",
             "question": "A block weighing $50\\text{ lb}$ sits on a horizontal plane. The coefficient of static friction between the block and the plane is $\\mu_s = 0.4$. If a horizontal force $P = 15\\text{ lb}$ is applied to the block, what is the magnitude of the friction force $F_f$ acting on the block?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1J3xE3o68zw7vA_kYT539M0sVImuYzwn7/preview",
+            "local_question_image": "assets/quiz-images/img_1J3xE3o68zw7vA_kYT539M0sVImuYzwn7.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34361,7 +34318,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Mechanisms",
             "title": "Slider-Crank Velocity at 90 Degrees",
             "question": "In a slider-crank mechanism, the crank length is $r = 0.15$ m and it rotates at a constant angular velocity of $\\omega = 30$ rad/s. What is the magnitude of the velocity of the slider when the crank is at an angle of $\\theta = 90^\\circ$ relative to the line of stroke?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1U6Yk0scbcwZlOKpaU1DpoTbiR1weWVRt/preview",
+            "local_question_image": "assets/quiz-images/img_1U6Yk0scbcwZlOKpaU1DpoTbiR1weWVRt.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34412,7 +34370,8 @@ const QUESTIONS = {
             "topic": "Kinematics of Mechanisms",
             "title": "Speed of Sliding Rod AB",
             "question": "A rigid rod $AB$ of length $5$ m leans against a vertical wall. Point $A$ is on the ground and point $B$ is against the wall. If point $A$ slides away from the wall at a constant speed of $3$ m/s, what is the speed of point $B$ at the instant when point $A$ is $4$ m away from the wall?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1elrWE8eV8q9O9n51PWg27kZZB5-T-9RG/preview",
+            "local_question_image": "assets/quiz-images/img_1elrWE8eV8q9O9n51PWg27kZZB5-T-9RG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34565,7 +34524,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Rigid Bodies",
             "title": "Rolling Motion on an Incline",
             "question": "A uniform disk of mass $10$ kg and radius $0.5$ m starts from rest and rolls without slipping down a $30^{\\circ}$ incline. After it has traveled $4$ m along the slope, what is its translational velocity?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1E0qXXDweidVNPCRVQdj1hvRCVm-b0bjo/preview",
+            "local_question_image": "assets/quiz-images/img_1E0qXXDweidVNPCRVQdj1hvRCVm-b0bjo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34620,7 +34580,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Rigid Bodies",
             "title": "Angular Velocity of a Rotating Rod",
             "question": "A slender uniform rod of mass $5$ kg and length $2$ m is pinned at one end and released from rest in the horizontal position. What is its angular velocity when it passes through the vertical position?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1GAM2HY13bp0djYjvQ3yVa1PIraJEle08/preview",
+            "local_question_image": "assets/quiz-images/img_1GAM2HY13bp0djYjvQ3yVa1PIraJEle08.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34730,7 +34691,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Rigid Bodies",
             "title": "Kinetic Energy Ratio for Sphere",
             "question": "A uniform solid sphere of mass $m$ and radius $r$ rolls without slipping on a horizontal surface. What is the ratio of its rotational kinetic energy to its total kinetic energy?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1cRPa1JB8H0AQx0ImZnzTALA2Y1A5qwVq/preview",
+            "local_question_image": "assets/quiz-images/img_1cRPa1JB8H0AQx0ImZnzTALA2Y1A5qwVq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34785,7 +34747,8 @@ const QUESTIONS = {
             "topic": "Work-Energy of Rigid Bodies",
             "title": "Speed of a Falling Block",
             "question": "A $2$ kg block is attached to a cord wrapped around a uniform $4$ kg disk of radius $0.1$ m. The disk is free to rotate about its center. If the block is released from rest, what is its speed after it has fallen $3$ m?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/10gHTiP5lQ2BJ9fuqomKnQww0dMRFrDdv/preview",
+            "local_question_image": "assets/quiz-images/img_10gHTiP5lQ2BJ9fuqomKnQww0dMRFrDdv.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34840,7 +34803,8 @@ const QUESTIONS = {
             "topic": "Impulse-Momentum of Rigid Bodies",
             "title": "Angular Velocity of a Slender Rod",
             "question": "A slender rod ($m = 4 \\text{ kg}, L = 1.5 \\text{ m}$) is suspended vertically from a frictionless pin at its top. A horizontal impulsive force with a total linear impulse of $20 \\text{ N} \\cdot \\text{ s}$ is applied to the bottom of the rod. The resulting angular velocity is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/17R1YzbpZDRzyZMEw-U5fFLFSyR7Ftqme/preview",
+            "local_question_image": "assets/quiz-images/img_17R1YzbpZDRzyZMEw-U5fFLFSyR7Ftqme.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34895,7 +34859,8 @@ const QUESTIONS = {
             "topic": "Impulse-Momentum of Rigid Bodies",
             "title": "Velocity After Head-on Collision",
             "question": "Particle A ($m_A = 2$ kg) is moving at $5$ m/s to the right when it strikes Particle B ($m_B = 3$ kg), which is at rest. The collision is head-on and has a coefficient of restitution $e = 0.8$. What is the velocity of Particle B immediately after the collision?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vKbdNZiUpwmoeUXoicbPqfukBUpXcJK0/preview",
+            "local_question_image": "assets/quiz-images/img_1vKbdNZiUpwmoeUXoicbPqfukBUpXcJK0.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -34950,7 +34915,8 @@ const QUESTIONS = {
             "topic": "Impulse-Momentum of Rigid Bodies",
             "title": "Average Impact Force Calculation",
             "question": "A $0.5$ kg ball is traveling horizontally at $20$ m/s when it strikes a vertical wall. It rebounds at $15$ m/s in the opposite direction. If the duration of the impact is $0.01$ s, what is the magnitude of the average force exerted by the wall on the ball?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1-BUQDO4TkzKBv4E639xGg7Zi0BqvTTx5/preview",
+            "local_question_image": "assets/quiz-images/img_1-BUQDO4TkzKBv4E639xGg7Zi0BqvTTx5.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -35005,7 +34971,8 @@ const QUESTIONS = {
             "topic": "Free and Forced Vibrations",
             "title": "Mechanical Vibrations",
             "question": "A single-degree-of-freedom undamped system consists of a mass $m = 5\\text{ kg}$ and a spring with a constant $k = 2000\\text{ N/m}$. Calculate the natural frequency of the system in Hz.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1GXlM7bdwvEkVEWnnz7N_mAUwvnHQshOR/preview",
+            "local_question_image": "assets/quiz-images/img_1GXlM7bdwvEkVEWnnz7N_mAUwvnHQshOR.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -35056,7 +35023,8 @@ const QUESTIONS = {
             "topic": "Free and Forced Vibrations",
             "title": "Mass-Spring-Damper System",
             "question": "A mechanical system is modeled as a mass-spring-damper system with a mass $m = 5 \\text{ kg}$, a spring constant $k = 2000 \\text{ N/m}$, and a damping coefficient $c = 40 \\text{ N} \\cdot \\text{s/m}$. Calculate the damping ratio $\\zeta$ of the system.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1qxNAVsSlUpjdh9QUFvgUvJ_O3nbBrFnt/preview",
+            "local_question_image": "assets/quiz-images/img_1qxNAVsSlUpjdh9QUFvgUvJ_O3nbBrFnt.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -35107,7 +35075,8 @@ const QUESTIONS = {
             "topic": "Free and Forced Vibrations",
             "title": "Damping Ratio from Peak Amplitudes",
             "question": "In a free vibration test of a damped mass-spring system, the ratio of two successive peak amplitudes is measured to be 2.0. Determine the damping ratio $\\zeta$ of the system.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1eCOMQGaTuxuQVSGIAWFP5mfXI28Jo5bX/preview",
+            "local_question_image": "assets/quiz-images/img_1eCOMQGaTuxuQVSGIAWFP5mfXI28Jo5bX.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -39129,7 +39098,8 @@ const QUESTIONS = {
             "topic": "Column Buckling",
             "title": "Column Slenderness Ratio Calculation",
             "question": "A column with a pinned-pinned end condition has a length of $4.0\\text{ m}$ and a radius of gyration $r = 40\\text{ mm}$. What is the slenderness ratio of this column?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1XsjMWrqlDZBC1TL0jNmduMrRsi_2a25P/preview",
+            "local_question_image": "assets/quiz-images/img_1XsjMWrqlDZBC1TL0jNmduMrRsi_2a25P.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -39184,7 +39154,8 @@ const QUESTIONS = {
             "topic": "Column Buckling",
             "title": "Critical Buckling Stress Calculation",
             "question": "An aluminum column ($E = 70\\text{ GPa}$) has a slenderness ratio of 120. Using Euler's formula, what is the critical buckling stress $\\sigma_{cr}$ for this column?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/13t60nWkrjvUmOgO1R1kglJfLIm9Uc2gk/preview",
+            "local_question_image": "assets/quiz-images/img_13t60nWkrjvUmOgO1R1kglJfLIm9Uc2gk.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -39239,7 +39210,8 @@ const QUESTIONS = {
             "topic": "Statically Indeterminate Systems",
             "title": "Static Indeterminacy of 2D Frame",
             "question": "A 2D rigid frame consists of 3 members and 4 joints (including supports). If the frame is fixed to the ground at two of these joints and has no internal hinges or pins, what is the degree of static indeterminacy?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1bwcS8JKmLyQbNX5mg1zMYzlZU5zOCHI0/preview",
+            "local_question_image": "assets/quiz-images/img_1bwcS8JKmLyQbNX5mg1zMYzlZU5zOCHI0.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -75811,6 +75783,7 @@ const QUESTIONS = {
             "title": "Soil Mechanics Void Ratio Calculation",
             "question": "A soil sample has a specific gravity of solids ($G_s$) of 2.65, a water content ($w$) of 20%, and a degree of saturation ($S$) of 80%. What is the void ratio ($e$) of the soil?",
             "question_image": "https://drive.google.com/file/d/1J_p1rYA4DRJgD3_Aijf7FB1Ktq2tQMnr/preview",
+            "local_question_image": "assets/quiz-images/img_1J_p1rYA4DRJgD3_Aijf7FB1Ktq2tQMnr.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -76105,6 +76078,7 @@ const QUESTIONS = {
             "title": "Calculating Specific Gravity of Soil",
             "question": "A soil has a bulk unit weight of $18.5\\text{ kN/m}^3$ at a water content of 12%. If the void ratio is 0.65, determine the specific gravity ($G_s$) of the soil solids. (Assume $\\gamma_w = 9.81\\text{kN/m}^3$)",
             "question_image": "https://drive.google.com/file/d/1JLek3BVnh578nanfzgpR_K-KPHgFpIHf/preview",
+            "local_question_image": "assets/quiz-images/img_1JLek3BVnh578nanfzgpR_K-KPHgFpIHf.jpg",
             "times_presented": 0,
             "options": [
                 {
