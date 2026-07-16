@@ -5837,7 +5837,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Goodman Criterion",
-                        "content": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{N_f}$$\\n$$\frac{100}{200} + \\frac{200}{600} = 0.5 + 0.333 = 0.833$$"
+                        "content": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{N_f}$$\\n$$\\{100}{200} + \\frac{200}{600} = 0.5 + 0.333 = 0.833$$"
                     },
                     {
                         "title": "Solve for Factor of Safety",
@@ -12819,7 +12819,7 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     {
                         "title": "Plastic Moment Formula",
-                        "content": "The plastic moment capacity is fully yielded, given by $M_p = Z_x \times F_y$."
+                        "content": "The plastic moment capacity is fully yielded, given by $M_p = Z_x \\ F_y$."
                     },
                     {
                         "title": "Calculate in N-mm",
@@ -13188,11 +13188,11 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Calculate Reaction Distance",
-                        "content": "$d_r = V \times t_r = 27.78 \times 2.5 = 69.45\\text{ m}$."
+                        "content": "$d_r = V \\ t_r = 27.78 \\ 2.5 = 69.45\\text{ m}$."
                     },
                     {
                         "title": "Calculate Braking Distance",
-                        "content": "$d_b = \\frac{V^2}{2a} = \\frac{27.78^2}{2 \times 3.4} = \\frac{771.6}{6.8} = 113.47\\text{ m}$."
+                        "content": "$d_b = \\frac{V^2}{2a} = \\frac{27.78^2}{2 \\ 3.4} = \\frac{771.6}{6.8} = 113.47\\text{ m}$."
                     },
                     {
                         "title": "Total Stopping Sight Distance",
@@ -18213,7 +18213,7 @@ const ADVANCED_QUESTIONS = {
         {
             "topic": "Risk Assessment",
             "title": "Quantitative Risk Calculation",
-            "question": "A chemical plant operates a hazardous unit that has an estimated failure frequency of $2 \times 10^{-4}$ per year. If a failure occurs, there is a 10% chance that it will lead to a toxic release. Given a toxic release, the probability of an operator fatality is 50%. What is the Individual Risk (IR) of fatality for an operator who spends 25% of their year continuously working near this unit?",
+            "question": "A chemical plant operates a hazardous unit that has an estimated failure frequency of $2 \\ 10^{-4}$ per year. If a failure occurs, there is a 10% chance that it will lead to a toxic release. Given a toxic release, the probability of an operator fatality is 50%. What is the Individual Risk (IR) of fatality for an operator who spends 25% of their year continuously working near this unit?",
             "times_presented": 0,
             "options": [
                 {
@@ -18964,7 +18964,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Calculate Value",
-                        "content": "$P(X=1) = \\binom{50}{1} (0.01)^1 (0.99)^{49} = 50 \\times 0.01 \\times 0.6111 = 0.5 \times 0.6111 = 0.3055$."
+                        "content": "$P(X=1) = \\binom{50}{1} (0.01)^1 (0.99)^{49} = 50 \\times 0.01 \\times 0.6111 = 0.5 \\ 0.6111 = 0.3055$."
                     },
                     {
                         "title": "Final Percentage",
@@ -21935,7 +21935,7 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     {
                         "title": "Entropy Change of System (Iron Block)",
-                        "content": "$\\Delta S_{sys} = m C \\ln\\left(\\frac{T_2}{T_1}\\right) = 10 \times 0.45 \times \\ln\\left(\\frac{300}{500}\\right) = 4.5 \\times (-0.5108) = -2.298\\text{ kJ/K}$."
+                        "content": "$\\Delta S_{sys} = m C \\ln\\left(\\frac{T_2}{T_1}\\right) = 10 \\ 0.45 \\ \\ln\\left(\\frac{300}{500}\\right) = 4.5 \\times (-0.5108) = -2.298\\text{ kJ/K}$."
                     },
                     {
                         "title": "Heat Transferred to Lake",
@@ -23463,7 +23463,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Substitute Values",
-                        "content": "$EOQ = \\sqrt{\\frac{2 \times 10000 \times 200}{4}}$."
+                        "content": "$EOQ = \\sqrt{\\frac{2 \\ 10000 \\ 200}{4}}$."
                     },
                     {
                         "title": "Calculate",
@@ -24076,7 +24076,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Result",
-                        "content": "Thus, the mathematical maximum $RWL$ you can ever calculate is $51 \\times 1 \times 1 \times 1 \times 1 \times 1 \times 1 = 51\\text{ lbs}$. Any deviation from perfect posture reduces the safe weight limit."
+                        "content": "Thus, the mathematical maximum $RWL$ you can ever calculate is $51 \\times 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 = 51\\text{ lbs}$. Any deviation from perfect posture reduces the safe weight limit."
                     }
                 ],
                 "solution_image": "",
@@ -24473,7 +24473,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Calculate Standard Time",
-                        "content": "$ST = NT \times (1 + \\text{Allowance Fraction}) = 5.50 \\times (1 + 0.15)$."
+                        "content": "$ST = NT \\ (1 + \\text{Allowance Fraction}) = 5.50 \\times (1 + 0.15)$."
                     },
                     {
                         "title": "Final Result",
@@ -30752,7 +30752,7 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     {
                         "title": "AMAT Equation",
-                        "content": "$AMAT = H \times T_c + (1-H) \times T_m$."
+                        "content": "$AMAT = H \\ T_c + (1-H) \\ T_m$."
                     },
                     {
                         "title": "Substitute and Solve",

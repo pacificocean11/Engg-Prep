@@ -1657,7 +1657,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview",
-            "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
+                "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1708,7 +1708,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview",
-            "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
+                "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1763,7 +1763,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview",
-            "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
+                "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1818,7 +1818,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview",
-            "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
+                "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1873,7 +1873,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview",
-            "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
+                "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -1928,7 +1928,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview",
-            "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
+                "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -2371,7 +2371,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview",
-            "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
+                "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -7112,55 +7112,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Calculus",
-            "title": "Volumes of Revolution",
-            "question": "To mathematically calculate the 3D volume of a solid shape created by taking a 2D curve and spinning it $360^\\circ$ around the x-axis, the standard 'Disk Method' utilizes the integral formula:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$V = \\int 2\\pi x f(x) dx$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$V = \\int (f(x))^2 dx$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$V = \\int \\pi (f(x))^2 dx$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$V = \\int \\frac{4}{3} \\pi (f(x))^3 dx$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Area of a Circle",
-                        "content": "When you spin the curve, every vertical slice forms a perfect, flat, geometric circle. The area of a circle is $\\pi r^2$."
-                    },
-                    {
-                        "title": "The Integral",
-                        "content": "The radius ($r$) is the height of the curve $f(x)$. The thickness of the slice is $dx$. Summing up all these infinitely thin circular disks yields $V = \\int \\pi (f(x))^2 dx$."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Volumes of Revolution",
-                "search_term": "Volumes of Revolution"
-            }
-        },
-        {
             "topic": "Differential Equations",
             "title": "Euler's Method",
             "question": "Euler's Method is a numerical (computer-based) mathematical technique. It is primarily used to:",
@@ -8609,7 +8560,7 @@ const QUESTIONS = {
         {
             "topic": "Expected Value",
             "title": "Calculating Expected Profit per Component",
-            "question": "A process has a 5% defect rate. Functional components yield $50 profit; defective ones lose $150. What is the expected profit per component?",
+            "question": "A process has a 5% defect rate. Functional components yield \$50 profit; defective ones lose \$150. What is the expected profit per component?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -9852,59 +9803,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Descriptive Statistics",
-            "title": "Sample Variance",
-            "question": "When mathematically calculating the sample variance ($s^2$) of a dataset, why is the sum of the squared deviations explicitly divided by $(n - 1)$ rather than by the total number of observations $n$?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Because one sample is always considered an outlier and is discarded",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To artificially inflate the variance to account for laboratory measurement error",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To create an 'unbiased' estimator of the true population variance, correcting for the fact that the sample mean is mathematically constrained to the data itself (Bessel's Correction)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Because it makes the square root calculation geometrically easier",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Population vs Sample",
-                        "content": "If you measure every human on earth (the entire population), you divide strictly by $N$."
-                    },
-                    {
-                        "title": "The Bias",
-                        "content": "However, if you only measure a sample of 10 people, those 10 people naturally cluster around their own sample mean closer than they do the true global mean. If you divided by $n$, your variance would consistently mathematically underestimate the true global variance."
-                    },
-                    {
-                        "title": "Bessel's Correction",
-                        "content": "Dividing by $(n-1)$, known as degrees of freedom, mathematically forces the formula to be an unbiased estimator."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Descriptive Statistics",
-                "search_term": "descriptive statistics"
-            }
-        },
-        {
             "topic": "Probability",
             "title": "Mutually Exclusive Events",
             "question": "If two mathematical events, A and B, are strictly defined as 'mutually exclusive', the probability of both events occurring simultaneously, denoted as $P(A \\cap B)$, is exactly equal to:",
@@ -10455,56 +10353,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Regression",
-            "title": "Coefficient of Determination",
-            "question": "If a simple linear regression model has a mathematically calculated correlation coefficient of $r = 0.8$, the resulting 'Coefficient of Determination' ($R^2$) is $0.64$. What does this $0.64$ strictly represent in the physical real world?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The slope of the regression line is exactly $0.64$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The y-intercept of the regression line is exactly $0.64$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Exactly $64\\%$ of the total mathematical variance in the dependent variable ($Y$) is explained by the independent variable ($X$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The data is $64\\%$ likely to be completely false",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Meaning of R-squared",
-                        "content": "If you are trying to predict the price of a house ($Y$) based solely on its square footage ($X$), an $R^2$ of $0.64$ means that $64\\%$ of the reason why prices change is due to the size of the house."
-                    },
-                    {
-                        "title": "The Missing Percentage",
-                        "content": "The remaining $36\\%$ of the variance is caused by things NOT in your math model (like neighborhood quality, pool, age of roof, or pure random luck)."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Regression",
-                "search_term": "regression",
-                "page_number": 70
-            }
-        },
-        {
             "topic": "Descriptive Statistics",
             "title": "Median vs Mean",
             "question": "If an engineer is mathematically analyzing a dataset representing annual factory salaries, and the CEO earns a massive, extreme outlier salary of $$50\\text{ Million}$ while everyone else earns $$50,000$, which statistical measure of central tendency will physically remain almost entirely unaffected by the CEO?",
@@ -10551,206 +10399,6 @@ const QUESTIONS = {
                 "section": "Engineering Probability and Statistics",
                 "topic": "Descriptive Statistics",
                 "search_term": "descriptive statistics"
-            }
-        },
-        {
-            "topic": "Distributions",
-            "title": "Exponential Distribution",
-            "question": "In industrial reliability engineering, the continuous Exponential Probability Distribution is most famously and universally used to mathematically model:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The exact physical weight of a manufactured product",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The geometric tolerance of a steel shaft",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The continuous time that elapses between completely random, independent events (e.g., the 'Time Between Failures' of a mechanical pump)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The number of defective items in a batch of 100",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Poisson vs Exponential",
-                        "content": "Poisson counts the discrete *number* of events in a set time (e.g., 4 failures per year). The Exponential distribution measures the continuous *time* between those events."
-                    },
-                    {
-                        "title": "Memoryless Property",
-                        "content": "A unique mathematical property of the exponential distribution is that it is 'memoryless'. The probability of a lightbulb burning out tomorrow is the exact same whether the bulb is 1 day old or 10 years old (assuming pure random failure, not wear-out)."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Distributions",
-                "search_term": "distributions",
-                "page_number": 66
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Law of Total Probability",
-            "question": "If a factory has three distinct assembly lines (A, B, and C) that manufacture $20\\%$, $30\\%$, and $50\\%$ of the total products respectively, and you know the defect rate of each individual line, you can mathematically calculate the overall global defect rate of the entire factory using the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Law of Large Numbers",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Law of Total Probability",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Central Limit Theorem",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Pythagorean Theorem",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Scenario",
-                        "content": "The sample space is completely partitioned into mutually exclusive chunks (A, B, C)."
-                    },
-                    {
-                        "title": "The Equation",
-                        "content": "The Law of Total Probability states that $P(\\text{Defect}) = P(\\text{Defect}|A)P(A) + P(\\text{Defect}|B)P(B) + P(\\text{Defect}|C)P(C)$. You simply multiply each line's defect rate by its market share and add them all together."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "probability",
-                "page_number": 64
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Central Limit Theorem",
-            "question": "The Central Limit Theorem is arguably the most profoundly important theorem in statistics. It mathematically guarantees that if you take sufficiently large random samples ($n > 30$) from ANY population (even one that is wildly skewed or bimodal), the distribution of the sample MEANS will:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Exactly match the shape of the original strange population",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Always equal exactly zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Form a straight horizontal line",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Mathematically approach a perfect standard Normal (Gaussian) Bell Curve",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Magic",
-                        "content": "Imagine a factory where people only make $$10\\text{k}$ or $$100\\text{k}$ (a U-shaped bimodal distribution). If you graph individual salaries, it looks like a U."
-                    },
-                    {
-                        "title": "The Averages",
-                        "content": "But if you grab $50$ random people, average their salary, write it down, and repeat this $1000$ times, the graph of those *averages* will form a flawless, beautiful Bell Curve. This allows engineers to use normal Z-tables on almost any large-scale problem, regardless of the underlying physics."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Statistics",
-                "search_term": "statistics",
-                "page_number": 64
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Expected Value",
-            "question": "In mathematical statistics, the 'Expected Value' $E(X)$ of a discrete random variable is physically synonymous with the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Absolute maximum possible outcome",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Standard deviation",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Long-run arithmetic mean (weighted average) of all possible outcomes",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Most frequently occurring outcome (the Mode)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Calculation",
-                        "content": "To find $E(X)$, you multiply every possible outcome by its exact mathematical probability, and sum them up: $\\Sigma [x_i \\cdot P(x_i)]$."
-                    },
-                    {
-                        "title": "Real World Example",
-                        "content": "If you play a carnival game, the expected value might be $-\\$0.50$. This means that while you might randomly win $$10$ today, if you play the game $1,000,000$ times, you are mathematically guaranteed to lose exactly an average of $50\\text{ cents}$ every single time you play."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "probability",
-                "page_number": 64
             }
         },
         {
@@ -10801,105 +10449,6 @@ const QUESTIONS = {
                 "topic": "Hypothesis Testing",
                 "search_term": "hypothesis testing",
                 "page_number": 71
-            }
-        },
-        {
-            "topic": "Probability",
-            "title": "Bayes' Theorem",
-            "question": "Bayes' Theorem is a powerful mathematical tool utilized strictly to update the probability of an event occurring based on new evidence. It allows an engineer to precisely calculate the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Inverse probability (e.g., finding $P(A|B)$ when you already know $P(B|A)$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Area under a standard normal curve",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Derivative of a probability function",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Median of a dataset",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Equation",
-                        "content": "$P(A|B) = [P(B|A) \\cdot P(A)] / P(B)$."
-                    },
-                    {
-                        "title": "Medical Example",
-                        "content": "You know that $99\\%$ of people with cancer test positive ($P(\\text{Positive} | \\text{Cancer})$). But a patient wants to know the inverse: 'I tested positive. What are the actual odds that I actually have cancer?' ($P(\\text{Cancer} | \\text{Positive})$). Because the disease is rare, Bayes' theorem reveals that a positive test might still only mean a $5\\%$ actual chance of having the disease."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "probability",
-                "page_number": 64
-            }
-        },
-        {
-            "topic": "Descriptive Statistics",
-            "title": "Percentiles",
-            "question": "If an engineering student scores exactly at the '$85\\text{th}$ percentile' on the FE Exam, this mathematically and definitively indicates that:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "They answered exactly $85\\%$ of the test questions correctly",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "They scored strictly equal to or higher than exactly $85\\%$ of all other students who took the exam",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Their score was $85$ points above the mathematical mean",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "They failed the exam",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Scores vs Ranks",
-                        "content": "A percentile is purely a geometric ranking, not a grade."
-                    },
-                    {
-                        "title": "The Application",
-                        "content": "The exam could be incredibly difficult. The student might have only answered $40\\%$ of the questions right. But if $85\\%$ of the other students answered less than $40\\%$ right, the student is still in the 85th percentile. They beat $85\\%$ of the room."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Descriptive Statistics",
-                "search_term": "descriptive statistics"
             }
         },
         {
@@ -11801,50 +11350,6 @@ const QUESTIONS = {
                 "topic": "Standard Deviation",
                 "search_term": "Standard Deviation",
                 "page_number": 64
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Median vs Mean",
-            "question": "In a positively (right) skewed distribution, how do the mean and median typically relate?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Mean < Median",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Mean = Median",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Cannot be determined",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Mean > Median",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Skewness",
-                        "content": "In a right-skewed distribution, the long tail pulls the mean to the right of the median."
-                    }
-                ],
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Probability and Statistics",
-                "topic": "Probability",
-                "search_term": "Probability Functions",
-                "page_number": 66
             }
         },
         {
@@ -15627,116 +15132,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Logic Diagrams",
-            "title": "Evaluating a Boolean Function",
-            "question": "Given the Boolean function $F(A, B, C) = (A \\cdot B) + (B \\cdot C)$, what is the output value when the inputs are $A = 1, B = 0$, and $C = 1$?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Infinite",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "1",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "High",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Substitute Values",
-                        "content": "Substitute the inputs into the function: $F(1, 0, 1) = (1 \\cdot 0) + (0 \\cdot 1)$."
-                    },
-                    {
-                        "title": "Evaluate AND Operations",
-                        "content": "$1 \\cdot 0 = 0$ and $0 \\cdot 1 = 0$, so $F = 0 + 0$."
-                    },
-                    {
-                        "title": "Evaluate OR Operation",
-                        "content": "In Boolean logic, $0 + 0 = 0$."
-                    }
-                ],
-                "final_answer": "D",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Logic Diagrams",
-                "search_term": "logic diagrams",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Logic Diagrams",
-            "title": "Simplify Boolean Expression",
-            "question": "Simplify the following Boolean expression using standard identities: $Y = A \\cdot B + A \\cdot \\overline{B}$.",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$A$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "1",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\overline{A}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$B$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Apply Distributive Law",
-                        "content": "Factor out the common term $A$: $Y = A \\cdot (B + \\overline{B})$."
-                    },
-                    {
-                        "title": "Apply Complement Law",
-                        "content": "The identity $B + \\overline{B} = 1$ simplifies the expression to $Y = A \\cdot 1$."
-                    },
-                    {
-                        "title": "Apply Identity Law",
-                        "content": "Any variable ANDed with 1 remains unchanged: $A \\cdot 1 = A$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Logic Diagrams",
-                "search_term": "logic diagrams",
-                "page_number": null
-            }
-        },
-        {
             "topic": "Sensors and Transducers",
             "title": "RTD Measurement",
             "question": "An RTD (Resistance Temperature Detector) typically uses which material for its sensing element due to its linear resistance-temperature relationship?",
@@ -16669,57 +16064,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Control Systems",
-            "title": "Routh-Hurwitz Stability Criterion",
-            "question": "A control system has a characteristic equation s³ + 2s² + 4s + K = 0. According to the Routh-Hurwitz stability criterion, what is the range of K for the system to remain stable?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "0 < K < 8",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "K > 8",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "K > 0",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0 < K < 4",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Routh Array Construction",
-                        "content": "Row s³: 1, 4. Row s²: 2, K. Row s¹: (2*4 - 1*K)/2 = (8 - K)/2. Row s⁰: K."
-                    },
-                    {
-                        "title": "Check First Column Signs",
-                        "content": "For stability, all elements in the first column must be positive: 1 > 0, 2 > 0, (8-K)/2 > 0 (so K < 8), and K > 0. Therefore, 0 < K < 8."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Control Systems",
-                "search_term": "control systems",
-                "page_number": 231
-            }
-        },
-        {
-            "topic": "Control Systems",
             "title": "Steady-State Error for Type 0 System",
             "question": "A unity feedback system has an open-loop transfer function G(s) = 5 / (s + 2). What is the steady-state error (ess) for a unit step input?",
             "question_image": "",
@@ -16994,151 +16338,6 @@ const QUESTIONS = {
                     {
                         "title": "XOR Gate Behavior",
                         "content": "An Exclusive-OR (XOR) gate has the output $Y = Aoverline{B} + overline{A}B$. It yields 1 if exactly one input is 1. If both are 0 or both are 1, it yields 0."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Logic Diagrams",
-                "search_term": "logic diagrams",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Logic Diagrams",
-            "title": "Boolean Minimization",
-            "question": "Simplify the Boolean expression: $Y = A cdot B + A cdot overline{B}$.",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "A",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "B",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$A+B$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Distributive Law",
-                        "content": "$Y = A(B + overline{B})$"
-                    },
-                    {
-                        "title": "Complement Identity",
-                        "content": "Since $B + overline{B} = 1$, we have $Y = A cdot 1 = A$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Logic Diagrams",
-                "search_term": "logic diagrams",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Logic Diagrams",
-            "title": "NAND Universal Gate",
-            "question": "To implement an OR gate using only 2-input NAND gates, how many NAND gates are required?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "3 NAND gates",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "2 NAND gates",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "4 NAND gates",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1 NAND gate",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Universal NAND Implementation",
-                        "content": "To get $Y = A + B$ using NAND: first invert both inputs using two NAND gates configured as NOT gates ($overline{A}$, $overline{B}$). Then feed these into a third NAND gate: $overline{overline{A} cdot overline{B}} = A + B$ (by De Morgan's Law)."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Logic Diagrams",
-                "search_term": "logic diagrams",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Logic Diagrams",
-            "title": "Multiplexer Functionality",
-            "question": "A multiplexer (MUX) is a combinational logic circuit designed to:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Select one of several analog or digital input signals and forward the selected input into a single line",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Convert parallel data into serial data only",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Store a single bit of information",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Perform arithmetic additions",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "MUX Function",
-                        "content": "A MUX has $2^n$ data inputs, $n$ select lines, and 1 output. The binary value on the select lines determines which data input is routed to the output."
                     }
                 ],
                 "final_answer": "A",
@@ -18544,56 +17743,6 @@ const QUESTIONS = {
                 "page_number": 69
             }
         },
-        {
-            "topic": "Control Systems",
-            "title": "Gain Margin and Phase Margin",
-            "question": "In classical control theory, the mathematically calculated 'Gain Margin' and 'Phase Margin' of a system are highly critical metrics used exclusively to determine the system's:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Total physical weight",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Cost of manufacturing",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Maximum electrical power output",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Relative stability (exactly how close the system is to crossing the threshold into violent, destructive instability)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Absolute vs Relative",
-                        "content": "Knowing a system is 'stable' is not enough. You need to know *how* stable it is."
-                    },
-                    {
-                        "title": "The Margins",
-                        "content": "Gain Margin tells you mathematically how much more power (gain) you can add to the amplifier before the system starts screaming (feedback loop instability). Phase Margin tells you how much physical time delay the system can tolerate before crashing. Bigger margins mean a much safer, more robust design."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "instr-controls",
-                "topic": "Control Systems",
-                "search_term": "control systems",
-                "page_number": 231
-            }
-        }
     ],
     "ethics": [
         {
@@ -26908,7 +26057,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w/preview",
-            "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
+                "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -27182,7 +26331,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/19-wekixZcSS97Vlrm7-4f97apZDscbwK/preview",
-            "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
+                "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -28752,96 +27901,9 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Replacement Analysis",
-            "title": "Economic Life of an Asset",
-            "question": "The economic life of an asset is defined as the service life that:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Minimizes the equivalent uniform annual cost (EUAC)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Maximizes the asset's book value",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Equals the physical life of the asset",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Maximizes cumulative depreciation",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Economic Life",
-                        "content": "Economic life is the period of ownership that minimizes the EUAC (or equivalent annual worth), accounting for capital costs and operating & maintenance costs."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Replacement Analysis",
-                "search_term": "replacement analysis"
-            }
-        },
-        {
-            "topic": "Cost Estimation",
-            "title": "Cost Index Scaling",
-            "question": "A chemical plant cost $2,000,000 when the Chemical Engineering Plant Cost Index (CEPCI) was 400. What is the estimated cost today when the current CEPCI is 600?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$3,000,000",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$2,400,000",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$1,333,333",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$4,000,000",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Cost Index",
-                        "content": "$C_2 = C_1 \\times \\dfrac{I_2}{I_1} = 2{,}000{,}000 \\times \\dfrac{600}{400} = \\$3{,}000{,}000$."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Cost Estimation",
-                "search_term": "cost estimation",
-                "page_number": 237
-            }
-        },
-        {
             "topic": "Time Value of Money",
             "title": "Present Worth",
-            "question": "A factory needs to buy a new conveyor belt. They know it will cost exactly $$50,000$ to replace the belt in exactly 10 years. If the company's bank account pays an interest rate of $5\\%$ compounded annually, they can mathematically calculate the 'Present Worth' ($P$). What does this Present Worth physically represent in the real world?",
+            "question": "A factory needs to buy a new conveyor belt. They know it will cost exactly \$50,000 to replace the belt in exactly 10 years. If the company's bank account pays an interest rate of 5\% compounded annually, they can mathematically calculate the 'Present Worth' ($P$). What does this Present Worth physically represent in the real world?",
             "times_presented": 0,
             "options": [
                 {
@@ -28989,7 +28051,7 @@ const QUESTIONS = {
         {
             "topic": "Depreciation",
             "title": "Straight-Line Method",
-            "question": "A construction company buys a bulldozer for $$100,000$. They plan to use it for exactly 5 years, after which they will sell it for a 'Salvage Value' of $$20,000$. Using the standard Straight-Line mathematical depreciation method, what is the exact physical amount of depreciation written off on their taxes every single year?",
+            "question": "A construction company buys a bulldozer for \$100,000. They plan to use it for exactly 5 years, after which they will sell it for a 'Salvage Value' of \$20,000. Using the standard Straight-Line mathematical depreciation method, what is the exact physical amount of depreciation written off on their taxes every single year?",
             "times_presented": 0,
             "options": [
                 {
@@ -29381,56 +28443,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Cost Estimation",
-            "title": "Learning Curve",
-            "question": "In industrial engineering manufacturing, the mathematical 'Learning Curve' model is used to predict assembly line costs. The fundamental physical premise of the learning curve is that every time the cumulative production quantity strictly DOUBLES, the time required to build the newest unit will:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Double",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Increase by a fixed 10 minutes",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Decrease by a mathematically constant, fixed percentage (e.g., an $80\\%$ learning curve)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Instantly drop to zero",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Human Efficiency",
-                        "content": "The first time a worker builds an airplane wing, they are slow. The second time, they are faster because they learned the tricks."
-                    },
-                    {
-                        "title": "The Mathematical Rule",
-                        "content": "If you have an $80\\%$ learning curve: If Unit 1 takes $100\\text{ hours}$, Unit 2 (doubled) takes $80\\text{ hours}$. Unit 4 (doubled again) takes $64\\text{ hours}$ ($80 \\times 0.8$). Unit 8 takes $51.2\\text{ hours}$. It creates a decaying exponential curve that eventually flattens out as the worker reaches peak human speed."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Cost Estimation",
-                "search_term": "cost estimation",
-                "page_number": 237
-            }
-        },
-        {
             "topic": "Depreciation",
             "title": "Book Value",
             "question": "In corporate accounting and engineering economics, the mathematically calculated 'Book Value' of an industrial machine at the end of Year 3 is explicitly defined as the:",
@@ -29481,59 +28493,9 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Inflation",
-            "title": "Real vs Actual Dollars",
-            "question": "When an engineer is calculating the future costs of a 20-year project, they must account for inflation. In economic mathematics, a 'Real' (or Constant) dollar explicitly ignores the physical effects of inflation. What does an 'Actual' (or Current) dollar mathematically represent?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The physical, out-of-pocket cash amount you will literally have to hand to the cashier in that future year, fully inflated by the loss of purchasing power",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The value of gold",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "A dollar that has been adjusted backward to 1990 buying power",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Only the interest paid to the bank",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Burger Analogy",
-                        "content": "In 1950, a burger cost $$0.15$. Today it costs $$5.00$. That $$5.00$ bill is the 'Actual' dollar. It is what you physically pull out of your wallet today."
-                    },
-                    {
-                        "title": "Engineering Projections",
-                        "content": "If you are planning to buy a generator in 10 years, and it costs $$1000$ in today's 'Real' dollars, but inflation is $3\\%$, you must calculate the 'Actual' dollars to know exactly how much cash to request from the CEO in the year 2035 ($1000 \\times 1.03^{10} = \\$1343$)."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Inflation",
-                "search_term": "inflation",
-                "page_number": 235
-            }
-        },
-        {
             "topic": "Alternatives Analysis",
             "title": "Sunk Costs",
-            "question": "An engineering firm has already spent a massive $$2\\text{ Million}$ trying to design a new smartphone, but the technology isn't working. A competitor just released a better phone. In rigorous engineering economic analysis, the $$2\\text{ Million}$ already spent is mathematically defined as a 'Sunk Cost'. How should this sunk cost be treated when deciding whether to cancel the project or keep going?",
+            "question": "An engineering firm has already spent a massive $2 Million trying to design a new smartphone, but the technology isn't working. A competitor just released a better phone. In rigorous engineering economic analysis, the $2 Million already spent is mathematically defined as a 'Sunk Cost'. How should this sunk cost be treated when deciding whether to cancel the project or keep going?",
             "times_presented": 0,
             "options": [
                 {
@@ -29548,7 +28510,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "The project MUST be finished to avoid wasting the $$2\\text{ Million}$",
+                    "text": "The project MUST be finished to avoid wasting the $2 Million",
                     "is_correct": false
                 },
                 {
@@ -29577,106 +28539,6 @@ const QUESTIONS = {
                 "section": "Engineering Economics",
                 "topic": "Alternatives Analysis",
                 "search_term": "alternatives analysis"
-            }
-        },
-        {
-            "topic": "Time Value of Money",
-            "title": "Rule of 72",
-            "question": "The 'Rule of 72' is a famous mathematical shortcut used by engineers and investors to instantly estimate compound interest. If you invest $$10,000$ in a stock market fund that earns exactly $8\\%$ annual interest, the Rule of 72 states that your money will physically double (reach $$20,000$) in approximately:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "72 years",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "9 years",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "8 years",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "12 years",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Shortcut",
-                        "content": "To find out how long it takes an investment to double, you simply divide the number 72 by the integer interest rate."
-                    },
-                    {
-                        "title": "The Math",
-                        "content": "$72 / 8 = 9\\text{ years}$. This is a surprisingly accurate mental approximation of the complex logarithmic formula $\\ln(2) / \\ln(1+i)$."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Time Value of Money",
-                "search_term": "time value of money",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Cost Estimation",
-            "title": "Cost Indexes",
-            "question": "Civil engineers frequently use historical 'Cost Indexes' (like the ENR Construction Cost Index) to estimate the physical cost of a new bridge today, based solely on what a similar bridge cost 20 years ago. Mathematically, the estimated cost today is strictly calculated by:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Adding the two index numbers together",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Ignoring the index and just adjusting for inflation",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Multiplying the old historical cost by the ratio of the (Current Index Number / Historical Index Number)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Squaring the old cost",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Purpose of the Index",
-                        "content": "An index tracks the combined rising prices of concrete, steel, and labor over decades."
-                    },
-                    {
-                        "title": "The Ratio",
-                        "content": "If a bridge cost $$1,000,000$ when the index was at $100$, and the index today is at $250$, the math is simple ratios: $(\\$1,000,000) \\times (250 / 100) = \\$2,500,000$ to build that exact same bridge today."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Engineering Economics",
-                "topic": "Cost Estimation",
-                "search_term": "cost estimation",
-                "page_number": 237
             }
         },
         {
@@ -31973,55 +30835,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Force Vectors",
-            "title": "Resultant Force",
-            "question": "If two geometric force vectors act simultaneously on a single physical particle, the exact mathematical 'Resultant' force vector is defined physically as:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The algebraic subtraction of the two scalar magnitudes",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "A single equivalent force vector that produces the exact same physical translation effect on the particle as both original forces combined",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "A force that strictly cancels out both original forces, creating equilibrium",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The cross product of the two force vectors",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Vector Addition",
-                        "content": "Forces cannot just be added like normal numbers ($5\\text{ lbs} + 5\\text{ lbs}$ does not necessarily equal $10\\text{ lbs}$). You must account for their geometric direction."
-                    },
-                    {
-                        "title": "The Resultant",
-                        "content": "If you pull a box North with $10\\text{ lbs}$, and your friend pulls it East with $10\\text{ lbs}$, the Resultant is a single imaginary vector pulling Northeast with exactly $14.14\\text{ lbs}$ of force. If you replaced both of you with one robot pulling Northeast, the box wouldn't know the difference."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Force Vectors",
-                "search_term": "force vectors"
-            }
-        },
-        {
             "topic": "Moments",
             "title": "Varignon's Theorem",
             "question": "In classical statics, Varignon's Theorem provides a powerful mathematical shortcut for calculating moments. The theorem explicitly states that the total moment of a force about a specific point is exactly equal to:",
@@ -32118,56 +30931,6 @@ const QUESTIONS = {
                 "section": "Statics",
                 "topic": "Rigid Body Equilibrium",
                 "search_term": "rigid body equilibrium"
-            }
-        },
-        {
-            "topic": "Trusses",
-            "title": "Zero-Force Members",
-            "question": "When analyzing a massive bridge truss using the Method of Joints, engineers actively search for 'Zero-Force Members'. What is the primary physical and structural purpose of leaving a steel beam in a bridge if it currently carries mathematically zero pounds of force?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It physically prevents long, slender compression beams from bowing outward and buckling, and safely distributes totally unexpected dynamic side-loads (like a massive gust of wind)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "It stores kinetic energy",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It acts as a permanent magnetic ground for lightning strikes",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It has no purpose; it is an embarrassing mathematical mistake by the architect",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Identification",
-                        "content": "If two beams meet at a T-joint, and there is no external load pushing on the joint, the vertical 'stem' of the T mathematically must have zero force in it to maintain $\\Sigma F_y = 0$."
-                    },
-                    {
-                        "title": "The Reality",
-                        "content": "Even though it carries $0$ pounds when the bridge is empty, if a heavy truck hits the brakes or a hurricane hits the side of the bridge, the load dynamically shifts. The 'zero-force' member instantly wakes up and takes massive loads, saving the bridge from collapse."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Trusses",
-                "search_term": "trusses",
-                "page_number": 274
             }
         },
         {
@@ -32318,56 +31081,6 @@ const QUESTIONS = {
                 "topic": "Moments of Inertia",
                 "search_term": "moments of inertia",
                 "page_number": 96
-            }
-        },
-        {
-            "topic": "Equilibrium",
-            "title": "Couples",
-            "question": "In classical vector mechanics, a 'Couple' is physically defined as two mathematically parallel forces that have the exact same magnitude, opposite directions, and are separated by a perpendicular distance. What is the unique, defining mathematical characteristic of the Moment produced by a pure Couple?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It physically produces the exact same rotational torque (moment) perfectly regardless of which point on the object you measure it from (it is a 'free vector')",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "It produces a massive linear translation force",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It can only be balanced by a single, larger force",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Its moment is exactly zero",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Steering Wheel",
-                        "content": "Imagine grabbing a steering wheel with two hands. Left hand pushes up $10\\text{ lbs}$, right hand pulls down $10\\text{ lbs}$. This is a Couple. Because $+10$ and $-10$ cancel out, there is ZERO physical force trying to push the steering column through the dashboard."
-                    },
-                    {
-                        "title": "Pure Rotation",
-                        "content": "The ONLY physical effect of a Couple is pure, unadulterated rotational twist. Because it is pure twist, the math proves the twisting torque is identical whether you calculate it from the center of the wheel, the edge of the wheel, or a point on the moon."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Equilibrium",
-                "search_term": "equilibrium",
-                "page_number": 86
             }
         },
         {
@@ -32668,154 +31381,6 @@ const QUESTIONS = {
                 "topic": "Vector Analysis",
                 "search_term": "vector analysis",
                 "page_number": null
-            }
-        },
-        {
-            "topic": "Cables",
-            "title": "Catenary Curve",
-            "question": "When a massive, heavy, perfectly uniform physical steel cable is suspended freely between two electrical towers, allowing its own dead weight to pull it down, the cable mathematically forms a highly specific geometric curve known precisely as a:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Perfect Circle",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Sine Wave",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Catenary Curve (governed by hyperbolic cosine mathematics, $\\cosh(x)$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Straight Line",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Parabola vs Catenary",
-                        "content": "If a cable is practically weightless but is holding up a massively heavy flat bridge deck (like the Golden Gate Bridge), the physics forces the cable into a perfect geometric Parabola ($x^2$)."
-                    },
-                    {
-                        "title": "The Free Cable",
-                        "content": "If the cable is just hanging freely under its own weight (like a power line), the tension physics shifts slightly. It mathematically forms a 'Catenary', which looks almost exactly like a parabola but requires complex $\\cosh(x)$ calculus to solve."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Cables",
-                "search_term": "cables"
-            }
-        },
-        {
-            "topic": "Equilibrium",
-            "title": "Three-Force Principle",
-            "question": "If a solid physical object is in perfect static equilibrium while being acted upon by exactly three non-parallel geometric forces, a rigid mathematical law dictates that the lines of action of those three forces MUST:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Be perfectly parallel to each other",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "All intersect together perfectly at one single, common concurrent point",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Form a perfect equilateral triangle",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Be equal to zero",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Torque Problem",
-                        "content": "If Force A and Force B intersect at a point, you can calculate the moments around that intersection point. The moments of A and B are zero (because distance is zero)."
-                    },
-                    {
-                        "title": "The Requirement",
-                        "content": "If the object is in equilibrium, the total moment MUST be zero. Therefore, Force C cannot possibly create any moment either. The only mathematical way Force C creates zero moment is if its line of action physically shoots straight through that exact same intersection point."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Equilibrium",
-                "search_term": "equilibrium",
-                "page_number": 86
-            }
-        },
-        {
-            "topic": "Frames and Machines",
-            "title": "Multi-Force Members",
-            "question": "In classical statics, the strict mathematical difference between a 'Truss' and a 'Frame' is that a Frame physically contains at least one:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Multi-Force Member (a solid beam that has forces applied at $3$ or more locations, subjecting the beam to internal bending moments rather than just pure tension/compression)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Welded joint instead of a pinned joint",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Rope or cable",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Moving part",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Trusses",
-                        "content": "A perfect truss is made $100\\%$ entirely of Two-Force members. All loads are applied exactly at the pins. The beams only feel pure stretch or pure squash."
-                    },
-                    {
-                        "title": "Frames",
-                        "content": "A Frame (like the boom of a construction crane) has heavy loads applied right in the physical middle of the beams. This instantly subjects the beam to severe internal bending forces. You can no longer assume the internal force vectors point perfectly straight down the axis of the beam."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Frames and Machines",
-                "search_term": "frames and machines"
             }
         },
         {
@@ -33121,7 +31686,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview",
-            "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
+                "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -33229,7 +31794,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview",
-            "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
+                "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -36208,55 +34773,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Rotational Kinetics",
-            "title": "Conservation of Angular Momentum",
-            "question": "An ice skater is physically spinning in place with their arms extended. When they suddenly pull their arms tightly into their chest, their rotational spin speed violently increases. According to the laws of dynamics, this happens because:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "They pushed off the ice with their skates",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Friction disappeared",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Pulling their arms inward mathematically decreased their Mass Moment of Inertia ($I$); because total Angular Momentum ($I\\omega$) must remain constant, their Angular Velocity ($\\omega$) had to mathematically skyrocket to compensate",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Their physical body mass decreased",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Equation",
-                        "content": "Angular Momentum $H = I \\times \\omega$. If no one pushes the skater (no external torque), $H$ must stay the exact same number (e.g., $100$)."
-                    },
-                    {
-                        "title": "The Math",
-                        "content": "If arms are out, $I$ is big ($10$). So $\\omega$ is $10$ ($10 \\times 10 = 100$). When they pull arms in, $I$ shrinks down to $2$. To keep the equation balanced at $100$, the spin speed $\\omega$ must instantly explode to $50$ ($2 \\times 50 = 100$). The physics is absolute."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Rotational Kinetics",
-                "search_term": "rotational kinetics"
-            }
-        },
-        {
             "topic": "Vibrations",
             "title": "Natural Frequency",
             "question": "A heavy steel block is physically hanging from a thick coil spring. If an engineer mathematically pulls the block down and lets it go, it will bounce up and down at its 'Natural Frequency' ($\\omega_n$). The exact physical speed of this bouncing frequency is governed entirely by:",
@@ -36404,106 +34920,6 @@ const QUESTIONS = {
                 "topic": "Vibrations",
                 "search_term": "vibrations",
                 "page_number": 113
-            }
-        },
-        {
-            "topic": "Kinematics",
-            "title": "Relative Motion",
-            "question": "Car A is driving North at $60\\text{ mph}$. Car B is driving East at $60\\text{ mph}$. The mathematical 'Relative Velocity' of Car B with respect to Car A ($V_{B/A}$) is found using vector math. The physical meaning of $V_{B/A}$ is:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The speed a police radar gun on the side of the road reads",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Zero, because they are going the same speed",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The speed of light",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Exactly how fast and in what direction Car B appears to be moving from the visual perspective of the driver sitting inside Car A",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Vector Math",
-                        "content": "The equation is $V_{B/A} = V_B - V_A$. Because they are vectors, subtracting a North vector is the same as adding a South vector."
-                    },
-                    {
-                        "title": "The Perspective",
-                        "content": "If you are driving North in Car A, you feel like you are sitting still. You look out your window, and Car B appears to be shooting diagonally South-East away from you at $84.8\\text{ mph}$. That is relative motion."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Kinematics",
-                "search_term": "kinematics",
-                "page_number": 102
-            }
-        },
-        {
-            "topic": "Kinetics",
-            "title": "Coriolis Acceleration",
-            "question": "The Coriolis Effect is a bizarre mathematical acceleration force that only physically appears when an engineer analyzes an object moving:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Within a frame of reference that is physically rotating (like walking across a spinning carousel, or firing an artillery shell across the spinning Earth)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Faster than the speed of sound",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "In a perfect vacuum",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "On a perfectly flat, stationary table",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Rotating Frame",
-                        "content": "If you stand in the center of a spinning merry-go-round and try to roll a ball straight outward to your friend on the edge, the ball will magically curve sideways."
-                    },
-                    {
-                        "title": "The Math",
-                        "content": "There is no actual physical wind pushing the ball sideways. The ball is going perfectly straight. It curves because the ground under the ball is rotating away from it. The mathematical formula $2\\omega \\times V_{rel}$ allows engineers to predict exactly how far an artillery shell will drift off-target due to the Earth's rotation."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Dynamics",
-                "topic": "Kinetics",
-                "search_term": "kinetics",
-                "page_number": 106
             }
         },
         {
@@ -37057,7 +35473,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview",
-            "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
+                "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37109,7 +35525,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview",
-            "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
+                "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37218,7 +35634,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview",
-            "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
+                "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37269,7 +35685,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview",
-            "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
+                "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37320,7 +35736,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview",
-            "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
+                "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37371,7 +35787,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview",
-            "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
+                "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -37955,7 +36371,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview",
-            "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
+                "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -38011,7 +36427,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview",
-            "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
+                "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -38622,7 +37038,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview",
-            "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
+                "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -40099,55 +38515,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Beam Deflection",
-            "title": "Boundary Conditions",
-            "question": "To mathematically solve the differential equation for the physical deflection curve of a beam ($EI y'' = M$), an engineer must use 'Boundary Conditions'. If one end of the beam is physically welded into a solid concrete wall (a 'Fixed' or 'Cantilever' support), what two mathematical boundary conditions MUST be true exactly at that wall?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The physical deflection is maximum, and the slope is zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The shear force is zero, and the moment is zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The temperature is zero, and the pressure is zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The physical deflection ($y$) is exactly zero, AND the physical geometric slope ($dy/dx$) is exactly zero",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Physics of the Weld",
-                        "content": "A fixed support is immovable. The concrete physically refuses to let the steel beam move up or down, so the vertical deflection ($y$) at the wall must mathematically be $0.0$."
-                    },
-                    {
-                        "title": "The Clamp Effect",
-                        "content": "Furthermore, the concrete grips the beam so tightly that it physically cannot even twist or angle downward. The beam must emerge perfectly horizontally from the wall before it starts sagging. Therefore, the angle/slope ($dy/dx$ or $\\theta$) is also strictly $0.0$ at the wall."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Beam Deflection",
-                "search_term": "beam deflection"
-            }
-        },
-        {
             "topic": "Combined Loading",
             "title": "Mohr's Circle",
             "question": "Mohr's Circle is a brilliant graphical mathematical tool used to visualize the complex stress state inside a material. On the standard Mohr's Circle geometric plot, what does the extreme rightmost edge of the circle (the absolute maximum positive X-value) physically represent?",
@@ -40645,55 +39012,6 @@ const QUESTIONS = {
                 "topic": "Stress and Strain",
                 "search_term": "stress and strain",
                 "page_number": 132
-            }
-        },
-        {
-            "topic": "Beam Deflection",
-            "title": "Superposition",
-            "question": "A massive steel beam has a heavy truck parked on the left side AND a heavy train parked on the right side. To find the exact physical downward deflection in the dead center of the beam, an engineer can mathematically solve for the truck by itself, solve for the train by itself, and simply add the two deflections together. This powerful mathematical shortcut is called:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The Method of Joints",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Thermodynamics",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The Principle of Superposition",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The Parallel Axis Theorem",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Requirement",
-                        "content": "Superposition ONLY works if the physics are perfectly linear (meaning $F=kx$, and the beam doesn't bend so far that the geometry physically changes)."
-                    },
-                    {
-                        "title": "The Power",
-                        "content": "If the math is linear, $f(A+B)$ is exactly equal to $f(A) + f(B)$. You can break an impossibly complex 10-load system into 10 separate, incredibly easy textbook problems, and just sum the final answers."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-strength",
-                "topic": "Beam Deflection",
-                "search_term": "beam deflection"
             }
         },
         {
@@ -42592,50 +40910,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Corrosion",
-            "title": "Pitting Corrosion",
-            "question": "Pitting is a form of extremely localized corrosion that leads to the creation of small _____ in the metal.",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Crystals",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Glows",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Protective layers",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Holes or pits",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition",
-                        "content": "Often occurs in stainless steels in chloride-rich environments."
-                    }
-                ],
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Corrosion",
-                "search_term": "corrosion",
-                "page_number": 21
-            }
-        },
-        {
             "topic": "Manufacturing Processes",
             "title": "Recrystallization Temperature",
             "question": "The recrystallization temperature is the temperature at which:",
@@ -43077,7 +41351,7 @@ const QUESTIONS = {
         {
             "topic": "Engineered Materials",
             "title": "Composite Material — Rule of Mixtures",
-            "question": "A fiber-reinforced composite has fibers with E_f = 400 GPa and a matrix with E_m = 4 GPa. The fiber volume fraction is 0.3. What is the longitudinal modulus using the rule of mixtures?",
+            "question": "A fiber-reinforced composite has fibers with E$_f$ = 400 GPa and a matrix with E$_m$ = 4 GPa. The fiber volume fraction is 0.3. What is the longitudinal modulus using the rule of mixtures?",
             "times_presented": 0,
             "options": [
                 {
@@ -43300,55 +41574,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Crystal Structures",
-            "title": "Slip Systems",
-            "question": "Aluminum (FCC crystal structure) is highly ductile and easy to bend, whereas Magnesium (HCP crystal structure) is incredibly brittle and snaps easily. Physically and metallurgically, why is the FCC structure universally far more ductile than the HCP structure?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Because the FCC structure has exactly 12 intersecting close-packed 'slip systems' (atomic highways) allowing atoms to easily slide past one another in many directions without cracking",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Because Aluminum is a liquid at room temperature",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Because HCP metals have zero gravity",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Because FCC metals have smaller atomic weights",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Mechanism of Bending",
-                        "content": "When you bend a paperclip, the atoms don't stretch; entire geometric planes of atoms literally slide past each other like a deck of cards."
-                    },
-                    {
-                        "title": "Slip Systems",
-                        "content": "An FCC crystal has $12$ different geometric directions ('slip systems') where the planes are incredibly smooth and packed tight, allowing easy sliding. HCP only has $3$ slip systems. If you try to bend Magnesium in a direction where it doesn't have a slip system, the atoms cannot slide, so the crystal simply snaps in half."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Crystal Structures",
-                "search_term": "crystal structures"
-            }
-        },
-        {
             "topic": "Phase Diagrams",
             "title": "The Eutectoid Reaction",
             "question": "On the classic Iron-Carbon (Steel) phase diagram, the critical 'Eutectoid' reaction occurs at exactly $0.76\\%$ Carbon and $727^\\circ\\text{C}$. During this specific metallurgical reaction, what exactly happens physically as the steel cools through this temperature line?",
@@ -43548,55 +41773,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Strengthening Mechanisms",
-            "title": "Strain Hardening (Cold Working)",
-            "question": "If you bend a copper wire back and forth several times with your hands, the wire becomes physically stiffer and much harder to bend at that exact spot until it finally snaps. This metallurgical phenomenon is called 'Strain Hardening' or 'Cold Working'. Physically, why does the metal become stronger?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The friction of bending heats the wire up and melts it",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The bending generates millions of new dislocations that crash into each other, tangle up like a traffic jam, and physically block each other from moving",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The bending turns the copper into iron",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The bending squeezes all the atoms closer together, making it denser",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Mechanism of Deformation",
-                        "content": "Metals bend by moving dislocations (wrinkles). If a dislocation can move freely, the metal is soft."
-                    },
-                    {
-                        "title": "The Traffic Jam",
-                        "content": "When you physically cold-work (hammer or bend) a metal, you violently spawn millions of new dislocations. They start running into each other and become tangled in massive 'traffic jams'. Because the wrinkles are now gridlocked and cannot move, the metal can no longer bend. Its Yield Strength has skyrocketed."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Strengthening Mechanisms",
-                "search_term": "strengthening mechanisms"
-            }
-        },
-        {
             "topic": "Phase Diagrams",
             "title": "The Lever Rule",
             "question": "When examining a binary phase diagram in a two-phase region (e.g., exactly at a point where both Solid and Liquid co-exist), an engineer mathematically utilizes the 'Lever Rule'. The explicit mathematical purpose of the Lever Rule is to calculate the:",
@@ -43746,56 +41922,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Material Properties",
-            "title": "Ductile-to-Brittle Transition Temperature (DBTT)",
-            "question": "The Titanic famously sank because its steel hull possessed a surprisingly high 'Ductile-to-Brittle Transition Temperature' (DBTT). What is the catastrophic physical reality of a metal operating below its DBTT?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It turns into a liquid",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It becomes highly magnetic",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Even though it is highly ductile and bendable at room temperature, the freezing cold physically transforms the steel into a glass-like state, causing it to violently shatter upon impact instead of safely denting",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It loses all of its mass",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Liberty Ships",
-                        "content": "During WWII, massive cargo ships in the freezing North Atlantic would suddenly crack entirely in half while sitting perfectly still. Engineers were baffled."
-                    },
-                    {
-                        "title": "The DBTT Phenomenon",
-                        "content": "BCC metals (like Iron) have a fatal flaw. At room temperature, they are ductile. But as the temperature drops, the atomic vibrations slow down. At a specific temperature (the DBTT), the atoms lock up. If an iceberg hits the hull, the steel cannot bend to absorb the blow. It simply shatters like a dinner plate."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Material Properties",
-                "search_term": "material properties",
-                "page_number": 138
-            }
-        },
-        {
             "topic": "Corrosion",
             "title": "Galvanic Corrosion",
             "question": "An engineer mistakenly uses a solid Copper bolt to permanently attach a piece of Aluminum to a boat hull sitting in salt water. Within three months, the Aluminum around the bolt is completely eaten away and destroyed. This is a classic textbook example of:",
@@ -43893,105 +42019,6 @@ const QUESTIONS = {
                 "topic": "Composites",
                 "search_term": "composites",
                 "page_number": 124
-            }
-        },
-        {
-            "topic": "Diffusion",
-            "title": "Fick's First Law",
-            "question": "Case-hardening is a process where steel gears are baked in a carbon-rich gas. The carbon atoms physically migrate into the solid steel. The mathematical speed at which these carbon atoms diffuse through the solid steel lattice is governed by Fick's First Law, which states that the diffusion flux is directly proportional to the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Phase of the moon",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Weight of the gear",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Concentration Gradient (the mathematical difference in carbon density between the outside gas and the inside steel)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Speed of the gas",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Driving Force",
-                        "content": "Diffusion is driven by differences in concentration. If you drop food coloring in water, it naturally spreads from the high-concentration dark spot to the zero-concentration clear water."
-                    },
-                    {
-                        "title": "The Equation",
-                        "content": "Fick's First Law is $J = -D \\frac{dC}{dx}$. The steeper the gradient ($dC/dx$), the faster the atoms physically blast their way into the steel. This creates a gear with an ultra-hard, wear-resistant high-carbon skin, but a soft, tough, low-carbon core."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Diffusion",
-                "search_term": "diffusion",
-                "page_number": 117
-            }
-        },
-        {
-            "topic": "Material Testing",
-            "title": "Hardness Testing",
-            "question": "A Rockwell Hardness Tester is used on an assembly line to verify the heat treatment of a steel wrench. The Rockwell test physically and mathematically evaluates the metal's 'hardness' strictly by measuring the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Electrical resistance of the surface",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Depth of physical penetration left behind after violently crushing a tiny diamond cone or steel ball into the surface of the metal",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Time it takes for the metal to melt",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Resilience of the metal to bending",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Concept of Hardness",
-                        "content": "Hardness is simply a material's physical resistance to localized plastic deformation (denting or scratching)."
-                    },
-                    {
-                        "title": "The Rockwell Method",
-                        "content": "The machine applies a heavy $150\\text{ kg}$ weight to a sharp diamond point, driving it into the steel. The machine then literally uses a micrometer to measure how deep the crater is. A shallow crater means the metal is incredibly hard (e.g., Rockwell C60). A deep crater means the metal is soft."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Material Testing",
-                "search_term": "material testing"
             }
         },
         {
@@ -44192,55 +42219,6 @@ const QUESTIONS = {
                 "topic": "Ceramics",
                 "search_term": "ceramics",
                 "page_number": null
-            }
-        },
-        {
-            "topic": "Crystal Structures",
-            "title": "Miller Indices",
-            "question": "In crystallography, 'Miller Indices' are a mathematical notation system (e.g., $[1 1 1]$ or $(1 0 0)$) used heavily by materials engineers strictly to geometrically identify and designate:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The weight of the crystal",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The chemical formula of the compound",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Specific geometric directions and 2D atomic planes within the 3D crystal lattice",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The number of electrons in the outer shell",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Need for a Map",
-                        "content": "When discussing 'Slip Systems', you need a mathematical way to tell another engineer exactly WHICH angle the atoms are sliding along."
-                    },
-                    {
-                        "title": "The Notation",
-                        "content": "Miller indices use reciprocals of the X, Y, and Z intercepts. For example, the $(1 0 0)$ plane is simply the flat square face of a cubic crystal. The $(1 1 1)$ plane is a diagonal slice cutting off the corner of the cube. It provides a flawless 3D mapping system for atomic structures."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Crystal Structures",
-                "search_term": "crystal structures"
             }
         },
         {
@@ -46308,7 +44286,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview",
-            "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
+                "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46360,7 +44338,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview",
-            "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
+                "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46572,7 +44550,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ/preview",
-            "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
+                "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46624,7 +44602,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3/preview",
-            "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
+                "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -46676,7 +44654,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy/preview",
-            "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
+                "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -47675,56 +45653,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Fluid Dynamics",
-            "title": "Stagnation Point",
-            "question": "When a fast-moving physical fluid strikes the blunt, flat nose of an underwater submarine, the water directly hitting the dead center of the nose is physically forced to a complete, absolute halt (Velocity mathematically drops to exactly zero). This specific geometric location is universally known as the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Event Horizon",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Friction Point",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Stagnation Point (where all kinetic energy is converted instantly into maximum physical pressure)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Boundary Layer",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Conversion",
-                        "content": "According to Bernoulli, $P_{total} = P_{static} + P_{dynamic}$. The dynamic pressure is $\\frac{1}{2} \\rho v^2$."
-                    },
-                    {
-                        "title": "The Stagnation Math",
-                        "content": "Because the sub's nose physically stops the water, $v = 0$. Therefore, $100\\%$ of the water's former kinetic rushing energy is instantly converted into pure, crushing static pressure. The Stagnation Point mathematically experiences the absolute highest physical pressure on the entire submarine."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Dynamics",
-                "search_term": "fluid dynamics",
-                "page_number": null
-            }
-        },
-        {
             "topic": "Flow Measurement",
             "title": "Venturi Tube",
             "question": "A 'Venturi Tube' is a highly precise industrial pipe fitting used explicitly to mathematically calculate the physical volumetric flow rate of water. It achieves this by intentionally forcing the water through a severe geometric constriction (a throat) and using a manometer to mathematically measure the resulting:",
@@ -48565,54 +46493,6 @@ const QUESTIONS = {
                 "section": "electricity",
                 "topic": "Current Electricity",
                 "search_term": "current electricity"
-            }
-        },
-        {
-            "topic": "Magnetism",
-            "title": "Magnetic Force- Scalar Value",
-            "question": "A proton moves with a speed of $5 \\times 10^6$ m/s perpendicular to a magnetic field of $0.2$ T. What is the magnitude of the magnetic force on the proton?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1.6 \\times 10^{-13}$ N",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$3.2 \\times 10^{-13}$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0.8 \\times 10^{-13}$ N",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Zero",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Formula",
-                        "content": "$F = qvB\\sin\\theta$. Here $\\theta = 90^\\circ$."
-                    },
-                    {
-                        "title": "Calculation",
-                        "content": "$F = (1.6 \\times 10^{-19})(5 \\times 10^6)(0.2) = 1.6 \\times 10^{-13}$ N."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Magnetism",
-                "search_term": "magnetism",
-                "page_number": 361
             }
         },
         {
@@ -51205,56 +49085,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Magnetism",
-            "title": "Magnetic Flux",
-            "question": "While Electric Monopoles (isolated positive or negative charges) exist everywhere in nature, Gauss's Law for Magnetism mathematically dictates that the net Magnetic Flux passing through any perfectly closed 3D surface is ALWAYS exactly zero. Physically, this proves that:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Magnets do not exist",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Magnetic Monopoles (a pure 'North' pole without a 'South' pole) are mathematically and physically impossible in classical physics",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Magnetic fields only exist in space",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Gravity cancels out magnetism",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Broken Magnet",
-                        "content": "If you cut a bar magnet in half, you don't get a 'North' piece and a 'South' piece. You instantly get two brand new, smaller magnets, both with a North and a South."
-                    },
-                    {
-                        "title": "The Field Lines",
-                        "content": "Because monopoles don't exist, every single magnetic field line that leaves a North pole MUST eventually loop back around and enter the South pole. Therefore, whatever flux leaves a box must re-enter it, making the net flux always exactly $0.0$."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Magnetism",
-                "search_term": "magnetism",
-                "page_number": 361
-            }
-        },
-        {
             "topic": "Electricity",
             "title": "Ampere's Law",
             "question": "Ampere's Law connects electricity to magnetism. It mathematically states that the integral of the magnetic field ($B$) around a closed loop is directly proportional to the exact amount of:",
@@ -51451,55 +49281,6 @@ const QUESTIONS = {
                 "topic": "Electricity",
                 "search_term": "electricity",
                 "page_number": 354
-            }
-        },
-        {
-            "topic": "Electromagnetism",
-            "title": "Maxwell's Equations",
-            "question": "In 1865, James Clerk Maxwell mathematically unified electricity and magnetism into four beautiful equations. He made a massive mathematical correction to Ampere's Law by adding a term called 'Displacement Current'. This brilliant theoretical addition mathematically proved for the first time that:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Magnets can be melted",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "A changing Electric field physically generates a Magnetic field (and vice versa), which propagates through empty space as an Electromagnetic Wave (Light)",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Gravity is an illusion",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Voltage is temperature dependent",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Missing Link",
-                        "content": "Faraday proved that a moving Magnetic field creates an Electric field. Maxwell proved the reverse: a moving Electric field creates a Magnetic field."
-                    },
-                    {
-                        "title": "The Leap",
-                        "content": "Because they create each other, they can 'leap-frog' through the dead vacuum of outer space forever without needing a copper wire. Maxwell calculated the speed of this self-sustaining wave and found it was exactly $300,000\\text{ km/s}$. He had accidentally just discovered what Light actually is."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Electromagnetism",
-                "search_term": "electromagnetism"
             }
         },
         {
@@ -51903,56 +49684,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Circuit Analysis",
-            "title": "Superposition Principle",
-            "question": "An engineer is analyzing a linear circuit that contains THREE different batteries (voltage sources) in different loops. Using the 'Superposition Principle', the engineer can mathematically solve for the current in a specific resistor by:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Multiplying the three batteries together",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Throwing two batteries away permanently",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Turning off all batteries except ONE, solving the circuit, and then repeating this for each battery. Finally, mathematically adding (superimposing) the individual results together",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Waiting until the batteries die",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Power of Linearity",
-                        "content": "Resistors obey $V=IR$, which is a straight-line linear equation. Because it is linear, $f(A+B+C) = f(A) + f(B) + f(C)$."
-                    },
-                    {
-                        "title": "The Method",
-                        "content": "Trying to solve a 3-battery circuit all at once requires massive matrix algebra. Superposition lets you 'turn off' (short-circuit) two batteries, making it a dirt-simple 1-battery circuit. You solve it three separate times in your head, and just add the three currents together. The physics proves the answer is flawlessly identical."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Circuit Analysis",
-                "search_term": "circuit analysis",
-                "page_number": null
-            }
-        },
-        {
             "topic": "Transients",
             "title": "Capacitors in DC",
             "question": "An engineer wires an empty Capacitor in series with a resistor and a DC battery. When the switch is first closed, current flows. However, after exactly $5$ 'Time Constants' ($5\\tau$), the capacitor is fully charged. At this exact physical moment (Steady State), the capacitor acts mathematically and physically as a:",
@@ -52203,56 +49934,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "AC Circuits",
-            "title": "Phase Shift (ELI the ICE man)",
-            "question": "In a purely Inductive AC circuit (just a coil of wire and an AC generator), the voltage and the current are physically mathematically out of phase. The famous mnemonic 'ELI' reminds engineers that in an Inductor (L):",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Current and Voltage are perfectly in phase",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Voltage (E) mathematically LEADS the Current (I) by exactly 90 degrees",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Current mathematically LEADS the Voltage by 90 degrees",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Voltage lags by 180 degrees",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Resistance to Change",
-                        "content": "An inductor violently fights changes in current. When you push a massive sine wave of voltage ($E$) across it, the current ($I$) struggles to get moving."
-                    },
-                    {
-                        "title": "The $90^\\circ$ Delay",
-                        "content": "Because it takes time for the flywheel to spin up, the physical Current wave mathematically arrives exactly $1/4$ of a cycle ($90^\\circ$) AFTER the Voltage wave. In a Capacitor ('ICE'), it is reversed: the Current violently rushes in first, so Current (I) leads Voltage (E)."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "AC Circuits",
-                "search_term": "ac circuits",
-                "page_number": 365
-            }
-        },
-        {
             "topic": "AC Power",
             "title": "Real vs Reactive Power",
             "question": "In a heavy industrial factory filled with AC electric motors, the total 'Apparent Power' (kVA) billed by the power company consists of two mathematical parts: Real Power (kW) and Reactive Power (kVAR). What physically IS Reactive Power?",
@@ -52460,7 +50141,7 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$-10$ (It magnifies the voltage $10\\times$ and violently flips it upside down)",
+                    "text": "$-10$",
                     "is_correct": true
                 },
                 {
@@ -58606,56 +56287,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Thermodynamics",
-            "title": "Phase Diagrams (Triple Point)",
-            "question": "On a physical Pressure-Temperature (P-T) Phase Diagram for pure water, there exists a single mathematical coordinate known as the 'Triple Point' ($0.01^\\circ\\text{C}$ and $0.006\\text{ atm}$). What explicitly happens at this exact coordinate?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Water boils at the speed of light",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Water turns into a plasma",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Solid ice, liquid water, and steam gas all physically and mathematically co-exist in perfect, unchanging equilibrium simultaneously",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Gravity ceases to affect the water",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Intersection",
-                        "content": "The melting line, boiling line, and sublimation line all mathematically crash into each other at exactly one point."
-                    },
-                    {
-                        "title": "The Bizarre Reality",
-                        "content": "If you put water in a vacuum chamber at exactly $0.006\\text{ atm}$ and $0.01^\\circ\\text{C}$, the water will literally be boiling, freezing, and melting all at the exact same time. It is a fundamental constant of the universe used to physically calibrate atomic thermometers."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Thermodynamics",
-                "search_term": "thermodynamics",
-                "page_number": 143
-            }
-        },
-        {
             "topic": "Heat Transfer (Conduction)",
             "title": "Fourier's Law",
             "question": "Fourier's Law of Heat Conduction mathematically dictates the physical rate of heat ($q$) blasting through a solid brick wall. The equation is $q = -kA \\frac{dT}{dx}$. What does the mathematical variable '$k$' strictly represent?",
@@ -58702,104 +56333,6 @@ const QUESTIONS = {
                 "section": "Thermodynamics",
                 "topic": "Heat Transfer (Conduction)",
                 "search_term": "heat transfer (conduction)"
-            }
-        },
-        {
-            "topic": "Heat Transfer (Conduction)",
-            "title": "Thermal Resistance",
-            "question": "To solve complex multi-layered walls (like a house with brick, wood, and drywall), engineers completely abandon complex calculus and instead use a brilliant mathematical shortcut called 'Thermal Resistance' ($R = L/kA$). This physically allows the engineer to mathematically treat the heat transfer problem exactly like a:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Hydraulic water pump",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Chemical reaction",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Basic DC electrical circuit, where Temperature difference acts like Voltage, Heat flow acts like Current, and they can simply add the Resistors in series ($R_{eq} = R_1 + R_2 + R_3$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Magnetic field",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Ohm's Law Analogy",
-                        "content": "Ohm's Law is $I = \\Delta V / R_{electrical}$. Heat transfer is $q = \\Delta T / R_{thermal}$."
-                    },
-                    {
-                        "title": "The Shortcut",
-                        "content": "Instead of solving three nested differential equations, you just calculate the $R$-value of the brick, the $R$-value of the wood, and the $R$-value of the drywall, add them up, and divide the temperature difference by the total. This is exactly why home insulation is literally sold at Home Depot labeled with an 'R-Value' (like R-13)."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Heat Transfer (Conduction)",
-                "search_term": "heat transfer (conduction)"
-            }
-        },
-        {
-            "topic": "Heat Transfer (Convection)",
-            "title": "Newton's Law of Cooling",
-            "question": "When cold wind physically blows across a hot car engine, the heat is ripped away via Convection. Newton's Law of Cooling mathematically calculates this heat loss as $q = hA(T_{surface} - T_{fluid})$. Unlike conduction '$k$', the Convection Coefficient '$h$' is NOT a pure material property. '$h$' mathematically depends heavily on:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The color of the car",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The speed of light",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The gravity of the earth",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The extremely complex physical fluid dynamics of the wind (velocity, turbulence, boundary layer geometry, and fluid viscosity)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Moving Fluid",
-                        "content": "Conduction only cares about solid atoms. Convection relies on the physical movement of fluid physically carrying the heat away."
-                    },
-                    {
-                        "title": "The $h$ Variable",
-                        "content": "If the wind is stagnant, $h$ is tiny ($10$). If the wind is blasting at $100\\text{ mph}$ and highly turbulent, it violently scrubs the boundary layer, and $h$ skyrockets to $1000$. Finding $h$ is notoriously the most difficult, algebraically brutal part of all heat transfer engineering."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Heat Transfer (Convection)",
-                "search_term": "heat transfer (convection)"
             }
         },
         {
@@ -58941,104 +56474,6 @@ const QUESTIONS = {
                 "solution_image": "",
                 "video_explanation": "",
                 "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Heat Transfer (Radiation)",
-                "search_term": "heat transfer (radiation)"
-            }
-        },
-        {
-            "topic": "Heat Transfer (Radiation)",
-            "title": "Emissivity and Blackbodies",
-            "question": "In the mathematical equations for Thermal Radiation, engineers use a physical property called 'Emissivity' ($\\epsilon$). An Emissivity of exactly $1.0$ mathematically defines a theoretical 'Ideal Blackbody'. What is the explicit physical definition of an Ideal Blackbody?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "An object that is painted white",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "An object that reflects $100\\%$ of all light hitting it like a perfect mirror",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "An object that is transparent",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "A perfect physical absorber that absorbs $100\\%$ of all incident radiation hitting it, and conversely is the absolute most perfect, maximum possible emitter of thermal radiation allowed by the laws of physics",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Scale",
-                        "content": "Emissivity ranges from $0.0$ (perfect mirror) to $1.0$ (perfect blackbody)."
-                    },
-                    {
-                        "title": "Good Absorbers = Good Emitters",
-                        "content": "Physics dictates that if you are good at absorbing heat, you MUST be good at spitting it out. Polished aluminum foil has an emissivity of $0.05$ (it barely emits any heat). Matte black soot has an emissivity of $0.95$. This is why the bottom of a frying pan is black, and why thermoses are made of mirrored silver."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Thermodynamics",
-                "topic": "Heat Transfer (Radiation)",
-                "search_term": "heat transfer (radiation)"
-            }
-        },
-        {
-            "topic": "Heat Transfer (Radiation)",
-            "title": "View Factor (Shape Factor)",
-            "question": "When calculating the physical radiant heat exchange between two distinct objects (like a hot fire and a cold wall), the mathematical equation requires a 'View Factor' ($F_{1 \\rightarrow 2}$). What does this View Factor physically and mathematically calculate?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The exact geometric fraction of the total radiation leaving Object 1 that physically strikes Object 2, based entirely on their 3D shapes, sizes, and orientations",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The color of the objects",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The speed of the photons",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The temperature difference",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Flashlight Analogy",
-                        "content": "If you stand $10\\text{ feet}$ away from a fire, only a small cone of the fire's total heat actually hits your body. The rest shoots past you into the room."
-                    },
-                    {
-                        "title": "The Geometry",
-                        "content": "If you are standing far away, the View Factor might be $0.1$ ($10\\%$ of the heat hits you). If you physically wrap the fire completely in a metal sphere, the View Factor is mathematically exactly $1.0$ ($100\\%$ of the fire's heat has no choice but to hit the sphere wall). It is pure 3D calculus."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -61972,7 +59407,7 @@ const QUESTIONS = {
             "topic": "Deformation and Stiffness",
             "title": "Total Elongation of Stepped Rod",
             "question": "A stepped steel rod is subjected to an axial tensile force of $100\\text{ kN}$. The rod consists of two segments: Segment 1 has a length of $0.5\\text{ m}$ and a cross-sectional area of $500\\text{ mm}^2$. Segment 2 has a length of $0.5\\text{ m}$ and a cross-sectional area of $1000\\text{ mm}^2$. Given the modulus of elasticity for steel is $E = 200\\text{ GPa}$, what is the total elongation of the rod?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jEfIfyVMLSsAFvQQtVNuCsonR3Xuwrdi/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62025,13 +59460,14 @@ const QUESTIONS = {
                 "topic": "Deformation and Stiffness",
                 "search_term": "deformation and stiffness",
                 "page_number": null
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1jEfIfyVMLSsAFvQQtVNuCsonR3Xuwrdi.jpg"
         },
         {
             "topic": "Deformation and Stiffness",
             "title": "Angle of Twist in Hollow Shaft",
             "question": "A hollow steel shaft with an outer diameter of $60\\text{ mm}$ and an inner diameter of $40\\text{ mm}$ is $2\\text{ m}$ long. It is subjected to a torque of $1000\\text{ N}\\cdot\\text{m}$. If the shear modulus $G = 80\\text{ GPa}$, what is the angle of twist in radians?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1cGVyB4G6KbvAmiErnNHulq3ZqiEi8sxO/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62080,7 +59516,8 @@ const QUESTIONS = {
                 "topic": "Deformation and Stiffness",
                 "search_term": "deformation and stiffness",
                 "page_number": null
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1cGVyB4G6KbvAmiErnNHulq3ZqiEi8sxO.jpg"
         },
         {
             "topic": "Springs",
@@ -62251,7 +59688,7 @@ const QUESTIONS = {
             "topic": "Pressure Vessels and Piping",
             "title": "Thin-walled Cylindrical Pressure Vessel",
             "question": "A cylindrical pressure vessel has an internal diameter of $D = 1.2 \\text{ m}$ and a wall thickness of $t = 10 \\text{ mm}$. If the internal gauge pressure is $p = 2 \\text{ MPa}$, determine the hoop stress $\\sigma_h$ in the wall.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1VDU26Nw97IROWdyYgQwPO5xNrsUu5UmZ/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62300,13 +59737,14 @@ const QUESTIONS = {
                 "topic": "Pressure Vessels and Piping",
                 "search_term": "pressure vessels and piping",
                 "page_number": null
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1VDU26Nw97IROWdyYgQwPO5xNrsUu5UmZ.jpg"
         },
         {
             "topic": "Bearings",
             "title": "Ball Bearing Rated Life Calculation",
             "question": "A radial ball bearing has a dynamic load rating $C$ of $20\\text{ kN}$. If the bearing is subjected to a constant radial load $P$ of $5\\text{ kN}$, calculate the rated life $L_{10}$ in millions of revolutions.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1i6CWZdixo-LF5elsBGuuVzHTUEjkCFx8/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62355,7 +59793,8 @@ const QUESTIONS = {
                 "topic": "Bearings",
                 "search_term": "bearings",
                 "page_number": 437
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1i6CWZdixo-LF5elsBGuuVzHTUEjkCFx8.jpg"
         },
         {
             "topic": "Power Screws",
@@ -62420,7 +59859,7 @@ const QUESTIONS = {
             "topic": "Power Screws",
             "title": "Power Screw",
             "question": "A square thread power screw has a major diameter of $d = 30 \\text{ mm}$ and a pitch of $p = 6 \\text{ mm}$ with double threads. If the coefficient of friction is $f = 0.15$ and collar friction is neglected, what is the torque required to raise a load of $F = 10 \\text{ kN}$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1VZu56yc6CYyOmbZHjAZrklHtWH3XSAnh/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62473,13 +59912,14 @@ const QUESTIONS = {
                 "topic": "Power Screws",
                 "search_term": "power screws",
                 "page_number": 438
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1VZu56yc6CYyOmbZHjAZrklHtWH3XSAnh.jpg"
         },
         {
             "topic": "Power Transmission",
             "title": "Torque Transmitted by a Key",
             "question": "A square key is used to connect a $1.5 \\text{ in.}$ diameter shaft to a hub. The key has a width of $w = 0.375 \\text{ in.}$ and a length of $L = 2.0 \\text{ in.}$. If the allowable shear stress for the key material is $\\tau_{all} = 10,000 \\text{ psi}$, what is the maximum torque $T$ that can be transmitted based on the shear strength of the key?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1KVbgti0rJ46Tn-rkG61NbgCtlTXy2jxF/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62532,7 +59972,8 @@ const QUESTIONS = {
                 "topic": "Power Transmission",
                 "search_term": "power transmission",
                 "page_number": 438
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1KVbgti0rJ46Tn-rkG61NbgCtlTXy2jxF.jpg"
         },
         {
             "topic": "Power Transmission",
@@ -62648,7 +60089,7 @@ const QUESTIONS = {
             "topic": "Joining Methods",
             "title": "Preloading of a Bolt",
             "question": "A $10 \\text{ mm}$ diameter steel bolt is preloaded to a force of $F_i = 20 \\text{ kN}$. The joint constant is $C = 0.25$. If an external tensile load of $P = 12 \\text{ kN}$ is applied to the joint, what is the total resultant force $F_b$ acting on the bolt?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1j9nq5mcSYUP4mYa6Nyks0h4bZWIajCkA/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62697,7 +60138,8 @@ const QUESTIONS = {
                 "topic": "Joining Methods",
                 "search_term": "joining methods",
                 "page_number": 441
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1j9nq5mcSYUP4mYa6Nyks0h4bZWIajCkA.jpg"
         },
         {
             "topic": "Manufacturability",
@@ -62813,7 +60255,7 @@ const QUESTIONS = {
             "topic": "Quality and Reliability",
             "title": "Parallel System Reliability Calculation",
             "question": "A redundant system is designed with three identical components connected in parallel. If the reliability of each individual component is $R = 0.85$, what is the overall reliability of the system?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Fwsu6jrm4Rbs3jyw-emTOD2eVuplL8Dr/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62866,13 +60308,14 @@ const QUESTIONS = {
                 "topic": "Quality and Reliability",
                 "search_term": "quality and reliability",
                 "page_number": null
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1Fwsu6jrm4Rbs3jyw-emTOD2eVuplL8Dr.jpg"
         },
         {
             "topic": "Quality and Reliability",
             "title": "Series-Parallel System Reliability",
             "question": "A machine consists of two subsystems, A and B, connected in series. Subsystem A consists of two components in parallel, each with a reliability of 0.90. Subsystem B consists of a single component with a reliability of 0.80. What is the total system reliability?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1WYtwIEV04uupi5vkaz2sfxAvIOtieXa6/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62921,13 +60364,14 @@ const QUESTIONS = {
                 "topic": "Quality and Reliability",
                 "search_term": "quality and reliability",
                 "page_number": null
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1WYtwIEV04uupi5vkaz2sfxAvIOtieXa6.jpg"
         },
         {
             "topic": "Components",
             "title": "Pneumatic Cylinder Volumetric Flow Rate",
             "question": "A pneumatic cylinder with a bore diameter of 75 mm is required to extend at a steady speed of 0.15 m/s. What is the required volumetric flow rate of air at the cylinder inlet?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fug7m58OXs_Kn1j3Klm8OxhLk6Q3B-56/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -62980,13 +60424,14 @@ const QUESTIONS = {
                 "topic": "Components",
                 "search_term": "components",
                 "page_number": 38
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1fug7m58OXs_Kn1j3Klm8OxhLk6Q3B-56.jpg"
         },
         {
             "topic": "Components",
             "title": "Hydraulic Cylinder Retraction Force",
             "question": "A double-acting hydraulic cylinder has a bore diameter of 80 mm and a rod diameter of 35 mm. If the hydraulic system pressure is 15 MPa, what is the maximum theoretical retraction force?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1eu64aCq1kvJKpdmgVy_fDAqJz_USLmzD/preview",
             "times_presented": 0,
             "options": [
                 {
@@ -63039,7 +60484,8 @@ const QUESTIONS = {
                 "topic": "Components",
                 "search_term": "components",
                 "page_number": 38
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1eu64aCq1kvJKpdmgVy_fDAqJz_USLmzD.jpg"
         },
         {
             "topic": "Engineering Drawing Interpretations and GD & T",
@@ -63085,7 +60531,7 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "D",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/1lomhktdMjUwyzMxJZs3dBODCAqajoITV/preview",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -63291,100 +60737,6 @@ const QUESTIONS = {
                     {
                         "title": "Calculate",
                         "content": "$P_{eq} = left( 0.4 \times 2^3 + 0.6 \times 4^3 \right)^{1/3} = left( 0.4 \times 8 + 0.6 \times 64 \right)^{1/3} = left( 3.2 + 38.4 \right)^{1/3} = (41.6)^{1/3} approx 3.46\text{ kN}$. Closest option: A."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Bearings",
-                "search_term": "bearings",
-                "page_number": 437
-            }
-        },
-        {
-            "topic": "Bearings",
-            "title": "Petroff's Equation for Journal Bearing",
-            "question": "Petroff's equation for a lightly loaded journal bearing relates the coefficient of friction (f) to which parameters?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$f = 2pi^2 left(\frac{mu N}{P}\right)left(\frac{r}{c}\right)$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$f = \frac{mu N}{P}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$f = pi left(\frac{mu N}{P}\right)left(\frac{c}{r}\right)$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$f = 2pi left(\frac{mu N}{P}\right)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Petroff's Relation",
-                        "content": "Petroff's equation defines the coefficient of friction as $f = 2pi^2 left(\frac{mu N}{P}\right)left(\frac{r}{c}\right)$ where $mu$ is viscosity, N is rotational speed, P is projected pressure, r is journal radius, and c is radial clearance."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Bearings",
-                "search_term": "bearings",
-                "page_number": 437
-            }
-        },
-        {
-            "topic": "Bearings",
-            "title": "Sommerfeld Number (Bearing Characteristic Number)",
-            "question": "The Sommerfeld Number (S) for journal bearing design is defined as:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$S = left(\frac{r}{c}\right)^2 \frac{mu N}{P}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$S = left(\frac{c}{r}\right)^2 \frac{mu N}{P}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$S = \frac{r}{c} \frac{mu N}{P}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$S = \frac{mu N}{P}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Sommerfeld Number Definition",
-                        "content": "The Sommerfeld (or bearing characteristic) number S is a dimensionless parameter used to model hydrodynamic lubrication: $S = left(\frac{r}{c}\right)^2 \frac{mu N}{P}$."
                     }
                 ],
                 "final_answer": "A",
@@ -63634,57 +60986,7 @@ const QUESTIONS = {
                 "page_number": 437
             }
         },
-        {
-            "topic": "Components",
-            "title": "Shaft Critical Speed — Dunkerley's Formula",
-            "question": "A shaft has individual critical speeds of 100 rad/s and 200 rad/s under two separate mounted masses. What is the approximate system critical speed using Dunkerley's approximation?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "89.4 rad/s",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "150.0 rad/s",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "300.0 rad/s",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "112.5 rad/s",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Dunkerley's Equation",
-                        "content": "$\frac{1}{omega_n^2} = \frac{1}{omega_1^2} + \frac{1}{omega_2^2}$"
-                    },
-                    {
-                        "title": "Calculate",
-                        "content": "$\frac{1}{omega_n^2} = \frac{1}{100^2} + \frac{1}{200^2} = 10^{-4} + 0.25 \times 10^{-4} = 1.25 \times 10^{-4}$. $omega_n^2 = 8000 \rightarrow omega_n = sqrt{8000} approx 89.4\text{ rad/s}$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Components",
-                "search_term": "components",
-                "page_number": 38
-            }
-        },
+
         {
             "topic": "Components",
             "title": "Key Stress Analysis — Shear vs. Crushing",
@@ -63879,53 +61181,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Components",
-            "title": "Centrifugal Clutch Engagement",
-            "question": "A centrifugal clutch engages when the shaft speed reaches a threshold. The transmitting torque capacity is proportional to:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The square of the rotational speed ($omega^2$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The rotational speed ($omega$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The cube of the rotational speed ($omega^3$)",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The square root of rotational speed ($sqrt{omega}$)",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Centrifugal Force",
-                        "content": "$F_c = m r omega^2$. Since the normal force pressing the friction shoes against the drum is proportional to the centrifugal force, the torque capacity is proportional to $omega^2$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Components",
-                "search_term": "components",
-                "page_number": 38
-            }
-        },
-        {
-            "topic": "Components",
             "title": "Flywheel Energy Storage",
             "question": "A solid disk flywheel has mass M, radius R, and rotates at speed N. If the speed fluctuates by 2%, the kinetic energy stored in the flywheel fluctuates by approximately:",
             "question_image": "",
@@ -64021,7 +61276,7 @@ const QUESTIONS = {
         {
             "topic": "Deformation and Stiffness",
             "title": "Stiffness of Beams in Parallel",
-            "question": "Two cantilever beams of stiffnesses $k_1 = 10\text{ kN/mm}$ and $k_2 = 20\text{ kN/mm}$ support a load in parallel. What is the equivalent stiffness ($k_{eq}$) of the system?",
+            "question": "Two cantilever beams of stiffnesses $k_1 = 10 kN/mm $ and $k_2 = 20 kN/mm $ support a load in parallel. What is the equivalent stiffness ($k_{eq}$) of the system?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -64068,7 +61323,7 @@ const QUESTIONS = {
         {
             "topic": "Deformation and Stiffness",
             "title": "Stiffness of Shafts in Series",
-            "question": "A stepped shaft consists of two segments in series with torsional stiffnesses $k_{t1} = 500\text{ N-m/rad}$ and $k_{t2} = 500\text{ N-m/rad}$. What is the equivalent torsional stiffness ($k_{eq}$)?",
+            "question": "A stepped shaft consists of two segments in series with torsional stiffnesses $k_{t1} = 500 N-m/rad$ and $k_{t2} = 500 N-m/rad$. What is the equivalent torsional stiffness ($k_{eq}$)?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -64355,53 +61610,7 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-        {
-            "topic": "Deformation and Stiffness",
-            "title": "Maxwell's Reciprocal Theorem",
-            "question": "Maxwell's reciprocal theorem of deflections states that in any linearly elastic structure:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The deflection at point A due to a load at point B equals the deflection at B due to the same load at A",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Stiffness is inversely proportional to mass",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Stress is always proportional to strain",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Work done is independent of the load path",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Reciprocal Theorem",
-                        "content": "Maxwell's theorem ($delta_{AB} = delta_{BA}$) is a specific case of Betti's reciprocal theorem, applicable to linear elastic structures within their proportional limit."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Deformation and Stiffness",
-                "search_term": "deformation and stiffness",
-                "page_number": null
-            }
-        },
+
         {
             "topic": "Engineering Drawing Interpretations and GD & T",
             "title": "Flatness vs. Straightness Symbols",
@@ -64874,17 +62083,17 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$C = \frac{K_b}{K_b + K_m}$",
+                    "text": "$C = \\frac{K_b}{K_b + K_m}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$C = \frac{K_m}{K_b + K_m}$",
+                    "text": "$C = \\frac{K_m}{K_b + K_m}$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$C = \frac{K_b}{K_m}$",
+                    "text": "$C = \\frac{K_b}{K_m}$",
                     "is_correct": false
                 },
                 {
@@ -64897,7 +62106,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Joint Constant",
-                        "content": "When an external tension force P is applied to a bolted joint, the bolt experiences a force increase of $P_b = C \times P$ where $C = \frac{K_b}{K_b + K_m}$. The members experience a clamping force reduction of $(1-C)P$. Typically C is small (0.1 to 0.3) because member stiffness is much higher than bolt stiffness."
+                        "content": "When an external tension force P is applied to a bolted joint, the bolt experiences a force increase of $P_b = C \\\\times P$ where $C = \\\\frac{K_b}{K_b + K_m}$. The members experience a clamping force reduction of $(1-C)P$. Typically C is small (0.1 to 0.3) because member stiffness is much higher than bolt stiffness."
                     }
                 ],
                 "final_answer": "A",
@@ -65015,22 +62224,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$sigma = \frac{P}{t L}$",
+                    "text": "$\sigma = \\frac{P}{t L}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$sigma = \frac{P}{0.707 t L}$",
+                    "text": "$\sigma = \\frac{P}{0.707 t L}$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$sigma = \frac{2P}{t L}$",
+                    "text": "$\sigma = \\frac{2P}{t L}$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$sigma = \frac{P}{2 t L}$",
+                    "text": "$\sigma = \\frac{P}{2 t L}$",
                     "is_correct": false
                 }
             ],
@@ -65339,53 +62548,7 @@ const QUESTIONS = {
                 "page_number": 444
             }
         },
-        {
-            "topic": "Manufacturability",
-            "title": "Design for Assembly (DFA) — Part Reduction",
-            "question": "The fundamental goal of Design for Assembly (DFA) per the Boothroyd-Dewhurst method is to:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Minimize the number of individual parts, and ensure parts are self-aligning and symmetric",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Use the cheapest materials possible",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Increase the variety of fastners",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Eliminate quality control steps",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "DFA Principles",
-                        "content": "Reducing part count directly reduces assembly time, purchasing overhead, and stock keeping. Symmetrical parts are easier for workers or robots to orient without error. Self-alignment features speed up insertion."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Manufacturability",
-                "search_term": "manufacturability",
-                "page_number": 444
-            }
-        },
+
         {
             "topic": "Manufacturability",
             "title": "Bilateral vs. Unilateral Tolerances",
@@ -65480,53 +62643,7 @@ const QUESTIONS = {
                 "page_number": 444
             }
         },
-        {
-            "topic": "Power Screws",
-            "title": "Torque to Raise Load in Power Screw",
-            "question": "A square-thread power screw has a mean diameter dm and pitch p. The torque required to raise a load F is given by which formula? (assume zero collar friction)",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$T_R = \frac{F d_m}{2} left[ \frac{l + pi mu d_m}{pi d_m - mu l} \right]$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$T_R = \frac{F d_m}{2} left[ \frac{pi mu d_m - l}{pi d_m + mu l} \right]$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$T_R = F d_m mu$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$T_R = \frac{F d_m}{2} \tan lambda$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Torque to Raise Load",
-                        "content": "The torque to raise load F in a square thread power screw is $T_R = \frac{F d_m}{2} left( \frac{l + pi mu d_m}{pi d_m - mu l} \right)$ where $l$ is lead, $d_m$ is mean diameter, and $mu$ is coefficient of thread friction."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Power Screws",
-                "search_term": "power screws",
-                "page_number": 438
-            }
-        },
+
         {
             "topic": "Power Screws",
             "title": "Self-Locking Condition",
@@ -65536,22 +62653,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$mu geq \tanlambda$ (where λ is the lead angle)",
+                    "text": "$\\\\mu \\\\geq \\\\tan \\\\lambda$ (where $\\\\lambda$ is the lead angle)",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$mu leq \tanlambda$",
+                    "text": "$\\\\mu \\\\leq \\\\tan \\\\lambda$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$lambda geq 45^circ$",
+                    "text": "$\\\\lambda \\\\geq 45^\\\\circ$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$mu = 0$",
+                    "text": "$\\\\mu = 0$",
                     "is_correct": false
                 }
             ],
@@ -65559,7 +62676,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Self-locking Condition",
-                        "content": "A power screw is self-locking if the torque to lower the load is positive ($T_L > 0$). This occurs mathematically when $pi mu d_m geq l \rightarrow mu geq \frac{l}{pi d_m} \rightarrow mu geq \tanlambda$."
+                        "content": "A power screw is self-locking if the torque to lower the load is positive ($T_L > 0$). This occurs mathematically when $\\\\pi \\\\mu d_m \\\\geq l \\\\rightarrow \\\\mu \\\\geq \\\\frac{l}{\\\\pi d_m} \\\\rightarrow \\\\mu \\\\geq \\\\tan \\\\lambda$."
                     }
                 ],
                 "final_answer": "A",
@@ -65677,22 +62794,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$Tc = mu_c F \frac{d_o + d_i}{4}$",
+                    "text": "$T_c = \\mu_c F \\frac{d_o + d_i}{4}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$Tc = mu_c F \frac{d_o - d_i}{4}$",
+                    "text": "$T_c = \\mu_c F \\frac{d_o - d_i}{4}$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$Tc = mu_c F \frac{d_o + d_i}{2}$",
+                    "text": "$T_c = \\mu_c F \\frac{d_o + d_i}{2}$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$Tc = 0$",
+                    "text": "$T_c = 0$",
                     "is_correct": false
                 }
             ],
@@ -65813,53 +62930,7 @@ const QUESTIONS = {
                 "page_number": 438
             }
         },
-        {
-            "topic": "Power Screws",
-            "title": "Recirculating Ball Screw Purpose",
-            "question": "A recirculating ball screw is used in precision linear positioning (e.g., CNC machines) because:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It converts sliding friction to rolling friction, achieving efficiencies of 90% or higher and reducing backlash",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "It is always self-locking",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It is cheaper to manufacture than standard Acme screws",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It requires no lubrication",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Ball Screw Features",
-                        "content": "Ball screws use recirculating ball bearings between the screw and nut. This dramatically reduces friction coefficients, allowing high efficiency (90%+) and zero backlash for precise positioning."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Power Screws",
-                "search_term": "power screws",
-                "page_number": 438
-            }
-        },
+
         {
             "topic": "Power Transmission",
             "title": "Gear Train Velocity Ratio",
@@ -66304,22 +63375,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$sigma = \frac{p d}{4 t}$",
+                    "text": "$\sigma = \\frac{p d}{4 t}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$sigma = \frac{p d}{2 t}$",
+                    "text": "$\sigma = \\frac{p d}{2 t}$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$sigma = \frac{p d}{t}$",
+                    "text": "$\sigma = \\frac{p d}{t}$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$sigma = 0$",
+                    "text": "$\sigma = 0$",
                     "is_correct": false
                 }
             ],
@@ -66436,53 +63507,7 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-        {
-            "topic": "Pressure Vessels and Piping",
-            "title": "Autofrettage Purpose",
-            "question": "Autofrettage is a process used in the manufacture of high-pressure gun barrels and cylinders to:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Induce favorable compressive residual stresses at the inner wall, increasing pressure capacity",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Reduce the overall weight of the cylinder",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Increase the thermal conductivity of the barrel",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Improve corrosion resistance",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Autofrettage",
-                        "content": "By applying an extreme temporary pressure, the inner part of the cylinder is yielded plastically while the outer part remains elastic. Upon pressure release, the outer part shrinks back, placing the inner wall under high residual compression, which counteracts subsequent operating pressure stresses."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Pressure Vessels and Piping",
-                "search_term": "pressure vessels and piping",
-                "page_number": null
-            }
-        },
+
         {
             "topic": "Pressure Vessels and Piping",
             "title": "Longitudinal Weld Stress",
@@ -66624,53 +63649,7 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-        {
-            "topic": "Pressure Vessels and Piping",
-            "title": "ASME Boiler and Pressure Vessel Code (BPVC)",
-            "question": "ASME BPVC Section VIII regulates the design, fabrication, and inspection of:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Unfired pressure vessels operating above 15 psi",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Power boilers for steam generation",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Nuclear power plant piping only",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Natural gas pipelines",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "ASME Code Sections",
-                        "content": "ASME Section VIII governs the design and manufacture of unfired pressure vessels. Section I covers power boilers. Section III covers nuclear facility components. B31 covers pressure piping."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Pressure Vessels and Piping",
-                "search_term": "pressure vessels and piping",
-                "page_number": null
-            }
-        },
+
         {
             "topic": "Quality and Reliability",
             "title": "System Reliability in Series",
@@ -66826,104 +63805,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Quality and Reliability",
-            "title": "Reliability Over Specified Time",
-            "question": "Using the same constant failure rate (λ = 0.002 failures/hour), what is the reliability of the component for a mission time of 100 hours?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "81.9%",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "20.0%",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "90.5%",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "73.6%",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Exponential Reliability Function",
-                        "content": "$R(t) = e^{-lambda t}$"
-                    },
-                    {
-                        "title": "Calculate",
-                        "content": "$R(100) = e^{-0.002 \times 100} = e^{-0.20} approx 0.8187 = 81.9%$"
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Quality and Reliability",
-                "search_term": "quality and reliability",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Quality and Reliability",
-            "title": "Bathtub Curve Phase 1 (Infant Mortality)",
-            "question": "In the standard reliability 'bathtub curve', the initial high-failure-rate region is called 'infant mortality'. The primary cause of failure in this phase is:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Manufacturing defects, poor quality control, and material flaws",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Normal wear-out and fatigue",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Random overloading and environmental spikes",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Improper maintenance",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Infant Mortality",
-                        "content": "The bathtub curve has 3 phases: 1. Infant Mortality (decreasing failure rate due to QC defects, screenable flaws). 2. Useful Life (constant failure rate, random failures). 3. Wear-out (increasing failure rate, aging/fatigue)."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Quality and Reliability",
-                "search_term": "quality and reliability",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Quality and Reliability",
             "title": "Six Sigma Quality Defect Rate",
             "question": "A process operating at a true Six Sigma level yields how many Defects Per Million Opportunities (DPMO)?",
             "question_image": "",
@@ -67016,53 +63897,7 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-        {
-            "topic": "Quality and Reliability",
-            "title": "Statistical Process Control — Cpk",
-            "question": "A process has a process capability index Cpk = 1.0. This indicates that:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The process mean is at least 3 standard deviations away from the nearest specification limit",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The process is perfectly centered with zero defects",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The process variance is zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The specification limits are too wide",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Cpk Definition",
-                        "content": "$C_{pk} = minleft( \frac{USL - mu}{3sigma}, \frac{mu - LSL}{3sigma} \right)$. A value of 1.0 means the nearest limit is exactly at $3sigma$, yielding a nominal defect rate of 0.27% (if normally distributed)."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Quality and Reliability",
-                "search_term": "quality and reliability",
-                "page_number": null
-            }
-        },
+
         {
             "topic": "Springs",
             "title": "Helical Spring Wahl Factor",
@@ -67113,7 +63948,7 @@ const QUESTIONS = {
         {
             "topic": "Springs",
             "title": "Spring Constant in Parallel",
-            "question": "Two helical compression springs with spring constants $k_1 = 10\text{ N/mm}$ and $k_2 = 15\text{ N/mm}$ are connected in parallel. What is the equivalent spring constant?",
+            "question": "Two helical compression springs with spring constants $k_1 = 10 \text{ N/mm}$ and $k_2 = 15 \text{ N/mm}$ are connected in parallel. What is the equivalent spring constant?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -67160,7 +63995,7 @@ const QUESTIONS = {
         {
             "topic": "Springs",
             "title": "Spring Constant in Series",
-            "question": "Using the same two springs ($k_1 = 10\text{ N/mm}$ and $k_2 = 15\text{ N/mm}$), what is the equivalent spring constant if connected in series?",
+            "question": "Using the same two springs ($k_1 = 10 N/mm$ and $k_2 = 15 N/mm$), what is the equivalent spring constant if connected in series?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -67189,7 +64024,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Series Springs",
-                        "content": "$\frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2} = \frac{1}{10} + \frac{1}{15} = \frac{3 + 2}{30} = \frac{5}{30} \rightarrow k_{eq} = 6\text{ N/mm}$."
+                        "content": "$\\\\frac{1}{k_{eq}} = \\\\frac{1}{k_1} + \\\\frac{1}{k_2} = \\\\frac{1}{10} + \\\\frac{1}{15} = \\\\frac{3 + 2}{30} = \\\\frac{5}{30} \\\\rightarrow k_{eq} = 6\\\\text{ N/mm}$."
                     }
                 ],
                 "final_answer": "A",
