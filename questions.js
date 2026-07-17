@@ -2001,7 +2001,7 @@ const QUESTIONS = {
         {
             "topic": "Calculus",
             "title": "Limits: L’Hopital’s Rule",
-            "question": "Evaluate the following limit:\\n\\[ \\lim_{x \\to 0} \\dfrac{e^{2x} - 1 - 2x}{x^2} \\]",
+            "question": "Evaluate the following limit: \\[ \\lim_{x \\to 0} \\dfrac{e^{2x} - 1 - 2x}{x^2} \\]",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -5908,56 +5908,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Vector Analysis",
-            "title": "Cross Product",
-            "question": "Unlike the dot product which produces a scalar number, the 'Cross Product' of two 3D vectors mathematically produces a new vector that is strictly:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Parallel to the larger of the two original vectors",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Exactly perpendicular (orthogonal) to the plane containing both of the original vectors",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Half the length of the original vectors",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Equal to zero if the vectors are orthogonal",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Right-Hand Rule",
-                        "content": "If you cross vector $A$ into vector $B$, the resulting vector $C$ shoots straight up out of the surface. This is governed by the right-hand rule."
-                    },
-                    {
-                        "title": "Orthogonality",
-                        "content": "Because the new vector is perfectly perpendicular to both $A$ and $B$, the dot product of $C \\cdot A$ will always be exactly $0$, and $C \\cdot B$ will always be exactly $0$."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Vectors",
-                "search_term": "Vector Analysis, Cross Product",
-                "page_number": null
-            }
-        },
-        {
             "topic": "Differential Equations",
             "title": "Separable Variables",
             "question": "Solve the first-order differential equation by separation of variables: $\\frac{dy}{dx} = 2x y$. (Assume $y > 0$).",
@@ -6359,55 +6309,6 @@ const QUESTIONS = {
                 "topic": "Calculus",
                 "search_term": "Derivatives, Integrals",
                 "page_number": 49
-            }
-        },
-        {
-            "topic": "Differential Equations",
-            "title": "Exact Differential Equations",
-            "question": "A first-order differential equation in the form $M(x,y)dx + N(x,y)dy = 0$ is mathematically defined as 'Exact' if and only if:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\frac{\\partial M}{\\partial x} = \\frac{\\partial N}{\\partial y}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{\\partial M}{\\partial y} = -\\frac{\\partial N}{\\partial x}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$M(x,y)$ is perfectly equal to $N(x,y)$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Condition for Exactness",
-                        "content": "An equation is 'exact' if it is the total differential of some underlying scalar function $F(x,y) = C$."
-                    },
-                    {
-                        "title": "Clairaut's Theorem",
-                        "content": "Because mixed partial derivatives must be strictly equal (i.e., $F_{xy} = F_{yx}$), it physically forces the condition that $\\frac{\\partial M}{\\partial y}$ must equal $\\frac{\\partial N}{\\partial x}$."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Algebra and Trigonometry",
-                "search_term": "Roots of Quadratic Equation"
             }
         },
         {
@@ -7109,55 +7010,6 @@ const QUESTIONS = {
                 "section": "Mathematics",
                 "topic": "Cramer's Rule",
                 "search_term": "Cramer's Rule"
-            }
-        },
-        {
-            "topic": "Differential Equations",
-            "title": "Euler's Method",
-            "question": "Euler's Method is a numerical (computer-based) mathematical technique. It is primarily used to:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Calculate the exact analytical roots of a 5th degree polynomial",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Find the exact matrix inverse",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Calculate the dot product of two vectors",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Approximate the solution to a complex differential equation by taking small, linear 'steps' using the tangent slope",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Unsolvable Equations",
-                        "content": "Many real-world differential equations (like turbulent fluid dynamics) are physically impossible to solve analytically with pure calculus."
-                    },
-                    {
-                        "title": "The Numerical Hack",
-                        "content": "Euler's Method starts at a known point, calculates the slope (derivative), draws a tiny straight line for a distance of $\\Delta x$, recalculates the new slope, and repeats. If the step size $\\Delta x$ is tiny enough, it perfectly traces the unsolvable curve."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Euler's Method",
-                "search_term": "Euler's Method"
             }
         },
         {
@@ -10868,50 +10720,6 @@ const QUESTIONS = {
                 "topic": "Null Hypothesis",
                 "search_term": "Null Hypothesis",
                 "page_number": 73
-            }
-        },
-        {
-            "topic": "Statistics",
-            "title": "Median",
-            "question": "In a skewed distribution, which measure of central tendency is generally most robust to outliers?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Mean",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Median",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Mode",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Range",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Definition",
-                        "content": "The median is the middle value and is not pulled by extreme values like the mean."
-                    }
-                ],
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Median",
-                "search_term": "Median",
-                "page_number": 64
             }
         },
         {
@@ -27639,7 +27447,7 @@ const QUESTIONS = {
         {
             "topic": "Time Value of Money",
             "title": "Present Value of Annuity",
-            "question": "What is the present value of receiving $5,000 per year for 4 years at an interest rate of 10% per year? (P/A, 10%, 4) = 3.1699",
+            "question": "What is the present value of receiving $5,000 per year for 4 years at an interest rate of 10% per year?",
             "times_presented": 0,
             "options": [
                 {
@@ -30835,56 +30643,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Moments",
-            "title": "Varignon's Theorem",
-            "question": "In classical statics, Varignon's Theorem provides a powerful mathematical shortcut for calculating moments. The theorem explicitly states that the total moment of a force about a specific point is exactly equal to:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Zero, if the object is not physically spinning",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The cross product of the moment of inertia and the mass",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The mathematical sum of the individual moments created by the orthogonal ($X$ and $Y$) components of that force",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "The force divided by the perpendicular distance",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Hard Way",
-                        "content": "Calculating $M = F \\times d$ can be brutally hard if the force is pushing at a weird $37^\\circ$ angle, because finding the exact perpendicular distance ($d$) requires complex geometry."
-                    },
-                    {
-                        "title": "Varignon's Shortcut",
-                        "content": "Varignon proved you can just mathematically shatter the weird force into an $F_x$ component and an $F_y$ component. You calculate the simple moment of $F_x$ and add it to the simple moment of $F_y$. The result is identical."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Statics",
-                "topic": "Moments",
-                "search_term": "moments",
-                "page_number": 95
-            }
-        },
-        {
             "topic": "Rigid Body Equilibrium",
             "title": "Two-Force Members",
             "question": "In structural analysis, a 'Two-Force Member' is a massive geometric shortcut. If a solid steel bar is definitively identified as a two-force member, the internal forces acting on it MUST mathematically be:",
@@ -31056,7 +30814,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Parallel Axis Theorem ($I = \\bar{I} + Ad^2$)",
+                    "text": "Parallel Axis Theorem",
                     "is_correct": true
                 }
             ],
@@ -34379,7 +34137,7 @@ const QUESTIONS = {
         {
             "topic": "Work and Energy",
             "title": "Kinetic Energy",
-            "question": "The physical Kinetic Energy ($KE$) of a speeding car is mathematically calculated as $KE = \\frac{1}{2}mv^2$. If the driver presses the gas pedal and explicitly doubles the physical speed ($v$) of the car, the total Kinetic Energy of the vehicle will mathematically:",
+            "question": "If the driver presses the gas pedal and explicitly doubles the physical speed ($v$) of the car, the total Kinetic Energy of the vehicle will mathematically:",
             "times_presented": 0,
             "options": [
                 {
@@ -34399,7 +34157,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "Quadruple (increase by a factor of exactly 4)",
+                    "text": "Quadruple",
                     "is_correct": true
                 }
             ],
@@ -34686,7 +34444,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "Exact physical contact point where the bottom of the rubber tire touches the asphalt road",
+                    "text": "Contact point of tire and road",
                     "is_correct": true
                 },
                 {
@@ -35189,7 +34947,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "It mathematically and physically dies out and disappears to zero over a short time due to friction/damping, leaving only the steady-state vibration",
+                    "text": "It eventually dies out to zero",
                     "is_correct": true
                 },
                 {
@@ -41525,55 +41283,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Crystal Structures",
-            "title": "Atomic Packing Factor (APF)",
-            "question": "In materials science, the 'Atomic Packing Factor' (APF) mathematically defines the exact volume fraction of a unit cell that is physically occupied by solid atoms. Which specific crystal lattice structure has the absolute highest possible mathematically achievable APF ($0.74$) in nature?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Body-Centered Cubic (BCC)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Simple Cubic (SC)",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Amorphous Glass",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Face-Centered Cubic (FCC) and Hexagonal Close-Packed (HCP)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Sphere Packing Problem",
-                        "content": "If you throw a bunch of oranges into a box, there will always be empty air gaps between them."
-                    },
-                    {
-                        "title": "The Maximum Limit",
-                        "content": "The absolute tightest, most incredibly dense way you can mathematically pack perfect spheres is the FCC (Aluminum/Copper) or HCP (Titanium) structure. Exactly $74\\%$ of the volume is solid atom, and $26\\%$ is empty vacuum space. The BCC structure (like Iron at room temperature) is much 'looser', packing at only $68\\%$ ($0.68$)."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "materials-science",
-                "topic": "Crystal Structures",
-                "search_term": "crystal structures"
-            }
-        },
-        {
             "topic": "Phase Diagrams",
             "title": "The Eutectoid Reaction",
             "question": "On the classic Iron-Carbon (Steel) phase diagram, the critical 'Eutectoid' reaction occurs at exactly $0.76\\%$ Carbon and $727^\\circ\\text{C}$. During this specific metallurgical reaction, what exactly happens physically as the steel cools through this temperature line?",
@@ -42124,7 +41833,7 @@ const QUESTIONS = {
         {
             "topic": "Material Properties",
             "title": "Toughness vs Resilience",
-            "question": "On a mathematically plotted Stress-Strain curve from a tensile test, 'Resilience' is the geometric area strictly under the purely linear, elastic portion of the curve. However, 'Toughness' is geometrically defined as the:",
+            "question": "On a mathematically plotted Stress-Strain curve from a tensile test, 'Toughness' is geometrically defined as the:",
             "times_presented": 0,
             "options": [
                 {
@@ -42139,12 +41848,12 @@ const QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Total absolute mathematical area under the ENTIRE curve, from zero all the way to the final catastrophic fracture point",
+                    "text": "Total area under the entire curve",
                     "is_correct": true
                 },
                 {
                     "label": "D",
-                    "text": "Length of the X-axis",
+                    "text": "Area under elastic portion of the curve",
                     "is_correct": false
                 }
             ],
@@ -42278,7 +41987,7 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\\epsilon = \\ln(1 + e)$ (The natural log of one plus the engineering strain)",
+                    "text": "$\\epsilon = \\ln(1 + e)$",
                     "is_correct": true
                 },
                 {
@@ -48612,7 +48321,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "It mathematically increases the capacitance by a specific multiplier known as the 'Dielectric Constant' ($k$ or $\\kappa$)",
+                    "text": "Increases the capacitance by a specific multiplier",
                     "is_correct": true
                 }
             ],
@@ -48690,56 +48399,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Magnetism",
-            "title": "Magnetic Force on a Moving Charge",
-            "question": "An engineer fires a single electron perfectly parallel to a massive magnetic field line. According to the Lorentz force equation ($F = qv \\times B$), what is the exact physical magnetic force exerted on the electron?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Infinity",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Exactly Zero, because the cross product of two parallel vectors is mathematically zero",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "It pushes the electron backwards",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It pushes the electron upwards",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Cross Product",
-                        "content": "The magnetic force $F = q |v| |B| \\sin(\\theta)$. Magnetism is bizarre because it only works sideways."
-                    },
-                    {
-                        "title": "The Parallel Failure",
-                        "content": "If you fire an electron perfectly along the magnetic field line, $\\theta = 0^\\circ$. The sine of zero is $0$. The electron feels absolutely nothing and flies straight. If you fire the electron perpendicularly across the field ($\\theta = 90^\\circ$), the force is at its absolute maximum, and the electron violently curves into a circle."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Magnetism",
-                "search_term": "magnetism",
-                "page_number": 361
-            }
-        },
-        {
-            "topic": "Magnetism",
             "title": "Right-Hand Rule",
             "question": "A long, straight copper wire is carrying an electrical current straight UP toward the ceiling. Using the physics 'Right-Hand Rule', what is the exact mathematical shape and direction of the magnetic field generated entirely by this wire?",
             "times_presented": 0,
@@ -48786,55 +48445,6 @@ const QUESTIONS = {
                 "topic": "Magnetism",
                 "search_term": "magnetism",
                 "page_number": 361
-            }
-        },
-        {
-            "topic": "Electromagnetism",
-            "title": "Faraday's Law of Induction",
-            "question": "Faraday's Law of Induction mathematically states that an Electromotive Force (Voltage) is explicitly generated inside a coil of wire ONLY when:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The coil is perfectly stationary next to a stationary magnet",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The coil is painted black",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The coil is cooled below freezing",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The magnetic flux passing through the geometric area of the coil physically CHANGES with respect to time ($d\\Phi/dt$)",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Law of Change",
-                        "content": "You cannot get free energy just by sitting a magnet next to a wire. The universe demands physical Work."
-                    },
-                    {
-                        "title": "The Generator",
-                        "content": "To generate voltage, the magnetic field MUST be actively changing. You must physically spin the magnet, or physically move the coil, or turn an electromagnet on and off. The faster you change the magnetic flux ($d\\Phi/dt$), the higher the voltage spikes. This is exactly how every power plant on Earth generates electricity."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Electromagnetism",
-                "search_term": "electromagnetism"
             }
         },
         {
@@ -49082,56 +48692,6 @@ const QUESTIONS = {
                 "topic": "Capacitance",
                 "search_term": "capacitance",
                 "page_number": 118
-            }
-        },
-        {
-            "topic": "Electricity",
-            "title": "Ampere's Law",
-            "question": "Ampere's Law connects electricity to magnetism. It mathematically states that the integral of the magnetic field ($B$) around a closed loop is directly proportional to the exact amount of:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Electrical Current ($I$) physically piercing through the surface of that loop",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Voltage of the battery",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Resistance of the wire",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Weight of the magnet",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Loop",
-                        "content": "Imagine drawing an imaginary hula-hoop in mid-air. If a copper wire carrying $10\\text{ Amps}$ passes straight through the center of the hoop, Ampere's Law guarantees there will be a magnetic field swirling around the plastic rim of the hoop."
-                    },
-                    {
-                        "title": "The Core Concept",
-                        "content": "This is the mathematical foundation for every electromagnet, solenoid, and electric motor ever built. Moving electrons (current) physically summon magnetic fields into existence."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Electricity",
-                "search_term": "electricity",
-                "page_number": 354
             }
         },
         {
@@ -49685,56 +49245,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Transients",
-            "title": "Capacitors in DC",
-            "question": "An engineer wires an empty Capacitor in series with a resistor and a DC battery. When the switch is first closed, current flows. However, after exactly $5$ 'Time Constants' ($5\\tau$), the capacitor is fully charged. At this exact physical moment (Steady State), the capacitor acts mathematically and physically as a:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Perfect short circuit (a straight wire)",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Perfect OPEN circuit (a cut wire), completely stopping all DC current from flowing through that branch",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "New battery",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Resistor",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Sponge Analogy",
-                        "content": "A capacitor is an electrical sponge. When it is empty, it sucks up water (electrons) furiously. It acts like a short circuit."
-                    },
-                    {
-                        "title": "The Full Sponge",
-                        "content": "Once the capacitor hits $100\\%$ full (the voltage on the plates exactly matches the battery voltage), the sponge physically cannot hold another drop. The opposing electrical fields mathematically cancel out, and absolutely zero DC current can flow. The circuit is dead."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Transients",
-                "search_term": "transients",
-                "page_number": 367
-            }
-        },
-        {
-            "topic": "Transients",
             "title": "Inductors in DC",
             "question": "Conversely, an engineer wires an Inductor in series with a resistor and a DC battery. When the switch is first closed, the inductor acts like a brick wall, blocking all current. However, after it reaches DC Steady State, the magnetic field is fully established and unchanging. At this moment, the Inductor acts physically as a:",
             "times_presented": 0,
@@ -49841,7 +49351,7 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Root-Mean-Square (RMS) voltage, which mathematically equals the equivalent DC voltage that would produce the exact same physical heat in a resistor",
+                    "text": "Root-Mean-Square (RMS) voltage",
                     "is_correct": true
                 },
                 {
@@ -49991,7 +49501,7 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "Real Power (kW) strictly divided by the Total Apparent Power (kVA) (mathematically equal to the cosine of the phase angle)",
+                    "text": "Real Power (kW)",
                     "is_correct": true
                 },
                 {
@@ -50085,56 +49595,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Operational Amplifiers",
-            "title": "Ideal Op-Amp Rules",
-            "question": "When an engineer mathematically analyzes a circuit containing an 'Ideal' Operational Amplifier (Op-Amp) with negative feedback, they rely on two absolute 'Golden Rules' of Op-Amp physics. The first rule is that the input terminals draw exactly zero current. The second mathematical rule is that the Op-Amp will output whatever voltage is necessary to force the:",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Output voltage to exactly equal the battery voltage",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Frequency to double",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Voltage difference between its two input terminals ($V^+$ and $V^-$) to be mathematically exactly zero ($V^+ = V^-$)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Resistors to melt",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Virtual Short",
-                        "content": "Because the Op-Amp has infinite mathematical gain ($\\sim 100,000\\times$), even a $0.001\\text{V}$ difference on the inputs will make the output violently blast to max voltage."
-                    },
-                    {
-                        "title": "The Feedback Loop",
-                        "content": "By wiring the output back to the negative input (Negative Feedback), the Op-Amp instantly self-corrects. It will tweak its output to the exact microvolt required so that $V^+$ perfectly matches $V^-$. This 'virtual short' makes Op-Amp circuit algebra incredibly easy."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Operational Amplifiers",
-                "search_term": "operational amplifiers",
-                "page_number": 386
-            }
-        },
-        {
-            "topic": "Operational Amplifiers",
             "title": "Inverting Amplifier",
             "question": "An engineer builds a classic 'Inverting Amplifier' using an Op-Amp, an input resistor ($R_{in} = 1\\text{ k}\\Omega$), and a feedback resistor ($R_f = 10\\text{ k}\\Omega$). The mathematical voltage Gain ($V_{out} / V_{in}$) of this specific circuit is exactly:",
             "times_presented": 0,
@@ -50174,56 +49634,6 @@ const QUESTIONS = {
                 "solution_image": "",
                 "video_explanation": "",
                 "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "electricity",
-                "topic": "Operational Amplifiers",
-                "search_term": "operational amplifiers",
-                "page_number": 386
-            }
-        },
-        {
-            "topic": "Operational Amplifiers",
-            "title": "Voltage Follower (Buffer)",
-            "question": "An engineer wires the output of an Op-Amp directly backward into its negative input terminal, with absolutely no resistors. This creates a 'Voltage Follower'. The mathematical gain is exactly $1.0$. If it doesn't amplify the voltage, what is its physical engineering purpose?",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "To heat up the room",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "To filter out radio waves",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "To act as a mathematical 'Buffer', drawing exactly zero current from a fragile, weak sensor while physically supplying massive current to a heavy load",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It has no purpose and is a wiring mistake",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Problem with Loading",
-                        "content": "If you hook a delicate $5\\text{V}$ temperature sensor directly to a heavy electric motor, the motor will suck massive current, crashing the sensor's voltage down to $0\\text{V}$."
-                    },
-                    {
-                        "title": "The Shield",
-                        "content": "A Voltage Follower sits between them. The sensor talks to the Op-Amp (which requires exactly zero current, so the sensor stays perfectly at $5\\text{V}$). The Op-Amp then uses the heavy wall-power to violently force the motor to exactly $5\\text{V}$. It is an electrical bodyguard."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -60703,7 +60113,7 @@ const QUESTIONS = {
         {
             "topic": "Bearings",
             "title": "Bearing Life with Variable Load",
-            "question": "A ball bearing operates at 1000 rpm under a load of 2 kN for 40% of the time, and 4 kN for 60% of the time. What is the equivalent radial load (P_eq) for life calculations?",
+            "question": "A ball bearing operates at 1000 rpm under a load of 2 kN for 40% of the time, and 4 kN for 60% of the time. What is the equivalent radial load (P_$eq$) for life calculations?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -60925,53 +60335,6 @@ const QUESTIONS = {
                     {
                         "title": "High Speed Thrusters",
                         "content": "At high speeds, the centrifugal force acts on the balls, pushing them outward against the races. This induces sliding friction instead of pure rolling contact, leading to excessive heat generation and failure."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Bearings",
-                "search_term": "bearings",
-                "page_number": 437
-            }
-        },
-        {
-            "topic": "Bearings",
-            "title": "Viscosity Index for Lubrication",
-            "question": "In journal bearings, a high Viscosity Index (VI) lubricant is desirable because it indicates that:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Viscosity changes very little with temperature variations",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The oil is extremely thick at all temperatures",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The oil has a very low coefficient of friction",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "It contains solid additives",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "VI Definition",
-                        "content": "The Viscosity Index (VI) measures the rate of change of viscosity with temperature. A high VI means the lubricant maintains stable viscosity over a wide operating temperature range."
                     }
                 ],
                 "final_answer": "A",
@@ -61421,7 +60784,7 @@ const QUESTIONS = {
         {
             "topic": "Deformation and Stiffness",
             "title": "Deflection of Cantilever Beam with Point Load",
-            "question": "A cantilever steel beam (E = 200 GPa, I = 10^-5 m^4) of length 3 m carries a point load P = 10 kN at its free end. What is the maximum deflection?",
+            "question": "A cantilever steel beam (E = 200 GPa, I = 10$^{-5}$ m$^4$) of length 3 m carries a point load P = 10 kN at its free end. What is the maximum deflection?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -61450,58 +60813,11 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Deflection Formula",
-                        "content": "$delta = \frac{P L^3}{3 E I}$"
+                        "content": "$delta = \\frac{P L^3}{3 E I}$"
                     },
                     {
                         "title": "Substitute Values",
-                        "content": "$delta = \frac{10000 \times 3^3}{3 \times 200 \times 10^9 \times 10^{-5}} = \frac{270000}{6 \times 10^6} = 0.045\text{ m} = 45\text{ mm}$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Deformation and Stiffness",
-                "search_term": "deformation and stiffness",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Deformation and Stiffness",
-            "title": "Castigliano's Theorem Purpose",
-            "question": "Castigliano's second theorem is a powerful energy method used to determine:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Deflections and slopes of linearly elastic structures by taking the partial derivative of total strain energy",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The buckling limit of long columns",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The ultimate tensile strength of brittle materials",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Resonant frequencies in mechanical vibrations",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Castigliano's Theorem",
-                        "content": "Castigliano's second theorem states: $delta_i = \frac{partial U}{partial P_i}$ where $U$ is total strain energy, $P_i$ is a concentrated load, and $delta_i$ is deflection in the direction of $P_i$."
+                        "content": "$delta = \\frac{10000 \times 3^3}{3 \times 200 \times 10^9 \times 10^{-5}} = \frac{270000}{6 \times 10^6} = 0.045\text{ m} = 45\text{ mm}$."
                     }
                 ],
                 "final_answer": "A",
@@ -62643,54 +61959,6 @@ const QUESTIONS = {
                 "page_number": 444
             }
         },
-
-        {
-            "topic": "Power Screws",
-            "title": "Self-Locking Condition",
-            "question": "A power screw is self-locking (cannot be backdriven by the load) if which of the following conditions is met?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\\\mu \\\\geq \\\\tan \\\\lambda$ (where $\\\\lambda$ is the lead angle)",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$\\\\mu \\\\leq \\\\tan \\\\lambda$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$\\\\lambda \\\\geq 45^\\\\circ$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\\\mu = 0$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Self-locking Condition",
-                        "content": "A power screw is self-locking if the torque to lower the load is positive ($T_L > 0$). This occurs mathematically when $\\\\pi \\\\mu d_m \\\\geq l \\\\rightarrow \\\\mu \\\\geq \\\\frac{l}{\\\\pi d_m} \\\\rightarrow \\\\mu \\\\geq \\\\tan \\\\lambda$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Power Screws",
-                "search_term": "power screws",
-                "page_number": 438
-            }
-        },
         {
             "topic": "Power Screws",
             "title": "Power Screw Efficiency",
@@ -63126,7 +62394,7 @@ const QUESTIONS = {
         {
             "topic": "Power Transmission",
             "title": "Planetary Gear Train Ratio",
-            "question": "A planetary gear set has a fixed Ring gear (T_r = 80 teeth) and a Sun gear (T_s = 20 teeth) as input. What is the gear ratio from the Sun gear to the planet carrier output?",
+            "question": "A planetary gear set has a fixed Ring gear (T$_r$ = 80 teeth) and a Sun gear (T$_s$ = 20 teeth) as input. What is the gear ratio from the Sun gear to the planet carrier output?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -63207,53 +62475,6 @@ const QUESTIONS = {
                     {
                         "title": "Lewis Equation",
                         "content": "$sigma = \frac{W_t}{F m Y}$ where $W_t$ is tangential load, F is face width, m is module, and Y is the Lewis form factor. It models the gear tooth as a cantilever beam and estimates tensile bending stress at the fillet."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Power Transmission",
-                "search_term": "power transmission",
-                "page_number": 438
-            }
-        },
-        {
-            "topic": "Power Transmission",
-            "title": "Chain Drive Chordal Action",
-            "question": "In chain drives, chordal action (or polygonal effect) causes:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Cyclic variations in the linear velocity of the chain, causing vibration",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The chain to slip off the sprocket",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Excessive elastic elongation of links",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Automatic tension adjustment",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Polygonal Effect",
-                        "content": "Since a sprocket is a polygon rather than a circle, the effective radius changes as a link wraps around. This results in periodic speed fluctuations in the chain, which can induce vibration and noise."
                     }
                 ],
                 "final_answer": "A",
@@ -63375,22 +62596,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\sigma = \\frac{p d}{4 t}$",
+                    "text": "$\\sigma = \\frac{p d}{4 t}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$\sigma = \\frac{p d}{2 t}$",
+                    "text": "$\\sigma = \\frac{p d}{2 t}$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$\sigma = \\frac{p d}{t}$",
+                    "text": "$\\sigma = \\frac{p d}{t}$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$\sigma = 0$",
+                    "text": "$\\sigma = 0$",
                     "is_correct": false
                 }
             ],
@@ -63752,152 +62973,6 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-        {
-            "topic": "Quality and Reliability",
-            "title": "MTBF and Constant Failure Rate",
-            "question": "A mechanical component has a constant failure rate of λ = 0.002 failures/hour. What is the Mean Time Between Failures (MTBF)?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "500 hours",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "200 hours",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "1000 hours",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "50 hours",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "MTBF Formula",
-                        "content": "$MTBF = \frac{1}{lambda}$ for a constant failure rate (exponential distribution)."
-                    },
-                    {
-                        "title": "Calculate",
-                        "content": "$MTBF = \frac{1}{0.002} = 500\text{ hours}$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Quality and Reliability",
-                "search_term": "quality and reliability",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Quality and Reliability",
-            "title": "Six Sigma Quality Defect Rate",
-            "question": "A process operating at a true Six Sigma level yields how many Defects Per Million Opportunities (DPMO)?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "3.4 DPMO",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "270 DPMO",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "1350 DPMO",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "66807 DPMO",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Six Sigma Yield",
-                        "content": "Six Sigma quality standard accounts for a typical $1.5sigma$ process shift over time, resulting in an output yield of 99.99966%, which corresponds to 3.4 defects per million opportunities (DPMO)."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Quality and Reliability",
-                "search_term": "quality and reliability",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Quality and Reliability",
-            "title": "Failure Mode and Effects Analysis (FMEA)",
-            "question": "In an FMEA study, the Risk Priority Number (RPN) is calculated by multiplying which three factors?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Severity × Occurrence × Detection",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Probability × Consequence × Cost",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "MTBF × Failure Rate × Severity",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Safety Factor × Load × Stress",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "RPN Calculation",
-                        "content": "$RPN = S \times O \times D$ where: S = Severity of effect (1-10). O = Probability of Occurrence (1-10). D = Likelihood of Detection before reaching customer (1-10). RPN ranges from 1 to 1000."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "design",
-                "topic": "Quality and Reliability",
-                "search_term": "quality and reliability",
-                "page_number": null
-            }
-        },
-
         {
             "topic": "Springs",
             "title": "Helical Spring Wahl Factor",
