@@ -362,6 +362,34 @@
     </div>
 </div>
 
+<!-- ===== FULL FE EXAM SIMULATOR ===== -->
+<div id="full-fe-exam-card" class="col-span-1 md:col-span-12 lg:col-span-12 glass-card rounded-3xl p-6 relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6 mb-2">
+    <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center shrink-0 border border-amber-500/20">
+            <span class="material-symbols-outlined text-amber-500 text-3xl" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+        </div>
+        <div>
+            <h3 class="font-display-lg text-2xl text-on-surface dark:text-white mb-1">Mechanical FE Simulator</h3>
+            <p class="font-body-sm text-slate-500 dark:text-slate-400">110 Questions • 6 Hours • Official Engg.tv Mechanical Blueprint</p>
+        </div>
+    </div>
+    
+    <!-- Lock State -->
+    <div id="fe-simulator-locked" class="flex flex-col items-end gap-2 w-full sm:w-auto">
+        <div class="w-full sm:w-48 bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+            <div id="fe-sim-progress" class="bg-amber-500 h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+        </div>
+        <p id="fe-sim-lock-text" class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest"><span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> Unlocks at 500 Points</p>
+    </div>
+    
+    <!-- Unlocked State -->
+    <div id="fe-simulator-unlocked" class="hidden w-full sm:w-auto">
+        <button onclick="window.startFullFEExamFlow()" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">play_arrow</span> Start Simulator
+        </button>
+    </div>
+</div>
+
   <!-- ===== DAILY QUESTS & MISSIONS ===== -->
   <div id="daily-quests-card" class="col-span-1 md:col-span-12 lg:col-span-4 glass-card rounded-3xl p-6 relative overflow-hidden">
       <div class="absolute -right-6 -top-6 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -1558,6 +1586,46 @@
             }
         });
     </script>
+    <!-- FE EXAM MODALS -->
+    <div id="fe-exam-intro-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/90 backdrop-blur-sm p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900">
+                <h2 id="fe-intro-title" class="text-xl font-bold font-display-lg text-slate-800 dark:text-white">Nondisclosure Agreement</h2>
+                <div id="fe-intro-timer-container" class="text-secondary font-black bg-secondary/10 px-3 py-1 rounded-full flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[14px]">timer</span>
+                    <span id="fe-intro-timer">02:00</span>
+                </div>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1 font-body-base text-slate-600 dark:text-slate-300" id="fe-intro-content">
+                <!-- Content generated via JS -->
+            </div>
+            <div class="p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex justify-end gap-3 items-center">
+                <div id="fe-intro-wait-text" class="text-sm font-bold text-slate-400 flex items-center gap-2 h-[48px]">
+                    <span class="material-symbols-outlined animate-spin text-[16px]">hourglass_empty</span> Please read carefully...
+                </div>
+                <button id="btn-fe-intro-action" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hidden">I Agree</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="fe-exam-break-modal" class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-center bg-slate-900/95 backdrop-blur-md p-4 text-center">
+        <div class="w-24 h-24 rounded-full bg-amber-500/20 flex items-center justify-center mb-6 border-4 border-amber-500/30 mx-auto">
+            <span class="material-symbols-outlined text-amber-500 text-5xl" style="font-variation-settings:'FILL' 1;">free_cancellation</span>
+        </div>
+        <h2 class="text-4xl font-display-lg text-white mb-2">Scheduled Break</h2>
+        <p class="text-lg text-slate-400 max-w-lg mb-8 mx-auto">You have completed Part 1 (55 questions). The exam timer is paused. Once you resume, you cannot return to the first 55 questions.</p>
+        
+        <div class="bg-slate-800 rounded-3xl p-8 mb-8 border border-slate-700 shadow-2xl w-full max-w-sm mx-auto">
+            <p class="text-sm font-bold text-amber-500 uppercase tracking-widest mb-2">Break Time Remaining</p>
+            <p id="fe-break-timer" class="text-6xl font-black text-white tabular-nums tracking-tight">25:00</p>
+        </div>
+        
+        <button onclick="window.resumeFEExamPart2()" class="mx-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-lg uppercase tracking-widest flex items-center gap-2">
+            <span class="material-symbols-outlined text-[24px]">play_circle</span> Resume Exam (Part 2)
+        </button>
+    </div>
+
+    <script src="js/fe-simulator.js"></script>
 </body>
 
 </html>

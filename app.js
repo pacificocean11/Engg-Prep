@@ -1756,7 +1756,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         state.questionEnteredAt = Date.now();
 
         const question = state.quizQuestions[state.currentQuestionIndex];
-        questionMeta.textContent = `Question ${state.currentQuestionIndex + 1} of ${state.quizQuestions.length} • ${state.currentTopic || state.currentSubject.name}`;
+        if (state.isFullFEExam) {
+            questionMeta.textContent = `Question ${state.currentQuestionIndex + 1} of ${state.quizQuestions.length}`;
+        } else {
+            questionMeta.textContent = `Question ${state.currentQuestionIndex + 1} of ${state.quizQuestions.length} • ${state.currentTopic || state.currentSubject.name}`;
+        }
         
         questionText.innerHTML = `<p>${injectFormulaTriggers(question.question)}</p>`;
         
@@ -1954,10 +1958,40 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 }
             }
             
-            btn.onclick = () => {
-                state.currentQuestionIndex = idx;
-                loadQuestion();
-            };
+            // FE Exam Part lockdown: grey out and disable locked halves
+            let isLocked = false;
+            if (state.isFullFEExam && !state.isFinished) {
+                if (!state.hasTakenFEBreak && idx >= 55) {
+                    isLocked = true; // Part 1: lock Part 2 questions
+                } else if (state.hasTakenFEBreak && idx < 55) {
+                    isLocked = true; // Part 2: lock Part 1 questions
+                }
+            }
+            
+            if (isLocked) {
+                btn.style.opacity = '0.2';
+                btn.style.pointerEvents = 'none';
+                btn.style.filter = 'grayscale(100%)';
+            } else {
+                btn.onclick = () => {
+                    state.currentQuestionIndex = idx;
+                    loadQuestion();
+                };
+            }
+            
+            // Add visual separator between Part 1 and Part 2 in FE exam
+            if (state.isFullFEExam && idx === 55) {
+                const separator = document.createElement('div');
+                separator.className = 'w-full';
+                separator.style.cssText = 'height: 2px; background: linear-gradient(90deg, transparent, #94a3b8, transparent); margin: 12px 0; grid-column: 1 / -1;';
+                
+                const label = document.createElement('div');
+                label.style.cssText = 'grid-column: 1 / -1; text-align: center; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; margin-bottom: 8px;';
+                label.textContent = state.hasTakenFEBreak ? '▼ Part 2 (Questions 56–110)' : '▽ Part 2 (Locked)';
+                
+                questionMap.appendChild(separator);
+                questionMap.appendChild(label);
+            }
             
             questionMap.appendChild(btn);
         });
@@ -2230,7 +2264,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     setTimeout(() => {
                         if (!state.isFinished) {
                             state.currentQuestionIndex++;
-                            loadQuestion();
+                            // FE Exam: route through window.loadQuestion to trigger break at Q55
+                            if (state.isFullFEExam && window.loadQuestion) {
+                                window.loadQuestion();
+                            } else {
+                                loadQuestion();
+                            }
                         }
                     }, 300);
                 } else {
@@ -2242,6 +2281,17 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
+                // FE Exam: block advancing past question 55 during Part 1
+                if (state.isFullFEExam && !state.hasTakenFEBreak && state.currentQuestionIndex >= 54) {
+                    if (state.currentQuestionIndex === 54) {
+                        state.currentQuestionIndex++;
+                        // Must call window.loadQuestion (intercepted) to trigger break
+                        if (window.loadQuestion) {
+                            window.loadQuestion();
+                        }
+                    }
+                    return;
+                }
                 if (state.currentQuestionIndex < state.quizQuestions.length - 1) {
                     state.currentQuestionIndex++;
                     loadQuestion();
@@ -2421,7 +2471,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
         
-        if (accuracy >= 80 && window.incrementQuestProgress) {
+        // Prevent exploit: Only award "Flawless Victory" if the user actually finished the entire quiz
+        const isQuizCompleted = attempted === state.quizQuestions.length && attempted > 0;
+        if (accuracy >= 80 && isQuizCompleted && window.incrementQuestProgress) {
             window.incrementQuestProgress('perfect_quiz', 1);
         }
         if (state.currentSubject && state.currentSubject.id === 'srs-review' && window.incrementQuestProgress) {
@@ -3152,6 +3204,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 pointsToNextLevel.className = "text-[10px] font-medium text-green-500";
             }
         }
+    
+        // Check FE Simulator unlock state whenever gamification UI updates
+        if (window.checkFESimulatorUnlock) window.checkFESimulatorUnlock();
     }
     window.updateGamificationUI = updateGamificationUI;
 
