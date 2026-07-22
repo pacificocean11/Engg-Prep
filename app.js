@@ -2328,6 +2328,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
+                if (state.isFullFEExam && state.hasTakenFEBreak && state.currentQuestionIndex === 55) {
+                    if (window.showFEBlockModal) {
+                        window.showFEBlockModal("Access Denied", "You cannot return to Part 1 (Questions 1-55) after your scheduled break.");
+                    } else {
+                        alert("You cannot return to Part 1 (Questions 1-55) after your scheduled break.");
+                    }
+                    return;
+                }
                 if (state.currentQuestionIndex > 0) {
                     state.currentQuestionIndex--;
                     loadQuestion();
@@ -2886,7 +2894,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     function startTimer() {
         state.secondsElapsed = 0;
         if (state.isMockExam) {
-            state.secondsRemaining = 60 * 60; // 60 minutes
+            if (state.isFullFEExam) {
+                state.secondsRemaining = 160 * 60; // 160 minutes (Half of 5hr 20m)
+            } else {
+                state.secondsRemaining = 60 * 60; // 60 minutes for standard mock
+            }
             quizTimer.classList.remove('blinking-timer');
             updateTimerDisplay();
         } else {
