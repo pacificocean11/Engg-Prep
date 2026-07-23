@@ -57,9 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (window.syncToFirebase) window.syncToFirebase();
                 window.showToast("Reward Claimed!", `+${questDef.reward} Bonus Points added!`, "stars");
             }
-            if (window.confetti) {
-                window.confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, zIndex: 10000 });
-            }
             renderDailyQuests();
         }
     };

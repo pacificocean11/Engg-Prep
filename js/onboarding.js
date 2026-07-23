@@ -73,7 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Trigger logic
         setTimeout(() => {
-            if (!localStorage.getItem('enggtv_onboarding_complete') && state.currentPage === 'dashboard') {
+            // TEMPORARILY SUPPRESSED: Save this functionality for future flash announcements
+            const enableIntroScreens = false;
+            
+            if (enableIntroScreens && !localStorage.getItem('enggtv_onboarding_complete') && state.currentPage === 'dashboard') {
                 onboardingModal.classList.remove('hidden');
                 setTimeout(() => onboardingModal.classList.add('opacity-100'), 50);
                 updateOnboardingUI();
