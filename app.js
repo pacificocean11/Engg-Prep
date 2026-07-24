@@ -2345,10 +2345,34 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         if (exitQuizBtn) {
             exitQuizBtn.addEventListener('click', () => {
-                if (confirm("Are you sure you want to exit the quiz? Your progress won't be saved.")) {
-                    stopTimer();
-                    navigateTo('study');
+                const exitModal = document.getElementById('exit-quiz-modal');
+                if (exitModal) {
+                    exitModal.classList.remove('hidden');
+                } else {
+                    if (confirm("Are you sure you want to exit the quiz? Your progress won't be saved.")) {
+                        stopTimer();
+                        navigateTo('study');
+                    }
                 }
+            });
+        }
+
+        const exitQuizCancelBtn = document.getElementById('btn-exit-quiz-cancel');
+        const exitQuizConfirmBtn = document.getElementById('btn-exit-quiz-confirm');
+
+        if (exitQuizCancelBtn) {
+            exitQuizCancelBtn.addEventListener('click', () => {
+                const exitModal = document.getElementById('exit-quiz-modal');
+                if (exitModal) exitModal.classList.add('hidden');
+            });
+        }
+
+        if (exitQuizConfirmBtn) {
+            exitQuizConfirmBtn.addEventListener('click', () => {
+                const exitModal = document.getElementById('exit-quiz-modal');
+                if (exitModal) exitModal.classList.add('hidden');
+                stopTimer();
+                navigateTo('study');
             });
         }
 
@@ -4143,155 +4167,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         }
     })();
 
-    window.shareDiagnosticReport = async function() {
-        try {
-            if (typeof html2canvas === 'undefined') {
-                window.showToast("Error", "Screenshot tool is still loading...", "error");
-                return;
-            }
-            
-            window.showToast("Generating...", "Creating a snapshot of your report...", "refresh");
-            
-            const captureElement = document.getElementById('diagnostic-report-card');
-            
-            // Briefly hide the share button from the screenshot
-            const shareBtn = captureElement.querySelector('button');
-            if(shareBtn) shareBtn.style.opacity = '0';
 
-            // Temporarily expand width to prevent clipping on mobile devices
-            const originalWidth = captureElement.style.width;
-            const originalMaxWidth = captureElement.style.maxWidth;
-            captureElement.style.width = 'max-content';
-            captureElement.style.maxWidth = 'none';
-            // Allow DOM to reflow
-            await new Promise(r => setTimeout(r, 50));
 
-            const canvas = await html2canvas(captureElement, {
-                scale: 2,
-                backgroundColor: null,
-                useCORS: true,
-                allowTaint: true,
-                windowWidth: captureElement.scrollWidth
-            });
-            
-            // Restore width
-            captureElement.style.width = originalWidth;
-            captureElement.style.maxWidth = originalMaxWidth;
-            
-            if(shareBtn) shareBtn.style.opacity = '1';
 
-            canvas.toBlob(async (blob) => {
-                if (!blob) return;
-                
-                const file = new File([blob], `ENGG_tv_Diagnostic_${(state.user.username || 'Student').replace(/\s+/g, '_')}.png`, { type: 'image/png' });
-                const shareData = {
-                    title: 'My FE Exam Diagnostic Report',
-                    text: `I am tracking my FE Exam readiness using the NCEES diagnostic format on ENGG.tv! 🚀\n\nStart studying for free: https://pacificocean11.github.io/Engg-Prep\n\n#FEExam #Engineering #ENGGtv`,
-                    files: [file]
-                };
-
-                if (navigator.canShare && navigator.canShare(shareData)) {
-                    try {
-                        await navigator.share(shareData);
-                        window.showToast("Shared!", "Report shared successfully.", "check_circle");
-                    } catch (err) {
-                        if (err.name !== 'AbortError') {
-                            downloadCanvasAsImage(canvas, file.name);
-                        }
-                    }
-                } else {
-                    downloadCanvasAsImage(canvas, file.name);
-                }
-            });
-            
-            function downloadCanvasAsImage(canvas, filename) {
-                const link = document.createElement('a');
-                link.download = filename;
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-                window.showToast("Report Downloaded!", "You can now post this image on LinkedIn.", "check_circle");
-                
-                const caption = `I am tracking my FE Exam readiness using the NCEES diagnostic format on ENGG.tv! 🚀\n\nStart studying for free: https://pacificocean11.github.io/Engg-Prep\n\n#FEExam #Engineering #ENGGtv`;
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(caption).catch(e => console.log('Clipboard failed', e));
-                }
-            }
-            
-        } catch (error) {
-            console.error("Error generating report snapshot:", error);
-            window.showToast("Error", "Could not generate report image.", "error");
-        }
-    };
-
-    window.exportDiagnosticPDF = async function() {
-        try {
-            if (typeof html2pdf === 'undefined') {
-                window.showToast("Error", "PDF tool is still loading...", "error");
-                return;
-            }
-            
-            window.showToast("Generating...", "Creating a styled PDF report...", "picture_as_pdf");
-            
-            const captureElement = document.getElementById('diagnostic-report-card');
-            
-            // Briefly hide the buttons from the screenshot
-            const buttons = captureElement.querySelectorAll('button');
-            const originalDisplays = [];
-            buttons.forEach(btn => {
-                originalDisplays.push(btn.style.display);
-                btn.style.display = 'none';
-            });
-            
-            // Temporarily remove dark mode for a printer-friendly PDF
-            const htmlElement = document.documentElement;
-            const wasDark = htmlElement.classList.contains('dark');
-            if (wasDark) {
-                htmlElement.classList.remove('dark');
-                // Wait for styles to apply
-                await new Promise(r => setTimeout(r, 100));
-            }
-
-            const username = (state.user.username || 'Student').replace(/\s+/g, '_');
-            
-            // Temporarily expand width to prevent clipping on mobile devices
-            const originalWidth = captureElement.style.width;
-            const originalMaxWidth = captureElement.style.maxWidth;
-            captureElement.style.width = 'max-content';
-            captureElement.style.maxWidth = 'none';
-            
-            const opt = {
-              margin:       0.5,
-              filename:     `ENGG_tv_Diagnostic_${username}.pdf`,
-              image:        { type: 'jpeg', quality: 0.98 },
-              html2canvas:  { scale: 2, useCORS: true, backgroundColor: '#ffffff', windowWidth: captureElement.scrollWidth },
-              jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
-            };
-
-            await html2pdf().set(opt).from(captureElement).save();
-            
-            // Restore state
-            captureElement.style.width = originalWidth;
-            captureElement.style.maxWidth = originalMaxWidth;
-            
-            buttons.forEach((btn, index) => {
-                btn.style.display = originalDisplays[index];
-            });
-            if (wasDark) {
-                htmlElement.classList.add('dark');
-            }
-            
-            window.showToast("Success!", "Your PDF report has been downloaded.", "check_circle");
-        } catch (error) {
-            console.error("Error generating PDF:", error);
-            window.showToast("Error", "Could not generate PDF.", "error");
-            
-            // Ensure restore even on error
-            const htmlElement = document.documentElement;
-            if (htmlElement && !htmlElement.classList.contains('dark') && localStorage.getItem('enggtv_theme') === 'dark') {
-                htmlElement.classList.add('dark');
-            }
-        }
-    };
     // Offline Sync Trigger
     window.triggerOfflineSync = function() {
         if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -4313,13 +4191,19 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             const imageUrls = [];
             try {
                 if (typeof QUESTIONS !== 'undefined') {
-                    QUESTIONS.forEach(q => {
+                    Object.values(QUESTIONS).flat().forEach(q => {
                         if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
                         if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
                     });
                 }
                 if (typeof ADVANCED_QUESTIONS !== 'undefined') {
-                    ADVANCED_QUESTIONS.forEach(q => {
+                    Object.values(ADVANCED_QUESTIONS).flat().forEach(q => {
+                        if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
+                        if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
+                    });
+                }
+                if (typeof EXAM_QUESTIONS !== 'undefined') {
+                    Object.values(EXAM_QUESTIONS).flat().forEach(q => {
                         if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
                         if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
                     });
@@ -4334,6 +4218,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     './app.js',
                     './questions.js',
                     './advanced_questions.js',
+                    './exam_questions.js',
                     './style.css',
                     ...imageUrls
                 ]

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v36';
+const CACHE_NAME = 'engg-prep-cache-v37';
 const APP_SHELL = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const APP_SHELL = [
   './app.js',
   './questions.js',
   './advanced_questions.js',
+  './exam_questions.js',
   './style.css',
   './firebase-config.js',
   './js/data-manager.js',
@@ -17,6 +18,7 @@ const APP_SHELL = [
   './js/tts.js',
   './js/weakness-srs.js',
   './js/daily-quests.js',
+  './js/fe-simulator.js',
   './manifest.json',
   './engg_tv_logo.png'
 ];
