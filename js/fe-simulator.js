@@ -64,7 +64,7 @@
         };
         
         let subjectGroups = [];
-        const sourceDB = (typeof QUESTIONS !== 'undefined') ? QUESTIONS : window.QUESTIONS; 
+        const sourceDB = (typeof EXAM_QUESTIONS !== 'undefined') ? EXAM_QUESTIONS : ((typeof QUESTIONS !== 'undefined') ? QUESTIONS : window.QUESTIONS); 
         
         for (const [subjectId, count] of Object.entries(blueprint)) {
             if (sourceDB && sourceDB[subjectId]) {
