@@ -1,39 +1,76 @@
 (function() {
     // --- 1. Unlock Logic ---
     function checkFESimulatorUnlock() {
-        const lockedDiv = document.getElementById('fe-simulator-locked');
-        const unlockedDiv = document.getElementById('fe-simulator-unlocked');
-        const progBar = document.getElementById('fe-sim-progress');
-        const lockText = document.getElementById('fe-sim-lock-text');
-        
-        if (!lockedDiv) return;
-        
         // Use window.state dynamically so it isn't undefined when IIFE runs early
         const points = (window.state && window.state.userPoints) ? window.state.userPoints : 0;
         const required = 500;
         
         console.log(`[FE Simulator] Unlock Check - Points: ${points}, Required: ${required}`);
         
-        if (points >= required) {
-            lockedDiv.classList.remove('flex');
-            lockedDiv.classList.add('hidden');
-            lockedDiv.style.display = 'none'; // Fallback
-            
-            unlockedDiv.classList.remove('hidden');
-            unlockedDiv.classList.add('flex');
-            unlockedDiv.style.display = 'flex'; // Fallback
-        } else {
-            lockedDiv.classList.remove('hidden');
-            lockedDiv.classList.add('flex');
-            lockedDiv.style.display = 'flex'; // Fallback
-            
-            unlockedDiv.classList.remove('flex');
-            unlockedDiv.classList.add('hidden');
-            unlockedDiv.style.display = 'none'; // Fallback
-            const pct = Math.min(100, (points / required) * 100);
-            if (progBar) progBar.style.width = pct + '%';
-            if (lockText) lockText.innerHTML = `<span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> ${points}/${required} Points to Unlock`;
+        const discipline = localStorage.getItem('enggtv_discipline') || (window.state && window.state.user && window.state.user.discipline) || 'Mechanical';
+        const isOther = discipline.toLowerCase().includes('other');
+
+        const mechCard = document.getElementById('full-fe-exam-card');
+        const otherCard = document.getElementById('full-fe-exam-card-other');
+
+        if (mechCard) {
+            if (isOther) {
+                mechCard.classList.add('hidden');
+                mechCard.classList.remove('flex');
+                mechCard.style.display = 'none';
+            } else {
+                mechCard.classList.remove('hidden');
+                mechCard.classList.add('flex');
+                mechCard.style.display = 'flex';
+            }
         }
+        
+        if (otherCard) {
+            if (!isOther) {
+                otherCard.classList.add('hidden');
+                otherCard.classList.remove('flex');
+                otherCard.style.display = 'none';
+            } else {
+                otherCard.classList.remove('hidden');
+                otherCard.classList.add('flex');
+                otherCard.style.display = 'flex';
+            }
+        }
+
+        const simulators = [
+            { locked: 'fe-simulator-locked', unlocked: 'fe-simulator-unlocked', prog: 'fe-sim-progress', text: 'fe-sim-lock-text' },
+            { locked: 'fe-simulator-locked-other', unlocked: 'fe-simulator-unlocked-other', prog: 'fe-sim-progress-other', text: 'fe-sim-lock-text-other' }
+        ];
+
+        simulators.forEach(sim => {
+            const lockedDiv = document.getElementById(sim.locked);
+            const unlockedDiv = document.getElementById(sim.unlocked);
+            const progBar = document.getElementById(sim.prog);
+            const lockText = document.getElementById(sim.text);
+
+            if (!lockedDiv) return;
+
+            if (points >= required) {
+                lockedDiv.classList.remove('flex');
+                lockedDiv.classList.add('hidden');
+                lockedDiv.style.display = 'none'; // Fallback
+                
+                unlockedDiv.classList.remove('hidden');
+                unlockedDiv.classList.add('flex');
+                unlockedDiv.style.display = 'flex'; // Fallback
+            } else {
+                lockedDiv.classList.remove('hidden');
+                lockedDiv.classList.add('flex');
+                lockedDiv.style.display = 'flex'; // Fallback
+                
+                unlockedDiv.classList.remove('flex');
+                unlockedDiv.classList.add('hidden');
+                unlockedDiv.style.display = 'none'; // Fallback
+                const pct = Math.min(100, (points / required) * 100);
+                if (progBar) progBar.style.width = pct + '%';
+                if (lockText) lockText.innerHTML = `<span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> ${points}/${required} Points to Unlock`;
+            }
+        });
     }
     
     // Expose globally so app.js updateGamificationUI can call it
@@ -44,24 +81,42 @@
 
 
     // --- 2. FE EXAM GENERATOR (110 questions, NCEES Blueprint) ---
-    function generateFEExam() {
-        // NCEES FE Mechanical Blueprint (110 questions)
-        const blueprint = {
-            'math': 8,                 // Mathematics
-            'stats': 5,                // Probability and Statistics
-            'ethics': 4,               // Ethics and Professional Practice
-            'econ': 4,                 // Engineering Economics
-            'electricity': 6,          // Electricity and Magnetism
-            'statics': 10,             // Statics
-            'dynamics': 10,            // Dynamics, Kinematics, and Vibrations
-            'materials-strength': 10,  // Mechanics of Materials
-            'materials-science': 8,    // Material Properties and Processing
-            'fluids': 11,              // Fluid Mechanics
-            'thermo': 12,              // Thermodynamics
-            'heat': 8,                 // Heat Transfer
-            'instr-controls': 6,       // Measurements, Instrumentation, and Controls
-            'design': 8                // Mechanical Design and Analysis
+    function generateFEExam(discipline = 'mechanical') {
+        const blueprints = {
+            'mechanical': {
+                'math': 8,                 // Mathematics
+                'stats': 5,                // Probability and Statistics
+                'ethics': 4,               // Ethics and Professional Practice
+                'econ': 4,                 // Engineering Economics
+                'electricity': 6,          // Electricity and Magnetism
+                'statics': 10,             // Statics
+                'dynamics': 10,            // Dynamics, Kinematics, and Vibrations
+                'materials-strength': 10,  // Mechanics of Materials
+                'materials-science': 8,    // Material Properties and Processing
+                'fluids': 11,              // Fluid Mechanics
+                'thermo': 12,              // Thermodynamics
+                'heat': 8,                 // Heat Transfer
+                'instr-controls': 6,       // Measurements, Instrumentation, and Controls
+                'design': 8                // Mechanical Design and Analysis
+            },
+            'other': {
+                'math': 9,
+                'stats': 7,
+                'chemistry': 6,
+                'instr-controls': 5,
+                'ethics': 5,
+                'safety': 5,
+                'econ': 6,
+                'statics': 10,
+                'dynamics': 9,
+                'materials-strength': 10,
+                'materials-science': 9,
+                'fluids': 10,
+                'electricity': 9,
+                'thermo': 10
+            }
         };
+        const blueprint = blueprints[discipline] || blueprints['mechanical'];
         
         let subjectGroups = [];
         const sourceDB = (typeof EXAM_QUESTIONS !== 'undefined') ? EXAM_QUESTIONS : ((typeof QUESTIONS !== 'undefined') ? QUESTIONS : window.QUESTIONS); 
@@ -111,7 +166,8 @@
     let originalLoadQuestion = null;
     let originalUpdateQuestionMap = null;
 
-    window.startFullFEExamFlow = function() {
+    window.startFullFEExamFlow = function(discipline = 'mechanical') {
+        window.currentSimulatorDiscipline = discipline;
         if (!interceptorsSetup) {
             setupFEInterceptors();
             interceptorsSetup = true;
@@ -219,10 +275,16 @@
     function startFEExamPart1() {
         document.getElementById('fe-exam-intro-modal').classList.add('hidden');
         
-        const questions = generateFEExam();
+        const discipline = window.currentSimulatorDiscipline || 'mechanical';
+        const questions = generateFEExam(discipline);
 
-        window.state.currentSubject = { name: "Mechanical FE Simulator", id: "fe-simulator" };
-        window.state.currentTopic = "Official Mechanical Blueprint";
+        if (discipline === 'other') {
+            window.state.currentSubject = { name: "Other Disciplines FE Simulator", id: "fe-simulator-other" };
+            window.state.currentTopic = "Official Other Disciplines Blueprint";
+        } else {
+            window.state.currentSubject = { name: "Mechanical FE Simulator", id: "fe-simulator" };
+            window.state.currentTopic = "Official Mechanical Blueprint";
+        }
         
         if (window.prepareQuestions) {
             window.state.quizQuestions = window.prepareQuestions(questions);
