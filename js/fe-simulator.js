@@ -1,76 +1,66 @@
 (function() {
     // --- 1. Unlock Logic ---
     function checkFESimulatorUnlock() {
-        // Use window.state dynamically so it isn't undefined when IIFE runs early
         const points = (window.state && window.state.userPoints) ? window.state.userPoints : 0;
         const required = 500;
         
-        console.log(`[FE Simulator] Unlock Check - Points: ${points}, Required: ${required}`);
+        let rawDiscipline = localStorage.getItem('enggtv_discipline') || (window.state && window.state.user && window.state.user.discipline) || 'Mechanical';
+        const discipline = rawDiscipline.replace(' Engineer', '').replace(' Engineering', '');
         
-        const discipline = localStorage.getItem('enggtv_discipline') || (window.state && window.state.user && window.state.user.discipline) || 'Mechanical';
-        const isOther = discipline.toLowerCase().includes('other');
+        const card = document.getElementById('full-fe-exam-card');
+        if (!card) return;
+        
+        const titleEl = document.getElementById('fe-simulator-title');
+        const subtitleEl = document.getElementById('fe-simulator-subtitle');
+        const iconEl = document.getElementById('fe-simulator-icon');
+        const iconContainer = document.getElementById('fe-simulator-icon-container');
+        
+        if (titleEl) titleEl.innerText = `${discipline} FE Simulator`;
+        if (subtitleEl) subtitleEl.innerText = `110 Questions • 6 Hours • Official Engg.tv ${discipline} Blueprint`;
+        
+        let colorClass = 'text-amber-500';
+        let bgClass = 'bg-amber-500/10';
+        let borderClass = 'border-amber-500/20';
+        let btnClass = 'bg-amber-500 hover:bg-amber-600 shadow-amber-500/30';
+        let progClass = 'bg-amber-500';
+        
+        if (discipline.toLowerCase().includes('civil')) { colorClass = 'text-blue-500'; bgClass = 'bg-blue-500/10'; borderClass = 'border-blue-500/20'; btnClass = 'bg-blue-500 hover:bg-blue-600 shadow-blue-500/30'; progClass = 'bg-blue-500'; }
+        else if (discipline.toLowerCase().includes('chemical')) { colorClass = 'text-emerald-500'; bgClass = 'bg-emerald-500/10'; borderClass = 'border-emerald-500/20'; btnClass = 'bg-emerald-500 hover:bg-emerald-600 shadow-emerald-500/30'; progClass = 'bg-emerald-500'; }
+        else if (discipline.toLowerCase().includes('electrical')) { colorClass = 'text-purple-500'; bgClass = 'bg-purple-500/10'; borderClass = 'border-purple-500/20'; btnClass = 'bg-purple-500 hover:bg-purple-600 shadow-purple-500/30'; progClass = 'bg-purple-500'; }
+        else if (discipline.toLowerCase().includes('environmental')) { colorClass = 'text-green-500'; bgClass = 'bg-green-500/10'; borderClass = 'border-green-500/20'; btnClass = 'bg-green-500 hover:bg-green-600 shadow-green-500/30'; progClass = 'bg-green-500'; }
+        else if (discipline.toLowerCase().includes('industrial')) { colorClass = 'text-orange-500'; bgClass = 'bg-orange-500/10'; borderClass = 'border-orange-500/20'; btnClass = 'bg-orange-500 hover:bg-orange-600 shadow-orange-500/30'; progClass = 'bg-orange-500'; }
+        else if (discipline.toLowerCase().includes('other')) { colorClass = 'text-primary'; bgClass = 'bg-primary/10'; borderClass = 'border-primary/20'; btnClass = 'bg-primary hover:bg-pink-600 shadow-pink-500/30'; progClass = 'bg-primary'; }
+        
+        if (iconEl) iconEl.className = `material-symbols-outlined text-3xl ${colorClass}`;
+        if (iconContainer) iconContainer.className = `w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 border ${bgClass} ${borderClass}`;
+        
+        const startBtn = document.getElementById('btn-start-fe-simulator');
+        if (startBtn) {
+            startBtn.className = `w-full sm:w-auto text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg active:scale-95 transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-2 ${btnClass}`;
+            startBtn.onclick = () => window.startFullFEExamFlow(discipline.toLowerCase());
+        }
 
-        const mechCard = document.getElementById('full-fe-exam-card');
-        const otherCard = document.getElementById('full-fe-exam-card-other');
+        const lockedDiv = document.getElementById('fe-simulator-locked');
+        const unlockedDiv = document.getElementById('fe-simulator-unlocked');
+        const progBar = document.getElementById('fe-sim-progress');
+        const lockText = document.getElementById('fe-sim-lock-text');
 
-        if (mechCard) {
-            if (isOther) {
-                mechCard.classList.add('hidden');
-                mechCard.classList.remove('flex');
-                mechCard.style.display = 'none';
-            } else {
-                mechCard.classList.remove('hidden');
-                mechCard.classList.add('flex');
-                mechCard.style.display = 'flex';
+        if (points >= required) {
+            if(lockedDiv) { lockedDiv.classList.remove('flex'); lockedDiv.classList.add('hidden'); lockedDiv.style.display = 'none'; }
+            if(unlockedDiv) { unlockedDiv.classList.remove('hidden'); unlockedDiv.classList.add('flex'); unlockedDiv.style.display = 'flex'; }
+        } else {
+            if(lockedDiv) { lockedDiv.classList.remove('hidden'); lockedDiv.classList.add('flex'); lockedDiv.style.display = 'flex'; }
+            if(unlockedDiv) { unlockedDiv.classList.remove('flex'); unlockedDiv.classList.add('hidden'); unlockedDiv.style.display = 'none'; }
+            const pct = Math.min(100, (points / required) * 100);
+            if (progBar) {
+                progBar.style.width = pct + '%';
+                progBar.className = `h-full rounded-full transition-all duration-1000 ${progClass}`;
+            }
+            if (lockText) {
+                lockText.innerHTML = `<span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> ${points}/${required} Points to Unlock`;
+                lockText.className = `text-xs font-bold uppercase tracking-widest ${colorClass}`;
             }
         }
-        
-        if (otherCard) {
-            if (!isOther) {
-                otherCard.classList.add('hidden');
-                otherCard.classList.remove('flex');
-                otherCard.style.display = 'none';
-            } else {
-                otherCard.classList.remove('hidden');
-                otherCard.classList.add('flex');
-                otherCard.style.display = 'flex';
-            }
-        }
-
-        const simulators = [
-            { locked: 'fe-simulator-locked', unlocked: 'fe-simulator-unlocked', prog: 'fe-sim-progress', text: 'fe-sim-lock-text' },
-            { locked: 'fe-simulator-locked-other', unlocked: 'fe-simulator-unlocked-other', prog: 'fe-sim-progress-other', text: 'fe-sim-lock-text-other' }
-        ];
-
-        simulators.forEach(sim => {
-            const lockedDiv = document.getElementById(sim.locked);
-            const unlockedDiv = document.getElementById(sim.unlocked);
-            const progBar = document.getElementById(sim.prog);
-            const lockText = document.getElementById(sim.text);
-
-            if (!lockedDiv) return;
-
-            if (points >= required) {
-                lockedDiv.classList.remove('flex');
-                lockedDiv.classList.add('hidden');
-                lockedDiv.style.display = 'none'; // Fallback
-                
-                unlockedDiv.classList.remove('hidden');
-                unlockedDiv.classList.add('flex');
-                unlockedDiv.style.display = 'flex'; // Fallback
-            } else {
-                lockedDiv.classList.remove('hidden');
-                lockedDiv.classList.add('flex');
-                lockedDiv.style.display = 'flex'; // Fallback
-                
-                unlockedDiv.classList.remove('flex');
-                unlockedDiv.classList.add('hidden');
-                unlockedDiv.style.display = 'none'; // Fallback
-                const pct = Math.min(100, (points / required) * 100);
-                if (progBar) progBar.style.width = pct + '%';
-                if (lockText) lockText.innerHTML = `<span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> ${points}/${required} Points to Unlock`;
-            }
-        });
     }
     
     // Expose globally so app.js updateGamificationUI can call it
@@ -84,55 +74,75 @@
     function generateFEExam(discipline = 'mechanical') {
         const blueprints = {
             'mechanical': {
-                'math': 8,                 // Mathematics
-                'stats': 5,                // Probability and Statistics
-                'ethics': 4,               // Ethics and Professional Practice
-                'econ': 4,                 // Engineering Economics
-                'electricity': 6,          // Electricity and Magnetism
-                'statics': 10,             // Statics
-                'dynamics': 10,            // Dynamics, Kinematics, and Vibrations
-                'materials-strength': 10,  // Mechanics of Materials
-                'materials-science': 8,    // Material Properties and Processing
-                'fluids': 11,              // Fluid Mechanics
-                'thermo': 12,              // Thermodynamics
-                'heat': 8,                 // Heat Transfer
-                'instr-controls': 6,       // Measurements, Instrumentation, and Controls
-                'design': 8                // Mechanical Design and Analysis
+                'math': 8, 'stats': 5, 'ethics': 4, 'econ': 4, 'electricity': 6, 'statics': 10, 'dynamics': 10, 'materials-strength': 10, 'materials-science': 8, 'fluids': 11, 'thermo': 12, 'heat': 8, 'instr-controls': 6, 'design': 8
+            },
+            'civil': {
+                'math': 8, 'stats': 5, 'ethics': 4, 'econ': 5, 'statics': 8, 'dynamics': 4, 'materials-strength': 7, 'materials-science': 5, 'fluids': 6, 'surveying': 6, 'water-res': 11, 'structural': 11, 'geotech': 11, 'transport': 10, 'construction': 9
+            },
+            'chemical': {
+                'math': 6, 'stats': 4, 'ethics': 3, 'econ': 3, 'materials-science': 5, 'fluids': 10, 'thermo': 12, 'heat': 10, 'mass-sep': 10, 'reaction-eng': 11, 'balances': 11, 'chem-bio': 6, 'process-control': 6, 'process-design': 6, 'safety': 7
+            },
+            'electrical': {
+                'math': 12, 'stats': 5, 'ethics': 4, 'econ': 4, 'elec-materials': 5, 'circuits': 11, 'linear-systems': 6, 'signals': 6, 'electronics': 8, 'power': 9, 'electromagnetics': 6, 'control-systems': 7, 'communications': 6, 'networks': 6, 'computer-systems': 8, 'software': 7
+            },
+            'environmental': {
+                'math': 5, 'stats': 4, 'ethics': 4, 'econ': 4, 'principles': 5, 'env-chem': 6, 'risk': 5, 'fluids-hyd': 8, 'thermo': 4, 'water-hydrology': 9, 'groundwater-soils': 9, 'water-wastewater': 15, 'air-quality': 13, 'waste': 12, 'energy-env': 7
+            },
+            'industrial': {
+                'math': 7, 'stats': 10, 'ethics': 4, 'econ': 10, 'modeling': 9, 'eng-mgmt': 8, 'production': 9, 'supply-chain': 9, 'ergonomics': 9, 'work-design': 9, 'quality': 9, 'systems': 9, 'materials-science': 4, 'safety': 4
             },
             'other': {
-                'math': 9,
-                'stats': 7,
-                'chemistry': 6,
-                'instr-controls': 5,
-                'ethics': 5,
-                'safety': 5,
-                'econ': 6,
-                'statics': 10,
-                'dynamics': 9,
-                'materials-strength': 10,
-                'materials-science': 9,
-                'fluids': 10,
-                'electricity': 9,
-                'thermo': 10
+                'math': 9, 'stats': 7, 'chemistry': 6, 'instr-controls': 5, 'ethics': 5, 'safety': 5, 'econ': 6, 'statics': 10, 'dynamics': 9, 'materials-strength': 10, 'materials-science': 9, 'fluids': 10, 'electricity': 9, 'thermo': 10
             }
         };
-        const blueprint = blueprints[discipline] || blueprints['mechanical'];
+        
+        let bKey = 'mechanical';
+        if (discipline.toLowerCase().includes('civil')) bKey = 'civil';
+        else if (discipline.toLowerCase().includes('chemical')) bKey = 'chemical';
+        else if (discipline.toLowerCase().includes('electrical')) bKey = 'electrical';
+        else if (discipline.toLowerCase().includes('environmental')) bKey = 'environmental';
+        else if (discipline.toLowerCase().includes('industrial')) bKey = 'industrial';
+        else if (discipline.toLowerCase().includes('other')) bKey = 'other';
+        
+        const blueprint = blueprints[bKey] || blueprints['mechanical'];
+        
+        const primaryDB = (typeof EXAM_QUESTIONS !== 'undefined') ? EXAM_QUESTIONS : null;
+        const fallbackDB = (typeof QUESTIONS !== 'undefined') ? QUESTIONS : window.QUESTIONS;
         
         let subjectGroups = [];
-        const sourceDB = (typeof EXAM_QUESTIONS !== 'undefined') ? EXAM_QUESTIONS : ((typeof QUESTIONS !== 'undefined') ? QUESTIONS : window.QUESTIONS); 
         
         for (const [subjectId, count] of Object.entries(blueprint)) {
-            if (sourceDB && sourceDB[subjectId]) {
-                const pool = [...sourceDB[subjectId]].map(q => ({...q, subjectId}));
-                pool.sort(() => Math.random() - 0.5);
-                
-                let group = pool.slice(0, count);
-                while (group.length < count && pool.length > 0) {
-                     group.push(pool[Math.floor(Math.random() * pool.length)]);
-                }
-                
-                subjectGroups.push(group);
+            let pool = [];
+            
+            // Try to get from primary database first (exam_questions.js)
+            if (primaryDB && primaryDB[subjectId]) {
+                pool = [...primaryDB[subjectId]].map(q => ({...q, subjectId}));
             }
+            
+            // If primary doesn't have enough (or any), pull from fallback database (questions.js)
+            if (pool.length < count && fallbackDB && fallbackDB[subjectId]) {
+                const existingText = pool.map(q => q.question_text || q.question);
+                const extraNeeded = count - pool.length;
+                
+                let fallbackPool = [...fallbackDB[subjectId]]
+                    .map(q => ({...q, subjectId}))
+                    .filter(q => !existingText.includes(q.question_text || q.question));
+                
+                // Shuffle fallback and take what we need
+                fallbackPool.sort(() => Math.random() - 0.5);
+                pool = pool.concat(fallbackPool);
+            }
+            
+            // Now shuffle the combined pool and take exactly `count`
+            pool.sort(() => Math.random() - 0.5);
+            let group = pool.slice(0, count);
+            
+            // If still not enough (extremely rare), allow duplicates from the pool
+            while (group.length < count && pool.length > 0) {
+                 group.push(pool[Math.floor(Math.random() * pool.length)]);
+            }
+            
+            subjectGroups.push(group);
         }
         
         // Shuffle the order of the subjects
@@ -141,13 +151,14 @@
         // Flatten the array so subjects are presented together
         let selectedQuestions = subjectGroups.flat();
         
-        // Final fallback padding if somehow we are short
+        // Final fallback padding if somehow we are still short (e.g., both DBs missing subject)
         while (selectedQuestions.length < 110) {
-            const allKeys = sourceDB ? Object.keys(sourceDB) : [];
+            const anyDB = primaryDB || fallbackDB;
+            const allKeys = anyDB ? Object.keys(anyDB) : [];
             if(allKeys.length === 0) break;
             const randomSub = allKeys[Math.floor(Math.random() * allKeys.length)];
-            if(sourceDB[randomSub] && sourceDB[randomSub].length > 0) {
-                const q = sourceDB[randomSub][Math.floor(Math.random() * sourceDB[randomSub].length)];
+            if(anyDB[randomSub] && anyDB[randomSub].length > 0) {
+                const q = anyDB[randomSub][Math.floor(Math.random() * anyDB[randomSub].length)];
                 selectedQuestions.push({...q, subjectId: randomSub});
             } else {
                 break;
@@ -278,13 +289,11 @@
         const discipline = window.currentSimulatorDiscipline || 'mechanical';
         const questions = generateFEExam(discipline);
 
-        if (discipline === 'other') {
-            window.state.currentSubject = { name: "Other Disciplines FE Simulator", id: "fe-simulator-other" };
-            window.state.currentTopic = "Official Other Disciplines Blueprint";
-        } else {
-            window.state.currentSubject = { name: "Mechanical FE Simulator", id: "fe-simulator" };
-            window.state.currentTopic = "Official Mechanical Blueprint";
-        }
+        let titleDiscipline = discipline.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        if (discipline.includes('other')) titleDiscipline = 'Other Disciplines';
+
+        window.state.currentSubject = { name: `${titleDiscipline} FE Simulator`, id: `fe-simulator-${titleDiscipline.replace(/\s+/g, '-').toLowerCase()}` };
+        window.state.currentTopic = `Official ${titleDiscipline} Blueprint`;
         
         if (window.prepareQuestions) {
             window.state.quizQuestions = window.prepareQuestions(questions);
