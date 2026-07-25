@@ -114,7 +114,7 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Numerical Methods",
             "title": "Trapezoidal Rule",
-            "question": "For the data,\n$x$  :  $0$   $1$   $2$\n$f(x)$  :  $8$   $5$   $6$\n\nthe value of $\\int_{0}^{2} [f(x)]^2 dx$ by Trapezoidal rule will be:",
+            "question": "For the data,\n$x$  :  \{$0$,   $1$,   $2$\} \n$f(x)$  :  \{$8$,   $5$,   $6$\}\n\nthe value of $\\int_{0}^{2} [f(x)]^2 dx$ by Trapezoidal rule will be:",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -1483,65 +1483,6 @@ const EXAM_QUESTIONS = {
                 "section": "Probability and Statistics",
                 "topic": "Probability Distributions",
                 "search_term": "Binomial Distribution"
-            }
-        },
-        {
-            "topic": "Probability and Statistics",
-            "title": "Expected Value and Variance of a Discrete Random Variable",
-            "question": "For the following probability distribution of a random variable $X$, the Expected value and Variance of $X$ are respectively\n\n\\begin{center}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n$X = x$ & $1$ & $2$ & $3$ \\\\ \\hline\n$P(X = x)$ & $1/5$ & $2/5$ & $2/5$ \\\\ \\hline\n\\end{tabular}\n\\end{center}",
-            "question_image": "",
-            "local_question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$\\frac{27}{5}, \\frac{27}{25}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$\\frac{11}{5}, \\frac{14}{25}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "$\\frac{4}{5}, \\frac{14}{25}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$\\frac{7}{5}, \\frac{11}{25}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Expected Value and Variance",
-                        "content": "For a discrete random variable $X$ taking values $x_i$ with probabilities $P(X = x_i)$:\n\n1. **Expected Value ($E[X]$ or $\\mu$):**\n$$E[X] = \\sum x_i P(X = x_i)$$\n\n2. **Variance ($\\text{Var}(X)$ or $\\sigma^2$):**\n$$\\text{Var}(X) = E[X^2] - (E[X])^2$$"
-                    },
-                    {
-                        "title": "Step 1: Calculate the Expected Value ($E[X]$)",
-                        "content": "Substitute the values from the probability distribution table:\n$$E[X] = \\left(1 \\times \\frac{1}{5}\\right) + \\left(2 \\times \\frac{2}{5}\\right) + \\left(3 \\times \\frac{2}{5}\\right)$$\n\n$$E[X] = \\frac{1}{5} + \\frac{4}{5} + \\frac{6}{5} = \\frac{1 + 4 + 6}{5} = \\frac{11}{5}$$\n\nThus, the Expected value $E[X] = \\dfrac{11}{5}$."
-                    },
-                    {
-                        "title": "Step 2: Calculate $E[X^2]$",
-                        "content": "Compute the expected value of $X^2$:\n$$E[X^2] = \\sum x_i^2 P(X = x_i)$$\n\n$$E[X^2] = \\left(1^2 \\times \\frac{1}{5}\\right) + \\left(2^2 \\times \\frac{2}{5}\\right) + \\left(3^2 \\times \\frac{2}{5}\\right)$$\n\n$$E[X^2] = \\left(1 \\times \\frac{1}{5}\\right) + \\left(4 \\times \\frac{2}{5}\\right) + \\left(9 \\times \\frac{2}{5}\\right)$$\n\n$$E[X^2] = \\frac{1}{5} + \\frac{8}{5} + \\frac{18}{5} = \\frac{27}{5}$$"
-                    },
-                    {
-                        "title": "Step 3: Calculate Variance ($\\text{Var}(X)$)",
-                        "content": "Using the variance definition:\n$$\\text{Var}(X) = E[X^2] - (E[X])^2$$\n\n$$\\text{Var}(X) = \\frac{27}{5} - \\left(\\frac{11}{5}\\right)^2 = \\frac{27}{5} - \\frac{121}{25}$$\n\nFind a common denominator ($25$):\n$$\\text{Var}(X) = \\frac{27 \\times 5}{25} - \\frac{121}{25} = \\frac{135 - 121}{25} = \\frac{14}{25}$$\n\nTherefore, the Expected value and Variance of $X$ are $\\dfrac{11}{5}$ and $\\dfrac{14}{25}$ respectively."
-                    }
-                ],
-                "final_answer": "B",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Probability and Statistics",
-                "topic": "Probability Distributions",
-                "search_term": "Expected Value and Variance"
             }
         },
         {
@@ -3840,8 +3781,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Mechanics",
             "title": "Static Friction and Equilibrium on Vertical Surfaces",
             "question": "A body of mass 3 kg is kept stationary by pressing to a vertical wall by a force of 200 N. the coefficient of friction between wall and body is 0.3. then the frictional force is equal to:($g = 10\\text{ m/s}^2$)",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1n26nG-aJAgtMQU7ZLyjVLY6h-5b2TtAQ/preview",
+            "local_question_image": "assets/quiz-images/img_1n26nG-aJAgtMQU7ZLyjVLY6h-5b2TtAQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4077,7 +4018,7 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Physics",
             "title": "Newton's First Law and Net Force",
-            "question": "An object travels northwards with a constant velocity. The net force acting on the object will be \\underline{\\hspace{2cm}}.",
+            "question": "An object travels northwards with a constant velocity. The net force acting on the object will be:",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -4408,8 +4349,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Conservation of Linear Momentum",
             "question": "A gun of mass 3000 kg fires horizontally a shell of mass 50 kg with a velocity of 300 m/s. What is the velocity with which the gun will recoil?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1xcjDlLQTaS5HInLDZoZZmEmfJOynTgLD/preview",
+            "local_question_image": "assets/quiz-images/img_1xcjDlLQTaS5HInLDZoZZmEmfJOynTgLD.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -5430,8 +5371,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics / Kinematics",
             "title": "Horizontal Projectile Motion",
             "question": "A ball is projected horizontally with a velocity of $5\\text{ ms}^{-1}$ from the top of a building $19.6\\text{ m}$ high. How long will the ball take to hit the ground?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1sTRJ_TX2M0ePQepjTB9GMyf8YNJEBcbM/preview",
+            "local_question_image": "assets/quiz-images/img_1sTRJ_TX2M0ePQepjTB9GMyf8YNJEBcbM.jpg",
             "times_presented": 0,
             "options": [
                 {

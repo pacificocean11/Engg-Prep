@@ -1657,6 +1657,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview",
+            "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
                 "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
                 "video_explanation": ""
             },
@@ -1708,6 +1709,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview",
+            "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
                 "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
                 "video_explanation": ""
             },
@@ -1763,6 +1765,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview",
+            "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
                 "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
                 "video_explanation": ""
             },
@@ -1818,6 +1821,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview",
+            "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
                 "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
                 "video_explanation": ""
             },
@@ -1873,6 +1877,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview",
+            "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
                 "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
                 "video_explanation": ""
             },
@@ -1928,6 +1933,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview",
+            "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
                 "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
                 "video_explanation": ""
             },
@@ -2371,6 +2377,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview",
+            "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
                 "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
                 "video_explanation": ""
             },
@@ -26181,6 +26188,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w/preview",
+            "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
                 "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
                 "video_explanation": ""
             },
@@ -26455,6 +26463,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/19-wekixZcSS97Vlrm7-4f97apZDscbwK/preview",
+            "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
                 "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
                 "video_explanation": ""
             },
@@ -29133,7 +29142,8 @@ const QUESTIONS = {
             "topic": "Resultants of Force Systems",
             "title": "Net Resultant Moment on Plate",
             "question": "A rigid plate lies in the $xy$-plane and is subjected to two couples. Couple 1 consists of two $40\\ \\text{lb}$ forces with a perpendicular separation of $3\\ \\text{ft}$ acting counter-clockwise. Couple 2 consists of two $25\\ \\text{lb}$ forces with a perpendicular separation of $5\\ \\text{ft}$ acting clockwise. What is the net resultant moment acting on the plate?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1q-WjXY2SC7eWM5IOzJKreRQatm7boExc/preview",
+            "local_question_image": "assets/quiz-images/img_1q-WjXY2SC7eWM5IOzJKreRQatm7boExc.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -31818,6 +31828,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview",
+            "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
                 "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
                 "video_explanation": ""
             },
@@ -31926,6 +31937,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview",
+            "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
                 "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
                 "video_explanation": ""
             },
@@ -34014,6 +34026,7 @@ const QUESTIONS = {
             "title": "Conservation of Linear Momentum",
             "question": "A 2 kg ball moving at 6 m/s collides and sticks to a 4 kg stationary ball. What is the velocity after the perfectly inelastic collision?",
             "question_image": "https://drive.google.com/file/d/1DJS2doreAU8Galr48R3Ual3_tUP7NoIK/preview",
+            "local_question_image": "assets/quiz-images/img_1DJS2doreAU8Galr48R3Ual3_tUP7NoIK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -35444,6 +35457,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview",
+            "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
                 "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
                 "video_explanation": ""
             },
@@ -35496,6 +35510,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview",
+            "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
                 "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
                 "video_explanation": ""
             },
@@ -35605,6 +35620,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview",
+            "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
                 "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
                 "video_explanation": ""
             },
@@ -35656,6 +35672,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview",
+            "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
                 "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
                 "video_explanation": ""
             },
@@ -35707,6 +35724,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview",
+            "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
                 "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
                 "video_explanation": ""
             },
@@ -35758,6 +35776,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview",
+            "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
                 "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
                 "video_explanation": ""
             },
@@ -36342,6 +36361,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview",
+            "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
                 "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
                 "video_explanation": ""
             },
@@ -36398,6 +36418,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview",
+            "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
                 "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
                 "video_explanation": ""
             },
@@ -37009,6 +37030,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview",
+            "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
                 "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
                 "video_explanation": ""
             },
@@ -38812,7 +38834,7 @@ const QUESTIONS = {
         {
             "topic": "Failure Theories",
             "title": "Von Mises Stress",
-            "question": "For highly ductile materials like steel and aluminum, the most accurate and widely used mathematical Failure Theory in modern engineering software (like SolidWorks) is the:",
+            "question": "For highly ductile materials like steel and aluminum, the most accurate and widely used mathematical Failure Theory in modern engineering software (like SolidWorks(R)) is the:",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -43115,7 +43137,8 @@ const QUESTIONS = {
             "topic": "Fluid Statics",
             "title": "Total force on Submerged Plate",
             "question": "Determine the total force on a circular plate of diameter 2 m, which is placed vertically in water in such a way that the Center of the plate is 2.5 m below the free surface of the water.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Sdg44NsOIayK_tp8lt2VRkRlnHpF-ta-/preview",
+            "local_question_image": "assets/quiz-images/img_1Sdg44NsOIayK_tp8lt2VRkRlnHpF-ta-.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -44286,6 +44309,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview",
+            "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
                 "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
                 "video_explanation": ""
             },
@@ -44338,6 +44362,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview",
+            "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
                 "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
                 "video_explanation": ""
             },
@@ -44550,6 +44575,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ/preview",
+            "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
                 "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
                 "video_explanation": ""
             },
@@ -44602,6 +44628,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3/preview",
+            "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
                 "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
                 "video_explanation": ""
             },
@@ -44654,6 +44681,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy/preview",
+            "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
                 "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
                 "video_explanation": ""
             },
@@ -45620,57 +45648,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Fluid Dynamics",
-            "title": "Bernoulli's Equation",
-            "question": "Bernoulli's Equation represents the absolute conservation of physical energy in a flowing fluid. If an airplane wing forces the air flowing over the top of the wing to mathematically and physically speed up (high kinetic energy), Bernoulli's Equation dictates that the physical static pressure of that air MUST:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Increase",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Mathematically drop/decrease, creating a vacuum suction that physically lifts the heavy airplane into the sky",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "Remain perfectly unchanged",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Turn the air into a liquid",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Zero-Sum Game",
-                        "content": "Energy is conserved. Total Energy = Pressure Energy + Kinetic Energy + Potential Energy."
-                    },
-                    {
-                        "title": "The Tradeoff",
-                        "content": "If the air stays at the exact same elevation (Potential Energy is constant), but the air is forced to speed up (Kinetic Energy skyrockets), the math demands that the Pressure Energy MUST violently drop to keep the total equation balanced. This creates a low-pressure zone above the wing, sucking the airplane upward."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Dynamics",
-                "search_term": "fluid dynamics",
-                "page_number": null
-            }
-        },
-        {
             "topic": "Flow Measurement",
             "title": "Venturi Tube",
             "question": "A 'Venturi Tube' is a highly precise industrial pipe fitting used explicitly to mathematically calculate the physical volumetric flow rate of water. It achieves this by intentionally forcing the water through a severe geometric constriction (a throat) and using a manometer to mathematically measure the resulting:",
@@ -45888,17 +45865,17 @@ const QUESTIONS = {
                 },
                 {
                     "label": "B",
-                    "text": "The color of the pipe",
+                    "text": "The pressure difference between two ends of the pipe",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "The price of the water",
+                    "text": "The kinemamtic viscosity of the water",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "Both the calculated Reynolds Number ($Re$) AND the physical 'Relative Roughness' ($\\epsilon/D$) of the inside pipe wall",
+                    "text": "Reynolds Number and Relative Roughness",
                     "is_correct": true
                 }
             ],
@@ -45974,57 +45951,6 @@ const QUESTIONS = {
                 "topic": "Pipe Flow",
                 "search_term": "pipe flow",
                 "page_number": 189
-            }
-        },
-        {
-            "topic": "Pumps",
-            "title": "Cavitation",
-            "question": "A massive industrial water pump will physically destroy itself in a matter of hours through a violently destructive phenomenon called 'Cavitation'. Physically and mathematically, Cavitation is strictly caused when:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "The electric motor spins too slowly",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "The local fluid pressure inside the pump impeller drops perfectly BELOW the mathematical 'Vapor Pressure' of the water, causing the water to instantly boil into steam bubbles that subsequently violently implode",
-                    "is_correct": true
-                },
-                {
-                    "label": "C",
-                    "text": "The water is too cold",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Sand gets sucked into the pump",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Boiling without Heat",
-                        "content": "You can boil water at room temperature if you drop the pressure low enough. A pump creates massive suction (low pressure) to pull water in."
-                    },
-                    {
-                        "title": "The Implosion",
-                        "content": "If the suction is too strong, the pressure hits the Vapor Pressure. The water literally flashes into millions of steam bubbles. When those bubbles pass into the high-pressure side of the pump, they instantly violently implode with shockwaves that blast microscopic craters into the solid steel impeller, destroying the pump."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Pumps",
-                "search_term": "pumps",
-                "page_number": 148
             }
         },
         {
@@ -46282,57 +46208,6 @@ const QUESTIONS = {
                 "page_number": 148
             }
         },
-        {
-            "topic": "Fluid Properties",
-            "title": "Surface Tension",
-            "question": "A tiny steel sewing needle can physically float perfectly on top of a glass of water, even though solid steel is 8 times denser than water. This physical phenomenon is caused entirely by mathematical 'Surface Tension'. Surface Tension is metallurgically and chemically caused by:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Unequal, unbalanced cohesive intermolecular forces violently pulling the surface water molecules downward into the bulk liquid, creating a tight elastic 'skin'",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "The needle being highly magnetic",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Air bubbles lifting the needle",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "The water freezing into ice",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Bulk Water",
-                        "content": "A water molecule deep inside the cup is pulled equally in all 3D directions by its neighboring molecules. It feels zero net force."
-                    },
-                    {
-                        "title": "The Surface",
-                        "content": "A molecule on the very top surface has NO water above it. It is only pulled sideways and straight DOWN into the cup. This severe downward tension locks the top molecules together into a tight, invisible, elastic trampoline that is physically strong enough to hold up a steel needle or a water strider bug."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Fluid Mechanics",
-                "topic": "Fluid Properties",
-                "search_term": "fluid properties",
-                "page_number": null
-            }
-        }
     ],
     "electricity": [
         {
@@ -57447,7 +57322,8 @@ const QUESTIONS = {
             "topic": "Conduction",
             "title": "Conductivity and Temperature Gradient",
             "question": "The temperature variation under steady heat conduction across a composite slab of two materials of conductivities $k_1$ and $k_2$ is shown in Fig. Then which one of the following statements holds?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1yH2BG2ZclWes8Uq2axDUmgBJ3N6wgnTJ/preview",
+            "local_question_image": "assets/quiz-images/img_1yH2BG2ZclWes8Uq2axDUmgBJ3N6wgnTJ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -60379,6 +60255,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1lomhktdMjUwyzMxJZs3dBODCAqajoITV/preview",
+            "local_solution_image": "assets/quiz-images/img_1lomhktdMjUwyzMxJZs3dBODCAqajoITV.jpg",
                 "local_solution_image": "assets/quiz-images/img_1lomhktdMjUwyzMxJZs3dBODCAqajoITV.jpg",
                 "video_explanation": ""
             },
@@ -63690,7 +63567,7 @@ const QUESTIONS = {
         {
             "topic": "Springs",
             "title": "Active vs Total Coils in Compression Springs",
-            "question": "For a helical compression spring with squared and ground ends, how is the number of active coils (Na) related to the total number of coils (Nt)?",
+            "question": "For a helical compression spring with squared and ground ends, how is the number of active coils (N$_a$) related to the total number of coils (N$_t$)?",
             "question_image": "",
             "times_presented": 0,
             "options": [
