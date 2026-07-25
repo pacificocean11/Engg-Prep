@@ -375,7 +375,35 @@
     
     <!-- Unlocked State -->
     <div id="fe-simulator-unlocked" class="hidden w-full sm:w-auto">
-        <button onclick="window.startFullFEExamFlow()" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+        <button onclick="window.startFullFEExamFlow('mechanical')" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">play_arrow</span> Start Simulator
+        </button>
+    </div>
+</div>
+
+<!-- ===== OTHER DISCIPLINES FE EXAM SIMULATOR ===== -->
+<div id="full-fe-exam-card-other" class="col-span-1 md:col-span-12 lg:col-span-12 glass-card rounded-3xl p-6 relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6 mb-2">
+    <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+        </div>
+        <div>
+            <h3 class="font-display-lg text-2xl text-on-surface dark:text-white mb-1">Other Disciplines FE Simulator</h3>
+            <p class="font-body-sm text-slate-500 dark:text-slate-400">110 Questions • 6 Hours • Official Engg.tv Other Disciplines Blueprint</p>
+        </div>
+    </div>
+    
+    <!-- Lock State -->
+    <div id="fe-simulator-locked-other" class="flex flex-col items-end gap-2 w-full sm:w-auto">
+        <div class="w-full sm:w-48 bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+            <div id="fe-sim-progress-other" class="bg-primary h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+        </div>
+        <p id="fe-sim-lock-text-other" class="text-xs font-bold text-primary uppercase tracking-widest"><span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> Unlocks at 500 Points</p>
+    </div>
+    
+    <!-- Unlocked State -->
+    <div id="fe-simulator-unlocked-other" class="hidden w-full sm:w-auto">
+        <button onclick="window.startFullFEExamFlow('other')" class="w-full sm:w-auto bg-primary hover:bg-pink-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-pink-500/30 active:scale-95 transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-2">
             <span class="material-symbols-outlined text-[18px]">play_arrow</span> Start Simulator
         </button>
     </div>
@@ -1182,11 +1210,11 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-    <script src="firebase-config.js?v=2"></script>
-    <script src="js/data-manager.js?v=3"></script>
+    <script src="firebase-config.js?v=3"></script>
+    <script src="js/data-manager.js?v=4"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=12"></script>
+    <script src="app.js?v=13"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -1633,7 +1661,7 @@
         </button>
     </div>
 
-    <script src="js/fe-simulator.js?v=2"></script>
+    <script src="js/fe-simulator.js?v=4"></script>
 </body>
 
 </html>

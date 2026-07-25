@@ -15,6 +15,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+// Fix for localhost / networks getting stuck in "Checking..." mode
+// Force long polling to bypass WebSocket blocking issues
+if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    db.settings({ experimentalForceLongPolling: true });
+    // Also clear any lingering corrupted IndexedDB from old persistence settings
+    try {
+        db.clearPersistence().catch(() => {});
+    } catch(e) {}
+}
+
 // Offline persistence DISABLED globally.
 // enablePersistence was corrupting IndexedDB when disk space was low,
 // causing all Firestore reads to hang indefinitely ("Checking" mode).
