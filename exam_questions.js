@@ -1303,7 +1303,7 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Probability and Statistics",
             "title": "Parameter Estimation and Standard Deviation",
-            "question": "Let mean and standard deviation of probability distribution\n\n\\begin{center}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n$X = x$ & $-3$ & $0$ & $1$ & $\\alpha$ \\\\ \\hline\n$P(X = x)$ & $\\frac{1}{4}$ & $K$ & $\\frac{1}{4}$ & $\\frac{1}{3}$ \\\\ \\hline\n\\end{tabular}\n\\end{center}\n\nbe $\\mu$ and $\\sigma$ respectively and if $\\sigma - \\mu = 2$ then $\\sigma =$",
+            "question": "Let mean and standard deviation of probability distribution\n\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n$X = x$ & $-3$ & $0$ & $1$ & $\\alpha$ \\\\ \\hline\n$P(X = x)$ & $\\frac{1}{4}$ & $K$ & $\\frac{1}{4}$ & $\\frac{1}{3}$ \\\\ \\hline\n\\end{tabular}\n\nbe $\\mu$ and $\\sigma$ respectively and if $\\sigma - \\mu = 2$ then $\\sigma =$",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -1429,7 +1429,7 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Probability and Statistics",
             "title": "Binomial Probability Distribution",
-            "question": "Four cards are drawn successively with replacement from well shuffled deck of $52$ cards, then the probability that only two cards are club cards is \\dots\\dots\\dots\\dots",
+            "question": "Four cards are drawn successively with replacement from well shuffled deck of $52$ cards, then the probability that only two cards are club cards is:",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -1942,7 +1942,7 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Engineering Economics",
             "title": "Capital Budgeting Definitions",
-            "question": "\\underline{\\hspace{2cm}} refers to the time period within which investment in fixed assets is recovered.\\\\",
+            "question": "____ refers to the time period within which investment in fixed assets is recovered.",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,

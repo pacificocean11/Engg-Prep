@@ -102704,56 +102704,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Dielectrics",
-            "title": "Relative Permittivity (Dielectric Constant)",
-            "question": "Inside every capacitor, engineers place a physical insulator (Dielectric) between the two metal plates. Mathematically, placing a piece of Ceramic ($k = 1000$) between the plates instead of Air ($k = 1.0$) physically forces the Capacitance ($C$) to:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Drop to zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Remain unchanged",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Mathematically EXPLODE by exactly $1000\\times$, allowing the exact same physical piece of metal to suddenly store one thousand times more electrical charge at the exact same voltage",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Turn into an inductor",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Polarization",
-                        "content": "When voltage is applied to the metal plates, the electric field mathematically tries to cross the gap. The Ceramic insulator blocks the electricity, but its internal atoms physically 'stretch' and polarize."
-                    },
-                    {
-                        "title": "The Cancellation",
-                        "content": "This internal stretching creates an opposing internal electric field that mathematically cancels out $99.9\\%$ of the applied field. Because the voltage drops so massively, the power supply is tricked into pumping $1000\\times$ more physical electrons onto the metal plates to restore the voltage. This is how a microscopic ceramic capacitor can store massive amounts of energy."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Dielectrics",
-                "search_term": "dielectrics"
-            }
-        },
-        {
             "topic": "Semiconductors",
             "title": "Drift vs Diffusion Current",
             "question": "Inside a semiconductor, there are mathematically exactly TWO physical ways an electron can move to create current. 'Drift' current is violently forced by an applied Voltage (Electric Field). What is the exact physical driving force that causes 'Diffusion' current?",
@@ -103111,57 +103061,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Electronics",
-            "title": "Rectifiers (AC to DC)",
-            "question": "A massive power transformer delivers $120\\text{V}$ alternating current (AC) to a circuit. To physically and mathematically convert this violently reversing AC wave into a smooth, flat Direct Current (DC) battery line, an engineer MUST build a 'Bridge Rectifier' using exactly four:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Resistors",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "Capacitors",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "PN Junction Diodes, because their mathematical one-way valve nature physically forces the backward half of the AC wave to perfectly flip upside down, making all current flow in only one direction",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "Inductors",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The AC Problem",
-                        "content": "AC electricity violently shoves electrons forward, then violently yanks them backward, 60 times a second. A laptop battery needs them to only go forward."
-                    },
-                    {
-                        "title": "The Diode Bridge",
-                        "content": "By arranging 4 one-way diodes in a diamond, the positive wave is allowed to go straight to the laptop. When the negative backward wave hits, the diodes block it and physically re-route it through a different path so it hits the laptop going forward AGAIN. The math converts a sine wave into a series of positive bouncing hills. A large capacitor then physically flattens the hills into a pure DC line."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Electronics",
-                "search_term": "electronics",
-                "page_number": 121
-            }
-        },
-        {
             "topic": "Power Systems",
             "title": "Real vs Reactive Power",
             "question": "In a massive AC power grid, mathematicians use the 'Power Triangle'. 'Real Power' ($P$, measured in Watts) does physical, mechanical work. What is the explicit physical reality of 'Reactive Power' ($Q$, measured in VARs)?",
@@ -103254,57 +103153,6 @@ const QUESTIONS = {
                 "solution_image": "",
                 "video_explanation": "",
                 "final_answer": "B"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "elec-materials",
-                "topic": "Power Systems",
-                "search_term": "power systems",
-                "page_number": null
-            }
-        },
-        {
-            "topic": "Power Systems",
-            "title": "Three-Phase Power",
-            "question": "The entire planet's electrical grid is physically built using 'Three-Phase' AC power instead of simple Single-Phase. Mathematically and physically, what is the absolute biggest engineering advantage of Three-Phase power for spinning massive factory motors?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It is safer to touch",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It is colder",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The mathematical sum of the three offset sine waves guarantees that the total instantaneous physical power delivered is a completely perfectly FLAT, constant line, eliminating all violent mechanical vibration",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It requires more wires",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Single-Phase Vibration",
-                        "content": "In a normal house outlet, the AC sine wave physically hits ZERO Volts 120 times every second. If you run a massive $10,000\\text{ HP}$ motor on this, the engine mathematically turns on and off 120 times a second, violently jackhammering the steel shaft until it shatters."
-                    },
-                    {
-                        "title": "The Three-Phase Smoothness",
-                        "content": "By staggering three waves exactly $120^\\circ$ apart, whenever Wave 1 hits zero, Wave 2 and Wave 3 are at peak power. The math ($sin^2(t) + sin^2(t-120) + sin^2(t+120)$) perfectly equals exactly $1.5$ ALWAYS. The physical power is a flawless, flat $100\\%$ line. The massive steel motor spins with absolute thermodynamic perfection."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
             },
             "ncees_reference": {
                 "version": "10.6",
@@ -104406,7 +104254,7 @@ const QUESTIONS = {
         {
             "topic": "DC Analysis",
             "title": "Mesh Analysis with Supermesh",
-            "question": "A mesh circuit contains mesh currents $I_1$ and $I_2$. An independent $5\\text{ A}$ current source is shared between Mesh 1 and Mesh 2, flowing upwards from Mesh 2 to Mesh 1. The resistors in Mesh 1 and Mesh 2 are $2\\text{ \\Omega}$ and $8\\text{ \\Omega}$ respectively, connected to a $100\\text{ V}$ independent DC voltage source across the combined supermesh. Find the current $I_1$.",
+            "question": "A mesh circuit contains mesh currents $I_1$ and $I_2$. An independent $5\\text{ A}$ current source is shared between Mesh 1 and Mesh 2, flowing upwards from Mesh 2 to Mesh 1. The resistors in Mesh 1 and Mesh 2 are $2 $\\Omega$ and $8 $\\Omega$ respectively, connected to a $100\\text{ V}$ independent DC voltage source across the combined supermesh. Find the current $I_1$.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -105572,7 +105420,7 @@ const QUESTIONS = {
         {
             "topic": "Resonance",
             "title": "Series Resonant Frequency",
-            "question": "A series RLC circuit has $R = 10\\text{ \\Omega}$, $L = 2\\text{ mH}$, and $C = 5\\text{ \\mu F}$. Calculate the resonant frequency ($f_0$) in Hz.",
+            "question": "A series RLC circuit has $R$ = 10 $\\Omega$, $L$ = 2$\\text{ mH}$, and $C$ = 5 $\\mu$ F. Calculate the resonant frequency ($f_0$) in Hz.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -113181,57 +113029,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Control Systems",
-            "title": "Steady-State Error (System Type)",
-            "question": "If you command a 'Type 0' control system to track a constantly moving target (like a drone following a moving car at $60\\text{ mph}$), what will physically and mathematically happen?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It will perfectly lock onto the car",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It will fly backward",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "The math proves it will NEVER hit the car; it will physically fly at $60\\text{ mph}$, but will mathematically permanently trail exactly a few feet behind the car forever (Constant Steady-State Error)",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It will crash into the ground",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "System Types",
-                        "content": "The 'Type' is exactly how many pure mathematical Integrators ($1/s$) are in the open-loop equation. A Type 0 has zero integrators."
-                    },
-                    {
-                        "title": "The Ramp Input",
-                        "content": "A moving car is a 'Ramp' input (Velocity). A Type 0 system only has a 'P' controller. The only way a 'P' controller can generate the $60\\text{ mph}$ engine power is if there is a permanent physical error (gap) for it to multiply. If it ever actually caught the car (zero error), the engine would mathematically shut off! To flawlessly catch the car, you MUST mathematically upgrade to a Type 1 system by physically adding an Integrator (I) term."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "linear-systems",
-                "topic": "Control Systems",
-                "search_term": "control systems",
-                "page_number": 231
-            }
-        },
-        {
             "topic": "Linear Systems",
             "title": "Step Response",
             "question": "When an engineer tests a physical motor, they hit it with a mathematical 'Step Input' ($1/s$). Physically, what does hitting a machine with a 'Step Input' actually mean in the real world?",
@@ -118350,7 +118147,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "Exactly $5\\text{ kHz}$; the massive high-frequency wave mathematically 'folds' backward across the $7.5\\text{ kHz}$ Nyquist limit and physically impersonates a low, rumbling bass tone",
+                    "text": "Exactly $5\\text{ kHz}$",
                     "is_correct": true
                 },
                 {
@@ -118785,57 +118582,6 @@ const QUESTIONS = {
                 "section": "signals",
                 "topic": "Digital Signals",
                 "search_term": "digital signals"
-            }
-        },
-        {
-            "topic": "Signals",
-            "title": "Cross-Correlation",
-            "question": "A massive radar station blasts a radio pulse at an airplane. The pulse bounces off the plane and returns as a tiny, noisy echo. To physically calculate exactly how many microseconds it took for the echo to return, the computer mathematically performs 'Cross-Correlation' between the original pulse and the noisy sky. What does this math do?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "It deletes the signal",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "It multiplies them by zero",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "It mathematically physically slides the clean original pulse across the noisy radar data; at the exact millisecond the two shapes perfectly 'lock' together, the mathematical equation violently spikes, instantly revealing the precise time delay",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "It divides the frequencies",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "The Needle in the Haystack",
-                        "content": "The returning echo is so weak it is buried under $10\\text{ dB}$ of random atmospheric static. The human eye cannot see it."
-                    },
-                    {
-                        "title": "The Pattern Matcher",
-                        "content": "Cross-Correlation is mathematically just 'Pattern Matching'. It slides a template of the original pulse across the static. When it hits random static, the multiplications cancel out to near zero. But the exact nanosecond the template physically overlays perfectly on top of the hidden echo, all the $1$s line up with $1$s, and the math explodes into a massive $+100$ spike. The radar instantly knows the plane is $14.2\\text{ miles}$ away."
-                    }
-                ],
-                "solution_image": "",
-                "video_explanation": "",
-                "final_answer": "C"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "signals",
-                "topic": "Signals",
-                "search_term": "signals",
-                "page_number": 380
             }
         },
         {
@@ -119756,28 +119502,28 @@ const QUESTIONS = {
         {
             "topic": "Transistors",
             "title": "Alpha ($alpha$)",
-            "question": "The parameter $alpha$ for a BJT is related to $\beta$ by:",
+            "question": "The parameter $\\alpha$ for a BJT is related to $\\beta$ by:",
             "question_image": "",
             "times_presented": 0,
             "options": [
                 {
                     "label": "A",
-                    "text": "$alpha = \beta + 1$",
+                    "text": "$\\alpha = \\beta + 1$",
                     "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "$alpha = \beta / (\beta + 1)$",
+                    "text": "$\\alpha = \\beta / (\\beta + 1)$",
                     "is_correct": true
                 },
                 {
                     "label": "C",
-                    "text": "$alpha = 1 / \beta$",
+                    "text": "$\\alpha = 1 / \\beta$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$alpha = \beta / (\beta - 1)$",
+                    "text": "$alpha = \\beta / (\\beta - 1)$",
                     "is_correct": false
                 }
             ],
@@ -120767,17 +120513,17 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "3.5 sin(\\omega t) V, infinite input impedance",
+                    "text": "3.5 $\\sin(\\omega t)$ V, infinite input impedance",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "-3.5 sin(\\omega t) V, zero input impedance",
+                    "text": "-3.5 $\\sin(\\omega t)$ V, zero input impedance",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "3.5 sin(\\omega t) V, zero input impedance",
+                    "text": "3.5 $\\sin(\\omega t)$ V, zero input impedance",
                     "is_correct": false
                 },
                 {
@@ -121925,7 +121671,7 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$V_L = sqrt{3} V_P$",
+                    "text": "$V_L = \\sqrt{3} V_P$",
                     "is_correct": true
                 },
                 {
@@ -121940,7 +121686,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "$V_L = V_P / sqrt{3}$",
+                    "text": "$V_L = V_P / \\sqrt{3}$",
                     "is_correct": false
                 }
             ],
@@ -123378,28 +123124,28 @@ const QUESTIONS = {
         {
             "topic": "Three-phase Systems",
             "title": "Wye-Delta Impedance Transformation",
-            "question": "A balanced Wye-connected load has branch impedances of $\\mathbf{Z}_Y = 10 + j5\\text{ \\Omega}$. What is the equivalent branch impedance $\\mathbf{Z}_\\Delta$ of a Delta-connected load that draws identical currents from the same supply?",
+            "question": "A balanced Wye-connected load has branch impedances of $\\mathbf{Z}_Y$ = 10 + j5 \\$Omega. What is the equivalent branch impedance $\\mathbf{Z}_\\Delta$ of a Delta-connected load that draws identical currents from the same supply?",
             "question_image": "",
             "times_presented": 0,
             "options": [
                 {
                     "label": "A",
-                    "text": "30 + j15 \\Omega",
+                    "text": "30 + j15 $\\Omega$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "3.33 + j1.67 \\Omega",
+                    "text": "3.33 + j1.67 $\\Omega$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "10 + j5 \\Omega",
+                    "text": "10 + j5 $\\Omega$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "15 + j30 \\Omega",
+                    "text": "15 + j30 $\\Omega$",
                     "is_correct": false
                 }
             ],
@@ -123935,28 +123681,28 @@ const QUESTIONS = {
         {
             "topic": "Transmission Lines",
             "title": "Characteristic Impedance Sizing",
-            "question": "A lossless transmission line has inductance per unit length $L = 1.0\\text{ \\mu H/m}$ and capacitance per unit length $C = 100\\text{ pF/m}$. Calculate the characteristic impedance ($Z_0$) of the line.",
+            "question": "A lossless transmission line has inductance per unit length L = 1.0\\text{ $\\mu$ H/m} and capacitance per unit length $C = 100\\text{ pF/m}$. Calculate the characteristic impedance ($Z_0$) of the line.",
             "question_image": "",
             "times_presented": 0,
             "options": [
                 {
                     "label": "A",
-                    "text": "100.0 \\Omega",
+                    "text": "100.0 $\\Omega$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "50.0 \\Omega",
+                    "text": "50.0 $\\Omega$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "377.0 \\Omega",
+                    "text": "377.0 $\\Omega$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "75.0 \\Omega",
+                    "text": "75.0 $\\Omega$",
                     "is_correct": false
                 }
             ],
@@ -124088,7 +123834,7 @@ const QUESTIONS = {
         {
             "topic": "Transmission Lines",
             "title": "Surge Impedance Loading (SIL)",
-            "question": "A three-phase, $345\\text{ kV}$ transmission line has a surge impedance (characteristic impedance) of $Z_c = 300\\text{ \\Omega}$. Calculate the Surge Impedance Loading ($SIL$) in MW.",
+            "question": "A three-phase, $345\\text{ kV}$ transmission line has a surge impedance (characteristic impedance) of $Z_c$ = 300 $\\Omega$. Calculate the Surge Impedance Loading ($SIL$) in MW.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -125013,7 +124759,7 @@ const QUESTIONS = {
         {
             "topic": "Electromagnetics",
             "title": "Poynting Vector",
-            "question": "The Poynting vector ($mathbf{S} = mathbf{E} \times mathbf{H}$) represents:",
+            "question": "The Poynting vector ($\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}$) represents:",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -125064,22 +124810,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "50 $Omega$",
+                    "text": "50 $\\Omega$",
                     "is_correct": false
                 },
                 {
                     "label": "B",
-                    "text": "75 $Omega$",
+                    "text": "75 $\\Omega$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "377 $Omega$",
+                    "text": "377 $\\Omega$",
                     "is_correct": true
                 },
                 {
                     "label": "D",
-                    "text": "0 $Omega$",
+                    "text": "0 $\\Omega$",
                     "is_correct": false
                 }
             ],
@@ -125845,7 +125591,7 @@ const QUESTIONS = {
         {
             "topic": "Electrostatics",
             "title": "Electric Potential of Point Charge",
-            "question": "A point charge of $q = 5.0\\text{ \\mu C}$ is located at the origin in free space. What is the electric potential ($V$) at a point $r = 10.0\\text{ m}$ away from the charge, relative to potential at infinity?",
+            "question": "A point charge of $q = 5.0\\text{ $\\mu$ C}$ is located at the origin in free space. What is the electric potential ($V$) at a point $r = 10.0\\text{ m}$ away from the charge, relative to potential at infinity?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -127306,12 +127052,12 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "\\frac{R}{L} = \\frac{G}{C}",
+                    "text": "$\\frac{R}{L}$ = $\\frac{G}{C}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "R \\cdot C = G \\cdot L",
+                    "text": "R $\\cdot$ C = G $\\cdot$ L",
                     "is_correct": false
                 },
                 {
@@ -127321,7 +127067,7 @@ const QUESTIONS = {
                 },
                 {
                     "label": "D",
-                    "text": "\\frac{R}{G} = \\frac{C}{L}",
+                    "text": "$\\frac{R}{G}$ = $\\frac{C}{L}$",
                     "is_correct": false
                 }
             ],
@@ -131778,7 +131524,7 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "\\frac{1}{s}",
+                    "text": "$\\frac{1}{s}$",
                     "is_correct": true
                 },
                 {
@@ -131788,12 +131534,12 @@ const QUESTIONS = {
                 },
                 {
                     "label": "C",
-                    "text": "\\frac{1}{s^2}",
+                    "text": "$\\frac{1}{s^2}$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "\\frac{1}{s+1}",
+                    "text": "$\\frac{1}{s+1}$",
                     "is_correct": false
                 }
             ],
@@ -133782,17 +133528,17 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "L \\ge H",
+                    "text": "L $\\ge$ H",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "L \\le H",
+                    "text": "L $\\le$ H",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "L \\ge \\log_2 H",
+                    "text": "L $\\ge$ $\\log_2$ H",
                     "is_correct": false
                 },
                 {
