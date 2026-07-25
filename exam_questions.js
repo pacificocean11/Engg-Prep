@@ -1,17 +1,34 @@
+
 const EXAM_QUESTIONS = {
     "math": [
         {
             "topic": "Analytic Geometry",
             "title": "Area of a Triangle Formed by Lines",
             "question": "The area (in sq. units) of the triangle formed by the graphs of $8x + 3y = 24$, $2x + 8 = y$ and the $x$-axis is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fNnAP-20gBFz8a5C-l_pADpoc-y3CftC/preview",
+            "local_question_image": "assets/quiz-images/img_1fNnAP-20gBFz8a5C-l_pADpoc-y3CftC.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$14$", "is_correct": false },
-                { "label": "B", "text": "$28$", "is_correct": true },
-                { "label": "C", "text": "$15$", "is_correct": false },
-                { "label": "D", "text": "$24$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$14$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$28$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$15$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$24$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -43,14 +60,30 @@ const EXAM_QUESTIONS = {
             "topic": "Analytic Geometry",
             "title": "Finding the Constant in a Line Equation",
             "question": "The straight-line $kx - 3y = 6$ passes through the point $(3, 2)$. What is the value of $k$?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/13JKn19sNUICQFSgfqlwrjuPBpLXnRmBX/preview",
+            "local_question_image": "assets/quiz-images/img_13JKn19sNUICQFSgfqlwrjuPBpLXnRmBX.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4$", "is_correct": true },
-                { "label": "B", "text": "$3$", "is_correct": false },
-                { "label": "C", "text": "$6$", "is_correct": false },
-                { "label": "D", "text": "$2$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$4$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -86,10 +119,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$92$", "is_correct": false },
-                { "label": "B", "text": "$75$", "is_correct": true },
-                { "label": "C", "text": "$123$", "is_correct": false },
-                { "label": "D", "text": "$42$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$92$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$75$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$123$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$42$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -125,10 +174,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\dfrac{28}{3}$", "is_correct": false },
-                { "label": "B", "text": "$\\dfrac{32}{3}$", "is_correct": true },
-                { "label": "C", "text": "$\\dfrac{34}{3}$", "is_correct": false },
-                { "label": "D", "text": "$10$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\dfrac{28}{3}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\dfrac{32}{3}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\dfrac{34}{3}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -168,10 +233,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2$", "is_correct": false },
-                { "label": "B", "text": "$3$", "is_correct": false },
-                { "label": "C", "text": "$-1$", "is_correct": false },
-                { "label": "D", "text": "$5$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -207,10 +288,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$3$", "is_correct": false },
-                { "label": "B", "text": "$6$", "is_correct": true },
-                { "label": "C", "text": "$8$", "is_correct": false },
-                { "label": "D", "text": "$0$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$8$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -242,14 +339,30 @@ const EXAM_QUESTIONS = {
             "topic": "Linear Algebra",
             "title": "Dot Product of Two Vectors",
             "question": "Find the dot product of two vectors $|\\mathbf{a}| = 9$ and $|\\mathbf{b}| = 5\\sqrt{2}$ and $\\theta = 45^{\\circ}$.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1yjnXFKvXLzBx_hnIwQHzHrh2EQRr2XDe/preview",
+            "local_question_image": "assets/quiz-images/img_1yjnXFKvXLzBx_hnIwQHzHrh2EQRr2XDe.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$45$", "is_correct": true },
-                { "label": "B", "text": "$20$", "is_correct": false },
-                { "label": "C", "text": "$48.5$", "is_correct": false },
-                { "label": "D", "text": "$25\\sqrt{2}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$45$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$20$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$48.5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$25\\sqrt{2}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -285,10 +398,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2^x \\log 2 - \\log x - 1$", "is_correct": false },
-                { "label": "B", "text": "$2^x \\log 2 - \\log x + 1$", "is_correct": false },
-                { "label": "C", "text": "$2^x \\log 2 + \\log x - 1$", "is_correct": false },
-                { "label": "D", "text": "$2^x \\log 2 + \\log x + 1$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$2^x \\log 2 - \\log x - 1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2^x \\log 2 - \\log x + 1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2^x \\log 2 + \\log x - 1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2^x \\log 2 + \\log x + 1$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -324,14 +453,30 @@ const EXAM_QUESTIONS = {
             "topic": "Analytic Geometry",
             "title": "Eccentricity of a Hyperbola",
             "question": "Find the eccentricity of the conic $25x^2 - 4y^2 = 100$.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1w0x7RCYlmhjpc9PZBH12dyWlU-jLd1nq/preview",
+            "local_question_image": "assets/quiz-images/img_1w0x7RCYlmhjpc9PZBH12dyWlU-jLd1nq.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$5$", "is_correct": false },
-                { "label": "B", "text": "$\\dfrac{5}{2}$", "is_correct": false },
-                { "label": "C", "text": "$\\dfrac{\\sqrt{29}}{2}$", "is_correct": true },
-                { "label": "D", "text": "$\\dfrac{\\sqrt{21}}{2}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\dfrac{5}{2}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\dfrac{\\sqrt{29}}{2}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$\\dfrac{\\sqrt{21}}{2}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -366,15 +511,31 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Calculus",
             "title": "Derivative of Composite Logarithmic Functions",
-            "question": "If $y = \\log_3 (\\log_3 x)$ then $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$ at $x = 3$ is \\dots\\dots",
+            "question": "If $y = \\log_3 (\\log_3 x)$ then $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$ at $x = 3$ is:",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{1}{3} (\\log 3)^{-3}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{1}{3} (\\log 3)$", "is_correct": false },
-                { "label": "C", "text": "$\\frac{1}{3} \\frac{1}{(\\log 3)^{-3}}$", "is_correct": false },
-                { "label": "D", "text": "$\\frac{1}{3} (\\log 3)^{-2}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$\\frac{1}{3} (\\log 3)^{-3}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{1}{3} (\\log 3)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{1}{3} \\frac{1}{(\\log 3)^{-3}}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{1}{3} (\\log 3)^{-2}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -414,10 +575,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$7$", "is_correct": true },
-                { "label": "B", "text": "$9$", "is_correct": false },
-                { "label": "C", "text": "$17$", "is_correct": false },
-                { "label": "D", "text": "$39$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$7$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$9$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$17$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$39$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -453,10 +630,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{\\pi}{3}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{\\pi}{4}$", "is_correct": false },
-                { "label": "C", "text": "$\\frac{\\pi}{6}$", "is_correct": true },
-                { "label": "D", "text": "$\\frac{\\pi}{2}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\frac{\\pi}{3}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{\\pi}{4}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{\\pi}{6}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{\\pi}{2}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -498,10 +691,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$564$", "is_correct": false },
-                { "label": "B", "text": "$645$", "is_correct": false },
-                { "label": "C", "text": "$735$", "is_correct": false },
-                { "label": "D", "text": "$756$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$564$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$645$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$735$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$756$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -537,10 +746,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$21$", "is_correct": true },
-                { "label": "B", "text": "$42$", "is_correct": false },
-                { "label": "C", "text": "$36$", "is_correct": false },
-                { "label": "D", "text": "$28$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$21$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$42$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$36$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$28$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -576,10 +801,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\dfrac{4}{35}$", "is_correct": false },
-                { "label": "B", "text": "$\\dfrac{2}{35}$", "is_correct": false },
-                { "label": "C", "text": "$\\dfrac{1}{35}$", "is_correct": false },
-                { "label": "D", "text": "$\\dfrac{3}{35}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$\\dfrac{4}{35}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\dfrac{2}{35}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\dfrac{1}{35}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\dfrac{3}{35}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -615,10 +856,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2$", "is_correct": false },
-                { "label": "B", "text": "$1.45$", "is_correct": false },
-                { "label": "C", "text": "$2.3$", "is_correct": false },
-                { "label": "D", "text": "$0$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.45$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -654,10 +911,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$5.12$", "is_correct": false },
-                { "label": "B", "text": "$2.55$", "is_correct": false },
-                { "label": "C", "text": "$4.82$", "is_correct": false },
-                { "label": "D", "text": "$3.41$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$5.12$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.55$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4.82$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.41$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -693,10 +966,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\dfrac{7}{12}$", "is_correct": false },
-                { "label": "B", "text": "$\\dfrac{1}{12}$", "is_correct": false },
-                { "label": "C", "text": "$\\dfrac{3}{10}$", "is_correct": false },
-                { "label": "D", "text": "$\\dfrac{1}{2}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$\\dfrac{7}{12}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\dfrac{1}{12}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\dfrac{3}{10}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\dfrac{1}{2}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -736,10 +1025,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$8$", "is_correct": false },
-                { "label": "B", "text": "$64$", "is_correct": false },
-                { "label": "C", "text": "$32$", "is_correct": false },
-                { "label": "D", "text": "$16$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$8$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$64$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$32$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$16$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -775,10 +1080,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$45$", "is_correct": false },
-                { "label": "B", "text": "$48$", "is_correct": false },
-                { "label": "C", "text": "$42$", "is_correct": false },
-                { "label": "D", "text": "$54$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$45$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$48$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$42$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$54$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -814,10 +1135,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$9$", "is_correct": true },
-                { "label": "B", "text": "$6$", "is_correct": false },
-                { "label": "C", "text": "$7$", "is_correct": false },
-                { "label": "D", "text": "$11$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$9$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$11$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -853,10 +1190,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2$ and $3$", "is_correct": false },
-                { "label": "B", "text": "$3$ and $1$", "is_correct": true },
-                { "label": "C", "text": "$3$ and $\\sqrt{2}$", "is_correct": false },
-                { "label": "D", "text": "$2$ and $1$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$2$ and $3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3$ and $1$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3$ and $\\sqrt{2}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2$ and $1$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -896,10 +1249,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1.76$", "is_correct": true },
-                { "label": "B", "text": "$2.45$", "is_correct": false },
-                { "label": "C", "text": "$3.2$", "is_correct": false },
-                { "label": "D", "text": "$4.8$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1.76$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.45$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4.8$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -939,10 +1308,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{3}{2}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{5}{2}$", "is_correct": true },
-                { "label": "C", "text": "$\\frac{7}{2}$", "is_correct": false },
-                { "label": "D", "text": "$\\frac{9}{2}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\frac{3}{2}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{5}{2}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{7}{2}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{9}{2}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -990,10 +1375,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$45$", "is_correct": false },
-                { "label": "B", "text": "$44$", "is_correct": false },
-                { "label": "C", "text": "$48$", "is_correct": true },
-                { "label": "D", "text": "$40$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$45$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$44$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$48$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$40$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1033,10 +1434,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{26}{128}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{24}{128}$", "is_correct": false },
-                { "label": "C", "text": "$\\frac{27}{128}$", "is_correct": true },
-                { "label": "D", "text": "$\\frac{28}{128}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\frac{26}{128}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{24}{128}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{27}{128}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{28}{128}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1076,10 +1493,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{27}{5}, \\frac{27}{25}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{11}{5}, \\frac{14}{25}$", "is_correct": true },
-                { "label": "C", "text": "$\\frac{4}{5}, \\frac{14}{25}$", "is_correct": false },
-                { "label": "D", "text": "$\\frac{7}{5}, \\frac{11}{25}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\frac{27}{5}, \\frac{27}{25}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{11}{5}, \\frac{14}{25}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{4}{5}, \\frac{14}{25}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{7}{5}, \\frac{11}{25}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1119,10 +1552,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.125$", "is_correct": false },
-                { "label": "B", "text": "$0.75$", "is_correct": false },
-                { "label": "C", "text": "$0.25$", "is_correct": true },
-                { "label": "D", "text": "$0.375$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.125$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.75$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.25$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.375$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1162,10 +1611,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$6652800$", "is_correct": false },
-                { "label": "B", "text": "$221760$", "is_correct": false },
-                { "label": "C", "text": "$1108800$", "is_correct": false },
-                { "label": "D", "text": "$554400$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$6652800$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$221760$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1108800$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$554400$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -1205,10 +1670,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$5$ or $11$", "is_correct": false },
-                { "label": "B", "text": "$7$ or $14$", "is_correct": true },
-                { "label": "C", "text": "$8$ or $15$", "is_correct": false },
-                { "label": "D", "text": "$6$ or $13$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$5$ or $11$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7$ or $14$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$8$ or $15$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$6$ or $13$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1250,10 +1731,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "\\$37,363", "is_correct": true },
-                { "label": "B", "text": "\\$35,000", "is_correct": false },
-                { "label": "C", "text": "\\$40,000", "is_correct": false },
-                { "label": "D", "text": "\\$38,500", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "\\$37,363",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "\\$35,000",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "\\$40,000",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "\\$38,500",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1289,10 +1786,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$6\\%$", "is_correct": false },
-                { "label": "B", "text": "$7\\%$", "is_correct": false },
-                { "label": "C", "text": "$8\\%$", "is_correct": true },
-                { "label": "D", "text": "$9\\%$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$6\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$7\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$9\\%$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1328,10 +1841,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "\\$82,000", "is_correct": false },
-                { "label": "B", "text": "\\$87,000", "is_correct": false },
-                { "label": "C", "text": "\\$90,000", "is_correct": true },
-                { "label": "D", "text": "\\$93,000", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "\\$82,000",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "\\$87,000",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "\\$90,000",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "\\$93,000",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1367,10 +1896,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1300$", "is_correct": false },
-                { "label": "B", "text": "$1400$", "is_correct": false },
-                { "label": "C", "text": "$1500$", "is_correct": true },
-                { "label": "D", "text": "$1600$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1300$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1400$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1500$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$1600$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1406,10 +1951,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1200\\text{ items}$", "is_correct": true },
-                { "label": "B", "text": "$3000\\text{ items}$", "is_correct": false },
-                { "label": "C", "text": "$7000\\text{ items}$", "is_correct": false },
-                { "label": "D", "text": "$6500\\text{ items}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1200\\text{ items}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3000\\text{ items}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7000\\text{ items}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$6500\\text{ items}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1445,10 +2006,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Payback period", "is_correct": true },
-                { "label": "B", "text": "Discounted cash flow", "is_correct": false },
-                { "label": "C", "text": "Average rate of return", "is_correct": false },
-                { "label": "D", "text": "NPV", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Payback period",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Discounted cash flow",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Average rate of return",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "NPV",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1482,10 +2059,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1.5\\text{ F}$", "is_correct": true },
-                { "label": "B", "text": "$2.5\\text{ F}$", "is_correct": false },
-                { "label": "C", "text": "$4\\text{ F}$", "is_correct": false },
-                { "label": "D", "text": "$3\\text{ F}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1.5\\text{ F}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.5\\text{ F}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4\\text{ F}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3\\text{ F}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1517,10 +2110,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Material", "is_correct": true },
-                { "label": "B", "text": "Area", "is_correct": false },
-                { "label": "C", "text": "Length", "is_correct": false },
-                { "label": "D", "text": "All of these", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Material",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Area",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Length",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "All of these",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1552,10 +2161,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1.5\\ \\Omega$", "is_correct": false },
-                { "label": "B", "text": "$2\\ \\Omega$", "is_correct": true },
-                { "label": "C", "text": "$3\\ \\Omega$", "is_correct": false },
-                { "label": "D", "text": "$4\\ \\Omega$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1.5\\ \\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2\\ \\Omega$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$3\\ \\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4\\ \\Omega$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1591,10 +2216,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "It can be transmitted over long distances.", "is_correct": false },
-                { "label": "B", "text": "Its production is cheaper.", "is_correct": false },
-                { "label": "C", "text": "It has a constant value.", "is_correct": true },
-                { "label": "D", "text": "Its voltage can be easily changed.", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "It can be transmitted over long distances.",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Its production is cheaper.",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "It has a constant value.",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "Its voltage can be easily changed.",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1626,10 +2267,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$480\\text{ W}$", "is_correct": true },
-                { "label": "B", "text": "$240\\text{ W}$", "is_correct": false },
-                { "label": "C", "text": "$48\\text{ W}$", "is_correct": false },
-                { "label": "D", "text": "$24\\text{ W}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$480\\text{ W}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$240\\text{ W}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$48\\text{ W}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$24\\text{ W}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1665,10 +2322,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$25\\ \\Omega$", "is_correct": false },
-                { "label": "B", "text": "$100\\ \\Omega$", "is_correct": false },
-                { "label": "C", "text": "$157\\ \\Omega$", "is_correct": true },
-                { "label": "D", "text": "$622\\ \\Omega$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$25\\ \\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$100\\ \\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$157\\ \\Omega$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$622\\ \\Omega$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1700,10 +2373,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$I_{\\text{max}} = 7.07\\text{ A}$", "is_correct": true },
-                { "label": "B", "text": "$I_{\\text{max}} = 3.14\\text{ A}$", "is_correct": false },
-                { "label": "C", "text": "$I_{\\text{max}} = 2.51\\text{ A}$", "is_correct": false },
-                { "label": "D", "text": "$I_{\\text{max}} = 3.53\\text{ A}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$I_{\\text{max}} = 7.07\\text{ A}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$I_{\\text{max}} = 3.14\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$I_{\\text{max}} = 2.51\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$I_{\\text{max}} = 3.53\\text{ A}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1739,10 +2428,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "lags the voltage by $\\pi/2$", "is_correct": true },
-                { "label": "B", "text": "leads the voltage by $\\pi/2$", "is_correct": false },
-                { "label": "C", "text": "lags the voltage by $\\pi$", "is_correct": false },
-                { "label": "D", "text": "leads the voltage by $\\pi$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "lags the voltage by $\\pi/2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "leads the voltage by $\\pi/2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "lags the voltage by $\\pi$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "leads the voltage by $\\pi$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1770,14 +2475,30 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Half-Wave Rectifier and Transformer Calculations",
             "question": "The turns ratio of a transformer used in half-wave rectifier is $n_1 : n_2 = 12 : 1$. The primary is connected to the power mains of 220 V, 50 Hz. Assuming the diode resistance in forward bias to be zero, calculate the dc voltage across the load",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1MuPsb758fagCZFbmz4SJBe8lzmhvW4EB/preview",
+            "local_question_image": "assets/quiz-images/img_1MuPsb758fagCZFbmz4SJBe8lzmhvW4EB.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$8.24\\text{ V}$", "is_correct": true },
-                { "label": "B", "text": "$4.12\\text{ V}$", "is_correct": false },
-                { "label": "C", "text": "$2.8\\text{ V}$", "is_correct": false },
-                { "label": "D", "text": "$16.48\\text{ V}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$8.24\\text{ V}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$4.12\\text{ V}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.8\\text{ V}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$16.48\\text{ V}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1813,10 +2534,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "It can convert AC voltage into DC voltage and vice versa.", "is_correct": false },
-                { "label": "B", "text": "It can convert low voltage to high voltage and vice versa.", "is_correct": true },
-                { "label": "C", "text": "Both 1 and 2", "is_correct": false },
-                { "label": "D", "text": "Neither 1 nor 2", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "It can convert AC voltage into DC voltage and vice versa.",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "It can convert low voltage to high voltage and vice versa.",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "Both 1 and 2",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Neither 1 nor 2",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1848,10 +2585,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Current", "is_correct": false },
-                { "label": "B", "text": "Voltage", "is_correct": false },
-                { "label": "C", "text": "Power", "is_correct": true },
-                { "label": "D", "text": "All of the above", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Current",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Voltage",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Power",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "All of the above",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1883,10 +2636,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$148\\text{ A}$", "is_correct": false },
-                { "label": "B", "text": "$130\\text{ A}$", "is_correct": false },
-                { "label": "C", "text": "$120\\text{ A}$", "is_correct": true },
-                { "label": "D", "text": "$100\\text{ A}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$148\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$130\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$120\\text{ A}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$100\\text{ A}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1918,10 +2687,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Equal", "is_correct": false },
-                { "label": "B", "text": "Less", "is_correct": true },
-                { "label": "C", "text": "More", "is_correct": false },
-                { "label": "D", "text": "There is no relation", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Equal",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Less",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "More",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "There is no relation",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1953,10 +2738,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$6\\text{ A}$", "is_correct": false },
-                { "label": "B", "text": "$2\\text{ A}$", "is_correct": true },
-                { "label": "C", "text": "$2.67\\text{ A}$", "is_correct": false },
-                { "label": "D", "text": "$3\\text{ A}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$6\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2\\text{ A}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$2.67\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3\\text{ A}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -1988,10 +2789,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\Omega$", "is_correct": false },
-                { "label": "B", "text": "$\\Omega\\text{ m}$", "is_correct": true },
-                { "label": "C", "text": "$\\Omega/\\text{m}$", "is_correct": false },
-                { "label": "D", "text": "$\\text{m}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\Omega\\text{ m}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\Omega/\\text{m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\text{m}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2023,10 +2840,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Leading", "is_correct": false },
-                { "label": "B", "text": "Unity", "is_correct": true },
-                { "label": "C", "text": "Lagging", "is_correct": false },
-                { "label": "D", "text": "zero", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Leading",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Unity",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "Lagging",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "zero",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2058,10 +2891,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.2\\text{ A}$", "is_correct": true },
-                { "label": "B", "text": "$5\\text{ A}$", "is_correct": false },
-                { "label": "C", "text": "$0.5\\text{ A}$", "is_correct": false },
-                { "label": "D", "text": "$1\\text{ A}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.2\\text{ A}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$5\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.5\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1\\text{ A}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2097,10 +2946,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "R", "is_correct": false },
-                { "label": "B", "text": "R/2", "is_correct": true },
-                { "label": "C", "text": "R/4", "is_correct": false },
-                { "label": "D", "text": "R/8", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "R",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "R/2",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "R/4",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "R/8",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2136,10 +3001,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$94$", "is_correct": false },
-                { "label": "B", "text": "$90$", "is_correct": true },
-                { "label": "C", "text": "$60$", "is_correct": false },
-                { "label": "D", "text": "$40$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$94$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$90$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$60$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2171,10 +3052,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Minimum, maximum", "is_correct": true },
-                { "label": "B", "text": "Zero, zero", "is_correct": false },
-                { "label": "C", "text": "Infinite, zero", "is_correct": false },
-                { "label": "D", "text": "Zero, infinite", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Minimum, maximum",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Zero, zero",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Infinite, zero",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Zero, infinite",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2206,10 +3103,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$8\\text{ m}$", "is_correct": true },
-                { "label": "B", "text": "$10\\text{ m}$", "is_correct": false },
-                { "label": "C", "text": "$6\\text{ m}$", "is_correct": false },
-                { "label": "D", "text": "$4\\text{ m}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$8\\text{ m}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$10\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$6\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4\\text{ m}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2249,10 +3162,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.7\\text{ A}$", "is_correct": false },
-                { "label": "B", "text": "$1.4\\text{ A}$", "is_correct": false },
-                { "label": "C", "text": "$2.1\\text{ A}$", "is_correct": true },
-                { "label": "D", "text": "$2.8\\text{ A}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.7\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.4\\text{ A}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.1\\text{ A}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$2.8\\text{ A}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2292,10 +3221,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.8$", "is_correct": true },
-                { "label": "B", "text": "$0.64$", "is_correct": false },
-                { "label": "C", "text": "$0.9$", "is_correct": false },
-                { "label": "D", "text": "$0.5$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.8$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.64$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.9$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2331,10 +3276,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{i_o}{\\sqrt{2}}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{i_o}{\\sqrt{3}}$", "is_correct": true },
-                { "label": "C", "text": "$i_o$", "is_correct": false },
-                { "label": "D", "text": "$\\frac{i_o}{\\sqrt{6}}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\frac{i_o}{\\sqrt{2}}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{i_o}{\\sqrt{3}}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$i_o$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{i_o}{\\sqrt{6}}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2370,10 +3331,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10\\text{ Amp}$", "is_correct": true },
-                { "label": "B", "text": "$5\\sqrt{2}\\text{ Amp}$", "is_correct": false },
-                { "label": "C", "text": "$100\\text{ Amp}$", "is_correct": false },
-                { "label": "D", "text": "$50\\text{ Amp}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$10\\text{ Amp}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$5\\sqrt{2}\\text{ Amp}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100\\text{ Amp}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50\\text{ Amp}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2413,10 +3390,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{100}{\\sqrt{2}}\\text{ A}, 100\\text{ Hz}$", "is_correct": false },
-                { "label": "B", "text": "$50\\sqrt{2}\\text{ A}, 50\\text{ Hz}$", "is_correct": false },
-                { "label": "C", "text": "$100\\sqrt{2}\\text{ A}, 100\\text{ Hz}$", "is_correct": false },
-                { "label": "D", "text": "$100\\text{ A}, 50\\text{ Hz}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$\\frac{100}{\\sqrt{2}}\\text{ A}, 100\\text{ Hz}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$50\\sqrt{2}\\text{ A}, 50\\text{ Hz}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$100\\sqrt{2}\\text{ A}, 100\\text{ Hz}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$100\\text{ A}, 50\\text{ Hz}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -2452,10 +3445,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10\\text{ V}$", "is_correct": false },
-                { "label": "B", "text": "$1.2\\text{ V}$", "is_correct": false },
-                { "label": "C", "text": "$12\\text{ V}$", "is_correct": false },
-                { "label": "D", "text": "$10.8\\text{ V}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$10\\text{ V}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$1.2\\text{ V}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$12\\text{ V}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.8\\text{ V}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -2495,10 +3504,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$200\\text{ W}$", "is_correct": false },
-                { "label": "B", "text": "$400\\text{ W}$", "is_correct": false },
-                { "label": "C", "text": "$331\\text{ W}$", "is_correct": true },
-                { "label": "D", "text": "$121\\text{ W}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$200\\text{ W}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$400\\text{ W}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$331\\text{ W}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$121\\text{ W}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2534,10 +3559,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\frac{1}{120}\\text{ s}$", "is_correct": false },
-                { "label": "B", "text": "$\\frac{1}{60}\\text{ s}$", "is_correct": false },
-                { "label": "C", "text": "$\\frac{1}{30}\\text{ s}$", "is_correct": false },
-                { "label": "D", "text": "$\\frac{1}{240}\\text{ s}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$\\frac{1}{120}\\text{ s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\frac{1}{60}\\text{ s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$\\frac{1}{30}\\text{ s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\frac{1}{240}\\text{ s}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -2573,10 +3614,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$15.6\\text{ A}$ and $30^\\circ$", "is_correct": false },
-                { "label": "B", "text": "$15.6\\text{ A}$ and $45^\\circ$", "is_correct": false },
-                { "label": "C", "text": "$7.8\\text{ A}$ and $30^\\circ$", "is_correct": false },
-                { "label": "D", "text": "$7.8\\text{ A}$ and $45^\\circ$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$15.6\\text{ A}$ and $30^\\circ$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$15.6\\text{ A}$ and $45^\\circ$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$7.8\\text{ A}$ and $30^\\circ$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$7.8\\text{ A}$ and $45^\\circ$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -2616,10 +3673,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "14.92", "is_correct": false },
-                { "label": "B", "text": "17.55", "is_correct": true },
-                { "label": "C", "text": "12.68", "is_correct": false },
-                { "label": "D", "text": "20.00", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "14.92",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "17.55",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "12.68",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "20.00",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2657,10 +3730,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$(0, 0)$", "is_correct": false },
-                { "label": "B", "text": "$(4, 7)$", "is_correct": true },
-                { "label": "C", "text": "$(7, 4)$", "is_correct": false },
-                { "label": "D", "text": "$(7, 7)$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$(0, 0)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$(4, 7)$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$(7, 4)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$(7, 7)$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2700,10 +3789,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10.53$", "is_correct": false },
-                { "label": "B", "text": "$57.36$", "is_correct": false },
-                { "label": "C", "text": "$21.07$", "is_correct": false },
-                { "label": "D", "text": "$28.68$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$10.53$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$57.36$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$21.07$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$28.68$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -2739,10 +3844,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$30\\text{ N}$", "is_correct": true },
-                { "label": "B", "text": "$60\\text{ N}$", "is_correct": false },
-                { "label": "C", "text": "$3\\text{ N}$", "is_correct": false },
-                { "label": "D", "text": "$6\\text{ N}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$30\\text{ N}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$60\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$6\\text{ N}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2782,10 +3903,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\bar{X} = \\dfrac{(\\pi - 0.75)}{(r - 0.5)}$", "is_correct": false },
-                { "label": "B", "text": "$\\bar{X} = \\dfrac{r(\\pi - 0.75)}{(\\pi - 0.5)}$", "is_correct": true },
-                { "label": "C", "text": "$\\bar{X} = \\dfrac{r(\\pi - 0.75)}{2(\\pi - 0.5)}$", "is_correct": false },
-                { "label": "D", "text": "$\\bar{X} = \\dfrac{(\\pi - 0.75)}{r(\\pi - 0.5)}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\bar{X} = \\dfrac{(\\pi - 0.75)}{(r - 0.5)}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\bar{X} = \\dfrac{r(\\pi - 0.75)}{(\\pi - 0.5)}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\bar{X} = \\dfrac{r(\\pi - 0.75)}{2(\\pi - 0.5)}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\bar{X} = \\dfrac{(\\pi - 0.75)}{r(\\pi - 0.5)}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2825,10 +3962,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$129.1\\text{ mm}$", "is_correct": false },
-                { "label": "B", "text": "$133.68\\text{ mm}$", "is_correct": false },
-                { "label": "C", "text": "$1.5.49\\text{ mm}$", "is_correct": false },
-                { "label": "D", "text": "$112.44\\text{ mm}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$129.1\\text{ mm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$133.68\\text{ mm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.5.49\\text{ mm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$112.44\\text{ mm}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -2866,14 +4019,30 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Power Developed Running Up Stairs",
             "question": "A 40 kg girl runs up a flight of stairs having a rise of 5 m in 4 s. The power developed by her will be \\underline{\\hspace{2cm}}.\n\n(take $g = 10\\text{ m/s}^2$)",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1S5f-VpBXuJ57vYvYSF8274xs7CnZVh8h/preview",
+            "local_question_image": "assets/quiz-images/img_1S5f-VpBXuJ57vYvYSF8274xs7CnZVh8h.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$100\\text{ W}$", "is_correct": false },
-                { "label": "B", "text": "$200\\text{ W}$", "is_correct": false },
-                { "label": "C", "text": "$500\\text{ W}$", "is_correct": true },
-                { "label": "D", "text": "$2000\\text{ W}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$100\\text{ W}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$200\\text{ W}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500\\text{ W}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$2000\\text{ W}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2913,10 +4082,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "towards the south", "is_correct": false },
-                { "label": "B", "text": "towards the east", "is_correct": false },
-                { "label": "C", "text": "zero", "is_correct": true },
-                { "label": "D", "text": "towards the north", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "towards the south",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "towards the east",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "zero",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "towards the north",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2948,10 +4133,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$50$", "is_correct": false },
-                { "label": "B", "text": "$32$", "is_correct": true },
-                { "label": "C", "text": "$16$", "is_correct": false },
-                { "label": "D", "text": "$25$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$50$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$32$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$16$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$25$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -2987,10 +4188,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$8\\text{ J}$", "is_correct": false },
-                { "label": "B", "text": "$32\\text{ J}$", "is_correct": false },
-                { "label": "C", "text": "$24\\text{ J}$", "is_correct": true },
-                { "label": "D", "text": "$16\\text{ J}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$8\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$32\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$24\\text{ J}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$16\\text{ J}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3021,15 +4238,31 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Physics",
             "title": "Vertical Motion Under Gravity",
-            "question": "A ball, thrown vertically upward, rises to a height of 80 m and returns to its original position. The magnitude of its displacement after 7 s of motion will be \\underline{\\hspace{2cm}}. (take $g = 10\\text{ m/s}^2$)",
-            "question_image": "",
-            "local_question_image": "",
+            "question": "A ball, thrown vertically upward, rises to a height of 80 m and returns to its original position. The magnitude of its displacement after 7 s of motion will be: (take $g = 10\\text{ m/s}^2$)",
+            "question_image": "https://drive.google.com/file/d/1zmBoCgZVOCs49j9lHLLe5xyll2yzxVkH/preview",
+            "local_question_image": "assets/quiz-images/img_1zmBoCgZVOCs49j9lHLLe5xyll2yzxVkH.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$35\\text{ m}$", "is_correct": true },
-                { "label": "B", "text": "$125\\text{ m}$", "is_correct": false },
-                { "label": "C", "text": "$45\\text{ m}$", "is_correct": false },
-                { "label": "D", "text": "$25\\text{ m}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$35\\text{ m}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$125\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$45\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$25\\text{ m}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3065,10 +4298,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10\\text{ J}$", "is_correct": false },
-                { "label": "B", "text": "$5\\text{ J}$", "is_correct": true },
-                { "label": "C", "text": "$5000\\text{ J}$", "is_correct": false },
-                { "label": "D", "text": "$500\\text{ J}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$10\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5\\text{ J}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5000\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$500\\text{ J}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3104,10 +4353,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2.68\\text{ m/s}$", "is_correct": false },
-                { "label": "B", "text": "$5.4\\text{ km/hr}$", "is_correct": false },
-                { "label": "C", "text": "$10.77\\text{ m/s}$", "is_correct": false },
-                { "label": "D", "text": "$15.0\\text{ m/s}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$2.68\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.4\\text{ km/hr}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.77\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$15.0\\text{ m/s}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3147,10 +4412,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$-5\\text{ m/s}$", "is_correct": true },
-                { "label": "B", "text": "$10\\text{ m/s}$", "is_correct": false },
-                { "label": "C", "text": "$50\\text{ m/s}$", "is_correct": false },
-                { "label": "D", "text": "$30\\text{ m/s}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$-5\\text{ m/s}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$10\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$50\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$30\\text{ m/s}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3182,14 +4463,30 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Direct Central Impact and Coefficient of Restitution",
             "question": "Ball A of mass 1 kg moving with velocity of 2 m/s strikes directly on a ball of mass 2 kg rest. What are the velocities of the two balls after impact if coefficient of restitution is 0.5?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/16IniDX0Z4v7nfyBfK7LTea6EBpWOtaPJ/preview",
+            "local_question_image": "assets/quiz-images/img_16IniDX0Z4v7nfyBfK7LTea6EBpWOtaPJ.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0\\text{ and } 1\\text{ m/s}$", "is_correct": true },
-                { "label": "B", "text": "$1\\text{ and } 2\\text{ m/s}$", "is_correct": false },
-                { "label": "C", "text": "$2\\text{ and } 2\\text{ m/s}$", "is_correct": false },
-                { "label": "D", "text": "$1\\text{ and } 1\\text{ m/s}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0\\text{ and } 1\\text{ m/s}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1\\text{ and } 2\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2\\text{ and } 2\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1\\text{ and } 1\\text{ m/s}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3228,15 +4525,31 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Physics",
             "title": "Inelastic Collision and Coefficient of Restitution",
-            "question": "A mass $m_1$ of 100 kg travelling with a uniform velocity of 5 m/s along a line collides with a stationary mass $m_2$ of 1000 kg. after the collision, both the masses travel together with the same velocity. The coefficient of restitution is \\underline{\\hspace{2cm}}.",
-            "question_image": "",
-            "local_question_image": "",
+            "question": "A mass $m_1$ of 100 kg travelling with a uniform velocity of 5 m/s along a line collides with a stationary mass $m_2$ of 1000 kg. after the collision, both the masses travel together with the same velocity. The coefficient of restitution is:",
+            "question_image": "https://drive.google.com/file/d/1YU5qQ-Y_563_3V5opyS7k2exPEcMSJFr/preview",
+            "local_question_image": "assets/quiz-images/img_1YU5qQ-Y_563_3V5opyS7k2exPEcMSJFr.jpg",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.6$", "is_correct": false },
-                { "label": "B", "text": "$0.1$", "is_correct": false },
-                { "label": "C", "text": "$0.01$", "is_correct": false },
-                { "label": "D", "text": "$0$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$0.6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.01$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3272,10 +4585,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2\\text{ m}$", "is_correct": false },
-                { "label": "B", "text": "$4\\text{ m}$", "is_correct": true },
-                { "label": "C", "text": "$1\\text{ m}$", "is_correct": false },
-                { "label": "D", "text": "$0.63\\text{ m}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$2\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4\\text{ m}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.63\\text{ m}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3319,10 +4648,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Has no radial component of acceleration", "is_correct": true },
-                { "label": "B", "text": "Has no tangential component of acceleration", "is_correct": false },
-                { "label": "C", "text": "Has both tangential and radial component of acceleration", "is_correct": false },
-                { "label": "D", "text": "Has no radial and tangential component of acceleration", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Has no radial component of acceleration",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Has no tangential component of acceleration",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Has both tangential and radial component of acceleration",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Has no radial and tangential component of acceleration",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3354,10 +4699,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$5\\text{ m/s}$", "is_correct": false },
-                { "label": "B", "text": "$6\\text{ m/s}$", "is_correct": true },
-                { "label": "C", "text": "$7\\text{ m/s}$", "is_correct": false },
-                { "label": "D", "text": "$8\\text{ m/s}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$5\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6\\text{ m/s}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8\\text{ m/s}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3397,10 +4758,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2.68\\text{ m/s}$", "is_correct": false },
-                { "label": "B", "text": "$5.4\\text{ km/hr}$", "is_correct": false },
-                { "label": "C", "text": "$10.77\\text{ m/s}$", "is_correct": false },
-                { "label": "D", "text": "$15.0\\text{ m/s}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$2.68\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$5.4\\text{ km/hr}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.77\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$15.0\\text{ m/s}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3444,10 +4821,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4u/g$", "is_correct": true },
-                { "label": "B", "text": "$3u/g$", "is_correct": false },
-                { "label": "C", "text": "$2u/g$", "is_correct": false },
-                { "label": "D", "text": "$u/g$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$4u/g$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$3u/g$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2u/g$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$u/g$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3483,10 +4876,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4\\text{ m/s}^2$", "is_correct": false },
-                { "label": "B", "text": "$6\\text{ m/s}^2$", "is_correct": false },
-                { "label": "C", "text": "$8\\text{ m/s}^2$", "is_correct": false },
-                { "label": "D", "text": "$10\\text{ m/s}^2$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$4\\text{ m/s}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6\\text{ m/s}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$8\\text{ m/s}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10\\text{ m/s}^2$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3530,10 +4939,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "total linear momentum only", "is_correct": true },
-                { "label": "B", "text": "total kinetic energy only", "is_correct": false },
-                { "label": "C", "text": "both linear momentum and kinetic energy", "is_correct": false },
-                { "label": "D", "text": "neither linear momentum nor kinetic energy", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "total linear momentum only",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "total kinetic energy only",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "both linear momentum and kinetic energy",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "neither linear momentum nor kinetic energy",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3565,10 +4990,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "The ring has higher kinetic energy", "is_correct": true },
-                { "label": "B", "text": "The disc has higher kinetic energy", "is_correct": false },
-                { "label": "C", "text": "The ring and the disc have the same kinetic energy", "is_correct": false },
-                { "label": "D", "text": "Kinetic energies of both the bodies are zero since they are not in linear motion", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "The ring has higher kinetic energy",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "The disc has higher kinetic energy",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "The ring and the disc have the same kinetic energy",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Kinetic energies of both the bodies are zero since they are not in linear motion",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3604,10 +5045,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$400\\text{ N}$", "is_correct": false },
-                { "label": "B", "text": "$460\\text{ N}$", "is_correct": false },
-                { "label": "C", "text": "$520\\text{ N}$", "is_correct": true },
-                { "label": "D", "text": "$640\\text{ N}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$400\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$460\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$520\\text{ N}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$640\\text{ N}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3647,10 +5104,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\pi$", "is_correct": false },
-                { "label": "B", "text": "$2\\pi$", "is_correct": false },
-                { "label": "C", "text": "$3\\pi$", "is_correct": false },
-                { "label": "D", "text": "$4\\pi$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$\\pi$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2\\pi$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3\\pi$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$4\\pi$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3686,10 +5159,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$100$", "is_correct": true },
-                { "label": "B", "text": "$50$", "is_correct": false },
-                { "label": "C", "text": "$25$", "is_correct": false },
-                { "label": "D", "text": "$5$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$100$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$50$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$25$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$5$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3729,10 +5218,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$20\\text{ joule}, 10\\text{ watt}$", "is_correct": false },
-                { "label": "B", "text": "$15\\text{ joule}, 7.5\\text{ watt}$", "is_correct": true },
-                { "label": "C", "text": "$13\\text{ joule}, 6.5\\text{ watt}$", "is_correct": false },
-                { "label": "D", "text": "$10\\text{ joule}, 5\\text{ watt}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$20\\text{ joule}, 10\\text{ watt}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$15\\text{ joule}, 7.5\\text{ watt}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$13\\text{ joule}, 6.5\\text{ watt}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10\\text{ joule}, 5\\text{ watt}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3768,10 +5273,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$6\\text{ cm from B.}$", "is_correct": false },
-                { "label": "B", "text": "$3\\text{ cm from A.}$", "is_correct": false },
-                { "label": "C", "text": "$2\\text{ cm from B.}$", "is_correct": false },
-                { "label": "D", "text": "$6\\text{ cm from A.}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$6\\text{ cm from B.}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3\\text{ cm from A.}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2\\text{ cm from B.}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$6\\text{ cm from A.}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3807,10 +5328,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "the total kinetic energy before collision is equal to the total kinetic energy after collision.", "is_correct": true },
-                { "label": "B", "text": "the total kinetic energy before collision is less than total kinetic energy after collision.", "is_correct": false },
-                { "label": "C", "text": "the total kinetic energy before collision is greater than the total kinetic energy after collision.", "is_correct": false },
-                { "label": "D", "text": "coefficient of restitution is equal to zero.", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "the total kinetic energy before collision is equal to the total kinetic energy after collision.",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "the total kinetic energy before collision is less than total kinetic energy after collision.",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "the total kinetic energy before collision is greater than the total kinetic energy after collision.",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "coefficient of restitution is equal to zero.",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3842,10 +5379,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.63$", "is_correct": true },
-                { "label": "B", "text": "$1.26$", "is_correct": false },
-                { "label": "C", "text": "$0.32$", "is_correct": false },
-                { "label": "D", "text": "$1.89$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.63$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$1.26$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.32$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.89$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3881,10 +5434,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\sqrt{2}\\text{ s}$", "is_correct": false },
-                { "label": "B", "text": "$2\\text{ s}$", "is_correct": true },
-                { "label": "C", "text": "$\\sqrt{3}\\text{ s}$", "is_correct": false },
-                { "label": "D", "text": "$3\\text{ s}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\sqrt{2}\\text{ s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2\\text{ s}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\sqrt{3}\\text{ s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3\\text{ s}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -3920,10 +5489,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10\\text{ m}$", "is_correct": false },
-                { "label": "B", "text": "$8\\text{ m}$", "is_correct": false },
-                { "label": "C", "text": "$4\\text{ m}$", "is_correct": false },
-                { "label": "D", "text": "$7\\text{ m}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$10\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$8\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$7\\text{ m}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -3961,10 +5546,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$500\\text{ N/mm}^2$", "is_correct": false },
-                { "label": "B", "text": "$2000\\text{ N/mm}^2$", "is_correct": false },
-                { "label": "C", "text": "$1000\\text{ N/mm}^2$", "is_correct": true },
-                { "label": "D", "text": "$981\\text{ N/mm}^2$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$500\\text{ N/mm}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2000\\text{ N/mm}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1000\\text{ N/mm}^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$981\\text{ N/mm}^2$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4000,10 +5601,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$25\\text{ MPa tension}$", "is_correct": true },
-                { "label": "B", "text": "$75\\text{ MPa compression}$", "is_correct": false },
-                { "label": "C", "text": "$25\\text{ MPa compression}$", "is_correct": false },
-                { "label": "D", "text": "$75\\text{ MPa tension}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$25\\text{ MPa tension}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$75\\text{ MPa compression}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$25\\text{ MPa compression}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$75\\text{ MPa tension}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4039,10 +5656,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Zero", "is_correct": false },
-                { "label": "B", "text": "Maximum", "is_correct": false },
-                { "label": "C", "text": "Equal", "is_correct": true },
-                { "label": "D", "text": "Minimum", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Zero",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Maximum",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Equal",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "Minimum",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4074,10 +5707,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$210\\text{ N/mm}^2$", "is_correct": false },
-                { "label": "B", "text": "$205\\text{ N/mm}^2$", "is_correct": false },
-                { "label": "C", "text": "$200\\text{ N/mm}^2$", "is_correct": true },
-                { "label": "D", "text": "$195\\text{ N/mm}^2$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$210\\text{ N/mm}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$205\\text{ N/mm}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$200\\text{ N/mm}^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$195\\text{ N/mm}^2$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4113,10 +5762,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$15\\text{ MPa}$", "is_correct": false },
-                { "label": "B", "text": "$60\\text{ MPa}$", "is_correct": false },
-                { "label": "C", "text": "$25\\text{ MPa}$", "is_correct": false },
-                { "label": "D", "text": "$30\\text{ MPa}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$15\\text{ MPa}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$60\\text{ MPa}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$25\\text{ MPa}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$30\\text{ MPa}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -4152,10 +5817,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.02\\text{ and }0.01$", "is_correct": true },
-                { "label": "B", "text": "$0.02\\text{ and }0.02$", "is_correct": false },
-                { "label": "C", "text": "$0.01\\text{ and }0.01$", "is_correct": false },
-                { "label": "D", "text": "$0.01\\text{ and }0.02$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.02\\text{ and }0.01$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$0.02\\text{ and }0.02$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.01\\text{ and }0.01$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.01\\text{ and }0.02$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4195,10 +5876,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$3$", "is_correct": false },
-                { "label": "B", "text": "$2.5$", "is_correct": true },
-                { "label": "C", "text": "$7.5$", "is_correct": false },
-                { "label": "D", "text": "$1.25$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2.5$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7.5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.25$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4238,10 +5935,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$15\\text{ kNm}$", "is_correct": false },
-                { "label": "B", "text": "$10\\text{ kNm}$", "is_correct": true },
-                { "label": "C", "text": "$5\\text{ kNm}$", "is_correct": false },
-                { "label": "D", "text": "$40\\text{ kNm}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$15\\text{ kNm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10\\text{ kNm}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$5\\text{ kNm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$40\\text{ kNm}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4281,10 +5994,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$200\\text{ N/m}$", "is_correct": true },
-                { "label": "B", "text": "$100\\text{ N/m}$", "is_correct": false },
-                { "label": "C", "text": "$400\\text{ N/m}$", "is_correct": false },
-                { "label": "D", "text": "$900\\text{ N/m}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$200\\text{ N/m}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$100\\text{ N/m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$400\\text{ N/m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$900\\text{ N/m}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4326,10 +6055,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$950$", "is_correct": false },
-                { "label": "B", "text": "$2300$", "is_correct": false },
-                { "label": "C", "text": "$1280$", "is_correct": true },
-                { "label": "D", "text": "None of the above", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$950$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2300$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1280$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "None of the above",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4369,10 +6114,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$40\\text{ N/m}^2$", "is_correct": false },
-                { "label": "B", "text": "$50\\text{ N/m}^2$", "is_correct": false },
-                { "label": "C", "text": "$60\\text{ N/m}^2$", "is_correct": true },
-                { "label": "D", "text": "$70\\text{ N/m}^2$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$40\\text{ N/m}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$50\\text{ N/m}^2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$60\\text{ N/m}^2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$70\\text{ N/m}^2$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4408,10 +6169,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2$", "is_correct": false },
-                { "label": "B", "text": "$3$", "is_correct": false },
-                { "label": "C", "text": "$4$", "is_correct": true },
-                { "label": "D", "text": "$5$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$5$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4447,10 +6224,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$14\\text{ m}$", "is_correct": false },
-                { "label": "B", "text": "$16\\text{ m}$", "is_correct": true },
-                { "label": "C", "text": "$7\\text{ m}$", "is_correct": false },
-                { "label": "D", "text": "$8\\text{ m}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$14\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$16\\text{ m}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$7\\text{ m}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$8\\text{ m}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4486,10 +6279,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$5$", "is_correct": false },
-                { "label": "B", "text": "$10$", "is_correct": true },
-                { "label": "C", "text": "$20$", "is_correct": false },
-                { "label": "D", "text": "$1$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$5$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$20$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4529,10 +6338,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10\\text{ N}$", "is_correct": false },
-                { "label": "B", "text": "$8\\text{ N}$", "is_correct": false },
-                { "label": "C", "text": "$12\\text{ N}$", "is_correct": false },
-                { "label": "D", "text": "$2\\text{ N}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$10\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$8\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$12\\text{ N}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2\\text{ N}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -4568,10 +6393,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$76$", "is_correct": true },
-                { "label": "B", "text": "$7.6$", "is_correct": false },
-                { "label": "C", "text": "$760$", "is_correct": false },
-                { "label": "D", "text": "$0.76$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$76$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$7.6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$760$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.76$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4611,10 +6452,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$74.8\\text{ cm}$", "is_correct": false },
-                { "label": "B", "text": "$37.4\\text{ cm}$", "is_correct": true },
-                { "label": "C", "text": "$30.6\\text{ cm}$", "is_correct": false },
-                { "label": "D", "text": "$20.8\\text{ cm}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$74.8\\text{ cm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$37.4\\text{ cm}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$30.6\\text{ cm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$20.8\\text{ cm}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4654,10 +6511,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$2.93$", "is_correct": true },
-                { "label": "B", "text": "$2.50$", "is_correct": false },
-                { "label": "C", "text": "$0.3$", "is_correct": false },
-                { "label": "D", "text": "$0.1$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$2.93$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$2.50$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.1$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4697,10 +6570,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$250\\text{ m/s}$", "is_correct": false },
-                { "label": "B", "text": "$50\\text{ m/s}$", "is_correct": false },
-                { "label": "C", "text": "$10\\text{ m/s}$", "is_correct": false },
-                { "label": "D", "text": "$2\\text{ m/s}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$250\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$50\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10\\text{ m/s}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2\\text{ m/s}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -4740,10 +6629,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$160\\text{ rpm}$", "is_correct": false },
-                { "label": "B", "text": "$175\\text{ rpm}$", "is_correct": false },
-                { "label": "C", "text": "$150\\text{ rpm}$", "is_correct": false },
-                { "label": "D", "text": "$200\\text{ rpm}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$160\\text{ rpm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$175\\text{ rpm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$150\\text{ rpm}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$200\\text{ rpm}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -4783,10 +6688,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.71$", "is_correct": false },
-                { "label": "B", "text": "$0.68$", "is_correct": false },
-                { "label": "C", "text": "$0.50$", "is_correct": true },
-                { "label": "D", "text": "$0.56$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.71$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.68$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0.50$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0.56$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4826,10 +6747,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Laminar flow", "is_correct": true },
-                { "label": "B", "text": "Transient flow", "is_correct": false },
-                { "label": "C", "text": "Turbulent flow", "is_correct": false },
-                { "label": "D", "text": "Cannot say", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Laminar flow",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "Transient flow",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Turbulent flow",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Cannot say",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4871,10 +6808,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$149.2\\text{ kg}$", "is_correct": false },
-                { "label": "B", "text": "$119.2\\text{ kg}$", "is_correct": true },
-                { "label": "C", "text": "$83.2\\text{ kg}$", "is_correct": false },
-                { "label": "D", "text": "$169.7\\text{ kg}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$149.2\\text{ kg}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$119.2\\text{ kg}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$83.2\\text{ kg}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$169.7\\text{ kg}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4918,10 +6871,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Specific humidity of the air increases", "is_correct": false },
-                { "label": "B", "text": "Specific humidity of the air decreases", "is_correct": false },
-                { "label": "C", "text": "Relative humidity of the air increases", "is_correct": false },
-                { "label": "D", "text": "Relative humidity of the air decreases", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "Specific humidity of the air increases",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Specific humidity of the air decreases",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Relative humidity of the air increases",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Relative humidity of the air decreases",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -4953,10 +6922,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Humidifier", "is_correct": false },
-                { "label": "B", "text": "Dehumidifier", "is_correct": true },
-                { "label": "C", "text": "Sensible heater", "is_correct": false },
-                { "label": "D", "text": "Sensible cooler", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Humidifier",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Dehumidifier",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "Sensible heater",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Sensible cooler",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -4988,10 +6973,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4.8 \\times 10^4\\text{ J}$", "is_correct": false },
-                { "label": "B", "text": "$3.5 \\times 10^4\\text{ J}$", "is_correct": false },
-                { "label": "C", "text": "$1.6 \\times 10^4\\text{ J}$", "is_correct": false },
-                { "label": "D", "text": "$1.2 \\times 10^4\\text{ J}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$4.8 \\times 10^4\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.5 \\times 10^4\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.6 \\times 10^4\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$1.2 \\times 10^4\\text{ J}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5031,10 +7032,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1 \\times 10^4\\text{ J}$", "is_correct": false },
-                { "label": "B", "text": "$2 \\times 10^4\\text{ J}$", "is_correct": false },
-                { "label": "C", "text": "$4 \\times 10^4\\text{ J}$", "is_correct": true },
-                { "label": "D", "text": "$5 \\times 10^4\\text{ J}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1 \\times 10^4\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2 \\times 10^4\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$4 \\times 10^4\\text{ J}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$5 \\times 10^4\\text{ J}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5074,10 +7091,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4.05$", "is_correct": false },
-                { "label": "B", "text": "$3.54$", "is_correct": false },
-                { "label": "C", "text": "$1.56$", "is_correct": false },
-                { "label": "D", "text": "$2.93$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$4.05$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.54$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.56$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$2.93$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5113,10 +7146,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0.8$", "is_correct": false },
-                { "label": "B", "text": "$0.2$", "is_correct": true },
-                { "label": "C", "text": "$1.0$", "is_correct": false },
-                { "label": "D", "text": "$0.5$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0.8$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.2$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1.0$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5156,10 +7205,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$11.6$", "is_correct": false },
-                { "label": "B", "text": "$10$", "is_correct": true },
-                { "label": "C", "text": "$6.67$", "is_correct": false },
-                { "label": "D", "text": "$15$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$11.6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$10$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$6.67$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$15$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5203,10 +7268,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$20\\%$", "is_correct": true },
-                { "label": "B", "text": "$40\\%$", "is_correct": false },
-                { "label": "C", "text": "$30\\%$", "is_correct": false },
-                { "label": "D", "text": "$50\\%$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$20\\%$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$40\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$30\\%$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$50\\%$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5246,10 +7327,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4.0\\text{ bar}$", "is_correct": false },
-                { "label": "B", "text": "$6.0\\text{ bar}$", "is_correct": true },
-                { "label": "C", "text": "$8.0\\text{ bar}$", "is_correct": false },
-                { "label": "D", "text": "$10.0\\text{ bar}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$4.0\\text{ bar}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$6.0\\text{ bar}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$8.0\\text{ bar}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$10.0\\text{ bar}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5289,10 +7386,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$0, RT_2 \\ln \\left| \\frac{V_1}{V_2} \\right|, R(T_2 - T_1)$", "is_correct": false },
-                { "label": "B", "text": "$R(T_1 - T_2), 0, RT_1 \\ln \\left| \\frac{V_1}{V_2} \\right|$", "is_correct": false },
-                { "label": "C", "text": "$0, RT_2 \\ln \\left| \\frac{V_1}{V_2} \\right|, R(T_1 - T_2)$", "is_correct": true },
-                { "label": "D", "text": "$0, RT_2 \\ln \\left| \\frac{V_2}{V_1} \\right|, R(T_2 - T_1)$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$0, RT_2 \\ln \\left| \\frac{V_1}{V_2} \\right|, R(T_2 - T_1)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$R(T_1 - T_2), 0, RT_1 \\ln \\left| \\frac{V_1}{V_2} \\right|$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$0, RT_2 \\ln \\left| \\frac{V_1}{V_2} \\right|, R(T_1 - T_2)$",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$0, RT_2 \\ln \\left| \\frac{V_2}{V_1} \\right|, R(T_2 - T_1)$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5336,10 +7449,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$166\\text{ J}$", "is_correct": false },
-                { "label": "B", "text": "$41.5\\text{ J}$", "is_correct": false },
-                { "label": "C", "text": "$83\\text{ J}$", "is_correct": false },
-                { "label": "D", "text": "$124.5\\text{ J}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$166\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$41.5\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$83\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$124.5\\text{ J}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5375,10 +7504,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$800\\text{ J}$", "is_correct": false },
-                { "label": "B", "text": "$400\\text{ J}$", "is_correct": false },
-                { "label": "C", "text": "$500\\text{ J}$", "is_correct": false },
-                { "label": "D", "text": "$600\\text{ J}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$800\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$400\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$500\\text{ J}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$600\\text{ J}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5414,10 +7559,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "0.284", "is_correct": false },
-                { "label": "B", "text": "0.301", "is_correct": false },
-                { "label": "C", "text": "0.321", "is_correct": true },
-                { "label": "D", "text": "0.356", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "0.284",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "0.301",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "0.321",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "0.356",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5459,10 +7620,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$10.2\\ \\Omega$", "is_correct": true },
-                { "label": "B", "text": "$11.7\\ \\Omega$", "is_correct": false },
-                { "label": "C", "text": "$10.5\\ \\Omega$", "is_correct": false },
-                { "label": "D", "text": "$11.5\\ \\Omega$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$10.2\\ \\Omega$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$11.7\\ \\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$10.5\\ \\Omega$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$11.5\\ \\Omega$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5498,10 +7675,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1\\text{ volt}$", "is_correct": false },
-                { "label": "B", "text": "$0\\text{ volt}$", "is_correct": false },
-                { "label": "C", "text": "the same as the voltage drop across any resistor", "is_correct": false },
-                { "label": "D", "text": "the same as that of Y", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$1\\text{ volt}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0\\text{ volt}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "the same as the voltage drop across any resistor",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "the same as that of Y",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5537,10 +7730,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Laplace transform of the step response", "is_correct": false },
-                { "label": "B", "text": "Laplace transform of the sinusoidal input", "is_correct": false },
-                { "label": "C", "text": "Laplace transform of the ramp response", "is_correct": false },
-                { "label": "D", "text": "Laplace transform of the impulse response", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "Laplace transform of the step response",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Laplace transform of the sinusoidal input",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Laplace transform of the ramp response",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Laplace transform of the impulse response",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5580,10 +7789,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1 / (1 + K_p)$", "is_correct": false },
-                { "label": "B", "text": "Zero", "is_correct": true },
-                { "label": "C", "text": "$1 / K_p$", "is_correct": false },
-                { "label": "D", "text": "Infinity", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1 / (1 + K_p)$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Zero",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$1 / K_p$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "Infinity",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5625,10 +7850,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$3$", "is_correct": false },
-                { "label": "B", "text": "$4$", "is_correct": true },
-                { "label": "C", "text": "$6$", "is_correct": false },
-                { "label": "D", "text": "$7$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$3$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$4$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$7$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5660,10 +7901,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "'II' is more acidic than 'I'.", "is_correct": false },
-                { "label": "B", "text": "'I' is basic and 'II' is acidic.", "is_correct": false },
-                { "label": "C", "text": "'II' is more basic than 'I'.", "is_correct": true },
-                { "label": "D", "text": "'I' is more basic than 'II'.", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "'II' is more acidic than 'I'.",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "'I' is basic and 'II' is acidic.",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "'II' is more basic than 'I'.",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "'I' is more basic than 'II'.",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5699,10 +7956,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$6.022 \\times 10^{23}$", "is_correct": false },
-                { "label": "B", "text": "$3.011 \\times 10^{23}$", "is_correct": false },
-                { "label": "C", "text": "$1.505 \\times 10^{22}$", "is_correct": false },
-                { "label": "D", "text": "$7.527 \\times 10^{22}$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$6.022 \\times 10^{23}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$3.011 \\times 10^{23}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$1.505 \\times 10^{22}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$7.527 \\times 10^{22}$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5742,10 +8015,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$3.5229$", "is_correct": true },
-                { "label": "B", "text": "$4.229$", "is_correct": false },
-                { "label": "C", "text": "$3.229$", "is_correct": false },
-                { "label": "D", "text": "$3.5223$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$3.5229$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$4.229$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$3.229$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$3.5223$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5785,10 +8074,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$4.745$", "is_correct": true },
-                { "label": "B", "text": "$5.741$", "is_correct": false },
-                { "label": "C", "text": "$2.876$", "is_correct": false },
-                { "label": "D", "text": "$7.001$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$4.745$",
+                    "is_correct": true
+                },
+                {
+                    "label": "B",
+                    "text": "$5.741$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$2.876$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$7.001$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5828,10 +8133,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1$", "is_correct": false },
-                { "label": "B", "text": "$2$", "is_correct": false },
-                { "label": "C", "text": "Zero", "is_correct": true },
-                { "label": "D", "text": "$7$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$2$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Zero",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "$7$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5867,10 +8188,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$+4$", "is_correct": false },
-                { "label": "B", "text": "$-4$", "is_correct": false },
-                { "label": "C", "text": "$-6$", "is_correct": false },
-                { "label": "D", "text": "$+6$", "is_correct": true }
+                {
+                    "label": "A",
+                    "text": "$+4$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$-4$",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "$-6$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$+6$",
+                    "is_correct": true
+                }
             ],
             "solution": {
                 "steps": [
@@ -5906,10 +8243,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "Oxygen", "is_correct": false },
-                { "label": "B", "text": "Nitrogen", "is_correct": false },
-                { "label": "C", "text": "Fluorine", "is_correct": true },
-                { "label": "D", "text": "Chlorine", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "Oxygen",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "Nitrogen",
+                    "is_correct": false
+                },
+                {
+                    "label": "C",
+                    "text": "Fluorine",
+                    "is_correct": true
+                },
+                {
+                    "label": "D",
+                    "text": "Chlorine",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5945,10 +8298,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$1.7018\\text{ g}$", "is_correct": false },
-                { "label": "B", "text": "$0.2938\\text{ g}$", "is_correct": true },
-                { "label": "C", "text": "$2.4036\\text{ g}$", "is_correct": false },
-                { "label": "D", "text": "$0.5876\\text{ g}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$1.7018\\text{ g}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$0.2938\\text{ g}$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$2.4036\\text{ g}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$0.5876\\text{ g}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [
@@ -5988,10 +8357,26 @@ const EXAM_QUESTIONS = {
             "local_question_image": "",
             "times_presented": 0,
             "options": [
-                { "label": "A", "text": "$\\text{H}_2\\text{O(g)} + \\text{CO(g)} \\rightleftharpoons \\text{H}_2(\\text{g}) + \\text{CO}_2(\\text{g})$", "is_correct": false },
-                { "label": "B", "text": "$\\text{N}_2(\\text{g}) + 3\\text{H}_2(\\text{g}) \\rightleftharpoons 2\\text{NH}_3(\\text{g})$", "is_correct": true },
-                { "label": "C", "text": "$\\text{H}_2(\\text{g}) + \\text{I}_2(\\text{g}) \\rightleftharpoons 2\\text{HI(g)}$", "is_correct": false },
-                { "label": "D", "text": "$\\text{N}_2(\\text{g}) + \\text{O}_2(\\text{g}) \\rightleftharpoons 2\\text{NO(g)}$", "is_correct": false }
+                {
+                    "label": "A",
+                    "text": "$\\text{H}_2\\text{O(g)} + \\text{CO(g)} \\rightleftharpoons \\text{H}_2(\\text{g}) + \\text{CO}_2(\\text{g})$",
+                    "is_correct": false
+                },
+                {
+                    "label": "B",
+                    "text": "$\\text{N}_2(\\text{g}) + 3\\text{H}_2(\\text{g}) \\rightleftharpoons 2\\text{NH}_3(\\text{g})$",
+                    "is_correct": true
+                },
+                {
+                    "label": "C",
+                    "text": "$\\text{H}_2(\\text{g}) + \\text{I}_2(\\text{g}) \\rightleftharpoons 2\\text{HI(g)}$",
+                    "is_correct": false
+                },
+                {
+                    "label": "D",
+                    "text": "$\\text{N}_2(\\text{g}) + \\text{O}_2(\\text{g}) \\rightleftharpoons 2\\text{NO(g)}$",
+                    "is_correct": false
+                }
             ],
             "solution": {
                 "steps": [

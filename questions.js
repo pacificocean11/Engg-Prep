@@ -1657,7 +1657,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt/preview",
-            "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
                 "local_solution_image": "assets/quiz-images/img_1UxTtLlgSwNLBS5P1xYjo3Xh-sDxiZqGt.jpg",
                 "video_explanation": ""
             },
@@ -1709,7 +1708,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp/preview",
-            "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
                 "local_solution_image": "assets/quiz-images/img_1pyOK9k20FoMHtQMm-4ALtewEmv5EOpBp.jpg",
                 "video_explanation": ""
             },
@@ -1765,7 +1763,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1LQ_0P1h4aivR92tDT8MUus8l21_ICs30/preview",
-            "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
                 "local_solution_image": "assets/quiz-images/img_1LQ_0P1h4aivR92tDT8MUus8l21_ICs30.jpg",
                 "video_explanation": ""
             },
@@ -1821,7 +1818,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ/preview",
-            "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
                 "local_solution_image": "assets/quiz-images/img_1Ho5zSylBCIkJQMc9G41Xj6JiCqZN4bcZ.jpg",
                 "video_explanation": ""
             },
@@ -1877,7 +1873,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si/preview",
-            "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
                 "local_solution_image": "assets/quiz-images/img_1lHKWeXEgwuq2K9u1qOUndCZRikF0Q5Si.jpg",
                 "video_explanation": ""
             },
@@ -1933,7 +1928,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP/preview",
-            "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
                 "local_solution_image": "assets/quiz-images/img_1gwi_2_6IPtsj7e5bkiCKGLgE1URjGVoP.jpg",
                 "video_explanation": ""
             },
@@ -2377,7 +2371,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y/preview",
-            "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
                 "local_solution_image": "assets/quiz-images/img_1xWqwngRanUx13DgDRFkr2LVy8PqnWu2Y.jpg",
                 "video_explanation": ""
             },
@@ -8478,7 +8471,7 @@ const QUESTIONS = {
         {
             "topic": "Expected Value",
             "title": "Calculating Expected Profit per Component",
-            "question": "A process has a 5% defect rate. Functional components yield \$50 profit; defective ones lose \$150. What is the expected profit per component?",
+            "question": "A process has a 5% defect rate. Functional components yield $50 profit; defective ones lose $150. What is the expected profit per component?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -17757,7 +17750,7 @@ const QUESTIONS = {
                 "search_term": "measurement",
                 "page_number": 69
             }
-        },
+        }
     ],
     "ethics": [
         {
@@ -26188,7 +26181,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w/preview",
-            "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
                 "local_solution_image": "assets/quiz-images/img_17AkFxWAdgnEhrElpAK1H-LgUa4CEMw_w.jpg",
                 "video_explanation": ""
             },
@@ -26463,7 +26455,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/19-wekixZcSS97Vlrm7-4f97apZDscbwK/preview",
-            "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
                 "local_solution_image": "assets/quiz-images/img_19-wekixZcSS97Vlrm7-4f97apZDscbwK.jpg",
                 "video_explanation": ""
             },
@@ -28055,7 +28046,7 @@ const QUESTIONS = {
         {
             "topic": "Time Value of Money",
             "title": "Present Worth",
-            "question": "A factory needs to buy a new conveyor belt. They know it will cost exactly \$50,000 to replace the belt in exactly 10 years. If the company's bank account pays an interest rate of 5\% compounded annually, they can mathematically calculate the 'Present Worth' ($P$). What does this Present Worth physically represent in the real world?",
+            "question": "A factory needs to buy a new conveyor belt. They know it will cost exactly $50,000 to replace the belt in exactly 10 years. If the company's bank account pays an interest rate of 5% compounded annually, they can mathematically calculate the 'Present Worth' ($P$). What does this Present Worth physically represent in the real world?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -28206,7 +28197,7 @@ const QUESTIONS = {
         {
             "topic": "Depreciation",
             "title": "Straight-Line Method",
-            "question": "A construction company buys a bulldozer for \$100,000. They plan to use it for exactly 5 years, after which they will sell it for a 'Salvage Value' of \$20,000. Using the standard Straight-Line mathematical depreciation method, what is the exact physical amount of depreciation written off on their taxes every single year?",
+            "question": "A construction company buys a bulldozer for $100,000. They plan to use it for exactly 5 years, after which they will sell it for a 'Salvage Value' of $20,000. Using the standard Straight-Line mathematical depreciation method, what is the exact physical amount of depreciation written off on their taxes every single year?",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -31827,7 +31818,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk/preview",
-            "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
                 "local_solution_image": "assets/quiz-images/img_13LIu2PT5LW6oWVVYhmHE3cp_SwIj8Vsk.jpg",
                 "video_explanation": ""
             },
@@ -31936,7 +31926,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu/preview",
-            "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
                 "local_solution_image": "assets/quiz-images/img_1PBDUYD6WMVW3gbl9Te6-zfCbnmAW2cqu.jpg",
                 "video_explanation": ""
             },
@@ -34063,7 +34052,8 @@ const QUESTIONS = {
                 "topic": "Impulse-Momentum",
                 "search_term": "impulse-momentum",
                 "page_number": 191
-            }
+            },
+            "local_question_image": "assets/quiz-images/img_1DJS2doreAU8Galr48R3Ual3_tUP7NoIK.jpg"
         },
         {
             "topic": "Rotation",
@@ -35454,7 +35444,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_/preview",
-            "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
                 "local_solution_image": "assets/quiz-images/img_1i3mOT9PRqYkq-I5mnaCZBh1R2f9mZVc_.jpg",
                 "video_explanation": ""
             },
@@ -35507,7 +35496,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk/preview",
-            "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
                 "local_solution_image": "assets/quiz-images/img_13DUNDaLj1fMjN33P8-TXsslFWOZfEnjk.jpg",
                 "video_explanation": ""
             },
@@ -35617,7 +35605,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6/preview",
-            "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
                 "local_solution_image": "assets/quiz-images/img_1BYbBJv1WaxbuzYnN4mmIK_eT9xUDmQB6.jpg",
                 "video_explanation": ""
             },
@@ -35669,7 +35656,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0/preview",
-            "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
                 "local_solution_image": "assets/quiz-images/img_1b1wEx97sdejAQ0cRoqUE9GPZa6RiuvD0.jpg",
                 "video_explanation": ""
             },
@@ -35721,7 +35707,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj/preview",
-            "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
                 "local_solution_image": "assets/quiz-images/img_1M7WUvNiwTFeVKlDH9Hhe6u7FnKTMzZcj.jpg",
                 "video_explanation": ""
             },
@@ -35773,7 +35758,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3/preview",
-            "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
                 "local_solution_image": "assets/quiz-images/img_1Nu5cyKSZZ2fNDjeA6GcI4bbNzKU04LY3.jpg",
                 "video_explanation": ""
             },
@@ -36358,7 +36342,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "B",
                 "solution_image": "https://drive.google.com/file/d/1cpavGIPjyCIysk3vLU4JOUAewn69DRzI/preview",
-            "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
                 "local_solution_image": "assets/quiz-images/img_1cpavGIPjyCIysk3vLU4JOUAewn69DRzI.jpg",
                 "video_explanation": ""
             },
@@ -36415,7 +36398,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV/preview",
-            "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
                 "local_solution_image": "assets/quiz-images/img_1MApz2z2u3zn8L3iJRpD87Mw5trwlocGV.jpg",
                 "video_explanation": ""
             },
@@ -37027,7 +37009,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "C",
                 "solution_image": "https://drive.google.com/file/d/1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh/preview",
-            "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
                 "local_solution_image": "assets/quiz-images/img_1fzNX1Dss0qREDff5Rl5Ssp2NeS7rQXmh.jpg",
                 "video_explanation": ""
             },
@@ -44305,7 +44286,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX/preview",
-            "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
                 "local_solution_image": "assets/quiz-images/img_1pPccrLeLHpe-w8K5y6_s-wmi6Xv063qX.jpg",
                 "video_explanation": ""
             },
@@ -44358,7 +44338,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "A",
                 "solution_image": "https://drive.google.com/file/d/1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz/preview",
-            "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
                 "local_solution_image": "assets/quiz-images/img_1j2kjgvziCr70fIY8ngzwau_fnpM1KWcz.jpg",
                 "video_explanation": ""
             },
@@ -44571,7 +44550,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ/preview",
-            "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
                 "local_solution_image": "assets/quiz-images/img_1CSF-7IFkSXhfzk1vx558Xzpn3wvgTUsQ.jpg",
                 "video_explanation": ""
             },
@@ -44624,7 +44602,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3/preview",
-            "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
                 "local_solution_image": "assets/quiz-images/img_1KwSqVhSna6gOKbaYWfLi_t_9A15BRJC3.jpg",
                 "video_explanation": ""
             },
@@ -44677,7 +44654,6 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy/preview",
-            "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
                 "local_solution_image": "assets/quiz-images/img_1NumEwnWQ5aLnIee_10X-kfQz1cvgFLuy.jpg",
                 "video_explanation": ""
             },
@@ -59332,8 +59308,7 @@ const QUESTIONS = {
                 "topic": "Deformation and Stiffness",
                 "search_term": "deformation and stiffness",
                 "page_number": null
-            },
-            "local_question_image": "assets/quiz-images/img_1jEfIfyVMLSsAFvQQtVNuCsonR3Xuwrdi.jpg"
+            }
         },
         {
             "topic": "Deformation and Stiffness",
@@ -59389,8 +59364,7 @@ const QUESTIONS = {
                 "topic": "Deformation and Stiffness",
                 "search_term": "deformation and stiffness",
                 "page_number": null
-            },
-            "local_question_image": "assets/quiz-images/img_1cGVyB4G6KbvAmiErnNHulq3ZqiEi8sxO.jpg"
+            }
         },
         {
             "topic": "Springs",
@@ -59611,8 +59585,7 @@ const QUESTIONS = {
                 "topic": "Pressure Vessels and Piping",
                 "search_term": "pressure vessels and piping",
                 "page_number": null
-            },
-            "local_question_image": "assets/quiz-images/img_1VDU26Nw97IROWdyYgQwPO5xNrsUu5UmZ.jpg"
+            }
         },
         {
             "topic": "Bearings",
@@ -59668,8 +59641,7 @@ const QUESTIONS = {
                 "topic": "Bearings",
                 "search_term": "bearings",
                 "page_number": 437
-            },
-            "local_question_image": "assets/quiz-images/img_1i6CWZdixo-LF5elsBGuuVzHTUEjkCFx8.jpg"
+            }
         },
         {
             "topic": "Power Screws",
@@ -59788,8 +59760,7 @@ const QUESTIONS = {
                 "topic": "Power Screws",
                 "search_term": "power screws",
                 "page_number": 438
-            },
-            "local_question_image": "assets/quiz-images/img_1VZu56yc6CYyOmbZHjAZrklHtWH3XSAnh.jpg"
+            }
         },
         {
             "topic": "Power Transmission",
@@ -59849,8 +59820,7 @@ const QUESTIONS = {
                 "topic": "Power Transmission",
                 "search_term": "power transmission",
                 "page_number": 438
-            },
-            "local_question_image": "assets/quiz-images/img_1KVbgti0rJ46Tn-rkG61NbgCtlTXy2jxF.jpg"
+            }
         },
         {
             "topic": "Power Transmission",
@@ -60016,8 +59986,7 @@ const QUESTIONS = {
                 "topic": "Joining Methods",
                 "search_term": "joining methods",
                 "page_number": 441
-            },
-            "local_question_image": "assets/quiz-images/img_1j9nq5mcSYUP4mYa6Nyks0h4bZWIajCkA.jpg"
+            }
         },
         {
             "topic": "Manufacturability",
@@ -60187,8 +60156,7 @@ const QUESTIONS = {
                 "topic": "Quality and Reliability",
                 "search_term": "quality and reliability",
                 "page_number": null
-            },
-            "local_question_image": "assets/quiz-images/img_1Fwsu6jrm4Rbs3jyw-emTOD2eVuplL8Dr.jpg"
+            }
         },
         {
             "topic": "Quality and Reliability",
@@ -60244,8 +60212,7 @@ const QUESTIONS = {
                 "topic": "Quality and Reliability",
                 "search_term": "quality and reliability",
                 "page_number": null
-            },
-            "local_question_image": "assets/quiz-images/img_1WYtwIEV04uupi5vkaz2sfxAvIOtieXa6.jpg"
+            }
         },
         {
             "topic": "Components",
@@ -60305,8 +60272,7 @@ const QUESTIONS = {
                 "topic": "Components",
                 "search_term": "components",
                 "page_number": 38
-            },
-            "local_question_image": "assets/quiz-images/img_1fug7m58OXs_Kn1j3Klm8OxhLk6Q3B-56.jpg"
+            }
         },
         {
             "topic": "Components",
@@ -60366,8 +60332,7 @@ const QUESTIONS = {
                 "topic": "Components",
                 "search_term": "components",
                 "page_number": 38
-            },
-            "local_question_image": "assets/quiz-images/img_1eu64aCq1kvJKpdmgVy_fDAqJz_USLmzD.jpg"
+            }
         },
         {
             "topic": "Engineering Drawing Interpretations and GD & T",
@@ -60414,7 +60379,7 @@ const QUESTIONS = {
                 ],
                 "final_answer": "D",
                 "solution_image": "https://drive.google.com/file/d/1lomhktdMjUwyzMxJZs3dBODCAqajoITV/preview",
-            "local_solution_image": "assets/quiz-images/img_1lomhktdMjUwyzMxJZs3dBODCAqajoITV.jpg",
+                "local_solution_image": "assets/quiz-images/img_1lomhktdMjUwyzMxJZs3dBODCAqajoITV.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -60822,7 +60787,6 @@ const QUESTIONS = {
                 "page_number": 437
             }
         },
-
         {
             "topic": "Components",
             "title": "Key Stress Analysis — Shear vs. Crushing",
@@ -61399,7 +61363,6 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-
         {
             "topic": "Engineering Drawing Interpretations and GD & T",
             "title": "Flatness vs. Straightness Symbols",
@@ -62013,22 +61976,22 @@ const QUESTIONS = {
             "options": [
                 {
                     "label": "A",
-                    "text": "$\sigma = \\frac{P}{t L}$",
+                    "text": "$sigma = \\frac{P}{t L}$",
                     "is_correct": true
                 },
                 {
                     "label": "B",
-                    "text": "$\sigma = \\frac{P}{0.707 t L}$",
+                    "text": "$sigma = \\frac{P}{0.707 t L}$",
                     "is_correct": false
                 },
                 {
                     "label": "C",
-                    "text": "$\sigma = \\frac{2P}{t L}$",
+                    "text": "$sigma = \\frac{2P}{t L}$",
                     "is_correct": false
                 },
                 {
                     "label": "D",
-                    "text": "$\sigma = \\frac{P}{2 t L}$",
+                    "text": "$sigma = \\frac{P}{2 t L}$",
                     "is_correct": false
                 }
             ],
@@ -62337,7 +62300,6 @@ const QUESTIONS = {
                 "page_number": 444
             }
         },
-
         {
             "topic": "Manufacturability",
             "title": "Bilateral vs. Unilateral Tolerances",
@@ -62671,7 +62633,6 @@ const QUESTIONS = {
                 "page_number": 438
             }
         },
-
         {
             "topic": "Power Transmission",
             "title": "Gear Train Velocity Ratio",
@@ -63201,7 +63162,6 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-
         {
             "topic": "Pressure Vessels and Piping",
             "title": "Longitudinal Weld Stress",
@@ -63343,7 +63303,6 @@ const QUESTIONS = {
                 "page_number": null
             }
         },
-
         {
             "topic": "Quality and Reliability",
             "title": "System Reliability in Series",
