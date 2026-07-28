@@ -3642,7 +3642,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (window.firebaseDb) {
                 // Fetch all users to ensure we don't miss legacy accounts that only have 'points' instead of 'userPoints'
                 // This resolves the missing 22 users issue (76 total users vs 54).
-                const snapshot = await window.firebaseDb.collection("users").limit(300).get();
+                const snapshot = await window.firebaseDb.collection("users").limit(1000).get();
                 if (!snapshot.empty) {
                     realUsers = [];
                     snapshot.forEach(doc => {
@@ -3661,10 +3661,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                         }
                     });
                     
-                    // Sort descending in memory since we fetched all
-                    realUsers.sort((a, b) => b.points - a.points);
-                    // Trim to top 100
-                    realUsers = realUsers.slice(0, 100);
+                    // We will sort and trim AFTER deduplicating below.
                 }
             }
         } catch (e) {
@@ -3728,12 +3725,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Sort by points descending
         allUsers.sort((a, b) => b.points - a.points);
 
-        // Take top 100
-        const top100 = allUsers.slice(0, 100);
+        // Take top 500
+        const top500 = allUsers.slice(0, 500);
 
         const isAdmin = state.user.username && state.user.username.toLowerCase() === 'admin';
 
-        list.innerHTML = top100.map((user, index) => {
+        list.innerHTML = top500.map((user, index) => {
             const rank = index + 1;
             let rankBadge = '';
             if (rank === 1) rankBadge = 'bg-amber-400 text-white';
