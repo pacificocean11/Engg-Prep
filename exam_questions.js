@@ -2846,8 +2846,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Equivalent Capacitance Calculation",
             "question": "What will be the equivalent capacitance at the terminals A, B?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/15kdYUs1hSSm_D_SlTVxQjMK9tujgq2Pp/preview",
+            "local_question_image": "assets/quiz-images/img_15kdYUs1hSSm_D_SlTVxQjMK9tujgq2Pp.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -2948,8 +2948,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Temperature Dependence of Resistance",
             "question": "A resistor measures 4 $\\Omega$ at 40$^\\circ$ C and 6 $\\Omega$ at 80$^\\circ$ C. At T = 0$^\\circ$ C the resistor will measure:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1p8Whf--A530iCPdZotGC_e_a1iBqukop/preview",
+            "local_question_image": "assets/quiz-images/img_1p8Whf--A530iCPdZotGC_e_a1iBqukop.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3003,8 +3003,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Characteristics of Alternating Current",
             "question": "Which of the following statements is incorrect for alternating current?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1bQoRr1rEWVHVvIhrmfDpMlDsXTAGghHL/preview",
+            "local_question_image": "assets/quiz-images/img_1bQoRr1rEWVHVvIhrmfDpMlDsXTAGghHL.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3054,8 +3054,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Power Dissipated in Series LCR Circuit",
             "question": "A series LCR circuit ($R = 30\\ \\Omega$, $X_L = 40\\ \\Omega$, $X_C = 80\\ \\Omega$) is connected to an AC source of $200\\text{ V}$ and $50\\text{ Hz}$. The power dissipated in the circuit is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1p5_IvdF6ipPSUnLuqpsNU4tQmCWP8ZYQ/preview",
+            "local_question_image": "assets/quiz-images/img_1p5_IvdF6ipPSUnLuqpsNU4tQmCWP8ZYQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3109,8 +3109,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Inductive Reactance and Impedance",
             "question": "The coil of the inductor element of 0.5 H is connected to an alternating source of frequency 50 Hz and its impedance will be -",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1dQ7STsEUTR8kdBaKXqiu2_4AwVss_yFR/preview",
+            "local_question_image": "assets/quiz-images/img_1dQ7STsEUTR8kdBaKXqiu2_4AwVss_yFR.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3160,8 +3160,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Peak Current in Purely Inductive AC Circuit",
             "question": "A 100 mH inductor is connected to a 157 V, 50 Hz AC source. The peak current of the circuit is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/11G1WuYdihT-EOaq7NjAaNIyixPZv8kvD/preview",
+            "local_question_image": "assets/quiz-images/img_11G1WuYdihT-EOaq7NjAaNIyixPZv8kvD.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3215,8 +3215,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Phase Relationship in an Inductive Circuit",
             "question": "The current in the inductor:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1x1jQUGMkB7jx7gorvM1XFQzmpwvrowTc/preview",
+            "local_question_image": "assets/quiz-images/img_1x1jQUGMkB7jx7gorvM1XFQzmpwvrowTc.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3321,8 +3321,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Working Principles of Transformers",
             "question": "Which of the following option is correct regarding transformer?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1oIT9owtryg4KeQPDc5qiP0aOZZGBrSuW/preview",
+            "local_question_image": "assets/quiz-images/img_1oIT9owtryg4KeQPDc5qiP0aOZZGBrSuW.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3372,8 +3372,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Ideal Transformer Properties",
             "question": "Which of the following remains constant in an ideal step down transformer?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1huo8Lo2VLaJxSGa7mlvQQ7vCT1cJfsBQ/preview",
+            "local_question_image": "assets/quiz-images/img_1huo8Lo2VLaJxSGa7mlvQQ7vCT1cJfsBQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3525,8 +3525,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Parallel Circuit Current Division",
             "question": "Find the current through 3-ohm resistor",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1_dihmCp41i16cw06BsKYHAMVZEbT1c8Z/preview",
+            "local_question_image": "assets/quiz-images/img_1_dihmCp41i16cw06BsKYHAMVZEbT1c8Z.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3839,8 +3839,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Resonance in Series RLC Circuit",
             "question": "In a series RLC circuit the impedance is _______ and current is ________ at resonance.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1NyGLG7FtBAYfA7eIk6q3gyZKKDHB7kT7/preview",
+            "local_question_image": "assets/quiz-images/img_1NyGLG7FtBAYfA7eIk6q3gyZKKDHB7kT7.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3888,69 +3888,10 @@ const EXAM_QUESTIONS = {
         },
         {
             "topic": "Electricity and Magnetism",
-            "title": "Potentiometer and Balancing Length",
-            "question": "Figure shows a potentiometer wire AB having resistance of $5\\ \\Omega$ and length $10\\text{ m}$. An e.m.f. is $0.4\\text{ V}$ of battery, the balancing length AP is (internal resistance is negligible)",
-            "question_image": "",
-            "local_question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$8\\text{ m}$",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "$10\\text{ m}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$6\\text{ m}$",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "$4\\text{ m}$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Potentiometer Principle",
-                        "content": "A potentiometer works on the principle that the potential drop across any length of a uniform wire carrying a constant current is directly proportional to its length:\n$$V_{AP} = k \\cdot l_{AP} \\implies E_{\\text{cell}} = k \\cdot l_{AP}$$\n\nWhere:\n- $k$ = Potential gradient of the potentiometer wire ($\\text{V/m}$)\n- $l_{AP}$ = Balancing length AP\n- $E_{\\text{cell}} = 0.4\\text{ V}$ = Unknown EMF to be balanced"
-                    },
-                    {
-                        "title": "Step 1: Calculate Total Current in Main Circuit",
-                        "content": "The primary circuit consists of a driver cell of EMF $E_{\\text{driver}} = 5\\text{ V}$, external resistance $R = 45\\ \\Omega$, and wire resistance $R_{AB} = 5\\ \\Omega$:\n$$I = \\frac{E_{\\text{driver}}}{R_{AB} + R} = \\frac{5\\text{ V}}{5\\ \\Omega + 45\\ \\Omega} = \\frac{5}{50} = 0.1\\text{ A}$$"
-                    },
-                    {
-                        "title": "Step 2: Calculate Potential Drop Across Wire AB and Potential Gradient",
-                        "content": "The total potential difference across the potentiometer wire $AB$ is:\n$$V_{AB} = I \\cdot R_{AB} = 0.1\\text{ A} \\times 5\\ \\Omega = 0.5\\text{ V}$$\n\nThe potential gradient $k$ along the wire of length $L = 10\\text{ m}$ is:\n$$k = \\frac{V_{AB}}{L} = \\frac{0.5\\text{ V}}{10\\text{ m}} = 0.05\\text{ V/m}$$"
-                    },
-                    {
-                        "title": "Step 3: Calculate the Balancing Length ($l_{AP}$)",
-                        "content": "At null deflection, the potential difference across section $AP$ balances the EMF of the cell ($0.4\\text{ V}$):\n$$E_{\\text{cell}} = k \\cdot l_{AP}$$\n\n$$0.4 = 0.05 \\cdot l_{AP}$$\n\n$$l_{AP} = \\frac{0.4}{0.05} = 8\\text{ m}$$\n\nTherefore, the balancing length AP is $8\\text{ m}$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Electricity and Magnetism",
-                "topic": "DC Circuits",
-                "search_term": "Potentiometer"
-            }
-        },
-        {
-            "topic": "Electricity and Magnetism",
             "title": "Kirchhoff's First Law (Junction Rule)",
             "question": "The currents in different parts of the electric circuit are shown in following figure. The value of current $i$ is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1X_ySMBKzJMi-EMJrnUmgwtlZFKJfT5rx/preview",
+            "local_question_image": "assets/quiz-images/img_1X_ySMBKzJMi-EMJrnUmgwtlZFKJfT5rx.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4063,8 +4004,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "RMS Value of Time-Varying Current",
             "question": "The electric current in the circuit is given as $i = i_o(t/T)$. The r.m.s current for the period $t = 0$ to $t = T$ is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PyIcssogtV8adwT8DcizXVDJtRVhq-aL/preview",
+            "local_question_image": "assets/quiz-images/img_1PyIcssogtV8adwT8DcizXVDJtRVhq-aL.jpg",
             "times_presented": 0,
             "options": [
                 {
