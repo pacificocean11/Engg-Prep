@@ -1238,7 +1238,7 @@ const QUESTIONS = {
         {
             "topic": "Numerical Methods",
             "title": "Numerical Integration: Trapezoidal Rule Error Analysis",
-            "question": "The error in numerically computing the integral $\\int_{0}^{\\pi} (\\sin x + \\cos x) dx$ using the trapezoidal rule with three intervals of equal length between $0$ and $\\pi$ is \\underline{\\hspace{2cm}}.",
+            "question": "The error in numerically computing the integral $\\int_{0}^{\\pi} (\\sin x + \\cos x) dx$ using the trapezoidal rule with three intervals of equal length between $0$ and $\\pi$ is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -1284,7 +1284,7 @@ const QUESTIONS = {
         {
             "topic": "Numerical Methods",
             "title": "Numerical Integration: Trapezoidal Rule",
-            "question": "Using a unit step size, the value of integral $\\int_{1}^{2} x \\ln x dx$ by trapezoidal rule is \\underline{\\hspace{2cm}}.",
+            "question": "Using a unit step size, the value of integral $\\int_{1}^{2} x \\ln x dx$ by trapezoidal rule is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -1330,7 +1330,7 @@ const QUESTIONS = {
         {
             "topic": "Numerical Methods",
             "title": "Numerical Integration: Trapezoidal Rule",
-            "question": "The values of function $f(x)$ at 5 discrete points are given below:\n\n\n\nUsing Trapezoidal rule with step size of 0.1, the value of $\\int_{0}^{0.4} f(x) dx$ is \\underline{\\hspace{2cm}}.",
+            "question": "The values of function $f(x)$ at 5 discrete points are given below:\n\n\n\nUsing Trapezoidal rule with step size of 0.1, the value of $\\int_{0}^{0.4} f(x) dx$ is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -7870,7 +7870,7 @@ const QUESTIONS = {
         {
             "topic": "Probability Distributions",
             "title": "Binomial Probability Distribution",
-            "question": "A lot had 10\\% defective items. Ten items are chosen randomly from this lot. The probability that exactly 2 of the chosen items are defective is",
+            "question": "A lot had 10\% defective items. Ten items are chosen randomly from this lot. The probability that exactly 2 of the chosen items are defective is",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -8166,7 +8166,7 @@ const QUESTIONS = {
         {
             "topic": "Probability",
             "title": "Conditional Probability",
-            "question": "The chance of a student passing an exam is 20\\%. The chance of a student passing the exam and getting above 90\\% marks in it is 5\\%. Given that a student passes the examination, the probability that the student gets above 90\\% marks is",
+            "question": "The chance of a student passing an exam is 20\%. The chance of a student passing the exam and getting above 90\% marks in it is 5\%. Given that a student passes the examination, the probability that the student gets above 90\% marks is",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -18143,7 +18143,7 @@ const QUESTIONS = {
         {
             "topic": "Logic Diagrams",
             "title": "De Morgan's Laws",
-            "question": "According to De Morgan's laws in Boolean algebra, the expression $overline{A cdot B}$ is equivalent to:",
+            "question": "According to De Morgan's laws in Boolean algebra, the expression $\\overline{A \\cdot B}$ is equivalent to:",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -30605,7 +30605,8 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Moment of Inertia of Hollow Composite Section",
             "question": "The value of moment of inertia of the section shown in the figure about the axis-$X X$ is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jyRAEt2HCxF7PRqb7DajW2muZ6BWtdxE/preview",
+            "local_question_image": "assets/quiz-images/img_1jyRAEt2HCxF7PRqb7DajW2muZ6BWtdxE.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -30661,7 +30662,8 @@ const QUESTIONS = {
             "topic": "Centroids and Moments of Inertia",
             "title": "Area Moment of Inertia About Base",
             "question": "The figure shows cross-section of a beam subjected to bending. The area moment of inertia (in $\\text{mm}^4$) of this cross-section about its base is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/11lJoFvXlshfeQcBk2sDCpTkC5xOb6XvY/preview",
+            "local_question_image": "assets/quiz-images/img_11lJoFvXlshfeQcBk2sDCpTkC5xOb6XvY.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37156,7 +37158,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Average Speed for Equal Distance Segments",
-            "question": "A car covers the first half of the distance between two places at $40\\text{ km/h}$ and another half at $50\\text{ km/h}$. The average speed of the car is \\underline{\\hspace{2cm}}.",
+            "question": "A car covers the first half of the distance between two places at $40\\text{ km/h}$ and another half at $50\\text{ km/h}$. The average speed of the car is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37208,7 +37210,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Displacement at Zero Velocity",
-            "question": "The displacement $x$ (in $\\text{m}$) of a particle of mass $m$ (in $\\text{kg}$) moving in one dimension under the action of a force, is related to time $t$ (in $\\text{sec}$) by $t = \\sqrt{x} + 3$. The displacement of the particle when its velocity is zero, will be \\underline{\\hspace{2cm}}.",
+            "question": "The displacement $x$ (in $\\text{m}$) of a particle of mass $m$ (in $\\text{kg}$) moving in one dimension under the action of a force, is related to time $t$ (in $\\text{sec}$) by $t = \\sqrt{x} + 3$. The displacement of the particle when its velocity is zero, will be _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37320,7 +37322,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Maximum Speed from Acceleration-Time Graph",
-            "question": "A particle starts from rest. Its acceleration $a$ versus time $t$ is shown in the figure. The maximum speed of the particle will be \\underline{\\hspace{2cm}}.",
+            "question": "A particle starts from rest. Its acceleration $a$ versus time $t$ is shown in the figure. The maximum speed of the particle will be _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37372,7 +37374,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Stopping Distance and Velocity Proportionality",
-            "question": "A car moving with a velocity of $20\\text{ ms}^{-1}$ stopped at a distance of $40\\text{ m}$. If the same car is travelling at double the velocity, the distance travelled by it for same retardation is \\underline{\\hspace{2cm}}.",
+            "question": "A car moving with a velocity of $20\\text{ ms}^{-1}$ stopped at a distance of $40\\text{ m}$. If the same car is travelling at double the velocity, the distance travelled by it for same retardation is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37424,7 +37426,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "2D Motion with Constant Acceleration",
-            "question": "A particle starts from the origin at $t = 0$ with a velocity of $10\\hat{\\mathbf{j}}\\text{ ms}^{-1}$ and move in the $x\\text{-}y$ plane with a constant acceleration of $(8\\hat{\\mathbf{i}} + 2\\hat{\\mathbf{j}})\\text{ms}^{-2}$. At an instant when the $x$-coordinate of the particle is $16\\text{ m}$, $y$-coordinate of the particle is \\underline{\\hspace{2cm}}.",
+            "question": "A particle starts from the origin at $t = 0$ with a velocity of $10\\hat{\\mathbf{j}}\\text{ ms}^{-1}$ and move in the $x\\text{-}y$ plane with a constant acceleration of $(8\\hat{\\mathbf{i}} + 2\\hat{\\mathbf{j}})\\text{ms}^{-2}$. At an instant when the $x$-coordinate of the particle is $16\\text{ m}$, $y$-coordinate of the particle is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37476,7 +37478,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Relative Velocity in Two Dimensions (Rain-Woman Problem)",
-            "question": "Rain is falling vertically with a speed of $12\\text{ ms}^{-1}$. A woman rides a bicycles with a speed of $12\\text{ ms}^{-1}$ in east to west direction. What is the direction in which she should hold her umbrella? \\underline{\\hspace{2cm}}.",
+            "question": "Rain is falling vertically with a speed of $12\\text{ ms}^{-1}$. A woman rides a bicycles with a speed of $12\\text{ ms}^{-1}$ in east to west direction. What is the direction in which she should hold her umbrella? _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37532,7 +37534,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Static Equilibrium and Tension in Strings",
-            "question": "A mass $M$ is hung with a light inextensible string as shown in figure. Find the tension of the horizontal string. \\underline{\\hspace{2cm}}.",
+            "question": "A mass $M$ is hung with a light inextensible string as shown in figure. Find the tension of the horizontal string. _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37588,7 +37590,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Apparent Weight in an Accelerating Elevator",
-            "question": "A man weighs $80\\text{ kg}$. He stands on a weighing scale in a lift which is moving upwards with a uniform acceleration of $6\\text{ m/s}^2$. What would be his weight in kg? ($g = 10\\text{ m/s}^2$) \\underline{\\hspace{2cm}}.",
+            "question": "A man weighs $80\\text{ kg}$. He stands on a weighing scale in a lift which is moving upwards with a uniform acceleration of $6\\text{ m/s}^2$. What would be his weight in kg? ($g = 10\\text{ m/s}^2$) _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37644,7 +37646,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Mass Calculation from Friction and Velocity-Time Graph",
-            "question": "A block of certain mass is placed on a rough floor. The coefficients of static and kinetic friction between the block and the floor are $0.4$ and $0.25$ respectively. A constant horizontal force $F = 20\\text{ N}$ acts on it so that the velocity of the block varies with time according to the following graph. The mass of the block is nearly (Take $g \\simeq 10\\text{ ms}^{-2}$) \\underline{\\hspace{2cm}}.",
+            "question": "A block of certain mass is placed on a rough floor. The coefficients of static and kinetic friction between the block and the floor are $0.4$ and $0.25$ respectively. A constant horizontal force $F = 20\\text{ N}$ acts on it so that the velocity of the block varies with time according to the following graph. The mass of the block is nearly (Take $g \\simeq 10\\text{ ms}^{-2}$) _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37696,7 +37698,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Block on Rough Inclined Plane",
-            "question": "A block of certain mass is placed on a rough inclined plane. The angle between the plane and the horizontal is $30^\\circ$. The coefficients of static and kinetic frictions between the block and the inclined plane are $0.6$ and $0.5$ respectively. Then, the magnitude of the acceleration of the block is [Take $g = 10\\text{ ms}^{-2}$] \\underline{\\hspace{2cm}}.",
+            "question": "A block of certain mass is placed on a rough inclined plane. The angle between the plane and the horizontal is $30^\\circ$. The coefficients of static and kinetic frictions between the block and the inclined plane are $0.6$ and $0.5$ respectively. Then, the magnitude of the acceleration of the block is [Take $g = 10\\text{ ms}^{-2}$] _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37752,7 +37754,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Acceleration of Body on Rough Horizontal Surface",
-            "question": "A body of mass $10\\text{ kg}$ is kept on a horizontal surface. The coefficient of kinetic friction between the body and the surface is $0.5$. A horizontal force of $60\\text{ N}$ is applied on the body. The resulting acceleration of the body is about \\underline{\\hspace{2cm}}.",
+            "question": "A body of mass $10\\text{ kg}$ is kept on a horizontal surface. The coefficient of kinetic friction between the body and the surface is $0.5$. A horizontal force of $60\\text{ N}$ is applied on the body. The resulting acceleration of the body is about _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37860,7 +37862,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Time when Velocity vector aligns with Y-axis",
-            "question": "An object with mass $5\\text{ kg}$ is acted upon by a force, $\\mathbf{F} = (-3\\hat{\\mathbf{i}} - 4\\hat{\\mathbf{j}})\\text{N}$. If its initial velocity at $t = 0$ is $\\mathbf{v} = (3\\hat{\\mathbf{i}} + 12\\hat{\\mathbf{j}})\\text{m/s}$, the time at which it will just have a velocity along $y$-axis is - \\underline{\\hspace{2cm}}.",
+            "question": "An object with mass $5\\text{ kg}$ is acted upon by a force, $\\mathbf{F} = (-3\\hat{\\mathbf{i}} - 4\\hat{\\mathbf{j}})\\text{N}$. If its initial velocity at $t = 0$ is $\\mathbf{v} = (3\\hat{\\mathbf{i}} + 12\\hat{\\mathbf{j}})\\text{m/s}$, the time at which it will just have a velocity along $y$-axis is - _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37916,7 +37918,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Acceleration Vector in Uniform Circular Motion",
-            "question": "A particle is in uniform circular motion. The equation of its trajectory is given by $(x - 2)^2 + y^2 = 25$, where $x$ and $y$ are in meter. The speed of the particle is $2\\text{ ms}^{-1}$, when the particle attains the lowest '$y$' co-ordinate, the acceleration of the particle is (in $\\text{ms}^{-2}$) \\underline{\\hspace{2cm}}.",
+            "question": "A particle is in uniform circular motion. The equation of its trajectory is given by $(x - 2)^2 + y^2 = 25$, where $x$ and $y$ are in meter. The speed of the particle is $2\\text{ ms}^{-1}$, when the particle attains the lowest '$y$' co-ordinate, the acceleration of the particle is (in $\\text{ms}^{-2}$) _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -37972,7 +37974,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Distance and Displacement on a Circular Track",
-            "question": "An athlete runs along a circular track of diameter $80\\text{ m}$. The distance travelled and the magnitude of displacement of the athlete when he covers $3/4$ th of the circle is (in $\\text{m}$) \\underline{\\hspace{2cm}}.",
+            "question": "An athlete runs along a circular track of diameter $80\\text{ m}$. The distance travelled and the magnitude of displacement of the athlete when he covers $3/4$ th of the circle is (in $\\text{m}$) _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -38024,7 +38026,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Uniform Circular Motion in One Complete Revolution",
-            "question": "A particle is in uniform circular motion, related to one complete revolution of the particle, which among the statements is incorrect? \\underline{\\hspace{2cm}}.",
+            "question": "A particle is in uniform circular motion, related to one complete revolution of the particle, which among the statements is incorrect? _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -38080,7 +38082,7 @@ const QUESTIONS = {
         {
             "topic": "Kinematics",
             "title": "Angle Between Velocity and Acceleration in Uniform Circular Motion",
-            "question": "The angle between velocity and acceleration of a particle describing uniform circular motion is \\underline{\\hspace{2cm}}.",
+            "question": "The angle between velocity and acceleration of a particle describing uniform circular motion is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -38136,7 +38138,7 @@ const QUESTIONS = {
         {
             "topic": "Laws of Motion",
             "title": "Change in Kinetic Energy under Constant Force",
-            "question": "A horizontal force of $5\\text{ N}$ is applied on a stationary body of mass $5\\text{ kg}$, which is initially at rest on a frictionless table. The change in kinetic energy of the body in $10\\text{ s}$ is \\underline{\\hspace{2cm}}.",
+            "question": "A horizontal force of $5\\text{ N}$ is applied on a stationary body of mass $5\\text{ kg}$, which is initially at rest on a frictionless table. The change in kinetic energy of the body in $10\\text{ s}$ is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -38192,7 +38194,7 @@ const QUESTIONS = {
         {
             "topic": "Work, Power, Energy",
             "title": "Work Done by Variable Force / Work-Energy Theorem",
-            "question": "A body of mass $0.25\\text{ kg}$ travels along a straight line from $x = 0$ to $x = 2\\text{ m}$ with a speed $v = k x^{3/2}$ where $k = 2\\text{ SI units}$. The work done by the net force during this displacement is \\underline{\\hspace{2cm}}.",
+            "question": "A body of mass $0.25\\text{ kg}$ travels along a straight line from $x = 0$ to $x = 2\\text{ m}$ with a speed $v = k x^{3/2}$ where $k = 2\\text{ SI units}$. The work done by the net force during this displacement is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -38877,7 +38879,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Support Reactions in Simply-Supported Beam Under Concentrated Moment",
             "question": "A simply supported beam $PQ$ is loaded by a moment of $1\\text{ kN}\\cdot\\text{m}$ at the mid-span of the beam as shown in the figure. The reaction forces $R_P$ and $R_Q$ at supports $P$ and $Q$ respectively are",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1IALzr1df_kbAzd0mXUNgBpToM9j6GjQC/preview",
+            "local_question_image": "assets/quiz-images/img_1IALzr1df_kbAzd0mXUNgBpToM9j6GjQC.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -43335,7 +43338,7 @@ const QUESTIONS = {
         {
             "topic": "Elasticity and Mechanical Properties of Solids",
             "title": "Breaking Stress and Cross-Sectional Area",
-            "question": "A metallic rod breaks when strain produced is $0.2\\%$. The Young's modulus of the material of the rod $7 \\times 10^9\\text{ N/m}^2$. The area of crosssection to support a load of $10^4\\text{ N}$ is \\underline{\\hspace{2cm}}.",
+            "question": "A metallic rod breaks when strain produced is $0.2\\%$. The Young's modulus of the material of the rod $7 \\times 10^9\\text{ N/m}^2$. The area of crosssection to support a load of $10^4\\text{ N}$ is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -43387,7 +43390,7 @@ const QUESTIONS = {
         {
             "topic": "Elasticity and Mechanical Properties of Solids",
             "title": "Young's Modulus of a Perfectly Rigid Body",
-            "question": "Young's modulus of a perfect rigid body is \\underline{\\hspace{2cm}}.",
+            "question": "Young's modulus of a perfect rigid body is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -43441,7 +43444,7 @@ const QUESTIONS = {
         {
             "topic": "Phase Diagrams",
             "title": "Pro-Eutectoid Phase Fraction in Hypoeutectoid Steel",
-            "question": "In $\\text{Fe-Fe}_3\\text{C}$ phase diagram, the eutectoid composition is $0.8\\text{ weight \\%}$ of carbon at $725^\\circ\\text{C}$. The maximum solubility of carbon in $\\alpha$-ferrite phase is $0.025\\text{ weight \\%}$ of carbon. A steel sample, having no other alloying element except $0.5\\text{ weight \\%}$ of carbon, is slowly cooled from $1000^\\circ\\text{C}$ to room temperature. The fraction of pro-eutectoid $\\alpha$-ferrite in the above steel sample at room temperature is \\underline{\\hspace{2cm}}.",
+            "question": "In $\\text{Fe-Fe}_3\\text{C}$ phase diagram, the eutectoid composition is $0.8\\text{ weight \%}$ of carbon at $725^\\circ\\text{C}$. The maximum solubility of carbon in $\\alpha$-ferrite phase is $0.025\\text{ weight \%}$ of carbon. A steel sample, having no other alloying element except $0.5\\text{ weight \%}$ of carbon, is slowly cooled from $1000^\\circ\\text{C}$ to room temperature. The fraction of pro-eutectoid $\\alpha$-ferrite in the above steel sample at room temperature is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -46735,7 +46738,7 @@ const QUESTIONS = {
         {
             "topic": "Properties of Bulk Matter",
             "title": "Capillary Rise in Weightlessness / Free Fall",
-            "question": "A $30\\text{ cm}$ long capillary tube is dipped in water, water rises upto a height of $10\\text{ cm}$ due to capillarity. If this experiment is conducted in a freely falling water in an elevator, then the length of the water column becomes \\underline{\\hspace{2cm}}.",
+            "question": "A $30\\text{ cm}$ long capillary tube is dipped in water, water rises upto a height of $10\\text{ cm}$ due to capillarity. If this experiment is conducted in a freely falling water in an elevator, then the length of the water column becomes _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -46789,7 +46792,7 @@ const QUESTIONS = {
         {
             "topic": "Flow Measurement",
             "title": "Pitot Tube with U-Tube Manometer",
-            "question": "A pitot tube connected to a U-tube mercury manometer measures the speed of air flowing in the wind tunnel as shown in the figure below. The density of air is $1.23 \\text{ kg m}^{-3}$ while the density of water is $1000 \\text{ kg m}^{-3}$. For the manometer reading of $h = 30 \\text{ mm}$ of mercury, the speed of air in the wind tunnel is \\underline{\\hspace{2cm}} $\\text{ms}^{-1}$ (rounded off to 1 decimal place).\n\nAssume: Specific gravity of mercury = $13.6$\n\nAcceleration due to gravity = $10 \\text{ m s}^{-2}$",
+            "question": "A pitot tube connected to a U-tube mercury manometer measures the speed of air flowing in the wind tunnel as shown in the figure below. The density of air is $1.23 \\text{ kg m}^{-3}$ while the density of water is $1000 \\text{ kg m}^{-3}$. For the manometer reading of $h = 30 \\text{ mm}$ of mercury, the speed of air in the wind tunnel is _____ $\\text{ms}^{-1}$ (rounded off to 1 decimal place).\n\nAssume: Specific gravity of mercury = $13.6$\n\nAcceleration due to gravity = $10 \\text{ m s}^{-2}$",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -46835,7 +46838,7 @@ const QUESTIONS = {
         {
             "topic": "Continuity Equation",
             "title": "Conservation of Mass in Branching Channels",
-            "question": "A channel of width $450\\text{ mm}$ branches into two sub-channels having width $300\\text{ mm}$ and $200\\text{ mm}$ as shown in figure. If the volumetric flow rate (taking unit depth) of an incompressible flow through the main channel is $0.9\\text{ m}^3/\\text{s}$, and the velocity in the sub-channel of width $200\\text{ mm}$ is $3\\text{ m}/\\text{s}$, the velocity in the sub-channel of width $300\\text{ mm}$ is \\underline{\\hspace{2cm}} $\\text{m}/\\text{s}$.\n\nAssume both inlet and outlet to be at the same elevation.",
+            "question": "A channel of width $450\\text{ mm}$ branches into two sub-channels having width $300\\text{ mm}$ and $200\\text{ mm}$ as shown in figure. If the volumetric flow rate (taking unit depth) of an incompressible flow through the main channel is $0.9\\text{ m}^3/\\text{s}$, and the velocity in the sub-channel of width $200\\text{ mm}$ is $3\\text{ m}/\\text{s}$, the velocity in the sub-channel of width $300\\text{ mm}$ is _____ $\\text{m}/\\text{s}$.\n\nAssume both inlet and outlet to be at the same elevation.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -46881,7 +46884,7 @@ const QUESTIONS = {
         {
             "topic": "Pipe Flow",
             "title": "Reynolds Number Calculation",
-            "question": "Water flows through a pipe having an inner radius of $10\\text{ mm}$ at the rate of $36\\text{ kg/hr}$ at $25^\\circ\\text{C}$. The viscosity of water at $25^\\circ\\text{C}$ is $0.001\\text{ kg/m}\\cdot\\text{s}$. The Reynolds number of the flow is \\underline{\\hspace{2cm}}.",
+            "question": "Water flows through a pipe having an inner radius of $10\\text{ mm}$ at the rate of $36\\text{ kg/hr}$ at $25^\\circ\\text{C}$. The viscosity of water at $25^\\circ\\text{C}$ is $0.001\\text{ kg/m}\\cdot\\text{s}$. The Reynolds number of the flow is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -46927,7 +46930,7 @@ const QUESTIONS = {
         {
             "topic": "Pipe Flow",
             "title": "Darcy Friction Factor in Laminar Flow",
-            "question": "For a fully developed flow of water in a pipe having diameter $10\\text{ cm}$, velocity $0.1\\text{ m/s}$ and kinematic viscosity $10^{-5}\\text{ m}^2/\\text{s}$, the value of Darcy friction factor is \\underline{\\hspace{2cm}}.",
+            "question": "For a fully developed flow of water in a pipe having diameter $10\\text{ cm}$, velocity $0.1\\text{ m/s}$ and kinematic viscosity $10^{-5}\\text{ m}^2/\\text{s}$, the value of Darcy friction factor is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -50785,7 +50788,7 @@ const QUESTIONS = {
         {
             "topic": "Fluid Mechanics",
             "title": "Volumetric Flow Rate and Velocity in a Pipe",
-            "question": "Water flows through a horizontal pipe of varying cross-section at a rate of $0.314\\text{ m}^3\\text{ s}^{-1}$. The velocity of water at a point where the radius of the pipe is $10\\text{ cm}$ is \\underline{\\hspace{2cm}}.",
+            "question": "Water flows through a horizontal pipe of varying cross-section at a rate of $0.314\\text{ m}^3\\text{ s}^{-1}$. The velocity of water at a point where the radius of the pipe is $10\\text{ cm}$ is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -50885,7 +50888,7 @@ const QUESTIONS = {
         {
             "topic": "Fluid Mechanics",
             "title": "Hydrostatic Pressure at the Bottom of a Tank",
-            "question": "The pressure at the bottom of a liquid tank is not proportional to the \\underline{\\hspace{2cm}}.",
+            "question": "The pressure at the bottom of a liquid tank is not proportional to the _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -54722,7 +54725,7 @@ const QUESTIONS = {
         {
             "topic": "First Law of Thermodynamics",
             "title": "First Law Applied to Rigid \\& Insulated Systems",
-            "question": "Consider $1\\text{ kg}$ of an ideal gas at $1\\text{ bar}$ and $300\\text{ K}$ contained in a rigid and perfectly insulated container. The specific heat of the gas at constant volume $c_v$ is equal to $750\\text{ J}\\cdot\\text{kg}^{-1}\\text{K}^{-1}$. A stirrer performs $225\\text{ kJ}$ of work on the gas. Assume that the container does not participate in the thermodynamic interaction. The final pressure of the gas will be \\underline{\\hspace{2cm}} $\\text{bar}$ (in integer).",
+            "question": "Consider $1\\text{ kg}$ of an ideal gas at $1\\text{ bar}$ and $300\\text{ K}$ contained in a rigid and perfectly insulated container. The specific heat of the gas at constant volume $c_v$ is equal to $750\\text{ J}\\cdot\\text{kg}^{-1}\\text{K}^{-1}$. A stirrer performs $225\\text{ kJ}$ of work on the gas. Assume that the container does not participate in the thermodynamic interaction. The final pressure of the gas will be _____ $\\text{bar}$ (in integer).",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -54952,7 +54955,7 @@ const QUESTIONS = {
         {
             "topic": "IC Engines \\& Power Cycles",
             "title": "Air Standard Otto Cycle Analysis",
-            "question": "An engine running on an air standard Otto cycle has a displacement volume $250\\text{ cm}^3$ and a clearance volume $35.7\\text{ cm}^3$. The pressure and temperature at the beginning of the compression process are $100\\text{ kPa}$ and $300\\text{ K}$, respectively. Heat transfer during constant-volume heat addition process is $800\\text{ kJ/kg}$. The specific heat at constant volume is $0.718\\text{ kJ/kg}\\cdot\\text{K}$ and the ratio of specific heats at constant pressure and constant volume is $1.4$. Assume the specific heats to remain constant during the cycle. The maximum pressure in the cycle is \\underline{\\hspace{2cm}} $\\text{kPa}$ (round off to the nearest integer).",
+            "question": "An engine running on an air standard Otto cycle has a displacement volume $250\\text{ cm}^3$ and a clearance volume $35.7\\text{ cm}^3$. The pressure and temperature at the beginning of the compression process are $100\\text{ kPa}$ and $300\\text{ K}$, respectively. Heat transfer during constant-volume heat addition process is $800\\text{ kJ/kg}$. The specific heat at constant volume is $0.718\\text{ kJ/kg}\\cdot\\text{K}$ and the ratio of specific heats at constant pressure and constant volume is $1.4$. Assume the specific heats to remain constant during the cycle. The maximum pressure in the cycle is _____ $\\text{kPa}$ (round off to the nearest integer).",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -54998,7 +55001,7 @@ const QUESTIONS = {
         {
             "topic": "Entropy Analysis",
             "title": "Entropy Change in Irreversible Constant-Volume Processes",
-            "question": "One $\\text{kg}$ of an ideal gas (gas constant, $R = 400\\text{ J/kg}\\cdot\\text{K}$; specific heat at constant volume, $c_v = 1000\\text{ J/kg}\\cdot\\text{K}$) at $1\\text{ bar}$, and $300\\text{ K}$ is contained in a sealed rigid cylinder. During an adiabatic process, $100\\text{ kJ}$ of work is done on the system by a stirrer. The increase in entropy of the system is \\underline{\\hspace{2cm}} $\\text{J/K}$.",
+            "question": "One $\\text{kg}$ of an ideal gas (gas constant, $R = 400\\text{ J/kg}\\cdot\\text{K}$; specific heat at constant volume, $c_v = 1000\\text{ J/kg}\\cdot\\text{K}$) at $1\\text{ bar}$, and $300\\text{ K}$ is contained in a sealed rigid cylinder. During an adiabatic process, $100\\text{ kJ}$ of work is done on the system by a stirrer. The increase in entropy of the system is _____ $\\text{J/K}$.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55090,7 +55093,7 @@ const QUESTIONS = {
         {
             "topic": "First Law of Thermodynamics",
             "title": "Isothermal Work in Closed Systems",
-            "question": "A piston-cylinder device initially contains $0.4\\text{ m}^3$ of air (to be treated as an ideal gas) at $100\\text{ kPa}$ and $80^\\circ\\text{C}$. The air is now isothermally compressed to $0.1\\text{ m}^3$. The work done during this process is \\underline{\\hspace{2cm}} $\\text{kJ}$.\n\n\\textbf{(Take the sign convention such that work done on the system is negative)}",
+            "question": "A piston-cylinder device initially contains $0.4\\text{ m}^3$ of air (to be treated as an ideal gas) at $100\\text{ kPa}$ and $80^\\circ\\text{C}$. The air is now isothermally compressed to $0.1\\text{ m}^3$. The work done during this process is _____ $\\text{kJ}$.\n\n\\textbf{(Take the sign convention such that work done on the system is negative)}",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55136,7 +55139,7 @@ const QUESTIONS = {
         {
             "topic": "Steady Flow Energy Equation",
             "title": "First Law Applied to Open Control Volumes (Nozzles)",
-            "question": "Steam at an initial enthalpy of $100\\text{ kJ/kg}$ and inlet velocity of $100\\text{ m/s}$, enters an insulated horizontal nozzle. It leaves the nozzle at $200\\text{ m/s}$. The exit enthalpy (in $\\text{kJ/kg}$) is \\underline{\\hspace{2cm}}.",
+            "question": "Steam at an initial enthalpy of $100\\text{ kJ/kg}$ and inlet velocity of $100\\text{ m/s}$, enters an insulated horizontal nozzle. It leaves the nozzle at $200\\text{ m/s}$. The exit enthalpy (in $\\text{kJ/kg}$) is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55182,7 +55185,7 @@ const QUESTIONS = {
         {
             "topic": "First Law of Thermodynamics",
             "title": "First Law Analysis of Closed System with Kinetic and Potential Energy Changes",
-            "question": "Work is done on an adiabatic system due to which its velocity changes from $10\\text{ m/s}$ to $20\\text{ m/s}$, elevation increases by $20\\text{ m}$ and temperature increases by $1\\text{ K}$. The mass of the system is $10\\text{ kg}$, $C_v = 100\\text{ J/(kg}\\cdot\\text{K)}$ and gravitational acceleration is $10\\text{ m/s}^2$. If there is no change in any other component of the energy of the system, the magnitude of total work done (in $\\text{kJ}$) on the system is \\underline{\\hspace{2cm}}.",
+            "question": "Work is done on an adiabatic system due to which its velocity changes from $10\\text{ m/s}$ to $20\\text{ m/s}$, elevation increases by $20\\text{ m}$ and temperature increases by $1\\text{ K}$. The mass of the system is $10\\text{ kg}$, $C_v = 100\\text{ J/(kg}\\cdot\\text{K)}$ and gravitational acceleration is $10\\text{ m/s}^2$. If there is no change in any other component of the energy of the system, the magnitude of total work done (in $\\text{kJ}$) on the system is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55228,7 +55231,7 @@ const QUESTIONS = {
         {
             "topic": "First Law of Thermodynamics",
             "title": "First Law Applied to Stirrer Work in Rigid Insulated Systems",
-            "question": "A well insulated rigid container of volume $1\\text{ m}^3$ contains $1.0\\text{ kg}$ of an ideal gas [$C_p = 1000\\text{ J/(kg}\\cdot\\text{K)}$ and $C_v = 800\\text{ J/(kg}\\cdot\\text{K)}$] at a pressure of $10^5\\text{ Pa}$. A stirrer is rotated at constant rpm in the container for $1000$ rotations and the applied torque is $100\\text{ N}\\cdot\\text{m}$. The final temperature of the gas (in $\\text{K}$) is \\underline{\\hspace{2cm}}.",
+            "question": "A well insulated rigid container of volume $1\\text{ m}^3$ contains $1.0\\text{ kg}$ of an ideal gas [$C_p = 1000\\text{ J/(kg}\\cdot\\text{K)}$ and $C_v = 800\\text{ J/(kg}\\cdot\\text{K)}$] at a pressure of $10^5\\text{ Pa}$. A stirrer is rotated at constant rpm in the container for $1000$ rotations and the applied torque is $100\\text{ N}\\cdot\\text{m}$. The final temperature of the gas (in $\\text{K}$) is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55366,7 +55369,7 @@ const QUESTIONS = {
         {
             "topic": "Pure Substances",
             "title": "Definition and Calculation of Specific Enthalpy",
-            "question": "A pure substance at $8\\text{ MPa}$ and $400^\\circ\\text{C}$ is having a specific internal energy of $2864\\text{ kJ/kg}$ and a specific volume of $0.03432\\text{ m}^3/\\text{kg}$. Its specific enthalpy (in $\\text{kJ/kg}$) is \\underline{\\hspace{2cm}}.",
+            "question": "A pure substance at $8\\text{ MPa}$ and $400^\\circ\\text{C}$ is having a specific internal energy of $2864\\text{ kJ/kg}$ and a specific volume of $0.03432\\text{ m}^3/\\text{kg}$. Its specific enthalpy (in $\\text{kJ/kg}$) is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55412,7 +55415,7 @@ const QUESTIONS = {
         {
             "topic": "Pure Substances",
             "title": "Constant Volume Phase Change and Liquid Level Dip in Vertical Cylinder",
-            "question": "A rigid closed vertical cylindrical vessel of $15\\text{ cm}$ diameter contains $5\\text{ kg}$ water at $80^\\circ\\text{C}$ with $10\\%$ quality. The water is heated till its temperature reaches $130^\\circ\\text{C}$. Considering only a horizontal separated interface between liquid and vapor, the dip in the liquid level after the heating process is \\underline{\\hspace{2cm}} $\\text{cm}$ (rounded off to 2 decimal places).\n\n\n\n$T$, $v$ and $u$ are temperature, specific volume, and specific internal energy, respectively. Subscripts $f$ and $g$ represent saturated liquid and saturated vapor, respectively.",
+            "question": "A rigid closed vertical cylindrical vessel of $15\\text{ cm}$ diameter contains $5\\text{ kg}$ water at $80^\\circ\\text{C}$ with $10\\%$ quality. The water is heated till its temperature reaches $130^\\circ\\text{C}$. Considering only a horizontal separated interface between liquid and vapor, the dip in the liquid level after the heating process is _____ $\\text{cm}$ (rounded off to 2 decimal places).\n\n\n\n$T$, $v$ and $u$ are temperature, specific volume, and specific internal energy, respectively. Subscripts $f$ and $g$ represent saturated liquid and saturated vapor, respectively.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55458,7 +55461,7 @@ const QUESTIONS = {
         {
             "topic": "Steady Flow Systems",
             "title": "First Law Analysis of Steam Turbine with Heat Loss",
-            "question": "Steam enters a turbine at $30\\text{ bar}$, $300^\\circ\\text{C}$ ($u = 2750\\text{ kJ/kg}$, $h = 2993\\text{ kJ/kg}$) and exits the turbine as saturated liquid at $15\\text{ kPa}$ ($u = 225\\text{ kJ/kg}$, $h = 226\\text{ kJ/kg}$). Heat loss to the surrounding is $50\\text{ kJ/kg}$ of steam flowing through the turbine. Neglecting changes in kinetic energy and potential energy, the work output of the turbine (in $\\text{kJ/kg}$ of steam) is \\underline{\\hspace{2cm}}.",
+            "question": "Steam enters a turbine at $30\\text{ bar}$, $300^\\circ\\text{C}$ ($u = 2750\\text{ kJ/kg}$, $h = 2993\\text{ kJ/kg}$) and exits the turbine as saturated liquid at $15\\text{ kPa}$ ($u = 225\\text{ kJ/kg}$, $h = 226\\text{ kJ/kg}$). Heat loss to the surrounding is $50\\text{ kJ/kg}$ of steam flowing through the turbine. Neglecting changes in kinetic energy and potential energy, the work output of the turbine (in $\\text{kJ/kg}$ of steam) is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -55596,7 +55599,7 @@ const QUESTIONS = {
         {
             "topic": "Second Law of Thermodynamics",
             "title": "Entropy Generation in Finite Temperature Heat Transfer",
-            "question": "One kilogram of water at room temperature is brought into contact with a high temperature thermal reservoir. The entropy change of the universe is \\underline{\\hspace{2cm}}.",
+            "question": "One kilogram of water at room temperature is brought into contact with a high temperature thermal reservoir. The entropy change of the universe is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -62019,58 +62022,6 @@ const QUESTIONS = {
         },
         {
             "topic": "Thermodynamics",
-            "title": "Reversible and Irreversible Processes",
-            "question": "Following are statements of a few processes taking place in nature.\n\\begin{enumerate}[label=\\Roman*.]\n    \\item Free expansion of a gas\n    \\item The combustion of a mixture of petrol and air ignited by a spark\n    \\item The leaking of gas from the kitchen cylinder\n    \\item The transfer of heat from one heated part of a liquid to the other colder part\n\\end{enumerate}\nWhich amongst these processes are irreversible in nature?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "I and II",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "I and III",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "II, III and IV",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "I, II, III and IV",
-                    "is_correct": true
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Reversible and Irreversible Processes",
-                        "content": "A process is **reversible** if it can be reversed such that both the system and the surroundings return to their exact initial states without leaving any change in the universe. \n\nAccording to the **Second Law of Thermodynamics**, all natural/spontaneous processes are **irreversible** because they increase the entropy of the universe ($\\Delta S_{\\text{univ}} > 0$).\n\n\\begin{empheq}[box={\\mymath[colback=col3!30,drop lifted shadow, rounded corners]}]{equation}\\tag{Irreversibility Condition}\n\\Delta S_{\\text{universe}} > 0 \\implies \\text{Process is Irreversible}\n\\end{empheq}"
-                    },
-                    {
-                        "title": "Step 1: Evaluate Each Given Statement",
-                        "content": "\\begin{enumerate}[label=\\Roman*.]\n    \\item **Free expansion of a gas:** Expansion of gas into a vacuum occurs spontaneously without external work done. It cannot be reversed spontaneously without doing net work on the system. Thus, it is **irreversible**.\n    \\item **Combustion of petrol-air mixture:** Chemical reactions involving rapid burning and release of heat/light cannot spontaneously synthesize the fuel and oxygen back from combustion products. Thus, it is **irreversible**.\n    \\item **Leaking of gas from a cylinder:** Diffusion of gas from high pressure to low pressure (into atmosphere) is a non-equilibrium spontaneous process. Thus, it is **irreversible**.\n    \\item **Transfer of heat from hot to cold body:** Heat flows spontaneously from a higher temperature to a lower temperature down a finite temperature gradient. It cannot flow back spontaneously from cold to hot without external work. Thus, it is **irreversible**.\n\\end{enumerate}"
-                    },
-                    {
-                        "title": "Step 2: Conclusion",
-                        "content": "All four given processes (I, II, III, and IV) are spontaneous natural processes and therefore **irreversible** in nature.\n\nCorrect Answer: D (I, II, III and IV)"
-                    }
-                ],
-                "final_answer": "D"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "thermo",
-                "topic": "Thermodynamics",
-                "search_term": "physics"
-            }
-        },
-        {
-            "topic": "Thermodynamics",
             "title": "Thermodynamic Processes and Definitions",
             "question": "In thermodynamic processes, which of the following statements is not true?",
             "question_image": "",
@@ -62124,7 +62075,7 @@ const QUESTIONS = {
         {
             "topic": "Thermodynamics",
             "title": "First Law of Thermodynamics and Path Independence of Internal Energy",
-            "question": "A gas is taken from state A to state B along two different paths 1 and 2. The heat absorbed and work done by the system along these two paths are $Q_1$ and $Q_2$ and $W_1$ and $W_2$ respectively. Then \\underline{\\hspace{2cm}}.",
+            "question": "A gas is taken from state A to state B along two different paths 1 and 2. The heat absorbed and work done by the system along these two paths are $Q_1$ and $Q_2$ and $W_1$ and $W_2$ respectively. Then _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -62176,7 +62127,7 @@ const QUESTIONS = {
         {
             "topic": "Thermodynamics",
             "title": "Work Done in a Cyclic Process",
-            "question": "One mole of an ideal monoatomic gas is taken round the cyclic process MNOM. The work done by the gas is \\underline{\\hspace{2cm}}.",
+            "question": "One mole of an ideal monoatomic gas is taken round the cyclic process MNOM. The work done by the gas is _____.",
             "question_image": "",
             "times_presented": 0,
             "options": [
@@ -62652,57 +62603,6 @@ const QUESTIONS = {
                     {
                         "title": "Solve for F21",
                         "content": "$F_{21} = \\frac{A_1}{A_2} F_{12} = \\frac{2}{4} \\times 0.60 = 0.30$."
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "heat",
-                "topic": "Radiation",
-                "search_term": "radiation",
-                "page_number": 118
-            }
-        },
-        {
-            "topic": "Radiation",
-            "title": "Wien's Displacement Law",
-            "question": "A heated metal bar has a surface temperature of 1000 K. What is the wavelength ($lambda_{max}$) at which the maximum spectral emissive power occurs? (Wien's constant $C_3 = 2898\\text{ }mu\\text{m}cdot\\text{K}$)",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "2.90 μm",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "0.29 μm",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "29.0 μm",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1.45 μm",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Wien's Law Formula",
-                        "content": "$lambda_{max} T = C_3 = 2898\\text{ }mu\\text{m}cdot\\text{K}$"
-                    },
-                    {
-                        "title": "Calculate Wavelength",
-                        "content": "$lambda_{max} = \\frac{2898}{1000} = 2.898\\text{ }mu\\text{m} approx 2.90\\text{ }mu\\text{m}$."
                     }
                 ],
                 "final_answer": "A",
@@ -64879,7 +64779,7 @@ const QUESTIONS = {
         {
             "topic": "Thermal Properties of Matter",
             "title": "Calorimetry and Phase Change",
-            "question": "$100\\text{ g}$ of ice at $0^\\circ\\text{C}$ is mixed with $100\\text{ g}$ of water at $100^\\circ\\text{C}$. The final temperature of the mixture is \\underline{\\hspace{2cm}}.\n\n[\\text{Take, } $L_f = 3.36 \\times 10^5\\text{ J kg}^{-1}$ and $S_w = 4.2 \\times 10^3\\text{ J kg}^{-1}\\text{ K}^{-1}$]",
+            "question": "$100\\text{ g}$ of ice at $0^\\circ\\text{C}$ is mixed with $100\\text{ g}$ of water at $100^\\circ\\text{C}$. The final temperature of the mixture is _____.\n\n[\\text{Take, } $L_f = 3.36 \\times 10^5\\text{ J kg}^{-1}$ and $S_w = 4.2 \\times 10^3\\text{ J kg}^{-1}\\text{ K}^{-1}$]",
             "question_image": "",
             "times_presented": 0,
             "options": [

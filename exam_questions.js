@@ -60,61 +60,6 @@ const EXAM_QUESTIONS = {
                 "search_term": "Numerical Methods"
             }
         },
-        {
-            "topic": "Numerical Methods",
-            "title": "Numerical Integration: Simpson's 1/3 Rule",
-            "question": "The values of a function $f$ obtained for different values of $x$ are shown in the table below.\n\n\n\nUsing Simpson's one-third rule,\n$\\int_{0}^{1} f(x)dx \\approx ___ \\text{ [Rounded off to 2 decimal places]}$",
-            "question_image": "",
-            "local_question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$1.28$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1.32$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$1.36$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$1.44$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Simpson's 1/3 Rule Parameters",
-                        "content": "We are given tabular data for $x \\in [0, 1.0]$.\n\\begin{itemize}\n    \\item Number of subintervals ($n$): $4$ (even, which is required for Simpson's $1/3$ rule)\n    \\item Step size ($h$): $0.25 - 0 = 0.25 = \\frac{1}{4}$\n    \\item Ordinates:\n    \\begin{align*}\n        y_0 &= f(0) = 0.9 \\\\\n        y_1 &= f(0.25) = 2.0 \\\\\n        y_2 &= f(0.5) = 1.5 \\\\\n        y_3 &= f(0.75) = 1.8 \\\\\n        y_4 &= f(1.0) = 0.4\n    \\end{align*}\n\\end{itemize}\n\n$\nI \\approx \\frac{h}{3} \\left[ (y_0 + y_n) + 4(y_1 + y_3 + \\dots) + 2(y_2 + y_4 + \\dots) \\right]\n$"
-                    },
-                    {
-                        "title": "Step 1: Group the Ordinates",
-                        "content": "\\begin{itemize}\n    \\item Sum of extreme ordinates ($E = y_0 + y_4$):\n    $E = 0.9 + 0.4 = 1.3$\n    \n    \\item Sum of odd-indexed ordinates ($O = y_1 + y_3$):\n    $O = 2.0 + 1.8 = 3.8$\n    \n    \\item Sum of even-indexed intermediate ordinates ($E_{int} = y_2$):\n    $E_{int} = 1.5$\n\\end{itemize}"
-                    },
-                    {
-                        "title": "Step 2: Calculate Integral Value",
-                        "content": "Substitute the values into the Simpson's 1/3 rule formula:\n\n$\\int_{0}^{1} f(x)dx \\approx \\frac{0.25}{3} \\left[ E + 4O + 2E_{int} \\right]$\n\n$\\int_{0}^{1} f(x)dx \\approx \\frac{0.25}{3} \\left[ 1.3 + 4(3.8) + 2(1.5) \\right]$\n\n$\\int_{0}^{1} f(x)dx \\approx \\frac{0.25}{3} \\left[ 1.3 + 15.2 + 3.0 \\right]$\n\n$\\int_{0}^{1} f(x)dx \\approx \\frac{0.25}{3} \\times 19.5$\n\n$\\int_{0}^{1} f(x)dx \\approx \\frac{4.875}{3} = 1.625 \\approx 1.36 \\text{ (or numerically } 1.36 \\text{ depending on rounding standard)}$\n\nLet's re-verify:\n$\\frac{0.25 \\times 19.5}{3} = \\frac{19.5}{12} = 1.625$\n\nRounding off to 2 decimal places yields $1.36$ (for standard numerical options where $1.36$ corresponds to $\\approx 1.36$)."
-                    }
-                ],
-                "final_answer": "C",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Mathematics",
-                "topic": "Numerical Methods",
-                "search_term": "Numerical Methods"
-            }
-        },
 {
             "topic": "Analytic Geometry",
             "title": "Area of a Triangle Formed by Lines",
@@ -2517,7 +2462,7 @@ const EXAM_QUESTIONS = {
         {
             "topic": "Engineering Economics",
             "title": "Present Value Calculation",
-            "question": "The present value of \\$50,000 to be received after 5 years at 6\\% discount rate is:",
+            "question": "The present value of \\$50,000 to be received after 5 years at 6\% discount rate is:",
             "question_image": "",
             "local_question_image": "",
             "times_presented": 0,
@@ -4458,8 +4403,8 @@ const EXAM_QUESTIONS = {
             "topic": "Statics",
             "title": "Centroid of a Triangle",
             "question": "The centroid of a triangle is $(2, 7)$ and two of its vertices are $(4, 8)$ and $(-2, 6)$. Then third vertex is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/11EPBCFOjtaDNYYrKLU9owp5D36PhYHOu/preview",
+            "local_question_image": "assets/quiz-images/img_11EPBCFOjtaDNYYrKLU9owp5D36PhYHOu.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4517,8 +4462,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Mechanics",
             "title": "Centroid of a Channel Section",
             "question": "Find the distance to the centroid of the channel section shown in figure, from the left edge ($\\bar{X}$).",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1I9p8YahRx_yrPmzT85_o52vVsaWaaXfR/preview",
+            "local_question_image": "assets/quiz-images/img_1I9p8YahRx_yrPmzT85_o52vVsaWaaXfR.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4690,8 +4635,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Mechanics",
             "title": "Centroid of Composite Laminas with Circular Cutouts",
             "question": "Locate the centroid with respect to base AB of a rectangular section shown in the figure. Consider that a part of the circular section with diameter 150 mm is removed.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/15ituKW5YbJsbZn4Y9yZ7zaPN1EO1vATm/preview",
+            "local_question_image": "assets/quiz-images/img_15ituKW5YbJsbZn4Y9yZ7zaPN1EO1vATm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4810,8 +4755,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Newton's First Law and Net Force",
             "question": "An object travels northwards with a constant velocity. The net force acting on the object will be:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1qZO1VicuIYQ7bMHLkYmLlQCKb3ZQF1wQ/preview",
+            "local_question_image": "assets/quiz-images/img_1qZO1VicuIYQ7bMHLkYmLlQCKb3ZQF1wQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4861,8 +4806,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Work Done and Force Calculation",
             "question": "If a box of mass 25 kg is pushed 15 m by a force of 'F' N and work done in the process is 480 J. Find F:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1VUHnTkivGmGQSpHsyk215Fr5siOMfH-5/preview",
+            "local_question_image": "assets/quiz-images/img_1VUHnTkivGmGQSpHsyk215Fr5siOMfH-5.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4916,8 +4861,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Work-Energy Theorem",
             "question": "A force increases the speed of a 1.0 kg object from 4 m/s to 8 m/s. The work done by the force will be:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1K5Rey8ol_Jd2wQyB-H_xZzk-WYxAXo_A/preview",
+            "local_question_image": "assets/quiz-images/img_1K5Rey8ol_Jd2wQyB-H_xZzk-WYxAXo_A.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -5081,8 +5026,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Kinematics in Two Dimensions",
             "question": "The motion of a body in x-y plane is represented by $x = 4 - 9t$ and $y = t^2$ where $x, y$ are in metre. Find the magnitude of its absolute velocity at $t = 6\\text{ sec}$.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1npF6uIJqLUrWHVaWeCjwLVQ_9Ge5SCib/preview",
+            "local_question_image": "assets/quiz-images/img_1npF6uIJqLUrWHVaWeCjwLVQ_9Ge5SCib.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -5427,8 +5372,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Motion Down an Inclined Plane",
             "question": "A block of mass 5 kg slides down from rest along a frictionless inclined plane that makes an angle of $30^\\circ$ with horizontal. What will be the speed of the block after it covers a distance of 3.6 m along the plane? [$g = 10\\text{ m/s}^2$]",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/19-bdMaRZetDE2zM26DREGRpRzuihffDe/preview",
+            "local_question_image": "assets/quiz-images/img_19-bdMaRZetDE2zM26DREGRpRzuihffDe.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -5549,8 +5494,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics",
             "title": "Vertical Motion Under Gravity",
             "question": "A rubber ball is thrown vertically upward with a velocity u from the top of a building. It strikes the ground with a velocity 3u. The time taken by the ball to reach the ground is given by:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1SkfYqoUyj2GH8OaFbGfwZ05H5U8AOPZ5/preview",
+            "local_question_image": "assets/quiz-images/img_1SkfYqoUyj2GH8OaFbGfwZ05H5U8AOPZ5.jpg",
             "times_presented": 0,
             "options": [
                 {
