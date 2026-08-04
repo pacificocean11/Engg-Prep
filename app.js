@@ -1077,6 +1077,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             'quiz-view': 'Practice Session',
             'account-info-view': 'Account Information',
             'support-view': 'Message Admin',
+            'mentoring-view': 'Free FE Mentoring',
             'achievements-view': 'Achievements',
             'leaderboard': 'Leaderboard'
         };
@@ -1099,6 +1100,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (pageId === 'dashboard') {
                 updateDashboardStats();
                 updateGamificationUI();
+            }
+            if (pageId === 'mentoring-view') {
+                initMentoringView();
             }
             if (pageId === 'settings') {
                 updateGamificationUI();
@@ -4287,6 +4291,168 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 window.showToast("Name Updated", "Your display name has been successfully changed.", "person");
             } else {
                 window.showToast("Invalid Name", "Please enter a valid name.", "error");
+            }
+        });
+    }
+
+    // ===== FREE MENTORING LOGIC =====
+    window.openMentoringCalendly = function() {
+        const modal = document.getElementById('mentoring-calendly-modal');
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+    };
+
+    window.closeMentoringCalendly = function() {
+        const modal = document.getElementById('mentoring-calendly-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    };
+
+    window.proceedToCalendlyBooking = function() {
+        window.closeMentoringCalendly();
+        // Redirect to www.ENGG.tv where 30-minute Calendly scheduling provision exists
+        window.open('https://www.ENGG.tv', '_blank');
+    };
+
+    window.openMentoringCalendlyFromSuccess = function() {
+        window.closeMentoringSuccessModal();
+        window.openMentoringCalendly();
+    };
+
+    window.closeMentoringSuccessModal = function() {
+        const modal = document.getElementById('mentoring-question-success-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        navigateTo('dashboard');
+    };
+
+    function initMentoringView() {
+        const nameField = document.getElementById('mentor-q-name');
+        const emailField = document.getElementById('mentor-q-email');
+        if (nameField && (!nameField.value || nameField.value === 'Alex Riviera')) {
+            const currentName = state.userName || (state.user && state.user.username !== 'guest' ? (state.user.username === 'demo' ? 'Alex Riviera' : state.user.username) : 'Alex Riviera');
+            nameField.value = currentName;
+        }
+        if (emailField && !emailField.value && state.user && state.user.email) {
+            emailField.value = state.user.email;
+        }
+    }
+
+    // Mentor Question Form Submission & Character Counter
+    const mentorForm = document.getElementById('mentor-question-form');
+    const mentorMsgField = document.getElementById('mentor-q-message');
+    const mentorCharCounter = document.getElementById('mentor-q-char-count');
+
+    if (mentorMsgField && mentorCharCounter) {
+        mentorMsgField.addEventListener('input', () => {
+            const len = mentorMsgField.value.length;
+            mentorCharCounter.textContent = `${len} / 600`;
+            mentorCharCounter.classList.toggle('text-secondary', len > 550);
+            mentorCharCounter.classList.toggle('text-slate-400', len <= 550);
+        });
+    }
+
+    if (mentorForm) {
+        mentorForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nameVal = document.getElementById('mentor-q-name')?.value?.trim() || state.userName || 'Student';
+            const emailVal = document.getElementById('mentor-q-email')?.value?.trim() || (state.user?.email || 'Not Provided');
+            const categoryVal = document.getElementById('mentor-q-category')?.value || 'Mentoring Question';
+            const msgVal = document.getElementById('mentor-q-message')?.value?.trim();
+            const btn = document.getElementById('btn-submit-mentor-q');
+            const btnIcon = document.getElementById('mentor-send-icon');
+            const btnText = document.getElementById('mentor-send-text');
+
+            if (!msgVal) return;
+
+            // Loading state
+            btn.disabled = true;
+            if (btnIcon) { btnIcon.textContent = 'refresh'; btnIcon.style.animation = 'spin 1s linear infinite'; }
+            if (btnText) btnText.textContent = 'Sending to Mentor...';
+
+            const userDiscipline = localStorage.getItem('enggtv_discipline') || state.discipline || 'Mechanical';
+
+            try {
+                // Send via EmailJS (delivered directly to admin@engg.tv)
+                const isEmailJSConfigured = typeof EMAILJS_SERVICE_ID !== 'undefined'
+                    && EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID'
+                    && typeof EMAILJS_TEMPLATE_ID !== 'undefined'
+                    && EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID'
+                    && typeof emailjs !== 'undefined';
+
+                if (isEmailJSConfigured) {
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        from_name: nameVal,
+                        from_user: state.user?.username || nameVal,
+                        from_email: emailVal,
+                        subject: `[ENGG.tv Free Mentoring] ${categoryVal}: Question from ${nameVal}`,
+                        message: `Topic Category: ${categoryVal}\nDiscipline: ${userDiscipline}\nEmail: ${emailVal}\n\nStudent Question:\n${msgVal}`,
+                        reply_to: emailVal !== 'Not Provided' ? emailVal : 'admin@engg.tv',
+                        sent_at: new Date().toLocaleString(),
+                        discipline: userDiscipline,
+                        user_points: state.userPoints || 0
+                    });
+                } else {
+                    // Fallback mailto
+                    const mailtoBody = encodeURIComponent(`From: ${nameVal}\nEmail: ${emailVal}\nDiscipline: ${userDiscipline}\nTopic: ${categoryVal}\n\nQuestion:\n${msgVal}`);
+                    const mailtoLink = `mailto:admin@engg.tv?subject=${encodeURIComponent('[ENGG.tv Free Mentoring] ' + categoryVal + ' - ' + nameVal)}&body=${mailtoBody}`;
+                    window.open(mailtoLink, '_blank');
+                }
+
+                // Optional Firestore logging
+                try {
+                    if (window.firebase && firebase.firestore) {
+                        const db = firebase.firestore();
+                        await db.collection('adminMessages').add({
+                            type: 'mentoring_inquiry',
+                            name: nameVal,
+                            email: emailVal,
+                            category: categoryVal,
+                            discipline: userDiscipline,
+                            message: msgVal,
+                            points: state.userPoints || 0,
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                    }
+                } catch (dbErr) {
+                    console.warn('Mentoring message Firestore log non-blocking err:', dbErr);
+                }
+
+                window.showToast('Question Sent! ✉️', 'Delivered to admin@engg.tv', 'mark_email_read');
+                mentorForm.reset();
+                if (mentorCharCounter) mentorCharCounter.textContent = '0 / 600';
+
+                // Confetti animation
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 120,
+                        spread: 60,
+                        origin: { y: 0.6 },
+                        colors: ['#f59e0b', '#be0055', '#3b82f6']
+                    });
+                }
+
+                // Show Success & Calendly invitation modal
+                const successModal = document.getElementById('mentoring-question-success-modal');
+                if (successModal) {
+                    successModal.classList.remove('hidden');
+                    successModal.classList.add('flex');
+                }
+
+            } catch (error) {
+                console.error('Mentoring question error:', error);
+                window.showToast('Send Failed', 'Please email us directly at admin@engg.tv', 'error');
+            } finally {
+                btn.disabled = false;
+                if (btnIcon) { btnIcon.textContent = 'send'; btnIcon.style.animation = ''; }
+                if (btnText) btnText.textContent = 'Send Question to Mentor';
             }
         });
     }

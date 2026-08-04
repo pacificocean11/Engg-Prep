@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v44';
+const CACHE_NAME = 'engg-prep-cache-v48';
 const APP_SHELL = [
   './',
   './index.html',

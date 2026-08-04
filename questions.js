@@ -8036,79 +8036,7 @@ const QUESTIONS = {
                 "search_term": "Probability Distributions"
             }
         },
-        {
-            "topic": "Expected Value",
-            "title": "Expectation of a Function of a Continuous Random Variable",
-            "question": "",
-            "question_image": "",
-            "local_question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Expected Value for Continuous Distribution",
-                        "content": "The uniform distribution on $[0,1]$ has a probability density function (PDF):\n$$f(x) = \\begin{cases} 1, & 0 \\le x \\le 1 \\\\ 0, & \\text{otherwise} \\end{cases}$$\n\nBy the Law of the Unconscious Statistician (LOTUS), the expected value of a function $g(X)$ of a continuous random variable $X$ is defined as:\n\n$\nE[g(X)] = \\int_{-\\infty}^{\\infty} g(x) f(x) \\, dx\n$"
-                    },
-                    {
-                        "title": "Step 1: Set Up the Integration",
-                        "content": "For $Y = g(X) = \\log_e(X + 1) = \\ln(x + 1)$ on the interval $[0, 1]$:\n\n$$E[Y] = \\int_{0}^{1} \\ln(x + 1) \\cdot (1) \\, dx = \\int_{0}^{1} \\ln(x + 1) \\, dx$$"
-                    },
-                    {
-                        "title": "Step 2: Evaluate the Definite Integral",
-                        "content": "Using integration by parts or variable substitution ($u = x + 1 \\implies du = dx$):\n\n$$\\int \\ln(u) \\, du = u \\ln(u) - u + C$$\n\nApplying limits from $x = 0$ ($u = 1$) to $x = 1$ ($u = 2$):\n\n$$E[Y] = \\Big[ (x + 1) \\ln(x + 1) - (x + 1) \\Big]_0^1$$\n\n$$E[Y] = \\Big( 2 \\ln(2) - 2 \\Big) - \\Big( 1 \\ln(1) - 1 \\Big)$$\n\nSince $\\ln(1) = 0$:\n$$E[Y] = 2 \\ln(2) - 2 - (0 - 1) = 2 \\ln(2) - 1$$"
-                    },
-                    {
-                        "title": "Step 3: Numerical Evaluation",
-                        "content": "Using the value $\\ln(2) \\approx 0.693147$:\n\n$$E[Y] = 2(0.693147) - 1 = 1.386294 - 1 = 0.386294$$\n\nRounding off to 2 decimal places yields **$0.39$**.\n\nCorrect Answer: 0.39"
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Probability and Statistics",
-                "topic": "Expected Value",
-                "search_term": "Expected Value"
-            }
-        },
-        {
-            "topic": "Probability Distributions",
-            "title": "Binomial Distribution and Quality Control",
-            "question": "",
-            "question_image": "",
-            "local_question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand the Binomial Model",
-                        "content": "Let $X$ be the random variable denoting the number of defective screws in a packet of $5$ screws. \n\nSince each screw is independently tested with a constant probability of defect, $X$ follows a Binomial distribution $X \\sim B(n, p)$:\n\\begin{itemize}\n    \\item Number of trials (screws per packet): $n = 5$\n    \\item Probability of a defective screw: $p = 0.1$\n    \\item Probability of a non-defective screw: $q = 1 - p = 0.9$\n\\end{itemize}\n\n$\nP(\\text{Packet Replaced}) = P(X \\ge 1) = 1 - P(X = 0)\n$"
-                    },
-                    {
-                        "title": "Step 1: Calculate Probability of Zero Defective Screws",
-                        "content": "A packet is **not** replaced if all 5 screws in the packet are non-defective ($X = 0$):\n\n$$P(X = 0) = \\binom{5}{0} p^0 q^{5-0}$$\n\n$$P(X = 0) = 1 \\times (0.1)^0 \\times (0.9)^5$$\n\n$$P(X = 0) = (0.9)^5 = 0.59049$$"
-                    },
-                    {
-                        "title": "Step 2: Calculate Probability of Replacement",
-                        "content": "Using the complementary probability rule:\n\n$$P(\\text{Replacement}) = 1 - P(X = 0)$$\n\n$$P(\\text{Replacement}) = 1 - 0.59049 = 0.40951 \\approx 0.4095 \\quad (\\text{or } 0.41)$$\n\nCorrect Answer: 0.4095 (or 0.41)"
-                    }
-                ],
-                "final_answer": "A",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Probability and Statistics",
-                "topic": "Probability Distributions",
-                "search_term": "Probability Distributions"
-            }
-        },
-        {
+                        {
             "topic": "Probability Distributions",
             "title": "Combinatorics and Hypergeometric Probability in Playing Cards",
             "question": "Three cards were drawn from a pack of 52 cards. The probability that they are a king, a queen, and a jack is",
@@ -8827,34 +8755,7 @@ const QUESTIONS = {
                 "video_explanation": ""
             }
         },
-        {
-            "topic": "Probability Distributions",
-            "title": "Area Under the Standard Normal Distribution Curve",
-            "question": "",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand the Standard Normal Distribution",
-                        "content": "A standard normal distribution variable $Z$ is a continuous random variable with a mean $\\mu = 0$ and standard deviation $\\sigma = 1$. The total area under the probability density curve is equal to $1$ (or $100\\%$).\n\n\\begin{empheq}[box={\\mymath[colback=col3!30,drop lifted shadow, rounded corners]}]{equation}\\tag{Empirical Rule / $3\\sigma$ Limit}\nP(-3 \\le Z \\le +3) = \\Phi(3) - \\Phi(-3) \\approx 0.9973 \\implies 99.73\\%\n\\end{empheq}"
-                    },
-                    {
-                        "title": "Step 1: Apply the Empirical Rule (68--95--99.7 Rule)",
-                        "content": "For any standard normal curve:\n\\begin{itemize}\n    \\item About $68.27\\%$ of the area lies within $1$ standard deviation of the mean ($-1 \\le Z \\le +1$).\n    \\item About $95.45\\%$ of the area lies within $2$ standard deviations of the mean ($-2 \\le Z \\le +2$).\n    \\item About **$99.73\\%$** (commonly rounded to **$99.7\\%$**) of the area lies within $3$ standard deviations of the mean ($-3 \\le Z \\le +3$).\n\\end{itemize}"
-                    },
-                    {
-                        "title": "Step 2: Verification using Cumulative Distribution Function $\\Phi(z)$",
-                        "content": "Using standard normal distribution cumulative probability tables:\n$$\\Phi(+3.00) = P(Z \\le +3) = 0.99865$$\n$$\\Phi(-3.00) = P(Z \\le -3) = 0.00135$$\n\nCalculating the area bounded between $Z = -3$ and $Z = +3$:\n$$P(-3 \\le Z \\le +3) = \\Phi(3) - \\Phi(-3)$$\n$$P(-3 \\le Z \\le +3) = 0.99865 - 0.00135 = 0.9973$$\n\nConverting to a percentage:\n$$\\text{Area} = 0.9973 \\times 100\\% = 99.73\\% \\quad (\\text{or } 99.7\\%)$$\n\nFinal Answer: $99.73\\%$ (or $99.7\\%$)"
-                    }
-                ],
-                "final_answer": "",
-                "solution_image": "",
-                "video_explanation": ""
-            }
-        },
-        {
+                {
             "topic": "Measures of Central Tendencies and Dispersions",
             "title": "Mode of a Statistical Sample",
             "question": "A sample of 15 data is as follows: 17, 18, 17, 17, 13, 18, 5, 5, 6, 7, 8, 9, 20, 17, 3. The mode of the data is",
@@ -8902,34 +8803,7 @@ const QUESTIONS = {
                 "video_explanation": ""
             }
         },
-        {
-            "topic": "Expected Value",
-            "title": "Expected Value of a Fair Six-Sided Die",
-            "question": "",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Expectation for a Fair Die",
-                        "content": "By the Law of Large Numbers, rolling a fair die a large number of times causes the sample mean of the outcomes to converge to the theoretical expected value (mean), $E[X]$.\n\nFor a discrete random variable $X$ with outcomes $x_i$ and probabilities $P(X = x_i)$:\n\n\\begin{empheq}[box={\\mymath[colback=col3!30,drop lifted shadow, rounded corners]}]{equation}\\tag{Expected Value Formula}\nE[X] = \\sum_{i=1}^{n} x_i \\cdot P(X = x_i)\n \\end{empheq}"
-                    },
-                    {
-                        "title": "Step 1: Identify Outcomes and Probabilities",
-                        "content": "A fair six-faced die has six equally likely outcomes:\n$$X \\in \\{1, 2, 3, 4, 5, 6\\}$$\n\nSince the die is fair, each outcome occurs with probability:\n$$P(X = x) = \\frac{1}{6} \\quad \\text{for } x \\in \\{1, 2, 3, 4, 5, 6\\}$$"
-                    },
-                    {
-                        "title": "Step 2: Calculate the Mean Value",
-                        "content": "Applying the expected value formula:\n$$E[X] = 1 \\cdot \\left(\\frac{1}{6}\\right) + 2 \\cdot \\left(\\frac{1}{6}\\right) + 3 \\cdot \\left(\\frac{1}{6}\\right) + 4 \\cdot \\left(\\frac{1}{6}\\right) + 5 \\cdot \\left(\\frac{1}{6}\\right) + 6 \\cdot \\left(\\frac{1}{6}\\right)$$\n\n$$E[X] = \\frac{1 + 2 + 3 + 4 + 5 + 6}{6}$$\n\n$$E[X] = \\frac{21}{6} = 3.5$$\n\nThus, the mean value of the outcomes when rolled a large number of times is $3.5$.\n\nFinal Answer: $3.5$"
-                    }
-                ],
-                "final_answer": "",
-                "solution_image": "",
-                "video_explanation": ""
-            }
-        },
-        {
+                {
             "topic": "Probability",
             "title": "Probability of At Least One Head in Coin Tosses",
             "question": "If two unbiased coins are tossed, then what is the probability of having at least one head?",
@@ -37159,7 +37033,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Average Speed for Equal Distance Segments",
             "question": "A car covers the first half of the distance between two places at $40\\text{ km/h}$ and another half at $50\\text{ km/h}$. The average speed of the car is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1-a0rVqr_UXutGf_2tV-9VMGAV0iDgqeb/preview",
+            "local_question_image": "assets/quiz-images/img_1-a0rVqr_UXutGf_2tV-9VMGAV0iDgqeb.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37267,7 +37142,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Displacement Analysis from Velocity-Time Graph",
             "question": "For a body moving along a straight line, the following $v-t$ graph is obtained.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1O4RrgrZ8E5qyUOiCxstnc3-Dl1_I3qNS/preview",
+            "local_question_image": "assets/quiz-images/img_1O4RrgrZ8E5qyUOiCxstnc3-Dl1_I3qNS.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37323,7 +37199,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Maximum Speed from Acceleration-Time Graph",
             "question": "A particle starts from rest. Its acceleration $a$ versus time $t$ is shown in the figure. The maximum speed of the particle will be _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1tWgrRjQqxkuAQcPMS4TffhoiqOIoXHgl/preview",
+            "local_question_image": "assets/quiz-images/img_1tWgrRjQqxkuAQcPMS4TffhoiqOIoXHgl.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37375,7 +37252,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Stopping Distance and Velocity Proportionality",
             "question": "A car moving with a velocity of $20\\text{ ms}^{-1}$ stopped at a distance of $40\\text{ m}$. If the same car is travelling at double the velocity, the distance travelled by it for same retardation is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1W00VETDkHcM5_rOyDJDlr1NWXdII1Lrw/preview",
+            "local_question_image": "assets/quiz-images/img_1W00VETDkHcM5_rOyDJDlr1NWXdII1Lrw.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37479,7 +37357,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Relative Velocity in Two Dimensions (Rain-Woman Problem)",
             "question": "Rain is falling vertically with a speed of $12\\text{ ms}^{-1}$. A woman rides a bicycles with a speed of $12\\text{ ms}^{-1}$ in east to west direction. What is the direction in which she should hold her umbrella? _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1YAEujo-NidSdVPRx9KgIS_G642FXdGmC/preview",
+            "local_question_image": "assets/quiz-images/img_1YAEujo-NidSdVPRx9KgIS_G642FXdGmC.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37532,10 +37411,11 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Laws of Motion",
+            "topic": "Equilibrium of Rigid Bodies",
             "title": "Static Equilibrium and Tension in Strings",
             "question": "A mass $M$ is hung with a light inextensible string as shown in figure. Find the tension of the horizontal string. _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1mltykQpJ4b9E2k9Pw6A-3b6BVB2ptZOf/preview",
+            "local_question_image": "assets/quiz-images/img_1mltykQpJ4b9E2k9Pw6A-3b6BVB2ptZOf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38353,69 +38233,7 @@ const QUESTIONS = {
                 "video_explanation": ""
             }
         },
-        {
-            "topic": "Column Buckling",
-            "title": "Euler Critical Buckling Load for Columns",
-            "question": "",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Euler's Critical Buckling Load",
-                        "content": "Euler's critical load $P_{\\text{cr}}$ for a column is the maximum axial compressive force it can support without buckling:\n\n\\begin{empheq}[box={\\mymath[colback=col3!30,drop lifted shadow, rounded corners]}]{equation}\\tag{Euler Buckling Formula}\nP_{\\text{cr}} = \\frac{\\pi^2 E I_{\\text{min}}}{L_e^2}\n \\end{empheq}\n\nwhere:\n\\begin{itemize}\n    \\item $E$ is Young's modulus of the column material.\n    \\item $I_{\\text{min}}$ is the minimum area moment of inertia of the cross-section (buckling always occurs about the principal axis with minimum moment of inertia).\n    \\item $L_e$ is the effective length of the column depending on end support conditions.\n\\end{itemize}"
-                    },
-                    {
-                        "title": "Step 1: Determine Effective Length ($L_e$)",
-                        "content": "For a column hinged (pinned) at both ends:\n$$L_e = 1.0 \\times L = 1.0\\text{ m}$$"
-                    },
-                    {
-                        "title": "Step 2: Calculate Minimum Area Moment of Inertia ($I_{\\text{min",
-                        "content": "}$)}\nThe rectangular cross-section has dimensions $10\\text{ mm} \\times 20\\text{ mm}$. The minimum moment of inertia occurs about the weak axis (bending parallel to the $20\\text{ mm}$ side):\n$$I_{\\text{min}} = \\frac{b h^3}{12} = \\frac{20 \\times 10^3}{12} = \\frac{20000}{12} = \\frac{5000}{3}\\text{ mm}^4$$\n\nConverting to standard SI units ($\\text{m}^4$):\n$$I_{\\text{min}} = \\frac{5000}{3} \\times 10^{-12}\\text{ m}^4 = \\frac{5}{3} \\times 10^{-9}\\text{ m}^4$$"
-                    },
-                    {
-                        "title": "Step 3: Calculate Lowest Euler Critical Buckling Load ($P_{\\text{cr",
-                        "content": "}$)}\nGiven $E = 200\\text{ GPa} = 200 \\times 10^9\\text{ N/m}^2$:\n$$P_{\\text{cr}} = \\frac{\\pi^2 \\times (200 \\times 10^9\\text{ N/m}^2) \\times \\left(\\frac{5}{3} \\times 10^{-9}\\text{ m}^4\\right)}{(1.0\\text{ m})^2}$$\n\n$$P_{\\text{cr}} = \\pi^2 \\times 200 \\times \\frac{5}{3} = \\frac{1000 \\pi^2}{3}\\text{ N}$$\n\nUsing $\\pi^2 \\approx 9.8696$:\n$$P_{\\text{cr}} \\approx \\frac{1000 \\times 9.8696}{3} \\approx 3289.87\\text{ N}$$\n\nFinal Answer: $3289.87$ (or $3290$)"
-                    }
-                ],
-                "final_answer": "",
-                "solution_image": "",
-                "video_explanation": ""
-            }
-        },
-        {
-            "topic": "Stress Transformations and Mohr Circle",
-            "title": "Maximum Normal Stress in Pure Shear State",
-            "question": "",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Principal Stresses in Plane Stress",
-                        "content": "The principal stresses $\\sigma_{1,2}$ for a two-dimensional state of stress $(\\sigma_x, \\sigma_y, \\tau_{xy})$ are given by the formula:\n\n\\begin{empheq}[box={\\mymath[colback=col3!30,drop lifted shadow, rounded corners]}]{equation}\\tag{Principal Stresses}\n\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}\n \\end{empheq}"
-                    },
-                    {
-                        "title": "Step 1: Identify Given Stress Components",
-                        "content": "From the problem statement:\n\\begin{itemize}\n    \\item Normal stresses: $\\sigma_x = 0$, $\\sigma_y = 0$, $\\sigma_z = 0$\n    \\item Out-of-plane shear stresses: $\\tau_{xz} = \\tau_{zx} = \\tau_{yz} = \\tau_{zy} = 0$\n    \\item In-plane shear stress: $\\tau_{xy} = \\tau_{yx} = 50\\text{ MPa}$\n\\end{itemize}\n\nThis represents a pure shear state of stress."
-                    },
-                    {
-                        "title": "Step 2: Calculate Principal Stresses",
-                        "content": "Substitute the values into the principal stress formula:\n$$\\sigma_{1,2} = \\frac{0 + 0}{2} \\pm \\sqrt{\\left(\\frac{0 - 0}{2}\\right)^2 + (50)^2}$$\n$$\\sigma_{1,2} = 0 \\pm \\sqrt{50^2} = \\pm 50\\text{ MPa}$$\n\nThus, the 3D principal stresses at the point are:\n$$\\sigma_1 = 50\\text{ MPa}, \\quad \\sigma_2 = 0\\text{ MPa}, \\quad \\sigma_3 = -50\\text{ MPa}$$"
-                    },
-                    {
-                        "title": "Step 3: Determine Maximum Normal Stress",
-                        "content": "The maximum normal stress ($\\sigma_{\\text{max}}$) experienced at the point is the algebraically largest principal stress:\n$$\\sigma_{\\text{max}} = \\sigma_1 = 50\\text{ MPa}$$\n\nFinal Answer: $50$"
-                    }
-                ],
-                "final_answer": "",
-                "solution_image": "",
-                "video_explanation": ""
-            }
-        },
-        {
+                        {
             "topic": "Stress Transformations and Mohr Circle",
             "title": "Yielding under Maximum Distortion Energy Theory",
             "question": "A structural member under loading has a uniform state of plane stress which in usual notations is given by $\\sigma_x = 3P$, $\\sigma_y = -2P$ and $\\tau_{xy} = \\sqrt{2} P$, where $P > 0$. The yield strength of the material is $350\\text{ MPa}$. If the member is designed using the maximum distortion energy theory, then the value of $P$ at which yielding starts (according to the maximum distortion energy theory) is:",
@@ -64834,34 +64652,7 @@ const QUESTIONS = {
         }
     ],
     "design": [
-        {
-            "topic": "Pressure Vessels and Piping",
-            "title": "Thin Pressure Vessels: Minimum Wall Thickness Design",
-            "question": "",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Stresses in Thin Gas Cylinders",
-                        "content": "In a thin-walled cylindrical vessel under internal pressure $p$, two tensile stresses act in the walls:\n1. **Circumferential (Hoop) Stress ($\\sigma_h$):** $\\sigma_h = \\frac{p \\cdot r}{t}$\n2. **Longitudinal Stress ($\\sigma_l$):** $\\sigma_l = \\frac{p \\cdot r}{2t}$\n\nSince $\\sigma_h = 2\\sigma_l$, the maximum tensile stress experienced by the cylinder material is the **hoop stress**.\n\n\\begin{empheq}[box={\\mymath[colback=col3!30,drop lifted shadow, rounded corners]}]{equation}\\tag{Hoop Stress Design Equation}\n\\sigma_h = \\frac{p \\cdot r}{t} \\le \\sigma_{\\text{permissible}}\n \\end{empheq}\n\nwhere:\n\\begin{itemize}\n    \\item $p$ = internal gauge pressure\n    \\item $r$ = internal radius of the cylinder\n    \\item $t$ = wall thickness of the cylinder\n    \\item $\\sigma_{\\text{permissible}}$ = maximum allowed working stress\n\\end{itemize}"
-                    },
-                    {
-                        "title": "Step 1: Identify Given Values",
-                        "content": "From the problem statement:\n\\begin{itemize}\n    \\item Internal radius $r = 100\\text{ mm}$\n    \\item Internal pressure $p = 10\\text{ MPa}$\n    \\item Maximum permissible working stress $\\sigma_{\\text{permissible}} = 100\\text{ MPa}$\n\\end{itemize}"
-                    },
-                    {
-                        "title": "Step 2: Calculate Minimum Wall Thickness ($t_{\\text{min",
-                        "content": "}$)}\nSet the maximum tensile stress ($\\sigma_h$) equal to the allowable working stress ($\\sigma_{\\text{permissible}}$):\n\n$$\\sigma_{\\text{permissible}} = \\frac{p \\cdot r}{t_{\\text{min}}}$$\n\nRearranging for $t_{\\text{min}}$:\n\n$$t_{\\text{min}} = \\frac{p \\cdot r}{\\sigma_{\\text{permissible}}}$$\n\nSubstituting the given values:\n\n$$t_{\\text{min}} = \\frac{10\\text{ MPa} \\times 100\\text{ mm}}{100\\text{ MPa}} = 10\\text{ mm}$$\n\nThus, to safely withstand the internal pressure without exceeding the allowable working stress, the minimum wall thickness must be $10\\text{ mm}$.\n\nFinal Answer: $10$"
-                    }
-                ],
-                "final_answer": "",
-                "solution_image": "",
-                "video_explanation": ""
-            }
-        },
-        {
+                {
             "topic": "Pressure Vessels and Piping",
             "title": "Thin Cylindrical Pressure Vessels: Hoop vs. Longitudinal Stress",
             "question": "A thin cylindrical pressure vessel with closed-ends is subjected to internal pressure. The ratio of circumferential (hoop) stress to the longitudinal stress is:",

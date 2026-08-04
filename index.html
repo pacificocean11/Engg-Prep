@@ -207,6 +207,52 @@
 </section>
 <!-- Bento Grid Dashboard -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+<!-- Free Mentoring Spotlight Card (B-1 / Bento) -->
+<div class="col-span-1 md:col-span-12 lg:col-span-12 glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden group border border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 shadow-[0_10px_40px_rgba(245,158,11,0.08)]">
+    <div class="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-amber-500/20 to-pink-500/10 blur-[90px] pointer-events-none"></div>
+    <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-wider border border-amber-500/20">
+                    <span class="material-symbols-outlined text-[15px]" style="font-variation-settings:'FILL' 1;">workspace_premium</span> 100% Free Mentoring
+                </span>
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Experienced FE Mentor
+                </span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold font-display-lg text-slate-800 dark:text-white leading-tight mb-2">
+                Free 1-on-1 Mentoring & Strategy Session
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed mb-4">
+                Accelerate your preparation with personalized guidance on career roadmap, choosing between your Core Discipline vs. FE Other, and customized study strategy.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-semibold text-slate-700 dark:text-slate-200 mb-2">
+                <div class="flex items-center gap-2 bg-white/60 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200/50 dark:border-slate-700/50">
+                    <span class="material-symbols-outlined text-amber-500 text-[18px]">trending_up</span>
+                    <span>Career & PE Value</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/60 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200/50 dark:border-slate-700/50">
+                    <span class="material-symbols-outlined text-pink-500 text-[18px]">alt_route</span>
+                    <span>Core vs FE-Other</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/60 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200/50 dark:border-slate-700/50">
+                    <span class="material-symbols-outlined text-cyan-500 text-[18px]">calendar_month</span>
+                    <span>Custom Study Plan</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-56 shrink-0">
+            <button onclick="window.openMentoringCalendly()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3.5 px-5 rounded-2xl shadow-lg shadow-amber-500/25 active:scale-95 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">video_camera_front</span> Book 30-Min Call
+            </button>
+            <button onclick="navigateTo('mentoring-view')" class="w-full bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800 text-slate-800 dark:text-white font-bold py-3.5 px-5 rounded-2xl border border-slate-200 dark:border-slate-700 active:scale-95 transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">forum</span> Ask a Question
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- Overall Progress Card (B-1: Glassmorphic + Glow) -->
 <div class="col-span-1 md:col-span-12 lg:col-span-5 lg:row-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group flex flex-col justify-center">
     <!-- Animated Glow Background -->
@@ -547,6 +593,27 @@
     </button>
 </div>
 </section>
+
+<!-- Free Mentoring Card in Settings -->
+<div onclick="navigateTo('mentoring-view')" class="w-full glass-card p-5 mb-6 rounded-3xl border border-amber-500/30 hover:border-amber-500/60 transition-all cursor-pointer group flex items-center justify-between bg-gradient-to-r from-amber-500/5 to-pink-500/5 hover:from-amber-500/10 hover:to-pink-500/10 shadow-[0_4px_20px_rgba(245,158,11,0.06)]">
+    <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 dark:bg-amber-400/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/20 group-hover:scale-105 transition-transform">
+            <span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL' 1;">school</span>
+        </div>
+        <div class="text-left">
+            <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-slate-800 dark:text-white block">Free 1-on-1 Mentoring</span>
+                <span class="bg-amber-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">Free</span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Experienced FE Mentor • Career, Discipline & Study Plan</p>
+        </div>
+    </div>
+    <div class="flex items-center gap-2">
+        <span class="text-xs font-bold text-amber-600 dark:text-amber-400 hidden sm:inline uppercase tracking-wider">Book / Ask</span>
+        <span class="material-symbols-outlined text-slate-300 group-hover:text-amber-500 transition-colors">chevron_right</span>
+    </div>
+</div>
+
 <!-- Stats Stack (Spacious Glass Cards) -->
 <div class="flex flex-col gap-4 mb-8">
 
@@ -1153,6 +1220,253 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Free 1-on-1 Mentoring Hub Page -->
+            <section id="mentoring-view" class="page">
+                <div class="mb-stack-lg mt-2 min-w-0 pb-20">
+                    <!-- Back Navigation Button -->
+                    <button onclick="navigateTo('dashboard')" class="inline-flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-secondary mb-4 transition-colors group cursor-pointer">
+                        <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                        <span class="uppercase tracking-widest">Back to Dashboard</span>
+                    </button>
+                    
+                    <!-- Mentor Banner Header -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-amber-500/30 mb-8 bg-gradient-to-r from-amber-500/5 via-transparent to-pink-500/5">
+                        <div class="absolute -top-24 -right-24 w-56 h-56 bg-amber-500/10 blur-[80px] pointer-events-none"></div>
+                        <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 to-pink-500 flex items-center justify-center text-white shadow-lg shrink-0">
+                                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">person_pin</span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 text-[10px] font-black uppercase tracking-wider border border-amber-500/20">
+                                            100% Free Program
+                                        </span>
+                                        <span class="text-xs font-bold text-green-600 dark:text-green-400 flex items-center gap-1">
+                                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Experienced FE Mentor
+                                        </span>
+                                    </div>
+                                    <h1 class="text-2xl sm:text-3xl font-display-lg font-bold text-slate-800 dark:text-white leading-tight">
+                                        Free FE Mentoring & Strategy
+                                    </h1>
+                                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                                        Personalized 1-on-1 Guidance on Career Value, Discipline Selection & Study Plans
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <button onclick="window.openMentoringCalendly()" class="w-full md:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-amber-500/25 active:scale-95 transition-all text-xs uppercase tracking-widest flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+                                <span class="material-symbols-outlined text-[20px]">calendar_today</span> Schedule 30-Min Call
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3 Core Guidance Tracks -->
+                    <div class="space-y-4 mb-10">
+                        <div class="flex justify-between items-center px-1">
+                            <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Core Mentoring Tracks</h3>
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-widest">3 Topics Covered</span>
+                        </div>
+
+                        <!-- Track 1: Career Importance & PE Roadmap -->
+                        <div class="glass-card rounded-2xl p-5 border border-slate-200/60 dark:border-slate-800 transition-all">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-amber-500/10 dark:bg-amber-400/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-2xl">trending_up</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <h4 class="text-base font-bold text-slate-800 dark:text-white">1. Importance of FE Exam & Career Growth</h4>
+                                        <span class="text-[9px] font-black bg-amber-500/10 text-amber-600 dark:text-amber-400 px-2 py-0.5 rounded-full uppercase">Pillar 1</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                                        The Fundamentals of Engineering (FE) exam is your required prerequisite toward earning your <strong>Professional Engineer (PE) License</strong>. Passing the FE grants you the official <strong>Engineer-in-Training (EIT)</strong> title, instantly validating your technical competency for top consulting firms, EPC contractors, and government roles.
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-slate-50/80 dark:bg-slate-900/60 p-3.5 rounded-xl border border-slate-200/50 dark:border-slate-800">
+                                        <div class="flex items-start gap-2">
+                                            <span class="material-symbols-outlined text-green-500 text-sm mt-0.5 shrink-0">verified</span>
+                                            <div><strong class="text-slate-800 dark:text-slate-200">Higher Earning Potential:</strong> Licensed engineers command a 15%–25% salary premium and qualify for project sign-off responsibilities.</div>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <span class="material-symbols-outlined text-green-500 text-sm mt-0.5 shrink-0">verified</span>
+                                            <div><strong class="text-slate-800 dark:text-slate-200">Pass Rate Timing:</strong> First-time pass rates are highest while course concepts are fresh in memory.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Track 2: Core Discipline vs. FE Other -->
+                        <div class="glass-card rounded-2xl p-5 border border-slate-200/60 dark:border-slate-800 transition-all">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-pink-500/10 dark:bg-pink-400/20 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-2xl">alt_route</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <h4 class="text-base font-bold text-slate-800 dark:text-white">2. Selection of Discipline (Core vs. "FE Other")</h4>
+                                        <span class="text-[9px] font-black bg-pink-500/10 text-pink-600 dark:text-pink-400 px-2 py-0.5 rounded-full uppercase">Pillar 2</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                                        Many candidates debate whether to register for their major discipline (e.g. Mechanical, Civil, Chemical, Electrical) or take <strong>FE Other Disciplines</strong>. State Licensing Boards award the identical EIT credential regardless of the exam track chosen.
+                                    </p>
+                                    <div class="overflow-x-auto bg-slate-50/80 dark:bg-slate-900/60 p-3.5 rounded-xl border border-slate-200/50 dark:border-slate-800">
+                                        <table class="w-full text-left text-xs border-collapse">
+                                            <thead>
+                                                <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-400 font-bold uppercase">
+                                                    <th class="py-2 pr-3">Factor</th>
+                                                    <th class="py-2 pr-3 text-secondary">Core Discipline</th>
+                                                    <th class="py-2 text-pink-500">FE Other Disciplines</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-slate-600 dark:text-slate-300 divide-y divide-slate-100 dark:divide-slate-800/60">
+                                                <tr>
+                                                    <td class="py-2 font-semibold text-slate-800 dark:text-slate-200">Ideal Candidate</td>
+                                                    <td class="py-2">Strong in specialty courses (HVAC, Structures, Circuits, Unit Ops)</td>
+                                                    <td class="py-2">Strong in foundational math, physics, chemistry, statics & dynamics</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-2 font-semibold text-slate-800 dark:text-slate-200">Question Breadth</td>
+                                                    <td class="py-2">14 branch-specific chapters</td>
+                                                    <td class="py-2">Fundamental cross-engineering syllabus</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-2 font-semibold text-slate-800 dark:text-slate-200">Mentor Tip</td>
+                                                    <td class="py-2">Choose if you work daily in branch design</td>
+                                                    <td class="py-2">Great if you graduated years ago or prefer math & physics</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Track 3: Customized Study Strategies -->
+                        <div class="glass-card rounded-2xl p-5 border border-slate-200/60 dark:border-slate-800 transition-all">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-cyan-500/10 dark:bg-cyan-400/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-2xl">psychology</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <h4 class="text-base font-bold text-slate-800 dark:text-white">3. Customized Study Strategies & Exam Technique</h4>
+                                        <span class="text-[9px] font-black bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 px-2 py-0.5 rounded-full uppercase">Pillar 3</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                                        The FE Exam is an endurance and reference handbook navigation test. Success comes down to structured problem repetitions and strict time discipline.
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                                        <div class="bg-white/70 dark:bg-slate-900/70 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800 text-center">
+                                            <span class="font-black text-secondary text-sm block mb-1">3 Min / Question</span>
+                                            <span class="text-[11px] text-slate-500 dark:text-slate-400">Flag tough questions immediately. Never spend &gt;3 mins on first pass.</span>
+                                        </div>
+                                        <div class="bg-white/70 dark:bg-slate-900/70 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800 text-center">
+                                            <span class="font-black text-pink-500 text-sm block mb-1">Search Keyword Skill</span>
+                                            <span class="text-[11px] text-slate-500 dark:text-slate-400">Master the searchable NCEES PDF handbook without manually browsing.</span>
+                                        </div>
+                                        <div class="bg-white/70 dark:bg-slate-900/70 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800 text-center">
+                                            <span class="font-black text-cyan-500 text-sm block mb-1">Simulate 110Q Full Exam</span>
+                                            <span class="text-[11px] text-slate-500 dark:text-slate-400">Take at least 2 full 5-hour timed mock exams in our simulator before testing.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Two-Way Action Hub -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+                        <!-- Quick Question Form -->
+                        <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="material-symbols-outlined text-secondary">forum</span>
+                                <h3 class="text-lg font-bold text-slate-800 dark:text-white">Ask Your Mentor a Quick Question</h3>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">
+                                Send a specific question directly to your mentor (<span class="font-semibold text-secondary">admin@engg.tv</span>). You'll receive a detailed email response.
+                            </p>
+
+                            <form id="mentor-question-form" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Your Name</label>
+                                        <input type="text" id="mentor-q-name" required placeholder="Alex Riviera" class="w-full px-4 py-3 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Your Email</label>
+                                        <input type="email" id="mentor-q-email" required placeholder="alex@example.com" class="w-full px-4 py-3 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Mentoring Topic</label>
+                                    <select id="mentor-q-category" class="w-full px-4 py-3 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-bold text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                                        <option value="Career & PE Roadmap">1. Career Importance & PE Roadmap</option>
+                                        <option value="Discipline Selection (Core vs Other)">2. Discipline Selection (Core vs FE-Other)</option>
+                                        <option value="Customized Study Strategy">3. Customized Study Strategy & Timeline</option>
+                                        <option value="FE Practice Problem Clarification">4. FE Practice Problem Clarification</option>
+                                        <option value="General Mentoring Inquiry">5. General Question</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between items-center mb-1.5">
+                                        <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest">Your Question</label>
+                                        <span id="mentor-q-char-count" class="text-[10px] font-bold text-slate-400">0 / 600</span>
+                                    </div>
+                                    <textarea id="mentor-q-message" rows="4" maxlength="600" required placeholder="Ask about syllabus difficulty, study timetable, core vs other comparison, or career advice..." class="w-full px-4 py-3 bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl text-xs text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-secondary resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" id="btn-submit-mentor-q" class="w-full bg-secondary hover:brightness-110 active:scale-[0.98] text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer">
+                                    <span class="material-symbols-outlined text-[18px]" id="mentor-send-icon">send</span>
+                                    <span id="mentor-send-text">Send Question to Mentor</span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Schedule 30-Min Call Card -->
+                        <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 border border-amber-500/30 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-amber-500/5 via-transparent to-pink-500/5">
+                            <div class="relative z-10">
+                                <div class="w-14 h-14 rounded-2xl bg-amber-500/10 dark:bg-amber-400/20 text-amber-500 flex items-center justify-center mb-4 border border-amber-500/20">
+                                    <span class="material-symbols-outlined text-3xl">video_camera_front</span>
+                                </div>
+                                <span class="text-[10px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest block mb-1">Live 1-on-1 Strategy</span>
+                                <h3 class="text-xl font-bold font-display-lg text-slate-800 dark:text-white mb-2">
+                                    Book a Free 30-Minute Video Consultation
+                                </h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                                    Prefer to discuss your situation face-to-face? Pick a convenient time slot via our Calendly scheduler on <strong>www.ENGG.tv</strong>.
+                                </p>
+
+                                <div class="space-y-3 mb-6 text-xs text-slate-700 dark:text-slate-300">
+                                    <div class="flex items-center gap-2.5">
+                                        <span class="material-symbols-outlined text-amber-500 text-base shrink-0">check_circle</span>
+                                        <span>Direct 1-on-1 with Experienced FE Mentor</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5">
+                                        <span class="material-symbols-outlined text-amber-500 text-base shrink-0">check_circle</span>
+                                        <span>Diagnostic audit of your prep baseline</span>
+                                    </div>
+                                    <div class="flex items-center gap-2.5">
+                                        <span class="material-symbols-outlined text-amber-500 text-base shrink-0">check_circle</span>
+                                        <span>Zero cost, 100% free community initiative</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative z-10 pt-4 border-t border-slate-200/50 dark:border-slate-800">
+                                <button onclick="window.openMentoringCalendly()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/25 active:scale-95 transition-all text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer">
+                                    <span class="material-symbols-outlined text-[20px]">event_available</span>
+                                    <span>Schedule on Calendly</span>
+                                </button>
+                                <p class="text-center text-[10px] text-slate-400 mt-2">Available via ENGG.tv Meeting Portal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -1186,7 +1500,7 @@
     <script src="js/data-manager.js?v=4"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=13"></script>
+    <script src="app.js?v=14"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -1595,28 +1909,36 @@
         });
     </script>
     <!-- FE EXAM MODALS -->
-    <div id="fe-exam-intro-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/90 backdrop-blur-sm p-4">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800">
-            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900">
-                <h2 id="fe-intro-title" class="text-xl font-bold font-display-lg text-slate-800 dark:text-white">Nondisclosure Agreement</h2>
-                <div id="fe-intro-timer-container" class="text-secondary font-black bg-secondary/10 px-3 py-1 rounded-full flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[14px]">timer</span>
-                    <span id="fe-intro-timer">02:00</span>
+    <div id="fe-exam-intro-modal" class="fixed inset-0 z-[10008] hidden flex items-center justify-center bg-slate-900/90 backdrop-blur-md p-3 sm:p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-[28px] sm:rounded-3xl max-w-2xl w-full max-h-[90dvh] sm:max-h-[85vh] overflow-hidden flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800">
+            <div class="p-4 sm:p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900 shrink-0">
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <span class="material-symbols-outlined text-amber-500 text-2xl sm:text-3xl">verified_user</span>
+                    <h2 id="fe-intro-title" class="text-base sm:text-xl font-bold font-display-lg text-slate-800 dark:text-white leading-tight">Nondisclosure Agreement</h2>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div id="fe-intro-timer-container" class="text-secondary font-black bg-secondary/10 px-2.5 sm:px-3 py-1 rounded-full flex items-center gap-1.5 text-xs sm:text-sm shrink-0">
+                        <span class="material-symbols-outlined text-[14px]">timer</span>
+                        <span id="fe-intro-timer">02:00</span>
+                    </div>
+                    <button onclick="window.cancelFEIntro()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors" title="Cancel">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                    </button>
                 </div>
             </div>
-            <div class="p-6 overflow-y-auto flex-1 font-body-base text-slate-600 dark:text-slate-300" id="fe-intro-content">
+            <div class="p-4 sm:p-6 overflow-y-auto flex-1 font-body-base text-slate-600 dark:text-slate-300" id="fe-intro-content">
                 <!-- Content generated via JS -->
             </div>
-            <div class="p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex justify-end gap-3 items-center">
-                <div id="fe-intro-wait-text" class="text-sm font-bold text-slate-400 flex items-center gap-2 h-[48px]">
+            <div class="p-4 sm:p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex flex-col sm:flex-row justify-between sm:justify-end gap-3 items-stretch sm:items-center shrink-0">
+                <div id="fe-intro-wait-text" class="text-xs sm:text-sm font-bold text-slate-400 flex items-center justify-center sm:justify-start gap-2 py-1">
                     <span class="material-symbols-outlined animate-spin text-[16px]">hourglass_empty</span> Please read carefully...
                 </div>
-                <button id="btn-fe-intro-action" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hidden">I Agree</button>
+                <button id="btn-fe-intro-action" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md hidden text-sm sm:text-base cursor-pointer">I Agree & Continue</button>
             </div>
         </div>
     </div>
 
-    <div id="fe-exam-break-modal" class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-center bg-slate-900/95 backdrop-blur-md p-4 text-center">
+    <div id="fe-exam-break-modal" class="fixed inset-0 z-[10008] hidden flex flex-col items-center justify-center bg-slate-900/95 backdrop-blur-md p-4 text-center">
         <div class="w-24 h-24 rounded-full bg-amber-500/20 flex items-center justify-center mb-6 border-4 border-amber-500/30 mx-auto">
             <span class="material-symbols-outlined text-amber-500 text-5xl" style="font-variation-settings:'FILL' 1;">free_cancellation</span>
         </div>
@@ -1628,12 +1950,94 @@
             <p id="fe-break-timer" class="text-6xl font-black text-white tabular-nums tracking-tight">25:00</p>
         </div>
         
-        <button onclick="window.resumeFEExamPart2()" class="mx-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-lg uppercase tracking-widest flex items-center gap-2">
+        <button onclick="window.resumeFEExamPart2()" class="mx-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-10 py-4 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-lg uppercase tracking-widest flex items-center gap-2 cursor-pointer">
             <span class="material-symbols-outlined text-[24px]">play_circle</span> Resume Exam (Part 2)
         </button>
     </div>
 
-    <script src="js/fe-simulator.js?v=4"></script>
+    <!-- MENTORING MODALS -->
+    <!-- 1. Mentoring Calendly Booking Modal -->
+    <div id="mentoring-calendly-modal" class="fixed inset-0 z-[10010] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-md p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-48 h-48 bg-amber-500/10 blur-3xl pointer-events-none"></div>
+            
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 dark:bg-amber-400/20 text-amber-500 flex items-center justify-center mx-auto mb-4 border border-amber-500/20">
+                <span class="material-symbols-outlined text-3xl">video_camera_front</span>
+            </div>
+            
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-[10px] font-black uppercase tracking-wider mb-2">
+                100% Free 1-on-1 Session
+            </div>
+            
+            <h3 class="text-xl sm:text-2xl font-bold font-display-lg text-slate-800 dark:text-white mb-2">
+                Schedule 30-Minute Mentoring
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                Connect directly with an <strong>Experienced FE Mentor</strong> to review your exam discipline choice, career roadmap, and customized study strategy.
+            </p>
+            
+            <div class="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 text-left text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-green-500 text-sm shrink-0">check_circle</span>
+                    <span>30 Minutes dedicated video call via Google Meet / Zoom</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-green-500 text-sm shrink-0">check_circle</span>
+                    <span>Book directly on the Calendly schedule on www.ENGG.tv</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button onclick="window.proceedToCalendlyBooking()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/25 active:scale-95 transition-all text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                    <span>Open ENGG.tv Meeting Scheduler</span>
+                </button>
+                <button onclick="window.closeMentoringCalendly()" class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold py-3 px-6 rounded-2xl transition-all text-xs uppercase tracking-widest cursor-pointer">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Mentoring Question Success & Calendly Prompt Modal -->
+    <div id="mentoring-question-success-modal" class="fixed inset-0 z-[10010] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-md p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 text-center relative overflow-hidden">
+            <div class="w-16 h-16 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mx-auto mb-4 border border-green-500/20">
+                <span class="material-symbols-outlined text-3xl">mark_email_read</span>
+            </div>
+            
+            <h3 class="text-xl sm:text-2xl font-bold font-display-lg text-slate-800 dark:text-white mb-2">
+                Question Sent to Mentor! ✉️
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                Your question has been dispatched to <strong class="text-secondary">admin@engg.tv</strong>. Your mentor will reply to your email as soon as possible.
+            </p>
+
+            <div class="bg-amber-500/10 dark:bg-amber-400/10 border border-amber-500/30 p-5 rounded-2xl text-left mb-6">
+                <div class="flex items-center gap-2 mb-1.5">
+                    <span class="material-symbols-outlined text-amber-500 text-lg">calendar_month</span>
+                    <span class="text-xs font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider">Need Faster or Deeper Guidance?</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Would you like to schedule a free <strong>30-minute 1-on-1 strategy meeting</strong> on Calendly right now?
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button onclick="window.openMentoringCalendlyFromSuccess()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/25 active:scale-95 transition-all text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-[18px]">video_camera_front</span>
+                    <span>Schedule 30-Min Meeting on Calendly</span>
+                </button>
+                <button onclick="window.closeMentoringSuccessModal()" class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold py-3 px-6 rounded-2xl transition-all text-xs uppercase tracking-widest cursor-pointer">
+                    Done & Return to Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/fe-simulator.js?v=5"></script>
 </body>
 
 </html>

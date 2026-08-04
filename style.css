@@ -3275,3 +3275,38 @@ html.dark .btn-tts:hover {
 .tap-bounce {
     animation: tapBounce 0.2s ease-out;
 }
+
+/* FE Exam Modals Safety & Stacking */
+#fe-exam-intro-modal,
+#fe-exam-break-modal {
+    z-index: 10050 !important;
+}
+
+#fe-exam-intro-modal .bg-white,
+#fe-exam-intro-modal .dark\:bg-slate-900 {
+    max-height: 90vh;
+    max-height: 90dvh;
+}
+
+@media (max-width: 640px) {
+    #fe-exam-intro-modal {
+        padding: 0.75rem !important;
+    }
+    #fe-exam-intro-modal button#btn-fe-intro-action {
+        width: 100% !important;
+        padding: 0.875rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Mentoring Modals & Stacking */
+#mentoring-calendly-modal,
+#mentoring-question-success-modal {
+    z-index: 10050 !important;
+}
+
+#mentoring-view table th,
+#mentoring-view table td {
+    padding: 0.625rem 0.75rem;
+}
+

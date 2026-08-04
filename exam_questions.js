@@ -798,61 +798,6 @@ const EXAM_QUESTIONS = {
                 }
             },
             {
-                "topic": "Regression and Curve Fitting",
-                "title": "Least Squares Linear Regression",
-                "question": "Using given data points tabulated below, a straight line passing through the origin is fitted using least squares method. The slope of the line is",
-                "question_image": "",
-                "local_question_image": "",
-                "times_presented": 0,
-                "options": [
-                    {
-                        "label": "A",
-                        "text": "$0.9$",
-                        "is_correct": false
-                    },
-                    {
-                        "label": "B",
-                        "text": "$1$",
-                        "is_correct": false
-                    },
-                    {
-                        "label": "C",
-                        "text": "$0.95$",
-                        "is_correct": true
-                    },
-                    {
-                        "label": "D",
-                        "text": "$0.88$",
-                        "is_correct": false
-                    }
-                ],
-                "solution": {
-                    "steps": [
-                        {
-                            "title": "Understand Least Squares Line Passing Through Origin",
-                            "content": "For a straight line passing through the origin, the equation is given by:\n$$y = mx$$\n\nWhere $m$ is the slope of the line. The sum of squared residuals is:\n$$S(m) = \\sum_{i=1}^{n} (y_i - m x_i)^2$$\n\nTo minimize $S(m)$, set the derivative with respect to $m$ to zero:\n$$\\frac{d S}{dm} = -2 \\sum_{i=1}^{n} x_i (y_i - m x_i) = 0 \\implies \\sum x_i y_i - m \\sum x_i^2 = 0$$\n\n$\nm = \\frac{\\sum x_i y_i}{\\sum x_i^2}\n$"
-                        },
-                        {
-                            "title": "Step 1: Compute Required Sums",
-                            "content": "Given the data points $(x_i, y_i)$:\n\\begin{itemize}\n    \\item $(1, 1.5)$\n    \\item $(2, 2.2)$\n    \\item $(3, 2.7)$\n\\end{itemize}\n\nCalculate $\\sum x_i^2$:\n$$\\sum x_i^2 = 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14$$\n\nCalculate $\\sum x_i y_i$:\n$$\\sum x_i y_i = (1 \\times 1.5) + (2 \\times 2.2) + (3 \\times 2.7)$$\n$$\\sum x_i y_i = 1.5 + 4.4 + 8.1 = 14.0$$"
-                        },
-                        {
-                            "title": "Step 2: Calculate the Slope $m$",
-                            "content": "Substituting the calculated sums into the formula:\n\n$$m = \\frac{14.0}{14} = 1$$\n\nThus, the slope of the fitted line passing through the origin is $1$."
-                        }
-                    ],
-                    "final_answer": "C",
-                    "solution_image": "",
-                    "video_explanation": ""
-                },
-                "ncees_reference": {
-                    "version": "10.6",
-                    "section": "Probability and Statistics",
-                    "topic": "Regression and Curve Fitting",
-                    "search_term": "Regression and Curve Fitting"
-                }
-            },
-            {
                 "topic": "Probability Distributions",
                 "title": "Binomial Probability Distribution",
                 "question": "A lot had 10\\% defective items. Ten items are chosen randomly from this lot. The probability that exactly 2 of the chosen items are defective is",
@@ -1008,78 +953,6 @@ const EXAM_QUESTIONS = {
                         {
                             "title": "Step 2: Calculate Required Probability",
                             "content": "$$P(\\text{2 Same, 1 Different}) = \\frac{79}{120}$$"
-                        }
-                    ],
-                    "final_answer": "A",
-                    "solution_image": "",
-                    "video_explanation": ""
-                },
-                "ncees_reference": {
-                    "version": "10.6",
-                    "section": "Probability and Statistics",
-                    "topic": "Probability Distributions",
-                    "search_term": "Probability Distributions"
-                }
-            },
-            {
-                "topic": "Expected Value",
-                "title": "Expectation of a Function of a Continuous Random Variable",
-                "question": "",
-                "question_image": "",
-                "local_question_image": "",
-                "times_presented": 0,
-                "options": [],
-                "solution": {
-                    "steps": [
-                        {
-                            "title": "Understand Expected Value for Continuous Distribution",
-                            "content": "The uniform distribution on $[0,1]$ has a probability density function (PDF):\n$$f(x) = \\begin{cases} 1, & 0 \\le x \\le 1 \\\\ 0, & \\text{otherwise} \\end{cases}$$\n\nBy the Law of the Unconscious Statistician (LOTUS), the expected value of a function $g(X)$ of a continuous random variable $X$ is defined as:\n\n$\nE[g(X)] = \\int_{-\\infty}^{\\infty} g(x) f(x) \\, dx\n$"
-                        },
-                        {
-                            "title": "Step 1: Set Up the Integration",
-                            "content": "For $Y = g(X) = \\log_e(X + 1) = \\ln(x + 1)$ on the interval $[0, 1]$:\n\n$$E[Y] = \\int_{0}^{1} \\ln(x + 1) \\cdot (1) \\, dx = \\int_{0}^{1} \\ln(x + 1) \\, dx$$"
-                        },
-                        {
-                            "title": "Step 2: Evaluate the Definite Integral",
-                            "content": "Using integration by parts or variable substitution ($u = x + 1 \\implies du = dx$):\n\n$$\\int \\ln(u) \\, du = u \\ln(u) - u + C$$\n\nApplying limits from $x = 0$ ($u = 1$) to $x = 1$ ($u = 2$):\n\n$$E[Y] = \\Big[ (x + 1) \\ln(x + 1) - (x + 1) \\Big]_0^1$$\n\n$$E[Y] = \\Big( 2 \\ln(2) - 2 \\Big) - \\Big( 1 \\ln(1) - 1 \\Big)$$\n\nSince $\\ln(1) = 0$:\n$$E[Y] = 2 \\ln(2) - 2 - (0 - 1) = 2 \\ln(2) - 1$$"
-                        },
-                        {
-                            "title": "Step 3: Numerical Evaluation",
-                            "content": "Using the value $\\ln(2) \\approx 0.693147$:\n\n$$E[Y] = 2(0.693147) - 1 = 1.386294 - 1 = 0.386294$$\n\nRounding off to 2 decimal places yields **$0.39$**.\n\nCorrect Answer: 0.39"
-                        }
-                    ],
-                    "final_answer": "A",
-                    "solution_image": "",
-                    "video_explanation": ""
-                },
-                "ncees_reference": {
-                    "version": "10.6",
-                    "section": "Probability and Statistics",
-                    "topic": "Expected Value",
-                    "search_term": "Expected Value"
-                }
-            },
-            {
-                "topic": "Probability Distributions",
-                "title": "Binomial Distribution and Quality Control",
-                "question": "",
-                "question_image": "",
-                "local_question_image": "",
-                "times_presented": 0,
-                "options": [],
-                "solution": {
-                    "steps": [
-                        {
-                            "title": "Understand the Binomial Model",
-                            "content": "Let $X$ be the random variable denoting the number of defective screws in a packet of $5$ screws. \n\nSince each screw is independently tested with a constant probability of defect, $X$ follows a Binomial distribution $X \\sim B(n, p)$:\n\\begin{itemize}\n    \\item Number of trials (screws per packet): $n = 5$\n    \\item Probability of a defective screw: $p = 0.1$\n    \\item Probability of a non-defective screw: $q = 1 - p = 0.9$\n\\end{itemize}\n\n$\nP(\\text{Packet Replaced}) = P(X \\ge 1) = 1 - P(X = 0)\n$"
-                        },
-                        {
-                            "title": "Step 1: Calculate Probability of Zero Defective Screws",
-                            "content": "A packet is **not** replaced if all 5 screws in the packet are non-defective ($X = 0$):\n\n$$P(X = 0) = \\binom{5}{0} p^0 q^{5-0}$$\n\n$$P(X = 0) = 1 \\times (0.1)^0 \\times (0.9)^5$$\n\n$$P(X = 0) = (0.9)^5 = 0.59049$$"
-                        },
-                        {
-                            "title": "Step 2: Calculate Probability of Replacement",
-                            "content": "Using the complementary probability rule:\n\n$$P(\\text{Replacement}) = 1 - P(X = 0)$$\n\n$$P(\\text{Replacement}) = 1 - 0.59049 = 0.40951 \\approx 0.4095 \\quad (\\text{or } 0.41)$$\n\nCorrect Answer: 0.4095 (or 0.41)"
                         }
                     ],
                     "final_answer": "A",
@@ -5718,8 +5591,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics / Mechanics & Newton's Laws",
             "title": "Apparent Weight in an Elevating System",
             "question": "The weight of man in lift moving in upward direction with an acceleration '$a$' is $660\\text{ N}$. When the lift moves in the downward direction with the same acceleration, his weight is found to be $380\\text{ N}$. The real weight of the man when the lift is at rest is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1_jM8Yh6PvVzWAQGtehzaKvhIcHemOrOl/preview",
+            "local_question_image": "assets/quiz-images/img_1_jM8Yh6PvVzWAQGtehzaKvhIcHemOrOl.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -5777,8 +5650,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics / Circular Motion",
             "title": "Angular Displacement",
             "question": "A particle completes $2$ revolutions in a circular path of radius $3\\text{ cm}$. The angular displacement of the particle will be (in radian)",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1eWeuZQVJiZgOqr0LXQsniiXp1uat2eYZ/preview",
+            "local_question_image": "assets/quiz-images/img_1eWeuZQVJiZgOqr0LXQsniiXp1uat2eYZ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -5832,8 +5705,8 @@ const EXAM_QUESTIONS = {
             "topic": "Physics / Work, Energy & Power",
             "title": "Instantaneous Power",
             "question": "A body of mass $1\\text{ kg}$ begins to move under the action of a time dependent force $\\vec{F} = (t\\hat{i} + 3t^2\\hat{j})\\text{ N}$ where $\\hat{i}$ and $\\hat{j}$ are the unit vectors along x and y axis. The power developed by the above force at time $t = 2\\text{ s}$ will be (in watt)",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fJ3lj6ia3VreJWJQGKlmfpsZMTheWgJE/preview",
+            "local_question_image": "assets/quiz-images/img_1fJ3lj6ia3VreJWJQGKlmfpsZMTheWgJE.jpg",
             "times_presented": 0,
             "options": [
                 {
