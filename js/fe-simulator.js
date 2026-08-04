@@ -109,6 +109,10 @@
         const primaryDB = (typeof EXAM_QUESTIONS !== 'undefined') ? EXAM_QUESTIONS : null;
         const fallbackDB = (typeof QUESTIONS !== 'undefined') ? QUESTIONS : window.QUESTIONS;
         
+        const isValidQuestion = q => q && typeof q === 'object' && 
+            ((q.question && q.question.trim().length > 0) || (q.question_text && q.question_text.trim().length > 0)) && 
+            Array.isArray(q.options) && q.options.length >= 2;
+
         let subjectGroups = [];
         
         for (const [subjectId, count] of Object.entries(blueprint)) {
@@ -116,7 +120,9 @@
             
             // Try to get from primary database first (exam_questions.js)
             if (primaryDB && primaryDB[subjectId]) {
-                pool = [...primaryDB[subjectId]].map(q => ({...q, subjectId}));
+                pool = [...primaryDB[subjectId]]
+                    .filter(isValidQuestion)
+                    .map(q => ({...q, subjectId}));
             }
             
             // If primary doesn't have enough (or any), pull from fallback database (questions.js)
@@ -125,6 +131,7 @@
                 const extraNeeded = count - pool.length;
                 
                 let fallbackPool = [...fallbackDB[subjectId]]
+                    .filter(isValidQuestion)
                     .map(q => ({...q, subjectId}))
                     .filter(q => !existingText.includes(q.question_text || q.question));
                 
@@ -158,8 +165,13 @@
             if(allKeys.length === 0) break;
             const randomSub = allKeys[Math.floor(Math.random() * allKeys.length)];
             if(anyDB[randomSub] && anyDB[randomSub].length > 0) {
-                const q = anyDB[randomSub][Math.floor(Math.random() * anyDB[randomSub].length)];
-                selectedQuestions.push({...q, subjectId: randomSub});
+                const validSubQuestions = anyDB[randomSub].filter(isValidQuestion);
+                if (validSubQuestions.length > 0) {
+                    const q = validSubQuestions[Math.floor(Math.random() * validSubQuestions.length)];
+                    selectedQuestions.push({...q, subjectId: randomSub});
+                } else {
+                    break;
+                }
             } else {
                 break;
             }
@@ -184,9 +196,24 @@
             interceptorsSetup = true;
         }
         
+        // Hide bottom navigation so it never overlaps or interferes
+        document.body.classList.add('nav-hidden');
+        
         const modal = document.getElementById('fe-exam-intro-modal');
         if (modal) modal.classList.remove('hidden');
         showNDAScreen();
+    };
+
+    window.cancelFEIntro = function() {
+        clearInterval(feIntroTimerInterval);
+        const modal = document.getElementById('fe-exam-intro-modal');
+        if (modal) modal.classList.add('hidden');
+        
+        // Restore navigation if user did not enter quiz view
+        const currentActivePage = document.querySelector('.page.active');
+        if (!currentActivePage || currentActivePage.id !== 'quiz-view') {
+            document.body.classList.remove('nav-hidden');
+        }
     };
 
     function showNDAScreen() {
@@ -205,6 +232,9 @@
                 <p class="text-sm text-red-500 font-bold mt-4">Violation of this agreement may result in the invalidation of your exam results and suspension from future Engg.tv simulator sessions.</p>
             </div>
         `;
+        
+        const btnAction = document.getElementById('btn-fe-intro-action');
+        if (btnAction) btnAction.innerText = "I Agree & Continue";
         
         // 2 Minutes NDA
         startIntroTimer(120, () => {
@@ -230,6 +260,9 @@
                 <p>Take a deep breath. Read every question carefully. Manage your time efficiently.</p>
             </div>
         `;
+        
+        const btnAction = document.getElementById('btn-fe-intro-action');
+        if (btnAction) btnAction.innerText = "I Agree & Begin Exam";
         
         // 8 Minutes Tutorial
         startIntroTimer(480, () => {
