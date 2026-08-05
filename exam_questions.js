@@ -6092,8 +6092,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Bending Stress in Circular Rods",
             "question": "What is the stress developed in bending a $10\\text{ mm}$ diameter steel rod of $E = 2 \\times 10^5\\text{ N/mm}^2$ to $2000\\text{ mm}$ diameter?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/17cWoVey8m1wPyaYhjoBQiBqxkF9K_M4P/preview",
+            "local_question_image": "assets/quiz-images/img_17cWoVey8m1wPyaYhjoBQiBqxkF9K_M4P.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6147,8 +6147,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Normal Stress on the Plane of Maximum Shear Stress",
             "question": "For the state of stress shown in the figure ($\\sigma_x = +100\\text{ MPa}, \\sigma_y = -50\\text{ MPa}$), normal stress acting on the plane of maximum shear stress is --",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/17iI7EVwr1W9zyL2nUtj-s3pgwEl2ksqZ/preview",
+            "local_question_image": "assets/quiz-images/img_17iI7EVwr1W9zyL2nUtj-s3pgwEl2ksqZ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6253,8 +6253,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Maximum Bending Stress in a Bent Plate",
             "question": "A steel plate is bent into a circular arc of radius $10\\text{ m}$. If the plate section be $120\\text{ mm}$ wide and $20\\text{ mm}$ thick, with $E = 2 \\times 10^5\\text{ N/mm}^2$, then the maximum bending stress-induced is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1L5NtcmVH000-FJcICuNGtsxRZBXECNgq/preview",
+            "local_question_image": "assets/quiz-images/img_1L5NtcmVH000-FJcICuNGtsxRZBXECNgq.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6308,8 +6308,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Hoop/Circumferential Stress in Thin Spherical Shells",
             "question": "Find the stress acting on the surface of a thin sphere of diameter $15\\text{ cm}$, thickness $0.25\\text{ cm}$ and the internal pressure is $2\\text{ MPa}$",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1kpTO4su3ZnYwhPGV9h8P7fdySRE0N5qX/preview",
+            "local_question_image": "assets/quiz-images/img_1kpTO4su3ZnYwhPGV9h8P7fdySRE0N5qX.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6363,8 +6363,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Elastic and Plastic Strains in Loading-Unloading Response",
             "question": "The loading and unloading response of a metal is shown in a figure. The total strain at a peak stress of $200\\text{ MPa}$ is $0.03$. After unloading, the permanent strain is $0.01$. The elastic and plastic strains corresponding to $200\\text{ MPa}$ stress, respectively, are",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/19nrmb9-LNwIkjRPUuVEDRzP3MnqCryXT/preview",
+            "local_question_image": "assets/quiz-images/img_19nrmb9-LNwIkjRPUuVEDRzP3MnqCryXT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6481,8 +6481,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Maximum Bending Moment in a Simply Supported Beam",
             "question": "A simply supported beam of length $3\\text{ m}$ carries a concentrated load of $15\\text{ kN}$ at distance of $1\\text{ m}$ from left support. The maximum bending moment in the beam:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1T7sF0mFy-GZtU4P4k_dOSTOr4LmFT6bU/preview",
+            "local_question_image": "assets/quiz-images/img_1T7sF0mFy-GZtU4P4k_dOSTOr4LmFT6bU.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6540,8 +6540,8 @@ const EXAM_QUESTIONS = {
             "topic": "Mechanics of Materials",
             "title": "Rate of Loading on a Cantilever Beam",
             "question": "A cantilever $9\\text{ m}$ long has uniformly distributed load over the entire length. The maximum bending moment is $8100\\text{ N-m}$, the rate of loading is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1sHVpm-Cih9kAYg7yBYsKYzxoGXU6jMXn/preview",
+            "local_question_image": "assets/quiz-images/img_1sHVpm-Cih9kAYg7yBYsKYzxoGXU6jMXn.jpg",
             "times_presented": 0,
             "options": [
                 {

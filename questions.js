@@ -38289,7 +38289,8 @@ const QUESTIONS = {
             "topic": "Stress Transformations and Mohr Circle",
             "title": "Valid Mohr's Circle Representations",
             "question": "Which of the plot(s) shown is/are valid Mohr's circle representations of a plane stress state in a material? (The center of each circle is indicated by O.)",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1EtE8gMdEHvf_7dXSmqtFpUpsEy7YViHL/preview",
+            "local_question_image": "assets/quiz-images/img_1EtE8gMdEHvf_7dXSmqtFpUpsEy7YViHL.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38337,7 +38338,8 @@ const QUESTIONS = {
             "topic": "Stress Transformations and Mohr Circle",
             "title": "Theories of Failure: Maximum Normal Stress vs. Maximum Shear Stress",
             "question": "The principal stresses at a point P in a solid are $70\\text{ MPa}$, $-70\\text{ MPa}$ and $0$. The yield stress of the material is $100\\text{ MPa}$. Which prediction(s) about material failure at P is/are CORRECT?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1z2-LrqdjkNZPHU8ola7TGa3uL0Wod8zM/preview",
+            "local_question_image": "assets/quiz-images/img_1z2-LrqdjkNZPHU8ola7TGa3uL0Wod8zM.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38385,7 +38387,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Ratio of Maximum Shear Stress to Maximum Bending Stress",
             "question": "Consider a simply supported beam of length $50h$, with a rectangular cross-section of depth $h$, and width $2h$. The beam carries a vertical point load $P$, at its mid-point. The ratio of the maximum shear stress to the maximum bending stress in the beam is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Uk88QY84-UCZgppjTXo1xAh8wvFWYLJB/preview",
+            "local_question_image": "assets/quiz-images/img_1Uk88QY84-UCZgppjTXo1xAh8wvFWYLJB.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38441,7 +38444,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Torsional Loads",
             "title": "Dimensions of Hollow Shaft Under Torsion",
             "question": "A hollow shaft ($d_0 = 2d_i$, where $d_0$ and $d_i$ are the outer and inner diameters respectively) needs to transmit $20\\text{ kW}$ power at $3000\\text{ RPM}$. If the maximum permissible shear stress is $30\\text{ MPa}$, $d_0$ is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1M787Jivi4WVHDHkF1B3b6PsFEgh2cK1r/preview",
+            "local_question_image": "assets/quiz-images/img_1M787Jivi4WVHDHkF1B3b6PsFEgh2cK1r.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38493,7 +38497,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Shear",
             "title": "Shear Stress in Rectangular Beams",
             "question": "A simply supported beam is subjected to an external point load $P$ as shown in the figure below. The beam has a rectangular cross-section of $20\\text{ mm} \\times 45\\text{ mm}$. $A$ is a pin support and $B$ is a roller support. The shear stress developed at point $C$, lying on the neutral axis of the beam, is $3\\text{ MPa}$. Neglecting the mass of the beam, the magnitude of the applied load is: $\\text{kN}$ (rounded off to 1 decimal place).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1yHb9TddOAQR24CYgS1LNuahvCNSedp6c/preview",
+            "local_question_image": "assets/quiz-images/img_1yHb9TddOAQR24CYgS1LNuahvCNSedp6c.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38545,7 +38550,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Torsional Loads",
             "title": "Angle of Twist in Stepped Shaft",
             "question": "Consider a stepped shaft subjected to a twisting moment applied at $B$ as shown in the figure. Assume shear modulus, $G = 77\\text{ GPa}$. The angle of twist at $C$ (in degrees) is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1qLqbQDzLytDX_Iq25gDzWMY6idRZr-28/preview",
+            "local_question_image": "assets/quiz-images/img_1qLqbQDzLytDX_Iq25gDzWMY6idRZr-28.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38601,7 +38607,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Torsional Loads",
             "title": "Maximum Shear Stress in Torsion of Solid Shaft",
             "question": "A motor driving a solid circular steel shaft transmits $40\\text{ kW}$ of power at $500\\text{ rpm}$. If the diameter of the shaft is $40\\text{ mm}$, the maximum shear stress in the shaft is: ____ $\\text{MPa}$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1rlmklMpESr6WKD1GFJGIUSWsFmgWPJgD/preview",
+            "local_question_image": "assets/quiz-images/img_1rlmklMpESr6WKD1GFJGIUSWsFmgWPJgD.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38649,7 +38656,8 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Bending Moment Under Concentrated Load",
             "question": "A concentrated load $P$ acts on a simply supported beam of span $L$ at a distance $\\frac{L}{3}$ from the left support. The bending moment at the point of application of the load is given by",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Mq7Fa74pM5fAjiSQ5dtzzn9jdr-L585H/preview",
+            "local_question_image": "assets/quiz-images/img_1Mq7Fa74pM5fAjiSQ5dtzzn9jdr-L585H.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38746,7 +38754,8 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Shear Force from Bending Moment Function",
             "question": "For a loaded cantilever beam of uniform cross-section, the bending moment (in $\\text{N}\\cdot\\text{mm}$) along the length is $M(x) = 5x^2+10x$, where $x$ is the distance (in $\\text{mm}$) measured from the free end of the beam. The magnitude of shear force (in $\\text{N}$) in the cross-section at $x=10\\text{ mm}$ is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1wyPpld9Mp-ScQwP1ckfmRRiwt67b9LiO/preview",
+            "local_question_image": "assets/quiz-images/img_1wyPpld9Mp-ScQwP1ckfmRRiwt67b9LiO.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38794,7 +38803,8 @@ const QUESTIONS = {
             "topic": "Shear and Moment Diagrams",
             "title": "Maximum Bending Moment in Simply-Supported Beam",
             "question": "A simply supported beam of span length $6\\text{ m}$ and $75\\text{ mm}$ diameter carries a UDL of $1.5\\text{ kN/m}$.\n\nWhat is the maximum value of bending moment?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jY1s_OixuPiyfdVehgu4ryIdE6qAR6ap/preview",
+            "local_question_image": "assets/quiz-images/img_1jY1s_OixuPiyfdVehgu4ryIdE6qAR6ap.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38842,7 +38852,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Bending Loads",
             "title": "Bending Stress in a Simply-Supported Beam",
             "question": "A simply-supported beam of length $3L$ is subjected to the loading shown in the figure.\n\nIt is given that $P = 1\\text{ N}, L = 1\\text{ m}$ and Young's modulus $E = 200\\text{ GPa}$. The cross-section is a square with dimension $100\\text{ mm}$. The bending stress (in $\\text{Pa}$) at the point A located at the top surface of the beam at a distance of $1.5L$ from the left end is: \n\n(Indicate compressive stress by a negative sign and tensile stress by a positive sign).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PVlA_LGhtRvQYxVsUWQdMFy4x3rkfOes/preview",
+            "local_question_image": "assets/quiz-images/img_1PVlA_LGhtRvQYxVsUWQdMFy4x3rkfOes.jpg",
             "times_presented": 0,
             "options": [
                 {
