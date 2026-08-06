@@ -54568,7 +54568,8 @@ const QUESTIONS = {
             "topic": "First Law of Thermodynamics",
             "title": "First Law Applied to Rigid \\& Insulated Systems",
             "question": "Consider $1\\text{ kg}$ of an ideal gas at $1\\text{ bar}$ and $300\\text{ K}$ contained in a rigid and perfectly insulated container. The specific heat of the gas at constant volume $c_v$ is equal to $750\\text{ J}\\cdot\\text{kg}^{-1}\\text{K}^{-1}$. A stirrer performs $225\\text{ kJ}$ of work on the gas. Assume that the container does not participate in the thermodynamic interaction. The final pressure of the gas will be _____ $\\text{bar}$ (in integer).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1NNBExmW-AD7GJkioMY4alkK6Gv5aDI-4/preview",
+            "local_question_image": "assets/quiz-images/img_1NNBExmW-AD7GJkioMY4alkK6Gv5aDI-4.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54614,7 +54615,8 @@ const QUESTIONS = {
             "topic": "First Law of Thermodynamics",
             "title": "First Law Applied to Closed Systems",
             "question": "A gas contained in a cylinder is compressed, the work required for compression being $5000\\text{ kJ}$. During the process, heat interaction of $200\\text{ kJ}$ causes the surroundings to be heated. The change in internal energy of the gas during the process is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vOhaHZoNC0fJOO-hgo9bBvt8_yRnDjdQ/preview",
+            "local_question_image": "assets/quiz-images/img_1vOhaHZoNC0fJOO-hgo9bBvt8_yRnDjdQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54660,7 +54662,8 @@ const QUESTIONS = {
             "topic": "Heat Transfer",
             "title": "First Law \\& Electrical Heating of Liquids",
             "question": "A $2\\text{ kW}$, $40\\text{ liter}$ water heater is switched on for $20\\text{ minutes}$. The heat capacity $C_p$ for water is $4.2\\text{ kJ/kg}\\cdot\\text{K}$. Assuming all the electrical energy has gone into heating the water, increase of the water temperature in degree centigrade is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/11wUTbEu09j7WnjxxCxL12Zdbry83r-H0/preview",
+            "local_question_image": "assets/quiz-images/img_11wUTbEu09j7WnjxxCxL12Zdbry83r-H0.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54706,7 +54709,8 @@ const QUESTIONS = {
             "topic": "Steady Flow Energy Equation",
             "title": "First Law Applied to Open Control Volumes (Turbines)",
             "question": "A steam turbine receives steam steadily at $10\\text{ bar}$ with an enthalpy of $3000\\text{ kJ/kg}$ and discharges at $1\\text{ bar}$ with an enthalpy of $2700\\text{ kJ/kg}$. The work output is $250\\text{ kJ/kg}$. The changes in kinetic and potential energies are negligible. The heat transfer from the turbine casing to the surroundings is equal to",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/11hE5GkBJLuMYE82cvLs1VgWFoan8dwtK/preview",
+            "local_question_image": "assets/quiz-images/img_11hE5GkBJLuMYE82cvLs1VgWFoan8dwtK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54752,7 +54756,8 @@ const QUESTIONS = {
             "topic": "Heat Transfer",
             "title": "Thermal Equilibrium \\& Calorimetry",
             "question": "A steel ball of mass $1\\text{ kg}$ and specific heat $0.4\\text{ kJ/kg}\\cdot\\text{K}$ is at temperature of $60^\\circ\\text{C}$. It is dropped into $1\\text{ kg}$ water at $20^\\circ\\text{C}$. The final steady state temperature of water is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1kBrHoNSla1QqNTLG1MkfrqrMhYbRXB5R/preview",
+            "local_question_image": "assets/quiz-images/img_1kBrHoNSla1QqNTLG1MkfrqrMhYbRXB5R.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54798,7 +54803,8 @@ const QUESTIONS = {
             "topic": "IC Engines \\& Power Cycles",
             "title": "Air Standard Otto Cycle Analysis",
             "question": "An engine running on an air standard Otto cycle has a displacement volume $250\\text{ cm}^3$ and a clearance volume $35.7\\text{ cm}^3$. The pressure and temperature at the beginning of the compression process are $100\\text{ kPa}$ and $300\\text{ K}$, respectively. Heat transfer during constant-volume heat addition process is $800\\text{ kJ/kg}$. The specific heat at constant volume is $0.718\\text{ kJ/kg}\\cdot\\text{K}$ and the ratio of specific heats at constant pressure and constant volume is $1.4$. Assume the specific heats to remain constant during the cycle. The maximum pressure in the cycle is _____ $\\text{kPa}$ (round off to the nearest integer).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1L9yMET1ZovhCaWrsdlHTDTxYZ_1mWx9J/preview",
+            "local_question_image": "assets/quiz-images/img_1L9yMET1ZovhCaWrsdlHTDTxYZ_1mWx9J.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54890,7 +54896,8 @@ const QUESTIONS = {
             "topic": "Steady Flow Energy Equation",
             "title": "First Law Applied to Open Control Volumes (Gas Turbines)",
             "question": "A calorically perfect gas (specific heat at constant pressure $1000\\text{ J/kg}\\cdot\\text{K}$) enters and leaves a gas turbine with the same velocity. The temperatures of the gas at turbine entry and exit are $1100\\text{ K}$ and $400\\text{ K}$, respectively. The power produced is $4.6\\text{ MW}$ and heat escapes at the rate of $300\\text{ kJ/s}$ through the turbine casing. The mass flow rate of the gas (in $\\text{kg/s}$) through the turbine is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Z_xnpwHBFCBxv9EKgqpmi4UgngxeI2AV/preview",
+            "local_question_image": "assets/quiz-images/img_1Z_xnpwHBFCBxv9EKgqpmi4UgngxeI2AV.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -54936,7 +54943,8 @@ const QUESTIONS = {
             "topic": "First Law of Thermodynamics",
             "title": "Isothermal Work in Closed Systems",
             "question": "A piston-cylinder device initially contains $0.4\\text{ m}^3$ of air (to be treated as an ideal gas) at $100\\text{ kPa}$ and $80^\\circ\\text{C}$. The air is now isothermally compressed to $0.1\\text{ m}^3$. The work done during this process is _____ $\\text{kJ}$.\n\n\\textbf{(Take the sign convention such that work done on the system is negative)}",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1r9sCOBfFjC0RAsrQPyRMFLwrysrOit-3/preview",
+            "local_question_image": "assets/quiz-images/img_1r9sCOBfFjC0RAsrQPyRMFLwrysrOit-3.jpg",
             "times_presented": 0,
             "options": [
                 {

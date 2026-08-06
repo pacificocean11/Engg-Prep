@@ -7354,8 +7354,8 @@ const EXAM_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Mass Determination of Dry Air in Moist Air Mixture",
             "question": "A conference hall of the size $7\\text{m} \\times 4\\text{m} \\times 4\\text{m}$ is filled with an air--water vapour mixture of $38^\\circ\\text{C}$, atmospheric pressure of 1 bar and RH 70%. The mass of air will be (assume $P_s$ at $38^\\circ\\text{C} = 0.06624\\text{ bar}$):",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PN1sdLihRoHhk82ukaR858k1-lXS7hOO/preview",
+            "local_question_image": "assets/quiz-images/img_1PN1sdLihRoHhk82ukaR858k1-lXS7hOO.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7519,8 +7519,8 @@ const EXAM_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Carnot Engine Efficiency and Work Output",
             "question": "An ideal gas heat engine operates in Carnot's cycle between $227^\\circ\\text{C}$ and $127^\\circ\\text{C}$. It absorbs $6 \\times 10^4\\text{ J}$ at high temperature. The amount of heat converted into work is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1iKrMPSC2VzFxAZA5Qbbvk8x_vOU__gQC/preview",
+            "local_question_image": "assets/quiz-images/img_1iKrMPSC2VzFxAZA5Qbbvk8x_vOU__gQC.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7578,8 +7578,8 @@ const EXAM_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Carnot Engine Heat Rejection",
             "question": "A Carnot engine works between the temperature $227^\\circ\\text{C}$ and $127^\\circ\\text{C}$. If the work output of the engine is $10^4\\text{ J}$, then the amount of heat rejected to the sink will be:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1iqaOiH83CQ9GJrZ0GnjyeOodY_-U4_vF/preview",
+            "local_question_image": "assets/quiz-images/img_1iqaOiH83CQ9GJrZ0GnjyeOodY_-U4_vF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7637,8 +7637,8 @@ const EXAM_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "COP of Carnot Refrigeration System",
             "question": "Ideal refrigeration system is used to cool the system at $5^\\circ\\text{C}$. Heat rejection happens at $100^\\circ\\text{C}$. If ambient temperature is $30^\\circ\\text{C}$, COP of the system is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1805--OF0Bblm4RQnqFKjzzmmRNhQdQuo/preview",
+            "local_question_image": "assets/quiz-images/img_1805--OF0Bblm4RQnqFKjzzmmRNhQdQuo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7814,8 +7814,8 @@ const EXAM_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Thermal Efficiency of Gas Turbine Cycle",
             "question": "In a gas turbine cycle, the turbine output is $600\\text{ kJ/kg}$, the compressor work is $400\\text{ kJ/kg}$, and the heat supplied is $1000\\text{ kJ/kg}$. The thermal efficiency of the cycle is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1x9xd0UwaFgWGwrStAK_FpI_AaL0Boa0k/preview",
+            "local_question_image": "assets/quiz-images/img_1x9xd0UwaFgWGwrStAK_FpI_AaL0Boa0k.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8105,8 +8105,8 @@ const EXAM_QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Isothermal Expansion in a Carnot Power Cycle",
             "question": "Refer to the Carnot power cycle shown. The working medium is $1\\text{ kg}$ of air as an ideal gas. The cycle has a thermal efficiency of $40\\%$. The heat transfer to the air during the isothermal expansion is $50\\text{ kJ}$. At the beginning of the isothermal expansion (state 2), the pressure is $8\\text{ bars}$ and the volume is $0.25\\text{ m}^3$. The volume ($\\text{m}^3$) at the end of the isothermal expansion process (state 3) is most nearly:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/100FNH_bApT3ffYNmTcldrCSiTHuZsYMi/preview",
+            "local_question_image": "assets/quiz-images/img_100FNH_bApT3ffYNmTcldrCSiTHuZsYMi.jpg",
             "times_presented": 0,
             "options": [
                 {
