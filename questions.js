@@ -1285,7 +1285,8 @@ const QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Numerical Integration: Trapezoidal Rule",
             "question": "Using a unit step size, the value of integral $\\int_{1}^{2} x \\ln x dx$ by trapezoidal rule is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1BD1Rl9wMD6QQ0v5aCt65TaU52r7FoSap/preview",
+            "local_question_image": "assets/quiz-images/img_1BD1Rl9wMD6QQ0v5aCt65TaU52r7FoSap.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1331,7 +1332,8 @@ const QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Numerical Integration: Trapezoidal Rule",
             "question": "The values of function $f(x)$ at 5 discrete points are given below:\n\n\n\nUsing Trapezoidal rule with step size of 0.1, the value of $\\int_{0}^{0.4} f(x) dx$ is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1SVljED3baLJ4sj9RCoeOvlilIKDl4uEK/preview",
+            "local_question_image": "assets/quiz-images/img_1SVljED3baLJ4sj9RCoeOvlilIKDl4uEK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1377,7 +1379,8 @@ const QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Numerical Integration: Trapezoidal Rule",
             "question": "The definite integral $\\int_{1}^{3} \\frac{1}{x} dx$ is evaluated using Trapezoidal rule with a step size of $1$. The correct answer is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18tUSE-AeSM_LfLNhF3YaYLpDqDSMZWkZ/preview",
+            "local_question_image": "assets/quiz-images/img_18tUSE-AeSM_LfLNhF3YaYLpDqDSMZWkZ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46570,7 +46573,8 @@ const QUESTIONS = {
             "topic": "Properties of Bulk Matter",
             "title": "Capillary Rise in Weightlessness / Free Fall",
             "question": "A $30\\text{ cm}$ long capillary tube is dipped in water, water rises upto a height of $10\\text{ cm}$ due to capillarity. If this experiment is conducted in a freely falling water in an elevator, then the length of the water column becomes _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1oy_oLsL05JJWFup6CUN28um4eB56p0Wr/preview",
+            "local_question_image": "assets/quiz-images/img_1oy_oLsL05JJWFup6CUN28um4eB56p0Wr.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46670,7 +46674,8 @@ const QUESTIONS = {
             "topic": "Continuity Equation",
             "title": "Conservation of Mass in Branching Channels",
             "question": "A channel of width $450\\text{ mm}$ branches into two sub-channels having width $300\\text{ mm}$ and $200\\text{ mm}$ as shown in figure. If the volumetric flow rate (taking unit depth) of an incompressible flow through the main channel is $0.9\\text{ m}^3/\\text{s}$, and the velocity in the sub-channel of width $200\\text{ mm}$ is $3\\text{ m}/\\text{s}$, the velocity in the sub-channel of width $300\\text{ mm}$ is _____ $\\text{m}/\\text{s}$.\n\nAssume both inlet and outlet to be at the same elevation.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1TeSWeWu7nUn81p2gaOK2ZyZH6vhtqS8k/preview",
+            "local_question_image": "assets/quiz-images/img_1TeSWeWu7nUn81p2gaOK2ZyZH6vhtqS8k.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46716,7 +46721,8 @@ const QUESTIONS = {
             "topic": "Pipe Flow",
             "title": "Reynolds Number Calculation",
             "question": "Water flows through a pipe having an inner radius of $10\\text{ mm}$ at the rate of $36\\text{ kg/hr}$ at $25^\\circ\\text{C}$. The viscosity of water at $25^\\circ\\text{C}$ is $0.001\\text{ kg/m}\\cdot\\text{s}$. The Reynolds number of the flow is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/16ETBSr0GC8jE9KL9JhkhsXDB-xq7hohT/preview",
+            "local_question_image": "assets/quiz-images/img_16ETBSr0GC8jE9KL9JhkhsXDB-xq7hohT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46762,7 +46768,8 @@ const QUESTIONS = {
             "topic": "Pipe Flow",
             "title": "Darcy Friction Factor in Laminar Flow",
             "question": "For a fully developed flow of water in a pipe having diameter $10\\text{ cm}$, velocity $0.1\\text{ m/s}$ and kinematic viscosity $10^{-5}\\text{ m}^2/\\text{s}$, the value of Darcy friction factor is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vm_AVNIQrB6-OtgtpNmc-DLhBC_Akkp5/preview",
+            "local_question_image": "assets/quiz-images/img_1vm_AVNIQrB6-OtgtpNmc-DLhBC_Akkp5.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50568,7 +50575,8 @@ const QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Bernoulli's Principle and Continuity Equation",
             "question": "A horizontal pipe carries water in a streamlined flow. At a point along the pipe, where the cross-sectional area is $10\\text{ cm}^2$, the velocity of water is $1\\text{ ms}^{-1}$ and the pressure is $2000\\text{ Pa}$. What is the pressure of water at another point where the cross-sectional area is $5\\text{ cm}^2$?\n\n$$\\left[\\text{Density of water} = 1000\\text{ kg}\\cdot\\text{m}^{-3}\\right]$$",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1KZFoehR6iEBU-MlTMw_a10I_8ty3fOyb/preview",
+            "local_question_image": "assets/quiz-images/img_1KZFoehR6iEBU-MlTMw_a10I_8ty3fOyb.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50620,7 +50628,8 @@ const QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Volumetric Flow Rate and Velocity in a Pipe",
             "question": "Water flows through a horizontal pipe of varying cross-section at a rate of $0.314\\text{ m}^3\\text{ s}^{-1}$. The velocity of water at a point where the radius of the pipe is $10\\text{ cm}$ is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1jZb1baaMuZOxKf0mBG6ebWCj7o4hQ6Xd/preview",
+            "local_question_image": "assets/quiz-images/img_1jZb1baaMuZOxKf0mBG6ebWCj7o4hQ6Xd.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50672,7 +50681,8 @@ const QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Fraction of Submerged Volume in Floating Bodies",
             "question": "Iceberg floats in water with part of it submerged. What is the fraction of the volume of iceberg submerged, if the density of ice is $\\rho_i = 0.917\\text{ g cm}^{-3}$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1JXAMJMvPYikwjDgpDZGi2QNG3Zb6BBwf/preview",
+            "local_question_image": "assets/quiz-images/img_1JXAMJMvPYikwjDgpDZGi2QNG3Zb6BBwf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50720,7 +50730,8 @@ const QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Hydrostatic Pressure at the Bottom of a Tank",
             "question": "The pressure at the bottom of a liquid tank is not proportional to the _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1HENCAeihI0RIrt2mBHrprVSuZiKoPPcA/preview",
+            "local_question_image": "assets/quiz-images/img_1HENCAeihI0RIrt2mBHrprVSuZiKoPPcA.jpg",
             "times_presented": 0,
             "options": [
                 {

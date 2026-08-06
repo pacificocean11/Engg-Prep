@@ -174,8 +174,8 @@ const EXAM_QUESTIONS = {
             "topic": "Numerical Methods",
             "title": "Trapezoidal Rule",
             "question": "For the data,\n$x$  :  \{$0$,   $1$,   $2$\} \n$f(x)$  :  \{$8$,   $5$,   $6$\}\n\nthe value of $\\int_{0}^{2} [f(x)]^2 dx$ by Trapezoidal rule will be:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1gZwTq5szKO0A2r_8szjMDgcXzxMWSm_6/preview",
+            "local_question_image": "assets/quiz-images/img_1gZwTq5szKO0A2r_8szjMDgcXzxMWSm_6.jpg",
             "times_presented": 0,
             "options": [
                 {
