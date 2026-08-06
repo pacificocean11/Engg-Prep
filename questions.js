@@ -38185,7 +38185,8 @@ const QUESTIONS = {
             "topic": "Column Buckling",
             "title": "Ratio of Critical Buckling Load for Clamped and Hinged Columns",
             "question": "For a long slender column of uniform cross section, the ratio of critical buckling load for the case with both ends clamped to the case with both ends hinged is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Ci_6aLpjJYvfBBibXYEgtgk7qap4xpEc/preview",
+            "local_question_image": "assets/quiz-images/img_1Ci_6aLpjJYvfBBibXYEgtgk7qap4xpEc.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -43168,7 +43169,8 @@ const QUESTIONS = {
             "topic": "Elasticity and Mechanical Properties of Solids",
             "title": "Breaking Stress and Cross-Sectional Area",
             "question": "A metallic rod breaks when strain produced is $0.2\\%$. The Young's modulus of the material of the rod $7 \\times 10^9\\text{ N/m}^2$. The area of crosssection to support a load of $10^4\\text{ N}$ is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fIt5EfXIdw2up0cgE7UDtf0GZaS_0-ON/preview",
+            "local_question_image": "assets/quiz-images/img_1fIt5EfXIdw2up0cgE7UDtf0GZaS_0-ON.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64667,7 +64669,8 @@ const QUESTIONS = {
             "topic": "Pressure Vessels and Piping",
             "title": "Thin Cylindrical Pressure Vessels: Hoop vs. Longitudinal Stress",
             "question": "A thin cylindrical pressure vessel with closed-ends is subjected to internal pressure. The ratio of circumferential (hoop) stress to the longitudinal stress is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1hk1wbeDiUkgJFTRCF90K4q3hX-8YBZEk/preview",
+            "local_question_image": "assets/quiz-images/img_1hk1wbeDiUkgJFTRCF90K4q3hX-8YBZEk.jpg",
             "times_presented": 0,
             "options": [
                 {

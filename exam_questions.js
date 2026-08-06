@@ -6601,8 +6601,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Friction Factor in Laminar Pipe Flow",
             "question": "In a circular tube of diameter $100\\text{ mm}$ and length $13\\text{ m}$ with laminar flow, the friction factor is estimated to be $0.05$. Calculate the Reynolds number?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1C4_J_7gUyO43kDlc9YXFSMHloLsn_rSC/preview",
+            "local_question_image": "assets/quiz-images/img_1C4_J_7gUyO43kDlc9YXFSMHloLsn_rSC.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6660,8 +6660,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Viscous Flow Between Fixed Parallel Plates",
             "question": "Oil ($\\text{SG} = 0.9$, Dynamic viscosity $= 1\\text{ Poise}$) is flowing with a mean velocity of $1\\text{ m/s}$ between two fixed parallel plates which are $1\\text{ cm}$ apart. What will be shear stress at the surface of the plate?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1S-Rf2hwuhsNTWGUvSOUvrDUwI9J2Vnee/preview",
+            "local_question_image": "assets/quiz-images/img_1S-Rf2hwuhsNTWGUvSOUvrDUwI9J2Vnee.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6715,8 +6715,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Velocity Profile in Viscous Flow Between Parallel Plates",
             "question": "The maximum velocity of a one-dimensional incompressible fully developed viscous flow, between two fixed parallel plates, is $6\\text{ ms}^{-1}$. The mean velocity (in $\\text{ms}^{-1}$) of the flow is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1a0dzCrf4CX938z2zQ4KzD5hpjtRq0tSI/preview",
+            "local_question_image": "assets/quiz-images/img_1a0dzCrf4CX938z2zQ4KzD5hpjtRq0tSI.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6770,8 +6770,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Head Loss in Laminar Pipe Flow",
             "question": "Glycerine ($\\mu = 1.50\\text{ Pa}\\cdot\\text{s}$; $\\rho = 1260\\text{ kg/m}^3$) flows at a velocity of $6.0\\text{ m/s}$ in $10\\text{ cm}$ diameter pipe. Head loss in a length of $7\\text{ m}$ pipe will be ($g = 10\\text{ m/s}^2$).",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1j0-0egrnYq46TvShwB8pl9CgXJE-b8Qr/preview",
+            "local_question_image": "assets/quiz-images/img_1j0-0egrnYq46TvShwB8pl9CgXJE-b8Qr.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6825,8 +6825,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Bernoulli's Equation and Flow Velocity",
             "question": "The pressure of water in a pipe when water is not flowing is $3 \\times 10^5\\text{ Pa}$ and when the water flows the pressure falls to $2.5 \\times 10^5\\text{ Pa}$. Find the speed of flow of water (in $\\text{m/s}$)?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1GEhWi7x5-dFOlVLMiEsLx1lg8hgAWQxL/preview",
+            "local_question_image": "assets/quiz-images/img_1GEhWi7x5-dFOlVLMiEsLx1lg8hgAWQxL.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6884,8 +6884,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Archimedes' Principle and Buoyancy Force",
             "question": "An object weights $10\\text{ N}$ in air. When immersed fully in a liquid it weighs only $8\\text{ N}$. The weight of liquid displaced by the object will be.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1mZXLzdriM8Gox-jikMvv9U2IQ-Nk0vdU/preview",
+            "local_question_image": "assets/quiz-images/img_1mZXLzdriM8Gox-jikMvv9U2IQ-Nk0vdU.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6939,8 +6939,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Atmospheric Pressure and Barometric Height",
             "question": "The mercury column in the barometer has a height of about ____ cm at sea level.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1A_yCDnfjN3CY8M1wbL_p5M6Ne2Pg2n9h/preview",
+            "local_question_image": "assets/quiz-images/img_1A_yCDnfjN3CY8M1wbL_p5M6Ne2Pg2n9h.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -6998,8 +6998,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics",
             "title": "Principle of Flotation and Immersed Height",
             "question": "A cuboid of total height $= 44\\text{ cm}$, length and breadth $= 11\\text{ cm}$ each is floating on the water. What is the height of the cuboid immersed in water if the density of the material is $850\\text{ kg/m}^3$?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1iHFcnrJBwWHCr9CmJVKLARXRYe9wI4ER/preview",
+            "local_question_image": "assets/quiz-images/img_1iHFcnrJBwWHCr9CmJVKLARXRYe9wI4ER.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7057,8 +7057,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics / Thermodynamics",
             "title": "Isentropic Pump Work",
             "question": "A pump raises pressure of a liquid from $1\\text{ bar}$ to $30\\text{ bar}$. If the density of liquid is $990\\text{ kg/m}^3$ the isentropic work done in $\\text{kJ/kg}$ is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vKjzx_wNIDeaT_P1DCweiwoyaB6uucz8/preview",
+            "local_question_image": "assets/quiz-images/img_1vKjzx_wNIDeaT_P1DCweiwoyaB6uucz8.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7116,8 +7116,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics / Dimensional Analysis",
             "title": "Dynamic Similarity and Froude Model Law",
             "question": "A ship with hull length of $100\\text{ m}$ is to run with speed of $10\\text{ m/s}$. For dynamic similarity of a $1 : 25$ model of the ship, the velocity in towing tank should be",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1b09VEv_bJ7kWa7k0fM7gieKXHcMuLyDm/preview",
+            "local_question_image": "assets/quiz-images/img_1b09VEv_bJ7kWa7k0fM7gieKXHcMuLyDm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7175,8 +7175,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics / Hydraulic Turbines",
             "title": "Unit Speed of Hydraulic Turbine",
             "question": "A turbine develops $400\\text{ kW}$ power under a head of $81\\text{ metres}$ at $225\\text{ rpm}$. What will be the speed of the turbine under a head of $64\\text{ metres}$?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/17vKuAEdta9YiFOfeBV7u8k-sT93sH_wd/preview",
+            "local_question_image": "assets/quiz-images/img_17vKuAEdta9YiFOfeBV7u8k-sT93sH_wd.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7234,8 +7234,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics / Flow Measurement",
             "title": "Coefficient of Discharge of an Orifice",
             "question": "A fluid flows through an orifice of an area $0.4\\text{ m}^2$ with an actual discharge of $400\\text{ l/s}$. If the theoretical velocity of flow through the orifice is $2\\text{ m/s}$, what is the coefficient of discharge?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1azL9IEkGnwDdsjzEocAOLh-mV29oAb1c/preview",
+            "local_question_image": "assets/quiz-images/img_1azL9IEkGnwDdsjzEocAOLh-mV29oAb1c.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7293,8 +7293,8 @@ const EXAM_QUESTIONS = {
             "topic": "Fluid Mechanics / Pipe Flow",
             "title": "Reynolds Number and Flow Classification",
             "question": "In a pipe of diameter $5\\text{ cm}$, water is flowing at a rate of $8\\text{ cm/sec}$. If the dynamic viscosity of water is $1.6 \\times 10^{-2}\\text{ Pa-s}$, what type of flow is present?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1HBXhsaMtKx2k2yVyW5xvjJkjQ0LYTTQI/preview",
+            "local_question_image": "assets/quiz-images/img_1HBXhsaMtKx2k2yVyW5xvjJkjQ0LYTTQI.jpg",
             "times_presented": 0,
             "options": [
                 {
