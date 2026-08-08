@@ -2336,8 +2336,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Present Value Calculation",
             "question": "The present value of \\$50,000 to be received after 5 years at 6\% discount rate is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1YkiK9x8XZoD_BKoO_s1sB2DU_qUUr4JV/preview",
+            "local_question_image": "assets/quiz-images/img_1YkiK9x8XZoD_BKoO_s1sB2DU_qUUr4JV.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -2391,8 +2391,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Compound Interest Rate Calculation",
             "question": "If \\$500,000 grows to \\$734,664 in 5 years with annual compounding, the interest rate is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1hCGicml1G0EGseJMDSHbHBmpK-p7HXSA/preview",
+            "local_question_image": "assets/quiz-images/img_1hCGicml1G0EGseJMDSHbHBmpK-p7HXSA.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -2446,8 +2446,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Straight-Line Method of Depreciation",
             "question": "Calculate the annual depreciation of a property, whose original cost is \\$3,000,000. Consider its scrape value as \\$300,000 after 30 years. Use the straight-line method.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1XmJQTWwtNtlrI25CtROjbXFljdwIcpnc/preview",
+            "local_question_image": "assets/quiz-images/img_1XmJQTWwtNtlrI25CtROjbXFljdwIcpnc.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -2501,8 +2501,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Break-Even Quantity Calculation",
             "question": "The fixed cost of the firm is \\$60,000 per month. The variable cost is \\$10 per unit and selling price is \\$50 per unit. The break even quantity will be",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1WaYH-fMyHpEkRmlk52Aidc3qVPp5WxPP/preview",
+            "local_question_image": "assets/quiz-images/img_1WaYH-fMyHpEkRmlk52Aidc3qVPp5WxPP.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -2556,8 +2556,8 @@ const EXAM_QUESTIONS = {
             "topic": "Engineering Economics",
             "title": "Break-Even Point Calculation",
             "question": "Fixed cost of an equipment is \\$6,000, if variable cost of an item it produces is \\$2 per item and sells it for \\$7 per item, what is the break-even point?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1nwc_pFYldKdzH_QuRAYHemIS5CxXAPWA/preview",
+            "local_question_image": "assets/quiz-images/img_1nwc_pFYldKdzH_QuRAYHemIS5CxXAPWA.jpg",
             "times_presented": 0,
             "options": [
                 {

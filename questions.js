@@ -38249,7 +38249,8 @@ const QUESTIONS = {
             "topic": "Stress Transformations and Mohr Circle",
             "title": "Yielding under Maximum Distortion Energy Theory",
             "question": "A structural member under loading has a uniform state of plane stress which in usual notations is given by $\\sigma_x = 3P$, $\\sigma_y = -2P$ and $\\tau_{xy} = \\sqrt{2} P$, where $P > 0$. The yield strength of the material is $350\\text{ MPa}$. If the member is designed using the maximum distortion energy theory, then the value of $P$ at which yielding starts (according to the maximum distortion energy theory) is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1LQYNvpYxveezIe-4RfGNcysZSMNfp-tJ/preview",
+            "local_question_image": "assets/quiz-images/img_1LQYNvpYxveezIe-4RfGNcysZSMNfp-tJ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64761,7 +64762,8 @@ const QUESTIONS = {
             "topic": "Springs",
             "title": "Spring Stiffness and Un-deformed Length",
             "question": "A weighing machine consists of a $2\\text{ kg}$ pan resting on a spring. In this condition, with the pan resting on the spring, the length of the spring is $200\\text{ mm}$. When a mass of $20\\text{ kg}$ is placed on the pan, the length of the spring becomes $100\\text{ mm}$. For the spring, the un-deformed length $L$ and the spring constant $K$ (stiffness) are:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1EqKjnPeRAhmDfZAR2TGE3xPDv8VdikYE/preview",
+            "local_question_image": "assets/quiz-images/img_1EqKjnPeRAhmDfZAR2TGE3xPDv8VdikYE.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64809,7 +64811,8 @@ const QUESTIONS = {
             "topic": "Springs",
             "title": "Effect of Mean Coil Diameter on Spring Stiffness",
             "question": "A compression spring is made of music wire of $20\\text{ mm}$ diameter having a shear strength and shear modulus of $800\\text{ MPa}$ and $80\\text{ GPa}$ respectively. The mean coil diameter is $20\\text{ mm}$, free length is $40\\text{ mm}$ and the number of active coils is 10. If the mean coil diameter is reduced to $10\\text{ mm}$, the stiffness of the spring is approximately:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ccBAhBDIFZEuxOIJL6Y_ddbwzkYU9Pix/preview",
+            "local_question_image": "assets/quiz-images/img_1ccBAhBDIFZEuxOIJL6Y_ddbwzkYU9Pix.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64861,7 +64864,8 @@ const QUESTIONS = {
             "topic": "Springs",
             "title": "Deflection of Springs in Parallel",
             "question": "The deflection of a spring with $20$ active turns under a load of $1000\\text{ N}$ is $10\\text{ mm}$. The spring is made into two pieces each of $10$ active coils and placed in parallel under the same load. The deflection of the system is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1U2RL7OOrTSicsTTWgNtZ0yXavXqXtTWr/preview",
+            "local_question_image": "assets/quiz-images/img_1U2RL7OOrTSicsTTWgNtZ0yXavXqXtTWr.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64917,7 +64921,8 @@ const QUESTIONS = {
             "topic": "Springs",
             "title": "Shear Stress in Helical Compression Spring",
             "question": "A helical compression spring made of wire of circular cross-section is subjected to a compressive load. The maximum shear stress induced in the cross-section of the wire is $24\\text{ MPa}$. For the same compressive load, if both the wire diameter and the mean coil diameter are doubled, the maximum shear stress (in $\\text{MPa}$) induced in the cross-section of the wire is:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1OjPQmyDCQsFUysPRQdL0stIPuevHMGo6/preview",
+            "local_question_image": "assets/quiz-images/img_1OjPQmyDCQsFUysPRQdL0stIPuevHMGo6.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64969,7 +64974,8 @@ const QUESTIONS = {
             "topic": "Springs",
             "title": "Spring Stiffness of Helical Compression Spring",
             "question": "The spring constant of a helical compression spring \\textbf{DOES NOT} depend on:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1eAZn_g-xxfJ8wvwe9p24sjbgQVAyPvqH/preview",
+            "local_question_image": "assets/quiz-images/img_1eAZn_g-xxfJ8wvwe9p24sjbgQVAyPvqH.jpg",
             "times_presented": 0,
             "options": [
                 {
