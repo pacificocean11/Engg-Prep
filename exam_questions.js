@@ -8166,8 +8166,8 @@ const EXAM_QUESTIONS = {
             "topic": "Measurements, Instrumentation and Controls",
             "title": "Balanced Wheatstone Bridge Circuit",
             "question": "Find the unknown resistance value in a given circuit, given the bridge is balanced. (Top-left: $25\\ \\Omega$, Top-right: $15\\ \\Omega$, Bottom-left: $17\\ \\Omega$, Bottom-right: $?$)",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ogS_2BiR69_CuESwLrWZm9jha5HY_rhy/preview",
+            "local_question_image": "assets/quiz-images/img_1ogS_2BiR69_CuESwLrWZm9jha5HY_rhy.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8221,8 +8221,8 @@ const EXAM_QUESTIONS = {
             "topic": "Measurements, Instrumentation and Controls",
             "title": "Balanced Bridge Potential Analysis",
             "question": "For the circuit shown, if the resistance of each resistor is $100\\ \\Omega$, the potential at X is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1iSN7ZXTVeiE4YEwsu3EIk_CI9berAw8a/preview",
+            "local_question_image": "assets/quiz-images/img_1iSN7ZXTVeiE4YEwsu3EIk_CI9berAw8a.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8335,8 +8335,8 @@ const EXAM_QUESTIONS = {
             "topic": "Measurements, Instrumentation and Controls",
             "title": "Steady-State Error Analysis",
             "question": "The steady-state error due to unit step input to a type-1 system is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/18zPOfvvKGSdeVE_CtU5OsTliSPi3r2Tf/preview",
+            "local_question_image": "assets/quiz-images/img_18zPOfvvKGSdeVE_CtU5OsTliSPi3r2Tf.jpg",
             "times_presented": 0,
             "options": [
                 {

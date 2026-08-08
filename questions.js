@@ -37746,7 +37746,8 @@ const QUESTIONS = {
             "topic": "Laws of Motion",
             "title": "Time when Velocity vector aligns with Y-axis",
             "question": "An object with mass $5\\text{ kg}$ is acted upon by a force, $\\mathbf{F} = (-3\\hat{\\mathbf{i}} - 4\\hat{\\mathbf{j}})\\text{N}$. If its initial velocity at $t = 0$ is $\\mathbf{v} = (3\\hat{\\mathbf{i}} + 12\\hat{\\mathbf{j}})\\text{m/s}$, the time at which it will just have a velocity along $y$-axis is - _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1dJTx1r4P14cDrkrJRLRSLP2QCbujLlq_/preview",
+            "local_question_image": "assets/quiz-images/img_1dJTx1r4P14cDrkrJRLRSLP2QCbujLlq_.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37802,7 +37803,8 @@ const QUESTIONS = {
             "topic": "Laws of Motion",
             "title": "Acceleration Vector in Uniform Circular Motion",
             "question": "A particle is in uniform circular motion. The equation of its trajectory is given by $(x - 2)^2 + y^2 = 25$, where $x$ and $y$ are in meter. The speed of the particle is $2\\text{ ms}^{-1}$, when the particle attains the lowest '$y$' co-ordinate, the acceleration of the particle is (in $\\text{ms}^{-2}$) _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PK6bfX-fzNOPSCey8pVR9zEKdSSpVmiz/preview",
+            "local_question_image": "assets/quiz-images/img_1PK6bfX-fzNOPSCey8pVR9zEKdSSpVmiz.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37858,7 +37860,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Distance and Displacement on a Circular Track",
             "question": "An athlete runs along a circular track of diameter $80\\text{ m}$. The distance travelled and the magnitude of displacement of the athlete when he covers $3/4$ th of the circle is (in $\\text{m}$) _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1iB6WlskbmHTzGZungFuj6bWMluCbP-3s/preview",
+            "local_question_image": "assets/quiz-images/img_1iB6WlskbmHTzGZungFuj6bWMluCbP-3s.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37910,7 +37913,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Uniform Circular Motion in One Complete Revolution",
             "question": "A particle is in uniform circular motion, related to one complete revolution of the particle, which among the statements is incorrect? _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Ic9LzKLctjLsp1t6Aws_mVPQ1gOffMzy/preview",
+            "local_question_image": "assets/quiz-images/img_1Ic9LzKLctjLsp1t6Aws_mVPQ1gOffMzy.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -37966,7 +37970,8 @@ const QUESTIONS = {
             "topic": "Kinematics",
             "title": "Angle Between Velocity and Acceleration in Uniform Circular Motion",
             "question": "The angle between velocity and acceleration of a particle describing uniform circular motion is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fxudhByN1uu7lNYFw7IrHxKtd-G8L8uO/preview",
+            "local_question_image": "assets/quiz-images/img_1fxudhByN1uu7lNYFw7IrHxKtd-G8L8uO.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38022,7 +38027,8 @@ const QUESTIONS = {
             "topic": "Laws of Motion",
             "title": "Change in Kinetic Energy under Constant Force",
             "question": "A horizontal force of $5\\text{ N}$ is applied on a stationary body of mass $5\\text{ kg}$, which is initially at rest on a frictionless table. The change in kinetic energy of the body in $10\\text{ s}$ is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ZHbNTpLfWsAmVOmCEmZHF6hPzR_08uRA/preview",
+            "local_question_image": "assets/quiz-images/img_1ZHbNTpLfWsAmVOmCEmZHF6hPzR_08uRA.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38078,7 +38084,8 @@ const QUESTIONS = {
             "topic": "Work, Power, Energy",
             "title": "Work Done by Variable Force / Work-Energy Theorem",
             "question": "A body of mass $0.25\\text{ kg}$ travels along a straight line from $x = 0$ to $x = 2\\text{ m}$ with a speed $v = k x^{3/2}$ where $k = 2\\text{ SI units}$. The work done by the net force during this displacement is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1pKXYJP6yAPepTskdl08UbdN5F9mGbLyG/preview",
+            "local_question_image": "assets/quiz-images/img_1pKXYJP6yAPepTskdl08UbdN5F9mGbLyG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -38134,7 +38141,8 @@ const QUESTIONS = {
             "topic": "Work, Power, Energy",
             "title": "Momentum from Power-Time Graph",
             "question": "A particle of mass $500\\text{ g}$ is at rest. It is free to move along a straight line. The power delivered to the particle varies with time according to the following graph",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1v1XXhXtViuEkRcQQIQHWhG2fGF2DZv3c/preview",
+            "local_question_image": "assets/quiz-images/img_1v1XXhXtViuEkRcQQIQHWhG2fGF2DZv3c.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -43279,7 +43287,8 @@ const QUESTIONS = {
             "topic": "Phase Diagrams",
             "title": "Pro-Eutectoid Phase Fraction in Hypoeutectoid Steel",
             "question": "In $\\text{Fe-Fe}_3\\text{C}$ phase diagram, the eutectoid composition is $0.8\\text{ weight \%}$ of carbon at $725^\\circ\\text{C}$. The maximum solubility of carbon in $\\alpha$-ferrite phase is $0.025\\text{ weight \%}$ of carbon. A steel sample, having no other alloying element except $0.5\\text{ weight \%}$ of carbon, is slowly cooled from $1000^\\circ\\text{C}$ to room temperature. The fraction of pro-eutectoid $\\alpha$-ferrite in the above steel sample at room temperature is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1tclII7DvSOy1cuiBKKx9vZTtlEUwSOGT/preview",
+            "local_question_image": "assets/quiz-images/img_1tclII7DvSOy1cuiBKKx9vZTtlEUwSOGT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -43325,7 +43334,8 @@ const QUESTIONS = {
             "topic": "Phase Diagrams, Phase Transformation, and Heat Treating",
             "title": "Phases present in Pearlite",
             "question": "The phases present in pearlite are:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1zNNoOsvbizbkKfw2g5cG1BE0bqv2h35e/preview",
+            "local_question_image": "assets/quiz-images/img_1zNNoOsvbizbkKfw2g5cG1BE0bqv2h35e.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55174,7 +55184,8 @@ const QUESTIONS = {
             "topic": "Pure Substances",
             "title": "State Identification on $T$-$v$ Diagram",
             "question": "A rigid container of volume $0.5\\text{ m}^3$ contains $1.0\\text{ kg}$ of water at $120^\\circ\\text{C}$ ($V_f = 0.00106\\text{ m}^3/\\text{kg}$, $v_g = 0.8908\\text{ m}^3/\\text{kg}$). The state of water is",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1u7pvzaAoBnitBKxoVGlAp8C76KD3VWS-/preview",
+            "local_question_image": "assets/quiz-images/img_1u7pvzaAoBnitBKxoVGlAp8C76KD3VWS-.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55266,7 +55277,8 @@ const QUESTIONS = {
             "topic": "Pure Substances",
             "title": "Constant Volume Phase Change and Liquid Level Dip in Vertical Cylinder",
             "question": "A rigid closed vertical cylindrical vessel of $15\\text{ cm}$ diameter contains $5\\text{ kg}$ water at $80^\\circ\\text{C}$ with $10\\%$ quality. The water is heated till its temperature reaches $130^\\circ\\text{C}$. Considering only a horizontal separated interface between liquid and vapor, the dip in the liquid level after the heating process is _____ $\\text{cm}$ (rounded off to 2 decimal places).\n\n\n\n$T$, $v$ and $u$ are temperature, specific volume, and specific internal energy, respectively. Subscripts $f$ and $g$ represent saturated liquid and saturated vapor, respectively.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1pQjtoUUbsyNP1gaK9A9BnuMT06Ja_JHD/preview",
+            "local_question_image": "assets/quiz-images/img_1pQjtoUUbsyNP1gaK9A9BnuMT06Ja_JHD.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55312,7 +55324,8 @@ const QUESTIONS = {
             "topic": "Steady Flow Systems",
             "title": "First Law Analysis of Steam Turbine with Heat Loss",
             "question": "Steam enters a turbine at $30\\text{ bar}$, $300^\\circ\\text{C}$ ($u = 2750\\text{ kJ/kg}$, $h = 2993\\text{ kJ/kg}$) and exits the turbine as saturated liquid at $15\\text{ kPa}$ ($u = 225\\text{ kJ/kg}$, $h = 226\\text{ kJ/kg}$). Heat loss to the surrounding is $50\\text{ kJ/kg}$ of steam flowing through the turbine. Neglecting changes in kinetic energy and potential energy, the work output of the turbine (in $\\text{kJ/kg}$ of steam) is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1LKjykZhiSs1gHfKYAgh2Lyg1_6pfqL0p/preview",
+            "local_question_image": "assets/quiz-images/img_1LKjykZhiSs1gHfKYAgh2Lyg1_6pfqL0p.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55358,7 +55371,8 @@ const QUESTIONS = {
             "topic": "Pure Substances",
             "title": "Dryness Fraction Calculation from Volumetric Composition",
             "question": "A vessel of volume $1.0\\text{ m}^3$ contains a mixture of liquid water and steam in equilibrium at $1.0\\text{ bar}$. Given that $90\\%$ of the volume is occupied by the steam, find the dryness fraction of the mixture. Assume, at $1.0\\text{ bar}$, $v_f = 0.001\\text{ m}^3/\\text{kg}$ and $v_g = 1.7\\text{ m}^3/\\text{kg}$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/15uPVAb0eDop1uloFJ9nztQaQBpX-udK8/preview",
+            "local_question_image": "assets/quiz-images/img_15uPVAb0eDop1uloFJ9nztQaQBpX-udK8.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55404,7 +55418,8 @@ const QUESTIONS = {
             "topic": "Second Law of Thermodynamics",
             "title": "Clausius Inequality and Heat Engine Cycle Criteria",
             "question": "Which one of the following pairs of equations describes an irreversible heat engine?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18RsHUTdVM-Z5cvUd8LBlQXA1wCJd9Jej/preview",
+            "local_question_image": "assets/quiz-images/img_18RsHUTdVM-Z5cvUd8LBlQXA1wCJd9Jej.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -55450,7 +55465,8 @@ const QUESTIONS = {
             "topic": "Second Law of Thermodynamics",
             "title": "Entropy Generation in Finite Temperature Heat Transfer",
             "question": "One kilogram of water at room temperature is brought into contact with a high temperature thermal reservoir. The entropy change of the universe is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1JoX0wODzbBz1JCikGSw4XJmexAlG49ap/preview",
+            "local_question_image": "assets/quiz-images/img_1JoX0wODzbBz1JCikGSw4XJmexAlG49ap.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -61874,7 +61890,8 @@ const QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Thermodynamic Processes and Definitions",
             "question": "In thermodynamic processes, which of the following statements is not true?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/10-Vt7LP_4ZTJk8XNQzM3Q8xSld1Kg294/preview",
+            "local_question_image": "assets/quiz-images/img_10-Vt7LP_4ZTJk8XNQzM3Q8xSld1Kg294.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -61926,7 +61943,8 @@ const QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "First Law of Thermodynamics and Path Independence of Internal Energy",
             "question": "A gas is taken from state A to state B along two different paths 1 and 2. The heat absorbed and work done by the system along these two paths are $Q_1$ and $Q_2$ and $W_1$ and $W_2$ respectively. Then _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1as39CIGGA3pzdVgPouJN_0WruAyGXujO/preview",
+            "local_question_image": "assets/quiz-images/img_1as39CIGGA3pzdVgPouJN_0WruAyGXujO.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -61978,7 +61996,8 @@ const QUESTIONS = {
             "topic": "Thermodynamics",
             "title": "Work Done in a Cyclic Process",
             "question": "One mole of an ideal monoatomic gas is taken round the cyclic process MNOM. The work done by the gas is _____.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1F-GZ2EoSSYTRhptY3n7FW0E1nhZ3XoJs/preview",
+            "local_question_image": "assets/quiz-images/img_1F-GZ2EoSSYTRhptY3n7FW0E1nhZ3XoJs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -64630,7 +64649,8 @@ const QUESTIONS = {
             "topic": "Thermal Properties of Matter",
             "title": "Calorimetry and Phase Change",
             "question": "$100\\text{ g}$ of ice at $0^\\circ\\text{C}$ is mixed with $100\\text{ g}$ of water at $100^\\circ\\text{C}$. The final temperature of the mixture is _____.\n\n[\\text{Take, } $L_f = 3.36 \\times 10^5\\text{ J kg}^{-1}$ and $S_w = 4.2 \\times 10^3\\text{ J kg}^{-1}\\text{ K}^{-1}$]",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1pZAdFNX0POuh1Rt8ADWzTfRUz0MmKuuR/preview",
+            "local_question_image": "assets/quiz-images/img_1pZAdFNX0POuh1Rt8ADWzTfRUz0MmKuuR.jpg",
             "times_presented": 0,
             "options": [
                 {
