@@ -7816,61 +7816,6 @@ const QUESTIONS = {
             }
         },
         {
-            "topic": "Regression and Curve Fitting",
-            "title": "Least Squares Linear Regression",
-            "question": "Using given data points tabulated below, a straight line passing through the origin is fitted using least squares method. The slope of the line is",
-            "question_image": "",
-            "local_question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "$0.9$",
-                    "is_correct": false
-                },
-                {
-                    "label": "B",
-                    "text": "$1$",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "$0.95$",
-                    "is_correct": true
-                },
-                {
-                    "label": "D",
-                    "text": "$0.88$",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Understand Least Squares Line Passing Through Origin",
-                        "content": "For a straight line passing through the origin, the equation is given by:\n$$y = mx$$\n\nWhere $m$ is the slope of the line. The sum of squared residuals is:\n$$S(m) = \\sum_{i=1}^{n} (y_i - m x_i)^2$$\n\nTo minimize $S(m)$, set the derivative with respect to $m$ to zero:\n$$\\frac{d S}{dm} = -2 \\sum_{i=1}^{n} x_i (y_i - m x_i) = 0 \\implies \\sum x_i y_i - m \\sum x_i^2 = 0$$\n\n$\nm = \\frac{\\sum x_i y_i}{\\sum x_i^2}\n$"
-                    },
-                    {
-                        "title": "Step 1: Compute Required Sums",
-                        "content": "Given the data points $(x_i, y_i)$:\n\\begin{itemize}\n    \\item $(1, 1.5)$\n    \\item $(2, 2.2)$\n    \\item $(3, 2.7)$\n\\end{itemize}\n\nCalculate $\\sum x_i^2$:\n$$\\sum x_i^2 = 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14$$\n\nCalculate $\\sum x_i y_i$:\n$$\\sum x_i y_i = (1 \\times 1.5) + (2 \\times 2.2) + (3 \\times 2.7)$$\n$$\\sum x_i y_i = 1.5 + 4.4 + 8.1 = 14.0$$"
-                    },
-                    {
-                        "title": "Step 2: Calculate the Slope $m$",
-                        "content": "Substituting the calculated sums into the formula:\n\n$$m = \\frac{14.0}{14} = 1$$\n\nThus, the slope of the fitted line passing through the origin is $1$."
-                    }
-                ],
-                "final_answer": "C",
-                "solution_image": "",
-                "video_explanation": ""
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "Probability and Statistics",
-                "topic": "Regression and Curve Fitting",
-                "search_term": "Regression and Curve Fitting"
-            }
-        },
-        {
             "topic": "Probability Distributions",
             "title": "Binomial Probability Distribution",
             "question": "A lot had 10\% defective items. Ten items are chosen randomly from this lot. The probability that exactly 2 of the chosen items are defective is",
@@ -7933,8 +7878,8 @@ const QUESTIONS = {
             "topic": "Probability",
             "title": "Classical Probability and Combinatorics",
             "question": "The probability that two friends share the same birth-month is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/16Yr8CutmmX-c-v6erBEdnuVdtfhIRtPJ/preview",
+            "local_question_image": "assets/quiz-images/img_16Yr8CutmmX-c-v6erBEdnuVdtfhIRtPJ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -7984,8 +7929,8 @@ const QUESTIONS = {
             "topic": "Probability Distributions",
             "title": "Combinatorics and Hypergeometric Probability",
             "question": "A student council of 10 members consists of two students from engineering school, three students from science school and five students from arts school. The university administration selects three students from the council at random. What is the chance that out of the selected students, two belong to the same school and the third belongs to different school?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1f8Du6_R7Wi3QyTPaY-vDeU5Dj2UhnvjI/preview",
+            "local_question_image": "assets/quiz-images/img_1f8Du6_R7Wi3QyTPaY-vDeU5Dj2UhnvjI.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8271,8 +8216,8 @@ const QUESTIONS = {
             "topic": "Probability",
             "title": "Bayes' Theorem and Conditional Probability",
             "question": "An automobile plant contracted to buy shock absorbers from two suppliers $X$ and $Y$. $X$ supplies 60\\% and $Y$ supplies 40\\% of the shock absorbers. All shock absorbers are subjected to a quality test. The ones that pass the quality test are considered reliable. Of $X$'s shock absorbers, 96\\% are reliable. Of $Y$'s shock absorbers, 72\\% are reliable. The probability that a randomly choosen shock absorber, which is found to reliable, is made by $Y$ is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1fQoOiPnWCjPW4suN1eFl_ER1S5XpP8Fm/preview",
+            "local_question_image": "assets/quiz-images/img_1fQoOiPnWCjPW4suN1eFl_ER1S5XpP8Fm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8326,8 +8271,8 @@ const QUESTIONS = {
             "topic": "Probability",
             "title": "Complementary Probability and Sample Space of Two Dice",
             "question": "A single die is thrown two times. What is the probability that the sum is neither 8 nor 9?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1vbYpMDtaYe4bQWhl2RuRTYmAC4REbnfm/preview",
+            "local_question_image": "assets/quiz-images/img_1vbYpMDtaYe4bQWhl2RuRTYmAC4REbnfm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8957,7 +8902,8 @@ const QUESTIONS = {
             "topic": "Probability Distributions",
             "title": "Probability of Drawing Specific Colored Balls",
             "question": "A bag contains 6 white and 4 red balls. Three balls are drawn at random. What is the probability that one ball is red and the other two are white?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1plbGiT6wHyhBYYTEFe0klmW93hIHvYjc/preview",
+            "local_question_image": "assets/quiz-images/img_1plbGiT6wHyhBYYTEFe0klmW93hIHvYjc.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50792,6 +50738,469 @@ const QUESTIONS = {
         }
     ],
     "electricity": [
+{
+        "topic": "Equivalent Capacitance and Voltage Distribution",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "In the circuit shown in the figure, the potential difference across the $4\\,\\mu\\text{F}$ capacitor is __________.",
+        "question_image": "https://drive.google.com/file/d/1y7S_eCjzhfjdZgXrhB3ojbin4ydyTsNQ/preview",
+            "local_question_image": "assets/quiz-images/img_1y7S_eCjzhfjdZgXrhB3ojbin4ydyTsNQ.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$3\\text{ V}$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$4\\text{ V}$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$9\\text{ V}$",
+                "is_correct": true
+            },
+            {
+                "label": "D",
+                "text": "$12\\text{ V}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Circuit Analysis for Capacitors\nTo find the potential difference across the $4\\,\\mu\\text{F}$ capacitor, we analyze the circuit in two steps:\n1. Combine the parallel capacitors into an equivalent capacitance $C_p$.\n2. Treat the resulting circuit as a simple series combination across the $12\\text{ V}$ voltage source.\n\n$$V_1 = V_{\\text{total}} \\cdot \\frac{C_{\\text{eq}}}{C_1} = V_{\\text{total}} \\cdot \\frac{C_2}{C_1 + C_2}$$\n\n## Step 1: Find Equivalent Capacitance of the Parallel Combination\nThe $9\\,\\mu\\text{F}$ and $3\\,\\mu\\text{F}$ capacitors are connected in parallel. Their combined equivalent capacitance $C_p$ is:\n\n$$C_p = 9\\,\\mu\\text{F} + 3\\,\\mu\\text{F} = 12\\,\\mu\\text{F}$$\n\n## Step 2: Series Combination with $4\\,\\mu\\text{F}$ Capacitor\nNow, the circuit reduces to a series combination of two capacitors:\n* $C_1 = 4\\,\\mu\\text{F}$\n* $C_p = 12\\,\\mu\\text{F}$\n\nThe net equivalent capacitance $C_{\\text{eq}}$ of the entire circuit is given by:\n\n$$\\frac{1}{C_{\\text{eq}}} = \\frac{1}{C_1} + \\frac{1}{C_p} = \\frac{1}{4} + \\frac{1}{12} = \\frac{3 + 1}{12} = \\frac{4}{12} = \\frac{1}{3}$$\n\n$$C_{\\text{eq}} = 3\\,\\mu\\text{F}$$\n\n## Step 3: Calculate Potential Difference across $4\\,\\mu\\text{F}$ Capacitor\nThe total charge $Q$ supplied by the $12\\text{ V}$ battery is:\n\n$$Q = C_{\\text{eq}} \\cdot V_{\\text{total}} = (3\\,\\mu\\text{F}) \\times (12\\text{ V}) = 36\\,\\mu\\text{C}$$\n\nSince $C_1 = 4\\,\\mu\\text{F}$ is connected in series with the battery, the full charge $Q = 36\\,\\mu\\text{C}$ flows through it. Therefore, the potential difference $V_1$ across the $4\\,\\mu\\text{F}$ capacitor is:\n\n$$V_1 = \\frac{Q}{C_1} = \\frac{36\\,\\mu\\text{C}}{4\\,\\mu\\text{F}} = 9\\text{ V}$$\n\nAlternatively, using the voltage divider rule:\n\n$$V_1 = 12\\text{ V} \\times \\frac{C_p}{C_1 + C_p} = 12 \\times \\frac{12}{4 + 12} = 12 \\times \\frac{12}{16} = 9\\text{ V}$$\n\nThus, the potential difference across the $4\\,\\mu\\text{F}$ capacitor is **$9\\text{ V}$**.\n\nCorrect Answer: C ($9\\text{ V}$)"
+                }
+            ],
+            "final_answer": "C",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Parallel Plate Capacitor with Dielectric Slab",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "If a slab of insulating material $4 \\times 10^{-3}\\text{ m}$ thick is introduced between the plates of a parallel plate capacitor, the separation between the plates has to be increased by $3.5 \\times 10^{-3}\\text{ m}$ to restore the capacity to its original value. The dielectric constant of the material will be __________.",
+        "question_image": "https://drive.google.com/file/d/1GxZR6c0y3RMFQ1DBTVh9P026e-kxNMgC/preview",
+            "local_question_image": "assets/quiz-images/img_1GxZR6c0y3RMFQ1DBTVh9P026e-kxNMgC.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$6$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$8$",
+                "is_correct": true
+            },
+            {
+                "label": "C",
+                "text": "$10$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$12$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Capacitance with Partial Dielectric Slab\nFor a parallel plate capacitor with plate area $A$ and initial plate separation $d$, the initial capacitance in air/vacuum is:\n\n$$C_0 = \\frac{\\varepsilon_0 A}{d}$$\n\nWhen a dielectric slab of thickness $t$ and dielectric constant $K$ is introduced, the capacitance becomes:\n\n$$C = \\frac{\\varepsilon_0 A}{d - t + \\frac{t}{K}} = \\frac{\\varepsilon_0 A}{d - t\\left(1 - \\frac{1}{K}\\right)}$$\n\n$$x = t\\left(1 - \\frac{1}{K}\\right)$$\n\n## Step 1: Relate Distance Adjustment to Slab Parameters\nTo restore the capacitance to its original value $C_0$, the separation between the plates is increased by a distance $x$ ($d' = d + x$):\n\n$$C' = \\frac{\\varepsilon_0 A}{(d + x) - t + \\frac{t}{K}} = C_0 = \\frac{\\varepsilon_0 A}{d}$$\n\nEquating the denominators:\n\n$$(d + x) - t + \\frac{t}{K} = d$$\n\n$$x = t - \\frac{t}{K} = t\\left(1 - \\frac{1}{K}\\right)$$\n\n## Step 2: Calculate Dielectric Constant ($K$)\nGiven values:\n* Thickness of dielectric slab, $t = 4 \\times 10^{-3}\\text{ m}$\n* Increase in plate separation, $x = 3.5 \\times 10^{-3}\\text{ m}$\n\nSubstitute $t$ and $x$ into the equation:\n\n$$3.5 \\times 10^{-3} = 4 \\times 10^{-3} \\left(1 - \\frac{1}{K}\\right)$$\n\n$$\\frac{3.5}{4} = 1 - \\frac{1}{K}$$\n\n$$0.875 = 1 - \\frac{1}{K}$$\n\n$$\\frac{1}{K} = 1 - 0.875 = 0.125 = \\frac{1}{8}$$\n\n$$K = 8$$\n\nThus, the dielectric constant of the material is **$8$**.\n\nCorrect Answer: B ($8$)"
+                }
+            ],
+            "final_answer": "B",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Grouping of Identical Capacitors for Desired Voltage and Capacitance",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "An electrician requires a capacitance of $6\\,\\mu\\text{F}$ in a circuit across a potential difference of $1.5\\text{ kV}$. A large number of $2\\,\\mu\\text{F}$ capacitors which can withstand a potential difference of not more than $500\\text{ V}$ are available. The minimum number of capacitors required for the purpose is __________.",
+        "question_image": "https://drive.google.com/file/d/1HJYbYk-IFXrm6dl6DVZQkB2JUo2Hp8nH/preview",
+            "local_question_image": "assets/quiz-images/img_1HJYbYk-IFXrm6dl6DVZQkB2JUo2Hp8nH.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$3$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$9$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$6$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$27$",
+                "is_correct": true
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Capacitor Network Formulation\nTo achieve a required total capacitance $C_{\\text{eq}}$ across a high potential difference $V_{\\text{total}}$, we connect $n$ identical capacitors in series within each branch, and place $m$ such identical branches in parallel.\n\n* Individual capacitance = $C = 2\\,\\mu\\text{F}$\n* Maximum safe voltage per capacitor = $V_0 = 500\\text{ V}$\n* Required net potential difference = $V_{\\text{total}} = 1.5\\text{ kV} = 1500\\text{ V}$\n* Required net equivalent capacitance = $C_{\\text{eq}} = 6\\,\\mu\\text{F}$\n\n$$n = \\frac{V_{\\text{total}}}{V_0}, \\quad C_{\\text{branch}} = \\frac{C}{n}, \\quad C_{\\text{eq}} = m \\cdot C_{\\text{branch}} = \\frac{m \\cdot C}{n}$$\n\n## Step 1: Determine the Number of Capacitors in Series per Branch ($n$)\nSince each capacitor can safely withstand a maximum voltage of $V_0 = 500\\text{ V}$, the total voltage $V_{\\text{total}} = 1500\\text{ V}$ must be divided equally across $n$ capacitors connected in series:\n\n$$n = \\frac{V_{\\text{total}}}{V_0} = \\frac{1500\\text{ V}}{500\\text{ V}} = 3\\text{ capacitors per branch}$$\n\n## Step 2: Calculate Equivalent Capacitance of One Series Branch ($C_{\\text{branch}}$)\nFor $n = 3$ identical capacitors of $C = 2\\,\\mu\\text{F}$ connected in series:\n\n$$C_{\\text{branch}} = \\frac{C}{n} = \\frac{2\\,\\mu\\text{F}}{3}$$\n\n## Step 3: Determine the Number of Parallel Branches ($m$)\nTo obtain the desired total equivalent capacitance $C_{\\text{eq}} = 6\\,\\mu\\text{F}$, we connect $m$ such identical branches in parallel:\n\n$$C_{\\text{eq}} = m \\cdot C_{\\text{branch}}$$\n\n$$6\\,\\mu\\text{F} = m \\cdot \\left(\\frac{2\\,\\mu\\text{F}}{3}\\right)$$\n\n$$m = \\frac{6 \\times 3}{2} = 9\\text{ branches}$$\n\n## Step 4: Calculate Minimum Total Number of Capacitors ($N$)\nThe total number of capacitors $N$ required in the network is:\n\n$$N = m \\times n = 9 \\times 3 = 27$$\n\nThus, the minimum number of capacitors required is **$27$**.\n\nCorrect Answer: D ($27$)"
+                }
+            ],
+            "final_answer": "D",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Charge vs Potential Difference ($Q-V$) Graph Analysis",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "In figure, charge on the capacitor is plotted against potential difference across the capacitor. The capacitance and energy stored in the capacitor are respectively __________.",
+        "question_image": "https://drive.google.com/file/d/1KJCa51kRU9VlQTh7lp2d5c-ZVm1ico6U/preview",
+            "local_question_image": "assets/quiz-images/img_1KJCa51kRU9VlQTh7lp2d5c-ZVm1ico6U.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$12\\,\\mu\\text{F},\\,1200\\,\\mu\\text{J}$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$12\\,\\mu\\text{F},\\,600\\,\\mu\\text{J}$",
+                "is_correct": true
+            },
+            {
+                "label": "C",
+                "text": "$24\\,\\mu\\text{F},\\,600\\,\\mu\\text{J}$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$24\\,\\mu\\text{F},\\,1200\\,\\mu\\text{J}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Capacitance and Stored Energy Relations\nFrom the $Q-V$ plot, for a potential difference of $V = 10\\text{ V}$, the charge accumulated on the capacitor is $Q = 120\\,\\mu\\text{C}$.\n\n$$C = \\frac{Q}{V}, \\quad U = \\frac{1}{2} Q V = \\text{Area under } Q-V \\text{ graph}$$\n\n## Step 1: Calculate Capacitance ($C$)\n$$C = \\frac{Q}{V} = \\frac{120\\,\\mu\\text{C}}{10\\text{ V}} = 12\\,\\mu\\text{F}$$\n\n## Step 2: Calculate Stored Energy ($U$)\nUsing the formula for energy stored in a capacitor:\n\n$$U = \\frac{1}{2} Q V = \\frac{1}{2} \\times (120\\,\\mu\\text{C}) \\times (10\\text{ V})$$\n\n$$U = 60 \\times 10 = 600\\,\\mu\\text{J}$$\n\nThus, the capacitance is **$12\\,\\mu\\text{F}$** and the energy stored is **$600\\,\\mu\\text{J}$**.\n\nCorrect Answer: B ($12\\,\\mu\\text{F},\\,600\\,\\mu\\text{J}$)"
+                }
+            ],
+            "final_answer": "B",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Combination of Capacitors",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "The difference between equivalent capacitances of two identical capacitors connected in parallel to that in series is $6\\,\\mu\\text{F}$. The value of capacitance of each capacitor is __________.",
+        "question_image": "https://drive.google.com/file/d/1ARIURZvNuq5IMs4qiHFqe4BTU5Z7RoWr/preview",
+            "local_question_image": "assets/quiz-images/img_1ARIURZvNuq5IMs4qiHFqe4BTU5Z7RoWr.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$2\\,\\mu\\text{F}$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$3\\,\\mu\\text{F}$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$4\\,\\mu\\text{F}$",
+                "is_correct": true
+            },
+            {
+                "label": "D",
+                "text": "$6\\,\\mu\\text{F}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Equivalent Capacitance Formulas\nLet $C$ be the capacitance of each identical capacitor.\n\n* **Parallel Combination ($C_p$):** \n  $$C_p = C + C = 2C$$\n\n* **Series Combination ($C_s$):** \n  $$C_s = \\frac{C \\cdot C}{C + C} = \\frac{C}{2}$$\n\n$$C_p - C_s = 2C - \\frac{C}{2} = \\frac{3}{2}C$$\n\n## Step 1: Calculate Capacitance $C$\nGiven that the difference between the equivalent capacitances is $6\\,\\mu\\text{F}$:\n\n$$C_p - C_s = 6\\,\\mu\\text{F}$$\n\n$$\\frac{3}{2}C = 6\\,\\mu\\text{F}$$\n\n$$C = 6 \\times \\frac{2}{3} = 4\\,\\mu\\text{F}$$\n\nThus, the capacitance of each capacitor is **$4\\,\\mu\\text{F}$**.\n\nCorrect Answer: C ($4\\,\\mu\\text{F}$)"
+                }
+            ],
+            "final_answer": "C",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Equivalent Capacitance of Network",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "The equivalent capacitance between A and B is __________.",
+        "question_image": "https://drive.google.com/file/d/1IIkK2KWhp6sOTgUqBHzCCAzBNBZS-tuP/preview",
+            "local_question_image": "assets/quiz-images/img_1IIkK2KWhp6sOTgUqBHzCCAzBNBZS-tuP.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$50\\text{ pF}$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$\\frac{100}{3}\\text{ pF}$",
+                "is_correct": true
+            },
+            {
+                "label": "C",
+                "text": "$150\\text{ pF}$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$300\\text{ pF}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Circuit Simplification Step-by-Step\nWe analyze the network by identifying series and parallel combinations between terminals $\\text{A}$ and $\\text{B}$:\n\n* Let $C_1 = 50\\text{ pF}$ (top capacitor)\n* Let $C_2 = 100\\text{ pF}$ and $C_3 = 100\\text{ pF}$ (middle branch capacitors)\n* Let $C_4 = 50\\text{ pF}$ (bottom capacitor connected to terminal B)\n\n$$C_{\\text{AB}} = \\frac{C_{\\text{upper}} \\times C_4}{C_{\\text{upper}} + C_4}$$\n\n## Step 1: Simplify Middle Branch Series Combination ($C_{23}$)\nThe two $100\\text{ pF}$ capacitors ($C_2$ and $C_3$) are connected in series with each other:\n\n$$C_{23} = \\frac{C_2 \\times C_3}{C_2 + C_3} = \\frac{100 \\times 100}{100 + 100} = \\frac{10000}{200} = 50\\text{ pF}$$\n\n## Step 2: Combine with Top Capacitor in Parallel ($C_{\\text{upper}}$)\nThis combination $C_{23} = 50\\text{ pF}$ is in parallel with the top capacitor $C_1 = 50\\text{ pF}$:\n\n$$C_{\\text{upper}} = C_1 + C_{23} = 50\\text{ pF} + 50\\text{ pF} = 100\\text{ pF}$$\n\n## Step 3: Calculate Net Capacitance Between Terminals A and B ($C_{\\text{AB}}$)\nFinally, the parallel combination $C_{\\text{upper}} = 100\\text{ pF}$ is in series with the bottom capacitor $C_4 = 50\\text{ pF}$:\n\n$$C_{\\text{AB}} = \\frac{C_{\\text{upper}} \\times C_4}{C_{\\text{upper}} + C_4} = \\frac{100 \\times 50}{100 + 50} = \\frac{5000}{150} = \\frac{100}{3}\\text{ pF}$$\n\nThus, the equivalent capacitance between $\\text{A}$ and $\\text{B}$ is **$\\frac{100}{3}\\text{ pF}$**.\n\nCorrect Answer: B ($\\frac{100}{3}\\text{ pF}$)"
+                }
+            ],
+            "final_answer": "B",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Reconnection of Capacitors",
+        "title": "Physics / Electrostatics & Capacitance",
+        "question": "Two capacitors of $3\\,\\mu\\text{F}$ and $6\\,\\mu\\text{F}$ are connected in series and a potential difference of $900\\text{ V}$ is applied across the combination. They are then disconnected and reconnected in parallel. The potential difference across the combination is __________.",
+        "question_image": "https://drive.google.com/file/d/1P2PkkO5yGmolLHOpcQOo15YLkMsAa_qo/preview",
+            "local_question_image": "assets/quiz-images/img_1P2PkkO5yGmolLHOpcQOo15YLkMsAa_qo.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "zero",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$200\\text{ V}$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$100\\text{ V}$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$400\\text{ V}$",
+                "is_correct": true
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Reconnection Principles\nWhen two capacitors are charged in series and subsequently reconnected in parallel (connecting positive plates together and negative plates together), the total charge is conserved across the parallel combination.\n\n$$V' = \\frac{Q_{\\text{total}}}{C_{\\text{p}}} = \\frac{Q_1 + Q_2}{C_1 + C_2}$$\n\n## Step 1: Calculate Charge Received in Series Combination\nThe equivalent capacitance $C_s$ of $C_1 = 3\\,\\mu\\text{F}$ and $C_2 = 6\\,\\mu\\text{F}$ in series is:\n\n$$C_s = \\frac{C_1 \\cdot C_2}{C_1 + C_2} = \\frac{3 \\times 6}{3 + 6} = \\frac{18}{9} = 2\\,\\mu\\text{F}$$\n\nThe total charge supplied by the $900\\text{ V}$ supply is:\n\n$$Q = C_s \\cdot V = (2\\,\\mu\\text{F}) \\times (900\\text{ V}) = 1800\\,\\mu\\text{C}$$\n\nSince the capacitors were in series, each capacitor acquires the same charge:\n\n$$Q_1 = 1800\\,\\mu\\text{C}, \\quad Q_2 = 1800\\,\\mu\\text{C}$$\n\n## Step 2: Calculate Common Potential in Parallel Reconnection\nWhen reconnected in parallel, the total charge $Q_{\\text{total}}$ on the parallel combination is:\n\n$$Q_{\\text{total}} = Q_1 + Q_2 = 1800\\,\\mu\\text{C} + 1800\\,\\mu\\text{C} = 3600\\,\\mu\\text{C}$$\n\nThe equivalent capacitance in parallel $C_p$ is:\n\n$$C_p = C_1 + C_2 = 3\\,\\mu\\text{F} + 6\\,\\mu\\text{F} = 9\\,\\mu\\text{F}$$\n\nTherefore, the new potential difference across the combination is:\n\n$$V' = \\frac{Q_{\\text{total}}}{C_p} = \\frac{3600\\,\\mu\\text{C}}{9\\,\\mu\\text{F}} = 400\\text{ V}$$\n\nThus, the potential difference across the combination is **$400\\text{ V}$**.\n\nCorrect Answer: D ($400\\text{ V}$)"
+                }
+            ],
+            "final_answer": "D",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "AC Power and RMS Current Calculation",
+        "title": "Physics / Alternating Current",
+        "question": "A light bulb rated $100\\text{ W}$ is connected to an AC source of $220\\text{ V}, 50\\text{ Hz}$. The rms current through the bulb is __________.",
+        "question_image": "https://drive.google.com/file/d/1huhyjldO4Q4N9QMugM46M3w8kM7IaKSI/preview",
+            "local_question_image": "assets/quiz-images/img_1huhyjldO4Q4N9QMugM46M3w8kM7IaKSI.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$0.454\\text{ A}$",
+                "is_correct": true
+            },
+            {
+                "label": "B",
+                "text": "$0.545\\text{ A}$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$2.20\\text{ A}$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$0.22\\text{ A}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand AC Power Relations\nThe power dissipation $P$ in a purely resistive load (such as an incandescent light bulb) connected to an alternating voltage source is given by the product of the root-mean-square voltage ($V_{\\text{rms}}$) and the root-mean-square current ($I_{\\text{rms}}$).\n\n$$P = V_{\\text{rms}} \\cdot I_{\\text{rms}} \\implies I_{\\text{rms}} = \\frac{P}{V_{\\text{rms}}}$$\n\n## Step 1: Identify Given Parameters\nFrom the problem statement:\n* Power rating of the bulb, $P = 100\\text{ W}$\n* RMS voltage of the AC source, $V_{\\text{rms}} = 220\\text{ V}$\n* Frequency of the source, $f = 50\\text{ Hz}$\n\n## Step 2: Calculate RMS Current ($I_{\\text{rms}}$)\nSubstitute the values into the power equation:\n\n$$I_{\\text{rms}} = \\frac{100\\text{ W}}{220\\text{ V}}$$\n\n$$I_{\\text{rms}} = \\frac{10}{22} = \\frac{5}{11}\\text{ A}$$\n\n$$I_{\\text{rms}} \\approx 0.4545\\text{ A} \\approx 0.454\\text{ A}$$\n\nThus, the rms current passing through the light bulb is **$0.454\\text{ A}$**.\n\nCorrect Answer: A ($0.454\\text{ A}$)"
+                }
+            ],
+            "final_answer": "A",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Phase Relationship in Purely Resistive AC Circuit",
+        "title": "Physics / Alternating Current",
+        "question": "In a circuit containing a pure resistor connected to an AC source, __________.",
+        "question_image": "https://drive.google.com/file/d/1e4202K64ZFkCYBPHz0PYiM-lEcffd7Lw/preview",
+            "local_question_image": "assets/quiz-images/img_1e4202K64ZFkCYBPHz0PYiM-lEcffd7Lw.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "Voltage leads the current by $90^\\circ$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "Current leads the voltage by $90^\\circ$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "Voltage and current are in same phase with each other",
+                "is_correct": true
+            },
+            {
+                "label": "D",
+                "text": "Current leads the voltage by $180^\\circ$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Purely Resistive AC Circuits\nWhen an alternating voltage source $v(t) = V_m \\sin(\\omega t)$ is connected across a pure resistor of resistance $R$, the instantaneous current $i(t)$ flowing through the resistor is given by Ohm's Law:\n\n$$i(t) = \\frac{v(t)}{R} = \\frac{V_m \\sin(\\omega t)}{R} = I_m \\sin(\\omega t)$$\n\nwhere $I_m = \\frac{V_m}{R}$ is the peak current.\n\n$$\\Delta \\phi = \\phi_V - \\phi_I = \\omega t - \\omega t = 0^\\circ$$\n\n## Step 1: Compare Phase Angles\n* Phase angle of alternating voltage, $\\phi_V = \\omega t$\n* Phase angle of alternating current, $\\phi_I = \\omega t$\n\nSince $\\phi_V - \\phi_I = 0$, both the voltage and current attain their zero, maximum, and minimum values at the exact same instants of time.\n\nTherefore, **voltage and current are in the same phase with each other**.\n\nCorrect Answer: C (Voltage and current are in same phase with each other)"
+                }
+            ],
+            "final_answer": "C",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "AC Voltage Equation Analysis",
+        "title": "Physics / Alternating Current",
+        "question": "A sinusoidal voltage produced by an AC generator at any instant $t$ is given by an equation $V = 311 \\sin 314\\,t$. The rms value of voltage and frequency are respectively __________.",
+        "question_image": "https://drive.google.com/file/d/1xhlDJCimmJkB8DgdZr6DAnModD6sWFm7/preview",
+            "local_question_image": "assets/quiz-images/img_1xhlDJCimmJkB8DgdZr6DAnModD6sWFm7.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$200\\text{ V},\\,50\\text{ Hz}$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$220\\text{ V},\\,100\\text{ Hz}$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$220\\text{ V},\\,50\\text{ Hz}$",
+                "is_correct": true
+            },
+            {
+                "label": "D",
+                "text": "$200\\text{ V},\\,100\\text{ Hz}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Standard Sinusoidal AC Equation\nThe general equation for a sinusoidal alternating voltage is given by:\n\n$$V = V_m \\sin(\\omega t)$$\n\nwhere:\n* $V_m$ is the peak (maximum) voltage\n* $\\omega = 2\\pi f$ is the angular frequency (in rad/s)\n* $f$ is the frequency (in Hz)\n\n$$V_{\\text{rms}} = \\frac{V_m}{\\sqrt{2}}, \\quad f = \\frac{\\omega}{2\\pi}$$\n\n## Step 1: Determine Peak Voltage and Angular Frequency\nComparing the given equation $V = 311 \\sin 314\\,t$ with $V = V_m \\sin(\\omega t)$:\n\n$$V_m = 311\\text{ V}$$\n\n$$\\omega = 314\\text{ rad/s}$$\n\n## Step 2: Calculate RMS Voltage ($V_{\\text{rms}}$)\n$$V_{\\text{rms}} = \\frac{V_m}{\\sqrt{2}} = \\frac{311}{1.414} \\approx 220\\text{ V}$$\n\n## Step 3: Calculate Frequency ($f$)\nUsing $\\omega = 2\\pi f$:\n\n$$f = \\frac{\\omega}{2\\pi} = \\frac{314}{2 \\times 3.1416} = \\frac{314}{6.2832} \\approx 50\\text{ Hz}$$\n\nThus, the RMS voltage is **$220\\text{ V}$** and the frequency is **$50\\text{ Hz}$**.\n\nCorrect Answer: C ($220\\text{ V},\\,50\\text{ Hz}$)"
+                }
+            ],
+            "final_answer": "C",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+    {
+        "topic": "Impedance of a Series LCR Circuit",
+        "title": "Physics / Alternating Current",
+        "question": "In a series $LCR$ circuit, $R = 300\\,\\Omega$, $L = 0.9\\text{ H}$, $C = 2.0\\,\\mu\\text{F}$ and $\\omega = 1000\\text{ rad/s}$, then impedance of the circuit is __________.",
+        "question_image": "https://drive.google.com/file/d/13LZ7nGFEegjIku5IN7eqKh-jzGpTqrzI/preview",
+            "local_question_image": "assets/quiz-images/img_13LZ7nGFEegjIku5IN7eqKh-jzGpTqrzI.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$900\\,\\Omega$",
+                "is_correct": false
+            },
+            {
+                "label": "B",
+                "text": "$500\\,\\Omega$",
+                "is_correct": true
+            },
+            {
+                "label": "C",
+                "text": "$400\\,\\Omega$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$1300\\,\\Omega$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Series LCR Circuit Impedance\nThe total opposition to alternating current in a series $LCR$ circuit is defined as the impedance ($Z$). It is calculated using the resistance ($R$), inductive reactance ($X_L$), and capacitive reactance ($X_C$).\n\n$$Z = \\sqrt{R^2 + (X_L - X_C)^2}$$\n\n## Step 1: Calculate Inductive Reactance ($X_L$)\nUsing $L = 0.9\\text{ H}$ and $\\omega = 1000\\text{ rad/s}$:\n\n$$X_L = \\omega L = 1000 \\times 0.9 = 900\\,\\Omega$$\n\n## Step 2: Calculate Capacitive Reactance ($X_C$)\nUsing $C = 2.0\\,\\mu\\text{F} = 2.0 \\times 10^{-6}\\text{ F}$ and $\\omega = 1000\\text{ rad/s}$:\n\n$$X_C = \\frac{1}{\\omega C} = \\frac{1}{1000 \\times 2.0 \\times 10^{-6}} = \\frac{1}{2 \\times 10^{-3}} = 500\\,\\Omega$$\n\n## Step 3: Calculate Net Reactance and Total Impedance ($Z$)\nThe difference between the reactances is:\n\n$$|X_L - X_C| = |900\\,\\Omega - 500\\,\\Omega| = 400\\,\\Omega$$\n\nSubstitute $R = 300\\,\\Omega$ and $(X_L - X_C) = 400\\,\\Omega$ into the impedance formula:\n\n$$Z = \\sqrt{(300)^2 + (400)^2} = \\sqrt{90000 + 160000} = \\sqrt{250000} = 500\\,\\Omega$$\n\nThus, the impedance of the circuit is **$500\\,\\Omega$**.\n\nCorrect Answer: B ($500\\,\\Omega$)"
+                }
+            ],
+            "final_answer": "B",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+
         {
             "topic": "Electrostatics",
             "title": "Electrostatic Force Calculation",
@@ -54575,6 +54984,49 @@ const QUESTIONS = {
         }
     ],
     "thermo": [
+{
+        "topic": "Work Done in a Cyclic Process",
+        "title": "Physics / Thermodynamics",
+        "question": "A thermodynamic system undergoes a cyclic process $ABC$ as shown in the diagram. The work done by the system per cycle is __________.",
+        "question_image": "https://drive.google.com/file/d/194czoUhCx38HKQND2G6I30DkOfATbBis/preview",
+            "local_question_image": "assets/quiz-images/img_194czoUhCx38HKQND2G6I30DkOfATbBis.jpg",
+        "times_presented": 0,
+        "options": [
+            {
+                "label": "A",
+                "text": "$750\\text{ J}$",
+                "is_correct": true
+            },
+            {
+                "label": "B",
+                "text": "$-1250\\text{ J}$",
+                "is_correct": false
+            },
+            {
+                "label": "C",
+                "text": "$-750\\text{ J}$",
+                "is_correct": false
+            },
+            {
+                "label": "D",
+                "text": "$1250\\text{ J}$",
+                "is_correct": false
+            }
+        ],
+        "solution": {
+            "steps": [
+                {
+                    "title": "Solution",
+                    "content": "## Understand Work Done in a Cyclic Process\nThe net work done by a thermodynamic system in a closed cyclic process on a $p-V$ diagram is given by the area enclosed by the cycle:\n\n* **Clockwise Cycle:** Work done is **positive** ($W > 0$).\n* **Counter-Clockwise Cycle:** Work done is **negative** ($W < 0$).\n\n$$W_{\\text{net}} = +\\text{Area of } \\Delta ABC \\quad (\\text{since direction is clockwise } A \\to B \\to C \\to A)$$\n\n## Step 1: Calculate Dimensions of Triangle $\\Delta ABC$\nFrom the given $p-V$ plot:\n* **Base ($BC$):** \n  $$\\text{Base} = V_C - V_B = 10\\text{ m}^3 - 5\\text{ m}^3 = 5\\text{ m}^3$$\n\n* **Height ($AB$):** \n  $$\\text{Height} = p_A - p_B = 400\\text{ N/m}^2 - 100\\text{ N/m}^2 = 300\\text{ N/m}^2$$\n\n## Step 2: Calculate Area of Triangle $\\Delta ABC$\n$$W = \\frac{1}{2} \\times \\text{Base} \\times \\text{Height}$$\n\n$$W = \\frac{1}{2} \\times (5\\text{ m}^3) \\times (300\\text{ N/m}^2) = 750\\text{ J}$$\n\nSince the cycle goes clockwise ($A \\to B \\to C \\to A$), the net work done by the system per cycle is positive:\n\n$$W = +750\\text{ J}$$\n\nCorrect Answer: A ($750\\text{ J}$)"
+                }
+            ],
+            "final_answer": "A",
+            "solution_image": "",
+            "video_explanation": ""
+        },
+        "local_question_image": ""
+    },
+
         {
             "topic": "First Law of Thermodynamics",
             "title": "First Law Applied to Rigid \\& Insulated Systems",

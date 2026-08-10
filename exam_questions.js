@@ -1481,8 +1481,8 @@ const EXAM_QUESTIONS = {
             "topic": "Probability and Statistics",
             "title": "Committee Selection with Constraints",
             "question": "From a group of 7 men and 6 women, five persons are to be selected to form a committee so that at least 3 men are there on the committee. In how many ways can it be done?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1VNelYwteAHJvJ1KtnfX2Zj0g5XPv6YPl/preview",
+            "local_question_image": "assets/quiz-images/img_1VNelYwteAHJvJ1KtnfX2Zj0g5XPv6YPl.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1536,8 +1536,8 @@ const EXAM_QUESTIONS = {
             "topic": "Probability and Statistics",
             "title": "Round-Robin Tournament Matches",
             "question": "In a tournament of 7 players, each player plays every other player once. How many matches are there?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1x5z3Vq0Ma9kep8R-Wj1TsGQV7F1U_qlO/preview",
+            "local_question_image": "assets/quiz-images/img_1x5z3Vq0Ma9kep8R-Wj1TsGQV7F1U_qlO.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1591,8 +1591,8 @@ const EXAM_QUESTIONS = {
             "topic": "Probability and Statistics",
             "title": "Arrangement with Positional Constraints",
             "question": "The letters of the word 'ARTICLE' is arranged in different ways randomly. What is the chance that the vowels occupy the even places?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1HqsA8Cwoh41MPEz4ccDL_mHGo0umbPKS/preview",
+            "local_question_image": "assets/quiz-images/img_1HqsA8Cwoh41MPEz4ccDL_mHGo0umbPKS.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1646,8 +1646,8 @@ const EXAM_QUESTIONS = {
             "topic": "Probability and Statistics",
             "title": "Mean and Median Analysis",
             "question": "Marks (out of 100) of seven students in an examination are given below. Find the difference between their mean and median.\n\\[ 70,\\, 55,\\, 52,\\, 85,\\, 68,\\, 67,\\, 79 \\]",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1kzITOGuxB0-DfUOA4GN3ctNjC_EeHil_/preview",
+            "local_question_image": "assets/quiz-images/img_1kzITOGuxB0-DfUOA4GN3ctNjC_EeHil_.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1701,8 +1701,8 @@ const EXAM_QUESTIONS = {
             "topic": "Probability and Statistics",
             "title": "Standard Deviation",
             "question": "What is the standard deviation of the given data?\n\\[ 3,\\, 8,\\, 4,\\, 5,\\, 9,\\, 13 \\]",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PEfxy4a2J_fXtL0GuD96QgLI1FKQ9YPQ/preview",
+            "local_question_image": "assets/quiz-images/img_1PEfxy4a2J_fXtL0GuD96QgLI1FKQ9YPQ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1870,8 +1870,8 @@ const EXAM_QUESTIONS = {
             "topic": "Probability and Statistics",
             "title": "Total Number of Balls",
             "question": "A bag contains only red, green and white balls. The probability of selecting a red ball from the bag at random is $\\dfrac{1}{3}$ and that of selecting a white ball at random is $\\dfrac{1}{2}$. If the bag contains 9 green balls, the total number of balls in the bag is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1SzFj8XeMxsTgPg-VAQ8yaXbRhOOPsurK/preview",
+            "local_question_image": "assets/quiz-images/img_1SzFj8XeMxsTgPg-VAQ8yaXbRhOOPsurK.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8396,8 +8396,8 @@ const EXAM_QUESTIONS = {
             "topic": "Chemistry",
             "title": "Atomic Structure of Carbon",
             "question": "The number of electrons in the outer most orbit of carbon atom is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1m-QktbFV_r5mNkPFy4enwQq4Vc9nppR9/preview",
+            "local_question_image": "assets/quiz-images/img_1m-QktbFV_r5mNkPFy4enwQq4Vc9nppR9.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -8447,8 +8447,8 @@ const EXAM_QUESTIONS = {
             "topic": "Chemistry",
             "title": "pH Scale and Basicity Comparison",
             "question": "The pH values of two solutions 'I' and 'II' are $8$ and $10$, respectively. Which of the following statements is true about these solutions?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1oWuRlKkISrGT19ERkoAkvnH-sCM6bqzm/preview",
+            "local_question_image": "assets/quiz-images/img_1oWuRlKkISrGT19ERkoAkvnH-sCM6bqzm.jpg",
             "times_presented": 0,
             "options": [
                 {
