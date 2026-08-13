@@ -78163,7 +78163,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Soil Dry Unit Weight Calculation",
             "question": "A soil sample has a void ratio of $0.65$ and a specific gravity of solids of $2.70$. What is the dry unit weight of the soil in $lb/ft^3$?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1YD8WAQB2Fbm_x537oxPJ8-nP_kkLR9dp/preview",
+            "local_question_image": "assets/quiz-images/img_1YD8WAQB2Fbm_x537oxPJ8-nP_kkLR9dp.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78218,7 +78219,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Degree of Saturation of Soil",
             "question": "For a soil sample with a water content of $20\\%$, a specific gravity of $2.65$, and a void ratio of $0.70$, what is the degree of saturation ($S$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1blrlUut4XutnIne03KzamDrHwQ_bxI5i/preview",
+            "local_question_image": "assets/quiz-images/img_1blrlUut4XutnIne03KzamDrHwQ_bxI5i.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78273,7 +78275,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "USCS Soil Classification",
             "question": "A soil sample has $65\\%$ of its particles passing through the No. 200 sieve. The Liquid Limit (LL) is 45 and the Plastic Limit (PL) is 20. According to the Unified Soil Classification System (USCS), what is the soil classification?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1pVr8zXYhUjbBEt3l1trr6-xptTMcRdn3/preview",
+            "local_question_image": "assets/quiz-images/img_1pVr8zXYhUjbBEt3l1trr6-xptTMcRdn3.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78332,7 +78335,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Calculating Relative Density of Soil",
             "question": "A granular soil has a maximum void ratio of $0.85$ and a minimum void ratio of $0.45$. If the in-situ void ratio is $0.60$, what is the relative density ($D_r$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/15l_OOejs_1hg71vzaBdoOAtPAMCpdiQ3/preview",
+            "local_question_image": "assets/quiz-images/img_15l_OOejs_1hg71vzaBdoOAtPAMCpdiQ3.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78387,7 +78391,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Uniformity Coefficient Calculation",
             "question": "From a grain-size distribution curve, the following values were determined: $D_{60} = 0.45 \\text{ mm}$, $D_{30} = 0.25 \\text{ mm}$, and $D_{10} = 0.15 \\text{ mm}$. What is the uniformity coefficient ($C_u$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Do30xA8Ix2vcqul4ENvuIbk8QlbUf0us/preview",
+            "local_question_image": "assets/quiz-images/img_1Do30xA8Ix2vcqul4ENvuIbk8QlbUf0us.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78493,7 +78498,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Void Ratio from Porosity",
             "question": "If the porosity ($n$) of a soil sample is 0.40, what is its void ratio ($e$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1CHp9xVSVwzWfvqIPqCXMIB6AAUPXZkuf/preview",
+            "local_question_image": "assets/quiz-images/img_1CHp9xVSVwzWfvqIPqCXMIB6AAUPXZkuf.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78544,7 +78550,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Soil Specific Gravity Calculation",
             "question": "A dry soil sample has a mass of $150 \\text{ g}$ and the volume of its solids is measured as $55.5 \\text{ cm}^3$. If the density of water is $1.0 \\text{ g/cm}^3$, what is the specific gravity ($G_s$) of the soil solids?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1oG2wlrMGJl8N580B4UwChjKHRN_aKNoz/preview",
+            "local_question_image": "assets/quiz-images/img_1oG2wlrMGJl8N580B4UwChjKHRN_aKNoz.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78595,7 +78602,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Coefficient of Curvature Calculation",
             "question": "A sieve analysis results in $D_{60} = 0.8 \\text{ mm}$, $D_{30} = 0.4 \\text{ mm}$, and $D_{10} = 0.1 \\text{ mm}$. What is the coefficient of curvature ($C_c$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1F0xcnbij68xNrER2awdGIoW9cypo9JFX/preview",
+            "local_question_image": "assets/quiz-images/img_1F0xcnbij68xNrER2awdGIoW9cypo9JFX.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -78646,7 +78654,8 @@ const QUESTIONS = {
             "topic": "Index Properties and Soil Classifications",
             "title": "Soil Saturated Unit Weight Calculation",
             "question": "A soil sample has a void ratio of $0.50$ and a specific gravity of $2.65$. What is the saturated unit weight ($\\gamma_{sat}$) in $kN/m^3$? (Assume $\\gamma_w = 9.81 \\text{ kN/m}^3$)",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PAKSngjLXp8dTDBg6stTGbEmoXIJ3zaG/preview",
+            "local_question_image": "assets/quiz-images/img_1PAKSngjLXp8dTDBg6stTGbEmoXIJ3zaG.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -205627,227 +205636,6 @@ const QUESTIONS = {
                 "section": "groundwater-soils",
                 "topic": "Soil Permeability",
                 "search_term": "soil permeability"
-            }
-        },
-        {
-            "topic": "Phase Relations",
-            "title": "Phase Relations — Void Ratio",
-            "question": "A soil sample has a porosity of 0.40. What is its void ratio (e)?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "0.67",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "0.40",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "0.25",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1.50",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Void Ratio",
-                        "content": "$e = \\dfrac{n}{1 - n} = \\dfrac{0.40}{1 - 0.40} = \\dfrac{0.40}{0.60} \\approx 0.67$."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Phase Relations",
-                "search_term": "soil mechanics"
-            }
-        },
-        {
-            "topic": "Seepage",
-            "title": "Flow Net seepage calculation",
-            "question": "A flow net under a sheet pile has 4 flow channels (Nf) and 12 head drops (Nd). If the total head loss is 6.0 m and hydraulic conductivity K = 2×10⁻⁵ m/s, what is the seepage rate per unit width?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "4.0×10⁻⁵ m³/s/m",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "1.2×10⁻⁴ m³/s/m",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "1.3×10⁻⁵ m³/s/m",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "4.0×10⁻⁶ m³/s/m",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Flow Net Seepage",
-                        "content": "$q = K H \\dfrac{N_f}{N_d} = (2 \\times 10^{-5} \\text{ m/s}) \\times 6.0 \\text{ m} \\times \\dfrac{4}{12} = 1.2 \\times 10^{-4} \\times 0.333 = 4.0 \\times 10^{-5}$ m³/s per meter width."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Seepage",
-                "search_term": "seepage",
-                "page_number": 266
-            }
-        },
-        {
-            "topic": "Groundwater Hydraulics",
-            "title": "Dupuit-Forchheimer Assumption",
-            "question": "The Dupuit-Forchheimer assumptions for unconfined groundwater flow state that:",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "Groundwater flow is horizontal and hydraulic gradient is equal to the water table slope",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "Flow is entirely vertical",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "Aquifer is anisotropic",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "Friction is neglected",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Dupuit Assumptions",
-                        "content": "To simplify unconfined flow, Dupuit assumed that flow lines are horizontal and equipotential lines are vertical, meaning hydraulic gradient is constant with depth and equal to $dh/dx$."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Groundwater Hydraulics",
-                "search_term": "groundwater hydraulics"
-            }
-        },
-        {
-            "topic": "Soil Shear Strength",
-            "title": "Mohr-Coulomb Shear Strength",
-            "question": "A sand has cohesion c = 0 and angle of internal friction φ = 30°. Under an effective normal stress of 100 kPa, what is the shear strength?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "57.7 kPa",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "50.0 kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "86.6 kPa",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "0 kPa",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Mohr-Coulomb",
-                        "content": "$\\tau = c + \\sigma' \\tan\\phi = 0 + 100 \\tan(30°) = 100 \\times 0.577 = 57.7$ kPa."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Soil Shear Strength",
-                "search_term": "soil shear strength"
-            }
-        },
-        {
-            "topic": "Contaminant Transport",
-            "title": "Retardation Factor",
-            "question": "A contaminant moves through soil. If the bulk density of soil is 1.5 g/cm³, porosity is 0.40, and the distribution coefficient K_d is 2.0 cm³/g, what is the retardation factor (R)?",
-            "question_image": "",
-            "times_presented": 0,
-            "options": [
-                {
-                    "label": "A",
-                    "text": "8.5",
-                    "is_correct": true
-                },
-                {
-                    "label": "B",
-                    "text": "2.0",
-                    "is_correct": false
-                },
-                {
-                    "label": "C",
-                    "text": "4.5",
-                    "is_correct": false
-                },
-                {
-                    "label": "D",
-                    "text": "1.0",
-                    "is_correct": false
-                }
-            ],
-            "solution": {
-                "steps": [
-                    {
-                        "title": "Retardation",
-                        "content": "$R = 1 + \\dfrac{\\rho_b K_d}{n} = 1 + \\dfrac{1.5 \\times 2.0}{0.40} = 1 + \\dfrac{3.0}{0.40} = 1 + 7.5 = 8.5$."
-                    }
-                ],
-                "final_answer": "A"
-            },
-            "ncees_reference": {
-                "version": "10.6",
-                "section": "groundwater-soils",
-                "topic": "Contaminant Transport",
-                "search_term": "contaminant transport"
             }
         },
         {
