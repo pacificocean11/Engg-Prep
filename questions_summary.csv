@@ -1,0 +1,108 @@
+Discipline,Subject ID,Subject Name,Practice Questions,Exam Questions,Advanced Questions,Total Questions,Questions with Diagrams
+"Other","physics","Physics",0,0,0,0,0
+"Other","math","Mathematics",128,13,5,146,10
+"Other","stats","Probability and Statistics",106,28,10,144,12
+"Other","chemistry","Chemistry",64,10,10,84,2
+"Other","instr-controls","Instrumentation and Controls",65,0,10,75,0
+"Other","ethics","Engineering Ethics and Societal Impacts",95,0,10,105,0
+"Other","safety","Safety, Health, and Environment",71,0,10,81,0
+"Other","econ","Engineering Economics",56,6,10,72,10
+"Other","statics","Statics",57,5,11,73,31
+"Other","dynamics","Dynamics",91,27,19,137,70
+"Other","materials-strength","Strength of Materials",98,0,11,109,48
+"Other","materials-science","Materials Science",68,0,10,78,3
+"Other","fluids","Fluid Mechanics",81,0,12,93,29
+"Other","electricity","Electricity, Power, and Magnetism",87,30,10,127,37
+"Other","thermo","Thermodynamics",150,0,13,163,33
+"Other","heat","Heat Transfer",56,0,9,65,2
+"Mechanical","math","Mathematics",128,13,5,146,10
+"Mechanical","stats","Probability and Statistics",106,28,10,144,12
+"Mechanical","ethics","Engineering Ethics and Societal Impacts",95,0,10,105,0
+"Mechanical","econ","Engineering Economics",56,6,10,72,10
+"Mechanical","electricity","Electricity, Power, and Magnetism",87,30,10,127,37
+"Mechanical","statics","Statics",57,5,11,73,31
+"Mechanical","dynamics","Dynamics",91,27,19,137,70
+"Mechanical","materials-strength","Strength of Materials",98,0,11,109,48
+"Mechanical","materials-science","Materials Science",68,0,10,78,3
+"Mechanical","fluids","Fluid Mechanics",81,0,12,93,29
+"Mechanical","thermo","Thermodynamics",150,0,13,163,33
+"Mechanical","heat","Heat Transfer",56,0,9,65,2
+"Mechanical","instr-controls","Measurements, Instrumentation, and Controls",65,0,10,75,0
+"Mechanical","design","Mechanical Design and Analysis",96,0,10,106,17
+"Civil","math","Mathematics",128,13,5,146,10
+"Civil","stats","Probability and Statistics",106,28,10,144,12
+"Civil","ethics","Engineering Ethics and Societal Impacts",95,0,10,105,0
+"Civil","econ","Engineering Economics",56,6,10,72,10
+"Civil","statics","Statics",57,5,11,73,31
+"Civil","dynamics","Dynamics",91,27,19,137,70
+"Civil","materials-strength","Strength of Materials",98,0,11,109,48
+"Civil","materials-science","Materials Science",68,0,10,78,3
+"Civil","fluids","Fluid Mechanics",81,0,12,93,29
+"Civil","surveying","Surveying",71,0,10,81,0
+"Civil","water-res","Water Resources and Environmental Engineering",140,0,10,150,20
+"Civil","structural","Structural Engineering",111,0,10,121,19
+"Civil","geotech","Geotechnical Engineering",140,0,10,150,8
+"Civil","transport","Transportation Engineering",90,0,10,100,10
+"Civil","construction","Construction Engineering",98,0,10,108,0
+"Chemical","math","Mathematics and Probability/Statistics",128,13,5,146,10
+"Chemical","ethics","Ethics and Professional Practice",95,0,10,105,0
+"Chemical","econ","Engineering Economics",56,6,10,72,10
+"Chemical","eng-sciences","Engineering Sciences",63,0,10,73,0
+"Chemical","comp-tools","Computational Tools",38,0,10,48,0
+"Chemical","materials-science","Materials Science",68,0,10,78,3
+"Chemical","chem-bio","Chemistry and Biology",75,0,10,85,0
+"Chemical","fluids","Fluid Mechanics/Dynamics",81,0,12,93,29
+"Chemical","thermo","Thermodynamics",150,0,13,163,33
+"Chemical","balances","Material/Energy Balances",39,0,10,49,0
+"Chemical","heat","Heat Transfer",56,0,9,65,2
+"Chemical","mass-sep","Mass Transfer and Separation",70,0,10,80,0
+"Chemical","solids","Solids Handling",42,0,10,52,0
+"Chemical","reaction-eng","Chemical Reaction Engineering",63,0,10,73,0
+"Chemical","process-design","Process Design and Economics",65,0,10,75,0
+"Chemical","process-control","Process Control",44,0,10,54,0
+"Chemical","safety","Safety, Health, and Environment",71,0,10,81,0
+"Environmental","math","Mathematics and Probability/Statistics",128,13,5,146,10
+"Environmental","ethics","Ethics and Professional Practice",95,0,10,105,0
+"Environmental","econ","Engineering Economics",56,6,10,72,10
+"Environmental","principles","Fundamental Principles",65,0,10,75,0
+"Environmental","env-chem","Environmental Chemistry",41,0,10,51,0
+"Environmental","risk","Health Hazards and Risk Assessment",41,0,3,44,0
+"Environmental","fluids-hyd","Fluid Mechanics and Hydraulics",65,0,10,75,0
+"Environmental","thermo","Thermodynamics",150,0,13,163,33
+"Environmental","water-hydrology","Surface Water Resources and Hydrology",41,0,10,51,0
+"Environmental","groundwater-soils","Groundwater, Soils, and Sediments",38,0,10,48,0
+"Environmental","water-wastewater","Water and Wastewater",62,0,10,72,0
+"Environmental","air-quality","Air Quality and Control",61,0,10,71,0
+"Environmental","waste","Solid and Hazardous Waste",41,0,10,51,0
+"Environmental","energy-env","Energy and Environment",38,0,10,48,0
+"Industrial","math","Mathematics",128,13,5,146,10
+"Industrial","eng-sciences","Engineering Sciences",63,0,10,73,0
+"Industrial","ethics","Ethics and Professional Practice",95,0,10,105,0
+"Industrial","econ","Engineering Economics",56,6,10,72,10
+"Industrial","stats","Probability and Statistics",106,28,10,144,12
+"Industrial","modeling","Modeling and Quantitative Analysis",62,0,9,71,0
+"Industrial","eng-mgmt","Engineering Management",38,0,10,48,0
+"Industrial","production","Manufacturing, Service, and Other Production Systems",41,0,10,51,0
+"Industrial","supply-chain","Facilities and Supply Chain",65,0,10,75,0
+"Industrial","ergonomics","Human Factors, Ergonomics, and Safety",60,0,10,70,0
+"Industrial","work-design","Work Design",41,0,10,51,0
+"Industrial","quality","Quality",65,0,10,75,0
+"Industrial","systems","Systems Engineering, Analysis, and Design",41,0,10,51,0
+"Electrical & Computer","math","Mathematics",128,13,5,146,10
+"Electrical & Computer","stats","Probability and Statistics",106,28,10,144,12
+"Electrical & Computer","ethics","Ethics and Professional Practice",95,0,10,105,0
+"Electrical & Computer","econ","Engineering Economics",56,6,10,72,10
+"Electrical & Computer","elec-materials","Properties of Electrical Materials",68,0,7,75,0
+"Electrical & Computer","eng-sciences","Engineering Sciences",63,0,10,73,0
+"Electrical & Computer","circuits","Circuit Analysis (DC and AC Steady State)",84,0,10,94,0
+"Electrical & Computer","linear-systems","Linear Systems",118,0,9,127,0
+"Electrical & Computer","signals","Signal Processing",119,0,10,129,0
+"Electrical & Computer","electronics","Electronics",60,0,9,69,0
+"Electrical & Computer","power","Power",58,0,10,68,0
+"Electrical & Computer","electromagnetics","Electromagnetics",82,0,10,92,0
+"Electrical & Computer","control-systems","Control Systems",68,0,9,77,0
+"Electrical & Computer","communications","Communications",51,0,10,61,0
+"Electrical & Computer","networks","Computer Networks",60,0,10,70,0
+"Electrical & Computer","digital-systems","Digital Systems",80,0,10,90,0
+"Electrical & Computer","computer-systems","Computer Systems",85,0,10,95,0
+"Electrical & Computer","software","Software Development",60,0,10,70,0

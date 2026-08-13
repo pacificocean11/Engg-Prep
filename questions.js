@@ -1816,7 +1816,8 @@ const QUESTIONS = {
             "topic": "Analytic Geometry",
             "title": "Acute Angle Between Two Lines",
             "question": "Calculate the acute angle $\\alpha$ between the lines with slopes $m_{1} = 2$ and $m_{2} = -3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Bz9XOp_o6NBNeSkYjUPY2v0N2XhzopYY/preview",
+            "local_question_image": "assets/quiz-images/img_1Bz9XOp_o6NBNeSkYjUPY2v0N2XhzopYY.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -1875,7 +1876,8 @@ const QUESTIONS = {
             "topic": "Analytic Geometry",
             "title": "Intercepts of a Line",
             "question": "A line has the equation $y - 3 = 2(x + 2)$. What are its x-intercept ($a$) and y-intercept ($b$)?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1QNQREs3i_NUJeUncYaJ1-PG_lNp59IES/preview",
+            "local_question_image": "assets/quiz-images/img_1QNQREs3i_NUJeUncYaJ1-PG_lNp59IES.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -39889,7 +39891,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Axial Loads",
             "title": "Modulus of Elasticity",
             "question": "A cylindrical specimen of a metal alloy with a diameter of $12.8 \\text{ mm}$ and a gauge length of $50.8 \\text{ mm}$ is subjected to a tensile load of $15,000 \\text{ N}$. This load results in an elastic elongation of $0.038 \\text{ mm}$. What is the modulus of elasticity, $E$, for this alloy?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ACXm5wHBx_iGsRKk4KSRx_ftXsiztd7H/preview",
+            "local_question_image": "assets/quiz-images/img_1ACXm5wHBx_iGsRKk4KSRx_ftXsiztd7H.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -40651,7 +40654,8 @@ const QUESTIONS = {
             "topic": "Stress/Strain Caused by Shear",
             "title": "Force Required to Punch Hole",
             "question": "A $30\\text{ mm}$ diameter hole is punched in a steel plate that is $10\\text{ mm}$ thick. If the ultimate shear strength of the steel is $400\\text{ MPa}$, what is the minimum force required to punch the hole?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1E5W5AZSplSnwHpE3UUX8FeVWd4dtfNhT/preview",
+            "local_question_image": "assets/quiz-images/img_1E5W5AZSplSnwHpE3UUX8FeVWd4dtfNhT.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46772,7 +46776,8 @@ const QUESTIONS = {
             "topic": "Fluid Properties",
             "title": "Kinematic Viscosity of a Fluid",
             "question": "Given a fluid with a dynamic viscosity of $\\mu = 0.048 \\text{ Pa} \\cdot \\text{s}$ and a specific gravity of $SG = 0.85$, determine the kinematic viscosity ($\\\nu$) in $\\text{m}^2/\\text{s}$. Assume the density of water $\\rho_w = 1000 \\text{ kg/m}^3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/13X5za5QznE1nfPS5N5wG8k1JqY98fHkZ/preview",
+            "local_question_image": "assets/quiz-images/img_13X5za5QznE1nfPS5N5wG8k1JqY98fHkZ.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -46935,7 +46940,8 @@ const QUESTIONS = {
             "topic": "Fluid Properties",
             "title": "Density Change from Bulk Modulus",
             "question": "A liquid has a bulk modulus of elasticity $E_v = 2.2$ GPa. If the pressure on the liquid increases by 10 MPa, what is the approximate percentage change in the density of the liquid?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1JZhLnHUVv-EreYhOjnx5-GCJXbaiT4Br/preview",
+            "local_question_image": "assets/quiz-images/img_1JZhLnHUVv-EreYhOjnx5-GCJXbaiT4Br.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -47783,7 +47789,8 @@ const QUESTIONS = {
             "topic": "Energy, Impulse, and Momentum",
             "title": "Force Exerted by a Jet",
             "question": "A water jet with a diameter of $50\\text{ mm}$ and a velocity of $10\\text{ m/s}$ strikes a stationary hemispherical vane, which deflects the water by $180^\\circ$ back in the direction it came from. What is the magnitude of the force exerted by the jet on the vane? Assume water density is $1000\\text{ kg/m}^3$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1rAUF0cUBu9y3q6NmsgnhqZqA1RgMbvFP/preview",
+            "local_question_image": "assets/quiz-images/img_1rAUF0cUBu9y3q6NmsgnhqZqA1RgMbvFP.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50738,6 +50745,302 @@ const QUESTIONS = {
         }
     ],
     "electricity": [
+        {
+            "topic": "Electrostatics",
+            "title": "Electrostatic Force Calculation",
+            "question": "Two point charges, $q_1 = +2.0 \\times 10^{-6} \\text{ C}$ and $q_2 = -4.0 \\times 10^{-6} \\text{ C}$, are separated by a distance of $0.30 \\text{ m}$ in a vacuum. What is the magnitude of the electrostatic force between them? (Assume the Coulomb constant $k = 8.99 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.20 \\text{ N}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$0.40 \\text{ N}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$0.80 \\text{ N}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$1.20 \\text{ N}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## Step 1: Identify Given Information\nThe problem provides the following values:\n* Charge 1: $q_1 = 2.0 \\times 10^{-6} \\text{ C}$\n* Charge 2: $q_2 = -4.0 \\times 10^{-6} \\text{ C}$\n* Distance: $r = 0.30 \\text{ m}$\n* Coulomb constant: $k = 8.99 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$\n\n## Step 2: Select the Relevant Formula\nTo find the magnitude of the electrostatic force, we use Coulomb's Law:\n$F = k \\dfrac{|q_1 q_2|}{r^2}$\n\n## Step 3: Substitution and Calculation\nSubstitute the known values into the equation:\n$F = (8.99 \\times 10^9) \\dfrac{|(2.0 \\times 10^{-6})(-4.0 \\times 10^{-6})|}{(0.30)^2}$\n\nCalculate the numerator (product of charges):\n$|q_1 q_2| = 8.0 \\times 10^{-12} \\text{ C}^2$\n\nCalculate the denominator (square of distance):\n$r^2 = 0.09 \\text{ m}^2$\n\nCombine the terms:\n$F = (8.99 \\times 10^9) \\dfrac{8.0 \\times 10^{-12}}{0.09}$\n$F \\approx 8.99 \\times 10^9 \\times 8.88 \\times 10^{-11}$\n$F \\approx 0.799 \\text{ N}$\n\nRounding to two significant figures, we get $F = 0.80 \\text{ N}$.\n\nCorrect Answer: C"
+                    }
+                ],
+                "final_answer": "C",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Electrostatics",
+            "title": "Equilibrium of Three Point Charges",
+            "question": "A point charge $q_1 = 1\\ \\mu\\text{C}$ is fixed at $x = 0$ and another point charge $q_2 = 4\\ \\mu\\text{C}$ is fixed at $x = 30\\text{ cm}$. At what position $x$ on the line segment connecting them is the net electrostatic force on a third charge $q_3$ equal to zero?",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$7.5\\text{ cm}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$10.0\\text{ cm}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$15.0\\text{ cm}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$20.0\\text{ cm}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## Step 1: Set up the Equilibrium Condition\nFor the net force on $q_3$ to be zero, the magnitude of the force exerted by $q_1$ must equal the magnitude of the force exerted by $q_2$. Let the position of $q_3$ be $x$. The distance from $q_1$ is $x$, and the distance from $q_2$ is $(30 - x)$.\n\nUsing Coulomb's Law:\n$k \\dfrac{|q_1 q_3|}{x^2} = k \\dfrac{|q_2 q_3|}{(30 - x)^2}$\n\n## Step 2: Simplify the Equation\nWe can cancel $k$ and $q_3$ from both sides:\n$\\dfrac{q_1}{x^2} = \\dfrac{q_2}{(30 - x)^2}$\n\nSubstitute the values $q_1 = 1\\ \\mu\\text{C}$ and $q_2 = 4\\ \\mu\\text{C}$:\n$\\dfrac{1}{x^2} = \\dfrac{4}{(30 - x)^2}$\n\n## Step 3: Solve for x\nTake the square root of both sides to simplify the quadratic relationship:\n$\\sqrt{\\dfrac{1}{x^2}} = \\sqrt{\\dfrac{4}{(30 - x)^2}}$\n$\\dfrac{1}{x} = \\dfrac{2}{30 - x}$\n\nCross-multiply to solve for $x$:\n$30 - x = 2x$\n$30 = 3x$\n$x = 10\\text{ cm}$\n\nThe third charge must be placed $10.0\\text{ cm}$ from $q_1$.\n\nCorrect Answer: B"
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Electric Potential",
+            "title": "Work Required to Move a Charge",
+            "question": "Determine the work required to move a point charge of $5\\mu\\text{C}$ through a potential difference of $400\\text{ V}$.",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$0.8\\text{ mJ}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$1.2\\text{ mJ}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$2.0\\text{ mJ}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$8.0\\text{ mJ}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## Step 1: Identify Given Information\nThe following values are provided in the problem statement:\n* Charge ($Q$) = $5\\mu\\text{C} = 5 \\times 10^{-6}\\text{ C}$\n* Potential Difference ($\\Delta V$) = $400\\text{ V}$\n\n## Step 2: State the Formula for Work Done\nThe work ($W$) required to move a charge through an electric potential difference is given by the formula:\n$W = Q \\times \\Delta V$\n\n## Step 3: Perform the Calculation\nSubstitute the given values into the formula:\n$W = (5 \\times 10^{-6}\\text{ C}) \\times (400\\text{ V})$\n$W = 2000 \\times 10^{-6}\\text{ J}$\n$W = 2.0 \\times 10^{-3}\\text{ J}$\n\n## Step 4: Convert to Millijoules\nSince $1\\text{ mJ} = 10^{-3}\\text{ J}$, the final value is:\n$W = 2.0\\text{ mJ}$\n\nCorrect Answer: C"
+                    }
+                ],
+                "final_answer": "C",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Current Electricity",
+            "title": "Calculating Electron Flow in Wire",
+            "question": "A steady current of $10\\text{ A}$ flows through a wire. How many electrons pass a given cross-section of the wire in $1\\text{ minute}$? (Assume elementary charge $e = 1.602 \\times 10^{-19}\\text{ C}$).",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$6.24 \\times 10^{19}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$1.07 \\times 10^{20}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$6.00 \\times 10^{21}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$3.75 \\times 10^{21}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## Step 1: Identify Given Parameters\nThe following information is provided in the problem:\n* Current ($I$) = $10\\text{ A}$\n* Time ($t$) = $1\\text{ minute} = 60\\text{ seconds}$\n* Elementary charge ($e$) = $1.602 \\times 10^{-19}\\text{ C}$\n\n## Step 2: Calculate Total Charge\nThe total charge ($Q$) passing through the cross-section is the product of current and time:\n$Q = I \\times t$\n$Q = 10\\text{ A} \\times 60\\text{ s} = 600\\text{ C}$\n\n## Step 3: Determine the Number of Electrons\nThe number of electrons ($n$) is the total charge divided by the charge of a single electron:\n$n = \\dfrac{Q}{e}$\n$n = \\dfrac{600\\text{ C}}{1.602 \\times 10^{-19}\\text{ C}}$\n\n## Step 4: Perform Final Calculation\n$n \\approx 3.7453 \\times 10^{21}$\nRounding to the nearest provided option:\n$n \\approx 3.75 \\times 10^{21}$\n\nCorrect Answer: D"
+                    }
+                ],
+                "final_answer": "D",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Magnetism",
+            "title": "Magnetic Force- Scalar Value",
+            "question": "A straight wire with a length of 0.5 m carries a current of 10 A. The wire is placed in a uniform magnetic field with a flux density of 0.2 T. If the angle between the wire and the magnetic field lines is $30^\\circ$, what is the magnitude of the magnetic force acting on the wire?",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "1.00 N"
+                },
+                {
+                    "label": "B",
+                    "text": "0.87 N"
+                },
+                {
+                    "label": "C",
+                    "text": "0.25 N"
+                },
+                {
+                    "label": "D",
+                    "text": "0.50 N"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "Formula: $F = BIL \\sin(\\theta)$\n$F = (0.2\\ T)(10\\ A)(0.5\\ m) \\sin(30^\\circ)$\n$F = (1.0) \\times 0.5 = 0.50\\ N$\n**Correct Answer: 0.50 N**"
+                    }
+                ],
+                "final_answer": "D",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Magnetism",
+            "title": "Magnetic Force- Vector Value",
+            "question": "A straight wire of length $L = 0.5 \\text{ m}$ carries a current of $I = 10 \\text{ A}$ in the $+x$ direction. The wire is situated in a uniform magnetic field given by $\\mathbf{B} = 0.2\\hat{j} + 0.4\\hat{k} \\text{ T}$. What is the magnitude of the magnetic force acting on the wire?",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$1.00 \\text{ N}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$2.24 \\text{ N}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$3.16 \\text{ N}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$5.00 \\text{ N}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "The magnetic force $\\mathbf{F}$ on a straight wire of length $L$ carrying a current $I$ in a magnetic field $\\mathbf{B}$ is given by:\n$\\mathbf{F} = I(\\mathbf{L} \\times \\mathbf{B})$\n\nGiven:\n* Current: $I = 10 \\text{ A}$\n* Length vector: $\\mathbf{L} = 0.5\\hat{i} \\text{ m}$ (since it is in the $+x$ direction)\n* Magnetic field: $\\mathbf{B} = (0.2\\hat{j} + 0.4\\hat{k}) \\text{ T}$\n\nCalculating the cross product:\n$\\mathbf{L} \\times \\mathbf{B} = (0.5\\hat{i}) \\times (0.2\\hat{j} + 0.4\\hat{k})$\n$\\mathbf{L} \\times \\mathbf{B} = 0.5 \\cdot 0.2(\\hat{i} \\times \\hat{j}) + 0.5 \\cdot 0.4(\\hat{i} \\times \\hat{k})$\n\nUsing unit vector identities ($\\hat{i} \\times \\hat{j} = \\hat{k}$ and $\\hat{i} \\times \\hat{k} = -\\hat{j}$):\n$\\mathbf{L} \\times \\mathbf{B} = 0.1\\hat{k} - 0.2\\hat{j}$\n\nNow, multiply by the current $I$:\n$\\mathbf{F} = 10(0.1\\hat{k} - 0.2\\hat{j}) = 1\\hat{k} - 2\\hat{j} \\text{ N}$\n\nThe magnitude of the force $|\\mathbf{F}|$ is:\n$|\\mathbf{F}| = \\sqrt{(-2)^2 + (1)^2} = \\sqrt{4 + 1} = \\sqrt{5} \\text{ N}$\n$|\\mathbf{F}| \\approx 2.236 \\text{ N}$\n\nRounding to two decimal places, we get 2.24 N .\n\n**Correct Answer: B**"
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Electric Potential",
+            "title": "Potential Difference between Two Points",
+            "question": "If $60 \\text{ J}$ of work is required to move $5 \\text{ C}$ of charge from point A to point B, what is the potential difference between the two points?",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$12 \\text{ V}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$300 \\text{ V}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$0.083 \\text{ V}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$15 \\text{ V}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## 1. Identify Given Parameters\n* Work done ($W$) = $60 \\text{ J}$\n* Charge ($Q$) = $5 \\text{ C}$\n\n## 2. Formula for Potential Difference\nThe potential difference ($V$) is defined as the work done per unit charge:\n$V = \\dfrac{W}{Q}$\n\n## 3. Calculation\nSubstitute the given values into the formula:\n$V = \\dfrac{60 \\text{ J}}{5 \\text{ C}}$\n$V = 12 \\text{ J/C}$\n\nSince $1 \\text{ Volt (V)} = 1 \\text{ Joule/Coulomb (J/C)}$:\n$V = 12 \\text{ V}$\n\n**Conclusion:**\nThe potential difference between the two points is **12 V**. The correct option is **A**."
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "Current Electricity",
+            "title": "Total Charge from Current Function",
+            "question": "The current entering a terminal is given by the function $i(t) = 5e^{-2t}$ A. What is the total charge $Q$ entering the terminal between $t = 0$ and $t = \\infty$?",
+            "question_image": "",
+            "local_question_image": "",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "2.5 C"
+                },
+                {
+                    "label": "B",
+                    "text": "5.0 C"
+                },
+                {
+                    "label": "C",
+                    "text": "10.0 C"
+                },
+                {
+                    "label": "D",
+                    "text": "1.25 C"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## Definition of Total Charge\nThe total charge $Q$ passing through a terminal is defined as the integral of the current $i(t)$ with respect to time over the given interval. Mathematically, this is expressed as:\n$Q = \\int_{t_1}^{t_2} i(t) \\, dt$\n\n## Setting Up the Integral\nGiven the current function $i(t) = 5e^{-2t}$ and the time interval from $t = 0$ to $t = \\infty$, we set up the following definite integral:\n$Q = \\int_{0}^{\\infty} 5e^{-2t} \\, dt$\n\n## Evaluating the Integral\nTo solve the integral, we use the basic integration rule \\int e^{at} \\, dt = \\dfrac{1}{a}e^{at}:\n$Q = 5 \\left[ \\dfrac{e^{-2t}}{-2} \\right]_{0}^{\\infty}$\n$Q = -\\dfrac{5}{2} \\left[ e^{-2t} \\right]_{0}^{\\infty}$\n\nNow, we evaluate the limits:\n$Q = -2.5 \\left( e^{-\\infty} - e^{0} \\right)$\nSince $e^{-\\infty} = 0$ and $e^{0} = 1$:\n$Q = -2.5 (0 - 1)$\n$Q = 2.5 \\text{ C}$\n\n## Conclusion\nThe total charge entering the terminal over the infinite time horizon is 2.5 Coulombs.\n\nCorrect Answer: A"
+                    }
+                ],
+                "final_answer": "A",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
 {
         "topic": "Equivalent Capacitance and Voltage Distribution",
         "title": "Physics / Electrostatics & Capacitance",
@@ -51756,7 +52059,8 @@ const QUESTIONS = {
             "topic": "DC Circuit Analysis",
             "title": "Parallel Circuit Current Division",
             "question": "A total current of $9A$ enters a parallel junction consisting of two resistors: $R_1 = 3\\Omega$ and $R_2 = 6\\Omega$. What is the current flowing through the $3\\Omega$ resistor?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1r1eyLsMHZKn9NWon4M5wMCMiYtYuypBg/preview",
+            "local_question_image": "assets/quiz-images/img_1r1eyLsMHZKn9NWon4M5wMCMiYtYuypBg.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -51807,7 +52111,8 @@ const QUESTIONS = {
             "topic": "DC Circuit Analysis",
             "title": "Loaded Voltage Divider Calculation",
             "question": "A $20\\text{ V}$ DC source is connected to a voltage divider consisting of two $5\\ \\Omega$ resistors ($R_1$ and $R_2$) in series. If a load resistor $R_L = 10\\ \\Omega$ is connected in parallel with $R_2$, what is the voltage across the load resistor?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1c9Zz5KNItgGiTBCqJ_Ionbn5wl9_gotu/preview",
+            "local_question_image": "assets/quiz-images/img_1c9Zz5KNItgGiTBCqJ_Ionbn5wl9_gotu.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -57373,7 +57678,8 @@ const QUESTIONS = {
             "topic": "Properties of Ideal Gases and Pure Substances",
             "title": "Properties of Two Phase Systems",
             "question": "A rigid tank contains a saturated liquid-vapor mixture of water at a pressure of $P = 200 \\text{ kPa}$ with a quality of $x = 0.75$. Given the saturated liquid enthalpy is $h_f = 504.7 \\text{ kJ/kg}$ and the enthalpy of vaporization is $h_{fg} = 2201.6 \\text{ kJ/kg}$, what is the specific enthalpy $h$ of the mixture?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PeQqUhpZFdQpYJxil0ooHci2ewqqrF8J/preview",
+            "local_question_image": "assets/quiz-images/img_1PeQqUhpZFdQpYJxil0ooHci2ewqqrF8J.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -109508,6 +109814,80 @@ const QUESTIONS = {
         }
     ],
     "circuits": [
+        {
+            "topic": "DC Circuits",
+            "title": "Nodal Analysis",
+            "question": "In the circuit below, find the voltage $V_1$ at the non-reference node. (Assume a single node $V_1$ connected to three branches: a $2\\text{A}$ current source entering the node, a $4\\Omega$ resistor connected to ground, and a $6\\Omega$ resistor connected to ground.)",
+            "question_image": "https://drive.google.com/file/d/12Jx7iTvj_6YnnH7McW1uUDgQE6jYooXI/preview",
+            "local_question_image": "assets/quiz-images/img_12Jx7iTvj_6YnnH7McW1uUDgQE6jYooXI.jpg",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$2.4\\text{ V}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$4.8\\text{ V}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$8.0\\text{ V}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$12.0\\text{ V}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## Step 1: Identify Given Information\nAccording to the problem description:\n* Current entering node $V_1$, $I_{in} = 2\\text{ A}$\n* Resistance 1, $R_1 = 4\\Omega$\n* Resistance 2, $R_2 = 6\\Omega$\n* Both resistors are connected between node $V_1$ and ground ($0\\text{ V}$)\n\n## Step 2: Apply Kirchhoff's Current Law (KCL)\nKirchhoff's Current Law states that the sum of currents entering a node must equal the sum of currents leaving the node.\nThe current entering is $2\\text{ A}$. The currents leaving through the resistors are $\\dfrac{V_1}{R_1}$ and $\\dfrac{V_1}{R_2}$.\n$2 = \\dfrac{V_1}{4} + \\dfrac{V_1}{6}$\n\n## Step 3: Solve for $V_1$\nFind a common denominator for the fractions (which is 12):\n$2 = \\dfrac{3V_1}{12} + \\dfrac{2V_1}{12}$\n$2 = \\dfrac{5V_1}{12}$\nMultiply both sides by 12:\n$24 = 5V_1$\nDivide by 5:\n$V_1 = \\dfrac{24}{5} = 4.8\\text{ V}$\n\nCorrect Answer: B"
+                    }
+                ],
+                "final_answer": "B",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
+        {
+            "topic": "DC Circuits",
+            "title": "Mesh Analysis",
+            "question": "In the circuit shown below, there are two meshes with clockwise mesh currents $I_1$ and $I_2$.\n* **Mesh 1** contains a $10\\text{V}$ voltage source and a $5\\Omega$ resistor.\n* **Mesh 2** contains a $15\\text{V}$ voltage source and a $7\\Omega$ resistor.\n* Both meshes share a common $3\\Omega$ resistor in the center branch.\n\nThe $10\\text{V}$ source is in the same direction as $I_1$, while the $15\\text{V}$ source opposes $I_2$. Determine the values of the mesh currents $I_1$ and $I_2$.",
+            "question_image": "https://drive.google.com/file/d/1-NAwUILduA4lQcAhz3zREj6yXHWt_7jq/preview",
+            "local_question_image": "assets/quiz-images/img_1-NAwUILduA4lQcAhz3zREj6yXHWt_7jq.jpg",
+            "times_presented": 0,
+            "options": [
+                {
+                    "label": "A",
+                    "text": "$I_1 = 0.96\\text{A}, \\quad I_2 = -1.73\\text{A}$"
+                },
+                {
+                    "label": "B",
+                    "text": "$I_1 = 2.34\\text{A}, \\quad I_2 = 1.15\\text{A}$"
+                },
+                {
+                    "label": "C",
+                    "text": "$I_1 = 1.54\\text{A}, \\quad I_2 = -0.19\\text{A}$"
+                },
+                {
+                    "label": "D",
+                    "text": "$I_1 = 0.77\\text{A}, \\quad I_2 = -1.27\\text{A}$"
+                }
+            ],
+            "solution": {
+                "steps": [
+                    {
+                        "title": "Explanation",
+                        "content": "## **KVL for Mesh 1:**\n\\begin{equation}\n    10 - 5I_1 - 3(I_1 - I_2) = 0 \\implies 8I_1 - 3I_2 = 10\n\\end{equation}\n\n## **KVL for Mesh 2:**\n\\begin{equation}\n    -15 - 7I_2 - 3(I_2 - I_1) = 0 \\implies -3I_1 + 10I_2 = -15\n\\end{equation}\n\n## Solving the simultaneous equations yields:\n$I_1 \\approx 0.77\\text{A} \\quad \\text{and} \\quad I_2 \\approx -1.27\\text{A}$"
+                    }
+                ],
+                "final_answer": "D",
+                "solution_image": "",
+                "video_explanation": ""
+            }
+        },
         {
             "topic": "DC Analysis",
             "title": "KVL in a Loop",
