@@ -99452,7 +99452,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Average End Area Excavation Volume",
             "question": "Calculate the volume (in cubic yards) of excavation between two parallel cross-sections 100 ft apart. The area of the first cross-section is $250 \\text{ ft}^{2}$ and the area of the second cross-section is $400 \\text{ ft}^{2}$ using the average end area method.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1LwVcmnL_1CEbIevw9XvJ88RVFHSxpIJ_/preview",
+            "local_question_image": "assets/quiz-images/img_1LwVcmnL_1CEbIevw9XvJ88RVFHSxpIJ_.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99507,7 +99508,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Prismoidal Volume Calculation",
             "question": "A prismoid has a length of 100 ft. The areas of the two end sections are $150 \\text{ ft}^2$ and $300 \\text{ ft}^2$. The area of the mid-section is $210 \\text{ ft}^2$. Calculate the volume in cubic yards using the prismoidal formula.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1NbiZVdZWilICiLzv_YGqDAcdPSAttGcn/preview",
+            "local_question_image": "assets/quiz-images/img_1NbiZVdZWilICiLzv_YGqDAcdPSAttGcn.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99562,7 +99564,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Soil Swell Volume Calculation",
             "question": "If an excavation project requires removing 2,500 bank cubic yards (BCY) of soil with a swell factor of 15%, what is the volume of the loose soil (LCY) to be hauled?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1wGjcT8KzliPg7Qgagp_3FtaQeGGVtOnt/preview",
+            "local_question_image": "assets/quiz-images/img_1wGjcT8KzliPg7Qgagp_3FtaQeGGVtOnt.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99613,7 +99616,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Cross-Sectional Area Calculation",
             "question": "Calculate the total area of a rectangular cross-section with a width $b = 14$ in and an effective depth $d = 24$ in.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/12v6Abs1FpREq-60CaY45UmXKQHMlF7dM/preview",
+            "local_question_image": "assets/quiz-images/img_12v6Abs1FpREq-60CaY45UmXKQHMlF7dM.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99664,7 +99668,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Borrow Pit Grid Square Volume",
             "question": "A borrow pit is divided into a $40\\text{ ft} \\times 40\\text{ ft}$ grid. The depths of cut at the four corners of one grid square are $2.1\\text{ ft}$, $3.4\\text{ ft}$, $4.5\\text{ ft}$, and $2.0\\text{ ft}$. Calculate the volume of earth in this grid square in cubic yards.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1nKczg7Ccy4mL0M0neesLNrz8L8A8-lKu/preview",
+            "local_question_image": "assets/quiz-images/img_1nKczg7Ccy4mL0M0neesLNrz8L8A8-lKu.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99719,7 +99724,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Soil Shrinkage and Bank Volume",
             "question": "A project requires $4,000$ compacted cubic yards (CCY) of embankment. The soil has a shrinkage factor of $12\\%$. How many bank cubic yards (BCY) of material are required?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1MNmZOmLScSCwf3bOIguCx-C2ISonH_Ag/preview",
+            "local_question_image": "assets/quiz-images/img_1MNmZOmLScSCwf3bOIguCx-C2ISonH_Ag.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99770,7 +99776,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Three-Level Section Area Calculation",
             "question": "For a three-level section, the following data is provided: base width $b = 24$ ft, center cut $c = 10$ ft. The left side slope intercept is at $w_l = 22$ ft from center with a height $h_l = 6$ ft. The right side slope intercept is at $w_r = 38$ ft with a height $h_r = 14$ ft. What is the area of the section?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1dQ2JOhDNA_m-Vj4UKThDn6XIGpFJfx01/preview",
+            "local_question_image": "assets/quiz-images/img_1dQ2JOhDNA_m-Vj4UKThDn6XIGpFJfx01.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99821,7 +99828,8 @@ const QUESTIONS = {
             "topic": "Earthwork and Volume Computations",
             "title": "Cut Volume with Linear Transition",
             "question": "Between station $10+00$ and station $11+00$, the earthwork transitions from cut to fill. At $10+00$, the cut area is $400 \\text{ ft}^2$. At $11+00$, the fill area is $600 \\text{ ft}^2$. Assuming a linear transition, calculate the volume of cut between station $10+00$ and the zero-point (in cubic yards).",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/18h6Y-oDiiMAwqbYlcWLusjN03rOXDyTF/preview",
+            "local_question_image": "assets/quiz-images/img_18h6Y-oDiiMAwqbYlcWLusjN03rOXDyTF.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99876,7 +99884,8 @@ const QUESTIONS = {
             "topic": "Coordinate Systems",
             "title": "Calculating Grid Distance in Surveying",
             "question": "A survey crew measures a ground distance of 2500.00 ft. The project is located in a state plane zone where the scale factor is 0.99992 and the elevation factor is 0.99988. What is the corresponding grid distance?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1sqnIdyqy1bqjYff97dh6V5Zz4k1Cp9N1/preview",
+            "local_question_image": "assets/quiz-images/img_1sqnIdyqy1bqjYff97dh6V5Zz4k1Cp9N1.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99935,7 +99944,8 @@ const QUESTIONS = {
             "topic": "Coordinate Systems",
             "title": "SPCS Map Projections",
             "question": "In the State Plane Coordinate System (SPCS), which map projection is primarily used for states or zones that have a long East-West extent?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1wQPca5BgkhckHOL8B3OK6FeeMK0GZ87h/preview",
+            "local_question_image": "assets/quiz-images/img_1wQPca5BgkhckHOL8B3OK6FeeMK0GZ87h.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -99990,7 +100000,8 @@ const QUESTIONS = {
             "topic": "Coordinate Systems",
             "title": "Calculating Surveying Elevation Factor",
             "question": "An elevation factor is required to reduce ground distances to the ellipsoid. Given an average earth radius of $R = 20,906,000$ ft and an average project orthometric height ($H$) of $4,500$ ft with a geoid undulation ($N$) of $-100$ ft, calculate the elevation factor.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1m5iM-MhnmxkI0Yooox0cKdjQiLxw8w1V/preview",
+            "local_question_image": "assets/quiz-images/img_1m5iM-MhnmxkI0Yooox0cKdjQiLxw8w1V.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -100049,7 +100060,8 @@ const QUESTIONS = {
             "topic": "Coordinate Systems",
             "title": "Understanding Mapping Angle Definition",
             "question": "The mapping angle (convergence angle) at a specific point is defined as the difference between:",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Gc8UYjFzc1jthx_HjVzrRYJNuSXwLIjn/preview",
+            "local_question_image": "assets/quiz-images/img_1Gc8UYjFzc1jthx_HjVzrRYJNuSXwLIjn.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -100104,7 +100116,8 @@ const QUESTIONS = {
             "topic": "Coordinate Systems",
             "title": "Calculating Grid Convergence Angle",
             "question": "A survey line has a True Azimuth of $145^{\\circ}10'30''$ and a Grid Azimuth of $145^{\\circ}25'15''$. Determine the convergence angle (mapping angle) $\\gamma$.",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/11_eSWedtNsFN7ZXmaemuqeNU_Mnx8g0H/preview",
+            "local_question_image": "assets/quiz-images/img_11_eSWedtNsFN7ZXmaemuqeNU_Mnx8g0H.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -100163,7 +100176,8 @@ const QUESTIONS = {
             "topic": "Coordinate Systems",
             "title": "Calculating Ground Distance from Coordinates",
             "question": "Two points A and B have the following State Plane grid coordinates: Point A (Northing: 500,000.00 ft, Easting: 2,000,000.00 ft); Point B (Northing: 500,300.00 ft, Easting: 2,000,400.00 ft). If the combined factor is 0.99985, what is the horizontal ground distance between the points?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1FZXxCB1EjxoohfjizLRA1DyWQTz28EWv/preview",
+            "local_question_image": "assets/quiz-images/img_1FZXxCB1EjxoohfjizLRA1DyWQTz28EWv.jpg",
             "times_presented": 0,
             "options": [
                 {
