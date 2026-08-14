@@ -50749,8 +50749,8 @@ const QUESTIONS = {
             "topic": "Electrostatics",
             "title": "Electrostatic Force Calculation",
             "question": "Two point charges, $q_1 = +2.0 \\times 10^{-6} \\text{ C}$ and $q_2 = -4.0 \\times 10^{-6} \\text{ C}$, are separated by a distance of $0.30 \\text{ m}$ in a vacuum. What is the magnitude of the electrostatic force between them? (Assume the Coulomb constant $k = 8.99 \\times 10^9 \\text{ N}\\cdot\\text{m}^2/\\text{C}^2$)",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1l_cAwvcvCgwExJqdecUddeoFBUWGmiWo/preview",
+            "local_question_image": "assets/quiz-images/img_1l_cAwvcvCgwExJqdecUddeoFBUWGmiWo.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50786,8 +50786,8 @@ const QUESTIONS = {
             "topic": "Electrostatics",
             "title": "Equilibrium of Three Point Charges",
             "question": "A point charge $q_1 = 1\\ \\mu\\text{C}$ is fixed at $x = 0$ and another point charge $q_2 = 4\\ \\mu\\text{C}$ is fixed at $x = 30\\text{ cm}$. At what position $x$ on the line segment connecting them is the net electrostatic force on a third charge $q_3$ equal to zero?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/17_TxL_E2kHjGk8Clasnmrk0zsH28OP2D/preview",
+            "local_question_image": "assets/quiz-images/img_17_TxL_E2kHjGk8Clasnmrk0zsH28OP2D.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50823,8 +50823,8 @@ const QUESTIONS = {
             "topic": "Electric Potential",
             "title": "Work Required to Move a Charge",
             "question": "Determine the work required to move a point charge of $5\\mu\\text{C}$ through a potential difference of $400\\text{ V}$.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1SFfvi4ZUr91J3wfIXqXV3b8IfTP5j2ZE/preview",
+            "local_question_image": "assets/quiz-images/img_1SFfvi4ZUr91J3wfIXqXV3b8IfTP5j2ZE.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50860,8 +50860,8 @@ const QUESTIONS = {
             "topic": "Current Electricity",
             "title": "Calculating Electron Flow in Wire",
             "question": "A steady current of $10\\text{ A}$ flows through a wire. How many electrons pass a given cross-section of the wire in $1\\text{ minute}$? (Assume elementary charge $e = 1.602 \\times 10^{-19}\\text{ C}$).",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1k1ZLn8ItPTjuf3qema-xCu-dWKjjitWN/preview",
+            "local_question_image": "assets/quiz-images/img_1k1ZLn8ItPTjuf3qema-xCu-dWKjjitWN.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50897,8 +50897,8 @@ const QUESTIONS = {
             "topic": "Magnetism",
             "title": "Magnetic Force- Scalar Value",
             "question": "A straight wire with a length of 0.5 m carries a current of 10 A. The wire is placed in a uniform magnetic field with a flux density of 0.2 T. If the angle between the wire and the magnetic field lines is $30^\\circ$, what is the magnitude of the magnetic force acting on the wire?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/105bIEm4nlnf-jjWRCrIGgzsIa5GcRnKa/preview",
+            "local_question_image": "assets/quiz-images/img_105bIEm4nlnf-jjWRCrIGgzsIa5GcRnKa.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -50971,8 +50971,8 @@ const QUESTIONS = {
             "topic": "Electric Potential",
             "title": "Potential Difference between Two Points",
             "question": "If $60 \\text{ J}$ of work is required to move $5 \\text{ C}$ of charge from point A to point B, what is the potential difference between the two points?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/14N83Sb05toZt4vHImOCl8cu_JXU605SS/preview",
+            "local_question_image": "assets/quiz-images/img_14N83Sb05toZt4vHImOCl8cu_JXU605SS.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -91344,7 +91344,8 @@ const QUESTIONS = {
             "topic": "Construction Operations and Methods",
             "title": "Scraper Hourly Production Calculation",
             "question": "A scraper has a heaped capacity of 20 LCY (Loose Cubic Yards). The load time is 1.0 min, the travel time is 4.0 min, the dump time is 0.5 min, and the return time is 3.5 min. If the efficiency factor is 0.85 (51 minutes per hour), what is the hourly production of the scraper in LCY/hr?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Fkn5aPBP31TaoewGUD4Zjp-nyiKfaYmp/preview",
+            "local_question_image": "assets/quiz-images/img_1Fkn5aPBP31TaoewGUD4Zjp-nyiKfaYmp.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -91490,7 +91491,8 @@ const QUESTIONS = {
                     }
                 ],
                 "final_answer": "B",
-                "solution_image": "",
+                "solution_image": "https://drive.google.com/file/d/1FeqmGUBNDG2BlMK4OXcF2hms-QYKaYIP/preview",
+            "local_solution_image": "assets/quiz-images/img_1FeqmGUBNDG2BlMK4OXcF2hms-QYKaYIP.jpg",
                 "video_explanation": ""
             },
             "ncees_reference": {
@@ -91556,7 +91558,8 @@ const QUESTIONS = {
             "topic": "Construction Operations and Methods",
             "title": "Balanced Fleet for Hauling Soil",
             "question": "A fleet of trucks is being used to haul soil. The loader takes 3 minutes to load a truck. The round-trip travel and dump time for a truck is 15 minutes. What is the balanced number of trucks required to keep the loader busy with no idle time?",
-            "question_image": "",
+            "question_image": "https://drive.google.com/file/d/1KrAn1OrUIAyZGfKOqJnbVU5NfBgWVZk-/preview",
+            "local_question_image": "assets/quiz-images/img_1KrAn1OrUIAyZGfKOqJnbVU5NfBgWVZk-.jpg",
             "times_presented": 0,
             "options": [
                 {

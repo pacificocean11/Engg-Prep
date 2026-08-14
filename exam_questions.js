@@ -3606,8 +3606,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Energy Stored in an Inductor",
             "question": "Determine the energy stored (in J) by a 5 H inductor, when the current flowing through the inductor is 6 A.",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1EjAWGXdXFJtoBQzUxz4JWtdYDBXfy794/preview",
+            "local_question_image": "assets/quiz-images/img_1EjAWGXdXFJtoBQzUxz4JWtdYDBXfy794.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3767,8 +3767,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Power Factor of an LCR Circuit",
             "question": "An RLC series circuit driven with $E_{rms} = 90\\text{ V}$ at frequency $f_{\\text{d}} = 30\\text{ Hz}$ has resistance $R = 80\\Omega$, an inductance with inductive reactance $X_L = 20.0\\Omega$ and capacitance with capacitive reactance $X_C = 80.0\\Omega$. The power factor of the circuit is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1k_bhac8JPgqb_sqPiR_4ZOYOoZzKfWXm/preview",
+            "local_question_image": "assets/quiz-images/img_1k_bhac8JPgqb_sqPiR_4ZOYOoZzKfWXm.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3877,8 +3877,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "RMS Value of Superposed Currents",
             "question": "An ac current is represented as\n$$i = 5\\sqrt{2} + 10 \\cos \\left(650\\pi t + \\frac{\\pi}{6}\\right) \\text{ Amp}$$\nThe r.m.s value of the current is",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1Ddp-4dGBNu15QnLHEq7_slGbY8AzugJR/preview",
+            "local_question_image": "assets/quiz-images/img_1Ddp-4dGBNu15QnLHEq7_slGbY8AzugJR.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3936,8 +3936,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "RMS Value and Frequency of Alternating Current",
             "question": "An alternating current is represented by the equation, $i = 100\\sqrt{2} \\sin(100\\pi t)\\text{ ampere}$. The RMS value of current and the frequency of the given alternating current are",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1ve1eLdk3r1eykY_rM9UoZIkjX_tPIGf4/preview",
+            "local_question_image": "assets/quiz-images/img_1ve1eLdk3r1eykY_rM9UoZIkjX_tPIGf4.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -3991,8 +3991,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Terminal Voltage of a Battery",
             "question": "A resistor is connected to a battery of $12\\text{ V}$ emf and internal resistance $2\\Omega$. If the current in the circuit is $0.6\\text{ A}$, the terminal voltage of the battery is:",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/1PQIBO7S6fcZw5apopinELFKEoJPtAXrs/preview",
+            "local_question_image": "assets/quiz-images/img_1PQIBO7S6fcZw5apopinELFKEoJPtAXrs.jpg",
             "times_presented": 0,
             "options": [
                 {
@@ -4050,8 +4050,8 @@ const EXAM_QUESTIONS = {
             "topic": "Electricity and Magnetism",
             "title": "Power Dissipation in Electrical Appliances",
             "question": "A room heater is rated $400\\text{ W}, 220\\text{ V}$. If the supply voltage drops to $200\\text{ V}$, what will be the power consumed (approximately)?",
-            "question_image": "",
-            "local_question_image": "",
+            "question_image": "https://drive.google.com/file/d/18K3_puDxmVntmpKiuObxz_RX_u7xu_35/preview",
+            "local_question_image": "assets/quiz-images/img_18K3_puDxmVntmpKiuObxz_RX_u7xu_35.jpg",
             "times_presented": 0,
             "options": [
                 {
