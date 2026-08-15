@@ -565,6 +565,29 @@
             <div id="subject-list" class="flex flex-col gap-6"></div>
         </section>
 
+        <section id="notes" class="page">
+            <div class="mb-stack-lg mt-4 min-w-0">
+                <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-stack-sm block">Study Material</span>
+                <h1 class="font-display-lg text-display-lg text-on-surface dark:text-slate-100 leading-tight break-words">Mechanical Notes</h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400 mt-2 break-words">Comprehensive study notes and formulas for Mechanical Engineering.</p>
+            </div>
+            <div id="notes-subject-list" class="flex flex-col gap-6"></div>
+        </section>
+
+        <!-- Notes Content View -->
+        <section id="notes-content-view" class="page">
+            <div class="flex items-center gap-4 mb-6 mt-2">
+                <button id="close-notes-btn" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+                    <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+                </button>
+                <div class="min-w-0">
+                    <span id="notes-view-subject" class="font-label-caps text-label-caps text-secondary uppercase tracking-wider block truncate">Subject</span>
+                    <h2 id="notes-view-title" class="font-title-lg text-title-lg text-on-surface dark:text-slate-100 truncate">Topics</h2>
+                </div>
+            </div>
+            <div id="notes-topics-container" class="flex flex-col gap-4"></div>
+        </section>
+
         <section id="settings" class="page">
             
 <!-- Profile Header Section -->
@@ -1476,9 +1499,13 @@
         <span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
         <span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
     </li>
+    <li data-page="notes" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
+        <span class="material-symbols-outlined text-2xl" data-icon="library_books">library_books</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest">Notes</span>
+    </li>
     <li data-page="study" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
         <span class="material-symbols-outlined text-2xl" data-icon="menu_book">menu_book</span>
-        <span class="text-[10px] font-bold uppercase tracking-widest">Study</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest">Quiz</span>
     </li>
     <li data-page="exam" class="flex flex-col items-center gap-1 cursor-pointer transition-all list-none">
         <span class="material-symbols-outlined text-2xl" data-icon="assignment">assignment</span>
@@ -1491,6 +1518,7 @@
 </nav>
 
     <script src="questions.js?v=2"></script>
+    <script src="notes.js?v=1"></script>
     <script src="advanced_questions.js?v=2"></script>
     <script src="exam_questions.js?v=2"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>

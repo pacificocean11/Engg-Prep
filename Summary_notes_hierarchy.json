@@ -1,0 +1,37 @@
+{
+    "discipline": "Summary",
+    "subjects": [
+        {
+            "subject": "Unknown Subject",
+            "chapters": [
+                {
+                    "chapter": "Civil",
+                    "topics": [
+                        {
+                            "topic": "Other",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Sample Test with Solutions",
+            "chapters": [
+                {
+                    "chapter": "Yes",
+                    "topics": [
+                        {
+                            "topic": "Yes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

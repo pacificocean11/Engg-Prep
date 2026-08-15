@@ -396,6 +396,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         });
 
         renderSubjects();
+        renderNotes();
         setupNavigation();
         setupMobileMenu();
         updateUIForTier();
@@ -1211,6 +1212,199 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         });
         updateDashboardStats();
         initTilt();
+    }
+
+    function renderNotes() {
+        const notesList = document.getElementById('notes-subject-list');
+        if (!notesList) return;
+        notesList.innerHTML = '';
+        
+        const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+
+        if (typeof notesData === 'undefined' || !notesData.length) {
+            notesList.innerHTML = '<div class="text-center py-10 glass-card"><span class="material-symbols-outlined text-4xl text-slate-300 mb-2">menu_book</span><p class="text-slate-500 font-medium">Notes module initializing...</p></div>';
+            return;
+        }
+
+        const filteredNotes = notesData.filter(item => item.discipline === currentDiscipline);
+
+        if (filteredNotes.length === 0) {
+            notesList.innerHTML = `<div class="text-center py-12 glass-card border border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600 mb-3 block">construction</span><h3 class="text-lg font-bold text-slate-700 dark:text-slate-300 mb-1">Coming Soon</h3><p class="text-slate-500 dark:text-slate-400">Notes for ${currentDiscipline} discipline will be available in a future update!</p></div>`;
+            return;
+        }
+
+        const subjects = {};
+        filteredNotes.forEach(item => {
+            if (!subjects[item.subject]) subjects[item.subject] = { items: [], chapters: {} };
+            subjects[item.subject].items.push(item);
+            
+            const chap = item.chapter || 'General';
+            if (!subjects[item.subject].chapters[chap]) subjects[item.subject].chapters[chap] = [];
+            subjects[item.subject].chapters[chap].push(item);
+        });
+
+        const colors = [
+            {bg: 'bg-primary-fixed', text: 'text-primary', icon: 'menu_book'},
+            {bg: 'bg-tertiary-fixed', text: 'text-tertiary', icon: 'library_books'},
+            {bg: 'bg-orange-100', text: 'text-primary', icon: 'auto_stories'},
+            {bg: 'bg-primary-fixed-dim/30', text: 'text-primary', icon: 'chrome_reader_mode'},
+            {bg: 'bg-green-100', text: 'text-green-700', icon: 'history_edu'}
+        ];
+
+        let idx = 0;
+        for (let subj in subjects) {
+            const color = colors[idx % colors.length];
+            const data = subjects[subj];
+            const chapters = data.chapters;
+            const chapterCount = Object.keys(chapters).length;
+            
+            const card = document.createElement('div');
+            card.className = 'stagger-item glass-card flex flex-col active:scale-[0.98] transition-transform duration-150 subject-card-tilt';
+            card.style.animationDelay = `${idx * 100}ms`;
+            
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'p-6 flex justify-between items-start cursor-pointer';
+            
+            headerDiv.innerHTML = `
+                <div class="flex justify-between items-center w-full">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl ${color.bg} flex items-center justify-center">
+                            <span class="material-symbols-outlined ${color.text} text-2xl" data-icon="${color.icon}">${color.icon}</span>
+                        </div>
+                        <div>
+                            <h3 class="font-title-sm text-title-sm text-on-surface dark:text-slate-100">${subj}</h3>
+                            <p class="text-xs text-slate-400 dark:text-slate-500 font-medium">${chapterCount} chapters</p>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-slate-300 transition-transform duration-300 transform accordion-icon">expand_more</span>
+                </div>
+            `;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'px-6 pb-6 hidden';
+            
+            const chapterList = document.createElement('div');
+            chapterList.className = 'mt-4 flex flex-col gap-2 border-t border-slate-100 dark:border-slate-800 pt-4';
+            
+            for (let chap in chapters) {
+                const chapItem = document.createElement('div');
+                chapItem.className = 'p-3 rounded-lg hover:bg-surface-container-highest dark:hover:bg-slate-800/50 cursor-pointer flex justify-between items-center transition-colors group';
+                chapItem.innerHTML = `
+                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">${chap}</span>
+                    <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 text-primary transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">arrow_forward</span>
+                `;
+                
+                chapItem.onclick = (e) => {
+                    e.stopPropagation();
+                    openNotes(subj, chap, chapters[chap]);
+                };
+                
+                chapterList.appendChild(chapItem);
+            }
+            
+            contentDiv.appendChild(chapterList);
+            
+            headerDiv.onclick = () => {
+                const isHidden = contentDiv.classList.contains('hidden');
+                
+                // Close all other accordions
+                document.querySelectorAll('#notes-subject-list .accordion-icon').forEach(icon => icon.classList.remove('rotate-180'));
+                document.querySelectorAll('#notes-subject-list .px-6.pb-6').forEach(div => {
+                    if (div !== contentDiv) div.classList.add('hidden');
+                });
+                
+                const icon = headerDiv.querySelector('.accordion-icon');
+                if (isHidden) {
+                    contentDiv.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                } else {
+                    contentDiv.classList.add('hidden');
+                    icon.classList.remove('rotate-180');
+                }
+            };
+            
+            card.appendChild(headerDiv);
+            card.appendChild(contentDiv);
+            notesList.appendChild(card);
+            idx++;
+        }
+        initTilt();
+    }
+
+    document.getElementById('close-notes-btn')?.addEventListener('click', () => navigateTo('notes'));
+
+    function openNotes(subjectTitle, chapterTitle, subtopicsList) {
+        document.getElementById('notes-view-subject').textContent = subjectTitle;
+        document.getElementById('notes-view-title').textContent = chapterTitle;
+        
+        const container = document.getElementById('notes-topics-container');
+        container.innerHTML = '';
+        
+        const topics = {};
+        subtopicsList.forEach(item => {
+            const top = item.topic || 'Overview';
+            if (!topics[top]) topics[top] = [];
+            topics[top].push(item);
+        });
+        
+        for (let topicName in topics) {
+            const topicDiv = document.createElement('div');
+            topicDiv.className = 'glass-card p-5 flex flex-col gap-4 mb-6';
+            
+            const topicHeader = document.createElement('h3');
+            topicHeader.className = 'font-display-sm text-display-sm text-primary border-b-2 border-primary/20 pb-3 mb-2';
+            topicHeader.textContent = topicName;
+            topicDiv.appendChild(topicHeader);
+            
+            topics[topicName].forEach(sub => {
+                const subDiv = document.createElement('div');
+                subDiv.className = 'mb-6 last:mb-0 ml-2';
+                
+                if (sub.subtopic && sub.subtopic !== 'Overview') {
+                    const subHeader = document.createElement('h5');
+                    subHeader.className = 'font-bold text-sm text-on-surface dark:text-slate-200 mb-3';
+                    subHeader.textContent = sub.subtopic;
+                    subDiv.appendChild(subHeader);
+                }
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'text-sm text-slate-700 dark:text-slate-300 leading-relaxed space-y-4';
+                
+                let html = sub.content_html || '<p class="text-slate-400 italic">No notes available.</p>';
+                if (sub.important) {
+                    html += `<div class="mt-5 p-4 bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 rounded"><strong class="text-red-700 dark:text-red-400 block mb-2">Important:</strong><div class="math-content">${sub.important}</div></div>`;
+                }
+                if (sub.resources) {
+                    html += sub.resources;
+                }
+                
+                contentDiv.innerHTML = html;
+                const imgs = contentDiv.querySelectorAll('img');
+                imgs.forEach(img => {
+                    img.classList.add('max-w-full', 'rounded', 'shadow-sm', 'inline-block');
+                    if (typeof toDriveImgUrl === 'function') {
+                        img.src = toDriveImgUrl(img.src);
+                    }
+                });
+                
+                // Style wikimedia attributions if they exist inside small tags
+                const smalls = contentDiv.querySelectorAll('small');
+                smalls.forEach(small => {
+                    small.classList.add('text-xs', 'text-slate-500', 'dark:text-slate-400', 'mt-1', 'block');
+                });
+                
+                subDiv.appendChild(contentDiv);
+                topicDiv.appendChild(subDiv);
+            });
+            
+            container.appendChild(topicDiv);
+        }
+        
+        navigateTo('notes-content-view');
+        
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([container]).catch(err => console.warn('MathJax error:', err));
+        }
     }
 
     function updateDashboardStats() {
@@ -3325,6 +3519,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             
             updateUIForTier();
             renderSubjects();
+            if (typeof renderNotes === 'function') renderNotes();
             updateDashboardStats();
             updateGamificationUI();
              // Sync discipline change to cloud

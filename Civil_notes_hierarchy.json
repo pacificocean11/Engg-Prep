@@ -1,0 +1,954 @@
+{
+    "discipline": "Civil",
+    "subjects": [
+        {
+            "subject": "CNST",
+            "chapters": [
+                {
+                    "chapter": "Construction Operations and Methods",
+                    "topics": [
+                        {
+                            "topic": "Construction Safety",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Project Administration",
+                    "topics": [
+                        {
+                            "topic": "Project Delivery Methods",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Project Controls",
+                    "topics": [
+                        {
+                            "topic": "Allocation of Resources",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Construction Engineering",
+            "chapters": [
+                {
+                    "chapter": "Construction Estimating",
+                    "topics": [
+                        {
+                            "topic": "Methods of Taking Out Quantities",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Requirements of Estimation and Costing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Construction Operations and Methods",
+                    "topics": [
+                        {
+                            "topic": "Construction Equipment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Productivity Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Safety",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Temporary Erosion Control",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Project Administration",
+                    "topics": [
+                        {
+                            "topic": "Documents",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Management",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Procurement",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Project Controls",
+                    "topics": [
+                        {
+                            "topic": "Activity Relationships",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Earned Value",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Scheduling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Ethics and Professional Practice",
+            "chapters": [
+                {
+                    "chapter": "Contracts and Contract Law",
+                    "topics": [
+                        {
+                            "topic": "Agreements and Contracts",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Licensure",
+                    "topics": [
+                        {
+                            "topic": "Licensure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Geotechnical Engineering",
+            "chapters": [
+                {
+                    "chapter": "Bearing Capacity",
+                    "topics": [
+                        {
+                            "topic": "Deep Foundation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Shallow Foundation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Consolidation and Differential Settlements",
+                    "topics": [
+                        {
+                            "topic": "Consolidation and Differential Settlements",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Effective Stress",
+                    "topics": [
+                        {
+                            "topic": "Effective Stress",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Foundation Types",
+                    "topics": [
+                        {
+                            "topic": "Mats",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Spread Footings",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wall Footings",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Index Properties and Soil Classifications",
+                    "topics": [
+                        {
+                            "topic": "Index Properties",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Soil Classification",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Laboratory and Field Tests",
+                    "topics": [
+                        {
+                            "topic": "Laboratory and Field Tests",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Phase Relations",
+                    "topics": [
+                        {
+                            "topic": "Volume Relations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Weight Relations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Shear Strength",
+                    "topics": [
+                        {
+                            "topic": "Shear Strength",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Slope Stability",
+                    "topics": [
+                        {
+                            "topic": "Cuts",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Dams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Embankments",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fills",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Soil Stabilization",
+                    "topics": [
+                        {
+                            "topic": "Chemical Additives",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Geosynthetics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Soil Erosion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Stability of Retaining Structures",
+                    "topics": [
+                        {
+                            "topic": "Active-Passive-At-Rest Pressure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Materials",
+            "chapters": [
+                {
+                    "chapter": "Mix Design of Concrete and Asphalt",
+                    "topics": [
+                        {
+                            "topic": "Concrete and Asphalt",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Physical and Mechanical Properties",
+                    "topics": [
+                        {
+                            "topic": "Physical Properties of Material",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Test Methods and Specifications",
+                    "topics": [
+                        {
+                            "topic": "Test Methods and Specifications",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Structural Engineering",
+            "chapters": [
+                {
+                    "chapter": "Design of Reinforced Concrete Components",
+                    "topics": [
+                        {
+                            "topic": "Beams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Codes and Design Philosophies",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Columns",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Short Columns",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Design of Steel Components",
+                    "topics": [
+                        {
+                            "topic": "Connections",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Tension Members",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Elementary Statically Indeterminate Structures",
+                    "topics": [
+                        {
+                            "topic": "Force Method of Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Member Fixed-End Moments",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Loads, Load Combinations, and Load Paths",
+                    "topics": [
+                        {
+                            "topic": "Load Combinations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Load Paths",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Tributary Areas",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Structural Analysis",
+                    "topics": [
+                        {
+                            "topic": "Beam Stiffness and Moment Carryover",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Frame Deflection by Unit Load Method",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Influence Lines for Beams and Trusses",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Moving Concentrated Load Sets",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Truss Deflection by Unit Load Method",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Structural Determinacy and Stability Analysis",
+                    "topics": [
+                        {
+                            "topic": "Determinacy and Stability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Surveying",
+            "chapters": [
+                {
+                    "chapter": "Angles, Distances, and Trigonometry",
+                    "topics": [
+                        {
+                            "topic": "Angles and Distances",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Area Computations",
+                    "topics": [
+                        {
+                            "topic": "Area of a Traverse by Coordinates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Triangle Method",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Coordinate Systems",
+                    "topics": [
+                        {
+                            "topic": "Latitude-Longitude",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "State Plane",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Earthwork and Volume Computations",
+                    "topics": [
+                        {
+                            "topic": "Earthwork",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Volume",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Latitudes and Departures",
+                    "topics": [
+                        {
+                            "topic": "Latitudes and Departures",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Leveling",
+                    "topics": [
+                        {
+                            "topic": "Differential",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Elevations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Percent Grades",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Transportation Engineering",
+            "chapters": [
+                {
+                    "chapter": "Geometric Design",
+                    "topics": [
+                        {
+                            "topic": "Geometric Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Highways",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Intersections",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Streets",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Pavement System Design",
+                    "topics": [
+                        {
+                            "topic": "Drainage",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Rehabilitation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Subgrade",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thickness",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Traffic Capacity and Flow Theory",
+                    "topics": [
+                        {
+                            "topic": "Traffic Capacity Studies",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Traffic Flow Characteristics and Studies",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Traffic Control Devices",
+                    "topics": [
+                        {
+                            "topic": "Signals",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transportation Planning",
+                    "topics": [
+                        {
+                            "topic": "Travel Forecast Modeling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Trip Generation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Water Resources and Environmental Engineering",
+            "chapters": [
+                {
+                    "chapter": "Basic Hydraulics",
+                    "topics": [
+                        {
+                            "topic": "Bernoulli Theorem",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Manning's Equation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Open-Channel Flow",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Basic Hydrology",
+                    "topics": [
+                        {
+                            "topic": "Infiltration",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Rainfall",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Runoff",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Watersheds",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Collection Systems",
+                    "topics": [
+                        {
+                            "topic": "Stormwater Collection Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wastewater Collection Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Flood Control",
+                    "topics": [
+                        {
+                            "topic": "Routing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Spillways",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Groundwater",
+                    "topics": [
+                        {
+                            "topic": "Drawdown",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Flow",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wells",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Stormwater",
+                    "topics": [
+                        {
+                            "topic": "Detention and Retention Basins",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Stormwater Quality",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Stormwater Routing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Testing and Standards",
+                    "topics": [
+                        {
+                            "topic": "Air Standards and Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Noise Standards and Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wastewater Standards and Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Water Standards and Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Water and Wastewater Treatment",
+                    "topics": [
+                        {
+                            "topic": "Biological Processes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Drinking Water Treatment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Softening",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Water Distribution Systems",
+                    "topics": [
+                        {
+                            "topic": "Distribution Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Water Quality",
+                    "topics": [
+                        {
+                            "topic": "Basic Water Chemistry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Ground and Surface",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

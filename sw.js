@@ -1,10 +1,11 @@
-const CACHE_NAME = 'engg-prep-cache-v64';
+const CACHE_NAME = 'engg-prep-cache-v66';
 const APP_SHELL = [
   './',
   './index.html',
   './login.html',
   './app.js',
   './questions.js',
+  './notes.js',
   './advanced_questions.js',
   './exam_questions.js',
   './style.css',

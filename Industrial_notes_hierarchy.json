@@ -1,0 +1,904 @@
+{
+    "discipline": "Industrial",
+    "subjects": [
+        {
+            "subject": "Engineering Economics",
+            "chapters": [
+                {
+                    "chapter": "Depreciation and Taxes",
+                    "topics": [
+                        {
+                            "topic": "After-Tax Cash Flow",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Depreciation Terminology",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Methods of Calculating Depreciation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Recapture",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Evaluation of Alternatives",
+                    "topics": [
+                        {
+                            "topic": "Equivalent Annual Cost",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Internal Rate of Return",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Engineering Management",
+            "chapters": [
+                {
+                    "chapter": "Decision Making and Risk",
+                    "topics": [
+                        {
+                            "topic": "Decision Trees",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Financial Risk",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Uncertainty- Decision Making",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Utility",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Performance Measurement",
+                    "topics": [
+                        {
+                            "topic": "Balance Scorecard",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Customer Satisfaction",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "KPIs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Productivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wage Scales",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Project Management",
+                    "topics": [
+                        {
+                            "topic": "Agile",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "CPM",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Earned Value- Project Management",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "PERT",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "WBS",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Principles and Tools",
+                    "topics": [
+                        {
+                            "topic": "Motivational Theory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Organizational Structure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Organizing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Planning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Facilities and Supply Chain",
+            "chapters": [
+                {
+                    "chapter": "Capacity Analysis",
+                    "topics": [
+                        {
+                            "topic": "Capacity Planning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Material Handling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Number of Machines and People",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Trade-Offs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Flow, Layout, and Location Analysis",
+                    "topics": [
+                        {
+                            "topic": "Distance Metrics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "From-to Charts",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Layout Types",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Supply Chain Management and Design",
+                    "topics": [
+                        {
+                            "topic": "Network Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Pooling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Single-level-Multilevel Distribution Models",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transportation (SCM)",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Human Factors, Ergonomics, and Safety",
+            "chapters": [
+                {
+                    "chapter": "Ergonomics",
+                    "topics": [
+                        {
+                            "topic": "Anthropometry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Biomechanics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Cumulative Trauma Disorders",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Macroergonomics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Workplace Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Human Factors",
+                    "topics": [
+                        {
+                            "topic": "Cognitive Engineering",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Controls",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Displays",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Usability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Safety and Industrial Hygiene",
+                    "topics": [
+                        {
+                            "topic": "Environmental Hazards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Regulations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Safety Programs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Workplace Hazards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Manufacturing, Service, and Other Production Systems",
+            "chapters": [
+                {
+                    "chapter": "Forecasting",
+                    "topics": [
+                        {
+                            "topic": "Exponential Smoothing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Moving Average",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Tracking Signals",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Manufacturing and Service Systems",
+                    "topics": [
+                        {
+                            "topic": "Automation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Energy Management",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Line Balancing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Measurement",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Throughput",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Planning and Scheduling",
+                    "topics": [
+                        {
+                            "topic": "Aggregate Planning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Inventory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "MRP",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sequencing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Theory of Constraints",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Process Improvements",
+                    "topics": [
+                        {
+                            "topic": "Lean Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Value Engineering",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Mathematics",
+            "chapters": [
+                {
+                    "chapter": "Analytic Geometry",
+                    "topics": [
+                        {
+                            "topic": "Areas and Volumes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Calculus",
+                    "topics": [
+                        {
+                            "topic": "Progressions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Series",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Modeling and Quantitative Analysis",
+            "chapters": [
+                {
+                    "chapter": "Data, Logic Development, and Analytics",
+                    "topics": [
+                        {
+                            "topic": "Algorithms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Data Science Techniques",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Databases",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Linear Programming and Optimization",
+                    "topics": [
+                        {
+                            "topic": "Formulation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Interpretation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Solution",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Stochastic Models and Simulation",
+                    "topics": [
+                        {
+                            "topic": "Inverse Probability Functions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Markov Processes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Queuing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Probability and Statistics",
+            "chapters": [
+                {
+                    "chapter": "Design of Experiments",
+                    "topics": [
+                        {
+                            "topic": "Factorial Designs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Linear Regression",
+                    "topics": [
+                        {
+                            "topic": "Parameter Estimation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Residual Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Probability Distributions",
+                    "topics": [
+                        {
+                            "topic": "Permutations and Combinations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Quality",
+            "chapters": [
+                {
+                    "chapter": "Quality Control",
+                    "topics": [
+                        {
+                            "topic": "Control Charts",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "DOE",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "OC Curves",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Process Capability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sampling Plans",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Quality Management, Planning, Assurance, and Systems",
+                    "topics": [
+                        {
+                            "topic": "Fishbone",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "House of Quality",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "QFD",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Six Sigma",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Taguchi Loss Function",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "TQM",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Solid and Hazardous Waste",
+            "chapters": [
+                {
+                    "chapter": "Solid Waste Disposal",
+                    "topics": [
+                        {
+                            "topic": "Gas Collection",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Solid Waste Management",
+                    "topics": [
+                        {
+                            "topic": "Recycling of Solid Waste",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Systems Engineering, Analysis, and Design",
+            "chapters": [
+                {
+                    "chapter": "Reliability Engineering",
+                    "topics": [
+                        {
+                            "topic": "MTBR",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "MTTF",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Availability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Requirements Analysis and System Design",
+                    "topics": [
+                        {
+                            "topic": "Requirement Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Risk Management",
+                    "topics": [
+                        {
+                            "topic": "Uncertainty",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fault Trees",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "FMEA",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Functional Analysis and Configuration Management",
+                    "topics": [
+                        {
+                            "topic": "Functional Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Water and Wastewater",
+            "chapters": [
+                {
+                    "chapter": "Water and Wastewater Characteristics",
+                    "topics": [
+                        {
+                            "topic": "Biological Characteristics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Work Design",
+            "chapters": [
+                {
+                    "chapter": "Learning Curves",
+                    "topics": [
+                        {
+                            "topic": "Learning Curves",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Methods Analysis",
+                    "topics": [
+                        {
+                            "topic": "Charting",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Motion Economy",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Workstation Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Work Measurement",
+                    "topics": [
+                        {
+                            "topic": "Predetermined Time Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Standards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Time Study",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Work Sampling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

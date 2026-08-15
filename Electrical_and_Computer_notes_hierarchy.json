@@ -1,0 +1,1277 @@
+{
+    "discipline": "Electrical and Computer",
+    "subjects": [
+        {
+            "subject": "Circuit Analysis",
+            "chapters": [
+                {
+                    "chapter": "Node/Loop Analysis",
+                    "topics": [
+                        {
+                            "topic": "Mesh Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Nodal Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Phasors",
+                    "topics": [
+                        {
+                            "topic": "Phasors of Mixed Circuits",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Phasors of Purely Resistive, Inductive and Capacitive Circuits",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Thevenin/Norton",
+                    "topics": [
+                        {
+                            "topic": "Norton Theorem",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thevenin Theorem",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Waveform Analysis",
+                    "topics": [
+                        {
+                            "topic": "Phase",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wavelength",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Communications",
+            "chapters": [
+                {
+                    "chapter": "Basic Modem Concepts",
+                    "topics": [
+                        {
+                            "topic": "AM",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Basic Concepts of Modulation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "FM",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "PCM",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Basic Modulation-Demodulation Concepts",
+                    "topics": [
+                        {
+                            "topic": "Code Division Multiplexing (CDM)",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Frequency Division Multiplexing (FDM)",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Time Division Multiplexing (TDM)",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Digital Communications",
+                    "topics": [
+                        {
+                            "topic": "Digital Communications",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Fourier Transform and Fourier Series",
+                    "topics": [
+                        {
+                            "topic": "Fourier series",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Fourier Transforms and Fourier Series",
+                    "topics": [
+                        {
+                            "topic": "Fourier Transforms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Computer Networks",
+            "chapters": [
+                {
+                    "chapter": "Network Intrusion Detection and Prevention",
+                    "topics": [
+                        {
+                            "topic": "Endpoint Detection",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Firewalls",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Network Detection",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Network Models",
+                    "topics": [
+                        {
+                            "topic": "OSI",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "TCP-IP",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Network Topologies",
+                    "topics": [
+                        {
+                            "topic": "Mesh",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Ring",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Star",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Network Types",
+                    "topics": [
+                        {
+                            "topic": "Internet",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "LAN",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "WAN",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Routing and Switching",
+                    "topics": [
+                        {
+                            "topic": "Routing and Switching",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Security",
+                    "topics": [
+                        {
+                            "topic": "Network Vulnerability Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Penetration Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Port Scanning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Security Triad",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Web Vulnerability Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Computer Systems",
+            "chapters": [
+                {
+                    "chapter": "Interfacing",
+                    "topics": [
+                        {
+                            "topic": "Interfacing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Memory Technology and Systems",
+                    "topics": [
+                        {
+                            "topic": "Memory Technology and Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Microprocessors",
+                    "topics": [
+                        {
+                            "topic": "8085 Microprocessor Architecture",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "8086 Microprocessor Architecture and Operation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Basic Microprocessor Terminology",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Instruction Set in 8085",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Control Systems",
+            "chapters": [
+                {
+                    "chapter": "Bode Plots",
+                    "topics": [
+                        {
+                            "topic": "Bode Plots",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Controller Performance",
+                    "topics": [
+                        {
+                            "topic": "Controller Performance",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Digital Systems",
+            "chapters": [
+                {
+                    "chapter": "Boolean Logic",
+                    "topics": [
+                        {
+                            "topic": "Basic Boolean operations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "De Morgans Theorems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Flip-flops and Counters",
+                    "topics": [
+                        {
+                            "topic": "J-K Flip Flop",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Flip-Flops and Counters",
+                    "topics": [
+                        {
+                            "topic": "D Flip-Flop",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "S-R Flip Flop",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Logic Minimization",
+                    "topics": [
+                        {
+                            "topic": "Karnaugh Maps",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "POS",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "SOP",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Number Systems",
+                    "topics": [
+                        {
+                            "topic": "BCD and Grey Code",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Binary, Octal and Hexadecimal Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Conversion from-to Decimal Number System",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fractions in Number Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Programmable Logic Devices and Gate Arrays",
+                    "topics": [
+                        {
+                            "topic": "Programmable Array Logic",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Programmable Logic Array",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Programmable Read Only Memory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "State Machine Design",
+                    "topics": [
+                        {
+                            "topic": "State Machine Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Timing",
+                    "topics": [
+                        {
+                            "topic": "Asynchronous Inputs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Race Conditions and Other Hazards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Timing Diagrams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Electricity and Magnetism",
+            "chapters": [
+                {
+                    "chapter": "Motors and Generators",
+                    "topics": [
+                        {
+                            "topic": "Synchronous Motors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transformers",
+                    "topics": [
+                        {
+                            "topic": "Single-phase and Three-phase",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transmission and Distribution",
+                    "topics": [
+                        {
+                            "topic": "Delta and Wye Connections",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Real and Reactive Losses",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Electromagnetics",
+            "chapters": [
+                {
+                    "chapter": "Electrodynamics",
+                    "topics": [
+                        {
+                            "topic": "Maxwell Equations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wave Propagation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Electrostatics and Magnetostatics",
+                    "topics": [
+                        {
+                            "topic": "Spatial Relationships",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Electrostatics/Electromagnetics",
+                    "topics": [
+                        {
+                            "topic": "Vector Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transmission Lines",
+                    "topics": [
+                        {
+                            "topic": "High Frequency",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Electronics",
+            "chapters": [
+                {
+                    "chapter": "Amplifiers",
+                    "topics": [
+                        {
+                            "topic": "Amplifiers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Discrete Devices",
+                    "topics": [
+                        {
+                            "topic": "Diodes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thyristors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transistors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Instrumentation",
+                    "topics": [
+                        {
+                            "topic": "Data Acquisition",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Measurements",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transducers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "OPAMP",
+                    "topics": [
+                        {
+                            "topic": "Ideal OPAMP",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Operational Amplifiers",
+                    "topics": [
+                        {
+                            "topic": "Nonideal OPAMP",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Power Electronics",
+                    "topics": [
+                        {
+                            "topic": "Converters",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Inverters",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Rectifiers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Engineering Economics",
+            "chapters": [
+                {
+                    "chapter": "Risk Identification",
+                    "topics": [
+                        {
+                            "topic": "Risk Assessment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Risk Terminology",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Types of Risks",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Ethics and Professional Practice",
+            "chapters": [
+                {
+                    "chapter": "Public Safety, Health, Welfare",
+                    "topics": [
+                        {
+                            "topic": "Radiation Protection",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Linear Systems",
+            "chapters": [
+                {
+                    "chapter": "Frequency/Transient Response",
+                    "topics": [
+                        {
+                            "topic": "Transient Response",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Resonance",
+                    "topics": [
+                        {
+                            "topic": "Resonance",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transfer Functions",
+                    "topics": [
+                        {
+                            "topic": "Closed-Loop Transfer Functions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Open-Loop Transfer Functions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Material Properties and Processing",
+            "chapters": [
+                {
+                    "chapter": "Electrical Properties",
+                    "topics": [
+                        {
+                            "topic": "Magnetic Permeability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Semiconductor Materials",
+                    "topics": [
+                        {
+                            "topic": "Diffusion-Drift Current",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Mathematics",
+            "chapters": [
+                {
+                    "chapter": "Algebra and Trigonometry",
+                    "topics": [
+                        {
+                            "topic": "Algebraic Equations and Roots",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Complex Numbers",
+                    "topics": [
+                        {
+                            "topic": "Algebraic Operations on Complex Numbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "De Moivers Theorem",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Different Forms of Complex Numbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Roots of Complex Numbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Theory of Complex Numbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Discrete Mathematics",
+                    "topics": [
+                        {
+                            "topic": "Digraph",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Matrix of Relation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Terminology and Symbols",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Measurements, Instrumentation and Controls",
+            "chapters": [
+                {
+                    "chapter": "Response and Stability",
+                    "topics": [
+                        {
+                            "topic": "Routh Hurwitz Criterion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Power Systems",
+            "chapters": [
+                {
+                    "chapter": "Motors and Generators",
+                    "topics": [
+                        {
+                            "topic": "DC Motors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Induction Motors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Power Theory",
+                    "topics": [
+                        {
+                            "topic": "Power Factor",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Single and Three Phase",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Voltage Regulation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transformers",
+                    "topics": [
+                        {
+                            "topic": "Losses in Transformer",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Reflected Impedance",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transmission and Distribution",
+                    "topics": [
+                        {
+                            "topic": "Efficiency",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Voltage Drop",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Properties of Materials",
+            "chapters": [
+                {
+                    "chapter": "Electrical",
+                    "topics": [
+                        {
+                            "topic": "Conductivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Noise",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Permittivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Resistivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Semiconductor",
+                    "topics": [
+                        {
+                            "topic": "Doping Bands",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Energy Bands",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "P-N Theory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Tunneling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Thermal",
+                    "topics": [
+                        {
+                            "topic": "Thermal Conductivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thermal Expansion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Signal Processing",
+            "chapters": [
+                {
+                    "chapter": "Analog Filters",
+                    "topics": [
+                        {
+                            "topic": "Analog Filters",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Digital Filters",
+                    "topics": [
+                        {
+                            "topic": "Difference Equations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Z-Transforms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Sampling",
+                    "topics": [
+                        {
+                            "topic": "Aliasing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Nyquist Theorem",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Software Engineering",
+            "chapters": [
+                {
+                    "chapter": "Algorithms",
+                    "topics": [
+                        {
+                            "topic": "Big-O",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Complexity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Searching",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sorting",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Data Structures",
+                    "topics": [
+                        {
+                            "topic": "Arrays",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Lists",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Structures",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Trees",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Vectors in Data Structures",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Software Implementation",
+                    "topics": [
+                        {
+                            "topic": "Conditionals",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Control Flow",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Iteration",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Recursion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Scripting",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

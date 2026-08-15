@@ -1,0 +1,549 @@
+{
+    "discipline": "Other",
+    "subjects": [
+        {
+            "subject": "Chemistry and Biology",
+            "chapters": [
+                {
+                    "chapter": "Acids and Bases",
+                    "topics": [
+                        {
+                            "topic": "Buffers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Chemical Reactions",
+                    "topics": [
+                        {
+                            "topic": "Bioconversion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Equilibrium",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Stoichiometry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Oxidation and Reduction",
+                    "topics": [
+                        {
+                            "topic": "Oxidation and Reduction Reactions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Engineering Economics",
+            "chapters": [
+                {
+                    "chapter": "Uncertainty",
+                    "topics": [
+                        {
+                            "topic": "Expected Value and Risk",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Project Selection",
+                    "topics": [
+                        {
+                            "topic": "Depreciation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Comparison of Projects",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Lease vs Buy vs Make",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Electricity and Magnetism",
+            "chapters": [
+                {
+                    "chapter": "Three-phase Power",
+                    "topics": [
+                        {
+                            "topic": "Balanced Loads",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Motor Efficiency",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Power Equation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Measuring Devices",
+                    "topics": [
+                        {
+                            "topic": "Voltmeter, Ammeter and Wattmeter",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Fluid Mechanics",
+            "chapters": [
+                {
+                    "chapter": "Open-channel Flow",
+                    "topics": [
+                        {
+                            "topic": "Drag",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Dimensionless Numbers",
+                    "topics": [
+                        {
+                            "topic": "Froude Number",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Flow Measurement",
+                    "topics": [
+                        {
+                            "topic": "Pitot Tube",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Venturi Meter",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Weir",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Measurements, Instrumentation and Controls",
+            "chapters": [
+                {
+                    "chapter": "Logic Diagrams",
+                    "topics": [
+                        {
+                            "topic": "Advanced Logic Devices",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Logic Gates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Time Delays",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Data Acquisition",
+                    "topics": [
+                        {
+                            "topic": "Amplification",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Analog-to-Digital Converters",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Digital-to-Analog Converters",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Filtering",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Logging",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sampling Rate and Range",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Signal Interface",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Signal Processing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Material Properties and Processing",
+            "chapters": [
+                {
+                    "chapter": "Properties",
+                    "topics": [
+                        {
+                            "topic": "Chemical Properties of Material",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Mathematics",
+            "chapters": [
+                {
+                    "chapter": "Analytic Geometry and Trigonometry",
+                    "topics": [
+                        {
+                            "topic": "Trigonometry",
+                            "subtopics": [
+                                "Addition Formulas",
+                                "Basic Trigonometric Definitions",
+                                "Fundamental Trigonometric Identities",
+                                "Law of Cosines",
+                                "Law of Sines",
+                                "Trigonometric Formulas for Multiple Angles",
+                                "Trigonometric Ratios of Negative Angles"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Probability and Statistics",
+            "chapters": [
+                {
+                    "chapter": "Estimation",
+                    "topics": [
+                        {
+                            "topic": "Confidence Intervals",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Safety, Health, and Environment",
+            "chapters": [
+                {
+                    "chapter": "Basic Safety Equipment",
+                    "topics": [
+                        {
+                            "topic": "Emergency Shutoffs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fire Prevention and Control",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Pressure-Relief Valves",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Confined Space Entry and Ventilation Rates",
+                    "topics": [
+                        {
+                            "topic": "Confined Space Entry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Ventilation Rates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Electrical safety",
+                    "topics": [
+                        {
+                            "topic": "Effect of Electrical Current on Human Body",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Gas Detection and Monitoring",
+                    "topics": [
+                        {
+                            "topic": "Gas Detection and Monitoring",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Hazard Communications",
+                    "topics": [
+                        {
+                            "topic": "Concentrations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fire Ratings",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Proper Labeling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Safety Equipment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "SDS",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Industrial Hygiene",
+                    "topics": [
+                        {
+                            "topic": "Biohazards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Carcinogens",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Exposure Limits",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Half-life",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Radiation Exposure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Toxicology",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Statics",
+            "chapters": [
+                {
+                    "chapter": "Weight and Mass Computations",
+                    "topics": [
+                        {
+                            "topic": "Conversion between Different Units",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Thermodynamics",
+            "chapters": [
+                {
+                    "chapter": "Mass and Energy Balances",
+                    "topics": [
+                        {
+                            "topic": "Energy Balance",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Mass Balance",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Property and Phase Diagram",
+                    "topics": [
+                        {
+                            "topic": "P-h Diagrams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "T-s Diagrams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Property and Phase Diagrams",
+                    "topics": [
+                        {
+                            "topic": "P-v Diagrams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Real Gas Law",
+                    "topics": [
+                        {
+                            "topic": "Real Gases",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Thermodynamic Equilibrium",
+                    "topics": [
+                        {
+                            "topic": "Thermodynamic Equilibrium",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

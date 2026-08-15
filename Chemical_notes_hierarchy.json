@@ -1,0 +1,1199 @@
+{
+    "discipline": "Chemical",
+    "subjects": [
+        {
+            "subject": "Chemical Reaction and Engineering",
+            "chapters": [
+                {
+                    "chapter": "Catalysis",
+                    "topics": [
+                        {
+                            "topic": "Biocatalysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Conversion, Yield, and Selectivity",
+                    "topics": [
+                        {
+                            "topic": "Conversion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Selectivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Yield",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Rate Constant",
+                    "topics": [
+                        {
+                            "topic": "Arrhenius Function",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Reaction Rates and Order",
+                    "topics": [
+                        {
+                            "topic": "Reaction Order",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Reaction Rate",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Reactor Types",
+                    "topics": [
+                        {
+                            "topic": "Batch",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Continuous Stirred Tank",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Gas Phase",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Liquid Phase",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Plug Flow",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Semibatch",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Type of Reactions",
+                    "topics": [
+                        {
+                            "topic": "Biological",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Forward",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Homogeneous",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Parallel",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Reverse",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Chemical Reaction Engineering",
+            "chapters": [
+                {
+                    "chapter": "Catalysis",
+                    "topics": [
+                        {
+                            "topic": "Catalysis Mechanisms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Physical Properties of Catalysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Type of Reactions",
+                    "topics": [
+                        {
+                            "topic": "Heterogeneous",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Series Reaction",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Chemistry and Biology",
+            "chapters": [
+                {
+                    "chapter": "Analytical Chemistry",
+                    "topics": [
+                        {
+                            "topic": "Instrumental Chemistry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Wet Chemistry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Biochemistry, Microbiology, and Molecular Biology",
+                    "topics": [
+                        {
+                            "topic": "Enzymes and Protein Chemistry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Genetics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Krebs, Glycolysis, Calvin Cycles",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Organization and Function of the Cell",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Protein Synthesis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transcription",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Translation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Bioprocessing",
+                    "topics": [
+                        {
+                            "topic": "Aerobic Processes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Anaerobic Processes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Biological Treatment Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fermentation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Nutrient Removal",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Inorganic Chemistry",
+                    "topics": [
+                        {
+                            "topic": "Acids and Bases",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Electrochemistry",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Molarity, Normality and Molality",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Periodic Table",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "pH",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "pK",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Redox Reactions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Solubility Product",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Valence",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Organic Chemistry",
+                    "topics": [
+                        {
+                            "topic": "Balanced Equations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Nomenclature",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Reactions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Structure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Synthesis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Fluid Mechanics",
+            "chapters": [
+                {
+                    "chapter": "Flow Measurement",
+                    "topics": [
+                        {
+                            "topic": "Orifice",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Mechanical Energy Balance",
+                    "topics": [
+                        {
+                            "topic": "Packed Beds",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Mass Transfer and Separation",
+            "chapters": [
+                {
+                    "chapter": "Continuous Contact Methods",
+                    "topics": [
+                        {
+                            "topic": "Height Equivalent to a Theoretical Plate",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Height of Transfer Unit",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Number of Theoretical Plates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Number of Transfer Units",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Convective Mass Transfer",
+                    "topics": [
+                        {
+                            "topic": "Eddy Diffusion",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Mass-Transfer Coefficient",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Equilibrium Stage Methods",
+                    "topics": [
+                        {
+                            "topic": "Graphical Methods",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "McCabe-Thiele",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Humidification, Drying, and Evaporation",
+                    "topics": [
+                        {
+                            "topic": "Humidification, Drying, and Evaporation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Molecular Diffusion",
+                    "topics": [
+                        {
+                            "topic": "Physical Property Estimation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Steady and Unsteady State",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Separation Systems",
+                    "topics": [
+                        {
+                            "topic": "Absorption",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Adsorption- Mass Transfer",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Distillation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Extraction",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Membrane Processes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Materials Science",
+            "chapters": [
+                {
+                    "chapter": "Polymers, Ceramics, and Composites",
+                    "topics": [
+                        {
+                            "topic": "Composites",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Mathematics",
+            "chapters": [
+                {
+                    "chapter": "Accuracy, Precision, and Significant Figures",
+                    "topics": [
+                        {
+                            "topic": "Accuracy and Precision",
+                            "subtopics": [
+                                "Overview",
+                                "Accuracy vs Precision"
+                            ]
+                        },
+                        {
+                            "topic": "Significant Figures",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Analytic Geometry",
+                    "topics": [
+                        {
+                            "topic": "Logarithms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Hypothesis Testing and Design of Experiments",
+                    "topics": [
+                        {
+                            "topic": "Outlier Testing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Statistical Control",
+                    "topics": [
+                        {
+                            "topic": "Control Limits",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Probability and Statistics",
+            "chapters": [
+                {
+                    "chapter": "Hypothesis Testing and Design of Experiments",
+                    "topics": [
+                        {
+                            "topic": "ANOVA",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "t-test",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Process Control",
+            "chapters": [
+                {
+                    "chapter": "Control Loop Design and Hardware",
+                    "topics": [
+                        {
+                            "topic": "Conceptual Process Control",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Control Valves",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "DCS Programming",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Interlocks",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Matching Measured and Manipulated Variables",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "PLC Programming",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sensors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Control Strategies",
+                    "topics": [
+                        {
+                            "topic": "Alarms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Cascade",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Feedback",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Feedforward",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Other Safety Equipment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "PID Controller Tuning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Ratio",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Dynamics",
+                    "topics": [
+                        {
+                            "topic": "Damping",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Gains and Time Constants",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Stability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transfer Functions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Process Design",
+            "chapters": [
+                {
+                    "chapter": "Design Standards",
+                    "topics": [
+                        {
+                            "topic": "ASTM",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "ISO",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "OSHA Design Standards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Regulatory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Equipment and Facilities Cost Estimation",
+                    "topics": [
+                        {
+                            "topic": "Cost Indices",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Equipment Costing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Equipment Selection",
+                    "topics": [
+                        {
+                            "topic": "Scale-up of Equipment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sizing of Equipment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "PFD and P&ID",
+                    "topics": [
+                        {
+                            "topic": "P & ID",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Process Design and Optimization",
+                    "topics": [
+                        {
+                            "topic": "Efficiency",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Evaluation of Specifications",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Green Engineering",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Inherently Safer Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Product Design",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Process Flow and PID Diagrams",
+                    "topics": [
+                        {
+                            "topic": "Process Flow Diagrams",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Safety, Health and Environment",
+            "chapters": [
+                {
+                    "chapter": "Hazardous Properties of Materials, including SDS",
+                    "topics": [
+                        {
+                            "topic": "Corrosivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Flammability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Handling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Reactivity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Storage",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Toxicity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transportation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Overpressure and Under pressure Protection",
+                    "topics": [
+                        {
+                            "topic": "Inherently Safe",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Redundant Control",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Relief",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Process Safety, Risk Assessment, and Hazard analysis",
+                    "topics": [
+                        {
+                            "topic": "Fault and Event Tree Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "HAZOP Studies",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Layer of Protection Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Reactivity Hazards",
+                    "topics": [
+                        {
+                            "topic": "Compatibility",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Inerting",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Runaway Reactions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Waste Minimization, Waste Treatment, and Regulation",
+                    "topics": [
+                        {
+                            "topic": "Air",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "CWA",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "OSHA",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Other EPA",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "RCRA",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Solids",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Water",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Safety, Health, and Environment",
+            "chapters": [
+                {
+                    "chapter": "Industrial Hygiene",
+                    "topics": [
+                        {
+                            "topic": "Ergonomics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Personal Protective Equipment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Solids Handling",
+            "chapters": [
+                {
+                    "chapter": "Particle Properties",
+                    "topics": [
+                        {
+                            "topic": "Particle Size Distribution",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Surface and Bulk Forces",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Processing",
+                    "topics": [
+                        {
+                            "topic": "Crushing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Crystallization",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Grinding",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Transportation and Storage",
+                    "topics": [
+                        {
+                            "topic": "Belts",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Hoppers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Pneumatic",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Slurries",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Tanks",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Thermodynamics",
+            "chapters": [
+                {
+                    "chapter": "Chemical Equilibrium",
+                    "topics": [
+                        {
+                            "topic": "Le Chateliers Principle",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Phase Equilibrium",
+                    "topics": [
+                        {
+                            "topic": "Activity Coefficient",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fugacity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Raolts Law",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
