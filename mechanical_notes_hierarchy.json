@@ -8,6 +8,36 @@
                     "chapter": "Math Basics",
                     "topics": [
                         {
+                            "topic": "Theory of Complex Numbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Trigonometry",
+                            "subtopics": [
+                                "Addition Formulas",
+                                "Basic Trigonometric Definitions",
+                                "Fundamental Trigonometric Identities",
+                                "Law of Cosines",
+                                "Law of Sines",
+                                "Trigonometric Formulas for Multiple Angles",
+                                "Trigonometric Ratios of Negative Angles"
+                            ]
+                        },
+                        {
+                            "topic": "Logarithms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Areas and Volumes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
                             "topic": "Calculators",
                             "subtopics": [
                                 "Overview"
@@ -59,12 +89,6 @@
                             "subtopics": [
                                 "Overview"
                             ]
-                        },
-                        {
-                            "topic": "Distance Formula",
-                            "subtopics": [
-                                "Overview"
-                            ]
                         }
                     ]
                 },
@@ -73,12 +97,6 @@
                     "topics": [
                         {
                             "topic": "Limits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Application of Derivatives",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -96,19 +114,13 @@
                             ]
                         },
                         {
-                            "topic": "Definite Integrals",
+                            "topic": "Application of Derivatives",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
                             "topic": "Indefinite Integrals",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Partial Fractions",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -147,12 +159,6 @@
                             "subtopics": [
                                 "Overview"
                             ]
-                        },
-                        {
-                            "topic": "Finding Differential Equation from Solution",
-                            "subtopics": [
-                                "Overview"
-                            ]
                         }
                     ]
                 },
@@ -160,7 +166,7 @@
                     "chapter": "Linear Algebra",
                     "topics": [
                         {
-                            "topic": "Determinant of a Matrix",
+                            "topic": "Types of Matrices",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -172,13 +178,13 @@
                             ]
                         },
                         {
-                            "topic": "Unit Vector",
+                            "topic": "Determinant of a Matrix",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Gradient, Divergence and Curl",
+                            "topic": "Unit Vector",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -190,7 +196,7 @@
                             ]
                         },
                         {
-                            "topic": "Types of Matrices",
+                            "topic": "Gradient, Divergence and Curl",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -345,12 +351,6 @@
                             "subtopics": [
                                 "Overview"
                             ]
-                        },
-                        {
-                            "topic": "Chi-squared distribution",
-                            "subtopics": [
-                                "Overview"
-                            ]
                         }
                     ]
                 },
@@ -358,13 +358,13 @@
                     "chapter": "Regression and Curve Fitting",
                     "topics": [
                         {
-                            "topic": "Correlation Coefficient",
+                            "topic": "Regression and Curve Fitting",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Regression and Curve Fitting",
+                            "topic": "Correlation Coefficient",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -381,13 +381,13 @@
                             ]
                         },
                         {
-                            "topic": "Comparison of Samples",
+                            "topic": "Confidence Intervals",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Sample Size Requirements",
+                            "topic": "Comparison of Samples",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -405,24 +405,6 @@
                         },
                         {
                             "topic": "Measurement of Error",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Sets",
-                    "topics": [
-                        {
-                            "topic": "Boolean Operations",
-                            "subtopics": [
-                                "Overview",
-                                "Venn Diagrams"
-                            ]
-                        },
-                        {
-                            "topic": "Set Notations",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -520,10 +502,38 @@
             "subject": "Engineering Economics",
             "chapters": [
                 {
-                    "chapter": "Break-even Analysis",
+                    "chapter": "Time Value of Money",
                     "topics": [
                         {
-                            "topic": "Break-even Analysis",
+                            "topic": "Discounted Cash Flow Factors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Net Present Value",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Non-Annual Compounding",
+                    "topics": [
+                        {
+                            "topic": "Non-Annual Compounding",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Inflation",
+                    "topics": [
+                        {
+                            "topic": "Inflation",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -535,6 +545,17 @@
                     "topics": [
                         {
                             "topic": "Capitalized Costs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Break-even Analysis",
+                    "topics": [
+                        {
+                            "topic": "Break-even Analysis",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -569,45 +590,6 @@
                         },
                         {
                             "topic": "Payback Period Analyses",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Inflation",
-                    "topics": [
-                        {
-                            "topic": "Inflation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Non-Annual Compounding",
-                    "topics": [
-                        {
-                            "topic": "Non-Annual Compounding",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Time Value of Money",
-                    "topics": [
-                        {
-                            "topic": "Discounted Cash Flow Factors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Net Present Value",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -679,9 +661,9 @@
                         {
                             "topic": "Capacitors and Inductors in Parallel and Series",
                             "subtopics": [
-                                "Overview",
                                 "Capacitors in Series and Parallel",
-                                "Inductors in Series and Parallel"
+                                "Inductors in Series and Parallel",
+                                "Overview"
                             ]
                         },
                         {

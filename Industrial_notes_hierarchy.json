@@ -120,6 +120,35 @@
                     ]
                 },
                 {
+                    "chapter": "Principles and Tools",
+                    "topics": [
+                        {
+                            "topic": "Motivational Theory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Organizational Structure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Organizing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Planning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "chapter": "Project Management",
                     "topics": [
                         {
@@ -148,35 +177,6 @@
                         },
                         {
                             "topic": "WBS",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Principles and Tools",
-                    "topics": [
-                        {
-                            "topic": "Motivational Theory",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Organizational Structure",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Organizing",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Planning",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -747,8 +747,25 @@
             "subject": "Systems Engineering, Analysis, and Design",
             "chapters": [
                 {
+                    "chapter": "Functional Analysis and Configuration Management",
+                    "topics": [
+                        {
+                            "topic": "Functional Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "chapter": "Reliability Engineering",
                     "topics": [
+                        {
+                            "topic": "Availability",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
                         {
                             "topic": "MTBR",
                             "subtopics": [
@@ -757,12 +774,6 @@
                         },
                         {
                             "topic": "MTTF",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Availability",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -784,12 +795,6 @@
                     "chapter": "Risk Management",
                     "topics": [
                         {
-                            "topic": "Uncertainty",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
                             "topic": "Fault Trees",
                             "subtopics": [
                                 "Overview"
@@ -800,14 +805,9 @@
                             "subtopics": [
                                 "Overview"
                             ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Functional Analysis and Configuration Management",
-                    "topics": [
+                        },
                         {
-                            "topic": "Functional Analysis",
+                            "topic": "Uncertainty",
                             "subtopics": [
                                 "Overview"
                             ]

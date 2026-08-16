@@ -52,47 +52,19 @@
             ]
         },
         {
-            "subject": "Engineering Economics",
+            "subject": "Electricity and Magnetism",
             "chapters": [
                 {
-                    "chapter": "Uncertainty",
+                    "chapter": "Measuring Devices",
                     "topics": [
                         {
-                            "topic": "Expected Value and Risk",
+                            "topic": "Voltmeter, Ammeter and Wattmeter",
                             "subtopics": [
                                 "Overview"
                             ]
                         }
                     ]
                 },
-                {
-                    "chapter": "Project Selection",
-                    "topics": [
-                        {
-                            "topic": "Depreciation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Comparison of Projects",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Lease vs Buy vs Make",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Electricity and Magnetism",
-            "chapters": [
                 {
                     "chapter": "Three-phase Power",
                     "topics": [
@@ -115,12 +87,40 @@
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "subject": "Engineering Economics",
+            "chapters": [
                 {
-                    "chapter": "Measuring Devices",
+                    "chapter": "Project Selection",
                     "topics": [
                         {
-                            "topic": "Voltmeter, Ammeter and Wattmeter",
+                            "topic": "Comparison of Projects",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Depreciation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Lease vs Buy vs Make",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Uncertainty",
+                    "topics": [
+                        {
+                            "topic": "Expected Value and Risk",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -132,17 +132,6 @@
         {
             "subject": "Fluid Mechanics",
             "chapters": [
-                {
-                    "chapter": "Open-channel Flow",
-                    "topics": [
-                        {
-                            "topic": "Drag",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
                 {
                     "chapter": "Dimensionless Numbers",
                     "topics": [
@@ -176,35 +165,61 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "chapter": "Open-channel Flow",
+                    "topics": [
+                        {
+                            "topic": "Drag",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Material Properties and Processing",
+            "chapters": [
+                {
+                    "chapter": "Properties",
+                    "topics": [
+                        {
+                            "topic": "Chemical Properties of Material",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Mathematics",
+            "chapters": [
+                {
+                    "chapter": "Analytic Geometry and Trigonometry",
+                    "topics": [
+                        {
+                            "topic": "Trigonometry",
+                            "subtopics": [
+                                "Addition Formulas",
+                                "Basic Trigonometric Definitions",
+                                "Fundamental Trigonometric Identities",
+                                "Law of Cosines",
+                                "Law of Sines",
+                                "Trigonometric Formulas for Multiple Angles",
+                                "Trigonometric Ratios of Negative Angles"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
         {
             "subject": "Measurements, Instrumentation and Controls",
             "chapters": [
-                {
-                    "chapter": "Logic Diagrams",
-                    "topics": [
-                        {
-                            "topic": "Advanced Logic Devices",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Logic Gates",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Time Delays",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
                 {
                     "chapter": "Data Acquisition",
                     "topics": [
@@ -257,41 +272,26 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "subject": "Material Properties and Processing",
-            "chapters": [
+                },
                 {
-                    "chapter": "Properties",
+                    "chapter": "Logic Diagrams",
                     "topics": [
                         {
-                            "topic": "Chemical Properties of Material",
+                            "topic": "Advanced Logic Devices",
                             "subtopics": [
                                 "Overview"
                             ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Mathematics",
-            "chapters": [
-                {
-                    "chapter": "Analytic Geometry and Trigonometry",
-                    "topics": [
+                        },
                         {
-                            "topic": "Trigonometry",
+                            "topic": "Logic Gates",
                             "subtopics": [
-                                "Addition Formulas",
-                                "Basic Trigonometric Definitions",
-                                "Fundamental Trigonometric Identities",
-                                "Law of Cosines",
-                                "Law of Sines",
-                                "Trigonometric Formulas for Multiple Angles",
-                                "Trigonometric Ratios of Negative Angles"
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Time Delays",
+                            "subtopics": [
+                                "Overview"
                             ]
                         }
                     ]
