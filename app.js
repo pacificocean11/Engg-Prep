@@ -1221,6 +1221,16 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         
         const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
 
+        const notesPageTitle = document.getElementById('notes-page-title');
+        const notesPageDesc = document.getElementById('notes-page-desc');
+        if (notesPageTitle) {
+            notesPageTitle.textContent = `${currentDiscipline} Notes`;
+        }
+        if (notesPageDesc) {
+            const disciplineText = currentDiscipline === 'Other' ? 'Other Disciplines' : currentDiscipline;
+            notesPageDesc.textContent = `Comprehensive study notes and formulas for ${disciplineText} Engineering.`;
+        }
+
         if (typeof notesData === 'undefined' || !notesData.length) {
             notesList.innerHTML = '<div class="text-center py-10 glass-card"><span class="material-symbols-outlined text-4xl text-slate-300 mb-2">menu_book</span><p class="text-slate-500 font-medium">Notes module initializing...</p></div>';
             return;
@@ -1251,8 +1261,67 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             {bg: 'bg-green-100', text: 'text-green-700', icon: 'history_edu'}
         ];
 
+        let subjectKeys = Object.keys(subjects);
+        if (currentDiscipline === 'Other' || currentDiscipline === 'Other Disciplines' || currentDiscipline.includes('Other')) {
+            const otherOrder = [
+                "Mathematics", 
+                "Probability and Statistics", 
+                "Chemistry and Biology",
+                "Chemistry", 
+                "Measurements, Instrumentation and Controls", 
+                "Instrumentation and Controls",
+                "Engineering Ethics and Societal Impacts", 
+                "Safety, Health, and Environment", 
+                "Engineering Economics", 
+                "Statics", 
+                "Dynamics", 
+                "Strength of Materials",
+                "Mechanics of Materials", 
+                "Material Properties and Processing", 
+                "Materials",
+                "Fluid Mechanics", 
+                "Electricity and Magnetism", 
+                "Basic Electrical Engineering",
+                "Thermodynamics",
+                "Thermodynamics and Heat Transfer"
+            ];
+            subjectKeys.sort((a, b) => {
+                let idxA = otherOrder.indexOf(a);
+                let idxB = otherOrder.indexOf(b);
+                if (idxA === -1) idxA = 999;
+                if (idxB === -1) idxB = 999;
+                return idxA - idxB;
+            });
+        } else if (currentDiscipline.includes('Civil')) {
+            console.log("Applying Civil custom subject sorting...");
+            const civilOrder = [
+                "Mathematics and Statistics",
+                "Ethics and Professional Practice",
+                "Engineering Economics",
+                "Statics",
+                "Dynamics",
+                "Mechanics of Materials",
+                "Materials",
+                "Fluid Mechanics",
+                "Surveying",
+                "Water Resources and Environmental Engineering",
+                "Structural Engineering",
+                "Geotechnical Engineering",
+                "Transportation Engineering",
+                "Construction Engineering"
+            ];
+            subjectKeys = subjectKeys.filter(key => key !== "CNST");
+            subjectKeys.sort((a, b) => {
+                let idxA = civilOrder.indexOf(a);
+                let idxB = civilOrder.indexOf(b);
+                if (idxA === -1) idxA = 999;
+                if (idxB === -1) idxB = 999;
+                return idxA - idxB;
+            });
+        }
+
         let idx = 0;
-        for (let subj in subjects) {
+        subjectKeys.forEach(subj => {
             const color = colors[idx % colors.length];
             const data = subjects[subj];
             const chapters = data.chapters;
@@ -1286,7 +1355,41 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             const chapterList = document.createElement('div');
             chapterList.className = 'mt-4 flex flex-col gap-2 border-t border-slate-100 dark:border-slate-800 pt-4';
             
-            for (let chap in chapters) {
+            let chapterKeys = Object.keys(chapters);
+            if (subj === 'Mathematics') {
+                const mathChapterOrder = [
+                    "Math Basics",
+                    "Basic Math",
+                    "Analytic Geometry",
+                    "Calculus",
+                    "Differential Equations",
+                    "Linear Algebra",
+                    "Numerical Methods",
+                    "Algorithm and Logic Development"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = mathChapterOrder.indexOf(a);
+                    let idxB = mathChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            } else if (subj === 'Measurements, Instrumentation and Controls' && (currentDiscipline.includes('Other'))) {
+                const measChapterOrder = [
+                    "Sensors and Transducers",
+                    "Data Acquisition",
+                    "Logic Diagrams"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = measChapterOrder.indexOf(a);
+                    let idxB = measChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            }
+            
+            chapterKeys.forEach(chap => {
                 const chapItem = document.createElement('div');
                 chapItem.className = 'p-3 rounded-lg hover:bg-surface-container-highest dark:hover:bg-slate-800/50 cursor-pointer flex justify-between items-center transition-colors group';
                 chapItem.innerHTML = `
@@ -1300,7 +1403,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 };
                 
                 chapterList.appendChild(chapItem);
-            }
+            });
             
             contentDiv.appendChild(chapterList);
             
@@ -1327,7 +1430,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             card.appendChild(contentDiv);
             notesList.appendChild(card);
             idx++;
-        }
+        });
         initTilt();
     }
 

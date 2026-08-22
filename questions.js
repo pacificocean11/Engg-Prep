@@ -1,20 +1,5 @@
 const OTHER_SUBJECTS = [
     {
-        "id": "physics",
-        "name": "Physics",
-        "icon": "🪐",
-        "topics": [
-            "Kinematics",
-            "Laws of Motion",
-            "Work, Power, Energy",
-            "Properties of Bulk Matter",
-            "Fluid Mechanics",
-            "Elasticity and Mechanical Properties of Solids",
-            "Thermodynamics",
-            "Thermal Properties of Matter"
-        ]
-    },
-    {
         "id": "math",
         "name": "Mathematics",
         "icon": "📐",
