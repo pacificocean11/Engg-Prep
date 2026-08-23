@@ -1387,6 +1387,143 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     if (idxB === -1) idxB = 999;
                     return idxA - idxB;
                 });
+            } else if (subj === 'Engineering Economics') {
+                const econChapterOrder = [
+                    "Time Value of Money",
+                    "Non-Annual Compounding",
+                    "Inflation",
+                    "Capitalized Costs",
+                    "Break-even Analysis",
+                    "Cost Types and Breakdowns",
+                    "Economic Analyses"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = econChapterOrder.indexOf(a);
+                    let idxB = econChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            } else if (subj === 'Statics' && currentDiscipline.includes('Other')) {
+                const staticsChapterOrder = [
+                    "Resultants of Force Systems",
+                    "Resolution of Forces",
+                    "Moments and Couple",
+                    "Systems of Forces",
+                    "Centroids",
+                    "Moment of Inertia",
+                    "Static Friction",
+                    "Screw Thread",
+                    "Belt Friction",
+                    "Statically Determinate Truss",
+                    "Concurrent Forces",
+                    "Concurrent Force Systems",
+                    "Equilibrium of Rigid Bodies",
+                    "Weight and Mass Computations"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = staticsChapterOrder.indexOf(a);
+                    let idxB = staticsChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            } else if (subj === 'Fluid Mechanics' && currentDiscipline.includes('Other')) {
+                const fluidChapterOrder = [
+                    "Fluid Properties",
+                    "Fluid Statics",
+                    "One-Dimensional Fluid Flow",
+                    "Internal Flow",
+                    "External Flow",
+                    "Impulse-Momentum Principle",
+                    "Compressible Flow",
+                    "Fluid Machinery",
+                    "Flow Measurement",
+                    "Dimensional Homogeneity",
+                    "Airfoil Theory",
+                    "Performance curves",
+                    "Power and Efficiency-Fluid",
+                    "Scaling Laws for Fans, Pumps and Compressors",
+                    "Open Channel Flow",
+                    "Dimensionless Numbers",
+                    " Dimensionless Numbers"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = fluidChapterOrder.indexOf(a);
+                    let idxB = fluidChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            } else if (subj === 'Electricity and Magnetism') {
+                const elecChapterOrder = [
+                    "Electrical Fundamentals",
+                    "Capacitors and Inductors",
+                    "AC Circuits",
+                    "Transformers",
+                    "Motors and Generators",
+                    "Three-phase Power"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = elecChapterOrder.indexOf(a);
+                    let idxB = elecChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            } else if (subj === 'Thermodynamics' || subj === 'Thermodynamics and Heat Transfer') {
+                const thermoChapterOrder = [
+                    "Single Component Systems",
+                    "PVT Behavior",
+                    "First Law of Thermodynamics",
+                    "Thermodynamic Processes",
+                    "Basic Cycles",
+                    "Psychrometrics",
+                    "Second Law of Thermodynamics",
+                    "Combustion & Products",
+                    "Refrigeration and HVAC",
+                    "Energy Transfer",
+                    "Energy Transfers",
+                    "Laws of Thermodynamics",
+                    "Nonreacting Mixtures of Gases",
+                    "Power Cycles",
+                    "Properties of Ideal Gases and Pure Substances",
+                    "Mass and Energy Balances",
+                    "Property and Phase Diagram",
+                    "Property and Phase Diagrams",
+                    "Real Gas Law",
+                    "Thermodynamic Equilibrium",
+                    "Conduction",
+                    "Convection",
+                    "Radiation"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = thermoChapterOrder.indexOf(a);
+                    let idxB = thermoChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
+            } else if (subj === 'Material Properties and Processing') {
+                const materialChapterOrder = [
+                    "Stress-Strain Diagrams",
+                    "Ferrous Metals",
+                    "Nonferrous Metals",
+                    "Engineered Materials",
+                    "Manufacturing Processes",
+                    "Phase Diagrams/Heat Treating",
+                    "Corrosion",
+                    "Failure Mechanisms",
+                    "Materials Selection",
+                    "Properties"
+                ];
+                chapterKeys.sort((a, b) => {
+                    let idxA = materialChapterOrder.indexOf(a);
+                    let idxB = materialChapterOrder.indexOf(b);
+                    if (idxA === -1) idxA = 999;
+                    if (idxB === -1) idxB = 999;
+                    return idxA - idxB;
+                });
             }
             
             chapterKeys.forEach(chap => {
