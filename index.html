@@ -399,33 +399,6 @@
     </div>
 </div>
 
-<!-- ===== FULL FE EXAM SIMULATOR ===== -->
-<div id="full-fe-exam-card" class="col-span-1 md:col-span-12 lg:col-span-12 glass-card rounded-3xl p-6 relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6 mb-2">
-    <div class="flex items-center gap-4">
-        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center shrink-0 border border-amber-500/20" id="fe-simulator-icon-container">
-            <span class="material-symbols-outlined text-amber-500 text-3xl" style="font-variation-settings:'FILL' 1;" id="fe-simulator-icon">workspace_premium</span>
-        </div>
-        <div>
-            <h3 class="font-display-lg text-2xl text-on-surface dark:text-white mb-1" id="fe-simulator-title">FE Simulator</h3>
-            <p class="font-body-sm text-slate-500 dark:text-slate-400" id="fe-simulator-subtitle">110 Questions • 6 Hours • Official Engg.tv Blueprint</p>
-        </div>
-    </div>
-    
-    <!-- Lock State -->
-    <div id="fe-simulator-locked" class="flex flex-col items-end gap-2 w-full sm:w-auto">
-        <div class="w-full sm:w-48 bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
-            <div id="fe-sim-progress" class="bg-amber-500 h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
-        </div>
-        <p id="fe-sim-lock-text" class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest"><span class="material-symbols-outlined text-[14px] align-text-bottom">lock</span> Unlocks at 500 Points</p>
-    </div>
-    
-    <!-- Unlocked State -->
-    <div id="fe-simulator-unlocked" class="hidden w-full sm:w-auto">
-        <button id="btn-start-fe-simulator" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-[18px]">play_arrow</span> Start Simulator
-        </button>
-    </div>
-</div>
 
   <!-- ===== DAILY QUESTS & MISSIONS ===== -->
   <div id="daily-quests-card" class="col-span-1 md:col-span-12 lg:col-span-4 glass-card rounded-3xl p-6 relative overflow-hidden">
@@ -816,31 +789,52 @@
         <div class="legacy-wrapper">
     
             <section id="exam" class="page">
-                    <div class="mock-exam-landing" id="exam-unlocked">
-                        <div class="exam-hero-card glass-card tilt-card">
-                            <div class="hero-content">
-                                <div class="hero-badge">Simulation</div>
-                                <h2 id="exam-headline">FE Mechanical Mock Exam</h2>
-                                <p>Test your readiness with a full-length simulated exam. This session follows the NCEES format guidelines to help you manage time and pressure.</p>
+                <div class="flex flex-col h-full max-w-4xl mx-auto w-full px-4 py-8">
+                    
+                    <!-- Tab Toggle -->
+                    <div class="flex justify-center mb-8">
+                        <div class="bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl flex items-center shadow-inner gap-1">
+                            <button id="tab-btn-simulator" class="px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-white dark:bg-slate-700 shadow text-on-surface dark:text-white" onclick="switchExamTab('simulator')">
+                                Full Simulator (110Q)
+                            </button>
+                            <button id="tab-btn-mini" class="px-6 py-2.5 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-all" onclick="switchExamTab('mini')">
+                                Mini-Exam (20Q)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Simulator View -->
+                    <div id="exam-view-simulator" class="flex-1 flex flex-col items-center justify-center w-full">
+                        <!-- ===== FULL FE EXAM SIMULATOR ===== -->
+                        <div id="full-fe-exam-card" class="exam-hero-card glass-card tilt-card w-full relative overflow-hidden">
+                            <div class="absolute -right-12 -top-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                            <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                            
+                            <div class="hero-content relative z-10">
+                                <div class="hero-badge">Full Simulation</div>
+                                <h2 id="fe-simulator-title">FE Simulator</h2>
+                                <p id="fe-simulator-subtitle" style="margin-bottom: 2rem;">110 Questions • 6 Hours • Official Engg.tv Blueprint</p>
                                 
                                 <div class="exam-specs">
                                     <div class="spec-item">
                                         <span class="spec-icon">📋</span>
-                                            <strong>20 Questions</strong>
-                                            <span>Randomly selected</span>
+                                        <div class="spec-info">
+                                            <strong>110 Questions</strong>
+                                            <span>Official Blueprint</span>
+                                        </div>
                                     </div>
                                     <div class="spec-item">
                                         <span class="spec-icon">⏱️</span>
                                         <div class="spec-info">
-                                            <strong>60 Minutes</strong>
-                                            <span>Countdown timer</span>
+                                            <strong>5h 20m</strong>
+                                            <span>Full Exam Timer</span>
                                         </div>
                                     </div>
                                     <div class="spec-item">
                                         <span class="spec-icon">🎯</span>
                                         <div class="spec-info">
-                                            <strong>Full Review</strong>
-                                            <span>Detailed solutions</span>
+                                            <strong>Analytics</strong>
+                                            <span>Detailed Breakdown</span>
                                         </div>
                                     </div>
                                 </div>
@@ -848,42 +842,118 @@
                                 <div class="exam-instructions">
                                     <h3>Before You Start:</h3>
                                     <ul>
-                                        <li>Ensure you have a quiet environment.</li>
-                                        <li>Have your calculator and FE Reference Handbook ready.</li>
-                                        <li>The timer will start immediately after clicking the button below.</li>
-                                        <li>You can flag questions to review them later.</li>
+                                        <li>Dedicate at least 6 hours of uninterrupted time.</li>
+                                        <li>Use the NCEES FE Reference Handbook.</li>
+                                        <li>You will be presented with a Nondisclosure Agreement (NDA) first.</li>
+                                        <li>Do not close the browser during the session.</li>
                                     </ul>
                                 </div>
 
-                                <button id="start-mock-exam" class="btn-primary btn-large" onclick="openMockPreview()">
-                                    <span class="icon">🚀</span> Start Simulated Exam
-                                </button>
+                                <!-- Lock State -->
+                                <div id="fe-simulator-locked" class="flex flex-col items-start gap-3 w-full mt-6">
+                                    <div class="w-full max-w-sm bg-slate-100 dark:bg-slate-800 h-3 rounded-full overflow-hidden">
+                                        <div id="fe-sim-progress" class="bg-amber-500 h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+                                    </div>
+                                    <p id="fe-sim-lock-text" class="text-sm font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest"><span class="material-symbols-outlined text-[16px] align-text-bottom">lock</span> Unlocks at 500 Points</p>
+                                </div>
+                                
+                                <!-- Unlocked State -->
+                                <div id="fe-simulator-unlocked" class="hidden w-full mt-6">
+                                    <button id="btn-start-fe-simulator" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-bold px-10 py-5 rounded-2xl shadow-xl shadow-amber-500/40 active:scale-95 transition-all text-base uppercase tracking-widest flex items-center justify-center gap-3">
+                                        <span class="material-symbols-outlined text-[32px]">play_arrow</span>
+                                        <div class="flex flex-col items-start text-left leading-tight">
+                                            <span>Start Simulator</span>
+                                            <span class="text-[13px] opacity-80 normal-case tracking-normal mt-1">110 Questions • 6 Hours</span>
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="hero-visual">
-                                <div class="exam-illustration">
-                                    <span class="clock-icon">⏱️</span>
-                                    <div class="pulse-ring"></div>
+
+                            <div class="hero-visual relative z-10 flex flex-col items-center justify-center">
+                                <div class="w-32 h-32 rounded-[40px] bg-amber-500/10 flex items-center justify-center shrink-0 border-4 border-amber-500/20 shadow-inner mb-6" id="fe-simulator-icon-container">
+                                    <span class="material-symbols-outlined text-amber-500 text-6xl" style="font-variation-settings:'FILL' 1;" id="fe-simulator-icon">workspace_premium</span>
+                                </div>
+                                <div class="exam-illustration !bg-transparent !shadow-none">
+                                    <div class="pulse-ring border-amber-500/40"></div>
                                 </div>
                             </div>
                         </div>
-
-                        
                     </div>
-                    
-                    <div class="mock-exam-landing hidden" id="exam-locked">
-                        <div class="exam-hero-card" style="background: #FF006E; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem;">
-                            <div class="w-20 h-20 bg-white/20 rounded-[28px] flex items-center justify-center mb-6 shadow-inner">
-                                <span class="material-symbols-outlined text-5xl text-white" style="font-variation-settings: 'FILL' 1;">lock</span>
+
+                    <!-- Mini Exam View -->
+                    <div id="exam-view-mini" class="flex-1 flex-col items-center justify-center hidden w-full">
+                        <div class="mock-exam-landing w-full" id="mini-exam-unlocked">
+                            <div class="exam-hero-card mini-exam glass-card tilt-card w-full">
+                                <div class="hero-content">
+                                    <div class="hero-badge">Simulation</div>
+                                    <h2 id="mini-exam-headline">FE Mechanical Mini-Exam</h2>
+                                    <p>Test your readiness with a condensed 20-question simulated exam. This session follows the NCEES format guidelines to help you manage time and pressure.</p>
+                                    
+                                    <div class="exam-specs">
+                                        <div class="spec-item">
+                                            <span class="spec-icon">📋</span>
+                                                <strong>20 Questions</strong>
+                                                <span>Randomly selected</span>
+                                        </div>
+                                        <div class="spec-item">
+                                            <span class="spec-icon">⏱️</span>
+                                            <div class="spec-info">
+                                                <strong>60 Minutes</strong>
+                                                <span>Countdown timer</span>
+                                            </div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <span class="spec-icon">🎯</span>
+                                            <div class="spec-info">
+                                                <strong>Full Review</strong>
+                                                <span>Detailed solutions</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="exam-instructions">
+                                        <h3>Before You Start:</h3>
+                                        <ul>
+                                            <li>Ensure you have a quiet environment.</li>
+                                            <li>Have your calculator and FE Reference Handbook ready.</li>
+                                            <li>The timer will start immediately after clicking the button below.</li>
+                                            <li>You can flag questions to review them later.</li>
+                                        </ul>
+                                    </div>
+
+                                    <button id="start-mock-exam" class="btn-primary btn-large flex items-center justify-center gap-3" onclick="openMockPreview()">
+                                        <span class="icon text-2xl">🚀</span>
+                                        <div class="flex flex-col items-start text-left leading-tight">
+                                            <span>Start Mini-Exam</span>
+                                            <span class="text-[13px] opacity-80 font-normal mt-1 normal-case tracking-normal">20 Questions • 60 Minutes</span>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="hero-visual">
+                                    <div class="exam-illustration">
+                                        <span class="clock-icon">⏱️</span>
+                                        <div class="pulse-ring"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Exam Section Locked</h2>
-                            <p style="color: rgba(255,255,255,0.9); max-width: 400px; margin-bottom: 2rem;">Earn 100 points to unlock the full-length simulated exam feature. Keep practicing to reach your goal!</p>
-                            <div class="w-full bg-white/30 h-2 rounded-full overflow-hidden max-w-[250px] mb-2">
-                              <div id="exam-points-progress-bar" class="bg-white h-full rounded-full" style="width: 0%"></div>
+                        </div>
+                        
+                        <div class="mock-exam-landing hidden w-full" id="mini-exam-locked">
+                            <div class="exam-hero-card mini-exam w-full" style="color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem;">
+                                <div class="w-20 h-20 bg-white/20 rounded-[28px] flex items-center justify-center mb-6 shadow-inner">
+                                    <span class="material-symbols-outlined text-5xl text-white" style="font-variation-settings: 'FILL' 1;">lock</span>
+                                </div>
+                                <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Mini-Exam Section Locked</h2>
+                                <p style="color: rgba(255,255,255,0.9); max-width: 400px; margin-bottom: 2rem;">Earn 100 points to unlock the 20-question mini-exam feature. Keep practicing to reach your goal!</p>
+                                <div class="w-full bg-white/30 h-2 rounded-full overflow-hidden max-w-[250px] mb-2">
+                                  <div id="mini-exam-points-progress-bar" class="bg-white h-full rounded-full" style="width: 0%"></div>
+                                </div>
+                                <p id="mini-exam-points-needed-text" style="font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: white;">0/100 Points</p>
                             </div>
-                            <p id="exam-points-needed-text" style="font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: white;">0/100 Points</p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
             <section id="formulas" class="page">
                     <div class="card">
                         <h2>Formula Reference</h2>
@@ -1573,7 +1643,7 @@
         });
       }
     </script>
-    <!-- Mock Exam Preview Modal -->
+    <!-- Mini-Exam Preview Modal -->
     <div id="mock-preview-modal" class="fixed inset-0 z-[10002] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
         <div class="glass-card w-full max-w-xl rounded-[40px] overflow-hidden shadow-2xl border border-white/20">
             <div class="p-8">
@@ -1582,7 +1652,7 @@
                         <span class="material-symbols-outlined text-3xl">assignment_late</span>
                     </div>
                     <div>
-                        <h2 class="font-display-lg text-2xl text-on-surface dark:text-white">Exam Simulation</h2>
+                        <h2 class="font-display-lg text-2xl text-on-surface dark:text-white">Mini-Exam Simulation</h2>
                         <p class="text-sm text-outline dark:text-slate-400">Ready to test your engineering intuition?</p>
                     </div>
                 </div>

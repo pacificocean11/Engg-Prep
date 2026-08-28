@@ -140,6 +140,29 @@
             "subject": "Ethics and Professional Practice",
             "chapters": [
                 {
+                    "chapter": "Codes of Ethics",
+                    "topics": [
+                        {
+                            "topic": "Ethical and Legal Considerations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "NCEES Model Law",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Professional and Technical Societies",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "chapter": "Contracts and Contract Law",
                     "topics": [
                         {
@@ -155,6 +178,17 @@
                     "topics": [
                         {
                             "topic": "Licensure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Public Health, Safety and Welfare",
+                    "topics": [
+                        {
+                            "topic": "Public Health, Safety and Welfare in Engineering",
                             "subtopics": [
                                 "Overview"
                             ]

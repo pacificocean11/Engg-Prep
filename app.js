@@ -1318,6 +1318,36 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 if (idxB === -1) idxB = 999;
                 return idxA - idxB;
             });
+        } else if (currentDiscipline === 'Electrical and Computer') {
+            const elecComputerOrder = [
+                "Mathematics",
+                "Probability and Statistics",
+                "Ethics and Professional Practice",
+                "Engineering Economics",
+                "Properties of Electrical Materials",
+                "Properties of Materials",
+                "Material Properties and Processing",
+                "Circuit Analysis",
+                "Circuit Analysis (Linear and Non-linear)",
+                "Linear Systems",
+                "Signal Processing",
+                "Electronics",
+                "Power Systems",
+                "Electromagnetics",
+                "Control Systems",
+                "Communications",
+                "Computer Networks",
+                "Digital Systems",
+                "Computer Systems",
+                "Software Engineering"
+            ];
+            subjectKeys.sort((a, b) => {
+                let idxA = elecComputerOrder.indexOf(a);
+                let idxB = elecComputerOrder.indexOf(b);
+                if (idxA === -1) idxA = 999;
+                if (idxB === -1) idxB = 999;
+                return idxA - idxB;
+            });
         }
 
         let idx = 0;
@@ -3683,6 +3713,32 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (window.checkFESimulatorUnlock) window.checkFESimulatorUnlock();
     }
     window.updateGamificationUI = updateGamificationUI;
+
+    window.switchExamTab = function(tabName) {
+        const simView = document.getElementById('exam-view-simulator');
+        const miniView = document.getElementById('exam-view-mini');
+        const simBtn = document.getElementById('tab-btn-simulator');
+        const miniBtn = document.getElementById('tab-btn-mini');
+        
+        if (tabName === 'simulator') {
+            simView.classList.remove('hidden');
+            simView.classList.add('flex');
+            miniView.classList.add('hidden');
+            miniView.classList.remove('flex');
+            
+            simBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-white dark:bg-slate-700 shadow text-on-surface dark:text-white";
+            miniBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-all";
+        } else {
+            miniView.classList.remove('hidden');
+            miniView.classList.add('flex');
+            simView.classList.add('hidden');
+            simView.classList.remove('flex');
+            
+            miniBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-white dark:bg-slate-700 shadow text-on-surface dark:text-white";
+            simBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-all";
+        }
+    };
+
 
     // Settings Functionality
     const btnAccount = document.getElementById('btn-account-info');

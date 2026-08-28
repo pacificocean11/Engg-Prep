@@ -1050,18 +1050,8 @@ const ELECTRICAL_COMPUTER_SUBJECTS = [
         ]
     },
     {
-        "id": "eng-sciences",
-        "name": "Engineering Sciences",
-        "icon": "🏗️",
-        "topics": [
-            "Statics",
-            "Dynamics",
-            "Materials Science"
-        ]
-    },
-    {
         "id": "circuits",
-        "name": "Circuit Analysis (DC and AC Steady State)",
+        "name": "Circuit Analysis",
         "icon": "🔌",
         "topics": [
             "KCL/KVL",
@@ -1099,7 +1089,7 @@ const ELECTRICAL_COMPUTER_SUBJECTS = [
     },
     {
         "id": "power",
-        "name": "Power",
+        "name": "Power Systems",
         "icon": "⚡",
         "topics": [
             "Transformers",
@@ -1163,7 +1153,7 @@ const ELECTRICAL_COMPUTER_SUBJECTS = [
     },
     {
         "id": "software",
-        "name": "Software Development",
+        "name": "Software Engineering",
         "icon": "💻",
         "topics": [
             "Algorithms",
