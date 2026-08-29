@@ -774,12 +774,130 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "chapter": "Time Value of Money",
+                    "topics": [
+                        {
+                            "topic": "Discounted Cash Flow Factors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Non-Annual Compounding",
+                    "topics": [
+                        {
+                            "topic": "Non-Annual Compounding",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Inflation",
+                    "topics": [
+                        {
+                            "topic": "Inflation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Capitalized Costs",
+                    "topics": [
+                        {
+                            "topic": "Capitalized Costs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Break-even Analysis",
+                    "topics": [
+                        {
+                            "topic": "Break-even Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Cost Types and Breakdowns",
+                    "topics": [
+                        {
+                            "topic": "Cost Types",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Economic Analyses",
+                    "topics": [
+                        {
+                            "topic": "Cost-Benefit Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Overhead Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Payback Period Analyses",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
         {
             "subject": "Ethics and Professional Practice",
             "chapters": [
+                {
+                    "chapter": "Intellectual Property",
+                    "topics": [
+                        {
+                            "topic": "Introduction to Intellectual Property",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Patents and Copyrights",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Trade Secrets",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Trademarks",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
                 {
                     "chapter": "Public Safety, Health, Welfare",
                     "topics": [
@@ -812,6 +930,17 @@
                     "topics": [
                         {
                             "topic": "Resonance",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Laplace Transforms",
+                    "topics": [
+                        {
+                            "topic": "Laplace Transform",
                             "subtopics": [
                                 "Overview"
                             ]

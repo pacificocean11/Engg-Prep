@@ -216,6 +216,51 @@
                     ]
                 },
                 {
+                    "chapter": "Basic Safety Equipment",
+                    "topics": [
+                        {
+                            "topic": "Emergency Shutoffs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Fire Prevention and Control",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Pressure-Relief Valves",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Gas Detection and Monitoring",
+                    "topics": [
+                        {
+                            "topic": "Gas Detection and Monitoring",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Electrical safety",
+                    "topics": [
+                        {
+                            "topic": "Effect of Electrical Current on Human Body",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "chapter": "Hazard Communications",
                     "topics": [
                         {
@@ -261,51 +306,6 @@
                         },
                         {
                             "topic": "Ventilation Rates",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Electrical safety",
-                    "topics": [
-                        {
-                            "topic": "Effect of Electrical Current on Human Body",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Basic Safety Equipment",
-                    "topics": [
-                        {
-                            "topic": "Emergency Shutoffs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Fire Prevention and Control",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pressure-Relief Valves",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Gas Detection and Monitoring",
-                    "topics": [
-                        {
-                            "topic": "Gas Detection and Monitoring",
                             "subtopics": [
                                 "Overview"
                             ]

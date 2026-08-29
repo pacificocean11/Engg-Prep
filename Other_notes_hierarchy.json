@@ -318,6 +318,47 @@
             "subject": "Safety, Health, and Environment",
             "chapters": [
                 {
+                    "chapter": "Industrial Hygiene",
+                    "topics": [
+                        {
+                            "topic": "Biohazards",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Carcinogens",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Exposure Limits",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Half-life",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Radiation Exposure",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Toxicology",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "chapter": "Basic Safety Equipment",
                     "topics": [
                         {
@@ -341,16 +382,10 @@
                     ]
                 },
                 {
-                    "chapter": "Confined Space Entry and Ventilation Rates",
+                    "chapter": "Gas Detection and Monitoring",
                     "topics": [
                         {
-                            "topic": "Confined Space Entry",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Ventilation Rates",
+                            "topic": "Gas Detection and Monitoring",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -362,17 +397,6 @@
                     "topics": [
                         {
                             "topic": "Effect of Electrical Current on Human Body",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Gas Detection and Monitoring",
-                    "topics": [
-                        {
-                            "topic": "Gas Detection and Monitoring",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -415,40 +439,16 @@
                     ]
                 },
                 {
-                    "chapter": "Industrial Hygiene",
+                    "chapter": "Confined Space Entry and Ventilation Rates",
                     "topics": [
                         {
-                            "topic": "Biohazards",
+                            "topic": "Confined Space Entry",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Carcinogens",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Exposure Limits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Half-life",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Radiation Exposure",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Toxicology",
+                            "topic": "Ventilation Rates",
                             "subtopics": [
                                 "Overview"
                             ]

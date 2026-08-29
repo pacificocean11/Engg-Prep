@@ -7,6 +7,7 @@
     "dev": "npx http-server -p 8000 -c-1",
     "sync": "node scripts/sync-assets.js",
     "sync-db": "node scripts/generate-index.js && node scripts/migrate-to-firestore.js",
+    "active-users": "node scripts/report-active-users.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
