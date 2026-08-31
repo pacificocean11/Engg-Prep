@@ -2,6 +2,39 @@
     "discipline": "Industrial",
     "subjects": [
         {
+            "subject": "Mathematics",
+            "chapters": [
+                {
+                    "chapter": "Analytic Geometry",
+                    "topics": [
+                        {
+                            "topic": "Areas and Volumes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Calculus",
+                    "topics": [
+                        {
+                            "topic": "Progressions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Series",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "subject": "Engineering Economics",
             "chapters": [
                 {
@@ -44,6 +77,124 @@
                         },
                         {
                             "topic": "Internal Rate of Return",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Probability and Statistics",
+            "chapters": [
+                {
+                    "chapter": "Design of Experiments",
+                    "topics": [
+                        {
+                            "topic": "Factorial Designs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Linear Regression",
+                    "topics": [
+                        {
+                            "topic": "Parameter Estimation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Residual Analysis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Probability Distributions",
+                    "topics": [
+                        {
+                            "topic": "Permutations and Combinations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Modeling and Quantitative Analysis",
+            "chapters": [
+                {
+                    "chapter": "Data, Logic Development, and Analytics",
+                    "topics": [
+                        {
+                            "topic": "Algorithms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Data Science Techniques",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Databases",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Linear Programming and Optimization",
+                    "topics": [
+                        {
+                            "topic": "Formulation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Interpretation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Solution",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Stochastic Models and Simulation",
+                    "topics": [
+                        {
+                            "topic": "Inverse Probability Functions",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Markov Processes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Queuing",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -177,6 +328,121 @@
                         },
                         {
                             "topic": "WBS",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Manufacturing, Service, and Other Production Systems",
+            "chapters": [
+                {
+                    "chapter": "Forecasting",
+                    "topics": [
+                        {
+                            "topic": "Exponential Smoothing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Moving Average",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Tracking Signals",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Manufacturing and Service Systems",
+                    "topics": [
+                        {
+                            "topic": "Automation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Energy Management",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Line Balancing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Measurement",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Throughput",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Planning and Scheduling",
+                    "topics": [
+                        {
+                            "topic": "Aggregate Planning",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Inventory",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "MRP",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sequencing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Theory of Constraints",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Process Improvements",
+                    "topics": [
+                        {
+                            "topic": "Lean Systems",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Value Engineering",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -370,25 +636,13 @@
             ]
         },
         {
-            "subject": "Manufacturing, Service, and Other Production Systems",
+            "subject": "Work Design",
             "chapters": [
                 {
-                    "chapter": "Forecasting",
+                    "chapter": "Learning Curves",
                     "topics": [
                         {
-                            "topic": "Exponential Smoothing",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Moving Average",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Tracking Signals",
+                            "topic": "Learning Curves",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -396,34 +650,22 @@
                     ]
                 },
                 {
-                    "chapter": "Manufacturing and Service Systems",
+                    "chapter": "Methods Analysis",
                     "topics": [
                         {
-                            "topic": "Automation",
+                            "topic": "Charting",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Energy Management",
+                            "topic": "Motion Economy",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Line Balancing",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Measurement",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Throughput",
+                            "topic": "Workstation Design",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -431,202 +673,28 @@
                     ]
                 },
                 {
-                    "chapter": "Planning and Scheduling",
+                    "chapter": "Work Measurement",
                     "topics": [
                         {
-                            "topic": "Aggregate Planning",
+                            "topic": "Predetermined Time Systems",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Inventory",
+                            "topic": "Standards",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "MRP",
+                            "topic": "Time Study",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Sequencing",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Theory of Constraints",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Process Improvements",
-                    "topics": [
-                        {
-                            "topic": "Lean Systems",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Value Engineering",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Mathematics",
-            "chapters": [
-                {
-                    "chapter": "Analytic Geometry",
-                    "topics": [
-                        {
-                            "topic": "Areas and Volumes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Calculus",
-                    "topics": [
-                        {
-                            "topic": "Progressions",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Series",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Modeling and Quantitative Analysis",
-            "chapters": [
-                {
-                    "chapter": "Data, Logic Development, and Analytics",
-                    "topics": [
-                        {
-                            "topic": "Algorithms",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Data Science Techniques",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Databases",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Linear Programming and Optimization",
-                    "topics": [
-                        {
-                            "topic": "Formulation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Interpretation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Solution",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Stochastic Models and Simulation",
-                    "topics": [
-                        {
-                            "topic": "Inverse Probability Functions",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Markov Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Queuing",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Probability and Statistics",
-            "chapters": [
-                {
-                    "chapter": "Design of Experiments",
-                    "topics": [
-                        {
-                            "topic": "Factorial Designs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Linear Regression",
-                    "topics": [
-                        {
-                            "topic": "Parameter Estimation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Residual Analysis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Probability Distributions",
-                    "topics": [
-                        {
-                            "topic": "Permutations and Combinations",
+                            "topic": "Work Sampling",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -717,33 +785,6 @@
             ]
         },
         {
-            "subject": "Solid and Hazardous Waste",
-            "chapters": [
-                {
-                    "chapter": "Solid Waste Disposal",
-                    "topics": [
-                        {
-                            "topic": "Gas Collection",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Solid Waste Management",
-                    "topics": [
-                        {
-                            "topic": "Recycling of Solid Waste",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "subject": "Systems Engineering, Analysis, and Design",
             "chapters": [
                 {
@@ -817,13 +858,24 @@
             ]
         },
         {
-            "subject": "Water and Wastewater",
+            "subject": "Solid and Hazardous Waste",
             "chapters": [
                 {
-                    "chapter": "Water and Wastewater Characteristics",
+                    "chapter": "Solid Waste Disposal",
                     "topics": [
                         {
-                            "topic": "Biological Characteristics",
+                            "topic": "Gas Collection",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Solid Waste Management",
+                    "topics": [
+                        {
+                            "topic": "Recycling of Solid Waste",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -833,65 +885,13 @@
             ]
         },
         {
-            "subject": "Work Design",
+            "subject": "Water and Wastewater",
             "chapters": [
                 {
-                    "chapter": "Learning Curves",
+                    "chapter": "Water and Wastewater Characteristics",
                     "topics": [
                         {
-                            "topic": "Learning Curves",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Methods Analysis",
-                    "topics": [
-                        {
-                            "topic": "Charting",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Motion Economy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Workstation Design",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Work Measurement",
-                    "topics": [
-                        {
-                            "topic": "Predetermined Time Systems",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Standards",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Time Study",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Work Sampling",
+                            "topic": "Biological Characteristics",
                             "subtopics": [
                                 "Overview"
                             ]

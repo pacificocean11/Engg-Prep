@@ -1348,6 +1348,54 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 if (idxB === -1) idxB = 999;
                 return idxA - idxB;
             });
+        } else if (currentDiscipline === 'Industrial') {
+            const industrialOrder = [
+                "Mathematics",
+                "Engineering Sciences",
+                "Ethics and Professional Practice",
+                "Engineering Economics",
+                "Probability and Statistics",
+                "Modeling and Quantitative Analysis",
+                "Engineering Management",
+                "Manufacturing, Service, and Other Production Systems",
+                "Facilities and Supply Chain",
+                "Human Factors, Ergonomics, and Safety",
+                "Work Design",
+                "Quality",
+                "Systems Engineering, Analysis, and Design"
+            ];
+            subjectKeys.sort((a, b) => {
+                let idxA = industrialOrder.indexOf(a);
+                let idxB = industrialOrder.indexOf(b);
+                if (idxA === -1) idxA = 999;
+                if (idxB === -1) idxB = 999;
+                return idxA - idxB;
+            });
+        } else if (currentDiscipline === 'Environmental' || currentDiscipline.includes('Environmental')) {
+            const envOrder = [
+                "Mathematics",
+                "Probability and Statistics",
+                "Ethics and Professional Practice",
+                "Engineering Economics",
+                "Fundamental Principles",
+                "Environmental Chemistry",
+                "Health Hazards and Risk Assessment",
+                "Fluid Mechanics and Hydraulics",
+                "Thermodynamics",
+                "Surface Water Resources and Hydrology",
+                "Groundwater, Soils, and Sediments",
+                "Water and Wastewater",
+                "Air Quality and Control",
+                "Solid and Hazardous Waste",
+                "Energy and Environment"
+            ];
+            subjectKeys.sort((a, b) => {
+                let idxA = envOrder.indexOf(a);
+                let idxB = envOrder.indexOf(b);
+                if (idxA === -1) idxA = 999;
+                if (idxB === -1) idxB = 999;
+                return idxA - idxB;
+            });
         }
 
         let idx = 0;
@@ -1649,6 +1697,23 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 }
                 
                 contentDiv.innerHTML = html;
+                
+                // Re-create TikZ scripts and trigger window load so TikZJax catches them
+                const tikzScripts = contentDiv.querySelectorAll('script[type="text/tikz"]');
+                if (tikzScripts.length > 0) {
+                    tikzScripts.forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        newScript.type = 'text/tikz';
+                        newScript.textContent = oldScript.textContent || oldScript.innerHTML;
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+                    
+                    const trigger = () => window.dispatchEvent(new Event('load'));
+                    setTimeout(trigger, 50);
+                    setTimeout(trigger, 200);
+                    setTimeout(trigger, 500);
+                }
+                
                 const imgs = contentDiv.querySelectorAll('img');
                 imgs.forEach(img => {
                     img.classList.add('max-w-full', 'rounded', 'shadow-sm', 'inline-block');

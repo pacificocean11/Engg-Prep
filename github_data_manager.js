@@ -67,12 +67,26 @@
             return;
         }
 
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
         console.log(`📡 Setting up Firestore sync listener for document: ${docId}`);
         
         try {
             updateSyncStatus(navigator.onLine ? 'syncing' : 'offline');
+
+            let initialListenerFired = false;
+            if (isLocal) {
+                setTimeout(() => {
+                    if (!initialListenerFired) {
+                        console.warn("⚠️ Firestore listener timed out on localhost. Setting sync status to local.");
+                        updateSyncStatus('local');
+                    }
+                }, 2500);
+            }
+
             firestoreSyncUnsubscribe = window.firebaseDb.collection("users").doc(docId)
                 .onSnapshot({ includeMetadataChanges: true }, (docSnap) => {
+                    initialListenerFired = true;
                     if (!navigator.onLine) {
                         updateSyncStatus('offline');
                         return;
@@ -94,11 +108,11 @@
                     }
                 }, (error) => {
                     console.error("❌ Firestore sync listener error:", error);
-                    updateSyncStatus('error');
+                    updateSyncStatus('local');
                 });
         } catch (e) {
             console.error("❌ Failed to attach Firestore sync listener:", e);
-            updateSyncStatus('error');
+            updateSyncStatus('local');
         }
     }
 
@@ -473,6 +487,7 @@
             }
         } catch (error) {
             console.error("❌ Firebase load failed:", error);
+            if (typeof updateSyncStatus === 'function') updateSyncStatus('local');
             throw error; // Rethrow to prevent subsequent syncToFirebase overwrites
         }
     }

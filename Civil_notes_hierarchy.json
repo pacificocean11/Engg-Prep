@@ -89,6 +89,17 @@
                     ]
                 },
                 {
+                    "chapter": "Interpretation of engineering drawings",
+                    "topics": [
+                        {
+                            "topic": "Engineering Drawing",
+                            "subtopics": [
+                                "Elements of Engineering Drawing"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "chapter": "Project Administration",
                     "topics": [
                         {

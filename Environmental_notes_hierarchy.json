@@ -2,214 +2,13 @@
     "discipline": "Environmental",
     "subjects": [
         {
-            "subject": "Air Quality and Control",
+            "subject": "Fundamental Principles",
             "chapters": [
                 {
-                    "chapter": "Ambient and Indoor Air Quality",
+                    "chapter": "Population Projections and Demand Calculations",
                     "topics": [
                         {
-                            "topic": "Air Quality Criteria",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Toxic and Hazardous Air Pollutants",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Atmospheric Modeling and Meteorology",
-                    "topics": [
-                        {
-                            "topic": "Dispersion Modeling",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Lapse Rates",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Stability Classes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Emissions",
-                    "topics": [
-                        {
-                            "topic": "Emission Factors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Emission Rates",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Gas Treatment Technologies",
-                    "topics": [
-                        {
-                            "topic": "Adsorbers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Biofiltration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Catalytic Reducers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Incineration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Scrubbers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Indoor Air Quality Modeling and Controls",
-                    "topics": [
-                        {
-                            "topic": "Air Exchanges",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Steady-State Reactor Model",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Unsteady-State Reactor Model",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Mass and Energy Balances",
-                    "topics": [
-                        {
-                            "topic": "Heating Values",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Loading Rates",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "STP Basis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Particle Treatment Technologies",
-                    "topics": [
-                        {
-                            "topic": "Baghouses",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Cyclones",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Electrostatic Precipitators",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Energy and Environment",
-            "chapters": [
-                {
-                    "chapter": "Energy Sources Concepts",
-                    "topics": [
-                        {
-                            "topic": "Alternative Energy Sources",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Conventional Energy Sources",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Environmental Impact of Energy Sources and Production",
-                    "topics": [
-                        {
-                            "topic": "Carbon Footprint",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Greenhouse Gas Production",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thermal Needs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Water Needs",
+                            "topic": "Demand Calculations",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -258,131 +57,6 @@
             ]
         },
         {
-            "subject": "Fundamental Principles",
-            "chapters": [
-                {
-                    "chapter": "Population Projections and Demand Calculations",
-                    "topics": [
-                        {
-                            "topic": "Demand Calculations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Groundwater, Soils, and Sediments",
-            "chapters": [
-                {
-                    "chapter": "Basic Hydrogeology",
-                    "topics": [
-                        {
-                            "topic": "Aquifer Properties",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Soil Characteristics",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Subsurface",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Drawdown",
-                    "topics": [
-                        {
-                            "topic": "Dupuit",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Jacob",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Theis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thiem",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Groundwater Flow",
-                    "topics": [
-                        {
-                            "topic": "Darcy's Law",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Gradient",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Specific Capacity",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Transport Mechanisms",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Velocity",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Remediation of Soil, Sediment, and/or Groundwater",
-                    "topics": [
-                        {
-                            "topic": "Ex-Situ-In-Situ Treatment",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Recovery",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "subject": "Health Hazards and Risk Assessment",
             "chapters": [
                 {
@@ -407,142 +81,6 @@
                         },
                         {
                             "topic": "Safety Screening",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Safety, Health, and Environment",
-            "chapters": [
-                {
-                    "chapter": "Dose-response toxicity",
-                    "topics": [
-                        {
-                            "topic": "Noncarcinogens",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Solid and Hazardous Waste",
-            "chapters": [
-                {
-                    "chapter": "Hazardous and Radioactive Waste Treatment and Disposal",
-                    "topics": [
-                        {
-                            "topic": "Biological Disposal",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Chemical Disposal",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Physical Disposal",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thermal Disposal",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Hazardous Waste Compatibility",
-                    "topics": [
-                        {
-                            "topic": "Hazardous Waste Compatibility",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Site Characterization",
-                    "topics": [
-                        {
-                            "topic": "Monitoring",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Remedial Investigation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Sampling",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Solid Waste Disposal",
-                    "topics": [
-                        {
-                            "topic": "Landfills",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Leachate",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Solid Waste Management",
-                    "topics": [
-                        {
-                            "topic": "Collection of Solid Waste",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Composting of Solid Waste",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Storage of Solid Waste",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Transportation of Solid Waste",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Waste to Energy",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -699,6 +237,115 @@
                         },
                         {
                             "topic": "Water Storage Sizing",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Groundwater, Soils, and Sediments",
+            "chapters": [
+                {
+                    "chapter": "Basic Hydrogeology",
+                    "topics": [
+                        {
+                            "topic": "Aquifer Properties",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Soil Characteristics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Subsurface",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Drawdown",
+                    "topics": [
+                        {
+                            "topic": "Dupuit",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Jacob",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Theis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thiem",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Groundwater Flow",
+                    "topics": [
+                        {
+                            "topic": "Darcy's Law",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Gradient",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Specific Capacity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transport Mechanisms",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Velocity",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Remediation of Soil, Sediment, and/or Groundwater",
+                    "topics": [
+                        {
+                            "topic": "Ex-Situ-In-Situ Treatment",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Recovery",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -919,6 +566,359 @@
                     "topics": [
                         {
                             "topic": "Water Conservation and Reuse",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Air Quality and Control",
+            "chapters": [
+                {
+                    "chapter": "Ambient and Indoor Air Quality",
+                    "topics": [
+                        {
+                            "topic": "Air Quality Criteria",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Toxic and Hazardous Air Pollutants",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Atmospheric Modeling and Meteorology",
+                    "topics": [
+                        {
+                            "topic": "Dispersion Modeling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Lapse Rates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Stability Classes",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Emissions",
+                    "topics": [
+                        {
+                            "topic": "Emission Factors",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Emission Rates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Gas Treatment Technologies",
+                    "topics": [
+                        {
+                            "topic": "Adsorbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Biofiltration",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Catalytic Reducers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Incineration",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Scrubbers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Indoor Air Quality Modeling and Controls",
+                    "topics": [
+                        {
+                            "topic": "Air Exchanges",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Steady-State Reactor Model",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Unsteady-State Reactor Model",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Mass and Energy Balances",
+                    "topics": [
+                        {
+                            "topic": "Heating Values",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Loading Rates",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "STP Basis",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Particle Treatment Technologies",
+                    "topics": [
+                        {
+                            "topic": "Baghouses",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Cyclones",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Electrostatic Precipitators",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Solid and Hazardous Waste",
+            "chapters": [
+                {
+                    "chapter": "Hazardous and Radioactive Waste Treatment and Disposal",
+                    "topics": [
+                        {
+                            "topic": "Biological Disposal",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Chemical Disposal",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Physical Disposal",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thermal Disposal",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Hazardous Waste Compatibility",
+                    "topics": [
+                        {
+                            "topic": "Hazardous Waste Compatibility",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Site Characterization",
+                    "topics": [
+                        {
+                            "topic": "Monitoring",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Remedial Investigation",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Sampling",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Solid Waste Disposal",
+                    "topics": [
+                        {
+                            "topic": "Landfills",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Leachate",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Solid Waste Management",
+                    "topics": [
+                        {
+                            "topic": "Collection of Solid Waste",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Composting of Solid Waste",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Storage of Solid Waste",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Transportation of Solid Waste",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Waste to Energy",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Energy and Environment",
+            "chapters": [
+                {
+                    "chapter": "Energy Sources Concepts",
+                    "topics": [
+                        {
+                            "topic": "Alternative Energy Sources",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Conventional Energy Sources",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "chapter": "Environmental Impact of Energy Sources and Production",
+                    "topics": [
+                        {
+                            "topic": "Carbon Footprint",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Greenhouse Gas Production",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Thermal Needs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Water Needs",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Safety, Health, and Environment",
+            "chapters": [
+                {
+                    "chapter": "Dose-response toxicity",
+                    "topics": [
+                        {
+                            "topic": "Noncarcinogens",
                             "subtopics": [
                                 "Overview"
                             ]

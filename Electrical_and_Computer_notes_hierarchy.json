@@ -405,21 +405,16 @@
                     ]
                 },
                 {
-                    "chapter": "Flip-flops and Counters",
-                    "topics": [
-                        {
-                            "topic": "J-K Flip Flop",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
                     "chapter": "Flip-Flops and Counters",
                     "topics": [
                         {
                             "topic": "D Flip-Flop",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "J-K Flip Flop",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -649,7 +644,13 @@
                     "chapter": "Amplifiers",
                     "topics": [
                         {
-                            "topic": "Amplifiers",
+                            "topic": "BJT Amplifier Configurations",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "MOSFET Amplifier Configurations",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -660,19 +661,13 @@
                     "chapter": "Discrete Devices",
                     "topics": [
                         {
-                            "topic": "Diodes",
+                            "topic": "Diodes & Applications",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Thyristors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Transistors",
+                            "topic": "BJT & MOSFET Operating Regions",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -683,19 +678,13 @@
                     "chapter": "Instrumentation",
                     "topics": [
                         {
-                            "topic": "Data Acquisition",
+                            "topic": "Measurement & Sensors",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Measurements",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Transducers",
+                            "topic": "Data Acquisition (ADC & DAC)",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -706,7 +695,25 @@
                     "chapter": "OPAMP",
                     "topics": [
                         {
-                            "topic": "Ideal OPAMP",
+                            "topic": "Ideal OPAMP Characteristics",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Inverting & Non-Inverting Amplifiers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Summing & Difference Amplifiers",
+                            "subtopics": [
+                                "Overview"
+                            ]
+                        },
+                        {
+                            "topic": "Integrators & Differentiators",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -717,7 +724,7 @@
                     "chapter": "Operational Amplifiers",
                     "topics": [
                         {
-                            "topic": "Nonideal OPAMP",
+                            "topic": "Non-Ideal Characteristics",
                             "subtopics": [
                                 "Overview"
                             ]
@@ -728,19 +735,13 @@
                     "chapter": "Power Electronics",
                     "topics": [
                         {
-                            "topic": "Converters",
+                            "topic": "DC-DC Converters",
                             "subtopics": [
                                 "Overview"
                             ]
                         },
                         {
-                            "topic": "Inverters",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Rectifiers",
+                            "topic": "Thyristors & Inverters",
                             "subtopics": [
                                 "Overview"
                             ]
