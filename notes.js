@@ -880,6 +880,74 @@ const notesData = [
   {
     "discipline": "Chemical",
     "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Equation of a Straight Line",
+    "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Chemical",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Chemical",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Parallel and Perpendicular Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png\" alt=\"Slopes of perpendicular lines\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Slopes_of_perpendicular_lines.png\">Brigban</a>, CC0, via Wikimedia Commons</small></small></center><br/></div>For parallel lines slopes are equal i.e. \\(m_{1} = m_{2}\\)<br />\r\n\r\nFor perpendicular lines<br />\r\n\\[m_{1} * m_{2} = -1\\]\r\nor,\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$m_2 = \\dfrac{-1}{m_1}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Chemical",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Chemical",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Chemical",
+    "subject": "Mathematics",
     "chapter": "Hypothesis Testing and Design of Experiments",
     "topic": "Outlier Testing",
     "subtopic": "Overview",
@@ -3450,39 +3518,25 @@ const notesData = [
     "subject": "Mathematics and Statistics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Angle between Two Lines",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
-    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
-    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
-    "images": [
-      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Civil",
-    "subject": "Mathematics and Statistics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
-    "subtopic": "Distance Formula",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
-    "important": "",
-    "resources": "",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Civil",
-    "subject": "Mathematics and Statistics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
     "subtopic": "Equation of a Straight Line",
     "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
     "important": "",
     "resources": "",
     "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Civil",
+    "subject": "Mathematics and Statistics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
     "local_images": []
   },
   {
@@ -3504,12 +3558,26 @@ const notesData = [
     "subject": "Mathematics and Statistics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Slope of a Straight Line",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Civil",
+    "subject": "Mathematics and Statistics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
     "important": "",
     "resources": "",
     "images": [
-      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": []
   },
@@ -6742,39 +6810,25 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Angle between Two Lines",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
-    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
-    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
-    "images": [
-      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Electrical and Computer",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
-    "subtopic": "Distance Formula",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
-    "important": "",
-    "resources": "",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Electrical and Computer",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
     "subtopic": "Equation of a Straight Line",
     "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
     "important": "",
     "resources": "",
     "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Electrical and Computer",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
     "local_images": []
   },
   {
@@ -6796,12 +6850,26 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Slope of a Straight Line",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Electrical and Computer",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
     "important": "",
     "resources": "",
     "images": [
-      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": []
   },
@@ -9948,6 +10016,74 @@ const notesData = [
   {
     "discipline": "Industrial",
     "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Equation of a Straight Line",
+    "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Industrial",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Industrial",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Parallel and Perpendicular Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png\" alt=\"Slopes of perpendicular lines\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Slopes_of_perpendicular_lines.png\">Brigban</a>, CC0, via Wikimedia Commons</small></small></center><br/></div>For parallel lines slopes are equal i.e. \\(m_{1} = m_{2}\\)<br />\r\n\r\nFor perpendicular lines<br />\r\n\\[m_{1} * m_{2} = -1\\]\r\nor,\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$m_2 = \\dfrac{-1}{m_1}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Industrial",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Industrial",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Industrial",
+    "subject": "Mathematics",
     "chapter": "Calculus",
     "topic": "Progressions",
     "subtopic": "Overview",
@@ -10628,39 +10764,25 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Angle between Two Lines",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
-    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
-    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
-    "images": [
-      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Mechanical",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
-    "subtopic": "Distance Formula",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
-    "important": "",
-    "resources": "",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Mechanical",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
     "subtopic": "Equation of a Straight Line",
     "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
     "important": "",
     "resources": "",
     "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
     "local_images": []
   },
   {
@@ -10682,12 +10804,26 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Slope of a Straight Line",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
     "important": "",
     "resources": "",
     "images": [
-      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": []
   },
@@ -16972,39 +17108,25 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Angle between Two Lines",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
-    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
-    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
-    "images": [
-      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Other",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
-    "subtopic": "Distance Formula",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
-    "important": "",
-    "resources": "",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Other",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
     "subtopic": "Equation of a Straight Line",
     "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
     "important": "",
     "resources": "",
     "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Other",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
     "local_images": []
   },
   {
@@ -17026,12 +17148,26 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Slope of a Straight Line",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Other",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
     "important": "",
     "resources": "",
     "images": [
-      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": []
   },
@@ -19308,39 +19444,25 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Angle between Two Lines",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
-    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
-    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
-    "images": [
-      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Environmental",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
-    "subtopic": "Distance Formula",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
-    "important": "",
-    "resources": "",
-    "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
-    ],
-    "local_images": []
-  },
-  {
-    "discipline": "Environmental",
-    "subject": "Mathematics",
-    "chapter": "Analytic Geometry",
-    "topic": "Straight Line",
     "subtopic": "Equation of a Straight Line",
     "content_html": "<p>The equation of a straight line (or any curve) is the relation between the x and y (and z) coordinates of all points lying on it.<br />\r\nThe general form of the equation of a straight line is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$Ax + By + C = 0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>\r\n</p>\r\n\r\n\r\n\r\n\r\n<section id=\"services\" class=\"services\">\r\n\r\n  <div class=\"container-fluid\" data-aos=\"fade-up\">\r\n\r\n    <header class=\"section-header\">\r\n      <p>Various forms of equations of Straight Line</p>\r\n    </header>\r\n\r\n    <div class=\"row gy-4\">\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"200\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Point Format:</h3><br/>\r\n          <div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y - y_{1} = m (x - x_{1})$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where \\(x_{1}\\) and \\(y_{1}\\) are the coordinates of the point through which the line passes.</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"800\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Slope Intercept Format:</h3>\r\n          <center><p><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21468&authkey=%21AMitb6PBUnCvkCg&width=340\" width=\"340\" /></p></center>\r\n      <p class=\"card-text\"><p>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$y = mx + b$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/></p>\r\n<p>where m = slope and b = y-intercept<br />\r\nFor the above line, y-intercept = 1, and<br />\r\nslope = \\(\\dfrac{\\mathrm{Rise}}{\\mathrm{Run}}\\) = \\(\\dfrac{2}{4}\\) = \\(\\dfrac{1}{2}\\)<br />\r\nSo the equation will be, \\[y = 0.5x + 1\\] \\[2y = x + 2\\] \\[x - 2y + 2 = 0\\]</p>\r\n          \r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-lg-4 col-md-6\" data-aos=\"flip-right\" data-aos-delay=\"1400\">\r\n        <div class=\"service-box orange\">\r\n          <h3>Double Intercept Format:</h3><br/>\r\n          <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21455&authkey=%21AGzML_9MDejqf2g&width=340\" width=\"340\"  /></center>\r\n      <p class=\"card-text\"><p>\\[\\dfrac{x}{a}+\\dfrac{y}{b} = 1\\]</p>\r\n<p>where a = x intercept and b = y intercept<br />    \r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>",
     "important": "",
     "resources": "",
     "images": [],
+    "local_images": []
+  },
+  {
+    "discipline": "Environmental",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Slope of a Straight Line",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "important": "",
+    "resources": "",
+    "images": [
+      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+    ],
     "local_images": []
   },
   {
@@ -19362,12 +19484,26 @@ const notesData = [
     "subject": "Mathematics",
     "chapter": "Analytic Geometry",
     "topic": "Straight Line",
-    "subtopic": "Slope of a Straight Line",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs\" style=\"max-width: 50vh;\" /></div><p><strong>Slope</strong> of a straight line gives you an idea about its inclination with reference to x-axis. Slope is also referred as <strong>gradient</strong>.</p>\r\n                                                \\[\\mathrm{Slope \\ of \\ a \\ straight \\ line} = \\dfrac{\\mathrm{Rise}}{\\mathrm{Run}} = \\dfrac{\\Delta y}{\\Delta x}\\]\r\n                                                <div class=\"text-center\">\r\n                                                <button type=\"button\" class=\"btn shadow-lg p-3 mb-5 bg-body rounded\">$m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}$ <span class=\"text-muted\">&emsp; ..&emsp; ..&emsp; Page 35</span></button>\r\n                                                </div>",
+    "subtopic": "Angle between Two Lines",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438\" width=\"436\" height=\"438\" /></div>Angle between two straight lines is given by: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div><br/>",
+    "important": "Slope: \\[m = \\dfrac{y_{2}-y_{1}}{x_{2}-x_{1}}\\]\r\n\r\nSlope-Intercept form: \\[y = mx + b\\]\r\n\r\nSlope Point Format: \\[y - y_{1} = m (x - x_{1})\\]\r\n\r\nAngle between two lines:\r\n\\[\\alpha = \\tan^{-1}\\left(\\dfrac{m_{2}-m_{1}}{1+ m_{1}m_{2}}\\right)\\]\r\n\r\n\\[d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o6XGCwggGALrona7bBE_evIq-OwC1F9e/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1BOpsJjbHDaG8MP6RfXTrnTDQ6HtrGbrt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13R7-HC6zges40j8nT0CZhAxsqKEjWLj9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.52% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1009790548?h=e833a6ae80&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Straight Lines\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
+    "images": [
+      "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21450&authkey=%21AJk5Mm0FE218YPo&width=436&height=438"
+    ],
+    "local_images": []
+  },
+  {
+    "discipline": "Environmental",
+    "subject": "Mathematics",
+    "chapter": "Analytic Geometry",
+    "topic": "Straight Line",
+    "subtopic": "Distance Formula",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg\" alt=\"Distance Formula\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Distance_Formula.svg\">Jim.belk</a>, Public domain, via Wikimedia Commons</small></small></center><br/></div><p>Distance between two points in the space <span class=\"math inline\">\\(P_1\\)</span> <span class=\"math inline\">\\((x_1,y_1,z_1)\\)</span> and <span class=\"math inline\">\\(P_2\\)</span> <span class=\"math inline\">\\((x_2,y_2,z_2)\\)</span> is given by:</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$d = \\sqrt{(x_{2}- x_{1})^{2} + (y_{2}- y_{1})^{2} + (z_{2}- z_{1})^{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 35</span></button>\r\n</div>\r\n\r\n<p>This can be proved by repeated application of the Pythagorean Theorem.</p>",
     "important": "",
     "resources": "",
     "images": [
-      "https://onedrive.live.com/embed?resid=F728E6377CFBE3DF%214826&authkey=%21AIkqp5sqBht3OYs"
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": []
   },

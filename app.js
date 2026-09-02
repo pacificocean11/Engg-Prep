@@ -1698,6 +1698,25 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 
                 contentDiv.innerHTML = html;
                 
+                // Temporarily hide video embeds across all disciplines
+                const videoIframes = contentDiv.querySelectorAll('iframe');
+                videoIframes.forEach(iframe => {
+                    const wrapper = iframe.closest('.w-full') || iframe.closest('[style*="padding"]') || iframe;
+                    wrapper.remove();
+                });
+                const videoElements = contentDiv.querySelectorAll('video');
+                videoElements.forEach(video => video.remove());
+                const videoScripts = contentDiv.querySelectorAll('script[src*="vimeo"], script[src*="youtube"], script[src*="player"]');
+                videoScripts.forEach(script => script.remove());
+
+                // Remove empty resource containers if any
+                const resourceContainers = contentDiv.querySelectorAll('.border-t');
+                resourceContainers.forEach(container => {
+                    if (!container.textContent.trim() && container.querySelectorAll('a, img, svg').length === 0) {
+                        container.remove();
+                    }
+                });
+                
                 // Re-create TikZ scripts and trigger window load so TikZJax catches them
                 const tikzScripts = contentDiv.querySelectorAll('script[type="text/tikz"]');
                 if (tikzScripts.length > 0) {
@@ -2650,6 +2669,73 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             explanationText.appendChild(nceesDiv);
         }
 
+        // --- Engg Copilot AI Explainer (Phase 1 Embed) ---
+        if (question.copilot_explanation) {
+            const copilot = question.copilot_explanation;
+            const copilotDiv = document.createElement('div');
+            copilotDiv.className = 'mt-4 mb-2 p-5 rounded-3xl bg-gradient-to-br from-indigo-950/80 via-purple-950/60 to-slate-900/90 border border-purple-500/30 dark:border-purple-500/40 shadow-xl relative overflow-hidden backdrop-blur-xl';
+            
+            let stepsHtml = '';
+            if (copilot.step_by_step && Array.isArray(copilot.step_by_step)) {
+                stepsHtml = copilot.step_by_step.map(s => `
+                    <div class="p-3 rounded-2xl bg-slate-900/80 border border-purple-500/20 text-xs text-slate-200 shadow-sm">
+                        <span class="font-bold text-purple-300 block mb-1 text-[13px]">${s.step}</span>
+                        <span class="text-slate-300 leading-relaxed">${injectFormulaTriggers(s.explanation)}</span>
+                    </div>
+                `).join('');
+            }
+
+            let pitfallsHtml = '';
+            if (copilot.common_pitfalls && Array.isArray(copilot.common_pitfalls)) {
+                pitfallsHtml = `
+                    <div class="p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-200 leading-relaxed mt-3">
+                        <strong class="text-rose-300 block mb-1.5 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px]">warning</span> Common Traps & Exam Pitfalls
+                        </strong>
+                        <ul class="space-y-1.5 text-slate-300">
+                            ${copilot.common_pitfalls.map(p => `<li class="flex items-start gap-2"><span class="text-rose-400 font-bold">&bull;</span> <span>${injectFormulaTriggers(p)}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            copilotDiv.innerHTML = `
+                <div class="absolute -top-12 -right-12 w-36 h-36 bg-purple-500/25 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex items-center justify-between mb-3 z-10 relative">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center text-white shadow-md">
+                            <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                        </div>
+                        <div>
+                            <span class="text-xs font-black uppercase tracking-wider text-purple-300 dark:text-purple-200 block">Engg Copilot AI Explainer</span>
+                            <span class="text-[10px] text-slate-400 font-medium block -mt-0.5">Pre-Generated Step-by-Step AI Breakdown</span>
+                        </div>
+                    </div>
+                    <span class="text-[9px] font-black bg-purple-500/20 text-purple-300 border border-purple-500/40 px-2.5 py-1 rounded-full uppercase tracking-widest shadow-sm">AI Embedded</span>
+                </div>
+                ${copilot.big_idea ? `
+                <div class="mb-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-200 leading-relaxed">
+                    <strong class="text-purple-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">💡 The Big Idea:</strong>
+                    ${injectFormulaTriggers(copilot.big_idea)}
+                </div>
+                ` : ''}
+                ${copilot.ncees_shortcut ? `
+                <div class="mb-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 leading-relaxed">
+                    <strong class="text-amber-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">📖 NCEES Handbook Shortcut:</strong>
+                    ${injectFormulaTriggers(copilot.ncees_shortcut)}
+                </div>
+                ` : ''}
+                ${stepsHtml ? `
+                <div class="mb-3 space-y-2">
+                    <strong class="text-[11px] font-bold text-purple-200 uppercase tracking-wider block mb-1">🪜 Step-by-Step AI Walkthrough:</strong>
+                    ${stepsHtml}
+                </div>
+                ` : ''}
+                ${pitfallsHtml}
+            `;
+            explanationText.appendChild(copilotDiv);
+        }
+
         // --- Video Explanation (Vimeo) ---
         const videoField = question.solution && question.solution.video_explanation;
         if (videoField && videoField.trim() !== '') {
@@ -2722,7 +2808,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
 
         if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
+            setTimeout(() => {
+                window.MathJax.typesetPromise([explanationContainer]).catch(err => console.error('MathJax typeset error:', err));
+            }, 50);
         }
 
         submitBtn.classList.add('hidden');

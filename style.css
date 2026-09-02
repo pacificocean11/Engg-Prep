@@ -45,29 +45,43 @@
     padding-top: 1rem !important;
 }
 
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 110, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 110, 0.3);
+}
+
+/* Focused Session Styles (Hides Navigation) */
+.nav-hidden #main-header,
+.nav-hidden #bottom-nav {
+    display: none !important;
+}
+
+.nav-hidden main {
+    padding-top: 1rem !important;
+}
+
 body.nav-hidden {
     padding-bottom: 0 !important;
 }
 
-/* Dark Mode Overrides (B-4: Cyber Aesthetics) */
+/* Dark Mode Overrides (Cyber Aesthetics & Ambient Dark Mode) */
 html.dark {
-    --bg-main: #0f172a;
-    --card-bg: #1e293b;
+    --bg-main: #090d16;
+    --card-bg: rgba(15, 23, 42, 0.75);
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
-    --border-color: #334155;
+    --border-color: rgba(255, 255, 255, 0.08);
     --accent-navy: #f59e0b;
-    --accent-glow: transparent;
-}
-
-html.dark body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-}
-
-* {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
