@@ -15,15 +15,17 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Fix for localhost / networks getting stuck in "Checking..." mode
-// Force long polling to bypass WebSocket blocking issues
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+// Fix for localhost & live production getting stuck in "Checking..." mode
+// Force long polling globally to bypass WebSocket blocking/hanging issues across hostnames
+try {
     db.settings({ experimentalForceLongPolling: true });
-    // Also clear any lingering corrupted IndexedDB from old persistence settings
-    try {
-        db.clearPersistence().catch(() => {});
-    } catch(e) {}
+} catch (e) {
+    console.warn("⚠️ Firestore settings notice:", e);
 }
+
+try {
+    db.clearPersistence().catch(() => {});
+} catch(e) {}
 
 // Offline persistence DISABLED globally.
 // enablePersistence was corrupting IndexedDB when disk space was low,
@@ -49,7 +51,7 @@ window.saveUserProgress = async function(userId, progressData) {
         // Firestore does not support undefined values, so we clean the object.
         const cleanData = JSON.parse(JSON.stringify(progressData));
         const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Firestore write timed out after 10s')), 10000)
+            setTimeout(() => reject(new Error('Firestore write timed out after 4s')), 4000)
         );
         const setPromise = db.collection("users").doc(userId).set(cleanData, { merge: true });
         await Promise.race([setPromise, timeoutPromise]);
@@ -65,9 +67,9 @@ window.saveUserProgress = async function(userId, progressData) {
 window.getUserProgress = async function(userId) {
     if (!userId || userId === 'guest') return null;
     try {
-        // 10-second timeout to prevent "Checking" mode from hanging forever
+        // 4-second timeout to prevent "Checking" mode from hanging
         const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Firestore read timed out after 10s')), 10000)
+            setTimeout(() => reject(new Error('Firestore read timed out after 4s')), 4000)
         );
         const fetchPromise = db.collection("users").doc(userId).get();
         const docSnap = await Promise.race([fetchPromise, timeoutPromise]);
