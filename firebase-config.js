@@ -18,7 +18,7 @@ const db = firebase.firestore();
 // Fix for localhost & live production getting stuck in "Checking..." mode
 // Force long polling globally to bypass WebSocket blocking/hanging issues across hostnames
 try {
-    db.settings({ experimentalForceLongPolling: true });
+    db.settings({ experimentalForceLongPolling: true, merge: true });
 } catch (e) {
     console.warn("⚠️ Firestore settings notice:", e);
 }

@@ -2669,18 +2669,18 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             explanationText.appendChild(nceesDiv);
         }
 
-        // --- Engg Copilot AI Explainer (Phase 1 Embed) ---
+        // --- Engg.tv AI explainer (Phase 1 Embed) ---
         if (question.copilot_explanation) {
             const copilot = question.copilot_explanation;
             const copilotDiv = document.createElement('div');
-            copilotDiv.className = 'mt-4 mb-2 p-5 rounded-3xl bg-gradient-to-br from-indigo-950/80 via-purple-950/60 to-slate-900/90 border border-purple-500/30 dark:border-purple-500/40 shadow-xl relative overflow-hidden backdrop-blur-xl';
+            copilotDiv.className = 'mt-4 mb-2 p-5 rounded-3xl enggtv-ai-box relative overflow-hidden backdrop-blur-xl transition-all duration-300';
             
             let stepsHtml = '';
             if (copilot.step_by_step && Array.isArray(copilot.step_by_step)) {
                 stepsHtml = copilot.step_by_step.map(s => `
-                    <div class="p-3 rounded-2xl bg-slate-900/80 border border-purple-500/20 text-xs text-slate-200 shadow-sm">
-                        <span class="font-bold text-purple-300 block mb-1 text-[13px]">${s.step}</span>
-                        <span class="text-slate-300 leading-relaxed">${injectFormulaTriggers(s.explanation)}</span>
+                    <div class="p-3.5 rounded-2xl enggtv-ai-step text-xs shadow-sm">
+                        <span class="font-bold enggtv-ai-step-title block mb-1 text-[13px]">${s.step}</span>
+                        <span class="leading-relaxed">${injectFormulaTriggers(s.explanation)}</span>
                     </div>
                 `).join('');
             }
@@ -2688,46 +2688,46 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             let pitfallsHtml = '';
             if (copilot.common_pitfalls && Array.isArray(copilot.common_pitfalls)) {
                 pitfallsHtml = `
-                    <div class="p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-200 leading-relaxed mt-3">
-                        <strong class="text-rose-300 block mb-1.5 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                    <div class="p-3.5 rounded-2xl enggtv-ai-pitfall text-xs leading-relaxed mt-3">
+                        <strong class="enggtv-ai-pitfall-title block mb-1.5 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
                             <span class="material-symbols-outlined text-[16px]">warning</span> Common Traps & Exam Pitfalls
                         </strong>
-                        <ul class="space-y-1.5 text-slate-300">
-                            ${copilot.common_pitfalls.map(p => `<li class="flex items-start gap-2"><span class="text-rose-400 font-bold">&bull;</span> <span>${injectFormulaTriggers(p)}</span></li>`).join('')}
+                        <ul class="space-y-1.5">
+                            ${copilot.common_pitfalls.map(p => `<li class="flex items-start gap-2"><span class="enggtv-ai-pitfall-bullet font-bold">&bull;</span> <span>${injectFormulaTriggers(p)}</span></li>`).join('')}
                         </ul>
                     </div>
                 `;
             }
 
             copilotDiv.innerHTML = `
-                <div class="absolute -top-12 -right-12 w-36 h-36 bg-purple-500/25 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -top-12 -right-12 w-36 h-36 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="flex items-center justify-between mb-3 z-10 relative">
                     <div class="flex items-center gap-2.5">
-                        <div class="w-8 h-8 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center text-white shadow-md">
+                        <div class="w-8 h-8 rounded-xl enggtv-ai-icon flex items-center justify-center shadow-md">
                             <span class="material-symbols-outlined text-[18px]">smart_toy</span>
                         </div>
                         <div>
-                            <span class="text-xs font-black uppercase tracking-wider text-purple-300 dark:text-purple-200 block">Engg Copilot AI Explainer</span>
-                            <span class="text-[10px] text-slate-400 font-medium block -mt-0.5">Pre-Generated Step-by-Step AI Breakdown</span>
+                            <span class="text-xs font-black uppercase tracking-wider enggtv-ai-title block">Engg.tv AI explainer</span>
+                            <span class="text-[10px] enggtv-ai-subtitle font-medium block -mt-0.5">Pre-Generated Step-by-Step AI Breakdown</span>
                         </div>
                     </div>
-                    <span class="text-[9px] font-black bg-purple-500/20 text-purple-300 border border-purple-500/40 px-2.5 py-1 rounded-full uppercase tracking-widest shadow-sm">AI Embedded</span>
+                    <span class="text-[9px] font-black enggtv-ai-badge px-2.5 py-1 rounded-full uppercase tracking-widest shadow-sm">AI Embedded</span>
                 </div>
                 ${copilot.big_idea ? `
-                <div class="mb-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-200 leading-relaxed">
-                    <strong class="text-purple-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">💡 The Big Idea:</strong>
+                <div class="mb-3 p-3.5 rounded-2xl enggtv-ai-bigidea text-xs leading-relaxed">
+                    <strong class="enggtv-ai-bigidea-title block mb-1 text-[11px] uppercase tracking-wider font-bold">💡 The Big Idea:</strong>
                     ${injectFormulaTriggers(copilot.big_idea)}
                 </div>
                 ` : ''}
                 ${copilot.ncees_shortcut ? `
-                <div class="mb-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 leading-relaxed">
-                    <strong class="text-amber-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">📖 NCEES Handbook Shortcut:</strong>
+                <div class="mb-3 p-3.5 rounded-2xl bg-amber-500/10 dark:bg-amber-500/15 border border-amber-500/25 text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
+                    <strong class="text-amber-600 dark:text-amber-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">📖 NCEES Handbook Shortcut:</strong>
                     ${injectFormulaTriggers(copilot.ncees_shortcut)}
                 </div>
                 ` : ''}
                 ${stepsHtml ? `
                 <div class="mb-3 space-y-2">
-                    <strong class="text-[11px] font-bold text-purple-200 uppercase tracking-wider block mb-1">🪜 Step-by-Step AI Walkthrough:</strong>
+                    <strong class="text-[11px] font-bold enggtv-ai-title uppercase tracking-wider block mb-1">🪜 Step-by-Step AI Walkthrough:</strong>
                     ${stepsHtml}
                 </div>
                 ` : ''}
@@ -5104,3 +5104,184 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     // Run Init
     init();
 });
+
+// Floating ENGG.tv Calculator & Scratchpad Controller
+let is2ndActive = false;
+let calcAngleMode = 'DEG'; // 'DEG' or 'RAD'
+let calcLastAns = 0;
+
+window.toggleCalcAngleMode = function() {
+    calcAngleMode = (calcAngleMode === 'DEG') ? 'RAD' : 'DEG';
+    const btn = document.getElementById('calc-angle-mode-btn');
+    if (btn) btn.innerText = calcAngleMode;
+};
+
+window.toggleCalc2nd = function() {
+    is2ndActive = !is2ndActive;
+    const btn2nd = document.getElementById('calc-2nd-btn');
+    const badge = document.getElementById('calc-2nd-badge');
+    const sinBtn = document.getElementById('calc-btn-sin');
+    const cosBtn = document.getElementById('calc-btn-cos');
+    const tanBtn = document.getElementById('calc-btn-tan');
+    const logBtn = document.getElementById('calc-btn-log');
+    const lnBtn = document.getElementById('calc-btn-ln');
+
+    if (is2ndActive) {
+        if (btn2nd) btn2nd.className = 'p-2.5 rounded-xl bg-[#EC4899] text-white text-xs font-black border border-pink-400 shadow-md shadow-pink-500/40 active:scale-95 transition-all cursor-pointer';
+        if (badge) badge.classList.remove('hidden');
+        if (sinBtn) sinBtn.innerText = 'sin⁻¹';
+        if (cosBtn) cosBtn.innerText = 'cos⁻¹';
+        if (tanBtn) tanBtn.innerText = 'tan⁻¹';
+        if (logBtn) logBtn.innerText = '10^x';
+        if (lnBtn) lnBtn.innerText = 'e^x';
+    } else {
+        if (btn2nd) btn2nd.className = 'p-2.5 rounded-xl bg-[#2E1E12] hover:bg-[#3D2919] text-xs font-bold text-amber-400 border border-[#F59E0B]/25 active:scale-95 transition-all cursor-pointer';
+        if (badge) badge.classList.add('hidden');
+        if (sinBtn) sinBtn.innerText = 'sin';
+        if (cosBtn) cosBtn.innerText = 'cos';
+        if (tanBtn) tanBtn.innerText = 'tan';
+        if (logBtn) logBtn.innerText = 'log';
+        if (lnBtn) lnBtn.innerText = 'ln';
+    }
+};
+
+window.calcTrig = function(func) {
+    if (is2ndActive) {
+        if (func === 'sin') window.calcInput('asin(');
+        else if (func === 'cos') window.calcInput('acos(');
+        else if (func === 'tan') window.calcInput('atan(');
+        window.toggleCalc2nd();
+    } else {
+        window.calcInput(func + '(');
+    }
+};
+
+window.calcLog = function(type) {
+    if (is2ndActive) {
+        if (type === 'log') window.calcInput('10^(');
+        else if (type === 'ln') window.calcInput('e^(');
+        window.toggleCalc2nd();
+    } else {
+        window.calcInput(type + '(');
+    }
+};
+
+window.toggleCalcModal = function() {
+    const modal = document.getElementById('calc-scratchpad-modal');
+    if (!modal) return;
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('scale-95', 'opacity-0');
+            modal.classList.add('scale-100', 'opacity-100');
+        }, 10);
+    } else {
+        modal.classList.remove('scale-100', 'opacity-100');
+        modal.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 200);
+    }
+};
+
+window.setCalcTab = function(tab) {
+    const calcPanel = document.getElementById('calc-panel');
+    const scratchPanel = document.getElementById('scratch-panel');
+    const calcTabBtn = document.getElementById('calc-tab-btn');
+    const scratchTabBtn = document.getElementById('scratch-tab-btn');
+
+    if (tab === 'calc') {
+        calcPanel.classList.remove('hidden');
+        scratchPanel.classList.add('hidden');
+        calcTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-slate-950 shadow-md shadow-[#F59E0B]/30 transition-colors cursor-pointer';
+        scratchTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold text-amber-300/70 hover:text-white transition-colors cursor-pointer';
+    } else {
+        calcPanel.classList.add('hidden');
+        scratchPanel.classList.remove('hidden');
+        scratchTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-slate-950 shadow-md shadow-[#F59E0B]/30 transition-colors cursor-pointer';
+        calcTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold text-amber-300/70 hover:text-white transition-colors cursor-pointer';
+    }
+};
+
+let currentCalcExpr = '';
+window.calcInput = function(val) {
+    currentCalcExpr += val;
+    const exprEl = document.getElementById('calc-expression');
+    if (exprEl) exprEl.innerText = currentCalcExpr;
+};
+
+window.calcClear = function() {
+    currentCalcExpr = '';
+    const exprEl = document.getElementById('calc-expression');
+    const dispEl = document.getElementById('calc-display');
+    if (exprEl) exprEl.innerText = '';
+    if (dispEl) dispEl.innerText = '0';
+};
+
+window.calcBackspace = function() {
+    currentCalcExpr = currentCalcExpr.slice(0, -1);
+    const exprEl = document.getElementById('calc-expression');
+    const dispEl = document.getElementById('calc-display');
+    if (exprEl) exprEl.innerText = currentCalcExpr;
+    if (!currentCalcExpr && dispEl) dispEl.innerText = '0';
+};
+
+window.calcEvaluate = function() {
+    if (!currentCalcExpr) return;
+    const dispEl = document.getElementById('calc-display');
+    try {
+        let expr = currentCalcExpr;
+
+        // Replace ANS
+        expr = expr.replace(/ANS/g, calcLastAns);
+        // Replace e^( or e^x
+        expr = expr.replace(/e\^\(/g, 'Math.exp(');
+        // Replace 10^(
+        expr = expr.replace(/10\^\(/g, 'Math.pow(10,');
+
+        // Angle conversions
+        const degFactor = (calcAngleMode === 'DEG') ? (180 / Math.PI) : 1;
+        const toRadFactor = (calcAngleMode === 'DEG') ? (Math.PI / 180) : 1;
+
+        // Create global wrapper functions for trig evaluation
+        window._c_asin = (x) => Math.asin(x) * degFactor;
+        window._c_acos = (x) => Math.acos(x) * degFactor;
+        window._c_atan = (x) => Math.atan(x) * degFactor;
+
+        window._c_sin = (x) => Math.sin(x * toRadFactor);
+        window._c_cos = (x) => Math.cos(x * toRadFactor);
+        window._c_tan = (x) => Math.tan(x * toRadFactor);
+
+        // Sanitize trig and math expressions
+        let sanitized = expr
+            .replace(/asin\(/g, '_c_asin(')
+            .replace(/acos\(/g, '_c_acos(')
+            .replace(/atan\(/g, '_c_atan(')
+            .replace(/arcsin\(/g, '_c_asin(')
+            .replace(/arccos\(/g, '_c_acos(')
+            .replace(/arctan\(/g, '_c_atan(')
+            .replace(/sin⁻¹\(/g, '_c_asin(')
+            .replace(/cos⁻¹\(/g, '_c_acos(')
+            .replace(/tan⁻¹\(/g, '_c_atan(')
+            .replace(/(?<![a-zA-Z_])sin\(/g, '_c_sin(')
+            .replace(/(?<![a-zA-Z_])cos\(/g, '_c_cos(')
+            .replace(/(?<![a-zA-Z_])tan\(/g, '_c_tan(')
+            .replace(/sqrt\(/g, 'Math.sqrt(')
+            .replace(/log\(/g, 'Math.log10(')
+            .replace(/ln\(/g, 'Math.log(')
+            .replace(/\^/g, '**');
+
+        let result = eval(sanitized);
+        if (typeof result === 'number' && !isNaN(result)) {
+            result = Number.isInteger(result) ? result : parseFloat(result.toFixed(6));
+            calcLastAns = result;
+            if (dispEl) dispEl.innerText = result;
+        } else {
+            if (dispEl) dispEl.innerText = 'ERROR';
+        }
+    } catch (err) {
+        if (dispEl) dispEl.innerText = 'ERROR';
+    }
+};
+
+

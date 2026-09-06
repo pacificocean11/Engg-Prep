@@ -3329,3 +3329,313 @@ html.dark .btn-tts:hover {
     padding: 0.625rem 0.75rem;
 }
 
+/* ==========================================================================
+   PREMIUM DUAL-THEME AESTHETICS (DARK & LIGHT MODE)
+   ========================================================================== */
+
+/* 1. Global Theme Transitions & Soft Rendering */
+body, main, header, .card, .glass-card, button {
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. Light Mode Premium Porcelain Depth */
+html:not(.dark) {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: rgba(226, 232, 240, 0.85);
+}
+
+html:not(.dark) .glass-card, 
+html:not(.dark) .card,
+html:not(.dark) .bg-white\/80,
+html:not(.dark) .bg-white {
+    box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05), 0 1px 3px 0 rgba(15, 23, 42, 0.02);
+}
+
+html:not(.dark) .glass-card:hover,
+html:not(.dark) .card:hover {
+    box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.1), 0 4px 12px 0 rgba(15, 23, 42, 0.04);
+}
+
+/* 3. Dark Mode Cyber Midnight Depth */
+html.dark {
+    --bg-main: #0b0f19;
+    --card-bg: rgba(17, 25, 42, 0.85);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark body {
+    background-color: #0b0f19;
+}
+
+html.dark .glass-card,
+html.dark .card,
+html.dark .dark\:bg-slate-900,
+html.dark .dark\:bg-slate-900\/80 {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .glass-card:hover,
+html.dark .card:hover {
+    box-shadow: 0 12px 40px 0 rgba(245, 158, 11, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    border-color: rgba(245, 158, 11, 0.25) !important;
+}
+
+/* 4. TikZ & MathJax Circuit/Plot Inversion in Dark Mode */
+html.dark .tikz-container svg,
+html.dark #notes-content svg,
+html.dark .solution-body svg,
+html.dark #question-text-container svg {
+    filter: invert(0.92) hue-rotate(180deg);
+}
+
+/* 5. Cloud Sync Status Indicator Glow */
+#cloud-sync-indicator {
+    transition: all 0.3s ease;
+}
+#cloud-sync-indicator:hover {
+    transform: scale(1.05);
+}
+
+/* 6. Ambient Mesh Radial Backgrounds */
+html.dark body {
+    background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 40%),
+                #0b0f19 !important;
+    background-attachment: fixed;
+}
+
+html:not(.dark) body {
+    background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.03) 0%, transparent 40%),
+                #f8fafc !important;
+    background-attachment: fixed;
+}
+
+/* 7. Tabular Numerals for Jitter-Free Countdown Timers */
+.tabular-nums, #timer-display, #fe-exam-timer, #fe-break-timer, .font-tabular {
+    font-variant-numeric: tabular-nums !important;
+}
+
+/* 8. Tactile Option Card & Button Feedback */
+button:active, .option-card:active {
+    transform: scale(0.975);
+}
+
+/* 9. Math Formula Callout Block Highlights */
+.solution-body .mjx-chtml, 
+.equation-block {
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.2s ease;
+}
+
+/* 10. Interactive Quiz Card Selection States */
+.option-card {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.option-card.selected {
+    border-color: #f59e0b !important;
+    background-color: rgba(245, 158, 11, 0.1) !important;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.option-card.correct {
+    border-color: #10b981 !important;
+    background-color: rgba(16, 185, 129, 0.1) !important;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.option-card.incorrect {
+    border-color: #f43f5e !important;
+    background-color: rgba(244, 63, 94, 0.1) !important;
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.2);
+}
+
+/* 11. Ultra-Premium Pill Badges & Animations */
+.badge-pill {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 12. Engg.tv AI Explainer Brand Palette (#0D2746, #0066CC, #DC3545) */
+
+/* Light Mode AI Box */
+html:not(.dark) .enggtv-ai-box {
+    background: linear-gradient(135deg, #f0f5fc 0%, #ffffff 100%);
+    border: 1px solid rgba(0, 102, 204, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.08);
+}
+html:not(.dark) .enggtv-ai-title {
+    color: #0D2746;
+}
+html:not(.dark) .enggtv-ai-subtitle {
+    color: #475569;
+}
+html:not(.dark) .enggtv-ai-badge {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: #0066CC;
+    border: 1px solid rgba(0, 102, 204, 0.3);
+}
+html:not(.dark) .enggtv-ai-icon {
+    background: linear-gradient(135deg, #0066CC, #0D2746);
+    color: #ffffff;
+}
+html:not(.dark) .enggtv-ai-bigidea {
+    background: #ffffff;
+    border: 1px solid rgba(13, 39, 70, 0.12);
+    color: #0D2746;
+}
+html:not(.dark) .enggtv-ai-bigidea-title {
+    color: #0066CC;
+}
+html:not(.dark) .enggtv-ai-step {
+    background: #ffffff;
+    border: 1px solid rgba(0, 102, 204, 0.15);
+    color: #1e293b;
+}
+html:not(.dark) .enggtv-ai-step-title {
+    color: #0066CC;
+}
+html:not(.dark) .enggtv-ai-pitfall {
+    background: rgba(220, 53, 69, 0.06);
+    border: 1px solid rgba(220, 53, 69, 0.25);
+    color: #7f1d1d;
+}
+html:not(.dark) .enggtv-ai-pitfall-title {
+    color: #DC3545;
+}
+html:not(.dark) .enggtv-ai-pitfall-bullet {
+    color: #DC3545;
+}
+
+/* Dark Mode AI Box */
+html.dark .enggtv-ai-box {
+    background: linear-gradient(135deg, #0D2746 0%, #11233B 100%);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    box-shadow: 0 12px 35px 0 rgba(26, 18, 11, 0.4), 0 0 20px rgba(245, 158, 11, 0.15);
+}
+html.dark .enggtv-ai-title {
+    color: #FBBF24;
+}
+html.dark .enggtv-ai-subtitle {
+    color: #E2C799;
+}
+html.dark .enggtv-ai-badge {
+    background-color: rgba(245, 158, 11, 0.25);
+    color: #FBBF24;
+    border: 1px solid rgba(245, 158, 11, 0.5);
+}
+html.dark .enggtv-ai-icon {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: #0f172a;
+}
+html.dark .enggtv-ai-bigidea {
+    background: rgba(38, 26, 16, 0.7);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    color: #fff8ed;
+}
+html.dark .enggtv-ai-bigidea-title {
+    color: #FBBF24;
+}
+html.dark .enggtv-ai-step {
+    background: rgba(26, 18, 11, 0.85);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fef3c7;
+}
+html.dark .enggtv-ai-step-title {
+    color: #FBBF24;
+}
+html.dark .enggtv-ai-pitfall {
+    background: rgba(225, 29, 72, 0.15);
+    border: 1px solid rgba(225, 29, 72, 0.4);
+    color: #fecdd3;
+}
+html.dark .enggtv-ai-pitfall-title {
+    color: #FDA4AF;
+}
+html.dark .enggtv-ai-pitfall-bullet {
+    color: #E11D48;
+}
+
+/* Warm Mesh Orbs & Ambient Animations */
+#ambient-mesh-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.mesh-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: orbFloat 18s ease-in-out infinite alternate;
+}
+html.dark .mesh-orb.orb-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #f59e0b 0%, #d97706 100%);
+    top: -100px;
+    left: -100px;
+}
+html.dark .mesh-orb.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #e65100 0%, #b45309 100%);
+    bottom: -150px;
+    right: -150px;
+    animation-delay: -6s;
+}
+html.dark .mesh-orb.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #ec4899 0%, #be185d 100%);
+    top: 40%;
+    right: 20%;
+    animation-delay: -12s;
+}
+
+@keyframes orbFloat {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, 40px) scale(1.1); }
+    100% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* Luxury Warm Glassmorphic Card Class */
+.warm-glass-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html.dark .warm-glass-card {
+    background: rgba(26, 18, 11, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+html.dark .warm-glass-card:hover {
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.15), 0 0 20px rgba(245, 158, 11, 0.08);
+    transform: translateY(-2px);
+}
+
+
+
+
+
+

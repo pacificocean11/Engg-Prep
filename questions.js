@@ -18968,7 +18968,7 @@ const QUESTIONS = {
                 "step_by_step": [
                     {
                         "step": "1. Analyze Pressure",
-                        "explanation": "Increasing pressure shifts equilibrium to the side with fewer gas moles ($2 moles$ on left vs $2 moles$ on right). This shifts it right."
+                        "explanation": "Increasing pressure shifts equilibrium to the side with fewer gas moles ($4\\text{ moles}$ on left vs $2\\text{ moles}$ on right). This shifts it right."
                     },
                     {
                         "step": "2. Analyze Temperature",
