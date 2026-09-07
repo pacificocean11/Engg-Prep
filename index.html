@@ -33,10 +33,10 @@
     <meta name="description"
         content="A premium study application for the Fundamentals of Engineering (FE) Mechanical Exam. Practice questions, mock exams, and progress tracking.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/css/formula_popups.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="pwa-icon.png">
     <link rel="apple-touch-icon" href="pwa-icon.png">
     <meta name="theme-color" content="#FF006E">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -244,6 +244,45 @@
 </div>
 </section>
 <!-- Dashboard Segmented Sub-Navigation Bar -->
+<script>
+// Immediate inline tab switcher: ensures tabs switch immediately without waiting for external scripts
+window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist) {
+    var tabs = ['overview', 'analytics', 'history', 'motivation', 'peers'];
+    if (tabId === 'theory') tabId = 'motivation';
+    if (tabs.indexOf(tabId) === -1) tabId = 'overview';
+    if (persist !== false) {
+        try { localStorage.setItem('enggtv_home_tab', tabId); } catch(e) {}
+    }
+    tabs.forEach(function(t) {
+        var btn = document.getElementById('tab-btn-' + t);
+        var pane = document.getElementById('dash-pane-' + t);
+        if (btn) {
+            if (t === tabId) {
+                btn.className = 'dash-subtab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm active:scale-95';
+            } else {
+                btn.className = 'dash-subtab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white/40 dark:hover:bg-slate-800/40 active:scale-95';
+            }
+        }
+        if (pane) {
+            if (t === tabId) {
+                pane.classList.remove('hidden');
+                pane.style.display = (t === 'overview' ? 'grid' : 'block');
+                pane.style.opacity = '1';
+                pane.style.transform = 'none';
+            } else {
+                pane.classList.add('hidden');
+                pane.style.display = 'none';
+            }
+        }
+    });
+    if (tabId === 'history' && typeof window.renderStudyCalendar === 'function') window.renderStudyCalendar();
+    if (tabId === 'motivation') {
+        if (typeof window.updateMotivationWidgets === 'function') window.updateMotivationWidgets();
+        if (typeof window.initFeaturedMechanismVideo === 'function') window.initFeaturedMechanismVideo();
+    }
+    if (tabId === 'peers' && typeof window.refreshPeerTicker === 'function') window.refreshPeerTicker();
+};
+</script>
 <div class="w-full flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar py-2 my-2">
     <div class="inline-flex p-1.5 rounded-2xl glass-card border border-white/20 dark:border-slate-800 shadow-md gap-1 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md">
         <button id="tab-btn-overview" onclick="switchDashboardTab('overview')" class="dash-subtab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm active:scale-95" data-tab="overview">
@@ -2145,20 +2184,13 @@
     <script src="exam_questions.js?v=3"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=95"></script>
+    <script src="app.js?v=96"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
     <script src="js/tts.js"></script>
     <script src="js/weakness-srs.js"></script>
     <script src="js/daily-quests.js"></script>
-    <script src="js/study-calendar.js?v=1"></script>
-    <script src="js/daily-motivation.js?v=1"></script>
-    <script src="js/alumni-spotlight.js?v=1"></script>
-    <script src="js/dashboard-tabs.js?v=1"></script>
-    <script src="js/zen-study.js?v=1"></script>
-    <script src="js/featured-video.js?v=1"></script>
-    <script src="js/peer-ticker.js?v=1"></script>
 
 <div id="avatar-picker-modal" class="fixed inset-0 z-[10002] hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
   <div id="avatar-picker-sheet" class="glass-card w-full max-w-xl rounded-[40px] p-8 overflow-hidden shadow-2xl border border-white/20">

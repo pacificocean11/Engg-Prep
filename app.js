@@ -5478,4 +5478,2529 @@ window.calcEvaluate = function() {
     }
 };
 
+// =========================================================================
+// ENGG.tv DASHBOARD ENGINES (Tabs, Calendar, Motivation, Alumni, Video, Peer Ticker, Zen Mode)
+// Bundled into app.js to guarantee live-site compatibility
+// =========================================================================
+
+// --- BEGIN js/dashboard-tabs.js ---
+/**
+ * ENGG.tv - Dashboard Segmented Sub-Navigation Module
+ * Divides the Home view into 4 focused panes:
+ * 1. Overview (Launchpad, Mentoring, Readiness, Quests)
+ * 2. Analytics (Diagnostic Performance Report)
+ * 3. History (Study Calendar, Recent Activity)
+ * 4. Alumni & Theory (Engg.tv Alumni Spotlight, Daily Mindset Quotes, FE Theorems)
+ */
+
+(function() {
+    const TABS = ['overview', 'analytics', 'history', 'motivation', 'peers'];
+    let currentTab = 'overview';
+
+    function switchDashboardTab(tabId, persist = true) {
+        if (tabId === 'theory') tabId = 'motivation';
+        if (!TABS.includes(tabId)) tabId = 'overview';
+        currentTab = tabId;
+
+        if (persist) {
+            localStorage.setItem('enggtv_home_tab', tabId);
+        }
+
+        // 1. Update Tab Buttons styling
+        TABS.forEach(t => {
+            const btn = document.getElementById(`tab-btn-${t}`);
+            const pane = document.getElementById(`dash-pane-${t}`);
+
+            if (btn) {
+                if (t === tabId) {
+                    btn.className = 'dash-subtab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm active:scale-95';
+                } else {
+                    btn.className = 'dash-subtab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white/40 dark:hover:bg-slate-800/40 active:scale-95';
+                }
+            }
+
+            // 2. Update Pane visibility
+            if (pane) {
+                if (t === tabId) {
+                    pane.classList.remove('hidden');
+                    // Smooth fade-in
+                    pane.style.opacity = '0';
+                    pane.style.transform = 'translateY(6px)';
+                    setTimeout(() => {
+                        pane.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+                        pane.style.opacity = '1';
+                        pane.style.transform = 'translateY(0)';
+                    }, 20);
+                } else {
+                    pane.classList.add('hidden');
+                }
+            }
+        });
+
+        // 3. Tab-specific triggers / re-renders
+        if (tabId === 'motivation') {
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                const formulaEl = document.getElementById('daily-theorem-formula');
+                if (formulaEl) {
+                    window.MathJax.typesetPromise([formulaEl]).catch(err => console.warn('MathJax render:', err));
+                }
+            }
+            if (typeof window.initFeaturedMechanismVideo === 'function') {
+                window.initFeaturedMechanismVideo();
+            }
+        } else if (tabId === 'history') {
+            // Trigger calendar day re-render if available
+            if (typeof window.renderStudyCalendar === 'function') {
+                window.renderStudyCalendar();
+            }
+        } else if (tabId === 'peers') {
+            if (typeof window.refreshPeerTicker === 'function') {
+                window.refreshPeerTicker();
+            }
+        }
+    }
+
+    function init() {
+        const savedTab = localStorage.getItem('enggtv_home_tab') || 'overview';
+        switchDashboardTab(savedTab, false);
+
+        // Add event listeners as backup to inline onclick
+        TABS.forEach(t => {
+            const btn = document.getElementById(`tab-btn-${t}`);
+            if (btn) {
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    switchDashboardTab(t, true);
+                };
+            }
+        });
+    }
+
+    // Expose globally
+    window.switchDashboardTab = switchDashboardTab;
+    window.getActiveDashboardTab = () => currentTab;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+})();
+
+// --- END js/dashboard-tabs.js ---
+
+// --- BEGIN js/study-calendar.js ---
+/**
+ * ENGG.tv - Study History Calendar Module
+ * Provides interactive monthly calendar tracking quizzes, mock exams, and notes reviewed.
+ */
+
+(function() {
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth(); // 0-indexed
+    let selectedDateStr = formatDateKey(new Date());
+
+    function padZero(num) {
+        return num < 10 ? '0' + num : '' + num;
+    }
+
+    function formatDateKey(dateObj) {
+        const y = dateObj.getFullYear();
+        const m = padZero(dateObj.getMonth() + 1);
+        const d = padZero(dateObj.getDate());
+        return `${y}-${m}-${d}`;
+    }
+
+    function getActivitiesMap() {
+        const map = {};
+        const activities = (window.state && window.state.recentActivity) ? window.state.recentActivity : [];
+        activities.forEach(act => {
+            if (!act || !act.timestamp) return;
+            const actDate = new Date(act.timestamp);
+            const key = formatDateKey(actDate);
+            if (!map[key]) map[key] = [];
+            map[key].push(act);
+        });
+        return map;
+    }
+
+    function renderCalendar() {
+        const monthYearLabel = document.getElementById('cal-month-year');
+        const grid = document.getElementById('cal-days-grid');
+        if (!grid) return;
+
+        const date = new Date(currentYear, currentMonth, 1);
+        const monthName = date.toLocaleString('default', { month: 'long' });
+        if (monthYearLabel) {
+            monthYearLabel.textContent = `${monthName} ${currentYear}`;
+        }
+
+        grid.innerHTML = '';
+
+        // Day of week offset for Monday start:
+        // getDay(): Sunday is 0, Monday is 1, ..., Saturday is 6
+        let firstDayIndex = date.getDay() - 1;
+        if (firstDayIndex === -1) firstDayIndex = 6; // Sunday becomes index 6
+
+        const totalDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        const prevMonthTotalDays = new Date(currentYear, currentMonth, 0).getDate();
+
+        const activitiesMap = getActivitiesMap();
+        const todayKey = formatDateKey(new Date());
+
+        // Fill previous month padding days
+        for (let i = firstDayIndex; i > 0; i--) {
+            const dayNum = prevMonthTotalDays - i + 1;
+            const cell = document.createElement('div');
+            cell.className = 'text-center py-2 text-xs text-slate-300 dark:text-slate-700 select-none cursor-default font-medium';
+            cell.textContent = dayNum;
+            grid.appendChild(cell);
+        }
+
+        // Fill current month days
+        for (let day = 1; day <= totalDaysInMonth; day++) {
+            const dayKey = `${currentYear}-${padZero(currentMonth + 1)}-${padZero(day)}`;
+            const isToday = (dayKey === todayKey);
+            const isSelected = (dayKey === selectedDateStr);
+            const dayActs = activitiesMap[dayKey] || [];
+            const hasActivity = dayActs.length > 0;
+
+            const cell = document.createElement('button');
+            cell.type = 'button';
+            cell.setAttribute('data-date', dayKey);
+
+            let baseClasses = 'relative flex flex-col items-center justify-center h-10 w-full rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer ';
+
+            if (isSelected) {
+                baseClasses += 'bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 shadow-md shadow-amber-500/30 scale-105 z-10 ';
+            } else if (isToday) {
+                baseClasses += 'border-2 border-[#F59E0B] text-amber-600 dark:text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 ';
+            } else if (hasActivity) {
+                baseClasses += 'bg-slate-100 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 hover:border-amber-400 border border-slate-200 dark:border-slate-700/60 ';
+            } else {
+                baseClasses += 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 ';
+            }
+
+            cell.className = baseClasses;
+
+            // Day number
+            const numSpan = document.createElement('span');
+            numSpan.textContent = day;
+            cell.appendChild(numSpan);
+
+            // Activity dot indicator
+            if (hasActivity) {
+                const dot = document.createElement('span');
+                const dotColor = isSelected ? 'bg-slate-950' : 'bg-[#F59E0B] shadow-[0_0_6px_#f59e0b]';
+                dot.className = `w-1.5 h-1.5 rounded-full ${dotColor} mt-0.5 animate-pulse`;
+                cell.appendChild(dot);
+            }
+
+            cell.addEventListener('click', () => {
+                selectedDateStr = dayKey;
+                renderCalendar();
+                renderDayDetails(dayKey);
+            });
+
+            grid.appendChild(cell);
+        }
+
+        renderDayDetails(selectedDateStr);
+    }
+
+    function renderDayDetails(dateKey) {
+        const detailsContainer = document.getElementById('cal-day-details');
+        const selectedDateTitle = document.getElementById('cal-selected-date-title');
+        const countBadge = document.getElementById('cal-activity-count-badge');
+        if (!detailsContainer) return;
+
+        // Parse key
+        const parts = dateKey.split('-');
+        const dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+        const formattedTitle = dateObj.toLocaleDateString('en-US', {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+        });
+
+        if (selectedDateTitle) {
+            selectedDateTitle.textContent = formattedTitle;
+        }
+
+        const activitiesMap = getActivitiesMap();
+        const acts = activitiesMap[dateKey] || [];
+
+        if (countBadge) {
+            if (acts.length > 0) {
+                countBadge.textContent = `${acts.length} ${acts.length === 1 ? 'Session' : 'Sessions'}`;
+                countBadge.className = 'text-[10px] font-black bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 px-2.5 py-0.5 rounded-full uppercase tracking-wider';
+            } else {
+                countBadge.textContent = 'Rest Day';
+                countBadge.className = 'text-[10px] font-black bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700 px-2.5 py-0.5 rounded-full uppercase tracking-wider';
+            }
+        }
+
+        if (acts.length === 0) {
+            detailsContainer.innerHTML = `
+                <div class="flex flex-col items-center justify-center p-6 sm:p-8 text-center bg-slate-50/60 dark:bg-slate-900/40 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800">
+                    <span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-3xl mb-2">event_busy</span>
+                    <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">No study sessions recorded on this day.</p>
+                    <p class="text-[11px] text-slate-400 dark:text-slate-500 mb-4">Every session counts toward passing your FE exam!</p>
+                    <div class="flex items-center gap-2">
+                        <button onclick="navigateTo('study')" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold text-xs rounded-xl shadow-md shadow-amber-500/20 transition-all cursor-pointer">
+                            Start a Quiz
+                        </button>
+                        <button onclick="navigateTo('notes')" class="px-3.5 py-1.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs rounded-xl border border-slate-200 dark:border-slate-700 transition-all cursor-pointer">
+                            Browse Notes
+                        </button>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        // Render activities
+        detailsContainer.innerHTML = acts.map((act, idx) => {
+            const timeStr = new Date(act.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            if (act.type === 'notes') {
+                const subject = act.subject || 'Engineering';
+                const chapter = act.chapter || act.title || 'Overview';
+                return `
+                    <div class="p-3.5 rounded-2xl bg-amber-500/5 dark:bg-amber-400/5 border border-amber-500/20 flex items-start gap-3 transition-all hover:border-amber-500/40">
+                        <div class="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed">
+                                You studied <strong class="font-bold text-amber-600 dark:text-amber-400">${subject}</strong> notes from the <strong class="font-bold text-slate-900 dark:text-white">${chapter}</strong> chapter.
+                            </p>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-semibold tracking-wider uppercase mt-1 inline-block">${timeStr}</span>
+                        </div>
+                    </div>
+                `;
+            } else if (act.isMockExam) {
+                return `
+                    <div class="p-3.5 rounded-2xl bg-indigo-500/5 dark:bg-indigo-400/5 border border-indigo-500/20 flex items-start gap-3 transition-all hover:border-indigo-500/40">
+                        <div class="w-8 h-8 rounded-xl bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-[18px]">assignment</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed">
+                                You completed a full <strong class="font-bold text-indigo-600 dark:text-indigo-400">FE Mock Exam</strong> and scored <strong class="font-bold text-slate-900 dark:text-white">${act.score} out of ${act.attempted || 110}</strong> points (${act.accuracy}% accuracy).
+                            </p>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-semibold tracking-wider uppercase mt-1 inline-block">${timeStr}</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                const topicTitle = act.title || act.subject || 'Engineering Fundamentals';
+                return `
+                    <div class="p-3.5 rounded-2xl bg-pink-500/5 dark:bg-pink-400/5 border border-pink-500/20 flex items-start gap-3 transition-all hover:border-pink-500/40">
+                        <div class="w-8 h-8 rounded-xl bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="material-symbols-outlined text-[18px]">quiz</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed">
+                                You attempted a quiz on <strong class="font-bold text-pink-600 dark:text-pink-400">${topicTitle}</strong> and scored <strong class="font-bold text-slate-900 dark:text-white">${act.score} out of ${act.attempted || 10}</strong> points (${act.accuracy}% accuracy).
+                            </p>
+                            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-semibold tracking-wider uppercase mt-1 inline-block">${timeStr}</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }).join('');
+    }
+
+    function initControls() {
+        const prevBtn = document.getElementById('cal-btn-prev');
+        const nextBtn = document.getElementById('cal-btn-next');
+        const todayBtn = document.getElementById('cal-btn-today');
+
+        if (prevBtn) {
+            prevBtn.onclick = () => {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar();
+            };
+        }
+
+        if (nextBtn) {
+            nextBtn.onclick = () => {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar();
+            };
+        }
+
+        if (todayBtn) {
+            todayBtn.onclick = () => {
+                const now = new Date();
+                currentYear = now.getFullYear();
+                currentMonth = now.getMonth();
+                selectedDateStr = formatDateKey(now);
+                renderCalendar();
+            };
+        }
+    }
+
+    /**
+     * Record a note reading event into recentActivity
+     */
+    function logNotesStudySession(subjectTitle, chapterTitle) {
+        if (!window.state || !window.state.user || !window.state.user.username) return;
+
+        if (!Array.isArray(window.state.recentActivity)) {
+            window.state.recentActivity = [];
+        }
+
+        // Deduplication: if student reopened same chapter within 15 minutes, skip duplicate
+        const fifteenMinsAgo = Date.now() - (15 * 60 * 1000);
+        const isDuplicate = window.state.recentActivity.some(a => 
+            a.type === 'notes' && 
+            a.subject === subjectTitle && 
+            a.chapter === chapterTitle && 
+            a.timestamp > fifteenMinsAgo
+        );
+
+        if (isDuplicate) {
+            console.log(`ℹ️ Notes study session already logged recently for ${chapterTitle}`);
+            return;
+        }
+
+        const noteActivity = {
+            id: Date.now().toString(),
+            type: 'notes',
+            title: `${chapterTitle}`,
+            subject: subjectTitle,
+            chapter: chapterTitle,
+            timestamp: Date.now()
+        };
+
+        window.state.recentActivity.unshift(noteActivity);
+        if (window.state.recentActivity.length > 120) {
+            window.state.recentActivity.pop();
+        }
+
+        const activityKey = `enggtv_recent_activity_${window.state.user.username}`;
+        localStorage.setItem(activityKey, JSON.stringify(window.state.recentActivity));
+
+        console.log(`📘 Logged study session: ${subjectTitle} - ${chapterTitle}`);
+
+        // Update UI
+        if (typeof window.syncToFirebase === 'function') {
+            window.syncToFirebase();
+        }
+        if (typeof window.renderRecentActivity === 'function') {
+            window.renderRecentActivity();
+        }
+        renderCalendar();
+    }
+
+    function init() {
+        initControls();
+        renderCalendar();
+    }
+
+    // Expose functions globally
+    window.initStudyCalendar = init;
+    window.renderStudyCalendar = renderCalendar;
+    window.logNotesStudySession = logNotesStudySession;
+
+    // Auto-init when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+})();
+
+// --- END js/study-calendar.js ---
+
+// --- BEGIN js/daily-motivation.js ---
+/**
+ * ENGG.tv - Daily Motivation & Discipline FE Theorem Module
+ * Displays daily inspiring engineering quotes and discipline-specific FE exam theorems.
+ */
+
+(function() {
+    const QUOTES = [
+        {
+            quote: "Scientists study the world as it is; engineers create the world that has never been.",
+            author: "Theodore von Kármán",
+            role: "Aerospace Pioneer & Mathematician"
+        },
+        {
+            quote: "Genius is one percent inspiration, and ninety-nine percent perspiration. Keep grinding your practice problems.",
+            author: "Thomas Edison",
+            role: "Prolific Inventor"
+        },
+        {
+            quote: "The present is theirs; the future, for which I really worked, is mine.",
+            author: "Nikola Tesla",
+            role: "Father of Alternating Current"
+        },
+        {
+            quote: "What I cannot create, I do not understand. Work the equations until the physics clicks.",
+            author: "Richard Feynman",
+            role: "Nobel Laureate in Physics"
+        },
+        {
+            quote: "Failure is simply the opportunity to begin again, this time more intelligently.",
+            author: "Henry Ford",
+            role: "Industrialist & Engineer"
+        },
+        {
+            quote: "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
+            author: "Marie Curie",
+            role: "Pioneer in Radioactivity"
+        },
+        {
+            quote: "Simplicity is the ultimate sophistication in engineering design.",
+            author: "Leonardo da Vinci",
+            role: "Renaissance Polymath & Engineer"
+        },
+        {
+            quote: "Give me a place to stand, and a lever long enough, and I will move the world.",
+            author: "Archimedes",
+            role: "Classical Greek Mathematician & Engineer"
+        },
+        {
+            quote: "An engineer is someone who can do for a nickel what any fool can do for a dollar.",
+            author: "Arthur Mellen Wellington",
+            role: "Civil Engineer"
+        },
+        {
+            quote: "Information is the resolution of uncertainty. Every practice question reduces your test-day uncertainty.",
+            author: "Claude Shannon",
+            role: "Father of Information Theory"
+        },
+        {
+            quote: "One small step for a man, one giant leap for mankind. Focus on completing one topic at a time.",
+            author: "Neil Armstrong",
+            role: "Aerospace Engineer & Astronaut"
+        },
+        {
+            quote: "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
+            author: "Antoine de Saint-Exupéry",
+            role: "Aviation Pioneer"
+        },
+        {
+            quote: "Small disciplines repeated with consistency every day lead to great achievements gained slowly over time.",
+            author: "John C. Maxwell",
+            role: "Leadership Author"
+        },
+        {
+            quote: "You don't have to be great to start, but you have to start to be great. Open your notes and begin.",
+            author: "Zig Ziglar",
+            role: "Performance Author"
+        },
+        {
+            quote: "The best way to predict the future is to design and build it yourself.",
+            author: "Alan Kay",
+            role: "Computer Scientist"
+        }
+    ];
+
+    const THEOREMS_BY_DISCIPLINE = {
+        "Mechanical": [
+            {
+                title: "Bernoulli’s Principle",
+                formula: "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$",
+                description: "States that for an inviscid, incompressible fluid in steady streamline flow, the sum of static pressure, dynamic pressure, and hydrostatic pressure is constant.",
+                examTip: "Search NCEES Handbook under Fluid Mechanics. Ensure you use consistent gauge vs absolute pressures and watch out for elevation head datum."
+            },
+            {
+                title: "Fourier’s Law of Thermal Conduction",
+                formula: "$$\\dot{Q} = -k A \\frac{dT}{dx}$$",
+                description: "Defines the rate of heat transfer through a material as directly proportional to the negative temperature gradient and the area perpendicular to that gradient.",
+                examTip: "Found under Heat Transfer. Remember: for multi-layer cylindrical pipes or walls, use the thermal resistance concept: $R_{th} = \\frac{L}{kA}$."
+            },
+            {
+                title: "Carnot Thermal Efficiency (Maximum Limit)",
+                formula: "$$\\eta_{\\text{Carnot}} = 1 - \\frac{T_L}{T_H} = \\frac{T_H - T_L}{T_H}$$",
+                description: "Represents the absolute theoretical maximum efficiency that any heat engine operating between two thermal reservoirs can achieve.",
+                examTip: "Found under Thermodynamics. Crucial test rule: Always convert temperatures to absolute Rankine ($^\\circ\\text{R}$) or Kelvin ($\\text{K}$)!"
+            },
+            {
+                title: "Mohr’s Circle for Plane Stress",
+                formula: "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}$$",
+                description: "A graphical representation of the transformation equations for plane stress, yielding principal normal stresses and maximum in-plane shear stress.",
+                examTip: "Found in Mechanics of Materials. The radius of the circle directly equals the maximum in-plane shear stress $\\tau_{\\text{max}}$."
+            },
+            {
+                title: "Parallel Axis Theorem (Second Moment of Area)",
+                formula: "$$I_x = I_{xc} + A d^2$$",
+                description: "Calculates the area moment of inertia of a shape about any arbitrary axis parallel to its centroidal axis.",
+                examTip: "Found in Statics / Dynamics. $d$ is strictly the perpendicular distance from the component's centroid to the reference axis."
+            }
+        ],
+        "Civil": [
+            {
+                title: "Darcy’s Law for Hydraulic Seepage",
+                formula: "$$Q = k \\cdot i \\cdot A = k \\left(\\frac{\\Delta h}{L}\\right) A$$",
+                description: "Governs the flow of fluid through porous soil media, where flow rate $Q$ is proportional to hydraulic conductivity $k$ and hydraulic gradient $i$.",
+                examTip: "Search NCEES Handbook under Geotechnical Engineering. Watch unit conversions: hydraulic conductivity $k$ is often given in $\\text{cm/s}$."
+            },
+            {
+                title: "Manning’s Equation for Open Channel Flow",
+                formula: "$$V = \\frac{k}{n} R_h^{2/3} S^{1/2} \\quad (k = 1.0\\text{ SI}, \\; 1.486\\text{ USCS})$$",
+                description: "Empirical formula estimating the average velocity of uniform open channel gravity flow as a function of roughness $n$, hydraulic radius $R_h$, and channel slope $S$.",
+                examTip: "Found in Hydraulics and Hydrologic Systems. Hydraulic radius $R_h = A / P_w$ where $P_w$ is the wetted perimeter only."
+            },
+            {
+                title: "Terzaghi’s Effective Stress Principle",
+                formula: "$$\\sigma' = \\sigma - u$$",
+                description: "Total stress $\\sigma$ applied to a soil mass is resisted partly by the soil skeleton (effective stress $\\sigma'$) and partly by pore water pressure $u$.",
+                examTip: "Found in Geotechnical Engineering. Only effective stress $\\sigma'$ controls soil shear strength and consolidation settlement."
+            },
+            {
+                title: "Euler’s Critical Buckling Load for Columns",
+                formula: "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
+                description: "Computes the maximum axial compressive load that a slender column can sustain before undergoing sudden lateral deflection or buckling.",
+                examTip: "Found in Mechanics of Materials & Structural Design. $K$ depends on end supports: $K=0.5$ (fixed-fixed), $K=0.7$ (fixed-pinned), $K=1.0$ (pinned-pinned), $K=2.0$ (fixed-free)."
+            }
+        ],
+        "Electrical and Computer": [
+            {
+                title: "Thevenin’s Equivalent Circuit Theorem",
+                formula: "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
+                description: "Any linear two-terminal circuit consisting of independent/dependent sources and resistors can be replaced by a single voltage source $V_{Th}$ in series with $R_{Th}$.",
+                examTip: "Found under Circuit Analysis. When finding $R_{Th}$, deactivate independent sources (short circuit voltage sources, open circuit current sources)."
+            },
+            {
+                title: "Maximum Power Transfer Theorem",
+                formula: "$$R_L = R_{Th} \\implies P_{\\text{max}} = \\frac{V_{Th}^2}{4 R_{Th}}$$",
+                description: "Maximum power is delivered from a linear source network to a resistive load when the load resistance equals the Thevenin equivalent source resistance.",
+                examTip: "Found in Electrical Circuits. For AC circuits with impedances, the load impedance must be the complex conjugate: $Z_L = Z_{Th}^*$."
+            },
+            {
+                title: "Kirchhoff’s Current and Voltage Laws (KCL & KVL)",
+                formula: "$$\\sum I_{\\text{in}} = \\sum I_{\\text{out}}, \\quad \\sum_{k=1}^n V_k = 0$$",
+                description: "Fundamental conservation laws of electrical charge (KCL at nodes) and electrical energy (KVL around closed loops).",
+                examTip: "Search NCEES Handbook under Circuit Analysis. Always be consistent with passive sign conventions when writing nodal or mesh matrix equations."
+            },
+            {
+                title: "Nyquist-Shannon Sampling Theorem",
+                formula: "$$f_s \\ge 2 f_{\\text{max}}$$",
+                description: "To accurately reconstruct a continuous-time bandlimited signal without aliasing distortion, the sampling frequency $f_s$ must be at least twice the highest frequency component.",
+                examTip: "Found under Signal Processing & Communications. $2 f_{\\text{max}}$ is called the Nyquist rate; $f_s / 2$ is the Nyquist frequency."
+            }
+        ],
+        "Chemical": [
+            {
+                title: "Le Chatelier’s Principle & Equilibrium Shift",
+                formula: "$$\\Delta G^\\circ = -R T \\ln(K_{eq})$$",
+                description: "If an external change in pressure, temperature, or concentration is imposed on a system in chemical equilibrium, the equilibrium shifts in a direction that counteracts the change.",
+                examTip: "Found in Chemical Reaction Engineering. Increasing pressure shifts to the side with fewer gas moles; increasing temperature favors endothermic direction."
+            },
+            {
+                title: "Arrhenius Temperature Dependency of Rate Constants",
+                formula: "$$k = A e^{-E_a / (R T)} \\iff \\ln\\left(\\frac{k_2}{k_1}\\right) = \\frac{E_a}{R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)$$",
+                description: "Expresses the mathematical relationship between the absolute temperature $T$ and the reaction rate constant $k$ in terms of activation energy $E_a$.",
+                examTip: "Found in Chemical Kinetics. Universal gas constant $R = 8.314\\text{ J/(mol}\\cdot\\text{K)}$. Always use absolute Kelvin for temperatures."
+            },
+            {
+                title: "Raoult’s Law for Ideal Vapor-Liquid Equilibrium",
+                formula: "$$y_i P = x_i P_i^{\\text{sat}}(T)$$",
+                description: "States that the partial pressure of a component in an ideal vapor mixture equals the product of its liquid mole fraction and pure component vapor pressure.",
+                examTip: "Found in Mass Transfer and Separation Processes. Use Antoine's Equation to compute the saturated vapor pressure $P^{\\text{sat}}$."
+            }
+        ],
+        "Industrial": [
+            {
+                title: "Little’s Law for Queueing & Work-in-Progress",
+                formula: "$$L = \\lambda \\cdot W$$",
+                description: "The long-term average number of items $L$ in a stationary queueing system equals the long-term average arrival rate $\\lambda$ multiplied by the average time $W$ spent in system.",
+                examTip: "Found in Industrial Operations Research. Little’s Law holds regardless of the arrival distribution or service discipline (FIFO, LIFO, Priority)."
+            },
+            {
+                title: "Economic Order Quantity (EOQ)",
+                formula: "$$Q^* = \\sqrt{\\frac{2 D S}{H}}$$",
+                description: "Calculates the optimal order quantity that minimizes the total annual inventory costs, balancing setup/ordering costs $S$ against unit holding costs $H$.",
+                examTip: "Found under Inventory Control. $D$ is annual demand, $S$ is fixed order cost, and $H$ is unit holding cost per year."
+            },
+            {
+                title: "Central Limit Theorem (Sampling Distribution)",
+                formula: "$$\\bar{X} \\sim \\mathcal{N}\\left(\\mu, \\frac{\\sigma^2}{n}\\right), \\quad Z = \\frac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}}$$",
+                description: "Regardless of the underlying population distribution, the distribution of sample means approaches a normal distribution as the sample size $n$ becomes large ($n \\ge 30$).",
+                examTip: "Found in Engineering Probability & Statistics. The standard error is $\\sigma / \\sqrt{n}$. Do not forget the $\\sqrt{n}$ in the denominator!"
+            }
+        ],
+        "Environmental": [
+            {
+                title: "Streeter-Phelps Dissolved Oxygen Sag Model",
+                formula: "$$D_t = \\frac{k_1 L_0}{k_2 - k_1}\\left(e^{-k_1 t} - e^{-k_2 t}\\right) + D_0 e^{-k_2 t}$$",
+                description: "Models the dissolved oxygen deficit $D_t$ in a river downstream from a wastewater discharge, balancing deoxygenation rate $k_1$ against reaeration rate $k_2$.",
+                examTip: "Found in Environmental Water Quality. The critical deficit occurs where the derivative $dD/dt = 0$, giving the critical time $t_c$."
+            },
+            {
+                title: "Stokes’ Law for Particle Terminal Settling Velocity",
+                formula: "$$v_t = \\frac{g (\\rho_p - \\rho_f) d_p^2}{18 \\mu}$$",
+                description: "Calculates the terminal settling velocity of small spherical particles in laminar flow where drag force balances gravitational and buoyancy forces.",
+                examTip: "Found in Water and Wastewater Treatment (Sedimentation Basins). Valid only for Reynolds number $Re_p < 1.0$ (laminar settling)."
+            }
+        ],
+        "Other": [
+            {
+                title: "First Law of Thermodynamics (Open System / Control Volume)",
+                formula: "$$\\dot{Q} - \\dot{W} = \\sum_{\\text{out}} \\dot{m}\\left(h + \\frac{V^2}{2} + g z\\right) - \\sum_{\\text{in}} \\dot{m}\\left(h + \\frac{V^2}{2} + g z\\right)$$",
+                description: "States the conservation of energy principle for an open system with mass flow entering and leaving across control volume boundaries.",
+                examTip: "Found in Thermodynamics. For adiabatic turbines: $\\dot{W} = \\dot{m}(h_1 - h_2)$; for throttling valves: $h_1 = h_2$."
+            },
+            {
+                title: "Work-Energy Theorem",
+                formula: "$$W_{\\text{net}} = \\Delta T = \\frac{1}{2} m v_2^2 - \\frac{1}{2} m v_1^2$$",
+                description: "The total work done by all forces acting on a particle equals the change in kinetic energy of the particle.",
+                examTip: "Found in Dynamics. Especially fast for problems involving velocity as a function of displacement where time $t$ is not required."
+            }
+        ]
+    };
+
+    let quoteIndex = Math.floor(Math.random() * QUOTES.length);
+    let theoremIndex = 0;
+
+    function getActiveDiscipline() {
+        const disc = localStorage.getItem('enggtv_discipline') || 
+                     (window.state && window.state.user && window.state.user.discipline) || 
+                     'Mechanical';
+        if (THEOREMS_BY_DISCIPLINE[disc]) return disc;
+        if (disc === 'Civil Engineering') return 'Civil';
+        if (disc === 'Electrical') return 'Electrical and Computer';
+        if (disc === 'Other Disciplines' || disc === 'FE_Other Discipline' || (disc && disc.toLowerCase().includes('other'))) return 'Other';
+        return 'Mechanical';
+    }
+
+    function renderDailyQuote(isShuffle = false) {
+        if (isShuffle) {
+            quoteIndex = (quoteIndex + 1) % QUOTES.length;
+        }
+        const q = QUOTES[quoteIndex];
+        const quoteTextEl = document.getElementById('daily-quote-text');
+        const quoteAuthorEl = document.getElementById('daily-quote-author');
+        const quoteRoleEl = document.getElementById('daily-quote-role');
+
+        if (quoteTextEl) quoteTextEl.textContent = `“${q.quote}”`;
+        if (quoteAuthorEl) quoteAuthorEl.textContent = q.author;
+        if (quoteRoleEl) quoteRoleEl.textContent = q.role;
+    }
+
+    function renderDailyTheorem(isShuffle = false) {
+        const disc = getActiveDiscipline();
+        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
+
+        if (isShuffle) {
+            theoremIndex = (theoremIndex + 1) % theorems.length;
+        } else {
+            // deterministic index based on day of month
+            const dayOfMonth = new Date().getDate();
+            theoremIndex = dayOfMonth % theorems.length;
+        }
+
+        const th = theorems[theoremIndex];
+
+        const discBadgeEl = document.getElementById('daily-theorem-discipline');
+        const titleEl = document.getElementById('daily-theorem-title');
+        const formulaEl = document.getElementById('daily-theorem-formula');
+        const descEl = document.getElementById('daily-theorem-desc');
+        const tipEl = document.getElementById('daily-theorem-tip');
+
+        if (discBadgeEl) discBadgeEl.textContent = `${disc} FE Focus`;
+        if (titleEl) titleEl.textContent = th.title;
+        if (formulaEl) formulaEl.innerHTML = th.formula;
+        if (descEl) descEl.textContent = th.description;
+        if (tipEl) tipEl.textContent = th.examTip;
+
+        // Render MathJax LaTeX equation
+        if (window.MathJax && window.MathJax.typesetPromise && formulaEl) {
+            window.MathJax.typesetPromise([formulaEl]).catch(err => console.warn('MathJax render notice:', err));
+        }
+    }
+
+    function init() {
+        renderDailyQuote(false);
+        renderDailyTheorem(false);
+
+        const shuffleQuoteBtn = document.getElementById('btn-shuffle-quote');
+        if (shuffleQuoteBtn) {
+            shuffleQuoteBtn.onclick = () => renderDailyQuote(true);
+        }
+
+        const shuffleTheoremBtn = document.getElementById('btn-shuffle-theorem');
+        if (shuffleTheoremBtn) {
+            shuffleTheoremBtn.onclick = () => renderDailyTheorem(true);
+        }
+    }
+
+    // Expose globally
+    window.THEOREMS_BY_DISCIPLINE = THEOREMS_BY_DISCIPLINE;
+    window.getActiveMotivationDiscipline = getActiveDiscipline;
+    window.shuffleQuote = () => renderDailyQuote(true);
+    window.shuffleTheorem = () => renderDailyTheorem(true);
+    window.updateMotivationWidgets = () => {
+        renderDailyQuote(false);
+        renderDailyTheorem(false);
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+})();
+
+// --- END js/daily-motivation.js ---
+
+// --- BEGIN js/alumni-spotlight.js ---
+/**
+ * ENGG.tv - Alumni Passer Spotlight Module
+ * Displays verified FE Exam passers, their discipline-specific journey, strategy takeaways, and custom avatars.
+ * Implements Option B: Discipline-Smart Prioritization with interactive shuffle.
+ */
+
+(function() {
+    const ALUMNI_PASSERS = [
+        {
+            id: 'sabrish',
+            name: 'Sabrish M.',
+            discipline: 'Mechanical',
+            badge: 'FE Mechanical Passed',
+            avatar: 'assets/avatars/sabrish.jpg',
+            initials: 'SM',
+            journeyQuote: 'Focusing on timed drills for Thermodynamics and Fluid Mechanics gave me the exact pacing I needed on exam day. Trust the practice repetition.',
+            takeaway: 'Practice timed quizzes daily to lock in your exam pacing.'
+        },
+        {
+            id: 'nainish',
+            name: 'Nainish M.',
+            discipline: 'Civil',
+            badge: 'FE Civil Passed',
+            avatar: 'assets/avatars/nainish.jpg',
+            initials: 'NM',
+            journeyQuote: 'Structural analysis and Geotech used to slow me down. Reviewing the step-by-step solutions daily turned my weakest topics into my highest scoring sections.',
+            takeaway: 'Review step-by-step solutions to convert weak areas into high scores.'
+        },
+        {
+            id: 'shariff',
+            name: 'Mr. H. Shariff',
+            discipline: 'Other Disciplines',
+            badge: 'FE Other Disciplines Passed',
+            avatar: 'assets/avatars/shariff.jpg',
+            initials: 'HS',
+            journeyQuote: 'Staying disciplined with the core fundamentals—especially Statics, Dynamics, and Materials—carried me across the finish line. ENGG.tv gave me the exact structure I needed.',
+            takeaway: 'Master statics and dynamics fundamentals before advancing to complex topics.'
+        },
+        {
+            id: 'linjo',
+            name: 'Linjo J.',
+            discipline: 'Other Disciplines',
+            badge: 'FE Other Disciplines Passed',
+            avatar: 'assets/avatars/linjo.jpg',
+            initials: 'LJ',
+            journeyQuote: 'The breadth of the Other Disciplines exam felt overwhelming at first, but doing 20 practice questions every morning on ENGG.tv made passing inevitable.',
+            takeaway: 'Consistency beats cramming: complete 15-20 practice questions every day.'
+        },
+        {
+            id: 'adarsh',
+            name: 'Adarsh',
+            discipline: 'Other Disciplines',
+            badge: 'FE Other Disciplines Passed',
+            avatar: 'assets/avatars/adarsh.jpg',
+            initials: 'A',
+            journeyQuote: 'Mastering the NCEES Handbook search shortcuts during daily quizzes was the ultimate turning point. If you stay consistent with the app, you will pass.',
+            takeaway: 'Practice fast electronic searching in the official NCEES Reference Handbook.'
+        }
+    ];
+
+    let currentIndex = 0;
+
+    function getActiveDiscipline() {
+        return localStorage.getItem('enggtv_discipline') || 
+               (window.state && window.state.user && window.state.user.discipline) || 
+               'Mechanical';
+    }
+
+    function getSmartDefaultIndex() {
+        const disc = getActiveDiscipline().toLowerCase();
+        
+        if (disc.includes('mech')) {
+            const idx = ALUMNI_PASSERS.findIndex(a => a.id === 'sabrish');
+            if (idx !== -1) return idx;
+        } else if (disc.includes('civil')) {
+            const idx = ALUMNI_PASSERS.findIndex(a => a.id === 'nainish');
+            if (idx !== -1) return idx;
+        } else if (disc.includes('other')) {
+            // Pick between Shariff, Linjo, Adarsh
+            const otherIndices = [2, 3, 4];
+            return otherIndices[Math.floor(Math.random() * otherIndices.length)];
+        }
+        
+        // Fallback random
+        return Math.floor(Math.random() * ALUMNI_PASSERS.length);
+    }
+
+    function renderAlumnus(index, animate = false) {
+        currentIndex = (index + ALUMNI_PASSERS.length) % ALUMNI_PASSERS.length;
+        const person = ALUMNI_PASSERS[currentIndex];
+
+        const cardEl = document.getElementById('alumni-spotlight-card');
+        const nameEl = document.getElementById('alumni-name');
+        const disciplineEl = document.getElementById('alumni-discipline');
+        const quoteEl = document.getElementById('alumni-quote');
+        const takeawayEl = document.getElementById('alumni-takeaway');
+        const avatarImgEl = document.getElementById('alumni-avatar-img');
+        const avatarInitialsEl = document.getElementById('alumni-avatar-initials');
+
+        if (!cardEl) return;
+
+        if (animate) {
+            const contentContainer = document.getElementById('alumni-content-container');
+            if (contentContainer) {
+                contentContainer.style.opacity = '0';
+                contentContainer.style.transform = 'translateY(4px)';
+                setTimeout(() => {
+                    updateContent();
+                    contentContainer.style.transition = 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)';
+                    contentContainer.style.opacity = '1';
+                    contentContainer.style.transform = 'translateY(0)';
+                }, 120);
+                return;
+            }
+        }
+
+        updateContent();
+
+        function updateContent() {
+            if (nameEl) nameEl.textContent = person.name;
+            if (disciplineEl) disciplineEl.textContent = person.badge;
+            if (quoteEl) quoteEl.textContent = `“${person.journeyQuote}”`;
+            if (takeawayEl) takeawayEl.textContent = person.takeaway;
+
+            if (avatarImgEl) {
+                avatarImgEl.src = person.avatar;
+                avatarImgEl.alt = `${person.name} - ${person.badge}`;
+                avatarImgEl.style.display = 'block';
+                if (avatarInitialsEl) avatarInitialsEl.style.display = 'none';
+
+                avatarImgEl.onerror = function() {
+                    // Fallback to initials if image fails to load
+                    avatarImgEl.style.display = 'none';
+                    if (avatarInitialsEl) {
+                        avatarInitialsEl.textContent = person.initials;
+                        avatarInitialsEl.style.display = 'flex';
+                    }
+                };
+            }
+        }
+    }
+
+    function shuffle() {
+        renderAlumnus(currentIndex + 1, true);
+    }
+
+    function init() {
+        currentIndex = getSmartDefaultIndex();
+        renderAlumnus(currentIndex, false);
+
+        const shuffleBtn = document.getElementById('btn-shuffle-alumni');
+        if (shuffleBtn) {
+            shuffleBtn.onclick = shuffle;
+        }
+    }
+
+    // Global hooks
+    window.shuffleAlumni = shuffle;
+    window.updateAlumniWidget = () => {
+        currentIndex = getSmartDefaultIndex();
+        renderAlumnus(currentIndex, true);
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 60);
+    }
+})();
+
+// --- END js/alumni-spotlight.js ---
+
+// --- BEGIN js/featured-video.js ---
+/**
+ * ENGG.tv - Featured Engineering Mechanism & Video Showcase Module
+ * Displays interactive 3D CAD/kinematic mechanism demonstrations.
+ * Configured as a modular developer placeholder that can easily be swapped
+ * with custom video content anytime.
+ */
+
+(function() {
+    'use strict';
+
+    // Global Configuration Object - Modify here to update video or replace placeholder
+    window.ENGGTV_FEATURED_VIDEO = {
+        id: 'coaxial-gear-train',
+        title: '3-Axis Coaxial Gear Train & Kinematics',
+        subtitle: 'Mechanical Design & Velocity Ratios',
+        badge: 'FE Mechanical & Kinematics',
+        srcMp4: 'assets/videos/placeholder_video.mp4',
+        srcWebm: 'assets/videos/placeholder_video.webm',
+        poster: 'assets/videos/placeholder_poster.jpg',
+        attribution: {
+            creator: 'TU Wien (Best Tech Nick 25)',
+            license: 'Creative Commons Attribution 4.0 (CC BY 4.0)',
+            source: 'Wikimedia Commons'
+        },
+        description: 'Physical 3D-printed coaxial gear train featuring dual spur and helical gears in mesh. Demonstrates torque transmission, counter-rotation, and gear tooth contact patterns.',
+        keyTakeaways: [
+            { icon: 'settings_suggest', text: 'Coaxial layout achieves compact gear reduction along a unified centerline axis.' },
+            { icon: 'speed', text: 'Velocity ratio $i = \\frac{\\omega_{in}}{\\omega_{out}} = \\frac{N_{out}}{N_{in}}$ determines mechanical torque multiplication.' },
+            { icon: 'noise_control_off', text: 'Helical gears distribute contact lines progressively for higher load capacity and quieter meshing.' }
+        ],
+        developerNote: 'Developer Placeholder: Replace assets/videos/placeholder_video.mp4 with your custom video file anytime.'
+    };
+
+    let videoEl = null;
+    let playBtn = null;
+    let isPlaying = false;
+
+    function initVideoShowcase() {
+        const container = document.getElementById('featured-mechanism-video-card');
+        if (!container) return;
+
+        videoEl = document.getElementById('mechanism-video-player');
+        playBtn = document.getElementById('btn-mechanism-play-toggle');
+
+        if (!videoEl) return;
+
+        // Ensure proper attributes
+        videoEl.playsInline = true;
+        videoEl.loop = true;
+        videoEl.muted = true; // Required for reliable autoplay compliance
+
+        // Update UI when video state changes
+        videoEl.addEventListener('play', () => {
+            isPlaying = true;
+            updatePlayButtonUI(true);
+        });
+
+        videoEl.addEventListener('pause', () => {
+            isPlaying = false;
+            updatePlayButtonUI(false);
+        });
+
+        if (playBtn) {
+            playBtn.onclick = togglePlay;
+        }
+
+        // Click directly on video or overlay to toggle play/pause
+        const videoWrapper = document.getElementById('mechanism-video-wrapper');
+        if (videoWrapper) {
+            videoWrapper.onclick = (e) => {
+                // If clicked on controls buttons, ignore
+                if (e.target.closest('button') && e.target.closest('button') !== playBtn) return;
+                togglePlay();
+            };
+        }
+
+        // Setup sound toggle button
+        const soundBtn = document.getElementById('btn-mechanism-sound-toggle');
+        if (soundBtn) {
+            soundBtn.onclick = (e) => {
+                e.stopPropagation();
+                if (!videoEl) return;
+                videoEl.muted = !videoEl.muted;
+                const icon = soundBtn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.textContent = videoEl.muted ? 'volume_off' : 'volume_up';
+                }
+            };
+        }
+
+        // Setup fullscreen button
+        const fsBtn = document.getElementById('btn-mechanism-fullscreen');
+        if (fsBtn) {
+            fsBtn.onclick = (e) => {
+                e.stopPropagation();
+                if (!videoEl) return;
+                if (videoEl.requestFullscreen) {
+                    videoEl.requestFullscreen();
+                } else if (videoEl.webkitRequestFullscreen) {
+                    videoEl.webkitRequestFullscreen();
+                }
+            };
+        }
+
+        // Setup developer copy button
+        const copyBtn = document.getElementById('btn-copy-video-path');
+        if (copyBtn) {
+            copyBtn.onclick = (e) => {
+                e.stopPropagation();
+                const pathText = 'assets/videos/placeholder_video.mp4';
+                const originalHtml = copyBtn.innerHTML;
+                const setSuccess = () => {
+                    copyBtn.innerHTML = '<span class="material-symbols-outlined text-[12px] text-emerald-400">check</span><span class="text-emerald-400">Copied!</span>';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHtml;
+                    }, 2000);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(pathText).then(setSuccess).catch(setSuccess);
+                } else {
+                    setSuccess();
+                }
+            };
+        }
+    }
+
+    function togglePlay() {
+        if (!videoEl) return;
+        if (videoEl.paused) {
+            videoEl.play().catch(err => {
+                console.warn('Playback error:', err);
+            });
+        } else {
+            videoEl.pause();
+        }
+    }
+
+    function updatePlayButtonUI(playing) {
+        const overlay = document.getElementById('mechanism-play-overlay');
+        const icon = playBtn ? playBtn.querySelector('.material-symbols-outlined') : null;
+
+        if (overlay) {
+            if (playing) {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        if (icon) {
+            icon.textContent = playing ? 'pause' : 'play_arrow';
+        }
+    }
+
+    // Expose helpers globally
+    window.initFeaturedMechanismVideo = initVideoShowcase;
+    window.toggleFeaturedMechanismPlay = togglePlay;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideoShowcase);
+    } else {
+        setTimeout(initVideoShowcase, 60);
+    }
+})();
+
+// --- END js/featured-video.js ---
+
+// --- BEGIN js/peer-ticker.js ---
+/**
+ * ENGG.tv - Live Peer Milestone & Kudos Ticker Module
+ * Real-time study momentum ticker with handle-based anonymity.
+ * Features:
+ * 1. Engineering-themed anonymous handles (@FluidVortex_32, @TrussMaster_88, etc.)
+ * 2. Real-time Firestore peer milestone sync with graceful local offline cache
+ * 3. Interactive Kudos mechanism with micro-animation and persistence
+ * 4. Discipline filtering (All vs. My Discipline)
+ */
+
+(function() {
+    'use strict';
+
+    // Handle Generation Vocabulary by Discipline
+    const HANDLE_VOCAB = {
+        Mechanical: {
+            prefixes: ['Turbo', 'Fluid', 'Thermo', 'Kinetics', 'Vortex', 'Gear', 'Entropy', 'Cam', 'Bernoulli', 'Rankine', 'Stress'],
+            nouns: ['Mech', 'Dynamics', 'Piston', 'Rotor', 'Torque', 'Shaft', 'Involute', 'Flow', 'Cycles', 'Engine']
+        },
+        Civil: {
+            prefixes: ['Structural', 'Truss', 'Concrete', 'GeoTech', 'Hydraulics', 'Beam', 'Survey', 'Shear', 'Foundation'],
+            nouns: ['Vector', 'Masonry', 'Span', 'Load', 'Cadastral', 'Retain', 'Column', 'Arch', 'CivilPro']
+        },
+        Electrical: {
+            prefixes: ['Maxwell', 'Circuit', 'Ohm', 'Flux', 'Signal', 'Nyquist', 'Voltage', 'Inductor', 'Faraday', 'Quantum'],
+            nouns: ['Guru', 'Current', 'Diode', 'Node', 'Wave', 'Ampere', 'Filter', 'Logic', 'Semicon']
+        },
+        Other: {
+            prefixes: ['Matrix', 'Vector', 'Math', 'Calculus', 'Entropy', 'Algorithm', 'Optima', 'Tensor', 'Kinetic'],
+            nouns: ['Engineer', 'Scholar', 'Solver', 'Logix', 'Mind', 'Genius', 'Master', 'Focus']
+        }
+    };
+
+    // 100% Real Only: Local cache for candidate study milestones
+    function loadLocalRealMilestones() {
+        try {
+            const raw = localStorage.getItem('enggtv_real_peer_milestones');
+            if (raw) return JSON.parse(raw);
+        } catch(e) {}
+        return [];
+    }
+
+    function saveLocalRealMilestones(list) {
+        try {
+            localStorage.setItem('enggtv_real_peer_milestones', JSON.stringify((list || []).slice(0, 50)));
+        } catch(e) {}
+    }
+
+    let currentFilter = 'all'; // 'all' or 'my_discipline'
+    let milestonesCache = [];
+    let givenKudosSet = new Set();
+    let firestoreUnsubscribe = null;
+
+    /**
+     * Get or generate the candidate's anonymous engineering handle.
+     */
+    function getOrGenerateHandle() {
+        let handle = localStorage.getItem('enggtv_anonymous_handle');
+        if (handle && handle.startsWith('@') && handle.length >= 4) {
+            return handle;
+        }
+
+        const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+        const vocabGroup = HANDLE_VOCAB[disc] || HANDLE_VOCAB['Mechanical'];
+        const prefix = vocabGroup.prefixes[Math.floor(Math.random() * vocabGroup.prefixes.length)];
+        const noun = vocabGroup.nouns[Math.floor(Math.random() * vocabGroup.nouns.length)];
+        const randNum = Math.floor(10 + Math.random() * 89); // 10-99
+
+        handle = `@${prefix}${noun}_${randNum}`;
+        localStorage.setItem('enggtv_anonymous_handle', handle);
+        return handle;
+    }
+
+    /**
+     * Update or set a custom handle.
+     */
+    function setCustomHandle(newHandle) {
+        if (!newHandle) return false;
+        let clean = newHandle.trim();
+        if (!clean.startsWith('@')) clean = '@' + clean;
+        // Clean characters: letters, numbers, underscores only
+        clean = '@' + clean.substring(1).replace(/[^a-zA-Z0-9_]/g, '');
+        if (clean.length < 4 || clean.length > 20) {
+            return false;
+        }
+        localStorage.setItem('enggtv_anonymous_handle', clean);
+        updateHandleUI();
+
+        // Optionally update in user doc if Firebase is initialized
+        try {
+            if (window.db && window.firebase && window.firebase.auth()) {
+                const currentUser = window.firebase.auth().currentUser;
+                if (currentUser) {
+                    window.db.collection('users').doc(currentUser.uid).set({
+                        anonymousHandle: clean
+                    }, { merge: true }).catch(() => {});
+                }
+            }
+        } catch (e) {}
+
+        return true;
+    }
+
+    /**
+     * Load given kudos from localStorage.
+     */
+    function loadGivenKudos() {
+        try {
+            const raw = localStorage.getItem('enggtv_given_kudos');
+            if (raw) {
+                const arr = JSON.parse(raw);
+                givenKudosSet = new Set(arr);
+            }
+        } catch (e) {
+            givenKudosSet = new Set();
+        }
+    }
+
+    function saveGivenKudos() {
+        try {
+            localStorage.setItem('enggtv_given_kudos', JSON.stringify([...givenKudosSet]));
+        } catch (e) {}
+    }
+
+    /**
+     * Format timestamp to relative human time (e.g. 2m ago).
+     */
+    function timeAgo(ms) {
+        const diff = Math.max(0, Date.now() - ms);
+        const mins = Math.floor(diff / (60 * 1000));
+        if (mins < 1) return 'Just now';
+        if (mins < 60) return `${mins}m ago`;
+        const hours = Math.floor(mins / 60);
+        if (hours < 24) return `${hours}h ago`;
+        const days = Math.floor(hours / 24);
+        return `${days}d ago`;
+    }
+
+    /**
+     * Generate avatar initials from handle (e.g. @FluidVortex_32 -> FV).
+     */
+    function getHandleInitials(handle) {
+        const clean = handle.replace('@', '');
+        const parts = clean.split('_')[0].split(/(?=[A-Z])/);
+        if (parts.length >= 2) {
+            return (parts[0][0] + parts[1][0]).toUpperCase();
+        }
+        return clean.substring(0, 2).toUpperCase();
+    }
+
+    /**
+     * Discipline color gradient mapping for avatar badges.
+     */
+    function getDisciplineGradient(disc) {
+        switch (disc) {
+            case 'Civil':
+                return 'from-amber-500 to-orange-600 border-amber-400/40 text-amber-100';
+            case 'Electrical':
+                return 'from-purple-500 to-indigo-600 border-purple-400/40 text-purple-100';
+            case 'Other':
+                return 'from-emerald-500 to-teal-600 border-emerald-400/40 text-emerald-100';
+            case 'Mechanical':
+            default:
+                return 'from-cyan-500 to-blue-600 border-cyan-400/40 text-cyan-100';
+        }
+    }
+
+    /**
+     * Render the Live Peer Milestone Stream into the DOM.
+     */
+    function renderStream() {
+        const streamContainer = document.getElementById('peer-milestones-stream');
+        if (!streamContainer) return;
+
+        const userDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+
+        // Filter milestones
+        const filtered = milestonesCache.filter(m => {
+            if (currentFilter === 'my_discipline') {
+                return m.discipline === userDiscipline;
+            }
+            return true;
+        });
+
+        if (filtered.length === 0) {
+            const isDiscFilter = currentFilter === 'my_discipline';
+            streamContainer.innerHTML = `
+                <div class="py-12 px-6 text-center rounded-2xl bg-white/40 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 flex flex-col items-center justify-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center border border-cyan-500/20 shadow-inner">
+                        <span class="material-symbols-outlined text-2xl">bolt</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 mb-1">
+                            ${isDiscFilter ? `No Recent ${userDiscipline} Milestones Yet` : 'No Recent Peer Milestones Yet'}
+                        </h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto leading-relaxed">
+                            100% Real candidate activity only. Set the study momentum by completing a practice drill, achieving a study streak, or solving a Simplistic Study challenge!
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-2 mt-1">
+                        <button onclick="navigateTo('study')" class="px-4 py-2 rounded-xl text-xs font-bold bg-primary hover:brightness-110 text-white shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+                            <span>Practice Drill</span>
+                        </button>
+                        <button onclick="if(window.openSimplisticStudyModal)window.openSimplisticStudyModal();" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600 transition-all cursor-pointer flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px]">psychology</span>
+                            <span>Simplistic Study</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        streamContainer.innerHTML = filtered.map((m, idx) => {
+            const hasGivenKudo = givenKudosSet.has(m.id);
+            const initials = getHandleInitials(m.handle);
+            const gradClass = getDisciplineGradient(m.discipline);
+            const isSelf = m.handle === getOrGenerateHandle();
+
+            return `
+                <div class="peer-milestone-item p-3.5 sm:p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 flex items-start justify-between gap-3.5 transition-all hover:border-cyan-500/40 hover:shadow-md group/item" data-id="${m.id}">
+                    <div class="flex items-start gap-3 min-w-0">
+                        <!-- Avatar Badge -->
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br ${gradClass} flex items-center justify-center font-bold text-xs font-mono shadow-sm shrink-0 border">
+                            ${initials}
+                        </div>
+
+                        <!-- Info Content -->
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200 truncate">${m.handle}</span>
+                                ${isSelf ? '<span class="text-[9px] font-black uppercase tracking-wider bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 px-1.5 py-0.5 rounded-full font-bold">You</span>' : ''}
+                                <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700/70 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-600/60">
+                                    FE ${m.discipline}
+                                </span>
+                                <span class="text-[10px] text-slate-400 dark:text-slate-400 font-medium ml-auto sm:ml-0">${timeAgo(m.timestamp)}</span>
+                            </div>
+
+                            <p class="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 leading-snug">
+                                ${m.title}
+                            </p>
+                            ${m.detail ? `<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">${m.detail}</p>` : ''}
+                        </div>
+                    </div>
+
+                    <!-- Interactive Kudos Button -->
+                    <button onclick="window.givePeerKudos('${m.id}')" class="kudos-btn shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        hasGivenKudo 
+                        ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/40 shadow-sm scale-105' 
+                        : 'bg-slate-100 hover:bg-amber-500/15 dark:bg-slate-700/60 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-amber-500 border border-slate-200/60 dark:border-slate-650 active:scale-95'
+                    }" title="Give Kudos">
+                        <span class="text-sm">👏</span>
+                        <span class="kudos-count font-mono">${m.kudosCount || 0}</span>
+                    </button>
+                </div>
+            `;
+        }).join('');
+    }
+
+    /**
+     * Give Kudos to a peer milestone.
+     */
+    function givePeerKudos(milestoneId) {
+        if (!milestoneId) return;
+        const hasGiven = givenKudosSet.has(milestoneId);
+
+        // Find milestone in cache
+        const target = milestonesCache.find(m => m.id === milestoneId);
+        if (!target) return;
+
+        if (hasGiven) {
+            // Retract kudo
+            givenKudosSet.delete(milestoneId);
+            target.kudosCount = Math.max(0, (target.kudosCount || 1) - 1);
+        } else {
+            // Add kudo
+            givenKudosSet.add(milestoneId);
+            target.kudosCount = (target.kudosCount || 0) + 1;
+
+            // Trigger micro confetti celebration
+            triggerKudosAnimation(milestoneId);
+
+            // Award social gamification point to candidate
+            if (typeof window.addPoints === 'function') {
+                window.addPoints(1, 'Gave Community Kudos!');
+            }
+        }
+
+        saveGivenKudos();
+        saveLocalRealMilestones(milestonesCache);
+        renderStream();
+
+        // Sync with Firestore if active
+        try {
+            if (window.db) {
+                const docRef = window.db.collection('peer_milestones').doc(milestoneId);
+                const incrementVal = hasGiven ? -1 : 1;
+                docRef.update({
+                    kudosCount: window.firebase.firestore.FieldValue.increment(incrementVal)
+                }).catch(() => {});
+            }
+        } catch (e) {}
+    }
+
+    /**
+     * Subtle micro-celebration animation on Kudos button.
+     */
+    function triggerKudosAnimation(milestoneId) {
+        const itemEl = document.querySelector(`.peer-milestone-item[data-id="${milestoneId}"] .kudos-btn`);
+        if (!itemEl) return;
+
+        // Visual bounce
+        itemEl.classList.add('scale-125', 'ring-2', 'ring-amber-400');
+        setTimeout(() => {
+            itemEl.classList.remove('scale-125', 'ring-2', 'ring-amber-400');
+        }, 300);
+
+        // Small confetti burst if canvas-confetti is loaded
+        if (typeof window.confetti === 'function') {
+            const rect = itemEl.getBoundingClientRect();
+            const x = (rect.left + rect.width / 2) / window.innerWidth;
+            const y = (rect.top + rect.height / 2) / window.innerHeight;
+            window.confetti({
+                particleCount: 15,
+                spread: 40,
+                startVelocity: 15,
+                origin: { x, y },
+                colors: ['#F59E0B', '#06B6D4', '#EC4899']
+            });
+        }
+    }
+
+    /**
+     * Public Method: Publish a candidate milestone to the live feed.
+     */
+    function publishPeerMilestone({ title, detail, type = 'quiz_finish', discipline = null }) {
+        if (!title) return;
+
+        const myDiscipline = discipline || localStorage.getItem('enggtv_discipline') || 'Mechanical';
+        const myHandle = getOrGenerateHandle();
+
+        const newMilestone = {
+            id: 'milestone_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
+            handle: myHandle,
+            discipline: myDiscipline,
+            type: type,
+            title: title,
+            detail: detail || '',
+            timestamp: Date.now(),
+            kudosCount: 1, // Self start
+            kudosUsers: []
+        };
+
+        // Prepend to local cache immediately
+        milestonesCache.unshift(newMilestone);
+        // Keep cache capped at 40
+        if (milestonesCache.length > 40) milestonesCache.pop();
+
+        saveLocalRealMilestones(milestonesCache);
+        renderStream();
+
+        // Broadcast to Firestore collection
+        try {
+            if (window.db) {
+                window.db.collection('peer_milestones').doc(newMilestone.id).set(newMilestone).then(() => {
+                    console.log('✅ Peer milestone broadcasted to Firestore');
+                }).catch(err => {
+                    console.warn('Firestore peer milestone sync note:', err.message);
+                });
+            }
+        } catch (e) {}
+
+        // Notification toast
+        if (typeof window.showNotification === 'function') {
+            window.showNotification(`📢 Shared to Peer Ticker as ${myHandle}!`, 'info');
+        }
+    }
+
+    /**
+     * Setup Real-Time Firestore onSnapshot listener.
+     */
+    function setupFirestoreListener() {
+        if (!window.db) return;
+
+        try {
+            firestoreUnsubscribe = window.db.collection('peer_milestones')
+                .orderBy('timestamp', 'desc')
+                .limit(60)
+                .onSnapshot(snapshot => {
+                    const firestoreItems = [];
+                    snapshot.forEach(doc => {
+                        firestoreItems.push({ id: doc.id, ...doc.data() });
+                    });
+
+                    if (firestoreItems.length > 0) {
+                        const map = new Map();
+                        // Prioritize real Firestore items
+                        firestoreItems.forEach(f => map.set(f.id, f));
+                        // Retain any locally published user milestones
+                        milestonesCache.forEach(m => {
+                            if (!map.has(m.id)) map.set(m.id, m);
+                        });
+                        milestonesCache = Array.from(map.values()).sort((a, b) => b.timestamp - a.timestamp);
+                        saveLocalRealMilestones(milestonesCache);
+                        renderStream();
+                    }
+                }, err => {
+                    console.warn('Firestore peer milestone listener notice:', err.message);
+                });
+        } catch (e) {
+            console.warn('Could not attach Firestore peer listener:', e);
+        }
+    }
+
+    /**
+     * Update the candidate's anonymous handle display and editing trigger.
+     */
+    function updateHandleUI() {
+        const handle = getOrGenerateHandle();
+        const displayEl = document.getElementById('user-anonymous-handle-text');
+        if (displayEl) {
+            displayEl.textContent = handle;
+        }
+    }
+
+    /**
+     * Open the Edit Handle modal.
+     */
+    function openEditHandleModal() {
+        const currentHandle = getOrGenerateHandle();
+        const modal = document.getElementById('edit-handle-modal');
+        const input = document.getElementById('input-edit-handle');
+        if (input) {
+            input.value = currentHandle.replace('@', '');
+        }
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+        }
+    }
+
+    function closeEditHandleModal() {
+        const modal = document.getElementById('edit-handle-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
+        }
+    }
+
+    function saveCustomHandleFromInput() {
+        const input = document.getElementById('input-edit-handle');
+        if (!input) return;
+        const val = input.value.trim();
+        const success = setCustomHandle(val);
+        if (success) {
+            closeEditHandleModal();
+            renderStream();
+            if (typeof window.showNotification === 'function') {
+                window.showNotification('✅ Anonymous handle updated: ' + getOrGenerateHandle(), 'success');
+            }
+        } else {
+            alert('Handle must be 3-18 letters, numbers, or underscores.');
+        }
+    }
+
+    /**
+     * Enhanced Coverage: Ingest real candidate study activity from localStorage,
+     * recentActivity, daily quests, streak tracker, and question statistics.
+     * Prevents empty state by transforming actual real past and current study actions
+     * into broadcastable peer milestones.
+     */
+    function scanAndIngestRealActivity() {
+        const myHandle = getOrGenerateHandle();
+        const myDisc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+        const existingIds = new Set(milestonesCache.map(m => m.id));
+        let addedCount = 0;
+
+        // 1. Ingest Real Quizzes & Mock Exams from recentActivity
+        let recent = [];
+        try {
+            if (window.state && Array.isArray(window.state.recentActivity) && window.state.recentActivity.length > 0) {
+                recent = window.state.recentActivity;
+            } else {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith('enggtv_recent_activity')) {
+                        try {
+                            const parsed = JSON.parse(localStorage.getItem(key));
+                            if (Array.isArray(parsed) && parsed.length > 0) {
+                                recent = recent.concat(parsed);
+                            }
+                        } catch(e) {}
+                    }
+                }
+            }
+        } catch(e) {}
+
+        if (recent.length > 0) {
+            recent.slice(0, 15).forEach(act => {
+                const actId = 'real_act_' + (act.id || act.timestamp);
+                if (!existingIds.has(actId)) {
+                    const attempted = act.attempted || 0;
+                    const score = act.score !== undefined ? act.score : 0;
+                    const acc = act.accuracy !== undefined ? act.accuracy : (attempted > 0 ? Math.round((score / attempted) * 100) : 0);
+                    const titleName = act.title || (act.isMockExam ? 'FE Mock Exam' : 'Practice');
+                    
+                    let milestoneTitle = `Completed ${attempted || 5}-Question Drill in ${titleName}`;
+                    if (acc >= 90) milestoneTitle = `Aced ${titleName} Drill (${acc}%) 🏆`;
+                    else if (acc >= 70) milestoneTitle = `Passed ${titleName} Drill (${acc}%)`;
+
+                    milestonesCache.push({
+                        id: actId,
+                        handle: myHandle,
+                        discipline: myDisc,
+                        type: 'quiz_finish',
+                        title: milestoneTitle,
+                        detail: `${score}/${attempted} correct questions in FE ${myDisc} practice`,
+                        timestamp: act.timestamp || Date.now(),
+                        kudosCount: Math.min(12, Math.max(1, Math.floor((score || 1) * 1.5))),
+                        kudosUsers: []
+                    });
+                    existingIds.add(actId);
+                    addedCount++;
+                }
+            });
+        }
+
+        // 2. Ingest Real Study Streak
+        try {
+            const streak = (window.calculateStreak && typeof window.calculateStreak === 'function')
+                ? window.calculateStreak()
+                : (window.state && window.state.recentActivity && typeof window.calculateStreakFromActivity === 'function'
+                    ? window.calculateStreakFromActivity(window.state.recentActivity)
+                    : 0);
+
+            if (streak > 0) {
+                const todayStr = new Date().toISOString().split('T')[0];
+                const streakId = 'real_streak_' + streak + '_' + todayStr;
+                if (!existingIds.has(streakId)) {
+                    milestonesCache.push({
+                        id: streakId,
+                        handle: myHandle,
+                        discipline: myDisc,
+                        type: 'study_streak',
+                        title: `Hit a ${streak}-Day Study Streak! 🔥`,
+                        detail: `Maintained daily practice consistency in FE ${myDisc}`,
+                        timestamp: Date.now() - 4 * 60 * 1000,
+                        kudosCount: streak * 3 + 1,
+                        kudosUsers: []
+                    });
+                    existingIds.add(streakId);
+                    addedCount++;
+                }
+            }
+        } catch(e) {}
+
+        // 3. Ingest Real Daily Quests Progress
+        try {
+            const todayStr = new Date().toISOString().split('T')[0];
+            const userObj = JSON.parse(localStorage.getItem('enggtv_user')) || {};
+            const qKey = `enggtv_quests_${userObj.username || 'guest'}_${todayStr}`;
+            const qData = JSON.parse(localStorage.getItem(qKey) || '{}');
+            if (qData.questions_answered && qData.questions_answered > 0) {
+                const questId = 'real_quest_' + todayStr;
+                if (!existingIds.has(questId)) {
+                    milestonesCache.push({
+                        id: questId,
+                        handle: myHandle,
+                        discipline: myDisc,
+                        type: 'daily_quest',
+                        title: `Solved ${qData.questions_answered} Questions Today ✍️`,
+                        detail: `Active daily practice session for FE ${myDisc}`,
+                        timestamp: Date.now() - 12 * 60 * 1000,
+                        kudosCount: Math.min(6, qData.questions_answered),
+                        kudosUsers: []
+                    });
+                    existingIds.add(questId);
+                    addedCount++;
+                }
+            }
+        } catch(e) {}
+
+        // 4. Ingest Total Questions Practiced if user has questionStats
+        try {
+            const qStats = JSON.parse(localStorage.getItem('enggtv_question_stats') || '{}');
+            const totalAnswered = Object.values(qStats).reduce((sum, n) => sum + (typeof n === 'number' ? n : 0), 0);
+            if (totalAnswered >= 3) {
+                const statsId = 'real_qstats_' + myDisc;
+                if (!existingIds.has(statsId)) {
+                    milestonesCache.push({
+                        id: statsId,
+                        handle: myHandle,
+                        discipline: myDisc,
+                        type: 'drill_volume',
+                        title: `Completed ${totalAnswered} Total Practice Question Repetitions`,
+                        detail: `Deep practice track in FE ${myDisc} questions catalog`,
+                        timestamp: Date.now() - 35 * 60 * 1000,
+                        kudosCount: Math.min(15, Math.floor(totalAnswered / 3) + 1),
+                        kudosUsers: []
+                    });
+                    existingIds.add(statsId);
+                    addedCount++;
+                }
+            }
+        } catch(e) {}
+
+        // 5. Ingest Real Points Milestones in multiples of 50 and 100 for current user
+        try {
+            const userObj = JSON.parse(localStorage.getItem('enggtv_user')) || {};
+            const rawPts = localStorage.getItem(`enggtv_points_${userObj.username || 'guest'}`);
+            const userPts = rawPts ? parseInt(rawPts, 10) : ((window.state && window.state.userPoints) || 0);
+            if (userPts >= 50) {
+                const milestoneTiers = [2500, 2000, 1500, 1000, 500, 400, 300, 250, 200, 150, 100, 50];
+                for (const tier of milestoneTiers) {
+                    if (userPts >= tier) {
+                        const ptsId = 'real_pts_' + myHandle + '_' + tier;
+                        if (!existingIds.has(ptsId)) {
+                            milestonesCache.push({
+                                id: ptsId,
+                                handle: myHandle,
+                                discipline: myDisc,
+                                type: 'points_milestone',
+                                title: userPts >= 1000 ? `Passed ${tier.toLocaleString()} Mastery Points Milestone 🌟` : `Reached ${tier} Study Mastery Points 🏆`,
+                                detail: `Total cumulative score of ${userPts.toLocaleString()} points in FE ${myDisc}`,
+                                timestamp: Date.now() - 25 * 60 * 1000,
+                                kudosCount: Math.min(20, Math.floor(tier / 25) + 2),
+                                kudosUsers: []
+                            });
+                            existingIds.add(ptsId);
+                            addedCount++;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch(e) {}
+
+        // 6. Active Daily Study Session Presence
+        try {
+            const isAuth = localStorage.getItem('enggtv_authenticated') === 'true';
+            if (isAuth) {
+                const todayStr = new Date().toISOString().split('T')[0];
+                const sessId = 'real_sess_' + todayStr;
+                if (!existingIds.has(sessId)) {
+                    milestonesCache.push({
+                        id: sessId,
+                        handle: myHandle,
+                        discipline: myDisc,
+                        type: 'session_active',
+                        title: `Active FE ${myDisc} Study Session In Progress`,
+                        detail: `Focusing on core engineering fundamentals & reference handbook`,
+                        timestamp: Date.now() - 2 * 60 * 1000,
+                        kudosCount: 2,
+                        kudosUsers: []
+                    });
+                    existingIds.add(sessId);
+                    addedCount++;
+                }
+            }
+        } catch(e) {}
+
+        if (addedCount > 0) {
+            milestonesCache.sort((a, b) => b.timestamp - a.timestamp);
+            saveLocalRealMilestones(milestonesCache);
+        }
+    }
+
+    /**
+     * Initialize Module.
+     */
+    function init() {
+        loadGivenKudos();
+        getOrGenerateHandle();
+        updateHandleUI();
+
+        // Initialize cache with 100% real local milestones
+        milestonesCache = loadLocalRealMilestones();
+        // Ingest existing real candidate study actions
+        scanAndIngestRealActivity();
+        renderStream();
+
+        // Ingest real community milestones from actual students in the database
+        fetch('assets/data/community_milestones.json')
+            .then(res => res.ok ? res.json() : [])
+            .then(communityData => {
+                if (Array.isArray(communityData) && communityData.length > 0) {
+                    const map = new Map();
+                    milestonesCache.forEach(m => map.set(m.id, m));
+                    communityData.forEach(m => {
+                        if (!map.has(m.id)) map.set(m.id, m);
+                    });
+                    milestonesCache = Array.from(map.values()).sort((a, b) => b.timestamp - a.timestamp);
+                    saveLocalRealMilestones(milestonesCache);
+                    renderStream();
+                }
+            })
+            .catch(() => {});
+
+        // Connect Firestore listener
+        setupFirestoreListener();
+
+        // Filter buttons
+        const btnAll = document.getElementById('peer-filter-all');
+        const btnMyDisc = document.getElementById('peer-filter-my-disc');
+
+        if (btnAll) {
+            btnAll.onclick = () => {
+                currentFilter = 'all';
+                btnAll.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-500 text-white shadow-sm transition-all cursor-pointer';
+                if (btnMyDisc) btnMyDisc.className = 'px-3 py-1.5 rounded-xl text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all cursor-pointer';
+                renderStream();
+            };
+        }
+
+        if (btnMyDisc) {
+            const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            btnMyDisc.textContent = `My Discipline (${disc})`;
+            btnMyDisc.onclick = () => {
+                currentFilter = 'my_discipline';
+                btnMyDisc.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-500 text-white shadow-sm transition-all cursor-pointer';
+                if (btnAll) btnAll.className = 'px-3 py-1.5 rounded-xl text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all cursor-pointer';
+                renderStream();
+            };
+        }
+
+        // Setup Edit Handle button
+        const editBtn = document.getElementById('btn-edit-anonymous-handle');
+        if (editBtn) {
+            editBtn.onclick = openEditHandleModal;
+        }
+
+        const closeBtn = document.getElementById('btn-close-edit-handle');
+        if (closeBtn) {
+            closeBtn.onclick = closeEditHandleModal;
+        }
+
+        const saveBtn = document.getElementById('btn-save-edit-handle');
+        if (saveBtn) {
+            saveBtn.onclick = saveCustomHandleFromInput;
+        }
+
+        // Periodic relative time refresher (every 60s)
+        setInterval(() => {
+            renderStream();
+        }, 60000);
+    }
+
+    function refreshPeerTicker() {
+        scanAndIngestRealActivity();
+        renderStream();
+    }
+
+    // Expose globally
+    window.publishPeerMilestone = publishPeerMilestone;
+    window.givePeerKudos = givePeerKudos;
+    window.getAnonymousHandle = getOrGenerateHandle;
+    window.setCustomAnonymousHandle = setCustomHandle;
+    window.openEditHandleModal = openEditHandleModal;
+    window.closeEditHandleModal = closeEditHandleModal;
+    window.saveCustomHandleFromInput = saveCustomHandleFromInput;
+    window.refreshPeerTicker = refreshPeerTicker;
+    window.scanAndIngestRealActivity = scanAndIngestRealActivity;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+})();
+
+// --- END js/peer-ticker.js ---
+
+// --- BEGIN js/zen-study.js ---
+/**
+ * ENGG.tv - Simplistic Study Mode (Zen Focus Mode)
+ * Distraction-free 2-tab micro-learning tool:
+ * Tab 1: Single discipline FE Theorem/Formula with shuffle icon
+ * Tab 2: Single discipline FE Practice Question with shuffle icon, hidden explanation, and +1 score integration
+ */
+
+(function() {
+    'use strict';
+
+    let currentDiscipline = 'Mechanical';
+    let currentTheoremIndex = 0;
+    let currentQuestion = null;
+    let hasAnswered = false;
+    let hasRevealedExplanation = false;
+    let activeZenTab = 'theorem';
+
+    // Map discipline names to standard keys
+    function normalizeDiscipline(disc) {
+        if (!disc) return 'Mechanical';
+        if (disc === 'Civil Engineering') return 'Civil';
+        if (disc === 'Electrical') return 'Electrical and Computer';
+        if (disc === 'Other Disciplines' || disc === 'FE_Other Discipline' || disc.toLowerCase().includes('other')) return 'Other';
+        return disc;
+    }
+
+    function getActiveDiscipline() {
+        if (window.getActiveMotivationDiscipline) {
+            return window.getActiveMotivationDiscipline();
+        }
+        const disc = localStorage.getItem('enggtv_discipline') || 
+                     (window.state && window.state.user && window.state.user.discipline) || 
+                     'Mechanical';
+        return normalizeDiscipline(disc);
+    }
+
+    function getTheoremsList() {
+        const disc = getActiveDiscipline();
+        const theoremsMap = window.THEOREMS_BY_DISCIPLINE || {};
+        if (theoremsMap[disc] && theoremsMap[disc].length > 0) {
+            return theoremsMap[disc];
+        }
+        return theoremsMap['Mechanical'] || [];
+    }
+
+    function getAllDisciplineQuestions() {
+        const disc = getActiveDiscipline();
+        const source = window.getQuestionsSource ? window.getQuestionsSource() : (typeof QUESTIONS !== 'undefined' ? QUESTIONS : {});
+        const allQuestions = [];
+
+        // 1. Try to use window.state.subjects if populated
+        let subjects = (window.state && window.state.subjects) || [];
+
+        // 2. If state subjects are empty or don't match current discipline, retrieve from global arrays
+        if (!subjects || subjects.length === 0) {
+            if (disc === 'Mechanical' && typeof MECHANICAL_SUBJECTS !== 'undefined') subjects = MECHANICAL_SUBJECTS;
+            else if (disc === 'Civil' && typeof CIVIL_SUBJECTS !== 'undefined') subjects = CIVIL_SUBJECTS;
+            else if (disc === 'Chemical' && typeof CHEMICAL_SUBJECTS !== 'undefined') subjects = CHEMICAL_SUBJECTS;
+            else if (disc === 'Industrial' && typeof INDUSTRIAL_SUBJECTS !== 'undefined') subjects = INDUSTRIAL_SUBJECTS;
+            else if (disc === 'Environmental' && typeof ENVIRONMENTAL_SUBJECTS !== 'undefined') subjects = ENVIRONMENTAL_SUBJECTS;
+            else if (disc === 'Electrical and Computer' && typeof ELECTRICAL_COMPUTER_SUBJECTS !== 'undefined') subjects = ELECTRICAL_COMPUTER_SUBJECTS;
+            else if (typeof OTHER_SUBJECTS !== 'undefined') subjects = OTHER_SUBJECTS;
+        }
+
+        if (subjects && subjects.length > 0) {
+            subjects.forEach(sub => {
+                if (source[sub.id] && Array.isArray(source[sub.id])) {
+                    source[sub.id].forEach(q => {
+                        allQuestions.push({
+                            ...q,
+                            subjectId: sub.id,
+                            subjectName: sub.name || sub.id
+                        });
+                    });
+                }
+            });
+        }
+
+        // Fallback: If still empty, collect all questions in source
+        if (allQuestions.length === 0 && source) {
+            Object.keys(source).forEach(key => {
+                if (Array.isArray(source[key])) {
+                    source[key].forEach(q => {
+                        allQuestions.push({
+                            ...q,
+                            subjectId: key,
+                            subjectName: key
+                        });
+                    });
+                }
+            });
+        }
+
+        return allQuestions;
+    }
+
+    // --- Tab 1: Theorem Logic ---
+    function renderTheorem() {
+        const theorems = getTheoremsList();
+        if (!theorems || theorems.length === 0) return;
+
+        if (currentTheoremIndex >= theorems.length) {
+            currentTheoremIndex = 0;
+        }
+
+        const th = theorems[currentTheoremIndex];
+        const titleEl = document.getElementById('zen-theorem-title');
+        const formulaEl = document.getElementById('zen-theorem-formula');
+        const descEl = document.getElementById('zen-theorem-desc');
+        const tipEl = document.getElementById('zen-theorem-tip');
+        const countEl = document.getElementById('zen-theorem-count');
+
+        if (titleEl) titleEl.textContent = th.title;
+        if (formulaEl) formulaEl.innerHTML = th.formula;
+        if (descEl) descEl.textContent = th.description;
+        if (tipEl) tipEl.textContent = th.examTip;
+        if (countEl) countEl.textContent = `Formula ${currentTheoremIndex + 1} of ${theorems.length}`;
+
+        // Typeset LaTeX equation
+        const panel = document.getElementById('zen-theorem-panel');
+        if (panel) {
+            if (window.safeTypesetMath) {
+                window.safeTypesetMath([panel]);
+            } else if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([panel]).catch(e => console.warn('MathJax zen render:', e));
+            }
+        }
+    }
+
+    function shuffleTheorem() {
+        const theorems = getTheoremsList();
+        if (theorems.length <= 1) return;
+
+        let nextIndex = Math.floor(Math.random() * theorems.length);
+        while (nextIndex === currentTheoremIndex && theorems.length > 1) {
+            nextIndex = Math.floor(Math.random() * theorems.length);
+        }
+        currentTheoremIndex = nextIndex;
+
+        // Visual feedback on shuffle button
+        const shuffleBtn = document.getElementById('zen-shuffle-theorem-btn');
+        if (shuffleBtn) {
+            shuffleBtn.classList.add('rotate-180');
+            setTimeout(() => shuffleBtn.classList.remove('rotate-180'), 300);
+        }
+
+        renderTheorem();
+    }
+
+    // --- Tab 2: Question Logic ---
+    function loadRandomQuestion() {
+        const questions = getAllDisciplineQuestions();
+        if (!questions || questions.length === 0) {
+            const qPrompt = document.getElementById('zen-question-prompt');
+            if (qPrompt) qPrompt.textContent = 'No questions found for this discipline.';
+            return;
+        }
+
+        let nextQ = questions[Math.floor(Math.random() * questions.length)];
+        if (currentQuestion && questions.length > 1) {
+            while (nextQ.id === currentQuestion.id) {
+                nextQ = questions[Math.floor(Math.random() * questions.length)];
+            }
+        }
+        currentQuestion = nextQ;
+        hasAnswered = false;
+        hasRevealedExplanation = false;
+
+        renderCurrentQuestion();
+    }
+
+    function renderCurrentQuestion() {
+        if (!currentQuestion) return;
+
+        const topicEl = document.getElementById('zen-question-topic');
+        const promptEl = document.getElementById('zen-question-prompt');
+        const imageContainer = document.getElementById('zen-question-image-container');
+        const optionsContainer = document.getElementById('zen-options-container');
+        const explanationContainer = document.getElementById('zen-explanation-container');
+        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+        const feedbackBanner = document.getElementById('zen-feedback-banner');
+
+        if (topicEl) {
+            topicEl.textContent = `${currentQuestion.subjectName || 'FE Practice'} • ${currentQuestion.topic || 'Core Problem'}`;
+        }
+        if (promptEl) {
+            promptEl.innerHTML = currentQuestion.question || '';
+        }
+
+        // Image Handling
+        if (imageContainer) {
+            const qImg = currentQuestion.local_image || currentQuestion.image;
+            if (qImg) {
+                const src = window.toDriveImgUrl ? window.toDriveImgUrl(qImg) : qImg;
+                imageContainer.innerHTML = `<img src="${src}" alt="Problem Diagram" class="max-h-56 mx-auto rounded-xl border border-slate-700/60 shadow-md my-3 object-contain">`;
+                imageContainer.classList.remove('hidden');
+            } else {
+                imageContainer.innerHTML = '';
+                imageContainer.classList.add('hidden');
+            }
+        }
+
+        // Reset Feedback Banner
+        if (feedbackBanner) {
+            feedbackBanner.innerHTML = '';
+            feedbackBanner.className = 'hidden mb-4 p-3.5 rounded-2xl text-xs font-bold transition-all';
+        }
+
+        // Render Options A, B, C, D
+        if (optionsContainer) {
+            optionsContainer.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+            (currentQuestion.options || []).forEach((opt, idx) => {
+                const optBtn = document.createElement('button');
+                optBtn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-slate-800/80 hover:bg-slate-750 border border-slate-700/80 hover:border-indigo-500/60 transition-all flex items-start gap-3.5 text-left text-sm text-slate-200 cursor-pointer group active:scale-[0.99]';
+                optBtn.setAttribute('data-index', idx);
+                optBtn.innerHTML = `
+                    <span class="zen-opt-letter w-7 h-7 rounded-xl bg-slate-700/80 text-slate-300 text-xs font-black flex items-center justify-center shrink-0 border border-slate-600 group-hover:border-indigo-400 group-hover:text-white transition-colors">
+                        ${letters[idx] || (idx + 1)}
+                    </span>
+                    <span class="zen-opt-text flex-1 pt-0.5 leading-relaxed">${opt.text || ''}</span>
+                `;
+                optBtn.onclick = () => handleOptionSelect(idx);
+                optionsContainer.appendChild(optBtn);
+            });
+        }
+
+        // Reset & Populate Explanation (Hidden Initially)
+        if (explanationContainer) {
+            explanationContainer.classList.add('hidden');
+            populateExplanationContent(explanationContainer);
+        }
+
+        // Reset Explanation Toggle Button
+        if (toggleExpBtn) {
+            toggleExpBtn.innerHTML = `
+                <span class="material-symbols-outlined text-[18px]">visibility</span>
+                <span>Explain Solution (Hidden)</span>
+            `;
+            toggleExpBtn.className = 'px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-300 hover:text-white text-xs font-bold border border-indigo-500/30 flex items-center gap-2 transition-all cursor-pointer shadow-sm';
+        }
+
+        // Typeset MathJax in Question Prompt and Options
+        const panel = document.getElementById('zen-question-panel');
+        if (panel) {
+            if (window.safeTypesetMath) {
+                window.safeTypesetMath([panel]);
+            } else if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([panel]).catch(e => console.warn('MathJax zen question render:', e));
+            }
+        }
+    }
+
+    function populateExplanationContent(container) {
+        if (!currentQuestion) return;
+
+        let stepsHtml = '';
+        if (currentQuestion.solution && currentQuestion.solution.steps && Array.isArray(currentQuestion.solution.steps)) {
+            stepsHtml = currentQuestion.solution.steps.map((st, i) => `
+                <div class="p-3.5 rounded-xl bg-slate-800/90 border border-slate-700/60 mb-2.5">
+                    <span class="text-xs font-black text-indigo-300 block mb-1 uppercase tracking-wider">Step ${i + 1}: ${st.title || ''}</span>
+                    <p class="text-xs text-slate-300 leading-relaxed">${st.content || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        // NCEES reference box
+        let nceesHtml = '';
+        if (currentQuestion.ncees_reference) {
+            const ref = currentQuestion.ncees_reference;
+            nceesHtml = `
+                <div class="mt-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3 text-xs text-amber-200">
+                    <span class="material-symbols-outlined text-amber-400 text-lg shrink-0 mt-0.5">menu_book</span>
+                    <div>
+                        <span class="font-bold text-amber-300 block mb-0.5 uppercase tracking-wide text-[10px]">NCEES Reference Handbook • ${ref.section || 'General'}</span>
+                        <p class="text-amber-100/90 leading-tight">Topic: <strong>${ref.topic || ''}</strong> ${ref.page_number ? `• Page ${ref.page_number}` : ''} ${ref.search_term ? `• Search: <em>"${ref.search_term}"</em>` : ''}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Engg.tv AI Big Idea / Pitfalls
+        let copilotHtml = '';
+        if (currentQuestion.copilot_explanation) {
+            const copilot = currentQuestion.copilot_explanation;
+            if (copilot.big_idea) {
+                copilotHtml += `
+                    <div class="mt-3 p-3.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-xs text-indigo-200 leading-relaxed">
+                        <strong class="text-indigo-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">💡 The Big Idea:</strong>
+                        ${copilot.big_idea}
+                    </div>
+                `;
+            }
+        }
+
+        const finalAnswer = (currentQuestion.solution && currentQuestion.solution.final_answer) || '';
+
+        container.innerHTML = `
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-3 mt-4 shadow-xl">
+                <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-indigo-400 text-xl">auto_stories</span>
+                        <span class="text-xs font-black uppercase tracking-wider text-indigo-200">Step-by-Step Explanation</span>
+                    </div>
+                    ${finalAnswer ? `<span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 text-xs font-bold">Final: ${finalAnswer}</span>` : ''}
+                </div>
+
+                <div class="space-y-2 pt-1">
+                    ${stepsHtml}
+                </div>
+
+                ${nceesHtml}
+                ${copilotHtml}
+            </div>
+        `;
+    }
+
+    function handleOptionSelect(selectedIndex) {
+        if (hasAnswered || !currentQuestion) return;
+        hasAnswered = true;
+
+        const options = currentQuestion.options || [];
+        const selectedOpt = options[selectedIndex];
+        const isCorrect = !!(selectedOpt && selectedOpt.is_correct);
+
+        const optionButtons = document.querySelectorAll('#zen-options-container .zen-option-btn');
+        optionButtons.forEach((btn, idx) => {
+            const opt = options[idx];
+            btn.classList.remove('hover:bg-slate-750', 'hover:border-indigo-500/60', 'cursor-pointer');
+            btn.classList.add('cursor-default');
+
+            if (opt && opt.is_correct) {
+                btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-emerald-950/60 border-2 border-emerald-500 text-emerald-200 transition-all flex items-start gap-3.5 text-left text-sm shadow-[0_0_20px_rgba(16,185,129,0.2)]';
+                const letterEl = btn.querySelector('.zen-opt-letter');
+                if (letterEl) letterEl.className = 'zen-opt-letter w-7 h-7 rounded-xl bg-emerald-500 text-slate-950 text-xs font-black flex items-center justify-center shrink-0';
+            } else if (idx === selectedIndex) {
+                btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-rose-950/60 border-2 border-rose-500 text-rose-200 transition-all flex items-start gap-3.5 text-left text-sm shadow-[0_0_20px_rgba(244,63,94,0.2)]';
+                const letterEl = btn.querySelector('.zen-opt-letter');
+                if (letterEl) letterEl.className = 'zen-opt-letter w-7 h-7 rounded-xl bg-rose-500 text-white text-xs font-black flex items-center justify-center shrink-0';
+            } else {
+                btn.classList.add('opacity-40');
+            }
+        });
+
+        // Feedback Banner & Points Award
+        const feedbackBanner = document.getElementById('zen-feedback-banner');
+        if (feedbackBanner) {
+            feedbackBanner.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackBanner.className = 'mb-4 p-3.5 rounded-2xl text-xs font-bold bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 flex items-center justify-between';
+                
+                // Award 1 point if not previously revealed
+                if (!hasRevealedExplanation) {
+                    if (window.addPoints) {
+                        window.addPoints(1, 'Simplistic Study Mode Correct Answer!');
+                    }
+                    if (typeof window.publishPeerMilestone === 'function' && currentQuestion) {
+                        const disc = getActiveDiscipline();
+                        window.publishPeerMilestone({
+                            type: 'zen_solved',
+                            title: `Solved ${currentQuestion.topic || 'FE Practice'} Problem in Simplistic Study`,
+                            detail: `FE ${disc} Focus • +1 Point awarded`,
+                            discipline: disc
+                        });
+                    }
+                    feedbackBanner.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                            <span>Correct! +1 point added to your score.</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-black uppercase tracking-wider">+1 PT</span>
+                    `;
+                } else {
+                    feedbackBanner.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                            <span>Correct! (Solution was previously revealed)</span>
+                        </div>
+                    `;
+                }
+            } else {
+                feedbackBanner.className = 'mb-4 p-3.5 rounded-2xl text-xs font-bold bg-rose-500/20 border border-rose-500/50 text-rose-300 flex items-center gap-2';
+                feedbackBanner.innerHTML = `
+                    <span class="material-symbols-outlined text-rose-400">cancel</span>
+                    <span>Incorrect. Review the step-by-step solution below.</span>
+                `;
+            }
+        }
+
+        // Auto-reveal explanation upon answering
+        revealExplanation(true);
+    }
+
+    function toggleExplanation() {
+        const expContainer = document.getElementById('zen-explanation-container');
+        if (!expContainer) return;
+
+        const isHidden = expContainer.classList.contains('hidden');
+        if (isHidden) {
+            hasRevealedExplanation = true;
+            revealExplanation(false);
+        } else {
+            expContainer.classList.add('hidden');
+            const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+            if (toggleExpBtn) {
+                toggleExpBtn.innerHTML = `
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                    <span>Explain Solution (Hidden)</span>
+                `;
+            }
+        }
+    }
+
+    function revealExplanation(isAfterAnswering) {
+        const expContainer = document.getElementById('zen-explanation-container');
+        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+        if (!expContainer) return;
+
+        expContainer.classList.remove('hidden');
+
+        setTimeout(() => {
+            expContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 60);
+
+        if (toggleExpBtn) {
+            toggleExpBtn.innerHTML = `
+                <span class="material-symbols-outlined text-[18px]">visibility_off</span>
+                <span>Hide Explanation</span>
+            `;
+            toggleExpBtn.className = 'px-4 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/40 text-indigo-200 text-xs font-bold border border-indigo-500/50 flex items-center gap-2 transition-all cursor-pointer shadow-sm';
+        }
+
+        // If revealed before answering, highlight correct option so user learns immediately
+        if (!hasAnswered && currentQuestion && currentQuestion.options) {
+            const optionButtons = document.querySelectorAll('#zen-options-container .zen-option-btn');
+            optionButtons.forEach((btn, idx) => {
+                const opt = currentQuestion.options[idx];
+                if (opt && opt.is_correct) {
+                    btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/60 text-emerald-200 transition-all flex items-start gap-3.5 text-left text-sm';
+                }
+            });
+        }
+
+        // Typeset MathJax inside explanation container
+        if (window.safeTypesetMath) {
+            window.safeTypesetMath([expContainer]);
+        } else if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([expContainer]).catch(e => console.warn('MathJax exp render:', e));
+        }
+    }
+
+    function shuffleQuestion() {
+        const shuffleBtn = document.getElementById('zen-shuffle-question-btn');
+        if (shuffleBtn) {
+            shuffleBtn.classList.add('rotate-180');
+            setTimeout(() => shuffleBtn.classList.remove('rotate-180'), 300);
+        }
+        loadRandomQuestion();
+    }
+
+    // --- Tab Switching ---
+    function setZenTab(tab) {
+        activeZenTab = tab;
+        const theoremPanel = document.getElementById('zen-theorem-panel');
+        const questionPanel = document.getElementById('zen-question-panel');
+        const tabTheoremBtn = document.getElementById('zen-tab-theorem-btn');
+        const tabQuestionBtn = document.getElementById('zen-tab-question-btn');
+
+        if (tab === 'theorem') {
+            if (theoremPanel) theoremPanel.classList.remove('hidden');
+            if (questionPanel) questionPanel.classList.add('hidden');
+
+            if (tabTheoremBtn) {
+                tabTheoremBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/30 transition-all cursor-pointer';
+            }
+            if (tabQuestionBtn) {
+                tabQuestionBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition-all cursor-pointer';
+            }
+
+            renderTheorem();
+        } else {
+            if (theoremPanel) theoremPanel.classList.add('hidden');
+            if (questionPanel) questionPanel.classList.remove('hidden');
+
+            if (tabQuestionBtn) {
+                tabQuestionBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/30 transition-all cursor-pointer';
+            }
+            if (tabTheoremBtn) {
+                tabTheoremBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition-all cursor-pointer';
+            }
+
+            if (!currentQuestion) {
+                loadRandomQuestion();
+            } else {
+                if (questionPanel) {
+                    if (window.safeTypesetMath) {
+                        window.safeTypesetMath([questionPanel]);
+                    } else if (window.MathJax && window.MathJax.typesetPromise) {
+                        window.MathJax.typesetPromise([questionPanel]).catch(e => console.warn(e));
+                    }
+                }
+            }
+        }
+    }
+
+    // --- Modal Lifecycle ---
+    function openModal() {
+        const modal = document.getElementById('simplistic-study-modal');
+        if (!modal) return;
+
+        currentDiscipline = getActiveDiscipline();
+        const discBadge = document.getElementById('zen-discipline-badge');
+        if (discBadge) {
+            discBadge.textContent = currentDiscipline;
+        }
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            const sheet = document.getElementById('zen-modal-card');
+            if (sheet) {
+                sheet.classList.remove('scale-95', 'opacity-0');
+                sheet.classList.add('scale-100', 'opacity-100');
+            }
+        }, 10);
+
+        setZenTab(activeZenTab);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('simplistic-study-modal');
+        const sheet = document.getElementById('zen-modal-card');
+        if (!modal) return;
+
+        if (sheet) {
+            sheet.classList.remove('scale-100', 'opacity-100');
+            sheet.classList.add('scale-95', 'opacity-0');
+        }
+        modal.classList.add('opacity-0');
+
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 250);
+    }
+
+    function toggleModal() {
+        const modal = document.getElementById('simplistic-study-modal');
+        if (!modal) return;
+        if (modal.classList.contains('hidden')) {
+            openModal();
+        } else {
+            closeModal();
+        }
+    }
+
+    function init() {
+        // Wire up tab buttons
+        const tabTheoremBtn = document.getElementById('zen-tab-theorem-btn');
+        if (tabTheoremBtn) {
+            tabTheoremBtn.onclick = () => setZenTab('theorem');
+        }
+
+        const tabQuestionBtn = document.getElementById('zen-tab-question-btn');
+        if (tabQuestionBtn) {
+            tabQuestionBtn.onclick = () => setZenTab('question');
+        }
+
+        // Shuffle buttons
+        const shuffleThBtn = document.getElementById('zen-shuffle-theorem-btn');
+        if (shuffleThBtn) {
+            shuffleThBtn.onclick = shuffleTheorem;
+        }
+
+        const shuffleQBtn = document.getElementById('zen-shuffle-question-btn');
+        if (shuffleQBtn) {
+            shuffleQBtn.onclick = shuffleQuestion;
+        }
+
+        const nextQBtn = document.getElementById('zen-next-q-btn');
+        if (nextQBtn) {
+            nextQBtn.onclick = shuffleQuestion;
+        }
+
+        // Toggle Explanation Button
+        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+        if (toggleExpBtn) {
+            toggleExpBtn.onclick = toggleExplanation;
+        }
+
+        // Close Modal button & backdrop
+        const closeBtn = document.getElementById('zen-modal-close-btn');
+        if (closeBtn) {
+            closeBtn.onclick = closeModal;
+        }
+
+        const modal = document.getElementById('simplistic-study-modal');
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    }
+
+    // Expose globally
+    window.openSimplisticStudyModal = openModal;
+    window.closeSimplisticStudyModal = closeModal;
+    window.toggleSimplisticStudyModal = toggleModal;
+    window.setZenTab = setZenTab;
+    window.shuffleZenTheorem = shuffleTheorem;
+    window.shuffleZenQuestion = shuffleQuestion;
+    window.handleZenOptionSelect = handleOptionSelect;
+    window.toggleZenExplanation = toggleExplanation;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+})();
+
+// --- END js/zen-study.js ---
 

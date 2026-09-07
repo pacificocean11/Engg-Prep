@@ -3634,6 +3634,89 @@ html.dark .warm-glass-card:hover {
     transform: translateY(-2px);
 }
 
+/* Contextual Formula Popups (A-5) */
+.formula-trigger {
+    color: var(--accent-pink);
+    border-bottom: 2px dashed var(--accent-pink);
+    cursor: help;
+    font-weight: 700;
+    position: relative;
+    padding: 0 2px;
+    transition: all 0.2s;
+    background: rgba(255, 0, 110, 0.05);
+    border-radius: 4px;
+}
+
+.formula-trigger:hover {
+    background: rgba(255, 0, 110, 0.1);
+    color: var(--accent-navy);
+}
+
+#formula-popup {
+    position: absolute;
+    z-index: 10000;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 0, 110, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+html.dark #formula-popup {
+    background: rgba(15, 23, 42, 0.95);
+    border-color: rgba(255, 0, 110, 0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#formula-popup.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.formula-popup-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--accent-pink);
+}
+
+.formula-popup-title {
+    font-family: 'Outfit';
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.formula-popup-content {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.formula-display {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255, 0, 110, 0.1);
+}
+
+html.dark .formula-display {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+
 
 
 

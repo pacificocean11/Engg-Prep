@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v154';
+const CACHE_NAME = 'engg-prep-cache-v155';
 const APP_SHELL = [
   './',
   './index.html',
@@ -19,13 +19,6 @@ const APP_SHELL = [
   './js/tts.js',
   './js/weakness-srs.js',
   './js/daily-quests.js',
-  './js/study-calendar.js',
-  './js/daily-motivation.js',
-  './js/alumni-spotlight.js',
-  './js/dashboard-tabs.js',
-  './js/zen-study.js',
-  './js/featured-video.js',
-  './js/peer-ticker.js',
   './assets/data/community_milestones.json',
   './assets/videos/placeholder_poster.jpg',
   './assets/avatars/sabrish.jpg',
