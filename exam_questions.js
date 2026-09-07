@@ -830,7 +830,7 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Binomial Probability Model",
-                            "content": "Let $X$ be the random variable representing the number of defective items among the chosen items. Since the probability of an item being defective is constant across all independent trials, $X$ follows a Binomial distribution $X \\sim B(n, p)$:\n\n\\begin{itemize}\n    \\item Number of trials: $n = 10$\n    \\item Probability of success (defective item): $p = 10\\% = 0.1$\n    \\item Probability of failure (non-defective item): $q = 1 - p = 0.9$\n    \\item Number of desired defective items: $k = 2$\n\\end{itemize}\n\n$\nP(X = k) = \\binom{n}{k} p^k q^{n-k}\n$"
+                            "content": "Let $X$ be the random variable representing the number of defective items among the chosen items. Since the probability of an item being defective is constant across all independent trials, $X$ follows a Binomial distribution $X \\sim B(n, p)$:\n\n\n    • Number of trials: $n = 10$\n    • Probability of success (defective item): $p = 10\\% = 0.1$\n    • Probability of failure (non-defective item): $q = 1 - p = 0.9$\n    • Number of desired defective items: $k = 2$\n\n\n$\nP(X = k) = \\binom{n}{k} p^k q^{n-k}\n$"
                         },
                         {
                             "title": "Step 1: Calculate Combination $\\binom{10",
@@ -889,11 +889,11 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Sample Space and Event Definition",
-                            "content": "Assuming that a person is equally likely to be born in any of the $12$ months of the year:\n\nLet the birth-months of the two friends be represented by the ordered pair $(M_1, M_2)$, where $M_1, M_2 \\in \\{1, 2, 3, \\dots, 12\\}$.\n\n\\begin{itemize}\n    \\item Total number of possible outcomes for two friends' birth-months:\n    $$N(S) = 12 \\times 12 = 144$$\n    \\item Favorable outcomes where both friends are born in the same month:\n    $$E = \\{(1,1), (2,2), (3,3), \\dots, (12,12)\\}$$\n    $$N(E) = 12$$\n\\end{itemize}\n\n$\nP(\\text{Same Birth-Month}) = \\frac{N(E)}{N(S)} = \\frac{12}{144} = \\frac{1}{12}\n$"
+                            "content": "Assuming that a person is equally likely to be born in any of the $12$ months of the year:\n\nLet the birth-months of the two friends be represented by the ordered pair $(M_1, M_2)$, where $M_1, M_2 \\in \\{1, 2, 3, \\dots, 12\\}$.\n\n\n    • Total number of possible outcomes for two friends' birth-months:\n    $$N(S) = 12 \\times 12 = 144$$\n    • Favorable outcomes where both friends are born in the same month:\n    $$E = \\{(1,1), (2,2), (3,3), \\dots, (12,12)\\}$$\n    $$N(E) = 12$$\n\n\n$\nP(\\text{Same Birth-Month}) = \\frac{N(E)}{N(S)} = \\frac{12}{144} = \\frac{1}{12}\n$"
                         },
                         {
                             "title": "Direct Method (Conditional Approach)",
-                            "content": "\\begin{enumerate}\n    \\item **First Friend:** The first friend can be born in any of the 12 months. The probability of choosing any month is $1$ (or $12/12$).\n    \\item **Second Friend:** For the second friend to share the same birth-month, they must be born in that exact same specific month chosen by the first friend. The probability is $1/12$.\n\\end{enumerate}\n\nCombining these probabilities:\n$$P(\\text{Same Month}) = 1 \\times \\frac{1}{12} = \\frac{1}{12}$$"
+                            "content": "\n    • **First Friend:** The first friend can be born in any of the 12 months. The probability of choosing any month is $1$ (or $12/12$).\n    • **Second Friend:** For the second friend to share the same birth-month, they must be born in that exact same specific month chosen by the first friend. The probability is $1/12$.\n\n\nCombining these probabilities:\n$$P(\\text{Same Month}) = 1 \\times \\frac{1}{12} = \\frac{1}{12}$$"
                         }
                     ],
                     "final_answer": "B",
@@ -940,15 +940,15 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Total Sample Space",
-                            "content": "The student council consists of 10 total members divided by school:\n\\begin{itemize}\n    \\item Engineering ($E$): 2 students\n    \\item Science ($S$): 3 students\n    \\item Arts ($A$): 5 students\n\\end{itemize}\n\nThe total number of ways to randomly select 3 students out of 10 is:\n$$N(S) = \\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{3 \\times 2 \\times 1} = 120$$\n\n$\nN(\\text{2 Same, 1 Different}) = N(S) - N(\\text{All 3 Same}) - N(\\text{All 3 Different})\n$"
+                            "content": "The student council consists of 10 total members divided by school:\n\n    • Engineering ($E$): 2 students\n    • Science ($S$): 3 students\n    • Arts ($A$): 5 students\n\n\nThe total number of ways to randomly select 3 students out of 10 is:\n$$N(S) = \\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{3 \\times 2 \\times 1} = 120$$\n\n$\nN(\\text{2 Same, 1 Different}) = N(S) - N(\\text{All 3 Same}) - N(\\text{All 3 Different})\n$"
                         },
                         {
                             "title": "Method 1: Complementary Selection",
-                            "content": "\\begin{enumerate}\n    \\item **All 3 students from the same school:**\n    \\begin{itemize}\n        \\item Engineering: 0 ways (only 2 students available)\n        \\item Science: $\\binom{3}{3} = 1$ way\n        \\item Arts: $\\binom{5}{3} = 10$ ways\n    \\end{itemize}\n    $$N(\\text{All 3 Same}) = 0 + 1 + 10 = 11$$\n\n    \\item **All 3 students from different schools (1 from E, 1 from S, 1 from A):**\n    $$N(\\text{All 3 Different}) = \\binom{2}{1} \\times \\binom{3}{1} \\times \\binom{5}{1} = 2 \\times 3 \\times 5 = 30$$\n\\end{enumerate}\n\nSubtracting these from the total possibilities gives the favorable outcomes:\n$$N(\\text{2 Same, 1 Different}) = 120 - 11 - 30 = 79$$"
+                            "content": "\n    • **All 3 students from the same school:**\n    \n        • Engineering: 0 ways (only 2 students available)\n        • Science: $\\binom{3}{3} = 1$ way\n        • Arts: $\\binom{5}{3} = 10$ ways\n    \n    $$N(\\text{All 3 Same}) = 0 + 1 + 10 = 11$$\n\n    • **All 3 students from different schools (1 from E, 1 from S, 1 from A):**\n    $$N(\\text{All 3 Different}) = \\binom{2}{1} \\times \\binom{3}{1} \\times \\binom{5}{1} = 2 \\times 3 \\times 5 = 30$$\n\n\nSubtracting these from the total possibilities gives the favorable outcomes:\n$$N(\\text{2 Same, 1 Different}) = 120 - 11 - 30 = 79$$"
                         },
                         {
                             "title": "Method 2: Direct Summation",
-                            "content": "Alternatively, sum all valid combinations:\n\\begin{itemize}\n    \\item 2 Engineering, 1 Science: $\\binom{2}{2} \\times \\binom{3}{1} = 1 \\times 3 = 3$\n    \\item 2 Engineering, 1 Arts: $\\binom{2}{2} \\times \\binom{5}{1} = 1 \\times 5 = 5$\n    \\item 2 Science, 1 Engineering: $\\binom{3}{2} \\times \\binom{2}{1} = 3 \\times 2 = 6$\n    \\item 2 Science, 1 Arts: $\\binom{3}{2} \\times \\binom{5}{1} = 3 \\times 5 = 15$\n    \\item 2 Arts, 1 Engineering: $\\binom{5}{2} \\times \\binom{2}{1} = 10 \\times 2 = 20$\n    \\item 2 Arts, 1 Science: $\\binom{5}{2} \\times \\binom{3}{1} = 10 \\times 3 = 30$\n\\end{itemize}\n\n$$\\text{Sum} = 3 + 5 + 6 + 15 + 20 + 30 = 79$$"
+                            "content": "Alternatively, sum all valid combinations:\n\n    • 2 Engineering, 1 Science: $\\binom{2}{2} \\times \\binom{3}{1} = 1 \\times 3 = 3$\n    • 2 Engineering, 1 Arts: $\\binom{2}{2} \\times \\binom{5}{1} = 1 \\times 5 = 5$\n    • 2 Science, 1 Engineering: $\\binom{3}{2} \\times \\binom{2}{1} = 3 \\times 2 = 6$\n    • 2 Science, 1 Arts: $\\binom{3}{2} \\times \\binom{5}{1} = 3 \\times 5 = 15$\n    • 2 Arts, 1 Engineering: $\\binom{5}{2} \\times \\binom{2}{1} = 10 \\times 2 = 20$\n    • 2 Arts, 1 Science: $\\binom{5}{2} \\times \\binom{3}{1} = 10 \\times 3 = 30$\n\n\n$$\\text{Sum} = 3 + 5 + 6 + 15 + 20 + 30 = 79$$"
                         },
                         {
                             "title": "Step 2: Calculate Required Probability",
@@ -999,11 +999,11 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Sample Space and Favorable Outcomes",
-                            "content": "A standard deck contains $52$ playing cards divided into $13$ ranks, with $4$ cards in each rank:\n\\begin{itemize}\n    \\item Number of Kings in the deck = $4$\n    \\item Number of Queens in the deck = $4$\n    \\item Number of Jacks in the deck = $4$\n\\end{itemize}\n\nThe total number of ways to draw $3$ cards randomly from $52$ cards is given by the combination formula:\n\n$$N(S) = \\binom{52}{3} = \\frac{52 \\times 51 \\times 50}{3 \\times 2 \\times 1} = 22,100$$\n\n$\nP(K \\cap Q \\cap J) = \\frac{\\binom{4}{1} \\times \\binom{4}{1} \\times \\binom{4}{1}}{\\binom{52}{3}}\n$"
+                            "content": "A standard deck contains $52$ playing cards divided into $13$ ranks, with $4$ cards in each rank:\n\n    • Number of Kings in the deck = $4$\n    • Number of Queens in the deck = $4$\n    • Number of Jacks in the deck = $4$\n\n\nThe total number of ways to draw $3$ cards randomly from $52$ cards is given by the combination formula:\n\n$$N(S) = \\binom{52}{3} = \\frac{52 \\times 51 \\times 50}{3 \\times 2 \\times 1} = 22,100$$\n\n$\nP(K \\cap Q \\cap J) = \\frac{\\binom{4}{1} \\times \\binom{4}{1} \\times \\binom{4}{1}}{\\binom{52}{3}}\n$"
                         },
                         {
                             "title": "Step 1: Calculate Favorable Outcomes",
-                            "content": "To select exactly $1$ King, $1$ Queen, and $1$ Jack:\n\\begin{itemize}\n    \\item Ways to select 1 King from 4 Kings: $\\binom{4}{1} = 4$\n    \\item Ways to select 1 Queen from 4 Queens: $\\binom{4}{1} = 4$\n    \\item Ways to select 1 Jack from 4 Jacks: $\\binom{4}{1} = 4$\n\\end{itemize}\n\n$$N(E) = \\binom{4}{1} \\times \\binom{4}{1} \\times \\binom{4}{1} = 4 \\times 4 \\times 4 = 64$$"
+                            "content": "To select exactly $1$ King, $1$ Queen, and $1$ Jack:\n\n    • Ways to select 1 King from 4 Kings: $\\binom{4}{1} = 4$\n    • Ways to select 1 Queen from 4 Queens: $\\binom{4}{1} = 4$\n    • Ways to select 1 Jack from 4 Jacks: $\\binom{4}{1} = 4$\n\n\n$$N(E) = \\binom{4}{1} \\times \\binom{4}{1} \\times \\binom{4}{1} = 4 \\times 4 \\times 4 = 64$$"
                         },
                         {
                             "title": "Step 2: Calculate Required Probability",
@@ -1054,7 +1054,7 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Conditional Probability",
-                            "content": "Let the relevant events be defined as:\n\\begin{itemize}\n    \\item $P$: Event that the student passes the exam.\n    \\item $A$: Event that the student gets above $90\\%$ marks.\n\\end{itemize}\n\nFrom the given information:\n\\begin{itemize}\n    \\item Probability of passing the exam: $P(P) = 20\\% = 0.20 = \\dfrac{20}{100}$\n    \\item Probability of passing and getting above $90\\%$ marks: $P(A \\cap P) = 5\\% = 0.05 = \\dfrac{5}{100}$\n\\end{itemize}\n\n$\nP(A \\mid P) = \\frac{P(A \\cap P)}{P(P)}\n$"
+                            "content": "Let the relevant events be defined as:\n\n    • $P$: Event that the student passes the exam.\n    • $A$: Event that the student gets above $90\\%$ marks.\n\n\nFrom the given information:\n\n    • Probability of passing the exam: $P(P) = 20\\% = 0.20 = \\dfrac{20}{100}$\n    • Probability of passing and getting above $90\\%$ marks: $P(A \\cap P) = 5\\% = 0.05 = \\dfrac{5}{100}$\n\n\n$\nP(A \\mid P) = \\frac{P(A \\cap P)}{P(P)}\n$"
                         },
                         {
                             "title": "Step 1: Apply the Conditional Probability Formula",
@@ -1168,7 +1168,7 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand the Selection Process",
-                            "content": "The box contains a total of $N = 4 + 6 = 10$ balls:\n\\begin{itemize}\n    \\item Number of red balls ($R$): $4$\n    \\item Number of black balls ($B$): $6$\n    \\item Total balls selected ($n$): $3$\n\\end{itemize}\n\nSelecting balls \"one after another, without replacement\" is equivalent to selecting 3 balls simultaneously at random.\n\n$\nP(1R, 2B) = \\frac{\\binom{4}{1} \\times \\binom{6}{2}}{\\binom{10}{3}}\n$"
+                            "content": "The box contains a total of $N = 4 + 6 = 10$ balls:\n\n    • Number of red balls ($R$): $4$\n    • Number of black balls ($B$): $6$\n    • Total balls selected ($n$): $3$\n\n\nSelecting balls \"one after another, without replacement\" is equivalent to selecting 3 balls simultaneously at random.\n\n$\nP(1R, 2B) = \\frac{\\binom{4}{1} \\times \\binom{6}{2}}{\\binom{10}{3}}\n$"
                         },
                         {
                             "title": "Step 1: Calculate Total Number of Outcomes",
@@ -1176,7 +1176,7 @@ const EXAM_QUESTIONS = {
                         },
                         {
                             "title": "Step 2: Calculate Favorable Outcomes",
-                            "content": "We need to select exactly $1$ red ball from $4$ and $2$ black balls from $6$:\n\n\\begin{itemize}\n    \\item Ways to select 1 red ball: $\\binom{4}{1} = 4$\n    \\item Ways to select 2 black balls: $\\binom{6}{2} = \\frac{6 \\times 5}{2 \\times 1} = 15$\n\\end{itemize}\n\nTotal favorable ways:\n$$N(E) = \\binom{4}{1} \\times \\binom{6}{2} = 4 \\times 15 = 60$$"
+                            "content": "We need to select exactly $1$ red ball from $4$ and $2$ black balls from $6$:\n\n\n    • Ways to select 1 red ball: $\\binom{4}{1} = 4$\n    • Ways to select 2 black balls: $\\binom{6}{2} = \\frac{6 \\times 5}{2 \\times 1} = 15$\n\n\nTotal favorable ways:\n$$N(E) = \\binom{4}{1} \\times \\binom{6}{2} = 4 \\times 15 = 60$$"
                         },
                         {
                             "title": "Step 3: Calculate Required Probability",
@@ -1227,7 +1227,7 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand the Given Events",
-                            "content": "Let the relevant events be defined as:\n\\begin{itemize}\n    \\item $X$: Event that the shock absorber is supplied by $X$.\n    \\item $Y$: Event that the shock absorber is supplied by $Y$.\n    \\item $R$: Event that the shock absorber is reliable.\n\\end{itemize}\n\nGiven prior probabilities:\n$$P(X) = 0.60, \\quad P(Y) = 0.40$$\n\nGiven conditional probabilities of reliability:\n$$P(R \\mid X) = 0.96, \\quad P(R \\mid Y) = 0.72$$\n\n$\nP(Y \\mid R) = \\frac{P(Y \\cap R)}{P(R)} = \\frac{P(Y) \\cdot P(R \\mid Y)}{P(X) \\cdot P(R \\mid X) + P(Y) \\cdot P(R \\mid Y)}\n$"
+                            "content": "Let the relevant events be defined as:\n\n    • $X$: Event that the shock absorber is supplied by $X$.\n    • $Y$: Event that the shock absorber is supplied by $Y$.\n    • $R$: Event that the shock absorber is reliable.\n\n\nGiven prior probabilities:\n$$P(X) = 0.60, \\quad P(Y) = 0.40$$\n\nGiven conditional probabilities of reliability:\n$$P(R \\mid X) = 0.96, \\quad P(R \\mid Y) = 0.72$$\n\n$\nP(Y \\mid R) = \\frac{P(Y \\cap R)}{P(R)} = \\frac{P(Y) \\cdot P(R \\mid Y)}{P(X) \\cdot P(R \\mid X) + P(Y) \\cdot P(R \\mid Y)}\n$"
                         },
                         {
                             "title": "Step 1: Calculate Total Probability of Reliability $P(R)$",
@@ -1286,7 +1286,7 @@ const EXAM_QUESTIONS = {
                         },
                         {
                             "title": "Step 1: Find Favorable Outcomes for Sum = 8 and Sum = 9",
-                            "content": "List all pairs $(d_1, d_2)$ that yield a sum of $8$ or $9$:\n\n\\begin{itemize}\n    \\item Outcomes where sum $= 8$: $\\{(2,6), (3,5), (4,4), (5,3), (6,2)\\} \\implies 5 \\text{ outcomes}$\n    \\item Outcomes where sum $= 9$: $\\{(3,6), (4,5), (5,4), (6,3)\\} \\implies 4 \\text{ outcomes}$\n\\end{itemize}\n\nTotal favorable outcomes for sum equal to $8$ or $9$:\n\n$$N(E) = 5 + 4 = 9$$"
+                            "content": "List all pairs $(d_1, d_2)$ that yield a sum of $8$ or $9$:\n\n\n    • Outcomes where sum $= 8$: $\\{(2,6), (3,5), (4,4), (5,3), (6,2)\\} \\implies 5 \\text{ outcomes}$\n    • Outcomes where sum $= 9$: $\\{(3,6), (4,5), (5,4), (6,3)\\} \\implies 4 \\text{ outcomes}$\n\n\nTotal favorable outcomes for sum equal to $8$ or $9$:\n\n$$N(E) = 5 + 4 = 9$$"
                         },
                         {
                             "title": "Step 2: Calculate Probability of Sum Being 8 or 9",
@@ -1341,11 +1341,11 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Sample Space and Selection",
-                            "content": "A standard deck contains $52$ playing cards, of which $4$ are Kings. Two cards are drawn without replacement.\n\n\\textbf{Method 1: Multiplication Rule for Dependent Events}\nLet:\n\\begin{itemize}\n    \\item $K_1$: Event that the first card drawn is a King.\n    \\item $K_2$: Event that the second card drawn is a King.\n\\end{itemize}\n\n$\nP(K_1 \\cap K_2) = P(K_1) \\times P(K_2 \\mid K_1)\n$"
+                            "content": "A standard deck contains $52$ playing cards, of which $4$ are Kings. Two cards are drawn without replacement.\n\n\\textbf{Method 1: Multiplication Rule for Dependent Events}\nLet:\n\n    • $K_1$: Event that the first card drawn is a King.\n    • $K_2$: Event that the second card drawn is a King.\n\n\n$\nP(K_1 \\cap K_2) = P(K_1) \\times P(K_2 \\mid K_1)\n$"
                         },
                         {
                             "title": "Step 1: Calculate Individual Probabilities",
-                            "content": "\\begin{itemize}\n    \\item Probability that the 1st card is a King:\n    $$P(K_1) = \\frac{4}{52} = \\frac{1}{13}$$\n    \n    \\item Since the first card is not replaced, $51$ cards remain in the deck with $3$ Kings left. Probability that the 2nd card is a King:\n    $$P(K_2 \\mid K_1) = \\frac{3}{51} = \\frac{1}{17}$$\n\\end{itemize}"
+                            "content": "\n    • Probability that the 1st card is a King:\n    $$P(K_1) = \\frac{4}{52} = \\frac{1}{13}$$\n    \n    • Since the first card is not replaced, $51$ cards remain in the deck with $3$ Kings left. Probability that the 2nd card is a King:\n    $$P(K_2 \\mid K_1) = \\frac{3}{51} = \\frac{1}{17}$$\n"
                         },
                         {
                             "title": "Step 2: Calculate Joint Probability",
@@ -1455,7 +1455,7 @@ const EXAM_QUESTIONS = {
                     "steps": [
                         {
                             "title": "Understand Binomial Distribution",
-                            "content": "Let $X$ be the number of defective bolts in a total sample of $n$ bolts. $X$ follows a Binomial distribution:\n\n$$X \\sim \\mathcal{B}(n, p)$$\n\nGiven parameters:\n\\begin{itemize}\n    \\item Total number of trials ($n$): $900$\n    \\item Probability of success (defective bolt, $p$): $0.1$\n    \\item Probability of failure ($q = 1 - p$): $1 - 0.1 = 0.9$\n\\end{itemize}\n\n$\n\\mu = n p, \\quad \\sigma = \\sqrt{n p q}\n$"
+                            "content": "Let $X$ be the number of defective bolts in a total sample of $n$ bolts. $X$ follows a Binomial distribution:\n\n$$X \\sim \\mathcal{B}(n, p)$$\n\nGiven parameters:\n\n    • Total number of trials ($n$): $900$\n    • Probability of success (defective bolt, $p$): $0.1$\n    • Probability of failure ($q = 1 - p$): $1 - 0.1 = 0.9$\n\n\n$\n\\mu = n p, \\quad \\sigma = \\sqrt{n p q}\n$"
                         },
                         {
                             "title": "Step 1: Calculate Mean ($\\mu$)",

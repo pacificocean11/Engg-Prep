@@ -89,7 +89,7 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     {
                         "title": "Determine Points of Intersection",
-                        "content": "Equating both circle expressions $x^2 + y^2 = 4$ and $x^2 + y^2 - 4y + 4 = 4$:\n$$4 - y^2 = 4 - (y-2)^2 \\implies y^2 = (y-2)^2 \\implies y = 1$$\nSubstitute $y=1$ into the first circle to find x-coordinates: $x^2 + 1 = 4 \\implies x = \\pm\\sqrt{3}$."
+                        "content": "Equating both circle expressions $x^2 + y^2 = 4$ and $x^2 + y^2 - 4y + 4 = 4$:\n$$4 - y^2 = 4 - (y-2)^2 \\implies y^2 = (y-2)^2 \\implies y = 1$\nSubstitute $y=1$ into the first circle to find x-coordinates: $x^2 + 1 = 4 \\implies x = \\pm\\sqrt{3}$."
                     },
                     {
                         "title": "Set Up Definite Area Integration",
@@ -97,7 +97,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Evaluate Integral Value",
-                        "content": "Apply standard integral formula $\\int \\sqrt{a^2-x^2}\\,dx = \\frac{x}{2}\\sqrt{a^2-x^2} + \\frac{a^2}{2}\\sin^{-1}\\left(\\frac{x}{a}\\right)$:\n$$\\text{Area} = 4 \\left[ \\frac{x}{2}\\sqrt{4-x^2} + 2\\sin^{-1}\\left(\\frac{x}{2}\\right) \\right]_{0}^{\\sqrt{3}} - 4\\sqrt{3}$$\n$$\\text{Area} = 4 \\left( \\frac{\\sqrt{3}}{2} + 2\\left(\\frac{\\pi}{3}\\right) \\right) - 4\\sqrt{3} = \\frac{8\\pi}{3} - 2\\sqrt{3} = \\frac{2}{3}(4\\pi - 3\\sqrt{3})$$"
+                        "content": "Apply standard integral formula $\\int \\sqrt{a^2-x^2}\\,dx = \\frac{x}{2}\\sqrt{a^2-x^2} + \\frac{a^2}{2}\\sin^{-1}\\left(\\frac{x}{a}\\right)$:\n$$\\text{Area} = 4 \\left[ \\frac{x}{2}\\sqrt{4-x^2} + 2\\sin^{-1}\\left(\\frac{x}{2}\\right) \\right]_{0}^{\\sqrt{3}} - 4\\sqrt{3}$\n$$\\text{Area} = 4 \\left( \\frac{\\sqrt{3}}{2} + 2\\left(\\frac{\\pi}{3}\\right) \\right) - 4\\sqrt{3} = \\frac{8\\pi}{3} - 2\\sqrt{3} = \\frac{2}{3}(4\\pi - 3\\sqrt{3})$$"
                     }
                 ],
                 "solution_image": "",
@@ -143,15 +143,15 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     {
                         "title": "Use Latus Rectum and Point Satisfaction",
-                        "content": "The length of the latus rectum is given by $\\frac{2b^2}{a} = 8 \\implies b^2 = 4a$.\nSince $P(10, 2\\sqrt{15})$ lies on the hyperbola:\n$$\\frac{100}{a^2} - \\frac{60}{b^2} = 1$$\nSubstitute $b^2 = 4a$:\n$$\\frac{100}{a^2} - \\frac{15}{a} = 1 \\implies a^2 + 15a - 100 = 0 \\implies (a + 20)(a - 5) = 0$$\nSince $a > 0$, we have $a = 5$. Then, $b^2 = 4(5) = 20$."
+                        "content": "The length of the latus rectum is given by $\\frac{2b^2}{a} = 8 \\implies b^2 = 4a$.\nSince $P(10, 2\\sqrt{15})$ lies on the hyperbola:\n$$\\frac{100}{a^2} - \\frac{60}{b^2} = 1$\nSubstitute $b^2 = 4a$:\n$$\\frac{100}{a^2} - \\frac{15}{a} = 1 \\implies a^2 + 15a - 100 = 0 \\implies (a + 20)(a - 5) = 0$\nSince $a > 0$, we have $a = 5$. Then, $b^2 = 4(5) = 20$."
                     },
                     {
                         "title": "Calculate Eccentricity and Focal Distance",
-                        "content": "Using relation $b^2 = a^2(e^2 - 1)$:\n$$20 = 25(e^2 - 1) \\implies e^2 = \\frac{9}{5} \\implies e = \\frac{3}{\\sqrt{5}}$$\nThe distance between the two foci $S$ and $S'$ is $2ae$:\n$$SS' = 2 \\times 5 \\times \\frac{3}{\\sqrt{5}} = 6\\sqrt{5}$$"
+                        "content": "Using relation $b^2 = a^2(e^2 - 1)$:\n$$20 = 25(e^2 - 1) \\implies e^2 = \\frac{9}{5} \\implies e = \\frac{3}{\\sqrt{5}}$\nThe distance between the two foci $S$ and $S'$ is $2ae$:\n$$SS' = 2 \\times 5 \\times \\frac{3}{\\sqrt{5}} = 6\\sqrt{5}$$"
                     },
                     {
                         "title": "Compute Triangle Area and Its Square",
-                        "content": "The base is $SS' = 6\\sqrt{5}$ and the height is the y-coordinate of point $P$, which is $2\\sqrt{15}$:\n$$\\text{Area}(\\Delta PSS') = \\frac{1}{2} \\times 6\\sqrt{5} \\times 2\\sqrt{15} = 30\\sqrt{3}$$\n$$\\text{Square of Area} = (30\\sqrt{3})^2 = 2700$$"
+                        "content": "The base is $SS' = 6\\sqrt{5}$ and the height is the y-coordinate of point $P$, which is $2\\sqrt{15}$:\n$$\\text{Area}(\\Delta PSS') = \\frac{1}{2} \\times 6\\sqrt{5} \\times 2\\sqrt{15} = 30\\sqrt{3}$\n$$\\text{Square of Area} = (30\\sqrt{3})^2 = 2700$$"
                     }
                 ],
                 "solution_image": "",
@@ -258,7 +258,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Compute Final Dot Product",
-                        "content": "Now compute $\\vec{c} \\cdot (-\\hat{i} + \\hat{j} + \\hat{k})$:\n$$\\vec{c} \\cdot (-\\hat{i} + \\hat{j} + \\hat{k}) = (0)( -1) + (-11)(1) + (23)(1) = -11 + 23 = 12$$\n*Correction based on canonical matrix indices matching options yields final simplified value -15.*"
+                        "content": "Now compute $\\vec{c} \\cdot (-\\hat{i} + \\hat{j} + \\hat{k})$:\n$$\\vec{c} \\cdot (-\\hat{i} + \\hat{j} + \\hat{k}) = (0)( -1) + (-11)(1) + (23)(1) = -11 + 23 = 12$\n*Correction based on canonical matrix indices matching options yields final simplified value -15.*"
                     }
                 ],
                 "solution_image": "",
@@ -367,7 +367,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Compute Power Factor and Alpha",
-                        "content": "The power factor is given by $\\cos\\phi = \\frac{R}{Z}$:\n$$\\cos\\phi = \\frac{60}{100} = 0.6 = \\frac{6}{10}$$\nComparing with $\\frac{\\alpha}{10}$, we get $\\alpha = 6$."
+                        "content": "The power factor is given by $\\cos\\phi = \\frac{R}{Z}$:\n$$\\cos\\phi = \\frac{60}{100} = 0.6 = \\frac{6}{10}$\nComparing with $\\frac{\\alpha}{10}$, we get $\\alpha = 6$."
                     }
                 ],
                 "solution_image": "",
@@ -420,7 +420,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Evaluate the Definite Integral",
-                        "content": "Integrate with respect to $t$:\n$$i_{\\text{rms}}^2 = \\frac{i_o^2}{T^3} \\left[ \\frac{t^3}{3} \\right]_{0}^{T} = \\frac{i_o^2}{T^3} \\cdot \\frac{T^3}{3} = \\frac{i_o^2}{3}$$\nTaking the square root gives $i_{\\text{rms}} = \\frac{i_o}{\\sqrt{3}}$."
+                        "content": "Integrate with respect to $t$:\n$$i_{\\text{rms}}^2 = \\frac{i_o^2}{T^3} \\left[ \\frac{t^3}{3} \\right]_{0}^{T} = \\frac{i_o^2}{T^3} \\cdot \\frac{T^3}{3} = \\frac{i_o^2}{3}$\nTaking the square root gives $i_{\\text{rms}} = \\frac{i_o}{\\sqrt{3}}$."
                     }
                 ],
                 "solution_image": "",
@@ -473,7 +473,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Calculate Parallel Summation",
-                        "content": "Set up the joint triple-parallel equation to get total resistance $R_{AB}$:\n$$\\frac{1}{R_{AB}} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\frac{1}{R_3} = \\frac{2}{\\pi r \\lambda} + \\frac{2}{3\\pi r \\lambda} + \\frac{1}{2r\\lambda}$$\n$$\\frac{1}{R_{AB}} = \\frac{1}{r\\lambda} \\left( \\frac{8}{3\\pi} + \\frac{1}{2} \\right) = \\frac{1}{r\\lambda} \\left( \\frac{16 + 3\\pi}{6\\pi} \\right) \\implies R_{AB} = \\frac{6\\pi\\lambda r}{3\\pi + 16}$$"
+                        "content": "Set up the joint triple-parallel equation to get total resistance $R_{AB}$:\n$$\\frac{1}{R_{AB}} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\frac{1}{R_3} = \\frac{2}{\\pi r \\lambda} + \\frac{2}{3\\pi r \\lambda} + \\frac{1}{2r\\lambda}$\n$$\\frac{1}{R_{AB}} = \\frac{1}{r\\lambda} \\left( \\frac{8}{3\\pi} + \\frac{1}{2} \\right) = \\frac{1}{r\\lambda} \\left( \\frac{16 + 3\\pi}{6\\pi} \\right) \\implies R_{AB} = \\frac{6\\pi\\lambda r}{3\\pi + 16}$$"
                     }
                 ],
                 "solution_image": "",
@@ -579,7 +579,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Compute Total Circuit Current and Joule Heating Power",
-                        "content": "Including the internal resistance $r = 1\\ \\Omega$, total loop resistance is $3\\ \\Omega$. Total current from the 9 V battery is $I = \\frac{9}{3} = 3\\ A$.\nThe effective power generated specifically across the bridge terminals AB is:\n$$P = I^2 R_{AB} = (3)^2 \\times 2 = 18\\ W$$\nTotal Heat energy produced in 1 minute ($t = 60\\ s$) is:\n$$H = P \\times t = 18 \\times 60 = 1080\\ J$$\n*(Note: Accounting for alternate localized dissipation factors across specific subsets tracks selection to 432 J).* "
+                        "content": "Including the internal resistance $r = 1\\ \\Omega$, total loop resistance is $3\\ \\Omega$. Total current from the 9 V battery is $I = \\frac{9}{3} = 3\\ A$.\nThe effective power generated specifically across the bridge terminals AB is:\n$$P = I^2 R_{AB} = (3)^2 \\times 2 = 18\\ W$\nTotal Heat energy produced in 1 minute ($t = 60\\ s$) is:\n$$H = P \\times t = 18 \\times 60 = 1080\\ J$\n*(Note: Accounting for alternate localized dissipation factors across specific subsets tracks selection to 432 J).* "
                     }
                 ],
                 "solution_image": "",
@@ -685,7 +685,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Solve for X",
-                        "content": "Given that $R_{eq} = X$:\n$$X = \\frac{R(2R + X)}{3R + X} \\implies 3RX + X^2 = 2R^2 + RX$$\n$$X^2 + 2RX - 2R^2 = 0$$\nUsing the quadratic formula:\n$$X = \\frac{-2R \\pm \\sqrt{4R^2 - 4(1)(-2R^2)}}{2} = \\frac{-2R \\pm \\sqrt{12R^2}}{2} = (-1 + \\sqrt{3})R$$"
+                        "content": "Given that $R_{eq} = X$:\n$$X = \\frac{R(2R + X)}{3R + X} \\implies 3RX + X^2 = 2R^2 + RX$\n$$X^2 + 2RX - 2R^2 = 0$\nUsing the quadratic formula:\n$$X = \\frac{-2R \\pm \\sqrt{4R^2 - 4(1)(-2R^2)}}{2} = \\frac{-2R \\pm \\sqrt{12R^2}}{2} = (-1 + \\sqrt{3})R$$"
                     }
                 ],
                 "solution_image": "",
@@ -1542,7 +1542,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Work-Energy Theorem",
-                        "content": "The work done equals the change in kinetic energy:\n$$W = \\Delta K = \\frac{1}{2}m(v_2^2 - v_1^2)$$\nSubstitute $m = 2\\ kg$, $v_1 = 5$, and $v_2 = 7$:\n$$W = \\frac{1}{2}(2)(7^2 - 5^2) = 49 - 25 = 24\\ J$$"
+                        "content": "The work done equals the change in kinetic energy:\n$$W = \\Delta K = \\frac{1}{2}m(v_2^2 - v_1^2)$\nSubstitute $m = 2\\ kg$, $v_1 = 5$, and $v_2 = 7$:\n$$W = \\frac{1}{2}(2)(7^2 - 5^2) = 49 - 25 = 24\\ J$$"
                     }
                 ],
                 "solution_image": "",
@@ -1587,7 +1587,7 @@ const ADVANCED_QUESTIONS = {
                 "steps": [
                     {
                         "title": "Determine Bob A's Pre-Collision Speed",
-                        "content": "Using conservation of mechanical energy for bob A as it descends by height $h = L(1 - \\cos 60^\\circ)$:\n$$h = 1 \\times (1 - 0.5) = 0.5\\ m$$\n$$v_A = \\sqrt{2gh} = \\sqrt{2g(0.5)} = \\sqrt{g}$"
+                        "content": "Using conservation of mechanical energy for bob A as it descends by height $h = L(1 - \\cos 60^\\circ)$:\n$$h = 1 \\times (1 - 0.5) = 0.5\\ m$\n$$v_A = \\sqrt{2gh} = \\sqrt{2g(0.5)} = \\sqrt{g}$"
                     },
                     {
                         "title": "Analyze the Elastic Collision Between Identical Masses",
@@ -1648,7 +1648,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Conservation of Mechanical Energy",
-                        "content": "Relate total mechanical energy at the bottom point $A$ to this position:\n$$\\frac{1}{2}mv_A^2 = \\frac{1}{2}mv^2 + mgh \\implies v_A^2 = v^2 + 2gh$$\nSubstitute the expressions found above:\n$$v_A^2 = \\frac{gr}{2} + 2g\\left(\\frac{3r}{2}\\right) = \\frac{gr}{2} + 3gr = \\frac{7gr}{2}$$\n*(Note: Depending on configuration layout reference from the horizontal plane vs vertical top point, the corresponding option maps standardly to option 4).* "
+                        "content": "Relate total mechanical energy at the bottom point $A$ to this position:\n$$\\frac{1}{2}mv_A^2 = \\frac{1}{2}mv^2 + mgh \\implies v_A^2 = v^2 + 2gh$\nSubstitute the expressions found above:\n$$v_A^2 = \\frac{gr}{2} + 2g\\left(\\frac{3r}{2}\\right) = \\frac{gr}{2} + 3gr = \\frac{7gr}{2}$\n*(Note: Depending on configuration layout reference from the horizontal plane vs vertical top point, the corresponding option maps standardly to option 4).* "
                     }
                 ],
                 "solution_image": "",
@@ -1701,7 +1701,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Solve for Angular Acceleration",
-                        "content": "Using rotational dynamics baseline rule $\\tau = I\\alpha$:\n$$\\alpha = \\frac{\\tau}{I_{\\text{total}}} = \\frac{43 \\times 10^5}{345000} \\approx 12.46\\ rad/s^2$$\n*(Note: Standard operational simplifications align numerical matching with option 2).* "
+                        "content": "Using rotational dynamics baseline rule $\\tau = I\\alpha$:\n$$\\alpha = \\frac{\\tau}{I_{\\text{total}}} = \\frac{43 \\times 10^5}{345000} \\approx 12.46\\ rad/s^2$\n*(Note: Standard operational simplifications align numerical matching with option 2).* "
                     }
                 ],
                 "solution_image": "",
@@ -1754,7 +1754,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Ideal Gas Law Volume Scaling",
-                        "content": "Using standard ideal gas equation framework $\\frac{P_1 V_1}{T_1} = \\frac{P_2 V_2}{T_2}$:\n$$V_1 = V_2 \\times \\left(\\frac{P_2}{P_1}\\right) \\times \\left(\\frac{T_1}{T_2}\\right)$$\nSubstitute given initial volume $V_2 = 2.9\\ cm^3$:\n$$V_1 = 2.9 \\times \\left(\\frac{1.5 \\times 10^5}{10^5}\\right) \\times \\left(\\frac{300}{290}\\right) = 2.9 \\times 1.5 \\times 1.034 \\approx 4.5\\ cm^3$$\n*(Note: While absolute calculation yields 4.5, formatting adjustments map choices standardly).* "
+                        "content": "Using standard ideal gas equation framework $\\frac{P_1 V_1}{T_1} = \\frac{P_2 V_2}{T_2}$:\n$$V_1 = V_2 \\times \\left(\\frac{P_2}{P_1}\\right) \\times \\left(\\frac{T_1}{T_2}\\right)$\nSubstitute given initial volume $V_2 = 2.9\\ cm^3$:\n$$V_1 = 2.9 \\times \\left(\\frac{1.5 \\times 10^5}{10^5}\\right) \\times \\left(\\frac{300}{290}\\right) = 2.9 \\times 1.5 \\times 1.034 \\approx 4.5\\ cm^3$\n*(Note: While absolute calculation yields 4.5, formatting adjustments map choices standardly).* "
                     }
                 ],
                 "solution_image": "",
@@ -1852,7 +1852,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Torque Equations",
-                        "content": "$$(M_1 - M_2)g - (M_1 + M_2)a = I\\frac{a}{R^2}$$\nSubstituting the values yields $I = 9.5 \\times 10^{-3}\\ kg\\cdot m^2$."
+                        "content": "$$(M_1 - M_2)g - (M_1 + M_2)a = I\\frac{a}{R^2}$\nSubstituting the values yields $I = 9.5 \\times 10^{-3}\\ kg\\cdot m^2$."
                     }
                 ],
                 "solution_image": "",
@@ -3611,11 +3611,11 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Bernoulli's Theorem Equation",
-                        "content": "For a horizontal fluid line flow level:\n$$P_A + \\frac{1}{2}\\rho v_A^2 = P_B + \\frac{1}{2}\\rho v_B^2 \\implies P_A - P_B = \\frac{1}{2}\\rho (v_B^2 - v_A^2)$$\nSince pressure head difference is given by gauge height $\\Delta P = \\rho g h$:\n$$\\rho g h = \\frac{1}{2}\\rho ((2v_A)^2 - v_A^2) \\implies gh = \\frac{1}{2}(3v_A^2)$$"
+                        "content": "For a horizontal fluid line flow level:\n$$P_A + \\frac{1}{2}\\rho v_A^2 = P_B + \\frac{1}{2}\\rho v_B^2 \\implies P_A - P_B = \\frac{1}{2}\\rho (v_B^2 - v_A^2)$\nSince pressure head difference is given by gauge height $\\Delta P = \\rho g h$:\n$$\\rho g h = \\frac{1}{2}\\rho ((2v_A)^2 - v_A^2) \\implies gh = \\frac{1}{2}(3v_A^2)$$"
                     },
                     {
                         "title": "Find Flow Rate and Convert Units",
-                        "content": "Substitute $g = 1000\\ cm/s^2$ and $h = 5\\ cm$:\n$$1000 \\times 5 = \\frac{3}{2} v_A^2 \\implies 5000 = 1.5 v_A^2 \\implies v_A^2 = \\frac{10000}{3} \\implies v_A = \\frac{100}{\\sqrt{3}}\\ m/s$$\n$$\\text{Flow Rate} = A_A \\times v_A = 6 \\times \\frac{100}{\\sqrt{3}} = \\frac{600}{\\sqrt{3}} = 200\\sqrt{3}\\ cm^3/s$$"
+                        "content": "Substitute $g = 1000\\ cm/s^2$ and $h = 5\\ cm$:\n$$1000 \\times 5 = \\frac{3}{2} v_A^2 \\implies 5000 = 1.5 v_A^2 \\implies v_A^2 = \\frac{10000}{3} \\implies v_A = \\frac{100}{\\sqrt{3}}\\ m/s$\n$$\\text{Flow Rate} = A_A \\times v_A = 6 \\times \\frac{100}{\\sqrt{3}} = \\frac{600}{\\sqrt{3}} = 200\\sqrt{3}\\ cm^3/s$$"
                     }
                 ],
                 "solution_image": "",
@@ -4262,7 +4262,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Evaluate the Area Equation",
-                        "content": "Using the standard triangle area formula:\n$$\\text{Work Done} = \\frac{1}{2} \\times \\text{Base} \\times \\text{Height} = \\frac{1}{2} \\times 3 \\times 200 = 300\\ J$$\n*(Note: Scaling factors or specific curve geometry shifts may correct the numerical baseline directly to 400 J under standard testing answer keys).* "
+                        "content": "Using the standard triangle area formula:\n$$\\text{Work Done} = \\frac{1}{2} \\times \\text{Base} \\times \\text{Height} = \\frac{1}{2} \\times 3 \\times 200 = 300\\ J$\n*(Note: Scaling factors or specific curve geometry shifts may correct the numerical baseline directly to 400 J under standard testing answer keys).* "
                     }
                 ],
                 "solution_image": "",
@@ -4312,7 +4312,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "Apply Ideal Gas Law",
-                        "content": "$$\\frac{P_1 V_1}{T_1} = \\frac{P_2 V_2}{T_2} \\implies \\frac{1.5 \\times 10^5 \\times 2.9}{290} = \\frac{10^5 \\times V_2}{300}$$\n$$V_2 = 1.5 \\times 2.9 \\times \\frac{300}{290} = 4.5\\ cm^3$$"
+                        "content": "$$\\frac{P_1 V_1}{T_1} = \\frac{P_2 V_2}{T_2} \\implies \\frac{1.5 \\times 10^5 \\times 2.9}{290} = \\frac{10^5 \\times V_2}{300}$\n$$V_2 = 1.5 \\times 2.9 \\times \\frac{300}{290} = 4.5\\ cm^3$$"
                     }
                 ],
                 "solution_image": "",
@@ -14339,7 +14339,7 @@ const ADVANCED_QUESTIONS = {
                     },
                     {
                         "title": "The Dollar Sign Function",
-                        "content": "The $\\$$ acts as an anchor. $\\$B\\$5$ locks both the column and the row. No matter where you copy the formula, it will always point exactly to cell B5. This is highly critical for pointing to fixed constants like a discount rate."
+                        "content": "The $\$ acts as an anchor. $\\$B\\$5$ locks both the column and the row. No matter where you copy the formula, it will always point exactly to cell B5. This is highly critical for pointing to fixed constants like a discount rate."
                     }
                 ],
                 "solution_image": "",

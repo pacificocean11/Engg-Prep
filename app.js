@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function startApp() {
     let questionStats = JSON.parse(localStorage.getItem('enggtv_question_stats') || '{}');
     [typeof QUESTIONS !== 'undefined' ? QUESTIONS : {}, typeof ADVANCED_QUESTIONS !== 'undefined' ? ADVANCED_QUESTIONS : {}].forEach(source => {
         for (let subject in source) {
@@ -202,9 +202,104 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         }
     };
 
-    function injectFormulaTriggers(text) {
-        return text;
+    function sanitizeMathDelimiters(text) {
+        if (!text || typeof text !== 'string') return text;
+        
+        // 1. Convert escaped dollar followed by currency digits: \$100 or \$14,693 -> &#36;100
+        let res = text.replace(/\\\$\s*(\d)/g, '&#36;$1');
+
+        // 2. Identify false inline math pairs: $...$ where content is sentence prose between two currency values
+        // Real math formulas do not span 3+ English words without LaTeX commands (\)
+        res = res.replace(/\$([^$\n]+)\$/g, (match, inner) => {
+            if (inner.includes('\\')) return match;
+            const hasWords = /\b(and|or|the|is|for|with|of|to|in|after|which|they|will|sell|value|cost|price|company|buys|plan|salvage|charge|annual|years)\b/i.test(inner);
+            const hasPunctuation = /[.!?]\s+[A-Z]/.test(inner);
+            if (hasWords || hasPunctuation) {
+                return '&#36;' + inner + '&#36;';
+            }
+            return match;
+        });
+
+        // 3. Isolated currency dollars: $ followed immediately by digits where there is NO matching $ in remainder of text
+        res = res.replace(/\$(\d{1,3}(?:,\d{3})*(?:\.\d+)?|\d+)(?=[\s.,!?;:)]|$)/g, (match, num, offset, fullStr) => {
+            const after = fullStr.slice(offset + match.length);
+            if (!after.includes('$')) {
+                return '&#36;' + num;
+            }
+            return match;
+        });
+
+        return res;
     }
+
+    function injectFormulaTriggers(text) {
+        if (!text || typeof text !== 'string') return text;
+        let res = text;
+
+        // 1. Fix math equations that got corrupted with \n + variable, e.g. $$\nm or $$\nx
+        res = res.replace(/\$\$\s*\\([a-zA-Z])(?=\s*[=+\-])/g, '$$\n$1');
+        res = res.replace(/\$\$\\n([a-zA-Z])/g, '$$\n$1');
+        res = res.replace(/\$\$\\n\s*/g, '$$\n');
+        res = res.replace(/\\n\s*\\\$\$/g, '\n$$');
+        res = res.replace(/\\\$\$/g, '$$');
+
+        // 2. Convert \textbf{...} in text to <b>...</b>
+        res = res.replace(/\\textbf\{([^}]+)\}/g, '<b>$1</b>');
+
+        // 3. Convert literal \n in prose (outside math)
+        res = res.replace(/\\n\s*•/g, '<br>&bull; ');
+        res = res.replace(/\\n/g, '<br>');
+
+        // 4. Sanitize currency dollar signs
+        res = sanitizeMathDelimiters(res);
+
+        return res;
+    }
+
+    /**
+     * Safely typesets LaTeX math inside the provided DOM elements using MathJax 3.
+     * Prevents concurrency collisions ('MathJax is already processing'), queues calls
+     * if MathJax is still loading, clears stale math references, and catches errors.
+     */
+    let mathJaxProcessingPromise = Promise.resolve();
+    window.safeTypesetMath = function(elements) {
+        if (!elements) elements = [document.body];
+        if (!Array.isArray(elements)) elements = [elements];
+        elements = elements.filter(el => el && el.nodeType === 1);
+        if (elements.length === 0) return Promise.resolve();
+
+        const doTypeset = () => {
+            if (!window.MathJax || !window.MathJax.typesetPromise) {
+                return Promise.resolve();
+            }
+            try {
+                if (typeof window.MathJax.typesetClear === 'function') {
+                    window.MathJax.typesetClear(elements);
+                }
+                return window.MathJax.typesetPromise(elements).catch(err => {
+                    console.warn('MathJax typeset notice:', err);
+                });
+            } catch (err) {
+                console.warn('MathJax typeset execution notice:', err);
+                return Promise.resolve();
+            }
+        };
+
+        if (window.__mathJaxReady || (window.MathJax && window.MathJax.typesetPromise)) {
+            mathJaxProcessingPromise = mathJaxProcessingPromise
+                .catch(() => {})
+                .then(doTypeset);
+            return mathJaxProcessingPromise;
+        } else {
+            if (!window.__pendingTypesetQueue) window.__pendingTypesetQueue = [];
+            window.__pendingTypesetQueue.push(() => {
+                mathJaxProcessingPromise = mathJaxProcessingPromise
+                    .catch(() => {})
+                    .then(doTypeset);
+            });
+            return Promise.resolve();
+        }
+    };
 
     /**
      * Converts any Google Drive URL (share link, /preview, /view, uc?export)
@@ -239,9 +334,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         formulaPopup.style.top = `${y - 10}px`;
         formulaPopup.classList.add('visible');
 
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise([formulaLatex]);
-        }
+        window.safeTypesetMath([formulaLatex]);
     }
 
     function hideFormulaPopup() {
@@ -378,6 +471,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     // Initialization
     function init() {
+        if (typeof updateSyncStatus === 'function') {
+            updateSyncStatus(navigator.onLine ? 'local' : 'offline');
+        }
         setupQuizListeners();
         setupDashboardListeners();
         setupAdminListeners();
@@ -449,11 +545,13 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             if (typeof window.loadFromFirebase === 'function') await window.loadFromFirebase();
                         } catch (loadErr) {
                             console.error("⚠️ loadFromFirebase failed (likely localhost restriction):", loadErr);
+                            if (typeof updateSyncStatus === 'function') updateSyncStatus('local');
                         }
                         try {
                             if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
                         } catch (e) {
                             console.error("⚠️ setupFirestoreSyncListener failed:", e);
+                            if (typeof updateSyncStatus === 'function') updateSyncStatus('local');
                         }
                         try {
                             await checkAdminMessages();
@@ -482,11 +580,13 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             if (typeof window.loadFromFirebase === 'function') await window.loadFromFirebase();
                         } catch (loadErr) {
                             console.error("⚠️ loadFromFirebase failed (likely localhost restriction):", loadErr);
+                            if (typeof updateSyncStatus === 'function') updateSyncStatus('local');
                         }
                         try {
                             if (typeof window.setupFirestoreSyncListener === 'function') window.setupFirestoreSyncListener(state.user.uid || state.user.username);
                         } catch (e) {
                             console.error("⚠️ setupFirestoreSyncListener failed:", e);
+                            if (typeof updateSyncStatus === 'function') updateSyncStatus('local');
                         }
                         try {
                             await checkAdminMessages();
@@ -1652,6 +1752,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     document.getElementById('close-notes-btn')?.addEventListener('click', () => navigateTo('notes'));
 
     function openNotes(subjectTitle, chapterTitle, subtopicsList) {
+        if (typeof window.logNotesStudySession === 'function') {
+            window.logNotesStudySession(subjectTitle, chapterTitle);
+        }
         document.getElementById('notes-view-subject').textContent = subjectTitle;
         document.getElementById('notes-view-title').textContent = chapterTitle;
         
@@ -1755,10 +1858,18 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         }
         
         navigateTo('notes-content-view');
-        
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise([container]).catch(err => console.warn('MathJax error:', err));
+
+        if (typeof window.publishPeerMilestone === 'function') {
+            const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            window.publishPeerMilestone({
+                type: 'notes_reviewed',
+                title: `Reviewed ${subjectTitle || 'Core'} Study Notes`,
+                detail: `Mastering theoretical principles and reference equations`,
+                discipline: disc
+            });
         }
+        
+        window.safeTypesetMath([container]);
     }
 
     function updateDashboardStats() {
@@ -1799,6 +1910,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             const circumference = 263.9; // 2 * Math.PI * 42
             const offset = circumference * (1 - percentage / 100);
             ringCircle.style.strokeDashoffset = offset;
+        }
+
+        if (typeof window.renderStudyCalendar === 'function') {
+            window.renderStudyCalendar();
         }
 
         const peerText = textDisplay.nextElementSibling;
@@ -1899,6 +2014,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     window.reviewActivity = function(activityId) {
         const activity = state.recentActivity.find(a => a.id === activityId);
+        if (activity && activity.type === 'notes') {
+            navigateTo('notes');
+            return;
+        }
         if (!activity || !activity.stateSnapshot) return;
 
         // Restore state from snapshot
@@ -2108,6 +2227,20 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         container.innerHTML = state.recentActivity.slice(0, 5).map((activity, idx) => {
             const timeAgo = getTimeAgo(activity.timestamp);
+            if (activity.type === 'notes') {
+                return `
+                    <div class="stagger-item glass-card p-4 flex items-center gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" onclick="navigateTo('notes')" style="animation-delay: ${idx * 100}ms">
+                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500">
+                            <span class="material-symbols-outlined text-amber-500">auto_stories</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-title-sm text-body-base text-on-surface dark:text-slate-100">${activity.subject || 'Engineering'}: ${activity.title}</p>
+                            <p class="font-body-sm text-body-sm text-outline dark:text-slate-400">Notes Read • Completed ${timeAgo}</p>
+                        </div>
+                        <span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+                    </div>
+                `;
+            }
             return `
                 <div class="stagger-item glass-card p-4 flex items-center gap-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors" onclick="window.loadRecentActivity('${activity.id}')" style="animation-delay: ${idx * 100}ms">
                     <div class="w-12 h-12 rounded-lg bg-${activity.isMockExam ? 'primary' : 'secondary'}/10 flex items-center justify-center">
@@ -2140,6 +2273,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     window.loadRecentActivity = function(activityId) {
         const activity = state.recentActivity.find(a => a.id === activityId);
+        if (activity && activity.type === 'notes') {
+            navigateTo('notes');
+            return;
+        }
         if (!activity || (!activity.stateSnapshot && !activity.minimalSnapshot)) {
             alert("Sorry, full details for this older activity were not saved.");
             return;
@@ -2233,9 +2370,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Render Session Autopsy for past quizzes too
         renderSessionAutopsy(attempted, correct, accuracy);
 
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
-        }
+        window.safeTypesetMath(resultsDetailedList ? [resultsDetailedList] : null);
 
         if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
             triggerConfetti();
@@ -2421,16 +2556,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             
             div.innerHTML = `
                 <span class="option-prefix">${option.label}</span>
-                <span class="option-text">${option.text}</span>
+                <span class="option-text">${injectFormulaTriggers(option.text)}</span>
             `;
             
             div.addEventListener('click', () => selectOption(index));
             optionsContainer.appendChild(div);
         });
 
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
-        }
+        window.safeTypesetMath([questionText, optionsContainer]);
 
         updateQuestionMap();
 
@@ -2643,7 +2776,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         const finalDiv = document.createElement('div');
         finalDiv.className = 'final-answer';
-        finalDiv.innerHTML = `<strong>Final Answer:</strong> ${question.solution.final_answer}`;
+        finalDiv.innerHTML = `<strong>Final Answer:</strong> ${injectFormulaTriggers(question.solution.final_answer || '')}`;
         explanationText.appendChild(finalDiv);
 
         // --- NCEES Handbook Reference ---
@@ -2736,32 +2869,52 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             explanationText.appendChild(copilotDiv);
         }
 
-        // --- Video Explanation (Vimeo) ---
+        // --- Video Explanation (Vimeo or Native HTML5 MP4/WebM) ---
         const videoField = question.solution && question.solution.video_explanation;
         if (videoField && videoField.trim() !== '') {
-            // Accept full URL (https://vimeo.com/123456789) or bare numeric ID
-            const vimeoIdMatch = videoField.trim().match(/(?:vimeo\.com\/|^)(\d+)/);
-            const vimeoId = vimeoIdMatch ? vimeoIdMatch[1] : null;
-            if (vimeoId) {
-                const videoDiv = document.createElement('div');
-                videoDiv.className = 'video-explanation-container';
+            const vStr = videoField.trim();
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'video-explanation-container mt-4 p-4 rounded-2xl bg-slate-900 border border-slate-800 text-white shadow-md';
+
+            // Check if it's a direct video file (MP4/WebM/local asset)
+            if (vStr.endsWith('.mp4') || vStr.endsWith('.webm') || vStr.includes('assets/videos/') || vStr.startsWith('blob:')) {
                 videoDiv.innerHTML = `
-                    <div class="video-explanation-header">
-                        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1; color: #FF006E;">play_circle</span>
-                        <span>Video Explanation</span>
+                    <div class="video-explanation-header flex items-center gap-2 mb-3 font-bold text-sm text-cyan-400">
+                        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1; color: #06B6D4;">play_circle</span>
+                        <span>Video Demonstration & Walkthrough</span>
                     </div>
-                    <div class="video-iframe-wrapper">
-                        <iframe
-                            src="https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479"
-                            frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                            allowfullscreen
-                            title="Video Explanation"
-                            loading="lazy">
-                        </iframe>
+                    <div class="video-native-wrapper rounded-xl overflow-hidden bg-black aspect-video relative shadow-inner border border-slate-700/60">
+                        <video controls playsinline preload="metadata" class="w-full h-full object-cover">
+                            <source src="${vStr}" type="${vStr.endsWith('.webm') ? 'video/webm' : 'video/mp4'}">
+                            Your browser does not support HTML5 video.
+                        </video>
                     </div>
                 `;
                 explanationText.appendChild(videoDiv);
+            } else {
+                // Accept full URL (https://vimeo.com/123456789) or bare numeric ID
+                const vimeoIdMatch = vStr.match(/(?:vimeo\.com\/|^)(\d+)/);
+                const vimeoId = vimeoIdMatch ? vimeoIdMatch[1] : null;
+                if (vimeoId) {
+                    videoDiv.innerHTML = `
+                        <div class="video-explanation-header flex items-center gap-2 mb-3 font-bold text-sm text-pink-400">
+                            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1; color: #FF006E;">play_circle</span>
+                            <span>Video Explanation</span>
+                        </div>
+                        <div class="video-iframe-wrapper rounded-xl overflow-hidden aspect-video">
+                            <iframe
+                                src="https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479"
+                                frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                allowfullscreen
+                                title="Video Explanation"
+                                loading="lazy"
+                                class="w-full h-full">
+                            </iframe>
+                        </div>
+                    `;
+                    explanationText.appendChild(videoDiv);
+                }
             }
         }
 
@@ -2807,11 +2960,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         explanationContainer.classList.remove('hidden');
 
 
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            setTimeout(() => {
-                window.MathJax.typesetPromise([explanationContainer]).catch(err => console.error('MathJax typeset error:', err));
-            }, 50);
-        }
+        window.safeTypesetMath([explanationContainer]);
 
         submitBtn.classList.add('hidden');
         nextBtn.classList.remove('hidden');
@@ -3078,6 +3227,25 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         setTimeout(() => toast.remove(), 5000);
     }
 
+    function formatQuestionHeaderForReview(text, maxLength = 100) {
+        if (!text) return '';
+        let cleaned = injectFormulaTriggers(text);
+        if (cleaned.length <= maxLength) return cleaned;
+        
+        let truncated = cleaned.substring(0, maxLength);
+        const dollarCount = (truncated.match(/(?<!\\)\$/g) || []).length;
+        if (dollarCount % 2 !== 0) {
+            const rest = cleaned.substring(maxLength);
+            const closeIdx = rest.indexOf('$');
+            if (closeIdx !== -1 && closeIdx < 35) {
+                truncated += rest.substring(0, closeIdx + 1);
+            } else {
+                truncated += '$';
+            }
+        }
+        return truncated + '...';
+    }
+
     function finishQuiz() {
         stopTimer();
         
@@ -3132,10 +3300,25 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (state.currentSubject && state.currentSubject.id === 'srs-review' && window.incrementQuestProgress) {
             window.incrementQuestProgress('srs_review', 1);
         }
-        
+
         // Save to recent activity
-        const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || state.currentSubject.name);
+        const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || (state.currentSubject ? state.currentSubject.name : 'Practice Drill'));
         const isActivityAdvanced = !state.isMockExam && localStorage.getItem('enggtv_advanced_mode') === 'true';
+
+        // Broadcast to Live Peer Milestone Ticker
+        if (attempted > 0 && typeof window.publishPeerMilestone === 'function') {
+            const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            let milestoneTitle = `Completed ${attempted}-Question Drill in ${activityTitle}`;
+            if (accuracy >= 90) milestoneTitle = `Aced ${activityTitle} Drill (${accuracy}%) 🏆`;
+            else if (accuracy >= 70) milestoneTitle = `Passed ${activityTitle} Drill (${accuracy}%)`;
+
+            window.publishPeerMilestone({
+                type: 'quiz_finish',
+                title: milestoneTitle,
+                detail: `${correct}/${attempted} correct questions in FE ${disc} practice`,
+                discipline: disc
+            });
+        }
         const newActivity = {
             id: Date.now().toString(),
             title: activityTitle,
@@ -3196,6 +3379,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Final Cloud Sync
         
         updateGamificationUI();
+        if (typeof window.renderStudyCalendar === 'function') {
+            window.renderStudyCalendar();
+        }
 
         resTotal.textContent = state.quizQuestions.length;
         resAttempted.textContent = attempted;
@@ -3240,11 +3426,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 }
             }
             
-            // Keep LaTeX markers and truncate carefully
-            let displayHeader = q.question;
-            if (displayHeader.length > 100) {
-                displayHeader = displayHeader.substring(0, 100) + '...';
-            }
+            // Keep LaTeX markers and truncate carefully without cutting math formulas in half
+            let displayHeader = formatQuestionHeaderForReview(q.question, 100);
             
             // --- Performance Benchmarking ---
             const qStr = q.question.substring(0, 50);
@@ -3277,9 +3460,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             `;
         }).join('');
 
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise();
-        }
+        window.safeTypesetMath(resultsDetailedList ? [resultsDetailedList] : null);
 
         if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
             triggerConfetti();
@@ -3971,6 +4152,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (typeof renderNotes === 'function') renderNotes();
             updateDashboardStats();
             updateGamificationUI();
+            if (typeof window.updateMotivationWidgets === 'function') {
+                window.updateMotivationWidgets();
+            }
+            if (typeof window.updateAlumniWidget === 'function') {
+                window.updateAlumniWidget();
+            }
              // Sync discipline change to cloud
             
             // Update labels in account info view immediately
@@ -4912,18 +5099,19 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     const userGreeting = document.getElementById('user-greeting');
 
     function updateNameDisplay(newName) {
+        newName = newName || 'Alex Riviera';
         state.userName = newName; // for share modal
         if (settingsNameDisplay) settingsNameDisplay.textContent = newName;
         if (accountInfoName) accountInfoName.textContent = newName;
         if (userGreeting) {
-            const firstName = newName.split(' ')[0];
+            const firstName = (newName && typeof newName === 'string') ? newName.split(' ')[0] : 'Alex';
             userGreeting.textContent = `Welcome back, ${firstName}`;
         }
         if (inputChangeName) inputChangeName.value = newName;
     }
 
-    const storedNameKey = `enggtv_display_name_${state.user ? state.user.username : 'default'}`;
-    const initialName = localStorage.getItem(storedNameKey) || (state.user && state.user.username !== 'demo' ? state.user.username : 'Alex Riviera');
+    const storedNameKey = `enggtv_display_name_${state.user && state.user.username ? state.user.username : 'default'}`;
+    const initialName = localStorage.getItem(storedNameKey) || (state.user && state.user.username && state.user.username !== 'demo' ? state.user.username : (state.user && state.user.name ? state.user.name : 'Alex Riviera'));
     updateNameDisplay(initialName);
 
     if (btnSaveName && inputChangeName) {
@@ -5103,7 +5291,13 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     // Run Init
     init();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startApp);
+} else {
+    startApp();
+}
 
 // Floating ENGG.tv Calculator & Scratchpad Controller
 let is2ndActive = false;

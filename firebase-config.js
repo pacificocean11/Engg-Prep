@@ -12,28 +12,31 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase (firebase global is loaded via CDN scripts in index.html)
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+let db = null;
+if (typeof firebase !== 'undefined') {
+    try {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
 
-// Fix for localhost & live production getting stuck in "Checking..." mode
-// Force long polling globally to bypass WebSocket blocking/hanging issues across hostnames
-try {
-    db.settings({ experimentalForceLongPolling: true, merge: true });
-} catch (e) {
-    console.warn("⚠️ Firestore settings notice:", e);
+        // Force long polling globally to bypass WebSocket blocking/hanging issues across hostnames
+        try {
+            db.settings({ experimentalAutoDetectLongPolling: true });
+        } catch (e) {
+            console.warn("⚠️ Firestore settings notice:", e);
+        }
+
+        try {
+            db.clearPersistence().catch(() => {});
+        } catch(e) {}
+
+        console.log("🏠 Offline persistence disabled globally for stability.");
+        console.log("🔥 Firebase Initialized successfully!");
+    } catch (e) {
+        console.error("⚠️ Firebase initialization error:", e);
+    }
+} else {
+    console.warn("⚠️ Firebase SDK not loaded, running in offline mode.");
 }
-
-try {
-    db.clearPersistence().catch(() => {});
-} catch(e) {}
-
-// Offline persistence DISABLED globally.
-// enablePersistence was corrupting IndexedDB when disk space was low,
-// causing all Firestore reads to hang indefinitely ("Checking" mode).
-// The app works perfectly without it — Firestore will simply fetch from the server each time.
-console.log("🏠 Offline persistence disabled globally for stability.");
-
-console.log("🔥 Firebase Initialized successfully!");
 
 // --- HELPER FUNCTIONS (synchronously available to app.js) ---
 
@@ -44,6 +47,10 @@ console.log("🔥 Firebase Initialized successfully!");
 window.saveUserProgress = async function(userId, progressData) {
     if (!userId || userId === 'guest') {
         console.warn("⚠️ Cannot save progress: User is guest or undefined.");
+        return;
+    }
+    if (!db) {
+        console.warn("⚠️ Firestore not available. Skipping cloud save.");
         return;
     }
     try {
@@ -66,6 +73,10 @@ window.saveUserProgress = async function(userId, progressData) {
  */
 window.getUserProgress = async function(userId) {
     if (!userId || userId === 'guest') return null;
+    if (!db) {
+        console.warn("⚠️ Firestore not available. Skipping cloud read.");
+        return null;
+    }
     try {
         // 4-second timeout to prevent "Checking" mode from hanging
         const timeoutPromise = new Promise((_, reject) =>
