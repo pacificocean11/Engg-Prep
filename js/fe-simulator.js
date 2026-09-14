@@ -14,9 +14,11 @@
         const subtitleEl = document.getElementById('fe-simulator-subtitle');
         const iconEl = document.getElementById('fe-simulator-icon');
         const iconContainer = document.getElementById('fe-simulator-icon-container');
+        const miniExamHeadline = document.getElementById('mini-exam-headline');
         
         if (titleEl) titleEl.innerText = `${discipline} FE Simulator`;
         if (subtitleEl) subtitleEl.innerText = `110 Questions • 6 Hours • Official Engg.tv ${discipline} Blueprint`;
+        if (miniExamHeadline) miniExamHeadline.innerText = `FE ${discipline} Mini-Exam`;
         
         let colorClass = 'text-amber-500';
         let bgClass = 'bg-amber-500/10';

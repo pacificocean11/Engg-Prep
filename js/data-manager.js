@@ -1,4 +1,5 @@
 function updateSyncStatus(status) {
+    status = status || 'local';
     const syncIcon = document.getElementById('sync-icon');
     const syncText = document.getElementById('sync-text');
     const syncDot = document.getElementById('sync-dot');
@@ -67,12 +68,25 @@ function setupFirestoreSyncListener(docId) {
         return;
     }
 
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
     console.log(`📡 Setting up Firestore sync listener for document: ${docId}`);
 
     try {
         updateSyncStatus(navigator.onLine ? 'syncing' : 'offline');
+
+        let initialListenerFired = false;
+        // Universal 3s safety timeout for all environments (localhost, GitHub Pages, production)
+        setTimeout(() => {
+            if (!initialListenerFired) {
+                console.warn("⚠️ Firestore listener initial callback timed out. Falling back sync status to local.");
+                updateSyncStatus('local');
+            }
+        }, 3000);
+
         firestoreSyncUnsubscribe = window.firebaseDb.collection("users").doc(docId)
             .onSnapshot({ includeMetadataChanges: true }, (docSnap) => {
+                initialListenerFired = true;
                 if (!navigator.onLine) {
                     updateSyncStatus('offline');
                     return;
@@ -94,11 +108,11 @@ function setupFirestoreSyncListener(docId) {
                 }
             }, (error) => {
                 console.error("❌ Firestore sync listener error:", error);
-                updateSyncStatus('error');
+                updateSyncStatus('local');
             });
     } catch (e) {
         console.error("❌ Failed to attach Firestore sync listener:", e);
-        updateSyncStatus('error');
+        updateSyncStatus('local');
     }
 }
 
@@ -189,6 +203,10 @@ async function loadFromFirebase() {
     const uidDocId = window.state.user.uid;
     const usernameDocId = window.state.user.username;
 
+    if (typeof updateSyncStatus === 'function') {
+        updateSyncStatus(navigator.onLine ? 'syncing' : 'offline');
+    }
+
     console.log(`🚀 Loading data for ${window.state.user.username || 'unknown'} (UID doc: ${uidDocId}, Username doc: ${usernameDocId}) from Firebase...`);
     try {
         let data = null;
@@ -228,7 +246,7 @@ async function loadFromFirebase() {
             if (usernameDocId !== uidDocId && usernameDocId !== 'admin' && usernameDocId !== 'demo') {
                 try {
                     const timeoutPromise = new Promise((_, reject) =>
-                        setTimeout(() => reject(new Error('Firestore delete timed out after 10s')), 10000)
+                        setTimeout(() => reject(new Error('Firestore delete timed out after 3s')), 3000)
                     );
                     const deletePromise = window.firebaseDb.collection("users").doc(usernameDocId).delete();
                     await Promise.race([deletePromise, timeoutPromise]);
@@ -476,6 +494,9 @@ async function loadFromFirebase() {
         }
     } catch (error) {
         console.error("❌ Firebase load failed:", error);
+        if (typeof updateSyncStatus === 'function') {
+            updateSyncStatus('local');
+        }
         throw error; // Rethrow to prevent subsequent syncToFirebase overwrites
     }
 }
