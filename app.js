@@ -5539,11 +5539,18 @@ window.calcEvaluate = function() {
 
         // 3. Tab-specific triggers / re-renders
         if (tabId === 'motivation') {
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                const formulaEl = document.getElementById('daily-theorem-formula');
-                if (formulaEl) {
-                    window.MathJax.typesetPromise([formulaEl]).catch(err => console.warn('MathJax render:', err));
+            const formulaEl = document.getElementById('daily-theorem-formula');
+            const descEl = document.getElementById('daily-theorem-desc');
+            const tipEl = document.getElementById('daily-theorem-tip');
+            const titleEl = document.getElementById('daily-theorem-title');
+            const mathElements = [formulaEl, descEl, tipEl, titleEl].filter(Boolean);
+            if (window.safeTypesetMath) {
+                window.safeTypesetMath(mathElements);
+            } else if (window.MathJax && window.MathJax.typesetPromise) {
+                if (typeof window.MathJax.typesetClear === 'function') {
+                    window.MathJax.typesetClear(mathElements);
                 }
+                window.MathJax.typesetPromise(mathElements).catch(err => console.warn('MathJax render:', err));
             }
             if (typeof window.initFeaturedMechanismVideo === 'function') {
                 window.initFeaturedMechanismVideo();
@@ -6026,8 +6033,8 @@ window.calcEvaluate = function() {
                         "description": "Defines the rate of heat transfer through a material as directly proportional to the negative temperature gradient and the cross-sectional area perpendicular to heat flow.",
                         "examTip": "Found under Heat Transfer. For multi-layer planar walls or cylindrical pipes, use the thermal resistance analogy: $R_{th} = \\frac{L}{k A}$.",
                         "videoUrl": "assets/videos/Fouriers_Law.mp4",
-                        "videoTitle": "Fourier's Law for Conduction",
-                        "videoDuration": "10s"
+			"videoTitle": "Fourier's Law Thermal Conduction Explainer",
+			"videoDuration": "10s"
                 },
                 {
                         "title": "Carnot Thermal Efficiency (Maximum Limit)",
@@ -6044,8 +6051,8 @@ window.calcEvaluate = function() {
                         "description": "A graphical and analytical transformation for plane stress, yielding in-plane principal normal stresses and maximum in-plane shear stress.",
                         "examTip": "Found in Mechanics of Materials. The radius of the circle directly equals the maximum in-plane shear stress $\\tau_{\\text{max}}$.",
                         "videoUrl": "assets/videos/Mohrs_Circle.mp4",
-                        "videoTitle": "Mohr's Circle for Plane Stress",
-                        "videoDuration": "12s"
+                        "videoTitle": "Mohr's Circle for Plane Stress Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Parallel Axis Theorem (Second Moment of Area)",
@@ -6060,31 +6067,46 @@ window.calcEvaluate = function() {
                         "title": "First Law of Thermodynamics (Closed System)",
                         "formula": "$$\\Delta U = Q - W = m c_v (T_2 - T_1)$$",
                         "description": "States conservation of energy for a stationary closed system: net change in internal energy equals net heat added minus net boundary work done by the system.",
-                        "examTip": "Found in Thermodynamics. Sign convention: Heat added is positive ($+Q$); work done by system is positive ($+W$). For ideal gases, internal energy depends only on temperature."
+                        "examTip": "Found in Thermodynamics. Sign convention: Heat added is positive ($+Q$); work done by system is positive ($+W$). For ideal gases, internal energy depends only on temperature.",
+                        "videoUrl": "assets/videos/First_Law_of_Thermodynamics.mp4",
+                        "videoTitle": "First Law of Thermodynamics Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Darcy-Weisbach Equation (Friction Head Loss)",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss due to wall friction in fully developed circular pipe flow as a function of friction factor $f$, length $L$, diameter $D$, and mean velocity $v$.",
-                        "examTip": "Found in Fluid Mechanics. In laminar pipe flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, find $f$ on the Moody diagram using relative roughness $\\epsilon/D$."
+                        "examTip": "Found in Fluid Mechanics. In laminar pipe flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, find $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
+                        "videoUrl": "assets/videos/Darcy_Weisbach_Equation.mp4",
+                        "videoTitle": "Darcy-Weisbach Equation (Friction Head Loss)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Euler’s Critical Buckling Load for Columns",
                         "formula": "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
                         "description": "Calculates the maximum axial compressive load that a slender column can sustain before undergoing sudden elastic lateral buckling.",
-                        "examTip": "Found in Mechanics of Materials. Check column end support factors: $K=0.5$ (fixed-fixed), $K=0.7$ (fixed-pinned), $K=1.0$ (pinned-pinned), $K=2.0$ (fixed-free)."
+                        "examTip": "Found in Mechanics of Materials. Check column end support factors: $K=0.5$ (fixed-fixed), $K=0.7$ (fixed-pinned), $K=1.0$ (pinned-pinned), $K=2.0$ (fixed-free).",
+                        "videoUrl": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+                        "videoTitle": "Euler’s Critical Buckling Load for Columns",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Newton’s Law of Cooling (Convective Heat Transfer)",
                         "formula": "$$\\dot{Q}_{conv} = h A_s (T_s - T_\\infty)$$",
                         "description": "Quantifies convective heat transfer between a solid surface and an adjacent moving fluid, driven by temperature difference and convective heat transfer coefficient $h$.",
-                        "examTip": "Found in Heat Transfer. Convection thermal resistance is $R_{th} = 1 / (h A_s)$. Note that $h$ is not a material constant; it depends on flow velocity, geometry, and fluid properties."
+                        "examTip": "Found in Heat Transfer. Convection thermal resistance is $R_{th} = 1 / (h A_s)$. Note that $h$ is not a material constant; it depends on flow velocity, geometry, and fluid properties.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Cooling.mp4",
+                        "videoTitle": "Newton’s Law of Cooling (Convective Heat Transfer)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Stefan-Boltzmann Law of Thermal Radiation",
                         "formula": "$$\\dot{Q}_{emit} = \\epsilon \\sigma A T^4, \\quad \\sigma = 5.67 \\times 10^{-8} \\text{ W}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
                         "description": "Total radiant energy emitted per unit time by a real surface is proportional to surface emissivity $\\epsilon$ and the fourth power of absolute temperature $T$.",
-                        "examTip": "Found in Heat Transfer. Mandatory rule: Surface temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$."
+                        "examTip": "Found in Heat Transfer. Mandatory rule: Surface temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$.",
+                        "videoUrl": "assets/videos/Stefan_Boltzmann_Law.mp4",
+                        "videoTitle": "Stefan-Boltzmann Law of Thermal Radiation",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Generalized Hooke’s Law (3D Elastic Stress-Strain)",
@@ -6096,25 +6118,37 @@ window.calcEvaluate = function() {
                         "title": "Elastic Flexure Formula (Beam Bending Stress)",
                         "formula": "$$\\sigma_b = -\\frac{M y}{I} \\implies \\sigma_{\\text{max}} = \\frac{M}{S}$$",
                         "description": "Determines normal bending stress at distance $y$ from the centroidal neutral axis under bending moment $M$, where $S = I/c$ is elastic section modulus.",
-                        "examTip": "Found in Mechanics of Materials. Maximum bending stress occurs at outermost fibers ($y = \\pm c$). For a rectangular cross section ($b \\times h$), $S = b h^2 / 6$."
+                        "examTip": "Found in Mechanics of Materials. Maximum bending stress occurs at outermost fibers ($y = \\pm c$). For a rectangular cross section ($b \\times h$), $S = b h^2 / 6$.",
+                        "videoUrl": "assets/videos/Bending_Formula.mp4",
+                        "videoTitle": "Bending Formula (Beam Flexure Stress)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Torsion Formula (Shaft Shear Stress & Twist)",
                         "formula": "$$\\tau = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{G J}$$",
                         "description": "Computes shear stress $\\tau$ at radius $r$ and total angular twist $\\phi$ in a circular shaft carrying torsional moment $T$, shear modulus $G$, and polar moment $J$.",
-                        "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$. For a hollow tube: $J = \\pi(d_o^4 - d_i^4) / 32$."
+                        "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$. For a hollow tube: $J = \\pi(d_o^4 - d_i^4) / 32$.",
+                        "videoUrl": "assets/videos/Torsion_Formula.mp4",
+                        "videoTitle": "Torsion Formula (Shaft Shear Stress & Twist)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Log Mean Temperature Difference (LMTD Heat Exchangers)",
                         "formula": "$$\\Delta T_{lm} = \\frac{\\Delta T_1 - \\Delta T_2}{\\ln(\\Delta T_1 / \\Delta T_2)}, \\quad \\dot{Q} = U A F \\Delta T_{lm}$$",
                         "description": "Evaluates the effective temperature driving force in parallel-flow and counter-flow heat exchangers with overall heat transfer coefficient $U$ and area $A$.",
-                        "examTip": "Found in Heat Transfer. Counter-flow arrangements produce a higher $\\Delta T_{lm}$ than parallel-flow for identical temperature endpoints, requiring less heat exchange area."
+                        "examTip": "Found in Heat Transfer. Counter-flow arrangements produce a higher $\\Delta T_{lm}$ than parallel-flow for identical temperature endpoints, requiring less heat exchange area.",
+                        "videoUrl": "assets/videos/LMTD.mp4",
+                        "videoTitle": "Log Mean Temperature Difference (LMTD Heat Exchangers)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Reynolds Number (Dynamic Similarity & Flow Regime)",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless parameter representing ratio of inertial forces to viscous forces; governs laminar vs turbulent transitions in pipe and boundary layer flows.",
-                        "examTip": "Found in Fluid Mechanics. For internal conduit flow: $Re < 2100$ is laminar; $Re > 4000$ is turbulent. Kinematic viscosity is $\\nu = \\mu / \\rho$."
+                        "examTip": "Found in Fluid Mechanics. For internal conduit flow: $Re < 2100$ is laminar; $Re > 4000$ is turbulent. Kinematic viscosity is $\\nu = \\mu / \\rho$.",
+                        "videoUrl": "assets/videos/Reynolds_Number.mp4",
+                        "videoTitle": "Reynolds Number (Laminar vs Turbulent Flow)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Work-Energy Principle (Rigid Body Dynamics)",
@@ -6132,37 +6166,55 @@ window.calcEvaluate = function() {
                         "title": "Ideal Rankine Cycle Thermal Efficiency (Vapor Power)",
                         "formula": "$$\\eta_{\\text{th}} = \\frac{w_{\\text{net}}}{q_{\\text{in}}} = \\frac{(h_3 - h_4) - (h_2 - h_1)}{h_3 - h_2}$$",
                         "description": "Defines thermal efficiency of steam power cycles using thermodynamic enthalpies at boiler inlet, turbine inlet, condenser inlet, and pump inlet.",
-                        "examTip": "Found in Thermodynamics. Pump work is $w_p = h_2 - h_1 \\approx v_1(P_2 - P_1)$. Remember to convert $v_1$ in $\\text{m}^3/\\text{kg}$ and $P$ in $\\text{kPa}$ to yield $\\text{kJ/kg}$."
+                        "examTip": "Found in Thermodynamics. Pump work is $w_p = h_2 - h_1 \\approx v_1(P_2 - P_1)$. Remember to convert $v_1$ in $\\text{m}^3/\\text{kg}$ and $P$ in $\\text{kPa}$ to yield $\\text{kJ/kg}$.",
+                        "videoUrl": "assets/videos/Rankine_Cycle.mp4",
+                        "videoTitle": "Ideal Rankine Cycle Thermal Efficiency (Vapor Power)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Continuity Equation (Conservation of Mass)",
                         "formula": "$$\\dot{m} = \\rho_1 A_1 v_1 = \\rho_2 A_2 v_2 \\implies Q = A_1 v_1 = A_2 v_2$$",
                         "description": "Expresses steady mass conservation in conduits; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is invariant along any streamtube.",
-                        "examTip": "Found in Fluid Mechanics. Velocity is inversely proportional to diameter squared: $v_2 = v_1 (D_1 / D_2)^2$. Halving the pipe diameter quadruples fluid velocity."
+                        "examTip": "Found in Fluid Mechanics. Velocity is inversely proportional to diameter squared: $v_2 = v_1 (D_1 / D_2)^2$. Halving the pipe diameter quadruples fluid velocity.",
+                        "videoUrl": "assets/videos/Continuity_Equation.mp4",
+                        "videoTitle": "Continuity Equation (Conservation of Mass) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
                         "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
                         "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
-                        "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams."
+                        "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
+                        "videoUrl": "assets/videos/Pressure_Vessels.mp4",
+                        "videoTitle": "Thin-Walled Pressure Vessels Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "SDOF Undamped Natural Frequency (Mechanical Vibrations)",
                         "formula": "$$\\omega_n = \\sqrt{\\frac{k}{m}} \\text{ [rad/s]}, \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\text{ [Hz]}$$",
                         "description": "Calculates fundamental natural circular frequency $\\omega_n$ and cyclic frequency $f_n$ for a single-degree-of-freedom mass-spring mechanical oscillator.",
-                        "examTip": "Found in Mechanical Design and Dynamics. Watch units closely: $\\omega_n$ is in rad/s, while $f_n$ is in cycles/s (Hz). Natural period is $\\tau_n = 1 / f_n = 2\\pi / \\omega_n$."
+                        "examTip": "Found in Mechanical Design and Dynamics. Watch units closely: $\\omega_n$ is in rad/s, while $f_n$ is in cycles/s (Hz). Natural period is $\\tau_n = 1 / f_n = 2\\pi / \\omega_n$.",
+                        "videoUrl": "assets/videos/Single_DOF_Natural_Frequency.mp4",
+                        "videoTitle": "Single DOF Undamped Natural Harmonic Frequency",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Ideal Otto Cycle Efficiency (Internal Combustion)",
                         "formula": "$$\\eta_{\\text{th, Otto}} = 1 - \\frac{1}{r^{k-1}}, \\quad r = \\frac{V_{\\text{max}}}{V_{\\text{min}}}$$",
                         "description": "Thermal efficiency of idealized four-stroke spark-ignition engines as a function of volumetric compression ratio $r$ and specific heat ratio $k = c_p/c_v$.",
-                        "examTip": "Found in Thermodynamics. For cold air standard assumptions, $k = 1.4$. Increasing compression ratio improves efficiency, limited practically by engine knock."
+                        "examTip": "Found in Thermodynamics. For cold air standard assumptions, $k = 1.4$. Increasing compression ratio improves efficiency, limited practically by engine knock.",
+                        "videoUrl": "assets/videos/Otto_Cycle.mp4",
+                        "videoTitle": "Ideal Otto Cycle Efficiency (Internal Combustion)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Speed of Sound & Mach Number (Compressible Flow)",
                         "formula": "$$c = \\sqrt{k R T}, \\quad M = \\frac{v}{c}$$",
                         "description": "Calculates acoustic speed $c$ in an ideal gas and Mach number $M$, establishing boundaries between subsonic ($M < 1$), sonic ($M = 1$), and supersonic ($M > 1$) flows.",
-                        "examTip": "Found in Fluid Mechanics. Specific gas constant for air is $R = 287 \\text{ J/(kg}\\cdot\\text{K)}$. Temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K})."
+                        "examTip": "Found in Fluid Mechanics. Specific gas constant for air is $R = 287 \\text{ J/(kg}\\cdot\\text{K)}$. Temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}).",
+                        "videoUrl": "assets/videos/Speed_of_Sound_and_Mach_Number.mp4",
+                        "videoTitle": "Speed of Sound & Mach Number (Compressible Flow)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Modified Goodman Fatigue Criterion (Fluctuating Stresses)",
@@ -6174,7 +6226,10 @@ window.calcEvaluate = function() {
                         "title": "Linear Impulse and Momentum Theorem (Impact & Jet Forces)",
                         "formula": "$$\\vec{I} = \\int_{t_1}^{t_2} \\sum \\vec{F} dt = m \\vec{v}_2 - m \\vec{v}_1 = \\Delta \\vec{p}$$",
                         "description": "The net impulse of external forces acting on a body over time interval $\\Delta t$ equals the vector change in linear momentum, fundamental to impact and fluid vane reactions.",
-                        "examTip": "Found in Dynamics and Fluid Mechanics. For steady fluid jets deflecting across stationary/moving blades: $\\vec{F} = \\dot{m}(\\vec{v}_{in} - \\vec{v}_{out})$. Respect vector directions!"
+                        "examTip": "Found in Dynamics and Fluid Mechanics. For steady fluid jets deflecting across stationary/moving blades: $\\vec{F} = \\dot{m}(\\vec{v}_{in} - \\vec{v}_{out})$. Respect vector directions!",
+                        "videoUrl": "assets/videos/Impulse_Momentum_Principle.mp4",
+                        "videoTitle": "Linear Impulse and Momentum Theorem Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Civil": [
@@ -6188,7 +6243,10 @@ window.calcEvaluate = function() {
                         "title": "Manning’s Equation for Open Channel Flow",
                         "formula": "$$V = \\frac{k}{n} R_h^{2/3} S^{1/2} \\quad (k = 1.0\\text{ SI}, \\; 1.486\\text{ USCS})$$",
                         "description": "Estimates mean velocity of uniform gravity-driven open channel flow as a function of roughness coefficient $n$, hydraulic radius $R_h$, and channel bed slope $S$.",
-                        "examTip": "Found in Hydraulics and Hydrologic Systems. Hydraulic radius $R_h = A / P_w$, where $P_w$ is strictly the wetted perimeter."
+                        "examTip": "Found in Hydraulics and Hydrologic Systems. Hydraulic radius $R_h = A / P_w$, where $P_w$ is strictly the wetted perimeter.",
+                        "videoUrl": "assets/videos/Mannings_Equation.mp4",
+                        "videoTitle": "Manning’s Equation (Open Channel Flow)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Terzaghi’s Effective Stress Principle",
@@ -6200,7 +6258,10 @@ window.calcEvaluate = function() {
                         "title": "Euler’s Critical Buckling Load for Columns",
                         "formula": "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
                         "description": "Determines the maximum axial compressive load that a slender structural column can sustain before undergoing sudden lateral elastic instability.",
-                        "examTip": "Found in Structural Mechanics and Steel Design. Effective length factor $K$: pinned-pinned $K=1.0$, fixed-fixed $K=0.5$, fixed-pinned $K=0.7$, fixed-free $K=2.0$."
+                        "examTip": "Found in Structural Mechanics and Steel Design. Effective length factor $K$: pinned-pinned $K=1.0$, fixed-fixed $K=0.5$, fixed-pinned $K=0.7$, fixed-free $K=2.0$.",
+                        "videoUrl": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+                        "videoTitle": "Euler’s Critical Buckling Load for Columns",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Boussinesq Vertical Stress Distribution",
@@ -6260,13 +6321,19 @@ window.calcEvaluate = function() {
                         "title": "Greenshields Macroscopic Traffic Flow Model",
                         "formula": "$$v = v_f \\left(1 - \\frac{k}{k_j}\\right), \\quad q = k v = v_f \\left(k - \\frac{k^2}{k_j}\\right)$$",
                         "description": "Fundamental linear model relating traffic space-mean speed $v$ to density $k$, yielding a parabolic flow-density relationship with maximum capacity at $k_j / 2$.",
-                        "examTip": "Found in Transportation Engineering. Maximum flow rate (highway capacity) occurs at $q_{\\text{max}} = \\frac{v_f k_j}{4}$ at optimum speed $v_o = v_f / 2$."
+                        "examTip": "Found in Transportation Engineering. Maximum flow rate (highway capacity) occurs at $q_{\\text{max}} = \\frac{v_f k_j}{4}$ at optimum speed $v_o = v_f / 2$.",
+                        "videoUrl": "assets/videos/Greenshields_Model.mp4",
+                        "videoTitle": "Greenshields Model (Traffic Flow & Capacity)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Stopping Sight Distance (SSD)",
                         "formula": "$$SSD = 1.47 V t_r + \\frac{V^2}{30\\left(\\frac{a}{32.2} \\pm G\\right)}$$",
                         "description": "Computes total distance required for a vehicle travelling at speed $V$ [mph] to stop safely, incorporating brake reaction distance and braking deceleration on grade $G$.",
-                        "examTip": "Found in Highway Design. AASHTO standard reaction time is $t_r = 2.5\\text{ s}$ and deceleration rate is $a = 11.2\\text{ ft/s}^2$ ($a/32.2 = 0.35$)."
+                        "examTip": "Found in Highway Design. AASHTO standard reaction time is $t_r = 2.5\\text{ s}$ and deceleration rate is $a = 11.2\\text{ ft/s}^2$ ($a/32.2 = 0.35$).",
+                        "videoUrl": "assets/videos/Stopping_Sight_Distance.mp4",
+                        "videoTitle": "Stopping Sight Distance (Highway Safety & Braking)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Horizontal Curve Minimum Radius & Superelevation",
@@ -6284,7 +6351,10 @@ window.calcEvaluate = function() {
                         "title": "Slenderness Ratio for Steel Compression Members",
                         "formula": "$$\\lambda = \\frac{K L}{r}, \\quad r = \\sqrt{\\frac{I}{A}}$$",
                         "description": "Measures column susceptibility to lateral buckling as the ratio of effective unbraced length $K L$ to minimum radius of gyration $r$.",
-                        "examTip": "Found in Structural Steel Design. Always evaluate buckling about the weak axis (minimum radius of gyration $r_y$) unless braced against lateral deflection."
+                        "examTip": "Found in Structural Steel Design. Always evaluate buckling about the weak axis (minimum radius of gyration $r_y$) unless braced against lateral deflection.",
+                        "videoUrl": "assets/videos/Slenderness_Ratio.mp4",
+                        "videoTitle": "Slenderness Ratio (Column Buckling & Stability)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Balanced Steel Reinforcement Ratio in Concrete",
@@ -6334,7 +6404,10 @@ window.calcEvaluate = function() {
                         "title": "Thevenin’s Equivalent Circuit Theorem",
                         "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
                         "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
-                        "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$."
+                        "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
+                        "videoUrl": "assets/videos/Thevenin_Theorem.mp4",
+                        "videoTitle": "Thevenin’s Equivalent Circuit Theorem",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Norton’s Equivalent Circuit Theorem",
@@ -6358,13 +6431,19 @@ window.calcEvaluate = function() {
                         "title": "Nyquist-Shannon Sampling Theorem",
                         "formula": "$$f_s \\ge 2 f_{\\text{max}}$$",
                         "description": "To completely reconstruct a continuous-time bandlimited analog signal without spectral aliasing distortion, the sampling frequency $f_s$ must be at least twice the maximum frequency component.",
-                        "examTip": "Found in Signal Processing. $2 f_{\\text{max}}$ is the Nyquist rate; $f_s / 2$ is the Nyquist frequency. If $f_s < 2 f_{\\text{max}}$, high frequencies alias into lower bands."
+                        "examTip": "Found in Signal Processing. $2 f_{\\text{max}}$ is the Nyquist rate; $f_s / 2$ is the Nyquist frequency. If $f_s < 2 f_{\\text{max}}$, high frequencies alias into lower bands.",
+                        "videoUrl": "assets/videos/Nyquist_Theorem.mp4",
+                        "videoTitle": "Nyquist-Shannon Sampling Theorem",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Ohm’s Law and Joule Heating Law",
                         "formula": "$$V = I R, \\quad P = V I = I^2 R = \\frac{V^2}{R}$$",
                         "description": "Relates electric potential difference $V$, current $I$, and resistance $R$ in ohmic conductors, expressing dissipated thermal power $P$.",
-                        "examTip": "Found in Circuit Analysis. Double check unit prefixes: $1\\text{ k}\\Omega = 10^3\\;\\Omega$, $1\\text{ mA} = 10^{-3}\\text{ A}$. $1\\text{ V} \\times 1\\text{ mA} = 1\\text{ mW}$."
+                        "examTip": "Found in Circuit Analysis. Double check unit prefixes: $1\\text{ k}\\Omega = 10^3\\;\\Omega$, $1\\text{ mA} = 10^{-3}\\text{ A}$. $1\\text{ V} \\times 1\\text{ mA} = 1\\text{ mW}$.",
+                        "videoUrl": "assets/videos/Ohms_Law.mp4",
+                        "videoTitle": "Ohm’s Law and Joule Heating Law",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "First-Order RC Transient Response",
@@ -6394,7 +6473,10 @@ window.calcEvaluate = function() {
                         "title": "Ideal Operational Amplifier Closed-Loop Gain",
                         "formula": "$$A_{v, \\text{inv}} = -\\frac{R_f}{R_{\\text{in}}}, \\quad A_{v, \\text{non-inv}} = 1 + \\frac{R_f}{R_1}$$",
                         "description": "Exploits virtual short-circuit conditions ($v_+ = v_-$ and $i_+ = i_- = 0$) in negative feedback op-amps to yield precise closed-loop voltage amplification.",
-                        "examTip": "Found in Electronics / Linear Circuits. Remember: output voltage cannot exceed the DC power supply rails (saturation occurs at $\\pm V_{CC}$)."
+                        "examTip": "Found in Electronics / Linear Circuits. Remember: output voltage cannot exceed the DC power supply rails (saturation occurs at $\\pm V_{CC}$).",
+                        "videoUrl": "assets/videos/OPAMP.mp4",
+                        "videoTitle": "Ideal Operational Amplifier (OP-AMP) Closed-Loop Gain",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Bipolar Junction Transistor (BJT) Active Mode Relations",
@@ -6436,7 +6518,10 @@ window.calcEvaluate = function() {
                         "title": "De Morgan’s Laws for Boolean Logic",
                         "formula": "$$\\overline{A \\cdot B} = \\overline{A} + \\overline{B}, \\quad \\overline{A + B} = \\overline{A} \\cdot \\overline{B}$$",
                         "description": "Fundamental duality theorems in Boolean algebra allowing conversion between AND and OR logic through inversion of variables and operators.",
-                        "examTip": "Found in Digital Systems. Essential for NAND-only and NOR-only logic gate implementations in logic circuit minimization."
+                        "examTip": "Found in Digital Systems. Essential for NAND-only and NOR-only logic gate implementations in logic circuit minimization.",
+                        "videoUrl": "assets/videos/De_Morgans_Laws_for_Boolean_Logic.mp4",
+                        "videoTitle": "De Morgan’s Laws for Boolean Logic",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Continuous-Time Convolution Integral (LTI Systems)",
@@ -6716,7 +6801,10 @@ window.calcEvaluate = function() {
                         "title": "Single Payment Compound Amount Factor (F/P)",
                         "formula": "$$(F/P, i, n) = (1 + i)^n$$",
                         "description": "Computes future sum of money $F$ accumulated from present principal $P$ compounded at interest rate $i$ over $n$ periods.",
-                        "examTip": "Found in Engineering Economics. Present worth factor is reciprocal: $(P/F, i, n) = (1 + i)^{-n}$."
+                        "examTip": "Found in Engineering Economics. Present worth factor is reciprocal: $(P/F, i, n) = (1 + i)^{-n}$.",
+                        "videoUrl": "assets/videos/Compound_Interest_Formula.mp4",
+                        "videoTitle": "Compound Interest (Single Payment F/P) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
@@ -6942,13 +7030,19 @@ window.calcEvaluate = function() {
                         "title": "First Law of Thermodynamics (Control Volume Energy Equation)",
                         "formula": "$$\\dot{Q} - \\dot{W} = \\sum_{\\text{out}} \\dot{m}\\left(h + \\frac{v^2}{2} + g z\\right) - \\sum_{\\text{in}} \\dot{m}\\left(h + \\frac{v^2}{2} + g z\\right)$$",
                         "description": "States general conservation of energy for an open steady-flow control volume with heat transfer, shaft work, and flowing fluid streams.",
-                        "examTip": "Found in Thermodynamics. For an adiabatic turbine: $\\dot{W} = \\dot{m}(h_1 - h_2)$. For an adiabatic throttling valve: $h_1 = h_2$."
+                        "examTip": "Found in Thermodynamics. For an adiabatic turbine: $\\dot{W} = \\dot{m}(h_1 - h_2)$. For an adiabatic throttling valve: $h_1 = h_2$.",
+                        "videoUrl": "assets/videos/First_Law_of_Thermodynamics.mp4",
+                        "videoTitle": "First Law of Thermodynamics Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Second Law of Thermodynamics (Carnot Efficiency Limit)",
                         "formula": "$$\\eta_{\\text{max}} = 1 - \\frac{T_L}{T_H} = \\frac{T_H - T_L}{T_H}$$",
                         "description": "The absolute upper limit of thermal conversion efficiency for any heat engine operating between hot reservoir $T_H$ and cold sink $T_L$.",
-                        "examTip": "Found in Thermodynamics. Always convert temperatures to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}) before substituting!"
+                        "examTip": "Found in Thermodynamics. Always convert temperatures to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}) before substituting!",
+                        "videoUrl": "assets/videos/Carnot_Cycle.mp4",
+                        "videoTitle": "Carnot Cycle Thermodynamic p-V Diagram",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Work-Energy Principle for Particles",
@@ -6960,7 +7054,10 @@ window.calcEvaluate = function() {
                         "title": "Linear Impulse and Momentum Principle",
                         "formula": "$$\\int_{t_1}^{t_2} \\sum \\vec{F} dt = m \\vec{v}_2 - m \\vec{v}_1 = \\Delta \\vec{p}$$",
                         "description": "The time integral of resultant external forces acting on a body equals the change in its linear momentum vector.",
-                        "examTip": "Found in Dynamics. Primary tool for solving impact, collision, and fluid jet reaction problems. Remember momentum is a vector quantity!"
+                        "examTip": "Found in Dynamics. Primary tool for solving impact, collision, and fluid jet reaction problems. Remember momentum is a vector quantity!",
+                        "videoUrl": "assets/videos/Impulse_Momentum_Principle.mp4",
+                        "videoTitle": "Linear Impulse and Momentum Principle Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Bernoulli’s Principle for Incompressible Streamline Flow",
@@ -6983,8 +7080,8 @@ window.calcEvaluate = function() {
                         "description": "Yields principal normal stresses and maximum in-plane shear stress for any general plane stress state $(\\sigma_x, \\sigma_y, \\tau_{xy})$.",
                         "examTip": "Found in Mechanics of Materials. The radius of the circle directly equals the maximum in-plane shear stress $\\tau_{\\text{max}}$.",
                         "videoUrl": "assets/videos/Mohrs_Circle.mp4",
-                        "videoTitle": "Mohr's Circle for Plane Stress",
-                        "videoDuration": "12s"
+                        "videoTitle": "Mohr's Circle for Plane Stress Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Parallel Axis Theorem for Moment of Inertia",
@@ -7005,13 +7102,19 @@ window.calcEvaluate = function() {
                         "title": "Euler’s Column Critical Buckling Formula",
                         "formula": "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
                         "description": "Calculates maximum axial compressive load before sudden elastic lateral buckling occurs in a slender structural member.",
-                        "examTip": "Found in Mechanics of Materials. $K$ is effective length factor: $1.0$ (pinned-pinned), $0.5$ (fixed-fixed), $0.7$ (fixed-pinned), $2.0$ (fixed-free)."
+                        "examTip": "Found in Mechanics of Materials. $K$ is effective length factor: $1.0$ (pinned-pinned), $0.5$ (fixed-fixed), $0.7$ (fixed-pinned), $2.0$ (fixed-free).",
+                        "videoUrl": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+                        "videoTitle": "Euler’s Critical Buckling Load for Columns",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Darcy-Weisbach Pipe Friction Equation",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss in conduit flow as a function of friction factor $f$, length $L$, diameter $D$, and velocity $v$.",
-                        "examTip": "Found in Fluid Mechanics. In laminar flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, look up $f$ on the Moody diagram using relative roughness $\\epsilon/D$."
+                        "examTip": "Found in Fluid Mechanics. In laminar flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, look up $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
+                        "videoUrl": "assets/videos/Darcy_Weisbach_Equation.mp4",
+                        "videoTitle": "Darcy-Weisbach Equation (Pipe Friction Head Loss)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Fourier’s Law of Thermal Conduction",
@@ -7019,80 +7122,116 @@ window.calcEvaluate = function() {
                         "description": "Rate of heat conduction through a material is proportional to thermal conductivity $k$, area $A$, and negative temperature gradient.",
                         "examTip": "Found in Heat Transfer. For a flat wall of thickness $L$: $\\dot{Q} = \\frac{k A}{L}(T_1 - T_2) = \\frac{\\Delta T}{R_{th}}$.",
                         "videoUrl": "assets/videos/Fouriers_Law.mp4",
-                        "videoTitle": "Fourier's Law for Conduction",
+                        "videoTitle": "Fourier's Law Thermal Conduction Explainer",
                         "videoDuration": "10s"
                 },
                 {
                         "title": "Newton’s Law of Cooling (Convective Heat Transfer)",
                         "formula": "$$\\dot{Q}_{conv} = h A_s (T_s - T_\\infty)$$",
                         "description": "Expresses rate of heat transfer between a solid surface at temperature $T_s$ and an adjacent moving fluid at bulk temperature $T_\\infty$.",
-                        "examTip": "Found in Heat Transfer. Convective thermal resistance is $R_{th} = 1 / (h A_s)$. Heat transfer coefficient $h$ depends on flow regime and geometry."
+                        "examTip": "Found in Heat Transfer. Convective thermal resistance is $R_{th} = 1 / (h A_s)$. Heat transfer coefficient $h$ depends on flow regime and geometry.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Cooling.mp4",
+                        "videoTitle": "Newton’s Law of Cooling (Convective Heat Transfer)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Stefan-Boltzmann Law of Thermal Radiation",
                         "formula": "$$\\dot{Q}_{emit} = \\epsilon \\sigma A T^4, \\quad \\sigma = 5.67 \\times 10^{-8} \\text{ W}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
                         "description": "Total radiant power emitted by a gray body with surface emissivity $\\epsilon$ at absolute thermodynamic temperature $T$.",
-                        "examTip": "Found in Heat Transfer. Temperature $T$ MUST be converted to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$."
+                        "examTip": "Found in Heat Transfer. Temperature $T$ MUST be converted to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$.",
+                        "videoUrl": "assets/videos/Stefan_Boltzmann_Law.mp4",
+                        "videoTitle": "Stefan-Boltzmann Law of Thermal Radiation",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "SDOF Undamped Natural Harmonic Frequency",
                         "formula": "$$\\omega_n = \\sqrt{\\frac{k}{m}} \\text{ [rad/s]}, \\quad f_n = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\text{ [Hz]}$$",
                         "description": "Calculates natural angular frequency $\\omega_n$ and cyclic frequency $f_n$ for an undamped single-degree-of-freedom mass-spring mechanical oscillator.",
-                        "examTip": "Found in Dynamics. Natural period of oscillation is $\\tau_n = 1 / f_n = 2\\pi / \\omega_n$."
+                        "examTip": "Found in Dynamics. Natural period of oscillation is $\\tau_n = 1 / f_n = 2\\pi / \\omega_n$.",
+                        "videoUrl": "assets/videos/Single_DOF_Natural_Frequency.mp4",
+                        "videoTitle": "Single DOF Undamped Natural Harmonic Frequency",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Ideal Gas Law Equation of State",
                         "formula": "$$P V = m R T = n \\bar{R} T, \\quad \\bar{R} = 8.314\\text{ kJ/(kmol}\\cdot\\text{K)}$$",
                         "description": "Relates pressure $P$, volume $V$, and absolute temperature $T$ for gases at low pressure and moderate temperature.",
-                        "examTip": "Found in Thermodynamics / Chemistry. Specific gas constant $R = \\bar{R} / M_{\\text{molar}}$. For air, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$."
+                        "examTip": "Found in Thermodynamics / Chemistry. Specific gas constant $R = \\bar{R} / M_{\\text{molar}}$. For air, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$.",
+                        "videoUrl": "assets/videos/Ideal_Gas_Law.mp4",
+                        "videoTitle": "Ideal Gas Law Equation of State Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Hydrostatic Pressure Distribution with Depth",
                         "formula": "$$P = P_0 + \\rho g h = P_0 + \\gamma h$$",
                         "description": "Pressure increase in a static incompressible fluid is directly proportional to fluid density $\\rho$, gravity $g$, and submerged depth $h$.",
-                        "examTip": "Found in Fluid Mechanics. Gauge pressure ignores atmospheric surface pressure $P_0$: $P_{\\text{gauge}} = \\gamma h$."
+                        "examTip": "Found in Fluid Mechanics. Gauge pressure ignores atmospheric surface pressure $P_0$: $P_{\\text{gauge}} = \\gamma h$.",
+                        "videoUrl": "assets/videos/Hydrostatic_Pressure.mp4",
+                        "videoTitle": "Hydrostatic Pressure Distribution Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Continuity Equation for Incompressible Flow",
                         "formula": "$$A_1 v_1 = A_2 v_2 = Q$$",
                         "description": "Conservation of mass in a fluid conduit; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is constant everywhere.",
-                        "examTip": "Found in Fluid Mechanics. Flow velocity varies inversely with cross-sectional area: $v_2 = v_1 (A_1 / A_2) = v_1 (D_1 / D_2)^2$."
+                        "examTip": "Found in Fluid Mechanics. Flow velocity varies inversely with cross-sectional area: $v_2 = v_1 (A_1 / A_2) = v_1 (D_1 / D_2)^2$.",
+                        "videoUrl": "assets/videos/Continuity_Equation.mp4",
+                        "videoTitle": "Continuity Equation (Conservation of Mass) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Elastic Flexure Formula for Beam Bending",
                         "formula": "$$\\sigma = -\\frac{M y}{I} \\implies \\sigma_{\\text{max}} = \\frac{M}{S}$$",
                         "description": "Determines longitudinal normal bending stress at distance $y$ from the neutral axis under internal bending moment $M$.",
-                        "examTip": "Found in Mechanics of Materials. Section modulus is $S = I / c$. For rectangular cross-section ($b \\times h$), $S = b h^2 / 6$."
+                        "examTip": "Found in Mechanics of Materials. Section modulus is $S = I / c$. For rectangular cross-section ($b \\times h$), $S = b h^2 / 6$.",
+                        "videoUrl": "assets/videos/Bending_Formula.mp4",
+                        "videoTitle": "Bending Formula (Beam Flexure Stress)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Torsion Formula for Circular Shafts",
                         "formula": "$$\\tau = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{G J}$$",
                         "description": "Computes shear stress $\\tau$ at radial distance $r$ and total angular twist $\\phi$ in a circular shaft subjected to torque $T$.",
-                        "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$."
+                        "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$.",
+                        "videoUrl": "assets/videos/Torsion_Formula.mp4",
+                        "videoTitle": "Torsion Formula (Shaft Shear Stress & Twist)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Reynolds Number (Flow Similarity Metric)",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless ratio of inertial forces to viscous forces in fluid flow, demarcating laminar from turbulent flow regimes.",
-                        "examTip": "Found in Fluid Mechanics. For internal pipe flow: $Re < 2100$ is laminar; $Re > 4000$ is fully turbulent."
+                        "examTip": "Found in Fluid Mechanics. For internal pipe flow: $Re < 2100$ is laminar; $Re > 4000$ is fully turbulent.",
+                        "videoUrl": "assets/videos/Reynolds_Number.mp4",
+                        "videoTitle": "Reynolds Number (Laminar vs Turbulent Flow)",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Ohm’s Law and Electrical Power",
                         "formula": "$$V = I R, \\quad P = V I = I^2 R = \\frac{V^2}{R}$$",
                         "description": "Fundamental relationship between voltage $V$, current $I$, resistance $R$, and dissipated electrical power $P$ in DC circuits.",
-                        "examTip": "Found in Electrical Circuits. In series circuits, current is constant; in parallel circuits, voltage drop is identical across branches."
+                        "examTip": "Found in Electrical Circuits. In series circuits, current is constant; in parallel circuits, voltage drop is identical across branches.",
+                        "videoUrl": "assets/videos/Ohms_Law.mp4",
+                        "videoTitle": "Ohm’s Law and Electrical Power",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
-                        "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$."
+                        "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
+                        "videoUrl": "assets/videos/Compound_Interest_Formula.mp4",
+                        "videoTitle": "Compound Interest Formula Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Centroid of Composite Planar Areas",
                         "formula": "$$\\bar{x} = \\frac{\\sum A_i \\bar{x}_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum A_i \\bar{y}_i}{\\sum A_i}$$",
                         "description": "Calculates the geometric center $(\\bar{x}, \\bar{y})$ of composite cross sections by taking the first moments of area divided by total area.",
-                        "examTip": "Found in Statics / Mechanics of Materials. For cutouts or holes, treat their area as negative in the summation."
+                        "examTip": "Found in Statics / Mechanics of Materials. For cutouts or holes, treat their area as negative in the summation.",
+                        "videoUrl": "assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+                        "videoTitle": "Centroid of Composite Planar Areas Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Isotropic Elastic Constants Relationship",
@@ -7188,9 +7327,15 @@ window.calcEvaluate = function() {
             }
         }
 
-        // Render MathJax LaTeX equation
-        if (window.MathJax && window.MathJax.typesetPromise && formulaEl) {
-            window.MathJax.typesetPromise([formulaEl]).catch(err => console.warn('MathJax render notice:', err));
+        // Render MathJax LaTeX equation & text (formula, description, tip, title)
+        const mathElements = [formulaEl, descEl, tipEl, titleEl].filter(Boolean);
+        if (window.safeTypesetMath) {
+            window.safeTypesetMath(mathElements);
+        } else if (window.MathJax && window.MathJax.typesetPromise) {
+            if (typeof window.MathJax.typesetClear === 'function') {
+                window.MathJax.typesetClear(mathElements);
+            }
+            window.MathJax.typesetPromise(mathElements).catch(err => console.warn('MathJax render notice:', err));
         }
     }
 
@@ -7237,29 +7382,86 @@ window.calcEvaluate = function() {
     }
 
     function previewTheoremVideo(videoId) {
-        // Ensure Mechanical discipline
+        if (typeof window.switchDashboardTab === 'function') {
+            try { window.switchDashboardTab('motivation'); } catch (e) {}
+        }
+        let disc = 'Mechanical';
+        if (videoId === 'greenshields' || videoId === 'greenshield' || videoId === 'stopping' || videoId === 'ssd' || videoId === 'manning' || videoId === 'mannings' || videoId === 'slenderness') {
+            disc = 'Civil';
+        } else if (videoId === 'demorgan' || videoId === 'demorgans' || videoId === 'boolean' || videoId === 'thevenin' || videoId === 'nyquist' || videoId === 'sampling' || videoId === 'ohm' || videoId === 'ohms' || videoId === 'opamp' || videoId === 'amplifier') {
+            disc = 'Electrical and Computer';
+        } else if (videoId === 'idealgas' || videoId === 'gas' || videoId === 'hydrostatic' || videoId === 'hydro' || videoId === 'compound' || videoId === 'interest' || videoId === 'centroid' || videoId === 'composite') {
+            disc = 'Other';
+        } else if (videoId === 'firstlaw' || videoId === 'thermodynamics' || videoId === 'pressurevessel' || videoId === 'pressure' || videoId === 'vessel' || videoId === 'vessels' || videoId === 'continuity' || videoId === 'impulse' || videoId === 'momentum' || videoId === 'euler' || videoId === 'buckling' || videoId === 'cooling' || videoId === 'newton' || videoId === 'newtons' || videoId === 'stefan' || videoId === 'boltzmann' || videoId === 'radiation' || videoId === 'sdof' || videoId === 'harmonic' || videoId === 'vibrations' || videoId === 'lmtd' || videoId === 'mach' || videoId === 'sound' || videoId === 'darcy' || videoId === 'weisbach' || videoId === 'weisback' || videoId === 'rankine' || videoId === 'otto') {
+            disc = 'Mechanical';
+        }
         try {
-            localStorage.setItem('enggtv_discipline', 'Mechanical');
+            localStorage.setItem('enggtv_discipline', disc);
         } catch (e) {}
 
-        const theorems = THEOREMS_BY_DISCIPLINE['Mechanical'];
-        let targetIndex = 0; // default Bernoulli
-        if (videoId === 'carnot') {
-            targetIndex = theorems.findIndex(t => t.title.toLowerCase().includes('carnot'));
-            if (targetIndex === -1) targetIndex = 2;
-        } else if (videoId === 'bernoulli') {
-            targetIndex = theorems.findIndex(t => t.title.toLowerCase().includes('bernoulli'));
-            if (targetIndex === -1) targetIndex = 0;
-        } else if (videoId === 'fourier') {
-            targetIndex = theorems.findIndex(t => t.title.toLowerCase().includes('fourier'));
-            if (targetIndex === -1) targetIndex = 1;
-        } else if (videoId === 'mohr' || videoId === 'mohrs') {
-            targetIndex = theorems.findIndex(t => t.title.toLowerCase().includes('mohr'));
-            if (targetIndex === -1) targetIndex = 3;
-        } else if (videoId === 'parallel') {
-            targetIndex = theorems.findIndex(t => t.title.toLowerCase().includes('parallel'));
-            if (targetIndex === -1) targetIndex = 4;
-        }
+        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
+        const keyMap = {
+            'bernoulli': ['bernoulli'],
+            'fourier': ['fourier'],
+            'carnot': ['carnot'],
+            'mohr': ['mohr'],
+            'parallel': ['parallel'],
+            'bending': ['bending', 'flexure'],
+            'torsion': ['torsion'],
+            'greenshields': ['greenshield'],
+            'ssd': ['stopping sight', 'ssd'],
+            'stopping': ['stopping sight', 'ssd'],
+            'reynolds': ['reynolds'],
+            'manning': ['manning'],
+            'mannings': ['manning'],
+            'slenderness': ['slenderness'],
+            'euler': ['euler', 'buckling'],
+            'buckling': ['euler', 'buckling'],
+            'demorgan': ['de morgan', 'demorgan'],
+            'demorgans': ['de morgan', 'demorgan'],
+            'thevenin': ['thevenin'],
+            'nyquist': ['nyquist', 'sampling'],
+            'cooling': ['cooling', 'convective'],
+            'newton': ['cooling', 'convective'],
+            'newtons': ['cooling', 'convective'],
+            'ohm': ['ohm'],
+            'ohms': ['ohm'],
+            'stefan': ['stefan', 'boltzmann'],
+            'boltzmann': ['stefan', 'boltzmann'],
+            'radiation': ['stefan', 'boltzmann'],
+            'sdof': ['sdof', 'natural harmonic', 'natural frequency'],
+            'harmonic': ['sdof', 'natural harmonic', 'natural frequency'],
+            'vibrations': ['sdof', 'natural harmonic', 'natural frequency'],
+            'lmtd': ['lmtd', 'log mean'],
+            'mach': ['mach', 'speed of sound'],
+            'sound': ['mach', 'speed of sound'],
+            'opamp': ['opamp', 'operational amplifier'],
+            'amplifier': ['opamp', 'operational amplifier'],
+            'darcy': ['darcy', 'weisbach'],
+            'weisbach': ['darcy', 'weisbach'],
+            'weisback': ['darcy', 'weisbach'],
+            'rankine': ['rankine'],
+            'otto': ['otto'],
+            'firstlaw': ['first law of thermodynamics', 'first law'],
+            'thermodynamics': ['first law of thermodynamics', 'first law'],
+            'pressurevessel': ['thin-walled pressure vessel', 'pressure vessel'],
+            'vessel': ['thin-walled pressure vessel', 'pressure vessel'],
+            'vessels': ['thin-walled pressure vessel', 'pressure vessel'],
+            'continuity': ['continuity equation', 'continuity'],
+            'impulse': ['linear impulse and momentum', 'impulse'],
+            'momentum': ['linear impulse and momentum', 'momentum'],
+            'idealgas': ['ideal gas law', 'ideal gas'],
+            'gas': ['ideal gas law', 'ideal gas'],
+            'hydrostatic': ['hydrostatic pressure', 'hydrostatic'],
+            'hydro': ['hydrostatic pressure', 'hydrostatic'],
+            'compound': ['compound interest', 'compound amount factor', 'compound'],
+            'interest': ['compound interest', 'compound amount factor', 'compound'],
+            'centroid': ['centroid of composite', 'centroid'],
+            'composite': ['centroid of composite', 'composite']
+        };
+        const searchTerms = keyMap[videoId] || [videoId];
+        let targetIndex = theorems.findIndex(t => searchTerms.some(term => t.title.toLowerCase().includes(term)));
+        if (targetIndex === -1) targetIndex = 0;
 
         renderDailyTheorem(false, targetIndex);
 
@@ -7308,6 +7510,22 @@ window.calcEvaluate = function() {
         renderDailyQuote(false);
         renderDailyTheorem(false);
     };
+
+    window.addEventListener('mathjax-ready', () => {
+        const formulaEl = document.getElementById('daily-theorem-formula');
+        const descEl = document.getElementById('daily-theorem-desc');
+        const tipEl = document.getElementById('daily-theorem-tip');
+        const titleEl = document.getElementById('daily-theorem-title');
+        const mathElements = [formulaEl, descEl, tipEl, titleEl].filter(Boolean);
+        if (window.safeTypesetMath) {
+            window.safeTypesetMath(mathElements);
+        } else if (window.MathJax && window.MathJax.typesetPromise) {
+            if (typeof window.MathJax.typesetClear === 'function') {
+                window.MathJax.typesetClear(mathElements);
+            }
+            window.MathJax.typesetPromise(mathElements).catch(err => console.warn('MathJax render notice:', err));
+        }
+    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);

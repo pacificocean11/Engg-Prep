@@ -940,16 +940,16 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         </span>
                         <div class="flex items-center gap-1.5 flex-wrap">
                             <button id="btn-trial-bernoulli" onclick="window.previewTheoremVideo('bernoulli')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Bernoulli's Principle video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Bernoulli</span>
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Bernoulli</span>
                             </button>
                             <button id="btn-trial-fourier" onclick="window.previewTheoremVideo('fourier')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-rose-500/15 hover:bg-rose-500/25 text-rose-700 dark:text-rose-300 border border-rose-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Fourier's Law video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Fourier's Law</span>
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Fourier's Law</span>
                             </button>
                             <button id="btn-trial-carnot" onclick="window.previewTheoremVideo('carnot')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Carnot Cycle video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Carnot Cycle</span>
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Carnot Cycle</span>
                             </button>
                             <button id="btn-trial-mohr" onclick="window.previewTheoremVideo('mohr')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Mohr's Circle video">
                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
@@ -958,6 +958,122 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                             <button id="btn-trial-parallel" onclick="window.previewTheoremVideo('parallel')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Parallel Axis Theorem video">
                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
                                 <span>Parallel Axis</span>
+                            </button>
+                            <button id="btn-trial-bending" onclick="window.previewTheoremVideo('bending')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/15 hover:bg-violet-500/25 text-violet-700 dark:text-violet-300 border border-violet-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Bending Formula video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Bending Formula</span>
+                            </button>
+                            <button id="btn-trial-torsion" onclick="window.previewTheoremVideo('torsion')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Torsion Formula video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Torsion Formula</span>
+                            </button>
+                            <button id="btn-trial-greenshields" onclick="window.previewTheoremVideo('greenshields')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-teal-500/15 hover:bg-teal-500/25 text-teal-700 dark:text-teal-300 border border-teal-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Greenshields Model video">
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Greenshields</span>
+                            </button>
+                            <button id="btn-trial-ssd" onclick="window.previewTheoremVideo('ssd')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Stopping Sight Distance video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Stopping Distance</span>
+                            </button>
+                            <button id="btn-trial-reynolds" onclick="window.previewTheoremVideo('reynolds')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-blue-500/15 hover:bg-blue-500/25 text-blue-700 dark:text-blue-300 border border-blue-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Reynolds Number video">
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Reynolds Number</span>
+                            </button>
+                            <button id="btn-trial-manning" onclick="window.previewTheoremVideo('manning')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Manning's Equation video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Manning's Eq</span>
+                            </button>
+                            <button id="btn-trial-slenderness" onclick="window.previewTheoremVideo('slenderness')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-purple-500/15 hover:bg-purple-500/25 text-purple-700 dark:text-purple-300 border border-purple-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Slenderness Ratio video">
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Slenderness Ratio</span>
+                            </button>
+                            <button id="btn-trial-euler" onclick="window.previewTheoremVideo('euler')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-500/15 hover:bg-orange-500/25 text-orange-700 dark:text-orange-300 border border-orange-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Euler's Critical Buckling Load video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Euler's Buckling</span>
+                            </button>
+                            <button id="btn-trial-demorgan" onclick="window.previewTheoremVideo('demorgan')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-pink-500/15 hover:bg-pink-500/25 text-pink-700 dark:text-pink-300 border border-pink-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview De Morgan's Laws for Boolean Logic video">
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>De Morgan's Laws</span>
+                            </button>
+                            <button id="btn-trial-thevenin" onclick="window.previewTheoremVideo('thevenin')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-yellow-500/15 hover:bg-yellow-500/25 text-yellow-700 dark:text-yellow-300 border border-yellow-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Thevenin's Theorem video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Thevenin's Theorem</span>
+                            </button>
+                            <button id="btn-trial-nyquist" onclick="window.previewTheoremVideo('nyquist')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Nyquist-Shannon Sampling Theorem video">
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Nyquist Theorem</span>
+                            </button>
+                            <button id="btn-trial-cooling" onclick="window.previewTheoremVideo('cooling')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Newton's Law of Cooling video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Newton's Cooling</span>
+                            </button>
+                            <button id="btn-trial-ohm" onclick="window.previewTheoremVideo('ohm')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-lime-500/15 hover:bg-lime-500/25 text-lime-700 dark:text-lime-300 border border-lime-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Ohm's Law video">
+                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                 <span>Ohm's Law</span>
+                            </button>
+                            <button id="btn-trial-stefan" onclick="window.previewTheoremVideo('stefan')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-red-500/15 hover:bg-red-500/25 text-red-700 dark:text-red-300 border border-red-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Stefan-Boltzmann Law video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Stefan-Boltzmann</span>
+                            </button>
+                            <button id="btn-trial-sdof" onclick="window.previewTheoremVideo('sdof')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Single DOF Natural Frequency video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>SDOF Vibrations</span>
+                            </button>
+                            <button id="btn-trial-lmtd" onclick="window.previewTheoremVideo('lmtd')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Log Mean Temperature Difference (LMTD) video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>LMTD</span>
+                            </button>
+                            <button id="btn-trial-mach" onclick="window.previewTheoremVideo('mach')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Speed of Sound & Mach Number video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Speed of Sound</span>
+                            </button>
+                            <button id="btn-trial-opamp" onclick="window.previewTheoremVideo('opamp')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/15 hover:bg-violet-500/25 text-violet-700 dark:text-violet-300 border border-violet-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Operational Amplifier (Op-Amp) video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Op-Amp</span>
+                            </button>
+                            <button id="btn-trial-darcy" onclick="window.previewTheoremVideo('darcy')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-blue-500/15 hover:bg-blue-500/25 text-blue-700 dark:text-blue-300 border border-blue-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Darcy-Weisbach Equation video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Darcy-Weisbach</span>
+                            </button>
+                            <button id="btn-trial-rankine" onclick="window.previewTheoremVideo('rankine')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Rankine Cycle video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Rankine Cycle</span>
+                            </button>
+                            <button id="btn-trial-firstlaw" onclick="window.previewTheoremVideo('firstlaw')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview First Law of Thermodynamics video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>First Law</span>
+                            </button>
+                            <button id="btn-trial-pressurevessel" onclick="window.previewTheoremVideo('pressurevessel')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Pressure Vessels video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Pressure Vessels</span>
+                            </button>
+                            <button id="btn-trial-continuity" onclick="window.previewTheoremVideo('continuity')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Continuity Equation video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Continuity Eq</span>
+                            </button>
+                            <button id="btn-trial-impulse" onclick="window.previewTheoremVideo('impulse')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/15 hover:bg-violet-500/25 text-violet-700 dark:text-violet-300 border border-violet-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Impulse-Momentum Principle video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Impulse-Momentum</span>
+                            </button>
+                            <button id="btn-trial-idealgas" onclick="window.previewTheoremVideo('idealgas')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-teal-500/15 hover:bg-teal-500/25 text-teal-700 dark:text-teal-300 border border-teal-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Ideal Gas Law video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Ideal Gas Law</span>
+                            </button>
+                            <button id="btn-trial-hydrostatic" onclick="window.previewTheoremVideo('hydrostatic')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-blue-500/15 hover:bg-blue-500/25 text-blue-700 dark:text-blue-300 border border-blue-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Hydrostatic Pressure video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Hydrostatic Pressure</span>
+                            </button>
+                            <button id="btn-trial-compound" onclick="window.previewTheoremVideo('compound')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Compound Interest Formula video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Compound Interest</span>
+                            </button>
+                            <button id="btn-trial-centroid" onclick="window.previewTheoremVideo('centroid')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Centroid of Composite Planar Areas video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Centroid Composite</span>
+                            </button>
+                            <button id="btn-trial-otto" onclick="window.previewTheoremVideo('otto')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-rose-500/15 hover:bg-rose-500/25 text-rose-700 dark:text-rose-300 border border-rose-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Otto Cycle video">
+                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
+                                <span>Otto Cycle</span>
                             </button>
                         </div>
                     </div>
@@ -2272,7 +2388,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="exam_questions.js?v=3"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=96"></script>
+    <script src="app.js?v=97"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
