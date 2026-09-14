@@ -799,10 +799,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
 </div>
 
 <!-- Daily Motivation & Discipline FE Theorem Dual Cards -->
-<div class="col-span-1 md:col-span-12 lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="col-span-1 md:col-span-12 lg:col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
     <!-- Card 1: Daily Motivation Quote Card -->
-    <div id="daily-quote-card" class="col-span-1 lg:col-span-6 glass-card rounded-3xl p-6 sm:p-7 relative overflow-hidden border border-amber-500/25 shadow-[0_8px_30px_rgba(245,158,11,0.06)] flex flex-col justify-between group">
+    <div id="daily-quote-card" class="col-span-1 lg:col-span-6 glass-card rounded-3xl p-6 sm:p-7 relative overflow-hidden border border-amber-500/25 shadow-[0_8px_30px_rgba(245,158,11,0.06)] self-start group">
         <div class="absolute -top-16 -right-16 w-44 h-44 bg-amber-500/10 rounded-full blur-[70px] pointer-events-none group-hover:bg-amber-500/20 transition-all duration-700"></div>
         <div class="relative z-10 flex flex-col gap-4">
             <!-- Header -->
@@ -813,30 +813,30 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                     </div>
                     <span class="font-label-caps text-[10px] uppercase tracking-widest text-amber-600 dark:text-amber-400 font-bold">Daily Engineering Mindset</span>
                 </div>
-                <button id="btn-shuffle-quote" class="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-amber-500 transition-all cursor-pointer flex items-center gap-1 text-[11px] font-semibold" title="Shuffle Quote">
+                <button id="btn-shuffle-quote" class="p-1.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-amber-500 transition-all cursor-pointer flex items-center gap-1.5 text-xs font-semibold" title="Shuffle Quote">
                     <span class="material-symbols-outlined text-[16px]">refresh</span>
-                    <span class="hidden sm:inline text-[10px] uppercase font-bold tracking-wider">Shuffle</span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider">Shuffle</span>
                 </button>
             </div>
 
             <!-- Quote Text -->
-            <p id="daily-quote-text" class="text-sm sm:text-base font-serif italic text-slate-800 dark:text-amber-100/90 leading-relaxed min-h-[50px]">
+            <p id="daily-quote-text" class="text-sm sm:text-base font-serif italic text-slate-800 dark:text-amber-100/90 leading-relaxed">
                 “Scientists study the world as it is; engineers create the world that has never been.”
             </p>
-        </div>
 
-        <!-- Author / Footer -->
-        <div class="relative z-10 pt-4 mt-2 border-t border-slate-200/50 dark:border-slate-800 flex items-center justify-between">
-            <div>
-                <p id="daily-quote-author" class="text-xs font-bold text-slate-900 dark:text-white">Theodore von Kármán</p>
-                <p id="daily-quote-role" class="text-[10px] text-slate-400 font-medium">Aerospace Pioneer & Mathematician</p>
+            <!-- Author / Footer (Immediately following quote) -->
+            <div class="pt-3 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
+                <div>
+                    <p id="daily-quote-author" class="text-xs font-bold text-slate-900 dark:text-white">Theodore von Kármán</p>
+                    <p id="daily-quote-role" class="text-[10px] text-slate-400 font-medium">Aerospace Pioneer & Mathematician</p>
+                </div>
+                <span class="text-[10px] font-bold text-amber-600/80 dark:text-amber-400/80 bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Inspiration</span>
             </div>
-            <span class="text-[10px] font-bold text-amber-600/80 dark:text-amber-400/80 bg-amber-500/10 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Inspiration</span>
         </div>
     </div>
 
     <!-- Card 2: FE Theorem of the Day Card -->
-    <div id="daily-theorem-card" class="col-span-1 lg:col-span-6 glass-card rounded-3xl p-6 sm:p-7 relative overflow-hidden border border-amber-500/25 shadow-[0_8px_30px_rgba(245,158,11,0.06)] flex flex-col justify-between group transition-all duration-300">
+    <div id="daily-theorem-card" class="col-span-1 lg:col-span-6 glass-card rounded-3xl p-6 sm:p-7 relative overflow-hidden border border-cyan-500/25 shadow-[0_8px_30px_rgba(6,182,212,0.06)] flex flex-col justify-between group transition-all duration-300">
         <div class="absolute -top-16 -right-16 w-44 h-44 bg-cyan-500/10 rounded-full blur-[70px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-700"></div>
         <div class="relative z-10 flex flex-col gap-3.5">
             <!-- Header -->
@@ -849,7 +849,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         <span class="font-label-caps text-[10px] uppercase tracking-widest text-cyan-600 dark:text-cyan-400 font-bold block">FE Theorem of the Day</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-1.5 flex-wrap">
+                <div class="flex items-center gap-2 flex-wrap">
                     <span id="daily-theorem-discipline" class="text-[9px] font-black uppercase tracking-wider bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded-full">Mechanical FE Focus • #1 of 25</span>
                     
                     <!-- Layout Mode Toggle (Below vs Next-To) -->
@@ -864,8 +864,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         </button>
                     </div>
 
-                    <button id="btn-shuffle-theorem" class="p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all cursor-pointer flex items-center gap-1 text-[11px] font-semibold" title="Next Theorem">
-                        <span class="material-symbols-outlined text-[16px]">refresh</span>
+                    <!-- Prominent Shuffle Theorem Button -->
+                    <button id="btn-shuffle-theorem" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-xs shadow-sm shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer flex items-center gap-1.5 group" title="Shuffle to Next Theorem & Play Explainer">
+                        <span class="material-symbols-outlined text-[16px] group-hover:rotate-180 transition-transform duration-500">shuffle</span>
+                        <span>Shuffle Theorem</span>
                     </button>
                 </div>
             </div>
@@ -932,151 +934,6 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         </div>
                     </div>
 
-                    <!-- Trial & Sample Switcher Bar -->
-                    <div class="p-2.5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 shadow-sm">
-                        <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-                            <span class="material-symbols-outlined text-[14px] text-cyan-500">science</span>
-                            <span>Trial Videos:</span>
-                        </span>
-                        <div class="flex items-center gap-1.5 flex-wrap">
-                            <button id="btn-trial-bernoulli" onclick="window.previewTheoremVideo('bernoulli')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Bernoulli's Principle video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Bernoulli</span>
-                            </button>
-                            <button id="btn-trial-fourier" onclick="window.previewTheoremVideo('fourier')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-rose-500/15 hover:bg-rose-500/25 text-rose-700 dark:text-rose-300 border border-rose-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Fourier's Law video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Fourier's Law</span>
-                            </button>
-                            <button id="btn-trial-carnot" onclick="window.previewTheoremVideo('carnot')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Carnot Cycle video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Carnot Cycle</span>
-                            </button>
-                            <button id="btn-trial-mohr" onclick="window.previewTheoremVideo('mohr')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Mohr's Circle video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Mohr's Circle</span>
-                            </button>
-                            <button id="btn-trial-parallel" onclick="window.previewTheoremVideo('parallel')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Parallel Axis Theorem video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Parallel Axis</span>
-                            </button>
-                            <button id="btn-trial-bending" onclick="window.previewTheoremVideo('bending')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/15 hover:bg-violet-500/25 text-violet-700 dark:text-violet-300 border border-violet-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Bending Formula video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Bending Formula</span>
-                            </button>
-                            <button id="btn-trial-torsion" onclick="window.previewTheoremVideo('torsion')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Torsion Formula video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Torsion Formula</span>
-                            </button>
-                            <button id="btn-trial-greenshields" onclick="window.previewTheoremVideo('greenshields')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-teal-500/15 hover:bg-teal-500/25 text-teal-700 dark:text-teal-300 border border-teal-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Greenshields Model video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Greenshields</span>
-                            </button>
-                            <button id="btn-trial-ssd" onclick="window.previewTheoremVideo('ssd')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Stopping Sight Distance video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Stopping Distance</span>
-                            </button>
-                            <button id="btn-trial-reynolds" onclick="window.previewTheoremVideo('reynolds')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-blue-500/15 hover:bg-blue-500/25 text-blue-700 dark:text-blue-300 border border-blue-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Reynolds Number video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Reynolds Number</span>
-                            </button>
-                            <button id="btn-trial-manning" onclick="window.previewTheoremVideo('manning')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Manning's Equation video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Manning's Eq</span>
-                            </button>
-                            <button id="btn-trial-slenderness" onclick="window.previewTheoremVideo('slenderness')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-purple-500/15 hover:bg-purple-500/25 text-purple-700 dark:text-purple-300 border border-purple-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Slenderness Ratio video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Slenderness Ratio</span>
-                            </button>
-                            <button id="btn-trial-euler" onclick="window.previewTheoremVideo('euler')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-orange-500/15 hover:bg-orange-500/25 text-orange-700 dark:text-orange-300 border border-orange-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Euler's Critical Buckling Load video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Euler's Buckling</span>
-                            </button>
-                            <button id="btn-trial-demorgan" onclick="window.previewTheoremVideo('demorgan')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-pink-500/15 hover:bg-pink-500/25 text-pink-700 dark:text-pink-300 border border-pink-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview De Morgan's Laws for Boolean Logic video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>De Morgan's Laws</span>
-                            </button>
-                            <button id="btn-trial-thevenin" onclick="window.previewTheoremVideo('thevenin')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-yellow-500/15 hover:bg-yellow-500/25 text-yellow-700 dark:text-yellow-300 border border-yellow-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Thevenin's Theorem video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Thevenin's Theorem</span>
-                            </button>
-                            <button id="btn-trial-nyquist" onclick="window.previewTheoremVideo('nyquist')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Nyquist-Shannon Sampling Theorem video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Nyquist Theorem</span>
-                            </button>
-                            <button id="btn-trial-cooling" onclick="window.previewTheoremVideo('cooling')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Newton's Law of Cooling video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Newton's Cooling</span>
-                            </button>
-                            <button id="btn-trial-ohm" onclick="window.previewTheoremVideo('ohm')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-lime-500/15 hover:bg-lime-500/25 text-lime-700 dark:text-lime-300 border border-lime-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Ohm's Law video">
-                                 <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                 <span>Ohm's Law</span>
-                            </button>
-                            <button id="btn-trial-stefan" onclick="window.previewTheoremVideo('stefan')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-red-500/15 hover:bg-red-500/25 text-red-700 dark:text-red-300 border border-red-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Stefan-Boltzmann Law video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Stefan-Boltzmann</span>
-                            </button>
-                            <button id="btn-trial-sdof" onclick="window.previewTheoremVideo('sdof')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Single DOF Natural Frequency video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>SDOF Vibrations</span>
-                            </button>
-                            <button id="btn-trial-lmtd" onclick="window.previewTheoremVideo('lmtd')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Log Mean Temperature Difference (LMTD) video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>LMTD</span>
-                            </button>
-                            <button id="btn-trial-mach" onclick="window.previewTheoremVideo('mach')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Speed of Sound & Mach Number video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Speed of Sound</span>
-                            </button>
-                            <button id="btn-trial-opamp" onclick="window.previewTheoremVideo('opamp')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/15 hover:bg-violet-500/25 text-violet-700 dark:text-violet-300 border border-violet-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Operational Amplifier (Op-Amp) video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Op-Amp</span>
-                            </button>
-                            <button id="btn-trial-darcy" onclick="window.previewTheoremVideo('darcy')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-blue-500/15 hover:bg-blue-500/25 text-blue-700 dark:text-blue-300 border border-blue-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Darcy-Weisbach Equation video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Darcy-Weisbach</span>
-                            </button>
-                            <button id="btn-trial-rankine" onclick="window.previewTheoremVideo('rankine')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Rankine Cycle video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Rankine Cycle</span>
-                            </button>
-                            <button id="btn-trial-firstlaw" onclick="window.previewTheoremVideo('firstlaw')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview First Law of Thermodynamics video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>First Law</span>
-                            </button>
-                            <button id="btn-trial-pressurevessel" onclick="window.previewTheoremVideo('pressurevessel')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Pressure Vessels video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Pressure Vessels</span>
-                            </button>
-                            <button id="btn-trial-continuity" onclick="window.previewTheoremVideo('continuity')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Continuity Equation video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Continuity Eq</span>
-                            </button>
-                            <button id="btn-trial-impulse" onclick="window.previewTheoremVideo('impulse')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-violet-500/15 hover:bg-violet-500/25 text-violet-700 dark:text-violet-300 border border-violet-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Impulse-Momentum Principle video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Impulse-Momentum</span>
-                            </button>
-                            <button id="btn-trial-idealgas" onclick="window.previewTheoremVideo('idealgas')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-teal-500/15 hover:bg-teal-500/25 text-teal-700 dark:text-teal-300 border border-teal-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Ideal Gas Law video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Ideal Gas Law</span>
-                            </button>
-                            <button id="btn-trial-hydrostatic" onclick="window.previewTheoremVideo('hydrostatic')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-blue-500/15 hover:bg-blue-500/25 text-blue-700 dark:text-blue-300 border border-blue-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Hydrostatic Pressure video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Hydrostatic Pressure</span>
-                            </button>
-                            <button id="btn-trial-compound" onclick="window.previewTheoremVideo('compound')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Compound Interest Formula video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Compound Interest</span>
-                            </button>
-                            <button id="btn-trial-centroid" onclick="window.previewTheoremVideo('centroid')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Centroid of Composite Planar Areas video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Centroid Composite</span>
-                            </button>
-                            <button id="btn-trial-otto" onclick="window.previewTheoremVideo('otto')" class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-rose-500/15 hover:bg-rose-500/25 text-rose-700 dark:text-rose-300 border border-rose-500/30 active:scale-95 transition-all cursor-pointer flex items-center gap-1" title="Preview Otto Cycle video">
-                                <span class="material-symbols-outlined text-[13px]">play_circle</span>
-                                <span>Otto Cycle</span>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1084,130 +941,6 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
 
 </div>
 
-<!-- Featured Engineering Mechanism / Video Showcase Card -->
-<div id="featured-mechanism-video-card" class="col-span-1 md:col-span-12 lg:col-span-12 glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-cyan-500/25 shadow-[0_8px_30px_rgba(6,182,212,0.06)] group">
-    <!-- Ambient Cyan Glow -->
-    <div class="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/10 rounded-full blur-[90px] pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-700"></div>
-
-    <div class="relative z-10">
-        <!-- Card Header -->
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200/60 dark:border-slate-800">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center border border-cyan-500/25 shadow-sm">
-                    <span class="material-symbols-outlined text-2xl">electric_bolt</span>
-                </div>
-                <div>
-                    <div class="flex items-center gap-2">
-                        <h3 class="font-bold text-base sm:text-lg text-slate-800 dark:text-white">FE Exam Core: Electrical Transformers</h3>
-                        <span class="text-[9px] font-black uppercase tracking-wider bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/25 px-2 py-0.5 rounded-full">FE Electrical & General</span>
-                    </div>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">High-Yield Video: Turns Ratio, Dot Convention & Impedance Reflection</p>
-                </div>
-            </div>
-
-            <!-- Header Action Controls -->
-            <div class="flex items-center gap-2">
-                <button id="btn-mechanism-sound-toggle" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-cyan-500 transition-all cursor-pointer flex items-center justify-center" title="Toggle Sound / Mute">
-                    <span class="material-symbols-outlined text-[18px]">volume_off</span>
-                </button>
-                <button id="btn-mechanism-fullscreen" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-cyan-500 transition-all cursor-pointer flex items-center justify-center" title="Fullscreen">
-                    <span class="material-symbols-outlined text-[18px]">fullscreen</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- 2-Column Grid: Video on Left, Engineering Breakdown on Right -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            <!-- Left: Video Player Frame (col-span-7) -->
-            <div class="lg:col-span-7 flex flex-col gap-3">
-                <div id="mechanism-video-wrapper" class="relative rounded-2xl overflow-hidden aspect-video bg-slate-950 border border-slate-700/50 shadow-xl cursor-pointer group/player">
-                    <video id="mechanism-video-player" poster="assets/videos/transformers_poster.jpg" playsinline loop muted preload="metadata" class="w-full h-full object-cover">
-                        <source src="assets/videos/transformers_fe_explainer.webm" type="video/webm">
-                        <source src="assets/videos/placeholder_video.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video>
-
-                    <!-- Play/Pause Gradient Overlay -->
-                    <div id="mechanism-play-overlay" class="absolute inset-0 bg-slate-950/40 backdrop-blur-[2px] flex items-center justify-center transition-opacity duration-300">
-                        <div class="w-16 h-16 rounded-full bg-cyan-500/90 text-white flex items-center justify-center shadow-2xl shadow-cyan-500/50 group-hover/player:scale-110 transition-transform duration-200">
-                            <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">play_arrow</span>
-                        </div>
-                    </div>
-
-                    <!-- Bottom Floating Control Bar inside Player -->
-                    <div class="absolute bottom-3 right-3 flex items-center gap-2 z-20">
-                        <button id="btn-mechanism-play-toggle" class="p-2 px-3 rounded-xl bg-slate-900/80 hover:bg-cyan-600 text-white text-xs font-bold backdrop-blur-md border border-white/10 flex items-center gap-1.5 transition-all cursor-pointer shadow-md">
-                            <span class="material-symbols-outlined text-[16px]">play_arrow</span>
-                            <span class="text-[11px]">Play / Pause</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Attribution Footer -->
-                <div class="flex items-center justify-between text-[10px] text-slate-500 dark:text-slate-400 px-1">
-                    <span class="flex items-center gap-1">
-                        <span class="material-symbols-outlined text-[13px] text-cyan-500">verified</span>
-                        <span>Curriculum: NCEES Reference Handbook (Power & Electrical)</span>
-                    </span>
-                    <span class="font-mono">720p HD Masterclass</span>
-                </div>
-            </div>
-
-            <!-- Right: Conceptual Breakdown & Developer Replace Info (col-span-5) -->
-            <div class="lg:col-span-5 flex flex-col justify-between self-stretch gap-4">
-                <div>
-                    <h4 class="font-bold text-base sm:text-lg text-slate-900 dark:text-white leading-snug">
-                        FE Transformers: The a² Rule & Dot Polarity
-                    </h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
-                        Essential exam walkthrough explaining single-phase step-up/down transformers, turns ratio calculations, apparent power invariance (S₁ = S₂), impedance reflection across windings (Zin = a² ZL), and core/copper loss trade-offs.
-                    </p>
-
-                    <!-- Key Engineering Concept Bullets -->
-                    <div class="mt-4 space-y-2.5">
-                        <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
-                            <span class="material-symbols-outlined text-cyan-500 text-[18px] shrink-0 mt-0.5">bolt</span>
-                            <div class="text-xs text-slate-700 dark:text-slate-200">
-                                <strong class="text-slate-900 dark:text-white">Turns Ratio & Power:</strong> $a = \frac{N_1}{N_2} = \frac{V_1}{V_2} = \frac{I_2}{I_1}$. Voltages transform directly, currents transform inversely, and apparent power is strictly conserved ($S_1 = S_2$).
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
-                            <span class="material-symbols-outlined text-cyan-500 text-[18px] shrink-0 mt-0.5">alt_route</span>
-                            <div class="text-xs text-slate-700 dark:text-slate-200">
-                                <strong class="text-slate-900 dark:text-white">The Dot Convention:</strong> If currents both enter or both leave dotted terminals, phase polarity is positive ($+a$). If one enters and one leaves, insert a negative sign: $\frac{V_1}{V_2} = -a$.
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
-                            <span class="material-symbols-outlined text-cyan-500 text-[18px] shrink-0 mt-0.5">memory</span>
-                            <div class="text-xs text-slate-700 dark:text-slate-200">
-                                <strong class="text-slate-900 dark:text-white">Impedance Reflection (a²):</strong> Load impedance reflected to the primary side scales by $a^2$: $Z_{in} = a^2 Z_L$. Always square the turns ratio—never use linear $a$!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Developer Quick-Guide Callout -->
-                <div class="p-3.5 rounded-2xl bg-cyan-500/10 dark:bg-cyan-950/40 border border-cyan-500/25 flex flex-col gap-2">
-                    <div class="flex items-center justify-between gap-2">
-                        <div class="flex items-center gap-1.5 text-cyan-700 dark:text-cyan-300 font-bold text-xs">
-                            <span class="material-symbols-outlined text-[16px]">info</span>
-                            <span>FE Exam Resource</span>
-                        </div>
-                        <button id="btn-copy-video-path" class="px-2 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-[10px] font-mono font-bold flex items-center gap-1 transition-all cursor-pointer" title="Copy video file path to clipboard">
-                            <span class="material-symbols-outlined text-[12px]">content_copy</span>
-                            <span>Copy Path</span>
-                        </button>
-                    </div>
-                    <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
-                        Active explainer video: <code class="font-mono text-cyan-600 dark:text-cyan-400 bg-white/50 dark:bg-slate-900/60 px-1 py-0.5 rounded text-[10px]">assets/videos/transformers_fe_explainer.webm</code>. Find companion formulas in the <span class="font-bold text-slate-800 dark:text-white">FE Reference Handbook</span> under Electrical & Power.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 </div>
 <!-- ========================================== -->
@@ -1262,7 +995,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
             <div class="w-full md:w-auto shrink-0 flex flex-col items-start sm:items-end gap-2 bg-gradient-to-br from-white/90 to-slate-50/90 dark:from-slate-800/90 dark:to-slate-900/90 p-4 sm:p-5 rounded-2xl border border-cyan-500/30 shadow-md">
                 <span class="text-[10px] uppercase font-black tracking-widest text-slate-400 dark:text-slate-500">Your Identity in Stream</span>
                 <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 flex items-center justify-center font-bold">
+                    <div id="user-anonymous-handle-icon" class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 flex items-center justify-center font-bold shrink-0 shadow-xs transition-all">
                         <span class="material-symbols-outlined text-[18px]">theater_comedy</span>
                     </div>
                     <span id="user-anonymous-handle-text" class="font-mono text-sm sm:text-base font-black text-cyan-600 dark:text-cyan-300">@Generating...</span>
