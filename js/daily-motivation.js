@@ -483,12 +483,18 @@
                 },
                 {
                         "title": "Maximum Power Transfer Theorem",
+                        "videoUrl": "assets/videos/Maximum_Power_Transfer_Theorem.mp4",
+                        "videoTitle": "Maximum Power Transfer Theorem Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R_L = R_{Th} \\implies P_{\\text{max}} = \\frac{V_{Th}^2}{4 R_{Th}}$$",
                         "description": "Maximum active power is transferred from a linear source network to a resistive load when load resistance matches the Thevenin internal source resistance.",
                         "examTip": "Found in Electrical Circuits. In AC circuits with complex impedances, the load impedance must equal the complex conjugate: $Z_L = Z_{Th}^*$."
                 },
                 {
                         "title": "Kirchhoff’s Current and Voltage Laws (KCL & KVL)",
+                        "videoUrl": "assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
+                        "videoTitle": "Kirchhoff’s Current and Voltage Laws (KCL & KVL) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\sum I_{\\text{in}} = \\sum I_{\\text{out}}, \\quad \\sum_{k=1}^n V_k = 0$$",
                         "description": "Fundamental conservation laws of electrical charge (KCL at nodes) and electric potential energy (KVL around closed loops).",
                         "examTip": "Found in Circuit Analysis. Maintain strict consistency with the passive sign convention: current enters the positive terminal of absorbing elements."
@@ -513,6 +519,9 @@
                 },
                 {
                         "title": "First-Order RC Transient Response",
+                        "videoUrl": "assets/videos/First_Order_RC_Transient_Response.mp4",
+                        "videoTitle": "First-Order RC Transient Response Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
                         "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
                         "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$."
@@ -531,6 +540,9 @@
                 },
                 {
                         "title": "Series RLC Resonance and Bandwidth",
+                        "videoUrl": "assets/videos/Series_RLC_Resonance_and_Bandwidth.mp4",
+                        "videoTitle": "Series RLC Resonance and Bandwidth Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\omega_0 = \\frac{1}{\\sqrt{L C}}, \\quad Q_{\\text{factor}} = \\frac{\\omega_0 L}{R}, \\quad BW = \\frac{\\omega_0}{Q_{\\text{factor}}} = \\frac{R}{L}$$",
                         "description": "At resonant frequency $\\omega_0$, inductive and capacitive reactances cancel ($X_L = X_C$), minimizing circuit impedance to pure resistance $R$.",
                         "examTip": "Found in Frequency Response. Resonant frequency in Hertz is $f_0 = \\frac{1}{2\\pi \\sqrt{LC}}$. Half-power cutoff frequencies are $\\omega_{1,2} = \\omega_0 \\pm BW / 2$."
@@ -546,6 +558,9 @@
                 },
                 {
                         "title": "Bipolar Junction Transistor (BJT) Active Mode Relations",
+                        "videoUrl": "assets/videos/Bipolar_Junction_Transistor_BJT_Active_Mode_Relations.mp4",
+                        "videoTitle": "Bipolar Junction Transistor (BJT) Active Mode Relations Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_C = \\beta I_B, \\quad I_E = (\\beta + 1) I_B, \\quad \\alpha = \\frac{\\beta}{\\beta + 1}$$",
                         "description": "Relates collector current $I_C$, base current $I_B$, and emitter current $I_E$ in forward-active mode where base-emitter junction is forward-biased and collector-base is reverse-biased.",
                         "examTip": "Found in Electronics. Standard silicon forward-bias base-emitter drop is $V_{BE} \\approx 0.7\\text{ V}$. When saturated, $V_{CE,\\text{sat}} \\approx 0.2\\text{ V}$ and $I_C < \\beta I_B$."
@@ -597,6 +612,9 @@
                 },
                 {
                         "title": "Laplace Transform Final Value Theorem",
+                        "videoUrl": "assets/videos/Laplace_Transform_Final_Value_Theorem.mp4",
+                        "videoTitle": "Laplace Transform Final Value Theorem Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\lim_{t \\to \\infty} f(t) = \\lim_{s \\to 0} s F(s)$$",
                         "description": "Calculates the steady-state value of a time-domain signal directly from its Laplace transform $F(s)$ without inverse transforming.",
                         "examTip": "Found in Control Systems. Valid ONLY if all poles of $s F(s)$ lie strictly in the open left half of the s-plane (system must be stable)."
@@ -1478,7 +1496,7 @@
         let disc = 'Mechanical';
         if (videoId === 'greenshields' || videoId === 'greenshield' || videoId === 'stopping' || videoId === 'ssd' || videoId === 'manning' || videoId === 'mannings' || videoId === 'slenderness') {
             disc = 'Civil';
-        } else if (videoId === 'demorgan' || videoId === 'demorgans' || videoId === 'boolean' || videoId === 'thevenin' || videoId === 'nyquist' || videoId === 'sampling' || videoId === 'ohm' || videoId === 'ohms' || videoId === 'opamp' || videoId === 'amplifier') {
+        } else if (videoId === 'demorgan' || videoId === 'demorgans' || videoId === 'boolean' || videoId === 'thevenin' || videoId === 'nyquist' || videoId === 'sampling' || videoId === 'ohm' || videoId === 'ohms' || videoId === 'opamp' || videoId === 'amplifier' || videoId === 'maximumpower' || videoId === 'power' || videoId === 'kirchhoff' || videoId === 'kcl' || videoId === 'kvl' || videoId === 'rctransient' || videoId === 'rc' || videoId === 'rlc' || videoId === 'resonance' || videoId === 'bjt' || videoId === 'transistor' || videoId === 'laplace' || videoId === 'finalvalue') {
             disc = 'Electrical and Computer';
         } else if (videoId === 'idealgas' || videoId === 'gas' || videoId === 'hydrostatic' || videoId === 'hydro' || videoId === 'compound' || videoId === 'interest' || videoId === 'centroid' || videoId === 'composite') {
             disc = 'Other';
@@ -1547,7 +1565,20 @@
             'compound': ['compound interest', 'compound amount factor', 'compound'],
             'interest': ['compound interest', 'compound amount factor', 'compound'],
             'centroid': ['centroid of composite', 'centroid'],
-            'composite': ['centroid of composite', 'composite']
+            'composite': ['centroid of composite', 'composite'],
+            'maximumpower': ['maximum power', 'power transfer'],
+            'power': ['maximum power', 'power transfer'],
+            'kirchhoff': ['kirchhoff', 'kcl', 'kvl'],
+            'kcl': ['kirchhoff', 'kcl'],
+            'kvl': ['kirchhoff', 'kvl'],
+            'rctransient': ['first-order rc', 'rc transient'],
+            'rc': ['first-order rc', 'rc transient'],
+            'rlc': ['series rlc', 'resonance and bandwidth'],
+            'resonance': ['series rlc', 'resonance and bandwidth'],
+            'bjt': ['bipolar junction transistor', 'bjt'],
+            'transistor': ['bipolar junction transistor', 'bjt'],
+            'laplace': ['laplace transform', 'final value theorem'],
+            'finalvalue': ['laplace transform', 'final value theorem']
         };
         const searchTerms = keyMap[videoId] || [videoId];
         let targetIndex = theorems.findIndex(t => searchTerms.some(term => t.title.toLowerCase().includes(term)));
