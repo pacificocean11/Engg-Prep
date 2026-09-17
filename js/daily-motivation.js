@@ -851,6 +851,114 @@
                         "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
                         "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curl of a Vector Field and Irrotational Fields",
+                        "formula": "$$\\text{curl } \\vec{F} = \\nabla \\times \\vec{F} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ F_x & F_y & F_z \\end{vmatrix}$$",
+                        "description": "Vector measure of microscopic rotational circulation density; if $\\nabla \\times \\vec{F} = \\vec{0}$, the field is irrotational (conservative), meaning $\\vec{F} = \\nabla \\phi$.",
+                        "examTip": "Found in Mathematics / Fluids. In conservative force fields (gravitational, electrostatic), work done around any closed loop is zero.",
+                        "videoUrl": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+                        "videoTitle": "Curl of a Vector Field and Irrotational Fields Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
+                        "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
+                        "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
+                        "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$).",
+                        "videoUrl": "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4",
+                        "videoTitle": "Benefit-Cost Ratio Decision Criterion (B/C) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Critical Path Method (CPM) Float Equations",
+                        "formula": "$$TF = LS - ES = LF - EF, \\quad FF = \\min(ES_{\\text{succ}}) - EF$$",
+                        "description": "Calculates total float $TF$ and free float $FF$ for project activities; activities on the critical path have $TF = 0$.",
+                        "examTip": "Found in Project Management. Earliest Start $ES = \\max(EF_{\\text{pred}})$; Latest Finish $LF = \\min(LS_{\\text{succ}})$. Delaying critical path delays project completion.",
+                        "videoUrl": "assets/videos/Critical_Path_Method_CPM_Float_Equations.mp4",
+                        "videoTitle": "Critical Path Method (CPM) Float Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Economic Order Quantity (EOQ)",
+                        "formula": "$$Q^* = \\sqrt{\\frac{2 D S}{H}}$$",
+                        "description": "Optimal batch order quantity minimizing annual total inventory costs by balancing fixed order cost $S$ against annual unit holding cost $H$.",
+                        "examTip": "Found under Inventory Control. $D$ is annual demand. Total annual cost curve is flat near the minimum, making EOQ robust to estimation errors.",
+                        "videoUrl": "assets/videos/Economic_Order_Quantity_EOQ.mp4",
+                        "videoTitle": "Economic Order Quantity (EOQ) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Wheatstone Bridge Null Balance Condition",
+                        "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
+                        "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
+                        "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance.",
+                        "videoUrl": "assets/videos/Wheatstone_Bridge_Circuit_Null_Balance_Condition.mp4",
+                        "videoTitle": "Wheatstone Bridge Circuit Null Balance Condition Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First-Order RC Transient Response",
+                        "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
+                        "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
+                        "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_RC_Transient_Response.mp4",
+                        "videoTitle": "First-Order RC Transient Response Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Thevenin’s Equivalent Circuit Theorem",
+                        "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
+                        "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
+                        "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
+                        "videoUrl": "assets/videos/Thevenin_Theorem.mp4",
+                        "videoTitle": "Thévenin's Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Ideal Operational Amplifier Golden Rules",
+                        "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
+                        "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
+                        "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
+                        "videoUrl": "assets/videos/Ideal_Operational_Amplifier_Golden_Rules.mp4",
+                        "videoTitle": "Ideal Operational Amplifier Golden Rules Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Permutations and Combinations Counting Rules",
+                        "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
+                        "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
+                        "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
+                        "videoUrl": "assets/videos/Permutations_and_Combinations_Counting_Rules.mp4",
+                        "videoTitle": "Permutations and Combinations Counting Rules Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2D Static Equilibrium Equations",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0$$",
+                        "description": "Necessary and sufficient conditions for static equilibrium of a planar rigid body: zero net horizontal force, zero net vertical force, and zero net moment about any arbitrary point $O$.",
+                        "examTip": "Found in Statics. Always begin problem solutions with a complete, clean Free-Body Diagram (FBD).",
+                        "videoUrl": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
+                        "videoTitle": "2D Static Equilibrium Equations Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Civil": [
@@ -1510,6 +1618,132 @@
                         "formula": "$$\\Delta \\sigma_z = \\frac{3 P}{2\\pi z^2 \\left[1 + (r/z)^2\\right]^{5/2}} = \\frac{P}{z^2} I_B$$",
                         "description": "Calculates vertical normal stress increase $\\Delta\\sigma_z$ at depth $z$ and radial distance $r$ within a semi-infinite, homogeneous, isotropic elastic soil mass carrying concentrated surface point load $P$.",
                         "examTip": "Found in Geotechnical Engineering. Directly beneath the load point ($r = 0$), Boussinesq influence factor is $I_B = 3/(2\\pi) = 0.477$."
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Taylor and Maclaurin Series Expansion",
+                        "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                        "description": "Represents an infinitely differentiable real function as a power series polynomial about center point $a$; when $a = 0$, it is called a Maclaurin series.",
+                        "examTip": "Found in Mathematics. Useful Maclaurin series: $e^x = 1 + x + x^2/2! + \\dots$, $\\sin x = x - x^3/3! + \\dots$, $\\cos x = 1 - x^2/2! + \\dots$.",
+                        "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+                        "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
+                        "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
+                        "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
+                        "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$).",
+                        "videoUrl": "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4",
+                        "videoTitle": "Benefit-Cost Ratio Decision Criterion (B/C) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Thermal Expansion Deformation and Thermal Stress",
+                        "formula": "$$\\delta_T = \\alpha L \\Delta T, \\quad \\sigma_T = -E \\alpha \\Delta T$$",
+                        "description": "Free thermal deformation $\\delta_T$ depends on coefficient of linear thermal expansion $\\alpha$. If member ends are rigidly constrained, compressive thermal stress develops.",
+                        "examTip": "Found in Mechanics of Materials. Thermal stress only develops when thermal strain is restrained by supports or adjacent materials.",
+                        "videoUrl": "assets/videos/Thermal_Expansion_Deformation_and_Thermal_Stress.mp4",
+                        "videoTitle": "Thermal Expansion Deformation and Thermal Stress Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Flat Belt Friction Equation (Capstan Formula)",
+                        "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
+                        "description": "Relates the tight side tension $T_2$ and slack side tension $T_1$ for a flexible belt wrapped around a drum with contact wrap angle $\\beta$ (in radians) and friction coefficient $\\mu$.",
+                        "examTip": "Found in Statics / Machine Design. Angle $\\beta$ must be converted to radians ($180^\\circ = \\pi\\text{ rad}$). Exponent growth means few turns hold enormous loads.",
+                        "videoUrl": "assets/videos/Flat_Belt_Friction_Equation_Capstan_Formula.mp4",
+                        "videoTitle": "Flat Belt Friction Equation (Capstan Formula) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Rotational Kinetic Energy of Rigid Bodies",
+                        "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
+                        "description": "Total kinetic energy of a planar rigid body equals the translational kinetic energy of its mass center $G$ plus the rotational kinetic energy about $G$.",
+                        "examTip": "Found in Dynamics. For pure rolling of a cylinder without slip: $v_G = r\\omega$, so $T = \\frac{1}{2} m (r\\omega)^2 + \\frac{1}{2}(\\frac{1}{2} m r^2)\\omega^2 = \\frac{3}{4} m v_G^2$.",
+                        "videoUrl": "assets/videos/Rotational_Kinetic_Energy_of_Rigid_Bodies.mp4",
+                        "videoTitle": "Rotational Kinetic Energy of Rigid Bodies Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Angular Impulse and Momentum Principle",
+                        "formula": "$$\\int_{t_1}^{t_2} \\sum M_O dt = (H_O)_2 - (H_O)_1 = I_O \\omega_2 - I_O \\omega_1$$",
+                        "description": "The time integral of external moments about a fixed point $O$ equals the change in angular momentum of the system.",
+                        "examTip": "Found in Dynamics. When net external moment about $O$ is zero, angular momentum is strictly conserved ($I_1 \\omega_1 = I_2 \\omega_2$).",
+                        "videoUrl": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+                        "videoTitle": "Angular Impulse and Momentum Principle Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mass Moment of Inertia of Common Geometric Bodies",
+                        "formula": "$$I_{\\text{cylinder}} = \\frac{1}{2} m r^2, \\quad I_{\\text{sphere}} = \\frac{2}{5} m r^2, \\quad I_{\\text{rod}} = \\frac{1}{12} m L^2$$",
+                        "description": "Resistance of rigid rotational geometries to angular acceleration about their centroidal symmetry axes.",
+                        "examTip": "Found in Dynamics / Handbook tables. For a slender rod pivoting about its pin end, use parallel axis theorem: $I_{pin} = \\frac{1}{12}mL^2 + m(L/2)^2 = \\frac{1}{3}mL^2$.",
+                        "videoUrl": "assets/videos/Mass_Moment_of_Inertia_of_Common_Geometric_Bodies.mp4",
+                        "videoTitle": "Mass Moment of Inertia of Common Geometric Bodies Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
+                        "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
+                        "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
+                        "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
+                        "videoUrl": "assets/videos/Pressure_Vessels.mp4",
+                        "videoTitle": "Thin-Walled Pressure Vessels Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Wheatstone Bridge Null Balance Condition",
+                        "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
+                        "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
+                        "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance.",
+                        "videoUrl": "assets/videos/Wheatstone_Bridge_Circuit_Null_Balance_Condition.mp4",
+                        "videoTitle": "Wheatstone Bridge Circuit Null Balance Condition Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Binary Phase Diagram Lever Rule",
+                        "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
+                        "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
+                        "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length.",
+                        "videoUrl": "assets/videos/Binary_Phase_Diagram_Lever_Rule.mp4",
+                        "videoTitle": "Binary Phase Diagram Lever Rule Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Permutations and Combinations Counting Rules",
+                        "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
+                        "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
+                        "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
+                        "videoUrl": "assets/videos/Permutations_and_Combinations_Counting_Rules.mp4",
+                        "videoTitle": "Permutations and Combinations Counting Rules Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2D Static Equilibrium Equations",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0$$",
+                        "description": "Necessary and sufficient conditions for static equilibrium of a planar rigid body: zero net horizontal force, zero net vertical force, and zero net moment about any arbitrary point $O$.",
+                        "examTip": "Found in Statics. Always begin problem solutions with a complete, clean Free-Body Diagram (FBD).",
+                        "videoUrl": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
+                        "videoTitle": "2D Static Equilibrium Equations Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Electrical and Computer": [
@@ -2154,6 +2388,51 @@
                         "formula": "$$e^{j\\theta} = \\cos\\theta + j\\sin\\theta, \\quad A\\cos(\\omega t + \\phi) \\longleftrightarrow \\vec{V} = A \\angle \\phi = A e^{j\\phi}$$",
                         "description": "Transforms steady-state sinusoidal time-domain signals into static frequency-domain complex vectors (phasors), reducing differential circuit equations to linear algebraic Ohm's law relationships.",
                         "examTip": "Found in AC Circuits. Multiplying a phasor by $j$ corresponds to an exact $+90^\\circ$ leading phase shift (quarter-period rotation in the complex plane)."
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curl of a Vector Field and Irrotational Fields",
+                        "formula": "$$\\text{curl } \\vec{F} = \\nabla \\times \\vec{F} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ F_x & F_y & F_z \\end{vmatrix}$$",
+                        "description": "Vector measure of microscopic rotational circulation density; if $\\nabla \\times \\vec{F} = \\vec{0}$, the field is irrotational (conservative), meaning $\\vec{F} = \\nabla \\phi$.",
+                        "examTip": "Found in Mathematics / Fluids. In conservative force fields (gravitational, electrostatic), work done around any closed loop is zero.",
+                        "videoUrl": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+                        "videoTitle": "Curl of a Vector Field and Irrotational Fields Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Taylor and Maclaurin Series Expansion",
+                        "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                        "description": "Represents an infinitely differentiable real function as a power series polynomial about center point $a$; when $a = 0$, it is called a Maclaurin series.",
+                        "examTip": "Found in Mathematics. Useful Maclaurin series: $e^x = 1 + x + x^2/2! + \\dots$, $\\sin x = x - x^3/3! + \\dots$, $\\cos x = 1 - x^2/2! + \\dots$.",
+                        "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+                        "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Ideal Operational Amplifier Golden Rules",
+                        "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
+                        "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
+                        "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
+                        "videoUrl": "assets/videos/Ideal_Operational_Amplifier_Golden_Rules.mp4",
+                        "videoTitle": "Ideal Operational Amplifier Golden Rules Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Chemical": [
@@ -2822,6 +3101,69 @@
                         "formula": "$$K_D = \\frac{y_A^*}{x_A}, \\quad \\beta = \\frac{K_{D, A}}{K_{D, B}} = \\frac{(y_A / x_A)}{(y_B / x_B)}$$",
                         "description": "In liquid-liquid extraction, distribution coefficient $K_D$ measures solute partitioning between extract and raffinate; separation factor $\\beta$ (analogous to relative volatility) must exceed $1.0$ for viable extraction.",
                         "examTip": "Found in Separation Processes. The ternary liquid-liquid equilibrium tie-lines on triangular phase diagrams give conjugate phase compositions directly."
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curl of a Vector Field and Irrotational Fields",
+                        "formula": "$$\\text{curl } \\vec{F} = \\nabla \\times \\vec{F} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ F_x & F_y & F_z \\end{vmatrix}$$",
+                        "description": "Vector measure of microscopic rotational circulation density; if $\\nabla \\times \\vec{F} = \\vec{0}$, the field is irrotational (conservative), meaning $\\vec{F} = \\nabla \\phi$.",
+                        "examTip": "Found in Mathematics / Fluids. In conservative force fields (gravitational, electrostatic), work done around any closed loop is zero.",
+                        "videoUrl": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+                        "videoTitle": "Curl of a Vector Field and Irrotational Fields Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Taylor and Maclaurin Series Expansion",
+                        "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                        "description": "Represents an infinitely differentiable real function as a power series polynomial about center point $a$; when $a = 0$, it is called a Maclaurin series.",
+                        "examTip": "Found in Mathematics. Useful Maclaurin series: $e^x = 1 + x + x^2/2! + \\dots$, $\\sin x = x - x^3/3! + \\dots$, $\\cos x = 1 - x^2/2! + \\dots$.",
+                        "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+                        "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Binary Phase Diagram Lever Rule",
+                        "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
+                        "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
+                        "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length.",
+                        "videoUrl": "assets/videos/Binary_Phase_Diagram_Lever_Rule.mp4",
+                        "videoTitle": "Binary Phase Diagram Lever Rule Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Critical Radius of Thermal Insulation",
+                        "formula": "$$r_{cr} = \\frac{k}{h}$$",
+                        "description": "Outer radius of cylinder insulation where heat transfer is maximized. Adding insulation to a pipe with $r_o < r_{cr}$ actually increases heat loss due to dominant surface area expansion.",
+                        "examTip": "Found in Heat Transfer. For a sphere: $r_{cr} = 2k/h$. For electrical wires, keeping $r_o \\approx r_{cr}$ maximizes convective heat dissipation.",
+                        "videoUrl": "assets/videos/Critical_Radius_of_Thermal_Insulation.mp4",
+                        "videoTitle": "Critical Radius of Thermal Insulation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Faraday’s Law of Electrolysis",
+                        "formula": "$$m = \\frac{Q M}{F z} = \\frac{I t M}{F z}, \\quad F = 96{,}485\\text{ C/mol e}^-$$",
+                        "description": "Mass $m$ of substance electrodeposited or liberated at an electrode is directly proportional to total electrical charge passed ($Q = I t$), with Faraday constant $F$.",
+                        "examTip": "Found in Chemistry. $z$ is number of electrons transferred per ion (e.g. for $\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}$, $z = 2$).",
+                        "videoUrl": "assets/videos/Faradays_Law_of_Electrolysis.mp4",
+                        "videoTitle": "Faraday’s Law of Electrolysis Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Industrial": [
@@ -3442,6 +3784,42 @@
                         "formula": "$$D_j = C \\times r_j, \\quad BV_j = C - \\sum_{k=1}^j D_k$$",
                         "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
                         "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Taylor and Maclaurin Series Expansion",
+                        "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                        "description": "Represents an infinitely differentiable real function as a power series polynomial about center point $a$; when $a = 0$, it is called a Maclaurin series.",
+                        "examTip": "Found in Mathematics. Useful Maclaurin series: $e^x = 1 + x + x^2/2! + \\dots$, $\\sin x = x - x^3/3! + \\dots$, $\\cos x = 1 - x^2/2! + \\dots$.",
+                        "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+                        "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Permutations and Combinations Counting Rules",
+                        "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
+                        "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
+                        "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
+                        "videoUrl": "assets/videos/Permutations_and_Combinations_Counting_Rules.mp4",
+                        "videoTitle": "Permutations and Combinations Counting Rules Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Environmental": [
@@ -4068,6 +4446,42 @@
                         "formula": "$$C_s = K_d C_w, \\quad K_d = f_{oc} K_{oc}$$",
                         "description": "Linear equilibrium partitioning of hydrophobic organic contaminants between solid soil phase ($C_s$, mg/kg) and aqueous pore water ($C_w$, mg/L) based on soil organic carbon fraction $f_{oc}$.",
                         "examTip": "Found in Environmental Remediation. Sand with low $f_{oc} < 0.001$ has low $K_d$ and exhibits minimal contaminant retardation."
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
+                        "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
+                        "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
+                        "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$).",
+                        "videoUrl": "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4",
+                        "videoTitle": "Benefit-Cost Ratio Decision Criterion (B/C) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Faraday’s Law of Electrolysis",
+                        "formula": "$$m = \\frac{Q M}{F z} = \\frac{I t M}{F z}, \\quad F = 96{,}485\\text{ C/mol e}^-$$",
+                        "description": "Mass $m$ of substance electrodeposited or liberated at an electrode is directly proportional to total electrical charge passed ($Q = I t$), with Faraday constant $F$.",
+                        "examTip": "Found in Chemistry. $z$ is number of electrons transferred per ion (e.g. for $\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}$, $z = 2$).",
+                        "videoUrl": "assets/videos/Faradays_Law_of_Electrolysis.mp4",
+                        "videoTitle": "Faraday’s Law of Electrolysis Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Other": [
@@ -4489,7 +4903,10 @@
                         "title": "Permutations and Combinations Counting Rules",
                         "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
                         "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
-                        "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations."
+                        "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
+                        "videoUrl": "assets/videos/Permutations_and_Combinations_Counting_Rules.mp4",
+                        "videoTitle": "Permutations and Combinations Counting Rules Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Binomial Distribution Mean and Variance",
@@ -4519,7 +4936,10 @@
                         "title": "Faraday’s Law of Electrolysis",
                         "formula": "$$m = \\frac{Q M}{F z} = \\frac{I t M}{F z}, \\quad F = 96{,}485\\text{ C/mol e}^-$$",
                         "description": "Mass $m$ of substance electrodeposited or liberated at an electrode is directly proportional to total electrical charge passed ($Q = I t$), with Faraday constant $F$.",
-                        "examTip": "Found in Chemistry. $z$ is number of electrons transferred per ion (e.g. for $\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}$, $z = 2$)."
+                        "examTip": "Found in Chemistry. $z$ is number of electrons transferred per ion (e.g. for $\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}$, $z = 2$).",
+                        "videoUrl": "assets/videos/Faradays_Law_of_Electrolysis.mp4",
+                        "videoTitle": "Faraday’s Law of Electrolysis Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Galvanic Cell Standard Potential ($E^\\circ_{\\text{cell}}$)",
@@ -4576,7 +4996,10 @@
                         "title": "Ideal Operational Amplifier Golden Rules",
                         "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
                         "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
-                        "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero."
+                        "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
+                        "videoUrl": "assets/videos/Ideal_Operational_Amplifier_Golden_Rules.mp4",
+                        "videoTitle": "Ideal Operational Amplifier Golden Rules Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Operational Amplifier Non-Inverting Voltage Gain",
@@ -4618,7 +5041,10 @@
                         "title": "2D Static Equilibrium Equations",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0$$",
                         "description": "Necessary and sufficient conditions for static equilibrium of a planar rigid body: zero net horizontal force, zero net vertical force, and zero net moment about any arbitrary point $O$.",
-                        "examTip": "Found in Statics. Always begin problem solutions with a complete, clean Free-Body Diagram (FBD)."
+                        "examTip": "Found in Statics. Always begin problem solutions with a complete, clean Free-Body Diagram (FBD).",
+                        "videoUrl": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
+                        "videoTitle": "2D Static Equilibrium Equations Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Zero-Force Members in Trusses",
@@ -4820,6 +5246,87 @@
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
                         "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$)."
+                },
+                {
+                        "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
+                        "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
+                        "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
+                        "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$).",
+                        "videoUrl": "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4",
+                        "videoTitle": "Benefit-Cost Ratio Decision Criterion (B/C) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Critical Path Method (CPM) Float Equations",
+                        "formula": "$$TF = LS - ES = LF - EF, \\quad FF = \\min(ES_{\\text{succ}}) - EF$$",
+                        "description": "Calculates total float $TF$ and free float $FF$ for project activities; activities on the critical path have $TF = 0$.",
+                        "examTip": "Found in Project Management. Earliest Start $ES = \\max(EF_{\\text{pred}})$; Latest Finish $LF = \\min(LS_{\\text{succ}})$. Delaying critical path delays project completion.",
+                        "videoUrl": "assets/videos/Critical_Path_Method_CPM_Float_Equations.mp4",
+                        "videoTitle": "Critical Path Method (CPM) Float Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Economic Order Quantity (EOQ)",
+                        "formula": "$$Q^* = \\sqrt{\\frac{2 D S}{H}}$$",
+                        "description": "Optimal batch order quantity minimizing annual total inventory costs by balancing fixed order cost $S$ against annual unit holding cost $H$.",
+                        "examTip": "Found under Inventory Control. $D$ is annual demand. Total annual cost curve is flat near the minimum, making EOQ robust to estimation errors.",
+                        "videoUrl": "assets/videos/Economic_Order_Quantity_EOQ.mp4",
+                        "videoTitle": "Economic Order Quantity (EOQ) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Angular Impulse and Momentum Principle",
+                        "formula": "$$\\int_{t_1}^{t_2} \\sum M_O dt = (H_O)_2 - (H_O)_1 = I_O \\omega_2 - I_O \\omega_1$$",
+                        "description": "The time integral of external moments about a fixed point $O$ equals the change in angular momentum of the system.",
+                        "examTip": "Found in Dynamics. When net external moment about $O$ is zero, angular momentum is strictly conserved ($I_1 \\omega_1 = I_2 \\omega_2$).",
+                        "videoUrl": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+                        "videoTitle": "Angular Impulse and Momentum Principle Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mass Moment of Inertia of Common Geometric Bodies",
+                        "formula": "$$I_{\\text{cylinder}} = \\frac{1}{2} m r^2, \\quad I_{\\text{sphere}} = \\frac{2}{5} m r^2, \\quad I_{\\text{rod}} = \\frac{1}{12} m L^2$$",
+                        "description": "Resistance of rigid rotational geometries to angular acceleration about their centroidal symmetry axes.",
+                        "examTip": "Found in Dynamics / Handbook tables. For a slender rod pivoting about its pin end, use parallel axis theorem: $I_{pin} = \\frac{1}{12}mL^2 + m(L/2)^2 = \\frac{1}{3}mL^2$.",
+                        "videoUrl": "assets/videos/Mass_Moment_of_Inertia_of_Common_Geometric_Bodies.mp4",
+                        "videoTitle": "Mass Moment of Inertia of Common Geometric Bodies Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
+                        "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
+                        "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
+                        "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
+                        "videoUrl": "assets/videos/Pressure_Vessels.mp4",
+                        "videoTitle": "Thin-Walled Pressure Vessels Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First-Order RC Transient Response",
+                        "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
+                        "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
+                        "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_RC_Transient_Response.mp4",
+                        "videoTitle": "First-Order RC Transient Response Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Thevenin’s Equivalent Circuit Theorem",
+                        "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
+                        "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
+                        "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
+                        "videoUrl": "assets/videos/Thevenin_Theorem.mp4",
+                        "videoTitle": "Thévenin's Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Maximum Power Transfer Theorem",
+                        "formula": "$$R_L = R_{Th} \\implies P_{\\text{max}} = \\frac{V_{Th}^2}{4 R_{Th}}$$",
+                        "description": "Maximum active power is transferred from a linear source network to a resistive load when load resistance matches the Thevenin internal source resistance.",
+                        "examTip": "Found in Electrical Circuits. In AC circuits with complex impedances, the load impedance must equal the complex conjugate: $Z_L = Z_{Th}^*$.",
+                        "videoUrl": "assets/videos/Maximum_Power_Transfer_Theorem.mp4",
+                        "videoTitle": "Maximum Power Transfer Theorem Explainer",
+                        "videoDuration": "10s"
                 }
         ]
 };
@@ -5129,6 +5636,15 @@
             'rigidbodieske': ['rotational kinetic energy of rigid bodies', 'planar rigid body rotational kinetic energy', 'rotational kinetic energy'],
             'lhospital': ['l’hôpital’s rule for indeterminate limits', 'l\'hospital\'s rule', 'indeterminate limits'],
             'indeterminatelimits': ['l’hôpital’s rule for indeterminate limits', 'indeterminate limits', 'l hospital'],
+            'opampgoldenrules': ['ideal operational amplifier golden rules', 'golden rules', 'op amp golden rules'],
+            'goldenrules': ['ideal operational amplifier golden rules', 'golden rules'],
+            'permutations': ['permutations and combinations counting rules', 'permutations', 'counting rules'],
+            'combinations': ['permutations and combinations counting rules', 'combinations', 'counting rules'],
+            'countingrules': ['permutations and combinations counting rules', 'counting rules'],
+            'faradayelectrolysis': ['faraday’s law of electrolysis', 'faraday law of electrolysis', 'electrolysis'],
+            'electrolysis': ['faraday’s law of electrolysis', 'faraday law of electrolysis', 'electrolysis'],
+            'staticequilibrium': ['2d static equilibrium equations', 'static equilibrium equations', 'static equilibrium'],
+            '2dequilibrium': ['2d static equilibrium equations', 'static equilibrium equations', 'equilibrium equations'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
