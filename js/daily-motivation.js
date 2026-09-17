@@ -433,7 +433,10 @@
                         "title": "Flat Belt Friction Equation (Capstan Formula)",
                         "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
                         "description": "Relates the tight side tension $T_2$ and slack side tension $T_1$ for a flexible belt wrapped around a drum with contact wrap angle $\\beta$ (in radians) and friction coefficient $\\mu$.",
-                        "examTip": "Found in Statics / Machine Design. Angle $\\beta$ must be converted to radians ($180^\\circ = \\pi\\text{ rad}$). Exponent growth means few turns hold enormous loads."
+                        "examTip": "Found in Statics / Machine Design. Angle $\\beta$ must be converted to radians ($180^\\circ = \\pi\\text{ rad}$). Exponent growth means few turns hold enormous loads.",
+                        "videoUrl": "assets/videos/Flat_Belt_Friction_Equation_Capstan_Formula.mp4",
+                        "videoTitle": "Flat Belt Friction Equation (Capstan Formula) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Varignon’s Theorem of Moments",
@@ -502,7 +505,10 @@
                         "title": "Rotational Kinetic Energy of Rigid Bodies",
                         "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "Total kinetic energy of a planar rigid body equals the translational kinetic energy of its mass center $G$ plus the rotational kinetic energy about $G$.",
-                        "examTip": "Found in Dynamics. For pure rolling of a cylinder without slip: $v_G = r\\omega$, so $T = \\frac{1}{2} m (r\\omega)^2 + \\frac{1}{2}(\\frac{1}{2} m r^2)\\omega^2 = \\frac{3}{4} m v_G^2$."
+                        "examTip": "Found in Dynamics. For pure rolling of a cylinder without slip: $v_G = r\\omega$, so $T = \\frac{1}{2} m (r\\omega)^2 + \\frac{1}{2}(\\frac{1}{2} m r^2)\\omega^2 = \\frac{3}{4} m v_G^2$.",
+                        "videoUrl": "assets/videos/Rotational_Kinetic_Energy_of_Rigid_Bodies.mp4",
+                        "videoTitle": "Rotational Kinetic Energy of Rigid Bodies Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Mass Moment of Inertia of Common Geometric Bodies",
@@ -574,7 +580,10 @@
                         "title": "Binary Phase Diagram Lever Rule",
                         "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
                         "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
-                        "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length."
+                        "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length.",
+                        "videoUrl": "assets/videos/Binary_Phase_Diagram_Lever_Rule.mp4",
+                        "videoTitle": "Binary Phase Diagram Lever Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Eutectic and Eutectoid Invariant Reactions",
@@ -1745,7 +1754,10 @@
                         "title": "Wheatstone Bridge Null Balance Condition",
                         "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
                         "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
-                        "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance."
+                        "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance.",
+                        "videoUrl": "assets/videos/Wheatstone_Bridge_Circuit_Null_Balance_Condition.mp4",
+                        "videoTitle": "Wheatstone Bridge Circuit Null Balance Condition Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Maximum Power Transfer for AC Complex Impedance",
@@ -2976,7 +2988,10 @@
                         "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
                         "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
                         "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
-                        "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$)."
+                        "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$).",
+                        "videoUrl": "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4",
+                        "videoTitle": "Benefit-Cost Ratio Decision Criterion (B/C) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Binomial Distribution Probability Mass Function and Moments",
@@ -4372,13 +4387,19 @@
                         "title": "L’Hôpital’s Rule for Indeterminate Limits",
                         "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
                         "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
-                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!"
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!",
+                        "videoUrl": "assets/videos/LHospitals_Rule_for_Indeterminate_Limits.mp4",
+                        "videoTitle": "L’Hospital’s Rule for Indeterminate Limits Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Integration by Parts Formula",
                         "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
                         "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
-                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential."
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+                        "videoUrl": "assets/videos/Integration_by_Parts_Formula.mp4",
+                        "videoTitle": "Integration by Parts Formula Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Taylor and Maclaurin Series Expansion",
@@ -4417,7 +4438,10 @@
                         "title": "Curl of a Vector Field and Irrotational Fields",
                         "formula": "$$\\text{curl } \\vec{F} = \\nabla \\times \\vec{F} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ F_x & F_y & F_z \\end{vmatrix}$$",
                         "description": "Vector measure of microscopic rotational circulation density; if $\\nabla \\times \\vec{F} = \\vec{0}$, the field is irrotational (conservative), meaning $\\vec{F} = \\nabla \\phi$.",
-                        "examTip": "Found in Mathematics / Fluids. In conservative force fields (gravitational, electrostatic), work done around any closed loop is zero."
+                        "examTip": "Found in Mathematics / Fluids. In conservative force fields (gravitational, electrostatic), work done around any closed loop is zero.",
+                        "videoUrl": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+                        "videoTitle": "Curl of a Vector Field and Irrotational Fields Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Green’s Theorem in the Plane",
@@ -4519,7 +4543,10 @@
                         "title": "Wheatstone Bridge Circuit Null Balance Condition",
                         "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies V_{\\text{out}} = 0\\text{ V}$$",
                         "description": "Four-resistor bridge network measuring resistance changes down to milliohms; when ratio of arms is balanced, output differential voltage is zero.",
-                        "examTip": "Found in Instrumentation. Foundational circuit for resistive temperature detectors (RTDs) and piezoresistive strain gauges."
+                        "examTip": "Found in Instrumentation. Foundational circuit for resistive temperature detectors (RTDs) and piezoresistive strain gauges.",
+                        "videoUrl": "assets/videos/Wheatstone_Bridge_Circuit_Null_Balance_Condition.mp4",
+                        "videoTitle": "Wheatstone Bridge Circuit Null Balance Condition Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Strain Gauge Gauge Factor Equation",
@@ -4618,7 +4645,10 @@
                         "title": "Flat Belt Friction Capstan Formula",
                         "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
                         "description": "Tension amplification around a stationary cylindrical drum with friction coefficient $\\mu$ and total wrap angle $\\beta$ (radians).",
-                        "examTip": "Found in Statics. $T_2$ is always the larger tension pulling in the direction of impending motion."
+                        "examTip": "Found in Statics. $T_2$ is always the larger tension pulling in the direction of impending motion.",
+                        "videoUrl": "assets/videos/Flat_Belt_Friction_Equation_Capstan_Formula.mp4",
+                        "videoTitle": "Flat Belt Friction Equation (Capstan Formula) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Rectilinear Kinematics Constant Acceleration Equations",
@@ -4666,7 +4696,10 @@
                         "title": "Planar Rigid Body Rotational Kinetic Energy",
                         "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "Kinetic energy of a rigid body equals translational energy of its center of mass $G$ plus rotational energy about $G$.",
-                        "examTip": "Found in Dynamics. If body rotates about a fixed pin center $O$: $T = \\frac{1}{2} I_O \\omega^2$."
+                        "examTip": "Found in Dynamics. If body rotates about a fixed pin center $O$: $T = \\frac{1}{2} I_O \\omega^2$.",
+                        "videoUrl": "assets/videos/Rotational_Kinetic_Energy_of_Rigid_Bodies.mp4",
+                        "videoTitle": "Rotational Kinetic Energy of Rigid Bodies Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Mass Moment of Inertia Parallel Axis Theorem",
@@ -4771,7 +4804,10 @@
                         "title": "Binary Phase Diagram Lever Rule",
                         "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
                         "description": "Computes equilibrium phase weight fractions in two-phase regions by taking opposite segment lengths along tie lines.",
-                        "examTip": "Found in Materials Science. Sum of phase fractions must equal unity: $W_L + W_\\alpha = 1.0$."
+                        "examTip": "Found in Materials Science. Sum of phase fractions must equal unity: $W_L + W_\\alpha = 1.0$.",
+                        "videoUrl": "assets/videos/Binary_Phase_Diagram_Lever_Rule.mp4",
+                        "videoTitle": "Binary Phase Diagram Lever Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Uniform Series Present Worth Factor ($(P/A, i, n)$)",
@@ -5077,6 +5113,22 @@
             'logarithmicdecrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
             'massmoment': ['mass moment of inertia of common geometric bodies', 'mass moment of inertia parallel axis theorem', 'mass moment of inertia'],
             'geometricbodies': ['mass moment of inertia of common geometric bodies', 'common geometric bodies'],
+            'curl': ['curl of a vector field', 'irrotational fields', 'curl', 'vector field'],
+            'irrotational': ['curl of a vector field', 'irrotational fields', 'irrotational'],
+            'leverrule': ['binary phase diagram lever rule', 'lever rule', 'phase diagram'],
+            'binaryphase': ['binary phase diagram lever rule', 'lever rule', 'phase diagram'],
+            'integrationbyparts': ['integration by parts formula', 'integration by parts', 'by parts'],
+            'byparts': ['integration by parts formula', 'integration by parts', 'by parts'],
+            'flatbelt': ['flat belt friction equation', 'flat belt friction capstan formula', 'flat belt', 'capstan formula'],
+            'capstan': ['flat belt friction equation', 'flat belt friction capstan formula', 'capstan formula', 'capstan'],
+            'benefitcost': ['benefit-cost ratio decision criterion', 'benefit cost ratio', 'b/c ratio'],
+            'bcratio': ['benefit-cost ratio decision criterion', 'benefit cost ratio', 'b/c ratio'],
+            'wheatstone': ['wheatstone bridge null balance condition', 'wheatstone bridge circuit null balance condition', 'wheatstone bridge'],
+            'nullbalance': ['wheatstone bridge null balance condition', 'wheatstone bridge circuit null balance condition', 'wheatstone bridge'],
+            'rotationalkinetic': ['rotational kinetic energy of rigid bodies', 'planar rigid body rotational kinetic energy', 'rotational kinetic energy'],
+            'rigidbodieske': ['rotational kinetic energy of rigid bodies', 'planar rigid body rotational kinetic energy', 'rotational kinetic energy'],
+            'lhospital': ['l’hôpital’s rule for indeterminate limits', 'l\'hospital\'s rule', 'indeterminate limits'],
+            'indeterminatelimits': ['l’hôpital’s rule for indeterminate limits', 'indeterminate limits', 'l hospital'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
