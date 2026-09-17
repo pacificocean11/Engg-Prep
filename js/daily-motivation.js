@@ -413,6 +413,435 @@
                         "videoUrl": "assets/videos/Compressibility_Factor_Real_Gas_Equation.mp4",
                         "videoTitle": "Compressibility Factor Real Gas Equation Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Truss Zero-Force Member Inspection Rules",
+                        "formula": "$$\\sum \\vec{F} = 0 \\implies F_{member} = 0$$",
+                        "description": "At a two-member non-collinear joint with no external load, both members carry zero force. At a three-member joint where two are collinear and no load acts, the third non-collinear member carries zero force.",
+                        "examTip": "Found in Statics. Spotting zero-force members immediately simplifies complex bridge/roof trusses without setting up simultaneous equations."
+                },
+                {
+                        "title": "Coulomb Dry Friction and Angle of Repose",
+                        "formula": "$$F_f \\le \\mu_s N, \\quad F_{k} = \\mu_k N, \\quad \\tan\\phi_s = \\mu_s$$",
+                        "description": "Frictional resistance prior to impending slip is proportional to normal force $N$ by static coefficient $\\mu_s$. The angle of repose $\\phi_s$ is the maximum incline angle before a block slides under gravity alone.",
+                        "examTip": "Found in Statics. Always check whether the block slips ($F_f = \\mu_s N$) or tips over ($M > 0$) about the pivot edge.",
+                        "videoUrl": "assets/videos/Coulomb_Dry_Friction_and_Angle_of_Repose.mp4",
+                        "videoTitle": "Coulomb Dry Friction and Angle of Repose Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Flat Belt Friction Equation (Capstan Formula)",
+                        "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
+                        "description": "Relates the tight side tension $T_2$ and slack side tension $T_1$ for a flexible belt wrapped around a drum with contact wrap angle $\\beta$ (in radians) and friction coefficient $\\mu$.",
+                        "examTip": "Found in Statics / Machine Design. Angle $\\beta$ must be converted to radians ($180^\\circ = \\pi\\text{ rad}$). Exponent growth means few turns hold enormous loads."
+                },
+                {
+                        "title": "Varignon’s Theorem of Moments",
+                        "formula": "$$M_O = \\vec{r} \\times \\vec{R} = \\sum (\\vec{r} \\times \\vec{F}_i)$$",
+                        "description": "The moment of a resultant force about any point $O$ is equal to the algebraic sum of the moments of its individual vector components about that same point.",
+                        "examTip": "Found in Statics. Break inclined forces into orthogonal $x$ and $y$ components to calculate moments via perpendicular scalar arms ($F_x y \\pm F_y x$)."
+                },
+                {
+                        "title": "Normal and Tangential Acceleration in Curvilinear Motion",
+                        "formula": "$$a_t = \\dot{v} = \\frac{dv}{dt}, \\quad a_n = \\frac{v^2}{\\rho}, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                        "description": "Decomposes particle acceleration into a tangential component $a_t$ changing speed and a normal (centripetal) component $a_n$ pointing toward the center of trajectory curvature $\\rho$.",
+                        "examTip": "Found in Dynamics. For constant-speed circular motion, $a_t = 0$, but centripetal acceleration $a_n = v^2/r = r\\omega^2$ remains non-zero.",
+                        "videoUrl": "assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
+                        "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coriolis Acceleration in Rotating Reference Frames",
+                        "formula": "$$\\vec{a}_{cor} = 2\\vec{\\omega} \\times \\vec{v}_{rel}$$",
+                        "description": "Apparent inertial acceleration experienced by a body moving with velocity $\\vec{v}_{rel}$ relative to a coordinate frame that is itself rotating with angular velocity $\\vec{\\omega}$.",
+                        "examTip": "Found in Dynamics (Kinematics of Rigid Bodies). Common in mechanisms where a slider moves along a rotating link or slotted guide arm."
+                },
+                {
+                        "title": "Coefficient of Restitution for Direct Central Impact",
+                        "formula": "$$e = \\frac{v'_{2} - v'_{1}}{v_1 - v_2} = \\frac{\\text{Relative Separation Velocity}}{\\text{Relative Approach Velocity}}$$",
+                        "description": "Measures elasticity of collision between two bodies: $e = 1$ is perfectly elastic (kinetic energy conserved), and $e = 0$ is perfectly plastic (bodies stick together).",
+                        "examTip": "Found in Dynamics. Combine the restitution equation with conservation of linear momentum ($m_1 v_1 + m_2 v_2 = m_1 v'_1 + m_2 v'_2$).",
+                        "videoUrl": "assets/videos/Coefficient_of_Restitution_for_Direct_Central_Impact.mp4",
+                        "videoTitle": "Coefficient of Restitution for Direct Central Impact Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Angular Impulse and Momentum Principle",
+                        "formula": "$$\\int_{t_1}^{t_2} \\sum M_O dt = (H_O)_2 - (H_O)_1 = I_O \\omega_2 - I_O \\omega_1$$",
+                        "description": "The time integral of external moments about a fixed point $O$ equals the change in angular momentum of the system.",
+                        "examTip": "Found in Dynamics. When net external moment about $O$ is zero, angular momentum is strictly conserved ($I_1 \\omega_1 = I_2 \\omega_2$).",
+                        "videoUrl": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+                        "videoTitle": "Angular Impulse and Momentum Principle Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Damped SDOF Natural Frequency and Damping Ratio",
+                        "formula": "$$\\zeta = \\frac{c}{2 m \\omega_n} = \\frac{c}{c_c}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+                        "description": "Quantifies viscous damping in a single-degree-of-freedom oscillator. For $\\zeta < 1$ (underdamped), oscillations occur at damped natural frequency $\\omega_d$.",
+                        "examTip": "Found in Dynamics / Mechanical Vibrations. Critical damping coefficient is $c_c = 2 m \\omega_n = 2\\sqrt{k m}$. Critical damping ($zeta=1$) yields fastest return to rest without overshoot.",
+                        "videoUrl": "assets/videos/Damped_SDOF_Natural_Frequency_and_Damping_Ratio.mp4",
+                        "videoTitle": "Damped SDOF Natural Frequency and Damping Ratio Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Decrement in Underdamped Vibrations",
+                        "formula": "$$\\delta = \\ln\\left(\\frac{x_1}{x_2}\\right) = \\frac{2\\pi \\zeta}{\\sqrt{1 - \\zeta^2}} \\approx 2\\pi \\zeta$$",
+                        "description": "Rate at which amplitude of free underdamped oscillations decays between successive peak cycles $x_1$ and $x_2$, used experimentally to find damping ratio $\\zeta$.",
+                        "examTip": "Found in Dynamics / Vibrations. For small damping ($\\zeta < 0.1$), the approximation $\\delta \\approx 2\\pi\\zeta$ is highly accurate on the FE exam.",
+                        "videoUrl": "assets/videos/Logarithmic_Decrement_in_Underdamped_Vibrations.mp4",
+                        "videoTitle": "Logarithmic Decrement in Underdamped Vibrations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Vibration Transmissibility for Harmonic Base Excitation",
+                        "formula": "$$TR = \\sqrt{\\frac{1 + (2\\zeta r)^2}{(1 - r^2)^2 + (2\\zeta r)^2}}, \\quad r = \\frac{\\omega}{\\omega_n}$$",
+                        "description": "Ratio of dynamic force transmitted to a supporting structure relative to applied harmonic excitation force as a function of frequency ratio $r$.",
+                        "examTip": "Found in Vibrations. Vibration isolation only occurs when $r = \\omega/\\omega_n > \\sqrt{2}$, where transmissibility $TR < 1$."
+                },
+                {
+                        "title": "Rotational Kinetic Energy of Rigid Bodies",
+                        "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
+                        "description": "Total kinetic energy of a planar rigid body equals the translational kinetic energy of its mass center $G$ plus the rotational kinetic energy about $G$.",
+                        "examTip": "Found in Dynamics. For pure rolling of a cylinder without slip: $v_G = r\\omega$, so $T = \\frac{1}{2} m (r\\omega)^2 + \\frac{1}{2}(\\frac{1}{2} m r^2)\\omega^2 = \\frac{3}{4} m v_G^2$."
+                },
+                {
+                        "title": "Mass Moment of Inertia of Common Geometric Bodies",
+                        "formula": "$$I_{\\text{cylinder}} = \\frac{1}{2} m r^2, \\quad I_{\\text{sphere}} = \\frac{2}{5} m r^2, \\quad I_{\\text{rod}} = \\frac{1}{12} m L^2$$",
+                        "description": "Resistance of rigid rotational geometries to angular acceleration about their centroidal symmetry axes.",
+                        "examTip": "Found in Dynamics / Handbook tables. For a slender rod pivoting about its pin end, use parallel axis theorem: $I_{pin} = \\frac{1}{12}mL^2 + m(L/2)^2 = \\frac{1}{3}mL^2$.",
+                        "videoUrl": "assets/videos/Mass_Moment_of_Inertia_of_Common_Geometric_Bodies.mp4",
+                        "videoTitle": "Mass Moment of Inertia of Common Geometric Bodies Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Thermal Expansion Deformation and Thermal Stress",
+                        "formula": "$$\\delta_T = \\alpha L \\Delta T, \\quad \\sigma_T = -E \\alpha \\Delta T$$",
+                        "description": "Free thermal deformation $\\delta_T$ depends on coefficient of linear thermal expansion $\\alpha$. If member ends are rigidly constrained, compressive thermal stress develops.",
+                        "examTip": "Found in Mechanics of Materials. Thermal stress only develops when thermal strain is restrained by supports or adjacent materials.",
+                        "videoUrl": "assets/videos/Thermal_Expansion_Deformation_and_Thermal_Stress.mp4",
+                        "videoTitle": "Thermal Expansion Deformation and Thermal Stress Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Transverse Shear Stress in Beams (Shear Formula)",
+                        "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\bar{y}' A'$$",
+                        "description": "Calculates longitudinal and transverse shear stress at any depth in a beam cross-section undergoing vertical shear force $V$, where $Q$ is first moment of area above the cut.",
+                        "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis ($Q = Q_{\\text{max}}$); it is zero at top and bottom free surfaces."
+                },
+                {
+                        "title": "Maximum Shear Stress in Rectangular Cross-Section Beams",
+                        "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\tau_{\\text{avg}}$$",
+                        "description": "Exact parabolic shear stress maximum at the neutral axis of a rectangular beam of cross-sectional area $A = b h$.",
+                        "examTip": "Found in Mechanics of Materials. For a circular solid cross-section, $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\tau_{\\text{avg}}$."
+                },
+                {
+                        "title": "Beam Deflection Differential Governing Equation",
+                        "formula": "$$E I \\frac{d^2 v}{dx^2} = M(x), \\quad E I \\frac{d^3 v}{dx^3} = V(x), \\quad E I \\frac{d^4 v}{dx^4} = -w(x)$$",
+                        "description": "Relates applied distributed transverse load $w(x)$, shear $V(x)$, bending moment $M(x)$, slope $dv/dx$, and elastic deflection $v(x)$ in beams.",
+                        "examTip": "Found in Mechanics of Materials. Boundary conditions for fixed wall: $v(0)=0, v'(0)=0$; pinned support: $v(0)=0, M(0)=0$; free end: $V(L)=0, M(L)=0$."
+                },
+                {
+                        "title": "Cantilever Beam Tip Deflection under Point Load",
+                        "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}, \\quad \\theta_{\\text{max}} = \\frac{P L^2}{2 E I}$$",
+                        "description": "Maximum tip deflection and slope for an end-loaded elastic cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
+                        "examTip": "Found in Mechanics of Materials deflection tables. If uniform load $w$ is applied instead: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$."
+                },
+                {
+                        "title": "Simply Supported Beam Center Deflection under Uniform Load",
+                        "formula": "$$\\delta_{\\text{center}} = \\frac{5 w L^4}{384 E I}, \\quad M_{\\text{max}} = \\frac{w L^2}{8}$$",
+                        "description": "Mid-span deflection and maximum bending moment for a simply supported beam under full-span uniformly distributed load $w$.",
+                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta_{\\text{center}} = \\frac{P L^3}{48 E I}$ and $M_{\\text{max}} = \\frac{P L}{4}$."
+                },
+                {
+                        "title": "Strain Rosette Transformation Equations",
+                        "formula": "$$\\epsilon_\\theta = \\frac{\\epsilon_x + \\epsilon_y}{2} + \\frac{\\epsilon_x - \\epsilon_y}{2}\\cos 2\\theta + \\frac{\\gamma_{xy}}{2}\\sin 2\\theta$$",
+                        "description": "Converts strains measured along three planar directions (e.g., $0^\\circ, 45^\\circ, 90^\\circ$ rectangular rosette) into normal strains $(\\epsilon_x, \\epsilon_y)$ and shear strain $\\gamma_{xy}$.",
+                        "examTip": "Found in Mechanics of Materials. In a $45^\\circ$ rosette: $\\epsilon_x = \\epsilon_a$, $\\epsilon_y = \\epsilon_c$, and $\\gamma_{xy} = 2\\epsilon_b - (\\epsilon_a + \\epsilon_c)$."
+                },
+                {
+                        "title": "Thick-Walled Cylinder Lamé Stress Equations",
+                        "formula": "$$\\sigma_t = \\frac{P_i r_i^2 - P_o r_o^2}{r_o^2 - r_i^2} + \\frac{(P_i - P_o)r_i^2 r_o^2}{r^2 (r_o^2 - r_i^2)}$$",
+                        "description": "Computes tangential (hoop) stress distribution $\\sigma_t$ as a function of radial distance $r$ in thick-walled cylinders where $t > r_i / 10$.",
+                        "examTip": "Found in Mechanics of Materials. Maximum hoop tensile stress always occurs at the inside surface ($r = r_i$). Under internal pressure only: $\\sigma_{t,\\text{max}} = P_i (r_o^2 + r_i^2)/(r_o^2 - r_i^2)$."
+                },
+                {
+                        "title": "Castigliano’s Second Theorem for Deflection",
+                        "formula": "$$\\delta_i = \\frac{\\partial U}{\\partial P_i} = \\int \\frac{M}{E I}\\left(\\frac{\\partial M}{\\partial P_i}\\right) dx$$",
+                        "description": "Partial derivative of total elastic strain energy $U$ with respect to an external concentrated load $P_i$ equals the deflection $\\delta_i$ at the load point in the load's direction.",
+                        "examTip": "Found in Mechanics of Materials / Structural Mechanics. If no load acts at the point of interest, apply a fictitious dummy load $Q$, differentiate, and evaluate at $Q = 0$."
+                },
+                {
+                        "title": "Binary Phase Diagram Lever Rule",
+                        "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
+                        "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
+                        "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length."
+                },
+                {
+                        "title": "Eutectic and Eutectoid Invariant Reactions",
+                        "formula": "$$\\text{Eutectic: } L \\xrightarrow{\\text{cool}} \\alpha + \\beta, \\quad \\text{Eutectoid: } \\gamma \\xrightarrow{\\text{cool}} \\alpha + \\text{Fe}_3\\text{C}$$",
+                        "description": "Eutectic transforms liquid into two distinct solid phases at constant temperature. In the Fe-C system, eutectoid reaction converts austenite ($\\gamma$) at $727^\\circ\\text{C}$ ($0.76\\text{ wt}\\%\\text{ C}$) into pearlite ($\\alpha + \\text{Fe}_3\\text{C}$).",
+                        "examTip": "Found in Materials Science. Peritectic reaction is liquid + solid $\\to$ new solid ($L + \\alpha \\to \\beta$)."
+                },
+                {
+                        "title": "Marin Factors for Fatigue Endurance Limit Modification",
+                        "formula": "$$S_e = k_a k_b k_c k_d k_e S'_e$$",
+                        "description": "Adjusts unnotched rotating-beam laboratory fatigue limit $S'_e$ ($S'_e \\approx 0.5 S_{ut}$ for steel) by surface factor $k_a$, size factor $k_b$, load factor $k_c$, temperature $k_d$, and reliability $k_e$.",
+                        "examTip": "Found in Mechanical Design. Ground surfaces have $k_a \\approx 1.0$, while as-forged or cast surfaces have significantly lower $k_a$ ($0.4 - 0.6$)."
+                },
+                {
+                        "title": "Linear Elastic Fracture Mechanics (Griffith Criterion)",
+                        "formula": "$$K_I = Y \\sigma \\sqrt{\\pi a} \\le K_{Ic}$$",
+                        "description": "Defines stress intensity factor $K_I$ for an crack of length $2a$ subjected to tensile stress $\\sigma$. Brittle fracture occurs catastrophically when $K_I$ reaches plane-strain fracture toughness $K_{Ic}$.",
+                        "examTip": "Found in Materials Science / Mechanical Design. Geometry correction factor $Y = 1.0$ for an internal crack in an infinite plate, and $Y \\approx 1.12$ for an edge crack."
+                },
+                {
+                        "title": "Larson-Miller Parameter for Creep Rupture Life",
+                        "formula": "$$LMP = T \\left(C + \\log_{10} t_r\\right) \\times 10^{-3}$$",
+                        "description": "Correlates creep rupture life $t_r$ (in hours) at absolute temperature $T$ (Kelvin or Rankine) for high-temperature components (gas turbine blades, boilers), with $C \\approx 20$.",
+                        "examTip": "Found in Materials Science. Temperature $T$ must always be in absolute units ($T = \\text{K}$ or $^\\circ\\text{R}$)."
+                },
+                {
+                        "title": "Cold Work and Ductility Trade-off",
+                        "formula": "$$\\%CW = \\frac{A_0 - A_d}{A_0} \\times 100$$",
+                        "description": "Plastic deformation at temperatures below recrystallization increases dislocation density, raising yield strength and tensile strength while reducing ductility (% elongation).",
+                        "examTip": "Found in Materials Science. Annealing (recovery, recrystallization, grain growth) restores original ductility and relieves residual stresses."
+                },
+                {
+                        "title": "Hydrostatic Center of Pressure on Submerged Surfaces",
+                        "formula": "$$y_{cp} = y_c + \\frac{I_{xc}}{y_c A}, \\quad F_R = \\bar{P} A = \\rho g y_c \\sin\\theta A$$",
+                        "description": "Resultant hydrostatic force $F_R$ acts through the center of pressure $y_{cp}$, which is always located below the area centroid $y_c$ by distance $I_{xc}/(y_c A)$.",
+                        "examTip": "Found in Fluid Mechanics. Remember $y$ is measured along the inclined surface plane from the liquid surface intersection."
+                },
+                {
+                        "title": "Archimedes’ Principle of Buoyancy",
+                        "formula": "$$F_B = \\rho_f g V_{\\text{displaced}} = \\gamma_f V_d$$",
+                        "description": "Any body wholly or partially submerged in a static fluid experiences an upward buoyant force equal to the weight of fluid displaced, acting through the center of buoyancy.",
+                        "examTip": "Found in Fluid Mechanics. For a floating body in static equilibrium, $F_B = W_{\\text{body}}$, meaning $\\rho_f V_d = \\rho_{\\text{body}} V_{\\text{total}}$.",
+                        "videoUrl": "assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+                        "videoTitle": "Archimedes’ Principle of Buoyancy Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Minor Head Losses in Pipe Networks",
+                        "formula": "$$h_m = K_L \\frac{v^2}{2g}$$",
+                        "description": "Computes localized mechanical energy dissipation caused by pipe fittings, elbows, valves, entrances, and sudden contractions/expansions using loss coefficient $K_L$.",
+                        "examTip": "Found in Fluid Mechanics. Add minor losses to major Darcy friction head loss in the extended Bernoulli energy equation: $h_L = f (L/D)(v^2/2g) + \\sum K_L (v^2/2g)$.",
+                        "videoUrl": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+                        "videoTitle": "Minor Head Loss in Piping Systems Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Centrifugal Pump Affinity Laws",
+                        "formula": "$$\\frac{Q_2}{Q_1} = \\frac{N_2}{N_1}, \\quad \\frac{H_2}{H_1} = \\left(\\frac{N_2}{N_1}\\right)^2, \\quad \\frac{\\dot{W}_2}{\\dot{W}_1} = \\left(\\frac{N_2}{N_1}\\right)^3$$",
+                        "description": "Predicts changes in volumetric flow rate $Q$, total head $H$, and required brake horsepower $\\dot{W}$ when pump impeller rotational speed $N$ is varied.",
+                        "examTip": "Found in Fluid Mechanics. Note power varies with the cube of shaft speed: doubling pump RPM requires $2^3 = 8\\times$ power!"
+                },
+                {
+                        "title": "Net Positive Suction Head Available (NPSHA)",
+                        "formula": "$$NPSHA = \\frac{P_{\\text{atm}}}{\\gamma} + z_s - h_f - \\frac{P_v}{\\gamma} \\ge NPSHR$$",
+                        "description": "Total absolute suction head at the pump inlet above liquid vapor pressure $P_v$. To prevent catastrophic cavitation, $NPSHA$ must exceed manufacturer's $NPSHR$.",
+                        "examTip": "Found in Fluid Mechanics. Raising fluid temperature increases vapor pressure $P_v$, reducing $NPSHA$ and triggering cavitation."
+                },
+                {
+                        "title": "Pump Specific Speed ($N_s$)",
+                        "formula": "$$N_s = \\frac{N \\sqrt{Q}}{H^{3/4}}$$",
+                        "description": "Dimensionless/empirical design parameter identifying optimal pump impeller type: radial flow ($N_s < 2000$), mixed flow ($2000 < N_s < 5000$), or axial flow ($N_s > 9000$).",
+                        "examTip": "Found in Fluid Mechanics. In USCS units: $N$ is in rpm, $Q$ is in gpm, and $H$ is in feet of fluid."
+                },
+                {
+                        "title": "Boundary Layer Displacement and Momentum Thickness",
+                        "formula": "$$\\delta^* = \\int_0^\\delta \\left(1 - \\frac{u}{U_\\infty}\\right) dy, \\quad \\theta = \\int_0^\\delta \\frac{u}{U_\\infty}\\left(1 - \\frac{u}{U_\\infty}\\right) dy$$",
+                        "description": "Measures the physical distance streamline flow is displaced outward ($\\delta^*$) and total momentum deficit ($\\theta$) due to fluid viscous boundary layer growth.",
+                        "examTip": "Found in Fluid Mechanics. For Blasius laminar boundary layer over flat plate: $\\delta = 5.0 x / \\sqrt{Re_x}$ and $\\delta^* = 1.72 x / \\sqrt{Re_x}$."
+                },
+                {
+                        "title": "Aerodynamic Drag Force and Drag Coefficient",
+                        "formula": "$$F_D = \\frac{1}{2} C_D \\rho v^2 A$$",
+                        "description": "Total resistive force exerted on a body moving through a fluid of density $\\rho$ at velocity $v$, where $A$ is frontal projected area and $C_D$ is drag coefficient.",
+                        "examTip": "Found in Fluid Mechanics. Power required to overcome drag scales with speed cubed: $P_{\\text{drag}} = F_D v = \\frac{1}{2} C_D \\rho v^3 A$."
+                },
+                {
+                        "title": "Aerodynamic Lift Force and Circulation (Kutta-Joukowski)",
+                        "formula": "$$F_L = \\frac{1}{2} C_L \\rho v^2 A, \\quad L' = \\rho_\\infty v_\\infty \\Gamma$$",
+                        "description": "Net perpendicular upward aerodynamic force on an airfoil resulting from circulation $\\Gamma$ and differential pressure distribution between upper and lower surfaces.",
+                        "examTip": "Found in Fluid Mechanics. In 2D potential flow, lift per unit span equals fluid density times freestream velocity times bound vortex circulation $\\Gamma$."
+                },
+                {
+                        "title": "Strouhal Number and Karman Vortex Shedding",
+                        "formula": "$$St = \\frac{f_s D}{v} \\approx 0.20 \\quad (10^2 < Re < 10^5)$$",
+                        "description": "Relates periodic vortex shedding frequency $f_s$ across a cylinder of diameter $D$ in fluid velocity $v$. Triggers resonant mechanical vibrations if $f_s = f_n$.",
+                        "examTip": "Found in Fluid Mechanics. Used for aerodynamic stability of smokestacks, submarine periscopes, and transmission lines."
+                },
+                {
+                        "title": "Stagnation Properties in Isentropic Compressible Flow",
+                        "formula": "$$\\frac{T_0}{T} = 1 + \\frac{k - 1}{2} M^2, \\quad \\frac{P_0}{P} = \\left(1 + \\frac{k - 1}{2} M^2\\right)^{\\frac{k}{k - 1}}$$",
+                        "description": "Relates static thermodynamic state $(P, T)$ to stagnation reservoir state $(P_0, T_0)$ achieved by isentropically decelerating fluid flow to zero velocity ($M = 0$).",
+                        "examTip": "Found in Fluid Mechanics / Thermodynamics. For ideal air ($k = 1.4$), critical pressure ratio at sonic throat ($M = 1$) is $P^* / P_0 = 0.528$."
+                },
+                {
+                        "title": "Normal Shock Wave Governing Equations",
+                        "formula": "$$M_2^2 = \\frac{(k - 1) M_1^2 + 2}{2 k M_1^2 - (k - 1)}, \\quad \\frac{P_2}{P_1} = \\frac{2 k M_1^2 - (k - 1)}{k + 1}$$",
+                        "description": "Governs discontinuous compression front in supersonic flow ($M_1 > 1$): downstream flow is always subsonic ($M_2 < 1$), static pressure and temperature rise, while stagnation pressure drops ($P_{02} < P_{01}$).",
+                        "examTip": "Found in Fluid Mechanics. Across a normal shock wave, total temperature is constant ($T_{01} = T_{02}$), but entropy increases (irreversible shock)."
+                },
+                {
+                        "title": "Polytropic Process Boundary Work",
+                        "formula": "$$W = \\int_1^2 P dV = \\frac{P_2 V_2 - P_1 V_1}{1 - n} = \\frac{m R (T_2 - T_1)}{1 - n} \\quad (n \\ne 1)$$",
+                        "description": "Quasi-equilibrium boundary work for a gas obeying $P V^n = \\text{constant}$. For isothermal ($n = 1$): $W = P_1 V_1 \\ln(V_2 / V_1)$.",
+                        "examTip": "Found in Thermodynamics. Special indices: $n = 0$ is isobaric; $n = 1$ is isothermal; $n = k = c_p/c_v$ is isentropic; $n \\to \\infty$ is isochoric."
+                },
+                {
+                        "title": "Enthalpy Definition and Specific Heat Relations",
+                        "formula": "$$h = u + P v, \\quad c_p - c_v = R, \\quad k = \\frac{c_p}{c_v}, \\quad c_p = \\frac{k R}{k - 1}$$",
+                        "description": "Fundamental thermodynamic property definitions for enthalpy $h$, relating constant-pressure specific heat $c_p$ and constant-volume specific heat $c_v$ via gas constant $R$.",
+                        "examTip": "Found in Thermodynamics. For cold air standard: $c_p = 1.005\\text{ kJ/(kg}\\cdot\\text{K)}$, $c_v = 0.718\\text{ kJ/(kg}\\cdot\\text{K)}$, $k = 1.40$, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$.",
+                        "videoUrl": "assets/videos/Ideal_Gas_Specific_Heat_Relationships.mp4",
+                        "videoTitle": "Ideal Gas Specific Heat Relationships Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Clausius Inequality for Thermodynamic Cycles",
+                        "formula": "$$\\oint \\frac{\\delta Q}{T} \\le 0$$",
+                        "description": "Second law formulation stating that cyclic integral of $\\delta Q / T$ is zero for reversible cycles and strictly negative for irreversible cycles.",
+                        "examTip": "Found in Thermodynamics. If $\\oint \\delta Q / T > 0$, the cycle violates the Second Law of Thermodynamics (physically impossible)."
+                },
+                {
+                        "title": "Entropy Change of Ideal Gases",
+                        "formula": "$$\\Delta s = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right) = c_v \\ln\\left(\\frac{T_2}{T_1}\\right) + R \\ln\\left(\\frac{v_2}{v_1}\\right)$$",
+                        "description": "Calculates entropy change $\\Delta s$ between two states for an ideal gas with constant specific heats.",
+                        "examTip": "Found in Thermodynamics. For an isentropic process ($\\Delta s = 0$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$."
+                },
+                {
+                        "title": "Ideal Diesel Cycle Thermal Efficiency",
+                        "formula": "$$\\eta_{\\text{Diesel}} = 1 - \\frac{1}{r^{k-1}}\\left[\\frac{r_c^k - 1}{k (r_c - 1)}\\right]$$",
+                        "description": "Efficiency of compression-ignition IC engines as a function of compression ratio $r = V_1/V_2$ and cut-off ratio $r_c = V_3/V_2$.",
+                        "examTip": "Found in Thermodynamics. Because $[(r_c^k-1)/(k(r_c-1))] > 1$, for the same compression ratio $r$, an Otto cycle is theoretically more efficient than a Diesel cycle."
+                },
+                {
+                        "title": "Ideal Brayton Cycle Efficiency for Gas Turbines",
+                        "formula": "$$\\eta_{\\text{Brayton}} = 1 - \\frac{1}{r_p^{(k-1)/k}}, \\quad r_p = \\frac{P_2}{P_1}$$",
+                        "description": "Thermal efficiency of an air-standard gas turbine cycle operating with isentropic compression, constant-pressure combustion, isentropic expansion, and exhaust.",
+                        "examTip": "Found in Thermodynamics. Efficiency depends strictly on compressor pressure ratio $r_p$ and specific heat ratio $k$."
+                },
+                {
+                        "title": "Vapor-Compression Refrigeration Cycle COP",
+                        "formula": "$$\\beta = COP_R = \\frac{q_L}{w_{in}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad COP_{HP} = COP_R + 1$$",
+                        "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
+                        "examTip": "Found in Thermodynamics. Expansion through throttling valve is isenthalpic: $h_4 = h_3$."
+                },
+                {
+                        "title": "Exergy (Availability) of a Closed System",
+                        "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0)$$",
+                        "description": "The maximum theoretical useful work obtainable as a system comes into thermodynamic equilibrium with an environment at $(T_0, P_0)$.",
+                        "examTip": "Found in Thermodynamics. Exergy destroyed in any real process is directly proportional to entropy generation: $X_{\\text{destroyed}} = T_0 S_{\\text{gen}}$."
+                },
+                {
+                        "title": "Psychrometric Humidity Ratio and Relative Humidity",
+                        "formula": "$$\\omega = 0.622 \\frac{P_v}{P - P_v}, \\quad \\phi = \\frac{P_v}{P_{sat}(T)}$$",
+                        "description": "Humidity ratio $\\omega$ (mass of water vapor per unit mass dry air) and relative humidity $\\phi$ (ratio of vapor partial pressure to saturation pressure at dry-bulb temperature).",
+                        "examTip": "Found in Thermodynamics / HVAC. At 100% relative humidity ($phi = 1.0$), dry-bulb temperature equals wet-bulb temperature equals dew-point temperature."
+                },
+                {
+                        "title": "Critical Radius of Thermal Insulation",
+                        "formula": "$$r_{cr} = \\frac{k}{h}$$",
+                        "description": "Outer radius of cylinder insulation where heat transfer is maximized. Adding insulation to a pipe with $r_o < r_{cr}$ actually increases heat loss due to dominant surface area expansion.",
+                        "examTip": "Found in Heat Transfer. For a sphere: $r_{cr} = 2k/h$. For electrical wires, keeping $r_o \\approx r_{cr}$ maximizes convective heat dissipation.",
+                        "videoUrl": "assets/videos/Critical_Radius_of_Thermal_Insulation.mp4",
+                        "videoTitle": "Critical Radius of Thermal Insulation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Natural Convection Rayleigh and Grashof Numbers",
+                        "formula": "$$Gr = \\frac{g \\beta (T_s - T_\\infty) L^3}{\\nu^2}, \\quad Ra = Gr \\cdot Pr$$",
+                        "description": "Dimensionless criteria governing buoyancy-driven natural convection: Grashof number $Gr$ balances buoyant forces against viscous forces; $Ra > 10^9$ indicates turbulent boundary layer.",
+                        "examTip": "Found in Heat Transfer. Volume expansion coefficient for ideal gas is $\\beta = 1 / T_f$ where film temperature $T_f = (T_s + T_\\infty)/2$ is in Kelvin."
+                },
+                {
+                        "title": "Dittus-Boelter Turbulent Pipe Flow Correlation",
+                        "formula": "$$Nu_D = \\frac{h D}{k} = 0.023 Re_D^{0.8} Pr^n$$",
+                        "description": "Calculates Nusselt number for fully developed turbulent flow in smooth circular pipes ($Re_D \\ge 10{,}000, 0.6 \\le Pr \\le 160$); $n = 0.4$ for heating, $n = 0.3$ for cooling.",
+                        "examTip": "Found in Heat Transfer. Convective heat transfer coefficient $h$ scales with velocity to the $0.8$ power ($h \\propto v^{0.8}$)."
+                },
+                {
+                        "title": "Lumped Capacitance Method for Transient Heat Transfer",
+                        "formula": "$$\\frac{T(t) - T_\\infty}{T_i - T_\\infty} = e^{-\\frac{t}{\\tau}}, \\quad \\tau = \\frac{\\rho V c}{h A_s}, \\quad Bi = \\frac{h L_c}{k} < 0.1$$",
+                        "description": "Predicts transient thermal response of a solid body assuming uniform spatial temperature distribution, valid when internal thermal resistance is negligible ($Bi < 0.1$).",
+                        "examTip": "Found in Heat Transfer. Characteristic length is $L_c = V / A_s$. For a sphere of radius $r_o$, $L_c = (\\frac{4}{3}\\pi r_o^3)/(4\\pi r_o^2) = r_o / 3$."
+                },
+                {
+                        "title": "Extended Surface Fin Efficiency and Effectiveness",
+                        "formula": "$$\\eta_f = \\frac{\\tanh(m L_c)}{m L_c}, \\quad m = \\sqrt{\\frac{h P}{k A_c}}, \\quad \\epsilon_f = \\frac{q_f}{h A_c (T_b - T_\\infty)}$$",
+                        "description": "Quantifies heat transfer performance of cooling fins: efficiency $\\eta_f$ is actual fin heat dissipation over ideal base-temperature dissipation; effectiveness $\\epsilon_f > 2$ justifies adding the fin.",
+                        "examTip": "Found in Heat Transfer. For long fins ($m L \\to \\infty$), tip temperature reaches ambient, giving $q_f = \\sqrt{h P k A_c} (T_b - T_\\infty)$."
+                },
+                {
+                        "title": "Radiation View Factor Reciprocity Relation",
+                        "formula": "$$A_1 F_{12} = A_2 F_{21}, \\quad \\sum_{j=1}^N F_{ij} = 1$$",
+                        "description": "Geometric radiation enclosure conservation relations: summation rule states all radiation leaving surface $i$ strikes other surfaces or itself; reciprocity relates reciprocal view factors.",
+                        "examTip": "Found in Heat Transfer. For a flat or convex surface, $F_{11} = 0$ (cannot see itself).",
+                        "videoUrl": "assets/videos/Radiation_View_Factor_Reciprocity_Relation.mp4",
+                        "videoTitle": "Radiation View Factor Reciprocity Relation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Radiation Heat Exchange Between Infinite Parallel Gray Plates",
+                        "formula": "$$q_{12} = \\frac{\\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$$",
+                        "description": "Net radiant heat flux exchanged between two large parallel diffuse-gray surfaces with emissivities $\\epsilon_1$ and $\\epsilon_2$ at absolute temperatures $T_1$ and $T_2$.",
+                        "examTip": "Found in Heat Transfer. Adding a radiation shield with emissivity $\\epsilon_s$ cuts heat transfer by more than 50%."
+                },
+                {
+                        "title": "AGMA Lewis Bending Equation for Spur Gear Teeth",
+                        "formula": "$$\\sigma = \\frac{W_t}{F m Y} = \\frac{W_t P_d}{F Y}$$",
+                        "description": "Computes root bending stress in spur gear teeth subjected to tangential transmitted load $W_t$, face width $F$, metric module $m$ (or diametral pitch $P_d$), and Lewis form factor $Y$.",
+                        "examTip": "Found in Mechanical Design. Tangential load is obtained directly from transmitted motor power: $W_t = T / (d/2) = P / (v_t)$."
+                },
+                {
+                        "title": "Rolling Element Bearing Rated Life ($L_{10}$)",
+                        "formula": "$$L_{10} = \\left(\\frac{C}{P}\\right)^p \\times 10^6 \\text{ revolutions}, \\quad p = 3 \\text{ (ball)}, \\quad p = 10/3 \\text{ (roller)}$$",
+                        "description": "Predicts rated fatigue life exceeded by 90% of identical bearings operating under equivalent radial dynamic load $P$ with dynamic load rating $C$.",
+                        "examTip": "Found in Mechanical Design. Life in hours is $L_{10h} = \\frac{L_{10}}{60 N}$. Halving the load increases ball bearing life by $2^3 = 8\\times$!"
+                },
+                {
+                        "title": "Power Screws Lifting Torque and Efficiency",
+                        "formula": "$$T_R = \\frac{F d_m}{2}\\left(\\frac{l + \\pi \\mu d_m}{\\pi d_m - \\mu l}\\right), \\quad e = \\frac{F l}{2\\pi T_R}$$",
+                        "description": "Computes torque $T_R$ required to raise axial load $F$ using a square-thread power screw of mean diameter $d_m$, lead $l$, and coefficient of friction $\\mu$.",
+                        "examTip": "Found in Mechanical Design. A screw is self-locking if friction angle exceeds lead angle: $\\mu \\ge l / (\\pi d_m)$ (efficiency $e < 50\\%$)."
+                },
+                {
+                        "title": "Bolted Joint Preload and Clamping Stiffness",
+                        "formula": "$$C = \\frac{k_b}{k_b + k_m}, \\quad P_b = F_i + C P, \\quad P_m = -F_i + (1 - C) P$$",
+                        "description": "Partitioning of external tensile service load $P$ between preloaded bolt ($k_b$) and clamped joint members ($k_m$), where joint stiffness constant $C$ is typically $0.15 - 0.30$.",
+                        "examTip": "Found in Mechanical Design. Joint separation occurs when clamping load vanishes ($P_m = 0$), giving external separation load $P_{\\text{sep}} = F_i / (1 - C)$."
+                },
+                {
+                        "title": "Helical Compression Spring Shear Stress with Wahl Factor",
+                        "formula": "$$\\tau = K_W \\frac{8 F D}{\\pi d^3}, \\quad K_W = \\frac{4C - 1}{4C - 4} + \\frac{0.615}{C}, \\quad C = \\frac{D}{d}$$",
+                        "description": "Calculates maximum torsional shear stress in a round wire helical spring under axial load $F$, corrected for direct transverse shear and inner coil curvature via Wahl factor $K_W$.",
+                        "examTip": "Found in Mechanical Design. Spring rate is $k = \\frac{d^4 G}{8 D^3 N_a}$. Doubling wire diameter $d$ increases spring stiffness by $2^4 = 16\\times$!"
+                },
+                {
+                        "title": "Modified Goodman Fatigue Failure Criterion",
+                        "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
+                        "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
+                        "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$."
+                },
+                {
+                        "title": "Rectilinear Kinematics Constant Acceleration Equations",
+                        "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2} a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
+                        "description": "Governs linear motion of a particle under uniform constant acceleration $a$.",
+                        "examTip": "Found in Dynamics. If acceleration varies with time or displacement, you MUST integrate: $v = \\int a dt$ or $v dv = a ds$.",
+                        "videoUrl": "assets/videos/Rectilinear_Kinematics_Constant_Acceleration_Equations.mp4",
+                        "videoTitle": "Rectilinear Kinematics Constant Acceleration Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Taylor and Maclaurin Series Expansion",
+                        "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                        "description": "Represents an infinitely differentiable real function as a power series polynomial about center point $a$; when $a = 0$, it is called a Maclaurin series.",
+                        "examTip": "Found in Mathematics. Useful Maclaurin series: $e^x = 1 + x + x^2/2! + \\dots$, $\\sin x = x - x^3/3! + \\dots$, $\\cos x = 1 - x^2/2! + \\dots$.",
+                        "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+                        "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Civil": [
@@ -706,6 +1135,372 @@
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Degree of Static Indeterminacy for Planar Frames",
+                        "formula": "$$3m + r = 3j + c \\implies DSI = 3m + r - 3j - c$$",
+                        "description": "Determines structural determinacy and degree of indeterminacy for 2D rigid frames with $m$ members, $r$ support reaction components, $j$ joints, and $c$ internal hinge conditions.",
+                        "examTip": "Found in Structural Analysis. If $DSI = 0$ (and stable), frame is determinate; if $DSI > 0$, indeterminate to that degree; if $DSI < 0$, unstable mechanism."
+                },
+                {
+                        "title": "Principle of Virtual Work for Beam Deflections",
+                        "formula": "$$\\Delta = \\int_0^L \\frac{M(x) m(x)}{E I} dx$$",
+                        "description": "Calculates deflection $\\Delta$ at any point in an elastic beam by integrating the product of real bending moment $M(x)$ and virtual moment $m(x)$ produced by a unit virtual load.",
+                        "examTip": "Found in Structural Analysis. For truss deflections, use the discrete summation form: $\\Delta = \\sum \\frac{F u L}{A E}$."
+                },
+                {
+                        "title": "Castigliano’s Second Theorem for Truss Joint Deflections",
+                        "formula": "$$\\Delta_i = \\frac{\\partial U}{\\partial P_i} = \\sum \\frac{F L}{A E}\\left(\\frac{\\partial F}{\\partial P_i}\\right)$$",
+                        "description": "The partial derivative of total internal complementary strain energy $U$ with respect to an external joint load $P_i$ yields the joint displacement in the direction of $P_i$.",
+                        "examTip": "Found in Structural Analysis. $\\partial F / \\partial P_i$ is identical to member force $u$ caused by a dummy unit load at joint $i$."
+                },
+                {
+                        "title": "Müller-Breslau Principle for Influence Lines",
+                        "formula": "$$IL(x) \\propto \\text{Deflected Shape under Unit Discontinuity}$$",
+                        "description": "The influence line for any internal force, shear, or moment is directly proportional to the deflected shape of the structure when the constraint corresponding to that force is released and a unit virtual displacement applied.",
+                        "examTip": "Found in Structural Analysis. For statically determinate beams, influence lines are strictly composed of straight line segments."
+                },
+                {
+                        "title": "Moment Distribution Method (Hardy Cross)",
+                        "formula": "$$DF_i = \\frac{K_i}{\\sum K}, \\quad K = \\frac{4 E I}{L} \\text{ (far end fixed)}, \\quad K = \\frac{3 E I}{L} \\text{ (far end pinned)}$$",
+                        "description": "Iterative technique for solving continuous indeterminate beams and frames by distributing unbalanced joint moments according to member stiffness factors $DF_i$ with a $1/2$ carryover factor.",
+                        "examTip": "Found in Structural Analysis. Fixed end moment for uniform load $w$: $FEM = w L^2 / 12$; for center point load $P$: $FEM = P L / 8$."
+                },
+                {
+                        "title": "Plastic Section Modulus and Shape Factor",
+                        "formula": "$$M_p = F_y Z, \\quad Z = \\frac{A}{2}(\\bar{y}_1 + \\bar{y}_2), \\quad k = \\frac{Z}{S}$$",
+                        "description": "Plastic moment capacity $M_p$ occurs when entire cross section yields in tension and compression. The shape factor $k = Z/S$ is $1.5$ for rectangular sections and $\\approx 1.10 - 1.15$ for standard W-shapes.",
+                        "examTip": "Found in Structural Design. The plastic neutral axis divides the total cross-sectional area into two exactly equal halves ($A_1 = A_2 = A/2$)."
+                },
+                {
+                        "title": "Torsion in Thin-Walled Closed Tubes (Bredt’s Formula)",
+                        "formula": "$$q = \\tau t = \\frac{T}{2 A_m}, \\quad \\phi = \\frac{T L}{4 A_m^2 G} \\oint \\frac{ds}{t}$$",
+                        "description": "Shear flow $q$ is constant around the perimeter of a thin-walled single-cell tube subjected to torque $T$, where $A_m$ is mean area enclosed by median perimeter line.",
+                        "examTip": "Found in Mechanics of Materials / Structural Mechanics. Closed tubes possess vastly superior torsional stiffness and capacity compared to open thin-walled sections."
+                },
+                {
+                        "title": "Shear Center for Open Thin-Walled Structural Sections",
+                        "formula": "$$e = \\frac{b^2 h^2 t}{4 I_x} \\quad \\text{(C-Channel)}$$",
+                        "description": "Point in the cross-sectional plane through which transverse shear loads must pass to produce pure bending without twisting the structural member.",
+                        "examTip": "Found in Mechanics of Materials. For sections with two axes of symmetry (I-beams, rectangular tubes), the shear center coincides exactly with the centroid."
+                },
+                {
+                        "title": "Temperature and Fabrication Deflections in Trusses",
+                        "formula": "$$\\Delta = \\sum u \\alpha \\Delta T L + \\sum u \\Delta L_{\\text{fab}}$$",
+                        "description": "Calculates joint displacement in trusses caused by thermal expansion/contraction of members ($alpha \\Delta T L$) or fabrication error length imperfections ($\\Delta L_{\\text{fab}}$).",
+                        "examTip": "Found in Structural Analysis. Value $u$ is the internal axial force in the member induced by a dummy unit virtual load applied at the target joint."
+                },
+                {
+                        "title": "ACI 318 Tension-Controlled Flexural Strength Reduction Factor",
+                        "formula": "$$\\phi = 0.65 + 0.25 \\left(\\frac{\\epsilon_t - \\epsilon_{ty}}{0.005 - \\epsilon_{ty}}\\right), \\quad \\phi = 0.90 \\text{ for } \\epsilon_t \\ge 0.005$$",
+                        "description": "Strength reduction factor $\\phi$ transitions linearly from $0.65$ (compression-controlled, $\\epsilon_t \\le 0.002$) to $0.90$ (tension-controlled, $\\epsilon_t \\ge 0.005$) to ensure ductile failure with ample warning.",
+                        "examTip": "Found in Reinforced Concrete Design. Always verify net tensile strain in extreme tension steel $\\epsilon_t = 0.003 (d - c)/c \\ge 0.004$ (minimum allowable by ACI)."
+                },
+                {
+                        "title": "Balanced Reinforcement Ratio in Concrete Beams",
+                        "formula": "$$\\rho_b = 0.85 \\beta_1 \\frac{f'_c}{f_y} \\left(\\frac{87{,}000}{87{,}000 + f_y}\\right) \\quad [\\text{USCS}]$$",
+                        "description": "Reinforcement ratio where concrete crushing ($\\epsilon_c = 0.003$) and steel yielding ($\\epsilon_s = f_y/E_s$) occur simultaneously.",
+                        "examTip": "Found in Concrete Design. Beams are designed with $\\rho \\ll \\rho_b$ (under-reinforced) to ensure tension steel yields first before concrete crushes."
+                },
+                {
+                        "title": "Minimum Flexural Reinforcement for Concrete Beams",
+                        "formula": "$$A_{s,\\text{min}} = \\frac{3\\sqrt{f'_c}}{f_y} b_w d \\ge \\frac{200}{f_y} b_w d$$",
+                        "description": "Guarantees the cracked reinforced section has a nominal flexural strength greater than the cracking moment of the unreinforced plain concrete section.",
+                        "examTip": "Found in Concrete Design. Governs shallow or lightly loaded wide beams to prevent sudden brittle collapse upon initial concrete cracking."
+                },
+                {
+                        "title": "Concrete Nominal Shear Strength ($V_c$)",
+                        "formula": "$$V_c = 2 \\lambda \\sqrt{f'_c} b_w d$$",
+                        "description": "Shear capacity contributed by aggregate interlock, dowel action, and uncracked compressive concrete zone in beams without web reinforcement; $\\lambda = 1.0$ for normal-weight concrete.",
+                        "examTip": "Found in Concrete Design. When factored shear $V_u > \\phi V_c / 2$, minimum stirrups are legally required by ACI 318."
+                },
+                {
+                        "title": "Shear Stirrup Spacing in Concrete Beams",
+                        "formula": "$$V_s = \\frac{A_v f_y d}{s} = \\frac{V_u - \\phi V_c}{\\phi} \\implies s = \\frac{A_v f_y d}{V_s}$$",
+                        "description": "Calculates longitudinal center-to-center spacing $s$ of vertical shear stirrups (legs $A_v$) required to carry excess shear force $V_s$.",
+                        "examTip": "Found in Concrete Design. Maximum spacing limit: if $V_s \\le 4\\sqrt{f'_c} b_w d$, $s_{\\text{max}} = \\min(d/2, 24\\text{ in})$. If $V_s > 4\\sqrt{f'_c} b_w d$, $s_{\\text{max}} = \\min(d/4, 12\\text{ in})$."
+                },
+                {
+                        "title": "Punching Shear in Two-Way Flat Slab Footings",
+                        "formula": "$$v_u = \\frac{V_u}{b_o d} \\le \\phi v_c, \\quad b_o = 2(c_1 + d) + 2(c_2 + d)$$",
+                        "description": "Checks critical two-way shear failure on a truncated pyramid perimeter $b_o$ located at distance $d/2$ from the face of the column.",
+                        "examTip": "Found in Concrete Design. Lowest of three ACI criteria governs: $v_c = \\min(4, 2 + 4/\\beta, 2 + \\alpha_s d/b_o)\\sqrt{f'_c}$."
+                },
+                {
+                        "title": "Tension Development Length of Deformed Bars",
+                        "formula": "$$\\ell_d = \\left[\\frac{3}{40} \\frac{f_y}{\\lambda \\sqrt{f'_c}} \\frac{\\psi_t \\psi_e \\psi_s}{\\left(\\frac{c_b + K_{tr}}{d_b}\\right)}\\right] d_b$$",
+                        "description": "Minimum embedded length of deformed reinforcing rebar required to develop full yield strength $f_y$ through bond without slip or concrete splitting.",
+                        "examTip": "Found in Concrete Design. Simplified equations in the FE Handbook often reduce to $\\ell_d = \\frac{f_y \\psi_t \\psi_e}{20 \\lambda \\sqrt{f'_c}} d_b$ for standard bars."
+                },
+                {
+                        "title": "Short Column Axial Compressive Capacity (ACI 318)",
+                        "formula": "$$P_n = 0.85 f'_c (A_g - A_{st}) + f_y A_{st}$$",
+                        "description": "Nominal concentric axial compressive capacity of reinforced concrete columns accounting for gross concrete area $A_g$ and total longitudinal steel area $A_{st}$.",
+                        "examTip": "Found in Concrete Design. Maximum design axial strength includes accidental eccentricity reductions: $\\phi P_{n,\\text{max}} = 0.80 \\phi P_n$ for tied columns, $0.85 \\phi P_n$ for spiral columns."
+                },
+                {
+                        "title": "Effective Moment of Inertia for Crack Deflection (Branson)",
+                        "formula": "$$I_e = \\left(\\frac{M_{cr}}{M_a}\\right)^3 I_g + \\left[1 - \\left(\\frac{M_{cr}}{M_a}\\right)^3\\right] I_{cr} \\le I_g$$",
+                        "description": "Transition between uncracked gross section ($I_g$) and fully cracked transformed section ($I_{cr}$) for computing service load beam deflections when applied moment $M_a > M_{cr}$.",
+                        "examTip": "Found in Concrete Design. Cracking moment is $M_{cr} = f_r I_g / y_t$, where modulus of rupture $f_r = 7.5\\lambda\\sqrt{f'_c}$."
+                },
+                {
+                        "title": "Modulus of Elasticity of Structural Concrete",
+                        "formula": "$$E_c = 33 w_c^{1.5} \\sqrt{f'_c} \\text{ [psi]}, \\quad E_c = 57{,}000 \\sqrt{f'_c} \\text{ (Normal Weight)}$$",
+                        "description": "Computes secant modulus of elasticity of hardened concrete based on unit weight $w_c$ (lb/cu ft) and 28-day compressive strength $f'_c$ (psi).",
+                        "examTip": "Found in Concrete Design. For normal-weight concrete ($w_c \\approx 145\\text{ pcf}$), $33 (145)^{1.5} \\approx 57{,}000$."
+                },
+                {
+                        "title": "AISC Column Critical Compressive Stress ($F_{cr}$)",
+                        "formula": "$$F_{cr} = [0.658^{F_y / F_e}] F_y \\quad \\left(\\frac{KL}{r} \\le 4.71\\sqrt{\\frac{E}{F_y}}\\right), \\quad F_{cr} = 0.877 F_e \\quad (\\text{Elastic})$$",
+                        "description": "AISC Specification column curve incorporating residual stresses and initial member out-of-straightness; transitions from inelastic buckling to Euler elastic buckling at slenderness $4.71\\sqrt{E/F_y}$.",
+                        "examTip": "Found in Steel Design. Euler elastic buckling stress is $F_e = \\pi^2 E / (KL/r)^2$. Design compressive strength is $\\phi_c P_n = 0.90 F_{cr} A_g$."
+                },
+                {
+                        "title": "Steel Tension Member Design Strengths (AISC LRFD)",
+                        "formula": "$$\\phi P_n = 0.90 F_y A_g \\quad (\\text{Yielding}), \\quad \\phi P_n = 0.75 F_u A_e \\quad (\\text{Rupture})$$",
+                        "description": "Dual limit states for structural steel tension members: gross section yielding prevents excessive elongation; net effective area ($A_e = U A_n$) rupture prevents connection tear-out.",
+                        "examTip": "Found in Steel Design. When holes are drilled, effective hole diameter is bolt diameter plus $1/8$ in ($1/16$ in clearance + $1/16$ in damage allowance)."
+                },
+                {
+                        "title": "Shear Lag Factor in Bolted Steel Connections",
+                        "formula": "$$U = 1 - \\frac{\\bar{x}}{L}, \\quad A_e = U A_n$$",
+                        "description": "Accounts for non-uniform tensile stress distribution when some but not all cross-sectional elements of a steel profile (e.g. only one leg of an angle) are connected.",
+                        "examTip": "Found in Steel Design. Variable $\\bar{x}$ is distance from connection plane to member centroid, and $L$ is connection length in the direction of loading."
+                },
+                {
+                        "title": "Block Shear Rupture Limit State (AISC 360)",
+                        "formula": "$$R_n = 0.60 F_u A_{nv} + U_{bs} F_u A_{nt} \\le 0.60 F_y A_{gv} + U_{bs} F_u A_{nt}$$",
+                        "description": "Tear-out failure mode along a perimeter of bolt holes combining shear rupture along longitudinal lines and tensile rupture across transverse lines; $\\phi = 0.75$.",
+                        "examTip": "Found in Steel Design. Tension stress uniformity factor $U_{bs} = 1.0$ for uniform tension stress distribution (standard angles and gusset plates)."
+                },
+                {
+                        "title": "Compact Section Plastic Moment Capacity ($M_p$)",
+                        "formula": "$$M_p = F_y Z_x, \\quad \\phi_b M_n = 0.90 M_p = 0.90 F_y Z_x$$",
+                        "description": "Nominal flexural capacity for compact steel I-beams with adequate lateral bracing ($L_b \\le L_p$), reaching full plastic yielding across the entire cross section.",
+                        "examTip": "Found in Steel Design. Limiting laterally unbraced length for plastic behavior is $L_p = 1.76 r_y \\sqrt{E / F_y}$."
+                },
+                {
+                        "title": "AISC Lateral-Torsional Buckling Moment Gradient Modifier ($C_b$)",
+                        "formula": "$$C_b = \\frac{12.5 M_{\\text{max}}}{2.5 M_{\\text{max}} + 3 M_A + 4 M_B + 3 M_C}$$",
+                        "description": "Accounts for non-uniform bending moment distribution across an unbraced segment of length $L_b$, increasing lateral-torsional buckling strength above uniform moment baseline ($C_b = 1.0$).",
+                        "examTip": "Found in Steel Design. $M_A, M_B, M_C$ are moments at quarter, mid, and three-quarter points of the unbraced length."
+                },
+                {
+                        "title": "Fillet Weld Nominal Strength (AISC LRFD)",
+                        "formula": "$$R_n = 0.60 F_{EXX} t_e = 0.60 F_{EXX} (0.707 w) = 0.424 F_{EXX} w$$",
+                        "description": "Shear capacity of a fillet weld based on weld leg size $w$, electrode tensile classification $F_{EXX}$ (e.g. E70 = 70 ksi), and effective throat $t_e = w \\cos 45^\\circ = 0.707 w$.",
+                        "examTip": "Found in Steel Design. For E70 electrode: $\\phi R_n = 0.75 \\times 0.424 \\times 70 = 0.928\\text{ kips/in per sixteenth of an inch of leg size}$."
+                },
+                {
+                        "title": "High-Strength Bolt Bearing and Tear-Out Limits",
+                        "formula": "$$R_n = 1.2 \\ell_c t F_u \\le 2.4 d t F_u$$",
+                        "description": "Nominal bearing strength of connected plate material at bolt holes, governed by clear distance $\\ell_c$ between hole edge and plate edge (or adjacent hole).",
+                        "examTip": "Found in Steel Design. Design strength factor $\\phi = 0.75$. Clear distance is $\\ell_c = \\text{center-to-center spacing} - d_{hole}$."
+                },
+                {
+                        "title": "Soil Phase Relationships (Volume-Mass Balance)",
+                        "formula": "$$e = \\frac{V_v}{V_s} = \\frac{n}{1 - n}, \\quad n = \\frac{V_v}{V} = \\frac{e}{1 + e}, \\quad S = \\frac{V_w}{V_v} = \\frac{w G_s}{e}$$",
+                        "description": "Fundamental three-phase volumetric relationships connecting void ratio $e$, porosity $n$, degree of saturation $S$, gravimetric water content $w$, and specific gravity $G_s$.",
+                        "examTip": "Found in Geotechnical Engineering. The identity $S e = w G_s$ is the primary key to unlocking almost every soil phase problem on the exam!"
+                },
+                {
+                        "title": "Soil Unit Weights (Dry, Saturated, Submerged)",
+                        "formula": "$$\\gamma_d = \\frac{G_s \\gamma_w}{1 + e} = \\frac{\\gamma}{1 + w}, \\quad \\gamma_{sat} = \\frac{(G_s + e)\\gamma_w}{1 + e}, \\quad \\gamma' = \\gamma_{sat} - \\gamma_w$$",
+                        "description": "Dry unit weight $\\gamma_d$, saturated unit weight $\\gamma_{sat}$, and effective buoyant submerged unit weight $\\gamma'$ used in soil effective stress calculations.",
+                        "examTip": "Found in Geotechnical. Density of water is $\\gamma_w = 62.4\\text{ lbf/ft}^3$ or $9.81\\text{ kN/m}^3$."
+                },
+                {
+                        "title": "Grain Size Distribution Metrics ($C_u$ and $C_c$)",
+                        "formula": "$$C_u = \\frac{D_{60}}{D_{10}}, \\quad C_c = \\frac{D_{30}^2}{D_{10} D_{60}}$$",
+                        "description": "Uniformity coefficient $C_u$ and coefficient of gradation (curvature) $C_c$ extracted from the grain-size distribution curve to classify coarse soils under USCS.",
+                        "examTip": "Found in Geotechnical Engineering. Well-graded gravel requires $C_u \\ge 4$ and $1 \\le C_c \\le 3$; well-graded sand requires $C_u \\ge 6$ and $1 \\le C_c \\le 3$."
+                },
+                {
+                        "title": "Atterberg Limits and Plasticity Index",
+                        "formula": "$$PI = LL - PL, \\quad LI = \\frac{w - PL}{PI}$$",
+                        "description": "Demarcates soil consistency states: liquid limit $LL$, plastic limit $PL$, and shrinkage limit $SL$. Liquidity Index $LI > 1.0$ indicates sensitive soil prone to quick liquefaction.",
+                        "examTip": "Found in Geotechnical. USCS A-line equation on the plasticity chart is $PI = 0.73 (LL - 20)$. Clays plot above the A-line; silts plot below."
+                },
+                {
+                        "title": "Standard Proctor Optimum Moisture and Maximum Dry Density",
+                        "formula": "$$\\gamma_{d,\\text{comp}} = \\frac{\\gamma_{\\text{wet}}}{1 + w}, \\quad \\text{Relative Compaction} = \\frac{\\gamma_{d,\\text{field}}}{\\gamma_{d,\\text{max}}} \\times 100$$",
+                        "description": "Establishes bell-shaped compaction curve relating dry density to moisture content. Compaction lubricates soil grains up to optimum moisture content (OMC), beyond which water displaces solids.",
+                        "examTip": "Found in Geotechnical. Most structural fill specifications require $\\ge 95\\%$ of Standard (or Modified) Proctor maximum dry density."
+                },
+                {
+                        "title": "Effective Stress Principle in Saturated Soils",
+                        "formula": "$$\\sigma' = \\sigma - u = \\sum \\gamma h - u$$",
+                        "description": "Terzaghi's fundamental soil mechanics principle: shear strength, compressibility, and volume change of soil skeleton depend entirely on effective intergranular stress $\\sigma'$, not total stress $\\sigma$.",
+                        "examTip": "Found in Geotechnical. Pore water pressure $u = \\gamma_w h_w$ for hydrostatic groundwater. Upward seepage reduces $\\sigma'$, potentially causing quicksand conditions."
+                },
+                {
+                        "title": "2:1 Stress Distribution Method for Deep Loads",
+                        "formula": "$$\\Delta\\sigma_z = \\frac{P}{(B + z)(L + z)}$$",
+                        "description": "Empirical approximation spreading foundation contact load $P$ through a rectangular footprint of dimensions $B \\times L$ outward at a $2$ vertical to $1$ horizontal slope.",
+                        "examTip": "Found in Geotechnical Engineering. Quickest method to estimate vertical stress increment $\\Delta\\sigma_z$ at depth $z$ beneath footing center for settlement calculations."
+                },
+                {
+                        "title": "Two-Dimensional Seepage through Flow Nets",
+                        "formula": "$$q = k H \\left(\\frac{N_f}{N_d}\\right)$$",
+                        "description": "Calculates volumetric seepage discharge $q$ per unit length beneath dams or sheet piles using hydraulic conductivity $k$, total head loss $H$, flow channels $N_f$, and equipotential drops $N_d$.",
+                        "examTip": "Found in Geotechnical. Pore water pressure at any equipotential line drops by $\\Delta h = H / N_d$ per step."
+                },
+                {
+                        "title": "Critical Hydraulic Gradient for Quicksand / Boiling",
+                        "formula": "$$i_{cr} = \\frac{\\gamma'}{\\gamma_w} = \\frac{G_s - 1}{1 + e}$$",
+                        "description": "Upward hydraulic gradient at which upward seepage hydrodynamic drag force completely balances the submerged buoyant weight of granular soil particles, causing total loss of shear strength ($FS = i_{cr} / i_{\\text{exit}}$).",
+                        "examTip": "Found in Geotechnical. For typical sand ($G_s \\approx 2.65, e \\approx 0.65$), $i_{cr} \\approx (2.65 - 1)/(1 + 0.65) \\approx 1.0$."
+                },
+                {
+                        "title": "Terzaghi Ultimate Bearing Capacity Equation",
+                        "formula": "$$q_{\\text{ult}} = c' N_c + q N_q + \\frac{1}{2} \\gamma B N_\\gamma, \\quad q_{\\text{allow}} = \\frac{q_{\\text{ult}}}{FS}$$",
+                        "description": "General shear failure capacity beneath a continuous shallow strip footing of width $B$ at embedment surcharge depth $D_f$ ($q = \\gamma D_f$), with dimensionless factors $N_c, N_q, N_\\gamma$ driven by friction angle $\\phi$.",
+                        "examTip": "Found in Geotechnical. For pure undrained clay ($\\phi = 0$): $N_c = 5.14, N_q = 1.0, N_\\gamma = 0$, giving $q_{\\text{ult}} = 5.14 c_u + q$."
+                },
+                {
+                        "title": "Primary Consolidation Settlement of Normally Consolidated Clay",
+                        "formula": "$$S_c = \\frac{C_c H_0}{1 + e_0} \\log_{10}\\left(\\frac{\\sigma'_0 + \\Delta\\sigma'}{\\sigma'_0}\\right)$$",
+                        "description": "Total vertical primary settlement $S_c$ of a saturated clay layer of initial thickness $H_0$ and void ratio $e_0$ under load increment $\\Delta\\sigma'$ using compression index $C_c$.",
+                        "examTip": "Found in Geotechnical. Skempton's empirical formula for remolded clay: $C_c \\approx 0.009 (LL - 10)$."
+                },
+                {
+                        "title": "Overconsolidated Clay Consolidation Settlement",
+                        "formula": "$$S_c = \\frac{C_s H_0}{1 + e_0} \\log_{10}\\left(\\frac{\\sigma'_p}{\\sigma'_0}\\right) + \\frac{C_c H_0}{1 + e_0} \\log_{10}\\left(\\frac{\\sigma'_0 + \\Delta\\sigma'}{\\sigma'_p}\\right)$$",
+                        "description": "Settlement when effective stress exceeds preconsolidation pressure $\\sigma'_p$, progressing along recompression/swell curve ($C_s$) before entering virgin compression ($C_c$).",
+                        "examTip": "Found in Geotechnical. Overconsolidation ratio is $OCR = \\sigma'_p / \\sigma'_0$. If $\\sigma'_0 + \\Delta\\sigma' \\le \\sigma'_p$, only the $C_s$ recompression term applies."
+                },
+                {
+                        "title": "Consolidation Time Rate and Drainage Path",
+                        "formula": "$$t = \\frac{T_v H_{dr}^2}{c_v}$$",
+                        "description": "Determines elapsed time $t$ to achieve a given average consolidation percentage using dimensionless time factor $T_v$ (e.g. $T_{v,50} = 0.197, T_{v,90} = 0.848$) and coefficient of consolidation $c_v$.",
+                        "examTip": "Found in Geotechnical. For two-way drainage (permeable sand above and below clay), $H_{dr} = H/2$; for one-way drainage (impermeable rock on one side), $H_{dr} = H$."
+                },
+                {
+                        "title": "Infinite Slope Stability in Granular Soils",
+                        "formula": "$$FS = \\frac{\\tan\\phi'}{\\tan\\beta} \\quad (\\text{Dry}), \\quad FS = \\left(\\frac{\\gamma'}{\\gamma_{sat}}\\right) \\frac{\\tan\\phi'}{\\tan\\beta} \\approx \\frac{1}{2} \\frac{\\tan\\phi'}{\\tan\\beta} \\quad (\\text{Seepage})$$",
+                        "description": "Factor of safety against translational sliding along an infinite cohesionless slope of inclination $\\beta$ with soil friction angle $\\phi'$. Parallel surface seepage cuts stability by approximately 50%.",
+                        "examTip": "Found in Geotechnical Engineering. An unsaturated sand slope is inherently stable as long as slope angle $\\beta \\le \\phi'$."
+                },
+                {
+                        "title": "NRCS Rainfall-Runoff Curve Number Equation",
+                        "formula": "$$Q = \\frac{(P - 0.2 S)^2}{P + 0.8 S}, \\quad S = \\frac{1000}{CN} - 10$$",
+                        "description": "Predicts direct surface runoff depth $Q$ (inches) from total storm rainfall $P$ (inches) based on potential maximum soil retention $S$ governed by hydrologic soil group Curve Number ($CN$).",
+                        "examTip": "Found in Water Resources / Hydrology. Runoff only occurs when precipitation exceeds initial abstraction: $P > I_a = 0.2 S$."
+                },
+                {
+                        "title": "Specific Energy and Critical Flow in Open Channels",
+                        "formula": "$$E = y + \\frac{v^2}{2g} = y + \\frac{Q^2}{2 g A^2}, \\quad \\frac{Q^2 T}{g A^3} = Fr^2 = 1 \\implies y_c = \\sqrt[3]{\\frac{q^2}{g}}$$",
+                        "description": "Mechanical energy per unit weight of fluid relative to the channel bottom. At minimum specific energy for a given flow $Q$, flow is critical ($Fr = 1$); $Fr < 1$ is subcritical, $Fr > 1$ is supercritical.",
+                        "examTip": "Found in Fluid Mechanics / Water Resources. For rectangular channels: critical depth is $y_c = (q^2/g)^{1/3}$ and minimum energy is $E_{\\text{min}} = 1.5 y_c$."
+                },
+                {
+                        "title": "Hydraulic Jump Conjugate Depths (Belanger Equation)",
+                        "formula": "$$\\frac{y_2}{y_1} = \\frac{1}{2}\\left(\\sqrt{1 + 8 Fr_1^2} - 1\\right)$$",
+                        "description": "Relates initial upstream supercritical depth $y_1$ ($Fr_1 > 1$) to downstream subcritical conjugate depth $y_2$ across a stationary hydraulic jump in a horizontal rectangular channel.",
+                        "examTip": "Found in Water Resources. Head loss across the hydraulic jump is $h_L = (y_2 - y_1)^3 / (4 y_1 y_2)$."
+                },
+                {
+                        "title": "Sharp-Crested Rectangular and V-Notch Weirs",
+                        "formula": "$$Q_{\\text{rect}} = C_w L H^{3/2}, \\quad Q_{90^\\circ \\text{ V-notch}} = 2.49 H^{2.48} \\quad [\\text{USCS}]$$",
+                        "description": "Flow measurement structures in open channels where volumetric discharge $Q$ is calibrated against upstream liquid head $H$ above weir crest.",
+                        "examTip": "Found in Water Resources. For standard rectangular weir, $C_w \\approx 3.33$ in USCS units ($Q = 3.33 L H^{1.5}$)."
+                },
+                {
+                        "title": "Horizontal Circular Curve Geometry (Highway Design)",
+                        "formula": "$$R = \\frac{5729.58}{D}, \\quad T = R \\tan\\left(\\frac{I}{2}\\right), \\quad L = \\frac{\\pi R I}{180} = 100 \\left(\\frac{I}{D}\\right)$$",
+                        "description": "Fundamental relationships connecting degree of curvature $D$ (arc definition), radius $R$, tangent distance $T$, curve length $L$, and intersection deflection angle $I$.",
+                        "examTip": "Found in Transportation. Stationing progresses continuously: Station of Point of Curvature $PC = PI - T$, and Point of Tangency $PT = PC + L$ (never use $PI + T$!)."
+                },
+                {
+                        "title": "Horizontal Curve Superelevation and Side Friction",
+                        "formula": "$$R_{\\text{min}} = \\frac{V^2}{15 (0.01 e_{\\text{max}} + f_{\\text{max}})}$$",
+                        "description": "AASHTO minimum safe curve radius balancing centrifugal lateral acceleration against roadway superelevation banking $e$ [%] and tire-pavement side friction factor $f$.",
+                        "examTip": "Found in Transportation. Design speed $V$ must be entered in mph to yield radius $R_{\\text{min}}$ in feet."
+                },
+                {
+                        "title": "Parabolic Vertical Crest and Sag Curve Elevations",
+                        "formula": "$$y = y_{BVC} + g_1 x + \\left(\\frac{g_2 - g_1}{2 L}\\right) x^2, \\quad x_m = -\\frac{g_1 L}{g_2 - g_1}$$",
+                        "description": "Calculates roadway profile grade elevations along an equal-tangent vertical parabolic curve of length $L$ with initial grade $g_1$ and final grade $g_2$; $x_m$ locates high or low point.",
+                        "examTip": "Found in Transportation. Grades $g_1$ and $g_2$ must be expressed as decimals ($+4\\% = +0.04$) when using this formula, or divide by 100 consistently."
+                },
+                {
+                        "title": "Rate of Vertical Curvature ($K$-Value)",
+                        "formula": "$$K = \\frac{L}{|g_2 - g_1|} = \\frac{L}{A}$$",
+                        "description": "Horizontal distance required to effect a 1% change in roadway gradient, used directly in AASHTO design tables for stopping sight distance compliance on crest and sag curves.",
+                        "examTip": "Found in Transportation. Required vertical curve length is $L = K A$, where $A = |g_2 - g_1|$ is algebraic grade difference in percent."
+                },
+                {
+                        "title": "Greenshields Fundamental Traffic Stream Model",
+                        "formula": "$$q = k v = v_f k - \\frac{v_f}{k_j} k^2, \\quad q_{\\text{max}} = \\frac{v_f k_j}{4}$$",
+                        "description": "Relates traffic flow rate $q$ (veh/hr), density $k$ (veh/mi), and space-mean speed $v$ (mph). Maximum capacity $q_{\\text{max}}$ occurs at optimal speed $v_f/2$ and optimal density $k_j/2$.",
+                        "examTip": "Found in Transportation. Free-flow speed $v_f$ occurs when density approaches zero; jam density $k_j$ occurs when vehicles are completely stopped ($v = 0$)."
+                },
+                {
+                        "title": "Highway Peak Hour Factor (PHF)",
+                        "formula": "$$PHF = \\frac{V}{4 \\times V_{15}}$$",
+                        "description": "Measures traffic flow peaking within the peak hour by comparing total hourly volume $V$ against four times the maximum 15-minute volume rate $V_{15}$.",
+                        "examTip": "Found in Transportation. $PHF$ ranges between $0.25$ and $1.0$. Practical highway capacity calculations divide hourly volume by $PHF$ to account for surge conditions."
+                },
+                {
+                        "title": "Differential Leveling Height of Instrument Math",
+                        "formula": "$$HI = BM + BS, \\quad Elev = HI - FS$$",
+                        "description": "Establishes instrument line-of-sight elevation ($HI$) by adding backsight ($BS$) rod reading to known benchmark ($BM$), and determines new point elevations by subtracting foresight ($FS$).",
+                        "examTip": "Found in Surveying. Mathematical check for leveling loop closure: $\\sum BS - \\sum FS = \\text{Ending Elevation} - \\text{Starting Elevation}$."
+                },
+                {
+                        "title": "Compass Rule for Closed Traverse Balancing",
+                        "formula": "$$C_{\\text{Lat}} = -(\\text{Total Closure Error}) \\left(\\frac{L_i}{\\sum L}\\right), \\quad C_{\\text{Dep}} = -(\\text{Total Closure Error}) \\left(\\frac{L_i}{\\sum L}\\right)$$",
+                        "description": "Distributes linear misclosure error in a closed traverse across individual courses proportionally to their horizontal lengths $L_i$.",
+                        "examTip": "Found in Surveying. Latitude is along the north-south axis: $\\text{Lat} = L \\cos\\theta$; Departure is along east-west axis: $\\text{Dep} = L \\sin\\theta$."
+                },
+                {
+                        "title": "Earthwork Average End Area Volume Formula",
+                        "formula": "$$V = L \\left(\\frac{A_1 + A_2}{2}\\right) \\text{ [cu ft]} = \\frac{L}{27}\\left(\\frac{A_1 + A_2}{2}\\right) \\text{ [cu yd]}$$",
+                        "description": "Standard highway cut/fill earthwork calculation computing prism volume between two cross-sectional stations separated by distance $L$.",
+                        "examTip": "Found in Construction / Surveying. Always check units: divide cubic feet by $27$ to obtain cubic yards (the standard commercial billing unit)."
+                },
+                {
+                        "title": "Earthwork Prismoidal Correction Volume Formula",
+                        "formula": "$$V_p = \\frac{L}{6} (A_1 + 4 A_m + A_2)$$",
+                        "description": "Exact volumetric formula for earthwork prismoids where cross-sectional area changes nonlinearly between consecutive stations, using mid-section area $A_m$.",
+                        "examTip": "Found in Construction. $A_m$ is determined by averaging the linear cross-sectional dimensions of $A_1$ and $A_2$, NOT by taking $(A_1 + A_2)/2$."
+                },
+                {
+                        "title": "Total Float and Free Float in Activity Networks",
+                        "formula": "$$TF = LS - ES = LF - EF, \\quad FF = \\min(ES_{\\text{successors}}) - EF$$",
+                        "description": "Project scheduling metrics: Total Float ($TF$) is maximum delay an activity can suffer without delaying project completion; Free Float ($FF$) is delay without impacting early start of any successor.",
+                        "examTip": "Found in Construction Management / CPM. Activities lying on the critical path have zero total float ($TF = 0$)."
+                },
+                {
+                        "title": "Weir End Contraction Correction (Francis Formula)",
+                        "formula": "$$Q = 3.33 (L - 0.1 n H) H^{3/2} \\quad [\\text{USCS}]$$",
+                        "description": "Corrects effective crest length for end contractions in rectangular weirs, where $n = 2$ for full end contractions and $n = 0$ for suppressed weirs spanning channel width.",
+                        "examTip": "Found in Water Resources. Suppressed weirs have higher discharge capacity because side contraction eddy losses are eliminated."
+                },
+                {
+                        "title": "Hardy Cross Method for Water Pipe Distribution Networks",
+                        "formula": "$$\\Delta Q = -\\frac{\\sum r Q |Q|^{n-1}}{n \\sum r |Q|^{n-1}} = -\\frac{\\sum h_f}{n \\sum (h_f / Q)}$$",
+                        "description": "Iterative flow balance algorithm enforcing zero head loss around closed pipe loops ($sum h_f = 0$); $n = 1.852$ for Hazen-Williams, $n = 2.0$ for Darcy-Weisbach.",
+                        "examTip": "Found in Water Resources / Environmental. Follow clockwise vs counter-clockwise sign conventions meticulously when summing loop head losses."
+                },
+                {
+                        "title": "Culvert Flow Control Regimes (Inlet vs Outlet Control)",
+                        "formula": "$$HW_i = f\\left(\\frac{Q}{A D^{0.5}}\\right), \\quad HW_o = H + h_o - L S_0$$",
+                        "description": "Determines whether culvert hydraulic capacity is restricted at the barrel entrance (inlet control, high velocity shooting flow) or downstream friction/tailwater (outlet control).",
+                        "examTip": "Found in Water Resources. Always compute headwater depth for both regimes; the higher headwater elevation dictates actual operation."
+                },
+                {
+                        "title": "Soil Active and Passive Earth Pressure Forces",
+                        "formula": "$$P_a = \\frac{1}{2} K_a \\gamma H^2, \\quad P_p = \\frac{1}{2} K_p \\gamma H^2$$",
+                        "description": "Resultant triangular lateral earth pressure forces acting on retaining walls of height $H$ at distance $H/3$ above the base under Rankine active and passive conditions.",
+                        "examTip": "Found in Geotechnical. Surcharge load $q$ adds a uniform rectangular lateral pressure distribution: $\\Delta p = K_a q$."
+                },
+                {
+                        "title": "Boussinesq Vertical Stress Distribution from Point Loads",
+                        "formula": "$$\\Delta \\sigma_z = \\frac{3 P}{2\\pi z^2 \\left[1 + (r/z)^2\\right]^{5/2}} = \\frac{P}{z^2} I_B$$",
+                        "description": "Calculates vertical normal stress increase $\\Delta\\sigma_z$ at depth $z$ and radial distance $r$ within a semi-infinite, homogeneous, isotropic elastic soil mass carrying concentrated surface point load $P$.",
+                        "examTip": "Found in Geotechnical Engineering. Directly beneath the load point ($r = 0$), Boussinesq influence factor is $I_B = 3/(2\\pi) = 0.477$."
                 }
         ],
         "Electrical and Computer": [
@@ -909,6 +1704,444 @@
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Superposition Theorem for Linear Circuits",
+                        "formula": "$$v_{\\text{total}} = \\sum_{k=1}^N v_k, \\quad i_{\\text{total}} = \\sum_{k=1}^N i_k$$",
+                        "description": "In any linear circuit with multiple independent sources, the response (voltage or current) equals the algebraic sum of the responses caused by each independent source acting alone, with all other independent voltage sources shorted ($0\\text{ V}$) and current sources opened ($0\\text{ A}$).",
+                        "examTip": "Found in Circuit Analysis. Superposition does NOT apply to power calculations because power is nonlinear ($P \\propto V^2, I^2$)."
+                },
+                {
+                        "title": "Nodal Analysis and Supernodes",
+                        "formula": "$$\\sum I_{\\text{leaving node}} = 0, \\quad v_A - v_B = V_s$$",
+                        "description": "Systematic circuit solution method applying KCL at essential nodes. When an independent or dependent voltage source connects between two non-reference nodes, enclose the source in a supernode and apply KCL to the combined boundary.",
+                        "examTip": "Found in Circuit Analysis. A circuit with $n$ nodes requires $(n - 1)$ independent node voltage equations."
+                },
+                {
+                        "title": "Mesh Analysis and Supermeshes",
+                        "formula": "$$\\sum V_{\\text{around mesh}} = 0, \\quad i_2 - i_1 = I_s$$",
+                        "description": "Systematic planar circuit method applying KVL around internal mesh loops. When a current source lies on the boundary between two meshes, create a supermesh by bypassing the branch and writing a single combined KVL loop.",
+                        "examTip": "Found in Circuit Analysis. Mesh analysis is only valid for planar circuits (circuits that can be drawn without crossing wires)."
+                },
+                {
+                        "title": "Source Transformation for Equivalent Generators",
+                        "formula": "$$V_s = I_s R, \\quad I_s = \\frac{V_s}{R}$$",
+                        "description": "Allows substituting a practical voltage source ($V_s$ in series with $R$) with an equivalent practical current source ($I_s$ in parallel with identical resistance $R$) without altering terminal behavior.",
+                        "examTip": "Found in Circuit Analysis. The resistor value remains identical in both representations; only orientation changes."
+                },
+                {
+                        "title": "Delta-Wye ($Delta-\\text{Y}$) Resistive Transformation",
+                        "formula": "$$R_1 = \\frac{R_b R_c}{R_a + R_b + R_c}, \\quad R_2 = \\frac{R_a R_c}{R_a + R_b + R_c}, \\quad R_3 = \\frac{R_a R_b}{R_a + R_b + R_c}$$",
+                        "description": "Converts a three-terminal Delta ($\\Delta$) network into an equivalent Wye ($\\text{Y}$) network; each Wye resistor equals the product of adjacent Delta resistors divided by the sum of all three Delta resistors.",
+                        "examTip": "Found in Circuit Analysis. If all Delta resistors are equal ($R_\\Delta$), then each Wye resistor is simply $R_\\text{Y} = R_\\Delta / 3$."
+                },
+                {
+                        "title": "Wye-Delta ($\\text{Y}-\\Delta$) Resistive Transformation",
+                        "formula": "$$R_a = \\frac{R_1 R_2 + R_2 R_3 + R_3 R_1}{R_1}, \\quad R_b = \\frac{\\sum R_i R_j}{R_2}, \\quad R_c = \\frac{\\sum R_i R_j}{R_3}$$",
+                        "description": "Converts a three-terminal Wye ($\\text{Y}$) network into an equivalent Delta ($\\Delta$) network; each Delta resistor equals the sum of pairwise products of Wye resistors divided by the opposite Wye resistor.",
+                        "examTip": "Found in Circuit Analysis. If all Wye resistors are equal ($R_\\text{Y}$), then each Delta resistor is $R_\\Delta = 3 R_\\text{Y}$."
+                },
+                {
+                        "title": "Wheatstone Bridge Null Balance Condition",
+                        "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
+                        "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
+                        "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance."
+                },
+                {
+                        "title": "Maximum Power Transfer for AC Complex Impedance",
+                        "formula": "$$Z_L = Z_{th}^* = R_{th} - j X_{th}, \\quad P_{\\text{max}} = \\frac{|V_{th}|^2}{4 R_{th}}$$",
+                        "description": "Maximum average real power is delivered to a complex load impedance $Z_L$ when $Z_L$ is the complex conjugate of the Thévenin equivalent source impedance $Z_{th}$.",
+                        "examTip": "Found in Circuit Analysis. If the load is constrained to be purely resistive ($Z_L = R_L$), maximum power occurs when $R_L = |Z_{th}| = \\sqrt{R_{th}^2 + X_{th}^2}$."
+                },
+                {
+                        "title": "Inductive and Capacitive Reactance and Susceptance",
+                        "formula": "$$X_L = \\omega L = 2\\pi f L, \\quad X_C = -\\frac{1}{\\omega C}, \\quad B_L = -\\frac{1}{\\omega L}, \\quad B_C = \\omega C$$",
+                        "description": "Impedances in the phasor frequency domain: inductor impedance is $Z_L = j\\omega L = j X_L$; capacitor impedance is $Z_C = 1/(j\\omega C) = -j/(\\omega C) = j X_C$.",
+                        "examTip": "Found in AC Circuits. Inductors oppose rapid changes in current; capacitors oppose rapid changes in voltage."
+                },
+                {
+                        "title": "Complex Admittance and Admittance Triangle",
+                        "formula": "$$Y = \\frac{1}{Z} = G + j B, \\quad G = \\frac{R}{R^2 + X^2}, \\quad B = -\\frac{X}{R^2 + X^2}$$",
+                        "description": "Admittance $Y$ (in siemens, S) decomposes into conductance $G$ and susceptance $B$, simplifying parallel AC branch network calculations since parallel admittances add directly ($Y_{\\text{eq}} = \\sum Y_i$).",
+                        "examTip": "Found in AC Circuits. Notice the sign inversion: an inductive impedance ($+jX_L$) produces a negative susceptance ($-jB_L$)."
+                },
+                {
+                        "title": "Power Factor and Power Factor Angle",
+                        "formula": "$$pf = \\cos\\theta = \\frac{P}{|S|} = \\frac{P}{\\sqrt{P^2 + Q^2}}$$",
+                        "description": "Ratio of real working power $P$ (watts) to apparent power $|S|$ (volt-amperes). Power factor is lagging if current lags voltage (inductive load, $Q > 0$) and leading if current leads voltage (capacitive load, $Q < 0$).",
+                        "examTip": "Found in AC Circuits. Angle $\\theta = \\theta_v - \\theta_i$. Industrial utilities penalize low power factors (typically $pf < 0.90$)."
+                },
+                {
+                        "title": "Power Factor Correction Capacitor Sizing",
+                        "formula": "$$Q_C = P \\left(\\tan\\theta_1 - \\tan\\theta_2\\right), \\quad C = \\frac{Q_C}{\\omega V_{\\text{rms}}^2}$$",
+                        "description": "Calculates required reactive power rating $Q_C$ (in VARs) of parallel capacitors installed to raise load power factor from $\\cos\\theta_1$ to improved target $\\cos\\theta_2$ without changing real power $P$.",
+                        "examTip": "Found in AC Power. Real power $P$ is completely unaffected by adding parallel capacitors; only apparent power $|S|$ and total line current drop."
+                },
+                {
+                        "title": "Balanced Three-Phase Voltage Relations",
+                        "formula": "$$V_{LL} = \\sqrt{3} V_{LN} \\angle +30^\\circ \\quad (\\text{positive ABC sequence})$$",
+                        "description": "In a balanced Wye system, line-to-line voltage magnitude is $\\sqrt{3} \\approx 1.732$ times line-to-neutral phase voltage magnitude and leads it by $30^\\circ$.",
+                        "examTip": "Found in Power Systems. In standard US commercial distribution: $V_{LN} = 120\\text{ V} \\implies V_{LL} = 120\\sqrt{3} = 208\\text{ V}$; and $277\\text{ V} \\implies 480\\text{ V}$."
+                },
+                {
+                        "title": "Balanced Three-Phase Delta Current Relations",
+                        "formula": "$$I_{\\text{line}} = \\sqrt{3} I_{\\text{phase}} \\angle -30^\\circ$$",
+                        "description": "In a balanced Delta load, line current magnitude entering a terminal is $\\sqrt{3}$ times the internal phase current circulating inside the Delta branch and lags it by $30^\\circ$.",
+                        "examTip": "Found in Power Systems. Across a Delta connection, line-to-line voltage is identical to load phase voltage ($V_L = V_p$)."
+                },
+                {
+                        "title": "Balanced Three-Phase Complex Power Equations",
+                        "formula": "$$P_{3\\phi} = \\sqrt{3} V_L I_L \\cos\\theta, \\quad Q_{3\\phi} = \\sqrt{3} V_L I_L \\sin\\theta, \\quad |S_{3\\phi}| = \\sqrt{3} V_L I_L$$",
+                        "description": "Total three-phase real, reactive, and apparent power expressed in terms of line-to-line voltage $V_L$ and line current $I_L$, valid for both Wye- and Delta-connected balanced systems.",
+                        "examTip": "Found in Power Systems. Note: if using per-phase values, total power is $P_{3\\phi} = 3 V_p I_p \\cos\\theta$."
+                },
+                {
+                        "title": "Two-Wattmeter Method for Three-Phase Power",
+                        "formula": "$$P_{3\\phi} = W_1 + W_2, \\quad \\tan\\theta = \\sqrt{3} \\left(\\frac{W_1 - W_2}{W_1 + W_2}\\right)$$",
+                        "description": "Measures total real power and determines overall power factor in three-phase three-wire systems using two single-phase wattmeter readings $W_1$ and $W_2$.",
+                        "examTip": "Found in Power Systems. If $W_1 = W_2$, power factor is $1.0$ (purely resistive). If one wattmeter reads zero, $pf = 0.50$."
+                },
+                {
+                        "title": "Parallel RLC Resonant Frequency and Quality Factor",
+                        "formula": "$$\\omega_0 = \\frac{1}{\\sqrt{L C}}, \\quad Q = \\frac{R}{\\omega_0 L} = \\omega_0 R C, \\quad BW = \\frac{\\omega_0}{Q} = \\frac{1}{R C}$$",
+                        "description": "In a parallel RLC tank circuit, impedance reaches a maximum ($Z = R$) at resonance when inductive and capacitive branch currents cancel, with half-power bandwidth $BW$.",
+                        "examTip": "Found in AC Circuits. Notice that for parallel RLC, quality factor $Q$ is directly proportional to resistance $R$, the exact inverse of series RLC!"
+                },
+                {
+                        "title": "Mutual Inductance and Dot Convention",
+                        "formula": "$$v_1 = L_1 \\frac{di_1}{dt} \\pm M \\frac{di_2}{dt}, \\quad v_2 = \\pm M \\frac{di_1}{dt} + L_2 \\frac{di_2}{dt}, \\quad M = k \\sqrt{L_1 L_2}$$",
+                        "description": "Coupled magnetic coils where mutual inductance $M$ induces voltage in adjacent coils; mutually induced voltage is positive at dotted terminal if entering current enters the dot of the second coil.",
+                        "examTip": "Found in AC Circuits. Coupling coefficient $k$ satisfies $0 \\le k \\le 1$; for ideal transformers, $k = 1.0$."
+                },
+                {
+                        "title": "First-Order RL Circuit Transient Response",
+                        "formula": "$$i(t) = i(\\infty) + [i(0^+) - i(\\infty)] e^{-t / \\tau}, \\quad \\tau = \\frac{L}{R_{\\text{th}}}$$",
+                        "description": "Governs current through an inductor undergoing switching transient, characterized by time constant $\\tau = L/R_{\\text{th}}$. Inductor current cannot change instantaneously ($i(0^+) = i(0^-)$).",
+                        "examTip": "Found in Circuit Transients. After $5\\tau$, transient is $\\ge 99.3\\%$ complete, and the inductor acts as an ideal short circuit in DC steady state."
+                },
+                {
+                        "title": "Second-Order RLC Characteristic Roots and Damping",
+                        "formula": "$$s^2 + 2\\alpha s + \\omega_0^2 = 0, \\quad s_{1,2} = -\\alpha \\pm \\sqrt{\\alpha^2 - \\omega_0^2}$$",
+                        "description": "General differential characteristic equation for RLC circuits: for series RLC, attenuation factor is $\\alpha = R/(2L)$; for parallel RLC, $\\alpha = 1/(2RC)$; natural undamped frequency is $\\omega_0 = 1/\\sqrt{LC}$.",
+                        "examTip": "Found in Linear Systems / Circuits. Response regimes: $\\alpha > \\omega_0$ is overdamped; $\\alpha = \\omega_0$ is critically damped; $\\alpha < \\omega_0$ is underdamped (oscillatory)."
+                },
+                {
+                        "title": "Continuous-Time Convolution Integral",
+                        "formula": "$$y(t) = x(t) * h(t) = \\int_{-\\infty}^\\infty x(\\tau) h(t - \\tau) d\\tau$$",
+                        "description": "Computes output $y(t)$ of any continuous Linear Time-Invariant (LTI) system by convolving input signal $x(t)$ with system unit impulse response $h(t)$.",
+                        "examTip": "Found in Linear Systems / Signals. In the Laplace $s$-domain, convolution simplifies to basic algebraic multiplication: $Y(s) = X(s) H(s)$."
+                },
+                {
+                        "title": "Dirac Delta Impulse and Unit Step Integration",
+                        "formula": "$$\\delta(t) = \\frac{d u(t)}{dt}, \\quad u(t) = \\int_{-\\infty}^t \\delta(\\tau) d\\tau, \\quad \\int_{-\\infty}^\\infty f(t) \\delta(t - t_0) dt = f(t_0)$$",
+                        "description": "The unit impulse $\\delta(t)$ is the generalized derivative of the Heaviside step $u(t)$. The sifting property extracts signal value $f(t_0)$ at the impulse occurrence instant.",
+                        "examTip": "Found in Signals and Systems. Laplace transform of $\\delta(t)$ is simply $1$; Laplace transform of unit step $u(t)$ is $1/s$."
+                },
+                {
+                        "title": "Laplace Transform Time Differentiation Property",
+                        "formula": "$$\\mathcal{L}\\left\\{\\frac{df(t)}{dt}\\right\\} = s F(s) - f(0^-), \\quad \\mathcal{L}\\left\\{\\frac{d^2 f(t)}{dt^2}\\right\\} = s^2 F(s) - s f(0^-) - f'(0^-)$$",
+                        "description": "Transforms differential equations with initial conditions into simple algebraic polynomial equations in the complex frequency variable $s = \\sigma + j\\omega$.",
+                        "examTip": "Found in Linear Systems. Always ensure initial conditions ($f(0^-), f'(0^-)$) are evaluated immediately prior to switching."
+                },
+                {
+                        "title": "Laplace Transform Time Integration Property",
+                        "formula": "$$\\mathcal{L}\\left\\{\\int_{0^-}^t f(\\tau) d\\tau\\right\\} = \\frac{F(s)}{s}$$",
+                        "description": "Integration in time corresponds to division by $s$ in the Laplace frequency domain, which is the foundational mathematical basis for operational amplifier analog integrators.",
+                        "examTip": "Found in Linear Systems / Control. A factor of $1/s$ in a loop transfer function represents an ideal integrator adding $-90^\\circ$ phase lag."
+                },
+                {
+                        "title": "Laplace Transform Frequency Shift (Modulation) Property",
+                        "formula": "$$\\mathcal{L}\\left\\{e^{-a t} f(t)\\right\\} = F(s + a)$$",
+                        "description": "Multiplying a time-domain signal by an exponential decay $e^{-at}$ shifts its Laplace transform in the complex $s$-plane by $+a$.",
+                        "examTip": "Found in Linear Systems. For example: $\\mathcal{L}\\{\\cos\\omega t\\} = \\frac{s}{s^2 + \\omega^2} \\implies \\mathcal{L}\\{e^{-at}\\cos\\omega t\\} = \\frac{s+a}{(s+a)^2 + \\omega^2}$."
+                },
+                {
+                        "title": "Laplace Transform Time Delay Property",
+                        "formula": "$$\\mathcal{L}\\left\\{f(t - t_0) u(t - t_0)\\right\\} = e^{-s t_0} F(s)$$",
+                        "description": "Delaying a signal by time offset $t_0 > 0$ corresponds to multiplying its Laplace transform by the pure dead-time exponential phase term $e^{-s t_0}$.",
+                        "examTip": "Found in Signals / Process Control. Time delays produce phase lag that grows linearly with frequency without altering amplitude."
+                },
+                {
+                        "title": "Laplace Transform Initial Value Theorem",
+                        "formula": "$$\\lim_{t \\to 0^+} f(t) = \\lim_{s \\to \\infty} s F(s)$$",
+                        "description": "Evaluates initial condition of a signal immediately after $t = 0$ directly from its Laplace transform without computing inverse transform, valid when $F(s)$ is strictly proper.",
+                        "examTip": "Found in Linear Systems. Useful for finding initial transient capacitor voltages or inductor currents directly from transfer functions."
+                },
+                {
+                        "title": "Transfer Function Poles, Zeros, and BIBO Stability",
+                        "formula": "$$H(s) = \\frac{N(s)}{D(s)} = K \\frac{\\prod (s - z_i)}{\\prod (s - p_j)}$$",
+                        "description": "System roots of numerator $N(s)$ are transmission zeros; roots of denominator $D(s)$ are poles. A continuous LTI system is Bounded-Input Bounded-Output (BIBO) stable if and only if all poles lie strictly in the open left-half $s$-plane ($\\text{Re}(p_j) < 0$).",
+                        "examTip": "Found in Control Systems. A pole on the imaginary axis produces marginal/undamped sustained oscillations."
+                },
+                {
+                        "title": "Discrete-Time Z-Transform and Digital System Stability",
+                        "formula": "$$X(z) = \\sum_{n=-\\infty}^\\infty x[n] z^{-n}$$",
+                        "description": "Maps discrete-time sequence $x[n]$ into complex $z$-plane ($z = e^{s T}$). A discrete causal LTI system is BIBO stable if and only if all transfer function poles lie strictly inside the unit circle ($|p_k| < 1$).",
+                        "examTip": "Found in Digital Signal Processing. The discrete unit circle ($|z| = 1$) corresponds to the continuous imaginary axis ($s = j\\omega$)."
+                },
+                {
+                        "title": "Semiconductor Carrier Concentration and Mass Action Law",
+                        "formula": "$$n \\cdot p = n_i^2, \\quad n_i = B T^{3/2} \\exp\\left(-\\frac{E_g}{2 k T}\\right)$$",
+                        "description": "In thermal equilibrium, the product of electron concentration $n$ and hole concentration $p$ in a doped semiconductor equals the intrinsic carrier concentration squared ($n_i^2$).",
+                        "examTip": "Found in Electronics / Materials. For silicon at room temperature ($300\\text{ K}$), bandgap is $E_g \\approx 1.12\\text{ eV}$ and $n_i \\approx 1.5 \\times 10^{10}\\text{ cm}^{-3}$."
+                },
+                {
+                        "title": "Shockley Ideal Diode Equation",
+                        "formula": "$$I_D = I_s \\left(e^{\\frac{V_D}{n V_T}} - 1\\right), \\quad V_T = \\frac{k T}{q} \\approx 26\\text{ mV} \\quad (300\\text{ K})$$",
+                        "description": "Models exponential I-V relationship of a p-n junction diode under forward and reverse bias, where $I_s$ is reverse saturation current and $n$ is ideality factor ($1 \\le n \\le 2$).",
+                        "examTip": "Found in Electronics. Thermal voltage is $V_T = 25.9\\text{ mV} \\approx 26\\text{ mV}$ at $300\\text{ K}$. Forward voltage drops by $\\approx 2\\text{ mV}/^\\circ\\text{C}$ as temperature rises."
+                },
+                {
+                        "title": "Diode Small-Signal Dynamic Resistance",
+                        "formula": "$$r_d = \\left.\\frac{dV_D}{dI_D}\\right|_{Q} = \\frac{n V_T}{I_D}$$",
+                        "description": "The dynamic AC small-signal resistance of a forward-biased diode operating at DC bias operating quiescent current $I_D$.",
+                        "examTip": "Found in Electronics. For a standard silicon diode ($n=1$) operating at $I_D = 1\\text{ mA}$, dynamic resistance is $r_d = 26\\text{ mV} / 1\\text{ mA} = 26\\ \\Omega$."
+                },
+                {
+                        "title": "Half-Wave and Full-Wave Rectifier Filter Ripple Voltage",
+                        "formula": "$$V_{r(p-p)} = \\frac{I_{DC}}{f C} \\quad (\\text{Half-Wave}), \\quad V_{r(p-p)} = \\frac{I_{DC}}{2 f C} \\quad (\\text{Full-Wave})$$",
+                        "description": "Peak-to-peak AC ripple voltage remaining across smoothing capacitor $C$ discharging through DC load current $I_{DC}$; full-wave rectifiers halve ripple because frequency is doubled ($2f$).",
+                        "examTip": "Found in Electronics. For $60\\text{ Hz}$ AC line: full-wave ripple frequency is $120\\text{ Hz}$. Peak Inverse Voltage (PIV) for center-tapped full-wave is $2 V_m$; for bridge rectifier it is $V_m$."
+                },
+                {
+                        "title": "Zener Diode Shunt Voltage Regulator Design",
+                        "formula": "$$R_{s,\\text{max}} = \\frac{V_{in,\\text{min}} - V_Z}{I_{L,\\text{max}} + I_{ZK}}, \\quad R_{s,\\text{min}} = \\frac{V_{in,\\text{max}} - V_Z}{I_{L,\\text{min}} + I_{ZM}}$$",
+                        "description": "Establishes bounding resistance range for series current-limiting resistor $R_s$ to maintain Zener regulation between knee current $I_{ZK}$ and maximum thermal dissipation current $I_{ZM}$.",
+                        "examTip": "Found in Electronics. When load is disconnected ($I_L = 0$), all current passes through the Zener, requiring $P_Z = V_Z I_Z \\le P_{Z,\\text{rated}}$."
+                },
+                {
+                        "title": "BJT Common-Emitter DC Load Line and Operating Point",
+                        "formula": "$$I_C = -\\frac{1}{R_C} V_{CE} + \\frac{V_{CC}}{R_C}, \\quad V_{CE} = V_{CC} - I_C R_C$$",
+                        "description": "Linear constraint line superimposed on BJT collector output characteristics; intersection with base current curve $I_B$ establishes the DC quiescent operating Q-point $(V_{CEQ}, I_{CQ})$.",
+                        "examTip": "Found in Electronics. To achieve maximum unclipped symmetrical AC output voltage swing, design Q-point at midpoint: $V_{CEQ} = V_{CC} / 2$."
+                },
+                {
+                        "title": "BJT Small-Signal Hybrid-$\\pi$ Parameters",
+                        "formula": "$$g_m = \\frac{I_C}{V_T}, \\quad r_\\pi = \\frac{\\beta}{g_m} = \\frac{\\beta V_T}{I_C}, \\quad r_o = \\frac{V_A}{I_C}$$",
+                        "description": "Linearizes BJT active operation for small AC signals: transconductance $g_m$, input resistance looking into base $r_\\pi$, and output Early resistance $r_o$.",
+                        "examTip": "Found in Electronics. For $I_C = 1\\text{ mA}$ and $\\beta = 100$: $g_m = 1/26\\text{ A/V} \\approx 38.5\\text{ mA/V}$, and $r_\\pi = 100 \\times 26\\ \\Omega = 2.6\\text{ k}\\Omega$."
+                },
+                {
+                        "title": "Enhancement MOSFET Drain Current in Saturation",
+                        "formula": "$$I_D = \\frac{1}{2} k'_n \\left(\\frac{W}{L}\\right) (V_{GS} - V_{th})^2 (1 + \\lambda V_{DS})$$",
+                        "description": "Governs n-channel MOSFET drain current in pinch-off saturation region ($V_{DS} \\ge V_{GS} - V_{th}$ and $V_{GS} > V_{th}$), with process transconductance parameter $k'_n = \\mu_n C_{ox}$.",
+                        "examTip": "Found in Electronics. Overdrive voltage is $V_{ov} = V_{GS} - V_{th}$. Channel-length modulation factor $\\lambda$ models finite output resistance ($r_o = 1/(\\lambda I_D)$)."
+                },
+                {
+                        "title": "MOSFET Triode (Linear) Region Conduction",
+                        "formula": "$$I_D = k'_n \\left(\\frac{W}{L}\\right) \\left[(V_{GS} - V_{th}) V_{DS} - \\frac{1}{2} V_{DS}^2\\right] \\quad (V_{DS} < V_{GS} - V_{th})$$",
+                        "description": "Governs MOSFET channel conduction prior to pinch-off. For very small $V_{DS} \\ll 2(V_{GS} - V_{th})$, the channel acts as a voltage-controlled linear resistor.",
+                        "examTip": "Found in Electronics. Equivalent channel resistance in deep triode is $r_{DS} = 1 / [k'_n (W/L)(V_{GS} - V_{th})]$."
+                },
+                {
+                        "title": "MOSFET Small-Signal Transconductance",
+                        "formula": "$$g_m = k'_n \\left(\\frac{W}{L}\\right) (V_{GS} - V_{th}) = \\sqrt{2 k'_n \\left(\\frac{W}{L}\\right) I_D} = \\frac{2 I_D}{V_{GS} - V_{th}}$$",
+                        "description": "Small-signal gate-to-drain transconductance relating change in output drain current $i_d$ to input gate-to-source AC voltage $v_{gs}$ in saturation.",
+                        "examTip": "Found in Electronics. Doubling DC drain current $I_D$ increases MOSFET transconductance by factor $\\sqrt{2} \\approx 1.414$ (unlike BJT where $g_m$ doubles linearly)."
+                },
+                {
+                        "title": "Ideal Operational Amplifier Inverting Configuration",
+                        "formula": "$$A_v = \\frac{v_{out}}{v_{in}} = -\\frac{R_f}{R_1}, \\quad R_{in} = R_1$$",
+                        "description": "Closed-loop voltage gain with negative feedback where the inverting terminal is held at virtual ground ($v^- = 0\\text{ V}$), producing $180^\\circ$ phase inversion.",
+                        "examTip": "Found in Electronics. Input impedance is determined strictly by input resistor $R_1$, which can load high-impedance signal sources."
+                },
+                {
+                        "title": "Ideal Operational Amplifier Non-Inverting Configuration",
+                        "formula": "$$A_v = \\frac{v_{out}}{v_{in}} = 1 + \\frac{R_f}{R_1}, \\quad R_{in} \\approx \\infty$$",
+                        "description": "Non-inverting amplifier offering exceptionally high input impedance and gain always $\\ge 1$. For a voltage buffer/follower, $R_f = 0$ giving unity gain ($A_v = 1$).",
+                        "examTip": "Found in Electronics. Voltage buffers are ideal impedance isolators, preventing circuit stages from loading preceding sensors."
+                },
+                {
+                        "title": "Inverting Summing Operational Amplifier",
+                        "formula": "$$v_{out} = -R_f \\left(\\frac{v_1}{R_1} + \\frac{v_2}{R_2} + \\dots + \\frac{v_n}{R_n}\\right)$$",
+                        "description": "Produces an output voltage that is an inverted weighted linear algebraic summation of multiple independent input voltages.",
+                        "examTip": "Found in Electronics / Linear Systems. Foundational circuit for digital-to-analog converters (weighted-resistor DACs)."
+                },
+                {
+                        "title": "Operational Amplifier Difference (Differential) Amplifier",
+                        "formula": "$$v_{out} = \\frac{R_2}{R_1} (v_2 - v_1) \\quad \\left(\\text{when } \\frac{R_1}{R_2} = \\frac{R_3}{R_4}\\right)$$",
+                        "description": "Amplifies difference between two input signals while rejecting common-mode noise, widely deployed as instrumentation front-end.",
+                        "examTip": "Found in Electronics. Common Mode Rejection Ratio ($CMRR = |A_d / A_{cm}|$) is infinite for perfectly matched resistor ratios."
+                },
+                {
+                        "title": "Operational Amplifier Active Integrator",
+                        "formula": "$$v_{out}(t) = -\\frac{1}{R C} \\int_0^t v_{in}(\\tau) d\\tau + v_{out}(0)$$",
+                        "description": "Inverting op-amp configuration using a feedback capacitor $C$ to compute the mathematical time-integral of input voltage with scale factor $-1/(RC)$.",
+                        "examTip": "Found in Electronics. Transfer function is $H(s) = -1/(s R C)$. In practical analog circuits, a large parallel bleeder resistor $R_f$ prevents DC saturation."
+                },
+                {
+                        "title": "Op-Amp Gain-Bandwidth Product (GBW) Tradeoff",
+                        "formula": "$$GBW = A_{CL} \\times f_B = f_t = \\text{constant}$$",
+                        "description": "For internally compensated op-amps, the product of closed-loop voltage gain $A_{CL}$ and $-3\\text{ dB}$ closed-loop bandwidth $f_B$ is fixed at unity-gain frequency $f_t$.",
+                        "examTip": "Found in Electronics. Increasing amplifier closed-loop gain from $10$ to $100$ automatically reduces operating bandwidth by a factor of $10$."
+                },
+                {
+                        "title": "Op-Amp Slew Rate Full-Power Bandwidth",
+                        "formula": "$$SR = \\left.\\frac{dv_{out}}{dt}\\right|_{\\text{max}}, \\quad f_{\\text{max}} = \\frac{SR}{2\\pi V_p}$$",
+                        "description": "Maximum rate of output voltage change limited by internal compensation charging currents. Full-power bandwidth $f_{\\text{max}}$ is the maximum undistorted sine frequency for peak amplitude $V_p$.",
+                        "examTip": "Found in Electronics. If input signal requires $dv_{out}/dt > SR$, the output distorts into a triangular waveform."
+                },
+                {
+                        "title": "Gauss’s Law for Electric Fields and Flux",
+                        "formula": "$$\\Phi_E = \\oint_S \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{\\text{enclosed}}}{\\epsilon_0}$$",
+                        "description": "Net electric flux passing outward through any closed Gaussian surface $S$ is directly proportional to the total net enclosed electric charge $Q_{\\text{enc}}$.",
+                        "examTip": "Found in Electromagnetics. Ideal for calculating electric fields around highly symmetric charge geometries (spherical shells, infinite line charges, planar sheets)."
+                },
+                {
+                        "title": "Electric Field Gradient and Electrostatic Potential",
+                        "formula": "$$\\vec{E} = -\\nabla V = -\\left(\\frac{\\partial V}{\\partial x}\\hat{i} + \\frac{\\partial V}{\\partial y}\\hat{j} + \\frac{\\partial V}{\\partial z}\\hat{k}\\right)$$",
+                        "description": "Conservative electric field vector $\\vec{E}$ is the negative spatial gradient of scalar electrostatic voltage potential $V$; electric field vectors always point in the direction of steepest potential decrease.",
+                        "examTip": "Found in Electromagnetics. Work done moving charge $q$ between points is $W = -q \\int \\vec{E}\\cdot d\\vec{l} = q(V_A - V_B)$."
+                },
+                {
+                        "title": "Parallel-Plate Capacitor Capacitance and Energy Density",
+                        "formula": "$$C = \\frac{\\epsilon_r \\epsilon_0 A}{d}, \\quad u_E = \\frac{1}{2} \\epsilon |\\vec{E}|^2, \\quad W_E = \\frac{1}{2} C V^2$$",
+                        "description": "Capacitance of planar electrodes of area $A$ separated by dielectric distance $d$, storing electrostatic potential energy in the electric field with energy density $u_E$.",
+                        "examTip": "Found in Electromagnetics / Physics. Inserting a dielectric material ($\\epsilon_r > 1$) increases capacitance by factor $\\epsilon_r$."
+                },
+                {
+                        "title": "Energy Stored in Inductors and Magnetic Field Density",
+                        "formula": "$$W_M = \\frac{1}{2} L I^2, \\quad u_B = \\frac{1}{2\\mu} |\\vec{B}|^2 = \\frac{1}{2} \\vec{B} \\cdot \\vec{H}$$",
+                        "description": "Total magnetic energy stored in current-carrying inductor of inductance $L$, localized within the surrounding magnetic field volume with volumetric energy density $u_B$.",
+                        "examTip": "Found in Electromagnetics. Inductor current cannot drop to zero instantaneously because magnetic field energy cannot dissipate in zero time."
+                },
+                {
+                        "title": "Biot-Savart Law for Magnetic Fields",
+                        "formula": "$$d\\vec{B} = \\frac{\\mu_0 I}{4\\pi} \\frac{d\\vec{\\ell} \\times \\hat{r}}{r^2}, \\quad B = \\frac{\\mu_0 I}{2\\pi r} \\text{ (Long Straight Wire)}$$",
+                        "description": "Fundamental electromagnetic law computing differential magnetic flux density $d\\vec{B}$ generated at a field point by a differential current element $I d\\vec{\\ell}$.",
+                        "examTip": "Found in Electromagnetics. Magnetic field around a straight conductor forms concentric circular loops obeying the right-hand rule."
+                },
+                {
+                        "title": "Ampère’s Circuital Law with Maxwell’s Displacement Current",
+                        "formula": "$$\\oint_C \\vec{B} \\cdot d\\vec{\\ell} = \\mu_0 \\left(I_{\\text{enclosed}} + \\epsilon_0 \\frac{d\\Phi_E}{dt}\\right)$$",
+                        "description": "Line integral of magnetic field around closed contour $C$ equals permeability times total conduction current plus Maxwell's displacement current (time-varying electric flux).",
+                        "examTip": "Found in Electromagnetics. Displacement current explains how magnetic fields exist inside the insulating dielectric gap of charging capacitors."
+                },
+                {
+                        "title": "Lorentz Force Law on Moving Charges",
+                        "formula": "$$\\vec{F} = q \\left(\\vec{E} + \\vec{v} \\times \\vec{B}\\right)$$",
+                        "description": "Combined electromagnetic vector force acting on a particle carrying charge $q$ moving with velocity $\\vec{v}$ through electric field $\\vec{E}$ and magnetic field $\\vec{B}$.",
+                        "examTip": "Found in Electromagnetics. Magnetic force $\\vec{F}_B = q(\\vec{v} \\times \\vec{B})$ does zero mechanical work because force is always perpendicular to velocity vector $\\vec{v}$."
+                },
+                {
+                        "title": "Poynting Vector for Electromagnetic Power Flow",
+                        "formula": "$$\\vec{S} = \\vec{E} \\times \\vec{H}, \\quad P_{\\text{avg}} = \\frac{1}{2} \\text{Re}\\left(\\vec{E} \\times \\vec{H}^*\\right) \\text{ [W/m}^2\\text{]}$$",
+                        "description": "Represents instantaneous directional energy flux density (rate of energy transfer per unit area) carried by propagating electromagnetic waves.",
+                        "examTip": "Found in Electromagnetics. In a plane wave in free space, electric and magnetic fields are mutually perpendicular, and $\\vec{S}$ points in the direction of wave propagation."
+                },
+                {
+                        "title": "Intrinsic Wave Impedance in Lossless Media",
+                        "formula": "$$\\eta = \\sqrt{\\frac{\\mu}{\\epsilon}}, \\quad \\eta_0 = \\sqrt{\\frac{\\mu_0}{\\epsilon_0}} \\approx 120\\pi \\approx 377\\ \\Omega \\text{ (Free Space)}$$",
+                        "description": "Ratio of transverse electric field strength $E$ to magnetic field strength $H$ for a uniform plane electromagnetic wave propagating through a dielectric medium.",
+                        "examTip": "Found in Electromagnetics. Phase velocity in non-magnetic lossless dielectric is $v_p = 1 / \\sqrt{\\mu_0 \\epsilon_r \\epsilon_0} = c / \\sqrt{\\epsilon_r} = c / n$."
+                },
+                {
+                        "title": "Lossless Transmission Line Characteristic Impedance",
+                        "formula": "$$Z_0 = \\sqrt{\\frac{L}{C}}, \\quad v_p = \\frac{1}{\\sqrt{L C}} = \\frac{c}{\\sqrt{\\epsilon_r}}$$",
+                        "description": "Ratio of voltage wave to current wave traveling along an infinite or terminated transmission line with per-unit-length inductance $L$ and capacitance $C$.",
+                        "examTip": "Found in Electromagnetics. Standard coaxial cable characteristic impedance is $50\\ \\Omega$ (communications) or $75\\ \\Omega$ (video/cable television)."
+                },
+                {
+                        "title": "Transmission Line Voltage Reflection Coefficient",
+                        "formula": "$$\\Gamma = \\frac{Z_L - Z_0}{Z_L + Z_0}$$",
+                        "description": "Complex ratio of reflected voltage wave amplitude to incident voltage wave amplitude at load termination $Z_L$; $\\Gamma = 0$ when load is matched ($Z_L = Z_0$).",
+                        "examTip": "Found in Electromagnetics. Special cases: short circuit ($Z_L = 0$) gives $\\Gamma = -1$; open circuit ($Z_L = \\infty$) gives $\\Gamma = +1$."
+                },
+                {
+                        "title": "Voltage Standing Wave Ratio (VSWR)",
+                        "formula": "$$VSWR = \\frac{V_{\\text{max}}}{V_{\\text{min}}} = \\frac{1 + |\\Gamma|}{1 - |\\Gamma|}, \\quad |\\Gamma| = \\frac{VSWR - 1}{VSWR + 1}$$",
+                        "description": "Measure of impedance mismatch on a transmission line: $VSWR = 1.0$ corresponds to perfect match (no reflection); $VSWR = \\infty$ represents complete reflection (pure standing wave).",
+                        "examTip": "Found in Electromagnetics. In RF systems, typical acceptable threshold for antenna installations is $VSWR \\le 1.5$."
+                },
+                {
+                        "title": "Mason’s Gain Formula for Signal Flow Graphs",
+                        "formula": "$$T = \\frac{\\sum_k P_k \\Delta_k}{\\Delta}, \\quad \\Delta = 1 - \\sum L_i + \\sum L_i L_j - \\dots$$",
+                        "description": "Direct graph reduction formula computing closed-loop transfer function $T$ from forward paths $P_k$, graph determinant $\\Delta$, individual feedback loops $L_i$, and non-touching loop pairs.",
+                        "examTip": "Found in Control Systems. A loop and forward path are 'non-touching' if they share zero common state nodes."
+                },
+                {
+                        "title": "Steady-State Error and Control System Type Numbers",
+                        "formula": "$$e_{ss} = \\frac{1}{1 + K_p} \\text{ (step)}, \\quad e_{ss} = \\frac{1}{K_v} \\text{ (ramp)}, \\quad e_{ss} = \\frac{1}{K_a} \\text{ (parabola)}$$",
+                        "description": "Quantifies tracking precision of unity feedback control systems using position error constant $K_p = \\lim_{s\\to 0} G(s)$, velocity constant $K_v = \\lim_{s\\to 0} s G(s)$, and acceleration constant $K_a = \\lim_{s\\to 0} s^2 G(s)$.",
+                        "examTip": "Found in Control Systems. A Type 0 system has finite step error; Type 1 has zero step error and finite ramp error; Type 2 has zero step and zero ramp error."
+                },
+                {
+                        "title": "Second-Order Control System Step Response Overshoot",
+                        "formula": "$$\\text{Percent Overshoot (\\%OS)} = 100 \\exp\\left(-\\frac{\\pi \\zeta}{\\sqrt{1 - \\zeta^2}}\\right)$$",
+                        "description": "Direct nonlinear relationship between damping ratio $\\zeta$ and peak percentage overshoot of closed-loop second-order step response.",
+                        "examTip": "Found in Control Systems. Benchmark values to memorize: $\\zeta = 0.707 \\implies \\%OS \\approx 4.3\\%$; $\\zeta = 0.50 \\implies \\%OS \\approx 16.3\\%$."
+                },
+                {
+                        "title": "Second-Order Settling Time and Peak Time",
+                        "formula": "$$T_s = \\frac{4}{\\zeta \\omega_n} \\quad (2\\% \\text{ criterion}), \\quad T_p = \\frac{\\pi}{\\omega_d} = \\frac{\\pi}{\\omega_n \\sqrt{1 - \\zeta^2}}$$",
+                        "description": "Step response transient milestones: $T_s$ is time required for response to permanently settle within $\\pm 2\\%$ of final value; $T_p$ is elapsed time to reach peak maximum overshoot.",
+                        "examTip": "Found in Control Systems. Product $\\zeta \\omega_n = \\sigma$ represents the real part of the complex pole pair (distance from imaginary axis)."
+                },
+                {
+                        "title": "Bode Plot Gain Margin and Phase Margin",
+                        "formula": "$$GM = -20\\log_{10}|G(j\\omega_{pc})| \\text{ [dB]}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{gc})$$",
+                        "description": "Stability robustness metrics in frequency domain: phase crossover frequency $\\omega_{pc}$ occurs where $\\angle G = -180^\\circ$; gain crossover frequency $\\omega_{gc}$ occurs where $|G| = 1$ ($0\\text{ dB}$).",
+                        "examTip": "Found in Control Systems. Stable systems have both positive gain margin ($GM > 0\\text{ dB}$) and positive phase margin ($PM > 0^\\circ$)."
+                },
+                {
+                        "title": "Karnaugh Map (K-Map) Simplification Rules",
+                        "formula": "$$\\text{Group Size} = 2^k \\in \\{1, 2, 4, 8, 16\\}$$",
+                        "description": "Graphical tool using Gray code adjacency to identify and eliminate redundant Boolean literal variables by grouping adjacent 1s into powers of two.",
+                        "examTip": "Found in Digital Systems. Always wrap around outside edges (torus topology) and use don't care conditions ($X$) whenever they enlarge group sizes."
+                },
+                {
+                        "title": "Binary Full Adder Boolean Logic Expressions",
+                        "formula": "$$S = A \\oplus B \\oplus C_{in}, \\quad C_{out} = A B + C_{in}(A \\oplus B) = A B + B C_{in} + A C_{in}$$",
+                        "description": "Fundamental building block of arithmetic logic units (ALUs), generating single-bit sum $S$ and carry-out $C_{out}$ from input bits $A, B$ and carry-in $C_{in}$.",
+                        "examTip": "Found in Digital Systems. A half-adder only takes two inputs ($A, B$), lacking a carry-in ($S = A \\oplus B, C_{out} = A B$)."
+                },
+                {
+                        "title": "Synchronous Sequential Circuit Maximum Clock Frequency",
+                        "formula": "$$T_{\\text{clk}} \\ge t_{cq} + t_{\\text{comb}} + t_{\\text{setup}} \\implies f_{\\text{max}} = \\frac{1}{T_{\\text{clk}}}$$",
+                        "description": "Ensures data launched from flip-flop $1$ propagates through combinational logic and meets setup time requirement of receiving flip-flop $2$ before the next active clock edge.",
+                        "examTip": "Found in Computer Architecture / Digital Systems. Hold time constraint requires $t_{cq} + t_{\\text{comb,min}} \\ge t_{\\text{hold}}$ (independent of clock period)."
+                },
+                {
+                        "title": "CPU Execution Time and Performance Equation",
+                        "formula": "$$\\text{CPU Time} = I \\times CPI \\times T_{\\text{clk}} = \\frac{I \\times CPI}{f_{\\text{clk}}}$$",
+                        "description": "Iron law of computer processor performance combining instruction count $I$, average Cycles Per Instruction ($CPI$), and clock period $T_{\\text{clk}}$ (or frequency $f_{\\text{clk}}$).",
+                        "examTip": "Found in Computer Architecture. Modern pipelined and superscalar processors aim for $CPI \\le 1.0$ by overlapping instruction execution."
+                },
+                {
+                        "title": "Cache Memory Average Memory Access Time (AMAT)",
+                        "formula": "$$AMAT = t_{\\text{hit}} + MR \\times t_{\\text{miss}} = t_{\\text{hit}} + (1 - HR) \\times t_{\\text{penalty}}$$",
+                        "description": "Average time CPU takes to read or write a memory word, balancing fast cache hit latency $t_{\\text{hit}}$ against miss rate $MR = (1 - HR)$ and main memory miss penalty $t_{\\text{miss}}$.",
+                        "examTip": "Found in Computer Architecture. For two-level cache hierarchies: $AMAT = t_{L1} + MR_{L1}(t_{L2} + MR_{L2} \\times t_{\\text{memory}}).$"
+                },
+                {
+                        "title": "IPv4 CIDR Subnetting and Host Calculation",
+                        "formula": "$$N_{\\text{hosts}} = 2^{32 - \\text{CIDR}} - 2, \\quad N_{\\text{subnets}} = 2^{\\text{borrowed bits}}$$",
+                        "description": "Calculates usable host IP addresses in an IPv4 network prefix /CIDR; two addresses are reserved (all zeros for network ID, all ones for directed broadcast).",
+                        "examTip": "Found in Computer Networks. For a /24 subnet: $2^{32-24} - 2 = 256 - 2 = 254$ usable hosts; subnet mask is $255.255.255.0$."
+                },
+                {
+                        "title": "Cyclic Redundancy Check (CRC) Error Detection",
+                        "formula": "$$\\frac{M(x) \\cdot x^r}{G(x)} = Q(x) + \\frac{R(x)}{G(x)}$$",
+                        "description": "Polynomial modulo-2 division error-detecting code where message polynomial $M(x)$ is padded by degree $r$ and divided by generator polynomial $G(x)$; remainder $R(x)$ forms the transmitted checksum.",
+                        "examTip": "Found in Computer Networks. If transmitted frame arrives without bit errors, modulo-2 division at receiver yields exactly zero remainder."
+                },
+                {
+                        "title": "Mealy vs Moore Finite State Machine (FSM) Models",
+                        "formula": "$$\\text{Moore: } Y = f(S), \\quad \\text{Mealy: } Y = g(S, X)$$",
+                        "description": "Moore FSM outputs depend solely on current internal state $S$ (synchronous with clock); Mealy FSM outputs depend on both current state $S$ and current inputs $X$ (reacts faster, but prone to input glitches).",
+                        "examTip": "Found in Digital Systems. Moore machines typically require more states than equivalent Mealy machines to implement the same sequential control specification."
+                },
+                {
+                        "title": "Static CMOS Inverter Noise Margins",
+                        "formula": "$$NM_L = V_{IL} - V_{OL}, \\quad NM_H = V_{OH} - V_{IH}$$",
+                        "description": "Measures electrical noise immunity in digital logic gates: low noise margin $NM_L$ is maximum allowable input low noise before gate misinterprets state; high noise margin $NM_H$ is high noise tolerance.",
+                        "examTip": "Found in Computer Engineering. In ideal complementary CMOS, $V_{OL} = 0\\text{ V}$ and $V_{OH} = V_{DD}$, providing exceptionally wide noise margins."
+                },
+                {
+                        "title": "Euler’s Identity and Sinusoidal Phasor Transform",
+                        "formula": "$$e^{j\\theta} = \\cos\\theta + j\\sin\\theta, \\quad A\\cos(\\omega t + \\phi) \\longleftrightarrow \\vec{V} = A \\angle \\phi = A e^{j\\phi}$$",
+                        "description": "Transforms steady-state sinusoidal time-domain signals into static frequency-domain complex vectors (phasors), reducing differential circuit equations to linear algebraic Ohm's law relationships.",
+                        "examTip": "Found in AC Circuits. Multiplying a phasor by $j$ corresponds to an exact $+90^\\circ$ leading phase shift (quarter-period rotation in the complex plane)."
                 }
         ],
         "Chemical": [
@@ -1241,6 +2474,342 @@
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Fundamental Thermodynamic Property Relations and Maxwell Relations",
+                        "formula": "$$dG = V dP - S dT, \\quad \\left(\\frac{\\partial V}{\\partial T}\\right)_P = -\\left(\\frac{\\partial S}{\\partial P}\\right)_T$$",
+                        "description": "Relates Gibbs free energy $G$ to state variables $P$ and $T$, yielding Maxwell's relations that connect unmeasurable entropy derivatives to measurable $P-V-T$ experimental data.",
+                        "examTip": "Found in Chemical Engineering Thermodynamics. Memorize $dG = V dP - S dT$ and $dH = V dP + T dS$ for closed systems of constant composition."
+                },
+                {
+                        "title": "Chemical Potential as the Criterion for Phase Equilibrium",
+                        "formula": "$$\\mu_i = \\left(\\frac{\\partial G}{\\partial n_i}\\right)_{T, P, n_{j \\ne i}}, \\quad \\mu_i^\\alpha = \\mu_i^\\beta = \\dots = \\mu_i^\\pi$$",
+                        "description": "For any multi-component, multi-phase closed system at uniform temperature and pressure, phase equilibrium is achieved when the chemical potential $\\mu_i$ of each component is equal in all coexisting phases.",
+                        "examTip": "Found in Thermodynamics. Difference in chemical potential is the fundamental driving force for chemical mass transfer and phase change."
+                },
+                {
+                        "title": "Fugacity and Fugacity Coefficient in Real Gases",
+                        "formula": "$$f_i = \\phi_i P, \\quad \\ln\\phi = \\int_0^P \\frac{Z - 1}{P} dP \\quad (\\text{const } T)$$",
+                        "description": "Fugacity $f$ acts as an effective thermodynamic pressure accounting for non-ideal molecular interactions; fugacity coefficient $\\phi \\to 1$ as pressure approaches zero.",
+                        "examTip": "Found in Chemical Thermodynamics. Phase equilibrium between liquid and vapor requires equal component fugacities: $f_i^L = f_i^V$."
+                },
+                {
+                        "title": "Modified Raoult’s Law for Non-Ideal Liquid Mixtures",
+                        "formula": "$$y_i P = x_i \\gamma_i P_i^{\\text{sat}}(T)$$",
+                        "description": "Extends ideal VLE to non-ideal liquid mixtures by introducing liquid-phase activity coefficient $\\gamma_i$; positive deviations ($\\gamma_i > 1$) indicate repulsive intermolecular forces, often causing minimum-boiling azeotropes.",
+                        "examTip": "Found in Chemical Engineering. When liquid is ideal ($\\gamma_i = 1$), the equation reduces to classical Raoult's law."
+                },
+                {
+                        "title": "Margules Two-Parameter Activity Coefficient Model",
+                        "formula": "$$\\ln\\gamma_1 = x_2^2 [A_{12} + 2(A_{21} - A_{12})x_1], \\quad \\ln\\gamma_2 = x_1^2 [A_{21} + 2(A_{12} - A_{21})x_2]$$",
+                        "description": "Models excess Gibbs free energy $G^E$ in non-ideal binary liquid solutions using empirical parameters $A_{12}$ and $A_{21}$ derived from infinite dilution data ($\\ln\\gamma_1^\\infty = A_{12}$).",
+                        "examTip": "Found in Chemical Thermodynamics. If $A_{12} = A_{21} = A$ (symmetric system), $\\ln\\gamma_1 = A x_2^2$ and $\\ln\\gamma_2 = A x_1^2$."
+                },
+                {
+                        "title": "Van Laar Binary Activity Coefficient Equations",
+                        "formula": "$$\\ln\\gamma_1 = \\frac{A'_{12}}{\\left(1 + \\frac{A'_{12} x_1}{A'_{21} x_2}\\right)^2}, \\quad \\ln\\gamma_2 = \\frac{A'_{21}}{\\left(1 + \\frac{A'_{21} x_2}{A'_{12} x_1}\\right)^2}$$",
+                        "description": "Thermodynamic model for binary liquid solutions accounting for disparate molecular sizes; parameters $A'_{12}$ and $A'_{21}$ are the infinite dilution log activity coefficients.",
+                        "examTip": "Found in Chemical Thermodynamics. Easily rearranged to find parameters directly from a single experimental azeotrope data point."
+                },
+                {
+                        "title": "Gibbs-Duhem Thermodynamic Consistency Equation",
+                        "formula": "$$\\sum_{i=1}^C x_i d\\ln\\gamma_i = 0 \\quad (\\text{const } T, P) \\implies x_1 \\frac{d\\ln\\gamma_1}{dx_1} + x_2 \\frac{d\\ln\\gamma_2}{dx_1} = 0$$",
+                        "description": "Fundamental differential constraint relating activity coefficients of all components in a solution; used to test experimental vapor-liquid equilibrium (VLE) datasets for thermodynamic consistency.",
+                        "examTip": "Found in Chemical Thermodynamics. If experimental binary data violates the Gibbs-Duhem area test, the measurements contain systematic experimental errors."
+                },
+                {
+                        "title": "Van ’t Hoff Equation for Chemical Equilibrium Constants",
+                        "formula": "$$\\frac{d\\ln K_{eq}}{dT} = \\frac{\\Delta H_{\\text{rxn}}^\\circ}{R T^2} \\implies \\ln\\left(\\frac{K_2}{K_1}\\right) = -\\frac{\\Delta H_{\\text{rxn}}^\\circ}{R}\\left(\\frac{1}{T_2} - \\frac{1}{T_1}\\right)$$",
+                        "description": "Predicts temperature dependence of chemical equilibrium constant $K_{eq}$: for endothermic reactions ($\\Delta H^circ > 0$), raising temperature increases $K_{eq}$; for exothermic reactions ($\\Delta H^circ < 0$), raising temperature decreases $K_{eq}$.",
+                        "examTip": "Found in Chemical Reaction Engineering / Thermodynamics. Plotting $\\ln K$ vs $1/T$ produces a linear van 't Hoff plot with slope $-\\Delta H^circ / R$."
+                },
+                {
+                        "title": "Redlich-Kwong Cubic Equation of State",
+                        "formula": "$$P = \\frac{R T}{v - b} - \\frac{a}{\\sqrt{T} v (v + b)}, \\quad a = 0.42748 \\frac{R^2 T_c^{2.5}}{P_c}, \\quad b = 0.08664 \\frac{R T_c}{P_c}$$",
+                        "description": "Two-parameter cubic equation of state significantly more accurate than van der Waals for real gas and vapor behavior up to high pressures, with parameters evaluated at the critical point.",
+                        "examTip": "Found in Chemical Thermodynamics. Parameter $b$ represents molar co-volume of molecules; parameter $a$ represents intermolecular attractive forces."
+                },
+                {
+                        "title": "Peng-Robinson Cubic Equation of State",
+                        "formula": "$$P = \\frac{R T}{v - b} - \\frac{a(T)}{v(v + b) + b(v - b)}, \\quad a(T) = 0.45724 \\frac{R^2 T_c^2}{P_c} \\alpha(T_r, \\omega)$$",
+                        "description": "Industry standard cubic equation of state in oil, gas, and petrochemical design; incorporates Pitzer acentric factor $\\omega$ in function $\\alpha$ for precise liquid density and VLE predictions.",
+                        "examTip": "Found in Chemical Engineering. Most simulation packages (Aspen, HYSYS) default to Peng-Robinson for hydrocarbon vapor-liquid equilibria."
+                },
+                {
+                        "title": "Virial Equation of State for Moderately Dense Gases",
+                        "formula": "$$Z = \\frac{P v}{R T} = 1 + \\frac{B(T)}{v} + \\frac{C(T)}{v^2} = 1 + B'(T) P + C'(T) P^2$$",
+                        "description": "The only equation of state with a rigorous theoretical foundation in statistical mechanics; virial coefficient $B(T)$ quantifies two-body intermolecular interactions, while $C(T)$ quantifies three-body collisions.",
+                        "examTip": "Found in Chemical Thermodynamics. Truncated at second virial coefficient ($Z = 1 + B P / (R T)$), it provides accurate low-pressure real gas calculations."
+                },
+                {
+                        "title": "Enthalpy and Entropy Residual Departure Functions",
+                        "formula": "$$H^R = H - H^{\\text{ig}} = \\int_0^P \\left[V - T\\left(\\frac{\\partial V}{\\partial T}\\right)_P\\right] dP$$",
+                        "description": "Difference between real fluid property $(H, S)$ and ideal gas property $(H^{\\text{ig}}, S^{\\text{ig}})$ at the same temperature and pressure, enabling thermodynamic tables from equations of state.",
+                        "examTip": "Found in Chemical Thermodynamics. For an ideal gas, all residual departure properties are identically zero ($H^R = 0, S^R = 0$)."
+                },
+                {
+                        "title": "Azeotropic Equilibrium Conditions in Binary Systems",
+                        "formula": "$$x_1 = y_1, \\quad x_2 = y_2, \\quad \\alpha_{12} = 1, \\quad \\frac{P_1^{\\text{sat}}}{P_2^{\\text{sat}}} = \\frac{\\gamma_2}{\\gamma_1}$$",
+                        "description": "At an azeotropic composition, vapor and liquid equilibrium phases have identical compositions, preventing separation by conventional single-column fractional distillation.",
+                        "examTip": "Found in Chemical Engineering / Separations. Relative volatility $\\alpha_{12} = 1.0$ at the azeotrope; breaking an azeotrope requires pressure-swing distillation, extractive distillation, or entrainers."
+                },
+                {
+                        "title": "Standard Heat of Reaction from Heats of Formation",
+                        "formula": "$$\\Delta H_{\\text{rxn}}^\\circ = \\sum_{i} \\nu_i \\Delta H_{f, i}^\\circ = \\sum (\\nu_i \\Delta H_f^\\circ)_{\\text{products}} - \\sum (|\\nu_i| \\Delta H_f^\\circ)_{\\text{reactants}}$$",
+                        "description": "Calculates standard enthalpy change of reaction at $25^\\circ\\text{C}$ ($298\\text{ K}$) using stoichiometric coefficients $\\nu_i$ (positive for products, negative for reactants) and standard heats of formation.",
+                        "examTip": "Found in Material and Energy Balances. Elements in their reference elemental states at standard temperature and pressure have $\\Delta H_f^circ = 0$ by definition."
+                },
+                {
+                        "title": "Adiabatic Flame Temperature Calculation",
+                        "formula": "$$\\Delta H_{\\text{rxn}}^circ(T_{\\text{ref}}) + \\sum_{\\text{products}} n_i \\int_{T_{\\text{ref}}}^{T_{\\text{ad}}} C_{p, i}(T) dT = 0$$",
+                        "description": "Theoretical maximum temperature attained by combustion products when a fuel burns completely in an insulated combustor with zero heat loss ($\\dot{Q} = 0$) and zero shaft work ($\\dot{W} = 0$).",
+                        "examTip": "Found in Material and Energy Balances. Operating with excess air increases mass of flue gas products ($N_2, O_2$), lowering the adiabatic flame temperature."
+                },
+                {
+                        "title": "Single-Pass Conversion vs Overall Process Conversion",
+                        "formula": "$$X_{\\text{single-pass}} = \\frac{n_{\\text{in, reactor}} - n_{\\text{out, reactor}}}{n_{\\text{in, reactor}}}, \\quad X_{\\text{overall}} = \\frac{n_{\\text{fresh feed}} - n_{\\text{final output}}}{n_{\\text{fresh feed}}}$$",
+                        "description": "Distinguishes reaction extent across the reactor unit alone ($X_{\\text{SP}}$) from total extent across the entire plant flowsheet ($X_{\\text{OV}}$) featuring recycle streams.",
+                        "examTip": "Found in Material Balances. With recycle, overall conversion can reach $99\\%$ even if single-pass conversion through the reactor is only $20\\%$."
+                },
+                {
+                        "title": "Recycle Ratio and Purge Fraction Material Balance",
+                        "formula": "$$R = \\frac{\\text{Recycle Flow}}{\\text{Fresh Feed Flow}}, \\quad f_{\\text{purge}} = \\frac{\\text{Purge Flow}}{\\text{Recycle + Purge}}$$",
+                        "description": "Purge streams prevent buildup of inert non-reactive impurities in chemical recycle loops; at steady state, inerts removed in purge must exactly equal inerts entering in fresh feed.",
+                        "examTip": "Found in Material Balances. Inerts entering with fresh feed = inerts leaving in purge stream: $F_{\\text{fresh}} x_{\\text{inert, feed}} = P_{\\text{purge}} x_{\\text{inert, recycle}}$."
+                },
+                {
+                        "title": "Extent of Reaction Definition ($\\xi$)",
+                        "formula": "$$n_i = n_{i0} + \\nu_i \\xi \\implies \\xi = \\frac{n_i - n_{i0}}{\\nu_i}$$",
+                        "description": "Single scalar parameter $\\xi$ (moles) quantifying progress of a chemical reaction, tracking molar amounts of all participating species based on their stoichiometric coefficients $\\nu_i$.",
+                        "examTip": "Found in Material Balances. In multiple reactions: $n_i = n_{i0} + \\sum_j \\nu_{ij} \\xi_j$, simplifying multi-reaction molar accounting."
+                },
+                {
+                        "title": "Watson’s Correlation for Latent Heat of Vaporization",
+                        "formula": "$$\\frac{\\Delta H_{v2}}{\\Delta H_{v1}} = \\left(\\frac{1 - T_{r2}}{1 - T_{r1}}\\right)^{0.38}, \\quad T_r = \\frac{T}{T_c}$$",
+                        "description": "Extrapolates heat of vaporization $\\Delta H_v$ of a pure substance to any desired temperature $T_2$ from known latent heat at normal boiling point $T_1$ using reduced temperatures $T_r$.",
+                        "examTip": "Found in Chemical Thermodynamics. As temperature approaches critical temperature ($T_r \\to 1$), latent heat of vaporization vanishes to zero."
+                },
+                {
+                        "title": "Unsteady-State Mass Balance for Mixing Vessels",
+                        "formula": "$$\\frac{dm_{\\text{sys}}}{dt} = \\sum \\dot{m}_{in} - \\sum \\dot{m}_{out}, \\quad \\frac{d(V C_A)}{dt} = Q_{in} C_{A, in} - Q_{out} C_{A} + r_A V$$",
+                        "description": "General differential mass conservation equation for non-steady accumulation in liquid and gas process vessels with chemical reaction.",
+                        "examTip": "Found in Material Balances. For constant vessel volume ($V = \\text{const}, Q_{in} = Q_{out} = Q$): $V \\frac{dC_A}{dt} = Q(C_{A, in} - C_A) + r_A V$."
+                },
+                {
+                        "title": "Unsteady-State Thermal Energy Balance for Well-Mixed Tanks",
+                        "formula": "$$m C_p \\frac{dT}{dt} = \\dot{m} C_p (T_{in} - T) + \\dot{Q} - \\dot{W}_s + V \\sum r_j (-\\Delta H_{rxn, j})$$",
+                        "description": "First law differential energy balance for dynamic stirred tank reactors predicting temperature transient $T(t)$ during startup, cooling jacket failure, or runaway reactions.",
+                        "examTip": "Found in Process Control / Reaction Engineering. For an exothermic reaction, the heat generation term is positive ($-\\Delta H_{rxn} > 0$)."
+                },
+                {
+                        "title": "Laminar Falling Film Flow Velocity Profile",
+                        "formula": "$$v_z(x) = \\frac{\\rho g \\delta^2 \\cos\\beta}{2 \\mu}\\left[1 - \\left(\\frac{x}{\\delta}\\right)^2\\right], \\quad Q = \\frac{\\rho g W \\delta^3 \\cos\\beta}{3 \\mu}$$",
+                        "description": "Parabolic laminar velocity distribution in a liquid film of thickness $\\delta$ flowing down a flat plate inclined at angle $\\beta$ with zero shear stress at the gas-liquid interface ($x=0$).",
+                        "examTip": "Found in Transport Phenomena / Fluid Mechanics. Volumetric flow rate $Q$ scales with the cube of film thickness ($\\delta^3$)."
+                },
+                {
+                        "title": "Non-Newtonian Ostwald-de Waele Power-Law Fluids",
+                        "formula": "$$\\tau = K \\dot{\\gamma}^n = K \\left|\\frac{du}{dy}\\right|^n, \\quad \\mu_{\\text{eff}} = K \\dot{\\gamma}^{n - 1}$$",
+                        "description": "Constitutive equation for non-Newtonian shear behavior: $n < 1$ is pseudoplastic (shear-thinning, polymers/slurries); $n = 1$ is Newtonian; $n > 1$ is dilatant (shear-thickening, starch suspensions).",
+                        "examTip": "Found in Chemical Fluid Mechanics. For shear-thinning fluids, apparent viscosity $\\mu_{\\text{eff}}$ decreases as shear rate $\\dot{\\gamma}$ increases."
+                },
+                {
+                        "title": "Bingham Plastic Yield Stress Fluids",
+                        "formula": "$$\\tau = \\tau_y + \\mu_p \\left(\\frac{du}{dy}\\right) \\quad (|\\tau| \\ge \\tau_y), \\quad \\frac{du}{dy} = 0 \\quad (|\\tau| < \\tau_y)$$",
+                        "description": "Models viscoplastic materials (toothpaste, drilling mud, sewage sludge) that behave as rigid solid plugs below yield stress $\\tau_y$ and flow as linear viscous fluids once yield stress is exceeded.",
+                        "examTip": "Found in Chemical Fluid Dynamics. In pipe flow, Bingham plastics form a central solid plug zone where shear stress is below $\\tau_y$."
+                },
+                {
+                        "title": "Two-Phase Pipe Flow Lockhart-Martinelli Parameter",
+                        "formula": "$$\\chi^2 = \\frac{(\\Delta P / L)_L}{(\\Delta P / L)_G}, \\quad \\phi_L^2 = \\frac{(\\Delta P / L)_{\\text{two-phase}}}{(\\Delta P / L)_L} = 1 + \\frac{C}{\\chi} + \\frac{1}{\\chi^2}$$",
+                        "description": "Correlates two-phase simultaneous gas-liquid pipe pressure gradient using single-phase liquid and gas pressure drops, where constant $C$ depends on flow regimes (turbulent-turbulent: $C = 20$).",
+                        "examTip": "Found in Chemical Process Piping. Two-phase flow pressure drops are substantially higher than single-phase liquid or gas flows alone."
+                },
+                {
+                        "title": "Sonic Choked Mass Flow of Ideal Gas through Orifice",
+                        "formula": "$$\\dot{m}_{\\text{choke}} = C_d A_t P_0 \\sqrt{\\frac{k M}{R T_0}\\left(\\frac{2}{k + 1}\\right)^{\\frac{k + 1}{k - 1}}}$$",
+                        "description": "Maximum mass discharge through a nozzle or relief valve rupture when pressure ratio falls below critical sonic ratio ($P / P_0 \\le 0.528$ for air); mass flow becomes independent of downstream backpressure.",
+                        "examTip": "Found in Process Safety / Fluids. Essential for sizing emergency pressure relief valves (PRVs) protecting chemical reactors from overpressurization."
+                },
+                {
+                        "title": "Terminal Settling Velocity in Newton’s Law Drag Regime",
+                        "formula": "$$v_t = 1.74 \\sqrt{\\frac{g d_p (\\rho_p - \\rho)}{\\rho}} \\quad (10^3 < Re_p < 2 \\times 10^5)$$",
+                        "description": "Terminal gravity settling velocity for coarse spherical particles in turbulent fluid flow where drag coefficient is constant ($C_D \\approx 0.44$), in contrast to laminar Stokes' regime.",
+                        "examTip": "Found in Solids Handling / Separations. In Newton's regime, terminal velocity is proportional to $\\sqrt{d_p}$; in Stokes' regime, it is proportional to $d_p^2$."
+                },
+                {
+                        "title": "Heat Exchanger Effectiveness-NTU Method ($epsilon$-NTU)",
+                        "formula": "$$\\epsilon = \\frac{q}{q_{\\text{max}}} = \\frac{C_h (T_{h,in} - T_{h,out})}{C_{\\text{min}}(T_{h,in} - T_{c,in})}, \\quad NTU = \\frac{U A}{C_{\\text{min}}}$$",
+                        "description": "Analyzes heat exchangers when outlet temperatures are unknown; effectiveness $\\epsilon$ is actual heat transfer rate divided by maximum thermodynamic heat transfer achievable in a counter-current exchanger of infinite area.",
+                        "examTip": "Found in Heat Transfer. Heat capacity rates are $C_h = \\dot{m}_h c_{p,h}$ and $C_c = \\dot{m}_c c_{p,c}$; $C_{\\text{min}} = \\min(C_h, C_c)$."
+                },
+                {
+                        "title": "Sieder-Tate Laminar Heat Transfer Correlation",
+                        "formula": "$$Nu_D = 1.86 \\left(Re_D Pr \\frac{D}{L}\\right)^{1/3} \\left(\\frac{\\mu}{\\mu_w}\\right)^{0.14}$$",
+                        "description": "Computes average Nusselt number for developing laminar flow inside tubes, incorporating fluid viscosity ratio $(\\mu/\\mu_w)$ to correct for steep temperature gradients near the wall.",
+                        "examTip": "Found in Heat Transfer. Combined parameter $(Re Pr D/L)$ is the Graetz number ($Gz$)."
+                },
+                {
+                        "title": "Nusselt Film Condensation on Vertical Plates and Tubes",
+                        "formula": "$$\\bar{h} = 0.943 \\left[\\frac{g \\rho_L (\\rho_L - \\rho_v) k_L^3 h'_{fg}}{\\mu_L L (T_{\\text{sat}} - T_s)}\\right]^{1/4}$$",
+                        "description": "Theoretically predicts average heat transfer coefficient for laminar film condensation of saturated vapor on vertical surfaces; heat transfer is throttled by thermal conduction through the draining liquid film.",
+                        "examTip": "Found in Heat Transfer. Modified latent heat of vaporization is $h'_{fg} = h_{fg} + 0.68 c_{p,L} (T_{\\text{sat}} - T_s)$."
+                },
+                {
+                        "title": "Zuber Critical Heat Flux (CHF) in Nucleate Pool Boiling",
+                        "formula": "$$q''_{\\text{max}} = 0.149 \\rho_v^{1/2} h_{fg} \\left[\\sigma g (\\rho_L - \\rho_v)\\right]^{1/4}$$",
+                        "description": "Theoretical maximum peak heat flux on the pool boiling curve before transition to insulating vapor film boiling (burnout / boiling crisis) occurs.",
+                        "examTip": "Found in Heat Transfer. Reboiler designs maintain heat flux well below $q''_{\\text{max}}$ to prevent catastrophic tube wall overheating."
+                },
+                {
+                        "title": "Evaporator Boiling Point Elevation (BPE) and Dühring’s Rule",
+                        "formula": "$$T_{\\text{boil, solution}} = T_{\\text{sat, pure water}} + BPE$$",
+                        "description": "Dissolved non-volatile solutes raise solution boiling point above pure solvent boiling point; Dühring's rule states solution boiling point varies linearly with pure solvent boiling point across various pressures.",
+                        "examTip": "Found in Unit Operations / Separation. $BPE$ reduces effective temperature driving force in multi-effect evaporators, increasing required heat transfer area."
+                },
+                {
+                        "title": "Steam Economy in Multiple-Effect Evaporators",
+                        "formula": "$$\\text{Economy} = \\frac{\\text{Total Mass of Water Vaporized}}{\\text{Mass of Fresh Boiler Steam Fed}} \\approx 0.8 \\times N$$",
+                        "description": "Thermal performance benchmark for evaporators: a single-effect evaporator has economy $\\approx 0.8 - 0.9$; using $N$ effects in series approximately multiplies steam economy by $N$.",
+                        "examTip": "Found in Chemical Plant Design. Latent heat released by condensing vapor from effect $1$ is reused as heating steam in effect $2$, which operates at a lower pressure."
+                },
+                {
+                        "title": "Fick’s Second Law of Transient Molecular Diffusion",
+                        "formula": "$$\\frac{\\partial C_A}{\\partial t} = D_{AB} \\frac{\\partial^2 C_A}{\\partial z^2}, \\quad \\frac{C_A(z,t) - C_{A0}}{C_{As} - C_{A0}} = 1 - \\text{erf}\\left(\\frac{z}{2\\sqrt{D_{AB} t}}\\right)$$",
+                        "description": "Governs time-dependent unsteady-state diffusion in stagnant media. For a semi-infinite medium with constant surface concentration $C_{As}$, concentration profiles are governed by the Gaussian error function.",
+                        "examTip": "Found in Mass Transfer. Penetration depth scales with $\\sqrt{D_{AB} t}$."
+                },
+                {
+                        "title": "Equimolar Counterdiffusion (EMCD) in Binary Gas Mixtures",
+                        "formula": "$$J_A^* = -J_B^* = \\frac{D_{AB}}{R T z} (P_{A1} - P_{A2})$$",
+                        "description": "Steady-state molecular diffusion through an ideal gas where molar fluxes are equal and opposite ($N_A = -N_B$), resulting in zero convective bulk drift velocity.",
+                        "examTip": "Found in Mass Transfer. Standard distillation columns operate under near-EMCD conditions due to equal molar latent heats of vaporization."
+                },
+                {
+                        "title": "Unimolecular Diffusion (UMD) through Stagnant Non-Diffusing Gas",
+                        "formula": "$$N_A = \\frac{D_{AB} P}{R T z P_{B,LM}} (P_{A1} - P_{A2}), \\quad P_{B,LM} = \\frac{P_{B2} - P_{B1}}{\\ln(P_{B2} / P_{B1})}$$",
+                        "description": "Steady-state diffusion of species $A$ through stagnant non-diffusing component $B$ ($N_B = 0$), where bulk convective flow enhances the net molar flux by ratio $P / P_{B,LM}$.",
+                        "examTip": "Found in Mass Transfer. Applicable to evaporation of volatile solvents from open tanks into still ambient air."
+                },
+                {
+                        "title": "Chapman-Enskog Kinetic Theory for Gas Binary Diffusivity",
+                        "formula": "$$D_{AB} = \\frac{0.001858 T^{3/2}\\sqrt{\\frac{1}{M_A} + \\frac{1}{M_B}}}{P \\sigma_{AB}^2 \\Omega_D}$$",
+                        "description": "Rigorous statistical mechanical expression for binary gas diffusivity: $D_{AB}$ is inversely proportional to absolute pressure $P$ and scales with temperature to the $1.5$ power.",
+                        "examTip": "Found in Mass Transfer. To scale gas diffusivity with operating conditions: $D_{AB}(T_2, P_2) = D_{AB}(T_1, P_1) \\left(\\frac{T_2}{T_1}\\right)^{3/2} \\left(\\frac{P_1}{P_2}\\right)$."
+                },
+                {
+                        "title": "Wilke-Chang Empirical Liquid Molecular Diffusivity",
+                        "formula": "$$D_{AB} = 7.4 \\times 10^{-8} \\frac{(\\phi M_B)^{1/2} T}{\\mu_B V_A^{0.6}}$$",
+                        "description": "Predicts liquid-phase diffusion coefficient $D_{AB}$ of solute $A$ in dilute solvent $B$ using solvent association parameter $\\phi$ ($\\phi = 2.6$ for water), temperature $T$, solvent viscosity $\\mu_B$, and solute molar volume $V_A$.",
+                        "examTip": "Found in Mass Transfer. Liquid diffusivities ($\\sim 10^{-5}\\text{ cm}^2/\\text{s}$) are approximately $10{,}000\\times$ slower than gas diffusivities."
+                },
+                {
+                        "title": "Two-Film Theory of Interphase Mass Transfer",
+                        "formula": "$$\\frac{1}{K_L} = \\frac{1}{k_L} + \\frac{1}{H k_G}, \\quad \\frac{1}{K_G} = \\frac{1}{k_G} + \\frac{H}{k_L}$$",
+                        "description": "Expresses overall interphase mass transfer resistance as the sum of individual gas-film and liquid-film resistances, linked via Henry's equilibrium constant $H$.",
+                        "examTip": "Found in Mass Transfer. For very soluble gases (large $H$), gas film resistance dominates ($1/K_G \\approx 1/k_G$); for sparingly soluble gases ($O_2, CO_2$), liquid film controls ($1/K_L \\approx 1/k_L$)."
+                },
+                {
+                        "title": "Chilton-Colburn Analogies for Heat and Mass Transfer",
+                        "formula": "$$j_D = \\frac{k_c}{v} Sc^{2/3} = j_H = \\frac{h}{\\rho c_p v} Pr^{2/3} = \\frac{f}{2}$$",
+                        "description": "Direct interrelation between friction factor $f/2$, heat transfer factor $j_H$, and mass transfer factor $j_D$, allowing mass transfer coefficients $k_c$ to be predicted from known heat transfer correlations.",
+                        "examTip": "Found in Transport Phenomena. Schmidt number is $Sc = \\nu / D_{AB}$; Prandtl number is $Pr = \\nu / \\alpha$; Lewis number is $Le = Sc / Pr = \\alpha / D_{AB}$."
+                },
+                {
+                        "title": "McCabe-Thiele Feed Line ($q$-Line) Equation",
+                        "formula": "$$y = \\frac{q}{q - 1} x - \\frac{x_F}{q - 1}, \\quad q = \\frac{H_V - H_F}{H_V - H_L}$$",
+                        "description": "Locus of intersections of rectifying and stripping operating lines in a distillation column, where feed thermal condition parameter $q$ represents moles of liquid introduced to stripping section per mole of feed.",
+                        "examTip": "Found in Distillation. Special $q$ slopes: bubble point saturated liquid ($q = 1$, vertical line); dew point saturated vapor ($q = 0$, horizontal line); subcooled liquid ($q > 1$, positive slope)."
+                },
+                {
+                        "title": "Minimum Reflux Ratio in Binary Distillation ($R_{\\text{min}}$)",
+                        "formula": "$$R_{\\text{min}} = \\frac{x_D - y'}{y' - x'}, \\quad \\left(\\frac{R}{R + 1}\\right)_{\\text{min}} = \\frac{x_D - y'}{x_D - x'}$$",
+                        "description": "The lowest reflux ratio $L/D$ for which separation is theoretically possible with infinite stages, occurring when the operating line pinches against the equilibrium curve at $(x', y')$.",
+                        "examTip": "Found in Separations. Commercial distillation columns typically operate at an optimal economic reflux ratio of $R = 1.1 - 1.5 R_{\\text{min}}$."
+                },
+                {
+                        "title": "Continuous Packed Column Height of a Transfer Unit",
+                        "formula": "$$Z = HTU \\times NTU = \\left(\\frac{L}{K_L a A}\\right) \\int_{x_2}^{x_1} \\frac{dx}{x - x^*}$$",
+                        "description": "Determines required packing depth $Z$ in continuous absorption or stripping columns; $HTU$ measures equipment efficiency, while $NTU$ measures separation difficulty.",
+                        "examTip": "Found in Separation Processes. $a$ is specific surface area of packing per unit tower volume ($A_s/V$)."
+                },
+                {
+                        "title": "Kremser-Brown-Souders Absorption Factor Equation",
+                        "formula": "$$N = \\frac{\\ln\\left[\\left(\\frac{y_{\\text{in}} - m x_{\\text{in}}}{y_{\\text{out}} - m x_{\\text{in}}}\\right)\\left(1 - \\frac{1}{A}\\right) + \\frac{1}{A}\\right]}{\\ln A}, \\quad A = \\frac{L}{m G}$$",
+                        "description": "Calculates theoretical equilibrium stages $N$ for dilute absorption/stripping towers with linear equilibrium ($y^* = m x$) using absorption factor $A = L / (m G)$.",
+                        "examTip": "Found in Separation Processes. If $A \\le 1.0$, achieving high recovery requires excessive column height; optimal design uses $A \\sim 1.2 - 1.5$."
+                },
+                {
+                        "title": "Packed Tower Flooding Velocity (GPDC)",
+                        "formula": "$$\\text{Flow Parameter } FP = \\frac{L}{G}\\sqrt{\\frac{\\rho_G}{\\rho_L}}$$",
+                        "description": "Generalized Pressure Drop Correlation (GPDC) coordinate defining upper hydrodynamic capacity limit of packed towers where liquid holdup prevents downward drainage, causing column liquid flooding.",
+                        "examTip": "Found in Chemical Plant Design. Packed towers are sized to operate safely at $60\\% - 80\\%$ of flooding gas velocity."
+                },
+                {
+                        "title": "Batch Chemical Reactor Reaction Time Integral",
+                        "formula": "$$t = C_{A0} \\int_0^X \\frac{dX}{-r_A} = -\\int_{C_{A0}}^{C_A} \\frac{dC_A}{-r_A}$$",
+                        "description": "Design equation for ideal isothermal batch reactors calculating holding time $t$ required to achieve conversion $X$ of limiting reactant $A$ with reaction rate $-r_A$.",
+                        "examTip": "Found in Chemical Reaction Engineering. For first-order reaction ($-r_A = k C_A$): $t = \\frac{1}{k}\\ln\\left(\\frac{1}{1 - X}\\right) = \\frac{1}{k}\\ln\\left(\\frac{C_{A0}}{C_A}\\right)$."
+                },
+                {
+                        "title": "Levenspiel Plot Comparison of Reactor Volumes",
+                        "formula": "$$V_{\\text{CSTR}} = F_{A0} \\left(\\frac{X}{-r_A}\\right), \\quad V_{\\text{PFR}} = F_{A0} \\int_0^X \\frac{dX}{-r_A}$$",
+                        "description": "Graphical reactor sizing: on a plot of $1/(-r_A)$ vs $X$, CSTR volume is the rectangular area evaluated at exit conversion, whereas PFR volume is the smaller integrated area under the curve.",
+                        "examTip": "Found in Chemical Reaction Engineering. For normal positive reaction orders, $V_{\\text{CSTR}} > V_{\\text{PFR}}$ for identical feed rates and conversions."
+                },
+                {
+                        "title": "Autocatalytic Reaction Optimal Reactor Configuration",
+                        "formula": "$$A + R \\xrightarrow{k} R + R, \\quad -r_A = k C_A C_R$$",
+                        "description": "Reactions where product accelerates reaction rate; rate reaches a maximum at intermediate conversion ($X = 0.5$). Optimal design uses a CSTR operating at maximum rate followed by a PFR.",
+                        "examTip": "Found in Chemical Reaction Engineering. On a Levenspiel plot, the curve has a minimum; sizing a CSTR to reach this minimum yields the smallest possible reactor volume."
+                },
+                {
+                        "title": "Langmuir-Hinshelwood Heterogeneous Catalytic Rate Law",
+                        "formula": "$$-r_A = \\frac{k K_A P_A}{1 + K_A P_A + K_B P_B}$$",
+                        "description": "Models catalytic gas-phase surface reaction where rate is limited by surface reaction of adsorbed species, showing first-order behavior at low pressure and zero-order saturation at high pressure.",
+                        "examTip": "Found in Chemical Reaction Engineering. At high reactant partial pressure ($K_A P_A \\gg 1$), catalyst sites are fully saturated and rate plateaus at maximum $k$."
+                },
+                {
+                        "title": "First-Order Plus Dead Time (FOPDT) Dynamics",
+                        "formula": "$$G(s) = \\frac{K_p e^{-\\theta s}}{\\tau s + 1}$$",
+                        "description": "Ubiquitous transfer function model approximating chemical process dynamic response to step inputs, defined by process steady-state gain $K_p$, time constant $\\tau$, and dead time $\\theta$.",
+                        "examTip": "Found in Process Control. Ziegler-Nichols open-loop tuning rules use $K_p, \\tau, \\theta$ directly to determine controller proportional gain $K_c$, integral time $\\tau_I$, and derivative time $\\tau_D$."
+                },
+                {
+                        "title": "Chemical Plant Equipment Six-Tenths Rule of Cost Sizing",
+                        "formula": "$$C_B = C_A \\left(\\frac{S_B}{S_A}\\right)^{0.6}$$",
+                        "description": "Empirical economy-of-scale power sizing rule estimating capital purchase cost $C_B$ of process equipment of capacity $S_B$ from known baseline cost $C_A$ at size $S_A$.",
+                        "examTip": "Found in Plant Design & Economics. Due to exponent $0.6 < 1.0$, doubling equipment capacity increases capital cost by only $2^{0.6} \\approx 1.516$ ($52\\%$ increase)."
+                },
+                {
+                        "title": "CEPCI Cost Index Inflation Adjustment for Plant Equipment",
+                        "formula": "$$C_{\\text{present}} = C_{\\text{past}} \\left(\\frac{I_{\\text{present}}}{I_{\\text{past}}}\\right)$$",
+                        "description": "Updates historical equipment and plant capital costs to current dollars using the Chemical Engineering Plant Cost Index (CEPCI) or Marshall & Swift Index.",
+                        "examTip": "Found in Engineering Economics. Ratio of cost indices eliminates the distorting effect of macroeconomic equipment inflation."
+                },
+                {
+                        "title": "Series vs Parallel Reaction Selectivity Maximization",
+                        "formula": "$$\\text{Parallel: } A \\to R \\text{ (des)}, A \\to S \\text{ (undes)}, \\quad \\frac{r_R}{r_S} = \\frac{k_1}{k_2} C_A^{a_1 - a_2}$$",
+                        "description": "To maximize selectivity of desired product $R$: if desired order $a_1 > a_2$, maintain high reactant concentration $C_A$ (use batch or PFR); if $a_1 < a_2$, maintain low $C_A$ (use CSTR).",
+                        "examTip": "Found in Chemical Reaction Engineering. For consecutive reactions ($A \\to R \\to S$), product $R$ reaches a maximum in a PFR; exiting at optimum space time $\\tau_{\\text{opt}}$ maximizes yield."
+                },
+                {
+                        "title": "Combustion Theoretical Air and Excess Air",
+                        "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100$$",
+                        "description": "Theoretical air is stoichiometric oxygen required for complete combustion of all fuel carbon to $\\text{CO}_2$, hydrogen to $\\text{H}_2\\text{O}$, and sulfur to $\\text{SO}_2$. Excess air guarantees complete combustion.",
+                        "examTip": "Found in Material Balances. Atmospheric air composition: $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$ by mole, meaning $3.76\\text{ moles N}_2$ accompany every $1\\text{ mole O}_2$."
+                },
+                {
+                        "title": "Overall Plate Efficiency in Distillation Columns",
+                        "formula": "$$E_o = \\frac{N_{\\text{theoretical}}}{N_{\\text{actual}}}, \\quad E_M = \\frac{y_n - y_{n-1}}{y_n^* - y_{n-1}}$$",
+                        "description": "Relates minimum theoretical equilibrium stages to actual physical trays required in a fractional distillation column; $E_M$ is the Murphree vapor tray efficiency.",
+                        "examTip": "Found in Separation Processes. Actual trays = $N_{\\text{theor}} / E_o$. Typical distillation tray efficiencies range between $60\\%$ and $85\\%$."
+                },
+                {
+                        "title": "Liquid Extraction Distribution Coefficient and Selectivity",
+                        "formula": "$$K_D = \\frac{y_A^*}{x_A}, \\quad \\beta = \\frac{K_{D, A}}{K_{D, B}} = \\frac{(y_A / x_A)}{(y_B / x_B)}$$",
+                        "description": "In liquid-liquid extraction, distribution coefficient $K_D$ measures solute partitioning between extract and raffinate; separation factor $\\beta$ (analogous to relative volatility) must exceed $1.0$ for viable extraction.",
+                        "examTip": "Found in Separation Processes. The ternary liquid-liquid equilibrium tie-lines on triangular phase diagrams give conjugate phase compositions directly."
                 }
         ],
         "Industrial": [
@@ -1408,6 +2977,456 @@
                         "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
                         "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
                         "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, use incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$)."
+                },
+                {
+                        "title": "Binomial Distribution Probability Mass Function and Moments",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models number of successes $k$ in $n$ independent Bernoulli trials with constant success probability $p$; used for lot acceptance sampling and attribute defect analysis.",
+                        "examTip": "Found in Engineering Probability & Statistics. When $n \\ge 30$ and $n p \\ge 5$, the normal distribution provides an accurate continuous approximation."
+                },
+                {
+                        "title": "Hypergeometric Distribution for Finite Population Sampling",
+                        "formula": "$$P(X = k) = \\frac{\\binom{K}{k}\\binom{N - K}{n - k}}{\\binom{N}{n}}, \\quad \\mu = n\\left(\\frac{K}{N}\\right)$$",
+                        "description": "Probability of obtaining $k$ defective items in a sample of size $n$ drawn without replacement from a finite population of size $N$ containing $K$ total defectives.",
+                        "examTip": "Found in Probability & Statistics. Unlike the binomial distribution, trials are dependent because sampling without replacement alters remaining probabilities."
+                },
+                {
+                        "title": "Continuous Uniform Distribution Expected Value and Variance",
+                        "formula": "$$f(x) = \\frac{1}{b - a}, \\quad E(X) = \\frac{a + b}{2}, \\quad \\text{Var}(X) = \\frac{(b - a)^2}{12}$$",
+                        "description": "Symmetric continuous probability distribution assigning equal likelihood across interval $[a, b]$, frequently utilized in Monte Carlo simulations for variables with unconstrained uncertainty.",
+                        "examTip": "Found in Probability and Statistics. Remember the divisor $12$ in the variance formula: $\\text{Var}(X) = (b - a)^2 / 12$."
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Score Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma} \\sim N(0, 1), \\quad P(a \\le X \\le b) = \\Phi\\left(\\frac{b - \\mu}{\\sigma}\\right) - \\Phi\\left(\\frac{a - \\mu}{\\sigma}\\right)$$",
+                        "description": "Standardizes any normal distribution $N(\\mu, \\sigma^2)$ into the standard normal distribution $N(0, 1)$ with mean $0$ and variance $1$, allowing probability evaluation from standard tables.",
+                        "examTip": "Found in Probability and Statistics. Cumulative probability symmetry rule: $\\Phi(-z) = 1 - \\Phi(z)$."
+                },
+                {
+                        "title": "Student’s $t$-Confidence Interval for Unknown Variance",
+                        "formula": "$$\\bar{X} \\pm t_{\\alpha/2, n-1} \\left(\\frac{s}{\\sqrt{n}}\\right)$$",
+                        "description": "Calculates confidence interval for population mean $\\mu$ when sampling from a normal distribution with small sample size ($n < 30$) and unknown variance, using sample standard deviation $s$.",
+                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution."
+                },
+                {
+                        "title": "Confidence Interval for Population Proportion",
+                        "formula": "$$\\hat{p} \\pm Z_{\\alpha/2} \\sqrt{\\frac{\\hat{p}(1 - \\hat{p})}{n}}$$",
+                        "description": "Large-sample confidence interval for population defect fraction or customer preference proportion $p$ based on sample estimate $\\hat{p} = X/n$.",
+                        "examTip": "Found in Quality / Statistics. For $95\\%$ confidence, $Z_{0.025} = 1.96$; for $99\\%$ confidence, $Z_{0.005} = 2.576$."
+                },
+                {
+                        "title": "Two-Sample Pooled $t$-Test for Equal Population Means",
+                        "formula": "$$t = \\frac{(\\bar{X}_1 - \\bar{X}_2) - (\\mu_1 - \\mu_2)}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}, \\quad s_p^2 = \\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}$$",
+                        "description": "Hypothesis test determining whether two independent process treatments have identical mean performance, assuming equal underlying population variances.",
+                        "examTip": "Found in Statistics. Total degrees of freedom is $df = n_1 + n_2 - 2$."
+                },
+                {
+                        "title": "Chi-Square Distribution for Population Variance",
+                        "formula": "$$\\chi^2 = \\frac{(n - 1) s^2}{\\sigma^2} \\sim \\chi^2_{n - 1}$$",
+                        "description": "Statistical sampling distribution of sample variance $s^2$ drawn from a normal distribution with true variance $\\sigma^2$, used to construct variance confidence intervals and test hypotheses.",
+                        "examTip": "Found in Quality Engineering. Two-sided $(1-\\alpha)$ confidence interval: $\\frac{(n-1)s^2}{\\chi^2_{\\alpha/2, n-1}} \\le \\sigma^2 \\le \\frac{(n-1)s^2}{\\chi^2_{1-\\alpha/2, n-1}}$."
+                },
+                {
+                        "title": "Fisher’s $F$-Test for Equality of Two Variances",
+                        "formula": "$$F = \\frac{s_1^2}{s_2^2} \\sim F_{n_1 - 1, n_2 - 1}$$",
+                        "description": "Compares sample variances from two independent normally distributed processes to test null hypothesis of equal precision ($H_0: \\sigma_1^2 = \\sigma_2^2$).",
+                        "examTip": "Found in Statistics. By convention, place the larger sample variance in the numerator so that calculated $F \\ge 1.0$."
+                },
+                {
+                        "title": "One-Way ANOVA Sum of Squares Decomposition",
+                        "formula": "$$SS_{\\text{total}} = SS_{\\text{treatment}} + SS_{\\text{error}}, \\quad \\sum\\sum (y_{ij} - \\bar{y}_{..})^2 = \\sum n_i (\\bar{y}_{i.} - \\bar{y}_{..})^2 + \\sum\\sum (y_{ij} - \\bar{y}_{i.})^2$$",
+                        "description": "Partitions total variability in response measurements into between-treatment variance ($SS_{\\text{treatment}}$) and random unexplained within-group error ($SS_{\\text{error}}$).",
+                        "examTip": "Found in Design of Experiments. Degrees of freedom partition identically: $(N - 1) = (k - 1) + (N - k)$ for $k$ treatments and $N$ total observations."
+                },
+                {
+                        "title": "One-Way ANOVA $F$-Statistic for Treatment Significance",
+                        "formula": "$$F = \\frac{MS_{\\text{treatment}}}{MS_{\\text{error}}} = \\frac{SS_{\\text{treatment}} / (k - 1)}{SS_{\\text{error}} / (N - k)}$$",
+                        "description": "Compares treatment variance against error variance; an $F$-statistic significantly greater than $1.0$ ($F > F_{\\alpha, k-1, N-k}$) rejects the null hypothesis of equal treatment means.",
+                        "examTip": "Found in Design of Experiments / Statistics. Rejecting $H_0$ means at least one treatment mean differs significantly from the others."
+                },
+                {
+                        "title": "Two-Way ANOVA with Factor Interactions",
+                        "formula": "$$SS_{\\text{total}} = SS_A + SS_B + SS_{AB} + SS_{\\text{error}}$$",
+                        "description": "Simultaneously evaluates main effects of two independent manufacturing factors ($A$ and $B$) and tests whether their combined interactive effect ($AB$) is synergistic.",
+                        "examTip": "Found in Quality Engineering. If interaction effect $AB$ is statistically significant, main effects cannot be interpreted independently."
+                },
+                {
+                        "title": "Simple Linear Regression Least-Squares Normal Equations",
+                        "formula": "$$\\hat{y} = \\beta_0 + \\beta_1 x, \\quad \\beta_1 = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad \\beta_0 = \\bar{y} - \\beta_1 \\bar{x}$$",
+                        "description": "Finds unique slope $\\beta_1$ and intercept $\\beta_0$ minimizing the sum of squared vertical prediction residuals $\\sum (y_i - \\hat{y}_i)^2$.",
+                        "examTip": "Found in Engineering Statistics. The regression line always passes through the bivariate centroid of the data points $(\\bar{x}, \\bar{y})$."
+                },
+                {
+                        "title": "Coefficient of Determination ($R^2$)",
+                        "formula": "$$R^2 = \\frac{SSR}{SST} = 1 - \\frac{SSE}{SST} = r_{xy}^2$$",
+                        "description": "Proportion of total variability in dependent response variable $y$ explained by linear regression model on independent variable $x$; $0 \\le R^2 \\le 1$.",
+                        "examTip": "Found in Statistics. In simple linear regression, $R^2$ is exactly equal to the Pearson correlation coefficient squared ($r^2$)."
+                },
+                {
+                        "title": "Chi-Square Goodness-of-Fit Hypothesis Test",
+                        "formula": "$$\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i} \\sim \\chi^2_{k - 1 - p}$$",
+                        "description": "Tests whether observed category counts $O_i$ conform to an assumed theoretical probability distribution (Poisson, Normal, Binomial) with expected frequencies $E_i$; $p$ is estimated parameters.",
+                        "examTip": "Found in Statistics. Rule of thumb: ensure all expected cell counts satisfy $E_i \\ge 5$; combine adjacent bins if necessary."
+                },
+                {
+                        "title": "Chi-Square Test of Independence in Contingency Tables",
+                        "formula": "$$\\chi^2 = \\sum_{i=1}^r \\sum_{j=1}^c \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}, \\quad E_{ij} = \\frac{R_i C_j}{N}, \\quad df = (r - 1)(c - 1)$$",
+                        "description": "Determines whether two categorical attributes in an $r \\times c$ matrix are statistically independent using marginal row totals $R_i$ and column totals $C_j$.",
+                        "examTip": "Found in Statistics. Rejection of independence ($p < \\alpha$) indicates a significant association between the two classification factors."
+                },
+                {
+                        "title": "Statistical Hypothesis Testing: Type I and Type II Errors",
+                        "formula": "$$\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ True}), \\quad \\beta = P(\\text{Fail to Reject } H_0 \\mid H_0 \\text{ False}), \\quad \\text{Power} = 1 - \\beta$$",
+                        "description": "Formal framework for quality decision errors: $\\alpha$ is producer's risk (false alarm); $\\beta$ is consumer's risk (missed defect); power $1 - \\beta$ is test sensitivity.",
+                        "examTip": "Found in Engineering Statistics. Increasing sample size $n$ allows reducing both $\\alpha$ and $\\beta$ simultaneously."
+                },
+                {
+                        "title": "Sample Size Determination for Estimating Population Means",
+                        "formula": "$$n = \\left(\\frac{Z_{\\alpha/2} \\sigma}{E}\\right)^2$$",
+                        "description": "Computes minimum sample size $n$ required to estimate population mean $\\mu$ within specified error margin $E = |\\bar{X} - \\mu|$ at $(1 - \\alpha)$ confidence level.",
+                        "examTip": "Found in Statistics. Always round up to the next integer. Notice sample size scales inversely with the square of the allowable error margin ($E^2$)."
+                },
+                {
+                        "title": "Shewhart $\\bar{X}$ and $s$ Control Charts for Variables",
+                        "formula": "$$UCL_{\\bar{X}} = \\bar{\\bar{X}} + A_3 \\bar{s}, \\quad LCL_{\\bar{X}} = \\bar{\\bar{X}} - A_3 \\bar{s}, \\quad UCL_s = B_4 \\bar{s}, \\quad LCL_s = B_3 \\bar{s}$$",
+                        "description": "Statistical process control charts monitoring subgroup mean and subgroup standard deviation $s$, preferred over $R$-charts when subgroup sample size is large ($n > 10$).",
+                        "examTip": "Found in Statistical Quality Control. Factors $A_3, B_3, B_4$ are tabulated in the NCEES Handbook based on subgroup sample size $n$."
+                },
+                {
+                        "title": "Control Chart for Fraction Nonconforming ($p$-Chart)",
+                        "formula": "$$UCL_p = \\bar{p} + 3 \\sqrt{\\frac{\\bar{p}(1 - \\bar{p})}{n}}, \\quad LCL_p = \\max\\left(0, \\bar{p} - 3 \\sqrt{\\frac{\\bar{p}(1 - \\bar{p})}{n}}\\right)$$",
+                        "description": "Attribute control chart monitoring proportion of defective units produced across inspection samples of constant size $n$.",
+                        "examTip": "Found in Quality Control. If calculated $LCL_p < 0$, set $LCL_p = 0$ because negative defect fractions are physically impossible."
+                },
+                {
+                        "title": "Control Chart for Count of Defects ($c$-Chart)",
+                        "formula": "$$UCL_c = \\bar{c} + 3 \\sqrt{\\bar{c}}, \\quad LCL_c = \\max\\left(0, \\bar{c} - 3 \\sqrt{\\bar{c}}\\right)$$",
+                        "description": "Attribute control chart monitoring total Poisson count of localized defects per single inspection unit of fixed size (e.g. blemishes per automobile door panel).",
+                        "examTip": "Found in Quality Control. For varying inspection unit sizes, use the $u$-chart instead ($UCL_u = \\bar{u} + 3\\sqrt{\\bar{u}/n}$)."
+                },
+                {
+                        "title": "Defects Per Unit Control Chart ($u$-Chart)",
+                        "formula": "$$UCL_u = \\bar{u} + 3 \\sqrt{\\frac{\\bar{u}}{n}}, \\quad LCL_u = \\max\\left(0, \\bar{u} - 3 \\sqrt{\\frac{\\bar{u}}{n}}\\right), \\quad u_i = \\frac{c_i}{n_i}$$",
+                        "description": "Monitors average defect density per unit when inspection sample size $n_i$ varies between inspection periods.",
+                        "examTip": "Found in Quality Engineering. Variable sample sizes result in variable (stepped) upper and lower control limits."
+                },
+                {
+                        "title": "Western Electric Run Rules for Out-of-Control Detection",
+                        "formula": "$$\\text{Zone Rules: } \\pm 1\\sigma, \\pm 2\\sigma, \\pm 3\\sigma \\text{ boundaries}$$",
+                        "description": "Rules for detecting non-random process shifts: 1 point beyond Zone A ($3\\sigma$); 2 out of 3 consecutive points in Zone A ($2\\sigma$ to $3\\sigma$); 4 out of 5 consecutive points in Zone B ($1\\sigma$ to $2\\sigma$); 8 consecutive points on one side of center line.",
+                        "examTip": "Found in Quality Control. Western Electric rules increase detection sensitivity to small sustained process mean shifts."
+                },
+                {
+                        "title": "Potential Process Capability Index ($C_p$)",
+                        "formula": "$$C_p = \\frac{USL - LSL}{6 \\sigma}$$",
+                        "description": "Measures intrinsic process capability to meet customer specifications assuming process is perfectly centered; $C_p \\ge 1.33$ is standard industry minimum capability.",
+                        "examTip": "Found in Quality Control. $C_p$ measures process spread relative to allowable tolerance, whereas $C_{pk}$ accounts for process centering off-target."
+                },
+                {
+                        "title": "Process Performance Indices ($P_p$ and $P_{pk}$)",
+                        "formula": "$$P_p = \\frac{USL - LSL}{6 s_{\\text{overall}}}, \\quad P_{pk} = \\min\\left(\\frac{USL - \\bar{X}}{3 s_{\\text{overall}}}, \\frac{\\bar{X} - LSL}{3 s_{\\text{overall}}}\\right)$$",
+                        "description": "Long-term capability metrics utilizing overall sample standard deviation $s_{\\text{overall}}$, reflecting both within-subgroup and between-subgroup process drift over time.",
+                        "examTip": "Found in Quality Engineering. $C_{pk}$ represents short-term potential capability; $P_{pk}$ represents actual realized long-term historical performance."
+                },
+                {
+                        "title": "Six Sigma 3.4 DPMO and $1.5\\sigma$ Mean Shift",
+                        "formula": "$$\\text{Six Sigma Quality} = 1 - \\Phi(6 - 1.5) = 1 - \\Phi(4.5) \\implies 3.4 \\text{ DPMO}$$",
+                        "description": "The Six Sigma quality standard incorporates an empirical long-term $1.5\\sigma$ process mean drift, resulting in exactly $3.4$ defects per million opportunities.",
+                        "examTip": "Found in Quality Control / Six Sigma. Without the $1.5\\sigma$ shift, a true $6\\sigma$ process would generate only $0.002$ DPMO."
+                },
+                {
+                        "title": "Operating Characteristic (OC) Curve in Acceptance Sampling",
+                        "formula": "$$P_a = P(X \\le c \\mid p) = \\sum_{k=0}^c \\binom{n}{k} p^k (1 - p)^{n - k}$$",
+                        "description": "Plots probability of lot acceptance $P_a$ against true lot defect fraction $p$ for single-sampling plan $(n, c)$; defines Producer's Risk $\\alpha$ at Acceptable Quality Limit (AQL) and Consumer's Risk $\\beta$ at Lot Tolerance Percent Defective (LTPD).",
+                        "examTip": "Found in Quality Control. Steeper OC curves provide better discrimination between good and bad incoming inspection lots."
+                },
+                {
+                        "title": "Average Outgoing Quality (AOQ) and AOQL",
+                        "formula": "$$AOQ = \\frac{P_a p (N - n)}{N} \\approx P_a p, \\quad AOQL = \\max_p(AOQ)$$",
+                        "description": "Expected outgoing defect fraction assuming rejected lots undergo $100\\%$ rectifying inspection; the Average Outgoing Quality Limit ($AOQL$) is the worst-case maximum defect rate escaping to customers.",
+                        "examTip": "Found in Quality Engineering. Regardless of incoming lot quality, the long-term average outgoing quality cannot exceed $AOQL$."
+                },
+                {
+                        "title": "Deming’s PDCA Continuous Improvement Cycle",
+                        "formula": "$$\\text{Plan} \\to \\text{Do} \\to \\text{Check} \\to \\text{Act}$$",
+                        "description": "Iterative four-step management framework for continual improvement of processes and products: Plan (identify opportunity), Do (pilot solution), Check (analyze results), Act (standardize and scale).",
+                        "examTip": "Found in Quality and Operations Management. Also known as the Shewhart cycle; foundational to Kaizen and Lean Six Sigma."
+                },
+                {
+                        "title": "Pareto 80/20 Analysis for Defect Prioritization",
+                        "formula": "$$\\text{Cumulative } \\% = \\frac{\\sum_{i=1}^k c_i}{\\sum_{i=1}^N c_i} \\times 100$$",
+                        "description": "Recognizes that roughly $80\\%$ of defects or quality costs stem from $20\\%$ of underlying causes ('vital few vs trivial many'), directing resources to high-leverage problems.",
+                        "examTip": "Found in Quality Management. A Pareto chart displays bars sorted in descending order accompanied by a cumulative percentage line."
+                },
+                {
+                        "title": "Linear Programming Standard Form and Basic Feasible Solutions",
+                        "formula": "$$\\text{Maximize } Z = \\vec{c}^T \\vec{x} \\quad \\text{subject to } A \\vec{x} + \\vec{s} = \\vec{b}, \\quad \\vec{x}, \\vec{s} \\ge 0$$",
+                        "description": "Canonical LP representation introducing slack and surplus variables $\\vec{s}$ to convert inequalities into equalities; basic feasible solutions (BFS) correspond to extreme corner points of the convex polytope.",
+                        "examTip": "Found in Operations Research. For $m$ constraint equations and $n$ variables, a basic solution sets $n - m$ non-basic variables to zero and solves for $m$ basic variables."
+                },
+                {
+                        "title": "Extreme Point Theorem in Linear Programming",
+                        "formula": "$$\\text{Optimal } Z^* \\in \\text{Extreme Points (Vertices) of Feasible Region}$$",
+                        "description": "States that if an optimal solution to a linear programming problem exists, at least one optimal corner point vertex of the convex feasible polygon achieves this maximum.",
+                        "examTip": "Found in Operations Research. If two adjacent vertices share the optimal objective value, all points along the connecting boundary segment are alternative optimal solutions."
+                },
+                {
+                        "title": "Simplex Tableau Optimality Condition",
+                        "formula": "$$\\bar{c}_j = c_j - \\vec{c}_B^T B^{-1} A_j \\le 0 \\quad (\\text{for all non-basic } j)$$",
+                        "description": "In a maximization simplex tableau, optimality is reached when all reduced costs $\\bar{c}_j$ are non-positive ($\\le 0$), proving no non-basic variable can enter the basis to increase objective $Z$.",
+                        "examTip": "Found in Operations Research. The entering variable is chosen by the most positive reduced cost; the leaving variable is determined by the minimum ratio test ($b_i / a_{ik} > 0$)."
+                },
+                {
+                        "title": "Duality Theorem of Linear Programming",
+                        "formula": "$$\\text{Primal: Max } \\vec{c}^T \\vec{x} \\text{ s.t. } A\\vec{x} \\le \\vec{b} \\iff \\text{Dual: Min } \\vec{b}^T \\vec{y} \\text{ s.t. } A^T\\vec{y} \\ge \\vec{c}$$",
+                        "description": "Every primal linear program has an associated dual problem; Strong Duality states that if either has an optimal solution, both have optimal solutions with identical objective values ($Z^* = W^*$).",
+                        "examTip": "Found in Operations Research. Complementary slackness states: $x_j (A^T y - c)_j = 0$ and $y_i (b - A x)_i = 0$."
+                },
+                {
+                        "title": "Shadow Price and Dual Variable Economic Interpretation",
+                        "formula": "$$y_i^* = \\frac{\\partial Z^*}{\\partial b_i}$$",
+                        "description": "Optimal dual variable $y_i^*$ represents the marginal increase in objective profit $Z^*$ achieved per unit increase in the capacity of constraint resource $b_i$.",
+                        "examTip": "Found in Operations Research. If a resource constraint is non-binding (has positive slack), its shadow price is strictly zero."
+                },
+                {
+                        "title": "Transportation Problem Vogel’s Approximation Method (VAM)",
+                        "formula": "$$\\text{Penalty} = |\\text{Lowest Cost} - \\text{Second Lowest Cost}|$$",
+                        "description": "Heuristic generating near-optimal starting basic feasible solutions for transportation matrices by calculating unit opportunity cost penalties for each row and column and allocating to the highest penalty.",
+                        "examTip": "Found in Operations Research. Total supply must equal total demand; if unbalanced, add a dummy source or destination with zero shipping costs."
+                },
+                {
+                        "title": "Hungarian Algorithm for the Bipartite Assignment Problem",
+                        "formula": "$$\\min \\sum_{i=1}^n \\sum_{j=1}^n c_{ij} x_{ij} \\quad \\text{subject to } \\sum_{j=1}^n x_{ij} = 1, \\quad \\sum_{i=1}^n x_{ij} = 1$$",
+                        "description": "Combinatorial algorithm solving one-to-one assignment of $n$ workers to $n$ tasks by subtracting row and column minima to uncover an independent set of zero-cost assignments covered by $n$ lines.",
+                        "examTip": "Found in Operations Research. Complexity is $O(n^3)$; guaranteed to find global minimum cost assignment."
+                },
+                {
+                        "title": "Branch-and-Bound Algorithm for Integer Linear Programs",
+                        "formula": "$$x_j \\le \\lfloor x_j^* \\rfloor \\quad \\text{or} \\quad x_j \\ge \\lceil x_j^* \\rceil$$",
+                        "description": "Solves integer programs by relaxing integrality constraints to solve LP bounds, partitioning non-integer fractional variables into mutually exclusive sub-branches, and pruning branches that cannot beat current best integer incumbent.",
+                        "examTip": "Found in Operations Research. Prune a branch if: (1) LP relaxation is infeasible; (2) LP bound is worse than best known integer solution; or (3) LP solution naturally yields integer values."
+                },
+                {
+                        "title": "Dijkstra’s Algorithm for Shortest Path in Networks",
+                        "formula": "$$d(v) = \\min\\left(d(v), d(u) + c(u, v)\\right)$$",
+                        "description": "Finds shortest paths from a source node to all other nodes in a weighted network with non-negative edge costs $c(u, v)$ by greedily relaxing edge distances.",
+                        "examTip": "Found in Operations Research / Computer Systems. Valid only for non-negative edge weights; use Bellman-Ford if negative weights exist."
+                },
+                {
+                        "title": "Ford-Fulkerson Max-Flow Min-Cut Theorem",
+                        "formula": "$$\\text{Maximum Flow Value} = \\text{Capacity of Minimum Cut}$$",
+                        "description": "In any flow network, the maximum volume of flow from source $s$ to sink $t$ equals the minimum total capacity of edges that, when removed, completely disconnect $s$ from $t$.",
+                        "examTip": "Found in Operations Research. Essential for network routing, pipeline capacities, and logistics bottleneck analysis."
+                },
+                {
+                        "title": "PERT Beta Distribution Three-Point Time Estimate",
+                        "formula": "$$t_e = \\frac{a + 4m + b}{6}, \\quad \\sigma^2 = \\left(\\frac{b - a}{6}\\right)^2$$",
+                        "description": "Calculates expected duration $t_e$ and variance $\\sigma^2$ for uncertain project activities using optimistic time $a$, most likely time $m$, and pessimistic time $b$.",
+                        "examTip": "Found in Project Management / CPM. Project completion variance is the sum of activity variances along the critical path: $\\sigma_{\\text{proj}}^2 = \\sum_{\\text{CP}} \\sigma_i^2$."
+                },
+                {
+                        "title": "Project Crashing Cost-Slope Optimization",
+                        "formula": "$$\\text{Cost Slope} = \\frac{\\text{Crash Cost} - \\text{Normal Cost}}{\\text{Normal Time} - \\text{Crash Time}} = \\frac{\\Delta C}{\\Delta T}$$",
+                        "description": "Direct cost per day to expedite an activity; projects are crashed most economically by expediting the critical path activity possessing the minimum cost slope.",
+                        "examTip": "Found in Construction Management. Never crash an activity that is not on the critical path, as it incurs cost without shortening project completion."
+                },
+                {
+                        "title": "Kendall’s Queueing System Notation ($A/B/c/K/m/Z$)",
+                        "formula": "$$A/B/c/K/m/Z \\implies \\text{Arrival / Service / Servers / Capacity / Population / Discipline}$$",
+                        "description": "Standard notation for queueing models: $M$ = Markovian (Poisson/exponential), $D$ = Deterministic, $G$ = General; $c$ = parallel servers; $K$ = system storage limit.",
+                        "examTip": "Found in Industrial Operations Research. Default standard queueing notation omits trailing defaults: $M/M/1$ means $M/M/1/\\infty/\\infty/FIFO$."
+                },
+                {
+                        "title": "$M/M/1$ Queue Steady-State Utilization Ratio",
+                        "formula": "$$\\rho = \\frac{\\lambda}{\\mu} < 1, \\quad P_0 = 1 - \\rho$$",
+                        "description": "Fraction of time the server is busy in a single-server Poisson arrival (rate $\\lambda$) exponential service (rate $\\mu$) queue; steady-state requires $\\lambda < \\mu$ ($\rho < 1$).",
+                        "examTip": "Found in Queueing Theory. Probability of an empty system (server idle) is $P_0 = 1 - \\rho$."
+                },
+                {
+                        "title": "$M/M/1$ Queue Average Entities in Queue and System",
+                        "formula": "$$L_q = \\frac{\\lambda^2}{\\mu(\\mu - \\lambda)} = \\frac{\\rho^2}{1 - \\rho}, \\quad L = \\frac{\\lambda}{\\mu - \\lambda} = \\frac{\\rho}{1 - \\rho}$$",
+                        "description": "Average number of customers waiting in line ($L_q$) and total customers in the system ($L = L_q + \\rho$) for an $M/M/1$ queue.",
+                        "examTip": "Found in Queueing Theory. As utilization $\\rho \\to 1.0$, queue length explodes asymptotically toward infinity."
+                },
+                {
+                        "title": "$M/M/1$ Queue Average Waiting Times",
+                        "formula": "$$W_q = \\frac{L_q}{\\lambda} = \\frac{\\lambda}{\\mu(\\mu - \\lambda)}, \\quad W = \\frac{L}{\\lambda} = \\frac{1}{\\mu - \\lambda} = W_q + \\frac{1}{\\mu}$$",
+                        "description": "Average waiting time spent in queue ($W_q$) and total residence time spent in system ($W$) including service time $1/\\mu$.",
+                        "examTip": "Found in Queueing Theory. Connects directly to Little's Law: $L = \\lambda W$ and $L_q = \\lambda W_q$."
+                },
+                {
+                        "title": "$M/M/c$ Multi-Server Queue Zero State Probability ($P_0$)",
+                        "formula": "$$P_0 = \\left[\\sum_{n=0}^{c-1} \\frac{(\\lambda / \\mu)^n}{n!} + \\frac{(\\lambda / \\mu)^c}{c!(1 - \\rho)}\\right]^{-1}, \\quad \\rho = \\frac{\\lambda}{c \\mu} < 1$$",
+                        "description": "Probability that all $c$ parallel servers are idle in an $M/M/c$ queueing system operating under total traffic intensity $\\lambda / \\mu$.",
+                        "examTip": "Found in Queueing Theory. System is stable if and only if $\\rho = \\lambda / (c \\mu) < 1$."
+                },
+                {
+                        "title": "$M/M/c$ Erlang-C Formula for Probability of Delay",
+                        "formula": "$$P(\\text{Wait} > 0) = C(c, \\lambda/\\mu) = \\frac{\\frac{(\\lambda / \\mu)^c}{c!(1 - \\rho)}}{\\sum_{k=0}^{c-1} \\frac{(\\lambda/\\mu)^k}{k!} + \\frac{(\\lambda/\\mu)^c}{c!(1 - \\rho)}}$$",
+                        "description": "Probability that an arriving entity finds all $c$ servers busy and must join the waiting queue, fundamental to telecommunications and call center staffing.",
+                        "examTip": "Found in Operations Research. Average queue length is $L_q = C(c, \\lambda/\\mu) \\frac{\\rho}{1 - \\rho}$."
+                },
+                {
+                        "title": "Pollaczek-Khinchine (P-K) Formula for $M/G/1$ Queues",
+                        "formula": "$$L_q = \\frac{\\lambda^2 \\sigma^2 + \\rho^2}{2(1 - \\rho)}, \\quad W_q = \\frac{\\lambda \\sigma^2 + \\rho / \\mu}{2(1 - \\rho)}$$",
+                        "description": "Calculates average queue length for Poisson arrivals with general service time distribution having mean $1/\\mu$ and variance $\\sigma^2$.",
+                        "examTip": "Found in Queueing Theory. If service times are deterministic (constant, $\\sigma^2 = 0$), $L_q$ is exactly half of the $M/M/1$ queue length!"
+                },
+                {
+                        "title": "Discrete-Time Markov Chain Stationary Distribution",
+                        "formula": "$$\\vec{\\pi} P = \\vec{\\pi}, \\quad \\sum_{i=1}^n \\pi_i = 1$$",
+                        "description": "Long-run steady-state probability vector $\\vec{\\pi}$ for an irreducible, aperiodic Markov chain with transition probability matrix $P$, where $\\pi_i$ is fraction of time spent in state $i$.",
+                        "examTip": "Found in Stochastic Modeling. Solve the system of linear equations by replacing one redundant equation with the normalization constraint $\\sum \\pi_i = 1$."
+                },
+                {
+                        "title": "Total Annual Inventory Cost Model",
+                        "formula": "$$TC(Q) = \\frac{D}{Q} S + \\frac{Q}{2} H = \\text{Annual Ordering Cost} + \\text{Annual Holding Cost}$$",
+                        "description": "Fundamental trade-off in inventory management between setup/order costs (decreasing with batch size $Q$) and carrying/holding costs (increasing linearly with $Q$).",
+                        "examTip": "Found in Production & Inventory. At optimal $EOQ$, annual ordering cost exactly equals annual holding cost ($(D/Q)S = (Q/2)H$)."
+                },
+                {
+                        "title": "Economic Production Quantity (EPQ / ELS) with Replenishment",
+                        "formula": "$$Q^* = \\sqrt{\\frac{2 D S}{H\\left(1 - \\frac{d}{p}\\right)}}, \\quad I_{\\text{max}} = Q^*\\left(1 - \\frac{d}{p}\\right)$$",
+                        "description": "Optimal batch size for manufacturing where product is added to inventory at production rate $p$ while simultaneously being depleted at demand rate $d$ ($p > d$).",
+                        "examTip": "Found in Production Planning. Because inventory builds at net rate $(p - d)$, maximum inventory is lower than $EOQ$, making $Q^*_{\\text{EPQ}} > Q^*_{\\text{EOQ}}$."
+                },
+                {
+                        "title": "EOQ Inventory Model with Planned Backorders",
+                        "formula": "$$Q^* = \\sqrt{\\frac{2 D S}{H}\\left(\\frac{H + B}{B}\\right)}, \\quad S^* = Q^*\\left(\\frac{H}{H + B}\\right)$$",
+                        "description": "Modifies EOQ when stockouts are permitted at unit shortage penalty cost $B$ per item per year; $S^*$ is maximum backorder level.",
+                        "examTip": "Found in Inventory Control. Allowing planned backorders increases optimal order size $Q^*$ and lowers total inventory cost relative to standard zero-shortage EOQ."
+                },
+                {
+                        "title": "Quantity Discount All-Units Inventory Sizing",
+                        "formula": "$$TC_j(Q) = \\frac{D}{Q} S + \\frac{Q}{2} H_j + C_j D$$",
+                        "description": "Determines optimal purchase volume when supplier offers tiered price discounts $C_j$; evaluates whether price savings offset increased inventory holding costs.",
+                        "examTip": "Found in Inventory Control. Calculate $EOQ$ for lowest price break; if feasible, it is optimal; otherwise, evaluate total cost at each price break quantity threshold."
+                },
+                {
+                        "title": "Safety Stock under Simultaneous Demand and Lead-Time Uncertainty",
+                        "formula": "$$SS = Z \\sigma_{DL} = Z \\sqrt{\\bar{L} \\sigma_d^2 + \\bar{d}^2 \\sigma_L^2}$$",
+                        "description": "Calculates buffer inventory required to protect against stockouts during replenishment lead time when both daily demand ($\bar{d}, sigma_d$) and lead time ($\bar{L}, sigma_L$) are random variables.",
+                        "examTip": "Found in Supply Chain Management. Factor $Z$ corresponds to standard normal value for target non-stockout cycle service level (e.g. $Z = 1.645$ for $95\\%$)."
+                },
+                {
+                        "title": "Material Requirements Planning (MRP) Gross-to-Net Explosion",
+                        "formula": "$$\\text{Net Requirement} = \\text{Gross Requirement} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock}$$",
+                        "description": "Time-phased priority planning logic deriving component manufacturing orders from Master Production Schedule using Bill of Materials (BOM) parent-child relationships and component lead times.",
+                        "examTip": "Found in Production Operations. Planned Order Releases are offset backward in time by component lead time."
+                },
+                {
+                        "title": "Master Production Schedule Available-to-Promise (ATP)",
+                        "formula": "$$ATP_1 = \\text{Initial On-Hand} + MPS_1 - \\sum \\text{Customer Orders before next } MPS$$",
+                        "description": "Calculates uncommitted inventory and planned production available to marketing for promising future customer order delivery dates.",
+                        "examTip": "Found in Production Operations. For periods after period 1: $ATP = MPS_t - \\sum \\text{Customer Orders until next } MPS$."
+                },
+                {
+                        "title": "Holt’s Linear Trend Exponential Smoothing",
+                        "formula": "$$L_t = \\alpha A_t + (1 - \\alpha)(L_{t-1} + T_{t-1}), \\quad T_t = \\beta(L_t - L_{t-1}) + (1 - \\beta)T_{t-1}, \\quad \\hat{Y}_{t+m} = L_t + m T_t$$",
+                        "description": "Two-parameter forecasting method handling time series with linear trend, updating base level estimate $L_t$ with smoothing parameter $\\alpha$ and trend estimate $T_t$ with parameter $\\beta$.",
+                        "examTip": "Found in Demand Forecasting. Forecast for $m$ periods into the future is linear projection: $F_{t+m} = L_t + m T_t$."
+                },
+                {
+                        "title": "Forecast Error Tracking Signal (TS)",
+                        "formula": "$$TS = \\frac{RSFE}{MAD} = \\frac{\\sum_{i=1}^t (A_i - F_i)}{\\frac{1}{t}\\sum_{i=1}^t |A_i - F_i|}$$",
+                        "description": "Monitors demand forecasting models for persistent bias (consistent over-forecasting or under-forecasting); acceptable operating range is typically within $\\pm 4$ to $\\pm 5$.",
+                        "examTip": "Found in Forecasting. If $|TS| > 4$, the forecasting model is biased and must be recalibrated."
+                },
+                {
+                        "title": "Center-of-Gravity Facility Location Model",
+                        "formula": "$$x^* = \\frac{\\sum_{i=1}^n W_i x_i}{\\sum_{i=1}^n W_i}, \\quad y^* = \\frac{\\sum_{i=1}^n W_i y_i}{\\sum_{i=1}^n W_i}$$",
+                        "description": "Finds optimal geographical coordinates $(x^*, y^*)$ for a central warehouse or distribution hub minimizing squared Euclidean transport costs to customer clusters with shipping weights $W_i$.",
+                        "examTip": "Found in Facilities Planning. Weights $W_i$ typically equal annual shipment volume times freight rate."
+                },
+                {
+                        "title": "Systematic Layout Planning (SLP) Activity Relationship Chart",
+                        "formula": "$$\\text{Closeness Ratings: } A (\\text{Absolute}), E (\\text{Essential}), I (\\text{Important}), O (\\text{Ordinary}), U (\\text{Unimportant}), X (\\text{Undesirable})$$",
+                        "description": "Qualitative facility layout methodology using triangular relationship charts (REL charts) to arrange functional industrial departments based on operational proximity ratings.",
+                        "examTip": "Found in Facilities Planning. Departments with 'A' ratings are placed immediately adjacent; 'X' departments are placed far apart (e.g. paint booth and welding shop)."
+                },
+                {
+                        "title": "Assembly Line Balancing Minimum Number of Workstations",
+                        "formula": "$$N_{\\text{min}} = \\left\\lceil \\frac{\\sum_{i=1}^k t_i}{C} \\right\\rceil, \\quad C = \\frac{T_{\\text{available}}}{D}$$",
+                        "description": "Calculates theoretical lower bound on workstations $N_{\\text{min}}$ required to assemble a product with total work content $\\sum t_i$ at cycle time $C$ to satisfy demand $D$.",
+                        "examTip": "Found in Manufacturing Systems. Always round up to the next integer (ceiling function $\\lceil \\dots \\rceil$)."
+                },
+                {
+                        "title": "NIOSH Manual Lifting Equation Recommended Weight Limit (RWL)",
+                        "formula": "$$RWL = LC \\times HM \\times VM \\times DM \\times AM \\times FM \\times CM$$",
+                        "description": "Ergonomic standard establishing maximum recommended load that nearly all healthy workers can perform over an 8-hour shift without increased risk of low-back pain.",
+                        "examTip": "Found in Ergonomics / Safety. Load constant is $LC = 51\\text{ lb}$ ($23\\text{ kg}$). All six multiplier factors ($HM, VM, DM, AM, FM, CM$) are $\\le 1.0$."
+                },
+                {
+                        "title": "NIOSH Lifting Index (LI) and Back Injury Hazard",
+                        "formula": "$$LI = \\frac{\\text{Actual Load Weight}}{RWL}$$",
+                        "description": "Relative estimate of physical stress associated with a manual lifting task: $LI \\le 1.0$ is nominally safe; $LI > 1.0$ indicates increased injury risk; $LI > 3.0$ represents high risk requiring immediate redesign.",
+                        "examTip": "Found in Human Factors. The primary goal of ergonomic engineering intervention is to bring $LI \\le 1.0$."
+                },
+                {
+                        "title": "Work Sampling Required Observations Sample Size",
+                        "formula": "$$n = \\frac{Z_{\\alpha/2}^2 p (1 - p)}{e^2}$$",
+                        "description": "Determines total random observations $n$ required to estimate the true percentage of time $p$ workers or machines spend in a specific activity state within precision tolerance $e$.",
+                        "examTip": "Found in Work Measurement. If no initial estimate of $p$ is available, using $p = 0.50$ yields the most conservative (maximum) sample size."
+                },
+                {
+                        "title": "Standard Time Calculation from Observed Cycle Times",
+                        "formula": "$$NT = OT \\times PR, \\quad ST = NT (1 + A_{\\text{total}}) = \\frac{NT}{1 - A_{\\text{shift}}}$$",
+                        "description": "Converts raw observed time ($OT$) to Normal Time ($NT$) via worker Performance Rating ($PR$), and adds personal, fatigue, and unavoidable delay allowances ($A$) to yield Standard Time ($ST$).",
+                        "examTip": "Found in Work Design. If allowances are based on normal time: $ST = NT(1 + A)$. If allowances are based on total shift time: $ST = NT / (1 - A)$."
+                },
+                {
+                        "title": "Anthropometric Percentile Design Equation",
+                        "formula": "$$X_p = \\bar{X} + Z_p S$$",
+                        "description": "Sizes workstation dimensions, seating, reach envelopes, and clearances to accommodate target user populations from sample mean $\\bar{X}$ and standard deviation $S$ (e.g., 5th percentile female reach to 95th percentile male clearance).",
+                        "examTip": "Found in Human Factors. For 5th percentile, $Z = -1.645$; for 95th percentile, $Z = +1.645$."
+                },
+                {
+                        "title": "Uniform Series Present Worth Factor ($(P/A, i, n)$)",
+                        "formula": "$$(P/A, i, n) = \\frac{(1 + i)^n - 1}{i (1 + i)^n}$$",
+                        "description": "Calculates present lump sum value $P$ equivalent to an equal uniform annual cash flow series $A$ received at the end of each period for $n$ periods at interest rate $i$.",
+                        "examTip": "Found in Engineering Economics. Reciprocal is the Capital Recovery factor: $(A/P, i, n) = [(P/A, i, n)]^{-1}$."
+                },
+                {
+                        "title": "Arithmetic Gradient Present Worth Factor ($(P/G, i, n)$)",
+                        "formula": "$$(P/G, i, n) = \\frac{(1 + i)^n - i n - 1}{i^2 (1 + i)^n}$$",
+                        "description": "Evaluates present worth of a cash flow series that increases uniformly by constant gradient amount $G$ in each successive period ($0, G, 2G, \\dots, (n-1)G$).",
+                        "examTip": "Found in Engineering Economics. Remember the gradient begins at period 2: cash flow at $t = 1$ is $0$, at $t = 2$ is $G$, and at $t = n$ is $(n - 1)G$."
+                },
+                {
+                        "title": "Uniform Gradient to Annual Worth Conversion ($(A/G, i, n)$)",
+                        "formula": "$$(A/G, i, n) = \\frac{1}{i} - \\frac{n}{(1 + i)^n - 1}$$",
+                        "description": "Converts an increasing arithmetic gradient series $G$ into an equivalent uniform annual cash flow series $A$ across $n$ periods.",
+                        "examTip": "Found in Engineering Economics. Combines with base annual operating cost: $A_{\\text{total}} = A_{\\text{base}} + G (A/G, i, n)$."
+                },
+                {
+                        "title": "Constant Failure Rate Exponential Reliability Function",
+                        "formula": "$$R(t) = e^{-\\lambda t}, \\quad MTBF = \\frac{1}{\\lambda}$$",
+                        "description": "Predicts probability $R(t)$ that a component operates without breakdown up to time $t$ during useful operating life where hazard rate $\\lambda$ is constant (exponential distribution).",
+                        "examTip": "Found in Reliability Engineering. Mean Time Between Failures ($MTBF$) is the exact reciprocal of constant failure rate $\\lambda$."
+                },
+                {
+                        "title": "Series System Reliability Modeling",
+                        "formula": "$$R_s(t) = \\prod_{i=1}^n R_i(t) = e^{-\\left(\\sum \\lambda_i\\right) t}$$",
+                        "description": "Reliability of a non-redundant system where failure of any single component causes total system failure; system reliability is always lower than that of its weakest component.",
+                        "examTip": "Found in Reliability Engineering. Failure rates of series components sum directly: $\\lambda_{\\text{system}} = \\sum \\lambda_i$."
+                },
+                {
+                        "title": "Parallel Redundant System Reliability Modeling",
+                        "formula": "$$R_p(t) = 1 - \\prod_{i=1}^n (1 - R_i(t))$$",
+                        "description": "Reliability of an active redundant system that continues functioning as long as at least one parallel redundant component remains operational.",
+                        "examTip": "Found in Reliability Engineering. For identical components with reliability $R$: $R_p = 1 - (1 - R)^n$."
+                },
+                {
+                        "title": "Internal Rate of Return (IRR) Criterion",
+                        "formula": "$$NPV = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0$$",
+                        "description": "Breakeven discount rate equating present worth of cash inflows to present worth of capital cash outflows; a project is acceptable if $IRR > MARR$ (Minimum Attractive Rate of Return).",
+                        "examTip": "Found in Engineering Economics. When selecting among mutually exclusive alternatives, use incremental analysis ($\\Delta IRR$), never compare absolute individual $IRR$ values directly."
+                },
+                {
+                        "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "formula": "$$D_j = C \\times r_j, \\quad BV_j = C - \\sum_{k=1}^j D_k$$",
+                        "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
+                        "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
                 }
         ],
         "Environmental": [
@@ -1632,6 +3651,408 @@
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Water Ionization Equilibrium and pH/pOH Relationship",
+                        "formula": "$$K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\quad (25^\\circ\\text{C}) \\implies \\text{pH} + \\text{pOH} = 14$$",
+                        "description": "Fundamental autoionization equilibrium of liquid water; neutral water has $\\text{pH} = \\text{pOH} = 7.0$ at $25^\\circ\\text{C}$, but neutral pH decreases at elevated water temperatures as $K_w$ increases.",
+                        "examTip": "Found in Environmental Chemistry. Concentration $[\\text{H}^+]$ is in moles/liter: $\\text{pH} = -\\log_{10}[\\text{H}^+]$."
+                },
+                {
+                        "title": "Weak Acid Dissociation and Henderson-Hasselbalch Equation",
+                        "formula": "$$K_a = \\frac{[\\text{H}^+][\\text{A}^-]}{[\\text{HA}]}, \\quad \\text{pH} = \\text{pK}_a + \\log_{10}\\left(\\frac{[\\text{A}^-]}{[\\text{HA}]}\\right)$$",
+                        "description": "Relates buffer pH to acid dissociation constant $\\text{pK}_a$ and the molar ratio of conjugate base $[\text{A}^-]$ to weak acid $[\text{HA}]$; maximum buffer capacity occurs when $\\text{pH} = \\text{pK}_a$.",
+                        "examTip": "Found in Environmental Chemistry. In hypochlorous acid disinfection: $\\text{pK}_a \\approx 7.5$; at $\\text{pH} < 7.5$, germicidal $\\text{HOCl}$ dominates over weaker $\\text{OCl}^-$."
+                },
+                {
+                        "title": "Solubility Product Constant ($K_{sp}$) and Chemical Precipitation",
+                        "formula": "$$A_x B_y(s) \\rightleftharpoons x A^{y+} + y B^{x-}, \\quad K_{sp} = [A^{y+}]^x [B^{x-}]^y$$",
+                        "description": "Equilibrium constant governing dissolution of sparingly soluble precipitates; precipitation occurs when ion activity product exceeds $K_{sp}$ ($IAP > K_{sp}$), fundamental to coagulation and softening.",
+                        "examTip": "Found in Environmental Chemistry. Adding a common ion shifts equilibrium toward precipitation, lowering dissolved metal concentration."
+                },
+                {
+                        "title": "Carbonate Equilibrium Speciation Fractions",
+                        "formula": "$$\\alpha_0 = \\frac{[\\text{H}^+]^2}{D}, \\quad \\alpha_1 = \\frac{K_1 [\\text{H}^+]}{D}, \\quad \\alpha_2 = \\frac{K_1 K_2}{D}, \\quad D = [\\text{H}^+]^2 + K_1 [\\text{H}^+] + K_1 K_2$$",
+                        "description": "Fractions of total inorganic carbon ($C_T$) present as dissolved carbonic acid $\\text{H}_2\\text{CO}_3^*$ ($\\alpha_0$), bicarbonate $\\text{HCO}_3^-$ ($\\alpha_1$), and carbonate $\\text{CO}_3^{2-}$ ($\\alpha_2$) as a function of pH.",
+                        "examTip": "Found in Water Chemistry. For typical natural surface waters ($6.5 < \\text{pH} < 8.5$), bicarbonate $\\text{HCO}_3^-$ accounts for $> 95\\%$ of inorganic carbon."
+                },
+                {
+                        "title": "Total Water Hardness as $\\text{mg/L as CaCO}_3$",
+                        "formula": "$$\\text{Hardness} = 2.50 [\\text{Ca}^{2+}] + 4.12 [\\text{Mg}^{2+}] \\quad [\\text{concentrations in mg/L}]$$",
+                        "description": "Expresses polyvalent metallic cation concentrations as equivalent calcium carbonate ($\text{CaCO}_3$, equivalent weight $50\\text{ g/eq}$); multiplier for $\\text{Ca}^{2+}$ is $50/20 = 2.50$, for $\\text{Mg}^{2+}$ is $50/12.15 = 4.12$.",
+                        "examTip": "Found in Water Quality. Total Hardness = Carbonate Hardness (temporary) + Non-Carbonate Hardness (permanent); Carbonate Hardness equals $\\min(\\text{Total Hardness}, \\text{Alkalinity})$."
+                },
+                {
+                        "title": "Equivalent Weight and Milliequivalents in Water Chemistry",
+                        "formula": "$$EW = \\frac{MW}{|z|}, \\quad \\text{meq/L} = \\frac{\\text{mg/L}}{EW}, \\quad \\text{mg/L as CaCO}_3 = \\text{meq/L} \\times 50$$",
+                        "description": "Normalizes chemical ionic concentrations by electrical valence $|z|$, enabling direct charge-balance summation of water quality cations and anions.",
+                        "examTip": "Found in Water Chemistry. In any natural water, sum of cations in meq/L must balance sum of anions in meq/L: $\\sum \\text{Cations} \\approx \\sum \\text{Anions}$."
+                },
+                {
+                        "title": "Chemical Oxygen Demand (COD) Stoichiometry",
+                        "formula": "$$\\text{C}_n\\text{H}_a\\text{O}_b\\text{N}_c + \\left(n + \\frac{a}{4} - \\frac{b}{2} - \\frac{3c}{4}\\right)\\text{O}_2 \\to n\\text{CO}_2 + \\left(\\frac{a - 3c}{2}\\right)\\text{H}_2\\text{O} + c\\text{NH}_3$$",
+                        "description": "Calculates oxygen equivalent of organic matter oxidized by strong chemical oxidant (potassium dichromate $\\text{K}_2\\text{Cr}_2\\text{O}_7$ in boiling sulfuric acid).",
+                        "examTip": "Found in Wastewater Engineering. Nitrogen in organic compounds is converted to ammonia ($\\text{NH}_3$), NOT nitrate, during standard COD chemical digestion."
+                },
+                {
+                        "title": "Theoretical Oxygen Demand (ThOD)",
+                        "formula": "$$ThOD = \\frac{\\text{Moles of } \\text{O}_2 \\text{ for complete oxidation} \\times 32\\text{ g/mol}}{\\text{Molecular Weight of Compound}}$$",
+                        "description": "Calculates stoichiometric oxygen mass needed to oxidize organic compound completely to $\\text{CO}_2, \\text{H}_2\\text{O}$, and $\\text{NO}_3^-$; typically, $ThOD \\ge COD > BOD_u > BOD_5$.",
+                        "examTip": "Found in Water Quality. If nitrogen is fully nitrified to nitrate ($\text{NO}_3^-$), add additional $2.0\\text{ moles O}_2$ per mole of ammonia."
+                },
+                {
+                        "title": "Total Organic Carbon (TOC) and Carbon-Oxygen Relationships",
+                        "formula": "$$TOC = \\frac{n \\times 12}{MW} \\times C_{\\text{compound}} \\text{ [mg/L]}$$",
+                        "description": "Direct instrumental measurement of organically bound carbon mass in water; for simple glucose ($\\text{C}_6\\text{H}_{12}\\text{O}_6$): $ThOD / TOC = (6 \\times 32) / (6 \\times 12) = 2.67\\text{ g O}_2 / \\text{g C}$.",
+                        "examTip": "Found in Environmental Chemistry. TOC is faster to measure than 5-day BOD and avoids hazardous heavy metal wastes generated by COD tests."
+                },
+                {
+                        "title": "Henry’s Law Constant Temperature Dependence",
+                        "formula": "$$H(T) = H_{298} \\exp\\left[-\\frac{\\Delta H_{\\text{sol}}}{R}\\left(\\frac{1}{T} - \\frac{1}{298}\\right)\\right]$$",
+                        "description": "Quantifies reduced gas solubility at warmer temperatures: gas dissolution is exothermic ($\\Delta H_{\\text{sol}} < 0$), so dissolved oxygen saturation in water decreases in summer.",
+                        "examTip": "Found in Water Quality / Environmental Chemistry. At sea level: saturated DO in water is $14.6\\text{ mg/L}$ at $0^\\circ\\text{C}$, but drops to $9.1\\text{ mg/L}$ at $20^\\circ\\text{C}$."
+                },
+                {
+                        "title": "Monod Microbial Cell Growth Kinetics",
+                        "formula": "$$\\mu = \\mu_{\\text{max}} \\left(\\frac{S}{K_s + S}\\right), \\quad r_g = \\mu X = \\mu_{\\text{max}} \\left(\\frac{S}{K_s + S}\\right) X$$",
+                        "description": "Relates specific microbial biomass growth rate $\\mu$ to growth-limiting substrate concentration $S$, where $K_s$ is half-velocity constant ($S$ where $\\mu = 0.5\\mu_{\\text{max}}$).",
+                        "examTip": "Found in Biological Wastewater Treatment. At high substrate concentration ($S \\gg K_s$), growth is zero-order ($\\mu \\approx \\mu_{\\text{max}}$); at low $S \\ll K_s$, growth is first-order."
+                },
+                {
+                        "title": "Net Specific Microbial Growth Rate with Endogenous Decay",
+                        "formula": "$$\\mu_{\\text{net}} = \\mu - k_d = \\mu_{\\text{max}} \\left(\\frac{S}{K_s + S}\\right) - k_d$$",
+                        "description": "Accounts for cellular biomass loss due to endogenous respiration, cell death, and predation via endogenous decay coefficient $k_d$ (typically $0.05 - 0.10\\text{ day}^{-1}$).",
+                        "examTip": "Found in Wastewater Engineering. In steady-state activated sludge without recycle, cell residence time dictates net growth: $1/\\theta_c = \\mu_{\\text{net}} = \\mu - k_d$."
+                },
+                {
+                        "title": "Biological Denitrification Stoichiometry with Methanol",
+                        "formula": "$$6\\text{NO}_3^- + 5\\text{CH}_3\\text{OH} \\to 3\\text{N}_2(g) + 5\\text{CO}_2 + 7\\text{H}_2\\text{O} + 6\\text{OH}^-$$",
+                        "description": "Anoxic heterotrophic conversion of nitrate to inert nitrogen gas, consuming an external organic carbon electron donor (methanol) and restoring alkalinity destroyed by nitrification.",
+                        "examTip": "Found in Wastewater Engineering. Denitrification produces $3.57\\text{ mg CaCO}_3$ alkalinity per $\\text{mg NO}_3^--\\text{N}$ reduced, recovering half of alkalinity lost during nitrification."
+                },
+                {
+                        "title": "Lime-Soda Ash Softening Stoichiometric Chemistry",
+                        "formula": "$$\\text{Lime: } \\text{Ca}^{2+} + 2\\text{HCO}_3^- + \\text{Ca(OH)}_2 \\to 2\\text{CaCO}_3(s) + 2\\text{H}_2\\text{O}, \\quad \\text{Soda Ash: } \\text{Ca}^{2+} + \\text{Na}_2\\text{CO}_3 \\to \\text{CaCO}_3(s) + 2\\text{Na}^+$$",
+                        "description": "Precipitates carbonate hardness as calcium carbonate ($\\text{CaCO}_3$, insoluble at $\\text{pH} \\approx 9.5$) using hydrated lime, and removes non-carbonate hardness using soda ash.",
+                        "examTip": "Found in Water Treatment. Magnesium requires raising pH to $\\sim 10.8$ to precipitate as magnesium hydroxide $\\text{Mg(OH)}_2$, requiring an extra equivalent of lime."
+                },
+                {
+                        "title": "River Mixing Zone Complete Mixing Mass Balance",
+                        "formula": "$$C_{\\text{mix}} = \\frac{Q_s C_s + Q_w C_w}{Q_s + Q_w}$$",
+                        "description": "Conservative pollutant concentration immediately downstream of point-source wastewater discharge $Q_w$ entering receiving river streamflow $Q_s$.",
+                        "examTip": "Found in Surface Water Quality. Regulated under low-flow design condition known as 7Q10 (lowest 7-day average flow occurring once in 10 years)."
+                },
+                {
+                        "title": "Critical Travel Time in the Streeter-Phelps Model ($t_c$)",
+                        "formula": "$$t_c = \\frac{1}{k_2 - k_1} \\ln\\left[\\frac{k_2}{k_1}\\left(1 - D_0 \\frac{k_2 - k_1}{k_1 L_0}\\right)\\right]$$",
+                        "description": "Downstream travel time $t_c$ from waste discharge point to location of minimum dissolved oxygen (maximum oxygen deficit $D_c$) in a receiving river.",
+                        "examTip": "Found in Water Quality. Downstream distance to the critical sag point is $x_c = v \\times t_c$, where $v$ is average river velocity."
+                },
+                {
+                        "title": "Critical Dissolved Oxygen Deficit Formula ($D_c$)",
+                        "formula": "$$D_c = \\frac{k_1 L_0}{k_2} e^{-k_1 t_c}, \\quad DO_{\\text{min}} = DO_{\\text{sat}} - D_c$$",
+                        "description": "Peak dissolved oxygen deficit occurring where deoxygenation rate exactly equals surface atmospheric reaeration rate ($dD/dt = 0 \\implies k_1 L_t = k_2 D_c$).",
+                        "examTip": "Found in Water Quality. Regulatory standards require minimum dissolved oxygen (e.g. $DO_{\\text{min}} \\ge 5.0\\text{ mg/L}$) to support aquatic fisheries."
+                },
+                {
+                        "title": "Nitrogenous Biochemical Oxygen Demand (NBOD)",
+                        "formula": "$$\\text{NBOD} = 4.57 \\times [\\text{Total Kjeldahl Nitrogen, mg/L as N}]$$",
+                        "description": "Oxygen consumed by autotrophic nitrifying bacteria oxidizing ammonia and organic nitrogen to nitrate: $\\text{NH}_4^+ + 2\\text{O}_2 \\to \\text{NO}_3^- + 2\\text{H}^+ + \\text{H}_2\\text{O}$.",
+                        "examTip": "Found in Wastewater Engineering. Ratio is $(2 \\times 32\\text{ g O}_2) / (14\\text{ g N}) = 4.57\\text{ g O}_2 / \\text{g N}$. NBOD exertion typically lags CBOD by $5 - 8\\text{ days}$."
+                },
+                {
+                        "title": "Vollenweider Lake Eutrophication Phosphorus Model",
+                        "formula": "$$[P] = \\frac{L_p}{q_s + v_s} = \\frac{L_p}{z / \\tau_w + v_s}$$",
+                        "description": "Predicts in-lake steady-state phosphorus concentration $[P]$ based on annual areal phosphorus loading $L_p$ ($\\text{mg/m}^2\\cdot\\text{yr}$), lake depth $z$, water residence time $\\tau_w$, and settling velocity $v_s$.",
+                        "examTip": "Found in Water Quality. Phosphorus is the primary limiting nutrient in freshwater lakes controlling algal blooms and eutrophication."
+                },
+                {
+                        "title": "Total Maximum Daily Load (TMDL) Allocation Balance",
+                        "formula": "$$TMDL = \\sum WLA + \\sum LA + MOS$$",
+                        "description": "Clean Water Act maximum pollutant loading a waterbody can assimilate while meeting water quality standards, divided between Waste Load Allocations (point sources, $WLA$), Load Allocations (nonpoint, $LA$), and Margin of Safety ($MOS$).",
+                        "examTip": "Found in Environmental Management. $MOS$ can be explicitly factored in or built into conservative modeling assumptions."
+                },
+                {
+                        "title": "Coagulation Rapid Mix Camp-Stein Parameter ($Gt$)",
+                        "formula": "$$Gt = \\sqrt{\\frac{P V}{\\mu}} \\cdot \\left(\\frac{1}{Q}\\right) = G \\times \\theta$$",
+                        "description": "Dimensionless mixing intensity parameter: for rapid mixing, $Gt \\sim 10^4$ to $10^5$; for flocculation basins, $Gt \\sim 10^4$ to $10^5$ with lower velocity gradients ($G \\sim 20 - 75\\text{ s}^{-1}$) to prevent floc shear.",
+                        "examTip": "Found in Water Treatment. Water dynamic viscosity $\\mu \\approx 1.00 \\times 10^{-3}\\text{ Pa}\\cdot\\text{s}$ at $20^\\circ\\text{C}$."
+                },
+                {
+                        "title": "Clarifier Weir Overflow Loading Rate (WLR)",
+                        "formula": "$$WLR = \\frac{Q}{\\text{Total Weir Length}} = \\frac{Q}{\\pi D} \\quad (\\text{Circular Clarifier})$$",
+                        "description": "Discharge rate per unit length of effluent peripheral V-notch weir crest in sedimentation tanks, regulated to prevent high exit velocities that scour settled flocs.",
+                        "examTip": "Found in Water Treatment. Typical design standard: $WLR \\le 10{,}000 - 20{,}000\\text{ gpd/ft}$."
+                },
+                {
+                        "title": "Granular Media Filter Clean Bed Head Loss (Carman-Kozeny)",
+                        "formula": "$$\\frac{h_L}{L} = \\frac{1 - \\epsilon}{\\epsilon^3} \\frac{v^2}{g d_p} \\left[150 \\frac{1 - \\epsilon}{Re_p} + 1.75\\right]$$",
+                        "description": "Friction head loss $h_L$ across a clean granular deep-bed sand/anthracite filter of depth $L$, porosity $\\epsilon$, filtration superficial velocity $v$, and particle diameter $d_p$.",
+                        "examTip": "Found in Drinking Water Treatment. Filter head loss increases over time as trapped suspended solids clog interstitial pore spaces, triggering backwash."
+                },
+                {
+                        "title": "Filter Backwash Expansion and Minimum Fluidization Velocity",
+                        "formula": "$$v_{mf} = \\frac{g (\\rho_p - \\rho_w) d_p^2 \\epsilon_{mf}^3}{150 \\mu (1 - \\epsilon_{mf})}, \\quad L_{exp} = L_0 \\left(\\frac{1 - \\epsilon_0}{1 - \\epsilon_{exp}}\\right)$$",
+                        "description": "Upward water wash velocity $v_{mf}$ required to fluidize sand media for cleaning, and expanded bed depth $L_{exp}$ during backwash.",
+                        "examTip": "Found in Water Treatment. Standard rapid sand backwash targets $20\\% - 30\\%$ bed expansion ($L_{exp} / L_0 \\approx 1.20 - 1.30$)."
+                },
+                {
+                        "title": "EPA $Ct$ Disinfection Inactivation Log-Credits",
+                        "formula": "$$\\text{Log Inactivation} = -\\log_{10}\\left(\\frac{N}{N_0}\\right), \\quad Ct = C_{\\text{residual}} \\times t_{10}$$",
+                        "description": "EPA Safe Drinking Water Act compliance: $Ct$ is disinfectant concentration $C$ times $10\\%$ baffling breakthrough contact time $t_{10}$; $1$-log removal = $90\\%$, $2$-log = $99\\%$, $3$-log = $99.9\\%$, $4$-log = $99.99\\%$.",
+                        "examTip": "Found in Drinking Water. A baffled basin has $t_{10} / \\theta \\approx 0.5 - 0.7$, whereas an unbaffled tank has $t_{10} / \\theta \\approx 0.1 - 0.2$."
+                },
+                {
+                        "title": "Activated Sludge Daily Biomass Waste Production ($P_x$)",
+                        "formula": "$$P_x = Y_{\\text{obs}} Q (S_0 - S) = \\frac{Y Q (S_0 - S)}{1 + k_d \\theta_c}$$",
+                        "description": "Daily dry mass of waste biological sludge (VSS) produced per day in secondary activated sludge, requiring solids handling and digestion disposal.",
+                        "examTip": "Found in Wastewater Engineering. To convert VSS to Total Suspended Solids (TSS), divide by volatile fraction (typically $VSS/TSS \\approx 0.80$)."
+                },
+                {
+                        "title": "Daily Biological Oxygen Demand in Aeration Basins",
+                        "formula": "$$R_O = Q (S_0 - S) - 1.42 P_x + 4.57 Q (N_0 - N)$$",
+                        "description": "Mass of oxygen required per day in activated sludge: carbonaceous BOD oxidation minus oxygen preserved in wasted bacterial cell tissue ($1.42\\text{ mg O}_2 / \\text{mg VSS}$) plus autotrophic nitrification demand.",
+                        "examTip": "Found in Wastewater Treatment. Cell biomass has standard empirical formulation $\\text{C}_5\\text{H}_7\\text{O}_2\\text{N}$, which requires $1.42\\text{ g O}_2$ per gram to fully oxidize."
+                },
+                {
+                        "title": "Secondary Clarifier Solids Loading Rate (SLR)",
+                        "formula": "$$SLR = \\frac{(Q + Q_r) X}{A_s} = \\frac{\\text{Total Solids Applied per Day}}{\\text{Clarifier Surface Area}}$$",
+                        "description": "Critical operational check on secondary settling tanks combining influent flow $Q$, return activated sludge flow $Q_r$, and mixed liquor suspended solids $X$ ($MLSS$).",
+                        "examTip": "Found in Wastewater Engineering. Design peak solids loading rate must not exceed $24 - 30\\text{ lb}/(\\text{ft}^2\\cdot\\text{day})$ to avoid sludge blanket washout."
+                },
+                {
+                        "title": "Trickling Filter NRC Formula for BOD Removal",
+                        "formula": "$$E_1 = \\frac{100}{1 + 0.0561 \\sqrt{\\frac{w}{V F}}}, \\quad F = \\frac{1 + R}{(1 + 0.1 R)^2}$$",
+                        "description": "Empirical National Research Council (NRC) formula predicting percentage BOD removal efficiency $E_1$ of rock-media trickling filters based on organic loading $w$, volume $V$, and recirculation factor $F$.",
+                        "examTip": "Found in Wastewater Treatment. Recirculation ratio is $R = Q_r / Q$."
+                },
+                {
+                        "title": "Anaerobic Digester Biogas Methane Generation",
+                        "formula": "$$V_{CH_4} = 5.62 [Q (S_0 - S) - 1.42 P_x] \\text{ [cu ft/day]} = 0.35 [Q (S_0 - S) - 1.42 P_x] \\text{ [m}^3\\text{/day]}$$",
+                        "description": "Computes volume of methane gas generated from anaerobic conversion of biodegradable COD into $\\text{CH}_4$ and $\\text{CO}_2$; standard yield is $5.62\\text{ ft}^3\\text{ CH}_4 / \\text{lb COD destroyed}$ ($0.35\\text{ m}^3/\\text{kg}$).",
+                        "examTip": "Found in Wastewater Treatment. Biogas is typically $65\\% \\text{ CH}_4$ and $35\\% \\text{ CO}_2$, with heating value $\\approx 600\\text{ BTU/cu ft}$."
+                },
+                {
+                        "title": "Dissolved Air Flotation (DAF) Air-to-Solids Ratio",
+                        "formula": "$$\\frac{A}{S} = \\frac{1.3 s_a (f P - 1) R}{Q X}$$",
+                        "description": "Operating metric for clarifiers that float low-density sludge/oil flocs using pressurized supersaturated recycle stream $R$ producing micron-sized air bubbles; $s_a$ is air solubility.",
+                        "examTip": "Found in Sludge Thickening. Typical optimal $A/S$ ratio is $0.005 - 0.060\\text{ lb air / lb solids}$."
+                },
+                {
+                        "title": "Ultraviolet (UV) Disinfection Fluence (Dose)",
+                        "formula": "$$D = I \\times t = I_{\\text{avg}} \\times \\theta, \\quad \\ln\\left(\\frac{N}{N_0}\\right) = -k D$$",
+                        "description": "UV radiation disinfection dose $D$ ($\\text{mJ/cm}^2$) equals average UV irradiance $I$ multiplied by exposure residence time $t$; destroys bacterial and viral DNA replication mechanisms without chemical residuals.",
+                        "examTip": "Found in Water Disinfection. Low UV transmittance (UVT) in wastewater reduces average irradiance $I_{\\text{avg}}$, requiring higher UV lamp wattage."
+                },
+                {
+                        "title": "Reverse Osmosis (RO) Membrane Water Flux",
+                        "formula": "$$J_w = A (\\Delta P - \\Delta \\pi), \\quad \\Delta \\pi = \\frac{R T}{M} \\sum (C_{i, \\text{feed}} - C_{i, \\text{perm}})$$",
+                        "description": "Permeate water volumetric flux $J_w$ across a semi-permeable membrane governed by water permeability constant $A$ and net driving pressure: hydraulic pressure difference $\\Delta P$ minus osmotic pressure difference $\\Delta\\pi$.",
+                        "examTip": "Found in Advanced Water Treatment / Desalination. Reverse osmosis only occurs when applied feed pressure exceeds natural osmotic pressure: $\\Delta P > \\Delta\\pi$."
+                },
+                {
+                        "title": "Aquifer Transmissivity and Storage Coefficient",
+                        "formula": "$$T = K b, \\quad S = S_s b$$",
+                        "description": "Transmissivity $T$ is the rate of groundwater flow through a unit width of vertical aquifer thickness $b$ under unit hydraulic gradient; storativity $S$ is volume of water released per unit area per unit decline in head.",
+                        "examTip": "Found in Hydrogeology. For confined aquifers, $S$ is very small ($10^{-5} - 10^{-3}$); for unconfined aquifers, $S \\approx S_y$ (specific yield, $0.1 - 0.3$)."
+                },
+                {
+                        "title": "Thiem Steady-State Well Drawdown in Confined Aquifers",
+                        "formula": "$$Q = \\frac{2\\pi T (h_2 - h_1)}{\\ln(r_2 / r_1)} = \\frac{2\\pi K b (s_1 - s_2)}{\\ln(r_2 / r_1)}$$",
+                        "description": "Radial equilibrium flow rate $Q$ pumped from a fully penetrating well in an extensive confined aquifer based on steady heads $h_1, h_2$ observed in piezometers at radii $r_1, r_2$.",
+                        "examTip": "Found in Groundwater. Drawdown is $s = h_0 - h$; note that $(s_1 - s_2) = (h_2 - h_1)$."
+                },
+                {
+                        "title": "Dupuit-Forchheimer Radial Flow in Unconfined Aquifers",
+                        "formula": "$$Q = \\frac{\\pi K (h_2^2 - h_1^2)}{\\ln(r_2 / r_1)}$$",
+                        "description": "Governs steady-state radial flow to a well in an unconfined water-table aquifer; derived assuming horizontal flow lines and hydraulic gradient equal to phreatic surface slope.",
+                        "examTip": "Found in Hydrogeology. Notice heads are squared ($h_2^2 - h_1^2$) due to variable saturated aquifer thickness."
+                },
+                {
+                        "title": "Theis Non-Equilibrium Unsteady Well Drawdown",
+                        "formula": "$$s = \\frac{Q}{4\\pi T} W(u), \\quad u = \\frac{r^2 S}{4 T t}, \\quad W(u) = \\int_u^\\infty \\frac{e^{-x}}{x} dx$$",
+                        "description": "Calculates transient drawdown $s(r, t)$ at distance $r$ from an unsteady well pumping at constant discharge $Q$ in a confined aquifer using the exponential well function $W(u)$.",
+                        "examTip": "Found in Hydrogeology. Evaluated on the FE exam either via $W(u)$ tables or using Cooper-Jacob approximation when $u < 0.01$."
+                },
+                {
+                        "title": "Cooper-Jacob Approximation for Well Drawdown",
+                        "formula": "$$s = \\frac{Q}{4\\pi T} \\left[\\ln\\left(\\frac{4 T t}{r^2 S}\\right) - 0.5772\\right] = \\frac{2.303 Q}{4\\pi T} \\log_{10}\\left(\\frac{2.25 T t}{r^2 S}\\right)$$",
+                        "description": "Truncated logarithmic approximation of Theis well equation, valid for small $u \\le 0.01$ (large pumping times $t$ or small radial distances $r$).",
+                        "examTip": "Found in Hydrogeology. Plotting drawdown $s$ vs $\\log t$ yields a straight line with slope $\\Delta s = 2.303 Q / (4\\pi T)$ per log cycle of time."
+                },
+                {
+                        "title": "Groundwater Contaminant Retardation Factor ($R$)",
+                        "formula": "$$R = \\frac{v_s}{v_c} = 1 + \\frac{\\rho_b}{\\theta} K_d$$",
+                        "description": "Ratio of groundwater pore water seepage velocity $v_s$ to contaminant migration plume velocity $v_c$, slowed by sorption onto soil matrix with bulk density $\\rho_b$, porosity $\\theta$, and distribution coefficient $K_d$.",
+                        "examTip": "Found in Subsurface Contaminant Transport. If $R = 5$, the contaminant plume travels at only $1/5$ the velocity of advancing groundwater."
+                },
+                {
+                        "title": "Organic Carbon Partition Coefficient ($K_{oc}$ and $K_d$)",
+                        "formula": "$$K_d = f_{oc} K_{oc}, \\quad \\log K_{oc} \\approx 0.903 \\log K_{ow} - 0.094$$",
+                        "description": "Predicts linear sorption distribution coefficient $K_d$ for non-polar hydrophobic organic compounds from soil weight fraction organic carbon $f_{oc}$ and octanol-water partition coefficient $K_{ow}$.",
+                        "examTip": "Found in Contaminant Remediation. Higher $K_{ow}$ (more hydrophobic) compounds sorb strongly to organic matter in soils, leading to high retardation."
+                },
+                {
+                        "title": "Soil Vapor Extraction (SVE) Radius of Influence",
+                        "formula": "$$\\frac{Q}{H} = \\frac{\\pi k_a}{\\mu_a} \\left[\\frac{P_{\\text{atm}}^2 - P_{\\text{vac}}^2}{P_{\\text{atm}} \\ln(R_I / R_w)}\\right]$$",
+                        "description": "Governs airflow extraction rate $Q$ through unsaturated vadose zone to remediate volatile organic compounds (VOCs) based on soil air permeability $k_a$ and vacuum radius of influence $R_I$.",
+                        "examTip": "Found in Soil Remediation. SVE is most effective for high-volatility compounds (Henry's constant $> 0.01\\text{ atm}\\cdot\\text{m}^3/\\text{mol}$, vapor pressure $> 1\\text{ mm Hg}$)."
+                },
+                {
+                        "title": "Gaussian Plume Ground-Level Centerline Dispersion",
+                        "formula": "$$C(x, 0, 0) = \\frac{Q}{\\pi u \\sigma_y \\sigma_z} \\exp\\left(-\\frac{H^2}{2\\sigma_z^2}\\right)$$",
+                        "description": "Evaluates ground-level ($z = 0$) downwind centerline ($y = 0$) air pollutant concentration emitted from continuous stack source with emission rate $Q$, effective height $H$, and wind speed $u$.",
+                        "examTip": "Found in Air Quality. Maximum ground-level concentration occurs downwind where vertical dispersion coefficient is $\\sigma_z = H / \\sqrt{2} = 0.707 H$."
+                },
+                {
+                        "title": "Effective Stack Height and Plume Rise (Holland’s Equation)",
+                        "formula": "$$H = h_s + \\Delta h, \\quad \\Delta h = \\frac{v_s d}{u}\\left(1.5 + 2.68 \\times 10^{-3} P d \\frac{T_s - T_a}{T_s}\\right)$$",
+                        "description": "Effective emission release height $H$ equals physical smokestack height $h_s$ plus buoyant and momentum plume rise $\\Delta h$ driven by stack exit gas velocity $v_s$ and temperature $T_s$.",
+                        "examTip": "Found in Air Pollution. Increasing physical stack height $h_s$ dramatically reduces peak ground-level pollutant concentrations ($C \\propto 1/H^2$)."
+                },
+                {
+                        "title": "Electrostatic Precipitator (ESP) Deutsch-Anderson Equation",
+                        "formula": "$$\\eta = 1 - \\exp\\left(-\\frac{w A}{Q}\\right)$$",
+                        "description": "Collection efficiency $\\eta$ of fly ash and fine particulates in electrostatic precipitators based on collection plate surface area $A$, gas volumetric flow $Q$, and particle electrical drift velocity $w$.",
+                        "examTip": "Found in Air Pollution Control. To double the uncollected penetration from $99\\%$ to $99.9\\%$ efficiency, plate collection area must increase significantly."
+                },
+                {
+                        "title": "Fabric Filter Baghouse Air-to-Cloth Ratio",
+                        "formula": "$$v_{ac} = \\frac{Q}{A_{\\text{cloth}}}, \\quad \\Delta P = (K_e + K_s W) v_{ac}$$",
+                        "description": "Filtration face velocity $v_{ac}$ (typically $2 - 4\\text{ ft/min}$) in industrial baghouses; total pressure drop $\\Delta P$ increases linearly as particulate cake areal density $W$ builds up.",
+                        "examTip": "Found in Air Quality Engineering. Baghouses achieve $> 99.9\\%$ capture efficiency across all particle sizes down to submicron levels."
+                },
+                {
+                        "title": "Wet Flue Gas Desulfurization (FGD) Chemistry",
+                        "formula": "$$\\text{SO}_2 + \\text{CaCO}_3 + \\frac{1}{2}\\text{O}_2 + 2\\text{H}_2\\text{O} \\to \\text{CaSO}_4\\cdot 2\\text{H}_2\\text{O}(s) + \\text{CO}_2$$",
+                        "description": "Acid gas scrubbing chemistry reacting sulfur dioxide in coal-fired power plant flue gas with limestone slurry to precipitate commercial-grade synthetic gypsum (calcium sulfate dihydrate).",
+                        "examTip": "Found in Air Pollution Control. Stoichiometric requirement is $1\\text{ mole CaCO}_3$ per mole of $\\text{SO}_2$ captured."
+                },
+                {
+                        "title": "Selective Catalytic Reduction (SCR) for NOx Abatement",
+                        "formula": "$$4\\text{NO} + 4\\text{NH}_3 + \\text{O}_2 \\xrightarrow{\\text{catalyst}} 4\\text{N}_2 + 6\\text{H}_2\\text{O}$$",
+                        "description": "High-efficiency ($> 90\\%$) catalytic reduction of nitrogen oxides ($\text{NO}_x$) to harmless atmospheric nitrogen gas using injected ammonia ($\text{NH}_3$) over titanium/vanadium oxide catalysts at $300 - 400^\\circ\\text{C}$.",
+                        "examTip": "Found in Air Pollution Control. Unreacted ammonia escaping the stack is known as 'ammonia slip' and is tightly regulated."
+                },
+                {
+                        "title": "Landfill Water Balance Leachate Generation (HELP Model)",
+                        "formula": "$$\\text{Leachate} = \\text{Precipitation} - \\text{Surface Runoff} - \\text{Evapotranspiration} - \\Delta S_{\\text{soil}}$$",
+                        "description": "Hydrologic Evaluation of Landfill Performance (HELP) water budget estimating volume of percolating contaminated leachate generated annually inside municipal solid waste landfills.",
+                        "examTip": "Found in Solid Waste Management. Impermeable final composite covers minimize infiltration, starving the landfill of moisture and halting leachate production."
+                },
+                {
+                        "title": "RCRA Subtitle C Hazardous Waste Landfill Liner System",
+                        "formula": "$$\\text{Double Composite Liner: } \\ge 2 \\text{ geomembranes (}\\ge 60\\text{ mil HDPE) } + \\ge 3\\text{ ft compacted clay } (K \\le 10^{-7}\\text{ cm/s})$$",
+                        "description": "Strict minimum federal RCRA engineering standard featuring primary leachate collection system, secondary leak detection and removal system (LDRS), and low-permeability clay barriers.",
+                        "examTip": "Found in Hazardous Waste Management. RCRA Subtitle D governs non-hazardous municipal solid waste (single composite liner required)."
+                },
+                {
+                        "title": "Toxicity Characteristic Leaching Procedure (TCLP)",
+                        "formula": "$$C_{\\text{leachate}} \\ge \\text{Regulatory Regulatory Threshold (e.g. Lead: } 5.0\\text{ mg/L)}$$",
+                        "description": "EPA standard extraction method (SW-846 Method 1311) simulating 20-fold acetic acid leaching inside a municipal landfill; if filtrate exceeds regulatory threshold, waste is classified as toxic hazardous waste (D-list).",
+                        "examTip": "Found in Hazardous Waste. Lead: $5.0\\text{ mg/L}$; Arsenic: $5.0\\text{ mg/L}$; Cadmium: $1.0\\text{ mg/L}$; Benzene: $0.5\\text{ mg/L}$."
+                },
+                {
+                        "title": "Sound Power Level ($L_W$) and Sound Pressure Level ($L_p$)",
+                        "formula": "$$L_W = 10 \\log_{10}\\left(\\frac{W}{10^{-12}\\text{ W}}\\right), \\quad L_p = 20 \\log_{10}\\left(\\frac{p}{20\\ \\mu\\text{Pa}}\\right)$$",
+                        "description": "Distinguishes intrinsic total acoustic energy emitted by a source ($L_W$, sound power level) from ambient acoustic pressure variation felt at receiver distance ($L_p$, sound pressure level).",
+                        "examTip": "Found in Environmental Noise. Reference sound power is $W_0 = 10^{-12}\\text{ W}$; reference sound pressure is $p_0 = 20\\ \\mu\\text{Pa}$ (threshold of human hearing at $1\\text{ kHz}$)."
+                },
+                {
+                        "title": "Sound Free-Field Spherical Spreading Attenuation",
+                        "formula": "$$L_{p2} = L_{p1} - 20 \\log_{10}\\left(\\frac{r_2}{r_1}\\right)$$",
+                        "description": "Inverse-square acoustic spreading law in spherical free field: sound pressure level drops by exactly $6\\text{ dB}$ for every doubling of distance from a point source ($20\\log_{10}(2) \\approx 6.02\\text{ dB}$).",
+                        "examTip": "Found in Environmental Noise. For an infinite line source (highway traffic), spreading is cylindrical and drops by only $3\\text{ dB}$ per doubling of distance ($10\\log_{10}(2) \\approx 3\\text{ dB}$)."
+                },
+                {
+                        "title": "Radiation Shielding Half-Value Layer (HVL)",
+                        "formula": "$$I = I_0 e^{-\\mu x} = I_0 \\left(\\frac{1}{2}\\right)^{\\frac{x}{HVL}}, \\quad HVL = \\frac{\\ln 2}{\\mu} = \\frac{0.693}{\\mu}$$",
+                        "description": "Thickness of shielding material $x$ required to cut incident gamma or X-ray ionizing radiation intensity $I$ by half, using linear attenuation coefficient $\\mu$.",
+                        "examTip": "Found in Radiation Protection. Providing $n$ half-value layers reduces radiation intensity to $(1/2)^n$; $10\\text{ HVLs}$ attenuates radiation to $< 0.1\\%$ ($1/1024$)."
+                },
+                {
+                        "title": "Luxury Phosphorus Uptake by PAOs in Enhanced Biological Phosphorus Removal",
+                        "formula": "$$\\text{Anaerobic: Release P} + \\text{Store PHA} \\implies \\text{Aerobic: Luxury Uptake of P}$$",
+                        "description": "Polyphosphate Accumulating Organisms (PAOs) release orthophosphate anaerobically to assimilate volatile fatty acids (VFAs), then take up phosphorus in excess of normal cellular requirements under aerobic conditions, concentrating it for sludge wastage.",
+                        "examTip": "Found in Wastewater Treatment. Anaerobic/Oxic (A/O) or Anaerobic/Anoxic/Oxic ($A^2/O$) configurations achieve $< 1.0\\text{ mg/L}$ effluent phosphorus without chemical precipitation."
+                },
+                {
+                        "title": "Disinfection Byproduct (DBP) Formation Kinetics",
+                        "formula": "$$\\text{Free Chlorine} + \\text{Natural Organic Matter (NOM)} \\to \\text{THMs} + \\text{HAAs}$$",
+                        "description": "Reaction of free chlorine disinfectant with humic/fulvic aquatic precursors forming regulated carcinogens: Total Trihalomethanes (TTHMs, EPA limit $80\\ \\mu\\text{g/L}$) and Haloacetic Acids (HAA5, EPA limit $60\\ \\mu\\text{g/L}$).",
+                        "examTip": "Found in Drinking Water Treatment. DBP formation increases with higher chlorine dose, contact time, water temperature, pH, and NOM precursor concentrations."
+                },
+                {
+                        "title": "Estuarine One-Dimensional Steady-State Salinity Dispersion",
+                        "formula": "$$s(x) = s_0 \\exp\\left(\\frac{u x}{E}\\right) = s_0 \\exp\\left(\\frac{Q x}{A E}\\right)$$",
+                        "description": "Models longitudinal upstream salt intrusion profile in well-mixed tidal estuaries balancing seaward advection velocity $u$ against landward tidal dispersion coefficient $E$.",
+                        "examTip": "Found in Surface Water Quality. At upstream distance $x < 0$, salinity decreases exponentially away from ocean boundary $s_0$."
+                },
+                {
+                        "title": "Urban Stormwater Event Mean Concentration (EMC)",
+                        "formula": "$$EMC = \\bar{C} = \\frac{M}{V} = \\frac{\\int C(t) Q(t) dt}{\\int Q(t) dt} = \\frac{\\sum C_i Q_i \\Delta t_i}{\\sum Q_i \\Delta t_i}$$",
+                        "description": "Flow-weighted average concentration representing total mass $M$ of runoff pollutant washed off during a rainfall event divided by total runoff volume $V$.",
+                        "examTip": "Found in Stormwater Management. Used to evaluate urban non-point source pollutant loading and Best Management Practice (BMP) removal efficiencies."
+                },
+                {
+                        "title": "Urban Stormwater Rational Peak Discharge Formula",
+                        "formula": "$$Q = C I A$$",
+                        "description": "Predicts peak surface runoff discharge rate $Q$ (cfs) from watershed drainage area $A$ (acres), rainfall intensity $I$ (in/hr) at time of concentration $t_c$, and dimensionless runoff coefficient $C$.",
+                        "examTip": "Found in Hydrology. Conversion factor: $1\\text{ acre-inch/hr} = 1.008\\text{ cfs} \\approx 1.0\\text{ cfs}$."
+                },
+                {
+                        "title": "NRCS Direct Runoff Equation with Initial Abstraction",
+                        "formula": "$$Q = \\frac{(P - I_a)^2}{(P - I_a) + S} = \\frac{(P - 0.2S)^2}{P + 0.8S}, \\quad S = \\frac{1000}{CN} - 10$$",
+                        "description": "Calculates direct surface runoff depth $Q$ (inches) from storm rainfall $P$ (inches) using hydrologic soil Curve Number ($CN$) and initial abstraction $I_a = 0.2 S$.",
+                        "examTip": "Found in Water Resources. Runoff occurs only when rainfall exceeds initial abstraction ($P > 0.2 S$)."
+                },
+                {
+                        "title": "Observed Yield Coefficient in Aeration Basins",
+                        "formula": "$$Y_{\\text{obs}} = \\frac{Y}{1 + k_d \\theta_c}$$",
+                        "description": "Ratio of biomass produced to substrate utilized in activated sludge systems, reduced from synthesis yield $Y$ by microbial endogenous respiration over sludge age $\\theta_c$.",
+                        "examTip": "Found in Wastewater Engineering. As sludge age $\\theta_c$ increases (extended aeration), $Y_{\\text{obs}}$ drops significantly, minimizing excess waste sludge."
+                },
+                {
+                        "title": "Mixed Liquor Volatile Suspended Solids (MLVSS) Active Fraction",
+                        "formula": "$$f_d = \\frac{X_v}{X} \\approx 0.70 - 0.85, \\quad X_a = f_a X_v$$",
+                        "description": "Distinguishes active living biological mass fraction from inert organic and inorganic suspended solids in mixed liquor aeration basins.",
+                        "examTip": "Found in Wastewater Treatment. Typical municipal aeration basins operate with $MLSS \\approx 2000 - 3500\\text{ mg/L}$ with $MLVSS / MLSS \\approx 0.80$."
+                },
+                {
+                        "title": "Sequencing Batch Reactor (SBR) Periodic Cycle Design",
+                        "formula": "$$T_{\\text{cycle}} = t_{\\text{fill}} + t_{\\text{react}} + t_{\\text{settle}} + t_{\\text{decant}} + t_{\\text{idle}}$$",
+                        "description": "Fill-and-draw activated sludge process where biological equalization, reaction, secondary clarification, and effluent decanting occur sequentially in a single basin.",
+                        "examTip": "Found in Wastewater Treatment. Eliminates separate secondary clarifiers and return activated sludge (RAS) pumping lines."
+                },
+                {
+                        "title": "Belt Filter Press Sludge Dewatering Solids Balance",
+                        "formula": "$$\\text{Recovery} = \\frac{C_c (C_i - C_f)}{C_i (C_c - C_f)} \\times 100, \\quad M_{\\text{cake}} = \\frac{M_{\\text{dry solids}}}{\\%\\text{ Cake Solids}}$$",
+                        "description": "Solids recovery efficiency and dewatered cake mass produced by chemical polymer conditioning followed by gravity drainage and pressure filtration belts.",
+                        "examTip": "Found in Sludge Processing. Conditioned municipal sludge dewaters to typical cake dryness of $18\\% - 25\\%$ dry solids."
+                },
+                {
+                        "title": "Well Capture Zone Radius of Influence Sizing",
+                        "formula": "$$y_{\\text{max}} = \\pm \\frac{Q}{2 K b i}, \\quad x_0 = -\\frac{Q}{2\\pi K b i}$$",
+                        "description": "Calculates parabolic capture zone boundary in uniform regional groundwater flow field of gradient $i$; $x_0$ is stagnation point distance downgradient of pumping well.",
+                        "examTip": "Found in Groundwater Remediation. Any contaminant within width $\\pm y_{\\text{max}}$ upgradient will ultimately be captured by the extraction well."
+                },
+                {
+                        "title": "Bioconcentration Factor from Octanol-Water Partitioning",
+                        "formula": "$$\\log BCF = 0.76 \\log K_{ow} - 0.23, \\quad BCF = \\frac{C_{\\text{biota}}}{C_{\\text{water}}}$$",
+                        "description": "Predicts equilibrium bioaccumulation of persistent organic pollutants in aquatic organisms (fish fat tissue) relative to ambient water concentration based on hydrophobicity $K_{ow}$.",
+                        "examTip": "Found in Environmental Toxicology. Compounds with $\\log K_{ow} > 4$ exhibit significant food-chain bioaccumulation potential."
+                },
+                {
+                        "title": "Pasquill-Gifford Atmospheric Stability and Plume Trapping",
+                        "formula": "$$\\text{Dry Adiabatic Lapse Rate (DALR)} = -9.8^\\circ\\text{C/km} = -5.4^\\circ\\text{F/1000 ft}$$",
+                        "description": "Classifies ambient atmospheric turbulence into stability classes A (extremely unstable) through F (moderately stable); temperature inversions ($dT/dz > 0$) trap plumes near the ground.",
+                        "examTip": "Found in Air Quality. When actual environmental lapse rate ($ELR$) is less than $DALR$, atmosphere is stable; fumigation occurs when an inversion layer caps an unstable surface layer."
+                },
+                {
+                        "title": "Soil Contaminant Partitioning Linear Sorption Isotherm",
+                        "formula": "$$C_s = K_d C_w, \\quad K_d = f_{oc} K_{oc}$$",
+                        "description": "Linear equilibrium partitioning of hydrophobic organic contaminants between solid soil phase ($C_s$, mg/kg) and aqueous pore water ($C_w$, mg/L) based on soil organic carbon fraction $f_{oc}$.",
+                        "examTip": "Found in Environmental Remediation. Sand with low $f_{oc} < 0.001$ has low $K_d$ and exhibits minimal contaminant retardation."
                 }
         ],
         "Other": [
@@ -1946,6 +4367,423 @@
                         "videoUrl": "assets/videos/Compressibility_Factor_Real_Gas_Equation.mp4",
                         "videoTitle": "Compressibility Factor Real Gas Equation Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "L’Hôpital’s Rule for Indeterminate Limits",
+                        "formula": "$$\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for } \\frac{0}{0} \\text{ or } \\frac{\\pm\\infty}{\\pm\\infty}\\right)$$",
+                        "description": "Evaluates indeterminate limits by differentiating numerator and denominator separately with respect to $x$ until a determinate value or infinite divergence is obtained.",
+                        "examTip": "Found in Mathematics. Differentiate top and bottom separately; DO NOT apply the quotient rule when using L'Hôpital's rule!"
+                },
+                {
+                        "title": "Integration by Parts Formula",
+                        "formula": "$$\\int u dv = u v - \\int v du, \\quad \\int_a^b u dv = [u v]_a^b - \\int_a^b v du$$",
+                        "description": "Technique for integrating products of algebraic, exponential, logarithmic, and trigonometric functions derived from the product rule of differentiation.",
+                        "examTip": "Found in Mathematics. Use the LIATE rule to choose $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential."
+                },
+                {
+                        "title": "Taylor and Maclaurin Series Expansion",
+                        "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                        "description": "Represents an infinitely differentiable real function as a power series polynomial about center point $a$; when $a = 0$, it is called a Maclaurin series.",
+                        "examTip": "Found in Mathematics. Useful Maclaurin series: $e^x = 1 + x + x^2/2! + \\dots$, $\\sin x = x - x^3/3! + \\dots$, $\\cos x = 1 - x^2/2! + \\dots$.",
+                        "videoUrl": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+                        "videoTitle": "Taylor and Maclaurin Series Expansion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$."
+                },
+                {
+                        "title": "Vector Cross Product and Parallelogram Area",
+                        "formula": "$$\\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}, \\quad |\\vec{A} \\times \\vec{B}| = |\\vec{A}| |\\vec{B}| \\sin\\theta$$",
+                        "description": "Vector product producing a vector mutually perpendicular to both $\\vec{A}$ and $\\vec{B}$ obeying the right-hand rule; magnitude equals the geometric area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics. Note anti-commutative property: $\\vec{A} \\times \\vec{B} = -(\\vec{B} \\times \\vec{A})$."
+                },
+                {
+                        "title": "Gradient Vector and Directional Derivative",
+                        "formula": "$$\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{i} + \\frac{\\partial f}{\\partial y}\\hat{j} + \\frac{\\partial f}{\\partial z}\\hat{k}, \\quad D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$$",
+                        "description": "Gradient vector points in direction of maximum rate of spatial increase of scalar function $f(x,y,z)$, with magnitude equal to that maximum slope.",
+                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$."
+                },
+                {
+                        "title": "Divergence of a Vector Field (Flux Density)",
+                        "formula": "$$\\text{div } \\vec{F} = \\nabla \\cdot \\vec{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}$$",
+                        "description": "Scalar measure of net outward flux expansion of vector field per unit volume; $\\nabla \\cdot \\vec{F} > 0$ indicates a local source, while $\\nabla \\cdot \\vec{F} < 0$ indicates a sink.",
+                        "examTip": "Found in Mathematics / Fluids. An incompressible fluid velocity field is strictly divergence-free: $\\nabla \\cdot \\vec{v} = 0$ (solenoidal field)."
+                },
+                {
+                        "title": "Curl of a Vector Field and Irrotational Fields",
+                        "formula": "$$\\text{curl } \\vec{F} = \\nabla \\times \\vec{F} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ F_x & F_y & F_z \\end{vmatrix}$$",
+                        "description": "Vector measure of microscopic rotational circulation density; if $\\nabla \\times \\vec{F} = \\vec{0}$, the field is irrotational (conservative), meaning $\\vec{F} = \\nabla \\phi$.",
+                        "examTip": "Found in Mathematics / Fluids. In conservative force fields (gravitational, electrostatic), work done around any closed loop is zero."
+                },
+                {
+                        "title": "Green’s Theorem in the Plane",
+                        "formula": "$$\\oint_C (P dx + Q dy) = \\iint_R \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right) dA$$",
+                        "description": "Relates line integral around simple closed counterclockwise boundary curve $C$ to double integral over planar enclosed region $R$.",
+                        "examTip": "Found in Mathematics. Planar area enclosed by curve $C$ is computed via line integral: $A = \\frac{1}{2}\\oint_C (x dy - y dx)$."
+                },
+                {
+                        "title": "Divergence Theorem (Gauss’s Theorem)",
+                        "formula": "$$\\iint_S \\vec{F} \\cdot d\\vec{A} = \\iiint_V (\\nabla \\cdot \\vec{F}) dV$$",
+                        "description": "Converts total outward surface flux of vector field $\\vec{F}$ across closed boundary surface $S$ into a volume integral of field divergence throughout interior volume $V$.",
+                        "examTip": "Found in Advanced Engineering Mathematics. Bridges macroscopic field flux with microscopic volume differential equations."
+                },
+                {
+                        "title": "Stokes’ Theorem on Open Spatial Surfaces",
+                        "formula": "$$\\oint_C \\vec{F} \\cdot d\\vec{r} = \\iint_S (\\nabla \\times \\vec{F}) \\cdot d\\vec{A}$$",
+                        "description": "Relates circulation line integral around closed space boundary curve $C$ to surface integral of curl over any oriented open surface $S$ capped by boundary $C$.",
+                        "examTip": "Found in Advanced Mathematics / Electromagnetics. Generalizes Green's theorem to 3D curved surfaces."
+                },
+                {
+                        "title": "First-Order Linear ODE Integrating Factor Method",
+                        "formula": "$$\\frac{dy}{dx} + P(x) y = Q(x) \\implies y(x) = \\frac{1}{\\mu(x)}\\left[\\int \\mu(x) Q(x) dx + C\\right], \\quad \\mu(x) = e^{\\int P(x) dx}$$",
+                        "description": "Standard exact solution method for first-order linear ordinary differential equations using integrating factor $\\mu(x)$.",
+                        "examTip": "Found in Mathematics. Ensure the leading derivative term has a coefficient of $1$ before identifying coefficient $P(x)$."
+                },
+                {
+                        "title": "Matrix Invertibility and Determinant Criterion",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A) \\iff \\det(A) \\ne 0$$",
+                        "description": "A square matrix $A$ has a unique matrix inverse $A^{-1}$ if and only if its scalar determinant is non-zero (non-singular matrix); if $\\det(A) = 0$, the matrix is singular.",
+                        "examTip": "Found in Linear Algebra. For a $2 \\times 2$ matrix $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$, inverse is $\\frac{1}{ad - bc}\\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$."
+                },
+                {
+                        "title": "Matrix Eigenvalues and Characteristic Polynomial",
+                        "formula": "$$\\det(A - \\lambda I) = 0, \\quad A \\vec{v} = \\lambda \\vec{v}$$",
+                        "description": "Roots of characteristic polynomial equation yield scalar eigenvalues $\\lambda$; associated non-zero vectors $\\vec{v}$ are eigenvectors that only change in scale under transformation $A$.",
+                        "examTip": "Found in Mathematics. Sum of eigenvalues equals trace of matrix ($\\sum \\lambda_i = \\text{tr}(A)$); product equals determinant ($\\prod \\lambda_i = \\det(A)$)."
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance."
+                },
+                {
+                        "title": "Permutations and Combinations Counting Rules",
+                        "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
+                        "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
+                        "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations."
+                },
+                {
+                        "title": "Binomial Distribution Mean and Variance",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Discrete probability distribution governing count of successes $k$ across $n$ independent trials with identical Bernoulli probability $p$.",
+                        "examTip": "Found in Probability and Statistics. Normal approximation is valid when both $n p \\ge 5$ and $n(1-p) \\ge 5$."
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
+                        "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$."
+                },
+                {
+                        "title": "Simple Linear Regression Least-Squares Slope",
+                        "formula": "$$b_1 = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum x_i y_i - \\frac{(\\sum x_i)(\\sum y_i)}{n}}{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}, \\quad b_0 = \\bar{y} - b_1 \\bar{x}$$",
+                        "description": "Best-fit linear slope $b_1$ minimizing vertical squared residuals $\\sum (y_i - \\hat{y}_i)^2$ in bivariate data sets.",
+                        "examTip": "Found in Engineering Statistics. Correlation coefficient is $r = b_1 (s_x / s_y)$."
+                },
+                {
+                        "title": "Solution Concentration: Molarity, Molality, and Normality",
+                        "formula": "$$M = \\frac{\\text{mol solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{mol solute}}{\\text{kg solvent}}, \\quad N = M \\times |z|$$",
+                        "description": "Definitions of chemical solution concentration: molarity $M$ varies slightly with temperature due to liquid volume expansion; molality $m$ is temperature-independent.",
+                        "examTip": "Found in Chemistry. For sulfuric acid ($\\text{H}_2\\text{SO}_4$, $z = 2$), a $1.0\\text{ M}$ solution has normality $N = 2.0\\text{ N}$."
+                },
+                {
+                        "title": "Faraday’s Law of Electrolysis",
+                        "formula": "$$m = \\frac{Q M}{F z} = \\frac{I t M}{F z}, \\quad F = 96{,}485\\text{ C/mol e}^-$$",
+                        "description": "Mass $m$ of substance electrodeposited or liberated at an electrode is directly proportional to total electrical charge passed ($Q = I t$), with Faraday constant $F$.",
+                        "examTip": "Found in Chemistry. $z$ is number of electrons transferred per ion (e.g. for $\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}$, $z = 2$)."
+                },
+                {
+                        "title": "Galvanic Cell Standard Potential ($E^\\circ_{\\text{cell}}$)",
+                        "formula": "$$E^\\circ_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}}, \\quad \\Delta G^\\circ = -n F E^\\circ_{\\text{cell}}$$",
+                        "description": "Standard electromotive force of an electrochemical cell computed from standard reduction potentials; spontaneous reaction requires positive potential ($E^\\circ_{\\text{cell}} > 0 \\implies \\Delta G^\\circ < 0$).",
+                        "examTip": "Found in Chemistry. Oxidation occurs at the anode (An Ox); reduction occurs at the cathode (Red Cat)."
+                },
+                {
+                        "title": "Nernst Equation for Non-Standard Cell Potential",
+                        "formula": "$$E = E^\\circ - \\frac{R T}{n F} \\ln Q = E^\\circ - \\frac{0.0592}{n} \\log_{10} Q \\quad (25^\\circ\\text{C})$$",
+                        "description": "Calculates electrical potential $E$ of an electrochemical cell under non-standard operating concentrations and partial pressures using reaction quotient $Q$.",
+                        "examTip": "Found in Chemistry. At equilibrium, cell potential drops to zero ($E = 0$) and $Q = K_{eq}$, giving $E^\\circ = \\frac{0.0592}{n}\\log_{10} K_{eq}$."
+                },
+                {
+                        "title": "Chemical Equilibrium Constant Expression ($K_c$ and $K_p$)",
+                        "formula": "$$K_p = K_c (R T)^{\\Delta n}, \\quad \\Delta n = \\sum \\nu_{\\text{gaseous products}} - \\sum \\nu_{\\text{gaseous reactants}}$$",
+                        "description": "Relates partial-pressure equilibrium constant $K_p$ to molar-concentration equilibrium constant $K_c$ for ideal gas chemical reactions.",
+                        "examTip": "Found in Chemistry. If moles of gas do not change during reaction ($\\Delta n = 0$), then $K_p = K_c$."
+                },
+                {
+                        "title": "Wheatstone Bridge Circuit Null Balance Condition",
+                        "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies V_{\\text{out}} = 0\\text{ V}$$",
+                        "description": "Four-resistor bridge network measuring resistance changes down to milliohms; when ratio of arms is balanced, output differential voltage is zero.",
+                        "examTip": "Found in Instrumentation. Foundational circuit for resistive temperature detectors (RTDs) and piezoresistive strain gauges."
+                },
+                {
+                        "title": "Strain Gauge Gauge Factor Equation",
+                        "formula": "$$GF = \\frac{\\Delta R / R}{\\epsilon} = 1 + 2\\nu + \\frac{\\Delta \\rho / \\rho}{\\epsilon}$$",
+                        "description": "Relates fractional electrical resistance change $\\Delta R / R$ to mechanical strain $\\epsilon$; standard metallic foil strain gauges have $GF \\approx 2.0$.",
+                        "examTip": "Found in Instrumentation. Quarter-bridge output voltage is $V_{\\text{out}} \\approx \\frac{1}{4} V_s GF \\epsilon$."
+                },
+                {
+                        "title": "Thermocouple Seebeck Effect Voltage",
+                        "formula": "$$V = \\alpha (T_{\\text{junction}} - T_{\\text{reference}})$$",
+                        "description": "Thermoelectric phenomenon where a temperature gradient between two dissimilar metal wire junctions generates a proportional DC millivolt signal with Seebeck coefficient $\\alpha$.",
+                        "examTip": "Found in Instrumentation. Type K (Chromel-Alumel) is most common, yielding sensitivity $\\alpha \\approx 41\\ \\mu\\text{V}/^\\circ\\text{C}$."
+                },
+                {
+                        "title": "First-Order Sensor Dynamic Step Response",
+                        "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
+                        "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
+                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$."
+                },
+                {
+                        "title": "Second-Order Sensor Natural Frequency and Damping",
+                        "formula": "$$\\frac{d^2 y}{dt^2} + 2\\zeta \\omega_n \\frac{dy}{dt} + \\omega_n^2 y = \\omega_n^2 x(t)$$",
+                        "description": "Dynamic equation for inertial instruments (accelerometers, pressure transducers); $\\zeta = 0.707$ is optimal compromise maximizing flat frequency response bandwidth without resonant peaking.",
+                        "examTip": "Found in Instrumentation / Control. Accelerometers operate accurately only at frequencies well below their natural frequency ($\\omega \\ll \\omega_n$)."
+                },
+                {
+                        "title": "Ideal Operational Amplifier Golden Rules",
+                        "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
+                        "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
+                        "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero."
+                },
+                {
+                        "title": "Operational Amplifier Non-Inverting Voltage Gain",
+                        "formula": "$$A_v = \\frac{v_{\\text{out}}}{v_{\\text{in}}} = 1 + \\frac{R_f}{R_1}$$",
+                        "description": "Voltage gain of closed-loop non-inverting operational amplifier, providing in-phase output with extremely high input impedance.",
+                        "examTip": "Found in Instrumentation. Setting $R_f = 0$ yields unity-gain voltage follower ($A_v = 1.0$), which eliminates sensor loading effects."
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities."
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation."
+                },
+                {
+                        "title": "OSHA Recordable Incident Rate Formula",
+                        "formula": "$$IR = \\frac{N \\times 200{,}000}{EH}$$",
+                        "description": "Standard occupational safety metric normalizing work-related injuries/illnesses $N$ per 100 full-time equivalent workers per year ($200{,}000\\text{ worker-hours}$).",
+                        "examTip": "Found in Safety. Benchmark constant is $100\\text{ workers} \\times 40\\text{ hrs/wk} \\times 50\\text{ wks/yr} = 200{,}000\\text{ hours}$."
+                },
+                {
+                        "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier",
+                        "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{LFL_i}}$$",
+                        "description": "Predicts lower flammability limit of a mixture of combustible gases using volume fractions $y_i$ and pure component $LFL$ values.",
+                        "examTip": "Found in Safety. A fuel-air mixture is flammable only within the range $LFL \\le C \\le UFL$."
+                },
+                {
+                        "title": "Factor of Safety Definition in Design",
+                        "formula": "$$FS = \\frac{\\text{Failure Load}}{\\text{Allowable Service Load}} = \\frac{\\sigma_{\\text{ultimate}}}{\\sigma_{\\text{allowable}}} > 1.0$$",
+                        "description": "Structural reserve margin against unexpected overloads, material defects, and calculation uncertainties; allowable working stress is $\\sigma_{\\text{allow}} = \\sigma_{\\text{yield}} / FS$.",
+                        "examTip": "Found in Mechanics of Materials / Safety. A factor of safety must always be strictly greater than $1.0$."
+                },
+                {
+                        "title": "2D Static Equilibrium Equations",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0$$",
+                        "description": "Necessary and sufficient conditions for static equilibrium of a planar rigid body: zero net horizontal force, zero net vertical force, and zero net moment about any arbitrary point $O$.",
+                        "examTip": "Found in Statics. Always begin problem solutions with a complete, clean Free-Body Diagram (FBD)."
+                },
+                {
+                        "title": "Zero-Force Members in Trusses",
+                        "formula": "$$\\text{Two non-collinear members, no joint load} \\implies F_1 = F_2 = 0$$",
+                        "description": "Instant identification of unloaded truss members: if two non-collinear members form an unloaded pin joint, both carry zero force.",
+                        "examTip": "Found in Statics. Zero-force members provide lateral stability against buckling and support unexpected moving loads."
+                },
+                {
+                        "title": "Coulomb Dry Friction Law",
+                        "formula": "$$F_f \\le \\mu_s N, \\quad F_k = \\mu_k N$$",
+                        "description": "Friction force opposes impending motion up to static maximum $F_s = \\mu_s N$; once sliding initiates, kinetic friction $F_k$ drops and remains constant.",
+                        "examTip": "Found in Statics. Static coefficient is always greater than kinetic coefficient: $\\mu_s > \\mu_k$."
+                },
+                {
+                        "title": "Angle of Static Friction and Angle of Repose",
+                        "formula": "$$\\tan\\phi_s = \\mu_s$$",
+                        "description": "Angle between normal reaction and total contact resultant force at impending slip, which equals the maximum angle of repose of an inclined plane.",
+                        "examTip": "Found in Statics. A block placed on incline $\\theta$ slips if $\\theta > \\phi_s$, and remains stationary if $\\theta \\le \\phi_s$.",
+                        "videoUrl": "assets/videos/Coulomb_Dry_Friction_and_Angle_of_Repose.mp4",
+                        "videoTitle": "Coulomb Dry Friction and Angle of Repose Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Flat Belt Friction Capstan Formula",
+                        "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
+                        "description": "Tension amplification around a stationary cylindrical drum with friction coefficient $\\mu$ and total wrap angle $\\beta$ (radians).",
+                        "examTip": "Found in Statics. $T_2$ is always the larger tension pulling in the direction of impending motion."
+                },
+                {
+                        "title": "Rectilinear Kinematics Constant Acceleration Equations",
+                        "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2} a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
+                        "description": "Governs linear motion of a particle under uniform constant acceleration $a$.",
+                        "examTip": "Found in Dynamics. If acceleration varies with time or displacement, you MUST integrate: $v = \\int a dt$ or $v dv = a ds$.",
+                        "videoUrl": "assets/videos/Rectilinear_Kinematics_Constant_Acceleration_Equations.mp4",
+                        "videoTitle": "Rectilinear Kinematics Constant Acceleration Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Normal and Tangential Acceleration in Curvilinear Motion",
+                        "formula": "$$a_t = \\frac{dv}{dt}, \\quad a_n = \\frac{v^2}{\\rho}, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                        "description": "Resolves particle acceleration along instantaneous path tangent ($a_t$, changing velocity magnitude) and normal ($a_n$, changing velocity direction toward center of curvature $\\rho$).",
+                        "examTip": "Found in Dynamics. For circular path of radius $r$: $a_n = v^2 / r = r \\omega^2$.",
+                        "videoUrl": "assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
+                        "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Projectile Motion Parabolic Trajectory Equations",
+                        "formula": "$$x(t) = (v_0 \\cos\\theta) t, \\quad y(t) = (v_0 \\sin\\theta) t - \\frac{1}{2} g t^2, \\quad R = \\frac{v_0^2 \\sin 2\\theta}{g}$$",
+                        "description": "Two-dimensional ballistic trajectory under constant downward gravitational acceleration $g$ with zero horizontal aerodynamic drag.",
+                        "examTip": "Found in Dynamics. Maximum horizontal range over level ground occurs at launch angle $\\theta = 45^\\circ$."
+                },
+                {
+                        "title": "Direct Central Impact Coefficient of Restitution",
+                        "formula": "$$e = \\frac{v'_2 - v'_1}{v_1 - v_2}, \\quad 0 \\le e \\le 1$$",
+                        "description": "Ratio of relative separation velocity to relative approach velocity along line of impact; $e = 1$ is perfectly elastic, $e = 0$ is plastic.",
+                        "examTip": "Found in Dynamics. Linear momentum is conserved along line of impact: $m_1 v_1 + m_2 v_2 = m_1 v'_1 + m_2 v'_2$.",
+                        "videoUrl": "assets/videos/Coefficient_of_Restitution_for_Direct_Central_Impact.mp4",
+                        "videoTitle": "Coefficient of Restitution for Direct Central Impact Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Damped SDOF Harmonic Natural Frequency",
+                        "formula": "$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}, \\quad \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\zeta = \\frac{c}{2\\sqrt{k m}}$$",
+                        "description": "Cyclic frequency of free underdamped oscillations ($\\zeta < 1$) in a viscous damped mass-spring single-degree-of-freedom system.",
+                        "examTip": "Found in Dynamics / Vibrations. When damping is zero ($\\zeta = 0$), $\\omega_d = \\omega_n$.",
+                        "videoUrl": "assets/videos/Damped_SDOF_Natural_Frequency_and_Damping_Ratio.mp4",
+                        "videoTitle": "Damped SDOF Natural Frequency and Damping Ratio Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Planar Rigid Body Rotational Kinetic Energy",
+                        "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
+                        "description": "Kinetic energy of a rigid body equals translational energy of its center of mass $G$ plus rotational energy about $G$.",
+                        "examTip": "Found in Dynamics. If body rotates about a fixed pin center $O$: $T = \\frac{1}{2} I_O \\omega^2$."
+                },
+                {
+                        "title": "Mass Moment of Inertia Parallel Axis Theorem",
+                        "formula": "$$I = I_G + m d^2$$",
+                        "description": "Computes mass moment of inertia about any axis parallel to a centroidal axis at perpendicular distance $d$.",
+                        "examTip": "Found in Dynamics. Centroidal moment $I_G$ is always the absolute minimum moment of inertia for any set of parallel axes."
+                },
+                {
+                        "title": "Thermal Expansion Deformation and Thermal Stress",
+                        "formula": "$$\\delta_T = \\alpha L \\Delta T, \\quad \\sigma_T = -E \\alpha \\Delta T$$",
+                        "description": "Unconstrained thermal elongation $\\delta_T$ depends on expansion coefficient $\\alpha$; fully restrained thermal expansion induces normal compressive stress $\\sigma_T$.",
+                        "examTip": "Found in Mechanics of Materials. Thermal stress occurs only when free expansion is restricted by supports.",
+                        "videoUrl": "assets/videos/Thermal_Expansion_Deformation_and_Thermal_Stress.mp4",
+                        "videoTitle": "Thermal Expansion Deformation and Thermal Stress Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Transverse Beam Shear Stress Formula",
+                        "formula": "$$\\tau = \\frac{V Q}{I b}$$",
+                        "description": "Longitudinal and transverse shear stress at any depth in a beam under vertical shear force $V$, where $Q$ is first moment of area.",
+                        "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis."
+                },
+                {
+                        "title": "Maximum Shear Stress in Rectangular Beams",
+                        "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\frac{V}{A}$$",
+                        "description": "Exact maximum shear stress at the neutral axis for rectangular cross-sections of width $b$ and height $h$ ($A = b h$).",
+                        "examTip": "Found in Mechanics of Materials. For solid circular shafts: $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\frac{V}{A}$."
+                },
+                {
+                        "title": "Cantilever Beam Tip Deflection under Concentrated Load",
+                        "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}$$",
+                        "description": "Maximum elastic tip deflection for an end-loaded cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
+                        "examTip": "Found in Mechanics of Materials. For uniform distributed load $w$: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$."
+                },
+                {
+                        "title": "Simply Supported Beam Center Deflection under Uniform Load",
+                        "formula": "$$\\delta_{\\text{max}} = \\frac{5 w L^4}{384 E I}$$",
+                        "description": "Maximum mid-span deflection for an elastic simply supported beam under full-span uniformly distributed load $w$.",
+                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta = \\frac{P L^3}{48 E I}$."
+                },
+                {
+                        "title": "Maximum Shear Stress Theory (Tresca Criterion)",
+                        "formula": "$$\\tau_{\\text{max}} = \\frac{\\sigma_1 - \\sigma_3}{2} \\le \\frac{S_y}{2} \\implies \\sigma_1 - \\sigma_3 \\le S_y$$",
+                        "description": "Predicts yielding in ductile materials when maximum shear stress reaches shear stress at yield in a uniaxial tensile test; conservative design criterion.",
+                        "examTip": "Found in Mechanics of Materials / Machine Design. Forms an internal hexagon in principal stress space $(\\sigma_1, \\sigma_2)$."
+                },
+                {
+                        "title": "Distortion Energy Theory (von Mises Yield Criterion)",
+                        "formula": "$$\\sigma' = \\sqrt{\\sigma_1^2 - \\sigma_1 \\sigma_2 + \\sigma_2^2} \\le S_y$$",
+                        "description": "States that yielding in ductile metals occurs when distortion strain energy per unit volume reaches the distortion energy at yield in uniaxial tension.",
+                        "examTip": "Found in Mechanics of Materials. Best matches experimental yield data for structural steel and aluminum; forms an ellipse in $(\\sigma_1, \\sigma_2)$ plane."
+                },
+                {
+                        "title": "Archimedes’ Principle of Buoyant Force",
+                        "formula": "$$F_B = \\rho_f g V_d = \\gamma_f V_d$$",
+                        "description": "Net upward hydrostatic force exerted on a submerged or floating body equals the total weight of the displaced liquid volume $V_d$.",
+                        "examTip": "Found in Fluid Mechanics. Line of action of buoyant force passes through the center of buoyancy (centroid of displaced fluid volume).",
+                        "videoUrl": "assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+                        "videoTitle": "Archimedes’ Principle of Buoyancy Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Minor Head Loss in Piping Systems",
+                        "formula": "$$h_m = K_L \\frac{v^2}{2g}$$",
+                        "description": "Head loss dissipations caused by valves, tees, bends, entrances, and expansions using minor loss coefficient $K_L$.",
+                        "examTip": "Found in Fluid Mechanics. For fully open gate valves: $K_L \\approx 0.15$; for standard $90^\\circ$ elbow: $K_L \\approx 0.9$.",
+                        "videoUrl": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+                        "videoTitle": "Minor Head Loss in Piping Systems Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Orifice Plate Flow Discharge Equation",
+                        "formula": "$$Q = C_d A_o \\sqrt{2 g \\Delta h} = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}}$$",
+                        "description": "Measures volumetric discharge through a sharp-edged orifice plate of opening area $A_o$ under differential pressure head $\\Delta h$.",
+                        "examTip": "Found in Fluid Mechanics. Discharge coefficient $C_d = C_c \\times C_v \\approx 0.60 - 0.62$ for sharp-edged circular orifices."
+                },
+                {
+                        "title": "Polytropic Process Boundary Work",
+                        "formula": "$$W = \\frac{P_2 V_2 - P_1 V_1}{1 - n} = \\frac{m R (T_2 - T_1)}{1 - n} \\quad (n \\ne 1)$$",
+                        "description": "Quasi-equilibrium boundary work for a closed system undergoing expansion or compression following $P V^n = \\text{constant}$.",
+                        "examTip": "Found in Thermodynamics. If $n = 1$ (isothermal ideal gas): $W = P_1 V_1 \\ln(V_2 / V_1) = m R T \\ln(P_1 / P_2)$."
+                },
+                {
+                        "title": "Ideal Gas Specific Heat Relationships",
+                        "formula": "$$c_p - c_v = R, \\quad k = \\frac{c_p}{c_v}, \\quad c_p = \\frac{k R}{k - 1}, \\quad c_v = \\frac{R}{k - 1}$$",
+                        "description": "Fundamental relationships connecting constant-pressure specific heat $c_p$, constant-volume specific heat $c_v$, gas constant $R$, and specific heat ratio $k$.",
+                        "examTip": "Found in Thermodynamics. For diatomic gases (air, $N_2, O_2$): $k \\approx 1.40$.",
+                        "videoUrl": "assets/videos/Ideal_Gas_Specific_Heat_Relationships.mp4",
+                        "videoTitle": "Ideal Gas Specific Heat Relationships Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Critical Radius of Thermal Insulation",
+                        "formula": "$$r_{cr} = \\frac{k}{h}$$",
+                        "description": "Cylinder insulation outer radius where heat loss is maximized; adding insulation to a pipe with $r_o < r_{cr}$ increases heat loss.",
+                        "examTip": "Found in Heat Transfer. For a sphere: $r_{cr} = 2k/h$.",
+                        "videoUrl": "assets/videos/Critical_Radius_of_Thermal_Insulation.mp4",
+                        "videoTitle": "Critical Radius of Thermal Insulation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Binary Phase Diagram Lever Rule",
+                        "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
+                        "description": "Computes equilibrium phase weight fractions in two-phase regions by taking opposite segment lengths along tie lines.",
+                        "examTip": "Found in Materials Science. Sum of phase fractions must equal unity: $W_L + W_\\alpha = 1.0$."
+                },
+                {
+                        "title": "Uniform Series Present Worth Factor ($(P/A, i, n)$)",
+                        "formula": "$$(P/A, i, n) = \\frac{(1 + i)^n - 1}{i (1 + i)^n}$$",
+                        "description": "Calculates present equivalent lump sum $P$ of a uniform annual cash flow series $A$ over $n$ interest periods at discount rate $i$.",
+                        "examTip": "Found in Engineering Economics. Capital recovery factor is the exact reciprocal: $(A/P, i, n) = 1 / (P/A, i, n)$."
+                },
+                {
+                        "title": "Straight-Line Depreciation Method",
+                        "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
+                        "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
+                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$)."
                 }
         ]
 };
@@ -2207,7 +5045,57 @@
             'realgases': ['van der waals', 'real gases'],
             'compressibility': ['compressibility factor', 'real gas equation'],
             'compressibilityfactor': ['compressibility factor', 'real gas equation'],
-            'zfactor': ['compressibility factor', 'real gas equation']
+            'zfactor': ['compressibility factor', 'real gas equation'],
+                        'criticalradius': ['critical radius', 'insulation'],
+            'specificheat': ['specific heat', 'ideal gas specific'],
+            'minorloss': ['minor head loss', 'piping systems', 'pipe networks'],
+            'minorheadloss': ['minor head loss', 'piping systems', 'pipe networks'],
+            'archimedes': ['archimedes', 'buoyant force', 'buoyancy'],
+            'buoyancy': ['archimedes', 'buoyant force', 'buoyancy'],
+            'thermalexpansion': ['thermal expansion', 'thermal stress'],
+            'thermalstress': ['thermal expansion', 'thermal stress'],
+            'rectilinear': ['rectilinear kinematics', 'rectilinear', 'constant acceleration'],
+            'kinematics': ['rectilinear kinematics', 'rectilinear', 'constant acceleration'],
+            'taylor': ['taylor and maclaurin', 'taylor', 'maclaurin'],
+            'maclaurin': ['taylor and maclaurin', 'taylor', 'maclaurin'],
+            'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
+            'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
+            'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
+            'reciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
+            'viewfactor': ['radiation view factor reciprocity', 'view factor'],
+            'radiationreciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
+            'repose': ['coulomb dry friction and angle of repose', 'angle of static friction and angle of repose', 'angle of repose'],
+            'dryfriction': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'dry friction'],
+            'coulomb': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'coulomb'],
+            'restitution': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'restitution'],
+            'centralimpact': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'central impact'],
+            'angularimpulse': ['angular impulse and momentum principle', 'angular impulse'],
+            'angularmomentum': ['angular impulse and momentum principle', 'angular impulse'],
+            'damped': ['damped sdof natural frequency and damping ratio', 'damped sdof harmonic natural frequency', 'damped sdof'],
+            'dampingratio': ['damped sdof natural frequency and damping ratio', 'damping ratio'],
+            'decrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
+            'logarithmicdecrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
+            'massmoment': ['mass moment of inertia of common geometric bodies', 'mass moment of inertia parallel axis theorem', 'mass moment of inertia'],
+            'geometricbodies': ['mass moment of inertia of common geometric bodies', 'common geometric bodies'],
+            'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
+            'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
+            'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
+            'reciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
+            'viewfactor': ['radiation view factor reciprocity', 'view factor'],
+            'radiationreciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
+            'repose': ['coulomb dry friction and angle of repose', 'angle of static friction and angle of repose', 'angle of repose'],
+            'dryfriction': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'dry friction'],
+            'coulomb': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'coulomb'],
+            'restitution': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'restitution'],
+            'centralimpact': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'central impact'],
+            'angularimpulse': ['angular impulse and momentum principle', 'angular impulse'],
+            'angularmomentum': ['angular impulse and momentum principle', 'angular impulse'],
+            'damped': ['damped sdof natural frequency and damping ratio', 'damped sdof harmonic natural frequency', 'damped sdof'],
+            'dampingratio': ['damped sdof natural frequency and damping ratio', 'damping ratio'],
+            'decrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
+            'logarithmicdecrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
+            'massmoment': ['mass moment of inertia of common geometric bodies', 'mass moment of inertia parallel axis theorem', 'mass moment of inertia'],
+            'geometricbodies': ['mass moment of inertia of common geometric bodies', 'common geometric bodies']
         };
         const searchTerms = keyMap[videoId] || [videoId];
 
@@ -2253,6 +5141,22 @@
         }, 150);
     }
 
+    function prevDailyTheorem() {
+        const disc = getActiveDiscipline();
+        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
+        if (!theorems || theorems.length === 0) return;
+        const newIndex = (theoremIndex - 1 + theorems.length) % theorems.length;
+        renderDailyTheorem(false, newIndex, true);
+    }
+
+    function nextDailyTheorem() {
+        const disc = getActiveDiscipline();
+        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
+        if (!theorems || theorems.length === 0) return;
+        const newIndex = (theoremIndex + 1) % theorems.length;
+        renderDailyTheorem(false, newIndex, true);
+    }
+
     function init() {
         renderDailyQuote(false);
         renderDailyTheorem(false);
@@ -2266,9 +5170,19 @@
             shuffleQuoteBtn.onclick = () => renderDailyQuote(true);
         }
 
+        const prevTheoremBtn = document.getElementById('btn-prev-theorem');
+        if (prevTheoremBtn) {
+            prevTheoremBtn.onclick = () => prevDailyTheorem();
+        }
+
+        const nextTheoremBtn = document.getElementById('btn-next-theorem');
+        if (nextTheoremBtn) {
+            nextTheoremBtn.onclick = () => nextDailyTheorem();
+        }
+
         const shuffleTheoremBtn = document.getElementById('btn-shuffle-theorem');
         if (shuffleTheoremBtn) {
-            shuffleTheoremBtn.onclick = () => renderDailyTheorem(true);
+            shuffleTheoremBtn.onclick = () => nextDailyTheorem();
         }
     }
 
@@ -2276,7 +5190,9 @@
     window.THEOREMS_BY_DISCIPLINE = THEOREMS_BY_DISCIPLINE;
     window.getActiveMotivationDiscipline = getActiveDiscipline;
     window.shuffleQuote = () => renderDailyQuote(true);
-    window.shuffleTheorem = () => renderDailyTheorem(true);
+    window.shuffleTheorem = nextDailyTheorem;
+    window.prevTheorem = prevDailyTheorem;
+    window.nextTheorem = nextDailyTheorem;
     window.setTheoremLayout = setTheoremLayout;
     window.previewTheoremVideo = previewTheoremVideo;
     window.updateMotivationWidgets = () => {
