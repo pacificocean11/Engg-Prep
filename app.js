@@ -10303,7 +10303,10 @@ window.calcEvaluate = function() {
                         "title": "Maximum Shear Stress in Rectangular Cross-Section Beams",
                         "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\tau_{\\text{avg}}$$",
                         "description": "Exact parabolic shear stress maximum at the neutral axis of a rectangular beam of cross-sectional area $A = b h$.",
-                        "examTip": "Found in Mechanics of Materials. For a circular solid cross-section, $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\tau_{\\text{avg}}$."
+                        "examTip": "Found in Mechanics of Materials. For a circular solid cross-section, $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\tau_{\\text{avg}}$.",
+                        "videoUrl": "assets/videos/Maximum_Shear_Stress_in_Rectangular_Beams.mp4",
+                        "videoTitle": "Maximum Shear Stress in Rectangular Beams Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Beam Deflection Differential Governing Equation",
@@ -10324,7 +10327,10 @@ window.calcEvaluate = function() {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
                         "formula": "$$\\delta_{\\text{center}} = \\frac{5 w L^4}{384 E I}, \\quad M_{\\text{max}} = \\frac{w L^2}{8}$$",
                         "description": "Mid-span deflection and maximum bending moment for a simply supported beam under full-span uniformly distributed load $w$.",
-                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta_{\\text{center}} = \\frac{P L^3}{48 E I}$ and $M_{\\text{max}} = \\frac{P L}{4}$."
+                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta_{\\text{center}} = \\frac{P L^3}{48 E I}$ and $M_{\\text{max}} = \\frac{P L}{4}$.",
+                        "videoUrl": "assets/videos/Simply_Supported_Beam_Center_Deflection_under_Uniform_Load.mp4",
+                        "videoTitle": "Simply Supported Beam Center Deflection under Uniform Load Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Strain Rosette Transformation Equations",
@@ -10789,6 +10795,42 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$.",
                         "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
                         "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Gibbs Phase Rule",
+                        "formula": "$$F = C - P + 2$$",
+                        "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
+                        "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
+                        "videoUrl": "assets/videos/Gibbs_Phase_Rule.mp4",
+                        "videoTitle": "Gibbs Phase Rule Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Combustion Theoretical Air and Excess Air",
+                        "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100$$",
+                        "description": "Theoretical air is stoichiometric oxygen required for complete combustion of all fuel carbon to $\\text{CO}_2$, hydrogen to $\\text{H}_2\\text{O}$, and sulfur to $\\text{SO}_2$. Excess air guarantees complete combustion.",
+                        "examTip": "Found in Material Balances. Atmospheric air composition: $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$ by mole, meaning $3.76\\text{ moles N}_2$ accompany every $1\\text{ mole O}_2$.",
+                        "videoUrl": "assets/videos/Combustion_Theoretical_Air_and_Excess_Air.mp4",
+                        "videoTitle": "Combustion Theoretical Air and Excess Air Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -11668,6 +11710,51 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
                         "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Solution Concentration: Molarity, Molality, and Normality",
+                        "formula": "$$M = \\frac{\\text{mol solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{mol solute}}{\\text{kg solvent}}, \\quad N = M \\times |z|$$",
+                        "description": "Definitions of chemical solution concentration: molarity $M$ varies slightly with temperature due to liquid volume expansion; molality $m$ is temperature-independent.",
+                        "examTip": "Found in Chemistry. For sulfuric acid ($\\text{H}_2\\text{SO}_4$, $z = 2$), a $1.0\\text{ M}$ solution has normality $N = 2.0\\text{ N}$.",
+                        "videoUrl": "assets/videos/Solution_Concentration_Molarity_Molality_and_Normality.mp4",
+                        "videoTitle": "Solution Concentration: Molarity, Molality, and Normality Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Simply Supported Beam Center Deflection under Uniform Load",
+                        "formula": "$$\\delta_{\\text{center}} = \\frac{5 w L^4}{384 E I}, \\quad M_{\\text{max}} = \\frac{w L^2}{8}$$",
+                        "description": "Mid-span deflection and maximum bending moment for a simply supported beam under full-span uniformly distributed load $w$.",
+                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta_{\\text{center}} = \\frac{P L^3}{48 E I}$ and $M_{\\text{max}} = \\frac{P L}{4}$.",
+                        "videoUrl": "assets/videos/Simply_Supported_Beam_Center_Deflection_under_Uniform_Load.mp4",
+                        "videoTitle": "Simply Supported Beam Center Deflection under Uniform Load Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Maximum Shear Stress in Rectangular Beams",
+                        "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\frac{V}{A}$$",
+                        "description": "Exact maximum shear stress at the neutral axis for rectangular cross-sections of width $b$ and height $h$ ($A = b h$).",
+                        "examTip": "Found in Mechanics of Materials. For solid circular shafts: $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\frac{V}{A}$.",
+                        "videoUrl": "assets/videos/Maximum_Shear_Stress_in_Rectangular_Beams.mp4",
+                        "videoTitle": "Maximum Shear Stress in Rectangular Beams Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Electrical and Computer": [
@@ -12384,6 +12471,24 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
                         "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Chemical": [
@@ -12472,7 +12577,10 @@ window.calcEvaluate = function() {
                         "title": "Gibbs Phase Rule",
                         "formula": "$$F = C - P + 2$$",
                         "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
-                        "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point)."
+                        "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
+                        "videoUrl": "assets/videos/Gibbs_Phase_Rule.mp4",
+                        "videoTitle": "Gibbs Phase Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Continuous Stirred-Tank Reactor (CSTR) Design Equation",
@@ -13045,7 +13153,10 @@ window.calcEvaluate = function() {
                         "title": "Combustion Theoretical Air and Excess Air",
                         "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100$$",
                         "description": "Theoretical air is stoichiometric oxygen required for complete combustion of all fuel carbon to $\\text{CO}_2$, hydrogen to $\\text{H}_2\\text{O}$, and sulfur to $\\text{SO}_2$. Excess air guarantees complete combustion.",
-                        "examTip": "Found in Material Balances. Atmospheric air composition: $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$ by mole, meaning $3.76\\text{ moles N}_2$ accompany every $1\\text{ mole O}_2$."
+                        "examTip": "Found in Material Balances. Atmospheric air composition: $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$ by mole, meaning $3.76\\text{ moles N}_2$ accompany every $1\\text{ mole O}_2$.",
+                        "videoUrl": "assets/videos/Combustion_Theoretical_Air_and_Excess_Air.mp4",
+                        "videoTitle": "Combustion Theoretical Air and Excess Air Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Overall Plate Efficiency in Distillation Columns",
@@ -13156,6 +13267,33 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$.",
                         "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
                         "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Solution Concentration: Molarity, Molality, and Normality",
+                        "formula": "$$M = \\frac{\\text{mol solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{mol solute}}{\\text{kg solvent}}, \\quad N = M \\times |z|$$",
+                        "description": "Definitions of chemical solution concentration: molarity $M$ varies slightly with temperature due to liquid volume expansion; molality $m$ is temperature-independent.",
+                        "examTip": "Found in Chemistry. For sulfuric acid ($\\text{H}_2\\text{SO}_4$, $z = 2$), a $1.0\\text{ M}$ solution has normality $N = 2.0\\text{ N}$.",
+                        "videoUrl": "assets/videos/Solution_Concentration_Molarity_Molality_and_Normality.mp4",
+                        "videoTitle": "Solution Concentration: Molarity, Molality, and Normality Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -13845,6 +13983,24 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
                         "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
                         "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -14619,6 +14775,51 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
                         "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Gibbs Phase Rule",
+                        "formula": "$$F = C - P + 2$$",
+                        "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
+                        "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
+                        "videoUrl": "assets/videos/Gibbs_Phase_Rule.mp4",
+                        "videoTitle": "Gibbs Phase Rule Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Combustion Theoretical Air and Excess Air",
+                        "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100$$",
+                        "description": "Theoretical air is stoichiometric oxygen required for complete combustion of all fuel carbon to $\\text{CO}_2$, hydrogen to $\\text{H}_2\\text{O}$, and sulfur to $\\text{SO}_2$. Excess air guarantees complete combustion.",
+                        "examTip": "Found in Material Balances. Atmospheric air composition: $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$ by mole, meaning $3.76\\text{ moles N}_2$ accompany every $1\\text{ mole O}_2$.",
+                        "videoUrl": "assets/videos/Combustion_Theoretical_Air_and_Excess_Air.mp4",
+                        "videoTitle": "Combustion Theoretical Air and Excess Air Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Solution Concentration: Molarity, Molality, and Normality",
+                        "formula": "$$M = \\frac{\\text{mol solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{mol solute}}{\\text{kg solvent}}, \\quad N = M \\times |z|$$",
+                        "description": "Definitions of chemical solution concentration: molarity $M$ varies slightly with temperature due to liquid volume expansion; molality $m$ is temperature-independent.",
+                        "examTip": "Found in Chemistry. For sulfuric acid ($\\text{H}_2\\text{SO}_4$, $z = 2$), a $1.0\\text{ M}$ solution has normality $N = 2.0\\text{ N}$.",
+                        "videoUrl": "assets/videos/Solution_Concentration_Molarity_Molality_and_Normality.mp4",
+                        "videoTitle": "Solution Concentration: Molarity, Molality, and Normality Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
+                        "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
+                        "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
+                        "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
+                        "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Other": [
@@ -15079,7 +15280,10 @@ window.calcEvaluate = function() {
                         "title": "Solution Concentration: Molarity, Molality, and Normality",
                         "formula": "$$M = \\frac{\\text{mol solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{mol solute}}{\\text{kg solvent}}, \\quad N = M \\times |z|$$",
                         "description": "Definitions of chemical solution concentration: molarity $M$ varies slightly with temperature due to liquid volume expansion; molality $m$ is temperature-independent.",
-                        "examTip": "Found in Chemistry. For sulfuric acid ($\\text{H}_2\\text{SO}_4$, $z = 2$), a $1.0\\text{ M}$ solution has normality $N = 2.0\\text{ N}$."
+                        "examTip": "Found in Chemistry. For sulfuric acid ($\\text{H}_2\\text{SO}_4$, $z = 2$), a $1.0\\text{ M}$ solution has normality $N = 2.0\\text{ N}$.",
+                        "videoUrl": "assets/videos/Solution_Concentration_Molarity_Molality_and_Normality.mp4",
+                        "videoTitle": "Solution Concentration: Molarity, Molality, and Normality Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Faraday’s Law of Electrolysis",
@@ -15163,13 +15367,19 @@ window.calcEvaluate = function() {
                         "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
                         "formula": "$$\\text{Priority: Public Health, Safety, and Welfare} > \\text{Client/Employer Interests}$$",
                         "description": "First Canon of the NCEES Rules of Professional Conduct: licensees shall hold paramount the health, safety, and welfare of the public in the performance of their professional duties.",
-                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities."
+                        "examTip": "Found in Ethics and Professional Practice. If a client overrules an engineer's technical safety judgement, the engineer has a legal duty to notify authorities.",
+                        "videoUrl": "assets/videos/NCEES_Model_Rules_Paramount_Duty_to_Public_Welfare.mp4",
+                        "videoTitle": "NCEES Model Rules: Paramount Duty to Public Welfare Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "NCEES Rules of Professional Conduct: PE Seal Integrity",
                         "formula": "$$\\text{Licensee Seal} \\implies \\text{Direct Supervisory Control or Personal Preparation}$$",
                         "description": "Engineers shall sign and seal only those plans, specifications, and reports prepared by them or under their direct personal supervision and responsible charge.",
-                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation."
+                        "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
+                        "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
+                        "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "OSHA Recordable Incident Rate Formula",
@@ -15304,7 +15514,10 @@ window.calcEvaluate = function() {
                         "title": "Maximum Shear Stress in Rectangular Beams",
                         "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\frac{V}{A}$$",
                         "description": "Exact maximum shear stress at the neutral axis for rectangular cross-sections of width $b$ and height $h$ ($A = b h$).",
-                        "examTip": "Found in Mechanics of Materials. For solid circular shafts: $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\frac{V}{A}$."
+                        "examTip": "Found in Mechanics of Materials. For solid circular shafts: $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\frac{V}{A}$.",
+                        "videoUrl": "assets/videos/Maximum_Shear_Stress_in_Rectangular_Beams.mp4",
+                        "videoTitle": "Maximum Shear Stress in Rectangular Beams Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Cantilever Beam Tip Deflection under Concentrated Load",
@@ -15319,7 +15532,10 @@ window.calcEvaluate = function() {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{5 w L^4}{384 E I}$$",
                         "description": "Maximum mid-span deflection for an elastic simply supported beam under full-span uniformly distributed load $w$.",
-                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta = \\frac{P L^3}{48 E I}$."
+                        "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta = \\frac{P L^3}{48 E I}$.",
+                        "videoUrl": "assets/videos/Simply_Supported_Beam_Center_Deflection_under_Uniform_Load.mp4",
+                        "videoTitle": "Simply Supported Beam Center Deflection under Uniform Load Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Maximum Shear Stress Theory (Tresca Criterion)",
@@ -15511,6 +15727,24 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution.",
                         "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
                         "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Gibbs Phase Rule",
+                        "formula": "$$F = C - P + 2$$",
+                        "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
+                        "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
+                        "videoUrl": "assets/videos/Gibbs_Phase_Rule.mp4",
+                        "videoTitle": "Gibbs Phase Rule Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Combustion Theoretical Air and Excess Air",
+                        "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100$$",
+                        "description": "Theoretical air is stoichiometric oxygen required for complete combustion of all fuel carbon to $\\text{CO}_2$, hydrogen to $\\text{H}_2\\text{O}$, and sulfur to $\\text{SO}_2$. Excess air guarantees complete combustion.",
+                        "examTip": "Found in Material Balances. Atmospheric air composition: $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$ by mole, meaning $3.76\\text{ moles N}_2$ accompany every $1\\text{ mole O}_2$.",
+                        "videoUrl": "assets/videos/Combustion_Theoretical_Air_and_Excess_Air.mp4",
+                        "videoTitle": "Combustion Theoretical Air and Excess Air Explainer",
                         "videoDuration": "10s"
                 }
         ]
@@ -15858,6 +16092,23 @@ window.calcEvaluate = function() {
             'tipdeflection': ['cantilever beam tip deflection', 'cantilever beam', 'tip deflection'],
             'isotropic': ['isotropic elastic constants relationship', 'isotropic elastic constants', 'elastic constants'],
             'elasticconstants': ['isotropic elastic constants relationship', 'elastic constants', 'shear modulus'],
+            'gibbs': ['gibbs phase rule', 'gibbs', 'degrees of freedom', 'phase rule'],
+            'phaserule': ['gibbs phase rule', 'phase rule'],
+            'theoreticalair': ['combustion theoretical air and excess air', 'theoretical air', 'excess air'],
+            'excessair': ['combustion theoretical air and excess air', 'theoretical air', 'excess air'],
+            'combustionair': ['combustion theoretical air and excess air', 'theoretical air', 'excess air'],
+            'molarity': ['solution concentration: molarity', 'molarity', 'molality', 'normality'],
+            'molality': ['solution concentration: molarity', 'molarity', 'molality', 'normality'],
+            'normality': ['solution concentration: molarity', 'molarity', 'molality', 'normality'],
+            'solutionconcentration': ['solution concentration', 'molarity'],
+            'beamdeflection': ['simply supported beam center deflection under uniform load', 'beam deflection'],
+            'uniformload': ['simply supported beam center deflection under uniform load', 'uniform load'],
+            'maximumshear': ['maximum shear stress in rectangular beams', 'shear stress in rectangular'],
+            'rectangularbeam': ['maximum shear stress in rectangular beams', 'shear stress in rectangular'],
+            'paramountduty': ['ncees model rules: paramount duty to public welfare', 'paramount duty', 'public welfare'],
+            'publicwelfare': ['ncees model rules: paramount duty to public welfare', 'public welfare'],
+            'peseal': ['ncees rules of professional conduct: pe seal integrity', 'pe seal', 'rules of professional conduct'],
+            'sealintegrity': ['ncees rules of professional conduct: pe seal integrity', 'seal integrity'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
