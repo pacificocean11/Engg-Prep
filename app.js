@@ -9943,7 +9943,10 @@ window.calcEvaluate = function() {
                         "title": "Generalized Hooke’s Law (3D Elastic Stress-Strain)",
                         "formula": "$$\\epsilon_x = \\frac{1}{E}\\left[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)\\right]$$",
                         "description": "Relates elastic normal strain along a Cartesian axis to multi-axial normal stresses and Poisson's ratio $\\nu$ in linear isotropic materials.",
-                        "examTip": "Found in Mechanics of Materials. Even under uniaxial tension ($\\sigma_y = \\sigma_z = 0$), lateral strains $\\epsilon_y = \\epsilon_z = -\\nu \\sigma_x / E$ still develop!"
+                        "examTip": "Found in Mechanics of Materials. Even under uniaxial tension ($\\sigma_y = \\sigma_z = 0$), lateral strains $\\epsilon_y = \\epsilon_z = -\\nu \\sigma_x / E$ still develop!",
+                        "videoUrl": "assets/videos/Generalized_Hookes_Law_3D_Elastic_Stress_Strain.mp4",
+                        "videoTitle": "Generalized Hooke’s Law (3D Elastic Stress-Strain) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Elastic Flexure Formula (Beam Bending Stress)",
@@ -9985,7 +9988,10 @@ window.calcEvaluate = function() {
                         "title": "Work-Energy Principle (Rigid Body Dynamics)",
                         "formula": "$$T_1 + \\sum U_{1-2} = T_2, \\quad T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "The net work done by all external forces and couples acting on a body during displacement equals the change in its total kinetic energy (translation plus rotation).",
-                        "examTip": "Found in Dynamics. For rolling without slipping on stationary surfaces, kinetic energy simplifies to $T = \\frac{1}{2} I_{IC} \\omega^2$ about the instantaneous center."
+                        "examTip": "Found in Dynamics. For rolling without slipping on stationary surfaces, kinetic energy simplifies to $T = \\frac{1}{2} I_{IC} \\omega^2$ about the instantaneous center.",
+                        "videoUrl": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+                        "videoTitle": "Work-Energy Principle (Rigid Body Dynamics) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Castigliano’s Second Theorem (Deflection from Strain Energy)",
@@ -10051,7 +10057,10 @@ window.calcEvaluate = function() {
                         "title": "Modified Goodman Fatigue Criterion (Fluctuating Stresses)",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{N_f}$$",
                         "description": "Evaluates fatigue safety factor $N_f$ for ductile mechanical parts under cyclic loading with alternating stress $\\sigma_a$, mean stress $\\sigma_m$, endurance limit $S_e$, and ultimate tensile strength $S_{ut}$.",
-                        "examTip": "Found in Mechanical Design. Alternating stress $\\sigma_a = (\\sigma_{\\text{max}} - \\sigma_{\\text{min}})/2$; mean stress $\\sigma_m = (\\sigma_{\\text{max}} + \\sigma_{\\text{min}})/2$. If $\\sigma_m \\le 0$, mean stress effect is zero."
+                        "examTip": "Found in Mechanical Design. Alternating stress $\\sigma_a = (\\sigma_{\\text{max}} - \\sigma_{\\text{min}})/2$; mean stress $\\sigma_m = (\\sigma_{\\text{max}} + \\sigma_{\\text{min}})/2$. If $\\sigma_m \\le 0$, mean stress effect is zero.",
+                        "videoUrl": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
+                        "videoTitle": "Modified Goodman Fatigue Failure Criterion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Linear Impulse and Momentum Theorem (Impact & Jet Forces)",
@@ -10582,13 +10591,19 @@ window.calcEvaluate = function() {
                         "title": "Rolling Element Bearing Rated Life ($L_{10}$)",
                         "formula": "$$L_{10} = \\left(\\frac{C}{P}\\right)^p \\times 10^6 \\text{ revolutions}, \\quad p = 3 \\text{ (ball)}, \\quad p = 10/3 \\text{ (roller)}$$",
                         "description": "Predicts rated fatigue life exceeded by 90% of identical bearings operating under equivalent radial dynamic load $P$ with dynamic load rating $C$.",
-                        "examTip": "Found in Mechanical Design. Life in hours is $L_{10h} = \\frac{L_{10}}{60 N}$. Halving the load increases ball bearing life by $2^3 = 8\\times$!"
+                        "examTip": "Found in Mechanical Design. Life in hours is $L_{10h} = \\frac{L_{10}}{60 N}$. Halving the load increases ball bearing life by $2^3 = 8\\times$!",
+                        "videoUrl": "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
+                        "videoTitle": "Rolling Element Bearing Rated Life (L10) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Power Screws Lifting Torque and Efficiency",
                         "formula": "$$T_R = \\frac{F d_m}{2}\\left(\\frac{l + \\pi \\mu d_m}{\\pi d_m - \\mu l}\\right), \\quad e = \\frac{F l}{2\\pi T_R}$$",
                         "description": "Computes torque $T_R$ required to raise axial load $F$ using a square-thread power screw of mean diameter $d_m$, lead $l$, and coefficient of friction $\\mu$.",
-                        "examTip": "Found in Mechanical Design. A screw is self-locking if friction angle exceeds lead angle: $\\mu \\ge l / (\\pi d_m)$ (efficiency $e < 50\\%$)."
+                        "examTip": "Found in Mechanical Design. A screw is self-locking if friction angle exceeds lead angle: $\\mu \\ge l / (\\pi d_m)$ (efficiency $e < 50\\%$).",
+                        "videoUrl": "assets/videos/Power_Screws_Lifting_Torque_and_Efficiency.mp4",
+                        "videoTitle": "Power Screws Lifting Torque and Efficiency Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Bolted Joint Preload and Clamping Stiffness",
@@ -10600,13 +10615,19 @@ window.calcEvaluate = function() {
                         "title": "Helical Compression Spring Shear Stress with Wahl Factor",
                         "formula": "$$\\tau = K_W \\frac{8 F D}{\\pi d^3}, \\quad K_W = \\frac{4C - 1}{4C - 4} + \\frac{0.615}{C}, \\quad C = \\frac{D}{d}$$",
                         "description": "Calculates maximum torsional shear stress in a round wire helical spring under axial load $F$, corrected for direct transverse shear and inner coil curvature via Wahl factor $K_W$.",
-                        "examTip": "Found in Mechanical Design. Spring rate is $k = \\frac{d^4 G}{8 D^3 N_a}$. Doubling wire diameter $d$ increases spring stiffness by $2^4 = 16\\times$!"
+                        "examTip": "Found in Mechanical Design. Spring rate is $k = \\frac{d^4 G}{8 D^3 N_a}$. Doubling wire diameter $d$ increases spring stiffness by $2^4 = 16\\times$!",
+                        "videoUrl": "assets/videos/Helical_Compression_Spring_Shear_Stress_with_Wahl_Factor.mp4",
+                        "videoTitle": "Helical Compression Spring Shear Stress with Wahl Factor Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Modified Goodman Fatigue Failure Criterion",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
                         "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
-                        "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$."
+                        "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$.",
+                        "videoUrl": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
+                        "videoTitle": "Modified Goodman Fatigue Failure Criterion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Rectilinear Kinematics Constant Acceleration Equations",
@@ -10831,6 +10852,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
                         "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
                         "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First-Order Sensor Dynamic Step Response",
+                        "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
+                        "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
+                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+                        "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -11755,6 +11785,33 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
                         "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Work-Energy Principle (Rigid Body Dynamics)",
+                        "formula": "$$T_1 + \\sum U_{1-2} = T_2, \\quad T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
+                        "description": "The net work done by all external forces and couples acting on a body during displacement equals the change in its total kinetic energy (translation plus rotation).",
+                        "examTip": "Found in Dynamics. For rolling without slipping on stationary surfaces, kinetic energy simplifies to $T = \\frac{1}{2} I_{IC} \\omega^2$ about the instantaneous center.",
+                        "videoUrl": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+                        "videoTitle": "Work-Energy Principle (Rigid Body Dynamics) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Generalized Hooke’s Law (3D Elastic Stress-Strain)",
+                        "formula": "$$\\epsilon_x = \\frac{1}{E}\\left[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)\\right]$$",
+                        "description": "Relates elastic normal strain along a Cartesian axis to multi-axial normal stresses and Poisson's ratio $\\nu$ in linear isotropic materials.",
+                        "examTip": "Found in Mechanics of Materials. Even under uniaxial tension ($\\sigma_y = \\sigma_z = 0$), lateral strains $\\epsilon_y = \\epsilon_z = -\\nu \\sigma_x / E$ still develop!",
+                        "videoUrl": "assets/videos/Generalized_Hookes_Law_3D_Elastic_Stress_Strain.mp4",
+                        "videoTitle": "Generalized Hooke’s Law (3D Elastic Stress-Strain) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Modified Goodman Fatigue Failure Criterion",
+                        "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
+                        "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
+                        "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$.",
+                        "videoUrl": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
+                        "videoTitle": "Modified Goodman Fatigue Failure Criterion Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Electrical and Computer": [
@@ -12488,6 +12545,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
                         "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
                         "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First-Order Sensor Dynamic Step Response",
+                        "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
+                        "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
+                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+                        "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -13295,6 +13361,15 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
                         "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "First-Order Sensor Dynamic Step Response",
+                        "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
+                        "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
+                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+                        "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Industrial": [
@@ -14001,6 +14076,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Ethics. 'Rubber-stamping' plans drawn by third parties without detailed engineering review is a severe disciplinary violation.",
                         "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
                         "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Rolling Element Bearing Rated Life ($L_{10}$)",
+                        "formula": "$$L_{10} = \\left(\\frac{C}{P}\\right)^p \\times 10^6 \\text{ revolutions}, \\quad p = 3 \\text{ (ball)}, \\quad p = 10/3 \\text{ (roller)}$$",
+                        "description": "Predicts rated fatigue life exceeded by 90% of identical bearings operating under equivalent radial dynamic load $P$ with dynamic load rating $C$.",
+                        "examTip": "Found in Mechanical Design. Life in hours is $L_{10h} = \\frac{L_{10}}{60 N}$. Halving the load increases ball bearing life by $2^3 = 8\\times$!",
+                        "videoUrl": "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
+                        "videoTitle": "Rolling Element Bearing Rated Life (L10) Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -14820,6 +14904,15 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/NCEES_Rules_of_Professional_Conduct_PE_Seal_Integrity.mp4",
                         "videoTitle": "NCEES Rules of Professional Conduct: PE Seal Integrity Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "First-Order Sensor Dynamic Step Response",
+                        "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
+                        "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
+                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+                        "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Other": [
@@ -14845,7 +14938,10 @@ window.calcEvaluate = function() {
                         "title": "Work-Energy Principle for Particles",
                         "formula": "$$W_{\\text{net}} = \\Delta T = \\frac{1}{2} m v_2^2 - \\frac{1}{2} m v_1^2$$",
                         "description": "The total work done by all external conservative and non-conservative forces equals the change in kinetic energy of the mass.",
-                        "examTip": "Found in Dynamics. Best method for problems involving force as a function of position or displacement where time $t$ is not needed."
+                        "examTip": "Found in Dynamics. Best method for problems involving force as a function of position or displacement where time $t$ is not needed.",
+                        "videoUrl": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+                        "videoTitle": "Work-Energy Principle (Rigid Body Dynamics) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Linear Impulse and Momentum Principle",
@@ -14869,7 +14965,10 @@ window.calcEvaluate = function() {
                         "title": "Hooke’s Law for Uniaxial Elastic Deformation",
                         "formula": "$$\\sigma = E \\epsilon, \\quad \\delta = \\frac{P L}{A E}$$",
                         "description": "Relates axial normal stress to elastic strain through Young’s modulus $E$, and determines elongation $\\delta$ under axial load $P$.",
-                        "examTip": "Found in Mechanics of Materials. Valid only within the linear elastic limit (below proportional limit stress $\\sigma_{pl}$)."
+                        "examTip": "Found in Mechanics of Materials. Valid only within the linear elastic limit (below proportional limit stress $\\sigma_{pl}$).",
+                        "videoUrl": "assets/videos/Generalized_Hookes_Law_3D_Elastic_Stress_Strain.mp4",
+                        "videoTitle": "Generalized Hooke’s Law (3D Elastic Stress-Strain) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Mohr’s Circle for 2D Plane Stress",
@@ -15340,7 +15439,10 @@ window.calcEvaluate = function() {
                         "title": "First-Order Sensor Dynamic Step Response",
                         "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
                         "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
-                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$."
+                        "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
+                        "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+                        "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Second-Order Sensor Natural Frequency and Damping",
@@ -15746,6 +15848,42 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Combustion_Theoretical_Air_and_Excess_Air.mp4",
                         "videoTitle": "Combustion Theoretical Air and Excess Air Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Modified Goodman Fatigue Failure Criterion",
+                        "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
+                        "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
+                        "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$.",
+                        "videoUrl": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
+                        "videoTitle": "Modified Goodman Fatigue Failure Criterion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Helical Compression Spring Shear Stress with Wahl Factor",
+                        "formula": "$$\\tau = K_W \\frac{8 F D}{\\pi d^3}, \\quad K_W = \\frac{4C - 1}{4C - 4} + \\frac{0.615}{C}, \\quad C = \\frac{D}{d}$$",
+                        "description": "Calculates maximum torsional shear stress in a round wire helical spring under axial load $F$, corrected for direct transverse shear and inner coil curvature via Wahl factor $K_W$.",
+                        "examTip": "Found in Mechanical Design. Spring rate is $k = \\frac{d^4 G}{8 D^3 N_a}$. Doubling wire diameter $d$ increases spring stiffness by $2^4 = 16\\times$!",
+                        "videoUrl": "assets/videos/Helical_Compression_Spring_Shear_Stress_with_Wahl_Factor.mp4",
+                        "videoTitle": "Helical Compression Spring Shear Stress with Wahl Factor Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Power Screws Lifting Torque and Efficiency",
+                        "formula": "$$T_R = \\frac{F d_m}{2}\\left(\\frac{l + \\pi \\mu d_m}{\\pi d_m - \\mu l}\\right), \\quad e = \\frac{F l}{2\\pi T_R}$$",
+                        "description": "Computes torque $T_R$ required to raise axial load $F$ using a square-thread power screw of mean diameter $d_m$, lead $l$, and coefficient of friction $\\mu$.",
+                        "examTip": "Found in Mechanical Design. A screw is self-locking if friction angle exceeds lead angle: $\\mu \\ge l / (\\pi d_m)$ (efficiency $e < 50\\%$).",
+                        "videoUrl": "assets/videos/Power_Screws_Lifting_Torque_and_Efficiency.mp4",
+                        "videoTitle": "Power Screws Lifting Torque and Efficiency Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Rolling Element Bearing Rated Life ($L_{10}$)",
+                        "formula": "$$L_{10} = \\left(\\frac{C}{P}\\right)^p \\times 10^6 \\text{ revolutions}, \\quad p = 3 \\text{ (ball)}, \\quad p = 10/3 \\text{ (roller)}$$",
+                        "description": "Predicts rated fatigue life exceeded by 90% of identical bearings operating under equivalent radial dynamic load $P$ with dynamic load rating $C$.",
+                        "examTip": "Found in Mechanical Design. Life in hours is $L_{10h} = \\frac{L_{10}}{60 N}$. Halving the load increases ball bearing life by $2^3 = 8\\times$!",
+                        "videoUrl": "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
+                        "videoTitle": "Rolling Element Bearing Rated Life (L10) Explainer",
+                        "videoDuration": "10s"
                 }
         ]
 };
@@ -16109,6 +16247,20 @@ window.calcEvaluate = function() {
             'publicwelfare': ['ncees model rules: paramount duty to public welfare', 'public welfare'],
             'peseal': ['ncees rules of professional conduct: pe seal integrity', 'pe seal', 'rules of professional conduct'],
             'sealintegrity': ['ncees rules of professional conduct: pe seal integrity', 'seal integrity'],
+            'sensorstep': ['first-order sensor dynamic step response', 'sensor dynamic step response', 'first-order sensor', 'step response'],
+            'firstordersensor': ['first-order sensor dynamic step response', 'first-order sensor', 'time constant'],
+            'workenergy': ['work-energy principle', 'work energy principle', 'rigid body dynamics'],
+            'rigidbodydynamics': ['work-energy principle (rigid body dynamics)', 'rigid body dynamics'],
+            'hookeslaw': ['generalized hooke’s law', 'hooke’s law', '3d elastic stress-strain'],
+            'generalizedhooke': ['generalized hooke’s law', 'hooke’s law', '3d elastic stress-strain'],
+            'goodman': ['modified goodman fatigue', 'goodman fatigue failure criterion', 'goodman criterion'],
+            'fatiguecriterion': ['modified goodman fatigue failure criterion', 'fatigue failure criterion'],
+            'helicalspring': ['helical compression spring', 'wahl factor', 'spring shear stress'],
+            'wahlfactor': ['helical compression spring', 'wahl factor'],
+            'powerscrew': ['power screws lifting torque and efficiency', 'power screws', 'lifting torque'],
+            'liftingtorque': ['power screws lifting torque and efficiency', 'lifting torque'],
+            'bearinglife': ['rolling element bearing rated life', 'bearing rated life', 'l10 life', 'l10'],
+            'l10life': ['rolling element bearing rated life', 'bearing rated life', 'l10'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
