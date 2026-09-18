@@ -10724,6 +10724,24 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
                         "videoTitle": "2D Static Equilibrium Equations Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
+                        "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
+                        "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
+                        "videoUrl": "assets/videos/Hagen_Poiseuille_Equation_for_Laminar_Pipe_Flow.mp4",
+                        "videoTitle": "Hagen-Poiseuille Equation for Laminar Pipe Flow Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Civil": [
@@ -10746,7 +10764,10 @@ window.calcEvaluate = function() {
                         "title": "Terzaghi’s Effective Stress Principle",
                         "formula": "$$\\sigma' = \\sigma - u$$",
                         "description": "Total normal stress $\\sigma$ applied to a soil mass is partitioned between the mineral skeleton (effective stress $\\sigma'$) and interstitial pore water pressure $u$.",
-                        "examTip": "Found in Geotechnical Engineering. Only effective stress $\\sigma'$ controls soil shear strength and consolidation settlement. Pore water carries zero shear stress."
+                        "examTip": "Found in Geotechnical Engineering. Only effective stress $\\sigma'$ controls soil shear strength and consolidation settlement. Pore water carries zero shear stress.",
+                        "videoUrl": "assets/videos/Terzaghis_Effective_Stress_Principle.mp4",
+                        "videoTitle": "Terzaghi’s Effective Stress Principle Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Euler’s Critical Buckling Load for Columns",
@@ -10773,7 +10794,10 @@ window.calcEvaluate = function() {
                         "title": "Rational Method for Peak Storm Runoff",
                         "formula": "$$Q = C \\cdot I \\cdot A$$",
                         "description": "Estimates maximum design peak stormwater runoff discharge $Q$ from a drainage basin as a function of runoff coefficient $C$, rainfall intensity $I$, and catchment area $A$.",
-                        "examTip": "Found in Hydrology. In USCS units: with $I$ in inches/hour and $A$ in acres, $Q$ directly equals cubic feet per second ($1\\text{ cfs} \\approx 1.008\\text{ acre-in/hr}$)."
+                        "examTip": "Found in Hydrology. In USCS units: with $I$ in inches/hour and $A$ in acres, $Q$ directly equals cubic feet per second ($1\\text{ cfs} \\approx 1.008\\text{ acre-in/hr}$).",
+                        "videoUrl": "assets/videos/Rational_Method_for_Peak_Storm_Runoff.mp4",
+                        "videoTitle": "Rational Method for Peak Storm Runoff Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Rankine Lateral Earth Pressure Coefficients",
@@ -10890,7 +10914,10 @@ window.calcEvaluate = function() {
                         "title": "Mohr-Coulomb Failure Criterion for Soils",
                         "formula": "$$\\tau_f = c' + \\sigma' \\tan\\phi'$$",
                         "description": "Fundamental shear strength equation for soils, stating that shear strength on any failure plane depends on effective cohesion $c'$, normal effective stress $\\sigma'$, and friction angle $\\phi'$.",
-                        "examTip": "Found in Geotechnical Engineering. For normally consolidated sands and gravels, $c' = 0$, giving $\\tau_f = \\sigma' \\tan\\phi'$. In undrained clay loading ($\\\\phi_u = 0$), $\\tau_f = s_u$."
+                        "examTip": "Found in Geotechnical Engineering. For normally consolidated sands and gravels, $c' = 0$, giving $\\tau_f = \\sigma' \\tan\\phi'$. In undrained clay loading ($\\\\phi_u = 0$), $\\tau_f = s_u$.",
+                        "videoUrl": "assets/videos/Mohr_Coulomb_Failure_Criterion_for_Soils.mp4",
+                        "videoTitle": "Mohr-Coulomb Failure Criterion for Soils Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Bernoulli’s Principle",
@@ -11190,19 +11217,28 @@ window.calcEvaluate = function() {
                         "title": "Soil Unit Weights (Dry, Saturated, Submerged)",
                         "formula": "$$\\gamma_d = \\frac{G_s \\gamma_w}{1 + e} = \\frac{\\gamma}{1 + w}, \\quad \\gamma_{sat} = \\frac{(G_s + e)\\gamma_w}{1 + e}, \\quad \\gamma' = \\gamma_{sat} - \\gamma_w$$",
                         "description": "Dry unit weight $\\gamma_d$, saturated unit weight $\\gamma_{sat}$, and effective buoyant submerged unit weight $\\gamma'$ used in soil effective stress calculations.",
-                        "examTip": "Found in Geotechnical. Density of water is $\\gamma_w = 62.4\\text{ lbf/ft}^3$ or $9.81\\text{ kN/m}^3$."
+                        "examTip": "Found in Geotechnical. Density of water is $\\gamma_w = 62.4\\text{ lbf/ft}^3$ or $9.81\\text{ kN/m}^3$.",
+                        "videoUrl": "assets/videos/Soil_Unit_Weights_Dry_Saturated_Submerged.mp4",
+                        "videoTitle": "Soil Unit Weights (Dry, Saturated, Submerged) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Grain Size Distribution Metrics ($C_u$ and $C_c$)",
                         "formula": "$$C_u = \\frac{D_{60}}{D_{10}}, \\quad C_c = \\frac{D_{30}^2}{D_{10} D_{60}}$$",
                         "description": "Uniformity coefficient $C_u$ and coefficient of gradation (curvature) $C_c$ extracted from the grain-size distribution curve to classify coarse soils under USCS.",
-                        "examTip": "Found in Geotechnical Engineering. Well-graded gravel requires $C_u \\ge 4$ and $1 \\le C_c \\le 3$; well-graded sand requires $C_u \\ge 6$ and $1 \\le C_c \\le 3$."
+                        "examTip": "Found in Geotechnical Engineering. Well-graded gravel requires $C_u \\ge 4$ and $1 \\le C_c \\le 3$; well-graded sand requires $C_u \\ge 6$ and $1 \\le C_c \\le 3$.",
+                        "videoUrl": "assets/videos/Grain_Size_Distribution_Metrics_Cu_and_Cc.mp4",
+                        "videoTitle": "Grain Size Distribution Metrics (Cu and Cc) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Atterberg Limits and Plasticity Index",
                         "formula": "$$PI = LL - PL, \\quad LI = \\frac{w - PL}{PI}$$",
                         "description": "Demarcates soil consistency states: liquid limit $LL$, plastic limit $PL$, and shrinkage limit $SL$. Liquidity Index $LI > 1.0$ indicates sensitive soil prone to quick liquefaction.",
-                        "examTip": "Found in Geotechnical. USCS A-line equation on the plasticity chart is $PI = 0.73 (LL - 20)$. Clays plot above the A-line; silts plot below."
+                        "examTip": "Found in Geotechnical. USCS A-line equation on the plasticity chart is $PI = 0.73 (LL - 20)$. Clays plot above the A-line; silts plot below.",
+                        "videoUrl": "assets/videos/Atterberg_Limits_and_Plasticity_Index.mp4",
+                        "videoTitle": "Atterberg Limits and Plasticity Index Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Standard Proctor Optimum Moisture and Maximum Dry Density",
@@ -11214,7 +11250,10 @@ window.calcEvaluate = function() {
                         "title": "Effective Stress Principle in Saturated Soils",
                         "formula": "$$\\sigma' = \\sigma - u = \\sum \\gamma h - u$$",
                         "description": "Terzaghi's fundamental soil mechanics principle: shear strength, compressibility, and volume change of soil skeleton depend entirely on effective intergranular stress $\\sigma'$, not total stress $\\sigma$.",
-                        "examTip": "Found in Geotechnical. Pore water pressure $u = \\gamma_w h_w$ for hydrostatic groundwater. Upward seepage reduces $\\sigma'$, potentially causing quicksand conditions."
+                        "examTip": "Found in Geotechnical. Pore water pressure $u = \\gamma_w h_w$ for hydrostatic groundwater. Upward seepage reduces $\\sigma'$, potentially causing quicksand conditions.",
+                        "videoUrl": "assets/videos/Terzaghis_Effective_Stress_Principle.mp4",
+                        "videoTitle": "Terzaghi’s Effective Stress Principle Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "2:1 Stress Distribution Method for Deep Loads",
@@ -11508,6 +11547,24 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Statics. Always begin problem solutions with a complete, clean Free-Body Diagram (FBD).",
                         "videoUrl": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
                         "videoTitle": "2D Static Equilibrium Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
+                        "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
+                        "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
+                        "videoUrl": "assets/videos/Hagen_Poiseuille_Equation_for_Laminar_Pipe_Flow.mp4",
+                        "videoTitle": "Hagen-Poiseuille Equation for Laminar Pipe Flow Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -12198,6 +12255,15 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Ideal_Operational_Amplifier_Golden_Rules.mp4",
                         "videoTitle": "Ideal Operational Amplifier Golden Rules Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Chemical": [
@@ -12253,7 +12319,10 @@ window.calcEvaluate = function() {
                         "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
                         "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
                         "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
-                        "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$."
+                        "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
+                        "videoUrl": "assets/videos/Hagen_Poiseuille_Equation_for_Laminar_Pipe_Flow.mp4",
+                        "videoTitle": "Hagen-Poiseuille Equation for Laminar Pipe Flow Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Van der Waals Equation of State for Real Gases",
@@ -12929,6 +12998,15 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Faradays_Law_of_Electrolysis.mp4",
                         "videoTitle": "Faraday’s Law of Electrolysis Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Industrial": [
@@ -13585,6 +13663,15 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Permutations_and_Combinations_Counting_Rules.mp4",
                         "videoTitle": "Permutations and Combinations Counting Rules Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Environmental": [
@@ -14156,7 +14243,10 @@ window.calcEvaluate = function() {
                         "title": "Urban Stormwater Rational Peak Discharge Formula",
                         "formula": "$$Q = C I A$$",
                         "description": "Predicts peak surface runoff discharge rate $Q$ (cfs) from watershed drainage area $A$ (acres), rainfall intensity $I$ (in/hr) at time of concentration $t_c$, and dimensionless runoff coefficient $C$.",
-                        "examTip": "Found in Hydrology. Conversion factor: $1\\text{ acre-inch/hr} = 1.008\\text{ cfs} \\approx 1.0\\text{ cfs}$."
+                        "examTip": "Found in Hydrology. Conversion factor: $1\\text{ acre-inch/hr} = 1.008\\text{ cfs} \\approx 1.0\\text{ cfs}$.",
+                        "videoUrl": "assets/videos/Rational_Method_for_Peak_Storm_Runoff.mp4",
+                        "videoTitle": "Rational Method for Peak Storm Runoff Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "NRCS Direct Runoff Equation with Initial Abstraction",
@@ -14246,6 +14336,69 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Chemistry. $z$ is number of electrons transferred per ion (e.g. for $\\text{Cu}^{2+} + 2e^- \\to \\text{Cu}$, $z = 2$).",
                         "videoUrl": "assets/videos/Faradays_Law_of_Electrolysis.mp4",
                         "videoTitle": "Faraday’s Law of Electrolysis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Atterberg Limits and Plasticity Index",
+                        "formula": "$$PI = LL - PL, \\quad LI = \\frac{w - PL}{PI}$$",
+                        "description": "Demarcates soil consistency states: liquid limit $LL$, plastic limit $PL$, and shrinkage limit $SL$. Liquidity Index $LI > 1.0$ indicates sensitive soil prone to quick liquefaction.",
+                        "examTip": "Found in Geotechnical. USCS A-line equation on the plasticity chart is $PI = 0.73 (LL - 20)$. Clays plot above the A-line; silts plot below.",
+                        "videoUrl": "assets/videos/Atterberg_Limits_and_Plasticity_Index.mp4",
+                        "videoTitle": "Atterberg Limits and Plasticity Index Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Grain Size Distribution Metrics ($C_u$ and $C_c$)",
+                        "formula": "$$C_u = \\frac{D_{60}}{D_{10}}, \\quad C_c = \\frac{D_{30}^2}{D_{10} D_{60}}$$",
+                        "description": "Uniformity coefficient $C_u$ and coefficient of gradation (curvature) $C_c$ extracted from the grain-size distribution curve to classify coarse soils under USCS.",
+                        "examTip": "Found in Geotechnical Engineering. Well-graded gravel requires $C_u \\ge 4$ and $1 \\le C_c \\le 3$; well-graded sand requires $C_u \\ge 6$ and $1 \\le C_c \\le 3$.",
+                        "videoUrl": "assets/videos/Grain_Size_Distribution_Metrics_Cu_and_Cc.mp4",
+                        "videoTitle": "Grain Size Distribution Metrics (Cu and Cc) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Soil Unit Weights (Dry, Saturated, Submerged)",
+                        "formula": "$$\\gamma_d = \\frac{G_s \\gamma_w}{1 + e} = \\frac{\\gamma}{1 + w}, \\quad \\gamma_{sat} = \\frac{(G_s + e)\\gamma_w}{1 + e}, \\quad \\gamma' = \\gamma_{sat} - \\gamma_w$$",
+                        "description": "Dry unit weight $\\gamma_d$, saturated unit weight $\\gamma_{sat}$, and effective buoyant submerged unit weight $\\gamma'$ used in soil effective stress calculations.",
+                        "examTip": "Found in Geotechnical. Density of water is $\\gamma_w = 62.4\\text{ lbf/ft}^3$ or $9.81\\text{ kN/m}^3$.",
+                        "videoUrl": "assets/videos/Soil_Unit_Weights_Dry_Saturated_Submerged.mp4",
+                        "videoTitle": "Soil Unit Weights (Dry, Saturated, Submerged) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Terzaghi’s Effective Stress Principle",
+                        "formula": "$$\\sigma' = \\sigma - u$$",
+                        "description": "Total normal stress $\\sigma$ applied to a soil mass is partitioned between the mineral skeleton (effective stress $\\sigma'$) and interstitial pore water pressure $u$.",
+                        "examTip": "Found in Geotechnical Engineering. Only effective stress $\\sigma'$ controls soil shear strength and consolidation settlement. Pore water carries zero shear stress.",
+                        "videoUrl": "assets/videos/Terzaghis_Effective_Stress_Principle.mp4",
+                        "videoTitle": "Terzaghi’s Effective Stress Principle Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
+                        "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
+                        "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
+                        "videoUrl": "assets/videos/Hagen_Poiseuille_Equation_for_Laminar_Pipe_Flow.mp4",
+                        "videoTitle": "Hagen-Poiseuille Equation for Laminar Pipe Flow Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mohr-Coulomb Failure Criterion for Soils",
+                        "formula": "$$\\tau_f = c' + \\sigma' \\tan\\phi'$$",
+                        "description": "Fundamental shear strength equation for soils, stating that shear strength on any failure plane depends on effective cohesion $c'$, normal effective stress $\\sigma'$, and friction angle $\\phi'$.",
+                        "examTip": "Found in Geotechnical Engineering. For normally consolidated sands and gravels, $c' = 0$, giving $\\tau_f = \\sigma' \\tan\\phi'$. In undrained clay loading ($\\\\phi_u = 0$), $\\tau_f = s_u$.",
+                        "videoUrl": "assets/videos/Mohr_Coulomb_Failure_Criterion_for_Soils.mp4",
+                        "videoTitle": "Mohr-Coulomb Failure Criterion for Soils Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Vector Dot Product and Orthogonality Condition",
+                        "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
+                        "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -14593,7 +14746,10 @@ window.calcEvaluate = function() {
                         "title": "Vector Dot Product and Orthogonality Condition",
                         "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
                         "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
-                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$."
+                        "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
+                        "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
+                        "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Vector Cross Product and Parallelogram Area",
@@ -15092,6 +15248,24 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Maximum_Power_Transfer_Theorem.mp4",
                         "videoTitle": "Maximum Power Transfer Theorem Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
+                        "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
+                        "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
+                        "videoUrl": "assets/videos/Hagen_Poiseuille_Equation_for_Laminar_Pipe_Flow.mp4",
+                        "videoTitle": "Hagen-Poiseuille Equation for Laminar Pipe Flow Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mohr-Coulomb Failure Criterion for Soils",
+                        "formula": "$$\\tau_f = c' + \\sigma' \\tan\\phi'$$",
+                        "description": "Fundamental shear strength equation for soils, stating that shear strength on any failure plane depends on effective cohesion $c'$, normal effective stress $\\sigma'$, and friction angle $\\phi'$.",
+                        "examTip": "Found in Geotechnical Engineering. For normally consolidated sands and gravels, $c' = 0$, giving $\\tau_f = \\sigma' \\tan\\phi'$. In undrained clay loading ($\\\\phi_u = 0$), $\\tau_f = s_u$.",
+                        "videoUrl": "assets/videos/Mohr_Coulomb_Failure_Criterion_for_Soils.mp4",
+                        "videoTitle": "Mohr-Coulomb Failure Criterion for Soils Explainer",
+                        "videoDuration": "10s"
                 }
         ]
 };
@@ -15410,6 +15584,20 @@ window.calcEvaluate = function() {
             'electrolysis': ['faraday’s law of electrolysis', 'faraday law of electrolysis', 'electrolysis'],
             'staticequilibrium': ['2d static equilibrium equations', 'static equilibrium equations', 'static equilibrium'],
             '2dequilibrium': ['2d static equilibrium equations', 'static equilibrium equations', 'equilibrium equations'],
+            'atterberg': ['atterberg limits and plasticity index', 'atterberg limits', 'plasticity index'],
+            'plasticityindex': ['atterberg limits and plasticity index', 'plasticity index'],
+            'grainsize': ['grain size distribution metrics', 'grain size', 'cu and cc'],
+            'soilunitweights': ['soil unit weights', 'unit weights', 'dry saturated submerged'],
+            'terzaghi': ['terzaghi’s effective stress principle', 'terzaghi effective stress', 'effective stress principle'],
+            'effectivestress': ['terzaghi’s effective stress principle', 'effective stress principle', 'effective stress'],
+            'rationalmethod': ['rational method for peak storm runoff', 'rational method', 'peak storm runoff', 'rational peak discharge'],
+            'stormrunoff': ['rational method for peak storm runoff', 'peak storm runoff', 'rational method'],
+            'hagenpoiseuille': ['hagen-poiseuille equation', 'hagen poiseuille equation', 'laminar pipe flow'],
+            'poiseuille': ['hagen-poiseuille equation', 'poiseuille equation', 'laminar pipe flow'],
+            'mohrcoulomb': ['mohr-coulomb failure criterion for soils', 'mohr coulomb failure criterion', 'mohr coulomb'],
+            'soilsfailure': ['mohr-coulomb failure criterion for soils', 'failure criterion for soils'],
+            'dotproduct': ['vector dot product and orthogonality condition', 'vector dot product', 'dot product'],
+            'orthogonality': ['vector dot product and orthogonality condition', 'orthogonality condition', 'orthogonality'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
