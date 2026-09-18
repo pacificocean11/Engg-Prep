@@ -10315,7 +10315,10 @@ window.calcEvaluate = function() {
                         "title": "Cantilever Beam Tip Deflection under Point Load",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}, \\quad \\theta_{\\text{max}} = \\frac{P L^2}{2 E I}$$",
                         "description": "Maximum tip deflection and slope for an end-loaded elastic cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
-                        "examTip": "Found in Mechanics of Materials deflection tables. If uniform load $w$ is applied instead: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$."
+                        "examTip": "Found in Mechanics of Materials deflection tables. If uniform load $w$ is applied instead: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$.",
+                        "videoUrl": "assets/videos/Cantilever_Beam_Tip_Deflection_under_Concentrated_Load.mp4",
+                        "videoTitle": "Cantilever Beam Tip Deflection under Concentrated Load Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
@@ -10741,6 +10744,51 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
                         "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
                         "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
+                        "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight-Line Depreciation Method",
+                        "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
+                        "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
+                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
+                        "videoUrl": "assets/videos/Straight_Line_Depreciation_Method.mp4",
+                        "videoTitle": "Straight-Line Depreciation Method Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Student’s $t$-Confidence Interval for Unknown Variance",
+                        "formula": "$$\\bar{X} \\pm t_{\\alpha/2, n-1} \\left(\\frac{s}{\\sqrt{n}}\\right)$$",
+                        "description": "Calculates confidence interval for population mean $\\mu$ when sampling from a normal distribution with small sample size ($n < 30$) and unknown variance, using sample standard deviation $s$.",
+                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution.",
+                        "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+                        "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Isotropic Elastic Constants Relationship",
+                        "formula": "$$G = \\frac{E}{2(1 + \\nu)}$$",
+                        "description": "Interrelates Young’s modulus of elasticity $E$, shear modulus $G$, and Poisson’s ratio $\\nu$ for homogeneous isotropic linear elastic materials.",
+                        "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$.",
+                        "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
+                        "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -11566,6 +11614,60 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
                         "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
+                        "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight-Line Depreciation Method",
+                        "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
+                        "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
+                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
+                        "videoUrl": "assets/videos/Straight_Line_Depreciation_Method.mp4",
+                        "videoTitle": "Straight-Line Depreciation Method Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Student’s $t$-Confidence Interval for Unknown Variance",
+                        "formula": "$$\\bar{X} \\pm t_{\\alpha/2, n-1} \\left(\\frac{s}{\\sqrt{n}}\\right)$$",
+                        "description": "Calculates confidence interval for population mean $\\mu$ when sampling from a normal distribution with small sample size ($n < 30$) and unknown variance, using sample standard deviation $s$.",
+                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution.",
+                        "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+                        "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Cantilever Beam Tip Deflection under Concentrated Load",
+                        "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}$$",
+                        "description": "Maximum elastic tip deflection for an end-loaded cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
+                        "examTip": "Found in Mechanics of Materials. For uniform distributed load $w$: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$.",
+                        "videoUrl": "assets/videos/Cantilever_Beam_Tip_Deflection_under_Concentrated_Load.mp4",
+                        "videoTitle": "Cantilever Beam Tip Deflection under Concentrated Load Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Isotropic Elastic Constants Relationship",
+                        "formula": "$$G = \\frac{E}{2(1 + \\nu)}$$",
+                        "description": "Interrelates Young’s modulus of elasticity $E$, shear modulus $G$, and Poisson’s ratio $\\nu$ for homogeneous isotropic linear elastic materials.",
+                        "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$.",
+                        "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
+                        "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Electrical and Computer": [
@@ -12264,6 +12366,24 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
                         "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
+                        "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Chemical": [
@@ -12403,7 +12523,10 @@ window.calcEvaluate = function() {
                         "title": "Nernst Equation for Electrochemical Cell Potential",
                         "formula": "$$E = E^\\circ - \\frac{R T}{n F} \\ln(Q_{\\text{rxn}})$$",
                         "description": "Calculates the real electrical reduction potential $E$ of an electrochemical cell under non-standard conditions based on reaction quotient $Q_{\\text{rxn}}$.",
-                        "examTip": "Found in Chemical Kinetics / Electrochemistry. At $25^\\circ\\text{C}$ ($298\\text{ K}$), $\\frac{R T}{F} \\ln(10) \\approx 0.0592\\text{ V}$, giving $E = E^\\circ - \\frac{0.0592}{n} \\log_{10}(Q)$."
+                        "examTip": "Found in Chemical Kinetics / Electrochemistry. At $25^\\circ\\text{C}$ ($298\\text{ K}$), $\\frac{R T}{F} \\ln(10) \\approx 0.0592\\text{ V}$, giving $E = E^\\circ - \\frac{0.0592}{n} \\log_{10}(Q)$.",
+                        "videoUrl": "assets/videos/Nernst_Equation_for_Non_Standard_Cell_Potential.mp4",
+                        "videoTitle": "Nernst Equation for Non-Standard Cell Potential Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Joule-Thomson Throttling Coefficient",
@@ -13007,6 +13130,33 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
                         "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
+                        "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Isotropic Elastic Constants Relationship",
+                        "formula": "$$G = \\frac{E}{2(1 + \\nu)}$$",
+                        "description": "Interrelates Young’s modulus of elasticity $E$, shear modulus $G$, and Poisson’s ratio $\\nu$ for homogeneous isotropic linear elastic materials.",
+                        "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$.",
+                        "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
+                        "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Industrial": [
@@ -13200,13 +13350,19 @@ window.calcEvaluate = function() {
                         "title": "Standard Normal Distribution $Z$-Score Transformation",
                         "formula": "$$Z = \\frac{X - \\mu}{\\sigma} \\sim N(0, 1), \\quad P(a \\le X \\le b) = \\Phi\\left(\\frac{b - \\mu}{\\sigma}\\right) - \\Phi\\left(\\frac{a - \\mu}{\\sigma}\\right)$$",
                         "description": "Standardizes any normal distribution $N(\\mu, \\sigma^2)$ into the standard normal distribution $N(0, 1)$ with mean $0$ and variance $1$, allowing probability evaluation from standard tables.",
-                        "examTip": "Found in Probability and Statistics. Cumulative probability symmetry rule: $\\Phi(-z) = 1 - \\Phi(z)$."
+                        "examTip": "Found in Probability and Statistics. Cumulative probability symmetry rule: $\\Phi(-z) = 1 - \\Phi(z)$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Student’s $t$-Confidence Interval for Unknown Variance",
                         "formula": "$$\\bar{X} \\pm t_{\\alpha/2, n-1} \\left(\\frac{s}{\\sqrt{n}}\\right)$$",
                         "description": "Calculates confidence interval for population mean $\\mu$ when sampling from a normal distribution with small sample size ($n < 30$) and unknown variance, using sample standard deviation $s$.",
-                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution."
+                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution.",
+                        "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+                        "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Confidence Interval for Population Proportion",
@@ -13671,6 +13827,24 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
                         "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
                         "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight-Line Depreciation Method",
+                        "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
+                        "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
+                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
+                        "videoUrl": "assets/videos/Straight_Line_Depreciation_Method.mp4",
+                        "videoTitle": "Straight-Line Depreciation Method Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -14400,6 +14574,51 @@ window.calcEvaluate = function() {
                         "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
                         "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Nernst Equation for Non-Standard Cell Potential",
+                        "formula": "$$E = E^\\circ - \\frac{R T}{n F} \\ln Q = E^\\circ - \\frac{0.0592}{n} \\log_{10} Q \\quad (25^\\circ\\text{C})$$",
+                        "description": "Calculates electrical potential $E$ of an electrochemical cell under non-standard operating concentrations and partial pressures using reaction quotient $Q$.",
+                        "examTip": "Found in Chemistry. At equilibrium, cell potential drops to zero ($E = 0$) and $Q = K_{eq}$, giving $E^\\circ = \\frac{0.0592}{n}\\log_{10} K_{eq}$.",
+                        "videoUrl": "assets/videos/Nernst_Equation_for_Non_Standard_Cell_Potential.mp4",
+                        "videoTitle": "Nernst Equation for Non-Standard Cell Potential Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Standard Normal Distribution $Z$-Transformation",
+                        "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
+                        "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight-Line Depreciation Method",
+                        "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
+                        "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
+                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
+                        "videoUrl": "assets/videos/Straight_Line_Depreciation_Method.mp4",
+                        "videoTitle": "Straight-Line Depreciation Method Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Sample Variance and Degrees of Freedom",
+                        "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
+                        "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Student’s $t$-Confidence Interval for Unknown Variance",
+                        "formula": "$$\\bar{X} \\pm t_{\\alpha/2, n-1} \\left(\\frac{s}{\\sqrt{n}}\\right)$$",
+                        "description": "Calculates confidence interval for population mean $\\mu$ when sampling from a normal distribution with small sample size ($n < 30$) and unknown variance, using sample standard deviation $s$.",
+                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution.",
+                        "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+                        "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Other": [
@@ -14614,7 +14833,10 @@ window.calcEvaluate = function() {
                         "title": "Isotropic Elastic Constants Relationship",
                         "formula": "$$G = \\frac{E}{2(1 + \\nu)}$$",
                         "description": "Interrelates Young’s modulus of elasticity $E$, shear modulus $G$, and Poisson’s ratio $\\nu$ for homogeneous isotropic linear elastic materials.",
-                        "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$."
+                        "examTip": "Found in Mechanics of Materials. For structural steel ($E \\approx 200\\text{ GPa}, \\nu \\approx 0.30$), shear modulus is $G \\approx 77\\text{ GPa}$.",
+                        "videoUrl": "assets/videos/Isotropic_Elastic_Constants_Relationship.mp4",
+                        "videoTitle": "Isotropic Elastic Constants Relationship Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manning’s Equation for Open Channel Flow",
@@ -14818,7 +15040,10 @@ window.calcEvaluate = function() {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
-                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance."
+                        "examTip": "Found in Probability and Statistics. Dividing by $n$ produces a biased underestimate of true population variance.",
+                        "videoUrl": "assets/videos/Sample_Variance_and_Degrees_of_Freedom.mp4",
+                        "videoTitle": "Sample Variance and Degrees of Freedom Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Permutations and Combinations Counting Rules",
@@ -14839,7 +15064,10 @@ window.calcEvaluate = function() {
                         "title": "Standard Normal Distribution $Z$-Transformation",
                         "formula": "$$Z = \\frac{X - \\mu}{\\sigma}, \\quad X = \\mu + Z \\sigma$$",
                         "description": "Standardizes any normal variable into standard normal deviations $Z$, representing distance from mean in units of standard deviations.",
-                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$."
+                        "examTip": "Found in Statistics. Empirical rule: $68.3\\%$ of values lie within $\\pm 1\\sigma$, $95.4\\%$ within $\\pm 2\\sigma$, and $99.7\\%$ within $\\pm 3\\sigma$.",
+                        "videoUrl": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+                        "videoTitle": "Standard Normal Distribution Z-Transformation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Simple Linear Regression Least-Squares Slope",
@@ -14872,7 +15100,10 @@ window.calcEvaluate = function() {
                         "title": "Nernst Equation for Non-Standard Cell Potential",
                         "formula": "$$E = E^\\circ - \\frac{R T}{n F} \\ln Q = E^\\circ - \\frac{0.0592}{n} \\log_{10} Q \\quad (25^\\circ\\text{C})$$",
                         "description": "Calculates electrical potential $E$ of an electrochemical cell under non-standard operating concentrations and partial pressures using reaction quotient $Q$.",
-                        "examTip": "Found in Chemistry. At equilibrium, cell potential drops to zero ($E = 0$) and $Q = K_{eq}$, giving $E^\\circ = \\frac{0.0592}{n}\\log_{10} K_{eq}$."
+                        "examTip": "Found in Chemistry. At equilibrium, cell potential drops to zero ($E = 0$) and $Q = K_{eq}$, giving $E^\\circ = \\frac{0.0592}{n}\\log_{10} K_{eq}$.",
+                        "videoUrl": "assets/videos/Nernst_Equation_for_Non_Standard_Cell_Potential.mp4",
+                        "videoTitle": "Nernst Equation for Non-Standard Cell Potential Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Chemical Equilibrium Constant Expression ($K_c$ and $K_p$)",
@@ -15079,7 +15310,10 @@ window.calcEvaluate = function() {
                         "title": "Cantilever Beam Tip Deflection under Concentrated Load",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}$$",
                         "description": "Maximum elastic tip deflection for an end-loaded cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
-                        "examTip": "Found in Mechanics of Materials. For uniform distributed load $w$: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$."
+                        "examTip": "Found in Mechanics of Materials. For uniform distributed load $w$: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$.",
+                        "videoUrl": "assets/videos/Cantilever_Beam_Tip_Deflection_under_Concentrated_Load.mp4",
+                        "videoTitle": "Cantilever Beam Tip Deflection under Concentrated Load Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
@@ -15166,7 +15400,10 @@ window.calcEvaluate = function() {
                         "title": "Straight-Line Depreciation Method",
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
-                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$)."
+                        "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
+                        "videoUrl": "assets/videos/Straight_Line_Depreciation_Method.mp4",
+                        "videoTitle": "Straight-Line Depreciation Method Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
@@ -15265,6 +15502,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Geotechnical Engineering. For normally consolidated sands and gravels, $c' = 0$, giving $\\tau_f = \\sigma' \\tan\\phi'$. In undrained clay loading ($\\\\phi_u = 0$), $\\tau_f = s_u$.",
                         "videoUrl": "assets/videos/Mohr_Coulomb_Failure_Criterion_for_Soils.mp4",
                         "videoTitle": "Mohr-Coulomb Failure Criterion for Soils Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Student’s $t$-Confidence Interval for Unknown Variance",
+                        "formula": "$$\\bar{X} \\pm t_{\\alpha/2, n-1} \\left(\\frac{s}{\\sqrt{n}}\\right)$$",
+                        "description": "Calculates confidence interval for population mean $\\mu$ when sampling from a normal distribution with small sample size ($n < 30$) and unknown variance, using sample standard deviation $s$.",
+                        "examTip": "Found in Engineering Statistics. Degrees of freedom is strictly $n - 1$. As $n \\to \\infty$, the $t$-distribution converges to the standard normal distribution.",
+                        "videoUrl": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+                        "videoTitle": "Student’s t-Confidence Interval for Unknown Variance Explainer",
                         "videoDuration": "10s"
                 }
         ]
@@ -15598,6 +15844,20 @@ window.calcEvaluate = function() {
             'soilsfailure': ['mohr-coulomb failure criterion for soils', 'failure criterion for soils'],
             'dotproduct': ['vector dot product and orthogonality condition', 'vector dot product', 'dot product'],
             'orthogonality': ['vector dot product and orthogonality condition', 'orthogonality condition', 'orthogonality'],
+            'nernst': ['nernst equation', 'non-standard cell potential', 'electrochemical cell potential'],
+            'cellpotential': ['nernst equation', 'non-standard cell potential'],
+            'standardnormal': ['standard normal distribution', 'z-transformation', 'z-score transformation'],
+            'ztransformation': ['standard normal distribution', 'z-transformation', 'z-score'],
+            'straightline': ['straight-line depreciation method', 'straight line depreciation', 'depreciation'],
+            'depreciation': ['straight-line depreciation method', 'straight line depreciation'],
+            'samplevariance': ['sample variance and degrees of freedom', 'sample variance', 'degrees of freedom'],
+            'degreesoffreedom': ['sample variance and degrees of freedom', 'degrees of freedom'],
+            'studentt': ['student’s t-confidence interval', 't-confidence interval', 'student t'],
+            'tinterval': ['student’s t-confidence interval', 'unknown variance'],
+            'cantilever': ['cantilever beam tip deflection', 'cantilever beam', 'concentrated load', 'point load'],
+            'tipdeflection': ['cantilever beam tip deflection', 'cantilever beam', 'tip deflection'],
+            'isotropic': ['isotropic elastic constants relationship', 'isotropic elastic constants', 'elastic constants'],
+            'elasticconstants': ['isotropic elastic constants relationship', 'elastic constants', 'shear modulus'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
