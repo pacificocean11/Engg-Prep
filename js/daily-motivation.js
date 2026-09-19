@@ -541,7 +541,10 @@
                         "title": "Transverse Shear Stress in Beams (Shear Formula)",
                         "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\bar{y}' A'$$",
                         "description": "Calculates longitudinal and transverse shear stress at any depth in a beam cross-section undergoing vertical shear force $V$, where $Q$ is first moment of area above the cut.",
-                        "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis ($Q = Q_{\\text{max}}$); it is zero at top and bottom free surfaces."
+                        "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis ($Q = Q_{\\text{max}}$); it is zero at top and bottom free surfaces.",
+                        "videoUrl": "assets/videos/Transverse_Shear_Stress_Formula_Jourawski.mp4",
+                        "videoTitle": "Transverse Shear Stress Formula (Jourawski) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Maximum Shear Stress in Rectangular Cross-Section Beams",
@@ -1170,7 +1173,10 @@
                         "title": "Darcy’s Law for Hydraulic Seepage",
                         "formula": "$$Q = k \\cdot i \\cdot A = k \\left(\\frac{\\Delta h}{L}\\right) A$$",
                         "description": "Governs fluid flow through porous soil media; discharge $Q$ is proportional to hydraulic conductivity $k$, gradient $i$, and cross-sectional seepage area $A$.",
-                        "examTip": "Found in Geotechnical Engineering. Watch unit conversions: hydraulic conductivity $k$ is often given in $\\text{cm/s}$, while area is in $\\text{m}^2$ or $\\text{ft}^2$."
+                        "examTip": "Found in Geotechnical Engineering. Watch unit conversions: hydraulic conductivity $k$ is often given in $\\text{cm/s}$, while area is in $\\text{m}^2$ or $\\text{ft}^2$.",
+                        "videoUrl": "assets/videos/Darcys_Law_for_Hydraulic_Seepage.mp4",
+                        "videoTitle": "Darcy’s Law for Hydraulic Seepage Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manning’s Equation for Open Channel Flow",
@@ -1224,7 +1230,10 @@
                         "title": "Rankine Lateral Earth Pressure Coefficients",
                         "formula": "$$K_a = \\tan^2\\left(45^\\circ - \\frac{\\phi}{2}\\right), \\quad K_p = \\tan^2\\left(45^\\circ + \\frac{\\phi}{2}\\right)$$",
                         "description": "Computes active ($K_a$) and passive ($K_p$) lateral earth pressure coefficients for cohesionless soils with internal friction angle $\\phi$ behind a vertical retaining wall.",
-                        "examTip": "Found in Geotechnical Engineering. Note that $K_p = 1 / K_a$. Active pressure develops when the wall moves away from soil; passive requires wall pushing into soil."
+                        "examTip": "Found in Geotechnical Engineering. Note that $K_p = 1 / K_a$. Active pressure develops when the wall moves away from soil; passive requires wall pushing into soil.",
+                        "videoUrl": "assets/videos/Rankine_Lateral_Earth_Pressure_Coefficients.mp4",
+                        "videoTitle": "Rankine Lateral Earth Pressure Coefficients Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "One-Dimensional Primary Consolidation Settlement",
@@ -1236,7 +1245,10 @@
                         "title": "Terzaghi’s Ultimate Bearing Capacity Equation",
                         "formula": "$$q_{ult} = c' N_c + q N_q + \\frac{1}{2}\\gamma B N_\\gamma$$",
                         "description": "Determines the ultimate bearing capacity of a shallow strip footing resting on soil with cohesion $c'$, surcharge $q = \\gamma D_f$, unit weight $\\gamma$, and footing width $B$.",
-                        "examTip": "Found in Foundation Engineering. Bearing capacity factors $N_c, N_q, N_\\gamma$ depend solely on soil friction angle $\\phi$ (tabulated in the NCEES Handbook)."
+                        "examTip": "Found in Foundation Engineering. Bearing capacity factors $N_c, N_q, N_\\gamma$ depend solely on soil friction angle $\\phi$ (tabulated in the NCEES Handbook).",
+                        "videoUrl": "assets/videos/Terzaghis_Ultimate_Bearing_Capacity_Equation.mp4",
+                        "videoTitle": "Terzaghi’s Ultimate Bearing Capacity Equation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Whitney Rectangular Stress Block (Concrete Design)",
@@ -1254,7 +1266,10 @@
                         "title": "Transverse Shear Stress Formula (Jourawski)",
                         "formula": "$$\\tau = \\frac{V Q}{I b}$$",
                         "description": "Calculates horizontal and vertical shear stress in a beam cross section subjected to internal shear force $V$, where $Q$ is the first moment of area above the cut line.",
-                        "examTip": "Found in Mechanics of Materials. Maximum shear stress in a rectangular beam ($b \\times h$) occurs at the neutral axis and equals $\\tau_{\\text{max}} = \\frac{3V}{2A}$."
+                        "examTip": "Found in Mechanics of Materials. Maximum shear stress in a rectangular beam ($b \\times h$) occurs at the neutral axis and equals $\\tau_{\\text{max}} = \\frac{3V}{2A}$.",
+                        "videoUrl": "assets/videos/Transverse_Shear_Stress_Formula_Jourawski.mp4",
+                        "videoTitle": "Transverse Shear Stress Formula (Jourawski) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Greenshields Macroscopic Traffic Flow Model",
@@ -1284,7 +1299,10 @@
                         "title": "Unconfined Aquifer Dupuit-Thiem Well Formula",
                         "formula": "$$Q = \\frac{\\pi K (h_2^2 - h_1^2)}{\\ln(r_2 / r_1)}$$",
                         "description": "Estimates steady-state radial pumping discharge $Q$ from an unconfined aquifer with hydraulic conductivity $K$ based on piezometric heads $h_1, h_2$ at observation radii $r_1, r_2$.",
-                        "examTip": "Found in Hydrology and Water Resources. For confined aquifers, the head term is linear: $Q = \\frac{2\\pi K b (h_2 - h_1)}{\\ln(r_2 / r_1)}$ where $b$ is aquifer thickness."
+                        "examTip": "Found in Hydrology and Water Resources. For confined aquifers, the head term is linear: $Q = \\frac{2\\pi K b (h_2 - h_1)}{\\ln(r_2 / r_1)}$ where $b$ is aquifer thickness.",
+                        "videoUrl": "assets/videos/Unconfined_Aquifer_Dupuit_Thiem_Well_Formula.mp4",
+                        "videoTitle": "Unconfined Aquifer Dupuit-Thiem Well Formula Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Slenderness Ratio for Steel Compression Members",
@@ -1698,7 +1716,10 @@
                         "title": "Terzaghi Ultimate Bearing Capacity Equation",
                         "formula": "$$q_{\\text{ult}} = c' N_c + q N_q + \\frac{1}{2} \\gamma B N_\\gamma, \\quad q_{\\text{allow}} = \\frac{q_{\\text{ult}}}{FS}$$",
                         "description": "General shear failure capacity beneath a continuous shallow strip footing of width $B$ at embedment surcharge depth $D_f$ ($q = \\gamma D_f$), with dimensionless factors $N_c, N_q, N_\\gamma$ driven by friction angle $\\phi$.",
-                        "examTip": "Found in Geotechnical. For pure undrained clay ($\\phi = 0$): $N_c = 5.14, N_q = 1.0, N_\\gamma = 0$, giving $q_{\\text{ult}} = 5.14 c_u + q$."
+                        "examTip": "Found in Geotechnical. For pure undrained clay ($\\phi = 0$): $N_c = 5.14, N_q = 1.0, N_\\gamma = 0$, giving $q_{\\text{ult}} = 5.14 c_u + q$.",
+                        "videoUrl": "assets/videos/Terzaghis_Ultimate_Bearing_Capacity_Equation.mp4",
+                        "videoTitle": "Terzaghi’s Ultimate Bearing Capacity Equation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Primary Consolidation Settlement of Normally Consolidated Clay",
@@ -1782,7 +1803,10 @@
                         "title": "Highway Peak Hour Factor (PHF)",
                         "formula": "$$PHF = \\frac{V}{4 \\times V_{15}}$$",
                         "description": "Measures traffic flow peaking within the peak hour by comparing total hourly volume $V$ against four times the maximum 15-minute volume rate $V_{15}$.",
-                        "examTip": "Found in Transportation. $PHF$ ranges between $0.25$ and $1.0$. Practical highway capacity calculations divide hourly volume by $PHF$ to account for surge conditions."
+                        "examTip": "Found in Transportation. $PHF$ ranges between $0.25$ and $1.0$. Practical highway capacity calculations divide hourly volume by $PHF$ to account for surge conditions.",
+                        "videoUrl": "assets/videos/Highway_Peak_Hour_Factor_PHF.mp4",
+                        "videoTitle": "Highway Peak Hour Factor (PHF) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Differential Leveling Height of Instrument Math",
@@ -1794,7 +1818,10 @@
                         "title": "Compass Rule for Closed Traverse Balancing",
                         "formula": "$$C_{\\text{Lat}} = -(\\text{Total Closure Error}) \\left(\\frac{L_i}{\\sum L}\\right), \\quad C_{\\text{Dep}} = -(\\text{Total Closure Error}) \\left(\\frac{L_i}{\\sum L}\\right)$$",
                         "description": "Distributes linear misclosure error in a closed traverse across individual courses proportionally to their horizontal lengths $L_i$.",
-                        "examTip": "Found in Surveying. Latitude is along the north-south axis: $\\text{Lat} = L \\cos\\theta$; Departure is along east-west axis: $\\text{Dep} = L \\sin\\theta$."
+                        "examTip": "Found in Surveying. Latitude is along the north-south axis: $\\text{Lat} = L \\cos\\theta$; Departure is along east-west axis: $\\text{Dep} = L \\sin\\theta$.",
+                        "videoUrl": "assets/videos/Compass_Rule_for_Closed_Traverse_Balancing.mp4",
+                        "videoTitle": "Compass Rule for Closed Traverse Balancing Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Earthwork Average End Area Volume Formula",
@@ -1836,7 +1863,10 @@
                         "title": "Soil Active and Passive Earth Pressure Forces",
                         "formula": "$$P_a = \\frac{1}{2} K_a \\gamma H^2, \\quad P_p = \\frac{1}{2} K_p \\gamma H^2$$",
                         "description": "Resultant triangular lateral earth pressure forces acting on retaining walls of height $H$ at distance $H/3$ above the base under Rankine active and passive conditions.",
-                        "examTip": "Found in Geotechnical. Surcharge load $q$ adds a uniform rectangular lateral pressure distribution: $\\Delta p = K_a q$."
+                        "examTip": "Found in Geotechnical. Surcharge load $q$ adds a uniform rectangular lateral pressure distribution: $\\Delta p = K_a q$.",
+                        "videoUrl": "assets/videos/Soil_Active_and_Passive_Earth_Pressure_Forces.mp4",
+                        "videoTitle": "Soil Active and Passive Earth Pressure Forces Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Boussinesq Vertical Stress Distribution from Point Loads",
@@ -3767,6 +3797,15 @@
                         "videoUrl": "assets/videos/Second_Order_Sensor_Natural_Frequency_and_Damping.mp4",
                         "videoTitle": "Second-Order Sensor Natural Frequency and Damping Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Darcy’s Law for Hydraulic Seepage",
+                        "formula": "$$Q = k \\cdot i \\cdot A = k \\left(\\frac{\\Delta h}{L}\\right) A$$",
+                        "description": "Governs fluid flow through porous soil media; discharge $Q$ is proportional to hydraulic conductivity $k$, gradient $i$, and cross-sectional seepage area $A$.",
+                        "examTip": "Found in Geotechnical Engineering. Watch unit conversions: hydraulic conductivity $k$ is often given in $\\text{cm/s}$, while area is in $\\text{m}^2$ or $\\text{ft}^2$.",
+                        "videoUrl": "assets/videos/Darcys_Law_for_Hydraulic_Seepage.mp4",
+                        "videoTitle": "Darcy’s Law for Hydraulic Seepage Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Industrial": [
@@ -4505,7 +4544,10 @@
                         "title": "Darcy’s Law for Groundwater Seepage",
                         "formula": "$$v_d = -K \\frac{dh}{dL}, \\quad v_s = \\frac{v_d}{\\eta_e}$$",
                         "description": "Determines superficial Darcy velocity $v_d$ and actual contaminant pore seepage velocity $v_s$ using hydraulic conductivity $K$ and effective porosity $\\eta_e$.",
-                        "examTip": "Found in Hydrogeology / Remediation. Actual travel time of a non-retarded contaminant plume is governed by seepage velocity $v_s = v_d / \\eta_e$, not Darcy velocity."
+                        "examTip": "Found in Hydrogeology / Remediation. Actual travel time of a non-retarded contaminant plume is governed by seepage velocity $v_s = v_d / \\eta_e$, not Darcy velocity.",
+                        "videoUrl": "assets/videos/Darcys_Law_for_Hydraulic_Seepage.mp4",
+                        "videoTitle": "Darcy’s Law for Hydraulic Seepage Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "First-Order Biochemical Oxygen Demand (BOD) Kinetics",
@@ -4925,7 +4967,10 @@
                         "title": "Dupuit-Forchheimer Radial Flow in Unconfined Aquifers",
                         "formula": "$$Q = \\frac{\\pi K (h_2^2 - h_1^2)}{\\ln(r_2 / r_1)}$$",
                         "description": "Governs steady-state radial flow to a well in an unconfined water-table aquifer; derived assuming horizontal flow lines and hydraulic gradient equal to phreatic surface slope.",
-                        "examTip": "Found in Hydrogeology. Notice heads are squared ($h_2^2 - h_1^2$) due to variable saturated aquifer thickness."
+                        "examTip": "Found in Hydrogeology. Notice heads are squared ($h_2^2 - h_1^2$) due to variable saturated aquifer thickness.",
+                        "videoUrl": "assets/videos/Unconfined_Aquifer_Dupuit_Thiem_Well_Formula.mp4",
+                        "videoTitle": "Unconfined Aquifer Dupuit-Thiem Well Formula Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Theis Non-Equilibrium Unsteady Well Drawdown",
@@ -5339,6 +5384,33 @@
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
                         "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
                         "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Soil Active and Passive Earth Pressure Forces",
+                        "formula": "$$P_a = \\frac{1}{2} K_a \\gamma H^2, \\quad P_p = \\frac{1}{2} K_p \\gamma H^2$$",
+                        "description": "Resultant triangular lateral earth pressure forces acting on retaining walls of height $H$ at distance $H/3$ above the base under Rankine active and passive conditions.",
+                        "examTip": "Found in Geotechnical. Surcharge load $q$ adds a uniform rectangular lateral pressure distribution: $\\Delta p = K_a q$.",
+                        "videoUrl": "assets/videos/Soil_Active_and_Passive_Earth_Pressure_Forces.mp4",
+                        "videoTitle": "Soil Active and Passive Earth Pressure Forces Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Terzaghi’s Ultimate Bearing Capacity Equation",
+                        "formula": "$$q_{ult} = c' N_c + q N_q + \\frac{1}{2}\\gamma B N_\\gamma$$",
+                        "description": "Determines the ultimate bearing capacity of a shallow strip footing resting on soil with cohesion $c'$, surcharge $q = \\gamma D_f$, unit weight $\\gamma$, and footing width $B$.",
+                        "examTip": "Found in Foundation Engineering. Bearing capacity factors $N_c, N_q, N_\\gamma$ depend solely on soil friction angle $\\phi$ (tabulated in the NCEES Handbook).",
+                        "videoUrl": "assets/videos/Terzaghis_Ultimate_Bearing_Capacity_Equation.mp4",
+                        "videoTitle": "Terzaghi’s Ultimate Bearing Capacity Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Rankine Lateral Earth Pressure Coefficients",
+                        "formula": "$$K_a = \\tan^2\\left(45^\\circ - \\frac{\\phi}{2}\\right), \\quad K_p = \\tan^2\\left(45^\\circ + \\frac{\\phi}{2}\\right)$$",
+                        "description": "Computes active ($K_a$) and passive ($K_p$) lateral earth pressure coefficients for cohesionless soils with internal friction angle $\\phi$ behind a vertical retaining wall.",
+                        "examTip": "Found in Geotechnical Engineering. Note that $K_p = 1 / K_a$. Active pressure develops when the wall moves away from soil; passive requires wall pushing into soil.",
+                        "videoUrl": "assets/videos/Rankine_Lateral_Earth_Pressure_Coefficients.mp4",
+                        "videoTitle": "Rankine Lateral Earth Pressure Coefficients Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -6052,7 +6124,10 @@
                         "title": "Transverse Beam Shear Stress Formula",
                         "formula": "$$\\tau = \\frac{V Q}{I b}$$",
                         "description": "Longitudinal and transverse shear stress at any depth in a beam under vertical shear force $V$, where $Q$ is first moment of area.",
-                        "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis."
+                        "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis.",
+                        "videoUrl": "assets/videos/Transverse_Shear_Stress_Formula_Jourawski.mp4",
+                        "videoTitle": "Transverse Shear Stress Formula (Jourawski) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Maximum Shear Stress in Rectangular Beams",
@@ -6743,6 +6818,22 @@
             'spurgear': ['agma lewis bending equation', 'spur gear teeth', 'spur gear'],
             'secondordersensor': ['second-order sensor natural frequency and damping', 'second-order sensor', 'sensor natural frequency'],
             'massmomentparallel': ['mass moment of inertia parallel axis theorem', 'mass moment of inertia parallel axis'],
+            'phf': ['highway peak hour factor', 'peak hour factor', 'phf'],
+            'peakhour': ['highway peak hour factor', 'peak hour factor', 'phf'],
+            'earthpressure': ['soil active and passive earth pressure forces', 'lateral earth pressure', 'earth pressure forces'],
+            'activepassive': ['soil active and passive earth pressure forces', 'earth pressure forces', 'active and passive'],
+            'darcysseepage': ['darcy’s law for hydraulic seepage', 'hydraulic seepage', 'darcy’s law for groundwater seepage'],
+            'seepage': ['darcy’s law for hydraulic seepage', 'hydraulic seepage'],
+            'bearingcapacity': ['terzaghi’s ultimate bearing capacity equation', 'ultimate bearing capacity', 'bearing capacity'],
+            'terzaghibearing': ['terzaghi’s ultimate bearing capacity equation', 'bearing capacity'],
+            'rankineearth': ['rankine lateral earth pressure coefficients', 'rankine lateral earth pressure', 'lateral earth pressure coefficients'],
+            'lateralearth': ['rankine lateral earth pressure coefficients', 'lateral earth pressure'],
+            'dupuit': ['unconfined aquifer dupuit-thiem well formula', 'dupuit-thiem', 'dupuit-forchheimer', 'unconfined aquifer'],
+            'thiem': ['unconfined aquifer dupuit-thiem well formula', 'dupuit-thiem'],
+            'jourawski': ['transverse shear stress formula', 'jourawski', 'transverse shear'],
+            'transverseshear': ['transverse shear stress formula', 'transverse beam shear stress', 'transverse shear stress in beams'],
+            'compassrule': ['compass rule for closed traverse balancing', 'compass rule', 'closed traverse'],
+            'closedtraverse': ['compass rule for closed traverse balancing', 'closed traverse balancing', 'traverse balancing'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
