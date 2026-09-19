@@ -820,7 +820,10 @@
                         "title": "AGMA Lewis Bending Equation for Spur Gear Teeth",
                         "formula": "$$\\sigma = \\frac{W_t}{F m Y} = \\frac{W_t P_d}{F Y}$$",
                         "description": "Computes root bending stress in spur gear teeth subjected to tangential transmitted load $W_t$, face width $F$, metric module $m$ (or diametral pitch $P_d$), and Lewis form factor $Y$.",
-                        "examTip": "Found in Mechanical Design. Tangential load is obtained directly from transmitted motor power: $W_t = T / (d/2) = P / (v_t)$."
+                        "examTip": "Found in Mechanical Design. Tangential load is obtained directly from transmitted motor power: $W_t = T / (d/2) = P / (v_t)$.",
+                        "videoUrl": "assets/videos/AGMA_Lewis_Bending_Equation_for_Spur_Gear_Teeth.mp4",
+                        "videoTitle": "AGMA Lewis Bending Equation for Spur Gear Teeth Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Rolling Element Bearing Rated Life ($L_{10}$)",
@@ -1096,6 +1099,69 @@
                         "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
                         "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
                         "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Fick’s First Law of Molecular Diffusion",
+                        "formula": "$$J_A = -D_{AB} \\frac{dC_A}{dz}$$",
+                        "description": "Defines molar diffusive flux $J_A$ as proportional to negative concentration gradient $dC_A / dz$ and binary molecular diffusivity $D_{AB}$.",
+                        "examTip": "Found in Mass Transfer. In bulk flow, total flux is $N_A = J_A + x_A (N_A + N_B)$. For equimolar counterdiffusion (EMD), $N_A = -N_B$.",
+                        "videoUrl": "assets/videos/Ficks_First_Law_of_Molecular_Diffusion.mp4",
+                        "videoTitle": "Fick’s First Law of Molecular Diffusion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Le Chatelier’s Principle & Standard Free Energy",
+                        "formula": "$$\\Delta G^\\circ = -R T \\ln(K_{eq})$$",
+                        "description": "Relates standard Gibbs free energy of reaction $\\Delta G^\\circ$ to the equilibrium constant $K_{eq}$; external changes shift equilibrium to counteract disturbance.",
+                        "examTip": "Found in Chemical Reaction Engineering. Increasing pressure shifts toward fewer gas moles; endothermic reactions have increased $K_{eq}$ at higher temperatures.",
+                        "videoUrl": "assets/videos/Le_Chateliers_Principle_and_Standard_Free_Energy.mp4",
+                        "videoTitle": "Le Chatelier’s Principle & Standard Free Energy Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Break-Even Production Volume",
+                        "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
+                        "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
+                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
+                        "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
+                        "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Gradient Vector and Directional Derivative",
+                        "formula": "$$\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{i} + \\frac{\\partial f}{\\partial y}\\hat{j} + \\frac{\\partial f}{\\partial z}\\hat{k}, \\quad D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$$",
+                        "description": "Gradient vector points in direction of maximum rate of spatial increase of scalar function $f(x,y,z)$, with magnitude equal to that maximum slope.",
+                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$.",
+                        "videoUrl": "assets/videos/Gradient_Vector_and_Directional_Derivative.mp4",
+                        "videoTitle": "Gradient Vector and Directional Derivative Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Strain Gauge Gauge Factor Equation",
+                        "formula": "$$GF = \\frac{\\Delta R / R}{\\epsilon} = 1 + 2\\nu + \\frac{\\Delta \\rho / \\rho}{\\epsilon}$$",
+                        "description": "Relates fractional electrical resistance change $\\Delta R / R$ to mechanical strain $\\epsilon$; standard metallic foil strain gauges have $GF \\approx 2.0$.",
+                        "examTip": "Found in Instrumentation. Quarter-bridge output voltage is $V_{\\text{out}} \\approx \\frac{1}{4} V_s GF \\epsilon$.",
+                        "videoUrl": "assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
+                        "videoTitle": "Strain Gauge Gauge Factor Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Second-Order Sensor Natural Frequency and Damping",
+                        "formula": "$$\\frac{d^2 y}{dt^2} + 2\\zeta \\omega_n \\frac{dy}{dt} + \\omega_n^2 y = \\omega_n^2 x(t)$$",
+                        "description": "Dynamic equation for inertial instruments (accelerometers, pressure transducers); $\\zeta = 0.707$ is optimal compromise maximizing flat frequency response bandwidth without resonant peaking.",
+                        "examTip": "Found in Instrumentation / Control. Accelerometers operate accurately only at frequencies well below their natural frequency ($\\omega \\ll \\omega_n$).",
+                        "videoUrl": "assets/videos/Second_Order_Sensor_Natural_Frequency_and_Damping.mp4",
+                        "videoTitle": "Second-Order Sensor Natural Frequency and Damping Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mass Moment of Inertia Parallel Axis Theorem",
+                        "formula": "$$I = I_G + m d^2$$",
+                        "description": "Computes mass moment of inertia about any axis parallel to a centroidal axis at perpendicular distance $d$.",
+                        "examTip": "Found in Dynamics. Centroidal moment $I_G$ is always the absolute minimum moment of inertia for any set of parallel axes.",
+                        "videoUrl": "assets/videos/Mass_Moment_of_Inertia_Parallel_Axis_Theorem.mp4",
+                        "videoTitle": "Mass Moment of Inertia Parallel Axis Theorem Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -2047,6 +2113,42 @@
                         "videoUrl": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
                         "videoTitle": "Modified Goodman Fatigue Failure Criterion Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Break-Even Production Volume",
+                        "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
+                        "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
+                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
+                        "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
+                        "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Gradient Vector and Directional Derivative",
+                        "formula": "$$\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{i} + \\frac{\\partial f}{\\partial y}\\hat{j} + \\frac{\\partial f}{\\partial z}\\hat{k}, \\quad D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$$",
+                        "description": "Gradient vector points in direction of maximum rate of spatial increase of scalar function $f(x,y,z)$, with magnitude equal to that maximum slope.",
+                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$.",
+                        "videoUrl": "assets/videos/Gradient_Vector_and_Directional_Derivative.mp4",
+                        "videoTitle": "Gradient Vector and Directional Derivative Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Strain Gauge Gauge Factor Equation",
+                        "formula": "$$GF = \\frac{\\Delta R / R}{\\epsilon} = 1 + 2\\nu + \\frac{\\Delta \\rho / \\rho}{\\epsilon}$$",
+                        "description": "Relates fractional electrical resistance change $\\Delta R / R$ to mechanical strain $\\epsilon$; standard metallic foil strain gauges have $GF \\approx 2.0$.",
+                        "examTip": "Found in Instrumentation. Quarter-bridge output voltage is $V_{\\text{out}} \\approx \\frac{1}{4} V_s GF \\epsilon$.",
+                        "videoUrl": "assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
+                        "videoTitle": "Strain Gauge Gauge Factor Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mass Moment of Inertia Parallel Axis Theorem",
+                        "formula": "$$I = I_G + m d^2$$",
+                        "description": "Computes mass moment of inertia about any axis parallel to a centroidal axis at perpendicular distance $d$.",
+                        "examTip": "Found in Dynamics. Centroidal moment $I_G$ is always the absolute minimum moment of inertia for any set of parallel axes.",
+                        "videoUrl": "assets/videos/Mass_Moment_of_Inertia_Parallel_Axis_Theorem.mp4",
+                        "videoTitle": "Mass Moment of Inertia Parallel Axis Theorem Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Electrical and Computer": [
@@ -2790,6 +2892,33 @@
                         "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
                         "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Gradient Vector and Directional Derivative",
+                        "formula": "$$\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{i} + \\frac{\\partial f}{\\partial y}\\hat{j} + \\frac{\\partial f}{\\partial z}\\hat{k}, \\quad D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$$",
+                        "description": "Gradient vector points in direction of maximum rate of spatial increase of scalar function $f(x,y,z)$, with magnitude equal to that maximum slope.",
+                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$.",
+                        "videoUrl": "assets/videos/Gradient_Vector_and_Directional_Derivative.mp4",
+                        "videoTitle": "Gradient Vector and Directional Derivative Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Strain Gauge Gauge Factor Equation",
+                        "formula": "$$GF = \\frac{\\Delta R / R}{\\epsilon} = 1 + 2\\nu + \\frac{\\Delta \\rho / \\rho}{\\epsilon}$$",
+                        "description": "Relates fractional electrical resistance change $\\Delta R / R$ to mechanical strain $\\epsilon$; standard metallic foil strain gauges have $GF \\approx 2.0$.",
+                        "examTip": "Found in Instrumentation. Quarter-bridge output voltage is $V_{\\text{out}} \\approx \\frac{1}{4} V_s GF \\epsilon$.",
+                        "videoUrl": "assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
+                        "videoTitle": "Strain Gauge Gauge Factor Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Second-Order Sensor Natural Frequency and Damping",
+                        "formula": "$$\\frac{d^2 y}{dt^2} + 2\\zeta \\omega_n \\frac{dy}{dt} + \\omega_n^2 y = \\omega_n^2 x(t)$$",
+                        "description": "Dynamic equation for inertial instruments (accelerometers, pressure transducers); $\\zeta = 0.707$ is optimal compromise maximizing flat frequency response bandwidth without resonant peaking.",
+                        "examTip": "Found in Instrumentation / Control. Accelerometers operate accurately only at frequencies well below their natural frequency ($\\omega \\ll \\omega_n$).",
+                        "videoUrl": "assets/videos/Second_Order_Sensor_Natural_Frequency_and_Damping.mp4",
+                        "videoTitle": "Second-Order Sensor Natural Frequency and Damping Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Chemical": [
@@ -2797,7 +2926,10 @@
                         "title": "Le Chatelier’s Principle & Standard Free Energy",
                         "formula": "$$\\Delta G^\\circ = -R T \\ln(K_{eq})$$",
                         "description": "Relates standard Gibbs free energy of reaction $\\Delta G^\\circ$ to the equilibrium constant $K_{eq}$; external changes shift equilibrium to counteract disturbance.",
-                        "examTip": "Found in Chemical Reaction Engineering. Increasing pressure shifts toward fewer gas moles; endothermic reactions have increased $K_{eq}$ at higher temperatures."
+                        "examTip": "Found in Chemical Reaction Engineering. Increasing pressure shifts toward fewer gas moles; endothermic reactions have increased $K_{eq}$ at higher temperatures.",
+                        "videoUrl": "assets/videos/Le_Chateliers_Principle_and_Standard_Free_Energy.mp4",
+                        "videoTitle": "Le Chatelier’s Principle & Standard Free Energy Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Arrhenius Temperature Dependency of Rate Constants",
@@ -2821,7 +2953,10 @@
                         "title": "Fick’s First Law of Molecular Diffusion",
                         "formula": "$$J_A = -D_{AB} \\frac{dC_A}{dz}$$",
                         "description": "Defines molar diffusive flux $J_A$ as proportional to negative concentration gradient $dC_A / dz$ and binary molecular diffusivity $D_{AB}$.",
-                        "examTip": "Found in Mass Transfer. In bulk flow, total flux is $N_A = J_A + x_A (N_A + N_B)$. For equimolar counterdiffusion (EMD), $N_A = -N_B$."
+                        "examTip": "Found in Mass Transfer. In bulk flow, total flux is $N_A = J_A + x_A (N_A + N_B)$. For equimolar counterdiffusion (EMD), $N_A = -N_B$.",
+                        "videoUrl": "assets/videos/Ficks_First_Law_of_Molecular_Diffusion.mp4",
+                        "videoTitle": "Fick’s First Law of Molecular Diffusion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Clausius-Clapeyron Equation for Phase Equilibrium",
@@ -3605,6 +3740,33 @@
                         "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
                         "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Break-Even Production Volume",
+                        "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
+                        "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
+                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
+                        "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
+                        "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Gradient Vector and Directional Derivative",
+                        "formula": "$$\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{i} + \\frac{\\partial f}{\\partial y}\\hat{j} + \\frac{\\partial f}{\\partial z}\\hat{k}, \\quad D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$$",
+                        "description": "Gradient vector points in direction of maximum rate of spatial increase of scalar function $f(x,y,z)$, with magnitude equal to that maximum slope.",
+                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$.",
+                        "videoUrl": "assets/videos/Gradient_Vector_and_Directional_Derivative.mp4",
+                        "videoTitle": "Gradient Vector and Directional Derivative Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Second-Order Sensor Natural Frequency and Damping",
+                        "formula": "$$\\frac{d^2 y}{dt^2} + 2\\zeta \\omega_n \\frac{dy}{dt} + \\omega_n^2 y = \\omega_n^2 x(t)$$",
+                        "description": "Dynamic equation for inertial instruments (accelerometers, pressure transducers); $\\zeta = 0.707$ is optimal compromise maximizing flat frequency response bandwidth without resonant peaking.",
+                        "examTip": "Found in Instrumentation / Control. Accelerometers operate accurately only at frequencies well below their natural frequency ($\\omega \\ll \\omega_n$).",
+                        "videoUrl": "assets/videos/Second_Order_Sensor_Natural_Frequency_and_Damping.mp4",
+                        "videoTitle": "Second-Order Sensor Natural Frequency and Damping Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Industrial": [
@@ -3684,7 +3846,10 @@
                         "title": "Break-Even Production Volume",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
-                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$."
+                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
+                        "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
+                        "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capital Recovery Factor for Uniform Series (A/P)",
@@ -5148,6 +5313,33 @@
                         "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
                         "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Fick’s First Law of Molecular Diffusion",
+                        "formula": "$$J_A = -D_{AB} \\frac{dC_A}{dz}$$",
+                        "description": "Defines molar diffusive flux $J_A$ as proportional to negative concentration gradient $dC_A / dz$ and binary molecular diffusivity $D_{AB}$.",
+                        "examTip": "Found in Mass Transfer. In bulk flow, total flux is $N_A = J_A + x_A (N_A + N_B)$. For equimolar counterdiffusion (EMD), $N_A = -N_B$.",
+                        "videoUrl": "assets/videos/Ficks_First_Law_of_Molecular_Diffusion.mp4",
+                        "videoTitle": "Fick’s First Law of Molecular Diffusion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Le Chatelier’s Principle & Standard Free Energy",
+                        "formula": "$$\\Delta G^\\circ = -R T \\ln(K_{eq})$$",
+                        "description": "Relates standard Gibbs free energy of reaction $\\Delta G^\\circ$ to the equilibrium constant $K_{eq}$; external changes shift equilibrium to counteract disturbance.",
+                        "examTip": "Found in Chemical Reaction Engineering. Increasing pressure shifts toward fewer gas moles; endothermic reactions have increased $K_{eq}$ at higher temperatures.",
+                        "videoUrl": "assets/videos/Le_Chateliers_Principle_and_Standard_Free_Energy.mp4",
+                        "videoTitle": "Le Chatelier’s Principle & Standard Free Energy Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Break-Even Production Volume",
+                        "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
+                        "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
+                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
+                        "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
+                        "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Other": [
@@ -5518,7 +5710,10 @@
                         "title": "Gradient Vector and Directional Derivative",
                         "formula": "$$\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{i} + \\frac{\\partial f}{\\partial y}\\hat{j} + \\frac{\\partial f}{\\partial z}\\hat{k}, \\quad D_{\\hat{u}} f = \\nabla f \\cdot \\hat{u}$$",
                         "description": "Gradient vector points in direction of maximum rate of spatial increase of scalar function $f(x,y,z)$, with magnitude equal to that maximum slope.",
-                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$."
+                        "examTip": "Found in Mathematics. The gradient vector is always perpendicular (normal) to the level curves or level surfaces $f(x,y,z) = c$.",
+                        "videoUrl": "assets/videos/Gradient_Vector_and_Directional_Derivative.mp4",
+                        "videoTitle": "Gradient Vector and Directional Derivative Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Divergence of a Vector Field (Flux Density)",
@@ -5662,7 +5857,10 @@
                         "title": "Strain Gauge Gauge Factor Equation",
                         "formula": "$$GF = \\frac{\\Delta R / R}{\\epsilon} = 1 + 2\\nu + \\frac{\\Delta \\rho / \\rho}{\\epsilon}$$",
                         "description": "Relates fractional electrical resistance change $\\Delta R / R$ to mechanical strain $\\epsilon$; standard metallic foil strain gauges have $GF \\approx 2.0$.",
-                        "examTip": "Found in Instrumentation. Quarter-bridge output voltage is $V_{\\text{out}} \\approx \\frac{1}{4} V_s GF \\epsilon$."
+                        "examTip": "Found in Instrumentation. Quarter-bridge output voltage is $V_{\\text{out}} \\approx \\frac{1}{4} V_s GF \\epsilon$.",
+                        "videoUrl": "assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
+                        "videoTitle": "Strain Gauge Gauge Factor Equation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Thermocouple Seebeck Effect Voltage",
@@ -5683,7 +5881,10 @@
                         "title": "Second-Order Sensor Natural Frequency and Damping",
                         "formula": "$$\\frac{d^2 y}{dt^2} + 2\\zeta \\omega_n \\frac{dy}{dt} + \\omega_n^2 y = \\omega_n^2 x(t)$$",
                         "description": "Dynamic equation for inertial instruments (accelerometers, pressure transducers); $\\zeta = 0.707$ is optimal compromise maximizing flat frequency response bandwidth without resonant peaking.",
-                        "examTip": "Found in Instrumentation / Control. Accelerometers operate accurately only at frequencies well below their natural frequency ($\\omega \\ll \\omega_n$)."
+                        "examTip": "Found in Instrumentation / Control. Accelerometers operate accurately only at frequencies well below their natural frequency ($\\omega \\ll \\omega_n$).",
+                        "videoUrl": "assets/videos/Second_Order_Sensor_Natural_Frequency_and_Damping.mp4",
+                        "videoTitle": "Second-Order Sensor Natural Frequency and Damping Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Ideal Operational Amplifier Golden Rules",
@@ -5728,7 +5929,10 @@
                         "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier",
                         "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{LFL_i}}$$",
                         "description": "Predicts lower flammability limit of a mixture of combustible gases using volume fractions $y_i$ and pure component $LFL$ values.",
-                        "examTip": "Found in Safety. A fuel-air mixture is flammable only within the range $LFL \\le C \\le UFL$."
+                        "examTip": "Found in Safety. A fuel-air mixture is flammable only within the range $LFL \\le C \\le UFL$.",
+                        "videoUrl": "assets/videos/Le_Chateliers_Principle_and_Standard_Free_Energy.mp4",
+                        "videoTitle": "Le Chatelier’s Principle & Standard Free Energy Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Factor of Safety Definition in Design",
@@ -5830,7 +6034,10 @@
                         "title": "Mass Moment of Inertia Parallel Axis Theorem",
                         "formula": "$$I = I_G + m d^2$$",
                         "description": "Computes mass moment of inertia about any axis parallel to a centroidal axis at perpendicular distance $d$.",
-                        "examTip": "Found in Dynamics. Centroidal moment $I_G$ is always the absolute minimum moment of inertia for any set of parallel axes."
+                        "examTip": "Found in Dynamics. Centroidal moment $I_G$ is always the absolute minimum moment of inertia for any set of parallel axes.",
+                        "videoUrl": "assets/videos/Mass_Moment_of_Inertia_Parallel_Axis_Theorem.mp4",
+                        "videoTitle": "Mass Moment of Inertia Parallel Axis Theorem Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Thermal Expansion Deformation and Thermal Stress",
@@ -6118,6 +6325,33 @@
                         "examTip": "Found in Mechanical Design. Life in hours is $L_{10h} = \\frac{L_{10}}{60 N}$. Halving the load increases ball bearing life by $2^3 = 8\\times$!",
                         "videoUrl": "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
                         "videoTitle": "Rolling Element Bearing Rated Life (L10) Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Fick’s First Law of Molecular Diffusion",
+                        "formula": "$$J_A = -D_{AB} \\frac{dC_A}{dz}$$",
+                        "description": "Defines molar diffusive flux $J_A$ as proportional to negative concentration gradient $dC_A / dz$ and binary molecular diffusivity $D_{AB}$.",
+                        "examTip": "Found in Mass Transfer. In bulk flow, total flux is $N_A = J_A + x_A (N_A + N_B)$. For equimolar counterdiffusion (EMD), $N_A = -N_B$.",
+                        "videoUrl": "assets/videos/Ficks_First_Law_of_Molecular_Diffusion.mp4",
+                        "videoTitle": "Fick’s First Law of Molecular Diffusion Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Break-Even Production Volume",
+                        "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
+                        "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
+                        "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
+                        "videoUrl": "assets/videos/Break_Even_Production_Volume.mp4",
+                        "videoTitle": "Break-Even Production Volume Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "AGMA Lewis Bending Equation for Spur Gear Teeth",
+                        "formula": "$$\\sigma = \\frac{W_t}{F m Y} = \\frac{W_t P_d}{F Y}$$",
+                        "description": "Computes root bending stress in spur gear teeth subjected to tangential transmitted load $W_t$, face width $F$, metric module $m$ (or diametral pitch $P_d$), and Lewis form factor $Y$.",
+                        "examTip": "Found in Mechanical Design. Tangential load is obtained directly from transmitted motor power: $W_t = T / (d/2) = P / (v_t)$.",
+                        "videoUrl": "assets/videos/AGMA_Lewis_Bending_Equation_for_Spur_Gear_Teeth.mp4",
+                        "videoTitle": "AGMA Lewis Bending Equation for Spur Gear Teeth Explainer",
                         "videoDuration": "10s"
                 }
         ]
@@ -6496,6 +6730,19 @@
             'liftingtorque': ['power screws lifting torque and efficiency', 'lifting torque'],
             'bearinglife': ['rolling element bearing rated life', 'bearing rated life', 'l10 life', 'l10'],
             'l10life': ['rolling element bearing rated life', 'bearing rated life', 'l10'],
+            'fick': ['fick’s first law', 'ficks first law', 'molecular diffusion', 'fick'],
+            'diffusion': ['fick’s first law', 'molecular diffusion'],
+            'lechatelier': ['le chatelier’s principle', 'le chatelier', 'standard free energy'],
+            'chatelier': ['le chatelier’s principle', 'le chatelier'],
+            'breakeven': ['break-even production volume', 'break-even', 'break even'],
+            'gradient': ['gradient vector and directional derivative', 'gradient vector', 'directional derivative'],
+            'directionalderivative': ['gradient vector and directional derivative', 'directional derivative'],
+            'straingauge': ['strain gauge gauge factor equation', 'strain gauge', 'gauge factor'],
+            'gaugefactor': ['strain gauge gauge factor equation', 'gauge factor'],
+            'agma': ['agma lewis bending equation', 'spur gear teeth', 'lewis bending', 'agma'],
+            'spurgear': ['agma lewis bending equation', 'spur gear teeth', 'spur gear'],
+            'secondordersensor': ['second-order sensor natural frequency and damping', 'second-order sensor', 'sensor natural frequency'],
+            'massmomentparallel': ['mass moment of inertia parallel axis theorem', 'mass moment of inertia parallel axis'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
