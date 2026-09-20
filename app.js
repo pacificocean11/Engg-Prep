@@ -6604,7 +6604,10 @@ window.calcEvaluate = function() {
                         "title": "Net Positive Suction Head Available (NPSHA)",
                         "formula": "$$NPSHA = \\frac{P_{\\text{atm}}}{\\gamma} + z_s - h_f - \\frac{P_v}{\\gamma} \\ge NPSHR$$",
                         "description": "Total absolute suction head at the pump inlet above liquid vapor pressure $P_v$. To prevent catastrophic cavitation, $NPSHA$ must exceed manufacturer's $NPSHR$.",
-                        "examTip": "Found in Fluid Mechanics. Raising fluid temperature increases vapor pressure $P_v$, reducing $NPSHA$ and triggering cavitation."
+                        "examTip": "Found in Fluid Mechanics. Raising fluid temperature increases vapor pressure $P_v$, reducing $NPSHA$ and triggering cavitation.",
+                        "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Pump Specific Speed ($N_s$)",
@@ -7456,7 +7459,10 @@ window.calcEvaluate = function() {
                         "title": "Resolution of a Force",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
-                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
+                        "videoUrl": "assets/videos/Resolution_of_a_Force.mp4",
+                        "videoTitle": "Resolution of a Force Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moments (Couples)",
@@ -7504,7 +7510,10 @@ window.calcEvaluate = function() {
                         "title": "Lami's Theorem for Concurrent Forces",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
-                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
+                        "videoUrl": "assets/videos/Lamis_Theorem_for_Concurrent_Forces.mp4",
+                        "videoTitle": "Lami's Theorem for Concurrent Forces Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Limiting friction",
@@ -7540,19 +7549,28 @@ window.calcEvaluate = function() {
                         "title": "Relative Motion",
                         "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
                         "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$."
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$.",
+                        "videoUrl": "assets/videos/Relative_Motion.mp4",
+                        "videoTitle": "Relative Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Projectile Motion",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
-                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground."
+                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground.",
+                        "videoUrl": "assets/videos/Projectile_Motion.mp4",
+                        "videoTitle": "Projectile Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
                         "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
                         "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
-                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$."
+                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$.",
+                        "videoUrl": "assets/videos/Potential_Energy_in_Many_Forms.mp4",
+                        "videoTitle": "Potential Energy (Gravity, Spring, etc) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Kinetic Energy",
@@ -7570,7 +7588,10 @@ window.calcEvaluate = function() {
                         "title": "Instantaneous Center of Rotation",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!"
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!",
+                        "videoUrl": "assets/videos/Instantaneous_Center_of_Rotation.mp4",
+                        "videoTitle": "Instantaneous Center of Rotation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Kennedy's Rule",
@@ -7582,7 +7603,10 @@ window.calcEvaluate = function() {
                         "title": "Newton's Law of Viscosity",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
-                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Viscosity.mp4",
+                        "videoTitle": "Newton's Law of Viscosity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
@@ -7651,10 +7675,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
                 },
                 {
-                        "title": "Net POsitive Suction Head (NPSH)",
+                        "title": "Net Positive Suction Head (NPSH)",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
-                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
+                        "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
@@ -9219,7 +9246,10 @@ window.calcEvaluate = function() {
                         "title": "Resolution of a Force",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
-                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
+                        "videoUrl": "assets/videos/Resolution_of_a_Force.mp4",
+                        "videoTitle": "Resolution of a Force Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moments (Couples)",
@@ -9267,7 +9297,10 @@ window.calcEvaluate = function() {
                         "title": "Lami's Theorem for Concurrent Forces",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
-                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
+                        "videoUrl": "assets/videos/Lamis_Theorem_for_Concurrent_Forces.mp4",
+                        "videoTitle": "Lami's Theorem for Concurrent Forces Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Limiting friction",
@@ -9303,19 +9336,28 @@ window.calcEvaluate = function() {
                         "title": "Relative Motion",
                         "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
                         "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$."
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$.",
+                        "videoUrl": "assets/videos/Relative_Motion.mp4",
+                        "videoTitle": "Relative Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Projectile Motion",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
-                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground."
+                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground.",
+                        "videoUrl": "assets/videos/Projectile_Motion.mp4",
+                        "videoTitle": "Projectile Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
                         "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
                         "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
-                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$."
+                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$.",
+                        "videoUrl": "assets/videos/Potential_Energy_in_Many_Forms.mp4",
+                        "videoTitle": "Potential Energy (Gravity, Spring, etc) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Kinetic Energy",
@@ -9333,7 +9375,10 @@ window.calcEvaluate = function() {
                         "title": "Instantaneous Center of Rotation",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!"
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!",
+                        "videoUrl": "assets/videos/Instantaneous_Center_of_Rotation.mp4",
+                        "videoTitle": "Instantaneous Center of Rotation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Kennedy's Rule",
@@ -9345,7 +9390,10 @@ window.calcEvaluate = function() {
                         "title": "Newton's Law of Viscosity",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
-                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Viscosity.mp4",
+                        "videoTitle": "Newton's Law of Viscosity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
@@ -9414,10 +9462,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
                 },
                 {
-                        "title": "Net POsitive Suction Head (NPSH)",
+                        "title": "Net Positive Suction Head (NPSH)",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
-                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
+                        "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
@@ -11770,7 +11821,10 @@ window.calcEvaluate = function() {
                         "title": "Newton's Law of Viscosity",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
-                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Viscosity.mp4",
+                        "videoTitle": "Newton's Law of Viscosity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
@@ -11839,10 +11893,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
                 },
                 {
-                        "title": "Net POsitive Suction Head (NPSH)",
+                        "title": "Net Positive Suction Head (NPSH)",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
-                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
+                        "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
@@ -13134,7 +13191,10 @@ window.calcEvaluate = function() {
                         "title": "Resolution of a Force",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
-                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
+                        "videoUrl": "assets/videos/Resolution_of_a_Force.mp4",
+                        "videoTitle": "Resolution of a Force Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moments (Couples)",
@@ -13182,7 +13242,10 @@ window.calcEvaluate = function() {
                         "title": "Lami's Theorem for Concurrent Forces",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
-                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
+                        "videoUrl": "assets/videos/Lamis_Theorem_for_Concurrent_Forces.mp4",
+                        "videoTitle": "Lami's Theorem for Concurrent Forces Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Limiting friction",
@@ -14498,7 +14561,10 @@ window.calcEvaluate = function() {
                         "title": "Newton's Law of Viscosity",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
-                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Viscosity.mp4",
+                        "videoTitle": "Newton's Law of Viscosity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
@@ -14567,10 +14633,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
                 },
                 {
-                        "title": "Net POsitive Suction Head (NPSH)",
+                        "title": "Net Positive Suction Head (NPSH)",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
-                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
+                        "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
@@ -15373,7 +15442,10 @@ window.calcEvaluate = function() {
                         "title": "Projectile Motion Parabolic Trajectory Equations",
                         "formula": "$$x(t) = (v_0 \\cos\\theta) t, \\quad y(t) = (v_0 \\sin\\theta) t - \\frac{1}{2} g t^2, \\quad R = \\frac{v_0^2 \\sin 2\\theta}{g}$$",
                         "description": "Two-dimensional ballistic trajectory under constant downward gravitational acceleration $g$ with zero horizontal aerodynamic drag.",
-                        "examTip": "Found in Dynamics. Maximum horizontal range over level ground occurs at launch angle $\\theta = 45^\\circ$."
+                        "examTip": "Found in Dynamics. Maximum horizontal range over level ground occurs at launch angle $\\theta = 45^\\circ$.",
+                        "videoUrl": "assets/videos/Projectile_Motion.mp4",
+                        "videoTitle": "Projectile Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Direct Central Impact Coefficient of Restitution",
@@ -16078,7 +16150,10 @@ window.calcEvaluate = function() {
                         "title": "Resolution of a Force",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
-                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
+                        "videoUrl": "assets/videos/Resolution_of_a_Force.mp4",
+                        "videoTitle": "Resolution of a Force Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moments (Couples)",
@@ -16126,7 +16201,10 @@ window.calcEvaluate = function() {
                         "title": "Lami's Theorem for Concurrent Forces",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
-                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
+                        "videoUrl": "assets/videos/Lamis_Theorem_for_Concurrent_Forces.mp4",
+                        "videoTitle": "Lami's Theorem for Concurrent Forces Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Limiting friction",
@@ -16162,19 +16240,28 @@ window.calcEvaluate = function() {
                         "title": "Relative Motion",
                         "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
                         "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$."
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$.",
+                        "videoUrl": "assets/videos/Relative_Motion.mp4",
+                        "videoTitle": "Relative Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Projectile Motion",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
-                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground."
+                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground.",
+                        "videoUrl": "assets/videos/Projectile_Motion.mp4",
+                        "videoTitle": "Projectile Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
                         "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
                         "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
-                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$."
+                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$.",
+                        "videoUrl": "assets/videos/Potential_Energy_in_Many_Forms.mp4",
+                        "videoTitle": "Potential Energy (Gravity, Spring, etc) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Kinetic Energy",
@@ -16192,7 +16279,10 @@ window.calcEvaluate = function() {
                         "title": "Instantaneous Center of Rotation",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!"
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!",
+                        "videoUrl": "assets/videos/Instantaneous_Center_of_Rotation.mp4",
+                        "videoTitle": "Instantaneous Center of Rotation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Kennedy's Rule",
@@ -16204,7 +16294,10 @@ window.calcEvaluate = function() {
                         "title": "Newton's Law of Viscosity",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
-                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
+                        "videoUrl": "assets/videos/Newtons_Law_of_Viscosity.mp4",
+                        "videoTitle": "Newton's Law of Viscosity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
@@ -16273,10 +16366,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
                 },
                 {
-                        "title": "Net POsitive Suction Head (NPSH)",
+                        "title": "Net Positive Suction Head (NPSH)",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
-                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
+                        "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
