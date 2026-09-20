@@ -1166,6 +1166,762 @@
                         "videoUrl": "assets/videos/Mass_Moment_of_Inertia_Parallel_Axis_Theorem.mp4",
                         "videoTitle": "Mass Moment of Inertia Parallel Axis Theorem Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Distance Formula",
+                        "formula": "$$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$",
+                        "description": "Calculates the straight-line Euclidean distance between two points in Cartesian space derived from the Pythagorean theorem.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. In 2D plane geometry, simplifies to $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Used for coordinate geometry, point clearances, and vector magnitudes."
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
+                },
+                {
+                        "title": "Resolution of a Force",
+                        "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
+                        "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                },
+                {
+                        "title": "Moments (Couples)",
+                        "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
+                        "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                },
+                {
+                        "title": "Area Moment of Inertia",
+                        "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
+                        "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
+                        "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
+                },
+                {
+                        "title": "Polar moment of inertia",
+                        "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
+                        "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                },
+                {
+                        "title": "Radius of Gyration",
+                        "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
+                        "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                },
+                {
+                        "title": "Product of Inertia",
+                        "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
+                        "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                },
+                {
+                        "title": "Method of Joints",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
+                        "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
+                        "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
+                },
+                {
+                        "title": "Method of Sections",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
+                        "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                },
+                {
+                        "title": "Lami's Theorem for Concurrent Forces",
+                        "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
+                        "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                },
+                {
+                        "title": "Limiting friction",
+                        "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
+                        "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                },
+                {
+                        "title": "Instantaneous velocity and Acceleration",
+                        "formula": "$$v(t) = \\frac{ds}{dt}, \\quad a(t) = \\frac{dv}{dt} = \\frac{d^2s}{dt^2}, \\quad a \\, ds = v \\, dv$$",
+                        "description": "Instantaneous velocity is the time derivative of position; instantaneous acceleration is the time derivative of velocity. The chain-rule identity $a \\, ds = v \\, dv$ eliminates explicit time dependence, allowing direct integration between velocity and position.",
+                        "examTip": "Found in Dynamics: Kinematics. Use $a \\, ds = v \\, dv$ whenever acceleration is given as a function of displacement $a(s)$ rather than time $a(t)$."
+                },
+                {
+                        "title": "Normal and Tangential Components",
+                        "formula": "$$\\mathbf{a} = a_t \\hat{\\mathbf{u}}_t + a_n \\hat{\\mathbf{u}}_n = \\left(\\frac{dv}{dt}\\right)\\hat{\\mathbf{u}}_t + \\left(\\frac{v^2}{\\rho}\\right)\\hat{\\mathbf{u}}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                        "description": "In curvilinear planar motion, acceleration decomposes into tangential acceleration $a_t = \\dot{v}$ (rate of change of speed) and normal centripetal acceleration $a_n = v^2/\\rho$ (rate of change of velocity direction toward center of curvature, radius $\\rho$).",
+                        "examTip": "Found in Dynamics: Kinematics. If a particle moves at constant speed along a curve, $a_t = 0$, but normal acceleration is non-zero: $a = a_n = v^2/\\rho$. Radius of curvature is $\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|}$."
+                },
+                {
+                        "title": "Constant Acceleration Motion",
+                        "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
+                        "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration."
+                },
+                {
+                        "title": "variable Acceleration Motion",
+                        "formula": "$$\\int_{v_0}^v dv = \\int_0^t a(t) \\, dt, \\quad \\int_{s_0}^s ds = \\int_0^t v(t) \\, dt, \\quad \\int_{v_0}^v v \\, dv = \\int_{s_0}^s a(s) \\, ds$$",
+                        "description": "When acceleration varies continuously as a function of time $a(t)$, velocity $a(v)$, or position $a(s)$, kinematics equations must be integrated directly using fundamental definitions $v = ds/dt$ and $a = dv/dt = v(dv/ds)$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$."
+                },
+                {
+                        "title": "Relative Motion",
+                        "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
+                        "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$."
+                },
+                {
+                        "title": "Projectile Motion",
+                        "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
+                        "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
+                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground."
+                },
+                {
+                        "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
+                        "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
+                        "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
+                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$."
+                },
+                {
+                        "title": "Kinetic Energy",
+                        "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
+                        "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
+                        "examTip": "Found in Dynamics: Work and Energy. For pure rolling without slipping: $v_G = r \\omega$. A solid cylinder has $T = \\frac{1}{2}m v^2 + \\frac{1}{2}(\\frac{1}{2}m r^2)(\\frac{v}{r})^2 = \\frac{3}{4}m v^2$."
+                },
+                {
+                        "title": "Rigid Body Rotation About a Fixed Axis",
+                        "formula": "$$\\sum M_O = I_O \\alpha, \\quad \\omega = \\omega_0 + \\alpha t, \\quad \\theta = \\theta_0 + \\omega_0 t + \\frac{1}{2}\\alpha t^2, \\quad v = r \\omega, \\quad a_t = r \\alpha, \\quad a_n = r \\omega^2$$",
+                        "description": "Governs planar rotation of an extended rigid body constrained about fixed rotational axis $O$. The net external moment about $O$ equals mass moment of inertia $I_O$ times angular acceleration $\\alpha$.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinetics. If pivoting about pin $O$, use parallel axis theorem: $I_O = I_G + m d^2$. Radial and tangential reaction forces at pivot are $R_n = m r_G \\omega^2$ and $R_t = m r_G \\alpha$."
+                },
+                {
+                        "title": "Instantaneous Center of Rotation",
+                        "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
+                        "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!"
+                },
+                {
+                        "title": "Kennedy's Rule",
+                        "formula": "$$\\text{IC}_{12}, \\text{IC}_{23}, \\text{IC}_{13} \\text{ lie on a single straight line}$$",
+                        "description": "In mechanism planar kinematics, Kennedy's theorem states that the three instantaneous centers of velocity relating any three bodies in relative motion must lie on a single common straight line. A mechanism with $n$ links has $\\frac{n(n-1)}{2}$ instantaneous centers.",
+                        "examTip": "Found in Dynamics: Mechanism Kinematics. Powerful graphical tool to locate unknown instant centers in four-bar linkages and slider-crank mechanisms by intersecting collinear lines."
+                },
+                {
+                        "title": "Newton's Law of Viscosity",
+                        "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
+                        "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                },
+                {
+                        "title": "Newtonian vs Non-Newtonian Fluid",
+                        "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
+                        "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                },
+                {
+                        "title": "Surface Tension",
+                        "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
+                        "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                },
+                {
+                        "title": "Capillarity",
+                        "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                        "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                },
+                {
+                        "title": "Manometers",
+                        "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
+                        "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                },
+                {
+                        "title": "Bouyancy Force",
+                        "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
+                        "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
+                },
+                {
+                        "title": "Pitot Tube",
+                        "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
+                        "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                },
+                {
+                        "title": "Venturi Meter",
+                        "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
+                        "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
+                        "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
+                },
+                {
+                        "title": "Orifice",
+                        "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
+                        "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
+                        "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
+                },
+                {
+                        "title": "Drag Coefficient and Lift coefficient",
+                        "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
+                        "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
+                },
+                {
+                        "title": "Orifice Discharging Freely into Atmosphere",
+                        "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
+                        "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
+                        "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
+                },
+                {
+                        "title": "Stagnation Temperature",
+                        "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
+                        "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
+                        "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
+                },
+                {
+                        "title": "Net POsitive Suction Head (NPSH)",
+                        "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
+                        "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                },
+                {
+                        "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
+                        "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
+                        "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
+                },
+                {
+                        "title": "Conduction Through a Plain Wall",
+                        "formula": "$$\\dot{Q} = k A \\frac{T_1 - T_2}{L} = \\frac{T_1 - T_2}{R_{\\text{th}}}, \\quad R_{\\text{th}} = \\frac{L}{k A}$$",
+                        "description": "Steady-state 1D heat conduction through a planar slab of thickness $L$, thermal conductivity $k$, and area $A$. Fourier's law integrates to a linear temperature profile with conduction thermal resistance $R_{\\text{th}} = L / (k A)$.",
+                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$."
+                },
+                {
+                        "title": "Conduction Through a Cylindrical Wall",
+                        "formula": "$$\\dot{Q} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2 / r_1)} = \\frac{T_1 - T_2}{R_{\\text{cyl}}}, \\quad R_{\\text{cyl}} = \\frac{\\ln(r_2 / r_1)}{2\\pi k L}$$",
+                        "description": "Radial steady heat conduction through a hollow cylinder (pipe) of length $L$, inner radius $r_1$, and outer radius $r_2$. Because heat flow area increases radially ($A(r) = 2\\pi r L$), the temperature distribution is logarithmic rather than linear.",
+                        "examTip": "Found in Heat Transfer: Conduction. Critical radius of insulation for a cylinder is $r_{cr} = k_{\\text{ins}} / h_{\\text{ext}}$. Adding insulation when $r_o < r_{cr}$ actually increases total heat loss until $r_o = r_{cr}$."
+                },
+                {
+                        "title": "Thermal resistance of an object",
+                        "formula": "$$R_{\\text{cond}} = \\frac{L}{k A}, \\quad R_{\\text{conv}} = \\frac{1}{h A}, \\quad R_{\\text{rad}} = \\frac{1}{h_r A}, \\quad \\dot{Q} = \\frac{\\Delta T_{\\text{overall}}}{R_{\\text{total}}} = U A \\Delta T_{\\text{overall}}$$*",
+                        "description": "Electrical circuit analogy where temperature difference acts as voltage potential, heat rate $\\dot{Q}$ acts as current, and materials act as thermal resistors. Total thermal resistance combines series and parallel conduction, convection, and radiation networks.",
+                        "examTip": "Found in Heat Transfer: Conduction/Convection Networks. The overall heat transfer coefficient $U$ satisfies $\\frac{1}{U A} = R_{\\text{total}} = \\frac{1}{h_i A_i} + \\sum \\frac{L}{k A} + \\frac{1}{h_o A_o}$."
+                },
+                {
+                        "title": "Black Body vs. Grey Body vs. Opaque Body",
+                        "formula": "$$E_b = \\sigma T^4, \\quad E = \\epsilon \\sigma T^4, \\quad \\alpha + \\rho + \\tau = 1, \\quad \\epsilon = \\alpha \\text{ (Kirchhoff's Law)}$$",
+                        "description": "A black body is an idealized perfect absorber ($\\alpha = 1$) and emitter ($\\epsilon = 1$). A gray body has constant emissivity and absorptivity independent of wavelength ($\\epsilon = \\alpha < 1$). An opaque body transmits no radiation ($\\tau = 0 \\implies \\alpha + \\rho = 1$).",
+                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!"
+                },
+                {
+                        "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "formula": "$$\\dot{Q}_{12} = \\frac{\\sigma(T_1^4 - T_2^4)}{\\frac{1 - \\epsilon_1}{\\epsilon_1 A_1} + \\frac{1}{A_1 F_{12}} + \\frac{1 - \\epsilon_2}{\\epsilon_2 A_2}}, \\quad A_1 F_{12} = A_2 F_{21} \\text{ (Reciprocity)}$$",
+                        "description": "Net radiant heat transfer between two diffuse, gray surfaces enclosed in an environment. Incorporates surface resistances $\\frac{1-\\epsilon}{\\epsilon A}$ and geometric space configuration resistance $\\frac{1}{A_1 F_{12}}$ governed by view factor $F_{12}$.",
+                        "examTip": "Found in Heat Transfer: Radiation. For two large parallel plates ($A_1 = A_2 = A$, $F_{12} = 1$): $\\dot{Q}_{12} = \\frac{A \\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$. For small convex object 1 in large room 2: $\\dot{Q} = \\epsilon_1 A_1 \\sigma (T_1^4 - T_2^4)$."
+                },
+                {
+                        "title": "Entropy",
+                        "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
+                        "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
+                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$."
+                },
+                {
+                        "title": "Enthalpy",
+                        "formula": "$$H = U + P V, \\quad h = u + P v, \\quad \\Delta h = c_p \\Delta T \\text{ (ideal gas)}, \\quad \\dot{Q} - \\dot{W}_s = \\dot{m}\\left(\\Delta h + \\frac{\\Delta v^2}{2} + g \\Delta z\\right)$$",
+                        "description": "Enthalpy represents total heat content, combining internal energy $U$ and flow work $P V$ required to displace fluid across system boundaries. For steady-state steady-flow (SSSF) open devices (turbines, compressors, nozzles), shaft work and heat relate directly to $\\Delta h$.",
+                        "examTip": "Found in Thermodynamics: First Law of Open Systems. For throttling valves (Joule-Thomson expansion), flow is isenthalpic ($h_1 = h_2$). For ideal gases, enthalpy depends ONLY on temperature: $dh = c_p dT$.",
+                        "videoUrl": "assets/videos/Enthalpy.mp4",
+                        "videoTitle": "Enthalpy Thermodynamic Property Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "formula": "$$x = \\frac{m_g}{m_f + m_g}, \\quad y = y_f + x \\, y_{fg} = y_f + x (y_g - y_f), \\quad y \\in \\{v, u, h, s\\}$$",
+                        "description": "In liquid-vapor saturation domes, intensive properties depend on quality $x$ (mass fraction of vapor). Saturated liquid has $x = 0$ ($y_f$); saturated vapor has $x = 1$ ($y_g$). Inside the dome, temperature and pressure are mutually dependent ($T_{\\text{sat}} = f(P_{\\text{sat}})$).",
+                        "examTip": "Found in Thermodynamics: Steam Tables. Enthalpy of a wet mixture is $h = h_f + x h_{fg}$. If given $h$, compute quality via $x = \\frac{h - h_f}{h_{fg}}$. If $x < 0$, fluid is subcooled; if $x > 1$, fluid is superheated."
+                },
+                {
+                        "title": "Mole fraction vs. mass fraction",
+                        "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
+                        "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
+                        "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
+                },
+                {
+                        "title": "Zeroth law of thermodynamics",
+                        "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
+                        "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
+                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system."
+                },
+                {
+                        "title": "Constant pressure process, with P-v and T-s representation",
+                        "formula": "$$W = P(V_2 - V_1), \\quad Q = \\Delta H = m c_p (T_2 - T_1), \\quad \\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\text{ (Charles’ Law)}$$",
+                        "description": "On a $P$-$v$ diagram, an isobaric process is a horizontal line ($P = \\text{const}$); boundary work equals area under the line $P \\Delta V$. On a $T$-$s$ diagram, it is a curve of positive slope $\\left(\\frac{\\partial T}{\\partial s}\\right)_P = \\frac{T}{c_p}$.",
+                        "examTip": "Found in Thermodynamics: Process Analysis. For closed systems at constant pressure without non-expansion work, heat transferred equals change in enthalpy ($Q = \\Delta H$)."
+                },
+                {
+                        "title": "Constant volume process, with P-v and T-s representation",
+                        "formula": "$$W = \\int P \\, dV = 0, \\quad Q = \\Delta U = m c_v (T_2 - T_1), \\quad \\frac{P_1}{T_1} = \\frac{P_2}{T_2} \\text{ (Gay-Lussac’s Law)}$$",
+                        "description": "On a $P$-$v$ diagram, an isochoric process is a vertical line ($V = \\text{const}$); boundary work is strictly zero ($W = 0$). On a $T$-$s$ diagram, it is a curve with slope $\\left(\\frac{\\partial T}{\\partial s}\\right)_v = \\frac{T}{c_v}$. Because $c_p > c_v$, isochoric curves on a $T$-$s$ diagram are steeper than isobaric curves!",
+                        "examTip": "Found in Thermodynamics: Process Analysis. In rigid closed containers ($V = \\text{const}$), boundary work is always zero: $Q = \\Delta U = m c_v \\Delta T$."
+                },
+                {
+                        "title": "Isothermal process, with P-v and T-s representation",
+                        "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
+                        "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
+                        "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
+                },
+                {
+                        "title": "Adiabatic process, with P-v and T-s representation",
+                        "formula": "$$P v^k = \\text{const}, \\quad T v^{k-1} = \\text{const}, \\quad T P^{\\frac{1-k}{k}} = \\text{const}, \\quad W = \\frac{P_1 V_1 - P_2 V_2}{k - 1} = -\\Delta U$$",
+                        "description": "In an adiabatic process, no heat is transferred ($Q = 0$). If also reversible, it is isentropic ($s = \\text{const}$). On a $P$-$v$ diagram, the isentropic curve is steeper than the isothermal curve by factor $k = c_p/c_v$. On a $T$-$s$ diagram, it is a vertical line.",
+                        "examTip": "Found in Thermodynamics: Process Analysis. For air: $k = 1.4$. Work done during reversible adiabatic expansion is $W = \\frac{m R (T_1 - T_2)}{k - 1} = m c_v (T_1 - T_2)$."
+                },
+                {
+                        "title": "Psychrometric Chart",
+                        "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
+                        "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
+                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy."
+                },
+                {
+                        "title": "Dry-bulb, Wet-bulb and dew-point temperature",
+                        "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
+                        "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
+                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases."
+                },
+                {
+                        "title": "Absolute humidity vs. Relative humidity",
+                        "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
+                        "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
+                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically."
+                },
+                {
+                        "title": "Exergy",
+                        "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
+                        "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$."
+                },
+                {
+                        "title": "Mollier chart",
+                        "formula": "$$\\left(\\frac{\\partial h}{\\partial s}\\right)_P = T, \\quad \\Delta h_{\\text{ideal}} = h_1 - h_{2s}, \\quad \\eta_{\\text{turb}} = \\frac{h_1 - h_2}{h_1 - h_{2s}}$$",
+                        "description": "An $h$-$s$ (enthalpy vs. entropy) coordinate chart used for steam turbines, nozzles, and refrigeration. Isobaric lines have slope equal to absolute temperature $T$. Vertical lines represent ideal isentropic processes ($s = \\text{const}$); deviation to the right shows irreversibility.",
+                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
+                },
+                {
+                        "title": "Regrigeration Cycles",
+                        "formula": "$$\\text{COP}_R = \\frac{q_L}{w_{\\text{net,in}}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad \\dot{Q}_L = \\dot{m}(h_1 - h_4), \\quad \\dot{W}_{\\text{comp}} = \\dot{m}(h_2 - h_1)$$",
+                        "description": "Standard cycle consists of 4 processes: (1-2) isentropic compression in compressor, (2-3) isobaric heat rejection in condenser ($q_H$), (3-4) isenthalpic throttling expansion valve ($h_3 = h_4$), and (4-1) isobaric heat absorption in evaporator ($q_L$).",
+                        "examTip": "Found in Mechanical: Refrigeration & HVAC. Remember throttling expansion is isenthalpic ($h_4 = h_3$). 1 ton of refrigeration = $12{,}000 \\, \\text{Btu/hr} = 3.517 \\, \\text{kW} = 200 \\, \\text{Btu/min}$."
+                },
+                {
+                        "title": "Coefficient of Performance (COP)",
+                        "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
+                        "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
+                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$."
+                },
+                {
+                        "title": "COP of refrigeration vs. COP of Heat Pump",
+                        "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
+                        "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
+                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$."
+                },
+                {
+                        "title": "HVAC Processes",
+                        "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
+                        "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
+                        "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
+                },
+                {
+                        "title": "Types of Fits",
+                        "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
+                        "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
+                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
+                },
+                {
+                        "title": "First and vs Third angle projection",
+                        "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
+                        "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                },
+                {
+                        "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
+                        "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
+                        "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
+                },
+                {
+                        "title": "Soderberg Theory",
+                        "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_y} = \\frac{1}{n}, \\quad \\sigma_a = \\frac{\\sigma_{\\max} - \\sigma_{\\min}}{2}, \\quad \\sigma_m = \\frac{\\sigma_{\\max} + \\sigma_{\\min}}{2}$$",
+                        "description": "A conservative fatigue failure criterion for ductile machine components subjected to combined fluctuating alternating stress $\\sigma_a$ and mean tensile stress $\\sigma_m$. Connects the fatigue endurance limit $S_e$ on the alternating axis directly to the tensile yield strength $S_y$ on the mean stress axis, ensuring safety against both fatigue fracture and gross static plastic yielding.",
+                        "examTip": "Found in Mechanical: Mechanical Design. Soderberg is the most conservative fatigue theory because it uses yield strength $S_y$ rather than ultimate strength $S_{ut}$. By comparison: Goodman uses $\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$, and Gerber uses a parabolic relationship $\\frac{\\sigma_a}{S_e} + (\\frac{\\sigma_m}{S_{ut}})^2 = \\frac{1}{n}$."
+                },
+                {
+                        "title": "Safety Data Sheet (SDS)",
+                        "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
+                        "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
+                        "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
+                },
+                {
+                        "title": "Signal Words",
+                        "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
+                        "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
+                        "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
+                },
+                {
+                        "title": "Flammability, LFL and UFL",
+                        "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
+                        "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                },
+                {
+                        "title": "Confined Space Safety",
+                        "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
+                        "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
+                        "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
+                },
+                {
+                        "title": "Noise Pollution Measurements",
+                        "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
+                        "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
                 }
         ],
         "Civil": [
@@ -2179,6 +2935,585 @@
                         "videoUrl": "assets/videos/Mass_Moment_of_Inertia_Parallel_Axis_Theorem.mp4",
                         "videoTitle": "Mass Moment of Inertia Parallel Axis Theorem Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
+                },
+                {
+                        "title": "Resolution of a Force",
+                        "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
+                        "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                },
+                {
+                        "title": "Moments (Couples)",
+                        "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
+                        "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                },
+                {
+                        "title": "Area Moment of Inertia",
+                        "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
+                        "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
+                        "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
+                },
+                {
+                        "title": "Polar moment of inertia",
+                        "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
+                        "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                },
+                {
+                        "title": "Radius of Gyration",
+                        "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
+                        "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                },
+                {
+                        "title": "Product of Inertia",
+                        "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
+                        "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                },
+                {
+                        "title": "Method of Joints",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
+                        "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
+                        "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
+                },
+                {
+                        "title": "Method of Sections",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
+                        "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                },
+                {
+                        "title": "Lami's Theorem for Concurrent Forces",
+                        "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
+                        "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                },
+                {
+                        "title": "Limiting friction",
+                        "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
+                        "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                },
+                {
+                        "title": "Instantaneous velocity and Acceleration",
+                        "formula": "$$v(t) = \\frac{ds}{dt}, \\quad a(t) = \\frac{dv}{dt} = \\frac{d^2s}{dt^2}, \\quad a \\, ds = v \\, dv$$",
+                        "description": "Instantaneous velocity is the time derivative of position; instantaneous acceleration is the time derivative of velocity. The chain-rule identity $a \\, ds = v \\, dv$ eliminates explicit time dependence, allowing direct integration between velocity and position.",
+                        "examTip": "Found in Dynamics: Kinematics. Use $a \\, ds = v \\, dv$ whenever acceleration is given as a function of displacement $a(s)$ rather than time $a(t)$."
+                },
+                {
+                        "title": "Normal and Tangential Components",
+                        "formula": "$$\\mathbf{a} = a_t \\hat{\\mathbf{u}}_t + a_n \\hat{\\mathbf{u}}_n = \\left(\\frac{dv}{dt}\\right)\\hat{\\mathbf{u}}_t + \\left(\\frac{v^2}{\\rho}\\right)\\hat{\\mathbf{u}}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                        "description": "In curvilinear planar motion, acceleration decomposes into tangential acceleration $a_t = \\dot{v}$ (rate of change of speed) and normal centripetal acceleration $a_n = v^2/\\rho$ (rate of change of velocity direction toward center of curvature, radius $\\rho$).",
+                        "examTip": "Found in Dynamics: Kinematics. If a particle moves at constant speed along a curve, $a_t = 0$, but normal acceleration is non-zero: $a = a_n = v^2/\\rho$. Radius of curvature is $\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|}$."
+                },
+                {
+                        "title": "Constant Acceleration Motion",
+                        "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
+                        "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration."
+                },
+                {
+                        "title": "variable Acceleration Motion",
+                        "formula": "$$\\int_{v_0}^v dv = \\int_0^t a(t) \\, dt, \\quad \\int_{s_0}^s ds = \\int_0^t v(t) \\, dt, \\quad \\int_{v_0}^v v \\, dv = \\int_{s_0}^s a(s) \\, ds$$",
+                        "description": "When acceleration varies continuously as a function of time $a(t)$, velocity $a(v)$, or position $a(s)$, kinematics equations must be integrated directly using fundamental definitions $v = ds/dt$ and $a = dv/dt = v(dv/ds)$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$."
+                },
+                {
+                        "title": "Relative Motion",
+                        "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
+                        "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$."
+                },
+                {
+                        "title": "Projectile Motion",
+                        "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
+                        "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
+                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground."
+                },
+                {
+                        "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
+                        "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
+                        "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
+                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$."
+                },
+                {
+                        "title": "Kinetic Energy",
+                        "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
+                        "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
+                        "examTip": "Found in Dynamics: Work and Energy. For pure rolling without slipping: $v_G = r \\omega$. A solid cylinder has $T = \\frac{1}{2}m v^2 + \\frac{1}{2}(\\frac{1}{2}m r^2)(\\frac{v}{r})^2 = \\frac{3}{4}m v^2$."
+                },
+                {
+                        "title": "Rigid Body Rotation About a Fixed Axis",
+                        "formula": "$$\\sum M_O = I_O \\alpha, \\quad \\omega = \\omega_0 + \\alpha t, \\quad \\theta = \\theta_0 + \\omega_0 t + \\frac{1}{2}\\alpha t^2, \\quad v = r \\omega, \\quad a_t = r \\alpha, \\quad a_n = r \\omega^2$$",
+                        "description": "Governs planar rotation of an extended rigid body constrained about fixed rotational axis $O$. The net external moment about $O$ equals mass moment of inertia $I_O$ times angular acceleration $\\alpha$.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinetics. If pivoting about pin $O$, use parallel axis theorem: $I_O = I_G + m d^2$. Radial and tangential reaction forces at pivot are $R_n = m r_G \\omega^2$ and $R_t = m r_G \\alpha$."
+                },
+                {
+                        "title": "Instantaneous Center of Rotation",
+                        "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
+                        "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!"
+                },
+                {
+                        "title": "Kennedy's Rule",
+                        "formula": "$$\\text{IC}_{12}, \\text{IC}_{23}, \\text{IC}_{13} \\text{ lie on a single straight line}$$",
+                        "description": "In mechanism planar kinematics, Kennedy's theorem states that the three instantaneous centers of velocity relating any three bodies in relative motion must lie on a single common straight line. A mechanism with $n$ links has $\\frac{n(n-1)}{2}$ instantaneous centers.",
+                        "examTip": "Found in Dynamics: Mechanism Kinematics. Powerful graphical tool to locate unknown instant centers in four-bar linkages and slider-crank mechanisms by intersecting collinear lines."
+                },
+                {
+                        "title": "Newton's Law of Viscosity",
+                        "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
+                        "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                },
+                {
+                        "title": "Newtonian vs Non-Newtonian Fluid",
+                        "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
+                        "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                },
+                {
+                        "title": "Surface Tension",
+                        "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
+                        "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                },
+                {
+                        "title": "Capillarity",
+                        "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                        "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                },
+                {
+                        "title": "Manometers",
+                        "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
+                        "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                },
+                {
+                        "title": "Bouyancy Force",
+                        "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
+                        "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
+                },
+                {
+                        "title": "Pitot Tube",
+                        "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
+                        "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                },
+                {
+                        "title": "Venturi Meter",
+                        "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
+                        "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
+                        "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
+                },
+                {
+                        "title": "Orifice",
+                        "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
+                        "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
+                        "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
+                },
+                {
+                        "title": "Drag Coefficient and Lift coefficient",
+                        "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
+                        "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
+                },
+                {
+                        "title": "Orifice Discharging Freely into Atmosphere",
+                        "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
+                        "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
+                        "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
+                },
+                {
+                        "title": "Stagnation Temperature",
+                        "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
+                        "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
+                        "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
+                },
+                {
+                        "title": "Net POsitive Suction Head (NPSH)",
+                        "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
+                        "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                },
+                {
+                        "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
+                        "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
+                        "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
+                },
+                {
+                        "title": "pH scale",
+                        "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
+                        "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                },
+                {
+                        "title": "Aerobic vs Anaerobic Processes",
+                        "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
+                        "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
+                        "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
+                },
+                {
+                        "title": "First and vs Third angle projection",
+                        "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
+                        "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                },
+                {
+                        "title": "Confined Space Safety",
+                        "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
+                        "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
+                        "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
                 }
         ],
         "Electrical and Computer": [
@@ -2949,6 +4284,351 @@
                         "videoUrl": "assets/videos/Second_Order_Sensor_Natural_Frequency_and_Damping.mp4",
                         "videoTitle": "Second-Order Sensor Natural Frequency and Damping Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
                 }
         ],
         "Chemical": [
@@ -3806,6 +5486,648 @@
                         "videoUrl": "assets/videos/Darcys_Law_for_Hydraulic_Seepage.mp4",
                         "videoTitle": "Darcy’s Law for Hydraulic Seepage Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
+                },
+                {
+                        "title": "Newton's Law of Viscosity",
+                        "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
+                        "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                },
+                {
+                        "title": "Newtonian vs Non-Newtonian Fluid",
+                        "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
+                        "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                },
+                {
+                        "title": "Surface Tension",
+                        "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
+                        "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                },
+                {
+                        "title": "Capillarity",
+                        "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                        "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                },
+                {
+                        "title": "Manometers",
+                        "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
+                        "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                },
+                {
+                        "title": "Bouyancy Force",
+                        "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
+                        "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
+                },
+                {
+                        "title": "Pitot Tube",
+                        "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
+                        "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                },
+                {
+                        "title": "Venturi Meter",
+                        "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
+                        "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
+                        "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
+                },
+                {
+                        "title": "Orifice",
+                        "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
+                        "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
+                        "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
+                },
+                {
+                        "title": "Drag Coefficient and Lift coefficient",
+                        "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
+                        "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
+                },
+                {
+                        "title": "Orifice Discharging Freely into Atmosphere",
+                        "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
+                        "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
+                        "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
+                },
+                {
+                        "title": "Stagnation Temperature",
+                        "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
+                        "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
+                        "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
+                },
+                {
+                        "title": "Net POsitive Suction Head (NPSH)",
+                        "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
+                        "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                },
+                {
+                        "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
+                        "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
+                        "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
+                },
+                {
+                        "title": "Conduction Through a Plain Wall",
+                        "formula": "$$\\dot{Q} = k A \\frac{T_1 - T_2}{L} = \\frac{T_1 - T_2}{R_{\\text{th}}}, \\quad R_{\\text{th}} = \\frac{L}{k A}$$",
+                        "description": "Steady-state 1D heat conduction through a planar slab of thickness $L$, thermal conductivity $k$, and area $A$. Fourier's law integrates to a linear temperature profile with conduction thermal resistance $R_{\\text{th}} = L / (k A)$.",
+                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$."
+                },
+                {
+                        "title": "Conduction Through a Cylindrical Wall",
+                        "formula": "$$\\dot{Q} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2 / r_1)} = \\frac{T_1 - T_2}{R_{\\text{cyl}}}, \\quad R_{\\text{cyl}} = \\frac{\\ln(r_2 / r_1)}{2\\pi k L}$$",
+                        "description": "Radial steady heat conduction through a hollow cylinder (pipe) of length $L$, inner radius $r_1$, and outer radius $r_2$. Because heat flow area increases radially ($A(r) = 2\\pi r L$), the temperature distribution is logarithmic rather than linear.",
+                        "examTip": "Found in Heat Transfer: Conduction. Critical radius of insulation for a cylinder is $r_{cr} = k_{\\text{ins}} / h_{\\text{ext}}$. Adding insulation when $r_o < r_{cr}$ actually increases total heat loss until $r_o = r_{cr}$."
+                },
+                {
+                        "title": "Thermal resistance of an object",
+                        "formula": "$$R_{\\text{cond}} = \\frac{L}{k A}, \\quad R_{\\text{conv}} = \\frac{1}{h A}, \\quad R_{\\text{rad}} = \\frac{1}{h_r A}, \\quad \\dot{Q} = \\frac{\\Delta T_{\\text{overall}}}{R_{\\text{total}}} = U A \\Delta T_{\\text{overall}}$$*",
+                        "description": "Electrical circuit analogy where temperature difference acts as voltage potential, heat rate $\\dot{Q}$ acts as current, and materials act as thermal resistors. Total thermal resistance combines series and parallel conduction, convection, and radiation networks.",
+                        "examTip": "Found in Heat Transfer: Conduction/Convection Networks. The overall heat transfer coefficient $U$ satisfies $\\frac{1}{U A} = R_{\\text{total}} = \\frac{1}{h_i A_i} + \\sum \\frac{L}{k A} + \\frac{1}{h_o A_o}$."
+                },
+                {
+                        "title": "Black Body vs. Grey Body vs. Opaque Body",
+                        "formula": "$$E_b = \\sigma T^4, \\quad E = \\epsilon \\sigma T^4, \\quad \\alpha + \\rho + \\tau = 1, \\quad \\epsilon = \\alpha \\text{ (Kirchhoff's Law)}$$",
+                        "description": "A black body is an idealized perfect absorber ($\\alpha = 1$) and emitter ($\\epsilon = 1$). A gray body has constant emissivity and absorptivity independent of wavelength ($\\epsilon = \\alpha < 1$). An opaque body transmits no radiation ($\\tau = 0 \\implies \\alpha + \\rho = 1$).",
+                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!"
+                },
+                {
+                        "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "formula": "$$\\dot{Q}_{12} = \\frac{\\sigma(T_1^4 - T_2^4)}{\\frac{1 - \\epsilon_1}{\\epsilon_1 A_1} + \\frac{1}{A_1 F_{12}} + \\frac{1 - \\epsilon_2}{\\epsilon_2 A_2}}, \\quad A_1 F_{12} = A_2 F_{21} \\text{ (Reciprocity)}$$",
+                        "description": "Net radiant heat transfer between two diffuse, gray surfaces enclosed in an environment. Incorporates surface resistances $\\frac{1-\\epsilon}{\\epsilon A}$ and geometric space configuration resistance $\\frac{1}{A_1 F_{12}}$ governed by view factor $F_{12}$.",
+                        "examTip": "Found in Heat Transfer: Radiation. For two large parallel plates ($A_1 = A_2 = A$, $F_{12} = 1$): $\\dot{Q}_{12} = \\frac{A \\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$. For small convex object 1 in large room 2: $\\dot{Q} = \\epsilon_1 A_1 \\sigma (T_1^4 - T_2^4)$."
+                },
+                {
+                        "title": "Entropy",
+                        "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
+                        "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
+                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$."
+                },
+                {
+                        "title": "Enthalpy",
+                        "formula": "$$H = U + P V, \\quad h = u + P v, \\quad \\Delta h = c_p \\Delta T \\text{ (ideal gas)}, \\quad \\dot{Q} - \\dot{W}_s = \\dot{m}\\left(\\Delta h + \\frac{\\Delta v^2}{2} + g \\Delta z\\right)$$",
+                        "description": "Enthalpy represents total heat content, combining internal energy $U$ and flow work $P V$ required to displace fluid across system boundaries. For steady-state steady-flow (SSSF) open devices (turbines, compressors, nozzles), shaft work and heat relate directly to $\\Delta h$.",
+                        "examTip": "Found in Thermodynamics: First Law of Open Systems. For throttling valves (Joule-Thomson expansion), flow is isenthalpic ($h_1 = h_2$). For ideal gases, enthalpy depends ONLY on temperature: $dh = c_p dT$.",
+                        "videoUrl": "assets/videos/Enthalpy.mp4",
+                        "videoTitle": "Enthalpy Thermodynamic Property Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "formula": "$$x = \\frac{m_g}{m_f + m_g}, \\quad y = y_f + x \\, y_{fg} = y_f + x (y_g - y_f), \\quad y \\in \\{v, u, h, s\\}$$",
+                        "description": "In liquid-vapor saturation domes, intensive properties depend on quality $x$ (mass fraction of vapor). Saturated liquid has $x = 0$ ($y_f$); saturated vapor has $x = 1$ ($y_g$). Inside the dome, temperature and pressure are mutually dependent ($T_{\\text{sat}} = f(P_{\\text{sat}})$).",
+                        "examTip": "Found in Thermodynamics: Steam Tables. Enthalpy of a wet mixture is $h = h_f + x h_{fg}$. If given $h$, compute quality via $x = \\frac{h - h_f}{h_{fg}}$. If $x < 0$, fluid is subcooled; if $x > 1$, fluid is superheated."
+                },
+                {
+                        "title": "Mole fraction vs. mass fraction",
+                        "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
+                        "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
+                        "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
+                },
+                {
+                        "title": "Zeroth law of thermodynamics",
+                        "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
+                        "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
+                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system."
+                },
+                {
+                        "title": "Constant pressure process, with P-v and T-s representation",
+                        "formula": "$$W = P(V_2 - V_1), \\quad Q = \\Delta H = m c_p (T_2 - T_1), \\quad \\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\text{ (Charles’ Law)}$$",
+                        "description": "On a $P$-$v$ diagram, an isobaric process is a horizontal line ($P = \\text{const}$); boundary work equals area under the line $P \\Delta V$. On a $T$-$s$ diagram, it is a curve of positive slope $\\left(\\frac{\\partial T}{\\partial s}\\right)_P = \\frac{T}{c_p}$.",
+                        "examTip": "Found in Thermodynamics: Process Analysis. For closed systems at constant pressure without non-expansion work, heat transferred equals change in enthalpy ($Q = \\Delta H$)."
+                },
+                {
+                        "title": "Constant volume process, with P-v and T-s representation",
+                        "formula": "$$W = \\int P \\, dV = 0, \\quad Q = \\Delta U = m c_v (T_2 - T_1), \\quad \\frac{P_1}{T_1} = \\frac{P_2}{T_2} \\text{ (Gay-Lussac’s Law)}$$",
+                        "description": "On a $P$-$v$ diagram, an isochoric process is a vertical line ($V = \\text{const}$); boundary work is strictly zero ($W = 0$). On a $T$-$s$ diagram, it is a curve with slope $\\left(\\frac{\\partial T}{\\partial s}\\right)_v = \\frac{T}{c_v}$. Because $c_p > c_v$, isochoric curves on a $T$-$s$ diagram are steeper than isobaric curves!",
+                        "examTip": "Found in Thermodynamics: Process Analysis. In rigid closed containers ($V = \\text{const}$), boundary work is always zero: $Q = \\Delta U = m c_v \\Delta T$."
+                },
+                {
+                        "title": "Isothermal process, with P-v and T-s representation",
+                        "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
+                        "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
+                        "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
+                },
+                {
+                        "title": "Adiabatic process, with P-v and T-s representation",
+                        "formula": "$$P v^k = \\text{const}, \\quad T v^{k-1} = \\text{const}, \\quad T P^{\\frac{1-k}{k}} = \\text{const}, \\quad W = \\frac{P_1 V_1 - P_2 V_2}{k - 1} = -\\Delta U$$",
+                        "description": "In an adiabatic process, no heat is transferred ($Q = 0$). If also reversible, it is isentropic ($s = \\text{const}$). On a $P$-$v$ diagram, the isentropic curve is steeper than the isothermal curve by factor $k = c_p/c_v$. On a $T$-$s$ diagram, it is a vertical line.",
+                        "examTip": "Found in Thermodynamics: Process Analysis. For air: $k = 1.4$. Work done during reversible adiabatic expansion is $W = \\frac{m R (T_1 - T_2)}{k - 1} = m c_v (T_1 - T_2)$."
+                },
+                {
+                        "title": "Exergy",
+                        "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
+                        "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$."
+                },
+                {
+                        "title": "Mollier chart",
+                        "formula": "$$\\left(\\frac{\\partial h}{\\partial s}\\right)_P = T, \\quad \\Delta h_{\\text{ideal}} = h_1 - h_{2s}, \\quad \\eta_{\\text{turb}} = \\frac{h_1 - h_2}{h_1 - h_{2s}}$$",
+                        "description": "An $h$-$s$ (enthalpy vs. entropy) coordinate chart used for steam turbines, nozzles, and refrigeration. Isobaric lines have slope equal to absolute temperature $T$. Vertical lines represent ideal isentropic processes ($s = \\text{const}$); deviation to the right shows irreversibility.",
+                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
+                },
+                {
+                        "title": "Regrigeration Cycles",
+                        "formula": "$$\\text{COP}_R = \\frac{q_L}{w_{\\text{net,in}}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad \\dot{Q}_L = \\dot{m}(h_1 - h_4), \\quad \\dot{W}_{\\text{comp}} = \\dot{m}(h_2 - h_1)$$",
+                        "description": "Standard cycle consists of 4 processes: (1-2) isentropic compression in compressor, (2-3) isobaric heat rejection in condenser ($q_H$), (3-4) isenthalpic throttling expansion valve ($h_3 = h_4$), and (4-1) isobaric heat absorption in evaporator ($q_L$).",
+                        "examTip": "Found in Mechanical: Refrigeration & HVAC. Remember throttling expansion is isenthalpic ($h_4 = h_3$). 1 ton of refrigeration = $12{,}000 \\, \\text{Btu/hr} = 3.517 \\, \\text{kW} = 200 \\, \\text{Btu/min}$."
+                },
+                {
+                        "title": "Coefficient of Performance (COP)",
+                        "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
+                        "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
+                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$."
+                },
+                {
+                        "title": "COP of refrigeration vs. COP of Heat Pump",
+                        "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
+                        "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
+                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$."
+                },
+                {
+                        "title": "Periodic Table of elements",
+                        "formula": "$$Z = \\text{protons}, \\quad A = Z + N, \\quad \\text{Trend: } \\text{IE, EN} \\nearrow, \\quad r_{\\text{atomic}} \\swarrow$$",
+                        "description": "Organizes chemical elements by increasing atomic number $Z$ and recurring electronic configurations. Periodic trends across a period (left to right): atomic radius decreases while ionization energy (IE) and electronegativity (EN) increase. Down a group (top to bottom): atomic radius increases while electronegativity and ionization energy decrease.",
+                        "examTip": "Found in Chemistry: Periodic Table. Group 1 = alkali metals ($+1$), Group 2 = alkaline earth metals ($+2$), Group 17 = halogens ($-1$), Group 18 = noble gases. Electronegativity peaks at Fluorine ($4.0$)."
+                },
+                {
+                        "title": "pH scale",
+                        "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
+                        "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                },
+                {
+                        "title": "Alkanes, Alkenes, Alkynes",
+                        "formula": "$$\\text{Alkanes: } \\text{C}_n \\text{H}_{2n+2}, \\quad \\text{Alkenes: } \\text{C}_n \\text{H}_{2n}, \\quad \\text{Alkynes: } \\text{C}_n \\text{H}_{2n-2}$$",
+                        "description": "Fundamental classes of aliphatic hydrocarbons classified by carbon-carbon bond saturation. Alkanes are saturated with single $\\text{C}-\\text{C}$ bonds ($sp^3$, e.g. methane, propane). Alkenes contain at least one carbon-carbon double bond ($\\text{C}=\\text{C}$, $sp^2$, e.g. ethylene). Alkynes contain at least one carbon-carbon triple bond ($\\text{C}\\equiv\\text{C}$, $sp$, e.g. acetylene).",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces."
+                },
+                {
+                        "title": "Aerobic vs Anaerobic Processes",
+                        "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
+                        "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
+                        "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
+                },
+                {
+                        "title": "Photosynthesis",
+                        "formula": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + h\\nu \\xrightarrow{\\text{chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2, \\quad \\Delta G^\\circ = +2870\\text{ kJ/mol}$$",
+                        "description": "An endergonic biochemical process by which photoautotrophic organisms (plants, algae, cyanobacteria) harness solar radiant energy $h\\nu$ to synthesize high-energy carbohydrates (glucose) from carbon dioxide and water, releasing oxygen as a byproduct. Forms the energetic foundation of primary biological productivity and the global carbon-oxygen cycle.",
+                        "examTip": "Found in Environmental Engineering: Ecological Systems and Water Quality. In surface waters, photosynthetic algal blooms cause daytime dissolved oxygen (DO) supersaturation and pH increases (as $\\text{CO}_2$ is consumed), followed by nighttime DO depletion via respiration."
+                },
+                {
+                        "title": "Alcohols",
+                        "formula": "$$\\text{R}-\\text{OH}, \\quad 2\\text{R}-\\text{OH} + 2\\text{Na} \\to 2\\text{R}-\\text{O}^-\\text{Na}^+ + \\text{H}_2\\uparrow, \\quad \\text{R}-\\text{CH}_2\\text{OH} \\xrightarrow{[\\text{O}]} \\text{R}-\\text{CHO} \\xrightarrow{[\\text{O}]} \\text{R}-\\text{COOH}$$",
+                        "description": "Organic compounds characterized by one or more hydroxyl ($-\\text{OH}$) functional groups covalently bonded to a saturated $sp^3$ carbon atom. Classified as primary ($1^\\circ$), secondary ($2^\\circ$), or tertiary ($3^\\circ$). Capable of intermolecular hydrogen bonding, conferring significantly higher boiling points and water miscibility than corresponding alkanes or ethers.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Primary alcohols oxidize to aldehydes and subsequently carboxylic acids. Secondary alcohols oxidize to ketones. Tertiary alcohols resist mild oxidation because the carbon bearing the $-\\text{OH}$ group has no hydrogen atom attached."
+                },
+                {
+                        "title": "Ethers, Carboxylic Acids and Esters",
+                        "formula": "$$\\text{Ether: } \\text{R}-\\text{O}-\\text{R}', \\quad \\text{Acid: } \\text{R}-\\text{COOH}, \\quad \\text{Ester: } \\text{R}-\\text{COO}-\\text{R}', \\quad \\text{RCOOH} + \\text{R'OH} \\xrightleftharpoons{\\text{H}^+} \\text{RCOOR}' + \\text{H}_2\\text{O}$$",
+                        "description": "Oxygen-bearing organic functional groups. Ethers ($\\text{R}-\\text{O}-\\text{R}'$) are relatively unreactive polar solvents lacking hydroxyl hydrogen bonding. Carboxylic acids ($\\text{R}-\\text{COOH}$) are weak organic acids that undergo resonance-stabilized ionization ($-\\text{COO}^-$). Fischer esterification condenses a carboxylic acid and an alcohol under acid catalysis to produce an ester ($\\text{R}-\\text{COO}-\\text{R}'$) and water.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Carboxylic acid boiling points are exceptionally high due to stable hydrogen-bonded dimer formation. Esters typically possess pleasant fruity aromas and are hydrolyzed via saponification with aqueous base ($\\text{NaOH}$)."
+                },
+                {
+                        "title": "Aldehydes and Ketones",
+                        "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
+                        "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
+                },
+                {
+                        "title": "Carcinogens",
+                        "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
+                        "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
+                        "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
+                },
+                {
+                        "title": "Safety Data Sheet (SDS)",
+                        "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
+                        "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
+                        "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
+                },
+                {
+                        "title": "Signal Words",
+                        "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
+                        "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
+                        "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
+                },
+                {
+                        "title": "Flammability, LFL and UFL",
+                        "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
+                        "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                },
+                {
+                        "title": "Confined Space Safety",
+                        "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
+                        "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
+                        "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
+                },
+                {
+                        "title": "Dose-Response Curves",
+                        "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
+                        "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
+                        "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
+                },
+                {
+                        "title": "Chemical Compatibility Chart",
+                        "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
+                        "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                },
+                {
+                        "title": "Exposure Limits",
+                        "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
+                        "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
+                        "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
                 }
         ],
         "Industrial": [
@@ -3984,7 +6306,10 @@
                         "title": "Binomial Distribution Probability Mass Function and Moments",
                         "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
                         "description": "Models number of successes $k$ in $n$ independent Bernoulli trials with constant success probability $p$; used for lot acceptance sampling and attribute defect analysis.",
-                        "examTip": "Found in Engineering Probability & Statistics. When $n \\ge 30$ and $n p \\ge 5$, the normal distribution provides an accurate continuous approximation."
+                        "examTip": "Found in Engineering Probability & Statistics. When $n \\ge 30$ and $n p \\ge 5$, the normal distribution provides an accurate continuous approximation.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Hypergeometric Distribution for Finite Population Sampling",
@@ -4525,6 +6850,483 @@
                         "videoUrl": "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
                         "videoTitle": "Rolling Element Bearing Rated Life (L10) Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
+                },
+                {
+                        "title": "Resolution of a Force",
+                        "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
+                        "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                },
+                {
+                        "title": "Moments (Couples)",
+                        "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
+                        "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                },
+                {
+                        "title": "Area Moment of Inertia",
+                        "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
+                        "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
+                        "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
+                },
+                {
+                        "title": "Polar moment of inertia",
+                        "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
+                        "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                },
+                {
+                        "title": "Radius of Gyration",
+                        "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
+                        "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                },
+                {
+                        "title": "Product of Inertia",
+                        "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
+                        "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                },
+                {
+                        "title": "Method of Joints",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
+                        "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
+                        "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
+                },
+                {
+                        "title": "Method of Sections",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
+                        "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                },
+                {
+                        "title": "Lami's Theorem for Concurrent Forces",
+                        "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
+                        "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                },
+                {
+                        "title": "Limiting friction",
+                        "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
+                        "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                },
+                {
+                        "title": "Types of Fits",
+                        "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
+                        "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
+                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
+                },
+                {
+                        "title": "First and vs Third angle projection",
+                        "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
+                        "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                },
+                {
+                        "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
+                        "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
+                        "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
+                },
+                {
+                        "title": "Carcinogens",
+                        "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
+                        "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
+                        "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
+                },
+                {
+                        "title": "Safety Data Sheet (SDS)",
+                        "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
+                        "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
+                        "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
+                },
+                {
+                        "title": "Signal Words",
+                        "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
+                        "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
+                        "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
+                },
+                {
+                        "title": "Flammability, LFL and UFL",
+                        "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
+                        "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                },
+                {
+                        "title": "Confined Space Safety",
+                        "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
+                        "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
+                        "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
+                },
+                {
+                        "title": "Dose-Response Curves",
+                        "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
+                        "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
+                        "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
+                },
+                {
+                        "title": "Chemical Compatibility Chart",
+                        "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
+                        "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                },
+                {
+                        "title": "Exposure Limits",
+                        "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
+                        "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
+                        "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
+                },
+                {
+                        "title": "Noise Pollution Measurements",
+                        "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
+                        "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
                 }
         ],
         "Environmental": [
@@ -5412,6 +8214,567 @@
                         "videoUrl": "assets/videos/Rankine_Lateral_Earth_Pressure_Coefficients.mp4",
                         "videoTitle": "Rankine Lateral Earth Pressure Coefficients Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
+                },
+                {
+                        "title": "Newton's Law of Viscosity",
+                        "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
+                        "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                },
+                {
+                        "title": "Newtonian vs Non-Newtonian Fluid",
+                        "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
+                        "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                },
+                {
+                        "title": "Surface Tension",
+                        "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
+                        "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                },
+                {
+                        "title": "Capillarity",
+                        "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                        "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                },
+                {
+                        "title": "Manometers",
+                        "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
+                        "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                },
+                {
+                        "title": "Bouyancy Force",
+                        "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
+                        "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
+                },
+                {
+                        "title": "Pitot Tube",
+                        "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
+                        "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                },
+                {
+                        "title": "Venturi Meter",
+                        "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
+                        "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
+                        "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
+                },
+                {
+                        "title": "Orifice",
+                        "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
+                        "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
+                        "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
+                },
+                {
+                        "title": "Drag Coefficient and Lift coefficient",
+                        "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
+                        "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
+                },
+                {
+                        "title": "Orifice Discharging Freely into Atmosphere",
+                        "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
+                        "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
+                        "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
+                },
+                {
+                        "title": "Stagnation Temperature",
+                        "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
+                        "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
+                        "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
+                },
+                {
+                        "title": "Net POsitive Suction Head (NPSH)",
+                        "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
+                        "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                },
+                {
+                        "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
+                        "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
+                        "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
+                },
+                {
+                        "title": "Mole fraction vs. mass fraction",
+                        "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
+                        "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
+                        "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
+                },
+                {
+                        "title": "Psychrometric Chart",
+                        "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
+                        "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
+                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy."
+                },
+                {
+                        "title": "Dry-bulb, Wet-bulb and dew-point temperature",
+                        "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
+                        "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
+                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases."
+                },
+                {
+                        "title": "Absolute humidity vs. Relative humidity",
+                        "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
+                        "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
+                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically."
+                },
+                {
+                        "title": "HVAC Processes",
+                        "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
+                        "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
+                        "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
+                },
+                {
+                        "title": "Periodic Table of elements",
+                        "formula": "$$Z = \\text{protons}, \\quad A = Z + N, \\quad \\text{Trend: } \\text{IE, EN} \\nearrow, \\quad r_{\\text{atomic}} \\swarrow$$",
+                        "description": "Organizes chemical elements by increasing atomic number $Z$ and recurring electronic configurations. Periodic trends across a period (left to right): atomic radius decreases while ionization energy (IE) and electronegativity (EN) increase. Down a group (top to bottom): atomic radius increases while electronegativity and ionization energy decrease.",
+                        "examTip": "Found in Chemistry: Periodic Table. Group 1 = alkali metals ($+1$), Group 2 = alkaline earth metals ($+2$), Group 17 = halogens ($-1$), Group 18 = noble gases. Electronegativity peaks at Fluorine ($4.0$)."
+                },
+                {
+                        "title": "pH scale",
+                        "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
+                        "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                },
+                {
+                        "title": "Alkanes, Alkenes, Alkynes",
+                        "formula": "$$\\text{Alkanes: } \\text{C}_n \\text{H}_{2n+2}, \\quad \\text{Alkenes: } \\text{C}_n \\text{H}_{2n}, \\quad \\text{Alkynes: } \\text{C}_n \\text{H}_{2n-2}$$",
+                        "description": "Fundamental classes of aliphatic hydrocarbons classified by carbon-carbon bond saturation. Alkanes are saturated with single $\\text{C}-\\text{C}$ bonds ($sp^3$, e.g. methane, propane). Alkenes contain at least one carbon-carbon double bond ($\\text{C}=\\text{C}$, $sp^2$, e.g. ethylene). Alkynes contain at least one carbon-carbon triple bond ($\\text{C}\\equiv\\text{C}$, $sp$, e.g. acetylene).",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces."
+                },
+                {
+                        "title": "Aerobic vs Anaerobic Processes",
+                        "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
+                        "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
+                        "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
+                },
+                {
+                        "title": "Photosynthesis",
+                        "formula": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + h\\nu \\xrightarrow{\\text{chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2, \\quad \\Delta G^\\circ = +2870\\text{ kJ/mol}$$",
+                        "description": "An endergonic biochemical process by which photoautotrophic organisms (plants, algae, cyanobacteria) harness solar radiant energy $h\\nu$ to synthesize high-energy carbohydrates (glucose) from carbon dioxide and water, releasing oxygen as a byproduct. Forms the energetic foundation of primary biological productivity and the global carbon-oxygen cycle.",
+                        "examTip": "Found in Environmental Engineering: Ecological Systems and Water Quality. In surface waters, photosynthetic algal blooms cause daytime dissolved oxygen (DO) supersaturation and pH increases (as $\\text{CO}_2$ is consumed), followed by nighttime DO depletion via respiration."
+                },
+                {
+                        "title": "Alcohols",
+                        "formula": "$$\\text{R}-\\text{OH}, \\quad 2\\text{R}-\\text{OH} + 2\\text{Na} \\to 2\\text{R}-\\text{O}^-\\text{Na}^+ + \\text{H}_2\\uparrow, \\quad \\text{R}-\\text{CH}_2\\text{OH} \\xrightarrow{[\\text{O}]} \\text{R}-\\text{CHO} \\xrightarrow{[\\text{O}]} \\text{R}-\\text{COOH}$$",
+                        "description": "Organic compounds characterized by one or more hydroxyl ($-\\text{OH}$) functional groups covalently bonded to a saturated $sp^3$ carbon atom. Classified as primary ($1^\\circ$), secondary ($2^\\circ$), or tertiary ($3^\\circ$). Capable of intermolecular hydrogen bonding, conferring significantly higher boiling points and water miscibility than corresponding alkanes or ethers.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Primary alcohols oxidize to aldehydes and subsequently carboxylic acids. Secondary alcohols oxidize to ketones. Tertiary alcohols resist mild oxidation because the carbon bearing the $-\\text{OH}$ group has no hydrogen atom attached."
+                },
+                {
+                        "title": "Ethers, Carboxylic Acids and Esters",
+                        "formula": "$$\\text{Ether: } \\text{R}-\\text{O}-\\text{R}', \\quad \\text{Acid: } \\text{R}-\\text{COOH}, \\quad \\text{Ester: } \\text{R}-\\text{COO}-\\text{R}', \\quad \\text{RCOOH} + \\text{R'OH} \\xrightleftharpoons{\\text{H}^+} \\text{RCOOR}' + \\text{H}_2\\text{O}$$",
+                        "description": "Oxygen-bearing organic functional groups. Ethers ($\\text{R}-\\text{O}-\\text{R}'$) are relatively unreactive polar solvents lacking hydroxyl hydrogen bonding. Carboxylic acids ($\\text{R}-\\text{COOH}$) are weak organic acids that undergo resonance-stabilized ionization ($-\\text{COO}^-$). Fischer esterification condenses a carboxylic acid and an alcohol under acid catalysis to produce an ester ($\\text{R}-\\text{COO}-\\text{R}'$) and water.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Carboxylic acid boiling points are exceptionally high due to stable hydrogen-bonded dimer formation. Esters typically possess pleasant fruity aromas and are hydrolyzed via saponification with aqueous base ($\\text{NaOH}$)."
+                },
+                {
+                        "title": "Aldehydes and Ketones",
+                        "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
+                        "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
+                },
+                {
+                        "title": "Carcinogens",
+                        "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
+                        "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
+                        "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
+                },
+                {
+                        "title": "Safety Data Sheet (SDS)",
+                        "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
+                        "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
+                        "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
+                },
+                {
+                        "title": "Signal Words",
+                        "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
+                        "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
+                        "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
+                },
+                {
+                        "title": "Flammability, LFL and UFL",
+                        "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
+                        "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                },
+                {
+                        "title": "Confined Space Safety",
+                        "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
+                        "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
+                        "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
+                },
+                {
+                        "title": "Dose-Response Curves",
+                        "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
+                        "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
+                        "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
+                },
+                {
+                        "title": "Chemical Compatibility Chart",
+                        "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
+                        "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                },
+                {
+                        "title": "Exposure Limits",
+                        "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
+                        "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
+                        "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
+                },
+                {
+                        "title": "Noise Pollution Measurements",
+                        "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
+                        "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
                 }
         ],
         "Other": [
@@ -5860,7 +9223,10 @@
                         "title": "Binomial Distribution Mean and Variance",
                         "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
                         "description": "Discrete probability distribution governing count of successes $k$ across $n$ independent trials with identical Bernoulli probability $p$.",
-                        "examTip": "Found in Probability and Statistics. Normal approximation is valid when both $n p \\ge 5$ and $n(1-p) \\ge 5$."
+                        "examTip": "Found in Probability and Statistics. Normal approximation is valid when both $n p \\ge 5$ and $n(1-p) \\ge 5$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Standard Normal Distribution $Z$-Transformation",
@@ -6428,6 +9794,822 @@
                         "videoUrl": "assets/videos/AGMA_Lewis_Bending_Equation_for_Spur_Gear_Teeth.mp4",
                         "videoTitle": "AGMA Lewis Bending Equation for Spur Gear Teeth Explainer",
                         "videoDuration": "10s"
+                },
+                {
+                        "title": "Angle between Two Non-Vertical Lines",
+                        "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
+                        "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
+                        "videoUrl": "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4",
+                        "videoTitle": "Angle Between Lines with Slopes m1 and m2 Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Slope-Intercept Form of a Linear Equation",
+                        "formula": "$$y = m x + b$$",
+                        "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
+                        "videoUrl": "assets/videos/Slope_Intercept_Form.mp4",
+                        "videoTitle": "Slope-Intercept Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation and Quadratic Formula",
+                        "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
+                        "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
+                        "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
+                        "videoUrl": "assets/videos/Quadratic_Equation.mp4",
+                        "videoTitle": "Quadratic Equation and Formula Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+                        "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
+                        "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
+                        "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
+                        "videoUrl": "assets/videos/Complex_Number_Polar_and_Rectangular_Form.mp4",
+                        "videoTitle": "Complex Number Polar and Rectangular Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Sines for Oblique Triangles",
+                        "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
+                        "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
+                        "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
+                        "videoUrl": "assets/videos/Law_of_Sines.mp4",
+                        "videoTitle": "Law of Sines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Law of Cosines for Oblique Triangles",
+                        "formula": "$$c^2 = a^2 + b^2 - 2 a b \\cos C$$",
+                        "description": "Generalizes the Pythagorean theorem to any oblique triangle by relating the square of any side to the sum of squares of the other two sides minus twice their product times the cosine of the included angle.",
+                        "examTip": "Found in Mathematics: Trigonometry and Statics. Solves triangles when given SAS (two sides and included angle) or SSS (three sides: $\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$). When $C = 90^\\circ$, $\\cos 90^\\circ = 0$, reducing directly to $c^2 = a^2 + b^2$."
+                },
+                {
+                        "title": "Double-Angle Trigonometric Identities",
+                        "formula": "$$\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta, \\quad \\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta, \\quad \\tan(2\\theta) = \\frac{2\\tan\\theta}{1 - \\tan^2\\theta}$$",
+                        "description": "Expresses trigonometric functions of double angles $2\\theta$ in terms of single-angle functions. Equivalent forms for cosine include $\\cos(2\\theta) = 2\\cos^2\\theta - 1 = 1 - 2\\sin^2\\theta$.",
+                        "examTip": "Found in Mathematics: Trigonometry and Calculus. The rearranged power-reduction identities $\\sin^2\\theta = \\frac{1 - \\cos(2\\theta)}{2}$ and $\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2}$ are essential for integrating squared trigonometric integrals.",
+                        "videoUrl": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+                        "videoTitle": "Trigonometric Ratios of Double Angles Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Eccentricity Classification of Conic Sections",
+                        "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
+                        "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
+                        "videoUrl": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+                        "videoTitle": "Eccentricities of Conic Sections Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "General Second-Degree Conic Section Discriminant",
+                        "formula": "$$A x^2 + B x y + C y^2 + D x + E y + F = 0, \\quad \\Delta = B^2 - 4 A C$$",
+                        "description": "Classifies the geometric profile of any quadratic curve in two variables using the conic discriminant $\\Delta = B^2 - 4 A C$: an ellipse if $\\Delta < 0$, a parabola if $\\Delta = 0$, and a hyperbola if $\\Delta > 0$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. When the cross-product term is absent ($B = 0$, axes aligned): if $A$ and $C$ share the same sign ($A C > 0$), it is an ellipse; if opposite signs ($A C < 0$), a hyperbola; if either $A=0$ or $C=0$, a parabola.",
+                        "videoUrl": "assets/videos/General_Form_of_the_Conic_Section_Equation.mp4",
+                        "videoTitle": "General Form of the Conic Section Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Arithmetic vs Geometric Progressions (Sequences & Series)",
+                        "formula": "$$\\text{AP: } a_n = a_1 + (n - 1)d, \\; S_n = \\frac{n(a_1 + a_n)}{2}; \\quad \\text{GP: } a_n = a_1 r^{n-1}, \\; S_n = \\frac{a_1(1 - r^n)}{1 - r}, \\; S_\\infty = \\frac{a_1}{1 - r} \\; (|r| < 1)$$",
+                        "description": "Contrasts linear constant-difference progressions (Arithmetic Progression with common difference $d$) against exponential constant-ratio progressions (Geometric Progression with common ratio $r$). Infinite geometric series converge if and only if $|r| < 1$.",
+                        "examTip": "Found in Mathematics: Algebra & Engineering Economics. In an AP, any term is the arithmetic mean of adjacent terms ($a_k = \\frac{a_{k-1} + a_{k+1}}{2}$). In a GP, $a_k = \\sqrt{a_{k-1} a_{k+1}}$ (geometric mean). Compound interest is an applied geometric sequence.",
+                        "videoUrl": "assets/videos/Arithmetic_vs_Geometric_Progression.mp4",
+                        "videoTitle": "Arithmetic vs Geometric Progression Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Homogeneous vs Non-Homogeneous Linear Differential Equations",
+                        "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
+                        "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
+                        "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
+                        "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Order and Degree of Differential Equations",
+                        "formula": "$$\\left[\\frac{d^n y}{dx^n}\\right]^m + f\\left(x, y, \\dots, \\frac{d^{n-1}y}{dx^{n-1}}\\right) = 0 \\implies \\text{Order} = n, \\quad \\text{Degree} = m$$",
+                        "description": "Defines the order of a differential equation as the highest derivative present ($n$), and the degree as the highest power/exponent ($m$) to which the highest derivative is raised after clearing fractional exponents and radicals.",
+                        "examTip": "Found in Mathematics: Differential Equations. Watch for exam traps: $\\left(\\frac{d^2 y}{dx^2}\\right)^3 + \\left(\\frac{dy}{dx}\\right)^5 = 0$ has Order = 2 and Degree = 3 (the exponent of the highest derivative, not the largest exponent in the equation!).",
+                        "videoUrl": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+                        "videoTitle": "Degree and Order of Differential Equation Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Laplace Transform Definition and Derivative Properties",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Matrix Multiplication and Dimension Compatibility",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
+                        "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                },
+                {
+                        "title": "Inverse of a Square Matrix and Adjugate Formula",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad A A^{-1} = A^{-1} A = I$$",
+                        "description": "Calculates the inverse $A^{-1}$ of a non-singular square matrix ($\\det(A) \\neq 0$). For a $2 \\times 2$ matrix: $\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. If $\\det(A) = 0$, the matrix is singular and cannot be inverted. Inverse of product reverses: $(A B)^{-1} = B^{-1} A^{-1}$.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Determinants of 2x2 and 3x3 Matrices",
+                        "formula": "$$\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix} = a d - b c, \\quad \\begin{vmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{vmatrix} = a(e i - f h) - b(d i - f g) + c(d h - e g)$$",
+                        "description": "Computes the scalar determinant for $2 \\times 2$ and $3 \\times 3$ matrices using diagonal differences and cofactor row expansion. Represents the volume scaling factor of the linear mapping.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(A B) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping any two rows negates the determinant."
+                },
+                {
+                        "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Vector Dot (Scalar) Product and Cross (Vector) Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta \\, \\hat{\\mathbf{n}} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product produces a scalar measuring vector alignment ($A_x B_x + A_y B_y + A_z B_z$). The cross product produces a perpendicular vector whose magnitude equals the area of the parallelogram spanned by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics/Dynamics. Moment of a force about a point is $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order is crucial!). Work done by a force is scalar $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\cdot \\mathbf{B} + \\mathbf{A} \\cdot \\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "Governs scalar vector multiplication: commutativity, distributivity, self-product equaling squared length, and the orthogonality condition (non-zero vectors are perpendicular if and only if $\\mathbf{A} \\cdot \\mathbf{B} = 0$).",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of vector $\\mathbf{A}$ along $\\mathbf{B}$ is $\\text{proj}_{\\mathbf{B}}\\mathbf{A} = \\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A} \\cdot \\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Algebraic and Geometric Properties of the Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A} \\times \\mathbf{B} + \\mathbf{A} \\times \\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "Governs vector cross products: anticommutativity (reversing operands inverts vector sign), self-cross product yielding zero, distributivity, and parallelism test (cross product is zero if vectors are collinear).",
+                        "examTip": "Found in Mathematics: Vector Operations. Cyclic unit vector relations: $\\mathbf{i} \\times \\mathbf{j} = \\mathbf{k}$, $\\mathbf{j} \\times \\mathbf{k} = \\mathbf{i}$, $\\mathbf{k} \\times \\mathbf{i} = \\mathbf{j}$. Reversing direction gives $-\\mathbf{k}, -\\mathbf{i}, -\\mathbf{j}$."
+                },
+                {
+                        "title": "Newton-Raphson Method for Numerical Root Finding",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "Iterative numerical algorithm for finding successively better approximations to roots of a real-valued function $f(x) = 0$ using tangent lines. Exhibits quadratic convergence ($|e_{n+1}| \\approx C |e_n|^2$) near simple roots.",
+                        "examTip": "Found in Mathematics: Numerical Methods. The method fails when $f'(x_n) \\approx 0$ (division by near-zero slope causing huge leaps or divergence) or when oscillations occur around inflection points.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton’s Method for Function Optimization and Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [H(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Second-order optimization technique that locates local extrema by finding stationary points where $f'(x) = 0$. In multiple dimensions, updates use the gradient vector $\\nabla f$ and the inverse Hessian matrix $H^{-1}$.",
+                        "examTip": "Found in Mathematics: Numerical Methods and Optimization. Requires $f''(x^*) > 0$ (Hessian positive definite) to guarantee convergence toward a local minimum rather than a maximum."
+                },
+                {
+                        "title": "Euler’s Forward Method for First-Order ODEs",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit single-step numerical procedure for solving first-order ordinary differential equations with initial condition $y(x_0) = y_0$ using forward step size $h$. Local truncation error is $O(h^2)$ and global error is $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. FE exam questions typically test 1 or 2 steps: compute slope $k_1 = f(x_0, y_0)$, update $y_1 = y_0 + h k_1$, and repeat for $y_2$."
+                },
+                {
+                        "title": "Trapezoidal Rule for Numerical Integration",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                },
+                {
+                        "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                },
+                {
+                        "title": "Laplace Transforms",
+                        "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
+                        "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                },
+                {
+                        "title": "Multiplication of Two Matrices",
+                        "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{ij} = \\sum_{k=1}^n a_{ik} b_{kj}$$",
+                        "description": "Matrix multiplication is valid only when inner dimensions match (number of columns of $A$ equals rows of $B$). The operation is associative ($A(BC) = (AB)C$) and distributive, but generally non-commutative ($AB \\neq BA$).",
+                        "examTip": "Found in Mathematics: Linear Algebra. Remember transpose of a product reverses order: $(AB)^T = B^T A^T$. $AB = 0$ does not imply $A = 0$ or $B = 0$."
+                },
+                {
+                        "title": "Inverse of a Matrix",
+                        "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
+                        "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
+                        "videoUrl": "assets/videos/Inverse_of_a_Matrix.mp4",
+                        "videoTitle": "Inverse of a Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "2 X 2 and 3 X 3 Determinants",
+                        "formula": "$$\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = ad - bc, \\quad \\det\\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ g & h & i \\end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$",
+                        "description": "The determinant represents the geometric volume scaling factor of a linear transformation. Computed using diagonal differences for $2 \\times 2$ and Laplace cofactor expansion along any row or column for $3 \\times 3$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. Key properties: $\\det(A^T) = \\det(A)$, $\\det(AB) = \\det(A)\\det(B)$, and for an $n \\times n$ matrix, $\\det(k A) = k^n \\det(A)$. Swapping two rows changes the sign."
+                },
+                {
+                        "title": "Length of a Vector and Unit Vector",
+                        "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
+                        "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
+                        "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
+                },
+                {
+                        "title": "Dot and Cross Product of Vectors",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\cos\\theta = A_x B_x + A_y B_y + A_z B_z, \\quad \\mathbf{A} \\times \\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ A_x & A_y & A_z \\\\ B_x & B_y & B_z \\end{vmatrix}$$",
+                        "description": "The dot product yields a scalar measuring vector projection and alignment. The cross product yields a pseudovector perpendicular to both $\\mathbf{A}$ and $\\mathbf{B}$ with magnitude $\\|\\mathbf{A}\\|\\|\\mathbf{B}\\|\\sin\\theta$, equal to the area of the spanned parallelogram.",
+                        "examTip": "Found in Mathematics: Vectors and Statics/Dynamics. Moment of force: $\\mathbf{M} = \\mathbf{r} \\times \\mathbf{F}$ (order matters!). Work done by force: $W = \\mathbf{F} \\cdot \\mathbf{d}$."
+                },
+                {
+                        "title": "Properties of Dot Product",
+                        "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
+                        "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
+                        "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
+                },
+                {
+                        "title": "Properties of Cross Product",
+                        "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
+                        "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
+                        "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
+                },
+                {
+                        "title": "Newton's Method for Root Extraction",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$",
+                        "description": "An iterative open root-finding algorithm that approximates roots of nonlinear equations $f(x) = 0$ by following the tangent line at $(x_n, f(x_n))$ to its x-intercept. Features quadratic convergence near simple roots ($|e_{n+1}| \\approx C |e_n|^2$).",
+                        "examTip": "Found in Mathematics: Numerical Methods. Fails if $f'(x_n) \\approx 0$ (horizontal slope causes division by zero or divergence) or when inflection points trigger limit-cycle oscillations.",
+                        "videoUrl": "assets/videos/Newtons_Method_for_Root_Extraction.mp4",
+                        "videoTitle": "Newton's Method for Root Extraction Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Newton's Method of Minimization",
+                        "formula": "$$x_{n+1} = x_n - \\frac{f'(x_n)}{f''(x_n)}, \\quad \\mathbf{x}_{k+1} = \\mathbf{x}_k - [\\mathbf{H}(f(\\mathbf{x}_k))]^{-1} \\nabla f(\\mathbf{x}_k)$$",
+                        "description": "Locates local extrema of an objective function $f(x)$ by setting the derivative to zero ($f'(x) = 0$). In multivariable optimization, the update uses the gradient vector $\\nabla f$ and the inverse of the symmetric Hessian matrix $\\mathbf{H}$.",
+                        "examTip": "Found in Mathematics: Optimization and Industrial Engineering. For a local minimum, the second derivative must be positive ($f''(x^*) > 0$), or the Hessian matrix must be positive definite."
+                },
+                {
+                        "title": "Euler's or Forward Rectangular Rule",
+                        "formula": "$$y_{n+1} = y_n + h \\, f(x_n, y_n), \\quad \\text{for } \\frac{dy}{dx} = f(x, y)$$",
+                        "description": "Explicit first-order numerical integration method that steps along the tangent slope $f(x_n, y_n)$ across step size $h = x_{n+1} - x_n$. Has a local truncation error of $O(h^2)$ and a cumulative global error of $O(h)$.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Questions typically test 1 or 2 iterations. To ensure numerical stability, step size $h$ must be kept sufficiently small, especially for stiff systems."
+                },
+                {
+                        "title": "Simpson's Rule/Parabolic Rule",
+                        "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
+                        "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                },
+                {
+                        "title": "Median of a sample for odd and even number of observations",
+                        "formula": "$$\\tilde{x} = \\begin{cases} x_{\\left(\\frac{n+1}{2}\\right)}, & n \\text{ is odd} \\\\ \\frac{1}{2}\\left(x_{\\left(\\frac{n}{2}\\right)} + x_{\\left(\\frac{n}{2} + 1\\right)}\\right), & n \\text{ is even} \\end{cases}$$",
+                        "description": "The sample median represents the 50th percentile of an ordered sample $x_{(1)} \\le x_{(2)} \\le \\dots \\le x_{(n)}$. For odd $n$, it is the single middle observation; for even $n$, it is the arithmetic average of the two middle observations.",
+                        "examTip": "Found in Engineering Probability and Statistics. Unlike the sample mean $\\bar{x}$, the median is a robust measure of central tendency unaffected by extreme outliers or skewed distributions.",
+                        "videoUrl": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+                        "videoTitle": "Median of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Mode of a sample",
+                        "formula": "$$\\text{Mode} = \\arg\\max_x \\{f(x)\\}$$",
+                        "description": "The mode is the observation value that occurs with the highest frequency in a sample or data set. A distribution can be unimodal, bimodal, multimodal, or have no mode if all observations appear with equal frequency.",
+                        "examTip": "Found in Engineering Probability and Statistics. For symmetric unimodal distributions (e.g. Normal), $\\text{Mean} = \\text{Median} = \\text{Mode}$. For right-skewed data: $\\text{Mode} < \\text{Median} < \\text{Mean}$.",
+                        "videoUrl": "assets/videos/Mode_of_a_sample.mp4",
+                        "videoTitle": "Mode of a Sample Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Variance and Standard Deviation",
+                        "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
+                        "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                },
+                {
+                        "title": "Law of Total Probability",
+                        "formula": "$$P(A) = \\sum_{i=1}^k P(A \\mid B_i) P(B_i)$$",
+                        "description": "Expresses the marginal probability of an event $A$ as the weighted sum of its conditional probabilities across a mutually exclusive and exhaustive partition of events $B_1, B_2, \\dots, B_k$ (where $\\sum P(B_i) = 1$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Forms the denominator of Bayes' Theorem: $P(B_j \\mid A) = \\frac{P(A \\mid B_j) P(B_j)}{\\sum P(A \\mid B_i) P(B_i)}$. Often solved using probability tree diagrams."
+                },
+                {
+                        "title": "Law of Compound or Joint Probability",
+                        "formula": "$$P(A \\cap B) = P(A \\mid B) P(B) = P(B \\mid A) P(A), \\quad P(A \\cap B) = P(A) P(B) \\text{ (independent)}$$",
+                        "description": "The multiplication rule computes the joint probability of two events occurring together. If events $A$ and $B$ are statistically independent, knowledge of $B$ does not alter $A$'s probability ($P(A \\mid B) = P(A)$).",
+                        "examTip": "Found in Engineering Probability and Statistics. Do not confuse mutually exclusive ($P(A \\cap B) = 0$) with independent ($P(A \\cap B) = P(A)P(B)$). Two events with non-zero probability cannot be both!"
+                },
+                {
+                        "title": "Probability Density Function",
+                        "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
+                        "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
+                        "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
+                },
+                {
+                        "title": "Cumulative Distribution Functions",
+                        "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
+                        "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
+                        "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
+                },
+                {
+                        "title": "Expected Values",
+                        "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
+                        "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
+                        "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
+                },
+                {
+                        "title": "Binomial Distribution",
+                        "formula": "$$P(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k} = \\frac{n!}{k!(n - k)!} p^k q^{n - k}, \\quad \\mu = n p, \\quad \\sigma^2 = n p (1 - p)$$",
+                        "description": "Models the number of successes $k$ in $n$ independent Bernoulli trials, each having identical success probability $p$. Assumes replacement or an infinite population where trial outcomes are mutually independent.",
+                        "examTip": "Found in Engineering Probability and Statistics. Key problem indicators: fixed number of trials $n$, binary pass/fail outcomes, constant probability $p$. For large $n$ and small $p$, approximates Poisson with $\\lambda = n p$.",
+                        "videoUrl": "assets/videos/Binomial_Distribution.mp4",
+                        "videoTitle": "Binomial Distribution Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Null Hypothesis",
+                        "formula": "$$Z_{\\text{test}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}, \\quad \\text{Reject } H_0 \\text{ if } |Z| > Z_{\\alpha/2} \\text{ or } p\\text{-value} < \\alpha$$",
+                        "description": "The null hypothesis $H_0$ posits no effect, difference, or change ($\\mu = \\mu_0$). Type I error ($\\alpha$) rejects a true $H_0$ (false alarm). Type II error ($\\beta$) fails to reject a false $H_0$. Statistical power is $1 - \\beta$.",
+                        "examTip": "Found in Engineering Probability and Statistics: Hypothesis Testing. For two-tailed tests at 95% confidence ($\\alpha = 0.05$), the critical $Z_{\\alpha/2} = 1.960$. If $\\sigma$ is unknown, use Student's $t$-distribution with $\\nu = n - 1$.",
+                        "videoUrl": "assets/videos/Null_Hypothesis.mp4",
+                        "videoTitle": "Null Hypothesis Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Construction of Confidence Intervals",
+                        "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
+                        "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
+                        "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
+                },
+                {
+                        "title": "Resolution of a Force",
+                        "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
+                        "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
+                        "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$."
+                },
+                {
+                        "title": "Moments (Couples)",
+                        "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
+                        "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                },
+                {
+                        "title": "Area Moment of Inertia",
+                        "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
+                        "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
+                        "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
+                },
+                {
+                        "title": "Polar moment of inertia",
+                        "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
+                        "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                },
+                {
+                        "title": "Radius of Gyration",
+                        "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
+                        "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                },
+                {
+                        "title": "Product of Inertia",
+                        "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
+                        "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                },
+                {
+                        "title": "Method of Joints",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
+                        "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
+                        "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
+                },
+                {
+                        "title": "Method of Sections",
+                        "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
+                        "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                },
+                {
+                        "title": "Lami's Theorem for Concurrent Forces",
+                        "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
+                        "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
+                        "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$."
+                },
+                {
+                        "title": "Limiting friction",
+                        "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
+                        "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                },
+                {
+                        "title": "Instantaneous velocity and Acceleration",
+                        "formula": "$$v(t) = \\frac{ds}{dt}, \\quad a(t) = \\frac{dv}{dt} = \\frac{d^2s}{dt^2}, \\quad a \\, ds = v \\, dv$$",
+                        "description": "Instantaneous velocity is the time derivative of position; instantaneous acceleration is the time derivative of velocity. The chain-rule identity $a \\, ds = v \\, dv$ eliminates explicit time dependence, allowing direct integration between velocity and position.",
+                        "examTip": "Found in Dynamics: Kinematics. Use $a \\, ds = v \\, dv$ whenever acceleration is given as a function of displacement $a(s)$ rather than time $a(t)$."
+                },
+                {
+                        "title": "Normal and Tangential Components",
+                        "formula": "$$\\mathbf{a} = a_t \\hat{\\mathbf{u}}_t + a_n \\hat{\\mathbf{u}}_n = \\left(\\frac{dv}{dt}\\right)\\hat{\\mathbf{u}}_t + \\left(\\frac{v^2}{\\rho}\\right)\\hat{\\mathbf{u}}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                        "description": "In curvilinear planar motion, acceleration decomposes into tangential acceleration $a_t = \\dot{v}$ (rate of change of speed) and normal centripetal acceleration $a_n = v^2/\\rho$ (rate of change of velocity direction toward center of curvature, radius $\\rho$).",
+                        "examTip": "Found in Dynamics: Kinematics. If a particle moves at constant speed along a curve, $a_t = 0$, but normal acceleration is non-zero: $a = a_n = v^2/\\rho$. Radius of curvature is $\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|}$."
+                },
+                {
+                        "title": "Constant Acceleration Motion",
+                        "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
+                        "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration."
+                },
+                {
+                        "title": "variable Acceleration Motion",
+                        "formula": "$$\\int_{v_0}^v dv = \\int_0^t a(t) \\, dt, \\quad \\int_{s_0}^s ds = \\int_0^t v(t) \\, dt, \\quad \\int_{v_0}^v v \\, dv = \\int_{s_0}^s a(s) \\, ds$$",
+                        "description": "When acceleration varies continuously as a function of time $a(t)$, velocity $a(v)$, or position $a(s)$, kinematics equations must be integrated directly using fundamental definitions $v = ds/dt$ and $a = dv/dt = v(dv/ds)$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$."
+                },
+                {
+                        "title": "Relative Motion",
+                        "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
+                        "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$."
+                },
+                {
+                        "title": "Projectile Motion",
+                        "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
+                        "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
+                        "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground."
+                },
+                {
+                        "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
+                        "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
+                        "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
+                        "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$."
+                },
+                {
+                        "title": "Kinetic Energy",
+                        "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
+                        "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
+                        "examTip": "Found in Dynamics: Work and Energy. For pure rolling without slipping: $v_G = r \\omega$. A solid cylinder has $T = \\frac{1}{2}m v^2 + \\frac{1}{2}(\\frac{1}{2}m r^2)(\\frac{v}{r})^2 = \\frac{3}{4}m v^2$."
+                },
+                {
+                        "title": "Rigid Body Rotation About a Fixed Axis",
+                        "formula": "$$\\sum M_O = I_O \\alpha, \\quad \\omega = \\omega_0 + \\alpha t, \\quad \\theta = \\theta_0 + \\omega_0 t + \\frac{1}{2}\\alpha t^2, \\quad v = r \\omega, \\quad a_t = r \\alpha, \\quad a_n = r \\omega^2$$",
+                        "description": "Governs planar rotation of an extended rigid body constrained about fixed rotational axis $O$. The net external moment about $O$ equals mass moment of inertia $I_O$ times angular acceleration $\\alpha$.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinetics. If pivoting about pin $O$, use parallel axis theorem: $I_O = I_G + m d^2$. Radial and tangential reaction forces at pivot are $R_n = m r_G \\omega^2$ and $R_t = m r_G \\alpha$."
+                },
+                {
+                        "title": "Instantaneous Center of Rotation",
+                        "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
+                        "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!"
+                },
+                {
+                        "title": "Kennedy's Rule",
+                        "formula": "$$\\text{IC}_{12}, \\text{IC}_{23}, \\text{IC}_{13} \\text{ lie on a single straight line}$$",
+                        "description": "In mechanism planar kinematics, Kennedy's theorem states that the three instantaneous centers of velocity relating any three bodies in relative motion must lie on a single common straight line. A mechanism with $n$ links has $\\frac{n(n-1)}{2}$ instantaneous centers.",
+                        "examTip": "Found in Dynamics: Mechanism Kinematics. Powerful graphical tool to locate unknown instant centers in four-bar linkages and slider-crank mechanisms by intersecting collinear lines."
+                },
+                {
+                        "title": "Newton's Law of Viscosity",
+                        "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
+                        "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
+                        "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases."
+                },
+                {
+                        "title": "Newtonian vs Non-Newtonian Fluid",
+                        "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
+                        "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                },
+                {
+                        "title": "Surface Tension",
+                        "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
+                        "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                },
+                {
+                        "title": "Capillarity",
+                        "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                        "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                },
+                {
+                        "title": "Manometers",
+                        "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
+                        "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                },
+                {
+                        "title": "Bouyancy Force",
+                        "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
+                        "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
+                },
+                {
+                        "title": "Pitot Tube",
+                        "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
+                        "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                },
+                {
+                        "title": "Venturi Meter",
+                        "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
+                        "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
+                        "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
+                },
+                {
+                        "title": "Orifice",
+                        "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
+                        "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
+                        "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
+                },
+                {
+                        "title": "Drag Coefficient and Lift coefficient",
+                        "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
+                        "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
+                        "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
+                },
+                {
+                        "title": "Orifice Discharging Freely into Atmosphere",
+                        "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
+                        "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
+                        "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
+                },
+                {
+                        "title": "Stagnation Temperature",
+                        "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
+                        "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
+                        "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
+                },
+                {
+                        "title": "Net POsitive Suction Head (NPSH)",
+                        "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
+                        "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
+                        "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$)."
+                },
+                {
+                        "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
+                        "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
+                        "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
+                },
+                {
+                        "title": "Conduction Through a Plain Wall",
+                        "formula": "$$\\dot{Q} = k A \\frac{T_1 - T_2}{L} = \\frac{T_1 - T_2}{R_{\\text{th}}}, \\quad R_{\\text{th}} = \\frac{L}{k A}$$",
+                        "description": "Steady-state 1D heat conduction through a planar slab of thickness $L$, thermal conductivity $k$, and area $A$. Fourier's law integrates to a linear temperature profile with conduction thermal resistance $R_{\\text{th}} = L / (k A)$.",
+                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$."
+                },
+                {
+                        "title": "Conduction Through a Cylindrical Wall",
+                        "formula": "$$\\dot{Q} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2 / r_1)} = \\frac{T_1 - T_2}{R_{\\text{cyl}}}, \\quad R_{\\text{cyl}} = \\frac{\\ln(r_2 / r_1)}{2\\pi k L}$$",
+                        "description": "Radial steady heat conduction through a hollow cylinder (pipe) of length $L$, inner radius $r_1$, and outer radius $r_2$. Because heat flow area increases radially ($A(r) = 2\\pi r L$), the temperature distribution is logarithmic rather than linear.",
+                        "examTip": "Found in Heat Transfer: Conduction. Critical radius of insulation for a cylinder is $r_{cr} = k_{\\text{ins}} / h_{\\text{ext}}$. Adding insulation when $r_o < r_{cr}$ actually increases total heat loss until $r_o = r_{cr}$."
+                },
+                {
+                        "title": "Thermal resistance of an object",
+                        "formula": "$$R_{\\text{cond}} = \\frac{L}{k A}, \\quad R_{\\text{conv}} = \\frac{1}{h A}, \\quad R_{\\text{rad}} = \\frac{1}{h_r A}, \\quad \\dot{Q} = \\frac{\\Delta T_{\\text{overall}}}{R_{\\text{total}}} = U A \\Delta T_{\\text{overall}}$$*",
+                        "description": "Electrical circuit analogy where temperature difference acts as voltage potential, heat rate $\\dot{Q}$ acts as current, and materials act as thermal resistors. Total thermal resistance combines series and parallel conduction, convection, and radiation networks.",
+                        "examTip": "Found in Heat Transfer: Conduction/Convection Networks. The overall heat transfer coefficient $U$ satisfies $\\frac{1}{U A} = R_{\\text{total}} = \\frac{1}{h_i A_i} + \\sum \\frac{L}{k A} + \\frac{1}{h_o A_o}$."
+                },
+                {
+                        "title": "Black Body vs. Grey Body vs. Opaque Body",
+                        "formula": "$$E_b = \\sigma T^4, \\quad E = \\epsilon \\sigma T^4, \\quad \\alpha + \\rho + \\tau = 1, \\quad \\epsilon = \\alpha \\text{ (Kirchhoff's Law)}$$",
+                        "description": "A black body is an idealized perfect absorber ($\\alpha = 1$) and emitter ($\\epsilon = 1$). A gray body has constant emissivity and absorptivity independent of wavelength ($\\epsilon = \\alpha < 1$). An opaque body transmits no radiation ($\\tau = 0 \\implies \\alpha + \\rho = 1$).",
+                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!"
+                },
+                {
+                        "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "formula": "$$\\dot{Q}_{12} = \\frac{\\sigma(T_1^4 - T_2^4)}{\\frac{1 - \\epsilon_1}{\\epsilon_1 A_1} + \\frac{1}{A_1 F_{12}} + \\frac{1 - \\epsilon_2}{\\epsilon_2 A_2}}, \\quad A_1 F_{12} = A_2 F_{21} \\text{ (Reciprocity)}$$",
+                        "description": "Net radiant heat transfer between two diffuse, gray surfaces enclosed in an environment. Incorporates surface resistances $\\frac{1-\\epsilon}{\\epsilon A}$ and geometric space configuration resistance $\\frac{1}{A_1 F_{12}}$ governed by view factor $F_{12}$.",
+                        "examTip": "Found in Heat Transfer: Radiation. For two large parallel plates ($A_1 = A_2 = A$, $F_{12} = 1$): $\\dot{Q}_{12} = \\frac{A \\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$. For small convex object 1 in large room 2: $\\dot{Q} = \\epsilon_1 A_1 \\sigma (T_1^4 - T_2^4)$."
+                },
+                {
+                        "title": "Entropy",
+                        "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
+                        "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
+                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$."
+                },
+                {
+                        "title": "Enthalpy",
+                        "formula": "$$H = U + P V, \\quad h = u + P v, \\quad \\Delta h = c_p \\Delta T \\text{ (ideal gas)}, \\quad \\dot{Q} - \\dot{W}_s = \\dot{m}\\left(\\Delta h + \\frac{\\Delta v^2}{2} + g \\Delta z\\right)$$",
+                        "description": "Enthalpy represents total heat content, combining internal energy $U$ and flow work $P V$ required to displace fluid across system boundaries. For steady-state steady-flow (SSSF) open devices (turbines, compressors, nozzles), shaft work and heat relate directly to $\\Delta h$.",
+                        "examTip": "Found in Thermodynamics: First Law of Open Systems. For throttling valves (Joule-Thomson expansion), flow is isenthalpic ($h_1 = h_2$). For ideal gases, enthalpy depends ONLY on temperature: $dh = c_p dT$.",
+                        "videoUrl": "assets/videos/Enthalpy.mp4",
+                        "videoTitle": "Enthalpy Thermodynamic Property Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "formula": "$$x = \\frac{m_g}{m_f + m_g}, \\quad y = y_f + x \\, y_{fg} = y_f + x (y_g - y_f), \\quad y \\in \\{v, u, h, s\\}$$",
+                        "description": "In liquid-vapor saturation domes, intensive properties depend on quality $x$ (mass fraction of vapor). Saturated liquid has $x = 0$ ($y_f$); saturated vapor has $x = 1$ ($y_g$). Inside the dome, temperature and pressure are mutually dependent ($T_{\\text{sat}} = f(P_{\\text{sat}})$).",
+                        "examTip": "Found in Thermodynamics: Steam Tables. Enthalpy of a wet mixture is $h = h_f + x h_{fg}$. If given $h$, compute quality via $x = \\frac{h - h_f}{h_{fg}}$. If $x < 0$, fluid is subcooled; if $x > 1$, fluid is superheated."
+                },
+                {
+                        "title": "Mole fraction vs. mass fraction",
+                        "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
+                        "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
+                        "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
+                },
+                {
+                        "title": "Zeroth law of thermodynamics",
+                        "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
+                        "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
+                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system."
+                },
+                {
+                        "title": "Constant pressure process, with P-v and T-s representation",
+                        "formula": "$$W = P(V_2 - V_1), \\quad Q = \\Delta H = m c_p (T_2 - T_1), \\quad \\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\text{ (Charles’ Law)}$$",
+                        "description": "On a $P$-$v$ diagram, an isobaric process is a horizontal line ($P = \\text{const}$); boundary work equals area under the line $P \\Delta V$. On a $T$-$s$ diagram, it is a curve of positive slope $\\left(\\frac{\\partial T}{\\partial s}\\right)_P = \\frac{T}{c_p}$.",
+                        "examTip": "Found in Thermodynamics: Process Analysis. For closed systems at constant pressure without non-expansion work, heat transferred equals change in enthalpy ($Q = \\Delta H$)."
+                },
+                {
+                        "title": "Constant volume process, with P-v and T-s representation",
+                        "formula": "$$W = \\int P \\, dV = 0, \\quad Q = \\Delta U = m c_v (T_2 - T_1), \\quad \\frac{P_1}{T_1} = \\frac{P_2}{T_2} \\text{ (Gay-Lussac’s Law)}$$",
+                        "description": "On a $P$-$v$ diagram, an isochoric process is a vertical line ($V = \\text{const}$); boundary work is strictly zero ($W = 0$). On a $T$-$s$ diagram, it is a curve with slope $\\left(\\frac{\\partial T}{\\partial s}\\right)_v = \\frac{T}{c_v}$. Because $c_p > c_v$, isochoric curves on a $T$-$s$ diagram are steeper than isobaric curves!",
+                        "examTip": "Found in Thermodynamics: Process Analysis. In rigid closed containers ($V = \\text{const}$), boundary work is always zero: $Q = \\Delta U = m c_v \\Delta T$."
+                },
+                {
+                        "title": "Isothermal process, with P-v and T-s representation",
+                        "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
+                        "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
+                        "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
+                },
+                {
+                        "title": "Adiabatic process, with P-v and T-s representation",
+                        "formula": "$$P v^k = \\text{const}, \\quad T v^{k-1} = \\text{const}, \\quad T P^{\\frac{1-k}{k}} = \\text{const}, \\quad W = \\frac{P_1 V_1 - P_2 V_2}{k - 1} = -\\Delta U$$",
+                        "description": "In an adiabatic process, no heat is transferred ($Q = 0$). If also reversible, it is isentropic ($s = \\text{const}$). On a $P$-$v$ diagram, the isentropic curve is steeper than the isothermal curve by factor $k = c_p/c_v$. On a $T$-$s$ diagram, it is a vertical line.",
+                        "examTip": "Found in Thermodynamics: Process Analysis. For air: $k = 1.4$. Work done during reversible adiabatic expansion is $W = \\frac{m R (T_1 - T_2)}{k - 1} = m c_v (T_1 - T_2)$."
+                },
+                {
+                        "title": "Psychrometric Chart",
+                        "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
+                        "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
+                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy."
+                },
+                {
+                        "title": "Dry-bulb, Wet-bulb and dew-point temperature",
+                        "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
+                        "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
+                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases."
+                },
+                {
+                        "title": "Absolute humidity vs. Relative humidity",
+                        "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
+                        "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
+                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically."
+                },
+                {
+                        "title": "Exergy",
+                        "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
+                        "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$."
+                },
+                {
+                        "title": "Mollier chart",
+                        "formula": "$$\\left(\\frac{\\partial h}{\\partial s}\\right)_P = T, \\quad \\Delta h_{\\text{ideal}} = h_1 - h_{2s}, \\quad \\eta_{\\text{turb}} = \\frac{h_1 - h_2}{h_1 - h_{2s}}$$",
+                        "description": "An $h$-$s$ (enthalpy vs. entropy) coordinate chart used for steam turbines, nozzles, and refrigeration. Isobaric lines have slope equal to absolute temperature $T$. Vertical lines represent ideal isentropic processes ($s = \\text{const}$); deviation to the right shows irreversibility.",
+                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
+                },
+                {
+                        "title": "Regrigeration Cycles",
+                        "formula": "$$\\text{COP}_R = \\frac{q_L}{w_{\\text{net,in}}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad \\dot{Q}_L = \\dot{m}(h_1 - h_4), \\quad \\dot{W}_{\\text{comp}} = \\dot{m}(h_2 - h_1)$$",
+                        "description": "Standard cycle consists of 4 processes: (1-2) isentropic compression in compressor, (2-3) isobaric heat rejection in condenser ($q_H$), (3-4) isenthalpic throttling expansion valve ($h_3 = h_4$), and (4-1) isobaric heat absorption in evaporator ($q_L$).",
+                        "examTip": "Found in Mechanical: Refrigeration & HVAC. Remember throttling expansion is isenthalpic ($h_4 = h_3$). 1 ton of refrigeration = $12{,}000 \\, \\text{Btu/hr} = 3.517 \\, \\text{kW} = 200 \\, \\text{Btu/min}$."
+                },
+                {
+                        "title": "Coefficient of Performance (COP)",
+                        "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
+                        "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
+                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$."
+                },
+                {
+                        "title": "COP of refrigeration vs. COP of Heat Pump",
+                        "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
+                        "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
+                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$."
+                },
+                {
+                        "title": "HVAC Processes",
+                        "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
+                        "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
+                        "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
+                },
+                {
+                        "title": "Periodic Table of elements",
+                        "formula": "$$Z = \\text{protons}, \\quad A = Z + N, \\quad \\text{Trend: } \\text{IE, EN} \\nearrow, \\quad r_{\\text{atomic}} \\swarrow$$",
+                        "description": "Organizes chemical elements by increasing atomic number $Z$ and recurring electronic configurations. Periodic trends across a period (left to right): atomic radius decreases while ionization energy (IE) and electronegativity (EN) increase. Down a group (top to bottom): atomic radius increases while electronegativity and ionization energy decrease.",
+                        "examTip": "Found in Chemistry: Periodic Table. Group 1 = alkali metals ($+1$), Group 2 = alkaline earth metals ($+2$), Group 17 = halogens ($-1$), Group 18 = noble gases. Electronegativity peaks at Fluorine ($4.0$)."
+                },
+                {
+                        "title": "pH scale",
+                        "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
+                        "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                },
+                {
+                        "title": "Alkanes, Alkenes, Alkynes",
+                        "formula": "$$\\text{Alkanes: } \\text{C}_n \\text{H}_{2n+2}, \\quad \\text{Alkenes: } \\text{C}_n \\text{H}_{2n}, \\quad \\text{Alkynes: } \\text{C}_n \\text{H}_{2n-2}$$",
+                        "description": "Fundamental classes of aliphatic hydrocarbons classified by carbon-carbon bond saturation. Alkanes are saturated with single $\\text{C}-\\text{C}$ bonds ($sp^3$, e.g. methane, propane). Alkenes contain at least one carbon-carbon double bond ($\\text{C}=\\text{C}$, $sp^2$, e.g. ethylene). Alkynes contain at least one carbon-carbon triple bond ($\\text{C}\\equiv\\text{C}$, $sp$, e.g. acetylene).",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces."
+                },
+                {
+                        "title": "Photosynthesis",
+                        "formula": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + h\\nu \\xrightarrow{\\text{chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2, \\quad \\Delta G^\\circ = +2870\\text{ kJ/mol}$$",
+                        "description": "An endergonic biochemical process by which photoautotrophic organisms (plants, algae, cyanobacteria) harness solar radiant energy $h\\nu$ to synthesize high-energy carbohydrates (glucose) from carbon dioxide and water, releasing oxygen as a byproduct. Forms the energetic foundation of primary biological productivity and the global carbon-oxygen cycle.",
+                        "examTip": "Found in Environmental Engineering: Ecological Systems and Water Quality. In surface waters, photosynthetic algal blooms cause daytime dissolved oxygen (DO) supersaturation and pH increases (as $\\text{CO}_2$ is consumed), followed by nighttime DO depletion via respiration."
+                },
+                {
+                        "title": "Alcohols",
+                        "formula": "$$\\text{R}-\\text{OH}, \\quad 2\\text{R}-\\text{OH} + 2\\text{Na} \\to 2\\text{R}-\\text{O}^-\\text{Na}^+ + \\text{H}_2\\uparrow, \\quad \\text{R}-\\text{CH}_2\\text{OH} \\xrightarrow{[\\text{O}]} \\text{R}-\\text{CHO} \\xrightarrow{[\\text{O}]} \\text{R}-\\text{COOH}$$",
+                        "description": "Organic compounds characterized by one or more hydroxyl ($-\\text{OH}$) functional groups covalently bonded to a saturated $sp^3$ carbon atom. Classified as primary ($1^\\circ$), secondary ($2^\\circ$), or tertiary ($3^\\circ$). Capable of intermolecular hydrogen bonding, conferring significantly higher boiling points and water miscibility than corresponding alkanes or ethers.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Primary alcohols oxidize to aldehydes and subsequently carboxylic acids. Secondary alcohols oxidize to ketones. Tertiary alcohols resist mild oxidation because the carbon bearing the $-\\text{OH}$ group has no hydrogen atom attached."
+                },
+                {
+                        "title": "Ethers, Carboxylic Acids and Esters",
+                        "formula": "$$\\text{Ether: } \\text{R}-\\text{O}-\\text{R}', \\quad \\text{Acid: } \\text{R}-\\text{COOH}, \\quad \\text{Ester: } \\text{R}-\\text{COO}-\\text{R}', \\quad \\text{RCOOH} + \\text{R'OH} \\xrightleftharpoons{\\text{H}^+} \\text{RCOOR}' + \\text{H}_2\\text{O}$$",
+                        "description": "Oxygen-bearing organic functional groups. Ethers ($\\text{R}-\\text{O}-\\text{R}'$) are relatively unreactive polar solvents lacking hydroxyl hydrogen bonding. Carboxylic acids ($\\text{R}-\\text{COOH}$) are weak organic acids that undergo resonance-stabilized ionization ($-\\text{COO}^-$). Fischer esterification condenses a carboxylic acid and an alcohol under acid catalysis to produce an ester ($\\text{R}-\\text{COO}-\\text{R}'$) and water.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Carboxylic acid boiling points are exceptionally high due to stable hydrogen-bonded dimer formation. Esters typically possess pleasant fruity aromas and are hydrolyzed via saponification with aqueous base ($\\text{NaOH}$)."
+                },
+                {
+                        "title": "Aldehydes and Ketones",
+                        "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
+                        "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
+                        "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
+                },
+                {
+                        "title": "Types of Fits",
+                        "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
+                        "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
+                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
+                },
+                {
+                        "title": "First and vs Third angle projection",
+                        "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
+                        "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                },
+                {
+                        "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
+                        "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
+                        "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
+                },
+                {
+                        "title": "Soderberg Theory",
+                        "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_y} = \\frac{1}{n}, \\quad \\sigma_a = \\frac{\\sigma_{\\max} - \\sigma_{\\min}}{2}, \\quad \\sigma_m = \\frac{\\sigma_{\\max} + \\sigma_{\\min}}{2}$$",
+                        "description": "A conservative fatigue failure criterion for ductile machine components subjected to combined fluctuating alternating stress $\\sigma_a$ and mean tensile stress $\\sigma_m$. Connects the fatigue endurance limit $S_e$ on the alternating axis directly to the tensile yield strength $S_y$ on the mean stress axis, ensuring safety against both fatigue fracture and gross static plastic yielding.",
+                        "examTip": "Found in Mechanical: Mechanical Design. Soderberg is the most conservative fatigue theory because it uses yield strength $S_y$ rather than ultimate strength $S_{ut}$. By comparison: Goodman uses $\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$, and Gerber uses a parabolic relationship $\\frac{\\sigma_a}{S_e} + (\\frac{\\sigma_m}{S_{ut}})^2 = \\frac{1}{n}$."
+                },
+                {
+                        "title": "Carcinogens",
+                        "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
+                        "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
+                        "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
+                },
+                {
+                        "title": "Safety Data Sheet (SDS)",
+                        "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
+                        "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
+                        "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
+                },
+                {
+                        "title": "Signal Words",
+                        "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
+                        "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
+                        "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
+                },
+                {
+                        "title": "Flammability, LFL and UFL",
+                        "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
+                        "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                },
+                {
+                        "title": "Confined Space Safety",
+                        "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
+                        "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
+                        "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
+                },
+                {
+                        "title": "Dose-Response Curves",
+                        "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
+                        "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
+                        "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
+                },
+                {
+                        "title": "Chemical Compatibility Chart",
+                        "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
+                        "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                },
+                {
+                        "title": "Exposure Limits",
+                        "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
+                        "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
+                        "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
+                },
+                {
+                        "title": "Noise Pollution Measurements",
+                        "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
+                        "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
                 }
         ]
 };
@@ -6834,6 +11016,15 @@
             'transverseshear': ['transverse shear stress formula', 'transverse beam shear stress', 'transverse shear stress in beams'],
             'compassrule': ['compass rule for closed traverse balancing', 'compass rule', 'closed traverse'],
             'closedtraverse': ['compass rule for closed traverse balancing', 'closed traverse balancing', 'traverse balancing'],
+            'distanceformula': ['distance formula', 'euclidean distance', 'distance between two points'],
+            'distance': ['distance formula', 'distance between two points'],
+            'anglebetweenlines': ['angle between two non-vertical lines', 'angle between lines', 'slopes m1 and m2'],
+            'slopeintercept': ['slope-intercept form of a linear equation', 'slope-intercept form', 'slope intercept'],
+            'complexpolar': ['complex numbers: rectangular, polar, and euler forms', 'complex number polar and rectangular', 'complex numbers'],
+            'degreeandorder': ['order and degree of differential equations', 'degree and order of differential equation', 'order and degree'],
+            'quadraticequation': ['quadratic equation and quadratic formula', 'quadratic equation'],
+            'coniceccentricity': ['eccentricity classification of conic sections', 'eccentricities of conic sections', 'eccentricity'],
+            'homogeneousode': ['homogeneous vs non-homogeneous linear differential equations', 'homogeneous vs non-homogeneous differential equations', 'homogeneous differential'],
             'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
             'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
             'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
