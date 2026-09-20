@@ -6706,7 +6706,10 @@ window.calcEvaluate = function() {
                         "title": "Psychrometric Humidity Ratio and Relative Humidity",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P - P_v}, \\quad \\phi = \\frac{P_v}{P_{sat}(T)}$$",
                         "description": "Humidity ratio $\\omega$ (mass of water vapor per unit mass dry air) and relative humidity $\\phi$ (ratio of vapor partial pressure to saturation pressure at dry-bulb temperature).",
-                        "examTip": "Found in Thermodynamics / HVAC. At 100% relative humidity ($phi = 1.0$), dry-bulb temperature equals wet-bulb temperature equals dew-point temperature."
+                        "examTip": "Found in Thermodynamics / HVAC. At 100% relative humidity ($phi = 1.0$), dry-bulb temperature equals wet-bulb temperature equals dew-point temperature.",
+                        "videoUrl": "assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
+                        "videoTitle": "Absolute Humidity vs. Relative Humidity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Critical Radius of Thermal Insulation",
@@ -7711,7 +7714,10 @@ window.calcEvaluate = function() {
                         "title": "Black Body vs. Grey Body vs. Opaque Body",
                         "formula": "$$E_b = \\sigma T^4, \\quad E = \\epsilon \\sigma T^4, \\quad \\alpha + \\rho + \\tau = 1, \\quad \\epsilon = \\alpha \\text{ (Kirchhoff's Law)}$$",
                         "description": "A black body is an idealized perfect absorber ($\\alpha = 1$) and emitter ($\\epsilon = 1$). A gray body has constant emissivity and absorptivity independent of wavelength ($\\epsilon = \\alpha < 1$). An opaque body transmits no radiation ($\\tau = 0 \\implies \\alpha + \\rho = 1$).",
-                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!"
+                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!",
+                        "videoUrl": "assets/videos/Black_Body_vs_Grey_Body_vs_Opaque_Body.mp4",
+                        "videoTitle": "Black Body vs. Grey Body vs. Opaque Body Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
@@ -7750,7 +7756,10 @@ window.calcEvaluate = function() {
                         "title": "Zeroth law of thermodynamics",
                         "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
-                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system."
+                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
+                        "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Constant pressure process, with P-v and T-s representation",
@@ -7780,19 +7789,28 @@ window.calcEvaluate = function() {
                         "title": "Psychrometric Chart",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
-                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy."
+                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
+                        "videoUrl": "assets/videos/Psychrometric_Chart.mp4",
+                        "videoTitle": "Psychrometric Chart Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Dry-bulb, Wet-bulb and dew-point temperature",
                         "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
                         "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
-                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases."
+                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases.",
+                        "videoUrl": "assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
+                        "videoTitle": "Dry-Bulb, Wet-Bulb and Dew-Point Temperature Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Absolute humidity vs. Relative humidity",
                         "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
                         "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
-                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically."
+                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically.",
+                        "videoUrl": "assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
+                        "videoTitle": "Absolute Humidity vs. Relative Humidity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Exergy",
@@ -7837,10 +7855,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
                 },
                 {
-                        "title": "First and vs Third angle projection",
+                        "title": "First Angle vs. Third Angle Projection",
                         "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
                         "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
-                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base.",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
@@ -7882,7 +7903,10 @@ window.calcEvaluate = function() {
                         "title": "Noise Pollution Measurements",
                         "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
                         "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
-                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
+                        "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
+                        "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Civil": [
@@ -9489,10 +9513,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
                 },
                 {
-                        "title": "First and vs Third angle projection",
+                        "title": "First Angle vs. Third Angle Projection",
                         "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
                         "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
-                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base.",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Confined Space Safety",
@@ -11929,7 +11956,10 @@ window.calcEvaluate = function() {
                         "title": "Black Body vs. Grey Body vs. Opaque Body",
                         "formula": "$$E_b = \\sigma T^4, \\quad E = \\epsilon \\sigma T^4, \\quad \\alpha + \\rho + \\tau = 1, \\quad \\epsilon = \\alpha \\text{ (Kirchhoff's Law)}$$",
                         "description": "A black body is an idealized perfect absorber ($\\alpha = 1$) and emitter ($\\epsilon = 1$). A gray body has constant emissivity and absorptivity independent of wavelength ($\\epsilon = \\alpha < 1$). An opaque body transmits no radiation ($\\tau = 0 \\implies \\alpha + \\rho = 1$).",
-                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!"
+                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!",
+                        "videoUrl": "assets/videos/Black_Body_vs_Grey_Body_vs_Opaque_Body.mp4",
+                        "videoTitle": "Black Body vs. Grey Body vs. Opaque Body Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
@@ -11968,7 +11998,10 @@ window.calcEvaluate = function() {
                         "title": "Zeroth law of thermodynamics",
                         "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
-                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system."
+                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
+                        "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Constant pressure process, with P-v and T-s representation",
@@ -13260,10 +13293,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
                 },
                 {
-                        "title": "First and vs Third angle projection",
+                        "title": "First Angle vs. Third Angle Projection",
                         "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
                         "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
-                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base.",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
@@ -13323,7 +13359,10 @@ window.calcEvaluate = function() {
                         "title": "Noise Pollution Measurements",
                         "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
                         "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
-                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
+                        "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
+                        "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Environmental": [
@@ -13460,7 +13499,10 @@ window.calcEvaluate = function() {
                         "title": "Noise Dose and Time-Weighted Average (OSHA)",
                         "formula": "$$D = 100 \\sum_{i=1}^n \\frac{C_i}{T_i}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                         "description": "Calculates occupational noise exposure dose $D$ [%] and 8-hour equivalent $TWA$ under OSHA standard with 5-dB exchange rate.",
-                        "examTip": "Found in Environmental Health / Industrial Hygiene. Permissible exposure limit is $TWA = 90\\text{ dBA}$ ($D=100\\%$); action level for hearing conservation is $85\\text{ dBA}$ ($D=50\\%$)."
+                        "examTip": "Found in Environmental Health / Industrial Hygiene. Permissible exposure limit is $TWA = 90\\text{ dBA}$ ($D=100\\%$); action level for hearing conservation is $85\\text{ dBA}$ ($D=50\\%$).",
+                        "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
+                        "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Hydraulic Retention Time in Treatment Basins",
@@ -14657,19 +14699,28 @@ window.calcEvaluate = function() {
                         "title": "Psychrometric Chart",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
-                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy."
+                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
+                        "videoUrl": "assets/videos/Psychrometric_Chart.mp4",
+                        "videoTitle": "Psychrometric Chart Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Dry-bulb, Wet-bulb and dew-point temperature",
                         "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
                         "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
-                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases."
+                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases.",
+                        "videoUrl": "assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
+                        "videoTitle": "Dry-Bulb, Wet-Bulb and Dew-Point Temperature Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Absolute humidity vs. Relative humidity",
                         "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
                         "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
-                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically."
+                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically.",
+                        "videoUrl": "assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
+                        "videoTitle": "Absolute Humidity vs. Relative Humidity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "HVAC Processes",
@@ -14777,7 +14828,10 @@ window.calcEvaluate = function() {
                         "title": "Noise Pollution Measurements",
                         "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
                         "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
-                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
+                        "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
+                        "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
                 }
         ],
         "Other": [
@@ -16402,7 +16456,10 @@ window.calcEvaluate = function() {
                         "title": "Black Body vs. Grey Body vs. Opaque Body",
                         "formula": "$$E_b = \\sigma T^4, \\quad E = \\epsilon \\sigma T^4, \\quad \\alpha + \\rho + \\tau = 1, \\quad \\epsilon = \\alpha \\text{ (Kirchhoff's Law)}$$",
                         "description": "A black body is an idealized perfect absorber ($\\alpha = 1$) and emitter ($\\epsilon = 1$). A gray body has constant emissivity and absorptivity independent of wavelength ($\\epsilon = \\alpha < 1$). An opaque body transmits no radiation ($\\tau = 0 \\implies \\alpha + \\rho = 1$).",
-                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!"
+                        "examTip": "Found in Heat Transfer: Radiation. Stefan-Boltzmann constant is $\\sigma = 5.67 \\times 10^{-8} \\, \\text{W}/(\\text{m}^2 \\cdot \\text{K}^4)$. Absolute temperature in Kelvin (or Rankine) MUST be used!",
+                        "videoUrl": "assets/videos/Black_Body_vs_Grey_Body_vs_Opaque_Body.mp4",
+                        "videoTitle": "Black Body vs. Grey Body vs. Opaque Body Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
@@ -16441,7 +16498,10 @@ window.calcEvaluate = function() {
                         "title": "Zeroth law of thermodynamics",
                         "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
-                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system."
+                        "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
+                        "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Constant pressure process, with P-v and T-s representation",
@@ -16471,19 +16531,28 @@ window.calcEvaluate = function() {
                         "title": "Psychrometric Chart",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
-                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy."
+                        "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
+                        "videoUrl": "assets/videos/Psychrometric_Chart.mp4",
+                        "videoTitle": "Psychrometric Chart Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Dry-bulb, Wet-bulb and dew-point temperature",
                         "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
                         "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
-                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases."
+                        "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases.",
+                        "videoUrl": "assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
+                        "videoTitle": "Dry-Bulb, Wet-Bulb and Dew-Point Temperature Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Absolute humidity vs. Relative humidity",
                         "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
                         "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
-                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically."
+                        "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically.",
+                        "videoUrl": "assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
+                        "videoTitle": "Absolute Humidity vs. Relative Humidity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Exergy",
@@ -16570,10 +16639,13 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
                 },
                 {
-                        "title": "First and vs Third angle projection",
+                        "title": "First Angle vs. Third Angle Projection",
                         "formula": "$$\\text{Symbol: } \\odot \\triangleleft \\text{ (Third-Angle)}, \\quad \\triangleleft \\odot \\text{ (First-Angle)}, \\quad \\text{Third-Angle: } \\text{Top Above Front, Right on Right}$$",
                         "description": "International multiview orthographic drafting standards. In Third-Angle projection (standard in the USA and Canada per ASME Y14.3), the projection plane lies between the observer and the object; the top view is placed directly above the front view, and the right-side view is placed on the right. In First-Angle projection (widely used in Europe and ISO), the object lies between the observer and the plane; the right-side view is projected onto the left side, and the top view is placed beneath the front view.",
-                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base."
+                        "examTip": "Found in Mechanical and Industrial: Drafting and Design. Always inspect the truncated cone projection symbol in the drawing title block! Third-angle has the circle next to the narrow end; first-angle has the circle next to the wide base.",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
@@ -16639,7 +16711,10 @@ window.calcEvaluate = function() {
                         "title": "Noise Pollution Measurements",
                         "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
                         "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
-                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!"
+                        "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
+                        "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
+                        "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
                 }
         ]
 };
