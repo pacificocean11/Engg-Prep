@@ -7727,6 +7727,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -7856,6 +7859,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
+                        "videoTitle": "Isothermal Process Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
                         "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
                         "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
@@ -7937,6 +7943,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "HVAC Processes",
+                        "videoUrl": "assets/videos/HVAC_Processes.mp4",
+                        "videoTitle": "HVAC Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
                         "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
                         "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
@@ -7961,6 +7970,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "videoUrl": "assets/videos/Geometric_Dimensioning_and_Tolerancing_GDT.mp4",
+                        "videoTitle": "GD&T Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
                         "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
                         "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
@@ -7973,6 +7985,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -7991,6 +8006,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -9615,6 +9633,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -9661,6 +9682,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
+                        "videoUrl": "assets/videos/Aerobic_vs_Anaerobic_Processes.mp4",
+                        "videoTitle": "Aerobic vs Anaerobic Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
                         "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
@@ -9676,6 +9700,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -12103,6 +12130,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -12232,6 +12262,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
+                        "videoTitle": "Isothermal Process Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
                         "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
                         "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
@@ -12307,6 +12340,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
+                        "videoUrl": "assets/videos/Aerobic_vs_Anaerobic_Processes.mp4",
+                        "videoTitle": "Aerobic vs Anaerobic Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
                         "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
@@ -12331,6 +12367,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Aldehydes and Ketones",
+                        "videoUrl": "assets/videos/Aldehydes_and_Ketones.mp4",
+                        "videoTitle": "Aldehydes and Ketones Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
                         "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
@@ -12343,6 +12382,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -12361,6 +12403,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -13567,6 +13612,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "videoUrl": "assets/videos/Geometric_Dimensioning_and_Tolerancing_GDT.mp4",
+                        "videoTitle": "GD&T Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
                         "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
                         "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
@@ -13579,6 +13627,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -13597,6 +13648,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -14959,6 +15013,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -15033,6 +15090,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "HVAC Processes",
+                        "videoUrl": "assets/videos/HVAC_Processes.mp4",
+                        "videoTitle": "HVAC Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
                         "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
                         "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
@@ -15060,6 +15120,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
+                        "videoUrl": "assets/videos/Aerobic_vs_Anaerobic_Processes.mp4",
+                        "videoTitle": "Aerobic vs Anaerobic Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
                         "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
@@ -15084,6 +15147,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Aldehydes and Ketones",
+                        "videoUrl": "assets/videos/Aldehydes_and_Ketones.mp4",
+                        "videoTitle": "Aldehydes and Ketones Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
                         "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
@@ -15096,6 +15162,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -15114,6 +15183,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -16774,6 +16846,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -16903,6 +16978,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
+                        "videoTitle": "Isothermal Process Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
                         "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
                         "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
@@ -16984,6 +17062,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "HVAC Processes",
+                        "videoUrl": "assets/videos/HVAC_Processes.mp4",
+                        "videoTitle": "HVAC Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
                         "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
                         "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
@@ -17029,6 +17110,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Aldehydes and Ketones",
+                        "videoUrl": "assets/videos/Aldehydes_and_Ketones.mp4",
+                        "videoTitle": "Aldehydes and Ketones Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
                         "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
@@ -17053,6 +17137,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "videoUrl": "assets/videos/Geometric_Dimensioning_and_Tolerancing_GDT.mp4",
+                        "videoTitle": "GD&T Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
                         "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
                         "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
@@ -17071,6 +17158,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -17089,6 +17179,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -17294,6 +17387,14 @@ window.calcEvaluate = function() {
             try { window.switchDashboardTab('motivation'); } catch (e) {}
         }
         const keyMap = {
+            'safetydatasheet': ["safety data sheet (sds)","safety data sheet","sds"],
+            'confinedspacesafety': ["confined space safety","confined space"],
+            'aldehydesketones': ["aldehydes and ketones","aldehydes","ketones"],
+            'gdt': ["geometric dimensioning and tolerancing (gd&t)","geometric dimensioning and tolerancing","gd&t"],
+            'hvacprocesses': ["hvac processes","hvac"],
+            'dragliftcoefficient': ["drag coefficient and lift coefficient","drag coefficient","lift coefficient"],
+            'aerobicanaerobic': ["aerobic vs anaerobic processes","aerobic vs anaerobic","aerobic process"],
+            'isothermalprocess': ["isothermal process, with p-v and t-s representation","isothermal process","isothermal"],
             'moodydiagram': ["moody, darcy, or stanton friction factor diagram","moody diagram","friction factor diagram","moody"],
             'orificedischarging': ["orifice discharging freely into atmosphere","orifice discharging","torricelli"],
             'coefficientofperformance': ["coefficient of performance (cop)","coefficient of performance","cop"],
@@ -19630,38 +19731,17 @@ window.calcEvaluate = function() {
 
 // --- BEGIN js/fe-flashcards.js ---
 /**
- * FE THEOREM RAPID FLASHCARD STUDIO WITH LEITNER SPACED REPETITION (SRS)
+ * FE THEOREM RAPID FLASHCARD STUDIO
  * Part of Engg.tv Prep — NCEES FE Exam Preparation Platform
  */
 (function() {
     'use strict';
 
-    const SRS_STORAGE_KEY = 'enggtv_flashcard_srs';
-    const BOX_INTERVALS_DAYS = { 1: 0, 2: 2, 3: 5, 4: 14 }; // Days until due
-    const SPRINT_SIZE = 20;
-
     let currentDeck = [];
     let currentIndex = 0;
     let isFlipped = false;
-    let sessionStats = { reviewed: 0, mastered: 0, xpEarned: 0 };
     let currentMode = 'recall'; // 'recall' or 'identify'
     let currentDiscipline = 'current';
-
-    // Helper: Load SRS state
-    function loadSrsData() {
-        try {
-            return JSON.parse(localStorage.getItem(SRS_STORAGE_KEY) || '{}');
-        } catch (e) {
-            return {};
-        }
-    }
-
-    // Helper: Save SRS state
-    function saveSrsData(data) {
-        try {
-            localStorage.setItem(SRS_STORAGE_KEY, JSON.stringify(data));
-        } catch (e) {}
-    }
 
     // Get active discipline from app or localStorage
     function getActiveDiscipline() {
@@ -19671,10 +19751,8 @@ window.calcEvaluate = function() {
         return localStorage.getItem('enggtv_discipline') || 'Mechanical';
     }
 
-    // Build the smart queue for current session
+    // Build the theorem queue for current session
     function buildSessionQueue(disc, mode) {
-        const srsData = loadSrsData();
-        const now = Date.now();
         const datasets = window.THEOREMS_BY_DISCIPLINE || {};
 
         let allTheorems = [];
@@ -19689,29 +19767,7 @@ window.calcEvaluate = function() {
             allTheorems = (datasets[disc] || []).map(t => ({ ...t, disc: disc }));
         }
 
-        if (allTheorems.length === 0) return [];
-
-        // Attach SRS metadata to each theorem
-        const queue = allTheorems.map(t => {
-            const entry = srsData[t.title] || { box: 1, nextDue: 0, repetitions: 0, lapses: 0 };
-            return {
-                ...t,
-                srs: entry,
-                isDue: entry.nextDue <= now,
-                isNew: entry.repetitions === 0
-            };
-        });
-
-        // Priority sorting:
-        // 1. Due cards from Box 1 & 2
-        // 2. Unseen new cards
-        // 3. Other cards (shuffled)
-        const dueCards = queue.filter(q => q.isDue && !q.isNew).sort((a, b) => a.srs.nextDue - b.srs.nextDue);
-        const newCards = queue.filter(q => q.isNew).sort(() => Math.random() - 0.5);
-        const upcomingCards = queue.filter(q => !q.isDue && !q.isNew).sort(() => Math.random() - 0.5);
-
-        const combined = [...dueCards, ...newCards, ...upcomingCards];
-        return combined;
+        return allTheorems;
     }
 
     // Render current card state
@@ -19723,19 +19779,8 @@ window.calcEvaluate = function() {
         const cardTrigger = document.getElementById('fc-card-trigger');
         const ratingDock = document.getElementById('fc-rating-dock');
 
-        if (currentIndex >= currentDeck.length) {
-            // Show session summary
+        if (!currentDeck || currentDeck.length === 0) {
             if (cardTrigger) cardTrigger.classList.add('hidden');
-            if (ratingDock) ratingDock.classList.add('hidden');
-            if (summaryView) {
-                summaryView.classList.remove('hidden');
-                const sumCards = document.getElementById('fc-sum-cards');
-                const sumMastered = document.getElementById('fc-sum-mastered');
-                const sumXp = document.getElementById('fc-sum-xp');
-                if (sumCards) sumCards.textContent = sessionStats.reviewed;
-                if (sumMastered) sumMastered.textContent = sessionStats.mastered;
-                if (sumXp) sumXp.textContent = `+${sessionStats.xpEarned} XP`;
-            }
             return;
         }
 
@@ -19743,42 +19788,28 @@ window.calcEvaluate = function() {
         if (summaryView) summaryView.classList.add('hidden');
         if (ratingDock) ratingDock.classList.remove('hidden');
 
+        // Circular wrap-around bounds check
+        if (currentIndex < 0) currentIndex = currentDeck.length - 1;
+        if (currentIndex >= currentDeck.length) currentIndex = 0;
+
         const card = currentDeck[currentIndex];
         isFlipped = false;
         const inner = document.getElementById('fc-flip-inner');
         if (inner) inner.classList.remove('flipped');
 
-        // Update Header Progress & Stats
+        // Update flip button text
+        const flipBtnText = document.getElementById('fc-flip-btn-text');
+        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
+
+        // Update Header Progress
         const progressText = document.getElementById('fc-progress-text');
         const progressBar = document.getElementById('fc-session-progress-bar');
-        const dueIndicator = document.getElementById('fc-due-indicator');
 
         if (progressText) progressText.textContent = `Card ${currentIndex + 1} of ${currentDeck.length}`;
         if (progressBar) {
-            const pct = Math.round(((currentIndex) / currentDeck.length) * 100);
-            progressBar.style.width = `${Math.max(5, pct)}%`;
+            const pct = Math.round(((currentIndex + 1) / currentDeck.length) * 100);
+            progressBar.style.width = `${Math.max(2, pct)}%`;
         }
-
-        const srsData = loadSrsData();
-        let box1Count = 0, box2Count = 0, box3Count = 0, box4Count = 0, totalDue = 0;
-        const now = Date.now();
-        Object.values(srsData).forEach(s => {
-            if (s.box === 1) box1Count++;
-            else if (s.box === 2) box2Count++;
-            else if (s.box === 3) box3Count++;
-            else if (s.box >= 4) box4Count++;
-            if (s.nextDue <= now) totalDue++;
-        });
-
-        const b1 = document.getElementById('fc-stat-box1');
-        const b2 = document.getElementById('fc-stat-box2');
-        const b3 = document.getElementById('fc-stat-box3');
-        const b4 = document.getElementById('fc-stat-box4');
-        if (b1) b1.textContent = `Box 1: ${box1Count}`;
-        if (b2) b2.textContent = `Box 2: ${box2Count}`;
-        if (b3) b3.textContent = `Box 3: ${box3Count}`;
-        if (b4) b4.textContent = `Mastered: ${box4Count}`;
-        if (dueIndicator) dueIndicator.textContent = `${totalDue} due for review`;
 
         // Card Front Fields
         const cardDisc = document.getElementById('fc-card-discipline');
@@ -19790,11 +19821,8 @@ window.calcEvaluate = function() {
 
         if (cardDisc) cardDisc.textContent = `${card.disc || getActiveDiscipline()} FE Focus`;
         if (cardLvl) {
-            const box = card.srs.box || 1;
-            cardLvl.textContent = card.srs.repetitions === 0 ? 'New Card' : `Box ${box} (${BOX_INTERVALS_DAYS[box] || 0}d)`;
-            cardLvl.className = box === 1 ? 'text-[10px] font-black uppercase tracking-wider bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded-full border border-rose-500/40' :
-                                box === 2 ? 'text-[10px] font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/40' :
-                                'text-[10px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/40';
+            cardLvl.textContent = `#${currentIndex + 1} of ${currentDeck.length}`;
+            cardLvl.className = 'text-[10px] font-black uppercase tracking-wider bg-purple-500/20 text-purple-300 px-2.5 py-0.5 rounded-full border border-purple-500/30';
         }
 
         if (currentMode === 'identify') {
@@ -19816,8 +19844,6 @@ window.calcEvaluate = function() {
             }
             if (frontFormulaView) frontFormulaView.classList.add('hidden');
             if (frontHint) {
-                // Remove block math $$...$$ so it does not give away the formula before flip,
-                // but preserve full text and inline math $...$ completely intact!
                 const cleanSnippet = (card.description || '').replace(/\$\$[\s\S]*?\$\$/g, '').trim();
                 frontHint.innerHTML = cleanSnippet || 'What is the mathematical equation, key variables, and assumptions?';
             }
@@ -19831,7 +19857,6 @@ window.calcEvaluate = function() {
         const backTip = document.getElementById('fc-back-tip');
         const backColPrimary = document.getElementById('fc-back-col-primary');
         const backColVideo = document.getElementById('fc-back-col-video');
-        const backVideoCont = document.getElementById('fc-back-video-container');
         const backVideo = document.getElementById('fc-back-video');
         const backVideoDur = document.getElementById('fc-back-video-duration');
 
@@ -19883,11 +19908,14 @@ window.calcEvaluate = function() {
 
     // Flip action
     function flipCard() {
-        if (currentIndex >= currentDeck.length) return;
+        if (currentDeck.length === 0) return;
         const inner = document.getElementById('fc-flip-inner');
         if (!inner) return;
 
         isFlipped = !isFlipped;
+        const flipBtnText = document.getElementById('fc-flip-btn-text');
+        if (flipBtnText) flipBtnText.textContent = isFlipped ? 'View Front' : 'Flip Card';
+
         if (isFlipped) {
             inner.classList.add('flipped');
 
@@ -19917,49 +19945,37 @@ window.calcEvaluate = function() {
         }
     }
 
-    // Rate card & advance Leitner SRS
-    function rateCard(rating) {
-        if (currentIndex >= currentDeck.length) return;
-        const card = currentDeck[currentIndex];
-        const srsData = loadSrsData();
-        const now = Date.now();
-
-        let srsEntry = srsData[card.title] || { box: 1, nextDue: 0, repetitions: 0, lapses: 0 };
-        srsEntry.repetitions = (srsEntry.repetitions || 0) + 1;
-        srsEntry.lastReviewed = now;
-
-        sessionStats.reviewed++;
-
-        if (rating === 1) {
-            // Hard / Lapsed: Drop back to Box 1, due today, re-append to session end
-            srsEntry.box = 1;
-            srsEntry.lapses = (srsEntry.lapses || 0) + 1;
-            srsEntry.nextDue = now;
-            // Append back to end of current deck so user encounters it again this session!
-            currentDeck.push({ ...card, srs: srsEntry });
-        } else if (rating === 2) {
-            // Good: Advance to box 2 or 3
-            srsEntry.box = Math.min((srsEntry.box || 1) + 1, 3);
-            const intervalDays = BOX_INTERVALS_DAYS[srsEntry.box] || 2;
-            srsEntry.nextDue = now + intervalDays * 24 * 60 * 60 * 1000;
-            sessionStats.xpEarned += 2;
-        } else if (rating === 3) {
-            // Mastered: Advance to Box 4 (+14 days), award bonus XP
-            srsEntry.box = 4;
-            srsEntry.nextDue = now + BOX_INTERVALS_DAYS[4] * 24 * 60 * 60 * 1000;
-            sessionStats.mastered++;
-            sessionStats.xpEarned += 5;
-        }
-
-        srsData[card.title] = srsEntry;
-        saveSrsData(srsData);
-
-        // Pause current video before moving
+    // Previous card action
+    function prevCard() {
+        if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
 
-        // Advance index
-        currentIndex++;
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCard();
+    }
+
+    // Next card action
+    function nextCard() {
+        if (currentDeck.length === 0) return;
+        const video = document.getElementById('fc-back-video');
+        if (video) video.pause();
+
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCard();
+    }
+
+    // Shuffle deck
+    function shuffleCards() {
+        if (currentDeck.length <= 1) return;
+        const video = document.getElementById('fc-back-video');
+        if (video) video.pause();
+
+        for (let i = currentDeck.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+        }
+        currentIndex = 0;
         renderCard();
     }
 
@@ -19971,7 +19987,6 @@ window.calcEvaluate = function() {
         currentDeck = buildSessionQueue(currentDiscipline, currentMode);
         currentIndex = 0;
         isFlipped = false;
-        sessionStats = { reviewed: 0, mastered: 0, xpEarned: 0 };
 
         const modal = document.getElementById('fe-flashcards-modal');
         const card = document.getElementById('flashcard-studio-card');
@@ -20014,17 +20029,11 @@ window.calcEvaluate = function() {
         }
     }
 
-    // Restart session
-    function restartFlashcardSession() {
-        openFlashcardStudio(currentDiscipline, currentMode);
-    }
-
     // Attach Keyboard Hotkeys
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('fe-flashcards-modal');
         if (!modal || modal.classList.contains('hidden')) return;
 
-        // Avoid triggering if user is focused on a select element
         if (e.target && (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT')) return;
 
         if (e.code === 'Escape') {
@@ -20033,15 +20042,12 @@ window.calcEvaluate = function() {
         } else if (e.code === 'Space' || e.code === 'Enter') {
             e.preventDefault();
             flipCard();
-        } else if (e.key === '1' || e.code === 'ArrowLeft') {
+        } else if (e.code === 'ArrowLeft') {
             e.preventDefault();
-            rateCard(1);
-        } else if (e.key === '2' || e.code === 'ArrowDown') {
+            prevCard();
+        } else if (e.code === 'ArrowRight') {
             e.preventDefault();
-            rateCard(2);
-        } else if (e.key === '3' || e.code === 'ArrowRight') {
-            e.preventDefault();
-            rateCard(3);
+            nextCard();
         }
     });
 
@@ -20069,8 +20075,12 @@ window.calcEvaluate = function() {
     window.openFlashcardStudio = openFlashcardStudio;
     window.closeFlashcardStudio = closeFlashcardStudio;
     window.flipFlashcard = flipCard;
-    window.rateFlashcard = rateCard;
-    window.restartFlashcardSession = restartFlashcardSession;
+    window.prevFlashcard = prevCard;
+    window.nextFlashcard = nextCard;
+    window.shuffleFlashcards = shuffleCards;
+    // Backwards compatibility aliases
+    window.rateFlashcard = nextCard;
+    window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode);
 
 })();
 
