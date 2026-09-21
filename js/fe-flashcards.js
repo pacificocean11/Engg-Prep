@@ -80,7 +80,7 @@
         const upcomingCards = queue.filter(q => !q.isDue && !q.isNew).sort(() => Math.random() - 0.5);
 
         const combined = [...dueCards, ...newCards, ...upcomingCards];
-        return combined.slice(0, SPRINT_SIZE);
+        return combined;
     }
 
     // Render current card state
@@ -318,11 +318,6 @@
             srsEntry.nextDue = now + BOX_INTERVALS_DAYS[4] * 24 * 60 * 60 * 1000;
             sessionStats.mastered++;
             sessionStats.xpEarned += 5;
-
-            // Award points globally if system supports it
-            if (typeof window.addPoints === 'function') {
-                window.addPoints(5);
-            }
         }
 
         srsData[card.title] = srsEntry;
