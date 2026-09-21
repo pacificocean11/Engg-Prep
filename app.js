@@ -1171,7 +1171,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Update Title
         const titles = {
             'dashboard': 'Dashboard',
-            'study': 'Study Topics',
+            'study': 'Assessment Center',
             'exam': 'Mock Exam',
             'formulas': 'Formula Reference',
             'settings': 'Settings',
@@ -4048,29 +4048,42 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     }
     window.updateGamificationUI = updateGamificationUI;
 
-    window.switchExamTab = function(tabName) {
-        const simView = document.getElementById('exam-view-simulator');
-        const miniView = document.getElementById('exam-view-mini');
-        const simBtn = document.getElementById('tab-btn-simulator');
-        const miniBtn = document.getElementById('tab-btn-mini');
-        
-        if (tabName === 'simulator') {
-            simView.classList.remove('hidden');
-            simView.classList.add('flex');
-            miniView.classList.add('hidden');
-            miniView.classList.remove('flex');
-            
-            simBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-white dark:bg-slate-700 shadow text-on-surface dark:text-white";
-            miniBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-all";
-        } else {
-            miniView.classList.remove('hidden');
-            miniView.classList.add('flex');
-            simView.classList.add('hidden');
-            simView.classList.remove('flex');
-            
-            miniBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold transition-all bg-white dark:bg-slate-700 shadow text-on-surface dark:text-white";
-            simBtn.className = "px-6 py-2.5 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-all";
+    window.switchTestTab = function(tabName) {
+        const quizView = document.getElementById('test-view-quiz');
+        const simView = document.getElementById('test-view-simulator');
+        const miniView = document.getElementById('test-view-mini');
+        const quizBtn = document.getElementById('test-tab-btn-quiz');
+        const simBtn = document.getElementById('test-tab-btn-simulator');
+        const miniBtn = document.getElementById('test-tab-btn-mini');
+
+        const activeClasses = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white dark:bg-slate-700 shadow text-on-surface dark:text-white cursor-pointer";
+        const inactiveClasses = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-white transition-all cursor-pointer";
+
+        if (quizView) {
+            quizView.classList.toggle('hidden', tabName !== 'quiz');
         }
+        if (simView) {
+            simView.classList.toggle('hidden', tabName !== 'simulator');
+            if (tabName === 'simulator') simView.classList.add('flex');
+            else simView.classList.remove('flex');
+        }
+        if (miniView) {
+            miniView.classList.toggle('hidden', tabName !== 'mini');
+            if (tabName === 'mini') miniView.classList.add('flex');
+            else miniView.classList.remove('flex');
+        }
+
+        if (quizBtn) quizBtn.className = tabName === 'quiz' ? activeClasses : inactiveClasses;
+        if (simBtn) simBtn.className = tabName === 'simulator' ? activeClasses : inactiveClasses;
+        if (miniBtn) miniBtn.className = tabName === 'mini' ? activeClasses : inactiveClasses;
+
+        if (tabName === 'quiz' && typeof renderSubjects === 'function') {
+            renderSubjects();
+        }
+    };
+
+    window.switchExamTab = function(tabName) {
+        window.switchTestTab(tabName);
     };
 
 
@@ -7466,6 +7479,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -7604,6 +7618,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kinetic Energy",
+                        "videoUrl": "assets/videos/Kinetic_Energy.mp4",
                         "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
                         "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
                         "examTip": "Found in Dynamics: Work and Energy. For pure rolling without slipping: $v_G = r \\omega$. A solid cylinder has $T = \\frac{1}{2}m v^2 + \\frac{1}{2}(\\frac{1}{2}m r^2)(\\frac{v}{r})^2 = \\frac{3}{4}m v^2$."
@@ -7712,6 +7727,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stagnation Temperature",
+                        "videoUrl": "assets/videos/Stagnation_Temperature.mp4",
                         "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
                         "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
@@ -7742,6 +7758,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Conduction Through a Cylindrical Wall",
+                        "videoUrl": "assets/videos/Conduction_Through_a_Cylindrical_Wall.mp4",
                         "formula": "$$\\dot{Q} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2 / r_1)} = \\frac{T_1 - T_2}{R_{\\text{cyl}}}, \\quad R_{\\text{cyl}} = \\frac{\\ln(r_2 / r_1)}{2\\pi k L}$$",
                         "description": "Radial steady heat conduction through a hollow cylinder (pipe) of length $L$, inner radius $r_1$, and outer radius $r_2$. Because heat flow area increases radially ($A(r) = 2\\pi r L$), the temperature distribution is logarithmic rather than linear.",
                         "examTip": "Found in Heat Transfer: Conduction. Critical radius of insulation for a cylinder is $r_{cr} = k_{\\text{ins}} / h_{\\text{ext}}$. Adding insulation when $r_o < r_{cr}$ actually increases total heat loss until $r_o = r_{cr}$."
@@ -7790,6 +7807,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mole fraction vs. mass fraction",
+                        "videoUrl": "assets/videos/Mole_fraction_vs_mass_fraction.mp4",
                         "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
                         "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
                         "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
@@ -9325,6 +9343,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -9463,6 +9482,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kinetic Energy",
+                        "videoUrl": "assets/videos/Kinetic_Energy.mp4",
                         "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
                         "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
                         "examTip": "Found in Dynamics: Work and Energy. For pure rolling without slipping: $v_G = r \\omega$. A solid cylinder has $T = \\frac{1}{2}m v^2 + \\frac{1}{2}(\\frac{1}{2}m r^2)(\\frac{v}{r})^2 = \\frac{3}{4}m v^2$."
@@ -9571,6 +9591,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stagnation Temperature",
+                        "videoUrl": "assets/videos/Stagnation_Temperature.mp4",
                         "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
                         "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
@@ -10737,6 +10758,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -11951,6 +11973,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -12038,6 +12061,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stagnation Temperature",
+                        "videoUrl": "assets/videos/Stagnation_Temperature.mp4",
                         "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
                         "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
@@ -12068,6 +12092,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Conduction Through a Cylindrical Wall",
+                        "videoUrl": "assets/videos/Conduction_Through_a_Cylindrical_Wall.mp4",
                         "formula": "$$\\dot{Q} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2 / r_1)} = \\frac{T_1 - T_2}{R_{\\text{cyl}}}, \\quad R_{\\text{cyl}} = \\frac{\\ln(r_2 / r_1)}{2\\pi k L}$$",
                         "description": "Radial steady heat conduction through a hollow cylinder (pipe) of length $L$, inner radius $r_1$, and outer radius $r_2$. Because heat flow area increases radially ($A(r) = 2\\pi r L$), the temperature distribution is logarithmic rather than linear.",
                         "examTip": "Found in Heat Transfer: Conduction. Critical radius of insulation for a cylinder is $r_{cr} = k_{\\text{ins}} / h_{\\text{ext}}$. Adding insulation when $r_o < r_{cr}$ actually increases total heat loss until $r_o = r_{cr}$."
@@ -12116,6 +12141,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mole fraction vs. mass fraction",
+                        "videoUrl": "assets/videos/Mole_fraction_vs_mass_fraction.mp4",
                         "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
                         "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
                         "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
@@ -13363,6 +13389,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -14775,6 +14802,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -14862,6 +14890,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stagnation Temperature",
+                        "videoUrl": "assets/videos/Stagnation_Temperature.mp4",
                         "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
                         "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
@@ -14883,6 +14912,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mole fraction vs. mass fraction",
+                        "videoUrl": "assets/videos/Mole_fraction_vs_mass_fraction.mp4",
                         "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
                         "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
                         "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
@@ -16409,6 +16439,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+                        "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
                         "examTip": "Found in Engineering Probability and Statistics. For sample proportion: $\\hat{p} \\pm Z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}$. Standard critical values: $90\\% \\implies 1.645$, $95\\% \\implies 1.960$, $99\\% \\implies 2.576$."
@@ -16547,6 +16578,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kinetic Energy",
+                        "videoUrl": "assets/videos/Kinetic_Energy.mp4",
                         "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
                         "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
                         "examTip": "Found in Dynamics: Work and Energy. For pure rolling without slipping: $v_G = r \\omega$. A solid cylinder has $T = \\frac{1}{2}m v^2 + \\frac{1}{2}(\\frac{1}{2}m r^2)(\\frac{v}{r})^2 = \\frac{3}{4}m v^2$."
@@ -16655,6 +16687,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stagnation Temperature",
+                        "videoUrl": "assets/videos/Stagnation_Temperature.mp4",
                         "formula": "$$T_0 = T + \\frac{v^2}{2 c_p} = T \\left(1 + \\frac{k - 1}{2} M^2\\right), \\quad \\frac{P_0}{P} = \\left(\\frac{T_0}{T}\\right)^{\\frac{k}{k-1}}$$",
                         "description": "Stagnation (total) temperature $T_0$ is the temperature a moving gas reaches when decelerated adiabatically to zero velocity. In isentropic flow, energy conservation dictates stagnation enthalpy $h_0 = h + v^2/2 = \\text{constant}$.",
                         "examTip": "Found in Fluid Mechanics and Thermodynamics: Compressible Flow. $M = v/c = v/\\sqrt{k R T}$ is the Mach number. In adiabatic flow, $T_0$ remains constant across normal shock waves, but stagnation pressure $P_0$ drops."
@@ -16685,6 +16718,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Conduction Through a Cylindrical Wall",
+                        "videoUrl": "assets/videos/Conduction_Through_a_Cylindrical_Wall.mp4",
                         "formula": "$$\\dot{Q} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2 / r_1)} = \\frac{T_1 - T_2}{R_{\\text{cyl}}}, \\quad R_{\\text{cyl}} = \\frac{\\ln(r_2 / r_1)}{2\\pi k L}$$",
                         "description": "Radial steady heat conduction through a hollow cylinder (pipe) of length $L$, inner radius $r_1$, and outer radius $r_2$. Because heat flow area increases radially ($A(r) = 2\\pi r L$), the temperature distribution is logarithmic rather than linear.",
                         "examTip": "Found in Heat Transfer: Conduction. Critical radius of insulation for a cylinder is $r_{cr} = k_{\\text{ins}} / h_{\\text{ext}}$. Adding insulation when $r_o < r_{cr}$ actually increases total heat loss until $r_o = r_{cr}$."
@@ -16733,6 +16767,7 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mole fraction vs. mass fraction",
+                        "videoUrl": "assets/videos/Mole_fraction_vs_mass_fraction.mp4",
                         "formula": "$$y_i = \\frac{n_i}{n_{\\text{total}}} = \\frac{P_i}{P}, \\quad w_i = \\frac{m_i}{m_{\\text{total}}}, \\quad w_i = \\frac{y_i M_i}{\\sum y_j M_j}, \\quad M_{\\text{mix}} = \\sum y_i M_i$$",
                         "description": "Mole fraction $y_i$ is the ratio of moles of component $i$ to total moles; by Dalton's law of partial pressures for ideal gases, $y_i = P_i/P$. Mass fraction $w_i$ is component mass over total mixture mass. Mean molecular weight is $M_{\\text{mix}} = \\sum y_i M_i$.",
                         "examTip": "Found in Chemistry and Thermodynamics: Mixtures. Conversion trick: to convert mole fractions to mass fractions, assume 100 total moles, compute component masses $m_i = n_i M_i$, and divide each by $\\sum m_i$."
@@ -17006,6 +17041,9 @@ window.calcEvaluate = function() {
     }
 
     function renderDailyTheorem(isShuffle = false, explicitIndex = null, autoPlay = false) {
+        if (!document.getElementById("daily-theorem-title") && !document.getElementById("daily-theorem-card")) {
+            return;
+        }
         const disc = getActiveDiscipline();
         const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
 
@@ -19554,7 +19592,7 @@ window.calcEvaluate = function() {
         const upcomingCards = queue.filter(q => !q.isDue && !q.isNew).sort(() => Math.random() - 0.5);
 
         const combined = [...dueCards, ...newCards, ...upcomingCards];
-        return combined.slice(0, SPRINT_SIZE);
+        return combined;
     }
 
     // Render current card state
@@ -19792,11 +19830,6 @@ window.calcEvaluate = function() {
             srsEntry.nextDue = now + BOX_INTERVALS_DAYS[4] * 24 * 60 * 60 * 1000;
             sessionStats.mastered++;
             sessionStats.xpEarned += 5;
-
-            // Award points globally if system supports it
-            if (typeof window.addPoints === 'function') {
-                window.addPoints(5);
-            }
         }
 
         srsData[card.title] = srsEntry;
