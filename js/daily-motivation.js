@@ -766,7 +766,10 @@
                         "title": "Exergy (Availability) of a Closed System",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0)$$",
                         "description": "The maximum theoretical useful work obtainable as a system comes into thermodynamic equilibrium with an environment at $(T_0, P_0)$.",
-                        "examTip": "Found in Thermodynamics. Exergy destroyed in any real process is directly proportional to entropy generation: $X_{\\text{destroyed}} = T_0 S_{\\text{gen}}$."
+                        "examTip": "Found in Thermodynamics. Exergy destroyed in any real process is directly proportional to entropy generation: $X_{\\text{destroyed}} = T_0 S_{\\text{gen}}$.",
+                        "videoUrl": "assets/videos/Exergy.mp4",
+                        "videoTitle": "Exergy Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Psychrometric Humidity Ratio and Relative Humidity",
@@ -881,8 +884,8 @@
                         "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2} a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
                         "description": "Governs linear motion of a particle under uniform constant acceleration $a$.",
                         "examTip": "Found in Dynamics. If acceleration varies with time or displacement, you MUST integrate: $v = \\int a dt$ or $v dv = a ds$.",
-                        "videoUrl": "assets/videos/Rectilinear_Kinematics_Constant_Acceleration_Equations.mp4",
-                        "videoTitle": "Rectilinear Kinematics Constant Acceleration Equations Explainer",
+                        "videoUrl": "assets/videos/Constant_Acceleration_Motion.mp4",
+                        "videoTitle": "Constant Acceleration Motion Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -1366,7 +1369,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -1444,7 +1450,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -1549,13 +1558,19 @@
                         "title": "Polar moment of inertia",
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
-                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
+                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
+                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Radius of Gyration",
                         "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
                         "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
-                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$.",
+                        "videoUrl": "assets/videos/Radius_of_Gyration.mp4",
+                        "videoTitle": "Radius of Gyration Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Product of Inertia",
@@ -1606,7 +1621,10 @@
                         "title": "Constant Acceleration Motion",
                         "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
                         "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
-                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration."
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration.",
+                        "videoUrl": "assets/videos/Constant_Acceleration_Motion.mp4",
+                        "videoTitle": "Constant Acceleration Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "variable Acceleration Motion",
@@ -1687,7 +1705,10 @@
                         "title": "Surface Tension",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
-                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
+                        "videoUrl": "assets/videos/Surface_Tension.mp4",
+                        "videoTitle": "Surface Tension Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capillarity",
@@ -1882,7 +1903,10 @@
                         "title": "Exergy",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
-                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$."
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
+                        "videoUrl": "assets/videos/Exergy.mp4",
+                        "videoTitle": "Exergy Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Mollier chart",
@@ -1900,13 +1924,19 @@
                         "title": "Coefficient of Performance (COP)",
                         "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
                         "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
-                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$."
+                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$.",
+                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
+                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "COP of refrigeration vs. COP of Heat Pump",
                         "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
                         "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
-                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$."
+                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$.",
+                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
+                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "HVAC Processes",
@@ -3174,7 +3204,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -3252,7 +3285,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -3357,13 +3393,19 @@
                         "title": "Polar moment of inertia",
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
-                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
+                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
+                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Radius of Gyration",
                         "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
                         "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
-                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$.",
+                        "videoUrl": "assets/videos/Radius_of_Gyration.mp4",
+                        "videoTitle": "Radius of Gyration Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Product of Inertia",
@@ -3414,7 +3456,10 @@
                         "title": "Constant Acceleration Motion",
                         "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
                         "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
-                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration."
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration.",
+                        "videoUrl": "assets/videos/Constant_Acceleration_Motion.mp4",
+                        "videoTitle": "Constant Acceleration Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "variable Acceleration Motion",
@@ -3495,7 +3540,10 @@
                         "title": "Surface Tension",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
-                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
+                        "videoUrl": "assets/videos/Surface_Tension.mp4",
+                        "videoTitle": "Surface Tension Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capillarity",
@@ -4550,7 +4598,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -4628,7 +4679,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -5752,7 +5806,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -5830,7 +5887,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -5929,7 +5989,10 @@
                         "title": "Surface Tension",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
-                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
+                        "videoUrl": "assets/videos/Surface_Tension.mp4",
+                        "videoTitle": "Surface Tension Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capillarity",
@@ -6097,7 +6160,10 @@
                         "title": "Exergy",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
-                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$."
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
+                        "videoUrl": "assets/videos/Exergy.mp4",
+                        "videoTitle": "Exergy Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Mollier chart",
@@ -6115,13 +6181,19 @@
                         "title": "Coefficient of Performance (COP)",
                         "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
                         "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
-                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$."
+                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$.",
+                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
+                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "COP of refrigeration vs. COP of Heat Pump",
                         "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
                         "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
-                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$."
+                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$.",
+                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
+                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Periodic Table of elements",
@@ -6139,7 +6211,10 @@
                         "title": "Alkanes, Alkenes, Alkynes",
                         "formula": "$$\\text{Alkanes: } \\text{C}_n \\text{H}_{2n+2}, \\quad \\text{Alkenes: } \\text{C}_n \\text{H}_{2n}, \\quad \\text{Alkynes: } \\text{C}_n \\text{H}_{2n-2}$$",
                         "description": "Fundamental classes of aliphatic hydrocarbons classified by carbon-carbon bond saturation. Alkanes are saturated with single $\\text{C}-\\text{C}$ bonds ($sp^3$, e.g. methane, propane). Alkenes contain at least one carbon-carbon double bond ($\\text{C}=\\text{C}$, $sp^2$, e.g. ethylene). Alkynes contain at least one carbon-carbon triple bond ($\\text{C}\\equiv\\text{C}$, $sp$, e.g. acetylene).",
-                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces."
+                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces.",
+                        "videoUrl": "assets/videos/Alkanes_Alkenes_Alkynes.mp4",
+                        "videoTitle": "Alkanes, Alkenes, Alkynes Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
@@ -7128,7 +7203,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -7206,7 +7284,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -7311,13 +7392,19 @@
                         "title": "Polar moment of inertia",
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
-                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
+                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
+                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Radius of Gyration",
                         "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
                         "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
-                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$.",
+                        "videoUrl": "assets/videos/Radius_of_Gyration.mp4",
+                        "videoTitle": "Radius of Gyration Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Product of Inertia",
@@ -7428,6 +7515,15 @@
                         "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
                         "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
                         "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Constant Acceleration Motion",
+                        "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
+                        "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration.",
+                        "videoUrl": "assets/videos/Constant_Acceleration_Motion.mp4",
+                        "videoTitle": "Constant Acceleration Motion Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -8507,7 +8603,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -8585,7 +8684,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -8684,7 +8786,10 @@
                         "title": "Surface Tension",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
-                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
+                        "videoUrl": "assets/videos/Surface_Tension.mp4",
+                        "videoTitle": "Surface Tension Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capillarity",
@@ -8810,7 +8915,10 @@
                         "title": "Alkanes, Alkenes, Alkynes",
                         "formula": "$$\\text{Alkanes: } \\text{C}_n \\text{H}_{2n+2}, \\quad \\text{Alkenes: } \\text{C}_n \\text{H}_{2n}, \\quad \\text{Alkynes: } \\text{C}_n \\text{H}_{2n-2}$$",
                         "description": "Fundamental classes of aliphatic hydrocarbons classified by carbon-carbon bond saturation. Alkanes are saturated with single $\\text{C}-\\text{C}$ bonds ($sp^3$, e.g. methane, propane). Alkenes contain at least one carbon-carbon double bond ($\\text{C}=\\text{C}$, $sp^2$, e.g. ethylene). Alkynes contain at least one carbon-carbon triple bond ($\\text{C}\\equiv\\text{C}$, $sp$, e.g. acetylene).",
-                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces."
+                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces.",
+                        "videoUrl": "assets/videos/Alkanes_Alkenes_Alkynes.mp4",
+                        "videoTitle": "Alkanes, Alkenes, Alkynes Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
@@ -8897,6 +9005,15 @@
                         "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
                         "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
                         "videoTitle": "Noise Pollution Measurements Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Exergy",
+                        "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
+                        "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
+                        "videoUrl": "assets/videos/Exergy.mp4",
+                        "videoTitle": "Exergy Explainer",
                         "videoDuration": "10s"
                 }
         ],
@@ -9545,8 +9662,8 @@
                         "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2} a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
                         "description": "Governs linear motion of a particle under uniform constant acceleration $a$.",
                         "examTip": "Found in Dynamics. If acceleration varies with time or displacement, you MUST integrate: $v = \\int a dt$ or $v dv = a ds$.",
-                        "videoUrl": "assets/videos/Rectilinear_Kinematics_Constant_Acceleration_Equations.mp4",
-                        "videoTitle": "Rectilinear Kinematics Constant Acceleration Equations Explainer",
+                        "videoUrl": "assets/videos/Constant_Acceleration_Motion.mp4",
+                        "videoTitle": "Constant Acceleration Motion Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -10108,7 +10225,10 @@
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transforms",
@@ -10186,7 +10306,10 @@
                         "title": "Simpson's Rule/Parabolic Rule",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$."
+                        "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
+                        "videoUrl": "assets/videos/Simpsons_Rule_Parabolic_Rule.mp4",
+                        "videoTitle": "Simpson's Rule / Parabolic Rule Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Median of a sample for odd and even number of observations",
@@ -10291,13 +10414,19 @@
                         "title": "Polar moment of inertia",
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
-                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$."
+                        "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
+                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
+                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Radius of Gyration",
                         "formula": "$$r = \\sqrt{\\frac{I}{A}} \\iff I = A r^2, \\quad \\lambda = \\frac{K L}{r_{\\min}}$$",
                         "description": "The radius of gyration $r$ represents the radial distance from a reference axis at which the entire cross-sectional area $A$ could be concentrated without altering its moment of inertia $I$.",
-                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$."
+                        "examTip": "Found in Statics and Mechanics of Materials: Column Buckling. The minimum radius of gyration $r_{\\min}$ governs column slenderness ratio $\\lambda = \\frac{K L}{r_{\\min}}$ in Euler's critical buckling formula: $P_{cr} = \\frac{\\pi^2 E A}{(K L / r)^2}$.",
+                        "videoUrl": "assets/videos/Radius_of_Gyration.mp4",
+                        "videoTitle": "Radius of Gyration Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Product of Inertia",
@@ -10348,7 +10477,10 @@
                         "title": "Constant Acceleration Motion",
                         "formula": "$$v = v_0 + a t, \\quad s = s_0 + v_0 t + \\frac{1}{2}a t^2, \\quad v^2 = v_0^2 + 2 a (s - s_0)$$",
                         "description": "Classical kinematic equations valid strictly when linear acceleration $a$ is constant throughout motion. Relates position $s$, initial position $s_0$, initial velocity $v_0$, final velocity $v$, acceleration $a$, and elapsed time $t$.",
-                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration."
+                        "examTip": "Found in Dynamics: Particle Kinematics. Always verify acceleration is constant before applying! If acceleration depends on time $a(t)$ or position $a(s)$, you MUST use calculus integration.",
+                        "videoUrl": "assets/videos/Constant_Acceleration_Motion.mp4",
+                        "videoTitle": "Constant Acceleration Motion Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "variable Acceleration Motion",
@@ -10429,7 +10561,10 @@
                         "title": "Surface Tension",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
-                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air."
+                        "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
+                        "videoUrl": "assets/videos/Surface_Tension.mp4",
+                        "videoTitle": "Surface Tension Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Capillarity",
@@ -10624,7 +10759,10 @@
                         "title": "Exergy",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
-                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$."
+                        "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
+                        "videoUrl": "assets/videos/Exergy.mp4",
+                        "videoTitle": "Exergy Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Mollier chart",
@@ -10642,13 +10780,19 @@
                         "title": "Coefficient of Performance (COP)",
                         "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
                         "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
-                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$."
+                        "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$.",
+                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
+                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "COP of refrigeration vs. COP of Heat Pump",
                         "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
                         "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
-                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$."
+                        "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$.",
+                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
+                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "HVAC Processes",
@@ -10672,7 +10816,10 @@
                         "title": "Alkanes, Alkenes, Alkynes",
                         "formula": "$$\\text{Alkanes: } \\text{C}_n \\text{H}_{2n+2}, \\quad \\text{Alkenes: } \\text{C}_n \\text{H}_{2n}, \\quad \\text{Alkynes: } \\text{C}_n \\text{H}_{2n-2}$$",
                         "description": "Fundamental classes of aliphatic hydrocarbons classified by carbon-carbon bond saturation. Alkanes are saturated with single $\\text{C}-\\text{C}$ bonds ($sp^3$, e.g. methane, propane). Alkenes contain at least one carbon-carbon double bond ($\\text{C}=\\text{C}$, $sp^2$, e.g. ethylene). Alkynes contain at least one carbon-carbon triple bond ($\\text{C}\\equiv\\text{C}$, $sp$, e.g. acetylene).",
-                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces."
+                        "examTip": "Found in Chemistry: Organic Chemistry. Double and triple bonds are sites of high chemical reactivity (addition reactions). As carbon chain length increases, boiling point and density increase due to stronger London dispersion forces.",
+                        "videoUrl": "assets/videos/Alkanes_Alkenes_Alkynes.mp4",
+                        "videoTitle": "Alkanes, Alkenes, Alkynes Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Photosynthesis",
@@ -10953,6 +11100,16 @@
             try { window.switchDashboardTab('motivation'); } catch (e) {}
         }
         const keyMap = {
+            'surfacetension': ['surface tension'],
+            'coprefrigeration': ['cop of refrigeration vs. cop of heat pump', 'coefficient of performance', 'cop'],
+            'polarmoment': ['polar moment of inertia', 'polar moment'],
+            'alkanes': ['alkanes, alkenes, alkynes', 'alkanes'],
+            'parabolicrule': ["simpson's rule/parabolic rule", 'simpson'],
+            'simpson': ['simpson’s 1/3 rule', "simpson's rule/parabolic rule", 'simpson'],
+            'exergy': ['exergy', 'availability of a closed system'],
+            'gyration': ['radius of gyration', 'gyration'],
+            'radiusofgyration': ['radius of gyration', 'gyration'],
+            'constantacceleration': ['constant acceleration motion', 'constant acceleration'],
             'bernoulli': ['bernoulli'],
             'fourier': ['fourier'],
             'carnot': ['carnot'],
