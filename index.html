@@ -2857,12 +2857,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                     <div>
                         <div class="flex items-center gap-2">
                             <span class="text-xs font-black uppercase tracking-wider text-purple-300">FE Rapid Flashcards</span>
-                            <span class="text-[9px] font-black uppercase tracking-widest bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full border border-purple-500/40">Leitner SRS</span>
+                            <span class="text-[9px] font-black uppercase tracking-widest bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full border border-purple-500/40">Theorem Review</span>
                         </div>
                         <p class="text-[11px] text-slate-400 flex items-center gap-1.5">
-                            <span id="fc-progress-text">Card 1 of 20</span>
-                            <span class="text-slate-600">•</span>
-                            <span id="fc-due-indicator" class="text-emerald-400 font-semibold">12 due for review</span>
+                            <span id="fc-progress-text">Card 1 of 249</span>
                         </p>
                     </div>
                 </div>
@@ -2887,6 +2885,11 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         <option value="identify">Formula Identifier (Formula → Title)</option>
                     </select>
 
+                    <!-- Shuffle Button -->
+                    <button id="fc-shuffle-btn" onclick="window.shuffleFlashcards && window.shuffleFlashcards()" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-purple-600/30 text-slate-400 hover:text-purple-300 flex items-center justify-center transition-colors cursor-pointer" title="Shuffle Cards">
+                        <span class="material-symbols-outlined text-[18px]">shuffle</span>
+                    </button>
+
                     <!-- Close Button -->
                     <button id="fc-close-btn" onclick="window.closeFlashcardStudio && window.closeFlashcardStudio()" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer ml-1" title="Close Studio (Esc)">
                         <span class="material-symbols-outlined text-[18px]">close</span>
@@ -2894,16 +2897,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                 </div>
             </div>
 
-            <!-- Progress & Box Stats Bar -->
-            <div class="px-6 py-2.5 bg-slate-950/40 border-b border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 gap-4 shrink-0">
-                <div class="flex-1 max-w-sm bg-slate-800 rounded-full h-1.5 overflow-hidden">
-                    <div id="fc-session-progress-bar" class="bg-gradient-to-r from-purple-500 to-cyan-400 h-full transition-all duration-300" style="width: 5%"></div>
-                </div>
-                <div class="flex items-center gap-3 font-mono text-[10px]">
-                    <span class="flex items-center gap-1 text-rose-400"><span class="w-2 h-2 rounded-full bg-rose-500"></span><span id="fc-stat-box1">Box 1: 0</span></span>
-                    <span class="flex items-center gap-1 text-amber-400"><span class="w-2 h-2 rounded-full bg-amber-500"></span><span id="fc-stat-box2">Box 2: 0</span></span>
-                    <span class="flex items-center gap-1 text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span id="fc-stat-box3">Box 3: 0</span></span>
-                    <span class="flex items-center gap-1 text-cyan-400"><span class="w-2 h-2 rounded-full bg-cyan-500"></span><span id="fc-stat-box4">Mastered: 0</span></span>
+            <!-- Progress Bar -->
+            <div class="px-6 py-2 bg-slate-950/40 border-b border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 gap-4 shrink-0">
+                <div class="flex-1 bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div id="fc-session-progress-bar" class="bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 h-full transition-all duration-300" style="width: 1%"></div>
                 </div>
             </div>
 
@@ -3059,32 +3056,25 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
 
             </div>
 
-            <!-- Footer Action Dock (SRS Rating Buttons: Hard / Good / Mastered) -->
-            <div id="fc-rating-dock" class="px-5 py-3.5 bg-slate-950/90 border-t border-purple-500/20 shrink-0 flex flex-wrap items-center justify-between gap-3">
-                <div class="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-400">
-                    <span class="material-symbols-outlined text-[16px] text-purple-400">psychology</span>
-                    <span>Rate your recall after flipping:</span>
-                </div>
+            <!-- Footer Action Dock (Navigation: Previous / Flip / Next) -->
+            <div id="fc-rating-dock" class="px-5 py-3.5 bg-slate-950/90 border-t border-purple-500/20 shrink-0 flex items-center justify-between gap-3">
+                <!-- Left: Previous Button -->
+                <button id="fc-btn-prev" onclick="window.prevFlashcard && window.prevFlashcard()" class="px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80 font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group" title="Previous Card (Left Arrow)">
+                    <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+                    <span>Previous</span>
+                </button>
 
-                <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-center">
-                    <!-- Button 1: Hard / Repeat -->
-                    <button id="fc-btn-hard" onclick="window.rateFlashcard && window.rateFlashcard(1)" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-rose-500/15 hover:bg-rose-500/25 text-rose-300 border border-rose-500/30 font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-1.5 group" title="Shortcut: Press 1 or Left Arrow">
-                        <span class="w-5 h-5 rounded-md bg-rose-500/30 text-rose-300 flex items-center justify-center text-[10px] font-mono group-hover:bg-rose-500 group-hover:text-white transition-colors">1</span>
-                        <span>Hard / Repeat</span>
-                    </button>
+                <!-- Center: Flip Card Button -->
+                <button id="fc-btn-flip" onclick="window.flipFlashcard && window.flipFlashcard()" class="px-5 sm:px-7 py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 hover:text-white border border-purple-500/40 font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group" title="Flip Card (Spacebar)">
+                    <span class="material-symbols-outlined text-[18px] group-hover:rotate-180 transition-transform duration-300">sync</span>
+                    <span id="fc-flip-btn-text">Flip Card</span>
+                </button>
 
-                    <!-- Button 2: Good -->
-                    <button id="fc-btn-good" onclick="window.rateFlashcard && window.rateFlashcard(2)" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-1.5 group" title="Shortcut: Press 2 or Down Arrow">
-                        <span class="w-5 h-5 rounded-md bg-amber-500/30 text-amber-300 flex items-center justify-center text-[10px] font-mono group-hover:bg-amber-500 group-hover:text-white transition-colors">2</span>
-                        <span>Good (+2d)</span>
-                    </button>
-
-                    <!-- Button 3: Mastered -->
-                    <button id="fc-btn-mastered" onclick="window.rateFlashcard && window.rateFlashcard(3)" class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-xs shadow-md shadow-emerald-500/30 active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-1.5 group" title="Shortcut: Press 3 or Right Arrow">
-                        <span class="w-5 h-5 rounded-md bg-white/20 text-white flex items-center justify-center text-[10px] font-mono">3</span>
-                        <span>Mastered (+5d)</span>
-                    </button>
-                </div>
+                <!-- Right: Next Button -->
+                <button id="fc-btn-next" onclick="window.nextFlashcard && window.nextFlashcard()" class="px-5 sm:px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-extrabold text-xs shadow-md shadow-cyan-500/25 active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group" title="Next Card (Right Arrow)">
+                    <span>Next</span>
+                    <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                </button>
             </div>
 
         </div>
