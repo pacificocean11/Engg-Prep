@@ -7362,12 +7362,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -7504,6 +7510,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+                        "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
+                        "videoTitle": "Area Moment of Inertia Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
                         "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
                         "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
@@ -7513,8 +7522,8 @@ window.calcEvaluate = function() {
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
                         "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
-                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
-                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoUrl": "assets/videos/Polar_moment_of_inertia.mp4",
+                        "videoTitle": "Polar moment of inertia Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -7640,6 +7649,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kennedy's Rule",
+                        "videoUrl": "assets/videos/Kennedys_Rule.mp4",
+                        "videoTitle": "Kennedy's Rule Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{IC}_{12}, \\text{IC}_{23}, \\text{IC}_{13} \\text{ lie on a single straight line}$$",
                         "description": "In mechanism planar kinematics, Kennedy's theorem states that the three instantaneous centers of velocity relating any three bodies in relative motion must lie on a single common straight line. A mechanism with $n$ links has $\\frac{n(n-1)}{2}$ instantaneous centers.",
                         "examTip": "Found in Dynamics: Mechanism Kinematics. Powerful graphical tool to locate unknown instant centers in four-bar linkages and slider-crank mechanisms by intersecting collinear lines."
@@ -7721,6 +7733,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
                         "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
                         "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
@@ -7738,11 +7753,14 @@ window.calcEvaluate = function() {
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
                         "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
+                        "videoTitle": "Moody Friction Factor Diagram Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
                         "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
                         "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
@@ -7801,6 +7819,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "videoUrl": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
+                        "videoTitle": "Properties for Two-Phase Systems Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$x = \\frac{m_g}{m_f + m_g}, \\quad y = y_f + x \\, y_{fg} = y_f + x (y_g - y_f), \\quad y \\in \\{v, u, h, s\\}$$",
                         "description": "In liquid-vapor saturation domes, intensive properties depend on quality $x$ (mass fraction of vapor). Saturated liquid has $x = 0$ ($y_f$); saturated vapor has $x = 1$ ($y_g$). Inside the dome, temperature and pressure are mutually dependent ($T_{\\text{sat}} = f(P_{\\text{sat}})$).",
                         "examTip": "Found in Thermodynamics: Steam Tables. Enthalpy of a wet mixture is $h = h_f + x h_{fg}$. If given $h$, compute quality via $x = \\frac{h - h_f}{h_{fg}}$. If $x < 0$, fluid is subcooled; if $x > 1$, fluid is superheated."
@@ -7818,7 +7839,7 @@ window.calcEvaluate = function() {
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
                         "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
                         "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
-                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
+                        "videoTitle": "Properties for Two-Phase Systems Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -7895,11 +7916,14 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Coefficient of Performance (COP)",
+                        "videoUrl": "assets/videos/Coefficient_of_Performance_COP.mp4",
+                        "videoTitle": "Coefficient of Performance (COP) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
                         "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
                         "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$.",
-                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
-                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoUrl": "assets/videos/Coefficient_of_Performance_COP.mp4",
+                        "videoTitle": "Coefficient of Performance (COP) Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -7922,8 +7946,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
-                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
-                        "videoTitle": "Types of Fits Explainer",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -8167,8 +8191,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\tau_f = c' + \\sigma' \\tan\\phi'$$",
                         "description": "Fundamental shear strength equation for soils, stating that shear strength on any failure plane depends on effective cohesion $c'$, normal effective stress $\\sigma'$, and friction angle $\\phi'$.",
                         "examTip": "Found in Geotechnical Engineering. For normally consolidated sands and gravels, $c' = 0$, giving $\\tau_f = \\sigma' \\tan\\phi'$. In undrained clay loading ($\\\\phi_u = 0$), $\\tau_f = s_u$.",
-                        "videoUrl": "assets/videos/Mohr_Coulomb_Failure_Criterion_for_Soils.mp4",
-                        "videoTitle": "Mohr-Coulomb Failure Criterion for Soils Explainer",
+                        "videoUrl": "assets/videos/Bernoullis_Principle.mp4",
+                        "videoTitle": "Bernoulli's Principle Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -9226,12 +9250,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -9368,6 +9398,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+                        "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
+                        "videoTitle": "Area Moment of Inertia Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
                         "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
                         "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
@@ -9377,8 +9410,8 @@ window.calcEvaluate = function() {
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
                         "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
-                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
-                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoUrl": "assets/videos/Polar_moment_of_inertia.mp4",
+                        "videoTitle": "Polar moment of inertia Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -9504,6 +9537,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kennedy's Rule",
+                        "videoUrl": "assets/videos/Kennedys_Rule.mp4",
+                        "videoTitle": "Kennedy's Rule Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{IC}_{12}, \\text{IC}_{23}, \\text{IC}_{13} \\text{ lie on a single straight line}$$",
                         "description": "In mechanism planar kinematics, Kennedy's theorem states that the three instantaneous centers of velocity relating any three bodies in relative motion must lie on a single common straight line. A mechanism with $n$ links has $\\frac{n(n-1)}{2}$ instantaneous centers.",
                         "examTip": "Found in Dynamics: Mechanism Kinematics. Powerful graphical tool to locate unknown instant centers in four-bar linkages and slider-crank mechanisms by intersecting collinear lines."
@@ -9585,6 +9621,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
                         "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
                         "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
@@ -9602,11 +9641,14 @@ window.calcEvaluate = function() {
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
                         "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
+                        "videoTitle": "Moody Friction Factor Diagram Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
                         "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
                         "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
@@ -10641,12 +10683,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -11856,12 +11904,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -12055,6 +12109,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
                         "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
                         "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
@@ -12072,11 +12129,14 @@ window.calcEvaluate = function() {
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
                         "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
+                        "videoTitle": "Moody Friction Factor Diagram Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
                         "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
                         "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
@@ -12135,6 +12195,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "videoUrl": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
+                        "videoTitle": "Properties for Two-Phase Systems Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$x = \\frac{m_g}{m_f + m_g}, \\quad y = y_f + x \\, y_{fg} = y_f + x (y_g - y_f), \\quad y \\in \\{v, u, h, s\\}$$",
                         "description": "In liquid-vapor saturation domes, intensive properties depend on quality $x$ (mass fraction of vapor). Saturated liquid has $x = 0$ ($y_f$); saturated vapor has $x = 1$ ($y_g$). Inside the dome, temperature and pressure are mutually dependent ($T_{\\text{sat}} = f(P_{\\text{sat}})$).",
                         "examTip": "Found in Thermodynamics: Steam Tables. Enthalpy of a wet mixture is $h = h_f + x h_{fg}$. If given $h$, compute quality via $x = \\frac{h - h_f}{h_{fg}}$. If $x < 0$, fluid is subcooled; if $x > 1$, fluid is superheated."
@@ -12152,7 +12215,7 @@ window.calcEvaluate = function() {
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
                         "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
                         "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
-                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
+                        "videoTitle": "Properties for Two-Phase Systems Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -12202,11 +12265,14 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Coefficient of Performance (COP)",
+                        "videoUrl": "assets/videos/Coefficient_of_Performance_COP.mp4",
+                        "videoTitle": "Coefficient of Performance (COP) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
                         "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
                         "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$.",
-                        "videoUrl": "assets/videos/COP_of_Refrigeration_vs_COP_of_Heat_Pump.mp4",
-                        "videoTitle": "COP of Refrigeration vs. COP of Heat Pump Explainer",
+                        "videoUrl": "assets/videos/Coefficient_of_Performance_COP.mp4",
+                        "videoTitle": "Coefficient of Performance (COP) Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -13272,12 +13338,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -13414,6 +13486,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+                        "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
+                        "videoTitle": "Area Moment of Inertia Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
                         "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
                         "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
@@ -13423,8 +13498,8 @@ window.calcEvaluate = function() {
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
                         "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
-                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
-                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoUrl": "assets/videos/Polar_moment_of_inertia.mp4",
+                        "videoTitle": "Polar moment of inertia Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -13477,8 +13552,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
-                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
-                        "videoTitle": "Types of Fits Explainer",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -14685,12 +14760,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -14884,6 +14965,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
                         "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
                         "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
@@ -14901,11 +14985,14 @@ window.calcEvaluate = function() {
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
                         "videoUrl": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-                        "videoTitle": "Net Positive Suction Head (NPSH) Explainer",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s"
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
+                        "videoTitle": "Moody Friction Factor Diagram Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
                         "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
                         "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
@@ -14923,7 +15010,7 @@ window.calcEvaluate = function() {
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
                         "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
                         "videoUrl": "assets/videos/Psychrometric_Chart.mp4",
-                        "videoTitle": "Psychrometric Chart Explainer",
+                        "videoTitle": "Moody Friction Factor Diagram Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -16322,12 +16409,18 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties of Dot Product",
+                        "videoUrl": "assets/videos/Properties_of_Dot_Product.mp4",
+                        "videoTitle": "Properties of Dot Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = \\mathbf{B} \\cdot \\mathbf{A}, \\quad \\mathbf{A} \\cdot (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\cdot\\mathbf{B} + \\mathbf{A}\\cdot\\mathbf{C}, \\quad \\mathbf{A} \\cdot \\mathbf{A} = \\|\\mathbf{A}\\|^2, \\quad \\mathbf{A} \\cdot \\mathbf{B} = 0 \\iff \\mathbf{A} \\perp \\mathbf{B}$$",
                         "description": "The dot product is commutative, distributive over addition, and satisfies scalar multiplication $(c\\mathbf{A})\\cdot\\mathbf{B} = c(\\mathbf{A}\\cdot\\mathbf{B})$. Two non-zero vectors are orthogonal (perpendicular) if and only if their dot product vanishes.",
                         "examTip": "Found in Mathematics: Vector Operations. Scalar projection of $\\mathbf{A}$ onto $\\mathbf{B}$ is $\\text{proj}_\\mathbf{B}\\mathbf{A} = \\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|}$. Vector projection is $\\left(\\frac{\\mathbf{A}\\cdot\\mathbf{B}}{\\|\\mathbf{B}\\|^2}\\right)\\mathbf{B}$."
                 },
                 {
                         "title": "Properties of Cross Product",
+                        "videoUrl": "assets/videos/Properties_of_Cross_Product.mp4",
+                        "videoTitle": "Properties of Cross Product Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A}), \\quad \\mathbf{A} \\times \\mathbf{A} = \\mathbf{0}, \\quad \\mathbf{A} \\times (\\mathbf{B} + \\mathbf{C}) = \\mathbf{A}\\times\\mathbf{B} + \\mathbf{A}\\times\\mathbf{C}, \\quad \\mathbf{A} \\times \\mathbf{B} = \\mathbf{0} \\iff \\mathbf{A} \\parallel \\mathbf{B}$$",
                         "description": "The cross product is anticommutative (reversing operand order flips direction). The cross product of any vector with itself is the zero vector $\\mathbf{0}$. Two non-zero vectors are parallel or antiparallel if and only if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$.",
                         "examTip": "Found in Mathematics: Vector Operations. Standard Cartesian cyclic right-hand rule: $\\mathbf{i}\\times\\mathbf{j} = \\mathbf{k}$, $\\mathbf{j}\\times\\mathbf{k} = \\mathbf{i}$, $\\mathbf{k}\\times\\mathbf{i} = \\mathbf{j}$. Note that cross product is NOT associative."
@@ -16464,6 +16557,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+                        "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
+                        "videoTitle": "Area Moment of Inertia Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_x = \\int y^2 \\, dA, \\quad I_y = \\int x^2 \\, dA, \\quad I_x = \\bar{I}_x + A d_y^2 \\text{ (Parallel Axis)}$$",
                         "description": "Quantifies a cross-section's geometric resistance to bending deflection and flexural stress. For a rectangle of base $b$ and height $h$ about its centroidal axis: $I_{xc} = \\frac{b h^3}{12}$.",
                         "examTip": "Found in Statics and Mechanics of Materials. Flexural beam stress is $\\sigma = \\frac{M y}{I}$. The axis of bending matters: height $h$ is always the dimension perpendicular to the bending axis (cubed term!)."
@@ -16473,8 +16569,8 @@ window.calcEvaluate = function() {
                         "formula": "$$J = \\int r^2 \\, dA = I_x + I_y, \\quad J_{\\text{circle}} = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2}$$",
                         "description": "The polar moment of inertia $J$ measures resistance to torsional deformation and shear stress in shafts under twisting torque. By the perpendicular axis theorem, the polar moment about the origin equals the sum of rectangular area moments $I_x + I_y$.",
                         "examTip": "Found in Mechanics of Materials: Torsion. Elastic torsional shear stress is $\\tau = \\frac{T \\rho}{J}$ with maximum $\\tau_{\\max} = \\frac{T r}{J}$. Angle of twist is $\\phi = \\frac{T L}{J G}$. For a hollow shaft: $J = \\frac{\\pi (d_o^4 - d_i^4)}{32}$.",
-                        "videoUrl": "assets/videos/Polar_Moment_of_Inertia.mp4",
-                        "videoTitle": "Polar Moment of Inertia Explainer",
+                        "videoUrl": "assets/videos/Polar_moment_of_inertia.mp4",
+                        "videoTitle": "Polar moment of inertia Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -16600,6 +16696,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kennedy's Rule",
+                        "videoUrl": "assets/videos/Kennedys_Rule.mp4",
+                        "videoTitle": "Kennedy's Rule Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{IC}_{12}, \\text{IC}_{23}, \\text{IC}_{13} \\text{ lie on a single straight line}$$",
                         "description": "In mechanism planar kinematics, Kennedy's theorem states that the three instantaneous centers of velocity relating any three bodies in relative motion must lie on a single common straight line. A mechanism with $n$ links has $\\frac{n(n-1)}{2}$ instantaneous centers.",
                         "examTip": "Found in Dynamics: Mechanism Kinematics. Powerful graphical tool to locate unknown instant centers in four-bar linkages and slider-crank mechanisms by intersecting collinear lines."
@@ -16681,6 +16780,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
+                        "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_{\\text{actual}} = C_v \\sqrt{2 g h}, \\quad Q = C_d A_o \\sqrt{2 g h} = C_c C_v A_o \\sqrt{2 g h}$$",
                         "description": "For a large open tank discharging through an orifice under liquid head $h$, Torricelli's theorem yields ideal exit velocity $v = \\sqrt{2gh}$. Viscous friction reduces velocity by $C_v \\approx 0.97$, and flow contraction at vena contracta reduces area by $C_c \\approx 0.62$.",
                         "examTip": "Found in Fluid Mechanics: Torricelli's Law. For draining tanks of surface area $A_t(z)$: time to drain from $h_1$ to $h_2$ is $t = \\int_{h_2}^{h_1} \\frac{A_t(z)}{C_d A_o \\sqrt{2gz}} dz$. For constant $A_t$: $t = \\frac{2 A_t}{C_d A_o \\sqrt{2g}}(\\sqrt{h_1} - \\sqrt{h_2})$."
@@ -16703,6 +16805,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
+                        "videoTitle": "Moody Friction Factor Diagram Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}, \\quad f_{\\text{lam}} = \\frac{64}{\\text{Re}} \\quad (\\text{Re} < 2100), \\quad \\frac{1}{\\sqrt{f}} = -2.0 \\log_{10}\\left(\\frac{\\epsilon/D}{3.7} + \\frac{2.51}{\\text{Re}\\sqrt{f}}\\right)$$",
                         "description": "Darcy-Weisbach equation computes pipe friction head loss $h_f$. Darcy friction factor $f$ is charted on the Moody diagram as a function of Reynolds number $\\text{Re} = \\rho v D / \\mu$ and relative pipe roughness $\\epsilon / D$. Colebrook equation models transition and turbulent regimes.",
                         "examTip": "Found in Fluid Mechanics. In laminar flow ($\\text{Re} < 2100$), $f = 64/\\text{Re}$ depends ONLY on Reynolds number, completely independent of roughness $\\epsilon/D$! In wholly turbulent flow, $f$ depends only on $\\epsilon/D$."
@@ -16761,6 +16866,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "videoUrl": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
+                        "videoTitle": "Properties for Two-Phase Systems Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$x = \\frac{m_g}{m_f + m_g}, \\quad y = y_f + x \\, y_{fg} = y_f + x (y_g - y_f), \\quad y \\in \\{v, u, h, s\\}$$",
                         "description": "In liquid-vapor saturation domes, intensive properties depend on quality $x$ (mass fraction of vapor). Saturated liquid has $x = 0$ ($y_f$); saturated vapor has $x = 1$ ($y_g$). Inside the dome, temperature and pressure are mutually dependent ($T_{\\text{sat}} = f(P_{\\text{sat}})$).",
                         "examTip": "Found in Thermodynamics: Steam Tables. Enthalpy of a wet mixture is $h = h_f + x h_{fg}$. If given $h$, compute quality via $x = \\frac{h - h_f}{h_{fg}}$. If $x < 0$, fluid is subcooled; if $x > 1$, fluid is superheated."
@@ -16855,6 +16963,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Coefficient of Performance (COP)",
+                        "videoUrl": "assets/videos/Coefficient_of_Performance_COP.mp4",
+                        "videoTitle": "Coefficient of Performance (COP) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{COP}_R = \\frac{Q_L}{W_{\\text{net,in}}}, \\quad \\text{COP}_{\\text{HP}} = \\frac{Q_H}{W_{\\text{net,in}}}, \\quad \\text{COP}_{R,\\text{Carnot}} = \\frac{T_L}{T_H - T_L}$$",
                         "description": "Dimensionless measure of refrigeration and heat pump efficiency. Represents desired thermal energy transfer divided by net work input. Can exceed 1.0 (typically 2.5 to 5.0). Upper bound is set by the reversed Carnot cycle operating between $T_L$ and $T_H$.",
                         "examTip": "Found in Thermodynamics: Heat Pumps and Refrigeration. Always use absolute temperatures ($K$ or $^\\circ R$) when calculating Carnot COP! Energy conservation dictates $Q_H = Q_L + W_{\\text{in}}$.",
@@ -16927,8 +17038,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
-                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
-                        "videoTitle": "Types of Fits Explainer",
+                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -17183,6 +17294,14 @@ window.calcEvaluate = function() {
             try { window.switchDashboardTab('motivation'); } catch (e) {}
         }
         const keyMap = {
+            'moodydiagram': ["moody, darcy, or stanton friction factor diagram","moody diagram","friction factor diagram","moody"],
+            'orificedischarging': ["orifice discharging freely into atmosphere","orifice discharging","torricelli"],
+            'coefficientofperformance': ["coefficient of performance (cop)","coefficient of performance","cop"],
+            'twophasevaporliquid': ["properties for two-phase (vapor-liquid) systems","two-phase systems","vapor-liquid"],
+            'areamomentofinertia': ["area moment of inertia","area moment"],
+            'propertiesofdotproduct': ["properties of dot product","dot product properties"],
+            'kennedysrule': ["kennedy's rule","kennedys rule","kennedy"],
+            'crossproduct': ["properties of cross product","cross product"],
             'productofinertia': ['product of inertia'],
             'couples': ['moments (couples)', 'couples'],
             'momentscouples': ['moments (couples)', 'couples'],
