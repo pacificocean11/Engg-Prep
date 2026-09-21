@@ -1780,6 +1780,9 @@
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -1909,6 +1912,9 @@
                 },
                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
+                        "videoTitle": "Isothermal Process Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
                         "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
                         "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
@@ -1990,6 +1996,9 @@
                 },
                 {
                         "title": "HVAC Processes",
+                        "videoUrl": "assets/videos/HVAC_Processes.mp4",
+                        "videoTitle": "HVAC Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
                         "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
                         "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
@@ -2014,6 +2023,9 @@
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "videoUrl": "assets/videos/Geometric_Dimensioning_and_Tolerancing_GDT.mp4",
+                        "videoTitle": "GD&T Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
                         "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
                         "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
@@ -2026,6 +2038,9 @@
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -2044,6 +2059,9 @@
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -3668,6 +3686,9 @@
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -3714,6 +3735,9 @@
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
+                        "videoUrl": "assets/videos/Aerobic_vs_Anaerobic_Processes.mp4",
+                        "videoTitle": "Aerobic vs Anaerobic Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
                         "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
@@ -3729,6 +3753,9 @@
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -6156,6 +6183,9 @@
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -6285,6 +6315,9 @@
                 },
                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
+                        "videoTitle": "Isothermal Process Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
                         "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
                         "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
@@ -6360,6 +6393,9 @@
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
+                        "videoUrl": "assets/videos/Aerobic_vs_Anaerobic_Processes.mp4",
+                        "videoTitle": "Aerobic vs Anaerobic Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
                         "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
@@ -6384,6 +6420,9 @@
                 },
                 {
                         "title": "Aldehydes and Ketones",
+                        "videoUrl": "assets/videos/Aldehydes_and_Ketones.mp4",
+                        "videoTitle": "Aldehydes and Ketones Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
                         "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
@@ -6396,6 +6435,9 @@
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -6414,6 +6456,9 @@
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -7620,6 +7665,9 @@
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "videoUrl": "assets/videos/Geometric_Dimensioning_and_Tolerancing_GDT.mp4",
+                        "videoTitle": "GD&T Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
                         "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
                         "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
@@ -7632,6 +7680,9 @@
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -7650,6 +7701,9 @@
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -9012,6 +9066,9 @@
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -9086,6 +9143,9 @@
                 },
                 {
                         "title": "HVAC Processes",
+                        "videoUrl": "assets/videos/HVAC_Processes.mp4",
+                        "videoTitle": "HVAC Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
                         "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
                         "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
@@ -9113,6 +9173,9 @@
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
+                        "videoUrl": "assets/videos/Aerobic_vs_Anaerobic_Processes.mp4",
+                        "videoTitle": "Aerobic vs Anaerobic Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\to 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP}, \\quad \\text{Anaerobic: } \\text{C}_6\\text{H}_{12}\\text{O}_6 \\to 3\\text{CH}_4 + 3\\text{CO}_2 + 2\\text{ ATP}$$",
                         "description": "Microbial metabolic decomposition of organic matter. Aerobic respiration uses dissolved free oxygen ($\\text{O}_2$) as the terminal electron acceptor, yielding high biomass cell synthesis, $\\text{CO}_2$, and $\\text{H}_2\\text{O}$. Anaerobic digestion operates in the strict absence of molecular oxygen, utilizing combined oxygen/sulfates/carbonates and generating methane ($\\text{CH}_4$) biogas and $\\text{CO}_2$ with much lower sludge production.",
                         "examTip": "Found in Environmental and Chemical: Biological Wastewater Treatment. Aerobic processes (e.g. activated sludge) require substantial aeration energy. Anaerobic processes (e.g. UASB digesters) generate renewable methane fuel and require heating to mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges."
@@ -9137,6 +9200,9 @@
                 },
                 {
                         "title": "Aldehydes and Ketones",
+                        "videoUrl": "assets/videos/Aldehydes_and_Ketones.mp4",
+                        "videoTitle": "Aldehydes and Ketones Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
                         "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
@@ -9149,6 +9215,9 @@
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -9167,6 +9236,9 @@
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -10827,6 +10899,9 @@
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
+                        "videoTitle": "Drag and Lift Coefficients Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_D = \\frac{1}{2}\\rho v^2 C_D A, \\quad F_L = \\frac{1}{2}\\rho v^2 C_L A, \\quad q = \\frac{1}{2}\\rho v^2$$",
                         "description": "Quantifies fluid dynamic forces acting on an immersed body. Drag $F_D$ acts parallel to relative freestream velocity (sum of skin friction and form/pressure drag). Lift $F_L$ acts perpendicular to relative flow. Dynamic pressure is $q = \\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Area $A$ is typically frontal projected area for blunt bodies (cars, spheres, cylinders), but planform wing area (chord $\\times$ span) for airfoils and aircraft."
@@ -10956,6 +11031,9 @@
                 },
                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
+                        "videoTitle": "Isothermal Process Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P V = \\text{const}, \\quad W = Q = m R T \\ln\\left(\\frac{V_2}{V_1}\\right) = m R T \\ln\\left(\\frac{P_1}{P_2}\\right), \\quad \\Delta U = 0$$",
                         "description": "On a $P$-$v$ diagram, an ideal gas isothermal process is an equilateral hyperbola ($P \\propto 1/V$). On a $T$-$s$ diagram, it is a horizontal line ($T = \\text{const}$). For an ideal gas, $\\Delta U = 0$, so heat added entirely converts to boundary work ($Q = W$).",
                         "examTip": "Found in Thermodynamics: Process Analysis. Carnot cycles use two reversible isothermal processes (heat addition at $T_H$ and heat rejection at $T_L$) which appear as horizontal segments on the $T$-$s$ diagram."
@@ -11037,6 +11115,9 @@
                 },
                 {
                         "title": "HVAC Processes",
+                        "videoUrl": "assets/videos/HVAC_Processes.mp4",
+                        "videoTitle": "HVAC Processes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{\\text{sensible}} = 1.08 \\times \\text{CFM} \\times \\Delta T_{\\text{db}}, \\quad \\dot{Q}_{\\text{total}} = 4.5 \\times \\text{CFM} \\times \\Delta h, \\quad \\text{SHR} = \\frac{\\dot{Q}_{\\text{sensible}}}{\\dot{Q}_{\\text{total}}}$$",
                         "description": "Governs heating, cooling, humidification, and dehumidification processes in building conditioning. Sensible cooling moves horizontally left on psychrometric chart; cooling and dehumidification moves down and left; adiabatic mixing follows the lever rule.",
                         "examTip": "Found in Mechanical and Environmental: HVAC. Standard air rules of thumb at sea level: Sensible $\\dot{Q}_s = 1.08 \\times \\text{CFM} \\times \\Delta T$ ($\\text{Btu/hr}$); Total $\\dot{Q}_t = 4.5 \\times \\text{CFM} \\times \\Delta h$ ($\\text{Btu/hr}$)."
@@ -11082,6 +11163,9 @@
                 },
                 {
                         "title": "Aldehydes and Ketones",
+                        "videoUrl": "assets/videos/Aldehydes_and_Ketones.mp4",
+                        "videoTitle": "Aldehydes and Ketones Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Aldehyde: } \\text{R}-\\text{CHO}, \\quad \\text{Ketone: } \\text{R}-\\text{CO}-\\text{R}', \\quad \\text{Carbonyl Group: } >\\text{C}^{\\delta+}=\\text{O}^{\\delta-}$$",
                         "description": "Organic compounds containing the carbonyl functional group ($>\\text{C}=\\text{O}$). In aldehydes, the carbonyl carbon is terminal, bonded to at least one hydrogen atom ($\\text{R}-\\text{CHO}$). In ketones, the carbonyl carbon is internal, bonded to two carbon groups ($\\text{R}-\\text{CO}-\\text{R}'$). The polar carbonyl dipole induces electrophilic reactivity at the carbon atom.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Aldehydes are easily oxidized to carboxylic acids (tested via Tollens' mirror or Fehling's reagent), whereas ketones resist oxidation without carbon chain cleavage. Both undergo nucleophilic addition reactions."
@@ -11106,6 +11190,9 @@
                 },
                 {
                         "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+                        "videoUrl": "assets/videos/Geometric_Dimensioning_and_Tolerancing_GDT.mp4",
+                        "videoTitle": "GD&T Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Feature Control Frame: } [\\text{Sym} \\mid \\text{Tol} \\, \\varnothing \\, \\text{MMC} \\mid \\text{Datum A} \\mid \\text{Datum B} \\mid \\text{Datum C}]$$",
                         "description": "Engineering language defined by ASME Y14.5 and ISO 1101 specifying nominal geometry and allowable variation of part features. Encoded in Feature Control Frames specifying geometric characteristics across 5 categories: Form (flatness, straightness, circularity, cylindricity), Profile (line, surface), Orientation (perpendicularity, parallelism, angularity), Location (position, concentricity), and Runout (circular, total).",
                         "examTip": "Found in Mechanical and Industrial: Mechanical Design and Quality. Maximum Material Condition (MMC, $\\textcircled{\\text{M}}$) grants \"bonus tolerance\": as the produced feature departs from MMC toward Least Material Condition (LMC, $\\textcircled{\\text{L}}$), allowable positional tolerance increases by the exact departure amount."
@@ -11124,6 +11211,9 @@
                 },
                 {
                         "title": "Safety Data Sheet (SDS)",
+                        "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
+                        "videoTitle": "Safety Data Sheet (SDS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
                         "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
                         "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
@@ -11142,6 +11232,9 @@
                 },
                 {
                         "title": "Confined Space Safety",
+                        "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
+                        "videoTitle": "Confined Space Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
                         "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
                         "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
@@ -11347,6 +11440,14 @@
             try { window.switchDashboardTab('motivation'); } catch (e) {}
         }
         const keyMap = {
+            'safetydatasheet': ["safety data sheet (sds)","safety data sheet","sds"],
+            'confinedspacesafety': ["confined space safety","confined space"],
+            'aldehydesketones': ["aldehydes and ketones","aldehydes","ketones"],
+            'gdt': ["geometric dimensioning and tolerancing (gd&t)","geometric dimensioning and tolerancing","gd&t"],
+            'hvacprocesses': ["hvac processes","hvac"],
+            'dragliftcoefficient': ["drag coefficient and lift coefficient","drag coefficient","lift coefficient"],
+            'aerobicanaerobic': ["aerobic vs anaerobic processes","aerobic vs anaerobic","aerobic process"],
+            'isothermalprocess': ["isothermal process, with p-v and t-s representation","isothermal process","isothermal"],
             'moodydiagram': ["moody, darcy, or stanton friction factor diagram","moody diagram","friction factor diagram","moody"],
             'orificedischarging': ["orifice discharging freely into atmosphere","orifice discharging","torricelli"],
             'coefficientofperformance': ["coefficient of performance (cop)","coefficient of performance","cop"],
