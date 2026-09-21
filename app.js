@@ -7411,7 +7411,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -7480,7 +7483,10 @@ window.calcEvaluate = function() {
                         "title": "Moments (Couples)",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
-                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
+                        "videoUrl": "assets/videos/Moments_Couples.mp4",
+                        "videoTitle": "Moments and Couples Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Area Moment of Inertia",
@@ -7510,7 +7516,10 @@ window.calcEvaluate = function() {
                         "title": "Product of Inertia",
                         "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
                         "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
-                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms.",
+                        "videoUrl": "assets/videos/Product_of_Inertia.mp4",
+                        "videoTitle": "Product of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Method of Joints",
@@ -7633,7 +7642,10 @@ window.calcEvaluate = function() {
                         "title": "Newtonian vs Non-Newtonian Fluid",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
-                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
+                        "videoUrl": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+                        "videoTitle": "Newtonian vs. Non-Newtonian Fluid Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Surface Tension",
@@ -7648,7 +7660,10 @@ window.calcEvaluate = function() {
                         "title": "Capillarity",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
+                        "videoUrl": "assets/videos/Capillarity.mp4",
+                        "videoTitle": "Capillarity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manometers",
@@ -7666,7 +7681,10 @@ window.calcEvaluate = function() {
                         "title": "Pitot Tube",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
-                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
+                        "videoUrl": "assets/videos/Pitot_Tube.mp4",
+                        "videoTitle": "Pitot Tube Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Venturi Meter",
@@ -7717,7 +7735,10 @@ window.calcEvaluate = function() {
                         "title": "Conduction Through a Plain Wall",
                         "formula": "$$\\dot{Q} = k A \\frac{T_1 - T_2}{L} = \\frac{T_1 - T_2}{R_{\\text{th}}}, \\quad R_{\\text{th}} = \\frac{L}{k A}$$",
                         "description": "Steady-state 1D heat conduction through a planar slab of thickness $L$, thermal conductivity $k$, and area $A$. Fourier's law integrates to a linear temperature profile with conduction thermal resistance $R_{\\text{th}} = L / (k A)$.",
-                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$."
+                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$.",
+                        "videoUrl": "assets/videos/Conduction_Through_a_Plain_Wall.mp4",
+                        "videoTitle": "Conduction Through a Plain Wall Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Conduction Through a Cylindrical Wall",
@@ -7882,7 +7903,10 @@ window.calcEvaluate = function() {
                         "title": "Types of Fits",
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
-                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
+                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
+                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
+                        "videoTitle": "Types of Fits Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "First Angle vs. Third Angle Projection",
@@ -9246,7 +9270,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -9315,7 +9342,10 @@ window.calcEvaluate = function() {
                         "title": "Moments (Couples)",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
-                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
+                        "videoUrl": "assets/videos/Moments_Couples.mp4",
+                        "videoTitle": "Moments and Couples Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Area Moment of Inertia",
@@ -9345,7 +9375,10 @@ window.calcEvaluate = function() {
                         "title": "Product of Inertia",
                         "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
                         "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
-                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms.",
+                        "videoUrl": "assets/videos/Product_of_Inertia.mp4",
+                        "videoTitle": "Product of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Method of Joints",
@@ -9468,7 +9501,10 @@ window.calcEvaluate = function() {
                         "title": "Newtonian vs Non-Newtonian Fluid",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
-                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
+                        "videoUrl": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+                        "videoTitle": "Newtonian vs. Non-Newtonian Fluid Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Surface Tension",
@@ -9483,7 +9519,10 @@ window.calcEvaluate = function() {
                         "title": "Capillarity",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
+                        "videoUrl": "assets/videos/Capillarity.mp4",
+                        "videoTitle": "Capillarity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manometers",
@@ -9501,7 +9540,10 @@ window.calcEvaluate = function() {
                         "title": "Pitot Tube",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
-                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
+                        "videoUrl": "assets/videos/Pitot_Tube.mp4",
+                        "videoTitle": "Pitot Tube Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Venturi Meter",
@@ -10640,7 +10682,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -11179,7 +11224,10 @@ window.calcEvaluate = function() {
                         "title": "Non-Newtonian Ostwald-de Waele Power-Law Fluids",
                         "formula": "$$\\tau = K \\dot{\\gamma}^n = K \\left|\\frac{du}{dy}\\right|^n, \\quad \\mu_{\\text{eff}} = K \\dot{\\gamma}^{n - 1}$$",
                         "description": "Constitutive equation for non-Newtonian shear behavior: $n < 1$ is pseudoplastic (shear-thinning, polymers/slurries); $n = 1$ is Newtonian; $n > 1$ is dilatant (shear-thickening, starch suspensions).",
-                        "examTip": "Found in Chemical Fluid Mechanics. For shear-thinning fluids, apparent viscosity $\\mu_{\\text{eff}}$ decreases as shear rate $\\dot{\\gamma}$ increases."
+                        "examTip": "Found in Chemical Fluid Mechanics. For shear-thinning fluids, apparent viscosity $\\mu_{\\text{eff}}$ decreases as shear rate $\\dot{\\gamma}$ increases.",
+                        "videoUrl": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+                        "videoTitle": "Newtonian vs. Non-Newtonian Fluid Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Bingham Plastic Yield Stress Fluids",
@@ -11848,7 +11896,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -11917,7 +11968,10 @@ window.calcEvaluate = function() {
                         "title": "Newtonian vs Non-Newtonian Fluid",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
-                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
+                        "videoUrl": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+                        "videoTitle": "Newtonian vs. Non-Newtonian Fluid Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Surface Tension",
@@ -11932,7 +11986,10 @@ window.calcEvaluate = function() {
                         "title": "Capillarity",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
+                        "videoUrl": "assets/videos/Capillarity.mp4",
+                        "videoTitle": "Capillarity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manometers",
@@ -11950,7 +12007,10 @@ window.calcEvaluate = function() {
                         "title": "Pitot Tube",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
-                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
+                        "videoUrl": "assets/videos/Pitot_Tube.mp4",
+                        "videoTitle": "Pitot Tube Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Venturi Meter",
@@ -12001,7 +12061,10 @@ window.calcEvaluate = function() {
                         "title": "Conduction Through a Plain Wall",
                         "formula": "$$\\dot{Q} = k A \\frac{T_1 - T_2}{L} = \\frac{T_1 - T_2}{R_{\\text{th}}}, \\quad R_{\\text{th}} = \\frac{L}{k A}$$",
                         "description": "Steady-state 1D heat conduction through a planar slab of thickness $L$, thermal conductivity $k$, and area $A$. Fourier's law integrates to a linear temperature profile with conduction thermal resistance $R_{\\text{th}} = L / (k A)$.",
-                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$."
+                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$.",
+                        "videoUrl": "assets/videos/Conduction_Through_a_Plain_Wall.mp4",
+                        "videoTitle": "Conduction Through a Plain Wall Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Conduction Through a Cylindrical Wall",
@@ -13245,7 +13308,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -13314,7 +13380,10 @@ window.calcEvaluate = function() {
                         "title": "Moments (Couples)",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
-                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
+                        "videoUrl": "assets/videos/Moments_Couples.mp4",
+                        "videoTitle": "Moments and Couples Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Area Moment of Inertia",
@@ -13344,7 +13413,10 @@ window.calcEvaluate = function() {
                         "title": "Product of Inertia",
                         "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
                         "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
-                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms.",
+                        "videoUrl": "assets/videos/Product_of_Inertia.mp4",
+                        "videoTitle": "Product of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Method of Joints",
@@ -13377,7 +13449,10 @@ window.calcEvaluate = function() {
                         "title": "Types of Fits",
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
-                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
+                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
+                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
+                        "videoTitle": "Types of Fits Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "First Angle vs. Third Angle Projection",
@@ -14645,7 +14720,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -14714,7 +14792,10 @@ window.calcEvaluate = function() {
                         "title": "Newtonian vs Non-Newtonian Fluid",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
-                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
+                        "videoUrl": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+                        "videoTitle": "Newtonian vs. Non-Newtonian Fluid Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Surface Tension",
@@ -14729,7 +14810,10 @@ window.calcEvaluate = function() {
                         "title": "Capillarity",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
+                        "videoUrl": "assets/videos/Capillarity.mp4",
+                        "videoTitle": "Capillarity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manometers",
@@ -14747,7 +14831,10 @@ window.calcEvaluate = function() {
                         "title": "Pitot Tube",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
-                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
+                        "videoUrl": "assets/videos/Pitot_Tube.mp4",
+                        "videoTitle": "Pitot Tube Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Venturi Meter",
@@ -16267,7 +16354,10 @@ window.calcEvaluate = function() {
                         "title": "Variance and Standard Deviation",
                         "formula": "$$s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1} = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}, \\quad s = \\sqrt{s^2}$$",
                         "description": "Measures data dispersion around the sample mean. Dividing by degrees of freedom $n - 1$ rather than $n$ provides an unbiased estimator of the true population variance $\\sigma^2$ (Bessel's correction).",
-                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$)."
+                        "examTip": "Found in Engineering Probability and Statistics. Ensure your calculator is in sample standard deviation mode ($s$ or $S_x$) rather than population mode ($\\sigma_x$, which divides by $n$).",
+                        "videoUrl": "assets/videos/Variance_and_Standard_Deviation.mp4",
+                        "videoTitle": "Variance and Standard Deviation Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Law of Total Probability",
@@ -16336,7 +16426,10 @@ window.calcEvaluate = function() {
                         "title": "Moments (Couples)",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
-                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant."
+                        "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
+                        "videoUrl": "assets/videos/Moments_Couples.mp4",
+                        "videoTitle": "Moments and Couples Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Area Moment of Inertia",
@@ -16366,7 +16459,10 @@ window.calcEvaluate = function() {
                         "title": "Product of Inertia",
                         "formula": "$$I_{xy} = \\int x y \\, dA, \\quad I_{xy} = \\bar{I}_{xy} + A d_x d_y, \\quad \\tan(2\\theta_p) = \\frac{-2 I_{xy}}{I_x - I_y}$$",
                         "description": "Measures cross-sectional asymmetry with respect to coordinate axes. If either the $x$-axis or $y$-axis is an axis of structural symmetry, the product of inertia is identically zero ($I_{xy} = 0$), meaning coordinate axes coincide with principal axes of inertia.",
-                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms."
+                        "examTip": "Found in Statics and Mechanics of Materials. When $I_{xy} = 0$, unsymmetric bending vanishes and standard flexure formulas $\\sigma = M y / I$ apply without cross-coupling terms.",
+                        "videoUrl": "assets/videos/Product_of_Inertia.mp4",
+                        "videoTitle": "Product of Inertia Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Method of Joints",
@@ -16489,7 +16585,10 @@ window.calcEvaluate = function() {
                         "title": "Newtonian vs Non-Newtonian Fluid",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
-                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises."
+                        "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
+                        "videoUrl": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+                        "videoTitle": "Newtonian vs. Non-Newtonian Fluid Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Surface Tension",
@@ -16504,7 +16603,10 @@ window.calcEvaluate = function() {
                         "title": "Capillarity",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
+                        "videoUrl": "assets/videos/Capillarity.mp4",
+                        "videoTitle": "Capillarity Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Manometers",
@@ -16522,7 +16624,10 @@ window.calcEvaluate = function() {
                         "title": "Pitot Tube",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
-                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!"
+                        "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
+                        "videoUrl": "assets/videos/Pitot_Tube.mp4",
+                        "videoTitle": "Pitot Tube Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Venturi Meter",
@@ -16573,7 +16678,10 @@ window.calcEvaluate = function() {
                         "title": "Conduction Through a Plain Wall",
                         "formula": "$$\\dot{Q} = k A \\frac{T_1 - T_2}{L} = \\frac{T_1 - T_2}{R_{\\text{th}}}, \\quad R_{\\text{th}} = \\frac{L}{k A}$$",
                         "description": "Steady-state 1D heat conduction through a planar slab of thickness $L$, thermal conductivity $k$, and area $A$. Fourier's law integrates to a linear temperature profile with conduction thermal resistance $R_{\\text{th}} = L / (k A)$.",
-                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$."
+                        "examTip": "Found in Heat Transfer: Conduction. For composite multi-layer planar walls, thermal resistances in series simply add: $R_{\\text{total}} = \\sum \\frac{L_i}{k_i A} + \\frac{1}{h_1 A} + \\frac{1}{h_2 A}$.",
+                        "videoUrl": "assets/videos/Conduction_Through_a_Plain_Wall.mp4",
+                        "videoTitle": "Conduction Through a Plain Wall Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Conduction Through a Cylindrical Wall",
@@ -16783,7 +16891,10 @@ window.calcEvaluate = function() {
                         "title": "Types of Fits",
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
-                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance)."
+                        "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
+                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
+                        "videoTitle": "Types of Fits Explainer",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "First Angle vs. Third Angle Projection",
@@ -17034,6 +17145,18 @@ window.calcEvaluate = function() {
             try { window.switchDashboardTab('motivation'); } catch (e) {}
         }
         const keyMap = {
+            'productofinertia': ['product of inertia'],
+            'couples': ['moments (couples)', 'couples'],
+            'momentscouples': ['moments (couples)', 'couples'],
+            'pitottube': ['pitot tube', 'pitot'],
+            'variancestddev': ['variance and standard deviation', 'standard deviation', 'variance'],
+            'plainwall': ['conduction through a plain wall', 'plain wall'],
+            'conductionplainwall': ['conduction through a plain wall', 'plain wall'],
+            'capillarity': ['capillarity'],
+            'nonnewtonian': ['newtonian vs non-newtonian fluid', 'non-newtonian'],
+            'newtonianfluid': ['newtonian vs non-newtonian fluid', 'newtonian'],
+            'fits': ['types of fits', 'fits'],
+            'typesoffits': ['types of fits', 'fits'],
             'surfacetension': ['surface tension'],
             'coprefrigeration': ['cop of refrigeration vs. cop of heat pump', 'coefficient of performance', 'cop'],
             'polarmoment': ['polar moment of inertia', 'polar moment'],
