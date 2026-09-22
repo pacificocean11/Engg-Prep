@@ -10,6 +10,7 @@
     let isFlipped = false;
     let currentMode = 'recall'; // 'recall' or 'identify'
     let currentDiscipline = 'current';
+    let activeMediaTab = 'video'; // 'video' or 'blueprint'
 
     // Get active discipline from app or localStorage
     function getActiveDiscipline() {
@@ -123,38 +124,118 @@
         const backFormula = document.getElementById('fc-back-formula');
         const backDesc = document.getElementById('fc-back-desc');
         const backTip = document.getElementById('fc-back-tip');
-        const backColPrimary = document.getElementById('fc-back-col-primary');
-        const backColVideo = document.getElementById('fc-back-col-video');
-        const backVideo = document.getElementById('fc-back-video');
-        const backVideoDur = document.getElementById('fc-back-video-duration');
 
         if (backTitle) backTitle.innerHTML = card.title || '';
         if (backFormula) backFormula.innerHTML = card.formula || '';
         if (backDesc) backDesc.innerHTML = card.description || '';
         if (backTip) backTip.innerHTML = card.examTip || '';
 
-        // Typeset all math elements on front and back
-        triggerMathTypeset([frontTitle, frontFormulaView, frontHint, backTitle, backFormula, backDesc, backTip]);
+        // If card is currently flipped, typeset back math now
+        if (isFlipped) {
+            triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
+        }
 
-        // Responsive Video & 2-Column Layout configuration
-        if (card.videoUrl && backVideo) {
-            if (backColVideo) backColVideo.classList.remove('hidden');
-            if (backColPrimary) {
-                backColPrimary.className = 'w-full sm:col-span-7 space-y-3.5';
+        // Responsive Media & 2-Column Layout configuration (Option A: Video + Technical Blueprint)
+        const hasVideo = Boolean(card.videoUrl);
+        const hasImage = Boolean(card.imageUrl);
+        const backColVideo = document.getElementById('fc-back-col-video');
+        const backColPrimary = document.getElementById('fc-back-col-primary');
+        const mediaSwitcher = document.getElementById('fc-media-switcher');
+        const mediaStaticHeader = document.getElementById('fc-media-static-header');
+        const headerIcon = document.getElementById('fc-media-header-icon');
+        const headerLabel = document.getElementById('fc-media-header-label');
+        const videoDur = document.getElementById('fc-back-video-duration');
+        const backVideo = document.getElementById('fc-back-video');
+        const backImg = document.getElementById('fc-back-image');
+        const imgContainer = document.getElementById('fc-back-image-container');
+
+        if (hasVideo || hasImage) {
+            if (backColVideo) {
+                backColVideo.classList.remove('hidden');
+                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
             }
-            if (backVideoDur) backVideoDur.textContent = card.videoDuration || '10s';
-            backVideo.src = card.videoUrl;
-            backVideo.load();
+            if (backColPrimary) {
+                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+            }
+
+            if (hasVideo && backVideo) {
+                backVideo.src = card.videoUrl;
+                backVideo.load();
+            } else if (backVideo) {
+                backVideo.pause();
+                backVideo.removeAttribute('src');
+            }
+
+            if (hasImage && backImg) {
+                backImg.src = card.imageUrl;
+                backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
+                if (imgContainer) {
+                    imgContainer.onclick = openBlueprintLightbox;
+                }
+            }
+
+            // Wire up toggle bar or static header
+            if (hasVideo && hasImage) {
+                if (mediaSwitcher) {
+                    mediaSwitcher.classList.remove('hidden');
+                    mediaSwitcher.classList.add('flex');
+                }
+                if (mediaStaticHeader) mediaStaticHeader.classList.add('hidden');
+
+                const btnVideo = document.getElementById('fc-toggle-btn-video');
+                const btnBlueprint = document.getElementById('fc-toggle-btn-blueprint');
+                if (btnVideo) btnVideo.onclick = () => setMediaTab('video');
+                if (btnBlueprint) btnBlueprint.onclick = () => setMediaTab('blueprint');
+
+                // Default to video when both exist
+                setMediaTab('video');
+            } else if (hasVideo) {
+                if (mediaSwitcher) {
+                    mediaSwitcher.classList.add('hidden');
+                    mediaSwitcher.classList.remove('flex');
+                }
+                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+                if (headerIcon) {
+                    headerIcon.textContent = 'smart_display';
+                    headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
+                }
+                if (headerLabel) {
+                    headerLabel.textContent = '10s Video Explainer';
+                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
+                }
+                setMediaTab('video');
+            } else {
+                // Only Blueprint Image exists
+                if (mediaSwitcher) {
+                    mediaSwitcher.classList.add('hidden');
+                    mediaSwitcher.classList.remove('flex');
+                }
+                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+                if (headerIcon) {
+                    headerIcon.textContent = 'architecture';
+                    headerIcon.className = 'material-symbols-outlined text-[15px] text-purple-400';
+                }
+                if (headerLabel) {
+                    headerLabel.textContent = 'Technical Blueprint';
+                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
+                }
+                setMediaTab('blueprint');
+            }
         } else {
+            // Neither video nor image exists
             if (backColVideo) backColVideo.classList.add('hidden');
             if (backColPrimary) {
-                backColPrimary.className = 'w-full sm:col-span-12 max-w-2xl lg:max-w-3xl mx-auto space-y-4';
+                backColPrimary.className = 'w-full sm:col-span-12 max-w-2xl lg:max-w-4xl mx-auto space-y-4';
             }
             if (backVideo) {
                 backVideo.pause();
                 backVideo.removeAttribute('src');
             }
         }
+
+        // Initialize In-Video Karaoke Captions
+        initKaraokeCues(card);
+        wireKaraokeVideoEvents();
     }
 
     // Typeset math helper
@@ -174,6 +255,281 @@
         }
     }
 
+    
+    // Set active media tab (Option A: Switch between Video and Blueprint Diagram)
+    function setMediaTab(tab) {
+        activeMediaTab = tab;
+        const videoContainer = document.getElementById('fc-back-video-container');
+        const imageContainer = document.getElementById('fc-back-image-container');
+        const btnVideo = document.getElementById('fc-toggle-btn-video');
+        const btnBlueprint = document.getElementById('fc-toggle-btn-blueprint');
+        const subtext = document.getElementById('fc-media-subtext');
+        const video = document.getElementById('fc-back-video');
+        const badge = document.getElementById('fc-back-video-duration');
+
+        if (tab === 'blueprint') {
+            if (videoContainer) videoContainer.classList.add('hidden');
+            if (imageContainer) imageContainer.classList.remove('hidden');
+            if (subtext) subtext.textContent = 'Click diagram to zoom in full resolution';
+            if (badge) badge.textContent = 'HD CAD';
+
+            if (btnBlueprint) {
+                btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 bg-purple-500/25 text-purple-300 border border-purple-500/40 shadow-sm';
+            }
+            if (btnVideo) {
+                btnVideo.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
+            }
+            if (video) video.pause();
+        } else {
+            if (imageContainer) imageContainer.classList.add('hidden');
+            if (videoContainer) videoContainer.classList.remove('hidden');
+            if (subtext) subtext.textContent = 'Auto-plays on flip • Tap for controls';
+
+            const card = currentDeck[currentIndex];
+            if (badge) badge.textContent = (card && card.videoDuration) || '10s';
+
+            if (btnVideo) {
+                btnVideo.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm';
+            }
+            if (btnBlueprint) {
+                btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
+            }
+            if (isFlipped && video && card && card.videoUrl) {
+                const p = video.play();
+                if (p !== undefined) p.catch(() => {});
+            }
+        }
+        updateKaraokeUI();
+    }
+
+            // =========================================================================
+    // In-Video Karaoke Captions Engine
+    // =========================================================================
+    // Default to OFF unless explicitly activated by the user
+    let karaokeActive = localStorage.getItem('engg_fc_karaoke') === 'true';
+    let currentActiveCueIndex = -1;
+
+    function toggleKaraokeCaptions() {
+        karaokeActive = !karaokeActive;
+        try { localStorage.setItem('engg_fc_karaoke', karaokeActive); } catch (e) {}
+        updateKaraokeUI();
+    }
+
+    /**
+     * Retrieves precision captions or dynamically generates karaoke cues on-the-fly
+     * for any 10-second NCEES theorem explainer video across all disciplines.
+     */
+    function getCardCaptions(card) {
+        if (!card || !card.videoUrl) return [];
+        if (card.captions && Array.isArray(card.captions) && card.captions.length > 0) {
+            return card.captions;
+        }
+
+        const cues = [];
+        const dur = 10.0;
+
+        // Phase 1 (0.0s - 4.4s): Concept & Core Principle
+        let p1Text = card.title || '';
+        if (card.description) {
+            const rawSentence = card.description.split('.')[0].trim();
+            p1Text = `${card.title}: ${rawSentence}.`;
+        }
+        const words1 = p1Text.split(/\s+/).filter(Boolean);
+        const p1Duration = 4.4;
+        const wDur1 = p1Duration / Math.max(words1.length, 1);
+        const timedWords1 = words1.map((w, idx) => ({
+            text: w,
+            start: parseFloat((idx * wDur1).toFixed(2)),
+            end: parseFloat(((idx + 1) * wDur1).toFixed(2))
+        }));
+        cues.push({
+            start: 0.0,
+            end: 4.4,
+            words: timedWords1
+        });
+
+        // Phase 2 (4.4s - 7.6s): Governing Formula (displayed in live MathJax without word-splitting)
+        if (card.formula) {
+            cues.push({
+                start: 4.4,
+                end: 7.6,
+                isEquation: true,
+                text: card.formula
+            });
+        }
+
+        // Phase 3 (7.6s - 10.0s): NCEES Exam Trap & Key Tip
+        let p3Text = card.examTip || 'Found in NCEES FE Reference Handbook. Review core assumptions!';
+        const cleanTip = p3Text.replace(/^Search NCEES Handbook under [^.]*\.\s*/i, '').trim();
+        const tipSentence = cleanTip.split('.')[0] || cleanTip;
+        const p3Display = `Exam Tip: ${tipSentence}!`;
+        const words3 = p3Display.split(/\s+/).filter(Boolean);
+        const p3Start = card.formula ? 7.6 : 4.6;
+        const p3Duration = dur - p3Start;
+        const wDur3 = p3Duration / Math.max(words3.length, 1);
+        const timedWords3 = words3.map((w, idx) => ({
+            text: w,
+            start: parseFloat((p3Start + idx * wDur3).toFixed(2)),
+            end: parseFloat((p3Start + (idx + 1) * wDur3).toFixed(2))
+        }));
+        cues.push({
+            start: p3Start,
+            end: dur,
+            words: timedWords3
+        });
+
+        return cues;
+    }
+
+    function updateKaraokeUI() {
+        const btn = document.getElementById('fc-btn-toggle-captions');
+        const statusText = document.getElementById('fc-caption-status-text');
+        const overlay = document.getElementById('fc-video-caption-overlay');
+        const box = document.getElementById('fc-karaoke-box');
+        const card = currentDeck[currentIndex];
+        const captions = getCardCaptions(card);
+        const hasCaptions = Boolean(card && card.videoUrl && captions.length > 0);
+
+        if (!hasCaptions || activeMediaTab !== 'video') {
+            if (btn) {
+                btn.classList.add('hidden');
+                btn.classList.remove('flex');
+            }
+            if (overlay) overlay.classList.add('hidden');
+            if (box) box.classList.add('hidden');
+            return;
+        }
+
+        if (btn) {
+            btn.classList.remove('hidden');
+            btn.classList.add('flex');
+            if (karaokeActive) {
+                btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-cyan-500/20 text-cyan-300 border-cyan-500/40 hover:bg-cyan-500/30 cursor-pointer shadow-sm';
+                if (statusText) statusText.textContent = 'CC On';
+            } else {
+                btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-slate-800/80 text-slate-400 border-slate-700 hover:text-slate-200 cursor-pointer';
+                if (statusText) statusText.textContent = 'CC Off';
+            }
+        }
+
+        if (overlay) {
+            if (karaokeActive) {
+                overlay.classList.remove('hidden');
+            } else {
+                overlay.classList.add('hidden');
+                if (box) box.classList.add('hidden');
+            }
+        }
+    }
+
+    function initKaraokeCues(card) {
+        currentActiveCueIndex = -1;
+        const textEl = document.getElementById('fc-karaoke-text');
+        const box = document.getElementById('fc-karaoke-box');
+        if (textEl) textEl.innerHTML = '';
+        if (box) box.classList.add('hidden');
+        updateKaraokeUI();
+    }
+
+    function renderKaraokeCue(cue, cueIndex) {
+        currentActiveCueIndex = cueIndex;
+        const textEl = document.getElementById('fc-karaoke-text');
+        const box = document.getElementById('fc-karaoke-box');
+        if (!textEl || !box) return;
+
+        box.classList.remove('hidden');
+
+        if (cue.isEquation) {
+            // Presenter is showing/stating the equation: render full MathJax formula with Apple dock badge
+            textEl.innerHTML = `<div class="inline-flex items-center gap-2.5 py-0.5 px-2 font-mono tracking-wide text-sm sm:text-base text-cyan-300"><span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-400/35 shadow-sm">NCEES Equation</span><span>${cue.text}</span></div>`;
+            triggerMathTypeset([textEl]);
+        } else if (cue.words && Array.isArray(cue.words)) {
+            // Render Karaoke words
+            textEl.innerHTML = cue.words.map((w, idx) => {
+                return `<span class="fc-karaoke-word" data-idx="${idx}" data-start="${w.start}" data-end="${w.end}">${w.text}</span>`;
+            }).join(' ');
+        } else if (cue.text) {
+            textEl.textContent = cue.text;
+        }
+    }
+
+    function wireKaraokeVideoEvents() {
+        const video = document.getElementById('fc-back-video');
+        if (!video || video._karaokeWired) return;
+        video._karaokeWired = true;
+
+        video.addEventListener('timeupdate', () => {
+            const card = currentDeck[currentIndex];
+            const overlay = document.getElementById('fc-video-caption-overlay');
+            const box = document.getElementById('fc-karaoke-box');
+            const textEl = document.getElementById('fc-karaoke-text');
+            const captions = getCardCaptions(card);
+
+            if (!card || !card.videoUrl || captions.length === 0 || !karaokeActive) {
+                if (box) box.classList.add('hidden');
+                return;
+            }
+
+            const t = video.currentTime;
+            const newIndex = captions.findIndex(c => t >= c.start && t < c.end);
+
+            if (newIndex === -1) {
+                currentActiveCueIndex = -1;
+                if (box) box.classList.add('hidden');
+                return;
+            }
+
+            const activeCue = captions[newIndex];
+
+            // If cue index changed, rebuild the cue content
+            if (newIndex !== currentActiveCueIndex) {
+                renderKaraokeCue(activeCue, newIndex);
+            }
+
+            // If cue has words, update the instant Karaoke highlight
+            if (activeCue.words && textEl) {
+                const wordSpans = textEl.querySelectorAll('.fc-karaoke-word');
+                wordSpans.forEach(span => {
+                    const start = parseFloat(span.dataset.start);
+                    const end = parseFloat(span.dataset.end);
+                    if (t < start) {
+                        span.className = 'fc-karaoke-word';
+                    } else if (t >= start && t < end) {
+                        span.className = 'fc-karaoke-word is-active';
+                    } else {
+                        span.className = 'fc-karaoke-word is-spoken';
+                    }
+                });
+            }
+        });
+    }
+
+    // Open Blueprint Lightbox
+    function openBlueprintLightbox() {
+        const card = currentDeck[currentIndex];
+        if (!card || !card.imageUrl) return;
+        const lightbox = document.getElementById('fc-blueprint-lightbox');
+        const img = document.getElementById('fc-lightbox-img');
+        const title = document.getElementById('fc-lightbox-title');
+        if (img) img.src = card.imageUrl;
+        if (title) {
+            title.innerHTML = `<span class="material-symbols-outlined text-[18px]">architecture</span><span>${card.imageTitle || card.title || 'Technical Blueprint Diagram'}</span>`;
+        }
+        if (lightbox) {
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+    }
+
+    // Close Blueprint Lightbox
+    function closeBlueprintLightbox() {
+        const lightbox = document.getElementById('fc-blueprint-lightbox');
+        if (lightbox) {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+    }
+
     // Flip action
     function flipCard() {
         if (currentDeck.length === 0) return;
@@ -187,16 +543,27 @@
         if (isFlipped) {
             inner.classList.add('flipped');
 
-            // Render LaTeX on back
+            const card = currentDeck[currentIndex];
             const backFormula = document.getElementById('fc-back-formula');
             const backDesc = document.getElementById('fc-back-desc');
             const backTip = document.getElementById('fc-back-tip');
             const backTitle = document.getElementById('fc-back-title');
-            triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
+
+            if (card) {
+                if (backTitle) backTitle.innerHTML = card.title || '';
+                if (backFormula) backFormula.innerHTML = card.formula || '';
+                if (backDesc) backDesc.innerHTML = card.description || '';
+                if (backTip) backTip.innerHTML = card.examTip || '';
+            }
+
+            const backEls = [backFormula, backDesc, backTip, backTitle].filter(Boolean);
+            // Trigger typeset immediately and staggered across 3D rotation
+            triggerMathTypeset(backEls);
+            setTimeout(() => triggerMathTypeset(backEls), 120);
+            setTimeout(() => triggerMathTypeset(backEls), 320);
 
             // Auto-play explainer video if present
-            const card = currentDeck[currentIndex];
-            if (card && card.videoUrl) {
+            if (card && card.videoUrl && activeMediaTab === 'video') {
                 setTimeout(() => {
                     const video = document.getElementById('fc-back-video');
                     if (video) {
@@ -219,6 +586,13 @@
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
 
+        // Always return to front face when navigating cards
+        isFlipped = false;
+        const inner = document.getElementById('fc-flip-inner');
+        if (inner) inner.classList.remove('flipped');
+        const flipBtnText = document.getElementById('fc-flip-btn-text');
+        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
+
         currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
         renderCard();
     }
@@ -228,6 +602,13 @@
         if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
+
+        // Always return to front face when navigating cards
+        isFlipped = false;
+        const inner = document.getElementById('fc-flip-inner');
+        if (inner) inner.classList.remove('flipped');
+        const flipBtnText = document.getElementById('fc-flip-btn-text');
+        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
 
         currentIndex = (currentIndex + 1) % currentDeck.length;
         renderCard();
@@ -305,6 +686,12 @@
         if (e.target && (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT')) return;
 
         if (e.code === 'Escape') {
+            const lb = document.getElementById('fc-blueprint-lightbox');
+            if (lb && !lb.classList.contains('hidden')) {
+                e.preventDefault();
+                closeBlueprintLightbox();
+                return;
+            }
             e.preventDefault();
             closeFlashcardStudio();
         } else if (e.code === 'Space' || e.code === 'Enter') {
@@ -339,13 +726,34 @@
         }
     });
 
+    // Re-typeset active flashcard when MathJax finishes loading asynchronously
+    window.addEventListener('mathjax-ready', () => {
+        const modal = document.getElementById('fe-flashcards-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+            renderCard();
+            if (isFlipped) {
+                const backFormula = document.getElementById('fc-back-formula');
+                const backDesc = document.getElementById('fc-back-desc');
+                const backTip = document.getElementById('fc-back-tip');
+                const backTitle = document.getElementById('fc-back-title');
+                const backEls = [backFormula, backDesc, backTip, backTitle].filter(Boolean);
+                triggerMathTypeset(backEls);
+            }
+        }
+    });
+
     // Public Window API
+    window.setMediaTab = setMediaTab;
+    window.openBlueprintLightbox = openBlueprintLightbox;
+    window.closeBlueprintLightbox = closeBlueprintLightbox;
     window.openFlashcardStudio = openFlashcardStudio;
     window.closeFlashcardStudio = closeFlashcardStudio;
     window.flipFlashcard = flipCard;
     window.prevFlashcard = prevCard;
     window.nextFlashcard = nextCard;
     window.shuffleFlashcards = shuffleCards;
+    window.toggleKaraokeCaptions = toggleKaraokeCaptions;
+    window.toggleTeleprompter = toggleKaraokeCaptions;
     // Backwards compatibility aliases
     window.rateFlashcard = nextCard;
     window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode);
