@@ -6038,7 +6038,56 @@ window.calcEvaluate = function() {
                         "examTip": "Search NCEES Handbook under Fluid Mechanics. Ensure you use consistent gauge vs absolute pressures and watch out for elevation head datum.",
                         "videoUrl": "assets/videos/Bernoullis_Principle.mp4",
                         "videoTitle": "Bernoulli's Principle Explainer",
-                        "videoDuration": "10s"
+                        "videoDuration": "10s",
+                        "captions": [
+                                {
+                                        "start": 0.0,
+                                        "end": 2.2,
+                                        "words": [
+                                                { "text": "Let's", "start": 0.0, "end": 0.4 },
+                                                { "text": "demonstrate", "start": 0.4, "end": 1.1 },
+                                                { "text": "Bernoulli's", "start": 1.1, "end": 1.7 },
+                                                { "text": "theorem:", "start": 1.7, "end": 2.2 }
+                                        ]
+                                },
+                                {
+                                        "start": 2.2,
+                                        "end": 6.4,
+                                        "words": [
+                                                { "text": "Where", "start": 2.2, "end": 2.5 },
+                                                { "text": "the", "start": 2.5, "end": 2.7 },
+                                                { "text": "tube", "start": 2.7, "end": 3.0 },
+                                                { "text": "narrows,", "start": 3.0, "end": 3.6 },
+                                                { "text": "fluid", "start": 3.6, "end": 4.0 },
+                                                { "text": "speed", "start": 4.0, "end": 4.5 },
+                                                { "text": "increases,", "start": 4.5, "end": 5.2 },
+                                                { "text": "but", "start": 5.2, "end": 5.4 },
+                                                { "text": "the", "start": 5.4, "end": 5.6 },
+                                                { "text": "pressure", "start": 5.6, "end": 6.0 },
+                                                { "text": "drops.", "start": 6.0, "end": 6.4 }
+                                        ]
+                                },
+                                {
+                                        "start": 6.4,
+                                        "end": 8.4,
+                                        "isEquation": true,
+                                        "text": "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$"
+                                },
+                                {
+                                        "start": 8.4,
+                                        "end": 10.0,
+                                        "words": [
+                                                { "text": "Energy", "start": 8.4, "end": 8.7 },
+                                                { "text": "is", "start": 8.7, "end": 8.9 },
+                                                { "text": "conserved:", "start": 8.9, "end": 9.3 },
+                                                { "text": "high", "start": 9.3, "end": 9.5 },
+                                                { "text": "speed", "start": 9.5, "end": 9.7 },
+                                                { "text": "means", "start": 9.7, "end": 9.8 },
+                                                { "text": "lower", "start": 9.8, "end": 9.9 },
+                                                { "text": "pressure!", "start": 9.9, "end": 10.0 }
+                                        ]
+                                }
+                        ]
                 },
                 {
                         "title": "Fourier’s Law of Thermal Conduction",
@@ -6047,7 +6096,52 @@ window.calcEvaluate = function() {
                         "examTip": "Found under Heat Transfer. For multi-layer planar walls or cylindrical pipes, use the thermal resistance analogy: $R_{th} = \\frac{L}{k A}$.",
                         "videoUrl": "assets/videos/Fouriers_Law.mp4",
                         "videoTitle": "Fourier's Law Thermal Conduction Explainer",
-                        "videoDuration": "10s"
+                        "videoDuration": "10s",
+                        "captions": [
+                                {
+                                        "start": 0.0,
+                                        "end": 4.2,
+                                        "words": [
+                                                { "text": "Heat", "start": 0.0, "end": 0.4 },
+                                                { "text": "always", "start": 0.4, "end": 0.8 },
+                                                { "text": "moves", "start": 0.8, "end": 1.2 },
+                                                { "text": "from", "start": 1.2, "end": 1.4 },
+                                                { "text": "hot", "start": 1.4, "end": 1.7 },
+                                                { "text": "to", "start": 1.7, "end": 1.9 },
+                                                { "text": "cold,", "start": 1.9, "end": 2.3 },
+                                                { "text": "and", "start": 2.3, "end": 2.5 },
+                                                { "text": "conduction", "start": 2.5, "end": 3.0 },
+                                                { "text": "depends", "start": 3.0, "end": 3.4 },
+                                                { "text": "on", "start": 3.4, "end": 3.6 },
+                                                { "text": "the", "start": 3.6, "end": 3.7 },
+                                                { "text": "material.", "start": 3.7, "end": 4.2 }
+                                        ]
+                                },
+                                {
+                                        "start": 4.2,
+                                        "end": 8.3,
+                                        "words": [
+                                                { "text": "Fourier's", "start": 4.2, "end": 4.7 },
+                                                { "text": "law", "start": 4.7, "end": 5.0 },
+                                                { "text": "states", "start": 5.0, "end": 5.4 },
+                                                { "text": "that", "start": 5.4, "end": 5.6 },
+                                                { "text": "heat", "start": 5.6, "end": 5.9 },
+                                                { "text": "flux", "start": 5.9, "end": 6.2 },
+                                                { "text": "is", "start": 6.2, "end": 6.4 },
+                                                { "text": "proportional", "start": 6.4, "end": 7.0 },
+                                                { "text": "to", "start": 7.0, "end": 7.2 },
+                                                { "text": "the", "start": 7.2, "end": 7.4 },
+                                                { "text": "temperature", "start": 7.4, "end": 7.9 },
+                                                { "text": "gradient.", "start": 7.9, "end": 8.3 }
+                                        ]
+                                },
+                                {
+                                        "start": 8.3,
+                                        "end": 10.0,
+                                        "isEquation": true,
+                                        "text": "$$\\dot{Q} = -k A \\frac{dT}{dx}$$"
+                                }
+                        ]
                 },
                 {
                         "title": "Carnot Thermal Efficiency (Maximum Limit)",
@@ -6132,6 +6226,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Elastic Flexure Formula (Beam Bending Stress)",
+                        "imageUrl": "assets/images/elastic_flexure_formula_beam_bending.jpg",
+                        "imageTitle": "Elastic Flexure Formula Beam Bending Blueprint",
                         "formula": "$$\\sigma_b = -\\frac{M y}{I} \\implies \\sigma_{\\text{max}} = \\frac{M}{S}$$",
                         "description": "Determines normal bending stress at distance $y$ from the centroidal neutral axis under bending moment $M$, where $S = I/c$ is elastic section modulus.",
                         "examTip": "Found in Mechanics of Materials. Maximum bending stress occurs at outermost fibers ($y = \\pm c$). For a rectangular cross section ($b \\times h$), $S = b h^2 / 6$.",
@@ -6177,6 +6273,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Castigliano’s Second Theorem (Deflection from Strain Energy)",
+                        "imageUrl": "assets/images/castigliano_second_theorem_deflection.jpg",
+                        "imageTitle": "Castigliano's Second Theorem Deflection Blueprint",
                         "formula": "$$\\delta_i = \\frac{\\partial U}{\\partial P_i}, \\quad \\theta_i = \\frac{\\partial U}{\\partial M_i}$$",
                         "description": "The partial derivative of total elastic strain energy $U$ with respect to an applied concentrated force $P_i$ equals the displacement $\\delta_i$ in that direction.",
                         "examTip": "Found in Mechanics of Materials. For bending beams: $U = \\int \\frac{M^2}{2EI} dx$. Differentiate under the integral: $\\delta_i = \\int \\frac{M}{EI}\\left(\\frac{\\partial M}{\\partial P_i}\\right) dx$."
@@ -6372,9 +6470,14 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Truss Zero-Force Member Inspection Rules",
+                        "imageUrl": "assets/images/truss_zero_force_member_rules.jpg",
+                        "imageTitle": "Truss Zero-Force Member Inspection Rules Blueprint",
                         "formula": "$$\\sum \\vec{F} = 0 \\implies F_{member} = 0$$",
                         "description": "At a two-member non-collinear joint with no external load, both members carry zero force. At a three-member joint where two are collinear and no load acts, the third non-collinear member carries zero force.",
-                        "examTip": "Found in Statics. Spotting zero-force members immediately simplifies complex bridge/roof trusses without setting up simultaneous equations."
+                        "examTip": "Found in Statics. Spotting zero-force members immediately simplifies complex bridge/roof trusses without setting up simultaneous equations.",
+                    "videoUrl": "assets/videos/Truss_Zero_Force_Member_Inspection_Rules.mp4",
+                    "videoTitle": "Truss Zero-Force Member Inspection Rules Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Coulomb Dry Friction and Angle of Repose",
@@ -6396,6 +6499,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Varignon’s Theorem of Moments",
+                        "imageUrl": "assets/images/varignon_theorem_of_moments.jpg",
+                        "imageTitle": "Varignon's Theorem of Moments Blueprint",
                         "formula": "$$M_O = \\vec{r} \\times \\vec{R} = \\sum (\\vec{r} \\times \\vec{F}_i)$$",
                         "description": "The moment of a resultant force about any point $O$ is equal to the algebraic sum of the moments of its individual vector components about that same point.",
                         "examTip": "Found in Statics. Break inclined forces into orthogonal $x$ and $y$ components to calculate moments via perpendicular scalar arms ($F_x y \\pm F_y x$)."
@@ -6411,6 +6516,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Coriolis Acceleration in Rotating Reference Frames",
+                        "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                        "imageTitle": "Coriolis Acceleration in Rotating Frame Blueprint",
                         "formula": "$$\\vec{a}_{cor} = 2\\vec{\\omega} \\times \\vec{v}_{rel}$$",
                         "description": "Apparent inertial acceleration experienced by a body moving with velocity $\\vec{v}_{rel}$ relative to a coordinate frame that is itself rotating with angular velocity $\\vec{\\omega}$.",
                         "examTip": "Found in Dynamics (Kinematics of Rigid Bodies). Common in mechanisms where a slider moves along a rotating link or slotted guide arm."
@@ -6453,6 +6560,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vibration Transmissibility for Harmonic Base Excitation",
+                        "imageUrl": "assets/images/vibration_transmissibility_harmonic_base.jpg",
+                        "imageTitle": "Vibration Transmissibility Base Excitation Blueprint",
                         "formula": "$$TR = \\sqrt{\\frac{1 + (2\\zeta r)^2}{(1 - r^2)^2 + (2\\zeta r)^2}}, \\quad r = \\frac{\\omega}{\\omega_n}$$",
                         "description": "Ratio of dynamic force transmitted to a supporting structure relative to applied harmonic excitation force as a function of frequency ratio $r$.",
                         "examTip": "Found in Vibrations. Vibration isolation only occurs when $r = \\omega/\\omega_n > \\sqrt{2}$, where transmissibility $TR < 1$."
@@ -6519,6 +6628,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
+                        "imageUrl": "assets/images/simply_supported_beam_udl_deflection.jpg",
+                        "imageTitle": "Simply Supported Beam UDL Deflection Blueprint",
                         "formula": "$$\\delta_{\\text{center}} = \\frac{5 w L^4}{384 E I}, \\quad M_{\\text{max}} = \\frac{w L^2}{8}$$",
                         "description": "Mid-span deflection and maximum bending moment for a simply supported beam under full-span uniformly distributed load $w$.",
                         "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta_{\\text{center}} = \\frac{P L^3}{48 E I}$ and $M_{\\text{max}} = \\frac{P L}{4}$.",
@@ -6557,7 +6668,10 @@ window.calcEvaluate = function() {
                         "title": "Eutectic and Eutectoid Invariant Reactions",
                         "formula": "$$\\text{Eutectic: } L \\xrightarrow{\\text{cool}} \\alpha + \\beta, \\quad \\text{Eutectoid: } \\gamma \\xrightarrow{\\text{cool}} \\alpha + \\text{Fe}_3\\text{C}$$",
                         "description": "Eutectic transforms liquid into two distinct solid phases at constant temperature. In the Fe-C system, eutectoid reaction converts austenite ($\\gamma$) at $727^\\circ\\text{C}$ ($0.76\\text{ wt}\\%\\text{ C}$) into pearlite ($\\alpha + \\text{Fe}_3\\text{C}$).",
-                        "examTip": "Found in Materials Science. Peritectic reaction is liquid + solid $\\to$ new solid ($L + \\alpha \\to \\beta$)."
+                        "examTip": "Found in Materials Science. Peritectic reaction is liquid + solid $\\to$ new solid ($L + \\alpha \\to \\beta$).",
+                    "videoUrl": "assets/videos/Eutectic_and_Eutectoid_Invariant_Reactions.mp4",
+                    "videoTitle": "Eutectic and Eutectoid Invariant Reactions Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Marin Factors for Fatigue Endurance Limit Modification",
@@ -6755,7 +6869,10 @@ window.calcEvaluate = function() {
                         "title": "Lumped Capacitance Method for Transient Heat Transfer",
                         "formula": "$$\\frac{T(t) - T_\\infty}{T_i - T_\\infty} = e^{-\\frac{t}{\\tau}}, \\quad \\tau = \\frac{\\rho V c}{h A_s}, \\quad Bi = \\frac{h L_c}{k} < 0.1$$",
                         "description": "Predicts transient thermal response of a solid body assuming uniform spatial temperature distribution, valid when internal thermal resistance is negligible ($Bi < 0.1$).",
-                        "examTip": "Found in Heat Transfer. Characteristic length is $L_c = V / A_s$. For a sphere of radius $r_o$, $L_c = (\\frac{4}{3}\\pi r_o^3)/(4\\pi r_o^2) = r_o / 3$."
+                        "examTip": "Found in Heat Transfer. Characteristic length is $L_c = V / A_s$. For a sphere of radius $r_o$, $L_c = (\\frac{4}{3}\\pi r_o^3)/(4\\pi r_o^2) = r_o / 3$.",
+                    "videoUrl": "assets/videos/Lumped_Capacitance_Method_for_Transient_Heat_Transfer.mp4",
+                    "videoTitle": "Lumped Capacitance Method for Transient Heat Transfer Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Extended Surface Fin Efficiency and Effectiveness",
@@ -7148,7 +7265,10 @@ window.calcEvaluate = function() {
                         "title": "Distance Formula",
                         "formula": "$$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$",
                         "description": "Calculates the straight-line Euclidean distance between two points in Cartesian space derived from the Pythagorean theorem.",
-                        "examTip": "Found in Mathematics: Analytic Geometry. In 2D plane geometry, simplifies to $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Used for coordinate geometry, point clearances, and vector magnitudes."
+                        "examTip": "Found in Mathematics: Analytic Geometry. In 2D plane geometry, simplifies to $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Used for coordinate geometry, point clearances, and vector magnitudes.",
+                    "videoUrl": "assets/videos/Distance_Formula.mp4",
+                    "videoTitle": "Distance Formula Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
@@ -7265,7 +7385,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -7284,6 +7407,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -7374,6 +7499,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -7593,7 +7720,10 @@ window.calcEvaluate = function() {
                         "title": "Method of Sections",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
                         "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
-                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$.",
+                    "videoUrl": "assets/videos/Truss_Method_of_Sections.mp4",
+                    "videoTitle": "Truss - Method of Sections Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
@@ -7735,7 +7865,10 @@ window.calcEvaluate = function() {
                         "title": "Manometers",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
+                    "videoUrl": "assets/videos/Manometers.mp4",
+                    "videoTitle": "Manometers Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Bouyancy Force",
@@ -7928,6 +8061,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Psychrometric Chart",
+                        "imageUrl": "assets/images/psychrometric_chart_scientific.jpg",
+                        "imageTitle": "Psychrometric Chart Thermodynamic Blueprint",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
                         "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
@@ -7969,7 +8104,10 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
                 },
                 {
-                        "title": "Regrigeration Cycles",
+                        "title": "Refrigeration Cycles",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{COP}_R = \\frac{q_L}{w_{\\text{net,in}}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad \\dot{Q}_L = \\dot{m}(h_1 - h_4), \\quad \\dot{W}_{\\text{comp}} = \\dot{m}(h_2 - h_1)$$",
                         "description": "Standard cycle consists of 4 processes: (1-2) isentropic compression in compressor, (2-3) isobaric heat rejection in condenser ($q_H$), (3-4) isenthalpic throttling expansion valve ($h_3 = h_4$), and (4-1) isobaric heat absorption in evaporator ($q_L$).",
                         "examTip": "Found in Mechanical: Refrigeration & HVAC. Remember throttling expansion is isenthalpic ($h_4 = h_3$). 1 ton of refrigeration = $12{,}000 \\, \\text{Btu/hr} = 3.517 \\, \\text{kW} = 200 \\, \\text{Btu/min}$."
@@ -8320,6 +8458,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Elastic Flexure Formula (Beam Bending Stress)",
+                        "imageUrl": "assets/images/elastic_flexure_formula_beam_bending.jpg",
+                        "imageTitle": "Elastic Flexure Formula Beam Bending Blueprint",
                         "formula": "$$\\sigma_b = -\\frac{M y}{I} \\implies \\sigma_{\\text{max}} = \\frac{M}{S}$$",
                         "description": "Determines normal bending stress at distance $y$ from the centroidal neutral axis under bending moment $M$, where $S = I/c$ is elastic section modulus.",
                         "examTip": "Found in Mechanics of Materials. Maximum bending stress occurs at outermost fibers ($y = \\pm c$). For a rectangular cross section ($b \\times h$), $S = b h^2 / 6$.",
@@ -9025,6 +9165,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
+                        "imageUrl": "assets/images/simply_supported_beam_udl_deflection.jpg",
+                        "imageTitle": "Simply Supported Beam UDL Deflection Blueprint",
                         "formula": "$$\\delta_{\\text{center}} = \\frac{5 w L^4}{384 E I}, \\quad M_{\\text{max}} = \\frac{w L^2}{8}$$",
                         "description": "Mid-span deflection and maximum bending moment for a simply supported beam under full-span uniformly distributed load $w$.",
                         "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta_{\\text{center}} = \\frac{P L^3}{48 E I}$ and $M_{\\text{max}} = \\frac{P L}{4}$.",
@@ -9237,7 +9379,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -9256,6 +9401,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -9346,6 +9493,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -9565,7 +9714,10 @@ window.calcEvaluate = function() {
                         "title": "Method of Sections",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
                         "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
-                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$.",
+                    "videoUrl": "assets/videos/Truss_Method_of_Sections.mp4",
+                    "videoTitle": "Truss - Method of Sections Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
@@ -9707,7 +9859,10 @@ window.calcEvaluate = function() {
                         "title": "Manometers",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
+                    "videoUrl": "assets/videos/Manometers.mp4",
+                    "videoTitle": "Manometers Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Bouyancy Force",
@@ -10706,7 +10861,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -10725,6 +10883,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -10815,6 +10975,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -11942,7 +12104,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -11961,6 +12126,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -12051,6 +12218,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -12243,7 +12412,10 @@ window.calcEvaluate = function() {
                         "title": "Manometers",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
+                    "videoUrl": "assets/videos/Manometers.mp4",
+                    "videoTitle": "Manometers Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Bouyancy Force",
@@ -12450,7 +12622,10 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
                 },
                 {
-                        "title": "Regrigeration Cycles",
+                        "title": "Refrigeration Cycles",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{COP}_R = \\frac{q_L}{w_{\\text{net,in}}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad \\dot{Q}_L = \\dot{m}(h_1 - h_4), \\quad \\dot{W}_{\\text{comp}} = \\dot{m}(h_2 - h_1)$$",
                         "description": "Standard cycle consists of 4 processes: (1-2) isentropic compression in compressor, (2-3) isobaric heat rejection in condenser ($q_H$), (3-4) isenthalpic throttling expansion valve ($h_3 = h_4$), and (4-1) isobaric heat absorption in evaporator ($q_L$).",
                         "examTip": "Found in Mechanical: Refrigeration & HVAC. Remember throttling expansion is isenthalpic ($h_4 = h_3$). 1 ton of refrigeration = $12{,}000 \\, \\text{Btu/hr} = 3.517 \\, \\text{kW} = 200 \\, \\text{Btu/min}$."
@@ -13475,7 +13650,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -13494,6 +13672,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -13584,6 +13764,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -13803,7 +13985,10 @@ window.calcEvaluate = function() {
                         "title": "Method of Sections",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
                         "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
-                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$.",
+                    "videoUrl": "assets/videos/Truss_Method_of_Sections.mp4",
+                    "videoTitle": "Truss - Method of Sections Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
@@ -14954,7 +15139,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -14973,6 +15161,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -15063,6 +15253,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -15255,7 +15447,10 @@ window.calcEvaluate = function() {
                         "title": "Manometers",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
+                    "videoUrl": "assets/videos/Manometers.mp4",
+                    "videoTitle": "Manometers Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Bouyancy Force",
@@ -15345,6 +15540,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Psychrometric Chart",
+                        "imageUrl": "assets/images/psychrometric_chart_scientific.jpg",
+                        "imageTitle": "Psychrometric Chart Thermodynamic Blueprint",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
                         "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
@@ -15692,6 +15889,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Elastic Flexure Formula for Beam Bending",
+                        "imageUrl": "assets/images/elastic_flexure_formula_beam_bending.jpg",
+                        "imageTitle": "Elastic Flexure Formula Beam Bending Blueprint",
                         "formula": "$$\\sigma = -\\frac{M y}{I} \\implies \\sigma_{\\text{max}} = \\frac{M}{S}$$",
                         "description": "Determines longitudinal normal bending stress at distance $y$ from the neutral axis under internal bending moment $M$.",
                         "examTip": "Found in Mechanics of Materials. Section modulus is $S = I / c$. For rectangular cross-section ($b \\times h$), $S = b h^2 / 6$.",
@@ -16144,7 +16343,10 @@ window.calcEvaluate = function() {
                         "title": "Zero-Force Members in Trusses",
                         "formula": "$$\\text{Two non-collinear members, no joint load} \\implies F_1 = F_2 = 0$$",
                         "description": "Instant identification of unloaded truss members: if two non-collinear members form an unloaded pin joint, both carry zero force.",
-                        "examTip": "Found in Statics. Zero-force members provide lateral stability against buckling and support unexpected moving loads."
+                        "examTip": "Found in Statics. Zero-force members provide lateral stability against buckling and support unexpected moving loads.",
+                    "videoUrl": "assets/videos/Truss_Zero_Force_Member_Inspection_Rules.mp4",
+                    "videoTitle": "Zero-Force Members in Trusses Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Coulomb Dry Friction Law",
@@ -16271,6 +16473,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simply Supported Beam Center Deflection under Uniform Load",
+                        "imageUrl": "assets/images/simply_supported_beam_udl_deflection.jpg",
+                        "imageTitle": "Simply Supported Beam UDL Deflection Blueprint",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{5 w L^4}{384 E I}$$",
                         "description": "Maximum mid-span deflection for an elastic simply supported beam under full-span uniformly distributed load $w$.",
                         "examTip": "Found in Mechanics of Materials. For a center concentrated point load $P$: $\\delta = \\frac{P L^3}{48 E I}$.",
@@ -16684,7 +16888,10 @@ window.calcEvaluate = function() {
                         "title": "Matrix Multiplication and Dimension Compatibility",
                         "formula": "$$[C]_{m \\times p} = [A]_{m \\times n} [B]_{n \\times p}, \\quad c_{i j} = \\sum_{k=1}^n a_{i k} b_{k j}$$",
                         "description": "Defines the product of matrices $A$ and $B$, valid only when the column dimension of $A$ equals the row dimension of $B$ ($n$). Matrix multiplication is associative and distributive, but generally non-commutative ($A B \\neq B A$).",
-                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix."
+                        "examTip": "Found in Mathematics: Linear Algebra. Transpose of a product reverses order: $(A B)^T = B^T A^T$. Matrix multiplication is not element-wise; $A B = 0$ does not imply that either $A$ or $B$ is the zero matrix.",
+                    "videoUrl": "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4",
+                    "videoTitle": "Matrix Multiplication and Dimension Compatibility Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Inverse of a Square Matrix and Adjugate Formula",
@@ -16703,6 +16910,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
                         "videoDuration": "10s",
@@ -16793,6 +17002,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "imageUrl": "assets/images/vector_length_and_unit_vector.jpg",
+                        "imageTitle": "3D Vector Length and Unit Vector Normalization Blueprint",
                         "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
                         "videoTitle": "Length of a Vector and Unit Vector Explainer",
                         "videoDuration": "10s",
@@ -17012,7 +17223,10 @@ window.calcEvaluate = function() {
                         "title": "Method of Sections",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad \\text{(for isolated cut section)}$$",
                         "description": "Analyzes specific internal truss members directly without solving sequential joints. An imaginary cut is passed through the truss, cutting at most three unknown members, and rigid body planar equilibrium is applied to either free-body portion.",
-                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$."
+                        "examTip": "Found in Statics: Trusses. Choose moment pivot point $O$ at the intersection of two unknown cut members; this eliminates two unknowns in a single equation: $\\sum M_O = 0 \\implies F_{\\text{target}}$.",
+                    "videoUrl": "assets/videos/Truss_Method_of_Sections.mp4",
+                    "videoTitle": "Truss - Method of Sections Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
@@ -17154,7 +17368,10 @@ window.calcEvaluate = function() {
                         "title": "Manometers",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
-                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure."
+                        "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
+                    "videoUrl": "assets/videos/Manometers.mp4",
+                    "videoTitle": "Manometers Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Bouyancy Force",
@@ -17347,6 +17564,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Psychrometric Chart",
+                        "imageUrl": "assets/images/psychrometric_chart_scientific.jpg",
+                        "imageTitle": "Psychrometric Chart Thermodynamic Blueprint",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P_{\\text{atm}} - P_v}, \\quad \\phi = \\frac{P_v}{P_{g}(T)}, \\quad h \\approx c_{pa} T + \\omega h_g(T)$$",
                         "description": "Graphical representation of thermodynamic properties of moist air at atmospheric pressure. Relates dry-bulb temperature (x-axis), humidity ratio $\\omega$ (y-axis), relative humidity curves $\\phi$, wet-bulb lines, dew point, enthalpy, and specific volume.",
                         "examTip": "Found in Mechanical and Environmental: HVAC / Refrigeration. Horizontal lines correspond to constant humidity ratio $\\omega$ and constant dew-point temperature. Slanted diagonal lines correspond to constant wet-bulb temperature and enthalpy.",
@@ -17388,7 +17607,10 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
                 },
                 {
-                        "title": "Regrigeration Cycles",
+                        "title": "Refrigeration Cycles",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{COP}_R = \\frac{q_L}{w_{\\text{net,in}}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad \\dot{Q}_L = \\dot{m}(h_1 - h_4), \\quad \\dot{W}_{\\text{comp}} = \\dot{m}(h_2 - h_1)$$",
                         "description": "Standard cycle consists of 4 processes: (1-2) isentropic compression in compressor, (2-3) isobaric heat rejection in condenser ($q_H$), (3-4) isenthalpic throttling expansion valve ($h_3 = h_4$), and (4-1) isobaric heat absorption in evaporator ($q_L$).",
                         "examTip": "Found in Mechanical: Refrigeration & HVAC. Remember throttling expansion is isenthalpic ($h_4 = h_3$). 1 ton of refrigeration = $12{,}000 \\, \\text{Btu/hr} = 3.517 \\, \\text{kW} = 200 \\, \\text{Btu/min}$."
@@ -20137,6 +20359,7 @@ window.calcEvaluate = function() {
     let isFlipped = false;
     let currentMode = 'recall'; // 'recall' or 'identify'
     let currentDiscipline = 'current';
+    let activeMediaTab = 'video'; // 'video' or 'blueprint'
 
     // Get active discipline from app or localStorage
     function getActiveDiscipline() {
@@ -20250,38 +20473,118 @@ window.calcEvaluate = function() {
         const backFormula = document.getElementById('fc-back-formula');
         const backDesc = document.getElementById('fc-back-desc');
         const backTip = document.getElementById('fc-back-tip');
-        const backColPrimary = document.getElementById('fc-back-col-primary');
-        const backColVideo = document.getElementById('fc-back-col-video');
-        const backVideo = document.getElementById('fc-back-video');
-        const backVideoDur = document.getElementById('fc-back-video-duration');
 
         if (backTitle) backTitle.innerHTML = card.title || '';
         if (backFormula) backFormula.innerHTML = card.formula || '';
         if (backDesc) backDesc.innerHTML = card.description || '';
         if (backTip) backTip.innerHTML = card.examTip || '';
 
-        // Typeset all math elements on front and back
-        triggerMathTypeset([frontTitle, frontFormulaView, frontHint, backTitle, backFormula, backDesc, backTip]);
+        // If card is currently flipped, typeset back math now
+        if (isFlipped) {
+            triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
+        }
 
-        // Responsive Video & 2-Column Layout configuration
-        if (card.videoUrl && backVideo) {
-            if (backColVideo) backColVideo.classList.remove('hidden');
-            if (backColPrimary) {
-                backColPrimary.className = 'w-full sm:col-span-7 space-y-3.5';
+        // Responsive Media & 2-Column Layout configuration (Option A: Video + Technical Blueprint)
+        const hasVideo = Boolean(card.videoUrl);
+        const hasImage = Boolean(card.imageUrl);
+        const backColVideo = document.getElementById('fc-back-col-video');
+        const backColPrimary = document.getElementById('fc-back-col-primary');
+        const mediaSwitcher = document.getElementById('fc-media-switcher');
+        const mediaStaticHeader = document.getElementById('fc-media-static-header');
+        const headerIcon = document.getElementById('fc-media-header-icon');
+        const headerLabel = document.getElementById('fc-media-header-label');
+        const videoDur = document.getElementById('fc-back-video-duration');
+        const backVideo = document.getElementById('fc-back-video');
+        const backImg = document.getElementById('fc-back-image');
+        const imgContainer = document.getElementById('fc-back-image-container');
+
+        if (hasVideo || hasImage) {
+            if (backColVideo) {
+                backColVideo.classList.remove('hidden');
+                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
             }
-            if (backVideoDur) backVideoDur.textContent = card.videoDuration || '10s';
-            backVideo.src = card.videoUrl;
-            backVideo.load();
+            if (backColPrimary) {
+                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+            }
+
+            if (hasVideo && backVideo) {
+                backVideo.src = card.videoUrl;
+                backVideo.load();
+            } else if (backVideo) {
+                backVideo.pause();
+                backVideo.removeAttribute('src');
+            }
+
+            if (hasImage && backImg) {
+                backImg.src = card.imageUrl;
+                backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
+                if (imgContainer) {
+                    imgContainer.onclick = openBlueprintLightbox;
+                }
+            }
+
+            // Wire up toggle bar or static header
+            if (hasVideo && hasImage) {
+                if (mediaSwitcher) {
+                    mediaSwitcher.classList.remove('hidden');
+                    mediaSwitcher.classList.add('flex');
+                }
+                if (mediaStaticHeader) mediaStaticHeader.classList.add('hidden');
+
+                const btnVideo = document.getElementById('fc-toggle-btn-video');
+                const btnBlueprint = document.getElementById('fc-toggle-btn-blueprint');
+                if (btnVideo) btnVideo.onclick = () => setMediaTab('video');
+                if (btnBlueprint) btnBlueprint.onclick = () => setMediaTab('blueprint');
+
+                // Default to video when both exist
+                setMediaTab('video');
+            } else if (hasVideo) {
+                if (mediaSwitcher) {
+                    mediaSwitcher.classList.add('hidden');
+                    mediaSwitcher.classList.remove('flex');
+                }
+                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+                if (headerIcon) {
+                    headerIcon.textContent = 'smart_display';
+                    headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
+                }
+                if (headerLabel) {
+                    headerLabel.textContent = '10s Video Explainer';
+                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
+                }
+                setMediaTab('video');
+            } else {
+                // Only Blueprint Image exists
+                if (mediaSwitcher) {
+                    mediaSwitcher.classList.add('hidden');
+                    mediaSwitcher.classList.remove('flex');
+                }
+                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+                if (headerIcon) {
+                    headerIcon.textContent = 'architecture';
+                    headerIcon.className = 'material-symbols-outlined text-[15px] text-purple-400';
+                }
+                if (headerLabel) {
+                    headerLabel.textContent = 'Technical Blueprint';
+                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
+                }
+                setMediaTab('blueprint');
+            }
         } else {
+            // Neither video nor image exists
             if (backColVideo) backColVideo.classList.add('hidden');
             if (backColPrimary) {
-                backColPrimary.className = 'w-full sm:col-span-12 max-w-2xl lg:max-w-3xl mx-auto space-y-4';
+                backColPrimary.className = 'w-full sm:col-span-12 max-w-2xl lg:max-w-4xl mx-auto space-y-4';
             }
             if (backVideo) {
                 backVideo.pause();
                 backVideo.removeAttribute('src');
             }
         }
+
+        // Initialize In-Video Karaoke Captions
+        initKaraokeCues(card);
+        wireKaraokeVideoEvents();
     }
 
     // Typeset math helper
@@ -20301,6 +20604,281 @@ window.calcEvaluate = function() {
         }
     }
 
+    
+    // Set active media tab (Option A: Switch between Video and Blueprint Diagram)
+    function setMediaTab(tab) {
+        activeMediaTab = tab;
+        const videoContainer = document.getElementById('fc-back-video-container');
+        const imageContainer = document.getElementById('fc-back-image-container');
+        const btnVideo = document.getElementById('fc-toggle-btn-video');
+        const btnBlueprint = document.getElementById('fc-toggle-btn-blueprint');
+        const subtext = document.getElementById('fc-media-subtext');
+        const video = document.getElementById('fc-back-video');
+        const badge = document.getElementById('fc-back-video-duration');
+
+        if (tab === 'blueprint') {
+            if (videoContainer) videoContainer.classList.add('hidden');
+            if (imageContainer) imageContainer.classList.remove('hidden');
+            if (subtext) subtext.textContent = 'Click diagram to zoom in full resolution';
+            if (badge) badge.textContent = 'HD CAD';
+
+            if (btnBlueprint) {
+                btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 bg-purple-500/25 text-purple-300 border border-purple-500/40 shadow-sm';
+            }
+            if (btnVideo) {
+                btnVideo.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
+            }
+            if (video) video.pause();
+        } else {
+            if (imageContainer) imageContainer.classList.add('hidden');
+            if (videoContainer) videoContainer.classList.remove('hidden');
+            if (subtext) subtext.textContent = 'Auto-plays on flip • Tap for controls';
+
+            const card = currentDeck[currentIndex];
+            if (badge) badge.textContent = (card && card.videoDuration) || '10s';
+
+            if (btnVideo) {
+                btnVideo.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm';
+            }
+            if (btnBlueprint) {
+                btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
+            }
+            if (isFlipped && video && card && card.videoUrl) {
+                const p = video.play();
+                if (p !== undefined) p.catch(() => {});
+            }
+        }
+        updateKaraokeUI();
+    }
+
+            // =========================================================================
+    // In-Video Karaoke Captions Engine
+    // =========================================================================
+    // Default to OFF unless explicitly activated by the user
+    let karaokeActive = localStorage.getItem('engg_fc_karaoke') === 'true';
+    let currentActiveCueIndex = -1;
+
+    function toggleKaraokeCaptions() {
+        karaokeActive = !karaokeActive;
+        try { localStorage.setItem('engg_fc_karaoke', karaokeActive); } catch (e) {}
+        updateKaraokeUI();
+    }
+
+    /**
+     * Retrieves precision captions or dynamically generates karaoke cues on-the-fly
+     * for any 10-second NCEES theorem explainer video across all disciplines.
+     */
+    function getCardCaptions(card) {
+        if (!card || !card.videoUrl) return [];
+        if (card.captions && Array.isArray(card.captions) && card.captions.length > 0) {
+            return card.captions;
+        }
+
+        const cues = [];
+        const dur = 10.0;
+
+        // Phase 1 (0.0s - 4.4s): Concept & Core Principle
+        let p1Text = card.title || '';
+        if (card.description) {
+            const rawSentence = card.description.split('.')[0].trim();
+            p1Text = `${card.title}: ${rawSentence}.`;
+        }
+        const words1 = p1Text.split(/\s+/).filter(Boolean);
+        const p1Duration = 4.4;
+        const wDur1 = p1Duration / Math.max(words1.length, 1);
+        const timedWords1 = words1.map((w, idx) => ({
+            text: w,
+            start: parseFloat((idx * wDur1).toFixed(2)),
+            end: parseFloat(((idx + 1) * wDur1).toFixed(2))
+        }));
+        cues.push({
+            start: 0.0,
+            end: 4.4,
+            words: timedWords1
+        });
+
+        // Phase 2 (4.4s - 7.6s): Governing Formula (displayed in live MathJax without word-splitting)
+        if (card.formula) {
+            cues.push({
+                start: 4.4,
+                end: 7.6,
+                isEquation: true,
+                text: card.formula
+            });
+        }
+
+        // Phase 3 (7.6s - 10.0s): NCEES Exam Trap & Key Tip
+        let p3Text = card.examTip || 'Found in NCEES FE Reference Handbook. Review core assumptions!';
+        const cleanTip = p3Text.replace(/^Search NCEES Handbook under [^.]*\.\s*/i, '').trim();
+        const tipSentence = cleanTip.split('.')[0] || cleanTip;
+        const p3Display = `Exam Tip: ${tipSentence}!`;
+        const words3 = p3Display.split(/\s+/).filter(Boolean);
+        const p3Start = card.formula ? 7.6 : 4.6;
+        const p3Duration = dur - p3Start;
+        const wDur3 = p3Duration / Math.max(words3.length, 1);
+        const timedWords3 = words3.map((w, idx) => ({
+            text: w,
+            start: parseFloat((p3Start + idx * wDur3).toFixed(2)),
+            end: parseFloat((p3Start + (idx + 1) * wDur3).toFixed(2))
+        }));
+        cues.push({
+            start: p3Start,
+            end: dur,
+            words: timedWords3
+        });
+
+        return cues;
+    }
+
+    function updateKaraokeUI() {
+        const btn = document.getElementById('fc-btn-toggle-captions');
+        const statusText = document.getElementById('fc-caption-status-text');
+        const overlay = document.getElementById('fc-video-caption-overlay');
+        const box = document.getElementById('fc-karaoke-box');
+        const card = currentDeck[currentIndex];
+        const captions = getCardCaptions(card);
+        const hasCaptions = Boolean(card && card.videoUrl && captions.length > 0);
+
+        if (!hasCaptions || activeMediaTab !== 'video') {
+            if (btn) {
+                btn.classList.add('hidden');
+                btn.classList.remove('flex');
+            }
+            if (overlay) overlay.classList.add('hidden');
+            if (box) box.classList.add('hidden');
+            return;
+        }
+
+        if (btn) {
+            btn.classList.remove('hidden');
+            btn.classList.add('flex');
+            if (karaokeActive) {
+                btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-cyan-500/20 text-cyan-300 border-cyan-500/40 hover:bg-cyan-500/30 cursor-pointer shadow-sm';
+                if (statusText) statusText.textContent = 'CC On';
+            } else {
+                btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-slate-800/80 text-slate-400 border-slate-700 hover:text-slate-200 cursor-pointer';
+                if (statusText) statusText.textContent = 'CC Off';
+            }
+        }
+
+        if (overlay) {
+            if (karaokeActive) {
+                overlay.classList.remove('hidden');
+            } else {
+                overlay.classList.add('hidden');
+                if (box) box.classList.add('hidden');
+            }
+        }
+    }
+
+    function initKaraokeCues(card) {
+        currentActiveCueIndex = -1;
+        const textEl = document.getElementById('fc-karaoke-text');
+        const box = document.getElementById('fc-karaoke-box');
+        if (textEl) textEl.innerHTML = '';
+        if (box) box.classList.add('hidden');
+        updateKaraokeUI();
+    }
+
+    function renderKaraokeCue(cue, cueIndex) {
+        currentActiveCueIndex = cueIndex;
+        const textEl = document.getElementById('fc-karaoke-text');
+        const box = document.getElementById('fc-karaoke-box');
+        if (!textEl || !box) return;
+
+        box.classList.remove('hidden');
+
+        if (cue.isEquation) {
+            // Presenter is showing/stating the equation: render full MathJax formula with Apple dock badge
+            textEl.innerHTML = `<div class="inline-flex items-center gap-2.5 py-0.5 px-2 font-mono tracking-wide text-sm sm:text-base text-cyan-300"><span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-400/35 shadow-sm">NCEES Equation</span><span>${cue.text}</span></div>`;
+            triggerMathTypeset([textEl]);
+        } else if (cue.words && Array.isArray(cue.words)) {
+            // Render Karaoke words
+            textEl.innerHTML = cue.words.map((w, idx) => {
+                return `<span class="fc-karaoke-word" data-idx="${idx}" data-start="${w.start}" data-end="${w.end}">${w.text}</span>`;
+            }).join(' ');
+        } else if (cue.text) {
+            textEl.textContent = cue.text;
+        }
+    }
+
+    function wireKaraokeVideoEvents() {
+        const video = document.getElementById('fc-back-video');
+        if (!video || video._karaokeWired) return;
+        video._karaokeWired = true;
+
+        video.addEventListener('timeupdate', () => {
+            const card = currentDeck[currentIndex];
+            const overlay = document.getElementById('fc-video-caption-overlay');
+            const box = document.getElementById('fc-karaoke-box');
+            const textEl = document.getElementById('fc-karaoke-text');
+            const captions = getCardCaptions(card);
+
+            if (!card || !card.videoUrl || captions.length === 0 || !karaokeActive) {
+                if (box) box.classList.add('hidden');
+                return;
+            }
+
+            const t = video.currentTime;
+            const newIndex = captions.findIndex(c => t >= c.start && t < c.end);
+
+            if (newIndex === -1) {
+                currentActiveCueIndex = -1;
+                if (box) box.classList.add('hidden');
+                return;
+            }
+
+            const activeCue = captions[newIndex];
+
+            // If cue index changed, rebuild the cue content
+            if (newIndex !== currentActiveCueIndex) {
+                renderKaraokeCue(activeCue, newIndex);
+            }
+
+            // If cue has words, update the instant Karaoke highlight
+            if (activeCue.words && textEl) {
+                const wordSpans = textEl.querySelectorAll('.fc-karaoke-word');
+                wordSpans.forEach(span => {
+                    const start = parseFloat(span.dataset.start);
+                    const end = parseFloat(span.dataset.end);
+                    if (t < start) {
+                        span.className = 'fc-karaoke-word';
+                    } else if (t >= start && t < end) {
+                        span.className = 'fc-karaoke-word is-active';
+                    } else {
+                        span.className = 'fc-karaoke-word is-spoken';
+                    }
+                });
+            }
+        });
+    }
+
+    // Open Blueprint Lightbox
+    function openBlueprintLightbox() {
+        const card = currentDeck[currentIndex];
+        if (!card || !card.imageUrl) return;
+        const lightbox = document.getElementById('fc-blueprint-lightbox');
+        const img = document.getElementById('fc-lightbox-img');
+        const title = document.getElementById('fc-lightbox-title');
+        if (img) img.src = card.imageUrl;
+        if (title) {
+            title.innerHTML = `<span class="material-symbols-outlined text-[18px]">architecture</span><span>${card.imageTitle || card.title || 'Technical Blueprint Diagram'}</span>`;
+        }
+        if (lightbox) {
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+    }
+
+    // Close Blueprint Lightbox
+    function closeBlueprintLightbox() {
+        const lightbox = document.getElementById('fc-blueprint-lightbox');
+        if (lightbox) {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+    }
+
     // Flip action
     function flipCard() {
         if (currentDeck.length === 0) return;
@@ -20314,16 +20892,27 @@ window.calcEvaluate = function() {
         if (isFlipped) {
             inner.classList.add('flipped');
 
-            // Render LaTeX on back
+            const card = currentDeck[currentIndex];
             const backFormula = document.getElementById('fc-back-formula');
             const backDesc = document.getElementById('fc-back-desc');
             const backTip = document.getElementById('fc-back-tip');
             const backTitle = document.getElementById('fc-back-title');
-            triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
+
+            if (card) {
+                if (backTitle) backTitle.innerHTML = card.title || '';
+                if (backFormula) backFormula.innerHTML = card.formula || '';
+                if (backDesc) backDesc.innerHTML = card.description || '';
+                if (backTip) backTip.innerHTML = card.examTip || '';
+            }
+
+            const backEls = [backFormula, backDesc, backTip, backTitle].filter(Boolean);
+            // Trigger typeset immediately and staggered across 3D rotation
+            triggerMathTypeset(backEls);
+            setTimeout(() => triggerMathTypeset(backEls), 120);
+            setTimeout(() => triggerMathTypeset(backEls), 320);
 
             // Auto-play explainer video if present
-            const card = currentDeck[currentIndex];
-            if (card && card.videoUrl) {
+            if (card && card.videoUrl && activeMediaTab === 'video') {
                 setTimeout(() => {
                     const video = document.getElementById('fc-back-video');
                     if (video) {
@@ -20346,6 +20935,13 @@ window.calcEvaluate = function() {
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
 
+        // Always return to front face when navigating cards
+        isFlipped = false;
+        const inner = document.getElementById('fc-flip-inner');
+        if (inner) inner.classList.remove('flipped');
+        const flipBtnText = document.getElementById('fc-flip-btn-text');
+        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
+
         currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
         renderCard();
     }
@@ -20355,6 +20951,13 @@ window.calcEvaluate = function() {
         if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
+
+        // Always return to front face when navigating cards
+        isFlipped = false;
+        const inner = document.getElementById('fc-flip-inner');
+        if (inner) inner.classList.remove('flipped');
+        const flipBtnText = document.getElementById('fc-flip-btn-text');
+        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
 
         currentIndex = (currentIndex + 1) % currentDeck.length;
         renderCard();
@@ -20432,6 +21035,12 @@ window.calcEvaluate = function() {
         if (e.target && (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT')) return;
 
         if (e.code === 'Escape') {
+            const lb = document.getElementById('fc-blueprint-lightbox');
+            if (lb && !lb.classList.contains('hidden')) {
+                e.preventDefault();
+                closeBlueprintLightbox();
+                return;
+            }
             e.preventDefault();
             closeFlashcardStudio();
         } else if (e.code === 'Space' || e.code === 'Enter') {
@@ -20466,13 +21075,34 @@ window.calcEvaluate = function() {
         }
     });
 
+    // Re-typeset active flashcard when MathJax finishes loading asynchronously
+    window.addEventListener('mathjax-ready', () => {
+        const modal = document.getElementById('fe-flashcards-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+            renderCard();
+            if (isFlipped) {
+                const backFormula = document.getElementById('fc-back-formula');
+                const backDesc = document.getElementById('fc-back-desc');
+                const backTip = document.getElementById('fc-back-tip');
+                const backTitle = document.getElementById('fc-back-title');
+                const backEls = [backFormula, backDesc, backTip, backTitle].filter(Boolean);
+                triggerMathTypeset(backEls);
+            }
+        }
+    });
+
     // Public Window API
+    window.setMediaTab = setMediaTab;
+    window.openBlueprintLightbox = openBlueprintLightbox;
+    window.closeBlueprintLightbox = closeBlueprintLightbox;
     window.openFlashcardStudio = openFlashcardStudio;
     window.closeFlashcardStudio = closeFlashcardStudio;
     window.flipFlashcard = flipCard;
     window.prevFlashcard = prevCard;
     window.nextFlashcard = nextCard;
     window.shuffleFlashcards = shuffleCards;
+    window.toggleKaraokeCaptions = toggleKaraokeCaptions;
+    window.toggleTeleprompter = toggleKaraokeCaptions;
     // Backwards compatibility aliases
     window.rateFlashcard = nextCard;
     window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode);
