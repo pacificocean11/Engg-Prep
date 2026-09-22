@@ -758,6 +758,9 @@
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\beta = COP_R = \\frac{q_L}{w_{in}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad COP_{HP} = COP_R + 1$$",
                         "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
                         "examTip": "Found in Thermodynamics. Expansion through throttling valve is isenthalpic: $h_4 = h_3$."
@@ -1051,6 +1054,15 @@
                         "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
                 },
                 {
+                        "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "videoUrl": "assets/videos/MACRS_Depreciation.mp4",
+                        "videoTitle": "MACRS Depreciation Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$D_j = C \times r_j, \quad BV_j = C - \sum_{k=1}^j D_k$$",
+                        "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
+                        "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -1325,6 +1337,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -1412,6 +1427,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -1520,6 +1538,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -1614,6 +1635,9 @@
                 },
                 {
                         "title": "Method of Joints",
+                        "videoUrl": "assets/videos/Method_of_Joints.mp4",
+                        "videoTitle": "Method of Joints Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
                         "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
                         "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
@@ -1768,6 +1792,9 @@
                 },
                 {
                         "title": "Bouyancy Force",
+                        "videoUrl": "assets/videos/Bouyancy_Force.mp4",
+                        "videoTitle": "Bouyancy Force Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
                         "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
@@ -1783,6 +1810,9 @@
                 },
                 {
                         "title": "Venturi Meter",
+                        "videoUrl": "assets/videos/Venturi_Meter.mp4",
+                        "videoTitle": "Venturi Meter Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
                         "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
                         "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
@@ -1857,6 +1887,9 @@
                 },
                 {
                         "title": "Thermal resistance of an object",
+                        "videoUrl": "assets/videos/Thermal_Resistance_of_an_Object.mp4",
+                        "videoTitle": "Thermal Resistance of an Object Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R_{\\text{cond}} = \\frac{L}{k A}, \\quad R_{\\text{conv}} = \\frac{1}{h A}, \\quad R_{\\text{rad}} = \\frac{1}{h_r A}, \\quad \\dot{Q} = \\frac{\\Delta T_{\\text{overall}}}{R_{\\text{total}}} = U A \\Delta T_{\\text{overall}}$$*",
                         "description": "Electrical circuit analogy where temperature difference acts as voltage potential, heat rate $\\dot{Q}$ acts as current, and materials act as thermal resistors. Total thermal resistance combines series and parallel conduction, convection, and radiation networks.",
                         "examTip": "Found in Heat Transfer: Conduction/Convection Networks. The overall heat transfer coefficient $U$ satisfies $\\frac{1}{U A} = R_{\\text{total}} = \\frac{1}{h_i A_i} + \\sum \\frac{L}{k A} + \\frac{1}{h_o A_o}$."
@@ -1872,6 +1905,9 @@
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "videoUrl": "assets/videos/Net_Energy_Exchange_by_Radiation_between_Two_Bodies.mp4",
+                        "videoTitle": "Net Energy Exchange by Radiation between Two Bodies Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{12} = \\frac{\\sigma(T_1^4 - T_2^4)}{\\frac{1 - \\epsilon_1}{\\epsilon_1 A_1} + \\frac{1}{A_1 F_{12}} + \\frac{1 - \\epsilon_2}{\\epsilon_2 A_2}}, \\quad A_1 F_{12} = A_2 F_{21} \\text{ (Reciprocity)}$$",
                         "description": "Net radiant heat transfer between two diffuse, gray surfaces enclosed in an environment. Incorporates surface resistances $\\frac{1-\\epsilon}{\\epsilon A}$ and geometric space configuration resistance $\\frac{1}{A_1 F_{12}}$ governed by view factor $F_{12}$.",
                         "examTip": "Found in Heat Transfer: Radiation. For two large parallel plates ($A_1 = A_2 = A$, $F_{12} = 1$): $\\dot{Q}_{12} = \\frac{A \\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$. For small convex object 1 in large room 2: $\\dot{Q} = \\epsilon_1 A_1 \\sigma (T_1^4 - T_2^4)$."
@@ -2013,6 +2049,15 @@
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Vapor-Compression Refrigeration Cycle COP",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$\beta = COP_R = \frac{q_L}{w_{in}} = \frac{h_1 - h_4}{h_2 - h_1}, \quad COP_{HP} = COP_R + 1$$",
+                        "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
+                        "examTip": "Found in Thermodynamics. Expansion through throttling valve is isenthalpic: $h_4 = h_3$."
+                },
+                {
                         "title": "HVAC Processes",
                         "videoUrl": "assets/videos/HVAC_Processes.mp4",
                         "videoTitle": "HVAC Processes Explainer",
@@ -2068,6 +2113,9 @@
                 },
                 {
                         "title": "Signal Words",
+                        "videoUrl": "assets/videos/Signal_Words.mp4",
+                        "videoTitle": "Signal Words Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
                         "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
                         "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
@@ -2975,6 +3023,15 @@
                         "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
                 },
                 {
+                        "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "videoUrl": "assets/videos/MACRS_Depreciation.mp4",
+                        "videoTitle": "MACRS Depreciation Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$D_j = C \times r_j, \quad BV_j = C - \sum_{k=1}^j D_k$$",
+                        "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
+                        "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -3252,6 +3309,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -3339,6 +3399,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -3447,6 +3510,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -3541,6 +3607,9 @@
                 },
                 {
                         "title": "Method of Joints",
+                        "videoUrl": "assets/videos/Method_of_Joints.mp4",
+                        "videoTitle": "Method of Joints Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
                         "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
                         "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
@@ -3695,6 +3764,9 @@
                 },
                 {
                         "title": "Bouyancy Force",
+                        "videoUrl": "assets/videos/Bouyancy_Force.mp4",
+                        "videoTitle": "Bouyancy Force Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
                         "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
@@ -3710,6 +3782,9 @@
                 },
                 {
                         "title": "Venturi Meter",
+                        "videoUrl": "assets/videos/Venturi_Meter.mp4",
+                        "videoTitle": "Venturi Meter Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
                         "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
                         "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
@@ -4703,6 +4778,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -4790,6 +4868,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -4898,6 +4979,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -5930,6 +6014,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -6017,6 +6104,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -6125,6 +6215,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -6207,6 +6300,9 @@
                 },
                 {
                         "title": "Bouyancy Force",
+                        "videoUrl": "assets/videos/Bouyancy_Force.mp4",
+                        "videoTitle": "Bouyancy Force Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
                         "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
@@ -6222,6 +6318,9 @@
                 },
                 {
                         "title": "Venturi Meter",
+                        "videoUrl": "assets/videos/Venturi_Meter.mp4",
+                        "videoTitle": "Venturi Meter Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
                         "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
                         "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
@@ -6296,6 +6395,9 @@
                 },
                 {
                         "title": "Thermal resistance of an object",
+                        "videoUrl": "assets/videos/Thermal_Resistance_of_an_Object.mp4",
+                        "videoTitle": "Thermal Resistance of an Object Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R_{\\text{cond}} = \\frac{L}{k A}, \\quad R_{\\text{conv}} = \\frac{1}{h A}, \\quad R_{\\text{rad}} = \\frac{1}{h_r A}, \\quad \\dot{Q} = \\frac{\\Delta T_{\\text{overall}}}{R_{\\text{total}}} = U A \\Delta T_{\\text{overall}}$$*",
                         "description": "Electrical circuit analogy where temperature difference acts as voltage potential, heat rate $\\dot{Q}$ acts as current, and materials act as thermal resistors. Total thermal resistance combines series and parallel conduction, convection, and radiation networks.",
                         "examTip": "Found in Heat Transfer: Conduction/Convection Networks. The overall heat transfer coefficient $U$ satisfies $\\frac{1}{U A} = R_{\\text{total}} = \\frac{1}{h_i A_i} + \\sum \\frac{L}{k A} + \\frac{1}{h_o A_o}$."
@@ -6311,6 +6413,9 @@
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "videoUrl": "assets/videos/Net_Energy_Exchange_by_Radiation_between_Two_Bodies.mp4",
+                        "videoTitle": "Net Energy Exchange by Radiation between Two Bodies Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{12} = \\frac{\\sigma(T_1^4 - T_2^4)}{\\frac{1 - \\epsilon_1}{\\epsilon_1 A_1} + \\frac{1}{A_1 F_{12}} + \\frac{1 - \\epsilon_2}{\\epsilon_2 A_2}}, \\quad A_1 F_{12} = A_2 F_{21} \\text{ (Reciprocity)}$$",
                         "description": "Net radiant heat transfer between two diffuse, gray surfaces enclosed in an environment. Incorporates surface resistances $\\frac{1-\\epsilon}{\\epsilon A}$ and geometric space configuration resistance $\\frac{1}{A_1 F_{12}}$ governed by view factor $F_{12}$.",
                         "examTip": "Found in Heat Transfer: Radiation. For two large parallel plates ($A_1 = A_2 = A$, $F_{12} = 1$): $\\dot{Q}_{12} = \\frac{A \\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$. For small convex object 1 in large room 2: $\\dot{Q} = \\epsilon_1 A_1 \\sigma (T_1^4 - T_2^4)$."
@@ -6425,7 +6530,19 @@
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Vapor-Compression Refrigeration Cycle COP",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$\beta = COP_R = \frac{q_L}{w_{in}} = \frac{h_1 - h_4}{h_2 - h_1}, \quad COP_{HP} = COP_R + 1$$",
+                        "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
+                        "examTip": "Found in Thermodynamics. Expansion through throttling valve is isenthalpic: $h_4 = h_3$."
+                },
+                {
                         "title": "Periodic Table of elements",
+                        "videoUrl": "assets/videos/Periodic_Table_of_Elements.mp4",
+                        "videoTitle": "Periodic Table of Elements Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z = \\text{protons}, \\quad A = Z + N, \\quad \\text{Trend: } \\text{IE, EN} \\nearrow, \\quad r_{\\text{atomic}} \\swarrow$$",
                         "description": "Organizes chemical elements by increasing atomic number $Z$ and recurring electronic configurations. Periodic trends across a period (left to right): atomic radius decreases while ionization energy (IE) and electronegativity (EN) increase. Down a group (top to bottom): atomic radius increases while electronegativity and ionization energy decrease.",
                         "examTip": "Found in Chemistry: Periodic Table. Group 1 = alkali metals ($+1$), Group 2 = alkaline earth metals ($+2$), Group 17 = halogens ($-1$), Group 18 = noble gases. Electronegativity peaks at Fluorine ($4.0$)."
@@ -6456,6 +6573,9 @@
                 },
                 {
                         "title": "Photosynthesis",
+                        "videoUrl": "assets/videos/Photosynthesis.mp4",
+                        "videoTitle": "Photosynthesis Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + h\\nu \\xrightarrow{\\text{chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2, \\quad \\Delta G^\\circ = +2870\\text{ kJ/mol}$$",
                         "description": "An endergonic biochemical process by which photoautotrophic organisms (plants, algae, cyanobacteria) harness solar radiant energy $h\\nu$ to synthesize high-energy carbohydrates (glucose) from carbon dioxide and water, releasing oxygen as a byproduct. Forms the energetic foundation of primary biological productivity and the global carbon-oxygen cycle.",
                         "examTip": "Found in Environmental Engineering: Ecological Systems and Water Quality. In surface waters, photosynthetic algal blooms cause daytime dissolved oxygen (DO) supersaturation and pH increases (as $\\text{CO}_2$ is consumed), followed by nighttime DO depletion via respiration."
@@ -6486,6 +6606,9 @@
                 },
                 {
                         "title": "Carcinogens",
+                        "videoUrl": "assets/videos/Carcinogens.mp4",
+                        "videoTitle": "Carcinogens Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
                         "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
                         "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
@@ -6501,6 +6624,9 @@
                 },
                 {
                         "title": "Signal Words",
+                        "videoUrl": "assets/videos/Signal_Words.mp4",
+                        "videoTitle": "Signal Words Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
                         "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
                         "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
@@ -7172,6 +7298,9 @@
                 },
                 {
                         "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "videoUrl": "assets/videos/MACRS_Depreciation.mp4",
+                        "videoTitle": "MACRS Depreciation Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$D_j = C \\times r_j, \\quad BV_j = C - \\sum_{k=1}^j D_k$$",
                         "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
                         "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
@@ -7238,6 +7367,15 @@
                         "formula": "$$BV_t = \\text{Original Cost} - \\text{Accumulated Depreciation} = C - \\sum_{j=1}^t D_j$$",
                         "description": "The current accounting value of an asset recorded on the balance sheet, calculated as the original unadjusted capital acquisition cost minus cumulative total depreciation deductions taken through period $t$.",
                         "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
+                },
+                {
+                        "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "videoUrl": "assets/videos/MACRS_Depreciation.mp4",
+                        "videoTitle": "MACRS Depreciation Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$D_j = C \times r_j, \quad BV_j = C - \sum_{k=1}^j D_k$$",
+                        "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
+                        "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
                 },
                 {
                         "title": "Sample Variance and Degrees of Freedom",
@@ -7409,6 +7547,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -7496,6 +7637,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -7604,6 +7748,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -7698,6 +7845,9 @@
                 },
                 {
                         "title": "Method of Joints",
+                        "videoUrl": "assets/videos/Method_of_Joints.mp4",
+                        "videoTitle": "Method of Joints Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
                         "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
                         "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
@@ -7752,6 +7902,9 @@
                 },
                 {
                         "title": "Carcinogens",
+                        "videoUrl": "assets/videos/Carcinogens.mp4",
+                        "videoTitle": "Carcinogens Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
                         "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
                         "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
@@ -7767,6 +7920,9 @@
                 },
                 {
                         "title": "Signal Words",
+                        "videoUrl": "assets/videos/Signal_Words.mp4",
+                        "videoTitle": "Signal Words Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
                         "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
                         "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
@@ -8602,6 +8758,15 @@
                         "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
                 },
                 {
+                        "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "videoUrl": "assets/videos/MACRS_Depreciation.mp4",
+                        "videoTitle": "MACRS Depreciation Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$D_j = C \times r_j, \quad BV_j = C - \sum_{k=1}^j D_k$$",
+                        "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
+                        "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -8861,6 +9026,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -8948,6 +9116,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -9056,6 +9227,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -9138,6 +9312,9 @@
                 },
                 {
                         "title": "Bouyancy Force",
+                        "videoUrl": "assets/videos/Bouyancy_Force.mp4",
+                        "videoTitle": "Bouyancy Force Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
                         "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
@@ -9153,6 +9330,9 @@
                 },
                 {
                         "title": "Venturi Meter",
+                        "videoUrl": "assets/videos/Venturi_Meter.mp4",
+                        "videoTitle": "Venturi Meter Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
                         "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
                         "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
@@ -9254,6 +9434,9 @@
                 },
                 {
                         "title": "Periodic Table of elements",
+                        "videoUrl": "assets/videos/Periodic_Table_of_Elements.mp4",
+                        "videoTitle": "Periodic Table of Elements Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z = \\text{protons}, \\quad A = Z + N, \\quad \\text{Trend: } \\text{IE, EN} \\nearrow, \\quad r_{\\text{atomic}} \\swarrow$$",
                         "description": "Organizes chemical elements by increasing atomic number $Z$ and recurring electronic configurations. Periodic trends across a period (left to right): atomic radius decreases while ionization energy (IE) and electronegativity (EN) increase. Down a group (top to bottom): atomic radius increases while electronegativity and ionization energy decrease.",
                         "examTip": "Found in Chemistry: Periodic Table. Group 1 = alkali metals ($+1$), Group 2 = alkaline earth metals ($+2$), Group 17 = halogens ($-1$), Group 18 = noble gases. Electronegativity peaks at Fluorine ($4.0$)."
@@ -9284,6 +9467,9 @@
                 },
                 {
                         "title": "Photosynthesis",
+                        "videoUrl": "assets/videos/Photosynthesis.mp4",
+                        "videoTitle": "Photosynthesis Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + h\\nu \\xrightarrow{\\text{chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2, \\quad \\Delta G^\\circ = +2870\\text{ kJ/mol}$$",
                         "description": "An endergonic biochemical process by which photoautotrophic organisms (plants, algae, cyanobacteria) harness solar radiant energy $h\\nu$ to synthesize high-energy carbohydrates (glucose) from carbon dioxide and water, releasing oxygen as a byproduct. Forms the energetic foundation of primary biological productivity and the global carbon-oxygen cycle.",
                         "examTip": "Found in Environmental Engineering: Ecological Systems and Water Quality. In surface waters, photosynthetic algal blooms cause daytime dissolved oxygen (DO) supersaturation and pH increases (as $\\text{CO}_2$ is consumed), followed by nighttime DO depletion via respiration."
@@ -9314,6 +9500,9 @@
                 },
                 {
                         "title": "Carcinogens",
+                        "videoUrl": "assets/videos/Carcinogens.mp4",
+                        "videoTitle": "Carcinogens Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
                         "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
                         "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
@@ -9329,6 +9518,9 @@
                 },
                 {
                         "title": "Signal Words",
+                        "videoUrl": "assets/videos/Signal_Words.mp4",
+                        "videoTitle": "Signal Words Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
                         "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
                         "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
@@ -10233,6 +10425,15 @@
                         "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
                 },
                 {
+                        "title": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+                        "videoUrl": "assets/videos/MACRS_Depreciation.mp4",
+                        "videoTitle": "MACRS Depreciation Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$D_j = C \times r_j, \quad BV_j = C - \sum_{k=1}^j D_k$$",
+                        "description": "US tax depreciation method specifying recovery percentage rates $r_j$ over statutory asset recovery periods (3, 5, 7, 10, 15, 20 years) incorporating the half-year convention.",
+                        "examTip": "Found in Engineering Economics. MACRS assumes zero salvage value ($S = 0$) in depreciation calculations."
+                },
+                {
                         "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
                         "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
                         "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
@@ -10555,6 +10756,9 @@
                 },
                 {
                         "title": "Vector Magnitude (Length) and Unit Vector Normalization",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Vector Magnitude and Unit Vector Normalization Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "Calculates the Euclidean norm (magnitude) of a 3D vector. Normalizing a vector by its length produces a unit vector $\\hat{\\mathbf{u}}$ with magnitude 1 whose components are the direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, unit vectors define line-of-action forces: $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -10642,6 +10846,9 @@
                 },
                 {
                         "title": "Length of a Vector and Unit Vector",
+                        "videoUrl": "assets/videos/Length_of_a_Vector_and_Unit_Vector.mp4",
+                        "videoTitle": "Length of a Vector and Unit Vector Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\|\\mathbf{v}\\| = \\sqrt{v_x^2 + v_y^2 + v_z^2}, \\quad \\hat{\\mathbf{u}} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\frac{v_x}{\\|\\mathbf{v}\\|}\\mathbf{i} + \\frac{v_y}{\\|\\mathbf{v}\\|}\\mathbf{j} + \\frac{v_z}{\\|\\mathbf{v}\\|}\\mathbf{k}$$",
                         "description": "The Euclidean length (norm) of a 3D vector is the square root of the sum of squared components. Dividing $\\mathbf{v}$ by its length yields a unit vector $\\hat{\\mathbf{u}}$ of length 1, whose components represent direction cosines $(\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$.",
                         "examTip": "Found in Mathematics: Vector Operations and Statics. Direction cosines satisfy $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$. In statics, any 3D force along line $AB$ is expressed as $\\mathbf{F} = F \\hat{\\mathbf{u}}_{AB}$."
@@ -10750,6 +10957,9 @@
                 },
                 {
                         "title": "Cumulative Distribution Functions",
+                        "videoUrl": "assets/videos/Cumulative_Distribution_Functions.mp4",
+                        "videoTitle": "Cumulative Distribution Functions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F(x) = P(X \\le x) = \\int_{-\\infty}^x f(t) \\, dt, \\quad f(x) = \\frac{dF(x)}{dx}, \\quad P(a < X \\le b) = F(b) - F(a)$$",
                         "description": "The cumulative distribution function (CDF) $F(x)$ gives the accumulated probability that random variable $X$ assumes a value less than or equal to $x$. It is monotonically non-decreasing with limits $\\lim_{x \\to -\\infty} F(x) = 0$ and $\\lim_{x \\to \\infty} F(x) = 1$.",
                         "examTip": "Found in Engineering Probability and Statistics. For discrete distributions, $F(x) = \\sum_{t \\le x} p(t)$ is a step function. For continuous distributions, differentiating the CDF immediately yields the PDF."
@@ -10844,6 +11054,9 @@
                 },
                 {
                         "title": "Method of Joints",
+                        "videoUrl": "assets/videos/Method_of_Joints.mp4",
+                        "videoTitle": "Method of Joints Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0 \\quad \\text{(at each isolated pin joint)}$$",
                         "description": "Determines internal axial forces in truss members by isolating individual pin joints where concurrent force equilibrium applies. Solves for member tensions ($+T$) and compressions ($-C$) starting from joints with at most two unknown member forces.",
                         "examTip": "Found in Statics: Trusses. First identify zero-force members by inspection: two non-collinear members meeting at an unloaded joint carry zero force; three members meeting where two are collinear and third is unloaded means third carries zero force."
@@ -10998,6 +11211,9 @@
                 },
                 {
                         "title": "Bouyancy Force",
+                        "videoUrl": "assets/videos/Bouyancy_Force.mp4",
+                        "videoTitle": "Bouyancy Force Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_B = \\rho_f g V_{\\text{disp}} = \\gamma_f V_{\\text{disp}}, \\quad W = \\rho_s g V_{\\text{body}}$$",
                         "description": "Archimedes' principle states that any body completely or partially submerged in a fluid experiences an upward buoyant force $F_B$ equal to the weight of fluid displaced. The buoyant force acts vertically upward through the centroid of displaced volume (center of buoyancy $B$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For a floating body in static equilibrium: $F_B = W \\implies \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{fluid}}}$. Stability depends on metacenter $M$ being above center of gravity $G$ ($GM > 0$)."
@@ -11013,6 +11229,9 @@
                 },
                 {
                         "title": "Venturi Meter",
+                        "videoUrl": "assets/videos/Venturi_Meter.mp4",
+                        "videoTitle": "Venturi Meter Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d \\frac{A_2}{\\sqrt{1 - \\beta^4}} \\sqrt{\\frac{2(P_1 - P_2)}{\\rho}}, \\quad \\beta = \\frac{d_2}{d_1}$$",
                         "description": "Differential pressure flowmeter consisting of converging section, narrow throat, and gradual diverging diffuser. As fluid accelerates through the throat ($A_2 < A_1$), static pressure drops ($P_2 < P_1$). Discharge coefficient $C_d \\approx 0.98$ accounts for boundary layer friction.",
                         "examTip": "Found in Fluid Mechanics. Gradual diffuser angle ($5^\\circ - 7^\\circ$) minimizes flow separation and permanent head loss, making Venturi meters much more energy efficient than orifice plates."
@@ -11087,6 +11306,9 @@
                 },
                 {
                         "title": "Thermal resistance of an object",
+                        "videoUrl": "assets/videos/Thermal_Resistance_of_an_Object.mp4",
+                        "videoTitle": "Thermal Resistance of an Object Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R_{\\text{cond}} = \\frac{L}{k A}, \\quad R_{\\text{conv}} = \\frac{1}{h A}, \\quad R_{\\text{rad}} = \\frac{1}{h_r A}, \\quad \\dot{Q} = \\frac{\\Delta T_{\\text{overall}}}{R_{\\text{total}}} = U A \\Delta T_{\\text{overall}}$$*",
                         "description": "Electrical circuit analogy where temperature difference acts as voltage potential, heat rate $\\dot{Q}$ acts as current, and materials act as thermal resistors. Total thermal resistance combines series and parallel conduction, convection, and radiation networks.",
                         "examTip": "Found in Heat Transfer: Conduction/Convection Networks. The overall heat transfer coefficient $U$ satisfies $\\frac{1}{U A} = R_{\\text{total}} = \\frac{1}{h_i A_i} + \\sum \\frac{L}{k A} + \\frac{1}{h_o A_o}$."
@@ -11102,6 +11324,9 @@
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "videoUrl": "assets/videos/Net_Energy_Exchange_by_Radiation_between_Two_Bodies.mp4",
+                        "videoTitle": "Net Energy Exchange by Radiation between Two Bodies Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\dot{Q}_{12} = \\frac{\\sigma(T_1^4 - T_2^4)}{\\frac{1 - \\epsilon_1}{\\epsilon_1 A_1} + \\frac{1}{A_1 F_{12}} + \\frac{1 - \\epsilon_2}{\\epsilon_2 A_2}}, \\quad A_1 F_{12} = A_2 F_{21} \\text{ (Reciprocity)}$$",
                         "description": "Net radiant heat transfer between two diffuse, gray surfaces enclosed in an environment. Incorporates surface resistances $\\frac{1-\\epsilon}{\\epsilon A}$ and geometric space configuration resistance $\\frac{1}{A_1 F_{12}}$ governed by view factor $F_{12}$.",
                         "examTip": "Found in Heat Transfer: Radiation. For two large parallel plates ($A_1 = A_2 = A$, $F_{12} = 1$): $\\dot{Q}_{12} = \\frac{A \\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$. For small convex object 1 in large room 2: $\\dot{Q} = \\epsilon_1 A_1 \\sigma (T_1^4 - T_2^4)$."
@@ -11243,6 +11468,15 @@
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Vapor-Compression Refrigeration Cycle COP",
+                        "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
+                        "videoTitle": "Refrigeration Cycle Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$\beta = COP_R = \frac{q_L}{w_{in}} = \frac{h_1 - h_4}{h_2 - h_1}, \quad COP_{HP} = COP_R + 1$$",
+                        "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
+                        "examTip": "Found in Thermodynamics. Expansion through throttling valve is isenthalpic: $h_4 = h_3$."
+                },
+                {
                         "title": "HVAC Processes",
                         "videoUrl": "assets/videos/HVAC_Processes.mp4",
                         "videoTitle": "HVAC Processes Explainer",
@@ -11253,6 +11487,9 @@
                 },
                 {
                         "title": "Periodic Table of elements",
+                        "videoUrl": "assets/videos/Periodic_Table_of_Elements.mp4",
+                        "videoTitle": "Periodic Table of Elements Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z = \\text{protons}, \\quad A = Z + N, \\quad \\text{Trend: } \\text{IE, EN} \\nearrow, \\quad r_{\\text{atomic}} \\swarrow$$",
                         "description": "Organizes chemical elements by increasing atomic number $Z$ and recurring electronic configurations. Periodic trends across a period (left to right): atomic radius decreases while ionization energy (IE) and electronegativity (EN) increase. Down a group (top to bottom): atomic radius increases while electronegativity and ionization energy decrease.",
                         "examTip": "Found in Chemistry: Periodic Table. Group 1 = alkali metals ($+1$), Group 2 = alkaline earth metals ($+2$), Group 17 = halogens ($-1$), Group 18 = noble gases. Electronegativity peaks at Fluorine ($4.0$)."
@@ -11274,6 +11511,9 @@
                 },
                 {
                         "title": "Photosynthesis",
+                        "videoUrl": "assets/videos/Photosynthesis.mp4",
+                        "videoTitle": "Photosynthesis Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$6\\text{CO}_2 + 6\\text{H}_2\\text{O} + h\\nu \\xrightarrow{\\text{chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2, \\quad \\Delta G^\\circ = +2870\\text{ kJ/mol}$$",
                         "description": "An endergonic biochemical process by which photoautotrophic organisms (plants, algae, cyanobacteria) harness solar radiant energy $h\\nu$ to synthesize high-energy carbohydrates (glucose) from carbon dioxide and water, releasing oxygen as a byproduct. Forms the energetic foundation of primary biological productivity and the global carbon-oxygen cycle.",
                         "examTip": "Found in Environmental Engineering: Ecological Systems and Water Quality. In surface waters, photosynthetic algal blooms cause daytime dissolved oxygen (DO) supersaturation and pH increases (as $\\text{CO}_2$ is consumed), followed by nighttime DO depletion via respiration."
@@ -11340,6 +11580,9 @@
                 },
                 {
                         "title": "Carcinogens",
+                        "videoUrl": "assets/videos/Carcinogens.mp4",
+                        "videoTitle": "Carcinogens Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Excess Lifetime Cancer Risk} = \\text{CDI} \\times \\text{SF}, \\quad \\text{CDI} = \\frac{C \\times \\text{IR} \\times \\text{EF} \\times \\text{ED}}{\\text{BW} \\times \\text{AT}}$$",
                         "description": "Substances or agents capable of causing cancer in living tissue. Toxicological evaluation utilizes non-threshold, linear multi-stage models where any exposure carries non-zero carcinogenic risk. Chronic Daily Intake ($\\text{CDI}$, $\\text{mg}/(\\text{kg}\\cdot\\text{day})$) multiplied by cancer Slope Factor ($\\text{SF}$, $(\\text{mg}/(\\text{kg}\\cdot\\text{day}))^{-1}$) calculates excess lifetime cancer risk.",
                         "examTip": "Found in Environmental and Other Disciplines: Health and Safety. Regulatory acceptable risk range is typically $10^{-6}$ (one in a million) to $10^{-4}$. Contrast with non-carcinogens, which utilize threshold Hazard Quotients ($\\text{HQ} = \\text{CDI} / \\text{RfD}$)."
@@ -11355,6 +11598,9 @@
                 },
                 {
                         "title": "Signal Words",
+                        "videoUrl": "assets/videos/Signal_Words.mp4",
+                        "videoTitle": "Signal Words Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
                         "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
                         "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
