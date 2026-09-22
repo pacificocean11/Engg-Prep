@@ -6442,6 +6442,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Biot Number for Transient Conduction",
                         "formula": "$$Bi = \\frac{h L_c}{k} < 0.1$$",
                         "description": "Compares internal thermal conduction resistance of a solid body to external convective surface resistance, where $L_c = V / A_s$ is characteristic length.",
@@ -6615,7 +6624,10 @@ window.calcEvaluate = function() {
                         "title": "Beam Deflection Differential Governing Equation",
                         "formula": "$$E I \\frac{d^2 v}{dx^2} = M(x), \\quad E I \\frac{d^3 v}{dx^3} = V(x), \\quad E I \\frac{d^4 v}{dx^4} = -w(x)$$",
                         "description": "Relates applied distributed transverse load $w(x)$, shear $V(x)$, bending moment $M(x)$, slope $dv/dx$, and elastic deflection $v(x)$ in beams.",
-                        "examTip": "Found in Mechanics of Materials. Boundary conditions for fixed wall: $v(0)=0, v'(0)=0$; pinned support: $v(0)=0, M(0)=0$; free end: $V(L)=0, M(L)=0$."
+                        "examTip": "Found in Mechanics of Materials. Boundary conditions for fixed wall: $v(0)=0, v'(0)=0$; pinned support: $v(0)=0, M(0)=0$; free end: $V(L)=0, M(L)=0$.",
+                    "videoUrl": "assets/videos/Beam_Deflection_Differential_Governing_Equation.mp4",
+                    "videoTitle": "Beam Deflection Differential Governing Equation Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Cantilever Beam Tip Deflection under Point Load",
@@ -6701,7 +6713,10 @@ window.calcEvaluate = function() {
                         "title": "Hydrostatic Center of Pressure on Submerged Surfaces",
                         "formula": "$$y_{cp} = y_c + \\frac{I_{xc}}{y_c A}, \\quad F_R = \\bar{P} A = \\rho g y_c \\sin\\theta A$$",
                         "description": "Resultant hydrostatic force $F_R$ acts through the center of pressure $y_{cp}$, which is always located below the area centroid $y_c$ by distance $I_{xc}/(y_c A)$.",
-                        "examTip": "Found in Fluid Mechanics. Remember $y$ is measured along the inclined surface plane from the liquid surface intersection."
+                        "examTip": "Found in Fluid Mechanics. Remember $y$ is measured along the inclined surface plane from the liquid surface intersection.",
+                    "videoUrl": "assets/videos/Hydrostatic_Center_of_Pressure_on_Submerged_Surfaces.mp4",
+                    "videoTitle": "Hydrostatic Center of Pressure on Submerged Surfaces Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Archimedes’ Principle of Buoyancy",
@@ -6878,7 +6893,10 @@ window.calcEvaluate = function() {
                         "title": "Extended Surface Fin Efficiency and Effectiveness",
                         "formula": "$$\\eta_f = \\frac{\\tanh(m L_c)}{m L_c}, \\quad m = \\sqrt{\\frac{h P}{k A_c}}, \\quad \\epsilon_f = \\frac{q_f}{h A_c (T_b - T_\\infty)}$$",
                         "description": "Quantifies heat transfer performance of cooling fins: efficiency $\\eta_f$ is actual fin heat dissipation over ideal base-temperature dissipation; effectiveness $\\epsilon_f > 2$ justifies adding the fin.",
-                        "examTip": "Found in Heat Transfer. For long fins ($m L \\to \\infty$), tip temperature reaches ambient, giving $q_f = \\sqrt{h P k A_c} (T_b - T_\\infty)$."
+                        "examTip": "Found in Heat Transfer. For long fins ($m L \\to \\infty$), tip temperature reaches ambient, giving $q_f = \\sqrt{h P k A_c} (T_b - T_\\infty)$.",
+                    "videoUrl": "assets/videos/Extended_Surface_Fin_Efficiency_and_Effectiveness.mp4",
+                    "videoTitle": "Extended Surface Fin Efficiency and Effectiveness Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Radiation View Factor Reciprocity Relation",
@@ -7738,7 +7756,10 @@ window.calcEvaluate = function() {
                         "title": "Limiting friction",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
-                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
+                    "videoUrl": "assets/videos/Limiting_friction.mp4",
+                    "videoTitle": "Limiting Friction Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Instantaneous velocity and Acceleration",
@@ -7996,7 +8017,10 @@ window.calcEvaluate = function() {
                         "title": "Entropy",
                         "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
                         "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
-                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$."
+                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$.",
+                    "videoUrl": "assets/videos/Entropy.mp4",
+                    "videoTitle": "Entropy Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Enthalpy",
@@ -8101,7 +8125,10 @@ window.calcEvaluate = function() {
                         "title": "Mollier chart",
                         "formula": "$$\\left(\\frac{\\partial h}{\\partial s}\\right)_P = T, \\quad \\Delta h_{\\text{ideal}} = h_1 - h_{2s}, \\quad \\eta_{\\text{turb}} = \\frac{h_1 - h_2}{h_1 - h_{2s}}$$",
                         "description": "An $h$-$s$ (enthalpy vs. entropy) coordinate chart used for steam turbines, nozzles, and refrigeration. Isobaric lines have slope equal to absolute temperature $T$. Vertical lines represent ideal isentropic processes ($s = \\text{const}$); deviation to the right shows irreversibility.",
-                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
+                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality.",
+                    "videoUrl": "assets/videos/Mollier_Chart.mp4",
+                    "videoTitle": "Mollier Chart Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Refrigeration Cycles",
@@ -8209,7 +8236,10 @@ window.calcEvaluate = function() {
                         "title": "Flammability, LFL and UFL",
                         "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
                         "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
-                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted.",
+                    "videoUrl": "assets/videos/Flammability_LFL_and_UFL.mp4",
+                    "videoTitle": "Flammability, LFL and UFL Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Confined Space Safety",
@@ -8546,6 +8576,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
                         "videoDuration": "10s"
                 },
                 {
@@ -9732,7 +9771,10 @@ window.calcEvaluate = function() {
                         "title": "Limiting friction",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
-                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
+                    "videoUrl": "assets/videos/Limiting_friction.mp4",
+                    "videoTitle": "Limiting Friction Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Instantaneous velocity and Acceleration",
@@ -10177,6 +10219,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
                         "videoDuration": "10s"
                 },
                 {
@@ -11477,6 +11528,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Fundamental Thermodynamic Property Relations and Maxwell Relations",
                         "formula": "$$dG = V dP - S dT, \\quad \\left(\\frac{\\partial V}{\\partial T}\\right)_P = -\\left(\\frac{\\partial S}{\\partial P}\\right)_T$$",
                         "description": "Relates Gibbs free energy $G$ to state variables $P$ and $T$, yielding Maxwell's relations that connect unmeasurable entropy derivatives to measurable $P-V-T$ experimental data.",
@@ -12543,7 +12603,10 @@ window.calcEvaluate = function() {
                         "title": "Entropy",
                         "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
                         "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
-                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$."
+                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$.",
+                    "videoUrl": "assets/videos/Entropy.mp4",
+                    "videoTitle": "Entropy Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Enthalpy",
@@ -12619,7 +12682,10 @@ window.calcEvaluate = function() {
                         "title": "Mollier chart",
                         "formula": "$$\\left(\\frac{\\partial h}{\\partial s}\\right)_P = T, \\quad \\Delta h_{\\text{ideal}} = h_1 - h_{2s}, \\quad \\eta_{\\text{turb}} = \\frac{h_1 - h_2}{h_1 - h_{2s}}$$",
                         "description": "An $h$-$s$ (enthalpy vs. entropy) coordinate chart used for steam turbines, nozzles, and refrigeration. Isobaric lines have slope equal to absolute temperature $T$. Vertical lines represent ideal isentropic processes ($s = \\text{const}$); deviation to the right shows irreversibility.",
-                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
+                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality.",
+                    "videoUrl": "assets/videos/Mollier_Chart.mp4",
+                    "videoTitle": "Mollier Chart Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Refrigeration Cycles",
@@ -12757,7 +12823,10 @@ window.calcEvaluate = function() {
                         "title": "Flammability, LFL and UFL",
                         "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
                         "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
-                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted.",
+                    "videoUrl": "assets/videos/Flammability_LFL_and_UFL.mp4",
+                    "videoTitle": "Flammability, LFL and UFL Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Confined Space Safety",
@@ -12897,6 +12966,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
                         "videoDuration": "10s"
                 },
                 {
@@ -13380,7 +13458,19 @@ window.calcEvaluate = function() {
                         "title": "Uniform Series Present Worth Factor ($(P/A, i, n)$)",
                         "formula": "$$(P/A, i, n) = \\frac{(1 + i)^n - 1}{i (1 + i)^n}$$",
                         "description": "Calculates present lump sum value $P$ equivalent to an equal uniform annual cash flow series $A$ received at the end of each period for $n$ periods at interest rate $i$.",
-                        "examTip": "Found in Engineering Economics. Reciprocal is the Capital Recovery factor: $(A/P, i, n) = [(P/A, i, n)]^{-1}$."
+                        "examTip": "Found in Engineering Economics. Reciprocal is the Capital Recovery factor: $(A/P, i, n) = [(P/A, i, n)]^{-1}$.",
+                    "videoUrl": "assets/videos/Bonds.mp4",
+                    "videoTitle": "Uniform Series Present Worth & Bond Annuity Stream Video Guide",
+                    "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Arithmetic Gradient Present Worth Factor ($(P/G, i, n)$)",
@@ -14003,7 +14093,10 @@ window.calcEvaluate = function() {
                         "title": "Limiting friction",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
-                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
+                    "videoUrl": "assets/videos/Limiting_friction.mp4",
+                    "videoTitle": "Limiting Friction Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Types of Fits",
@@ -14063,7 +14156,10 @@ window.calcEvaluate = function() {
                         "title": "Flammability, LFL and UFL",
                         "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
                         "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
-                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted.",
+                    "videoUrl": "assets/videos/Flammability_LFL_and_UFL.mp4",
+                    "videoTitle": "Flammability, LFL and UFL Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Confined Space Safety",
@@ -14344,6 +14440,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
                         "videoDuration": "10s"
                 },
                 {
@@ -15673,7 +15778,10 @@ window.calcEvaluate = function() {
                         "title": "Flammability, LFL and UFL",
                         "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
                         "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
-                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted.",
+                    "videoUrl": "assets/videos/Flammability_LFL_and_UFL.mp4",
+                    "videoTitle": "Flammability, LFL and UFL Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Confined Space Safety",
@@ -16031,6 +16139,15 @@ window.calcEvaluate = function() {
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
                         "videoUrl": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
                         "videoTitle": "Capitalized Cost for Infinite Project Life Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
                         "videoDuration": "10s"
                 },
                 {
@@ -16555,7 +16672,19 @@ window.calcEvaluate = function() {
                         "title": "Uniform Series Present Worth Factor ($(P/A, i, n)$)",
                         "formula": "$$(P/A, i, n) = \\frac{(1 + i)^n - 1}{i (1 + i)^n}$$",
                         "description": "Calculates present equivalent lump sum $P$ of a uniform annual cash flow series $A$ over $n$ interest periods at discount rate $i$.",
-                        "examTip": "Found in Engineering Economics. Capital recovery factor is the exact reciprocal: $(A/P, i, n) = 1 / (P/A, i, n)$."
+                        "examTip": "Found in Engineering Economics. Capital recovery factor is the exact reciprocal: $(A/P, i, n) = 1 / (P/A, i, n)$.",
+                    "videoUrl": "assets/videos/Bonds.mp4",
+                    "videoTitle": "Uniform Series Present Worth & Bond Annuity Stream Video Guide",
+                    "videoDuration": "10s"
+                },
+                {
+                        "title": "Bonds",
+                        "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
+                        "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
+                        "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
+                        "videoUrl": "assets/videos/Bonds.mp4",
+                        "videoTitle": "Bonds Video Guide",
+                        "videoDuration": "10s"
                 },
                 {
                         "title": "Straight-Line Depreciation Method",
@@ -17241,7 +17370,10 @@ window.calcEvaluate = function() {
                         "title": "Limiting friction",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
-                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions."
+                        "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
+                    "videoUrl": "assets/videos/Limiting_friction.mp4",
+                    "videoTitle": "Limiting Friction Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Instantaneous velocity and Acceleration",
@@ -17499,7 +17631,10 @@ window.calcEvaluate = function() {
                         "title": "Entropy",
                         "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
                         "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
-                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$."
+                        "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$.",
+                    "videoUrl": "assets/videos/Entropy.mp4",
+                    "videoTitle": "Entropy Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Enthalpy",
@@ -17604,7 +17739,10 @@ window.calcEvaluate = function() {
                         "title": "Mollier chart",
                         "formula": "$$\\left(\\frac{\\partial h}{\\partial s}\\right)_P = T, \\quad \\Delta h_{\\text{ideal}} = h_1 - h_{2s}, \\quad \\eta_{\\text{turb}} = \\frac{h_1 - h_2}{h_1 - h_{2s}}$$",
                         "description": "An $h$-$s$ (enthalpy vs. entropy) coordinate chart used for steam turbines, nozzles, and refrigeration. Isobaric lines have slope equal to absolute temperature $T$. Vertical lines represent ideal isentropic processes ($s = \\text{const}$); deviation to the right shows irreversibility.",
-                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality."
+                        "examTip": "Found in Mechanical and Chemical: Power Cycles. Turbine work drop is read directly as vertical height difference $\\Delta h$. Quality $x$ inside the vapor dome is read directly along lines of constant steam quality.",
+                    "videoUrl": "assets/videos/Mollier_Chart.mp4",
+                    "videoTitle": "Mollier Chart Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Refrigeration Cycles",
@@ -17778,7 +17916,10 @@ window.calcEvaluate = function() {
                         "title": "Flammability, LFL and UFL",
                         "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
                         "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
-                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted."
+                        "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted.",
+                    "videoUrl": "assets/videos/Flammability_LFL_and_UFL.mp4",
+                    "videoTitle": "Flammability, LFL and UFL Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Confined Space Safety",
