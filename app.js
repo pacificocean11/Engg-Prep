@@ -6989,6 +6989,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Book Value",
+                        "videoUrl": "assets/videos/Book_Value.mp4",
+                        "videoTitle": "Book Value Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$BV_t = \\text{Original Cost} - \\text{Accumulated Depreciation} = C - \\sum_{j=1}^t D_j$$",
+                        "description": "The current accounting value of an asset recorded on the balance sheet, calculated as the original unadjusted capital acquisition cost minus cumulative total depreciation deductions taken through period $t$.",
+                        "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -7449,6 +7458,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -7461,6 +7473,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -7721,6 +7736,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice",
+                        "videoUrl": "assets/videos/Orifice.mp4",
+                        "videoTitle": "Orifice Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
                         "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
                         "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
@@ -7979,6 +7997,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Soderberg Theory",
+                        "videoUrl": "assets/videos/Soderberg_Theory.mp4",
+                        "videoTitle": "Soderberg Theory Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_y} = \\frac{1}{n}, \\quad \\sigma_a = \\frac{\\sigma_{\\max} - \\sigma_{\\min}}{2}, \\quad \\sigma_m = \\frac{\\sigma_{\\max} + \\sigma_{\\min}}{2}$$",
                         "description": "A conservative fatigue failure criterion for ductile machine components subjected to combined fluctuating alternating stress $\\sigma_a$ and mean tensile stress $\\sigma_m$. Connects the fatigue endurance limit $S_e$ on the alternating axis directly to the tensile yield strength $S_y$ on the mean stress axis, ensuring safety against both fatigue fracture and gross static plastic yielding.",
                         "examTip": "Found in Mechanical: Mechanical Design. Soderberg is the most conservative fatigue theory because it uses yield strength $S_y$ rather than ultimate strength $S_{ut}$. By comparison: Goodman uses $\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$, and Gerber uses a parabolic relationship $\\frac{\\sigma_a}{S_e} + (\\frac{\\sigma_m}{S_{ut}})^2 = \\frac{1}{n}$."
@@ -8892,6 +8913,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Book Value",
+                        "videoUrl": "assets/videos/Book_Value.mp4",
+                        "videoTitle": "Book Value Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$BV_t = \\text{Original Cost} - \\text{Accumulated Depreciation} = C - \\sum_{j=1}^t D_j$$",
+                        "description": "The current accounting value of an asset recorded on the balance sheet, calculated as the original unadjusted capital acquisition cost minus cumulative total depreciation deductions taken through period $t$.",
+                        "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -9355,6 +9385,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -9367,6 +9400,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -9627,6 +9663,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice",
+                        "videoUrl": "assets/videos/Orifice.mp4",
+                        "videoTitle": "Orifice Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
                         "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
                         "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
@@ -10797,6 +10836,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -10809,6 +10851,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -12018,6 +12063,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -12030,6 +12078,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -12124,6 +12175,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice",
+                        "videoUrl": "assets/videos/Orifice.mp4",
+                        "videoTitle": "Orifice Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
                         "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
                         "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
@@ -12361,6 +12415,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ethers, Carboxylic Acids and Esters",
+                        "videoUrl": "assets/videos/Ethers_Carboxylic_Acids_and_Esters.mp4",
+                        "videoTitle": "Ethers, Carboxylic Acids and Esters Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Ether: } \\text{R}-\\text{O}-\\text{R}', \\quad \\text{Acid: } \\text{R}-\\text{COOH}, \\quad \\text{Ester: } \\text{R}-\\text{COO}-\\text{R}', \\quad \\text{RCOOH} + \\text{R'OH} \\xrightleftharpoons{\\text{H}^+} \\text{RCOOR}' + \\text{H}_2\\text{O}$$",
                         "description": "Oxygen-bearing organic functional groups. Ethers ($\\text{R}-\\text{O}-\\text{R}'$) are relatively unreactive polar solvents lacking hydroxyl hydrogen bonding. Carboxylic acids ($\\text{R}-\\text{COOH}$) are weak organic acids that undergo resonance-stabilized ionization ($-\\text{COO}^-$). Fischer esterification condenses a carboxylic acid and an alcohol under acid catalysis to produce an ester ($\\text{R}-\\text{COO}-\\text{R}'$) and water.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Carboxylic acid boiling points are exceptionally high due to stable hydrogen-bonded dimer formation. Esters typically possess pleasant fruity aromas and are hydrolyzed via saponification with aqueous base ($\\text{NaOH}$)."
@@ -12412,6 +12469,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dose-Response Curves",
+                        "videoUrl": "assets/videos/Dose_Response_Curves.mp4",
+                        "videoTitle": "Dose-Response Curves Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
                         "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
                         "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
@@ -12424,6 +12484,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Exposure Limits",
+                        "videoUrl": "assets/videos/Exposure_Limits.mp4",
+                        "videoTitle": "Exposure Limits Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
                         "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
                         "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
@@ -13115,6 +13178,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Book Value",
+                        "videoUrl": "assets/videos/Book_Value.mp4",
+                        "videoTitle": "Book Value Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$BV_t = \\text{Original Cost} - \\text{Accumulated Depreciation} = C - \\sum_{j=1}^t D_j$$",
+                        "description": "The current accounting value of an asset recorded on the balance sheet, calculated as the original unadjusted capital acquisition cost minus cumulative total depreciation deductions taken through period $t$.",
+                        "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -13470,6 +13542,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -13482,6 +13557,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -13657,6 +13735,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dose-Response Curves",
+                        "videoUrl": "assets/videos/Dose_Response_Curves.mp4",
+                        "videoTitle": "Dose-Response Curves Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
                         "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
                         "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
@@ -13669,6 +13750,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Exposure Limits",
+                        "videoUrl": "assets/videos/Exposure_Limits.mp4",
+                        "videoTitle": "Exposure Limits Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
                         "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
                         "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
@@ -14456,6 +14540,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Book Value",
+                        "videoUrl": "assets/videos/Book_Value.mp4",
+                        "videoTitle": "Book Value Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$BV_t = \\text{Original Cost} - \\text{Accumulated Depreciation} = C - \\sum_{j=1}^t D_j$$",
+                        "description": "The current accounting value of an asset recorded on the balance sheet, calculated as the original unadjusted capital acquisition cost minus cumulative total depreciation deductions taken through period $t$.",
+                        "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
+                },
+                {
                         "title": "Sample Variance and Degrees of Freedom",
                         "formula": "$$s^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (x_i - \\bar{x})^2 = \\frac{\\sum x_i^2 - \\frac{(\\sum x_i)^2}{n}}{n - 1}$$",
                         "description": "Unbiased estimator of population variance using divisor $(n - 1)$ (Bessel's correction) to compensate for loss of one degree of freedom from estimating mean $\\bar{x}$.",
@@ -14901,6 +14994,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -14913,6 +15009,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -15007,6 +15106,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice",
+                        "videoUrl": "assets/videos/Orifice.mp4",
+                        "videoTitle": "Orifice Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
                         "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
                         "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
@@ -15141,6 +15243,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ethers, Carboxylic Acids and Esters",
+                        "videoUrl": "assets/videos/Ethers_Carboxylic_Acids_and_Esters.mp4",
+                        "videoTitle": "Ethers, Carboxylic Acids and Esters Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Ether: } \\text{R}-\\text{O}-\\text{R}', \\quad \\text{Acid: } \\text{R}-\\text{COOH}, \\quad \\text{Ester: } \\text{R}-\\text{COO}-\\text{R}', \\quad \\text{RCOOH} + \\text{R'OH} \\xrightleftharpoons{\\text{H}^+} \\text{RCOOR}' + \\text{H}_2\\text{O}$$",
                         "description": "Oxygen-bearing organic functional groups. Ethers ($\\text{R}-\\text{O}-\\text{R}'$) are relatively unreactive polar solvents lacking hydroxyl hydrogen bonding. Carboxylic acids ($\\text{R}-\\text{COOH}$) are weak organic acids that undergo resonance-stabilized ionization ($-\\text{COO}^-$). Fischer esterification condenses a carboxylic acid and an alcohol under acid catalysis to produce an ester ($\\text{R}-\\text{COO}-\\text{R}'$) and water.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Carboxylic acid boiling points are exceptionally high due to stable hydrogen-bonded dimer formation. Esters typically possess pleasant fruity aromas and are hydrolyzed via saponification with aqueous base ($\\text{NaOH}$)."
@@ -15192,6 +15297,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dose-Response Curves",
+                        "videoUrl": "assets/videos/Dose_Response_Curves.mp4",
+                        "videoTitle": "Dose-Response Curves Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
                         "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
                         "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
@@ -15204,6 +15312,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Exposure Limits",
+                        "videoUrl": "assets/videos/Exposure_Limits.mp4",
+                        "videoTitle": "Exposure Limits Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
                         "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
                         "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
@@ -16060,6 +16171,15 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
+                        "title": "Book Value",
+                        "videoUrl": "assets/videos/Book_Value.mp4",
+                        "videoTitle": "Book Value Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$BV_t = \\text{Original Cost} - \\text{Accumulated Depreciation} = C - \\sum_{j=1}^t D_j$$",
+                        "description": "The current accounting value of an asset recorded on the balance sheet, calculated as the original unadjusted capital acquisition cost minus cumulative total depreciation deductions taken through period $t$.",
+                        "examTip": "Found in Engineering Economics: Depreciation. At the end of an asset's recovery period ($t = n$), the book value converges to the estimated salvage value ($BV_n = S_n$). Book value cannot be depreciated below salvage value."
+                },
+                {
                         "title": "Benefit-Cost Ratio Decision Criterion (B/C)",
                         "formula": "$$B/C = \\frac{PW(\\text{Benefits})}{PW(\\text{Initial Capital}) + PW(\\text{O\\&M}) - PW(\\text{Salvage})} \\ge 1.0$$",
                         "description": "Standard public sector engineering economic metric; projects are economically justified if present worth of benefits exceeds costs ($B/C \\ge 1$).",
@@ -16568,6 +16688,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Probability Density Function",
+                        "videoUrl": "assets/videos/Probability_Density_Function.mp4",
+                        "videoTitle": "Probability Density Function Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(x) \\ge 0, \\quad \\int_{-\\infty}^\\infty f(x) \\, dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) \\, dx$$",
                         "description": "A continuous random variable's probability density function (PDF) describes the relative likelihood of values. The probability of $X$ falling in interval $[a, b]$ is the area under $f(x)$. The probability of any single discrete point is exactly zero ($P(X = c) = 0$).",
                         "examTip": "Found in Engineering Probability and Statistics. To find unknown normalizing constant $C$ in handbook problems, evaluate $\\int_{-\\infty}^\\infty C g(x) dx = 1$ and solve for $C$."
@@ -16580,6 +16703,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Expected Values",
+                        "videoUrl": "assets/videos/Expected_Values.mp4",
+                        "videoTitle": "Expected Values Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$E[X] = \\mu = \\begin{cases} \\sum x_i P(X = x_i), & \\text{discrete} \\\\ \\int_{-\\infty}^\\infty x f(x) \\, dx, & \\text{continuous} \\end{cases}, \\quad E[aX + b] = a E[X] + b$$",
                         "description": "The mathematical expectation represents the probability-weighted average (first raw moment or centroid) of a random variable. Expectation is a strictly linear operator: $E[aX + bY] = a E[X] + b E[Y]$.",
                         "examTip": "Found in Engineering Probability and Statistics. Variance can be calculated directly using expected values: $\\text{Var}(X) = E[X^2] - (E[X])^2$. For independent variables, $E[X Y] = E[X] E[Y]$."
@@ -16840,6 +16966,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice",
+                        "videoUrl": "assets/videos/Orifice.mp4",
+                        "videoTitle": "Orifice Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad C_d = C_c C_v \\approx 0.60 - 0.62$$",
                         "description": "An obstruction meter featuring a thin plate with a sharp-edged circular hole inserted into a pipe. Jet contracts downstream to minimum area $A_c$ (vena contracta) with contraction coefficient $C_c = A_c/A_o$. Higher permanent pressure loss than Venturi.",
                         "examTip": "Found in Fluid Mechanics. $C_d$ is the product of contraction coefficient $C_c \\approx 0.62$ and velocity coefficient $C_v \\approx 0.97$, yielding typical $C_d \\approx 0.60 - 0.62$."
@@ -17104,6 +17233,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ethers, Carboxylic Acids and Esters",
+                        "videoUrl": "assets/videos/Ethers_Carboxylic_Acids_and_Esters.mp4",
+                        "videoTitle": "Ethers, Carboxylic Acids and Esters Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Ether: } \\text{R}-\\text{O}-\\text{R}', \\quad \\text{Acid: } \\text{R}-\\text{COOH}, \\quad \\text{Ester: } \\text{R}-\\text{COO}-\\text{R}', \\quad \\text{RCOOH} + \\text{R'OH} \\xrightleftharpoons{\\text{H}^+} \\text{RCOOR}' + \\text{H}_2\\text{O}$$",
                         "description": "Oxygen-bearing organic functional groups. Ethers ($\\text{R}-\\text{O}-\\text{R}'$) are relatively unreactive polar solvents lacking hydroxyl hydrogen bonding. Carboxylic acids ($\\text{R}-\\text{COOH}$) are weak organic acids that undergo resonance-stabilized ionization ($-\\text{COO}^-$). Fischer esterification condenses a carboxylic acid and an alcohol under acid catalysis to produce an ester ($\\text{R}-\\text{COO}-\\text{R}'$) and water.",
                         "examTip": "Found in Chemistry: Organic Chemistry. Carboxylic acid boiling points are exceptionally high due to stable hydrogen-bonded dimer formation. Esters typically possess pleasant fruity aromas and are hydrolyzed via saponification with aqueous base ($\\text{NaOH}$)."
@@ -17146,6 +17278,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Soderberg Theory",
+                        "videoUrl": "assets/videos/Soderberg_Theory.mp4",
+                        "videoTitle": "Soderberg Theory Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_y} = \\frac{1}{n}, \\quad \\sigma_a = \\frac{\\sigma_{\\max} - \\sigma_{\\min}}{2}, \\quad \\sigma_m = \\frac{\\sigma_{\\max} + \\sigma_{\\min}}{2}$$",
                         "description": "A conservative fatigue failure criterion for ductile machine components subjected to combined fluctuating alternating stress $\\sigma_a$ and mean tensile stress $\\sigma_m$. Connects the fatigue endurance limit $S_e$ on the alternating axis directly to the tensile yield strength $S_y$ on the mean stress axis, ensuring safety against both fatigue fracture and gross static plastic yielding.",
                         "examTip": "Found in Mechanical: Mechanical Design. Soderberg is the most conservative fatigue theory because it uses yield strength $S_y$ rather than ultimate strength $S_{ut}$. By comparison: Goodman uses $\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$, and Gerber uses a parabolic relationship $\\frac{\\sigma_a}{S_e} + (\\frac{\\sigma_m}{S_{ut}})^2 = \\frac{1}{n}$."
@@ -17188,6 +17323,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dose-Response Curves",
+                        "videoUrl": "assets/videos/Dose_Response_Curves.mp4",
+                        "videoTitle": "Dose-Response Curves Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Response } (\\%) = \\frac{1}{1 + e^{-(\\alpha + \\beta \\log D)}}, \\quad \\text{TI} = \\frac{\\text{TD}_{50}}{\\text{ED}_{50}} \\text{ or } \\frac{\\text{LD}_{50}}{\\text{ED}_{50}}$$",
                         "description": "Quantitative relationship describing the biological response of an organism as a function of exposure dose $D$. Sigmoidal curve yields key potency parameters: Threshold dose (minimum dose where response is observed), $\\text{NOAEL}$ (No Observed Adverse Effect Level), $\\text{LOAEL}$ (Lowest Observed Adverse Effect Level), and $\\text{LD}_{50}$ (median lethal dose causing death in $50\\%$ of test population).",
                         "examTip": "Found in Environmental and Chemical: Toxicology. Therapeutic Index ($\\text{TI} = \\text{TD}_{50} / \\text{ED}_{50}$) measures compound safety margin; larger $\\text{TI}$ indicates safer substance. Reference Dose for non-carcinogens is $\\text{RfD} = \\frac{\\text{NOAEL}}{\\text{UF} \\times \\text{MF}}$ where $\\text{UF}$ is uncertainty factor product."
@@ -17200,6 +17338,9 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Exposure Limits",
+                        "videoUrl": "assets/videos/Exposure_Limits.mp4",
+                        "videoTitle": "Exposure Limits Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{TWA} = \\frac{\\sum_{i=1}^n C_i T_i}{\\sum_{i=1}^n T_i} = \\frac{C_1 T_1 + C_2 T_2 + \\dots + C_n T_n}{8\\text{ hours}}, \\quad \\sum \\frac{C_i}{\\text{PEL}_i} \\le 1$$",
                         "description": "Standards specifying legal and recommended ceiling thresholds for airborne chemical substances in workplace breathing zones. OSHA Permissible Exposure Limit ($\\text{PEL}$) is a legally enforceable 8-hour Time-Weighted Average ($\\text{TWA}$). ACGIH Threshold Limit Value ($\\text{TLV}$) and NIOSH Recommended Exposure Limit ($\\text{REL}$) provide advisory limits, including Short-Term Exposure Limits ($\\text{STEL}$, 15-minute average) and Ceiling ($\\text{C}$, never-to-exceed instantaneous peak).",
                         "examTip": "Found in Industrial, Environmental, and Chemical: Industrial Hygiene. For mixture exposures to chemicals with additive toxic effects, the cumulative exposure index $\\sum \\frac{C_i}{\\text{PEL}_i}$ must not exceed $1.0$."
@@ -17387,6 +17528,14 @@ window.calcEvaluate = function() {
             try { window.switchDashboardTab('motivation'); } catch (e) {}
         }
         const keyMap = {
+            'orificeflow': ["orifice","orifice flow","orifice plate"],
+            'expectedvalues': ["expected values","expected value","mean value"],
+            'pdf': ["probability density function","pdf","continuous probability"],
+            'soderberg': ["soderberg theory","soderberg"],
+            'exposurelimits': ["exposure limits","pel","twa","tlv","exposure"],
+            'doseresponse': ["dose-response curves","dose-response","dose response"],
+            'bookvalue': ["book value","book value of asset","depreciation book value"],
+            'etherscarboxylic': ["ethers, carboxylic acids and esters","ethers","carboxylic acids","esters"],
             'safetydatasheet': ["safety data sheet (sds)","safety data sheet","sds"],
             'confinedspacesafety': ["confined space safety","confined space"],
             'aldehydesketones': ["aldehydes and ketones","aldehydes","ketones"],
