@@ -82,7 +82,7 @@
         }
     ];
 
-    const THEOREMS_BY_DISCIPLINE = {
+    const ALL_THEOREMS_BY_DISCIPLINE = {
         "Mechanical": [
                 {
                         "title": "Bernoulli’s Principle",
@@ -2196,7 +2196,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -2211,19 +2214,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
@@ -2238,7 +2250,10 @@
                           "title": "Equivalent Capacitance and Inductance Combinations",
                           "formula": "$$C_{\\text{parallel}} = \\sum C_i, \\quad \\frac{1}{C_{\\text{series}}} = \\sum \\frac{1}{C_i}; \\quad L_{\\text{series}} = \\sum L_i, \\quad \\frac{1}{L_{\\text{parallel}}} = \\sum \\frac{1}{L_i}$$",
                           "description": "Capacitors combine in opposite fashion to resistors: parallel capacitances add directly, whereas series capacitances combine via reciprocal sums. Inductors combine identical to resistors.",
-                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely."
+                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely.",
+                    "videoUrl": "assets/videos/Equivalent_Capacitance_and_Inductance_Combinations.mp4",
+                    "videoTitle": "Equivalent Capacitance and Inductance Combinations Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
@@ -2253,7 +2268,10 @@
                           "title": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
                           "formula": "$$\\frac{V_1}{V_2} = \\frac{N_1}{N_2} = a, \\quad \\frac{I_1}{I_2} = \\frac{N_2}{N_1} = \\frac{1}{a}, \\quad Z_{\\text{in}} = a^2 Z_L = \\left(\\frac{N_1}{N_2}\\right)^2 Z_L$$",
                           "description": "Describes power-conserving electromagnetic coupling between primary and secondary windings in an ideal transformer with turns ratio $a = N_1/N_2$.",
-                          "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$)."
+                          "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$).",
+                    "videoUrl": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+                    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "DC Motor Back-EMF and Output Torque Equations",
@@ -2388,7 +2406,10 @@
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
                           "formula": "$$P_{\\text{hyd}} = \\gamma Q h_p = \\rho g Q h_p, \\quad BHP = \\frac{P_{\\text{hyd}}}{\\eta_{\\text{pump}}} = \\frac{\\gamma Q h_p}{\\eta_{\\text{pump}}}$$",
                           "description": "Hydraulic power represents useful rate of mechanical energy transferred to flowing fluid. Brake horsepower (BHP) is the required mechanical input power delivered by the motor shaft to drive the pump at efficiency $\\eta_{\\text{pump}}$.",
-                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant."
+                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant.",
+                    "videoUrl": "assets/videos/Pump_Hydraulic_Power_and_Brake_Horsepower_BHP.mp4",
+                    "videoTitle": "Pump Hydraulic Power and Brake Horsepower (BHP) Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
@@ -2519,6 +2540,607 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Moment-Area First Theorem (Slope Change Between Points)",
+                "formula": "$$\\theta_{B/A} = \\theta_B - \\theta_A = \\int_A^B \\frac{M(x)}{E I} dx$$",
+                "description": "The change in slope (angle) between tangents at points $A$ and $B$ on the elastic curve of a beam equals the area under the $M/(EI)$ diagram between those two points.",
+                "examTip": "Found in Structural Analysis: Moment-Area Method. If $M/(EI)$ is positive (sagging moment), the slope increases from left to right."
+            },
+            {
+                "title": "Moment-Area Second Theorem (Tangential Deviation)",
+                "formula": "$$t_{B/A} = \\int_A^B \\frac{M(x)}{E I} x_B dx = \\bar{x}_B \\cdot \\text{Area}_{A-B}$$",
+                "description": "The vertical deviation $t_{B/A}$ of point $B$ on the elastic curve with respect to the tangent drawn from point $A$ equals the first moment of the $M/(EI)$ area between $A$ and $B$, taken about point $B$.",
+                "examTip": "Found in Structural Analysis: Moment-Area Method. Note subscript order: $t_{B/A} \\neq t_{A/B}$; the moment arm $\\bar{x}$ must always be measured to the point whose deviation is being computed."
+            },
+            {
+                "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
+                "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
+                "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
+                "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
+            },
+            {
+                "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
+                "formula": "$$h_L = \\frac{f_k (1 - \\epsilon)}{\\epsilon^3} \\frac{L}{d} \\frac{v_a^2}{g}$$",
+                "description": "Calculates clean bed head loss $h_L$ through a granular media filter bed of depth $L$, porosity $\\epsilon$, grain diameter $d$, and approach velocity $v_a$, where $f_k$ is the Kozeny friction factor.",
+                "examTip": "Found in Environmental: Water Treatment. Note the strong sensitivity to porosity: head loss is inversely proportional to $\\epsilon^3$."
+            },
+            {
+                "title": "Storm Sewer Gravity Pipe Design via Manning's and Rational Formula",
+                "formula": "$$Q = C I A = \\frac{k_n}{n} A_{\\text{pipe}} R_h^{2/3} S^{1/2}$$",
+                "description": "Sizes storm sewer storm pipes by equating peak runoff discharge $Q$ generated by the Rational Method to full gravity flow capacity evaluated via Manning's open channel flow formula.",
+                "examTip": "Found in Water Resources: Storm Drainage. $k_n = 1.486$ for USCS and $k_n = 1.0$ for SI units. For circular pipes flowing full, hydraulic radius $R_h = D / 4$."
+            },
+            {
+                "title": "Hazen-Williams Head Loss Equation for Water Distribution Pipes",
+                "formula": "$$h_f = \\frac{10.44 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{USCS}), \\quad h_f = \\frac{10.67 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{SI})$$",
+                "description": "Calculates friction head loss $h_f$ in pressurized water distribution pipes as a function of pipe length $L$, flow $Q$, inside diameter $d$, and empirical Hazen-Williams roughness coefficient $C$.",
+                "examTip": "Found in Hydraulics: Closed Conduit Flow. A higher $C$ value denotes a smoother pipe (e.g., $C = 140-150$ for new PVC; $C = 100$ for aged cast iron)."
+            },
+            {
+                "title": "Hardy Cross Network Balancing for Looped Water Distribution Systems",
+                "formula": "$$\\Delta Q = -\\frac{\\sum h_f}{n \\sum (h_f / Q)} = -\\frac{\\sum k Q |Q|^{n-1}}{n \\sum k |Q|^{n-1}}$$",
+                "description": "Iterative pipe loop balancing method enforcing energy conservation ($\\sum h_f = 0$ around every closed loop) by applying discharge correction $\\Delta Q$ to assumed pipe flows ($n = 1.852$ for Hazen-Williams, $n = 2.0$ for Darcy-Weisbach).",
+                "examTip": "Found in Hydraulics / Water Distribution. Clockwise flows around a loop are designated positive, and counterclockwise flows are negative."
+            },
+            {
+                "title": "Froude Number and Hydraulic Flow Regimes",
+                "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
+                "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
+            },
+            {
+                "title": "Gravity Retaining Wall Overturning Factor of Safety",
+                "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
+                "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
+            },
+            {
+                "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
+                "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
+            },
+            {
+                "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
+                "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
+                "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Earned Value Management: Cost Variance and Schedule Variance",
+                "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
+                "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+            },
+            {
+                "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
+                "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
+                "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
+            },
+            {
+                "title": "Standard Portland Cement Types (ASTM C150 Types I through V)",
+                "formula": "$$\\text{I: General, II: Mod Sulfate, III: High Early, IV: Low Heat, V: High Sulfate}$$",
+                "description": "Standardizes Portland cement chemistry: Type III achieves high early strength via fine grinding and high $C_3S$; Type IV limits heat of hydration for massive gravity dams; Type V resists aggressive soil sulfate attack with low $C_3A$.",
+                "examTip": "Found in Materials: Concrete. Tricalcium aluminate ($C_3A$) is the compound primarily responsible for vulnerability to sulfate expansion and rapid initial hydration heat."
+            },
+            {
+                "title": "Triaxial Shear Tests: CD vs. CU vs. UU Test Distinctions",
+                "formula": "$$\\text{CD: Consolidated Drained}, \\quad \\text{CU: Consolidated Undrained}, \\quad \\text{UU: Unconsolidated Undrained}$$",
+                "description": "Standard laboratory soil shear tests: CD evaluates long-term drained slope stability; CU evaluates rapid drawdown with pore pressure measurement yielding effective stress parameters; UU evaluates short-term end-of-construction bearing capacity ($c_u = \\sigma_d / 2$).",
+                "examTip": "Found in Geotechnical: Shear Strength. For a saturated UU test, total stress friction angle $\\phi_u = 0$, meaning the failure envelope is completely horizontal."
+            },
+            {
+                "title": "Capillary Rise Height in Fine-Grained Soils",
+                "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
+                "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
+                "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
+            },
+            {
+                "title": "Vertical Stress Increase beneath Point Loads: Boussinesq Solution",
+                "formula": "$$\\Delta \\sigma_z = \\frac{3 P}{2\\pi z^2} \\left[ \\frac{1}{1 + (r/z)^2} \\right]^{5/2} = \\frac{P}{z^2} \\cdot I_B$$",
+                "description": "Calculates vertical normal stress increase $\\Delta \\sigma_z$ at depth $z$ and radial distance $r$ inside a homogeneous, isotropic, semi-infinite elastic soil mass due to a concentrated surface point load $P$.",
+                "examTip": "Found in Geotechnical: Stress Distribution. Directly beneath the load ($r = 0$), vertical stress simplifies to $\\Delta \\sigma_z = 0.477 P / z^2$, diminishing rapidly with $z^2$."
+            },
+            {
+                "title": "Three-Phase Induction Motor Slip and Synchronous Speed",
+                "formula": "$$n_s = \\frac{120 f}{p}, \\quad s = \\frac{n_s - n}{n_s} = \\frac{\\omega_s - \\omega_m}{\\omega_s}$$",
+                "description": "Calculates synchronous speed $n_s$ (rpm) of the stator rotating magnetic field for supply frequency $f$ and pole count $p$, and fractional slip $s$ of the rotor operating at mechanical speed $n$.",
+                "examTip": "Found in Power: Induction Machines. Under normal full-load motoring conditions, slip $s$ is small (typically $0.02$ to $0.05$); at locked-rotor standstill, $s = 1.0$."
+            },
+            {
+                "title": "Synchronous Machine Rotor Speed and Frequency Relation",
+                "formula": "$$f = \\frac{p \\cdot n_s}{120}, \\quad \\delta = \\text{Power Angle}$$",
+                "description": "Governs synchronous generators and motors where rotor mechanical speed is locked to stator electrical frequency; real electric power transfer is given by $P = \\frac{E_f V_t}{X_s} \\sin\\delta$.",
+                "examTip": "Found in Power: Synchronous Machines. Maximum steady-state power transfer limit occurs when torque/power angle $\\delta = 90^\\circ$."
+            },
+            {
+                "title": "Routh-Hurwitz Stability Criterion and Routh Array",
+                "formula": "$$a_n s^n + a_{n-1} s^{n-1} + \\dots + a_0 = 0, \\quad b_1 = \\frac{a_{n-1} a_{n-2} - a_n a_{n-3}}{a_{n-1}}$$",
+                "description": "Determines dynamic closed-loop linear system stability without factoring characteristic roots; a system is strictly stable if and only if all elements in the first column of the Routh array are strictly positive.",
+                "examTip": "Found in Control Systems. The number of sign changes in the first column of the Routh array equals the exact number of right-half-plane (unstable) poles."
+            },
+            {
+                "title": "Root Locus Construction Rules: Real Axis Branches and Asymptotes",
+                "formula": "$$\\sigma_a = \\frac{\\sum p_i - \\sum z_i}{n - m}, \\quad \\phi_a = \\frac{(2k + 1)180^\\circ}{n - m}$$",
+                "description": "Plots trajectory of closed-loop poles as loop gain $K$ varies: a point on the real axis lies on the locus if the total number of real open-loop poles and zeros to its right is odd; branches radiate toward asymptotes centered at $\\sigma_a$.",
+                "examTip": "Found in Control Systems: Root Locus. $n$ is number of poles, $m$ is number of zeros; root locus branches always begin at open-loop poles ($K=0$) and end at open-loop zeros ($K\\to\\infty$)."
+            },
+            {
+                "title": "PID Controller Time-Domain Equation and Laplace Transfer Function",
+                "formula": "$$u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) d\\tau + K_d \\frac{de(t)}{dt}, \\quad G_c(s) = K_p + \\frac{K_i}{s} + K_d s$$",
+                "description": "Standard industrial three-term feedback controller: proportional action ($K_p$) accelerates response, integral action ($K_i$) eliminates steady-state tracking error, and derivative action ($K_d$) adds damping to reduce overshoot.",
+                "examTip": "Found in Control Systems. Adding an integrator ($1/s$) increases system type by 1, eliminating steady-state error to step inputs, but tends to destabilize phase margin."
+            },
+            {
+                "title": "Operational Amplifier Summing and Difference Amplifiers",
+                "formula": "$$v_o^{\\text{sum}} = -R_f \\sum \\frac{v_i}{R_i}, \\quad v_o^{\\text{diff}} = \\frac{R_2}{R_1}(v_2 - v_1) \\quad (\\text{when } \\frac{R_4}{R_3} = \\frac{R_2}{R_1})$$",
+                "description": "Standard linear op-amp analog building blocks: inverting summing amplifier produces a weighted sum of inputs; balanced difference amplifier rejects common-mode signals while amplifying the differential voltage $(v_2 - v_1)$.",
+                "examTip": "Found in Electronics: Operational Amplifiers. In ideal op-amps, apply the golden rules: differential input voltage $v^+ - v^- = 0$ (virtual short) and input currents $i^+ = i^- = 0$."
+            },
+            {
+                "title": "Instrumentation Amplifier Three-Op-Amp Architecture and CMRR",
+                "formula": "$$A_d = \\left(1 + \\frac{2 R_1}{R_G}\\right) \\left(\\frac{R_3}{R_2}\\right), \\quad v_o = A_d (v_2 - v_1)$$",
+                "description": "High-precision instrumentation circuit providing exceptionally high differential gain, extremely high input impedance on both inputs, and very high common-mode rejection ratio (CMRR).",
+                "examTip": "Found in Electronics / Instrumentation. A single external gain resistor $R_G$ sets the overall amplifier gain without upsetting internal resistor bridge matching."
+            },
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "DC Shunt Motor Torque-Speed Characteristic and Speed Regulation",
+                "formula": "$$\\omega_m = \\frac{V_t}{K_a \\Phi} - \\frac{R_a}{(K_a \\Phi)^2} T_e, \\quad \\%SR = \\frac{n_{nl} - n_{fl}}{n_{fl}} \\times 100\\%$$",
+                "description": "Governs DC shunt motor operation: mechanical speed $\\omega_m$ drops linearly with induced electromagnetic load torque $T_e$, with slope determined by armature resistance $R_a$.",
+                "examTip": "Found in Power: DC Machines. Weakening field flux $\\Phi$ (reducing field current) increases motor speed, but also reduces torque per ampere of armature current."
+            },
+            {
+                "title": "Three-Phase Induction Motor Torque-Slip Curve and Breakdown Torque",
+                "formula": "$$T_e = \\frac{3 V_{TH}^2 (R_2'/s)}{\\omega_s \\left[(R_{TH} + R_2'/s)^2 + (X_{TH} + X_2')^2\\right]}, \\quad s_{\\max} \\approx \\frac{R_2'}{X_{TH} + X_2'}$$",
+                "description": "Models induction motor electromechanical torque: breakdown (maximum pullout) torque magnitude is independent of rotor resistance $R_2'$, but the slip $s_{\\max}$ at which maximum torque occurs is directly proportional to $R_2'$.",
+                "examTip": "Found in Power: Induction Motors. Adding external resistance to a wound rotor shifts maximum torque toward starting ($s=1.0$), maximizing starting torque without altering peak capacity."
+            },
+            {
+                "title": "Schmitt Trigger Inverting Comparator and Hysteresis Bandwidth",
+                "formula": "$$V_{TH} = \\frac{R_1}{R_1 + R_2} V_{sat}^+, \\quad V_{TL} = \\frac{R_1}{R_1 + R_2} V_{sat}^-, \\quad V_H = V_{TH} - V_{TL}$$",
+                "description": "Positive feedback comparator circuit providing noise immunity by establishing two distinct threshold voltages ($V_{TH}$ upper and $V_{TL}$ lower); prevents chatter caused by noisy input signals.",
+                "examTip": "Found in Electronics: Non-Linear Op-Amp Circuits. Switching occurs only when the input crosses the opposing threshold, creating a clean square wave from slow or noisy inputs."
+            },
+            {
+                "title": "Operational Amplifier Common-Mode Rejection Ratio (CMRR)",
+                "formula": "$$\\text{CMRR} = \\left| \\frac{A_d}{A_{cm}} \\right|, \\quad \\text{CMRR}_{\\text{dB}} = 20 \\log_{10}\\left| \\frac{A_d}{A_{cm}} \\right|$$",
+                "description": "Measures an amplifier's ability to amplify desired differential signals $A_d$ while rejecting unwanted common-mode noise voltages $A_{cm}$ present on both inputs.",
+                "examTip": "Found in Electronics: Operational Amplifiers. For an ideal op-amp, common-mode gain $A_{cm} = 0$, giving an infinite CMRR ($\\infty\\text{ dB}$)."
+            },
+            {
+                "title": "Clausius-Clapeyron Equation for Vapor Pressure of Pure Liquids",
+                "formula": "$$\\ln\\left(\\frac{P_2^{\\text{sat}}}{P_1^{\\text{sat}}}\\right) = -\\frac{\\Delta H_{\\text{vap}}}{R} \\left( \\frac{1}{T_2} - \\frac{1}{T_1} \\right)$$",
+                "description": "Relates temperature sensitivity of pure substance saturation vapor pressure $P^{\\text{sat}}$ to latent heat of vaporization $\\Delta H_{\\text{vap}}$, assuming ideal vapor behavior and negligible liquid molar volume.",
+                "examTip": "Found in Chemical: Thermodynamics. Absolute temperatures (in Kelvin or Rankine) must strictly be used in the $1/T$ terms."
+            },
+            {
+                "title": "HAZOP Study Methodology and Standard Guide Words",
+                "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
+                "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
+                "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
+            },
+            {
+                "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
+                "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
+                "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
+                "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
+            },
+            {
+                "title": "Compressibility Factor $Z$ and Generalized Compressibility Charts",
+                "formula": "$$Z = \\frac{P v}{R T} = \\frac{P M}{\\rho R T}, \\quad P_r = \\frac{P}{P_c}, \\quad T_r = \\frac{T}{T_c}$$",
+                "description": "Quantifies departure of real gas behavior from ideal gas law ($Z = 1.0$) as a universal function of reduced pressure $P_r$ and reduced temperature $T_r$ (Theorem of Corresponding States).",
+                "examTip": "Found in Chemical: Thermodynamics. At low pressures ($P_r \\ll 1$) or very high temperatures ($T_r \\gg 2$), all real gases converge to ideal gas behavior ($Z \\to 1$)."
+            },
+            {
+                "title": "Excess Air and Theoretical Oxygen in Combustion Material Balances",
+                "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Moles Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100\\%$$",
+                "description": "Theoretical air is the stoichiometric amount of oxygen needed for complete fuel combustion to $\\text{CO}_2$ and $\\text{H}_2\\text{O}$ (all carbon to $\\text{CO}_2$ even if incomplete reaction occurs), carried by dry air containing $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$.",
+                "examTip": "Found in Chemical: Material Balances. Theoretical air is based strictly on complete combustion stoichiometry regardless of how much fuel actually burns."
+            },
+            {
+                "title": "Pressure Relief Valve Sizing Formula for Vapor Discharge",
+                "formula": "$$A = \\frac{W}{C K_d P_1} \\sqrt{\\frac{T Z}{M}}, \\quad C = 520 \\sqrt{k \\left(\\frac{2}{k+1}\\right)^{\\frac{k+1}{k-1}}}$$",
+                "description": "Calculates required discharge orifice area $A$ for safety pressure relief valves under sonic/choked vapor flow conditions, where $W$ is required mass relief rate, $P_1$ is upstream relieving pressure, and $M$ is molecular weight.",
+                "examTip": "Found in Chemical: Process Safety. Overpressure allowance is typically $10\\%$ for non-fire relief and $21\\%$ for external fire exposure scenarios."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
+                "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
+                "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
+            },
+            {
+                "title": "Heat Exchanger Fouling Resistance Factor",
+                "formula": "$$\\frac{1}{U_{\\text{fouled}}} = \\frac{1}{U_{\\text{clean}}} + R_{fi} + R_{fo}$$",
+                "description": "Accounts for heat transfer degradation caused by scale, corrosion, and biological deposition on internal ($R_{fi}$) and external ($R_{fo}$) tube surfaces over operating time.",
+                "examTip": "Found in Chemical: Heat Transfer. Neglecting fouling factors in industrial heat exchanger sizing leads to severe undersizing and thermal bottlenecking."
+            },
+            {
+                "title": "Pool Boiling Curve Regimes and Critical Heat Flux",
+                "formula": "$$q''_{\\max} = 0.149 \\, \\rho_v \\, h_{fg} \\left[ \\frac{\\sigma g (\\rho_L - \\rho_v)}{\\rho_v^2} \\right]^{1/4} \\quad (\\text{Zuber Equation})$$",
+                "description": "Relates boiling heat flux to wall superheat $\\Delta T_e = T_s - T_{\\text{sat}}$: progresses through Natural Convection $\\to$ Nucleate Boiling $\\to$ Critical Heat Flux (burnout point) $\\to$ Transition Boiling $\\to$ Film Boiling.",
+                "examTip": "Found in Chemical: Heat Transfer. Exceeding Critical Heat Flux ($q''_{\\max}$) causes an abrupt jump in surface temperature into the film boiling regime, potentially melting heat exchanger tubes."
+            },
+            {
+                "title": "Condensation Heat Transfer: Nusselt Film Theory for Vertical Surfaces",
+                "formula": "$$h_{\\text{avg}} = 0.943 \\left[ \\frac{g \\rho_L (\\rho_L - \\rho_v) k_L^3 h'_{fg}}{\\mu_L L (T_{\\text{sat}} - T_s)} \\right]^{1/4}$$",
+                "description": "Predicts average laminar heat transfer coefficient $h_{\\text{avg}}$ for film condensation on a vertical plate of height $L$; liquid condensate film flows downward by gravity, with thermal resistance growing with film thickness.",
+                "examTip": "Found in Chemical: Heat Transfer. Dropwise condensation achieves heat transfer coefficients up to 10 times higher than film condensation because the metal surface remains partially bare."
+            },
+            {
+                "title": "Process Control: First-Order Plus Dead Time (FOPDT) Model",
+                "formula": "$$G_p(s) = \\frac{K_p e^{-\\theta s}}{\\tau s + 1}$$",
+                "description": "Standard empirical industrial approximation for chemical processes: steady-state process gain $K_p = \\Delta y / \\Delta u$, apparent time constant $\\tau$, and transport delay / dead time $\\theta$.",
+                "examTip": "Found in Chemical: Process Dynamics & Control. Higher dead-time-to-time-constant ratios ($\\theta / \\tau > 0.5$) make feedback control significantly more difficult and require conservative tuning."
+            },
+            {
+                "title": "Process Control: Ziegler-Nichols Closed-Loop Tuning Rules",
+                "formula": "$$K_c = 0.60 K_u, \\quad \\tau_I = 0.50 P_u, \\quad \\tau_D = 0.125 P_u \\quad (\\text{PID})$$",
+                "description": "Sets PID controller parameters by increasing proportional gain with integral and derivative actions turned off until the closed-loop system reaches continuous sustained oscillation at ultimate gain $K_u$ and ultimate period $P_u$.",
+                "examTip": "Found in Process Control. Ziegler-Nichols tuning targets a quarter-amplitude decay ratio ($1/4$ decay), which tends to be somewhat oscillatory."
+            },
+            {
+                "title": "Open-Loop Step Response Method for Process Identification",
+                "formula": "$$K_p = \\frac{\\Delta y_{\\text{steady}}}{\\Delta u}, \\quad y(t = \\theta + \\tau) = 0.632 \\Delta y_{\\text{steady}}$$",
+                "description": "Estimates FOPDT process model parameters by introducing a step change in controller output $\\Delta u$ and analyzing the resulting open-loop process reaction curve.",
+                "examTip": "Found in Process Dynamics. Time constant $\\tau$ is the elapsed time between initial response takeoff (after dead time $\\theta$) and the $63.2\\%$ completion point."
+            },
+            {
+                "title": "Ratio Control Strategy for Blending and Reactant Feed Streams",
+                "formula": "$$u_B(t) = R_d \\cdot u_A(t)$$",
+                "description": "Maintains a fixed stoichiometric or blending ratio $R_d$ between two flowing streams by measuring uncontrolled wild flow $A$ and adjusting controlled slave stream $B$ in direct proportion.",
+                "examTip": "Found in Process Control. Widely employed in combustion air-to-fuel ratio control and stoichiometric feed balancing for chemical reactors."
+            },
+            {
+                "title": "Cascade Control Architecture for Secondary Disturbance Rejection",
+                "formula": "$$\\text{Primary (Master) Controller} \\to \\text{Secondary (Slave) Setpoint} \\to \\text{Control Valve}$$",
+                "description": "Nests a fast secondary inner feedback loop (e.g., fuel flow) inside a slower primary outer loop (e.g., furnace temperature), attenuating secondary disturbances before they affect the primary process variable.",
+                "examTip": "Found in Process Control. The secondary slave loop must be tuned first and must respond significantly faster than the primary master loop."
+            },
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "Mean Time Between Failures and System Availability",
+                "formula": "$$\\text{MTBF} = \\frac{1}{\\lambda} = \\text{MTTF} + \\text{MTTR}, \\quad A = \\frac{\\text{MTBF}}{\\text{MTBF} + \\text{MTTR}} = \\frac{\\text{Uptime}}{\\text{Uptime} + \\text{Downtime}}$$",
+                "description": "Quantifies operational readiness: Mean Time Between Failures ($\text{MTBF}$) measures operating reliability, while Mean Time To Repair ($\text{MTTR}$) measures maintainability; steady-state availability $A$ is the fraction of time the system is operational.",
+                "examTip": "Found in Reliability Engineering. An availability of 'three nines' ($99.9\\%$) permits only $8.76\\text{ hours}$ of total downtime per year."
+            },
+            {
+                "title": "Parallel System Reliability Formulation",
+                "formula": "$$R_s(t) = 1 - \\prod_{i=1}^n [1 - R_i(t)] = 1 - \\prod_{i=1}^n F_i(t)$$",
+                "description": "Calculates reliability of an active redundant system where all $n$ components operate simultaneously; the entire system fails only if every single redundant component fails.",
+                "examTip": "Found in Reliability. Adding redundant parallel components always improves system reliability ($R_s > \\max(R_i)$), in contrast to series configurations ($R_s < \\min(R_i)$)."
+            },
+            {
+                "title": "Standby Redundancy System Reliability with Perfect Switching",
+                "formula": "$$R_s(t) = e^{-\\lambda t} \\sum_{k=0}^{n-1} \\frac{(\\lambda t)^k}{k!} = e^{-\\lambda t} \\left( 1 + \\lambda t + \\frac{(\\lambda t)^2}{2!} + \\dots \\right)$$",
+                "description": "Reliability of a cold standby system where redundant backup units remain idle until the primary unit fails, assuming an ideal sensing and switching mechanism with identical constant failure rates $\\lambda$.",
+                "examTip": "Found in Industrial: Reliability. Standby redundancy provides longer expected lifetime than active parallel redundancy because backup units do not experience operational wear while idling."
+            },
+            {
+                "title": "Predetermined Motion Time Systems (PMTS / MTM-1)",
+                "formula": "$$1\\text{ TMU} = 0.00001\\text{ hour} = 0.0006\\text{ minute} = 0.036\\text{ second}, \\quad 1\\text{ second} = 27.8\\text{ TMU}$$",
+                "description": "Establishes standard task times by decomposing manual work into basic elemental motions (Reach, Grasp, Move, Position, Release) quantified in Time Measurement Units (TMU) without requiring stopwatch timing.",
+                "examTip": "Found in Industrial: Work Measurement. Memorize the direct conversion factor: $1\\text{ TMU} = 0.036\\text{ seconds}$ for rapid calculation on the FE exam."
+            },
+            {
+                "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
+                "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
+                "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+            },
+            {
+                "title": "Kanban Production System Container Sizing Equation",
+                "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
+                "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
+                "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
+            },
+            {
+                "title": "Bill of Materials Explosion Tree and Component Offsetting",
+                "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
+                "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
+                "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
+            },
+            {
+                "title": "Statistical Process Control $p$-Chart for Fraction Defective",
+                "formula": "$$\\bar{p} = \\frac{\\sum d_i}{\\sum n_i}, \\quad UCL, LCL = \\bar{p} \\pm 3 \\sqrt{\\frac{\\bar{p}(1 - \\bar{p})}{n}}$$",
+                "description": "Attributes control chart monitoring fraction defective in inspection samples of size $n$, based on the binomial distribution approximation; lower control limit is set to zero if calculated $LCL < 0$.",
+                "examTip": "Found in Quality Control. Sample size $n$ should be large enough so that $n \\bar{p} \\ge 5$ to satisfy the normal approximation to the binomial distribution."
+            },
+            {
+                "title": "Statistical Process Control $c$-Chart and $u$-Chart for Defects per Unit",
+                "formula": "$$c\\text{-Chart: } \\bar{c} \\pm 3\\sqrt{\\bar{c}} \\quad (\\text{Constant Area}), \\quad u\\text{-Chart: } \\bar{u} \\pm 3\\sqrt{\\frac{\\bar{u}}{n}} \\quad (\\text{Variable Area})$$",
+                "description": "Poisson-based control charts monitoring counts of nonconformities (defects): $c$-chart is used when inspection unit size is constant; $u$-chart monitors average defects per unit when sample size $n$ varies.",
+                "examTip": "Found in Quality Control. A defect ($c$ or $u$) is a specific nonconformance, whereas a defective item ($p$ or $np$) is an entire unit containing one or more defects."
+            },
+            {
+                "title": "Western Electric Rules for Special Cause Variation",
+                "formula": "$$\\text{Rule 1: } 1 \\text{ pt beyond } 3\\sigma; \\quad \\text{Rule 2: } 2 \\text{ of } 3 \\text{ pts beyond } 2\\sigma; \\quad \\text{Rule 3: } 4 \\text{ of } 5 \\text{ pts beyond } 1\\sigma; \\quad \\text{Rule 4: } 8 \\text{ consecutive pts on one side of center}$$",
+                "description": "Statistical decision rules detecting out-of-control conditions and non-random patterns (shifts, drifts, trends) on Shewhart control charts prior to an individual point breaching the $3\\sigma$ control limits.",
+                "examTip": "Found in Quality Control: SPC. All rules evaluate points on the same side of the centerline (except Rule 1, which applies to either limit)."
+            },
+            {
+                "title": "Six Sigma DMAIC Framework Steps and Tollgates",
+                "formula": "$$\\text{Define} \\to \\text{Measure} \\to \\text{Analyze} \\to \\text{Improve} \\to \\text{Control} \\quad (3.4 \\text{ DPMO at } 6\\sigma \\text{ with } 1.5\\sigma \\text{ shift})$$",
+                "description": "Structured data-driven problem-solving roadmap for process improvement: project charter & VOC (Define); baseline capability & MSA (Measure); root cause Ishikawa/regression (Analyze); DOE & pilot (Improve); SPC & poke-yoke (Control).",
+                "examTip": "Found in Quality: Six Sigma. A Six Sigma process allows a $1.5\\sigma$ long-term mean drift, resulting in exactly $3.4$ defects per million opportunities (DPMO)."
+            },
+            {
+                "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
+                "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
+                "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
+            },
+            {
+                "title": "Forecasting Error Metrics: MAD, MSE, and Tracking Signal",
+                "formula": "$$MAD = \\frac{\\sum |e_t|}{n}, \\quad MSE = \\frac{\\sum e_t^2}{n}, \\quad TS = \\frac{\\sum e_t}{MAD} = \\frac{RSFE}{MAD}$$",
+                "description": "Quantifies forecasting accuracy and bias: Mean Absolute Deviation ($MAD$) measures average magnitude of errors; Mean Squared Error ($MSE$) penalizes large outliers; Tracking Signal ($TS$, typically bounded within $\\pm 4$) detects persistent bias.",
+                "examTip": "Found in Industrial: Forecasting. For a normal error distribution, standard deviation of forecast error relates to MAD: $\\sigma \\approx 1.25 \\times MAD$."
+            },
+            {
+                "title": "Ergonomic Posture Assessment: RULA and REBA Methodologies",
+                "formula": "$$\\text{RULA (Upper Limb)}: \\text{Scores } 1-7, \\quad \\text{REBA (Entire Body)}: \\text{Scores } 1-15$$",
+                "description": "Rapid Upper Limb Assessment (RULA) targets sedentary and computer-intensive tasks assessing neck, trunk, and upper limbs; Rapid Entire Body Assessment (REBA) evaluates dynamic whole-body postures in healthcare, warehousing, and construction.",
+                "examTip": "Found in Industrial Ergonomics. A RULA score of 7 or REBA score $>11$ indicates high musculoskeletal disorder risk requiring immediate ergonomic intervention."
+            },
+            {
+                "title": "Total Productive Maintenance: Overall Equipment Effectiveness",
+                "formula": "$$OEE = \\text{Availability} \\times \\text{Performance} \\times \\text{Quality} = \\left(\\frac{\\text{Operating Time}}{\\text{Planned Time}}\\right) \\left(\\frac{\\text{Total Output}}{\\text{Target Output}}\\right) \\left(\\frac{\\text{Good Units}}{\\text{Total Output}}\\right)$$",
+                "description": "Comprehensive manufacturing productivity KPI accounting for the 'Six Big Losses': equipment breakdowns & setups (Availability); minor stoppages & reduced speed (Performance); startup rejects & production scrap (Quality).",
+                "examTip": "Found in Industrial: TPM & Lean. A benchmark world-class OEE is considered $85\\%$ ($90\\% \\text{ Availability} \\times 95\\% \\text{ Performance} \\times 99.9\\% \\text{ Quality}$)."
+            },
+            {
+                "title": "Break-Even Analysis for Make-or-Buy Decision Models",
+                "formula": "$$TC_{\\text{make}} = FC_{\\text{make}} + VC_{\\text{make}} \\cdot Q, \\quad TC_{\\text{buy}} = VC_{\\text{buy}} \\cdot Q, \\quad Q_{BE} = \\frac{FC_{\\text{make}}}{VC_{\\text{buy}} - VC_{\\text{make}}}$$",
+                "description": "Determines production volume $Q_{BE}$ above which in-house manufacturing (high fixed cost $FC$, low variable cost $VC$) becomes financially superior to purchasing from outside vendors ($FC = 0$, higher unit price $VC_{\\text{buy}}$).",
+                "examTip": "Found in Engineering Economics: Cost Analysis. For production volumes $Q > Q_{BE}$, make in-house; for volumes $Q < Q_{BE}$, buy externally."
+            },
+            {
+                "title": "Benefit-Cost Ratio (B/C Ratio) for Public Projects",
+                "formula": "$$B/C = \\frac{B - D}{C_0 + O\\&M} = \\frac{PV(\\text{Benefits}) - PV(\\text{Disbenefits})}{PV(\\text{Initial Capital Cost}) + PV(\\text{O\\&M Costs})} \\ge 1.0$$",
+                "description": "Standard decision criterion for public sector civil works projects: project is economically justified if net benefits to the public divided by costs to government exceed 1.0; disbenefits reduce user benefits in the numerator.",
+                "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$) must be applied in order of increasing cost."
+            },
+            {
+                "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
+                "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
+                "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
+            },
+            {
+                "title": "Payback Period: Simple vs. Discounted Payback Methods",
+                "formula": "$$\\sum_{t=1}^{\\text{Payback}} CF_t \\ge C_0 \\quad (\\text{Simple}), \\quad \\sum_{t=1}^{\\text{DPB}} \\frac{CF_t}{(1 + i)^t} \\ge C_0 \\quad (\\text{Discounted})$$",
+                "description": "Number of years required for cumulative net cash inflows to recover initial capital investment $C_0$; simple payback ignores the time value of money ($i=0$), whereas discounted payback accounts for cost of capital.",
+                "examTip": "Found in Engineering Economics. Major shortcoming of payback period is that it completely ignores cash flows occurring after the payback horizon."
+            },
+            {
+                "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
+                "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
+                "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
+                "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
+            },
+            {
+                "title": "Chi-Square Goodness-of-Fit Test for Discrete Distributions",
+                "formula": "$$\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}, \\quad \\nu = k - 1 - p$$",
+                "description": "Tests hypothesis that sample observations $O_i$ originate from a theoretical population distribution with expected frequencies $E_i$; degrees of freedom $\\nu$ subtracts 1 plus number of parameters $p$ estimated from sample data.",
+                "examTip": "Found in Probability & Statistics. Valid rule of thumb: expected frequency $E_i$ in every bin must be at least 5; pool adjacent bins if necessary."
+            },
+            {
+                "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
+                "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
+                "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
+            },
+            {
+                "title": "Student's t-Distribution Two-Sample Hypothesis Test",
+                "formula": "$$t = \\frac{(\\bar{X}_1 - \\bar{X}_2) - \\Delta_0}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}, \\quad s_p^2 = \\frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2}$$",
+                "description": "Tests difference between two independent population means when population variances are unknown but assumed equal, pooling sample variances $s_1^2$ and $s_2^2$ with degrees of freedom $\\nu = n_1 + n_2 - 2$.",
+                "examTip": "Found in Probability & Statistics: Hypothesis Testing. For large samples ($n_1 + n_2 > 30$), the $t$-distribution converges to standard normal $z$."
+            },
+            {
+                "title": "Chronic Daily Intake Chemical Exposure Formulation",
+                "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
+                "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+            },
+            {
+                "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
+                "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
+                "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
+                "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            },
+            {
+                "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
+                "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
+                "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
+                "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
+            },
+            {
+                "title": "Coagulation Velocity Gradient and Power Dissipation in Rapid Mix",
+                "formula": "$$G = \\sqrt{\\frac{P}{\\mu V}} \\quad (\\text{s}^{-1})$$",
+                "description": "Quantifies shear turbulence intensity in water treatment rapid mix and flocculation basins, where $P$ is mechanical power dissipated, $V$ is basin liquid volume, and $\\mu$ is fluid dynamic viscosity.",
+                "examTip": "Found in Environmental: Water Treatment. Rapid mix requires high intensity ($G = 700-1000\\text{ s}^{-1}$ for $10-60\\text{ s}$); flocculation requires gentle mixing ($G = 20-70\\text{ s}^{-1}$ for $20-30\\text{ min}$)."
+            },
+            {
+                "title": "Camp-Stein Rapid Mixing Detention Time and $Gt$ Parameter",
+                "formula": "$$Gt = G \\cdot t_d = G \\left(\\frac{V}{Q}\\right) \\quad (\\text{Dimensionless})$$",
+                "description": "Governs floc formation collisions in coagulation/flocculation basins: optimal flocculation design typically requires Camp-Stein product $Gt$ between $10^4$ and $10^5$.",
+                "examTip": "Found in Water Treatment. Insufficient $Gt$ causes poor floc aggregation; excessive $Gt$ or high $G$ shreds fragile flocs due to excessive fluid shear."
+            },
+            {
+                "title": "Stokes' Law Particle Terminal Settling Velocity in Water",
+                "formula": "$$v_t = \\frac{g (\\rho_p - \\rho) d_p^2}{18 \\mu} \\quad (\\text{for } Re_p < 1.0)$$",
+                "description": "Calculates terminal gravitational settling velocity of discrete spherical particles in laminar flow; settling speed is proportional to square of particle diameter ($d_p^2$) and density difference $(\\rho_p - \\rho)$.",
+                "examTip": "Found in Environmental: Water Treatment & Air Pollution. Doubling particle diameter quadruples settling speed ($2^2 = 4$), illustrating why coagulation/flocculation is crucial for rapid clarification."
+            },
+            {
+                "title": "Indoor Air Quality Single-Compartment Mass Balance Model",
+                "formula": "$$V \\frac{dC}{dt} = Q C_{\\text{in}} + S - Q C - k V C, \\quad C_{\\text{steady}} = \\frac{Q C_{\\text{in}} + S}{Q + k V}$$",
+                "description": "Models contaminant accumulation in a room of volume $V$ with outdoor airflow rate $Q$, ambient concentration $C_{\\text{in}}$, internal emission source rate $S$, and internal first-order decay/deposition rate $k$.",
+                "examTip": "Found in Environmental: Indoor Air Quality. The air exchange rate is $ACH = Q / V$ (air changes per hour); increasing outdoor ventilation $Q$ rapidly reduces steady-state indoor contaminant levels."
+            },
+            {
+                "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
+                "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
+                "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
+                "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
+            },
+            {
+                "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
+                "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
+                "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+            },
+            {
+                "title": "Bragg's Law of X-Ray Diffraction for Crystal Lattices",
+                "formula": "$$n \\lambda = 2 d_{hkl} \\sin\\theta, \\quad d_{hkl} = \\frac{a}{\\sqrt{h^2 + k^2 + l^2}} \\quad (\\text{Cubic})$$",
+                "description": "Governs constructive interference of monochromatic X-rays diffracted by parallel crystal lattice planes with Miller indices $(h k l)$, interplanar spacing $d_{hkl}$, and incident angle $\\theta$.",
+                "examTip": "Found in Materials Science. Ensure angle $\\theta$ is the Bragg diffraction angle measured relative to the crystal plane, NOT the total $2\\theta$ detector angle."
+            },
+            {
+                "title": "Cubic Crystal Structures: FCC vs. BCC Atomic Packing Factor",
+                "formula": "$$APF = \\frac{V_{\\text{atoms}}}{V_{\\text{unit cell}}}, \\quad APF_{\\text{FCC}} = 0.74 \\ (a = 2\\sqrt{2}R), \\quad APF_{\\text{BCC}} = 0.68 \\ (a = 4R/\\sqrt{3})$$",
+                "description": "Quantifies atomic packing efficiency: Face-Centered Cubic (FCC) has 4 atoms/unit cell with coordination number 12 and close-packed $APF = 0.74$; Body-Centered Cubic (BCC) has 2 atoms/unit cell with coordination number 8 and $APF = 0.68$.",
+                "examTip": "Found in Materials Science: Crystallography. FCC metals (copper, aluminum, austenitic steel) exhibit superior ductility across low temperatures compared to BCC metals which experience ductile-to-brittle transitions."
+            },
+            {
+                "title": "Binary Eutectic Phase Diagram Invariant Reaction",
+                "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
+                "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
+                "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
+            },
+            {
+                "title": "Lumped Capacitance Method for Transient Heat Conduction",
+                "formula": "$$\\frac{T(t) - T_\\infty}{T_0 - T_\\infty} = e^{-t / \\tau} = e^{-\\left(\\frac{h A_s}{\\rho V c}\\right) t}, \\quad Bi = \\frac{h L_c}{k} < 0.1$$",
+                "description": "Models uniform transient cooling/heating of a solid body when internal conduction resistance is negligible compared to surface convection resistance; characteristic length is $L_c = V / A_s$.",
+                "examTip": "Found in Heat Transfer. The lumped capacitance model is strictly valid ONLY when Biot number $Bi = h L_c / k < 0.1$; if $Bi \\ge 0.1$, spatial temperature gradients exist and Heisler charts must be used."
+            },
+            {
+                "title": "Biot Number vs. Fourier Number in Transient Conduction",
+                "formula": "$$Bi = \\frac{h L_c}{k_{\\text{solid}}} = \\frac{\\text{Convection Resistance}}{\\text{Internal Conduction Resistance}}, \\quad Fo = \\frac{\\alpha t}{L_c^2} = \\frac{\\text{Conduction Rate}}{\\text{Thermal Storage Rate}}$$",
+                "description": "Dimensionless parameters governing transient heat transfer: Biot number evaluates spatial temperature uniformity; Fourier number $Fo$ represents dimensionless time, where thermal diffusivity $\\alpha = k / (\\rho c_p)$.",
+                "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "Centroid and Moment of Inertia for Composite Areas",
+                "formula": "$$\\bar{y} = \\frac{\\sum (A_i \\bar{y}_i)}{\\sum A_i}, \\quad I_x = \\sum (I_{xi} + A_i d_{yi}^2)$$",
+                "description": "Calculates centroid $\\bar{y}$ and area moment of inertia $I_x$ of complex structural shapes by dividing them into standard geometric components (rectangles, triangles, circles) using the Parallel Axis Theorem.",
+                "examTip": "Found in Statics / Mechanics of Materials. Distance $d_{yi} = |\\bar{y}_i - \\bar{y}|$ is the distance between the individual component's centroid and the composite neutral axis."
+            },
+            {
+                "title": "Kinematics of Particles: Normal and Tangential Acceleration",
+                "formula": "$$\\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right) \\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right) \\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                "description": "Curvilinear motion coordinates: tangential acceleration $a_t$ reflects change in speed ($dv/dt$), while normal acceleration $a_n$ acts toward the center of curvature $\\rho$ reflecting change in direction.",
+                "examTip": "Found in Dynamics. For uniform circular motion, speed is constant ($a_t = 0$), but acceleration is non-zero ($a = a_n = v^2 / r$) pointing radially inward."
+            },
+            {
+                "title": "Particle Kinetics: Direct and Oblique Central Impact Equations",
+                "formula": "$$e = \\frac{(v_B')_n - (v_A')_n}{(v_A)_n - (v_B)_n}, \\quad m_A (v_A)_n + m_B (v_B)_n = m_A (v_A')_n + m_B (v_B')_n$$",
+                "description": "Governs collisions between particles: linear momentum is conserved along the normal line of impact; coefficient of restitution $e = 1.0$ for perfectly elastic collisions and $e = 0$ for perfectly plastic (sticking) impacts.",
+                "examTip": "Found in Dynamics: Impulse and Momentum. In oblique impacts, tangential velocities remain completely unchanged ($(v'_A)_t = (v_A)_t$) assuming frictionless surfaces."
+            },
+            {
+                "title": "Hydrostatic Force on Submerged Curved Surfaces",
+                "formula": "$$F_H = \\gamma \\bar{h} A_{\\text{proj}}, \\quad F_V = \\gamma V_{\\text{fluid above surface}}, \\quad F_R = \\sqrt{F_H^2 + F_V^2}$$",
+                "description": "Calculates resultant water pressure force $F_R$ on curved gates: horizontal component $F_H$ equals force on vertical projection of surface; vertical component $F_V$ equals weight of fluid volume directly above the curved surface.",
+                "examTip": "Found in Fluid Mechanics. The line of action of resultant hydrostatic force $F_R$ on any circular arc surface must pass directly through the center of curvature."
+            },
+            {
+                "title": "Buoyancy and Metacentric Height for Floating Body Stability",
+                "formula": "$$F_B = \\gamma_{\\text{fluid}} V_{\\text{displaced}}, \\quad \\overline{GM} = \\overline{BM} + \\overline{OB} - \\overline{OG}, \\quad \\overline{BM} = \\frac{I_{oo}}{V_{\\text{sub}}}$$",
+                "description": "Determines rotational stability of ships and floating pontoons: metacentric height $\\overline{GM} > 0$ produces a righting restoring couple (stable equilibrium); $\\overline{GM} < 0$ causes capsizing (unstable).",
+                "examTip": "Found in Fluid Mechanics. $I_{oo}$ is second moment of area of the waterline plane about its tilting axis, and $V_{\\text{sub}}$ is submerged volume."
+            },
+            {
+                "title": "Capillary Rise Height in Small Cylindrical Tubes",
+                "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\gamma r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                "description": "Calculates capillary height $h$ in narrow tubes of radius $r$ due to liquid surface tension $\\sigma$ and contact wetting angle $\\theta$; for clean glass and pure water, $\\theta = 0^\\circ$ ($cos\\theta = 1.0$).",
+                "examTip": "Found in Fluid Mechanics. For non-wetting liquids like mercury (contact angle $\\theta > 90^\\circ$), capillary depression occurs ($h < 0$)."
+            },
+            {
+                "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
+                "formula": "$$\\sigma_h = \\frac{P r}{t} \\quad (\\text{Hoop / Tangential}), \\quad \\sigma_L = \\frac{P r}{2 t} \\quad (\\text{Longitudinal / Axial})$$",
+                "description": "Governs stress in thin-walled vessels ($r / t \\ge 10$) under internal gauge pressure $P$: circumferential hoop stress $\\sigma_h$ is exactly double longitudinal stress $\\sigma_L$, explaining why pipes split along their seams.",
+                "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
+            },
+            {
+                "title": "Pure Torsion of Circular Shafts: Polar Moment and Angle of Twist",
+                "formula": "$$\\tau = \\frac{T \\rho}{J}, \\quad \\tau_{\\max} = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{J G}, \\quad J = \\frac{\\pi d^4}{32} \\quad (\\text{Solid})$$",
+                "description": "Torsional shearing stress $\\tau$ and elastic twist angle $\\phi$ in circular shafts of polar moment of inertia $J$ and shear modulus $G$ subjected to applied torque $T$.",
+                "examTip": "Found in Mechanics of Materials. Maximum shear occurs at outer surface ($\\rho = r$); for hollow shafts with outer diameter $d_o$ and inner diameter $d_i$, $J = \\frac{\\pi}{32}(d_o^4 - d_i^4)$."
+            },
+            {
+                "title": "Beam Flexure Formula and Maximum Bending Stress",
+                "formula": "$$\\sigma = -\\frac{M y}{I}, \\quad \\sigma_{\\max} = \\frac{M c}{I} = \\frac{M}{S}$$",
+                "description": "Predicts longitudinal normal bending stress $\\sigma$ in elastic beams at distance $y$ from the neutral axis, where $M$ is internal bending moment, $I$ is area moment of inertia, and $S = I / c$ is elastic section modulus.",
+                "examTip": "Found in Mechanics of Materials. Stress is zero at the neutral axis and reaches maximum tension and compression at extreme outer fibers ($y = \\pm c$)."
+            },
+            {
+                "title": "Transverse Shear Stress in Beams and First Moment of Area $Q$",
+                "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\int_{y_1}^c y dA = A' \\bar{y}'$$",
+                "description": "Calculates horizontal and vertical shearing stress $\\tau$ at any depth in a beam with shear force $V$, where $Q$ is the first moment of area of the portion of cross section above the cut taken about the neutral axis.",
+                "examTip": "Found in Mechanics of Materials. For rectangular beams, maximum shear stress occurs at the neutral axis: $\\tau_{\\max} = 1.5 (V / A)$; for circular beams, $\\tau_{\\max} = \\frac{4}{3} (V / A)$."
+            },
+            {
+                "title": "First-Order RC Circuit Time Constant and Transient Response",
+                "formula": "$$\\tau = R C, \\quad v(t) = v(\\infty) + [v(0) - v(\\infty)] e^{-t / \\tau}$$",
+                "description": "Governs transient charging and discharging of capacitors through resistors: time constant $\\tau = RC$ is elapsed time for response to reach $63.2\\%$ of its step change; steady state is reached after approx. $5\\tau$ ($99.3\\%$).",
+                "examTip": "Found in Electrical Circuits. The capacitor acts as an open circuit ($i_C = 0$) at steady state ($t \\to \\infty$) and as a short circuit / constant voltage source immediately after switching ($t = 0^+$)."
+            },
+            {
+                "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
+                "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
+                "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+            },
+            {
+                "title": "First-Order Chemical Reaction Half-Life",
+                "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
+                "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+            }
         ],
         "Civil": [
                 {
@@ -4246,7 +4868,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -4261,19 +4886,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
@@ -4288,7 +4922,10 @@
                           "title": "Equivalent Capacitance and Inductance Combinations",
                           "formula": "$$C_{\\text{parallel}} = \\sum C_i, \\quad \\frac{1}{C_{\\text{series}}} = \\sum \\frac{1}{C_i}; \\quad L_{\\text{series}} = \\sum L_i, \\quad \\frac{1}{L_{\\text{parallel}}} = \\sum \\frac{1}{L_i}$$",
                           "description": "Capacitors combine in opposite fashion to resistors: parallel capacitances add directly, whereas series capacitances combine via reciprocal sums. Inductors combine identical to resistors.",
-                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely."
+                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely.",
+                    "videoUrl": "assets/videos/Equivalent_Capacitance_and_Inductance_Combinations.mp4",
+                    "videoTitle": "Equivalent Capacitance and Inductance Combinations Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Free Body Diagram Support Reaction Rules",
@@ -4411,7 +5048,10 @@
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
                           "formula": "$$P_{\\text{hyd}} = \\gamma Q h_p = \\rho g Q h_p, \\quad BHP = \\frac{P_{\\text{hyd}}}{\\eta_{\\text{pump}}} = \\frac{\\gamma Q h_p}{\\eta_{\\text{pump}}}$$",
                           "description": "Hydraulic power represents useful rate of mechanical energy transferred to flowing fluid. Brake horsepower (BHP) is the required mechanical input power delivered by the motor shaft to drive the pump at efficiency $\\eta_{\\text{pump}}$.",
-                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant."
+                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant.",
+                    "videoUrl": "assets/videos/Pump_Hydraulic_Power_and_Brake_Horsepower_BHP.mp4",
+                    "videoTitle": "Pump Hydraulic Power and Brake Horsepower (BHP) Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
@@ -4458,6 +5098,704 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Moment-Area First Theorem (Slope Change Between Points)",
+                "formula": "$$\\theta_{B/A} = \\theta_B - \\theta_A = \\int_A^B \\frac{M(x)}{E I} dx$$",
+                "description": "The change in slope (angle) between tangents at points $A$ and $B$ on the elastic curve of a beam equals the area under the $M/(EI)$ diagram between those two points.",
+                "examTip": "Found in Structural Analysis: Moment-Area Method. If $M/(EI)$ is positive (sagging moment), the slope increases from left to right."
+            },
+            {
+                "title": "Moment-Area Second Theorem (Tangential Deviation)",
+                "formula": "$$t_{B/A} = \\int_A^B \\frac{M(x)}{E I} x_B dx = \\bar{x}_B \\cdot \\text{Area}_{A-B}$$",
+                "description": "The vertical deviation $t_{B/A}$ of point $B$ on the elastic curve with respect to the tangent drawn from point $A$ equals the first moment of the $M/(EI)$ area between $A$ and $B$, taken about point $B$.",
+                "examTip": "Found in Structural Analysis: Moment-Area Method. Note subscript order: $t_{B/A} \\neq t_{A/B}$; the moment arm $\\bar{x}$ must always be measured to the point whose deviation is being computed."
+            },
+            {
+                "title": "Sag Vertical Curve Length for Headlight Sight Distance",
+                "formula": "$$L = \\frac{A S^2}{200(h_1 + S \\tan\\beta)} = \\frac{A S^2}{200(2.0 + S \\tan 1^\\circ)} \\quad (\\text{for } S \\le L)$$",
+                "description": "Determines minimum length $L$ of a sag vertical curve where sight distance $S$ is constrained by vehicle headlight beam spread angle $\\beta = 1^\\circ$ and headlight mounting height $h_1 = 2.0\\text{ ft}$.",
+                "examTip": "Found in Transportation: Vertical Curves. $A = |g_2 - g_1|$ in percent. For comfort criterion instead of sight distance, use $L = A V^2 / 46.5$."
+            },
+            {
+                "title": "Passing Sight Distance (PSD) for Two-Lane Highways",
+                "formula": "$$PSD = d_1 + d_2 + d_3 + d_4$$",
+                "description": "Total distance required for a vehicle to safely pass a slower vehicle on a two-lane undivided highway, encompassing initial acceleration ($d_1$), left-lane occupation ($d_2$), clearance margin ($d_3$), and opposing vehicle travel ($d_4$).",
+                "examTip": "Found in Transportation: Sight Distances. PSD is significantly larger than Stopping Sight Distance (SSD). AASHTO design tables provide recommended PSD values based on design speed."
+            },
+            {
+                "title": "Horizontal Curve Tangent Distance and External Distance",
+                "formula": "$$T = R \\tan\\left(\\frac{I}{2}\\right), \\quad E = R \\left[\\sec\\left(\\frac{I}{2}\\right) - 1\\right] = R \\left(\\frac{1}{\\cos(I/2)} - 1\\right)$$",
+                "description": "Governs geometry of circular highway curves: tangent distance $T$ from $PC$ to $PI$ and external distance $E$ from $PI$ to the curve midpoint, where $I$ is the intersection (deflection) angle and $R$ is radius.",
+                "examTip": "Found in Transportation: Circular Curves. Verify your calculator is in degree mode when evaluating $\\tan(I/2)$ and $\\cos(I/2)$."
+            },
+            {
+                "title": "Horizontal Curve Middle Ordinate and Long Chord",
+                "formula": "$$M = R\\left[1 - \\cos\\left(\\frac{I}{2}\\right)\\right], \\quad LC = 2 R \\sin\\left(\\frac{I}{2}\\right)$$",
+                "description": "Computes middle ordinate $M$ (distance from curve midpoint to long chord midpoint) and long chord length $LC$ (straight-line distance between $PC$ and $PT$) for a circular curve.",
+                "examTip": "Found in Transportation: Circular Curves. $M$ is essential for verifying horizontal sightline offset (HSO) when obstructions exist inside curve rights-of-way."
+            },
+            {
+                "title": "Unit Hydrograph Convolution for Direct Runoff Hydrograph",
+                "formula": "$$Q_n = \\sum_{m=1}^n P_{m} \\cdot U_{n - m + 1}$$",
+                "description": "Generates direct runoff hydrograph ordinates $Q_n$ by convolving discrete rainfall excess increments $P_m$ with corresponding unit hydrograph ordinates $U$.",
+                "examTip": "Found in Hydrology / Water Resources. Remember that baseflow must be added back to the direct runoff hydrograph to obtain total streamflow discharge."
+            },
+            {
+                "title": "SCS Dimensionless Unit Hydrograph Peak Discharge",
+                "formula": "$$q_p = \\frac{484 A Q}{t_p} \\quad (\\text{USCS}), \\quad q_p = \\frac{0.208 A Q}{t_p} \\quad (\\text{SI})$$",
+                "description": "Calculates peak discharge $q_p$ of an NRCS/SCS unit hydrograph from drainage basin area $A$, runoff volume $Q$ (typically $1.0\\text{ in}$ or $1.0\\text{ mm}$), and time to peak $t_p$.",
+                "examTip": "Found in Hydrology. Time to peak relates to time of concentration: $t_p = \\Delta t / 2 + 0.6 t_c$, where lag time $t_L = 0.6 t_c$."
+            },
+            {
+                "title": "Reservoir Flood Routing: Storage-Indication Method (Modified Puls)",
+                "formula": "$$\\left(\\frac{2 S_2}{\\Delta t} + O_2\\right) = \\left(I_1 + I_2\\right) + \\left(\\frac{2 S_1}{\\Delta t} - O_1\\right)$$",
+                "description": "Numerically routes an inflow hydrograph $I(t)$ through a reservoir storage basin to obtain the attenuated outflow hydrograph $O(t)$ using conservation of mass over time step $\\Delta t$.",
+                "examTip": "Found in Water Resources: Hydrologic Routing. Pre-construct a routing curve or table relating $(2S/\\Delta t + O)$ to outflow $O$ from stage-storage-discharge data."
+            },
+            {
+                "title": "Unified Soil Classification System (USCS) Grain-Size Criteria",
+                "formula": "$$C_u = \\frac{D_{60}}{D_{10}}, \\quad C_c = \\frac{(D_{30})^2}{D_{10} \\cdot D_{60}}$$",
+                "description": "Classifies coarse-grained soils: $C_u$ is uniformity coefficient and $C_c$ is coefficient of curvature. Well-graded gravel (GW) requires $C_u \\ge 4$ and $1 \\le C_c \\le 3$; well-graded sand (SW) requires $C_u \\ge 6$ and $1 \\le C_c \\le 3$.",
+                "examTip": "Found in Geotechnical: Soil Classification. $D_{10}$ is also known as Hazen's effective grain size. Soil must first have $< 50\\%$ passing No. 200 sieve to be coarse-grained."
+            },
+            {
+                "title": "Soil Phase Relations: Degree of Saturation and Air Voids",
+                "formula": "$$S = \\frac{V_w}{V_v} = \\frac{w \\cdot G_s}{e}, \\quad n_a = \\frac{V_a}{V} = n(1 - S)$$",
+                "description": "Relates degree of saturation $S$, gravimetric water content $w$, specific gravity of soil solids $G_s$, and void ratio $e$; for saturated soil, $S = 1.0$ and $e = w \\cdot G_s$.",
+                "examTip": "Found in Geotechnical: Phase Relationships. The identity $S \\cdot e = w \\cdot G_s$ is one of the most frequently used formulas in geotechnical FE problems."
+            },
+            {
+                "title": "Mohr-Coulomb Effective Stress Shear Strength Criterion",
+                "formula": "$$\\tau_f = c' + \\sigma'_n \\tan\\phi' = c' + (\\sigma_n - u) \\tan\\phi'$$",
+                "description": "Predicts ultimate soil shear strength $\\tau_f$ along a failure plane based on effective cohesion $c'$, effective normal stress $\\sigma'_n$, pore water pressure $u$, and effective internal friction angle $\\phi'$.",
+                "examTip": "Found in Geotechnical: Soil Mechanics. For normally consolidated sands and gravels, effective cohesion $c' = 0$, simplifying to $\\tau_f = \\sigma'_n \\tan\\phi'$."
+            },
+            {
+                "title": "Soil Field Compaction: Relative Compaction (RC)",
+                "formula": "$$RC = \\frac{\\gamma_{d,\\text{field}}}{\\gamma_{d,\\max(\\text{lab})}} \\times 100\\%$$",
+                "description": "Measures field soil compaction quality by comparing dry unit weight achieved in the field against maximum dry unit weight obtained from standard or modified Proctor laboratory compaction tests.",
+                "examTip": "Found in Geotechnical: Compaction. Typical civil engineering earthwork specifications mandate $RC \\ge 95\\%$ of Standard or Modified Proctor maximum dry density."
+            },
+            {
+                "title": "Mass Haul Diagram: Economic Balance Line and Overhaul",
+                "formula": "$$\\text{Haul} = \\text{Volume} \\times \\text{Distance}, \\quad \\text{Overhaul Cost} = \\text{Overhaul Vol} \\times (\\text{Haul Dist} - \\text{Freehaul}) \\times \\text{Unit Price}$$",
+                "description": "Graphical tool plotting cumulative earthwork volume along road stations; horizontal balance lines identify zero net cut/fill, profile peaks represent cut-to-fill transitions, and troughs represent fill-to-cut transitions.",
+                "examTip": "Found in Construction: Earthwork. Freehaul is the maximum haul distance included in base excavation cost; any transport beyond freehaul is billed as overhaul."
+            },
+            {
+                "title": "LRFD Load Combinations for Structural Design (ASCE 7)",
+                "formula": "$$U_1 = 1.4 D, \\quad U_2 = 1.2 D + 1.6 L + 0.5(L_r \\text{ or } S \\text{ or } R), \\quad U_3 = 1.2 D + 1.0 W + 1.0 L + 0.5(L_r \\text{ or } S \\text{ or } R)$$",
+                "description": "Combines factored dead ($D$), live ($L$), roof live ($L_r$), snow ($S$), and wind ($W$) loads to determine governing ultimate design load effects under Strength Design / LRFD philosophy.",
+                "examTip": "Found in Structural Design: Load Combinations. In LRFD, factored resistance $\\phi R_n \\ge \\sum \\gamma_i Q_i$; always check which load combination produces the maximum positive and negative internal moments."
+            },
+            {
+                "title": "Unreinforced Concrete Web Shear Strength ($V_c$)",
+                "formula": "$$V_c = 2 \\lambda \\sqrt{f'_c} b_w d \\quad (\\text{USCS: lb, in}), \\quad V_c = 0.17 \\lambda \\sqrt{f'_c} b_w d \\quad (\\text{SI: N, mm})$$",
+                "description": "Calculates nominal diagonal tension shear capacity provided by the concrete cross-section alone in reinforced concrete beams, where $\\lambda$ is the lightweight aggregate reduction factor.",
+                "examTip": "Found in Reinforced Concrete Design (ACI 318). For normal weight concrete, $\\lambda = 1.0$. Stirrups (shear reinforcement $V_s$) are required whenever $V_u > 0.5 \\phi V_c$."
+            },
+            {
+                "title": "Concrete Tension Development Length for Deformed Bars",
+                "formula": "$$l_d = \\left(\\frac{3}{40} \\frac{f_y}{\\lambda \\sqrt{f'_c}} \\frac{\\psi_t \\psi_e \\psi_s}{\\left(\\frac{c_b + K_{tr}}{d_b}\\right)}\\right) d_b$$",
+                "description": "Determines minimum embedded length $l_d$ required to fully develop the design yield strength $f_y$ of deformed rebar in tension, accounting for bar size ($d_b$), concrete cover ($c_b$), casting position ($\\psi_t$), and epoxy coating ($\\psi_e$).",
+                "examTip": "Found in Reinforced Concrete Design. Top-cast bars (with $>12\\text{ in}$ of fresh concrete cast below them) require casting position factor $\\psi_t = 1.3$ due to bleeding water accumulation."
+            },
+            {
+                "title": "Structural Steel Compactness Limit for Flanges and Webs",
+                "formula": "$$\\lambda = \\frac{b}{t} \\le \\lambda_p = 0.38 \\sqrt{\\frac{E}{F_y}} \\quad (\\text{Unstiffened Flange})$$",
+                "description": "Criteria preventing local buckling of steel I-beam flanges prior to reaching plastic moment capacity $M_p$; sections with width-to-thickness ratio $\\lambda \\le \\lambda_p$ are classified as compact.",
+                "examTip": "Found in Structural Steel Design (AISC 360). For a compact section with adequate lateral bracing ($L_b \\le L_p$), nominal flexural strength reaches full plastic moment: $M_n = M_p = F_y Z_x$."
+            },
+            {
+                "title": "AISC Column Critical Stress (Elastic vs. Inelastic Buckling)",
+                "formula": "$$F_{cr} = [0.658^{F_y / F_e}] F_y \\quad (\\text{for } \\frac{KL}{r} \\le 4.71\\sqrt{E/F_y}), \\quad F_{cr} = 0.877 F_e \\quad (\\text{for } \\frac{KL}{r} > 4.71\\sqrt{E/F_y})$$",
+                "description": "Determines compressive design stress $F_{cr}$ for structural steel columns accounting for geometric imperfections and residual stresses in inelastic buckling vs. Euler elastic buckling stress $F_e = \\pi^2 E / (KL/r)^2$.",
+                "examTip": "Found in Structural Steel Design (AISC). In inelastic buckling, $F_e \\ge 0.44 F_y$; remember nominal column compressive strength is $P_n = F_{cr} A_g$ with $\\phi_c = 0.90$."
+            },
+            {
+                "title": "Fundamental Diagram of Traffic Flow (Greenshields Model)",
+                "formula": "$$v = v_f \\left(1 - \\frac{k}{k_j}\\right), \\quad q = k \\cdot v = v_f \\left(k - \\frac{k^2}{k_j}\\right)$$",
+                "description": "Assumes a linear relationship between traffic speed $v$ and traffic density $k$; maximum flow capacity $q_{\\max}$ occurs at optimum density $k_m = k_j / 2$ and speed $v_m = v_f / 2$, giving $q_{\\max} = v_f k_j / 4$.",
+                "examTip": "Found in Transportation: Traffic Engineering. $v_f$ is free-flow speed and $k_j$ is jam density. Note that flow $q$ is zero at both zero density and jam density."
+            },
+            {
+                "title": "Highway Level of Service (LOS) and Flow-Density-Speed Relations",
+                "formula": "$$q = k \\cdot v, \\quad D = \\frac{v_p}{S}$$",
+                "description": "Relates flow rate $q$ (veh/h), vehicular density $k$ (veh/mi), and space mean speed $v$ (mph); freeway Level of Service (LOS A through F) is explicitly governed by passenger-car density $D$ (pc/mi/ln).",
+                "examTip": "Found in Transportation: Highway Capacity Manual (HCM). Density is the primary operational measure of effectiveness (MOE) for freeways because it directly reflects driver freedom to maneuver."
+            },
+            {
+                "title": "AASHTO Flexible Pavement Structural Number (SN) Equation",
+                "formula": "$$SN = a_1 D_1 + a_2 D_2 m_2 + a_3 D_3 m_3$$",
+                "description": "Calculates required overall structural number $SN$ of a flexible pavement system from layer thickness $D_i$, structural layer coefficients $a_i$ (asphalt surface, base, subbase), and drainage coefficients $m_i$.",
+                "examTip": "Found in Transportation: Pavement Design. Subgrade resilient modulus $M_r$ governs required total $SN$; layer thicknesses $D_i$ are rounded up to the nearest half-inch."
+            },
+            {
+                "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
+                "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
+                "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
+                "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
+            },
+            {
+                "title": "Streeter-Phelps Critical Distance and Critical DO Deficit",
+                "formula": "$$t_c = \\frac{1}{k_r - k_d} \\ln\\left[\\frac{k_r}{k_d}\\left(1 - D_0 \\frac{k_r - k_d}{k_d L_0}\\right)\\right], \\quad D_c = \\frac{k_d L_0}{k_r} e^{-k_d t_c}$$",
+                "description": "Calculates time to reach critical dissolved oxygen deficit $t_c$ and maximum deficit magnitude $D_c$ in a stream downstream of wastewater discharge, where $k_d$ is deoxygenation rate, $k_r$ is reaeration rate, and $L_0$ is initial ultimate BOD.",
+                "examTip": "Found in Environmental / Water Resources. Critical dissolved oxygen concentration is $DO_{\\text{crit}} = DO_{\\text{sat}} - D_c$; make sure not to confuse deficit $D$ with actual concentration $DO$."
+            },
+            {
+                "title": "Biochemical Oxygen Demand (BOD) Reaction Rate and Temperature Correction",
+                "formula": "$$y_t = L_0 (1 - e^{-k t}), \\quad k_T = k_{20} \\cdot \\theta^{T - 20}$$",
+                "description": "First-order kinetics for carbonaceous BOD exertion over time $t$, where $\\theta = 1.135$ for temperatures between $4^\\circ\\text{C}$ and $20^\\circ\\text{C}$, and $\\theta = 1.056$ for temperatures between $20^\\circ\\text{C}$ and $30^\\circ\\text{C}$.",
+                "examTip": "Found in Environmental Engineering: Wastewater. Ultimate BOD $L_0$ does not change significantly with temperature, but reaction rate $k$ increases markedly with warming water."
+            },
+            {
+                "title": "Sedimentation Basin Surface Overflow Rate and Detention Time",
+                "formula": "$$v_0 = \\frac{Q}{A_s} = \\frac{Q}{W \\cdot L}, \\quad t_d = \\frac{V}{Q} = \\frac{A_s \\cdot H}{Q} = \\frac{H}{v_0}$$",
+                "description": "Governs settling basin clarification: all discrete particles with settling velocity $v_s \\ge v_0$ are $100\\%$ removed; removal fraction for particles with $v_s < v_0$ equals $v_s / v_0$.",
+                "examTip": "Found in Environmental / Water Treatment. Note that surface overflow rate $v_0$ is completely independent of basin depth $H$, while hydraulic detention time $t_d$ is directly proportional to depth."
+            },
+            {
+                "title": "Activated Sludge Mean Cell Residence Time (MCRT / Sludge Age)",
+                "formula": "$$\\theta_c = \\frac{V \\cdot X}{Q_w X_w + Q_e X_e}$$",
+                "description": "Quantifies average time (in days) that biological sludge biomass stays in an activated sludge aeration basin of volume $V$ with mixed liquor suspended solids concentration $X$, where $Q_w X_w$ is waste biomass and $Q_e X_e$ is effluent biomass.",
+                "examTip": "Found in Environmental / Wastewater Treatment. Effluent solids $X_e$ are frequently small enough to neglect, simplifying to $\\theta_c \\approx V X / (Q_w X_w)$."
+            },
+            {
+                "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
+                "formula": "$$h_L = \\frac{f_k (1 - \\epsilon)}{\\epsilon^3} \\frac{L}{d} \\frac{v_a^2}{g}$$",
+                "description": "Calculates clean bed head loss $h_L$ through a granular media filter bed of depth $L$, porosity $\\epsilon$, grain diameter $d$, and approach velocity $v_a$, where $f_k$ is the Kozeny friction factor.",
+                "examTip": "Found in Environmental: Water Treatment. Note the strong sensitivity to porosity: head loss is inversely proportional to $\\epsilon^3$."
+            },
+            {
+                "title": "Lime-Soda Ash Water Softening Precipitation Stoichiometry",
+                "formula": "$$\\text{Lime: } \\text{CO}_2, \\text{Ca}^{2+}\\text{(carbonate)}, \\text{Mg}^{2+}\\text{(all)}; \\quad \\text{Soda Ash: } \\text{Ca}^{2+}\\text{(non-carbonate)}$$",
+                "description": "Removes hardness by precipitation: hydrated lime $\\text{Ca(OH)}_2$ precipitates carbonate hardness as $\\text{CaCO}_3$ and magnesium as $\\text{Mg(OH)}_2$; soda ash $\\text{Na}_2\\text{CO}_3$ precipitates non-carbonate calcium hardness.",
+                "examTip": "Found in Environmental: Water Chemistry. Stoichiometric calculations are always carried out in equivalent weights or milliequivalents per liter ($\\text{meq/L}$) or $\\text{mg/L as }\\text{CaCO}_3$."
+            },
+            {
+                "title": "Differential Leveling: Height of Instrument and Benchmark Elevations",
+                "formula": "$$HI = \\text{Elev}_{BM} + BS, \\quad \\text{Elev}_{TP} = HI - FS$$",
+                "description": "Fundamental surveying leveling loop equations: Height of Instrument ($HI$) is established by adding a backsight ($BS$, plus sight) to a known elevation; new elevation is computed by subtracting a foresight ($FS$, minus sight).",
+                "examTip": "Found in Surveying: Leveling. Mathematical check for leveling field notes: $\\sum BS - \\sum FS = \\text{Final Elev} - \\text{Initial Elev}$."
+            },
+            {
+                "title": "Closed Traverse Balancing: Compass Rule (Bowditch Method)",
+                "formula": "$$\\text{Corr}_{\\text{Lat}} = - \\left(\\frac{\\text{Length}_i}{\\sum \\text{Length}}\\right) \\text{Closure}_{\\text{Lat}}, \\quad \\text{Corr}_{\\text{Dep}} = - \\left(\\frac{\\text{Length}_i}{\\sum \\text{Length}}\\right) \\text{Closure}_{\\text{Dep}}$$",
+                "description": "Distributes linear misclosure error among individual traverse courses in direct proportion to their course lengths, assuming angles and distances were measured with equal precision.",
+                "examTip": "Found in Surveying: Traverses. Latitude $= L \\cos\\theta$; Departure $= L \\sin\\theta$. Linear precision of closure is $\\text{Error} / \\sum \\text{Length} = \\sqrt{\\text{Closure}_{\\text{Lat}}^2 + \\text{Closure}_{\\text{Dep}}^2} / \\sum L$."
+            },
+            {
+                "title": "Surveying Borrow Pit Grid Method for Earthwork Excavation",
+                "formula": "$$V = \\frac{A_{\\text{grid}}}{4} \\left( \\sum h_1 + 2 \\sum h_2 + 3 \\sum h_3 + 4 \\sum h_4 \\right)$$",
+                "description": "Computes volume $V$ of earthwork excavation from a rectangular grid of area $A_{\\text{grid}}$, where $h_1, h_2, h_3, h_4$ represent excavation cut depths at grid corners common to 1, 2, 3, or 4 adjacent grid squares.",
+                "examTip": "Found in Construction / Surveying: Earthwork. Be meticulous when counting how many grid squares share each corner point to avoid coefficient misallocation."
+            },
+            {
+                "title": "Storm Sewer Gravity Pipe Design via Manning's and Rational Formula",
+                "formula": "$$Q = C I A = \\frac{k_n}{n} A_{\\text{pipe}} R_h^{2/3} S^{1/2}$$",
+                "description": "Sizes storm sewer storm pipes by equating peak runoff discharge $Q$ generated by the Rational Method to full gravity flow capacity evaluated via Manning's open channel flow formula.",
+                "examTip": "Found in Water Resources: Storm Drainage. $k_n = 1.486$ for USCS and $k_n = 1.0$ for SI units. For circular pipes flowing full, hydraulic radius $R_h = D / 4$."
+            },
+            {
+                "title": "Hazen-Williams Head Loss Equation for Water Distribution Pipes",
+                "formula": "$$h_f = \\frac{10.44 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{USCS}), \\quad h_f = \\frac{10.67 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{SI})$$",
+                "description": "Calculates friction head loss $h_f$ in pressurized water distribution pipes as a function of pipe length $L$, flow $Q$, inside diameter $d$, and empirical Hazen-Williams roughness coefficient $C$.",
+                "examTip": "Found in Hydraulics: Closed Conduit Flow. A higher $C$ value denotes a smoother pipe (e.g., $C = 140-150$ for new PVC; $C = 100$ for aged cast iron)."
+            },
+            {
+                "title": "Hardy Cross Network Balancing for Looped Water Distribution Systems",
+                "formula": "$$\\Delta Q = -\\frac{\\sum h_f}{n \\sum (h_f / Q)} = -\\frac{\\sum k Q |Q|^{n-1}}{n \\sum k |Q|^{n-1}}$$",
+                "description": "Iterative pipe loop balancing method enforcing energy conservation ($\\sum h_f = 0$ around every closed loop) by applying discharge correction $\\Delta Q$ to assumed pipe flows ($n = 1.852$ for Hazen-Williams, $n = 2.0$ for Darcy-Weisbach).",
+                "examTip": "Found in Hydraulics / Water Distribution. Clockwise flows around a loop are designated positive, and counterclockwise flows are negative."
+            },
+            {
+                "title": "Culvert Hydraulics: Inlet Control vs. Outlet Control Headwater",
+                "formula": "$$HW_{\\text{inlet}} = f(Q, D, \\text{Inlet Geometry}), \\quad HW_{\\text{outlet}} = TW + h_e + h_f + h_v - L S_0$$",
+                "description": "Evaluates culvert conveyance: under inlet control, the barrel carries more water than the inlet entrance accepts, so upstream headwater depends only on barrel entrance geometry; under outlet control, barrel friction and tailwater ($TW$) govern.",
+                "examTip": "Found in Hydraulics: Culvert Design. The controlling headwater is always the higher of $HW_{\\text{inlet}}$ and $HW_{\\text{outlet}}$."
+            },
+            {
+                "title": "Open Channel Specific Energy and Critical Depth ($y_c$)",
+                "formula": "$$E = y + \\frac{v^2}{2g} = y + \\frac{Q^2}{2 g A^2}, \\quad y_c = \\sqrt[3]{\\frac{q^2}{g}} \\quad (\\text{Rectangular})$$",
+                "description": "Specific energy $E$ is energy per unit weight of fluid measured relative to the channel bottom; critical flow occurs at minimum specific energy for a given discharge $Q$, where unit discharge $q = Q/b$.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. At critical depth $y_c$, Froude number $Fr = 1.0$ and velocity head equals half the hydraulic depth ($v_c^2 / 2g = D_h / 2$)."
+            },
+            {
+                "title": "Froude Number and Hydraulic Flow Regimes",
+                "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
+                "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
+            },
+            {
+                "title": "Critical Shear Stress and Shields Diagram for Channel Bed Sediment",
+                "formula": "$$\\tau_0 = \\gamma R_h S, \\quad \\theta_c = \\frac{\\tau_c}{(\\gamma_s - \\gamma) d_{50}}$$",
+                "description": "Calculates tractive boundary shear stress $\\tau_0$ exerted by flowing water on a channel bed; incipient motion of sediment grains occurs when Shields parameter $\\theta_c$ exceeds the critical threshold.",
+                "examTip": "Found in Water Resources: Sediment Transport. Stable non-erodible alluvial channel design requires bed shear stress $\\tau_0 \\le \\tau_c$."
+            },
+            {
+                "title": "Gravity Retaining Wall Overturning Factor of Safety",
+                "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
+                "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
+            },
+            {
+                "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
+                "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
+            },
+            {
+                "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
+                "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
+                "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
+            },
+            {
+                "title": "Soil Liquefaction Susceptibility: Cyclic Stress Ratio (CSR)",
+                "formula": "$$CSR = 0.65 \\left(\\frac{a_{\\max}}{g}\\right) \\left(\\frac{\\sigma_{v0}}{\\sigma'_{v0}}\\right) r_d$$",
+                "description": "Quantifies seismic shear stress demand on saturated, cohesionless soil during an earthquake, where $a_{\\max}$ is peak ground acceleration, $\\sigma_{v0}$ and $\\sigma'_{v0}$ are total and effective overburden stresses, and $r_d$ is depth reduction factor.",
+                "examTip": "Found in Geotechnical: Earthquake Engineering. Liquefaction occurs when the cyclic stress ratio $CSR$ exceeds the soil's cyclic resistance ratio $CRR$, i.e., $FS = CRR / CSR < 1.0$."
+            },
+            {
+                "title": "Deep Foundation Capacity: Static Driven Pile Load Carrying Capacity",
+                "formula": "$$Q_{\\text{ult}} = Q_b + Q_s = q_p A_p + \\sum (f_s A_s)$$",
+                "description": "Calculates ultimate compressive load capacity $Q_{\\text{ult}}$ of a deep driven pile as the sum of tip/base end bearing resistance ($Q_b$) and shaft side-friction resistance ($Q_s$).",
+                "examTip": "Found in Geotechnical: Foundations. In cohesive soils (clays), side friction is computed using the $\\alpha$-method: $f_s = \\alpha c_u$, where $\\alpha$ is the empirical adhesion factor."
+            },
+            {
+                "title": "Equivalent Single Axle Load (ESAL) Conversion Factors",
+                "formula": "$$ESAL = \\sum (N_i \\cdot LEF_i), \\quad LEF \\approx \\left(\\frac{\\text{Axle Load}}{18,000\\text{ lb}}\\right)^4$$",
+                "description": "Converts mixed traffic axle configurations and loads into equivalent passes of a standard $18,000\\text{ lb}$ ($18\\text{ kip}$) single axle with dual tires using the fourth-power damage rule.",
+                "examTip": "Found in Transportation: Pavement Design. Notice that a $36\\text{ kip}$ single axle inflicts $(36/18)^4 = 16$ times more pavement structural damage than a single $18\\text{ kip}$ axle."
+            },
+            {
+                "title": "Traffic Signal Yellow Change and All-Red Clearance Intervals",
+                "formula": "$$y = t + \\frac{v}{2 a + 2 g G}, \\quad r = \\frac{w + L}{v}$$",
+                "description": "Calculates signal change interval yellow time $y$ (perception-reaction time $t = 1.0\\text{ s}$, deceleration $a = 10\\text{ ft/s}^2$) and red clearance interval $r$ to clear the intersection width $w$ plus vehicle length $L$.",
+                "examTip": "Found in Transportation: Traffic Signals. Proper yellow plus all-red timing eliminates the dangerous dilemma zone where a driver can neither stop safely nor clear the intersection before red."
+            },
+            {
+                "title": "Freeway Weaving and Ramp Merging Traffic Conflict Points",
+                "formula": "$$VR = \\frac{V_w}{V_{\\text{total}}} = \\frac{V_{w1} + V_{w2}}{V_{\\text{total}}}$$",
+                "description": "Determines freeway weaving ratio $VR$ (ratio of total weaving flow rate to total freeway section flow rate) and identifies turbulence zones in cloverleaf and collector-distributor highway configurations.",
+                "examTip": "Found in Transportation: Highway Capacity Manual. High volume ratios $VR$ sharply reduce operational speeds and degrade the Level of Service of the weaving segment."
+            },
+            {
+                "title": "Prestressed Concrete Tendon Prestress Losses Breakdown",
+                "formula": "$$\\Delta f_{pT} = \\Delta f_{pES} + \\Delta f_{pCR} + \\Delta f_{pSH} + \\Delta f_{pRE}$$",
+                "description": "Calculates total long-term loss in prestressing steel stress as the sum of elastic shortening ($\\Delta f_{pES}$), concrete creep ($\\Delta f_{pCR}$), concrete drying shrinkage ($\\Delta f_{pSH}$), and tendon steel relaxation ($\\Delta f_{pRE}$).",
+                "examTip": "Found in Prestressed Concrete Design. Post-tensioned systems also experience friction losses along the duct curvature and tendon anchorage seating losses."
+            },
+            {
+                "title": "Structural Dynamics: Undamped Single Degree of Freedom Frequency",
+                "formula": "$$\\omega_n = \\sqrt{\\frac{k}{m}}, \\quad f_n = \\frac{\\omega_n}{2\\pi}, \\quad T_n = \\frac{1}{f_n} = \\frac{2\\pi}{\\omega_n} = 2\\pi \\sqrt{\\frac{m}{k}}$$",
+                "description": "Governs free vibration of an idealized single-story building or structural element with lumped mass $m$ and lateral stiffness $k$, determining natural circular frequency $\\omega_n$, frequency $f_n$, and fundamental period $T_n$.",
+                "examTip": "Found in Structural Analysis / Dynamics. When converting weight $W$ to mass $m$, remember $m = W / g$ (with $g = 32.2\\text{ ft/s}^2$ or $9.81\\text{ m/s}^2$)."
+            },
+            {
+                "title": "Equivalent Lateral Force Procedure: Equivalent Seismic Base Shear",
+                "formula": "$$V = C_s \\cdot W, \\quad C_s = \\frac{S_{DS}}{\\left(\\frac{R}{I_e}\\right)}$$",
+                "description": "Calculates total design lateral seismic base shear force $V$ acting at the foundation of a building structure from seismic response coefficient $C_s$, effective seismic weight $W$, response modification coefficient $R$, and importance factor $I_e$.",
+                "examTip": "Found in Structural Design: Seismic (ASCE 7). $C_s$ has upper and lower bounds based on the fundamental building period $T$ and long-period transition period $T_L$."
+            },
+            {
+                "title": "Wind Load Design Velocity Pressure Equation (ASCE 7)",
+                "formula": "$$q_z = 0.00256 \\cdot K_z \\cdot K_{zt} \\cdot K_d \\cdot K_e \\cdot V^2 \\quad (\\text{USCS: lb/ft}^2, \\text{mph})$$",
+                "description": "Determines dynamic wind velocity pressure $q_z$ at height $z$ based on basic wind speed $V$, velocity pressure exposure coefficient $K_z$, topographic factor $K_{zt}$, wind directionality factor $K_d$, and ground elevation factor $K_e$.",
+                "examTip": "Found in Structural Design: Wind Loads. Surface design wind pressure is $p = q G C_p - q_i (G C_{pi})$, accounting for both external and internal building pressure coefficients."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Construction Equipment Fleet Productivity: Scraper Cycle Time",
+                "formula": "$$T_{\\text{cycle}} = T_{\\text{load}} + T_{\\text{haul}} + T_{\\text{dump}} + T_{\\text{return}} + T_{\\text{wait}}$$",
+                "description": "Models heavy equipment earthmoving productivity: production equals payload volume divided by total round-trip cycle time, modified by job efficiency factors ($50\\text{ min/hr}$ or $83\\%$ working efficiency).",
+                "examTip": "Found in Construction: Equipment Operations. Balance pusher tractors with scrapers to minimize scraper waiting time and maximize earthmoving yardage per shift."
+            },
+            {
+                "title": "Earned Value Management: Cost Variance and Schedule Variance",
+                "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
+                "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+            },
+            {
+                "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
+                "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
+                "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
+            },
+            {
+                "title": "Concrete Slump Test and Air Entrainment Acceptance Testing",
+                "formula": "$$\\text{Slump} = 12\\text{ in} - h_{\\text{slumped}}, \\quad A = A_1 - G$$",
+                "description": "Field quality control tests for fresh concrete workability and freeze-thaw durability: slump cone test (ASTM C143) filled in 3 equal-volume layers with 25 roddings each; pressure air meter test (ASTM C231) corrected for aggregate correction factor $G$.",
+                "examTip": "Found in Materials: Concrete. Air entrainment ($4\\%$ to $8\\%$) provides microscopic bubble relief reservoirs for freezing water expansion in exposed outdoor flatwork."
+            },
+            {
+                "title": "Standard Portland Cement Types (ASTM C150 Types I through V)",
+                "formula": "$$\\text{I: General, II: Mod Sulfate, III: High Early, IV: Low Heat, V: High Sulfate}$$",
+                "description": "Standardizes Portland cement chemistry: Type III achieves high early strength via fine grinding and high $C_3S$; Type IV limits heat of hydration for massive gravity dams; Type V resists aggressive soil sulfate attack with low $C_3A$.",
+                "examTip": "Found in Materials: Concrete. Tricalcium aluminate ($C_3A$) is the compound primarily responsible for vulnerability to sulfate expansion and rapid initial hydration heat."
+            },
+            {
+                "title": "Superpave Asphalt Binder Performance Grading (PG Grades)",
+                "formula": "$$PG \\ XX - YY \\implies T_{\\max} = XX^\\circ\\text{C}, \\quad T_{\\min} = -YY^\\circ\\text{C}$$",
+                "description": "Specifies asphalt binder performance: in PG 64-22, the binder is engineered to resist permanent rutting up to an average 7-day maximum pavement temperature of $64^\\circ\\text{C}$ and thermal cracking down to $-22^\\circ\\text{C}$.",
+                "examTip": "Found in Materials: Asphalt. Dynamic Shear Rheometer (DSR) tests high-temperature rutting ($G^* / \\sin\\delta \\ge 1.0\\text{ kPa}$), while Bending Beam Rheometer (BBR) tests low-temperature thermal cracking stiffness."
+            },
+            {
+                "title": "Concrete Maturity Method for Estimating In-Situ Strength",
+                "formula": "$$M(t) = \\sum (T - T_0) \\Delta t \\quad (\\text{Nurse-Saul Equation})$$",
+                "description": "Estimates real-time compressive strength gain of cast-in-place concrete by integrating the time-temperature hydration history, where $T_0$ is datum temperature (typically $-10^\\circ\\text{C}$ or $14^\\circ\\text{F}$).",
+                "examTip": "Found in Construction: Concrete Curing. Used to safely determine exact timing for formwork stripping, post-tensioning tendon stressing, or opening highway pavements to traffic."
+            },
+            {
+                "title": "Triaxial Shear Tests: CD vs. CU vs. UU Test Distinctions",
+                "formula": "$$\\text{CD: Consolidated Drained}, \\quad \\text{CU: Consolidated Undrained}, \\quad \\text{UU: Unconsolidated Undrained}$$",
+                "description": "Standard laboratory soil shear tests: CD evaluates long-term drained slope stability; CU evaluates rapid drawdown with pore pressure measurement yielding effective stress parameters; UU evaluates short-term end-of-construction bearing capacity ($c_u = \\sigma_d / 2$).",
+                "examTip": "Found in Geotechnical: Shear Strength. For a saturated UU test, total stress friction angle $\\phi_u = 0$, meaning the failure envelope is completely horizontal."
+            },
+            {
+                "title": "Unconfined Compressive Strength of Cohesive Soil",
+                "formula": "$$q_u = 2 c_u \\implies c_u = \\frac{q_u}{2} = s_u$$",
+                "description": "In an unconfined compression test with confining cell pressure $\\sigma_3 = 0$, undrained shear strength (cohesion $c_u$ or $s_u$) of saturated clay is exactly half of the measured unconfined axial compressive failure stress $q_u$.",
+                "examTip": "Found in Geotechnical: Soil Mechanics. Highly popular on the FE exam because it requires no complicated trigonometry: simply divide $q_u$ by 2 to get undrained cohesion."
+            },
+            {
+                "title": "Flow Net Seepage Calculation for Earth Dams and Sheet Piles",
+                "formula": "$$q = k \\cdot H \\cdot \\left(\\frac{N_f}{N_d}\\right)$$",
+                "description": "Quantifies total 2D seepage flow rate $q$ (per unit length of structure) through a porous soil medium with hydraulic conductivity $k$ under total head loss $H$, using flow channels $N_f$ and equipotential drops $N_d$.",
+                "examTip": "Found in Geotechnical: Seepage. Flow nets consist of curvilinear squares where flow lines and equipotential lines intersect strictly at $90^\\circ$ angles."
+            },
+            {
+                "title": "Capillary Rise Height in Fine-Grained Soils",
+                "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
+                "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
+                "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
+            },
+            {
+                "title": "Geotextile Apparent Opening Size and Soil Retention Criteria",
+                "formula": "$$AOS \\le B \\cdot D_{85} \\quad (O_{95} \\le B \\cdot D_{85})$$",
+                "description": "Sizes geotextile filter fabrics: Apparent Opening Size ($AOS$ or $O_{95}$) must be sufficiently small to prevent soil piping erosion through the fabric while maintaining adequate water permittivity.",
+                "examTip": "Found in Geotechnical: Geosynthetics. For uniform soils ($C_u < 2-4$), design requires $O_{95} < D_{85}$; for well-graded soils, $O_{95} < B \\cdot D_{85}$."
+            },
+            {
+                "title": "Standard Penetration Test (SPT) Field Blow Count Energy Correction",
+                "formula": "$$N_{60} = N_{\\text{field}} \\left(\\frac{E_m}{60}\\right) C_B C_S C_R$$",
+                "description": "Normalizes raw SPT field blow count $N_{\\text{field}}$ to a standard $60\\%$ hammer energy efficiency $N_{60}$, accounting for hammer type ($E_m$), borehole diameter ($C_B$), sampling method ($C_S$), and rod length ($C_R$).",
+                "examTip": "Found in Geotechnical: Subsurface Exploration. Further correction for overburden stress yields $(N_1)_{60} = N_{60} \\cdot C_N$, where $C_N = \\sqrt{P_a / \\sigma'_{v0}}$."
+            },
+            {
+                "title": "Rock Quality Designation (RQD) and Rock Mass Rating",
+                "formula": "$$RQD = \\frac{\\sum \\text{Length of intact core pieces } \\ge 10\\text{ cm}}{\\text{Total run length of core}} \\times 100\\%$$",
+                "description": "Quantifies sound rock recovery from drill cores: $RQD < 25\\%$ represents very poor rock quality, while $RQD > 90\\%$ denotes excellent, unweathered, tightly jointed rock mass.",
+                "examTip": "Found in Geotechnical: Rock Mechanics. Only include sound pieces of core having a minimum length of $100\\text{ mm}$ ($4\\text{ inches}$) measured along the centerline."
+            },
+            {
+                "title": "Vertical Stress Increase beneath Point Loads: Boussinesq Solution",
+                "formula": "$$\\Delta \\sigma_z = \\frac{3 P}{2\\pi z^2} \\left[ \\frac{1}{1 + (r/z)^2} \\right]^{5/2} = \\frac{P}{z^2} \\cdot I_B$$",
+                "description": "Calculates vertical normal stress increase $\\Delta \\sigma_z$ at depth $z$ and radial distance $r$ inside a homogeneous, isotropic, semi-infinite elastic soil mass due to a concentrated surface point load $P$.",
+                "examTip": "Found in Geotechnical: Stress Distribution. Directly beneath the load ($r = 0$), vertical stress simplifies to $\\Delta \\sigma_z = 0.477 P / z^2$, diminishing rapidly with $z^2$."
+            },
+            {
+                "title": "AASHTO Soil Classification System Group Index",
+                "formula": "$$GI = (F_{200} - 35)[0.2 + 0.005(LL - 40)] + 0.01(F_{200} - 15)(PI - 10)$$",
+                "description": "Calculates Group Index ($GI$) for highway subgrade evaluation from percent passing No. 200 sieve ($F_{200}$), liquid limit ($LL$), and plasticity index ($PI$); higher $GI$ values denote poorer highway subgrade support.",
+                "examTip": "Found in Civil: Transportation & Geotechnical. $GI$ is always rounded to the nearest non-negative integer; if calculated $GI < 0$, report $GI = 0$."
+            }
+        ,
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "HAZOP Study Methodology and Standard Guide Words",
+                "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
+                "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
+                "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
+            },
+            {
+                "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
+                "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
+                "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
+                "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
+            },
+            {
+                "title": "Pressure Relief Valve Sizing Formula for Vapor Discharge",
+                "formula": "$$A = \\frac{W}{C K_d P_1} \\sqrt{\\frac{T Z}{M}}, \\quad C = 520 \\sqrt{k \\left(\\frac{2}{k+1}\\right)^{\\frac{k+1}{k-1}}}$$",
+                "description": "Calculates required discharge orifice area $A$ for safety pressure relief valves under sonic/choked vapor flow conditions, where $W$ is required mass relief rate, $P_1$ is upstream relieving pressure, and $M$ is molecular weight.",
+                "examTip": "Found in Chemical: Process Safety. Overpressure allowance is typically $10\\%$ for non-fire relief and $21\\%$ for external fire exposure scenarios."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
+                "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
+                "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
+            },
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
+                "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
+                "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+            },
+            {
+                "title": "Kanban Production System Container Sizing Equation",
+                "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
+                "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
+                "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
+            },
+            {
+                "title": "Bill of Materials Explosion Tree and Component Offsetting",
+                "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
+                "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
+                "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
+            },
+            {
+                "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
+                "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
+                "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
+            },
+            {
+                "title": "Forecasting Error Metrics: MAD, MSE, and Tracking Signal",
+                "formula": "$$MAD = \\frac{\\sum |e_t|}{n}, \\quad MSE = \\frac{\\sum e_t^2}{n}, \\quad TS = \\frac{\\sum e_t}{MAD} = \\frac{RSFE}{MAD}$$",
+                "description": "Quantifies forecasting accuracy and bias: Mean Absolute Deviation ($MAD$) measures average magnitude of errors; Mean Squared Error ($MSE$) penalizes large outliers; Tracking Signal ($TS$, typically bounded within $\\pm 4$) detects persistent bias.",
+                "examTip": "Found in Industrial: Forecasting. For a normal error distribution, standard deviation of forecast error relates to MAD: $\\sigma \\approx 1.25 \\times MAD$."
+            },
+            {
+                "title": "Break-Even Analysis for Make-or-Buy Decision Models",
+                "formula": "$$TC_{\\text{make}} = FC_{\\text{make}} + VC_{\\text{make}} \\cdot Q, \\quad TC_{\\text{buy}} = VC_{\\text{buy}} \\cdot Q, \\quad Q_{BE} = \\frac{FC_{\\text{make}}}{VC_{\\text{buy}} - VC_{\\text{make}}}$$",
+                "description": "Determines production volume $Q_{BE}$ above which in-house manufacturing (high fixed cost $FC$, low variable cost $VC$) becomes financially superior to purchasing from outside vendors ($FC = 0$, higher unit price $VC_{\\text{buy}}$).",
+                "examTip": "Found in Engineering Economics: Cost Analysis. For production volumes $Q > Q_{BE}$, make in-house; for volumes $Q < Q_{BE}$, buy externally."
+            },
+            {
+                "title": "Benefit-Cost Ratio (B/C Ratio) for Public Projects",
+                "formula": "$$B/C = \\frac{B - D}{C_0 + O\\&M} = \\frac{PV(\\text{Benefits}) - PV(\\text{Disbenefits})}{PV(\\text{Initial Capital Cost}) + PV(\\text{O\\&M Costs})} \\ge 1.0$$",
+                "description": "Standard decision criterion for public sector civil works projects: project is economically justified if net benefits to the public divided by costs to government exceed 1.0; disbenefits reduce user benefits in the numerator.",
+                "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$) must be applied in order of increasing cost."
+            },
+            {
+                "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
+                "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
+                "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
+            },
+            {
+                "title": "Payback Period: Simple vs. Discounted Payback Methods",
+                "formula": "$$\\sum_{t=1}^{\\text{Payback}} CF_t \\ge C_0 \\quad (\\text{Simple}), \\quad \\sum_{t=1}^{\\text{DPB}} \\frac{CF_t}{(1 + i)^t} \\ge C_0 \\quad (\\text{Discounted})$$",
+                "description": "Number of years required for cumulative net cash inflows to recover initial capital investment $C_0$; simple payback ignores the time value of money ($i=0$), whereas discounted payback accounts for cost of capital.",
+                "examTip": "Found in Engineering Economics. Major shortcoming of payback period is that it completely ignores cash flows occurring after the payback horizon."
+            },
+            {
+                "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
+                "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
+                "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
+                "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
+            },
+            {
+                "title": "Chi-Square Goodness-of-Fit Test for Discrete Distributions",
+                "formula": "$$\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}, \\quad \\nu = k - 1 - p$$",
+                "description": "Tests hypothesis that sample observations $O_i$ originate from a theoretical population distribution with expected frequencies $E_i$; degrees of freedom $\\nu$ subtracts 1 plus number of parameters $p$ estimated from sample data.",
+                "examTip": "Found in Probability & Statistics. Valid rule of thumb: expected frequency $E_i$ in every bin must be at least 5; pool adjacent bins if necessary."
+            },
+            {
+                "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
+                "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
+                "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
+            },
+            {
+                "title": "Student's t-Distribution Two-Sample Hypothesis Test",
+                "formula": "$$t = \\frac{(\\bar{X}_1 - \\bar{X}_2) - \\Delta_0}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}, \\quad s_p^2 = \\frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2}$$",
+                "description": "Tests difference between two independent population means when population variances are unknown but assumed equal, pooling sample variances $s_1^2$ and $s_2^2$ with degrees of freedom $\\nu = n_1 + n_2 - 2$.",
+                "examTip": "Found in Probability & Statistics: Hypothesis Testing. For large samples ($n_1 + n_2 > 30$), the $t$-distribution converges to standard normal $z$."
+            },
+            {
+                "title": "Solids Retention Time Activated Sludge Formulation",
+                "formula": "$$\\theta_c = \\frac{V \\cdot X}{Q_w X_w + Q_e X_e} \\approx \\frac{V \\cdot X}{Q_w X_w} \\quad (\\text{days})$$",
+                "description": "Fundamental operational parameter governing biological wastewater treatment: sludge age $\\theta_c$ dictates whether nitrifying bacteria can survive (typically requires $\\theta_c \\ge 8-10\\text{ days}$ at $20^\\circ\\text{C}$).",
+                "examTip": "Found in Environmental: Wastewater. $V$ is aeration basin volume, $X$ is MLSS concentration, and $Q_w X_w$ is waste activated sludge mass rate."
+            },
+            {
+                "title": "Chronic Daily Intake Chemical Exposure Formulation",
+                "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
+                "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+            },
+            {
+                "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
+                "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
+                "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
+                "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            },
+            {
+                "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
+                "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
+                "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
+                "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
+            },
+            {
+                "title": "Primary Sedimentation Basin Surface Overflow Rate and SS Removal",
+                "formula": "$$v_0 = \\frac{Q}{A_s} \\le 800 - 1200\\text{ gpd/ft}^2 \\ (32 - 48\\text{ m}^3/(\\text{m}^2\\cdot\\text{d})), \\quad \\text{SS Removal} = 50 - 65\\%$$",
+                "description": "Primary wastewater clarifiers settle raw settleable particulate organic solids: design surface overflow rates govern solid separation and typically achieve $50\\%-65\\%$ suspended solids and $25\\%-35\\%$ BOD removal.",
+                "examTip": "Found in Environmental: Wastewater Treatment. Overflow rates must not be exceeded during peak hourly flows to prevent sludge blanket scouring."
+            },
+            {
+                "title": "Stokes' Law Particle Terminal Settling Velocity in Water",
+                "formula": "$$v_t = \\frac{g (\\rho_p - \\rho) d_p^2}{18 \\mu} \\quad (\\text{for } Re_p < 1.0)$$",
+                "description": "Calculates terminal gravitational settling velocity of discrete spherical particles in laminar flow; settling speed is proportional to square of particle diameter ($d_p^2$) and density difference $(\\rho_p - \\rho)$.",
+                "examTip": "Found in Environmental: Water Treatment & Air Pollution. Doubling particle diameter quadruples settling speed ($2^2 = 4$), illustrating why coagulation/flocculation is crucial for rapid clarification."
+            },
+            {
+                "title": "Type I Discrete Settling vs. Type II Flocculent Settling in Clarifiers",
+                "formula": "$$\\text{Type I: Constant } v_t \\text{ (grit chambers)}; \\quad \\text{Type II: Accelerating } v_t \\text{ due to particle coalescing}$$",
+                "description": "Classifies sedimentation mechanisms: Type I particles settle at constant velocity with unchanged size/shape; Type II particles aggregate during settling, increasing mass and terminal velocity with depth.",
+                "examTip": "Found in Environmental: Clarifier Design. Type II removal efficiencies cannot be calculated purely from Stokes' law; they require settling column test analyses."
+            },
+            {
+                "title": "Type III Zone Settling and Type IV Compression Settling",
+                "formula": "$$\\text{Type III: Hindered interface settling}; \\quad \\text{Type IV: Consolidation under weight of overlying sludge}$$",
+                "description": "Characterizes high-solids sedimentation in secondary clarifiers: Type III forms a distinct solid-liquid interface where interparticle forces hinder fluid displacement; Type IV occurs at bottom where sludge physically compresses.",
+                "examTip": "Found in Wastewater: Secondary Clarifiers. Secondary clarifiers must be sized for both clarification (Type II/III at surface) and sludge thickening (Type IV at bottom)."
+            },
+            {
+                "title": "Nitrification Stoichiometric Oxygen and Alkalinity Consumption",
+                "formula": "$$\\text{NH}_4^+ + 2\\text{O}_2 \\to \\text{NO}_3^- + 2\\text{H}^+ + \\text{H}_2\\text{O} \\implies 4.57\\text{ mg }\\text{O}_2\\text{ and } 7.14\\text{ mg CaCO}_3 \\text{ consumed per mg }\\text{NH}_4\\text{-N}$$",
+                "description": "Two-step autotrophic biological oxidation: Nitrosomonas oxidizes ammonia to nitrite ($\\text{NO}_2^-$); Nitrobacter oxidizes nitrite to nitrate ($\\text{NO}_3^-$); consumes massive amounts of dissolved oxygen and destroys wastewater alkalinity.",
+                "examTip": "Found in Environmental: Biological Nitrogen Removal. Nitrification requires $4.57\\text{ mg }\\text{O}_2$ and destroys $7.14\\text{ mg}$ of alkalinity as $\\text{CaCO}_3$ per $\\text{mg }\\text{NH}_4\\text{-N}$ oxidized; if alkalinity drops too low, pH plunges and inhibits nitrifiers."
+            },
+            {
+                "title": "Denitrification Process Carbon Source Requirement",
+                "formula": "$$6\\text{NO}_3^- + 5\\text{CH}_3\\text{OH} \\to 3\\text{N}_2\\uparrow + 5\\text{CO}_2 + 7\\text{H}_2\\text{O} + 6\\text{OH}^-$$",
+                "description": "Anoxic biological reduction of nitrate to harmless nitrogen gas by heterotrophic bacteria; requires an external organic carbon source (e.g., methanol) and restores alkalinity ($3.57\\text{ mg CaCO}_3$ produced per $\\text{mg }\\text{NO}_3\\text{-N}$ reduced).",
+                "examTip": "Found in Environmental: Biological Nutrient Removal. Denitrification recovers approximately half ($50\\%$) of the alkalinity consumed during previous upstream nitrification."
+            },
+            {
+                "title": "Onsite Wastewater Treatment: Septic Tank and Soil Drainfield Sizing",
+                "formula": "$$A_{\\text{trench}} = \\frac{Q}{AR}, \\quad t_d = \\frac{V_{\\text{tank}}}{Q} \\ge 24-48\\text{ hours}$$",
+                "description": "Sizes residential septic tank systems: tank provides anaerobic settling and scum flotation with minimum 24-hour detention; soil absorption drainfield area $A$ is sized based on soil hydraulic application rate ($AR$ in $\\text{gpd/ft}^2$) determined from percolation tests.",
+                "examTip": "Found in Environmental: Onsite Treatment. Slower percolation rates (higher min/inch) indicate tighter clay soils requiring lower application rates and larger drainfield footprints."
+            },
+            {
+                "title": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry",
+                "formula": "$$\\text{Resin Capacity: eq/L or grains/ft}^3, \\quad 2\\text{R-Na} + \\text{Ca}^{2+} \\to \\text{R}_2\\text{-Ca} + 2\\text{Na}^+$$",
+                "description": "Replaces divalent calcium and magnesium ions with monovalent sodium ions using strong acid cation resin; exhausted resin beds are regenerated by reversing equilibrium with concentrated ($10\\%-15\\%$) $\\text{NaCl}$ brine solution.",
+                "examTip": "Found in Environmental: Water Softening. Unit conversion: $1\\text{ grain of hardness per gallon (gpg)} = 17.1\\text{ mg/L as }\\text{CaCO}_3$."
+            },
+            {
+                "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
+                "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
+                "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
+                "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
+            },
+            {
+                "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
+                "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
+                "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "Centroid and Moment of Inertia for Composite Areas",
+                "formula": "$$\\bar{y} = \\frac{\\sum (A_i \\bar{y}_i)}{\\sum A_i}, \\quad I_x = \\sum (I_{xi} + A_i d_{yi}^2)$$",
+                "description": "Calculates centroid $\\bar{y}$ and area moment of inertia $I_x$ of complex structural shapes by dividing them into standard geometric components (rectangles, triangles, circles) using the Parallel Axis Theorem.",
+                "examTip": "Found in Statics / Mechanics of Materials. Distance $d_{yi} = |\\bar{y}_i - \\bar{y}|$ is the distance between the individual component's centroid and the composite neutral axis."
+            },
+            {
+                "title": "Kinematics of Particles: Normal and Tangential Acceleration",
+                "formula": "$$\\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right) \\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right) \\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                "description": "Curvilinear motion coordinates: tangential acceleration $a_t$ reflects change in speed ($dv/dt$), while normal acceleration $a_n$ acts toward the center of curvature $\\rho$ reflecting change in direction.",
+                "examTip": "Found in Dynamics. For uniform circular motion, speed is constant ($a_t = 0$), but acceleration is non-zero ($a = a_n = v^2 / r$) pointing radially inward."
+            },
+            {
+                "title": "Particle Kinetics: Direct and Oblique Central Impact Equations",
+                "formula": "$$e = \\frac{(v_B')_n - (v_A')_n}{(v_A)_n - (v_B)_n}, \\quad m_A (v_A)_n + m_B (v_B)_n = m_A (v_A')_n + m_B (v_B')_n$$",
+                "description": "Governs collisions between particles: linear momentum is conserved along the normal line of impact; coefficient of restitution $e = 1.0$ for perfectly elastic collisions and $e = 0$ for perfectly plastic (sticking) impacts.",
+                "examTip": "Found in Dynamics: Impulse and Momentum. In oblique impacts, tangential velocities remain completely unchanged ($(v'_A)_t = (v_A)_t$) assuming frictionless surfaces."
+            },
+            {
+                "title": "Hydrostatic Force on Submerged Curved Surfaces",
+                "formula": "$$F_H = \\gamma \\bar{h} A_{\\text{proj}}, \\quad F_V = \\gamma V_{\\text{fluid above surface}}, \\quad F_R = \\sqrt{F_H^2 + F_V^2}$$",
+                "description": "Calculates resultant water pressure force $F_R$ on curved gates: horizontal component $F_H$ equals force on vertical projection of surface; vertical component $F_V$ equals weight of fluid volume directly above the curved surface.",
+                "examTip": "Found in Fluid Mechanics. The line of action of resultant hydrostatic force $F_R$ on any circular arc surface must pass directly through the center of curvature."
+            },
+            {
+                "title": "Buoyancy and Metacentric Height for Floating Body Stability",
+                "formula": "$$F_B = \\gamma_{\\text{fluid}} V_{\\text{displaced}}, \\quad \\overline{GM} = \\overline{BM} + \\overline{OB} - \\overline{OG}, \\quad \\overline{BM} = \\frac{I_{oo}}{V_{\\text{sub}}}$$",
+                "description": "Determines rotational stability of ships and floating pontoons: metacentric height $\\overline{GM} > 0$ produces a righting restoring couple (stable equilibrium); $\\overline{GM} < 0$ causes capsizing (unstable).",
+                "examTip": "Found in Fluid Mechanics. $I_{oo}$ is second moment of area of the waterline plane about its tilting axis, and $V_{\\text{sub}}$ is submerged volume."
+            },
+            {
+                "title": "Capillary Rise Height in Small Cylindrical Tubes",
+                "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\gamma r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                "description": "Calculates capillary height $h$ in narrow tubes of radius $r$ due to liquid surface tension $\\sigma$ and contact wetting angle $\\theta$; for clean glass and pure water, $\\theta = 0^\\circ$ ($cos\\theta = 1.0$).",
+                "examTip": "Found in Fluid Mechanics. For non-wetting liquids like mercury (contact angle $\\theta > 90^\\circ$), capillary depression occurs ($h < 0$)."
+            },
+            {
+                "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
+                "formula": "$$\\sigma_h = \\frac{P r}{t} \\quad (\\text{Hoop / Tangential}), \\quad \\sigma_L = \\frac{P r}{2 t} \\quad (\\text{Longitudinal / Axial})$$",
+                "description": "Governs stress in thin-walled vessels ($r / t \\ge 10$) under internal gauge pressure $P$: circumferential hoop stress $\\sigma_h$ is exactly double longitudinal stress $\\sigma_L$, explaining why pipes split along their seams.",
+                "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
+            },
+            {
+                "title": "Pure Torsion of Circular Shafts: Polar Moment and Angle of Twist",
+                "formula": "$$\\tau = \\frac{T \\rho}{J}, \\quad \\tau_{\\max} = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{J G}, \\quad J = \\frac{\\pi d^4}{32} \\quad (\\text{Solid})$$",
+                "description": "Torsional shearing stress $\\tau$ and elastic twist angle $\\phi$ in circular shafts of polar moment of inertia $J$ and shear modulus $G$ subjected to applied torque $T$.",
+                "examTip": "Found in Mechanics of Materials. Maximum shear occurs at outer surface ($\\rho = r$); for hollow shafts with outer diameter $d_o$ and inner diameter $d_i$, $J = \\frac{\\pi}{32}(d_o^4 - d_i^4)$."
+            },
+            {
+                "title": "Beam Flexure Formula and Maximum Bending Stress",
+                "formula": "$$\\sigma = -\\frac{M y}{I}, \\quad \\sigma_{\\max} = \\frac{M c}{I} = \\frac{M}{S}$$",
+                "description": "Predicts longitudinal normal bending stress $\\sigma$ in elastic beams at distance $y$ from the neutral axis, where $M$ is internal bending moment, $I$ is area moment of inertia, and $S = I / c$ is elastic section modulus.",
+                "examTip": "Found in Mechanics of Materials. Stress is zero at the neutral axis and reaches maximum tension and compression at extreme outer fibers ($y = \\pm c$)."
+            },
+            {
+                "title": "Transverse Shear Stress in Beams and First Moment of Area $Q$",
+                "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\int_{y_1}^c y dA = A' \\bar{y}'$$",
+                "description": "Calculates horizontal and vertical shearing stress $\\tau$ at any depth in a beam with shear force $V$, where $Q$ is the first moment of area of the portion of cross section above the cut taken about the neutral axis.",
+                "examTip": "Found in Mechanics of Materials. For rectangular beams, maximum shear stress occurs at the neutral axis: $\\tau_{\\max} = 1.5 (V / A)$; for circular beams, $\\tau_{\\max} = \\frac{4}{3} (V / A)$."
+            },
+            {
+                "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
+                "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
+                "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+            }
         ],
         "Electrical and Computer": [
                 {
@@ -5603,7 +6941,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -5618,19 +6959,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
@@ -5645,7 +6995,10 @@
                           "title": "Equivalent Capacitance and Inductance Combinations",
                           "formula": "$$C_{\\text{parallel}} = \\sum C_i, \\quad \\frac{1}{C_{\\text{series}}} = \\sum \\frac{1}{C_i}; \\quad L_{\\text{series}} = \\sum L_i, \\quad \\frac{1}{L_{\\text{parallel}}} = \\sum \\frac{1}{L_i}$$",
                           "description": "Capacitors combine in opposite fashion to resistors: parallel capacitances add directly, whereas series capacitances combine via reciprocal sums. Inductors combine identical to resistors.",
-                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely."
+                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely.",
+                    "videoUrl": "assets/videos/Equivalent_Capacitance_and_Inductance_Combinations.mp4",
+                    "videoTitle": "Equivalent Capacitance and Inductance Combinations Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
@@ -5660,7 +7013,10 @@
                           "title": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
                           "formula": "$$\\frac{V_1}{V_2} = \\frac{N_1}{N_2} = a, \\quad \\frac{I_1}{I_2} = \\frac{N_2}{N_1} = \\frac{1}{a}, \\quad Z_{\\text{in}} = a^2 Z_L = \\left(\\frac{N_1}{N_2}\\right)^2 Z_L$$",
                           "description": "Describes power-conserving electromagnetic coupling between primary and secondary windings in an ideal transformer with turns ratio $a = N_1/N_2$.",
-                          "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$)."
+                          "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$).",
+                    "videoUrl": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+                    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "DC Motor Back-EMF and Output Torque Equations",
@@ -5701,6 +7057,464 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Three-Phase Induction Motor Slip and Synchronous Speed",
+                "formula": "$$n_s = \\frac{120 f}{p}, \\quad s = \\frac{n_s - n}{n_s} = \\frac{\\omega_s - \\omega_m}{\\omega_s}$$",
+                "description": "Calculates synchronous speed $n_s$ (rpm) of the stator rotating magnetic field for supply frequency $f$ and pole count $p$, and fractional slip $s$ of the rotor operating at mechanical speed $n$.",
+                "examTip": "Found in Power: Induction Machines. Under normal full-load motoring conditions, slip $s$ is small (typically $0.02$ to $0.05$); at locked-rotor standstill, $s = 1.0$."
+            },
+            {
+                "title": "Synchronous Machine Rotor Speed and Frequency Relation",
+                "formula": "$$f = \\frac{p \\cdot n_s}{120}, \\quad \\delta = \\text{Power Angle}$$",
+                "description": "Governs synchronous generators and motors where rotor mechanical speed is locked to stator electrical frequency; real electric power transfer is given by $P = \\frac{E_f V_t}{X_s} \\sin\\delta$.",
+                "examTip": "Found in Power: Synchronous Machines. Maximum steady-state power transfer limit occurs when torque/power angle $\\delta = 90^\\circ$."
+            },
+            {
+                "title": "Skin Depth (Depth of Penetration) in Good Conductors",
+                "formula": "$$\\delta = \\frac{1}{\\sqrt{\\pi f \\mu \\sigma}} = \\sqrt{\\frac{2}{\\omega \\mu \\sigma}}$$",
+                "description": "The depth at which high-frequency electromagnetic field amplitudes and current densities drop to $1/e$ (approx. $36.8\\%$) of their surface values in a conductor of permeability $\\mu$ and conductivity $\\sigma$.",
+                "examTip": "Found in Electromagnetics. Higher frequency $f$ produces thinner skin depth $\\delta$, which concentrates AC current near the outer surface and increases effective AC resistance."
+            },
+            {
+                "title": "Routh-Hurwitz Stability Criterion and Routh Array",
+                "formula": "$$a_n s^n + a_{n-1} s^{n-1} + \\dots + a_0 = 0, \\quad b_1 = \\frac{a_{n-1} a_{n-2} - a_n a_{n-3}}{a_{n-1}}$$",
+                "description": "Determines dynamic closed-loop linear system stability without factoring characteristic roots; a system is strictly stable if and only if all elements in the first column of the Routh array are strictly positive.",
+                "examTip": "Found in Control Systems. The number of sign changes in the first column of the Routh array equals the exact number of right-half-plane (unstable) poles."
+            },
+            {
+                "title": "Root Locus Construction Rules: Real Axis Branches and Asymptotes",
+                "formula": "$$\\sigma_a = \\frac{\\sum p_i - \\sum z_i}{n - m}, \\quad \\phi_a = \\frac{(2k + 1)180^\\circ}{n - m}$$",
+                "description": "Plots trajectory of closed-loop poles as loop gain $K$ varies: a point on the real axis lies on the locus if the total number of real open-loop poles and zeros to its right is odd; branches radiate toward asymptotes centered at $\\sigma_a$.",
+                "examTip": "Found in Control Systems: Root Locus. $n$ is number of poles, $m$ is number of zeros; root locus branches always begin at open-loop poles ($K=0$) and end at open-loop zeros ($K\\to\\infty$)."
+            },
+            {
+                "title": "PID Controller Time-Domain Equation and Laplace Transfer Function",
+                "formula": "$$u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) d\\tau + K_d \\frac{de(t)}{dt}, \\quad G_c(s) = K_p + \\frac{K_i}{s} + K_d s$$",
+                "description": "Standard industrial three-term feedback controller: proportional action ($K_p$) accelerates response, integral action ($K_i$) eliminates steady-state tracking error, and derivative action ($K_d$) adds damping to reduce overshoot.",
+                "examTip": "Found in Control Systems. Adding an integrator ($1/s$) increases system type by 1, eliminating steady-state error to step inputs, but tends to destabilize phase margin."
+            },
+            {
+                "title": "Flip-Flop Characteristic Equations (SR, D, JK, T Flip-Flops)",
+                "formula": "$$Q^+_D = D, \\quad Q^+_{JK} = J \\bar{Q} + \\bar{K} Q, \\quad Q^+_T = T \\oplus Q = T \\bar{Q} + \\bar{T} Q$$",
+                "description": "Next-state logic equations for clocked bistable storage elements: D flip-flop passes data; JK toggles when $J=K=1$; T flip-flop inverts current state whenever toggle input $T=1$.",
+                "examTip": "Found in Digital Systems: Sequential Logic. In a JK flip-flop, $J=1, K=0$ sets $Q^+=1$; $J=0, K=1$ resets $Q^+=0$; $J=K=0$ holds state; $J=K=1$ toggles state."
+            },
+            {
+                "title": "Multiplexers and Demultiplexers Logic Implementations",
+                "formula": "$$Y = \\sum_{i=0}^{2^n - 1} D_i \\cdot m_i(S_{n-1}, \\dots, S_0)$$",
+                "description": "A $2^n$-to-1 multiplexer (MUX) routes one of $2^n$ data inputs to a single output line based on $n$ select address lines; demultiplexers perform the inverse operation.",
+                "examTip": "Found in Digital Systems. An $n$-variable Boolean function can be implemented directly using a $2^{n-1}$-to-1 MUX by connecting $n-1$ variables to select inputs."
+            },
+            {
+                "title": "Instruction Pipelining Speedup and Hazard Classifications",
+                "formula": "$$\\text{Speedup} = \\frac{k \\cdot N}{k + N - 1} \\to k \\quad (\\text{as } N \\to \\infty)$$",
+                "description": "Pipelining divides CPU instruction execution into $k$ stages (Fetch, Decode, Execute, Memory, Writeback); throughput increases up to $k$-fold, limited by structural, data (RAW, WAR, WAW), and branch control hazards.",
+                "examTip": "Found in Computer Systems: Architecture. Data hazard stalls can be mitigated via operand forwarding/bypassing, while control hazards are addressed by branch prediction."
+            },
+            {
+                "title": "Algorithm Time Complexity: Big-O Asymptotic Upper Bound",
+                "formula": "$$f(n) = O(g(n)) \\iff \\exists c > 0, n_0 > 0 \\text{ such that } |f(n)| \\le c |g(n)| \\ \\forall n \\ge n_0$$",
+                "description": "Formal mathematical definition of worst-case algorithmic time/space scaling: standard hierarchy ranges from $O(1) < O(\\log n) < O(n) < O(n \\log n) < O(n^2) < O(2^n)$.",
+                "examTip": "Found in Software Engineering / Computer Systems. Binary search is $O(\\log n)$, merge sort and quicksort average are $O(n \\log n)$, and nested loops are typically $O(n^2)$."
+            },
+            {
+                "title": "Two's Complement Integer Representation and Arithmetic Overflow",
+                "formula": "$$N = -b_{n-1} 2^{n-1} + \\sum_{i=0}^{n-2} b_i 2^i, \\quad \\text{Range: } [-2^{n-1}, 2^{n-1} - 1]$$",
+                "description": "Standard binary representation for signed integers: negative numbers are formed by inverting all bits and adding 1; addition overflow occurs if and only if two operands with matching sign bits produce a sum with the opposite sign bit.",
+                "examTip": "Found in Computer Systems: Number Systems. An 8-bit signed integer spans $-128$ to $+127$; overflow occurs when the carry into the sign bit differs from the carry out of the sign bit ($C_{in} \\oplus C_{out} = 1$)."
+            },
+            {
+                "title": "Discrete Fourier Transform (DFT) vs. Fast Fourier Transform (FFT)",
+                "formula": "$$X[k] = \\sum_{n=0}^{N-1} x[n] W_N^{k n}, \\quad \\text{DFT: } O(N^2), \\quad \\text{FFT: } O(N \\log_2 N)$$",
+                "description": "The discrete Fourier transform converts a finite sequence of equally-spaced digital samples into discrete frequency components; the Cooley-Tukey radix-2 FFT algorithm dramatically accelerates computation.",
+                "examTip": "Found in Signal Processing. For $N = 1024$ samples, FFT requires roughly $1024 \\times 10 \\approx 10^4$ operations compared to $(1024)^2 \\approx 10^6$ for direct DFT."
+            },
+            {
+                "title": "Operational Amplifier Summing and Difference Amplifiers",
+                "formula": "$$v_o^{\\text{sum}} = -R_f \\sum \\frac{v_i}{R_i}, \\quad v_o^{\\text{diff}} = \\frac{R_2}{R_1}(v_2 - v_1) \\quad (\\text{when } \\frac{R_4}{R_3} = \\frac{R_2}{R_1})$$",
+                "description": "Standard linear op-amp analog building blocks: inverting summing amplifier produces a weighted sum of inputs; balanced difference amplifier rejects common-mode signals while amplifying the differential voltage $(v_2 - v_1)$.",
+                "examTip": "Found in Electronics: Operational Amplifiers. In ideal op-amps, apply the golden rules: differential input voltage $v^+ - v^- = 0$ (virtual short) and input currents $i^+ = i^- = 0$."
+            },
+            {
+                "title": "Instrumentation Amplifier Three-Op-Amp Architecture and CMRR",
+                "formula": "$$A_d = \\left(1 + \\frac{2 R_1}{R_G}\\right) \\left(\\frac{R_3}{R_2}\\right), \\quad v_o = A_d (v_2 - v_1)$$",
+                "description": "High-precision instrumentation circuit providing exceptionally high differential gain, extremely high input impedance on both inputs, and very high common-mode rejection ratio (CMRR).",
+                "examTip": "Found in Electronics / Instrumentation. A single external gain resistor $R_G$ sets the overall amplifier gain without upsetting internal resistor bridge matching."
+            },
+            {
+                "title": "BJT Small-Signal Hybrid-Pi Model and Transconductance",
+                "formula": "$$g_m = \\frac{I_C}{V_T}, \\quad r_\\pi = \\frac{\\beta}{g_m} = \\frac{\\beta V_T}{I_C}, \\quad r_o = \\frac{V_A}{I_C}$$",
+                "description": "Linearized small-signal AC model for bipolar junction transistors in forward-active mode: thermal voltage $V_T \\approx 26\\text{ mV}$ at room temperature, with collector transconductance $g_m$ and input base resistance $r_\\pi$.",
+                "examTip": "Found in Electronics: BJTs. Small-signal voltage gain of a common-emitter amplifier with collector resistor $R_C$ is approximately $A_v = -g_m (R_C \\parallel r_o) \\approx -g_m R_C$."
+            },
+            {
+                "title": "MOSFET Small-Signal Model and Transconductance ($g_m$)",
+                "formula": "$$g_m = \\frac{\\partial I_D}{\\partial V_{GS}} = 2 k_n (V_{GS} - V_t) = \\sqrt{2 k_n I_D} = \\frac{2 I_D}{V_{GS} - V_t}$$",
+                "description": "Quantifies small-signal transconductance $g_m$ of an enhancement-mode MOSFET operating in the saturation region; input gate resistance is infinite at low frequencies.",
+                "examTip": "Found in Electronics: MOSFETs. Voltage gain of a common-source amplifier is $A_v = -g_m (R_D \\parallel r_o)$, where channel length modulation output resistance is $r_o = 1 / (\\lambda I_D)$."
+            },
+            {
+                "title": "Full-Wave Bridge Rectifier with Filter Capacitor Ripple Voltage",
+                "formula": "$$V_r = \\frac{I_{dc}}{2 f C} = \\frac{V_{peak}}{2 f R_L C}, \\quad V_{dc} \\approx V_{peak} - \\frac{V_r}{2}$$",
+                "description": "Calculates peak-to-peak AC ripple voltage $V_r$ across a reservoir smoothing capacitor $C$ discharging into load resistance $R_L$ from a full-wave rectifier at supply frequency $f$.",
+                "examTip": "Found in Electronics: Power Supplies. In full-wave rectification, the discharge frequency is $2f$ ($120\\text{ Hz}$ for $60\\text{ Hz}$ line AC), halving ripple compared to half-wave rectification."
+            },
+            {
+                "title": "Quarter-Wave Transformer Impedance Matching",
+                "formula": "$$Z_0 = \\sqrt{Z_{in} \\cdot Z_L}, \\quad l = \\frac{\\lambda}{4}$$",
+                "description": "Matches a real transmission line characteristic impedance $Z_{in}$ to a real load impedance $Z_L$ without reflections using a lossless quarter-wavelength section of impedance $Z_0$.",
+                "examTip": "Found in Electromagnetics: Transmission Lines. Only works at frequencies where line length is exactly $(2n+1)\\lambda/4$; for complex load $Z_L$, load must first be transformed to a real value."
+            },
+            {
+                "title": "Smith Chart Normalized Impedance and Admittance Coordinates",
+                "formula": "$$z = \\frac{Z}{Z_0} = r + j x, \\quad \\Gamma = \\frac{z - 1}{z + 1} = |\\Gamma| e^{j\\theta}$$",
+                "description": "Polar reflection coefficient $\\Gamma$ nomogram mapping circles of constant normalized resistance $r$ and arcs of constant reactance $x$; moving toward the generator corresponds to rotating clockwise around the chart.",
+                "examTip": "Found in Electromagnetics: Transmission Lines. One complete rotation around the perimeter of the Smith Chart corresponds to exactly half a wavelength ($0.50\\lambda$)."
+            },
+            {
+                "title": "Intrinsic Wave Impedance of Plane Electromagnetic Waves",
+                "formula": "$$\\eta = \\sqrt{\\frac{\\mu}{\\epsilon}} = \\frac{|\\mathbf{E}|}{|\\mathbf{H}|}, \\quad \\eta_0 = \\sqrt{\\frac{\\mu_0}{\\epsilon_0}} \\approx 120\\pi \\approx 377\\ \\Omega \\quad (\\text{Free Space})$$",
+                "description": "The ratio of the transverse electric field magnitude $E$ to magnetic field magnitude $H$ for a uniform TEM plane wave propagating through a lossless dielectric medium.",
+                "examTip": "Found in Electromagnetics. In a non-magnetic dielectric ($\\mu_r = 1$), intrinsic impedance is $\\eta = \\eta_0 / \\sqrt{\\epsilon_r} = 377 / \\sqrt{\\epsilon_r}\\ \\Omega$."
+            },
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "Attenuation Constant and Phase Constant for Lossy Dielectrics",
+                "formula": "$$\\gamma = \\alpha + j\\beta = \\sqrt{j\\omega\\mu(\\sigma + j\\omega\\epsilon)}$$",
+                "description": "Complex propagation constant $\\gamma$: attenuation constant $\\alpha$ (Np/m) governs exponential wave decay $e^{-\\alpha z}$, while phase constant $\\beta$ (rad/m) dictates phase velocity $v_p = \\omega / \\beta$ and wavelength $\\lambda = 2\\pi / \\beta$.",
+                "examTip": "Found in Electromagnetics. In a lossless medium ($\\sigma = 0$), attenuation $\\alpha = 0$ and $\\beta = \\omega \\sqrt{\\mu \\epsilon}$."
+            },
+            {
+                "title": "Three-Phase Power Measurement: Two-Wattmeter Method",
+                "formula": "$$P_{3\\phi} = W_1 + W_2, \\quad Q_{3\\phi} = \\sqrt{3}(W_1 - W_2), \\quad \\tan\\theta = \\sqrt{3} \\left(\\frac{W_1 - W_2}{W_1 + W_2}\\right)$$",
+                "description": "Measures total real power and total reactive power in any balanced or unbalanced three-wire three-phase system using two single-phase wattmeter readings $W_1$ and $W_2$.",
+                "examTip": "Found in Power: Three-Phase Systems. If power factor is less than $0.5$ lagging, one wattmeter will register a negative reading ($W_2 < 0$)."
+            },
+            {
+                "title": "Per-Unit System Base Conversion for Power Systems",
+                "formula": "$$Z_{pu}^{\\text{new}} = Z_{pu}^{\\text{old}} \\left(\\frac{V_{base}^{\\text{old}}}{V_{base}^{\\text{new}}}\\right)^2 \\left(\\frac{S_{base}^{\\text{new}}}{S_{base}^{\\text{old}}}\\right)$$",
+                "description": "Converts per-unit impedances from manufacturer equipment nameplate ratings to common system-wide power ($S_{base}$) and voltage ($V_{base}$) bases for power flow and short-circuit fault studies.",
+                "examTip": "Found in Power Systems. Note that voltage ratio is squared, while power ratio is first order."
+            },
+            {
+                "title": "DC Shunt Motor Torque-Speed Characteristic and Speed Regulation",
+                "formula": "$$\\omega_m = \\frac{V_t}{K_a \\Phi} - \\frac{R_a}{(K_a \\Phi)^2} T_e, \\quad \\%SR = \\frac{n_{nl} - n_{fl}}{n_{fl}} \\times 100\\%$$",
+                "description": "Governs DC shunt motor operation: mechanical speed $\\omega_m$ drops linearly with induced electromagnetic load torque $T_e$, with slope determined by armature resistance $R_a$.",
+                "examTip": "Found in Power: DC Machines. Weakening field flux $\\Phi$ (reducing field current) increases motor speed, but also reduces torque per ampere of armature current."
+            },
+            {
+                "title": "Three-Phase Induction Motor Torque-Slip Curve and Breakdown Torque",
+                "formula": "$$T_e = \\frac{3 V_{TH}^2 (R_2'/s)}{\\omega_s \\left[(R_{TH} + R_2'/s)^2 + (X_{TH} + X_2')^2\\right]}, \\quad s_{\\max} \\approx \\frac{R_2'}{X_{TH} + X_2'}$$",
+                "description": "Models induction motor electromechanical torque: breakdown (maximum pullout) torque magnitude is independent of rotor resistance $R_2'$, but the slip $s_{\\max}$ at which maximum torque occurs is directly proportional to $R_2'$.",
+                "examTip": "Found in Power: Induction Motors. Adding external resistance to a wound rotor shifts maximum torque toward starting ($s=1.0$), maximizing starting torque without altering peak capacity."
+            },
+            {
+                "title": "Continuous-Time Convolution Integral for LTI Systems",
+                "formula": "$$y(t) = x(t) * h(t) = \\int_{-\\infty}^\\infty x(\\tau) h(t - \\tau) d\\tau$$",
+                "description": "Computes output response $y(t)$ of any linear time-invariant (LTI) continuous system by convolving arbitrary input signal $x(t)$ with the system impulse response $h(t)$.",
+                "examTip": "Found in Linear Systems. In the Laplace transform frequency domain, time-domain convolution transforms into simple algebraic multiplication: $Y(s) = X(s) H(s)$."
+            },
+            {
+                "title": "Bilinear Transform for Analog-to-Digital IIR Filter Mapping",
+                "formula": "$$s = \\frac{2}{T} \\left( \\frac{1 - z^{-1}}{1 + z^{-1}} \\right) = \\frac{2}{T} \\left( \\frac{z - 1}{z + 1} \\right)$$",
+                "description": "Maps the continuous-time left-half $s$-plane entirely inside the discrete-time unit circle in the $z$-plane, guaranteeing that a stable analog filter transforms into a strictly stable digital filter without aliasing.",
+                "examTip": "Found in Signal Processing. Pre-warping of critical frequencies is required before designing: $\\omega_a = \\frac{2}{T} \\tan(\\omega_d T / 2)$ to compensate for non-linear frequency compression."
+            },
+            {
+                "title": "Discrete-Time Unit Impulse and Unit Step System Responses",
+                "formula": "$$s[n] = \\sum_{k=-\\infty}^n h[k], \\quad h[n] = s[n] - s[n - 1]$$",
+                "description": "Relates unit impulse response $h[n]$ and unit step response $s[n]$ for discrete LTI systems: step response equals the running accumulation of impulse response values.",
+                "examTip": "Found in Signal Processing / Linear Systems. In the $z$-domain, $X(z) = 1$ for unit impulse $\\delta[n]$ and $X(z) = \\frac{1}{1 - z^{-1}} = \\frac{z}{z - 1}$ for unit step $u[n]$."
+            },
+            {
+                "title": "Butterworth Low-Pass Filter Frequency Response and Order Selection",
+                "formula": "$$|H(j\\omega)|^2 = \\frac{1}{1 + (\\omega / \\omega_c)^{2n}}, \\quad n \\ge \\frac{\\log_{10}[(10^{0.1 A_s} - 1) / (10^{0.1 A_p} - 1)]}{2 \\log_{10}(\\omega_s / \\omega_p)}$$",
+                "description": "Maximally flat passband response filter with no passband or stopband ripple; filter order $n$ determines the rate of high-frequency attenuation rolloff ($20n\\text{ dB/decade}$).",
+                "examTip": "Found in Electronics: Active Filters. At the cutoff frequency $\\omega = \\omega_c$, magnitude response is down by exactly $3\\text{ dB}$ ($|H| = 1/\\sqrt{2} \\approx 0.707$) regardless of order $n$."
+            },
+            {
+                "title": "Shannon Channel Capacity Theorem and Spectral Efficiency",
+                "formula": "$$C = B \\log_2(1 + \\text{SNR}) = B \\log_2\\left(1 + \\frac{S}{N_0 B}\\right) \\quad (\\text{bits/second})$$",
+                "description": "Calculates theoretical maximum error-free data transmission rate $C$ over an additive white Gaussian noise (AWGN) channel with bandwidth $B$ (Hz) and signal-to-noise ratio $\\text{SNR}$.",
+                "examTip": "Found in Communications: Information Theory. When SNR is given in decibels (dB), convert to linear power ratio before plugging into formula: $\\text{SNR}_{\\text{linear}} = 10^{(\\text{SNR}_{\\text{dB}}/10)}$."
+            },
+            {
+                "title": "OSI 7-Layer Reference Model vs. TCP/IP Architecture",
+                "formula": "$$\\text{Application} \\to \\text{Presentation} \\to \\text{Session} \\to \\text{Transport} \\to \\text{Network} \\to \\text{Data Link} \\to \\text{Physical}$$",
+                "description": "Standard networking hierarchy: Physical (bits/cabling), Data Link (MAC framing/switches), Network (IP packets/routers), Transport (TCP/UDP ports), Session/Presentation/Application.",
+                "examTip": "Found in Computer Networks. Remember the mnemonic: 'All People Seem To Need Data Processing' (Layers 7 down to 1)."
+            },
+            {
+                "title": "TCP vs. UDP Transport Layer Protocol Characteristics",
+                "formula": "$$\\text{TCP: Connection-Oriented, Reliable, Byte Stream; } \\quad \\text{UDP: Connectionless, Unreliable, Datagram}$$",
+                "description": "Core transport protocols: TCP utilizes 3-way handshakes (SYN, SYN-ACK, ACK), sequence numbers, acknowledgments, and flow control; UDP delivers minimal header overhead ($8\\text{ bytes}$) for real-time streaming and DNS.",
+                "examTip": "Found in Computer Networks. TCP guarantees delivery and in-order packet arrival via sliding window retransmission, while UDP provides best-effort datagram delivery."
+            },
+            {
+                "title": "Half-Adder and Full-Adder Logic Circuit Equations",
+                "formula": "$$S = A \\oplus B \\oplus C_{in}, \\quad C_{out} = A B + C_{in}(A \\oplus B) = A B + B C_{in} + A C_{in}$$",
+                "description": "Fundamental combinational building block for binary arithmetic: full adder sums two operand bits $A$ and $B$ plus carry-in $C_{in}$ to generate sum bit $S$ and carry-out bit $C_{out}$.",
+                "examTip": "Found in Digital Systems: Arithmetic Circuits. A half-adder only adds two single bits ($S = A \\oplus B, C = A B$) without accepting a carry-in."
+            },
+            {
+                "title": "Binary Ripple Carry Adder vs. Carry-Lookahead Adder",
+                "formula": "$$G_i = A_i B_i, \\quad P_i = A_i \\oplus B_i, \\quad C_{i+1} = G_i + P_i C_i$$",
+                "description": "Accelerates binary addition: ripple carry adders have $O(n)$ latency due to carry propagation delay across $n$ stages; carry-lookahead adders compute carries in parallel using generate ($G_i$) and propagate ($P_i$) terms with $O(\\log n)$ delay.",
+                "examTip": "Found in Computer Systems: Processor Design. High-speed ALU design relies on carry-lookahead trees to break the carry-propagation critical delay path."
+            },
+            {
+                "title": "Priority Encoders and Binary Decoders Logic Operations",
+                "formula": "$$n\\text{-to-}2^n \\text{ Decoder: Active output corresponds to binary address; } \\quad 2^n\\text{-to-}n \\text{ Priority Encoder}$$",
+                "description": "Decoders assert a single output line corresponding to an $n$-bit binary input code; priority encoders output the binary index of the highest-priority asserted active input line.",
+                "examTip": "Found in Digital Systems. Decoders are frequently used for memory chip select address decoding; priority encoders manage hardware interrupt arbitration."
+            },
+            {
+                "title": "Static CMOS Inverter Voltage Transfer Characteristic and Noise Margins",
+                "formula": "$$NM_H = V_{OH} - V_{IH}, \\quad NM_L = V_{IL} - V_{OL}$$",
+                "description": "Characterizes digital logic noise immunity: High Noise Margin ($NM_H$) and Low Noise Margin ($NM_L$) quantify maximum spurious noise voltage tolerated without causing logic state ambiguity.",
+                "examTip": "Found in Electronics: Digital ICs. Complementary PMOS pull-up and NMOS pull-down transistors in CMOS produce zero static power dissipation when not switching."
+            },
+            {
+                "title": "Cache Memory Mapping: Direct-Mapped vs. Set-Associative Architecture",
+                "formula": "$$\\text{Address Bits} = \\text{Tag} + \\text{Index} + \\text{Byte Offset}, \\quad \\text{Index Bits} = \\log_2(\\text{Number of Sets})$$",
+                "description": "Organizes processor cache lines: direct-mapped cache maps each memory block to exactly one cache line; an $N$-way set-associative cache allows each block to occupy any of $N$ lines within a set, reducing conflict misses.",
+                "examTip": "Found in Computer Systems: Memory Architecture. Fully associative cache eliminates conflict misses entirely, but requires parallel tag comparators for every cache line."
+            },
+            {
+                "title": "Virtual Memory: Page Tables, TLB Hit Rate, and Page Faults",
+                "formula": "$$EAT = t_{tlb} + (1 - h_{tlb}) \\cdot t_{mem} + m_{\\text{page}} \\cdot t_{\\text{disk}}$$",
+                "description": "Translates virtual addresses to physical frame addresses via Translation Lookaside Buffer (TLB) and page tables; Effective Access Time ($EAT$) accounts for TLB hits, page table walks, and page faults fetching from disk.",
+                "examTip": "Found in Computer Systems: Operating Systems. Page sizes are typically powers of 2 (e.g., $4\\text{ KB} = 2^{12}\\text{ bytes}$, giving a $12\\text{ bit}$ page offset)."
+            },
+            {
+                "title": "Fundamental Data Structures: Stacks, Queues, and Linked Lists",
+                "formula": "$$\\text{Stack: LIFO (Push/Pop)}, \\quad \\text{Queue: FIFO (Enqueue/Dequeue)}$$",
+                "description": "Core software abstractions: Stacks operate Last-In-First-Out (used for function calls and expression parsing); Queues operate First-In-First-Out (used for buffers and BFS); Linked Lists provide $O(1)$ node insertion/deletion once positioned.",
+                "examTip": "Found in Software Engineering: Data Structures. Array indexing is $O(1)$, while linked list search is $O(n)$ due to sequential node traversal."
+            },
+            {
+                "title": "Binary Search Tree Properties and Search Time",
+                "formula": "$$\\text{Invariant: } \\text{Left Subtree} < \\text{Node} < \\text{Right Subtree}, \\quad T_{\\text{avg}} = O(\\log n), \\quad T_{\\text{worst}} = O(n)$$",
+                "description": "Node-based binary tree data structure maintaining sorted ordering: average search, insert, and delete take $O(\\log n)$ time; unbalanced degraded trees degenerate to linear lists with $O(n)$ search time.",
+                "examTip": "Found in Software Engineering: Algorithms. Self-balancing trees (AVL trees, Red-Black trees) guarantee strictly $O(\\log n)$ worst-case operation bounds."
+            },
+            {
+                "title": "Comparison-Based Sorting: Quicksort, Mergesort, and Heapsort",
+                "formula": "$$\\text{Mergesort: } O(n \\log n) \\text{ guaranteed}, \\quad \\text{Quicksort: } O(n \\log n) \\text{ avg, } O(n^2) \\text{ worst}$$",
+                "description": "Standard sorting algorithms: Mergesort is a stable divide-and-conquer algorithm with $O(n)$ auxiliary memory; Quicksort sorts in-place with low constant factors; Heapsort guarantees $O(n \\log n)$ time in-place using a binary heap.",
+                "examTip": "Found in Software Engineering: Algorithms. No comparison-based sort can exceed the theoretical lower bound of $\\Omega(n \\log n)$ worst-case time."
+            },
+            {
+                "title": "Graph Traversal Algorithms: Breadth-First Search vs. Depth-First Search",
+                "formula": "$$T = O(V + E) \\quad (\\text{Adjacency List}), \\quad \\text{BFS uses Queue, DFS uses Stack/Recursion}$$",
+                "description": "Traverses graphs with $V$ vertices and $E$ edges: BFS finds shortest paths in unweighted graphs level-by-level; DFS explores deepest branches first, ideal for topological sorting and cycle detection.",
+                "examTip": "Found in Software Engineering / Computer Systems. Using an adjacency matrix instead of an adjacency list increases traversal time complexity to $O(V^2)$."
+            },
+            {
+                "title": "Amdahl's Law for Multiprocessor Parallel Speedup",
+                "formula": "$$S_{\\text{latency}}(s) = \\frac{1}{(1 - p) + \\frac{p}{s}}$$",
+                "description": "Calculates theoretical speedup $S$ of executing a task on $s$ parallel processing cores, where $p$ is the fraction of code that can be parallelized and $(1 - p)$ is the strictly serial portion.",
+                "examTip": "Found in Computer Systems: Parallel Computing. As core count $s \\to \\infty$, maximum possible speedup is bounded by $1 / (1 - p)$; if $5\\%$ is serial, maximum speedup is 20 regardless of core count."
+            },
+            {
+                "title": "Microprocessor Addressing Modes and Program Counter",
+                "formula": "$$\\text{Immediate: } \\#\\text{Value}, \\quad \\text{Direct: } [\\text{Address}], \\quad \\text{Indirect: } [[\\text{Reg}]], \\quad \\text{Indexed: } [\\text{Reg} + \\text{Offset}]$$",
+                "description": "Specifies how CPU machine instructions locate operands: immediate embeds constant data in instruction; direct accesses explicit memory address; indexed adds base address register to an offset for array traversing.",
+                "examTip": "Found in Computer Systems: Microprocessors. The Program Counter (PC) stores the memory address of the next instruction to fetch and execute."
+            },
+            {
+                "title": "Interrupt Handling Mechanism and Interrupt Service Routines",
+                "formula": "$$\\text{Hardware Event} \\to \\text{Save Context} \\to \\text{Vector Table Lookup} \\to \\text{Execute ISR} \\to \\text{Restore Context}$$",
+                "description": "Asynchronous CPU event handling: external hardware triggers an interrupt request (IRQ); processor saves registers/PC to stack, fetches handler address from vector table, executes ISR, and resumes program execution.",
+                "examTip": "Found in Computer Systems: Embedded Systems. Non-Maskable Interrupts (NMI) cannot be disabled by software and are reserved for catastrophic hardware faults or watchdog timers."
+            },
+            {
+                "title": "Transmission Line Propagation Velocity and Time Delay",
+                "formula": "$$v_p = \\frac{1}{\\sqrt{L C}} = \\frac{c}{\\sqrt{\\epsilon_r}}, \\quad t_d = \\frac{l}{v_p} = l \\sqrt{L C}$$",
+                "description": "Governs signal propagation on high-speed printed circuit traces and transmission cables: phase velocity $v_p$ depends on line inductance $L$ and capacitance $C$ per unit length.",
+                "examTip": "Found in Electromagnetics / Computer Engineering. In FR-4 PCB substrates ($\\epsilon_r \\approx 4.0$), propagation speed is $v_p \\approx c / \\sqrt{4} = c / 2 \\approx 6\\text{ in/ns}$ ($15\\text{ cm/ns}$)."
+            },
+            {
+                "title": "Linear Circuit Superposition with Multiple AC Frequencies",
+                "formula": "$$v(t) = v_1(t) + v_2(t) \\implies P_{\\text{avg}} = P_1 + P_2 \\quad (\\text{for } \\omega_1 \\neq \\omega_2)$$",
+                "description": "In linear AC circuits with sources at different frequencies, phasor analysis must be solved separately for each frequency in the time domain; average total power equals the sum of individual average powers.",
+                "examTip": "Found in Circuit Analysis. Phasors cannot be added across different frequencies; convert responses back to time-domain sinusoids before summing."
+            },
+            {
+                "title": "Miller Effect on Inverting Voltage Amplifier Input Capacitance",
+                "formula": "$$C_M = C_f (1 - A_v) = C_f (1 + |A_v|)$$",
+                "description": "Feedback capacitance $C_f$ connected between input and output nodes of an inverting amplifier with voltage gain $A_v = -|A_v|$ appears multiplied at the input as equivalent capacitance $C_M$, drastically lowering high-frequency bandwidth.",
+                "examTip": "Found in Electronics: Frequency Response. Explains why common-emitter and common-source amplifiers have poor high-frequency response compared to cascode configurations."
+            },
+            {
+                "title": "Phase-Locked Loop Architecture and Operating States",
+                "formula": "$$\\text{Components: Phase Detector (PD)} \\to \\text{Loop Filter (LPF)} \\to \\text{Voltage-Controlled Oscillator (VCO)}$$",
+                "description": "Feedback control loop synchronizing output clock frequency and phase to an incoming reference signal; operating states comprise free-running, capture, and phase-lock tracking modes.",
+                "examTip": "Found in Communications / Electronics. PLLs are widely used for clock synthesis, carrier recovery, frequency demodulation, and zero-delay clock distribution."
+            },
+            {
+                "title": "Schmitt Trigger Inverting Comparator and Hysteresis Bandwidth",
+                "formula": "$$V_{TH} = \\frac{R_1}{R_1 + R_2} V_{sat}^+, \\quad V_{TL} = \\frac{R_1}{R_1 + R_2} V_{sat}^-, \\quad V_H = V_{TH} - V_{TL}$$",
+                "description": "Positive feedback comparator circuit providing noise immunity by establishing two distinct threshold voltages ($V_{TH}$ upper and $V_{TL}$ lower); prevents chatter caused by noisy input signals.",
+                "examTip": "Found in Electronics: Non-Linear Op-Amp Circuits. Switching occurs only when the input crosses the opposing threshold, creating a clean square wave from slow or noisy inputs."
+            },
+            {
+                "title": "Operational Amplifier Common-Mode Rejection Ratio (CMRR)",
+                "formula": "$$\\text{CMRR} = \\left| \\frac{A_d}{A_{cm}} \\right|, \\quad \\text{CMRR}_{\\text{dB}} = 20 \\log_{10}\\left| \\frac{A_d}{A_{cm}} \\right|$$",
+                "description": "Measures an amplifier's ability to amplify desired differential signals $A_d$ while rejecting unwanted common-mode noise voltages $A_{cm}$ present on both inputs.",
+                "examTip": "Found in Electronics: Operational Amplifiers. For an ideal op-amp, common-mode gain $A_{cm} = 0$, giving an infinite CMRR ($\\infty\\text{ dB}$)."
+            }
+        ,
+            {
+                "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
+                "formula": "$$h_L = \\frac{f_k (1 - \\epsilon)}{\\epsilon^3} \\frac{L}{d} \\frac{v_a^2}{g}$$",
+                "description": "Calculates clean bed head loss $h_L$ through a granular media filter bed of depth $L$, porosity $\\epsilon$, grain diameter $d$, and approach velocity $v_a$, where $f_k$ is the Kozeny friction factor.",
+                "examTip": "Found in Environmental: Water Treatment. Note the strong sensitivity to porosity: head loss is inversely proportional to $\\epsilon^3$."
+            },
+            {
+                "title": "Froude Number and Hydraulic Flow Regimes",
+                "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
+                "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Standard Portland Cement Types (ASTM C150 Types I through V)",
+                "formula": "$$\\text{I: General, II: Mod Sulfate, III: High Early, IV: Low Heat, V: High Sulfate}$$",
+                "description": "Standardizes Portland cement chemistry: Type III achieves high early strength via fine grinding and high $C_3S$; Type IV limits heat of hydration for massive gravity dams; Type V resists aggressive soil sulfate attack with low $C_3A$.",
+                "examTip": "Found in Materials: Concrete. Tricalcium aluminate ($C_3A$) is the compound primarily responsible for vulnerability to sulfate expansion and rapid initial hydration heat."
+            },
+            {
+                "title": "Triaxial Shear Tests: CD vs. CU vs. UU Test Distinctions",
+                "formula": "$$\\text{CD: Consolidated Drained}, \\quad \\text{CU: Consolidated Undrained}, \\quad \\text{UU: Unconsolidated Undrained}$$",
+                "description": "Standard laboratory soil shear tests: CD evaluates long-term drained slope stability; CU evaluates rapid drawdown with pore pressure measurement yielding effective stress parameters; UU evaluates short-term end-of-construction bearing capacity ($c_u = \\sigma_d / 2$).",
+                "examTip": "Found in Geotechnical: Shear Strength. For a saturated UU test, total stress friction angle $\\phi_u = 0$, meaning the failure envelope is completely horizontal."
+            },
+            {
+                "title": "Vertical Stress Increase beneath Point Loads: Boussinesq Solution",
+                "formula": "$$\\Delta \\sigma_z = \\frac{3 P}{2\\pi z^2} \\left[ \\frac{1}{1 + (r/z)^2} \\right]^{5/2} = \\frac{P}{z^2} \\cdot I_B$$",
+                "description": "Calculates vertical normal stress increase $\\Delta \\sigma_z$ at depth $z$ and radial distance $r$ inside a homogeneous, isotropic, semi-infinite elastic soil mass due to a concentrated surface point load $P$.",
+                "examTip": "Found in Geotechnical: Stress Distribution. Directly beneath the load ($r = 0$), vertical stress simplifies to $\\Delta \\sigma_z = 0.477 P / z^2$, diminishing rapidly with $z^2$."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Process Control: First-Order Plus Dead Time (FOPDT) Model",
+                "formula": "$$G_p(s) = \\frac{K_p e^{-\\theta s}}{\\tau s + 1}$$",
+                "description": "Standard empirical industrial approximation for chemical processes: steady-state process gain $K_p = \\Delta y / \\Delta u$, apparent time constant $\\tau$, and transport delay / dead time $\\theta$.",
+                "examTip": "Found in Chemical: Process Dynamics & Control. Higher dead-time-to-time-constant ratios ($\\theta / \\tau > 0.5$) make feedback control significantly more difficult and require conservative tuning."
+            },
+            {
+                "title": "Process Control: Ziegler-Nichols Closed-Loop Tuning Rules",
+                "formula": "$$K_c = 0.60 K_u, \\quad \\tau_I = 0.50 P_u, \\quad \\tau_D = 0.125 P_u \\quad (\\text{PID})$$",
+                "description": "Sets PID controller parameters by increasing proportional gain with integral and derivative actions turned off until the closed-loop system reaches continuous sustained oscillation at ultimate gain $K_u$ and ultimate period $P_u$.",
+                "examTip": "Found in Process Control. Ziegler-Nichols tuning targets a quarter-amplitude decay ratio ($1/4$ decay), which tends to be somewhat oscillatory."
+            },
+            {
+                "title": "Open-Loop Step Response Method for Process Identification",
+                "formula": "$$K_p = \\frac{\\Delta y_{\\text{steady}}}{\\Delta u}, \\quad y(t = \\theta + \\tau) = 0.632 \\Delta y_{\\text{steady}}$$",
+                "description": "Estimates FOPDT process model parameters by introducing a step change in controller output $\\Delta u$ and analyzing the resulting open-loop process reaction curve.",
+                "examTip": "Found in Process Dynamics. Time constant $\\tau$ is the elapsed time between initial response takeoff (after dead time $\\theta$) and the $63.2\\%$ completion point."
+            },
+            {
+                "title": "Ratio Control Strategy for Blending and Reactant Feed Streams",
+                "formula": "$$u_B(t) = R_d \\cdot u_A(t)$$",
+                "description": "Maintains a fixed stoichiometric or blending ratio $R_d$ between two flowing streams by measuring uncontrolled wild flow $A$ and adjusting controlled slave stream $B$ in direct proportion.",
+                "examTip": "Found in Process Control. Widely employed in combustion air-to-fuel ratio control and stoichiometric feed balancing for chemical reactors."
+            },
+            {
+                "title": "Cascade Control Architecture for Secondary Disturbance Rejection",
+                "formula": "$$\\text{Primary (Master) Controller} \\to \\text{Secondary (Slave) Setpoint} \\to \\text{Control Valve}$$",
+                "description": "Nests a fast secondary inner feedback loop (e.g., fuel flow) inside a slower primary outer loop (e.g., furnace temperature), attenuating secondary disturbances before they affect the primary process variable.",
+                "examTip": "Found in Process Control. The secondary slave loop must be tuned first and must respond significantly faster than the primary master loop."
+            },
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "Predetermined Motion Time Systems (PMTS / MTM-1)",
+                "formula": "$$1\\text{ TMU} = 0.00001\\text{ hour} = 0.0006\\text{ minute} = 0.036\\text{ second}, \\quad 1\\text{ second} = 27.8\\text{ TMU}$$",
+                "description": "Establishes standard task times by decomposing manual work into basic elemental motions (Reach, Grasp, Move, Position, Release) quantified in Time Measurement Units (TMU) without requiring stopwatch timing.",
+                "examTip": "Found in Industrial: Work Measurement. Memorize the direct conversion factor: $1\\text{ TMU} = 0.036\\text{ seconds}$ for rapid calculation on the FE exam."
+            },
+            {
+                "title": "Ergonomic Posture Assessment: RULA and REBA Methodologies",
+                "formula": "$$\\text{RULA (Upper Limb)}: \\text{Scores } 1-7, \\quad \\text{REBA (Entire Body)}: \\text{Scores } 1-15$$",
+                "description": "Rapid Upper Limb Assessment (RULA) targets sedentary and computer-intensive tasks assessing neck, trunk, and upper limbs; Rapid Entire Body Assessment (REBA) evaluates dynamic whole-body postures in healthcare, warehousing, and construction.",
+                "examTip": "Found in Industrial Ergonomics. A RULA score of 7 or REBA score $>11$ indicates high musculoskeletal disorder risk requiring immediate ergonomic intervention."
+            },
+            {
+                "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
+                "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
+                "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
+                "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
+            },
+            {
+                "title": "Coagulation Velocity Gradient and Power Dissipation in Rapid Mix",
+                "formula": "$$G = \\sqrt{\\frac{P}{\\mu V}} \\quad (\\text{s}^{-1})$$",
+                "description": "Quantifies shear turbulence intensity in water treatment rapid mix and flocculation basins, where $P$ is mechanical power dissipated, $V$ is basin liquid volume, and $\\mu$ is fluid dynamic viscosity.",
+                "examTip": "Found in Environmental: Water Treatment. Rapid mix requires high intensity ($G = 700-1000\\text{ s}^{-1}$ for $10-60\\text{ s}$); flocculation requires gentle mixing ($G = 20-70\\text{ s}^{-1}$ for $20-30\\text{ min}$)."
+            },
+            {
+                "title": "Camp-Stein Rapid Mixing Detention Time and $Gt$ Parameter",
+                "formula": "$$Gt = G \\cdot t_d = G \\left(\\frac{V}{Q}\\right) \\quad (\\text{Dimensionless})$$",
+                "description": "Governs floc formation collisions in coagulation/flocculation basins: optimal flocculation design typically requires Camp-Stein product $Gt$ between $10^4$ and $10^5$.",
+                "examTip": "Found in Water Treatment. Insufficient $Gt$ causes poor floc aggregation; excessive $Gt$ or high $G$ shreds fragile flocs due to excessive fluid shear."
+            },
+            {
+                "title": "Stokes' Law Particle Terminal Settling Velocity in Water",
+                "formula": "$$v_t = \\frac{g (\\rho_p - \\rho) d_p^2}{18 \\mu} \\quad (\\text{for } Re_p < 1.0)$$",
+                "description": "Calculates terminal gravitational settling velocity of discrete spherical particles in laminar flow; settling speed is proportional to square of particle diameter ($d_p^2$) and density difference $(\\rho_p - \\rho)$.",
+                "examTip": "Found in Environmental: Water Treatment & Air Pollution. Doubling particle diameter quadruples settling speed ($2^2 = 4$), illustrating why coagulation/flocculation is crucial for rapid clarification."
+            },
+            {
+                "title": "Indoor Air Quality Single-Compartment Mass Balance Model",
+                "formula": "$$V \\frac{dC}{dt} = Q C_{\\text{in}} + S - Q C - k V C, \\quad C_{\\text{steady}} = \\frac{Q C_{\\text{in}} + S}{Q + k V}$$",
+                "description": "Models contaminant accumulation in a room of volume $V$ with outdoor airflow rate $Q$, ambient concentration $C_{\\text{in}}$, internal emission source rate $S$, and internal first-order decay/deposition rate $k$.",
+                "examTip": "Found in Environmental: Indoor Air Quality. The air exchange rate is $ACH = Q / V$ (air changes per hour); increasing outdoor ventilation $Q$ rapidly reduces steady-state indoor contaminant levels."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "First-Order RC Circuit Time Constant and Transient Response",
+                "formula": "$$\\tau = R C, \\quad v(t) = v(\\infty) + [v(0) - v(\\infty)] e^{-t / \\tau}$$",
+                "description": "Governs transient charging and discharging of capacitors through resistors: time constant $\\tau = RC$ is elapsed time for response to reach $63.2\\%$ of its step change; steady state is reached after approx. $5\\tau$ ($99.3\\%$).",
+                "examTip": "Found in Electrical Circuits. The capacitor acts as an open circuit ($i_C = 0$) at steady state ($t \\to \\infty$) and as a short circuit / constant voltage source immediately after switching ($t = 0^+$)."
+            }
         ],
         "Chemical": [
                 {
@@ -7347,7 +9161,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -7362,19 +9179,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
@@ -7386,7 +9212,10 @@
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
                           "formula": "$$P_{\\text{hyd}} = \\gamma Q h_p = \\rho g Q h_p, \\quad BHP = \\frac{P_{\\text{hyd}}}{\\eta_{\\text{pump}}} = \\frac{\\gamma Q h_p}{\\eta_{\\text{pump}}}$$",
                           "description": "Hydraulic power represents useful rate of mechanical energy transferred to flowing fluid. Brake horsepower (BHP) is the required mechanical input power delivered by the motor shaft to drive the pump at efficiency $\\eta_{\\text{pump}}$.",
-                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant."
+                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant.",
+                    "videoUrl": "assets/videos/Pump_Hydraulic_Power_and_Brake_Horsepower_BHP.mp4",
+                    "videoTitle": "Pump Hydraulic Power and Brake Horsepower (BHP) Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
@@ -7469,6 +9298,536 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Fenske Equation for Minimum Equilibrium Stages at Total Reflux",
+                "formula": "$$N_{\\min} = \\frac{\\ln\\left[\\left(\\frac{x_D}{1 - x_D}\\right)\\left(\\frac{1 - x_B}{x_B}\\right)\\right]}{\\ln \\alpha_{\\text{avg}}} - 1$$",
+                "description": "Calculates theoretical minimum number of equilibrium stages $N_{\\min}$ required for binary distillation under total reflux ($R = \\infty$), where $\\alpha_{\\text{avg}} = \\sqrt{\\alpha_{\\text{top}} \\cdot \\alpha_{\\text{bottom}}}$ is average relative volatility.",
+                "examTip": "Found in Chemical: Mass Transfer & Distillation. Remember to subtract 1 stage if the reboiler acts as a theoretical equilibrium stage (partial reboiler)."
+            },
+            {
+                "title": "Constant-Volume Batch Reactor Design Equation",
+                "formula": "$$t = N_{A0} \\int_0^{X_A} \\frac{dX_A}{(-r_A) V} = C_{A0} \\int_0^{X_A} \\frac{dX_A}{(-r_A)}$$",
+                "description": "Calculates reaction time $t$ required to reach fractional conversion $X_A$ of limiting reactant $A$ in a constant-volume, perfectly mixed isothermal batch reactor with reaction rate $(-r_A)$.",
+                "examTip": "Found in Chemical Reaction Engineering. For a first-order reaction $(-r_A = k C_A)$, the integral evaluates to $t = \\frac{1}{k} \\ln\\left(\\frac{1}{1 - X_A}\\right)$."
+            },
+            {
+                "title": "Minimum Fluidization Velocity in Fluidized Beds",
+                "formula": "$$u_{mf} = \\frac{d_p^2 (\\rho_p - \\rho_g) g}{150 \\mu} \\left(\\frac{\\epsilon_{mf}^3}{1 - \\epsilon_{mf}}\\right) \\quad (\\text{for } Re_p < 20)$$",
+                "description": "Superficial fluid velocity at which upward drag force exerted on solid particles exactly balances the buoyant weight of the bed, transitioning the bed from a packed state to an incipiently fluidized state.",
+                "examTip": "Found in Chemical: Fluid-Particle Systems. At velocities above $u_{mf}$, pressure drop across the fluidized bed remains virtually constant, independent of velocity."
+            },
+            {
+                "title": "Two-Film Theory for Interphase Mass Transfer",
+                "formula": "$$N_A = k_G (p_{A,b} - p_{A,i}) = k_L (c_{A,i} - c_{A,b}) = K_G (p_{A,b} - p_A^*) = K_L (c_A^* - c_{A,b})$$",
+                "description": "Models steady-state mass transfer across a gas-liquid interface through two stagnant boundary films, where equilibrium exists at the interface according to Henry's law ($p_{A,i} = H c_{A,i}$).",
+                "examTip": "Found in Chemical: Mass Transfer. Overall resistance relation: $\\frac{1}{K_G} = \\frac{1}{k_G} + \\frac{H}{k_L}$; for highly soluble gases, liquid film resistance dominates ($K_G \\approx k_G$)."
+            },
+            {
+                "title": "Absorption and Stripping Factors and Kremser Equation",
+                "formula": "$$A = \\frac{L}{m G}, \\quad S = \\frac{m G}{L} = \\frac{1}{A}, \\quad N = \\frac{\\ln\\left[\\left(\\frac{y_{\\text{in}} - m x_{\\text{in}}}{y_{\\text{out}} - m x_{\\text{in}}}\\right)(1 - \\frac{1}{A}) + \\frac{1}{A}\\right]}{\\ln A}$$",
+                "description": "Calculates number of theoretical stages $N$ in gas absorption/stripping towers with linear equilibrium line $y = m x$, where $A$ is absorption factor and $S$ is stripping factor.",
+                "examTip": "Found in Chemical: Separations. For effective gas absorption, operating absorption factor $A$ is typically engineered between $1.2$ and $2.0$."
+            },
+            {
+                "title": "Clausius-Clapeyron Equation for Vapor Pressure of Pure Liquids",
+                "formula": "$$\\ln\\left(\\frac{P_2^{\\text{sat}}}{P_1^{\\text{sat}}}\\right) = -\\frac{\\Delta H_{\\text{vap}}}{R} \\left( \\frac{1}{T_2} - \\frac{1}{T_1} \\right)$$",
+                "description": "Relates temperature sensitivity of pure substance saturation vapor pressure $P^{\\text{sat}}$ to latent heat of vaporization $\\Delta H_{\\text{vap}}$, assuming ideal vapor behavior and negligible liquid molar volume.",
+                "examTip": "Found in Chemical: Thermodynamics. Absolute temperatures (in Kelvin or Rankine) must strictly be used in the $1/T$ terms."
+            },
+            {
+                "title": "Gibbs-Duhem Equation for Binary Liquid Solutions",
+                "formula": "$$\\sum_{i} x_i d\\bar{M}_i = 0 \\implies x_1 \\frac{d\\ln\\gamma_1}{dx_1} + x_2 \\frac{d\\ln\\gamma_2}{dx_1} = 0 \\quad (\\text{at constant } T, P)$$",
+                "description": "Fundamental thermodynamic consistency criterion for partial molar properties; mandates that activity coefficients $\\gamma_1$ and $\\gamma_2$ in binary liquid mixtures cannot vary independently.",
+                "examTip": "Found in Chemical: Solution Thermodynamics. Used experimentally to validate binary vapor-liquid equilibrium (VLE) data sets before fitting Margules or Van Laar parameters."
+            },
+            {
+                "title": "Selectivity and Instantaneous Yield for Parallel Chemical Reactions",
+                "formula": "$$S_{D/U} = \\frac{r_D}{r_U} = \\frac{k_D}{k_U} C_A^{a_1 - a_2}, \\quad Y_D = \\frac{r_D}{-r_A}$$",
+                "description": "Measures product distribution in competing parallel reactions ($A \\to D$ desired vs $A \\to U$ undesired); if desired reaction order is higher ($a_1 > a_2$), maintain high reactant concentration $C_A$ using a batch or plug-flow reactor.",
+                "examTip": "Found in Chemical Reaction Engineering. If undesired reaction order is higher ($a_2 > a_1$), maintain low $C_A$ using a CSTR or semibatch reactor."
+            },
+            {
+                "title": "Equal-Sized CSTRs in Series for First-Order Reactions",
+                "formula": "$$C_N = \\frac{C_0}{(1 + k \\tau_i)^N}, \\quad X_N = 1 - \\frac{1}{(1 + k \\tau_i)^N}$$",
+                "description": "Determines outlet reactant concentration $C_N$ and overall conversion $X_N$ from a cascade of $N$ equal-volume continuous stirred-tank reactors in series, each having space time $\\tau_i = V_i / v_0$.",
+                "examTip": "Found in Chemical Reaction Engineering. As $N \\to \\infty$, the performance of a cascade of CSTRs approaches that of an ideal plug-flow reactor (PFR)."
+            },
+            {
+                "title": "Catalyst Internal Effectiveness Factor and Thiele Modulus",
+                "formula": "$$\\eta = \\frac{\\text{Actual Reaction Rate}}{\\text{Rate if Entire Interior Exposed to Surface Conditions}} = \\frac{\\tanh\\phi}{\\phi}$$",
+                "description": "Quantifies internal pore diffusion limitations in porous catalyst pellets: Thiele modulus $\\phi = L \\sqrt{k / D_e}$; when $\\phi \\ll 1$, $\\eta \\approx 1.0$ (reaction kinetics control); when $\\phi \\gg 1$, $\\eta \\approx 1/\\phi$ (strong pore diffusion resistance).",
+                "examTip": "Found in Chemical Reaction Engineering. Under strong pore diffusion limitations, apparent activation energy is halved and observed reaction order shifts toward $(n+1)/2$."
+            },
+            {
+                "title": "HAZOP Study Methodology and Standard Guide Words",
+                "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
+                "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
+                "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
+            },
+            {
+                "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
+                "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
+                "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
+                "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
+            },
+            {
+                "title": "Chemical Reaction Equilibrium Standard Gibbs Free Energy Relation",
+                "formula": "$$\\Delta G_{\\text{rxn}}^\\circ = -R T \\ln K, \\quad K = \\prod (a_i)^{\\nu_i} \\approx \\prod (P_i / P^\\circ)^{\\nu_i}$$",
+                "description": "Links thermodynamic equilibrium constant $K$ to standard reaction Gibbs free energy change $\\Delta G_{\\text{rxn}}^\\circ = \\sum \\nu_i \\Delta G_{f,i}^\\circ$; spontaneous forward reactions exhibit $\\Delta G^\\circ < 0$ and $K > 1$.",
+                "examTip": "Found in Chemical: Thermodynamics. $R = 8.314\\text{ J/(mol}\\cdot\\text{K)}$; standard temperature is $298.15\\text{ K}$ ($25^\\circ\\text{C}$); make sure $\\Delta G^\\circ$ is in Joules, not kiloJoules."
+            },
+            {
+                "title": "van 't Hoff Isochore for Equilibrium Constant Temperature Sensitivity",
+                "formula": "$$\\frac{d\\ln K}{dT} = \\frac{\\Delta H_{\\text{rxn}}^\\circ}{R T^2} \\implies \\ln\\left(\\frac{K_2}{K_1}\\right) = -\\frac{\\Delta H_{\\text{rxn}}^\\circ}{R}\\left(\\frac{1}{T_2} - \\frac{1}{T_1}\\right)$$",
+                "description": "Predicts shift in chemical equilibrium constant with temperature: for endothermic reactions ($\\Delta H^\\circ > 0$), heating increases $K$; for exothermic reactions ($\\Delta H^\\circ < 0$), heating decreases $K$.",
+                "examTip": "Found in Chemical: Chemical Reaction Equilibrium. Perfectly aligns with Le Chatelier's principle: adding heat favors the endothermic direction to absorb thermal energy."
+            },
+            {
+                "title": "Peng-Robinson Equation of State for Real Fluid Phase Equilibrium",
+                "formula": "$$P = \\frac{R T}{v - b} - \\frac{a(T)}{v(v + b) + b(v - b)}$$",
+                "description": "Widely used cubic equation of state in petroleum and chemical engineering for modeling non-ideal gas and liquid phases, vapor pressures, and hydrocarbon phase equilibria.",
+                "examTip": "Found in Chemical: Thermodynamics. $a(T)$ incorporates critical properties ($T_c, P_c$) and acentric factor $\\omega$ to accurately reproduce vapor pressure curves."
+            },
+            {
+                "title": "Compressibility Factor $Z$ and Generalized Compressibility Charts",
+                "formula": "$$Z = \\frac{P v}{R T} = \\frac{P M}{\\rho R T}, \\quad P_r = \\frac{P}{P_c}, \\quad T_r = \\frac{T}{T_c}$$",
+                "description": "Quantifies departure of real gas behavior from ideal gas law ($Z = 1.0$) as a universal function of reduced pressure $P_r$ and reduced temperature $T_r$ (Theorem of Corresponding States).",
+                "examTip": "Found in Chemical: Thermodynamics. At low pressures ($P_r \\ll 1$) or very high temperatures ($T_r \\gg 2$), all real gases converge to ideal gas behavior ($Z \\to 1$)."
+            },
+            {
+                "title": "Virial Equation of State (B and C Virial Coefficients)",
+                "formula": "$$Z = 1 + \\frac{B}{v} + \\frac{C}{v^2} + \\dots = 1 + B' P + C' P^2 + \\dots$$",
+                "description": "Power-series expansion representing intermolecular forces: second virial coefficient $B(T)$ accounts for two-body molecular interactions; temperature at which $B(T) = 0$ is the Boyle temperature.",
+                "examTip": "Found in Chemical: Thermodynamics. Truncation after the second term ($Z = 1 + B P / (RT)$) is accurate up to moderate pressures (approx. $15\\text{ bar}$)."
+            },
+            {
+                "title": "Liquid-Liquid Extraction: Triangular Phase Diagrams and Tie Lines",
+                "formula": "$$\\frac{\\text{Amount of Extract}}{\\text{Amount of Raffinate}} = \\frac{\\text{Length of tie line segment to Raffinate}}{\\text{Length of tie line segment to Extract}}$$",
+                "description": "Separates liquid mixtures using solvent immiscibility: equilateral or right-triangular coordinates display ternary phase envelopes; tie lines connect conjugate extract and raffinate liquid phases in equilibrium.",
+                "examTip": "Found in Chemical: Separations. Plait point represents the critical composition on the binodal solubility curve where extract and raffinate phases become identical."
+            },
+            {
+                "title": "Mass Transfer Number of Transfer Units and Height of a Transfer Unit",
+                "formula": "$$Z = NTU \\times HTU = N_{OG} \\cdot H_{OG}, \\quad H_{OG} = \\frac{G}{K_G a P}$$",
+                "description": "Sizes packed gas absorption and stripping columns: Number of Transfer Units ($NTU$) reflects separation difficulty; Height of a Transfer Unit ($HTU$) reflects packing mass transfer efficiency.",
+                "examTip": "Found in Chemical: Mass Transfer & Separations. A taller packed bed ($Z$) is required if $HTU$ increases (poor packing mass transfer) or if separation specifications tighten (higher $NTU$)."
+            },
+            {
+                "title": "Equimolar Counterdiffusion vs. Diffusion through Stagnant Gas",
+                "formula": "$$N_A^{\\text{EMCD}} = \\frac{D_{AB}}{R T z}(p_{A1} - p_{A2}), \\quad N_A^{\\text{stagnant}} = \\frac{D_{AB} P}{R T z} \\ln\\left(\\frac{P - p_{A2}}{P - p_{A1}}\\right)$$",
+                "description": "Steady-state 1D molecular gas diffusion: in EMCD ($N_A = -N_B$), convective flux is zero; in diffusion through stagnant gas ($N_B = 0$), bulk convection enhances species $A$ flux by factor $P / p_{B,lm}$.",
+                "examTip": "Found in Chemical: Mass Transfer. Because of bulk flow contribution, mass flux through a stagnant gas is always greater than under equimolar counterdiffusion for identical concentration differences."
+            },
+            {
+                "title": "Chemical Oxygen Demand vs. Theoretical Oxygen Demand Stoichiometry",
+                "formula": "$$\\text{C}_n\\text{H}_a\\text{O}_b\\text{N}_c + \\left(n + \\frac{a}{4} - \\frac{b}{2} - \\frac{3c}{4}\\right)\\text{O}_2 \\to n\\text{CO}_2 + \\left(\\frac{a - 3c}{2}\\right)\\text{H}_2\\text{O} + c\\text{NH}_3$$",
+                "description": "Quantifies oxygen required to chemically oxidize organic compounds: ThOD is calculated directly from stoichiometry; COD measures dichromate chemical oxidation; relationship is generally $\\text{ThOD} \\ge \\text{COD} > \\text{BOD}_{\\text{ult}} > \\text{BOD}_5$.",
+                "examTip": "Found in Chemical / Environmental. One mole of $\\text{O}_2$ equals $32\\text{ g O}_2$; convert compound grams to moles, multiply by stoichiometric $\\text{O}_2$ factor, then convert to $\\text{g O}_2$."
+            },
+            {
+                "title": "Excess Air and Theoretical Oxygen in Combustion Material Balances",
+                "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Moles Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100\\%$$",
+                "description": "Theoretical air is the stoichiometric amount of oxygen needed for complete fuel combustion to $\\text{CO}_2$ and $\\text{H}_2\\text{O}$ (all carbon to $\\text{CO}_2$ even if incomplete reaction occurs), carried by dry air containing $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$.",
+                "examTip": "Found in Chemical: Material Balances. Theoretical air is based strictly on complete combustion stoichiometry regardless of how much fuel actually burns."
+            },
+            {
+                "title": "Single-Pass Conversion vs. Overall Plant Conversion with Recycle",
+                "formula": "$$f_{\\text{single-pass}} = \\frac{\\text{Reactant In (Reactor)} - \\text{Reactant Out (Reactor)}}{\\text{Reactant In (Reactor)}}, \\quad f_{\\text{overall}} = \\frac{\\text{Fresh Feed} - \\text{Gross Product Loss}}{\\text{Fresh Feed}}$$",
+                "description": "Differentiates reactor efficiency from overall process efficiency: recycling unreacted species allows a process with modest single-pass conversion (e.g., $20\\%$) to achieve $>99\\%$ overall chemical conversion.",
+                "examTip": "Found in Chemical: Material Balances. In steady-state recycle systems without side reactions or purge losses, overall conversion equals $100\\%$."
+            },
+            {
+                "title": "Purge Stream Flow Rate for Limiting Inerts Accumulation",
+                "formula": "$$F_{\\text{inerts, fresh feed}} = F_{\\text{inerts, purge}} = x_{\\text{inerts, purge}} \\cdot P_{\\text{purge}}$$",
+                "description": "Material balance requirement in recycle loops: to prevent continuous inert accumulation from building up indefinitely in the recycle loop, the rate of inerts leaving in the purge stream must exactly equal inerts entering in fresh feed.",
+                "examTip": "Found in Chemical: Recycle Material Balances. The recycle stream and purge stream have identical compositions because they split from the same parent stream."
+            },
+            {
+                "title": "Pressure Relief Valve Sizing Formula for Vapor Discharge",
+                "formula": "$$A = \\frac{W}{C K_d P_1} \\sqrt{\\frac{T Z}{M}}, \\quad C = 520 \\sqrt{k \\left(\\frac{2}{k+1}\\right)^{\\frac{k+1}{k-1}}}$$",
+                "description": "Calculates required discharge orifice area $A$ for safety pressure relief valves under sonic/choked vapor flow conditions, where $W$ is required mass relief rate, $P_1$ is upstream relieving pressure, and $M$ is molecular weight.",
+                "examTip": "Found in Chemical: Process Safety. Overpressure allowance is typically $10\\%$ for non-fire relief and $21\\%$ for external fire exposure scenarios."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
+                "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
+                "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
+            },
+            {
+                "title": "Rotameter Variable Area Flowmeter Equilibrium Force Balance",
+                "formula": "$$F_{\\text{buoyancy}} + F_{\\text{drag}} = W_{\\text{float}} \\implies Q \\propto A_{\\text{annular}} \\propto \\text{Float Height } h$$",
+                "description": "Variable-area flowmeter: as flow rate increases, the tapered metering tube causes the float to rise until upward fluid drag plus buoyant force exactly balances the downward gravitational weight of the float.",
+                "examTip": "Found in Instrumentation / Fluid Mechanics. Rotameters produce a virtually constant differential pressure across the float regardless of flow rate."
+            },
+            {
+                "title": "Non-Newtonian Fluids: Power-Law Shear Stress Model",
+                "formula": "$$\\tau = K \\left( \\frac{du}{dy} \\right)^n = K \\dot{\\gamma}^n, \\quad \\mu_{\\text{app}} = K \\dot{\\gamma}^{n - 1}$$",
+                "description": "Ostwald-de Waele model for non-Newtonian fluids with flow consistency index $K$: $n < 1$ represents pseudoplastic (shear-thinning, e.g., polymer solutions); $n > 1$ represents dilatant (shear-thickening, e.g., starch slurries); $n = 1$ is Newtonian.",
+                "examTip": "Found in Chemical: Fluid Mechanics. For pseudoplastic fluids ($n < 1$), apparent viscosity drops as shear rate increases, lowering pumping power requirements at high velocities."
+            },
+            {
+                "title": "Bingham Plastic Yield Stress and Plastic Viscosity Model",
+                "formula": "$$\\tau = \\tau_y + \\mu_p \\left(\\frac{du}{dy}\\right) \\quad (\\text{for } |\\tau| > \\tau_y), \\quad \\frac{du}{dy} = 0 \\quad (\\text{for } |\\tau| \\le \\tau_y)$$",
+                "description": "Models viscoplastic materials (drilling muds, paints, sludges) that behave as rigid solids until applied shear stress exceeds yield stress $\\tau_y$, after which flow exhibits linear plastic viscosity $\\mu_p$.",
+                "examTip": "Found in Chemical: Fluid Mechanics. Produces a central plug flow region in pipe flow where local shear stress is below yield stress $\\tau_y$."
+            },
+            {
+                "title": "Dimensional Analysis: Buckingham Pi Theorem in Chemical Scale-Up",
+                "formula": "$$k = n - m$$",
+                "description": "Determines number of independent dimensionless groups $\\Pi_k$ required to describe a physical system involving $n$ physical variables and $m$ fundamental dimensions (Mass, Length, Time, Temperature).",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Ensures dynamic and geometric similitude between pilot-scale experimental reactors and commercial production units."
+            },
+            {
+                "title": "Heat Exchanger Fouling Resistance Factor",
+                "formula": "$$\\frac{1}{U_{\\text{fouled}}} = \\frac{1}{U_{\\text{clean}}} + R_{fi} + R_{fo}$$",
+                "description": "Accounts for heat transfer degradation caused by scale, corrosion, and biological deposition on internal ($R_{fi}$) and external ($R_{fo}$) tube surfaces over operating time.",
+                "examTip": "Found in Chemical: Heat Transfer. Neglecting fouling factors in industrial heat exchanger sizing leads to severe undersizing and thermal bottlenecking."
+            },
+            {
+                "title": "Pool Boiling Curve Regimes and Critical Heat Flux",
+                "formula": "$$q''_{\\max} = 0.149 \\, \\rho_v \\, h_{fg} \\left[ \\frac{\\sigma g (\\rho_L - \\rho_v)}{\\rho_v^2} \\right]^{1/4} \\quad (\\text{Zuber Equation})$$",
+                "description": "Relates boiling heat flux to wall superheat $\\Delta T_e = T_s - T_{\\text{sat}}$: progresses through Natural Convection $\\to$ Nucleate Boiling $\\to$ Critical Heat Flux (burnout point) $\\to$ Transition Boiling $\\to$ Film Boiling.",
+                "examTip": "Found in Chemical: Heat Transfer. Exceeding Critical Heat Flux ($q''_{\\max}$) causes an abrupt jump in surface temperature into the film boiling regime, potentially melting heat exchanger tubes."
+            },
+            {
+                "title": "Condensation Heat Transfer: Nusselt Film Theory for Vertical Surfaces",
+                "formula": "$$h_{\\text{avg}} = 0.943 \\left[ \\frac{g \\rho_L (\\rho_L - \\rho_v) k_L^3 h'_{fg}}{\\mu_L L (T_{\\text{sat}} - T_s)} \\right]^{1/4}$$",
+                "description": "Predicts average laminar heat transfer coefficient $h_{\\text{avg}}$ for film condensation on a vertical plate of height $L$; liquid condensate film flows downward by gravity, with thermal resistance growing with film thickness.",
+                "examTip": "Found in Chemical: Heat Transfer. Dropwise condensation achieves heat transfer coefficients up to 10 times higher than film condensation because the metal surface remains partially bare."
+            },
+            {
+                "title": "Process Control: First-Order Plus Dead Time (FOPDT) Model",
+                "formula": "$$G_p(s) = \\frac{K_p e^{-\\theta s}}{\\tau s + 1}$$",
+                "description": "Standard empirical industrial approximation for chemical processes: steady-state process gain $K_p = \\Delta y / \\Delta u$, apparent time constant $\\tau$, and transport delay / dead time $\\theta$.",
+                "examTip": "Found in Chemical: Process Dynamics & Control. Higher dead-time-to-time-constant ratios ($\\theta / \\tau > 0.5$) make feedback control significantly more difficult and require conservative tuning."
+            },
+            {
+                "title": "Process Control: Ziegler-Nichols Closed-Loop Tuning Rules",
+                "formula": "$$K_c = 0.60 K_u, \\quad \\tau_I = 0.50 P_u, \\quad \\tau_D = 0.125 P_u \\quad (\\text{PID})$$",
+                "description": "Sets PID controller parameters by increasing proportional gain with integral and derivative actions turned off until the closed-loop system reaches continuous sustained oscillation at ultimate gain $K_u$ and ultimate period $P_u$.",
+                "examTip": "Found in Process Control. Ziegler-Nichols tuning targets a quarter-amplitude decay ratio ($1/4$ decay), which tends to be somewhat oscillatory."
+            },
+            {
+                "title": "Process Control: Control Valve Flow Characteristics",
+                "formula": "$$\\text{Linear: } \\frac{Q}{Q_{\\max}} = x, \\quad \\text{Equal } \\%: \\frac{Q}{Q_{\\max}} = R^{x - 1}$$",
+                "description": "Relates fractional flow capacity $Q / Q_{\\max}$ to stem lift position $x$: equal-percentage valves produce equal percentage changes in flow for equal increments in valve lift, compensating for nonlinear pipe pressure drops.",
+                "examTip": "Found in Process Control: Control Valves. Rangeability parameter $R$ is typically 20 to 50 for industrial control valves."
+            },
+            {
+                "title": "Open-Loop Step Response Method for Process Identification",
+                "formula": "$$K_p = \\frac{\\Delta y_{\\text{steady}}}{\\Delta u}, \\quad y(t = \\theta + \\tau) = 0.632 \\Delta y_{\\text{steady}}$$",
+                "description": "Estimates FOPDT process model parameters by introducing a step change in controller output $\\Delta u$ and analyzing the resulting open-loop process reaction curve.",
+                "examTip": "Found in Process Dynamics. Time constant $\\tau$ is the elapsed time between initial response takeoff (after dead time $\\theta$) and the $63.2\\%$ completion point."
+            },
+            {
+                "title": "Ratio Control Strategy for Blending and Reactant Feed Streams",
+                "formula": "$$u_B(t) = R_d \\cdot u_A(t)$$",
+                "description": "Maintains a fixed stoichiometric or blending ratio $R_d$ between two flowing streams by measuring uncontrolled wild flow $A$ and adjusting controlled slave stream $B$ in direct proportion.",
+                "examTip": "Found in Process Control. Widely employed in combustion air-to-fuel ratio control and stoichiometric feed balancing for chemical reactors."
+            },
+            {
+                "title": "Cascade Control Architecture for Secondary Disturbance Rejection",
+                "formula": "$$\\text{Primary (Master) Controller} \\to \\text{Secondary (Slave) Setpoint} \\to \\text{Control Valve}$$",
+                "description": "Nests a fast secondary inner feedback loop (e.g., fuel flow) inside a slower primary outer loop (e.g., furnace temperature), attenuating secondary disturbances before they affect the primary process variable.",
+                "examTip": "Found in Process Control. The secondary slave loop must be tuned first and must respond significantly faster than the primary master loop."
+            }
+        ,
+            {
+                "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
+                "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
+                "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
+                "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
+            },
+            {
+                "title": "Sedimentation Basin Surface Overflow Rate and Detention Time",
+                "formula": "$$v_0 = \\frac{Q}{A_s} = \\frac{Q}{W \\cdot L}, \\quad t_d = \\frac{V}{Q} = \\frac{A_s \\cdot H}{Q} = \\frac{H}{v_0}$$",
+                "description": "Governs settling basin clarification: all discrete particles with settling velocity $v_s \\ge v_0$ are $100\\%$ removed; removal fraction for particles with $v_s < v_0$ equals $v_s / v_0$.",
+                "examTip": "Found in Environmental / Water Treatment. Note that surface overflow rate $v_0$ is completely independent of basin depth $H$, while hydraulic detention time $t_d$ is directly proportional to depth."
+            },
+            {
+                "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
+                "formula": "$$h_L = \\frac{f_k (1 - \\epsilon)}{\\epsilon^3} \\frac{L}{d} \\frac{v_a^2}{g}$$",
+                "description": "Calculates clean bed head loss $h_L$ through a granular media filter bed of depth $L$, porosity $\\epsilon$, grain diameter $d$, and approach velocity $v_a$, where $f_k$ is the Kozeny friction factor.",
+                "examTip": "Found in Environmental: Water Treatment. Note the strong sensitivity to porosity: head loss is inversely proportional to $\\epsilon^3$."
+            },
+            {
+                "title": "Lime-Soda Ash Water Softening Precipitation Stoichiometry",
+                "formula": "$$\\text{Lime: } \\text{CO}_2, \\text{Ca}^{2+}\\text{(carbonate)}, \\text{Mg}^{2+}\\text{(all)}; \\quad \\text{Soda Ash: } \\text{Ca}^{2+}\\text{(non-carbonate)}$$",
+                "description": "Removes hardness by precipitation: hydrated lime $\\text{Ca(OH)}_2$ precipitates carbonate hardness as $\\text{CaCO}_3$ and magnesium as $\\text{Mg(OH)}_2$; soda ash $\\text{Na}_2\\text{CO}_3$ precipitates non-carbonate calcium hardness.",
+                "examTip": "Found in Environmental: Water Chemistry. Stoichiometric calculations are always carried out in equivalent weights or milliequivalents per liter ($\\text{meq/L}$) or $\\text{mg/L as }\\text{CaCO}_3$."
+            },
+            {
+                "title": "Storm Sewer Gravity Pipe Design via Manning's and Rational Formula",
+                "formula": "$$Q = C I A = \\frac{k_n}{n} A_{\\text{pipe}} R_h^{2/3} S^{1/2}$$",
+                "description": "Sizes storm sewer storm pipes by equating peak runoff discharge $Q$ generated by the Rational Method to full gravity flow capacity evaluated via Manning's open channel flow formula.",
+                "examTip": "Found in Water Resources: Storm Drainage. $k_n = 1.486$ for USCS and $k_n = 1.0$ for SI units. For circular pipes flowing full, hydraulic radius $R_h = D / 4$."
+            },
+            {
+                "title": "Hazen-Williams Head Loss Equation for Water Distribution Pipes",
+                "formula": "$$h_f = \\frac{10.44 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{USCS}), \\quad h_f = \\frac{10.67 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{SI})$$",
+                "description": "Calculates friction head loss $h_f$ in pressurized water distribution pipes as a function of pipe length $L$, flow $Q$, inside diameter $d$, and empirical Hazen-Williams roughness coefficient $C$.",
+                "examTip": "Found in Hydraulics: Closed Conduit Flow. A higher $C$ value denotes a smoother pipe (e.g., $C = 140-150$ for new PVC; $C = 100$ for aged cast iron)."
+            },
+            {
+                "title": "Hardy Cross Network Balancing for Looped Water Distribution Systems",
+                "formula": "$$\\Delta Q = -\\frac{\\sum h_f}{n \\sum (h_f / Q)} = -\\frac{\\sum k Q |Q|^{n-1}}{n \\sum k |Q|^{n-1}}$$",
+                "description": "Iterative pipe loop balancing method enforcing energy conservation ($\\sum h_f = 0$ around every closed loop) by applying discharge correction $\\Delta Q$ to assumed pipe flows ($n = 1.852$ for Hazen-Williams, $n = 2.0$ for Darcy-Weisbach).",
+                "examTip": "Found in Hydraulics / Water Distribution. Clockwise flows around a loop are designated positive, and counterclockwise flows are negative."
+            },
+            {
+                "title": "Froude Number and Hydraulic Flow Regimes",
+                "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
+                "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
+            },
+            {
+                "title": "Gravity Retaining Wall Overturning Factor of Safety",
+                "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
+                "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
+            },
+            {
+                "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
+                "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
+            },
+            {
+                "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
+                "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
+                "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Standard Portland Cement Types (ASTM C150 Types I through V)",
+                "formula": "$$\\text{I: General, II: Mod Sulfate, III: High Early, IV: Low Heat, V: High Sulfate}$$",
+                "description": "Standardizes Portland cement chemistry: Type III achieves high early strength via fine grinding and high $C_3S$; Type IV limits heat of hydration for massive gravity dams; Type V resists aggressive soil sulfate attack with low $C_3A$.",
+                "examTip": "Found in Materials: Concrete. Tricalcium aluminate ($C_3A$) is the compound primarily responsible for vulnerability to sulfate expansion and rapid initial hydration heat."
+            },
+            {
+                "title": "Triaxial Shear Tests: CD vs. CU vs. UU Test Distinctions",
+                "formula": "$$\\text{CD: Consolidated Drained}, \\quad \\text{CU: Consolidated Undrained}, \\quad \\text{UU: Unconsolidated Undrained}$$",
+                "description": "Standard laboratory soil shear tests: CD evaluates long-term drained slope stability; CU evaluates rapid drawdown with pore pressure measurement yielding effective stress parameters; UU evaluates short-term end-of-construction bearing capacity ($c_u = \\sigma_d / 2$).",
+                "examTip": "Found in Geotechnical: Shear Strength. For a saturated UU test, total stress friction angle $\\phi_u = 0$, meaning the failure envelope is completely horizontal."
+            },
+            {
+                "title": "Vertical Stress Increase beneath Point Loads: Boussinesq Solution",
+                "formula": "$$\\Delta \\sigma_z = \\frac{3 P}{2\\pi z^2} \\left[ \\frac{1}{1 + (r/z)^2} \\right]^{5/2} = \\frac{P}{z^2} \\cdot I_B$$",
+                "description": "Calculates vertical normal stress increase $\\Delta \\sigma_z$ at depth $z$ and radial distance $r$ inside a homogeneous, isotropic, semi-infinite elastic soil mass due to a concentrated surface point load $P$.",
+                "examTip": "Found in Geotechnical: Stress Distribution. Directly beneath the load ($r = 0$), vertical stress simplifies to $\\Delta \\sigma_z = 0.477 P / z^2$, diminishing rapidly with $z^2$."
+            },
+            {
+                "title": "Routh-Hurwitz Stability Criterion and Routh Array",
+                "formula": "$$a_n s^n + a_{n-1} s^{n-1} + \\dots + a_0 = 0, \\quad b_1 = \\frac{a_{n-1} a_{n-2} - a_n a_{n-3}}{a_{n-1}}$$",
+                "description": "Determines dynamic closed-loop linear system stability without factoring characteristic roots; a system is strictly stable if and only if all elements in the first column of the Routh array are strictly positive.",
+                "examTip": "Found in Control Systems. The number of sign changes in the first column of the Routh array equals the exact number of right-half-plane (unstable) poles."
+            },
+            {
+                "title": "Root Locus Construction Rules: Real Axis Branches and Asymptotes",
+                "formula": "$$\\sigma_a = \\frac{\\sum p_i - \\sum z_i}{n - m}, \\quad \\phi_a = \\frac{(2k + 1)180^\\circ}{n - m}$$",
+                "description": "Plots trajectory of closed-loop poles as loop gain $K$ varies: a point on the real axis lies on the locus if the total number of real open-loop poles and zeros to its right is odd; branches radiate toward asymptotes centered at $\\sigma_a$.",
+                "examTip": "Found in Control Systems: Root Locus. $n$ is number of poles, $m$ is number of zeros; root locus branches always begin at open-loop poles ($K=0$) and end at open-loop zeros ($K\\to\\infty$)."
+            },
+            {
+                "title": "PID Controller Time-Domain Equation and Laplace Transfer Function",
+                "formula": "$$u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) d\\tau + K_d \\frac{de(t)}{dt}, \\quad G_c(s) = K_p + \\frac{K_i}{s} + K_d s$$",
+                "description": "Standard industrial three-term feedback controller: proportional action ($K_p$) accelerates response, integral action ($K_i$) eliminates steady-state tracking error, and derivative action ($K_d$) adds damping to reduce overshoot.",
+                "examTip": "Found in Control Systems. Adding an integrator ($1/s$) increases system type by 1, eliminating steady-state error to step inputs, but tends to destabilize phase margin."
+            },
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "Predetermined Motion Time Systems (PMTS / MTM-1)",
+                "formula": "$$1\\text{ TMU} = 0.00001\\text{ hour} = 0.0006\\text{ minute} = 0.036\\text{ second}, \\quad 1\\text{ second} = 27.8\\text{ TMU}$$",
+                "description": "Establishes standard task times by decomposing manual work into basic elemental motions (Reach, Grasp, Move, Position, Release) quantified in Time Measurement Units (TMU) without requiring stopwatch timing.",
+                "examTip": "Found in Industrial: Work Measurement. Memorize the direct conversion factor: $1\\text{ TMU} = 0.036\\text{ seconds}$ for rapid calculation on the FE exam."
+            },
+            {
+                "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
+                "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
+                "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+            },
+            {
+                "title": "Kanban Production System Container Sizing Equation",
+                "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
+                "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
+                "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
+            },
+            {
+                "title": "Bill of Materials Explosion Tree and Component Offsetting",
+                "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
+                "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
+                "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
+            },
+            {
+                "title": "Ergonomic Posture Assessment: RULA and REBA Methodologies",
+                "formula": "$$\\text{RULA (Upper Limb)}: \\text{Scores } 1-7, \\quad \\text{REBA (Entire Body)}: \\text{Scores } 1-15$$",
+                "description": "Rapid Upper Limb Assessment (RULA) targets sedentary and computer-intensive tasks assessing neck, trunk, and upper limbs; Rapid Entire Body Assessment (REBA) evaluates dynamic whole-body postures in healthcare, warehousing, and construction.",
+                "examTip": "Found in Industrial Ergonomics. A RULA score of 7 or REBA score $>11$ indicates high musculoskeletal disorder risk requiring immediate ergonomic intervention."
+            },
+            {
+                "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
+                "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
+                "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
+                "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
+            },
+            {
+                "title": "Chronic Daily Intake Chemical Exposure Formulation",
+                "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
+                "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+            },
+            {
+                "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
+                "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
+                "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
+                "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            },
+            {
+                "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
+                "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
+                "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
+                "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
+            },
+            {
+                "title": "Coagulation Velocity Gradient and Power Dissipation in Rapid Mix",
+                "formula": "$$G = \\sqrt{\\frac{P}{\\mu V}} \\quad (\\text{s}^{-1})$$",
+                "description": "Quantifies shear turbulence intensity in water treatment rapid mix and flocculation basins, where $P$ is mechanical power dissipated, $V$ is basin liquid volume, and $\\mu$ is fluid dynamic viscosity.",
+                "examTip": "Found in Environmental: Water Treatment. Rapid mix requires high intensity ($G = 700-1000\\text{ s}^{-1}$ for $10-60\\text{ s}$); flocculation requires gentle mixing ($G = 20-70\\text{ s}^{-1}$ for $20-30\\text{ min}$)."
+            },
+            {
+                "title": "Camp-Stein Rapid Mixing Detention Time and $Gt$ Parameter",
+                "formula": "$$Gt = G \\cdot t_d = G \\left(\\frac{V}{Q}\\right) \\quad (\\text{Dimensionless})$$",
+                "description": "Governs floc formation collisions in coagulation/flocculation basins: optimal flocculation design typically requires Camp-Stein product $Gt$ between $10^4$ and $10^5$.",
+                "examTip": "Found in Water Treatment. Insufficient $Gt$ causes poor floc aggregation; excessive $Gt$ or high $G$ shreds fragile flocs due to excessive fluid shear."
+            },
+            {
+                "title": "Primary Sedimentation Basin Surface Overflow Rate and SS Removal",
+                "formula": "$$v_0 = \\frac{Q}{A_s} \\le 800 - 1200\\text{ gpd/ft}^2 \\ (32 - 48\\text{ m}^3/(\\text{m}^2\\cdot\\text{d})), \\quad \\text{SS Removal} = 50 - 65\\%$$",
+                "description": "Primary wastewater clarifiers settle raw settleable particulate organic solids: design surface overflow rates govern solid separation and typically achieve $50\\%-65\\%$ suspended solids and $25\\%-35\\%$ BOD removal.",
+                "examTip": "Found in Environmental: Wastewater Treatment. Overflow rates must not be exceeded during peak hourly flows to prevent sludge blanket scouring."
+            },
+            {
+                "title": "Stokes' Law Particle Terminal Settling Velocity in Water",
+                "formula": "$$v_t = \\frac{g (\\rho_p - \\rho) d_p^2}{18 \\mu} \\quad (\\text{for } Re_p < 1.0)$$",
+                "description": "Calculates terminal gravitational settling velocity of discrete spherical particles in laminar flow; settling speed is proportional to square of particle diameter ($d_p^2$) and density difference $(\\rho_p - \\rho)$.",
+                "examTip": "Found in Environmental: Water Treatment & Air Pollution. Doubling particle diameter quadruples settling speed ($2^2 = 4$), illustrating why coagulation/flocculation is crucial for rapid clarification."
+            },
+            {
+                "title": "Type I Discrete Settling vs. Type II Flocculent Settling in Clarifiers",
+                "formula": "$$\\text{Type I: Constant } v_t \\text{ (grit chambers)}; \\quad \\text{Type II: Accelerating } v_t \\text{ due to particle coalescing}$$",
+                "description": "Classifies sedimentation mechanisms: Type I particles settle at constant velocity with unchanged size/shape; Type II particles aggregate during settling, increasing mass and terminal velocity with depth.",
+                "examTip": "Found in Environmental: Clarifier Design. Type II removal efficiencies cannot be calculated purely from Stokes' law; they require settling column test analyses."
+            },
+            {
+                "title": "Type III Zone Settling and Type IV Compression Settling",
+                "formula": "$$\\text{Type III: Hindered interface settling}; \\quad \\text{Type IV: Consolidation under weight of overlying sludge}$$",
+                "description": "Characterizes high-solids sedimentation in secondary clarifiers: Type III forms a distinct solid-liquid interface where interparticle forces hinder fluid displacement; Type IV occurs at bottom where sludge physically compresses.",
+                "examTip": "Found in Wastewater: Secondary Clarifiers. Secondary clarifiers must be sized for both clarification (Type II/III at surface) and sludge thickening (Type IV at bottom)."
+            },
+            {
+                "title": "Indoor Air Quality Single-Compartment Mass Balance Model",
+                "formula": "$$V \\frac{dC}{dt} = Q C_{\\text{in}} + S - Q C - k V C, \\quad C_{\\text{steady}} = \\frac{Q C_{\\text{in}} + S}{Q + k V}$$",
+                "description": "Models contaminant accumulation in a room of volume $V$ with outdoor airflow rate $Q$, ambient concentration $C_{\\text{in}}$, internal emission source rate $S$, and internal first-order decay/deposition rate $k$.",
+                "examTip": "Found in Environmental: Indoor Air Quality. The air exchange rate is $ACH = Q / V$ (air changes per hour); increasing outdoor ventilation $Q$ rapidly reduces steady-state indoor contaminant levels."
+            },
+            {
+                "title": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry",
+                "formula": "$$\\text{Resin Capacity: eq/L or grains/ft}^3, \\quad 2\\text{R-Na} + \\text{Ca}^{2+} \\to \\text{R}_2\\text{-Ca} + 2\\text{Na}^+$$",
+                "description": "Replaces divalent calcium and magnesium ions with monovalent sodium ions using strong acid cation resin; exhausted resin beds are regenerated by reversing equilibrium with concentrated ($10\\%-15\\%$) $\\text{NaCl}$ brine solution.",
+                "examTip": "Found in Environmental: Water Softening. Unit conversion: $1\\text{ grain of hardness per gallon (gpg)} = 17.1\\text{ mg/L as }\\text{CaCO}_3$."
+            },
+            {
+                "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
+                "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
+                "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
+                "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
+            },
+            {
+                "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
+                "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
+                "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+            },
+            {
+                "title": "Binary Eutectic Phase Diagram Invariant Reaction",
+                "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
+                "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
+                "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
+            },
+            {
+                "title": "Lumped Capacitance Method for Transient Heat Conduction",
+                "formula": "$$\\frac{T(t) - T_\\infty}{T_0 - T_\\infty} = e^{-t / \\tau} = e^{-\\left(\\frac{h A_s}{\\rho V c}\\right) t}, \\quad Bi = \\frac{h L_c}{k} < 0.1$$",
+                "description": "Models uniform transient cooling/heating of a solid body when internal conduction resistance is negligible compared to surface convection resistance; characteristic length is $L_c = V / A_s$.",
+                "examTip": "Found in Heat Transfer. The lumped capacitance model is strictly valid ONLY when Biot number $Bi = h L_c / k < 0.1$; if $Bi \\ge 0.1$, spatial temperature gradients exist and Heisler charts must be used."
+            },
+            {
+                "title": "Biot Number vs. Fourier Number in Transient Conduction",
+                "formula": "$$Bi = \\frac{h L_c}{k_{\\text{solid}}} = \\frac{\\text{Convection Resistance}}{\\text{Internal Conduction Resistance}}, \\quad Fo = \\frac{\\alpha t}{L_c^2} = \\frac{\\text{Conduction Rate}}{\\text{Thermal Storage Rate}}$$",
+                "description": "Dimensionless parameters governing transient heat transfer: Biot number evaluates spatial temperature uniformity; Fourier number $Fo$ represents dimensionless time, where thermal diffusivity $\\alpha = k / (\\rho c_p)$.",
+                "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
+                "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
+                "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+            },
+            {
+                "title": "Molarity, Molality, and Normality Chemical Concentrations",
+                "formula": "$$M = \\frac{\\text{moles solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{moles solute}}{\\text{kg solvent}}, \\quad N = M \\times n = \\frac{\\text{equivalents}}{\\text{L solution}}$$",
+                "description": "Standard chemical solution concentration metrics: molarity $M$ varies with temperature due to fluid thermal expansion; molality $m$ is temperature-independent; normality $N$ incorporates reactive equivalence factor $n$.",
+                "examTip": "Found in Chemistry. For diprotic sulfuric acid ($\\text{H}_2\\text{SO}_4$), $n = 2$, so a $1.0\\text{ M }\\text{H}_2\\text{SO}_4$ solution is $2.0\\text{ N}$."
+            },
+            {
+                "title": "First-Order Chemical Reaction Half-Life",
+                "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
+                "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+            }
         ],
         "Industrial": [
                 {
@@ -8797,7 +11156,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -8812,19 +11174,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Free Body Diagram Support Reaction Rules",
@@ -8853,6 +11224,374 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "Mean Time Between Failures and System Availability",
+                "formula": "$$\\text{MTBF} = \\frac{1}{\\lambda} = \\text{MTTF} + \\text{MTTR}, \\quad A = \\frac{\\text{MTBF}}{\\text{MTBF} + \\text{MTTR}} = \\frac{\\text{Uptime}}{\\text{Uptime} + \\text{Downtime}}$$",
+                "description": "Quantifies operational readiness: Mean Time Between Failures ($\text{MTBF}$) measures operating reliability, while Mean Time To Repair ($\text{MTTR}$) measures maintainability; steady-state availability $A$ is the fraction of time the system is operational.",
+                "examTip": "Found in Reliability Engineering. An availability of 'three nines' ($99.9\\%$) permits only $8.76\\text{ hours}$ of total downtime per year."
+            },
+            {
+                "title": "Parallel System Reliability Formulation",
+                "formula": "$$R_s(t) = 1 - \\prod_{i=1}^n [1 - R_i(t)] = 1 - \\prod_{i=1}^n F_i(t)$$",
+                "description": "Calculates reliability of an active redundant system where all $n$ components operate simultaneously; the entire system fails only if every single redundant component fails.",
+                "examTip": "Found in Reliability. Adding redundant parallel components always improves system reliability ($R_s > \\max(R_i)$), in contrast to series configurations ($R_s < \\min(R_i)$)."
+            },
+            {
+                "title": "Standby Redundancy System Reliability with Perfect Switching",
+                "formula": "$$R_s(t) = e^{-\\lambda t} \\sum_{k=0}^{n-1} \\frac{(\\lambda t)^k}{k!} = e^{-\\lambda t} \\left( 1 + \\lambda t + \\frac{(\\lambda t)^2}{2!} + \\dots \\right)$$",
+                "description": "Reliability of a cold standby system where redundant backup units remain idle until the primary unit fails, assuming an ideal sensing and switching mechanism with identical constant failure rates $\\lambda$.",
+                "examTip": "Found in Industrial: Reliability. Standby redundancy provides longer expected lifetime than active parallel redundancy because backup units do not experience operational wear while idling."
+            },
+            {
+                "title": "Normal Time and Worker Performance Rating",
+                "formula": "$$NT = OT \\times PR = OT \\left(\\frac{\\text{Rating }\\%}{100}\\right), \\quad ST = NT \\times (1 + AF)$$",
+                "description": "Converts stopwatch observed cycle time ($OT$) into normal time ($NT$) by applying a worker performance rating ($PR$, where $100\\%$ is standard pace), then incorporates allowance factors ($AF$) for personal, fatigue, and unavoidable delays (PF&D).",
+                "examTip": "Found in Industrial: Work Design. If allowances are based on the workday rather than normal time, use $ST = NT / (1 - AF_{\\text{day}})$; read the problem statement carefully."
+            },
+            {
+                "title": "Predetermined Motion Time Systems (PMTS / MTM-1)",
+                "formula": "$$1\\text{ TMU} = 0.00001\\text{ hour} = 0.0006\\text{ minute} = 0.036\\text{ second}, \\quad 1\\text{ second} = 27.8\\text{ TMU}$$",
+                "description": "Establishes standard task times by decomposing manual work into basic elemental motions (Reach, Grasp, Move, Position, Release) quantified in Time Measurement Units (TMU) without requiring stopwatch timing.",
+                "examTip": "Found in Industrial: Work Measurement. Memorize the direct conversion factor: $1\\text{ TMU} = 0.036\\text{ seconds}$ for rapid calculation on the FE exam."
+            },
+            {
+                "title": "Biomechanical Spinal Compression Force at L5/S1 Joint",
+                "formula": "$$F_c = F_m + W_{\\text{torso}} + W_{\\text{load}}, \\quad F_m = \\frac{W_{\\text{torso}} \\cdot h_t + W_{\\text{load}} \\cdot h_L}{E_m}$$",
+                "description": "Calculates compressive force $F_c$ acting on the lumbosacral disc (L5/S1) during manual lifting, where back muscle force $F_m$ acts with a small moment arm $E_m \\approx 5\\text{ cm}$ ($2\\text{ inches}$) to counter forward torso and load moments.",
+                "examTip": "Found in Ergonomics / Biomechanics. NIOSH Action Limit for L5/S1 spinal compression is $3400\\text{ N}$ ($770\\text{ lb}$); lifting loads close to the body reduces moment arm $h_L$ and drastically lowers $F_c$."
+            },
+            {
+                "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
+                "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
+                "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+            },
+            {
+                "title": "Johnson's Rule for Two-Machine Flow Shop Sequencing",
+                "formula": "$$\\min(A_i, B_i): \\quad \\text{If minimum is on Machine 1, schedule FIRST; if on Machine 2, schedule LAST}$$",
+                "description": "Optimizes job processing sequence across two sequential machines in a flow shop to minimize total makespan (completion time of all jobs), repeatedly assigning jobs with shortest operation times to available front or rear positions.",
+                "examTip": "Found in Production Planning: Scheduling. Breaks ties arbitrarily; always ensures the theoretical minimum idle time on the second machine."
+            },
+            {
+                "title": "Single-Machine Priority Dispatching Rules",
+                "formula": "$$\\text{SPT: Shortest Processing Time}, \\quad \\text{EDD: Earliest Due Date}, \\quad \\text{CR} = \\frac{\\text{Due Date} - \\text{Now}}{\\text{Processing Time Remaining}}$$",
+                "description": "Heuristic dispatching rules for sequencing jobs on a single workstation: SPT minimizes mean flow time and average work-in-progress (WIP); EDD minimizes maximum job tardiness (lateness); Critical Ratio (CR $< 1.0$) identifies behind-schedule jobs.",
+                "examTip": "Found in Industrial: Operations Scheduling. If the exam asks which rule minimizes mean waiting time or mean completion time, the answer is always SPT."
+            },
+            {
+                "title": "Kanban Production System Container Sizing Equation",
+                "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
+                "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
+                "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
+            },
+            {
+                "title": "5S Lean Methodology (Sort, Set in Order, Shine, Standardize, Sustain)",
+                "formula": "$$\\text{1. Seiri (Sort)} \\to \\text{2. Seiton (Set in Order)} \\to \\text{3. Seiso (Shine)} \\to \\text{4. Seiketsu (Standardize)} \\to \\text{5. Shitsuke (Sustain)}$$",
+                "description": "Systematic workplace organization framework originating in Japanese manufacturing: eliminates clutter (red tagging), arranges tools ergonomically with shadow boards, maintains spotless cleanliness, codifies standards, and instills self-discipline.",
+                "examTip": "Found in Industrial: Lean Manufacturing. 5S serves as the visual management foundation before implementing advanced lean tools like SMED, TPM, and Kaizen."
+            },
+            {
+                "title": "Value Stream Mapping: Takt Time and Lead Time Ratio",
+                "formula": "$$T_{\\text{takt}} = \\frac{\\text{Net Available Operating Time per Shift}}{\\text{Customer Demand per Shift}}, \\quad PCE = \\frac{\\text{Value-Added Time}}{\\text{Total Production Lead Time}} \\times 100\\%$$",
+                "description": "Takt time sets the heartbeat of a lean production cell to match customer purchase pace; Process Cycle Efficiency ($PCE$) measures value stream waste, where world-class manufacturing often exhibits $PCE < 10\\%$ due to queueing delays.",
+                "examTip": "Found in Industrial: Value Stream Mapping. Net available time excludes planned downtime such as lunch breaks, team huddles, and scheduled maintenance."
+            },
+            {
+                "title": "Bill of Materials Explosion Tree and Component Offsetting",
+                "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
+                "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
+                "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
+            },
+            {
+                "title": "Statistical Process Control $p$-Chart for Fraction Defective",
+                "formula": "$$\\bar{p} = \\frac{\\sum d_i}{\\sum n_i}, \\quad UCL, LCL = \\bar{p} \\pm 3 \\sqrt{\\frac{\\bar{p}(1 - \\bar{p})}{n}}$$",
+                "description": "Attributes control chart monitoring fraction defective in inspection samples of size $n$, based on the binomial distribution approximation; lower control limit is set to zero if calculated $LCL < 0$.",
+                "examTip": "Found in Quality Control. Sample size $n$ should be large enough so that $n \\bar{p} \\ge 5$ to satisfy the normal approximation to the binomial distribution."
+            },
+            {
+                "title": "Statistical Process Control $c$-Chart and $u$-Chart for Defects per Unit",
+                "formula": "$$c\\text{-Chart: } \\bar{c} \\pm 3\\sqrt{\\bar{c}} \\quad (\\text{Constant Area}), \\quad u\\text{-Chart: } \\bar{u} \\pm 3\\sqrt{\\frac{\\bar{u}}{n}} \\quad (\\text{Variable Area})$$",
+                "description": "Poisson-based control charts monitoring counts of nonconformities (defects): $c$-chart is used when inspection unit size is constant; $u$-chart monitors average defects per unit when sample size $n$ varies.",
+                "examTip": "Found in Quality Control. A defect ($c$ or $u$) is a specific nonconformance, whereas a defective item ($p$ or $np$) is an entire unit containing one or more defects."
+            },
+            {
+                "title": "Western Electric Rules for Special Cause Variation",
+                "formula": "$$\\text{Rule 1: } 1 \\text{ pt beyond } 3\\sigma; \\quad \\text{Rule 2: } 2 \\text{ of } 3 \\text{ pts beyond } 2\\sigma; \\quad \\text{Rule 3: } 4 \\text{ of } 5 \\text{ pts beyond } 1\\sigma; \\quad \\text{Rule 4: } 8 \\text{ consecutive pts on one side of center}$$",
+                "description": "Statistical decision rules detecting out-of-control conditions and non-random patterns (shifts, drifts, trends) on Shewhart control charts prior to an individual point breaching the $3\\sigma$ control limits.",
+                "examTip": "Found in Quality Control: SPC. All rules evaluate points on the same side of the centerline (except Rule 1, which applies to either limit)."
+            },
+            {
+                "title": "Six Sigma DMAIC Framework Steps and Tollgates",
+                "formula": "$$\\text{Define} \\to \\text{Measure} \\to \\text{Analyze} \\to \\text{Improve} \\to \\text{Control} \\quad (3.4 \\text{ DPMO at } 6\\sigma \\text{ with } 1.5\\sigma \\text{ shift})$$",
+                "description": "Structured data-driven problem-solving roadmap for process improvement: project charter & VOC (Define); baseline capability & MSA (Measure); root cause Ishikawa/regression (Analyze); DOE & pilot (Improve); SPC & poke-yoke (Control).",
+                "examTip": "Found in Quality: Six Sigma. A Six Sigma process allows a $1.5\\sigma$ long-term mean drift, resulting in exactly $3.4$ defects per million opportunities (DPMO)."
+            },
+            {
+                "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
+                "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
+                "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
+            },
+            {
+                "title": "Forecasting Error Metrics: MAD, MSE, and Tracking Signal",
+                "formula": "$$MAD = \\frac{\\sum |e_t|}{n}, \\quad MSE = \\frac{\\sum e_t^2}{n}, \\quad TS = \\frac{\\sum e_t}{MAD} = \\frac{RSFE}{MAD}$$",
+                "description": "Quantifies forecasting accuracy and bias: Mean Absolute Deviation ($MAD$) measures average magnitude of errors; Mean Squared Error ($MSE$) penalizes large outliers; Tracking Signal ($TS$, typically bounded within $\\pm 4$) detects persistent bias.",
+                "examTip": "Found in Industrial: Forecasting. For a normal error distribution, standard deviation of forecast error relates to MAD: $\\sigma \\approx 1.25 \\times MAD$."
+            },
+            {
+                "title": "Transportation Problem Initial Basic Feasible Solution Methods",
+                "formula": "$$\\min \\sum_{i=1}^m \\sum_{j=1}^n c_{ij} x_{ij} \\quad \\text{s.t. } \\sum_j x_{ij} = s_i, \\ \\sum_i x_{ij} = d_j$$",
+                "description": "Specialized linear program allocating supply $s_i$ to demand destinations $d_j$: Northwest Corner method is purely mechanical; Vogel's Approximation Method (VAM) calculates penalty costs (difference between lowest two unit costs) to yield near-optimal starting solutions.",
+                "examTip": "Found in Operations Research. Total number of basic variables in a non-degenerate transportation problem with $m$ sources and $n$ destinations is strictly $m + n - 1$."
+            },
+            {
+                "title": "Duality in Linear Programming and Complementary Slackness",
+                "formula": "$$\\text{Primal: } \\max c^T x \\ \\text{s.t. } A x \\le b, \\ x \\ge 0 \\iff \\text{Dual: } \\min b^T y \\ \\text{s.t. } A^T y \\ge c, \\ y \\ge 0$$",
+                "description": "Every linear program (Primal) has an associated symmetric Dual; optimal objective values are identical (Strong Duality Theorem: $c^T x^* = b^T y^*$), and dual variables $y_i^*$ represent marginal shadow prices of primal resources.",
+                "examTip": "Found in Operations Research: Linear Programming. Complementary Slackness: if a primal constraint has positive slack ($s_i > 0$), its corresponding dual shadow price is zero ($y_i = 0$)."
+            },
+            {
+                "title": "M/M/c Multi-Server Queue Erlang-C Delay Probability",
+                "formula": "$$P_0 = \\left[ \\sum_{n=0}^{c-1} \\frac{(c \\rho)^n}{n!} + \\frac{(c \\rho)^c}{c!(1 - \\rho)} \\right]^{-1}, \\quad C(c, a) = \\frac{\\frac{(c \\rho)^c}{c!(1 - \\rho)}}{\\sum_{n=0}^{c-1} \\frac{(c \\rho)^n}{n!} + \\frac{(c \\rho)^c}{c!(1 - \\rho)}}$$",
+                "description": "Models queueing systems with Poisson arrivals ($lambda$), exponential service ($mu$), and $c$ parallel servers; system utilization is $\\rho = \\lambda / (c \\mu) < 1.0$; Erlang-C formula $C(c, a)$ yields probability that an arriving customer must wait in queue.",
+                "examTip": "Found in Industrial: Queuing Theory. Average time spent waiting in queue is $W_q = \\frac{C(c, a)}{c \\mu - \\lambda}$."
+            },
+            {
+                "title": "M/M/1/K Finite Queue Capacity Metrics",
+                "formula": "$$P_n = \\left(\\frac{1 - \\rho}{1 - \\rho^{K+1}}\\right) \\rho^n, \\quad \\lambda_{\\text{eff}} = \\lambda (1 - P_K)$$",
+                "description": "Models single-server queue with finite system capacity $K$ (including customer in service): arrivals finding $K$ customers present are blocked and turned away; effective arrival rate entering the system is $\\lambda_{\\text{eff}}$.",
+                "examTip": "Found in Queuing Theory. Unlike infinite queues, an M/M/1/K queue is stable even if $\\rho \\ge 1.0$ because blocked arrivals prevent queue buildup from growing without bound."
+            },
+            {
+                "title": "Anthropometric Design Principles for Ergonomics",
+                "formula": "$$\\text{Design for Extremes: } 5^{\\text{th}} \\% \\text{ (reach/clearance)} \\text{ or } 95^{\\text{th}} \\% \\text{ (headroom/strength)}; \\quad \\text{Adjustability: } 5^{\\text{th}} - 95^{\\text{th}} \\%$$",
+                "description": "Applies human body dimensions to workplace layout: design for clearance accommodates the $95^{\\text{th}}$ percentile (largest users); design for reach accommodates the $5^{\\text{th}}$ percentile (smallest users); adjustable designs (e.g., office chairs) span $5^{\\text{th}}$ to $95^{\\text{th}}$ percentiles.",
+                "examTip": "Found in Ergonomics. Never design for the 'average' human ($50^{\\text{th}}$ percentile) because a person of average stature has individual limbs that deviate significantly from average."
+            },
+            {
+                "title": "Ergonomic Posture Assessment: RULA and REBA Methodologies",
+                "formula": "$$\\text{RULA (Upper Limb)}: \\text{Scores } 1-7, \\quad \\text{REBA (Entire Body)}: \\text{Scores } 1-15$$",
+                "description": "Rapid Upper Limb Assessment (RULA) targets sedentary and computer-intensive tasks assessing neck, trunk, and upper limbs; Rapid Entire Body Assessment (REBA) evaluates dynamic whole-body postures in healthcare, warehousing, and construction.",
+                "examTip": "Found in Industrial Ergonomics. A RULA score of 7 or REBA score $>11$ indicates high musculoskeletal disorder risk requiring immediate ergonomic intervention."
+            },
+            {
+                "title": "Learning Curve Theory: Wright's Log-Linear Model",
+                "formula": "$$T_N = T_1 \\cdot N^b = T_1 \\cdot N^{\\frac{\\log_{10}(L)}{\\log_{10}(2)}}, \\quad b = \\frac{\\ln(L)}{\\ln(2)}$$",
+                "description": "Models operational productivity gains: every time cumulative production doubles, unit labor time decreases by a constant learning percentage $L$ (e.g., for an $80\\%$ learning curve, $L = 0.80$ and $b = -0.322$).",
+                "examTip": "Found in Industrial: Work Design & Economics. If unit 1 takes $100\\text{ hours}$ under an $80\\%$ curve, unit 2 takes $80\\text{ hours}$, unit 4 takes $64\\text{ hours}$, and unit 8 takes $51.2\\text{ hours}$."
+            },
+            {
+                "title": "Total Productive Maintenance: Overall Equipment Effectiveness",
+                "formula": "$$OEE = \\text{Availability} \\times \\text{Performance} \\times \\text{Quality} = \\left(\\frac{\\text{Operating Time}}{\\text{Planned Time}}\\right) \\left(\\frac{\\text{Total Output}}{\\text{Target Output}}\\right) \\left(\\frac{\\text{Good Units}}{\\text{Total Output}}\\right)$$",
+                "description": "Comprehensive manufacturing productivity KPI accounting for the 'Six Big Losses': equipment breakdowns & setups (Availability); minor stoppages & reduced speed (Performance); startup rejects & production scrap (Quality).",
+                "examTip": "Found in Industrial: TPM & Lean. A benchmark world-class OEE is considered $85\\%$ ($90\\% \\text{ Availability} \\times 95\\% \\text{ Performance} \\times 99.9\\% \\text{ Quality}$)."
+            },
+            {
+                "title": "Cellular Manufacturing: Rank Order Clustering",
+                "formula": "$$\\text{Step 1: Assign binary weights } 2^{n-j} \\text{ to columns and sort rows; Step 2: Repeat for rows and sort columns}$$",
+                "description": "King's matrix clustering algorithm reorganizes a zero-one Machine-Part incident matrix into block diagonal cells, grouping families of similar parts with dedicated machine clusters to minimize intercellular material handling.",
+                "examTip": "Found in Manufacturing Systems: Group Technology. Exceptional parts that require machines in multiple cells identify the need for duplicate tooling or subcontracting."
+            },
+            {
+                "title": "Single-Minute Exchange of Die (SMED) Setup Reduction",
+                "formula": "$$\\text{Step 1: Separate Internal vs External Setup} \\to \\text{Step 2: Convert Internal to External} \\to \\text{Step 3: Streamline All}$$",
+                "description": "Shigeo Shingo's lean setup reduction methodology targeting changeover times under 10 minutes ($<1\\text{ digit minute}$): internal elements (performed only while machine is stopped) are systematically converted to external elements (prepared while machine is running).",
+                "examTip": "Found in Industrial: Lean Manufacturing. Using standardized quick-clamping mechanisms instead of threaded bolts is a classic example of streamlining setup operations."
+            },
+            {
+                "title": "Facility Location: Center-of-Gravity (Centroid) Method",
+                "formula": "$$C_x = \\frac{\\sum (d_{ix} \\cdot W_i)}{\\sum W_i}, \\quad C_y = \\frac{\\sum (d_{iy} \\cdot W_i)}{\\sum W_i}$$",
+                "description": "Identifies the optimal geographical coordinates $(C_x, C_y)$ for a centralized distribution center or warehouse to minimize total transportation ton-mileage across $n$ supply/demand nodes with volumes $W_i$ at locations $(d_{ix}, d_{iy})$.",
+                "examTip": "Found in Facilities Planning: Logistics. Mathematically identical to finding the centroid / center of mass of a system of discrete concentrated loads."
+            },
+            {
+                "title": "Break-Even Analysis for Make-or-Buy Decision Models",
+                "formula": "$$TC_{\\text{make}} = FC_{\\text{make}} + VC_{\\text{make}} \\cdot Q, \\quad TC_{\\text{buy}} = VC_{\\text{buy}} \\cdot Q, \\quad Q_{BE} = \\frac{FC_{\\text{make}}}{VC_{\\text{buy}} - VC_{\\text{make}}}$$",
+                "description": "Determines production volume $Q_{BE}$ above which in-house manufacturing (high fixed cost $FC$, low variable cost $VC$) becomes financially superior to purchasing from outside vendors ($FC = 0$, higher unit price $VC_{\\text{buy}}$).",
+                "examTip": "Found in Engineering Economics: Cost Analysis. For production volumes $Q > Q_{BE}$, make in-house; for volumes $Q < Q_{BE}$, buy externally."
+            },
+            {
+                "title": "Benefit-Cost Ratio (B/C Ratio) for Public Projects",
+                "formula": "$$B/C = \\frac{B - D}{C_0 + O\\&M} = \\frac{PV(\\text{Benefits}) - PV(\\text{Disbenefits})}{PV(\\text{Initial Capital Cost}) + PV(\\text{O\\&M Costs})} \\ge 1.0$$",
+                "description": "Standard decision criterion for public sector civil works projects: project is economically justified if net benefits to the public divided by costs to government exceed 1.0; disbenefits reduce user benefits in the numerator.",
+                "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$) must be applied in order of increasing cost."
+            },
+            {
+                "title": "Modified Accelerated Cost Recovery System Depreciation",
+                "formula": "$$D_j = \\text{Cost Basis} \\times r_j, \\quad BV_j = \\text{Cost Basis} - \\sum_{i=1}^j D_i$$",
+                "description": "IRS tax depreciation framework using statutory recovery percentages $r_j$ (e.g., 3, 5, 7-year property classes) based on double declining balance switching to straight-line with a half-year convention; salvage value is treated as zero.",
+                "examTip": "Found in Engineering Economics: Taxes. Half-year convention means property placed in service during tax year receives only a half-year's depreciation in Year 1, extending deductions to Year $N+1$."
+            },
+            {
+                "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
+                "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
+                "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
+            },
+            {
+                "title": "Payback Period: Simple vs. Discounted Payback Methods",
+                "formula": "$$\\sum_{t=1}^{\\text{Payback}} CF_t \\ge C_0 \\quad (\\text{Simple}), \\quad \\sum_{t=1}^{\\text{DPB}} \\frac{CF_t}{(1 + i)^t} \\ge C_0 \\quad (\\text{Discounted})$$",
+                "description": "Number of years required for cumulative net cash inflows to recover initial capital investment $C_0$; simple payback ignores the time value of money ($i=0$), whereas discounted payback accounts for cost of capital.",
+                "examTip": "Found in Engineering Economics. Major shortcoming of payback period is that it completely ignores cash flows occurring after the payback horizon."
+            },
+            {
+                "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
+                "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
+                "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
+                "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
+            },
+            {
+                "title": "Chi-Square Goodness-of-Fit Test for Discrete Distributions",
+                "formula": "$$\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}, \\quad \\nu = k - 1 - p$$",
+                "description": "Tests hypothesis that sample observations $O_i$ originate from a theoretical population distribution with expected frequencies $E_i$; degrees of freedom $\\nu$ subtracts 1 plus number of parameters $p$ estimated from sample data.",
+                "examTip": "Found in Probability & Statistics. Valid rule of thumb: expected frequency $E_i$ in every bin must be at least 5; pool adjacent bins if necessary."
+            },
+            {
+                "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
+                "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
+                "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
+            },
+            {
+                "title": "Student's t-Distribution Two-Sample Hypothesis Test",
+                "formula": "$$t = \\frac{(\\bar{X}_1 - \\bar{X}_2) - \\Delta_0}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}, \\quad s_p^2 = \\frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2}$$",
+                "description": "Tests difference between two independent population means when population variances are unknown but assumed equal, pooling sample variances $s_1^2$ and $s_2^2$ with degrees of freedom $\\nu = n_1 + n_2 - 2$.",
+                "examTip": "Found in Probability & Statistics: Hypothesis Testing. For large samples ($n_1 + n_2 > 30$), the $t$-distribution converges to standard normal $z$."
+            }
+        ,
+            {
+                "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
+                "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
+                "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
+                "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
+            },
+            {
+                "title": "Gravity Retaining Wall Overturning Factor of Safety",
+                "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
+                "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
+            },
+            {
+                "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
+                "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
+            },
+            {
+                "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
+                "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
+                "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Earned Value Management: Cost Variance and Schedule Variance",
+                "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
+                "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+            },
+            {
+                "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
+                "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
+                "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
+            },
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "HAZOP Study Methodology and Standard Guide Words",
+                "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
+                "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
+                "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
+            },
+            {
+                "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
+                "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
+                "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
+                "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
+            },
+            {
+                "title": "Pressure Relief Valve Sizing Formula for Vapor Discharge",
+                "formula": "$$A = \\frac{W}{C K_d P_1} \\sqrt{\\frac{T Z}{M}}, \\quad C = 520 \\sqrt{k \\left(\\frac{2}{k+1}\\right)^{\\frac{k+1}{k-1}}}$$",
+                "description": "Calculates required discharge orifice area $A$ for safety pressure relief valves under sonic/choked vapor flow conditions, where $W$ is required mass relief rate, $P_1$ is upstream relieving pressure, and $M$ is molecular weight.",
+                "examTip": "Found in Chemical: Process Safety. Overpressure allowance is typically $10\\%$ for non-fire relief and $21\\%$ for external fire exposure scenarios."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Chronic Daily Intake Chemical Exposure Formulation",
+                "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
+                "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+            },
+            {
+                "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
+                "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
+                "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
+                "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            },
+            {
+                "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
+                "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
+                "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
+                "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
+            },
+            {
+                "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
+                "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
+                "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
+                "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
+            },
+            {
+                "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
+                "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
+                "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
+                "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
+                "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+            }
         ],
         "Environmental": [
                 {
@@ -10452,7 +13191,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -10467,19 +13209,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
@@ -10491,7 +13242,10 @@
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
                           "formula": "$$P_{\\text{hyd}} = \\gamma Q h_p = \\rho g Q h_p, \\quad BHP = \\frac{P_{\\text{hyd}}}{\\eta_{\\text{pump}}} = \\frac{\\gamma Q h_p}{\\eta_{\\text{pump}}}$$",
                           "description": "Hydraulic power represents useful rate of mechanical energy transferred to flowing fluid. Brake horsepower (BHP) is the required mechanical input power delivered by the motor shaft to drive the pump at efficiency $\\eta_{\\text{pump}}$.",
-                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant."
+                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant.",
+                    "videoUrl": "assets/videos/Pump_Hydraulic_Power_and_Brake_Horsepower_BHP.mp4",
+                    "videoTitle": "Pump Hydraulic Power and Brake Horsepower (BHP) Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
@@ -10514,6 +13268,470 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Solids Retention Time Activated Sludge Formulation",
+                "formula": "$$\\theta_c = \\frac{V \\cdot X}{Q_w X_w + Q_e X_e} \\approx \\frac{V \\cdot X}{Q_w X_w} \\quad (\\text{days})$$",
+                "description": "Fundamental operational parameter governing biological wastewater treatment: sludge age $\\theta_c$ dictates whether nitrifying bacteria can survive (typically requires $\\theta_c \\ge 8-10\\text{ days}$ at $20^\\circ\\text{C}$).",
+                "examTip": "Found in Environmental: Wastewater. $V$ is aeration basin volume, $X$ is MLSS concentration, and $Q_w X_w$ is waste activated sludge mass rate."
+            },
+            {
+                "title": "Mixed Liquor Suspended Solids and Volatile Fraction",
+                "formula": "$$MLVSS = f_v \\times MLSS \\quad (f_v \\approx 0.70 - 0.85)$$",
+                "description": "MLSS measures total suspended solids in the biological aeration basin; Mixed Liquor Volatile Suspended Solids (MLVSS) represents the active biological microbial biomass fraction.",
+                "examTip": "Found in Environmental: Biological Treatment. Kinetic reaction rates and F/M ratios are strictly calculated on an MLVSS basis to reflect active biomass."
+            },
+            {
+                "title": "CERCLA / Superfund Hazard Ranking System and National Priorities List",
+                "formula": "$$\\text{HRS Score } \\ge 28.5 \\implies \\text{Placement on National Priorities List (NPL)}$$",
+                "description": "Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA) cleanup framework: Hazard Ranking System (HRS) scores uncontrolled hazardous waste sites evaluating groundwater, surface water, soil, and air migration pathways.",
+                "examTip": "Found in Environmental: Hazardous Waste Laws. Superfund imposes retroactive, strict, joint and several liability on Potentially Responsible Parties (PRPs)."
+            },
+            {
+                "title": "Chronic Daily Intake Chemical Exposure Formulation",
+                "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
+                "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+            },
+            {
+                "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
+                "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
+                "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
+                "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            },
+            {
+                "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
+                "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
+                "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
+                "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
+            },
+            {
+                "title": "RCRA Characteristic Hazardous Waste Testing",
+                "formula": "$$\\text{Characteristics: Ignitability } (FP < 140^\\circ\\text{F}), \\ \\text{Corrosivity } (pH \\le 2 \\text{ or } \\ge 12.5), \\ \\text{Reactivity}, \\ \\text{TCLP Toxicity}$$",
+                "description": "Resource Conservation and Recovery Act (RCRA) criteria identifying hazardous waste under 40 CFR 261: flashpoint $<60^\\circ\\text{C}$ ($140^\\circ\\text{F}$); extreme pH; explosive instability/cyanides; or exceeding Toxicity Characteristic Leaching Procedure limits.",
+                "examTip": "Found in Environmental: Solid & Hazardous Waste. A waste is hazardous if it is specifically listed (F, K, P, U lists) or exhibits any of the four D-characteristic properties."
+            },
+            {
+                "title": "Monod Microbial Growth Kinetics and Substrate Utilization",
+                "formula": "$$\\mu = \\mu_{\\max} \\frac{S}{K_s + S}, \\quad r_{su} = -\\frac{k X S}{K_s + S} = -\\frac{\\mu X}{Y}$$",
+                "description": "Models microbial cell growth rate $\\mu$ as a hyperbolic function of limiting substrate concentration $S$, where $\\mu_{\\max}$ is maximum specific growth rate and $K_s$ is half-saturation constant ($S$ at which $\\mu = \\mu_{\\max} / 2$).",
+                "examTip": "Found in Environmental: Biological Kinetics. At high substrate ($S \\gg K_s$), kinetics are zero-order ($\\mu \\approx \\mu_{\\max}$); at very low substrate ($S \\ll K_s$), kinetics are first-order."
+            },
+            {
+                "title": "Coagulation Velocity Gradient and Power Dissipation in Rapid Mix",
+                "formula": "$$G = \\sqrt{\\frac{P}{\\mu V}} \\quad (\\text{s}^{-1})$$",
+                "description": "Quantifies shear turbulence intensity in water treatment rapid mix and flocculation basins, where $P$ is mechanical power dissipated, $V$ is basin liquid volume, and $\\mu$ is fluid dynamic viscosity.",
+                "examTip": "Found in Environmental: Water Treatment. Rapid mix requires high intensity ($G = 700-1000\\text{ s}^{-1}$ for $10-60\\text{ s}$); flocculation requires gentle mixing ($G = 20-70\\text{ s}^{-1}$ for $20-30\\text{ min}$)."
+            },
+            {
+                "title": "Camp-Stein Rapid Mixing Detention Time and $Gt$ Parameter",
+                "formula": "$$Gt = G \\cdot t_d = G \\left(\\frac{V}{Q}\\right) \\quad (\\text{Dimensionless})$$",
+                "description": "Governs floc formation collisions in coagulation/flocculation basins: optimal flocculation design typically requires Camp-Stein product $Gt$ between $10^4$ and $10^5$.",
+                "examTip": "Found in Water Treatment. Insufficient $Gt$ causes poor floc aggregation; excessive $Gt$ or high $G$ shreds fragile flocs due to excessive fluid shear."
+            },
+            {
+                "title": "Carbonate System Equilibrium and Speciation vs. pH",
+                "formula": "$$\\text{CO}_2(\\text{aq}) + \\text{H}_2\\text{O} \\xrightleftharpoons{K_1} \\text{H}^+ + \\text{HCO}_3^- \\xrightleftharpoons{K_2} 2\\text{H}^+ + \\text{CO}_3^{2-}$$",
+                "description": "Governs natural water buffering and pH stability ($pK_1 \\approx 6.3$, $pK_2 \\approx 10.3$ at $25^\\circ\\text{C}$): at $pH < 6.3$, carbonic acid $\\text{H}_2\\text{CO}_3^*$ dominates; at $6.3 < pH < 10.3$, bicarbonate $\\text{HCO}_3^-$ dominates; at $pH > 10.3$, carbonate $\\text{CO}_3^{2-}$ dominates.",
+                "examTip": "Found in Environmental Chemistry. In typical drinking waters ($pH \\approx 7-8$), virtually all dissolved inorganic carbon is in the bicarbonate ($\\text{HCO}_3^-$) form."
+            },
+            {
+                "title": "Henderson-Hasselbalch Equation for Environmental Buffer Systems",
+                "formula": "$$pH = pK_a + \\log_{10}\\left(\\frac{[A^-]}{[HA]}\\right) = pK_a + \\log_{10}\\left(\\frac{[\\text{Conjugate Base}]}{[\\text{Weak Acid}]}\\right)$$",
+                "description": "Calculates equilibrium pH of weak acid-conjugate base buffer solutions; maximum buffer capacity occurs when $[A^-] = [HA]$, at which point $pH = pK_a$.",
+                "examTip": "Found in Environmental Chemistry. Effective buffer operating range spans $pH = pK_a \\pm 1.0$."
+            },
+            {
+                "title": "Water Chlorination Breakpoint Curve and Free vs. Combined Residuals",
+                "formula": "$$\\text{Dose} = \\text{Demand} + \\text{Residual}, \\quad \\text{Free Chlorine} = [\\text{HOCl}] + [\\text{OCl}^-]$$",
+                "description": "Traces chlorine addition to water containing ammonia: chlorine initially reacts to form monochloramine and dichloramine (combined residual), then oxidizes chloramines to nitrogen gas reaching the breakpoint; additions beyond breakpoint produce free chlorine residual.",
+                "examTip": "Found in Water Treatment: Disinfection. Hypochlorous acid ($\\text{HOCl}$) is 80 to 100 times more potent as a disinfectant than hypochlorite ion ($\\text{OCl}^-$); maintaining $pH < 7.5$ maximizes $\\text{HOCl}$ fraction."
+            },
+            {
+                "title": "Air Pollutant Concentration Conversion: ppm to $\\mu\\text{g/m}^3$",
+                "formula": "$$\\mu\\text{g/m}^3 = \\frac{\\text{ppm} \\times M \\times 10^3}{V_m} = \\frac{\\text{ppm} \\times M \\times P \\times 10^6}{R T}$$",
+                "description": "Converts volumetric parts per million (ppmv) to mass concentration for air pollutants with molecular weight $M$; at standard conditions ($0^\\circ\\text{C}$, $1\\text{ atm}$), ideal gas molar volume is $V_m = 22.414\\text{ L/mol}$; at $25^\\circ\\text{C}$ and $1\\text{ atm}$, $V_m = 24.45\\text{ L/mol}$.",
+                "examTip": "Found in Air Quality. EPA National Ambient Air Quality Standards (NAAQS) specify $25^\\circ\\text{C}$ ($298.15\\text{ K}$) and $1\\text{ atm}$ ($101.325\\text{ kPa}$), making $V_m = 24.45\\text{ L/mol}$ standard."
+            },
+            {
+                "title": "Atmospheric Lapse Rates and Plume Behavior",
+                "formula": "$$\\Gamma_{\\text{dry}} = -9.8^\\circ\\text{C/km}, \\quad -\\frac{dT}{dz} > \\Gamma \\implies \\text{Unstable (Looping)}, \\quad -\\frac{dT}{dz} < 0 \\implies \\text{Inversion (Fanning)}$$",
+                "description": "Governs industrial smoke plume dispersion: Dry Adiabatic Lapse Rate (DALR) vs. Environmental Lapse Rate (ELR); produces distinct plume geometry types: looping (superadiabatic), coning (neutral), fanning (inversion), lofting (inversion below stack), and fumigation (inversion aloft broken by morning sun).",
+                "examTip": "Found in Air Pollution. Fumigation creates dangerous ground-level toxic pollutant concentrations when surface thermal mixing breaks an overnight radiation inversion."
+            },
+            {
+                "title": "Langmuir Adsorption Isotherm for Granular Activated Carbon",
+                "formula": "$$q_e = \\frac{q_m K_L C_e}{1 + K_L C_e}, \\quad \\frac{C_e}{q_e} = \\frac{1}{q_m K_L} + \\frac{C_e}{q_m}$$",
+                "description": "Models monolayer adsorption of organic micropollutants onto activated carbon pores assuming uniform surface energy; $q_e$ is equilibrium solid loading, $q_m$ is maximum monolayer capacity, and $C_e$ is equilibrium liquid concentration.",
+                "examTip": "Found in Environmental: Adsorption. A plot of $C_e / q_e$ versus $C_e$ yields a straight line with slope $1/q_m$ and intercept $1/(q_m K_L)$."
+            },
+            {
+                "title": "Freundlich Adsorption Isotherm Empirical Model",
+                "formula": "$$q_e = K_F C_e^{1/n}, \\quad \\log_{10}(q_e) = \\log_{10}(K_F) + \\frac{1}{n} \\log_{10}(C_e)$$",
+                "description": "Empirical adsorption model for heterogeneous adsorbent surfaces with exponential distribution of site adsorption heats; $K_F$ is capacity indicator and $1/n$ is adsorption intensity.",
+                "examTip": "Found in Environmental: Water & Wastewater Treatment. Favorable adsorption occurs when $0.1 < 1/n < 1.0$."
+            },
+            {
+                "title": "Groundwater Darcy Flux vs. Actual Pore Seepage Velocity",
+                "formula": "$$v = K \\cdot i = K \\left(\\frac{\\Delta h}{L}\\right), \\quad v_s = \\frac{v}{n_e} = \\frac{K \\cdot i}{n_e}$$",
+                "description": "Distinguishes superficial Darcy discharge velocity $v$ (flow per total gross area) from true interstitial pore seepage velocity $v_s$ (actual speed of advective groundwater contaminant transport), where $n_e$ is effective porosity.",
+                "examTip": "Found in Groundwater Hydrology. Because soil porosity $n_e < 1.0$ (typically $0.25$ to $0.40$), actual contaminant travel speed $v_s$ is $2.5$ to $4.0$ times faster than Darcy flux $v$."
+            },
+            {
+                "title": "Confined vs. Unconfined Aquifer Steady Radial Drawdown",
+                "formula": "$$\\text{Confined (Thiem): } Q = \\frac{2\\pi T (h_2 - h_1)}{\\ln(r_2 / r_1)}, \\quad \\text{Unconfined (Dupuit): } Q = \\frac{\\pi K (h_2^2 - h_1^2)}{\\ln(r_2 / r_1)}$$",
+                "description": "Calculates steady-state radial well pumping discharge $Q$ from two observation wells: in confined aquifers, transmissivity $T = K b$ is constant; in unconfined aquifers, water table drop thins saturated aquifer thickness ($h^2$ terms).",
+                "examTip": "Found in Groundwater: Well Hydraulics. Ensure radii $r_1, r_2$ and piezometric heads $h_1, h_2$ correspond to matching observation wells."
+            },
+            {
+                "title": "Capture Zone Analysis for Groundwater Remediation Pumping Wells",
+                "formula": "$$y_{\\max} = \\pm \\frac{Q}{2 B U}, \\quad x_0 = -\\frac{Q}{2\\pi B U}$$",
+                "description": "Defines the 2D capture envelope of a pump-and-treat recovery well pumping at rate $Q$ in a uniform regional groundwater flow field of specific discharge $U$ in an aquifer of thickness $B$; $x_0$ is the stagnation point distance downgradient.",
+                "examTip": "Found in Environmental: Groundwater Remediation. Any contaminant plume located within the capture zone boundaries ($|y| < y_{\\max}$) is successfully intercepted and drawn into the extraction well."
+            },
+            {
+                "title": "Soil Vapor Extraction Radius of Influence and Air Permeability",
+                "formula": "$$\\frac{Q}{H} = \\frac{\\pi k_a}{\\mu_a} \\left( \\frac{P_{\\text{atm}}^2 - P_w^2}{P_{\\text{atm}} \\ln(R_I / R_w)} \\right)$$",
+                "description": "Sizes vacuum extraction wells for in-situ vadose zone volatile organic remediation: calculates required airflow rate $Q$ per unit screen length $H$ to establish effective vacuum out to radius of influence $R_I$.",
+                "examTip": "Found in Environmental: Soil Remediation. SVE is most effective in permeable sandy soils ($k_a > 10^{-8}\\text{ cm}^2$) with Henry's law constant $H > 10^{-3}\\text{ atm}\\cdot\\text{m}^3\\text{/mol}$."
+            },
+            {
+                "title": "Bioventing and In-Situ Bioremediation Stoichiometric Oxygen Demands",
+                "formula": "$$\\text{C}_6\\text{H}_{14} + 9.5\\text{O}_2 \\to 6\\text{CO}_2 + 7\\text{H}_2\\text{O} \\implies 3.5\\text{ lb }\\text{O}_2\\text{ per lb hydrocarbon}$$",
+                "description": "Calculates air injection requirements for stimulating indigenous aerobic bacteria to biodegrade petroleum hydrocarbons in unsaturated soil, typically requiring approx. $3.0$ to $3.5\\text{ kg }\\text{O}_2$ per $\\text{kg}$ of hydrocarbon fuel destroyed.",
+                "examTip": "Found in Environmental Remediation. Bioventing operates at low airflow rates strictly to supply oxygen without volatilizing contaminants into the atmosphere, unlike high-flow SVE."
+            },
+            {
+                "title": "Primary Sedimentation Basin Surface Overflow Rate and SS Removal",
+                "formula": "$$v_0 = \\frac{Q}{A_s} \\le 800 - 1200\\text{ gpd/ft}^2 \\ (32 - 48\\text{ m}^3/(\\text{m}^2\\cdot\\text{d})), \\quad \\text{SS Removal} = 50 - 65\\%$$",
+                "description": "Primary wastewater clarifiers settle raw settleable particulate organic solids: design surface overflow rates govern solid separation and typically achieve $50\\%-65\\%$ suspended solids and $25\\%-35\\%$ BOD removal.",
+                "examTip": "Found in Environmental: Wastewater Treatment. Overflow rates must not be exceeded during peak hourly flows to prevent sludge blanket scouring."
+            },
+            {
+                "title": "Stokes' Law Particle Terminal Settling Velocity in Water",
+                "formula": "$$v_t = \\frac{g (\\rho_p - \\rho) d_p^2}{18 \\mu} \\quad (\\text{for } Re_p < 1.0)$$",
+                "description": "Calculates terminal gravitational settling velocity of discrete spherical particles in laminar flow; settling speed is proportional to square of particle diameter ($d_p^2$) and density difference $(\\rho_p - \\rho)$.",
+                "examTip": "Found in Environmental: Water Treatment & Air Pollution. Doubling particle diameter quadruples settling speed ($2^2 = 4$), illustrating why coagulation/flocculation is crucial for rapid clarification."
+            },
+            {
+                "title": "Type I Discrete Settling vs. Type II Flocculent Settling in Clarifiers",
+                "formula": "$$\\text{Type I: Constant } v_t \\text{ (grit chambers)}; \\quad \\text{Type II: Accelerating } v_t \\text{ due to particle coalescing}$$",
+                "description": "Classifies sedimentation mechanisms: Type I particles settle at constant velocity with unchanged size/shape; Type II particles aggregate during settling, increasing mass and terminal velocity with depth.",
+                "examTip": "Found in Environmental: Clarifier Design. Type II removal efficiencies cannot be calculated purely from Stokes' law; they require settling column test analyses."
+            },
+            {
+                "title": "Type III Zone Settling and Type IV Compression Settling",
+                "formula": "$$\\text{Type III: Hindered interface settling}; \\quad \\text{Type IV: Consolidation under weight of overlying sludge}$$",
+                "description": "Characterizes high-solids sedimentation in secondary clarifiers: Type III forms a distinct solid-liquid interface where interparticle forces hinder fluid displacement; Type IV occurs at bottom where sludge physically compresses.",
+                "examTip": "Found in Wastewater: Secondary Clarifiers. Secondary clarifiers must be sized for both clarification (Type II/III at surface) and sludge thickening (Type IV at bottom)."
+            },
+            {
+                "title": "Anaerobic Digestion Stoichiometric Methane Yield and VS Destruction",
+                "formula": "$$V_{\\text{CH}_4} = 0.35\\text{ m}^3 / \\text{kg COD converted} = 5.62\\text{ ft}^3 / \\text{lb COD converted} \\quad (\\text{at STP})$$",
+                "description": "Biochemically converts volatile organic solids (VS) into biogas ($65\\% \\text{ CH}_4, 35\\% \\text{ CO}_2$) in anaerobic digesters operated in mesophilic ($35^\\circ\\text{C}$) or thermophilic ($55^\\circ\\text{C}$) ranges.",
+                "examTip": "Found in Environmental: Sludge Processing. COD converted equals COD influent minus COD effluent minus COD incorporated into new microbial biomass."
+            },
+            {
+                "title": "Nitrification Stoichiometric Oxygen and Alkalinity Consumption",
+                "formula": "$$\\text{NH}_4^+ + 2\\text{O}_2 \\to \\text{NO}_3^- + 2\\text{H}^+ + \\text{H}_2\\text{O} \\implies 4.57\\text{ mg }\\text{O}_2\\text{ and } 7.14\\text{ mg CaCO}_3 \\text{ consumed per mg }\\text{NH}_4\\text{-N}$$",
+                "description": "Two-step autotrophic biological oxidation: Nitrosomonas oxidizes ammonia to nitrite ($\\text{NO}_2^-$); Nitrobacter oxidizes nitrite to nitrate ($\\text{NO}_3^-$); consumes massive amounts of dissolved oxygen and destroys wastewater alkalinity.",
+                "examTip": "Found in Environmental: Biological Nitrogen Removal. Nitrification requires $4.57\\text{ mg }\\text{O}_2$ and destroys $7.14\\text{ mg}$ of alkalinity as $\\text{CaCO}_3$ per $\\text{mg }\\text{NH}_4\\text{-N}$ oxidized; if alkalinity drops too low, pH plunges and inhibits nitrifiers."
+            },
+            {
+                "title": "Denitrification Process Carbon Source Requirement",
+                "formula": "$$6\\text{NO}_3^- + 5\\text{CH}_3\\text{OH} \\to 3\\text{N}_2\\uparrow + 5\\text{CO}_2 + 7\\text{H}_2\\text{O} + 6\\text{OH}^-$$",
+                "description": "Anoxic biological reduction of nitrate to harmless nitrogen gas by heterotrophic bacteria; requires an external organic carbon source (e.g., methanol) and restores alkalinity ($3.57\\text{ mg CaCO}_3$ produced per $\\text{mg }\\text{NO}_3\\text{-N}$ reduced).",
+                "examTip": "Found in Environmental: Biological Nutrient Removal. Denitrification recovers approximately half ($50\\%$) of the alkalinity consumed during previous upstream nitrification."
+            },
+            {
+                "title": "Total Kjeldahl Nitrogen Definition and Speciation Balance",
+                "formula": "$$\\text{TKN} = \\text{Organic Nitrogen} + \\text{Ammonia Nitrogen (NH}_3 + \\text{NH}_4^+), \\quad \\text{Total N} = \\text{TKN} + \\text{NO}_2^- + \\text{NO}_3^-$$",
+                "description": "Analytical measure of reduced nitrogen forms in municipal wastewater; untreated domestic wastewater typically contains $30-50\\text{ mg/L}$ total nitrogen, primarily in organic and ammonium forms.",
+                "examTip": "Found in Environmental: Water Quality. TKN does NOT include oxidized nitrogen forms (nitrite $\\text{NO}_2^-$ and nitrate $\\text{NO}_3^-$)."
+            },
+            {
+                "title": "Hazardous Air Pollutants Maximum Achievable Control Technology",
+                "formula": "$$\\text{MACT Floor } = \\text{Average emission limitation achieved by top } 12\\% \\text{ of existing sources}$$",
+                "description": "Clean Air Act Section 112 regulatory standard for controlling 187 toxic Hazardous Air Pollutants (HAPs); mandates technology-based emission standards representing the best performing industrial facilities.",
+                "examTip": "Found in Environmental: Air Quality Regulations. For new sources, MACT must match the emission control achieved by the single best controlled similar source."
+            },
+            {
+                "title": "Sound Attenuation with Distance from a Point Noise Source",
+                "formula": "$$L_{p2} = L_{p1} - 20 \\log_{10}\\left(\\frac{r_2}{r_1}\\right)$$, \\quad (\\text{6 dB drop per doubling of distance})$$",
+                "description": "Spherical geometric sound divergence from an isolated omnidirectional point noise source: doubling distance from $r_1$ to $2 r_1$ reduces sound pressure level by exactly $20 \\log_{10}(2) \\approx 6.02\\text{ dBA}$.",
+                "examTip": "Found in Environmental: Noise Pollution. Ensure you do not confuse point sources ($-6\\text{ dBA}$ per doubling) with continuous line sources ($-3\\text{ dBA}$ per doubling)."
+            },
+            {
+                "title": "Sound Attenuation with Distance from a Line Noise Source",
+                "formula": "$$L_{p2} = L_{p1} - 10 \\log_{10}\\left(\\frac{r_2}{r_1}\\right)$$, \\quad (\\text{3 dB drop per doubling of distance})$$",
+                "description": "Cylindrical geometric sound divergence from a continuous line noise source (e.g., a continuous stream of highway highway traffic): sound pressure level decreases by $3.01\\text{ dBA}$ for every doubling of distance from roadway.",
+                "examTip": "Found in Environmental: Noise Pollution. Traffic noise attenuates more slowly with distance than stationary equipment noise because acoustic energy spreads over cylindrical surfaces."
+            },
+            {
+                "title": "Greenhouse Gases Global Warming Potential and $\\text{CO}_2$ Equivalents",
+                "formula": "$$\\text{CO}_2\\text{e} = \\sum_{i} (\\text{Mass}_i \\times GWP_i), \\quad GWP_{\\text{CO}_2} = 1, \\ GWP_{\\text{CH}_4} = 28-36, \\ GWP_{\\text{N}_2\\text{O}} = 265-298$$",
+                "description": "Quantifies radiative forcing potency of greenhouse gas emissions relative to carbon dioxide over a 100-year time horizon; methane and nitrous oxide are substantially more potent warming agents per kilogram than $\\text{CO}_2$.",
+                "examTip": "Found in Environmental: Global Environmental Issues. Multiplying gas emission tonnage by its $GWP$ converts emissions into equivalent metric tons of $\\text{CO}_2\\text{e}$."
+            },
+            {
+                "title": "Stratospheric Ozone Depletion and Catalytic Chlorine Cycles",
+                "formula": "$$\\text{Cl} + \\text{O}_3 \\to \\text{ClO} + \\text{O}_2, \\quad \\text{ClO} + \\text{O} \\to \\text{Cl} + \\text{O}_2 \\implies \\text{Net: } \\text{O}_3 + \\text{O} \\to 2\\text{O}_2$$",
+                "description": "Catalytic destruction of stratospheric ozone layer by chlorine free radicals released by photolytic breakdown of chlorofluorocarbons (CFCs); a single chlorine atom destroys up to 100,000 ozone molecules before being deactivated.",
+                "examTip": "Found in Environmental: Atmospheric Chemistry. Regulated globally by the Montreal Protocol; UV-B radiation absorption occurs primarily in the stratosphere between $15$ and $35\\text{ km}$."
+            },
+            {
+                "title": "Indoor Air Quality Single-Compartment Mass Balance Model",
+                "formula": "$$V \\frac{dC}{dt} = Q C_{\\text{in}} + S - Q C - k V C, \\quad C_{\\text{steady}} = \\frac{Q C_{\\text{in}} + S}{Q + k V}$$",
+                "description": "Models contaminant accumulation in a room of volume $V$ with outdoor airflow rate $Q$, ambient concentration $C_{\\text{in}}$, internal emission source rate $S$, and internal first-order decay/deposition rate $k$.",
+                "examTip": "Found in Environmental: Indoor Air Quality. The air exchange rate is $ACH = Q / V$ (air changes per hour); increasing outdoor ventilation $Q$ rapidly reduces steady-state indoor contaminant levels."
+            },
+            {
+                "title": "Onsite Wastewater Treatment: Septic Tank and Soil Drainfield Sizing",
+                "formula": "$$A_{\\text{trench}} = \\frac{Q}{AR}, \\quad t_d = \\frac{V_{\\text{tank}}}{Q} \\ge 24-48\\text{ hours}$$",
+                "description": "Sizes residential septic tank systems: tank provides anaerobic settling and scum flotation with minimum 24-hour detention; soil absorption drainfield area $A$ is sized based on soil hydraulic application rate ($AR$ in $\\text{gpd/ft}^2$) determined from percolation tests.",
+                "examTip": "Found in Environmental: Onsite Treatment. Slower percolation rates (higher min/inch) indicate tighter clay soils requiring lower application rates and larger drainfield footprints."
+            },
+            {
+                "title": "Heavy Metal Hydroxide Precipitation and Minimum Solubility pH",
+                "formula": "$$\\text{M}^{n+} + n\\text{OH}^- \\xrightleftharpoons{} \\text{M(OH)}_n(\\text{s}), \\quad [\\text{M}^{n+}] = \\frac{K_{sp}}{[\\text{OH}^-]^n} = \\frac{K_{sp}}{(10^{-(14-pH)})^n}$$",
+                "description": "Removes dissolved heavy metals ($\text{Cu}^{2+}, \\text{Zn}^{2+}, \\text{Ni}^{2+}, \\text{Cr}^{3+}$) from industrial wastewater by adding lime or caustic to form insoluble metal hydroxide precipitates; amphoteric metals redissolve at excessively high pH.",
+                "examTip": "Found in Industrial Waste Treatment. Minimum solubility typically occurs in the pH range of $9.0$ to $10.5$; plotting log metal solubility versus pH reveals a distinct 'U-shaped' solubility curve."
+            },
+            {
+                "title": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry",
+                "formula": "$$\\text{Resin Capacity: eq/L or grains/ft}^3, \\quad 2\\text{R-Na} + \\text{Ca}^{2+} \\to \\text{R}_2\\text{-Ca} + 2\\text{Na}^+$$",
+                "description": "Replaces divalent calcium and magnesium ions with monovalent sodium ions using strong acid cation resin; exhausted resin beds are regenerated by reversing equilibrium with concentrated ($10\\%-15\\%$) $\\text{NaCl}$ brine solution.",
+                "examTip": "Found in Environmental: Water Softening. Unit conversion: $1\\text{ grain of hardness per gallon (gpg)} = 17.1\\text{ mg/L as }\\text{CaCO}_3$."
+            }
+        ,
+            {
+                "title": "Unit Hydrograph Convolution for Direct Runoff Hydrograph",
+                "formula": "$$Q_n = \\sum_{m=1}^n P_{m} \\cdot U_{n - m + 1}$$",
+                "description": "Generates direct runoff hydrograph ordinates $Q_n$ by convolving discrete rainfall excess increments $P_m$ with corresponding unit hydrograph ordinates $U$.",
+                "examTip": "Found in Hydrology / Water Resources. Remember that baseflow must be added back to the direct runoff hydrograph to obtain total streamflow discharge."
+            },
+            {
+                "title": "SCS Dimensionless Unit Hydrograph Peak Discharge",
+                "formula": "$$q_p = \\frac{484 A Q}{t_p} \\quad (\\text{USCS}), \\quad q_p = \\frac{0.208 A Q}{t_p} \\quad (\\text{SI})$$",
+                "description": "Calculates peak discharge $q_p$ of an NRCS/SCS unit hydrograph from drainage basin area $A$, runoff volume $Q$ (typically $1.0\\text{ in}$ or $1.0\\text{ mm}$), and time to peak $t_p$.",
+                "examTip": "Found in Hydrology. Time to peak relates to time of concentration: $t_p = \\Delta t / 2 + 0.6 t_c$, where lag time $t_L = 0.6 t_c$."
+            },
+            {
+                "title": "Reservoir Flood Routing: Storage-Indication Method (Modified Puls)",
+                "formula": "$$\\left(\\frac{2 S_2}{\\Delta t} + O_2\\right) = \\left(I_1 + I_2\\right) + \\left(\\frac{2 S_1}{\\Delta t} - O_1\\right)$$",
+                "description": "Numerically routes an inflow hydrograph $I(t)$ through a reservoir storage basin to obtain the attenuated outflow hydrograph $O(t)$ using conservation of mass over time step $\\Delta t$.",
+                "examTip": "Found in Water Resources: Hydrologic Routing. Pre-construct a routing curve or table relating $(2S/\\Delta t + O)$ to outflow $O$ from stage-storage-discharge data."
+            },
+            {
+                "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
+                "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
+                "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
+                "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
+            },
+            {
+                "title": "Streeter-Phelps Critical Distance and Critical DO Deficit",
+                "formula": "$$t_c = \\frac{1}{k_r - k_d} \\ln\\left[\\frac{k_r}{k_d}\\left(1 - D_0 \\frac{k_r - k_d}{k_d L_0}\\right)\\right], \\quad D_c = \\frac{k_d L_0}{k_r} e^{-k_d t_c}$$",
+                "description": "Calculates time to reach critical dissolved oxygen deficit $t_c$ and maximum deficit magnitude $D_c$ in a stream downstream of wastewater discharge, where $k_d$ is deoxygenation rate, $k_r$ is reaeration rate, and $L_0$ is initial ultimate BOD.",
+                "examTip": "Found in Environmental / Water Resources. Critical dissolved oxygen concentration is $DO_{\\text{crit}} = DO_{\\text{sat}} - D_c$; make sure not to confuse deficit $D$ with actual concentration $DO$."
+            },
+            {
+                "title": "Biochemical Oxygen Demand (BOD) Reaction Rate and Temperature Correction",
+                "formula": "$$y_t = L_0 (1 - e^{-k t}), \\quad k_T = k_{20} \\cdot \\theta^{T - 20}$$",
+                "description": "First-order kinetics for carbonaceous BOD exertion over time $t$, where $\\theta = 1.135$ for temperatures between $4^\\circ\\text{C}$ and $20^\\circ\\text{C}$, and $\\theta = 1.056$ for temperatures between $20^\\circ\\text{C}$ and $30^\\circ\\text{C}$.",
+                "examTip": "Found in Environmental Engineering: Wastewater. Ultimate BOD $L_0$ does not change significantly with temperature, but reaction rate $k$ increases markedly with warming water."
+            },
+            {
+                "title": "Sedimentation Basin Surface Overflow Rate and Detention Time",
+                "formula": "$$v_0 = \\frac{Q}{A_s} = \\frac{Q}{W \\cdot L}, \\quad t_d = \\frac{V}{Q} = \\frac{A_s \\cdot H}{Q} = \\frac{H}{v_0}$$",
+                "description": "Governs settling basin clarification: all discrete particles with settling velocity $v_s \\ge v_0$ are $100\\%$ removed; removal fraction for particles with $v_s < v_0$ equals $v_s / v_0$.",
+                "examTip": "Found in Environmental / Water Treatment. Note that surface overflow rate $v_0$ is completely independent of basin depth $H$, while hydraulic detention time $t_d$ is directly proportional to depth."
+            },
+            {
+                "title": "Activated Sludge Mean Cell Residence Time (MCRT / Sludge Age)",
+                "formula": "$$\\theta_c = \\frac{V \\cdot X}{Q_w X_w + Q_e X_e}$$",
+                "description": "Quantifies average time (in days) that biological sludge biomass stays in an activated sludge aeration basin of volume $V$ with mixed liquor suspended solids concentration $X$, where $Q_w X_w$ is waste biomass and $Q_e X_e$ is effluent biomass.",
+                "examTip": "Found in Environmental / Wastewater Treatment. Effluent solids $X_e$ are frequently small enough to neglect, simplifying to $\\theta_c \\approx V X / (Q_w X_w)$."
+            },
+            {
+                "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
+                "formula": "$$h_L = \\frac{f_k (1 - \\epsilon)}{\\epsilon^3} \\frac{L}{d} \\frac{v_a^2}{g}$$",
+                "description": "Calculates clean bed head loss $h_L$ through a granular media filter bed of depth $L$, porosity $\\epsilon$, grain diameter $d$, and approach velocity $v_a$, where $f_k$ is the Kozeny friction factor.",
+                "examTip": "Found in Environmental: Water Treatment. Note the strong sensitivity to porosity: head loss is inversely proportional to $\\epsilon^3$."
+            },
+            {
+                "title": "Lime-Soda Ash Water Softening Precipitation Stoichiometry",
+                "formula": "$$\\text{Lime: } \\text{CO}_2, \\text{Ca}^{2+}\\text{(carbonate)}, \\text{Mg}^{2+}\\text{(all)}; \\quad \\text{Soda Ash: } \\text{Ca}^{2+}\\text{(non-carbonate)}$$",
+                "description": "Removes hardness by precipitation: hydrated lime $\\text{Ca(OH)}_2$ precipitates carbonate hardness as $\\text{CaCO}_3$ and magnesium as $\\text{Mg(OH)}_2$; soda ash $\\text{Na}_2\\text{CO}_3$ precipitates non-carbonate calcium hardness.",
+                "examTip": "Found in Environmental: Water Chemistry. Stoichiometric calculations are always carried out in equivalent weights or milliequivalents per liter ($\\text{meq/L}$) or $\\text{mg/L as }\\text{CaCO}_3$."
+            },
+            {
+                "title": "Storm Sewer Gravity Pipe Design via Manning's and Rational Formula",
+                "formula": "$$Q = C I A = \\frac{k_n}{n} A_{\\text{pipe}} R_h^{2/3} S^{1/2}$$",
+                "description": "Sizes storm sewer storm pipes by equating peak runoff discharge $Q$ generated by the Rational Method to full gravity flow capacity evaluated via Manning's open channel flow formula.",
+                "examTip": "Found in Water Resources: Storm Drainage. $k_n = 1.486$ for USCS and $k_n = 1.0$ for SI units. For circular pipes flowing full, hydraulic radius $R_h = D / 4$."
+            },
+            {
+                "title": "Hazen-Williams Head Loss Equation for Water Distribution Pipes",
+                "formula": "$$h_f = \\frac{10.44 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{USCS}), \\quad h_f = \\frac{10.67 L Q^{1.852}}{C^{1.852} d^{4.87} } \\quad (\\text{SI})$$",
+                "description": "Calculates friction head loss $h_f$ in pressurized water distribution pipes as a function of pipe length $L$, flow $Q$, inside diameter $d$, and empirical Hazen-Williams roughness coefficient $C$.",
+                "examTip": "Found in Hydraulics: Closed Conduit Flow. A higher $C$ value denotes a smoother pipe (e.g., $C = 140-150$ for new PVC; $C = 100$ for aged cast iron)."
+            },
+            {
+                "title": "Hardy Cross Network Balancing for Looped Water Distribution Systems",
+                "formula": "$$\\Delta Q = -\\frac{\\sum h_f}{n \\sum (h_f / Q)} = -\\frac{\\sum k Q |Q|^{n-1}}{n \\sum k |Q|^{n-1}}$$",
+                "description": "Iterative pipe loop balancing method enforcing energy conservation ($\\sum h_f = 0$ around every closed loop) by applying discharge correction $\\Delta Q$ to assumed pipe flows ($n = 1.852$ for Hazen-Williams, $n = 2.0$ for Darcy-Weisbach).",
+                "examTip": "Found in Hydraulics / Water Distribution. Clockwise flows around a loop are designated positive, and counterclockwise flows are negative."
+            },
+            {
+                "title": "Culvert Hydraulics: Inlet Control vs. Outlet Control Headwater",
+                "formula": "$$HW_{\\text{inlet}} = f(Q, D, \\text{Inlet Geometry}), \\quad HW_{\\text{outlet}} = TW + h_e + h_f + h_v - L S_0$$",
+                "description": "Evaluates culvert conveyance: under inlet control, the barrel carries more water than the inlet entrance accepts, so upstream headwater depends only on barrel entrance geometry; under outlet control, barrel friction and tailwater ($TW$) govern.",
+                "examTip": "Found in Hydraulics: Culvert Design. The controlling headwater is always the higher of $HW_{\\text{inlet}}$ and $HW_{\\text{outlet}}$."
+            },
+            {
+                "title": "Open Channel Specific Energy and Critical Depth ($y_c$)",
+                "formula": "$$E = y + \\frac{v^2}{2g} = y + \\frac{Q^2}{2 g A^2}, \\quad y_c = \\sqrt[3]{\\frac{q^2}{g}} \\quad (\\text{Rectangular})$$",
+                "description": "Specific energy $E$ is energy per unit weight of fluid measured relative to the channel bottom; critical flow occurs at minimum specific energy for a given discharge $Q$, where unit discharge $q = Q/b$.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. At critical depth $y_c$, Froude number $Fr = 1.0$ and velocity head equals half the hydraulic depth ($v_c^2 / 2g = D_h / 2$)."
+            },
+            {
+                "title": "Froude Number and Hydraulic Flow Regimes",
+                "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
+                "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
+                "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
+            },
+            {
+                "title": "Gravity Retaining Wall Overturning Factor of Safety",
+                "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
+                "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
+            },
+            {
+                "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
+                "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
+            },
+            {
+                "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
+                "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
+                "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "HAZOP Study Methodology and Standard Guide Words",
+                "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
+                "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
+                "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
+            },
+            {
+                "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
+                "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
+                "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
+                "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
+            },
+            {
+                "title": "Pressure Relief Valve Sizing Formula for Vapor Discharge",
+                "formula": "$$A = \\frac{W}{C K_d P_1} \\sqrt{\\frac{T Z}{M}}, \\quad C = 520 \\sqrt{k \\left(\\frac{2}{k+1}\\right)^{\\frac{k+1}{k-1}}}$$",
+                "description": "Calculates required discharge orifice area $A$ for safety pressure relief valves under sonic/choked vapor flow conditions, where $W$ is required mass relief rate, $P_1$ is upstream relieving pressure, and $M$ is molecular weight.",
+                "examTip": "Found in Chemical: Process Safety. Overpressure allowance is typically $10\\%$ for non-fire relief and $21\\%$ for external fire exposure scenarios."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
+                "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
+                "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
+            },
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
+                "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
+                "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+            },
+            {
+                "title": "Kanban Production System Container Sizing Equation",
+                "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
+                "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
+                "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
+            },
+            {
+                "title": "Bill of Materials Explosion Tree and Component Offsetting",
+                "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
+                "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
+                "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
+            },
+            {
+                "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
+                "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
+                "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
+                "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
+            },
+            {
+                "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
+                "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
+                "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
+                "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
+                "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+            },
+            {
+                "title": "Molarity, Molality, and Normality Chemical Concentrations",
+                "formula": "$$M = \\frac{\\text{moles solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{moles solute}}{\\text{kg solvent}}, \\quad N = M \\times n = \\frac{\\text{equivalents}}{\\text{L solution}}$$",
+                "description": "Standard chemical solution concentration metrics: molarity $M$ varies with temperature due to fluid thermal expansion; molality $m$ is temperature-independent; normality $N$ incorporates reactive equivalence factor $n$.",
+                "examTip": "Found in Chemistry. For diprotic sulfuric acid ($\\text{H}_2\\text{SO}_4$), $n = 2$, so a $1.0\\text{ M }\\text{H}_2\\text{SO}_4$ solution is $2.0\\text{ N}$."
+            },
+            {
+                "title": "First-Order Chemical Reaction Half-Life",
+                "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
+                "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+            }
         ],
         "Other": [
                 {
@@ -12587,7 +15805,10 @@
                           "title": "Whistleblowing and Public Safety Escalation Protocol",
                           "formula": "$$\\text{Hierarchy: Internal Escalation } \\to \\text{ Management Notice } \\to \\text{ Licensing Board / Public Authorities}$$",
                           "description": "When an engineer's professional judgment is overruled under circumstances where the safety, health, or welfare of the public is endangered, the engineer is ethically obligated to inform the client/employer and, if uncorrected, report the condition to the appropriate regulatory agency.",
-                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer."
+                          "examTip": "Found in Ethics: NCEES Model Rules of Professional Conduct. The engineer's paramount responsibility is always to the public welfare, which overrides confidentiality or loyalty to an employer.",
+                    "videoUrl": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+                    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -12602,19 +15823,28 @@
                           "title": "Nominal vs. Effective Annual Interest Rate",
                           "formula": "$$i_e = \\left(1 + \\frac{r}{m}\\right)^m - 1, \\quad i_{e,\\text{continuous}} = e^r - 1$$",
                           "description": "Calculates the true annual yield $i_e$ when nominal annual interest rate $r$ is compounded $m$ times per year (e.g. monthly $m=12$, daily $m=365$).",
-                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables."
+                          "examTip": "Found in Engineering Economics: Interest Factors. When payments and compounding periods do not match, you must convert to the effective rate per payment period before using handbook factor tables.",
+                    "videoUrl": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+                    "videoTitle": "Nominal vs. Effective Annual Interest Rate Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Internal Rate of Return (IRR) Decision Rule",
                           "formula": "$$\\text{NPV} = \\sum_{t=0}^n \\frac{CF_t}{(1 + IRR)^t} = 0; \\quad \\text{Decision: Accept if } IRR \\ge MARR$$",
                           "description": "The discount rate that equates the present worth of net cash inflows to the initial investment cost. A project is economically justified if its IRR meets or exceeds the Minimum Attractive Rate of Return (MARR).",
-                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$)."
+                          "examTip": "Found in Engineering Economics: Rate of Return Analysis. For mutually exclusive project alternatives, never select simply based on highest individual IRR; you must perform incremental investment analysis ($\\Delta IRR$).",
+                    "videoUrl": "assets/videos/Internal_Rate_of_Return_IRR_Decision_Rule.mp4",
+                    "videoTitle": "Internal Rate of Return (IRR) Decision Rule Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Payback Period",
                           "formula": "$$\\text{Payback Period } (n_p) = \\frac{\\text{Initial Capital Investment } (I_0)}{\\text{Uniform Annual Net Cash Inflow } (A)}, \\quad \\sum_{t=1}^{n_p} CF_t = I_0$$",
                           "description": "Calculates the time required in years for cumulative undiscounted cash inflows to recover the initial capital investment outlay.",
-                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric."
+                          "examTip": "Found in Engineering Economics. Simple payback ignores the time value of money and all cash flows occurring after the payback horizon. Useful as a quick screening metric.",
+                    "videoUrl": "assets/videos/Simple_Payback_Period.mp4",
+                    "videoTitle": "Simple Payback Period Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
@@ -12629,7 +15859,10 @@
                           "title": "Equivalent Capacitance and Inductance Combinations",
                           "formula": "$$C_{\\text{parallel}} = \\sum C_i, \\quad \\frac{1}{C_{\\text{series}}} = \\sum \\frac{1}{C_i}; \\quad L_{\\text{series}} = \\sum L_i, \\quad \\frac{1}{L_{\\text{parallel}}} = \\sum \\frac{1}{L_i}$$",
                           "description": "Capacitors combine in opposite fashion to resistors: parallel capacitances add directly, whereas series capacitances combine via reciprocal sums. Inductors combine identical to resistors.",
-                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely."
+                          "examTip": "Found in Electricity and Magnetism: Capacitors and Inductors. Mnemonic: Inductors ($L$) behave like resistors ($R$); Capacitors ($C$) behave inversely.",
+                    "videoUrl": "assets/videos/Equivalent_Capacitance_and_Inductance_Combinations.mp4",
+                    "videoTitle": "Equivalent Capacitance and Inductance Combinations Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
@@ -12644,7 +15877,10 @@
                           "title": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
                           "formula": "$$\\frac{V_1}{V_2} = \\frac{N_1}{N_2} = a, \\quad \\frac{I_1}{I_2} = \\frac{N_2}{N_1} = \\frac{1}{a}, \\quad Z_{\\text{in}} = a^2 Z_L = \\left(\\frac{N_1}{N_2}\\right)^2 Z_L$$",
                           "description": "Describes power-conserving electromagnetic coupling between primary and secondary windings in an ideal transformer with turns ratio $a = N_1/N_2$.",
-                          "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$)."
+                          "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$).",
+                    "videoUrl": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+                    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "DC Motor Back-EMF and Output Torque Equations",
@@ -12779,7 +16015,10 @@
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
                           "formula": "$$P_{\\text{hyd}} = \\gamma Q h_p = \\rho g Q h_p, \\quad BHP = \\frac{P_{\\text{hyd}}}{\\eta_{\\text{pump}}} = \\frac{\\gamma Q h_p}{\\eta_{\\text{pump}}}$$",
                           "description": "Hydraulic power represents useful rate of mechanical energy transferred to flowing fluid. Brake horsepower (BHP) is the required mechanical input power delivered by the motor shaft to drive the pump at efficiency $\\eta_{\\text{pump}}$.",
-                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant."
+                          "examTip": "Found in Fluid Mechanics: Turbomachinery. In US Customary units: $BHP = \\frac{Q (\\text{gpm}) \\times H (\\text{ft}) \\times SG}{3960 \\times \\eta}$. Know the 3960 conversion constant.",
+                    "videoUrl": "assets/videos/Pump_Hydraulic_Power_and_Brake_Horsepower_BHP.mp4",
+                    "videoTitle": "Pump Hydraulic Power and Brake Horsepower (BHP) Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
@@ -12892,8 +16131,478 @@
                     "videoTitle": "Types of Parabolas and Their Equations Explainer",
                     "videoDuration": "10s"
                 }
+        ,
+            {
+                "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
+                "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
+                "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
+                "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
+            },
+            {
+                "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
+                "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
+                "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+            },
+            {
+                "title": "Bragg's Law of X-Ray Diffraction for Crystal Lattices",
+                "formula": "$$n \\lambda = 2 d_{hkl} \\sin\\theta, \\quad d_{hkl} = \\frac{a}{\\sqrt{h^2 + k^2 + l^2}} \\quad (\\text{Cubic})$$",
+                "description": "Governs constructive interference of monochromatic X-rays diffracted by parallel crystal lattice planes with Miller indices $(h k l)$, interplanar spacing $d_{hkl}$, and incident angle $\\theta$.",
+                "examTip": "Found in Materials Science. Ensure angle $\\theta$ is the Bragg diffraction angle measured relative to the crystal plane, NOT the total $2\\theta$ detector angle."
+            },
+            {
+                "title": "Cubic Crystal Structures: FCC vs. BCC Atomic Packing Factor",
+                "formula": "$$APF = \\frac{V_{\\text{atoms}}}{V_{\\text{unit cell}}}, \\quad APF_{\\text{FCC}} = 0.74 \\ (a = 2\\sqrt{2}R), \\quad APF_{\\text{BCC}} = 0.68 \\ (a = 4R/\\sqrt{3})$$",
+                "description": "Quantifies atomic packing efficiency: Face-Centered Cubic (FCC) has 4 atoms/unit cell with coordination number 12 and close-packed $APF = 0.74$; Body-Centered Cubic (BCC) has 2 atoms/unit cell with coordination number 8 and $APF = 0.68$.",
+                "examTip": "Found in Materials Science: Crystallography. FCC metals (copper, aluminum, austenitic steel) exhibit superior ductility across low temperatures compared to BCC metals which experience ductile-to-brittle transitions."
+            },
+            {
+                "title": "Binary Eutectic Phase Diagram Invariant Reaction",
+                "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
+                "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
+                "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
+            },
+            {
+                "title": "Lumped Capacitance Method for Transient Heat Conduction",
+                "formula": "$$\\frac{T(t) - T_\\infty}{T_0 - T_\\infty} = e^{-t / \\tau} = e^{-\\left(\\frac{h A_s}{\\rho V c}\\right) t}, \\quad Bi = \\frac{h L_c}{k} < 0.1$$",
+                "description": "Models uniform transient cooling/heating of a solid body when internal conduction resistance is negligible compared to surface convection resistance; characteristic length is $L_c = V / A_s$.",
+                "examTip": "Found in Heat Transfer. The lumped capacitance model is strictly valid ONLY when Biot number $Bi = h L_c / k < 0.1$; if $Bi \\ge 0.1$, spatial temperature gradients exist and Heisler charts must be used."
+            },
+            {
+                "title": "Biot Number vs. Fourier Number in Transient Conduction",
+                "formula": "$$Bi = \\frac{h L_c}{k_{\\text{solid}}} = \\frac{\\text{Convection Resistance}}{\\text{Internal Conduction Resistance}}, \\quad Fo = \\frac{\\alpha t}{L_c^2} = \\frac{\\text{Conduction Rate}}{\\text{Thermal Storage Rate}}$$",
+                "description": "Dimensionless parameters governing transient heat transfer: Biot number evaluates spatial temperature uniformity; Fourier number $Fo$ represents dimensionless time, where thermal diffusivity $\\alpha = k / (\\rho c_p)$.",
+                "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate."
+            },
+            {
+                "title": "Taylor Series and Maclaurin Series Expansions",
+                "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
+                "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+            },
+            {
+                "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
+                "formula": "$$\\text{Ratio: } L = \\lim_{n\\to\\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| < 1 \\implies \\text{Converges}; \\quad \\text{Alternating: } a_{n+1} \\le a_n \\text{ and } \\lim a_n = 0$$",
+                "description": "Determines convergence of infinite series: Ratio Test is conclusive if $L < 1$ (absolute convergence) and inconclusive if $L = 1$; Alternating Series Test guarantees convergence if term magnitudes monotonically decrease to zero.",
+                "examTip": "Found in Mathematics. For geometric series $\\sum a r^n$, convergence requires $|r| < 1$, with sum $S = a / (1 - r)$; for $p$-series $\\sum 1/n^p$, convergence requires $p > 1$."
+            },
+            {
+                "title": "Vector Cross Product and Dot Product Geometric Properties",
+                "formula": "$$\\mathbf{A} \\cdot \\mathbf{B} = |\\mathbf{A}| |\\mathbf{B}| \\cos\\theta, \\quad |\\mathbf{A} \\times \\mathbf{B}| = |\\mathbf{A}| |\\mathbf{B}| \\sin\\theta, \\quad \\mathbf{A} \\times \\mathbf{B} = -(\\mathbf{B} \\times \\mathbf{A})$$",
+                "description": "Fundamental 3D vector operations: dot product is a scalar measuring directional projection; cross product is an orthogonal vector whose magnitude equals the area of the parallelogram formed by $\\mathbf{A}$ and $\\mathbf{B}$.",
+                "examTip": "Found in Mathematics / Statics. Two non-zero vectors are perpendicular if $\\mathbf{A} \\cdot \\mathbf{B} = 0$, and parallel if $\\mathbf{A} \\times \\mathbf{B} = \\mathbf{0}$."
+            },
+            {
+                "title": "Centroid and Moment of Inertia for Composite Areas",
+                "formula": "$$\\bar{y} = \\frac{\\sum (A_i \\bar{y}_i)}{\\sum A_i}, \\quad I_x = \\sum (I_{xi} + A_i d_{yi}^2)$$",
+                "description": "Calculates centroid $\\bar{y}$ and area moment of inertia $I_x$ of complex structural shapes by dividing them into standard geometric components (rectangles, triangles, circles) using the Parallel Axis Theorem.",
+                "examTip": "Found in Statics / Mechanics of Materials. Distance $d_{yi} = |\\bar{y}_i - \\bar{y}|$ is the distance between the individual component's centroid and the composite neutral axis."
+            },
+            {
+                "title": "Kinematics of Particles: Normal and Tangential Acceleration",
+                "formula": "$$\\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right) \\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right) \\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+                "description": "Curvilinear motion coordinates: tangential acceleration $a_t$ reflects change in speed ($dv/dt$), while normal acceleration $a_n$ acts toward the center of curvature $\\rho$ reflecting change in direction.",
+                "examTip": "Found in Dynamics. For uniform circular motion, speed is constant ($a_t = 0$), but acceleration is non-zero ($a = a_n = v^2 / r$) pointing radially inward."
+            },
+            {
+                "title": "Particle Kinetics: Direct and Oblique Central Impact Equations",
+                "formula": "$$e = \\frac{(v_B')_n - (v_A')_n}{(v_A)_n - (v_B)_n}, \\quad m_A (v_A)_n + m_B (v_B)_n = m_A (v_A')_n + m_B (v_B')_n$$",
+                "description": "Governs collisions between particles: linear momentum is conserved along the normal line of impact; coefficient of restitution $e = 1.0$ for perfectly elastic collisions and $e = 0$ for perfectly plastic (sticking) impacts.",
+                "examTip": "Found in Dynamics: Impulse and Momentum. In oblique impacts, tangential velocities remain completely unchanged ($(v'_A)_t = (v_A)_t$) assuming frictionless surfaces."
+            },
+            {
+                "title": "Hydrostatic Force on Submerged Curved Surfaces",
+                "formula": "$$F_H = \\gamma \\bar{h} A_{\\text{proj}}, \\quad F_V = \\gamma V_{\\text{fluid above surface}}, \\quad F_R = \\sqrt{F_H^2 + F_V^2}$$",
+                "description": "Calculates resultant water pressure force $F_R$ on curved gates: horizontal component $F_H$ equals force on vertical projection of surface; vertical component $F_V$ equals weight of fluid volume directly above the curved surface.",
+                "examTip": "Found in Fluid Mechanics. The line of action of resultant hydrostatic force $F_R$ on any circular arc surface must pass directly through the center of curvature."
+            },
+            {
+                "title": "Buoyancy and Metacentric Height for Floating Body Stability",
+                "formula": "$$F_B = \\gamma_{\\text{fluid}} V_{\\text{displaced}}, \\quad \\overline{GM} = \\overline{BM} + \\overline{OB} - \\overline{OG}, \\quad \\overline{BM} = \\frac{I_{oo}}{V_{\\text{sub}}}$$",
+                "description": "Determines rotational stability of ships and floating pontoons: metacentric height $\\overline{GM} > 0$ produces a righting restoring couple (stable equilibrium); $\\overline{GM} < 0$ causes capsizing (unstable).",
+                "examTip": "Found in Fluid Mechanics. $I_{oo}$ is second moment of area of the waterline plane about its tilting axis, and $V_{\\text{sub}}$ is submerged volume."
+            },
+            {
+                "title": "Capillary Rise Height in Small Cylindrical Tubes",
+                "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\gamma r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
+                "description": "Calculates capillary height $h$ in narrow tubes of radius $r$ due to liquid surface tension $\\sigma$ and contact wetting angle $\\theta$; for clean glass and pure water, $\\theta = 0^\\circ$ ($cos\\theta = 1.0$).",
+                "examTip": "Found in Fluid Mechanics. For non-wetting liquids like mercury (contact angle $\\theta > 90^\\circ$), capillary depression occurs ($h < 0$)."
+            },
+            {
+                "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
+                "formula": "$$\\sigma_h = \\frac{P r}{t} \\quad (\\text{Hoop / Tangential}), \\quad \\sigma_L = \\frac{P r}{2 t} \\quad (\\text{Longitudinal / Axial})$$",
+                "description": "Governs stress in thin-walled vessels ($r / t \\ge 10$) under internal gauge pressure $P$: circumferential hoop stress $\\sigma_h$ is exactly double longitudinal stress $\\sigma_L$, explaining why pipes split along their seams.",
+                "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
+            },
+            {
+                "title": "Pure Torsion of Circular Shafts: Polar Moment and Angle of Twist",
+                "formula": "$$\\tau = \\frac{T \\rho}{J}, \\quad \\tau_{\\max} = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{J G}, \\quad J = \\frac{\\pi d^4}{32} \\quad (\\text{Solid})$$",
+                "description": "Torsional shearing stress $\\tau$ and elastic twist angle $\\phi$ in circular shafts of polar moment of inertia $J$ and shear modulus $G$ subjected to applied torque $T$.",
+                "examTip": "Found in Mechanics of Materials. Maximum shear occurs at outer surface ($\\rho = r$); for hollow shafts with outer diameter $d_o$ and inner diameter $d_i$, $J = \\frac{\\pi}{32}(d_o^4 - d_i^4)$."
+            },
+            {
+                "title": "Beam Flexure Formula and Maximum Bending Stress",
+                "formula": "$$\\sigma = -\\frac{M y}{I}, \\quad \\sigma_{\\max} = \\frac{M c}{I} = \\frac{M}{S}$$",
+                "description": "Predicts longitudinal normal bending stress $\\sigma$ in elastic beams at distance $y$ from the neutral axis, where $M$ is internal bending moment, $I$ is area moment of inertia, and $S = I / c$ is elastic section modulus.",
+                "examTip": "Found in Mechanics of Materials. Stress is zero at the neutral axis and reaches maximum tension and compression at extreme outer fibers ($y = \\pm c$)."
+            },
+            {
+                "title": "Transverse Shear Stress in Beams and First Moment of Area $Q$",
+                "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\int_{y_1}^c y dA = A' \\bar{y}'$$",
+                "description": "Calculates horizontal and vertical shearing stress $\\tau$ at any depth in a beam with shear force $V$, where $Q$ is the first moment of area of the portion of cross section above the cut taken about the neutral axis.",
+                "examTip": "Found in Mechanics of Materials. For rectangular beams, maximum shear stress occurs at the neutral axis: $\\tau_{\\max} = 1.5 (V / A)$; for circular beams, $\\tau_{\\max} = \\frac{4}{3} (V / A)$."
+            },
+            {
+                "title": "First-Order RC Circuit Time Constant and Transient Response",
+                "formula": "$$\\tau = R C, \\quad v(t) = v(\\infty) + [v(0) - v(\\infty)] e^{-t / \\tau}$$",
+                "description": "Governs transient charging and discharging of capacitors through resistors: time constant $\\tau = RC$ is elapsed time for response to reach $63.2\\%$ of its step change; steady state is reached after approx. $5\\tau$ ($99.3\\%$).",
+                "examTip": "Found in Electrical Circuits. The capacitor acts as an open circuit ($i_C = 0$) at steady state ($t \\to \\infty$) and as a short circuit / constant voltage source immediately after switching ($t = 0^+$)."
+            },
+            {
+                "title": "Magnetic Force on a Straight Current-Carrying Conductor",
+                "formula": "$$\\mathbf{F} = I (\\mathbf{L} \\times \\mathbf{B}), \\quad F = I L B \\sin\\theta$$",
+                "description": "Lorentz force exerted on a conductor carrying electric current $I$ of length vector $\\mathbf{L}$ immersed in an external magnetic flux density $\\mathbf{B}$; direction is governed by the right-hand rule.",
+                "examTip": "Found in Electricity and Magnetism. Maximum force occurs when conductor is perpendicular to magnetic field ($\\theta = 90^\\circ$); force is zero if current is parallel to field lines."
+            },
+            {
+                "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
+                "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
+                "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+            },
+            {
+                "title": "Molarity, Molality, and Normality Chemical Concentrations",
+                "formula": "$$M = \\frac{\\text{moles solute}}{\\text{L solution}}, \\quad m = \\frac{\\text{moles solute}}{\\text{kg solvent}}, \\quad N = M \\times n = \\frac{\\text{equivalents}}{\\text{L solution}}$$",
+                "description": "Standard chemical solution concentration metrics: molarity $M$ varies with temperature due to fluid thermal expansion; molality $m$ is temperature-independent; normality $N$ incorporates reactive equivalence factor $n$.",
+                "examTip": "Found in Chemistry. For diprotic sulfuric acid ($\\text{H}_2\\text{SO}_4$), $n = 2$, so a $1.0\\text{ M }\\text{H}_2\\text{SO}_4$ solution is $2.0\\text{ N}$."
+            },
+            {
+                "title": "First-Order Chemical Reaction Half-Life",
+                "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
+                "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+            }
+        ,
+            {
+                "title": "Moment-Area First Theorem (Slope Change Between Points)",
+                "formula": "$$\\theta_{B/A} = \\theta_B - \\theta_A = \\int_A^B \\frac{M(x)}{E I} dx$$",
+                "description": "The change in slope (angle) between tangents at points $A$ and $B$ on the elastic curve of a beam equals the area under the $M/(EI)$ diagram between those two points.",
+                "examTip": "Found in Structural Analysis: Moment-Area Method. If $M/(EI)$ is positive (sagging moment), the slope increases from left to right."
+            },
+            {
+                "title": "Moment-Area Second Theorem (Tangential Deviation)",
+                "formula": "$$t_{B/A} = \\int_A^B \\frac{M(x)}{E I} x_B dx = \\bar{x}_B \\cdot \\text{Area}_{A-B}$$",
+                "description": "The vertical deviation $t_{B/A}$ of point $B$ on the elastic curve with respect to the tangent drawn from point $A$ equals the first moment of the $M/(EI)$ area between $A$ and $B$, taken about point $B$.",
+                "examTip": "Found in Structural Analysis: Moment-Area Method. Note subscript order: $t_{B/A} \\neq t_{A/B}$; the moment arm $\\bar{x}$ must always be measured to the point whose deviation is being computed."
+            },
+            {
+                "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
+                "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
+                "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
+                "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
+            },
+            {
+                "title": "Gravity Retaining Wall Overturning Factor of Safety",
+                "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
+                "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
+            },
+            {
+                "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
+                "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
+                "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
+            },
+            {
+                "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
+                "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
+                "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
+            },
+            {
+                "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
+                "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
+                "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
+                "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
+            },
+            {
+                "title": "Earned Value Management: Cost Variance and Schedule Variance",
+                "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
+                "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+            },
+            {
+                "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
+                "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
+                "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
+            },
+            {
+                "title": "Capillary Rise Height in Fine-Grained Soils",
+                "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
+                "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
+                "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
+            },
+            {
+                "title": "Flip-Flop Characteristic Equations (SR, D, JK, T Flip-Flops)",
+                "formula": "$$Q^+_D = D, \\quad Q^+_{JK} = J \\bar{Q} + \\bar{K} Q, \\quad Q^+_T = T \\oplus Q = T \\bar{Q} + \\bar{T} Q$$",
+                "description": "Next-state logic equations for clocked bistable storage elements: D flip-flop passes data; JK toggles when $J=K=1$; T flip-flop inverts current state whenever toggle input $T=1$.",
+                "examTip": "Found in Digital Systems: Sequential Logic. In a JK flip-flop, $J=1, K=0$ sets $Q^+=1$; $J=0, K=1$ resets $Q^+=0$; $J=K=0$ holds state; $J=K=1$ toggles state."
+            },
+            {
+                "title": "Multiplexers and Demultiplexers Logic Implementations",
+                "formula": "$$Y = \\sum_{i=0}^{2^n - 1} D_i \\cdot m_i(S_{n-1}, \\dots, S_0)$$",
+                "description": "A $2^n$-to-1 multiplexer (MUX) routes one of $2^n$ data inputs to a single output line based on $n$ select address lines; demultiplexers perform the inverse operation.",
+                "examTip": "Found in Digital Systems. An $n$-variable Boolean function can be implemented directly using a $2^{n-1}$-to-1 MUX by connecting $n-1$ variables to select inputs."
+            },
+            {
+                "title": "Two's Complement Integer Representation and Arithmetic Overflow",
+                "formula": "$$N = -b_{n-1} 2^{n-1} + \\sum_{i=0}^{n-2} b_i 2^i, \\quad \\text{Range: } [-2^{n-1}, 2^{n-1} - 1]$$",
+                "description": "Standard binary representation for signed integers: negative numbers are formed by inverting all bits and adding 1; addition overflow occurs if and only if two operands with matching sign bits produce a sum with the opposite sign bit.",
+                "examTip": "Found in Computer Systems: Number Systems. An 8-bit signed integer spans $-128$ to $+127$; overflow occurs when the carry into the sign bit differs from the carry out of the sign bit ($C_{in} \\oplus C_{out} = 1$)."
+            },
+            {
+                "title": "Operational Amplifier Summing and Difference Amplifiers",
+                "formula": "$$v_o^{\\text{sum}} = -R_f \\sum \\frac{v_i}{R_i}, \\quad v_o^{\\text{diff}} = \\frac{R_2}{R_1}(v_2 - v_1) \\quad (\\text{when } \\frac{R_4}{R_3} = \\frac{R_2}{R_1})$$",
+                "description": "Standard linear op-amp analog building blocks: inverting summing amplifier produces a weighted sum of inputs; balanced difference amplifier rejects common-mode signals while amplifying the differential voltage $(v_2 - v_1)$.",
+                "examTip": "Found in Electronics: Operational Amplifiers. In ideal op-amps, apply the golden rules: differential input voltage $v^+ - v^- = 0$ (virtual short) and input currents $i^+ = i^- = 0$."
+            },
+            {
+                "title": "Instrumentation Amplifier Three-Op-Amp Architecture and CMRR",
+                "formula": "$$A_d = \\left(1 + \\frac{2 R_1}{R_G}\\right) \\left(\\frac{R_3}{R_2}\\right), \\quad v_o = A_d (v_2 - v_1)$$",
+                "description": "High-precision instrumentation circuit providing exceptionally high differential gain, extremely high input impedance on both inputs, and very high common-mode rejection ratio (CMRR).",
+                "examTip": "Found in Electronics / Instrumentation. A single external gain resistor $R_G$ sets the overall amplifier gain without upsetting internal resistor bridge matching."
+            },
+            {
+                "title": "BJT Small-Signal Hybrid-Pi Model and Transconductance",
+                "formula": "$$g_m = \\frac{I_C}{V_T}, \\quad r_\\pi = \\frac{\\beta}{g_m} = \\frac{\\beta V_T}{I_C}, \\quad r_o = \\frac{V_A}{I_C}$$",
+                "description": "Linearized small-signal AC model for bipolar junction transistors in forward-active mode: thermal voltage $V_T \\approx 26\\text{ mV}$ at room temperature, with collector transconductance $g_m$ and input base resistance $r_\\pi$.",
+                "examTip": "Found in Electronics: BJTs. Small-signal voltage gain of a common-emitter amplifier with collector resistor $R_C$ is approximately $A_v = -g_m (R_C \\parallel r_o) \\approx -g_m R_C$."
+            },
+            {
+                "title": "MOSFET Small-Signal Model and Transconductance ($g_m$)",
+                "formula": "$$g_m = \\frac{\\partial I_D}{\\partial V_{GS}} = 2 k_n (V_{GS} - V_t) = \\sqrt{2 k_n I_D} = \\frac{2 I_D}{V_{GS} - V_t}$$",
+                "description": "Quantifies small-signal transconductance $g_m$ of an enhancement-mode MOSFET operating in the saturation region; input gate resistance is infinite at low frequencies.",
+                "examTip": "Found in Electronics: MOSFETs. Voltage gain of a common-source amplifier is $A_v = -g_m (R_D \\parallel r_o)$, where channel length modulation output resistance is $r_o = 1 / (\\lambda I_D)$."
+            },
+            {
+                "title": "Full-Wave Bridge Rectifier with Filter Capacitor Ripple Voltage",
+                "formula": "$$V_r = \\frac{I_{dc}}{2 f C} = \\frac{V_{peak}}{2 f R_L C}, \\quad V_{dc} \\approx V_{peak} - \\frac{V_r}{2}$$",
+                "description": "Calculates peak-to-peak AC ripple voltage $V_r$ across a reservoir smoothing capacitor $C$ discharging into load resistance $R_L$ from a full-wave rectifier at supply frequency $f$.",
+                "examTip": "Found in Electronics: Power Supplies. In full-wave rectification, the discharge frequency is $2f$ ($120\\text{ Hz}$ for $60\\text{ Hz}$ line AC), halving ripple compared to half-wave rectification."
+            },
+            {
+                "title": "Poynting Vector and Time-Average Electromagnetic Power Density",
+                "formula": "$$\\mathbf{S} = \\mathbf{E} \\times \\mathbf{H}, \\quad \\mathbf{S}_{avg} = \\frac{1}{2} \\text{Re}\\{\\mathbf{E} \\times \\mathbf{H}^*\\} = \\frac{|E_0|^2}{2 \\eta} \\mathbf{a}_k$$",
+                "description": "Represents directional power flux density (in $\\text{W/m}^2$) of an electromagnetic field; the cross product indicates power flows perpendicular to both the electric and magnetic fields.",
+                "examTip": "Found in Electromagnetics. Remember the factor of $1/2$ when using peak field amplitudes $E_0$ and $H_0$; for RMS amplitudes, $S_{avg} = E_{rms}^2 / \\eta$."
+            },
+            {
+                "title": "Half-Adder and Full-Adder Logic Circuit Equations",
+                "formula": "$$S = A \\oplus B \\oplus C_{in}, \\quad C_{out} = A B + C_{in}(A \\oplus B) = A B + B C_{in} + A C_{in}$$",
+                "description": "Fundamental combinational building block for binary arithmetic: full adder sums two operand bits $A$ and $B$ plus carry-in $C_{in}$ to generate sum bit $S$ and carry-out bit $C_{out}$.",
+                "examTip": "Found in Digital Systems: Arithmetic Circuits. A half-adder only adds two single bits ($S = A \\oplus B, C = A B$) without accepting a carry-in."
+            },
+            {
+                "title": "Binary Ripple Carry Adder vs. Carry-Lookahead Adder",
+                "formula": "$$G_i = A_i B_i, \\quad P_i = A_i \\oplus B_i, \\quad C_{i+1} = G_i + P_i C_i$$",
+                "description": "Accelerates binary addition: ripple carry adders have $O(n)$ latency due to carry propagation delay across $n$ stages; carry-lookahead adders compute carries in parallel using generate ($G_i$) and propagate ($P_i$) terms with $O(\\log n)$ delay.",
+                "examTip": "Found in Computer Systems: Processor Design. High-speed ALU design relies on carry-lookahead trees to break the carry-propagation critical delay path."
+            },
+            {
+                "title": "Static CMOS Inverter Voltage Transfer Characteristic and Noise Margins",
+                "formula": "$$NM_H = V_{OH} - V_{IH}, \\quad NM_L = V_{IL} - V_{OL}$$",
+                "description": "Characterizes digital logic noise immunity: High Noise Margin ($NM_H$) and Low Noise Margin ($NM_L$) quantify maximum spurious noise voltage tolerated without causing logic state ambiguity.",
+                "examTip": "Found in Electronics: Digital ICs. Complementary PMOS pull-up and NMOS pull-down transistors in CMOS produce zero static power dissipation when not switching."
+            },
+            {
+                "title": "Schmitt Trigger Inverting Comparator and Hysteresis Bandwidth",
+                "formula": "$$V_{TH} = \\frac{R_1}{R_1 + R_2} V_{sat}^+, \\quad V_{TL} = \\frac{R_1}{R_1 + R_2} V_{sat}^-, \\quad V_H = V_{TH} - V_{TL}$$",
+                "description": "Positive feedback comparator circuit providing noise immunity by establishing two distinct threshold voltages ($V_{TH}$ upper and $V_{TL}$ lower); prevents chatter caused by noisy input signals.",
+                "examTip": "Found in Electronics: Non-Linear Op-Amp Circuits. Switching occurs only when the input crosses the opposing threshold, creating a clean square wave from slow or noisy inputs."
+            },
+            {
+                "title": "Operational Amplifier Common-Mode Rejection Ratio (CMRR)",
+                "formula": "$$\\text{CMRR} = \\left| \\frac{A_d}{A_{cm}} \\right|, \\quad \\text{CMRR}_{\\text{dB}} = 20 \\log_{10}\\left| \\frac{A_d}{A_{cm}} \\right|$$",
+                "description": "Measures an amplifier's ability to amplify desired differential signals $A_d$ while rejecting unwanted common-mode noise voltages $A_{cm}$ present on both inputs.",
+                "examTip": "Found in Electronics: Operational Amplifiers. For an ideal op-amp, common-mode gain $A_{cm} = 0$, giving an infinite CMRR ($\\infty\\text{ dB}$)."
+            },
+            {
+                "title": "Clausius-Clapeyron Equation for Vapor Pressure of Pure Liquids",
+                "formula": "$$\\ln\\left(\\frac{P_2^{\\text{sat}}}{P_1^{\\text{sat}}}\\right) = -\\frac{\\Delta H_{\\text{vap}}}{R} \\left( \\frac{1}{T_2} - \\frac{1}{T_1} \\right)$$",
+                "description": "Relates temperature sensitivity of pure substance saturation vapor pressure $P^{\\text{sat}}$ to latent heat of vaporization $\\Delta H_{\\text{vap}}$, assuming ideal vapor behavior and negligible liquid molar volume.",
+                "examTip": "Found in Chemical: Thermodynamics. Absolute temperatures (in Kelvin or Rankine) must strictly be used in the $1/T$ terms."
+            },
+            {
+                "title": "HAZOP Study Methodology and Standard Guide Words",
+                "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
+                "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
+                "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
+            },
+            {
+                "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
+                "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
+                "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
+                "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
+            },
+            {
+                "title": "Compressibility Factor $Z$ and Generalized Compressibility Charts",
+                "formula": "$$Z = \\frac{P v}{R T} = \\frac{P M}{\\rho R T}, \\quad P_r = \\frac{P}{P_c}, \\quad T_r = \\frac{T}{T_c}$$",
+                "description": "Quantifies departure of real gas behavior from ideal gas law ($Z = 1.0$) as a universal function of reduced pressure $P_r$ and reduced temperature $T_r$ (Theorem of Corresponding States).",
+                "examTip": "Found in Chemical: Thermodynamics. At low pressures ($P_r \\ll 1$) or very high temperatures ($T_r \\gg 2$), all real gases converge to ideal gas behavior ($Z \\to 1$)."
+            },
+            {
+                "title": "Excess Air and Theoretical Oxygen in Combustion Material Balances",
+                "formula": "$$\\%\\text{ Excess Air} = \\frac{\\text{Moles Air Fed} - \\text{Theoretical Air}}{\\text{Theoretical Air}} \\times 100\\%$$",
+                "description": "Theoretical air is the stoichiometric amount of oxygen needed for complete fuel combustion to $\\text{CO}_2$ and $\\text{H}_2\\text{O}$ (all carbon to $\\text{CO}_2$ even if incomplete reaction occurs), carried by dry air containing $21\\% \\text{ O}_2$ and $79\\% \\text{ N}_2$.",
+                "examTip": "Found in Chemical: Material Balances. Theoretical air is based strictly on complete combustion stoichiometry regardless of how much fuel actually burns."
+            },
+            {
+                "title": "Pressure Relief Valve Sizing Formula for Vapor Discharge",
+                "formula": "$$A = \\frac{W}{C K_d P_1} \\sqrt{\\frac{T Z}{M}}, \\quad C = 520 \\sqrt{k \\left(\\frac{2}{k+1}\\right)^{\\frac{k+1}{k-1}}}$$",
+                "description": "Calculates required discharge orifice area $A$ for safety pressure relief valves under sonic/choked vapor flow conditions, where $W$ is required mass relief rate, $P_1$ is upstream relieving pressure, and $M$ is molecular weight.",
+                "examTip": "Found in Chemical: Process Safety. Overpressure allowance is typically $10\\%$ for non-fire relief and $21\\%$ for external fire exposure scenarios."
+            },
+            {
+                "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+                "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
+                "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
+                "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
+            },
+            {
+                "title": "Heat Exchanger Fouling Resistance Factor",
+                "formula": "$$\\frac{1}{U_{\\text{fouled}}} = \\frac{1}{U_{\\text{clean}}} + R_{fi} + R_{fo}$$",
+                "description": "Accounts for heat transfer degradation caused by scale, corrosion, and biological deposition on internal ($R_{fi}$) and external ($R_{fo}$) tube surfaces over operating time.",
+                "examTip": "Found in Chemical: Heat Transfer. Neglecting fouling factors in industrial heat exchanger sizing leads to severe undersizing and thermal bottlenecking."
+            },
+            {
+                "title": "Pool Boiling Curve Regimes and Critical Heat Flux",
+                "formula": "$$q''_{\\max} = 0.149 \\, \\rho_v \\, h_{fg} \\left[ \\frac{\\sigma g (\\rho_L - \\rho_v)}{\\rho_v^2} \\right]^{1/4} \\quad (\\text{Zuber Equation})$$",
+                "description": "Relates boiling heat flux to wall superheat $\\Delta T_e = T_s - T_{\\text{sat}}$: progresses through Natural Convection $\\to$ Nucleate Boiling $\\to$ Critical Heat Flux (burnout point) $\\to$ Transition Boiling $\\to$ Film Boiling.",
+                "examTip": "Found in Chemical: Heat Transfer. Exceeding Critical Heat Flux ($q''_{\\max}$) causes an abrupt jump in surface temperature into the film boiling regime, potentially melting heat exchanger tubes."
+            },
+            {
+                "title": "Condensation Heat Transfer: Nusselt Film Theory for Vertical Surfaces",
+                "formula": "$$h_{\\text{avg}} = 0.943 \\left[ \\frac{g \\rho_L (\\rho_L - \\rho_v) k_L^3 h'_{fg}}{\\mu_L L (T_{\\text{sat}} - T_s)} \\right]^{1/4}$$",
+                "description": "Predicts average laminar heat transfer coefficient $h_{\\text{avg}}$ for film condensation on a vertical plate of height $L$; liquid condensate film flows downward by gravity, with thermal resistance growing with film thickness.",
+                "examTip": "Found in Chemical: Heat Transfer. Dropwise condensation achieves heat transfer coefficients up to 10 times higher than film condensation because the metal surface remains partially bare."
+            },
+            {
+                "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
+                "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
+                "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
+            },
+            {
+                "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
+                "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
+                "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+            },
+            {
+                "title": "Kanban Production System Container Sizing Equation",
+                "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
+                "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
+                "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
+            },
+            {
+                "title": "Bill of Materials Explosion Tree and Component Offsetting",
+                "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
+                "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
+                "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
+            },
+            {
+                "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
+                "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
+                "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
+            },
+            {
+                "title": "Forecasting Error Metrics: MAD, MSE, and Tracking Signal",
+                "formula": "$$MAD = \\frac{\\sum |e_t|}{n}, \\quad MSE = \\frac{\\sum e_t^2}{n}, \\quad TS = \\frac{\\sum e_t}{MAD} = \\frac{RSFE}{MAD}$$",
+                "description": "Quantifies forecasting accuracy and bias: Mean Absolute Deviation ($MAD$) measures average magnitude of errors; Mean Squared Error ($MSE$) penalizes large outliers; Tracking Signal ($TS$, typically bounded within $\\pm 4$) detects persistent bias.",
+                "examTip": "Found in Industrial: Forecasting. For a normal error distribution, standard deviation of forecast error relates to MAD: $\\sigma \\approx 1.25 \\times MAD$."
+            },
+            {
+                "title": "Break-Even Analysis for Make-or-Buy Decision Models",
+                "formula": "$$TC_{\\text{make}} = FC_{\\text{make}} + VC_{\\text{make}} \\cdot Q, \\quad TC_{\\text{buy}} = VC_{\\text{buy}} \\cdot Q, \\quad Q_{BE} = \\frac{FC_{\\text{make}}}{VC_{\\text{buy}} - VC_{\\text{make}}}$$",
+                "description": "Determines production volume $Q_{BE}$ above which in-house manufacturing (high fixed cost $FC$, low variable cost $VC$) becomes financially superior to purchasing from outside vendors ($FC = 0$, higher unit price $VC_{\\text{buy}}$).",
+                "examTip": "Found in Engineering Economics: Cost Analysis. For production volumes $Q > Q_{BE}$, make in-house; for volumes $Q < Q_{BE}$, buy externally."
+            },
+            {
+                "title": "Benefit-Cost Ratio (B/C Ratio) for Public Projects",
+                "formula": "$$B/C = \\frac{B - D}{C_0 + O\\&M} = \\frac{PV(\\text{Benefits}) - PV(\\text{Disbenefits})}{PV(\\text{Initial Capital Cost}) + PV(\\text{O\\&M Costs})} \\ge 1.0$$",
+                "description": "Standard decision criterion for public sector civil works projects: project is economically justified if net benefits to the public divided by costs to government exceed 1.0; disbenefits reduce user benefits in the numerator.",
+                "examTip": "Found in Engineering Economics. When comparing mutually exclusive alternatives, incremental benefit-cost analysis ($\\Delta B / \\Delta C \\ge 1.0$) must be applied in order of increasing cost."
+            },
+            {
+                "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
+                "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
+                "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
+            },
+            {
+                "title": "Payback Period: Simple vs. Discounted Payback Methods",
+                "formula": "$$\\sum_{t=1}^{\\text{Payback}} CF_t \\ge C_0 \\quad (\\text{Simple}), \\quad \\sum_{t=1}^{\\text{DPB}} \\frac{CF_t}{(1 + i)^t} \\ge C_0 \\quad (\\text{Discounted})$$",
+                "description": "Number of years required for cumulative net cash inflows to recover initial capital investment $C_0$; simple payback ignores the time value of money ($i=0$), whereas discounted payback accounts for cost of capital.",
+                "examTip": "Found in Engineering Economics. Major shortcoming of payback period is that it completely ignores cash flows occurring after the payback horizon."
+            },
+            {
+                "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
+                "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
+                "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
+                "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
+            },
+            {
+                "title": "Chi-Square Goodness-of-Fit Test for Discrete Distributions",
+                "formula": "$$\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}, \\quad \\nu = k - 1 - p$$",
+                "description": "Tests hypothesis that sample observations $O_i$ originate from a theoretical population distribution with expected frequencies $E_i$; degrees of freedom $\\nu$ subtracts 1 plus number of parameters $p$ estimated from sample data.",
+                "examTip": "Found in Probability & Statistics. Valid rule of thumb: expected frequency $E_i$ in every bin must be at least 5; pool adjacent bins if necessary."
+            },
+            {
+                "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
+                "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
+                "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
+            },
+            {
+                "title": "Student's t-Distribution Two-Sample Hypothesis Test",
+                "formula": "$$t = \\frac{(\\bar{X}_1 - \\bar{X}_2) - \\Delta_0}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}, \\quad s_p^2 = \\frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2}$$",
+                "description": "Tests difference between two independent population means when population variances are unknown but assumed equal, pooling sample variances $s_1^2$ and $s_2^2$ with degrees of freedom $\\nu = n_1 + n_2 - 2$.",
+                "examTip": "Found in Probability & Statistics: Hypothesis Testing. For large samples ($n_1 + n_2 > 30$), the $t$-distribution converges to standard normal $z$."
+            },
+            {
+                "title": "Chronic Daily Intake Chemical Exposure Formulation",
+                "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
+                "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+            },
+            {
+                "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
+                "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
+                "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
+                "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            },
+            {
+                "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
+                "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
+                "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
+                "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
+            }
         ]
 };
+
+    // =========================================================================
+    // Active/Visible Deck Filter
+    // =========================================================================
+    // Temporarily hide cards that do not have an associated video across all seven disciplines.
+    // The full database of all 2,215 authored theorems is preserved intact in ALL_THEOREMS_BY_DISCIPLINE.
+    // To restore/unhide all flashcards in the future, simply remove the filter or set an unhide flag.
+    const THEOREMS_BY_DISCIPLINE = {};
+    for (const [disc, list] of Object.entries(ALL_THEOREMS_BY_DISCIPLINE)) {
+        THEOREMS_BY_DISCIPLINE[disc] = list.filter(card => Boolean(card.videoUrl));
+    }
+
 
     let quoteIndex = Math.floor(Math.random() * QUOTES.length);
     let theoremIndex = 0;
@@ -13465,6 +17174,7 @@
     }
 
     // Expose globally
+    window.ALL_THEOREMS_BY_DISCIPLINE = ALL_THEOREMS_BY_DISCIPLINE;
     window.THEOREMS_BY_DISCIPLINE = THEOREMS_BY_DISCIPLINE;
     window.getActiveMotivationDiscipline = getActiveDiscipline;
     window.shuffleQuote = () => renderDailyQuote(true);
