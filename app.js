@@ -6573,7 +6573,10 @@ window.calcEvaluate = function() {
                         "imageTitle": "Vibration Transmissibility Base Excitation Blueprint",
                         "formula": "$$TR = \\sqrt{\\frac{1 + (2\\zeta r)^2}{(1 - r^2)^2 + (2\\zeta r)^2}}, \\quad r = \\frac{\\omega}{\\omega_n}$$",
                         "description": "Ratio of dynamic force transmitted to a supporting structure relative to applied harmonic excitation force as a function of frequency ratio $r$.",
-                        "examTip": "Found in Vibrations. Vibration isolation only occurs when $r = \\omega/\\omega_n > \\sqrt{2}$, where transmissibility $TR < 1$."
+                        "examTip": "Found in Vibrations. Vibration isolation only occurs when $r = \\omega/\\omega_n > \\sqrt{2}$, where transmissibility $TR < 1$.",
+                    "videoUrl": "assets/videos/Vibration_Transmissibility_for_Harmonic_Base_Excitation.mp4",
+                    "videoTitle": "Vibration Transmissibility for Harmonic Base Excitation Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Rotational Kinetic Energy of Rigid Bodies",
@@ -6770,7 +6773,10 @@ window.calcEvaluate = function() {
                         "title": "Boundary Layer Displacement and Momentum Thickness",
                         "formula": "$$\\delta^* = \\int_0^\\delta \\left(1 - \\frac{u}{U_\\infty}\\right) dy, \\quad \\theta = \\int_0^\\delta \\frac{u}{U_\\infty}\\left(1 - \\frac{u}{U_\\infty}\\right) dy$$",
                         "description": "Measures the physical distance streamline flow is displaced outward ($\\delta^*$) and total momentum deficit ($\\theta$) due to fluid viscous boundary layer growth.",
-                        "examTip": "Found in Fluid Mechanics. For Blasius laminar boundary layer over flat plate: $\\delta = 5.0 x / \\sqrt{Re_x}$ and $\\delta^* = 1.72 x / \\sqrt{Re_x}$."
+                        "examTip": "Found in Fluid Mechanics. For Blasius laminar boundary layer over flat plate: $\\delta = 5.0 x / \\sqrt{Re_x}$ and $\\delta^* = 1.72 x / \\sqrt{Re_x}$.",
+                    "videoUrl": "assets/videos/Boundary_Layer_Displacement_and_Momentum_Thickness.mp4",
+                    "videoTitle": "Boundary Layer Displacement & Momentum Thickness Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Aerodynamic Drag Force and Drag Coefficient",
@@ -6821,19 +6827,28 @@ window.calcEvaluate = function() {
                         "title": "Clausius Inequality for Thermodynamic Cycles",
                         "formula": "$$\\oint \\frac{\\delta Q}{T} \\le 0$$",
                         "description": "Second law formulation stating that cyclic integral of $\\delta Q / T$ is zero for reversible cycles and strictly negative for irreversible cycles.",
-                        "examTip": "Found in Thermodynamics. If $\\oint \\delta Q / T > 0$, the cycle violates the Second Law of Thermodynamics (physically impossible)."
+                        "examTip": "Found in Thermodynamics. If $\\oint \\delta Q / T > 0$, the cycle violates the Second Law of Thermodynamics (physically impossible).",
+                    "videoUrl": "assets/videos/Clausius_Inequality_for_Thermodynamic_Cycles.mp4",
+                    "videoTitle": "Clausius Inequality for Thermodynamic Cycles Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Entropy Change of Ideal Gases",
                         "formula": "$$\\Delta s = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right) = c_v \\ln\\left(\\frac{T_2}{T_1}\\right) + R \\ln\\left(\\frac{v_2}{v_1}\\right)$$",
                         "description": "Calculates entropy change $\\Delta s$ between two states for an ideal gas with constant specific heats.",
-                        "examTip": "Found in Thermodynamics. For an isentropic process ($\\Delta s = 0$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$."
+                        "examTip": "Found in Thermodynamics. For an isentropic process ($\\Delta s = 0$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$.",
+                    "videoUrl": "assets/videos/Entropy_Change_of_Ideal_Gases.mp4",
+                    "videoTitle": "Entropy Change of Ideal Gases Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Ideal Diesel Cycle Thermal Efficiency",
                         "formula": "$$\\eta_{\\text{Diesel}} = 1 - \\frac{1}{r^{k-1}}\\left[\\frac{r_c^k - 1}{k (r_c - 1)}\\right]$$",
                         "description": "Efficiency of compression-ignition IC engines as a function of compression ratio $r = V_1/V_2$ and cut-off ratio $r_c = V_3/V_2$.",
-                        "examTip": "Found in Thermodynamics. Because $[(r_c^k-1)/(k(r_c-1))] > 1$, for the same compression ratio $r$, an Otto cycle is theoretically more efficient than a Diesel cycle."
+                        "examTip": "Found in Thermodynamics. Because $[(r_c^k-1)/(k(r_c-1))] > 1$, for the same compression ratio $r$, an Otto cycle is theoretically more efficient than a Diesel cycle.",
+                    "videoUrl": "assets/videos/Ideal_Diesel_Cycle_Thermal_Efficiency.mp4",
+                    "videoTitle": "Ideal Diesel Cycle Thermal Efficiency Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Ideal Brayton Cycle Efficiency for Gas Turbines",
@@ -6884,7 +6899,10 @@ window.calcEvaluate = function() {
                         "title": "Natural Convection Rayleigh and Grashof Numbers",
                         "formula": "$$Gr = \\frac{g \\beta (T_s - T_\\infty) L^3}{\\nu^2}, \\quad Ra = Gr \\cdot Pr$$",
                         "description": "Dimensionless criteria governing buoyancy-driven natural convection: Grashof number $Gr$ balances buoyant forces against viscous forces; $Ra > 10^9$ indicates turbulent boundary layer.",
-                        "examTip": "Found in Heat Transfer. Volume expansion coefficient for ideal gas is $\\beta = 1 / T_f$ where film temperature $T_f = (T_s + T_\\infty)/2$ is in Kelvin."
+                        "examTip": "Found in Heat Transfer. Volume expansion coefficient for ideal gas is $\\beta = 1 / T_f$ where film temperature $T_f = (T_s + T_\\infty)/2$ is in Kelvin.",
+                    "videoUrl": "assets/videos/Natural_Convection_Rayleigh_and_Grashof_Numbers.mp4",
+                    "videoTitle": "Natural Convection Rayleigh & Grashof Numbers Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Dittus-Boelter Turbulent Pipe Flow Correlation",
@@ -7416,8 +7434,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -7810,10 +7828,13 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
-                        "title": "variable Acceleration Motion",
+                        "title": "Variable Acceleration Motion",
                         "formula": "$$\\int_{v_0}^v dv = \\int_0^t a(t) \\, dt, \\quad \\int_{s_0}^s ds = \\int_0^t v(t) \\, dt, \\quad \\int_{v_0}^v v \\, dv = \\int_{s_0}^s a(s) \\, ds$$",
                         "description": "When acceleration varies continuously as a function of time $a(t)$, velocity $a(v)$, or position $a(s)$, kinematics equations must be integrated directly using fundamental definitions $v = ds/dt$ and $a = dv/dt = v(dv/ds)$.",
-                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$."
+                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$.",
+                    "videoUrl": "assets/videos/Variable_Acceleration_Motion.mp4",
+                    "videoTitle": "Variable Acceleration Motion Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Relative Motion",
@@ -9440,8 +9461,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -9834,10 +9855,13 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
-                        "title": "variable Acceleration Motion",
+                        "title": "Variable Acceleration Motion",
                         "formula": "$$\\int_{v_0}^v dv = \\int_0^t a(t) \\, dt, \\quad \\int_{s_0}^s ds = \\int_0^t v(t) \\, dt, \\quad \\int_{v_0}^v v \\, dv = \\int_{s_0}^s a(s) \\, ds$$",
                         "description": "When acceleration varies continuously as a function of time $a(t)$, velocity $a(v)$, or position $a(s)$, kinematics equations must be integrated directly using fundamental definitions $v = ds/dt$ and $a = dv/dt = v(dv/ds)$.",
-                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$."
+                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$.",
+                    "videoUrl": "assets/videos/Variable_Acceleration_Motion.mp4",
+                    "videoTitle": "Variable Acceleration Motion Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Relative Motion",
@@ -10943,8 +10967,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -12204,8 +12228,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -13789,8 +13813,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -15302,8 +15326,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -17084,8 +17108,8 @@ window.calcEvaluate = function() {
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
                         "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
-                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
-                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoUrl": "assets/videos/Laplace_Transform_Definition_and_Derivative_Properties.mp4",
+                    "videoTitle": "Laplace Transform Definition & Derivative Properties Explainer",
                     "videoDuration": "10s"
                 },
                 {
@@ -17478,10 +17502,13 @@ window.calcEvaluate = function() {
                         "videoDuration": "10s"
                 },
                 {
-                        "title": "variable Acceleration Motion",
+                        "title": "Variable Acceleration Motion",
                         "formula": "$$\\int_{v_0}^v dv = \\int_0^t a(t) \\, dt, \\quad \\int_{s_0}^s ds = \\int_0^t v(t) \\, dt, \\quad \\int_{v_0}^v v \\, dv = \\int_{s_0}^s a(s) \\, ds$$",
                         "description": "When acceleration varies continuously as a function of time $a(t)$, velocity $a(v)$, or position $a(s)$, kinematics equations must be integrated directly using fundamental definitions $v = ds/dt$ and $a = dv/dt = v(dv/ds)$.",
-                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$."
+                        "examTip": "Found in Dynamics: Particle Kinematics. If acceleration is velocity-dependent (e.g. aerodynamic drag $a = -k v^2$), separate variables: $\\int \\frac{dv}{-k v^2} = \\int dt \\implies \\frac{1}{v} - \\frac{1}{v_0} = k t$.",
+                    "videoUrl": "assets/videos/Variable_Acceleration_Motion.mp4",
+                    "videoTitle": "Variable Acceleration Motion Explainer",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Relative Motion",
