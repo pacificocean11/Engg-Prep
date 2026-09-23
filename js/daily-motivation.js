@@ -742,7 +742,10 @@
                         "title": "Marin Factors for Fatigue Endurance Limit Modification",
                         "formula": "$$S_e = k_a k_b k_c k_d k_e S'_e$$",
                         "description": "Adjusts unnotched rotating-beam laboratory fatigue limit $S'_e$ ($S'_e \\approx 0.5 S_{ut}$ for steel) by surface factor $k_a$, size factor $k_b$, load factor $k_c$, temperature $k_d$, and reliability $k_e$.",
-                        "examTip": "Found in Mechanical Design. Ground surfaces have $k_a \\approx 1.0$, while as-forged or cast surfaces have significantly lower $k_a$ ($0.4 - 0.6$)."
+                        "examTip": "Found in Mechanical Design. Ground surfaces have $k_a \\approx 1.0$, while as-forged or cast surfaces have significantly lower $k_a$ ($0.4 - 0.6$).",
+                    "videoUrl": "assets/videos/Marin_Factors_for_Fatigue_Endurance_Limit_Modification.mp4",
+                    "videoTitle": "Marin Factors for Fatigue Endurance Limit Modification Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Linear Elastic Fracture Mechanics (Griffith Criterion)",
@@ -793,7 +796,10 @@
                         "title": "Centrifugal Pump Affinity Laws",
                         "formula": "$$\\frac{Q_2}{Q_1} = \\frac{N_2}{N_1}, \\quad \\frac{H_2}{H_1} = \\left(\\frac{N_2}{N_1}\\right)^2, \\quad \\frac{\\dot{W}_2}{\\dot{W}_1} = \\left(\\frac{N_2}{N_1}\\right)^3$$",
                         "description": "Predicts changes in volumetric flow rate $Q$, total head $H$, and required brake horsepower $\\dot{W}$ when pump impeller rotational speed $N$ is varied.",
-                        "examTip": "Found in Fluid Mechanics. Note power varies with the cube of shaft speed: doubling pump RPM requires $2^3 = 8\\times$ power!"
+                        "examTip": "Found in Fluid Mechanics. Note power varies with the cube of shaft speed: doubling pump RPM requires $2^3 = 8\\times$ power!",
+                    "videoUrl": "assets/videos/Centrifugal_Pump_Affinity_Laws.mp4",
+                    "videoTitle": "Centrifugal Pump Affinity Laws Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Net Positive Suction Head Available (NPSHA)",
@@ -808,7 +814,10 @@
                         "title": "Pump Specific Speed ($N_s$)",
                         "formula": "$$N_s = \\frac{N \\sqrt{Q}}{H^{3/4}}$$",
                         "description": "Dimensionless/empirical design parameter identifying optimal pump impeller type: radial flow ($N_s < 2000$), mixed flow ($2000 < N_s < 5000$), or axial flow ($N_s > 9000$).",
-                        "examTip": "Found in Fluid Mechanics. In USCS units: $N$ is in rpm, $Q$ is in gpm, and $H$ is in feet of fluid."
+                        "examTip": "Found in Fluid Mechanics. In USCS units: $N$ is in rpm, $Q$ is in gpm, and $H$ is in feet of fluid.",
+                    "videoUrl": "assets/videos/Pump_Specific_Speed.mp4",
+                    "videoTitle": "Pump Specific Speed Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Boundary Layer Displacement and Momentum Thickness",
@@ -883,7 +892,10 @@
                         "title": "Ideal Brayton Cycle Efficiency for Gas Turbines",
                         "formula": "$$\\eta_{\\text{Brayton}} = 1 - \\frac{1}{r_p^{(k-1)/k}}, \\quad r_p = \\frac{P_2}{P_1}$$",
                         "description": "Thermal efficiency of an air-standard gas turbine cycle operating with isentropic compression, constant-pressure combustion, isentropic expansion, and exhaust.",
-                        "examTip": "Found in Thermodynamics. Efficiency depends strictly on compressor pressure ratio $r_p$ and specific heat ratio $k$."
+                        "examTip": "Found in Thermodynamics. Efficiency depends strictly on compressor pressure ratio $r_p$ and specific heat ratio $k$.",
+                    "videoUrl": "assets/videos/Ideal_Brayton_Cycle_Efficiency_for_Gas_Turbines.mp4",
+                    "videoTitle": "Ideal Brayton Cycle Efficiency for Gas Turbines Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
@@ -964,7 +976,10 @@
                         "title": "Radiation Heat Exchange Between Infinite Parallel Gray Plates",
                         "formula": "$$q_{12} = \\frac{\\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$$",
                         "description": "Net radiant heat flux exchanged between two large parallel diffuse-gray surfaces with emissivities $\\epsilon_1$ and $\\epsilon_2$ at absolute temperatures $T_1$ and $T_2$.",
-                        "examTip": "Found in Heat Transfer. Adding a radiation shield with emissivity $\\epsilon_s$ cuts heat transfer by more than 50%."
+                        "examTip": "Found in Heat Transfer. Adding a radiation shield with emissivity $\\epsilon_s$ cuts heat transfer by more than 50%.",
+                    "videoUrl": "assets/videos/Radiation_Heat_Exchange_Between_Infinite_Parallel_Gray_Plates.mp4",
+                    "videoTitle": "Radiation Heat Exchange Between Infinite Parallel Gray Plates Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "AGMA Lewis Bending Equation for Spur Gear Teeth",
@@ -997,7 +1012,10 @@
                         "title": "Bolted Joint Preload and Clamping Stiffness",
                         "formula": "$$C = \\frac{k_b}{k_b + k_m}, \\quad P_b = F_i + C P, \\quad P_m = -F_i + (1 - C) P$$",
                         "description": "Partitioning of external tensile service load $P$ between preloaded bolt ($k_b$) and clamped joint members ($k_m$), where joint stiffness constant $C$ is typically $0.15 - 0.30$.",
-                        "examTip": "Found in Mechanical Design. Joint separation occurs when clamping load vanishes ($P_m = 0$), giving external separation load $P_{\\text{sep}} = F_i / (1 - C)$."
+                        "examTip": "Found in Mechanical Design. Joint separation occurs when clamping load vanishes ($P_m = 0$), giving external separation load $P_{\\text{sep}} = F_i / (1 - C)$.",
+                    "videoUrl": "assets/videos/Bolted_Joint_Preload_and_Clamping_Stiffness.mp4",
+                    "videoTitle": "Bolted Joint Preload and Clamping Stiffness Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Helical Compression Spring Shear Stress with Wahl Factor",
@@ -1450,7 +1468,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -1530,7 +1551,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -1545,7 +1569,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
@@ -3465,7 +3492,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -3545,7 +3575,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -3560,7 +3593,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
@@ -4959,7 +4995,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -5039,7 +5078,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -5054,7 +5096,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
@@ -6211,7 +6256,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -6291,7 +6339,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -6306,7 +6357,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
@@ -7787,7 +7841,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -7867,7 +7924,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -7882,7 +7942,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
@@ -9291,7 +9354,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -9371,7 +9437,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -9386,7 +9455,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
@@ -11064,7 +11136,10 @@
                         "title": "Laplace Transform Definition and Derivative Properties",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-s t} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Integral transform converting time-domain differential equations into algebraic equations in the complex frequency $s$-domain. The second derivative property $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$ naturally incorporates initial conditions.",
-                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations and Dynamic Systems. Standard handbook pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin\\omega t\\} = \\omega/(s^2+\\omega^2)$, and $\\mathcal{L}\\{\\cos\\omega t\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Matrix Multiplication and Dimension Compatibility",
@@ -11144,7 +11219,10 @@
                         "title": "Trapezoidal Rule for Numerical Integration",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
-                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2."
+                        "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
+                    "videoUrl": "assets/videos/Trapezoidal_Rule_for_Numerical_Integration.mp4",
+                    "videoTitle": "Trapezoidal Rule for Numerical Integration Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
@@ -11159,7 +11237,10 @@
                         "title": "Laplace Transforms",
                         "formula": "$$\\mathcal{L}\\{f(t)\\} = F(s) = \\int_0^\\infty f(t) e^{-st} \\, dt, \\quad \\mathcal{L}\\{f'(t)\\} = s F(s) - f(0^-)$$",
                         "description": "Converts linear time-domain differential equations into algebraic operations in the complex frequency $s$-domain. Initial conditions are incorporated directly into transformed derivatives: $\\mathcal{L}\\{f''(t)\\} = s^2 F(s) - s f(0^-) - f'(0^-)$.",
-                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$."
+                        "examTip": "Found in Mathematics: Differential Equations. Standard pairs: $\\mathcal{L}\\{1\\} = 1/s$, $\\mathcal{L}\\{e^{at}\\} = 1/(s-a)$, $\\mathcal{L}\\{\\sin(\\omega t)\\} = \\omega/(s^2+\\omega^2)$, $\\mathcal{L}\\{\\cos(\\omega t)\\} = s/(s^2+\\omega^2)$.",
+                    "videoUrl": "assets/videos/Laplace_Transforms.mp4",
+                    "videoTitle": "Laplace Transforms Video Guide",
+                    "videoDuration": "10s"
                 },
                 {
                         "title": "Multiplication of Two Matrices",
