@@ -6033,6 +6033,8 @@ window.calcEvaluate = function() {
         "Mechanical": [
                 {
                         "title": "Bernoulli’s Principle",
+                        "imageUrl": "assets/images/bernoullis_principle.jpg",
+                        "imageTitle": "Bernoulli’s Principle Venturi Constriction and Static Pressure Blueprint",
                         "formula": "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$",
                         "description": "States that for an inviscid, incompressible fluid in steady streamline flow, the sum of static pressure, dynamic pressure, and hydrostatic pressure is constant along a streamline.",
                         "examTip": "Search NCEES Handbook under Fluid Mechanics. Ensure you use consistent gauge vs absolute pressures and watch out for elevation head datum.",
@@ -6091,6 +6093,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Fourier’s Law of Thermal Conduction",
+                        "imageUrl": "assets/images/fouriers_law_of_thermal_conduction.jpg",
+                        "imageTitle": "Fourier’s Law of Thermal Conduction Plane Wall Blueprint",
                         "formula": "$$\\dot{Q} = -k A \\frac{dT}{dx}$$",
                         "description": "Defines the rate of heat transfer through a material as directly proportional to the negative temperature gradient and the cross-sectional area perpendicular to heat flow.",
                         "examTip": "Found under Heat Transfer. For multi-layer planar walls or cylindrical pipes, use the thermal resistance analogy: $R_{th} = \\frac{L}{k A}$.",
@@ -6145,6 +6149,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Carnot Thermal Efficiency (Maximum Limit)",
+                        "imageUrl": "assets/images/carnot_thermal_efficiency_maximum_limit.jpg",
+                        "imageTitle": "Carnot Thermal Efficiency Ideal P-V and T-s Cycle Diagrams Blueprint",
                         "formula": "$$\\eta_{\\text{Carnot}} = 1 - \\frac{T_L}{T_H} = \\frac{T_H - T_L}{T_H}$$",
                         "description": "Represents the absolute theoretical maximum efficiency that any heat engine operating between two thermal reservoirs can achieve.",
                         "examTip": "Found under Thermodynamics. Crucial test rule: Always convert temperatures to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}) before calculating!",
@@ -6154,6 +6160,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mohr’s Circle for Plane Stress",
+                        "imageUrl": "assets/images/mohrs_circle_for_plane_stress.jpg",
+                        "imageTitle": "Mohr’s Circle for Plane Stress State Transformation Blueprint",
                         "formula": "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}$$",
                         "description": "A graphical and analytical transformation for plane stress, yielding in-plane principal normal stresses and maximum in-plane shear stress.",
                         "examTip": "Found in Mechanics of Materials. The radius of the circle directly equals the maximum in-plane shear stress $\\tau_{\\text{max}}$.",
@@ -6163,6 +6171,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Parallel Axis Theorem (Second Moment of Area)",
+                        "imageUrl": "assets/images/parallel_axis_theorem_second_moment_of_area.jpg",
+                        "imageTitle": "Parallel Axis Theorem Second Moment of Area Blueprint",
                         "formula": "$$I_x = I_{xc} + A d^2$$",
                         "description": "Calculates the area moment of inertia of a shape about any arbitrary axis parallel to its centroidal axis.",
                         "examTip": "Found in Statics / Dynamics. Variable $d$ is strictly the perpendicular distance from the component centroid to the reference axis.",
@@ -6172,6 +6182,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "First Law of Thermodynamics (Closed System)",
+                        "imageUrl": "assets/images/first_law_of_thermodynamics_closed_system.jpg",
+                        "imageTitle": "First Law of Thermodynamics Closed System Energy Balance Blueprint",
                         "formula": "$$\\Delta U = Q - W = m c_v (T_2 - T_1)$$",
                         "description": "States conservation of energy for a stationary closed system: net change in internal energy equals net heat added minus net boundary work done by the system.",
                         "examTip": "Found in Thermodynamics. Sign convention: Heat added is positive ($+Q$); work done by system is positive ($+W$). For ideal gases, internal energy depends only on temperature.",
@@ -6181,6 +6193,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Darcy-Weisbach Equation (Friction Head Loss)",
+                        "imageUrl": "assets/images/darcy_weisbach_friction_head_loss.jpg",
+                        "imageTitle": "Darcy-Weisbach Equation Friction Head Loss Conduit Blueprint",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss due to wall friction in fully developed circular pipe flow as a function of friction factor $f$, length $L$, diameter $D$, and mean velocity $v$.",
                         "examTip": "Found in Fluid Mechanics. In laminar pipe flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, find $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
@@ -6190,6 +6204,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Euler’s Critical Buckling Load for Columns",
+                        "imageUrl": "assets/images/eulers_critical_buckling_load.jpg",
+                        "imageTitle": "Euler's Critical Buckling Load for Columns (Straight vs. Buckled State with End Pinned Conditions)",
                         "formula": "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
                         "description": "Calculates the maximum axial compressive load that a slender column can sustain before undergoing sudden elastic lateral buckling.",
                         "examTip": "Found in Mechanics of Materials. Check column end support factors: $K=0.5$ (fixed-fixed), $K=0.7$ (fixed-pinned), $K=1.0$ (pinned-pinned), $K=2.0$ (fixed-free).",
@@ -6199,6 +6215,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Newton’s Law of Cooling (Convective Heat Transfer)",
+                        "imageUrl": "assets/images/newtons_law_of_cooling_convective.jpg",
+                        "imageTitle": "Newton’s Law of Cooling Convective Heat Transfer Boundary Layer Blueprint",
                         "formula": "$$\\dot{Q}_{conv} = h A_s (T_s - T_\\infty)$$",
                         "description": "Quantifies convective heat transfer between a solid surface and an adjacent moving fluid, driven by temperature difference and convective heat transfer coefficient $h$.",
                         "examTip": "Found in Heat Transfer. Convection thermal resistance is $R_{th} = 1 / (h A_s)$. Note that $h$ is not a material constant; it depends on flow velocity, geometry, and fluid properties.",
@@ -6208,6 +6226,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stefan-Boltzmann Law of Thermal Radiation",
+                        "imageUrl": "assets/images/stefan_boltzmann_law_thermal_radiation.jpg",
+                        "imageTitle": "Stefan-Boltzmann Law of Thermal Radiation Emissive Power Blueprint",
                         "formula": "$$\\dot{Q}_{emit} = \\epsilon \\sigma A T^4, \\quad \\sigma = 5.67 \\times 10^{-8} \\text{ W}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
                         "description": "Total radiant energy emitted per unit time by a real surface is proportional to surface emissivity $\\epsilon$ and the fourth power of absolute temperature $T$.",
                         "examTip": "Found in Heat Transfer. Mandatory rule: Surface temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$.",
@@ -6217,6 +6237,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Generalized Hooke’s Law (3D Elastic Stress-Strain)",
+                        "imageUrl": "assets/images/generalized_hookes_law_3d_elastic_stress_strain.jpg",
+                        "imageTitle": "Generalized Hooke’s Law 3D Triaxial Elastic Stress Tensor Cube Blueprint",
                         "formula": "$$\\epsilon_x = \\frac{1}{E}\\left[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)\\right]$$",
                         "description": "Relates elastic normal strain along a Cartesian axis to multi-axial normal stresses and Poisson's ratio $\\nu$ in linear isotropic materials.",
                         "examTip": "Found in Mechanics of Materials. Even under uniaxial tension ($\\sigma_y = \\sigma_z = 0$), lateral strains $\\epsilon_y = \\epsilon_z = -\\nu \\sigma_x / E$ still develop!",
@@ -6237,6 +6259,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Torsion Formula (Shaft Shear Stress & Twist)",
+                        "imageUrl": "assets/images/torsion_formula_shaft_shear_stress_twist.jpg",
+                        "imageTitle": "Torsion Formula Circular Shaft Shear Stress and Angle of Twist Blueprint",
                         "formula": "$$\\tau = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{G J}$$",
                         "description": "Computes shear stress $\\tau$ at radius $r$ and total angular twist $\\phi$ in a circular shaft carrying torsional moment $T$, shear modulus $G$, and polar moment $J$.",
                         "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$. For a hollow tube: $J = \\pi(d_o^4 - d_i^4) / 32$.",
@@ -6246,6 +6270,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Log Mean Temperature Difference (LMTD Heat Exchangers)",
+                        "imageUrl": "assets/images/log_mean_temperature_difference_lmtd.jpg",
+                        "imageTitle": "Log Mean Temperature Difference (Parallel-Flow vs. Counter-Flow Heat Exchanger Blueprint)",
                         "formula": "$$\\Delta T_{lm} = \\frac{\\Delta T_1 - \\Delta T_2}{\\ln(\\Delta T_1 / \\Delta T_2)}, \\quad \\dot{Q} = U A F \\Delta T_{lm}$$",
                         "description": "Evaluates the effective temperature driving force in parallel-flow and counter-flow heat exchangers with overall heat transfer coefficient $U$ and area $A$.",
                         "examTip": "Found in Heat Transfer. Counter-flow arrangements produce a higher $\\Delta T_{lm}$ than parallel-flow for identical temperature endpoints, requiring less heat exchange area.",
@@ -6255,6 +6281,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Reynolds Number (Dynamic Similarity & Flow Regime)",
+                        "imageUrl": "assets/images/reynolds_number_dynamic_similarity.jpg",
+                        "imageTitle": "Reynolds Number Laminar vs Turbulent Flow Regimes Blueprint",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless parameter representing ratio of inertial forces to viscous forces; governs laminar vs turbulent transitions in pipe and boundary layer flows.",
                         "examTip": "Found in Fluid Mechanics. For internal conduit flow: $Re < 2100$ is laminar; $Re > 4000$ is turbulent. Kinematic viscosity is $\\nu = \\mu / \\rho$.",
@@ -6264,6 +6292,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Work-Energy Principle (Rigid Body Dynamics)",
+                        "imageUrl": "assets/images/work_energy_principle_rigid_body_dynamics.jpg",
+                        "imageTitle": "Work-Energy Principle Rigid Body Rolling Dynamics Blueprint",
                         "formula": "$$T_1 + \\sum U_{1-2} = T_2, \\quad T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "The net work done by all external forces and couples acting on a body during displacement equals the change in its total kinetic energy (translation plus rotation).",
                         "examTip": "Found in Dynamics. For rolling without slipping on stationary surfaces, kinetic energy simplifies to $T = \\frac{1}{2} I_{IC} \\omega^2$ about the instantaneous center.",
@@ -6273,6 +6303,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Ideal Rankine Cycle Thermal Efficiency (Vapor Power)",
+                        "imageUrl": "assets/images/ideal_rankine_cycle_thermal_efficiency.jpg",
+                        "imageTitle": "Ideal Rankine Cycle Schematic and T-s Diagram with Vapor Dome",
                         "formula": "$$\\eta_{\\text{th}} = \\frac{w_{\\text{net}}}{q_{\\text{in}}} = \\frac{(h_3 - h_4) - (h_2 - h_1)}{h_3 - h_2}$$",
                         "description": "Defines thermal efficiency of steam power cycles using thermodynamic enthalpies at boiler inlet, turbine inlet, condenser inlet, and pump inlet.",
                         "examTip": "Found in Thermodynamics. Pump work is $w_p = h_2 - h_1 \\approx v_1(P_2 - P_1)$. Remember to convert $v_1$ in $\\text{m}^3/\\text{kg}$ and $P$ in $\\text{kPa}$ to yield $\\text{kJ/kg}$.",
@@ -6282,6 +6314,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Continuity Equation (Conservation of Mass)",
+                        "imageUrl": "assets/images/continuity_equation_conservation_of_mass.jpg",
+                        "imageTitle": "Continuity Equation Conservation of Mass Converging Conduit Blueprint",
                         "formula": "$$\\dot{m} = \\rho_1 A_1 v_1 = \\rho_2 A_2 v_2 \\implies Q = A_1 v_1 = A_2 v_2$$",
                         "description": "Expresses steady mass conservation in conduits; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is invariant along any streamtube.",
                         "examTip": "Found in Fluid Mechanics. Velocity is inversely proportional to diameter squared: $v_2 = v_1 (D_1 / D_2)^2$. Halving the pipe diameter quadruples fluid velocity.",
@@ -6291,6 +6325,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                         "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
                         "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
                         "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
@@ -6300,6 +6336,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "SDOF Undamped Natural Frequency (Mechanical Vibrations)",
+                        "imageUrl": "assets/images/sdof_undamped_natural_frequency_vibrations.jpg",
+                        "imageTitle": "SDOF Undamped Natural Frequency Spring-Mass Oscillator Blueprint",
                         "formula": "$$\\omega_n = \\sqrt{\\frac{k}{m}} \\text{ [rad/s]}, \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\text{ [Hz]}$$",
                         "description": "Calculates fundamental natural circular frequency $\\omega_n$ and cyclic frequency $f_n$ for a single-degree-of-freedom mass-spring mechanical oscillator.",
                         "examTip": "Found in Mechanical Design and Dynamics. Watch units closely: $\\omega_n$ is in rad/s, while $f_n$ is in cycles/s (Hz). Natural period is $\\tau_n = 1 / f_n = 2\\pi / \\omega_n$.",
@@ -6309,6 +6347,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Otto Cycle Efficiency (Internal Combustion)",
+                        "imageUrl": "assets/images/ideal_otto_cycle_efficiency_internal_combustion.jpg",
+                        "imageTitle": "Ideal Otto Cycle Efficiency P-V and T-s Thermodynamic Diagrams Blueprint",
                         "formula": "$$\\eta_{\\text{th, Otto}} = 1 - \\frac{1}{r^{k-1}}, \\quad r = \\frac{V_{\\text{max}}}{V_{\\text{min}}}$$",
                         "description": "Thermal efficiency of idealized four-stroke spark-ignition engines as a function of volumetric compression ratio $r$ and specific heat ratio $k = c_p/c_v$.",
                         "examTip": "Found in Thermodynamics. For cold air standard assumptions, $k = 1.4$. Increasing compression ratio improves efficiency, limited practically by engine knock.",
@@ -6318,6 +6358,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Speed of Sound & Mach Number (Compressible Flow)",
+                        "imageUrl": "assets/images/speed_of_sound_mach_number_compressible.jpg",
+                        "imageTitle": "Speed of Sound and Mach Number Compressible Flow Regimes Blueprint",
                         "formula": "$$c = \\sqrt{k R T}, \\quad M = \\frac{v}{c}$$",
                         "description": "Calculates acoustic speed $c$ in an ideal gas and Mach number $M$, establishing boundaries between subsonic ($M < 1$), sonic ($M = 1$), and supersonic ($M > 1$) flows.",
                         "examTip": "Found in Fluid Mechanics. Specific gas constant for air is $R = 287 \\text{ J/(kg}\\cdot\\text{K)}$. Temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}).",
@@ -6327,6 +6369,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Modified Goodman Fatigue Criterion (Fluctuating Stresses)",
+                        "imageUrl": "assets/images/modified_goodman_fatigue_criterion.jpg",
+                        "imageTitle": "Modified Goodman Fatigue Criterion Fluctuating Stress Life Diagram Blueprint",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{N_f}$$",
                         "description": "Evaluates fatigue safety factor $N_f$ for ductile mechanical parts under cyclic loading with alternating stress $\\sigma_a$, mean stress $\\sigma_m$, endurance limit $S_e$, and ultimate tensile strength $S_{ut}$.",
                         "examTip": "Found in Mechanical Design. Alternating stress $\\sigma_a = (\\sigma_{\\text{max}} - \\sigma_{\\text{min}})/2$; mean stress $\\sigma_m = (\\sigma_{\\text{max}} + \\sigma_{\\text{min}})/2$. If $\\sigma_m \\le 0$, mean stress effect is zero.",
@@ -6336,6 +6380,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Linear Impulse and Momentum Theorem (Impact & Jet Forces)",
+                        "imageUrl": "assets/images/linear_impulse_momentum_jet_forces.jpg",
+                        "imageTitle": "Linear Impulse and Momentum Fluid Jet Impinging on Deflector Vane Blueprint",
                         "formula": "$$\\vec{I} = \\int_{t_1}^{t_2} \\sum \\vec{F} dt = m \\vec{v}_2 - m \\vec{v}_1 = \\Delta \\vec{p}$$",
                         "description": "The net impulse of external forces acting on a body over time interval $\\Delta t$ equals the vector change in linear momentum, fundamental to impact and fluid vane reactions.",
                         "examTip": "Found in Dynamics and Fluid Mechanics. For steady fluid jets deflecting across stationary/moving blades: $\\vec{F} = \\dot{m}(\\vec{v}_{in} - \\vec{v}_{out})$. Respect vector directions!",
@@ -6345,6 +6391,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Hydrostatic Pressure Distribution with Depth",
+                        "imageUrl": "assets/images/hydrostatic_pressure_distribution_depth.jpg",
+                        "imageTitle": "Hydrostatic Pressure Distribution Linear Gradient and Resultant Force Blueprint",
                         "formula": "$$P = P_0 + \\rho g h = P_0 + \\gamma h$$",
                         "description": "Pressure increase in a static incompressible fluid is directly proportional to fluid density $\\rho$, gravity $g$, and submerged depth $h$.",
                         "examTip": "Found in Fluid Mechanics. Gauge pressure ignores atmospheric surface pressure $P_0$: $P_{\\text{gauge}} = \\gamma h$.",
@@ -6354,6 +6402,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Gas Law Equation of State",
+                        "imageUrl": "assets/images/ideal_gas_law_equation_of_state.jpg",
+                        "imageTitle": "Ideal Gas Law Piston Cylinder State and Isothermal P-V Diagram Blueprint",
                         "formula": "$$P V = m R T = n \\bar{R} T, \\quad \\bar{R} = 8.314\\text{ kJ/(kmol}\\cdot\\text{K)}$$",
                         "description": "Relates pressure $P$, volume $V$, and absolute temperature $T$ for gases at low pressure and moderate temperature.",
                         "examTip": "Found in Thermodynamics / Chemistry. Specific gas constant $R = \\bar{R} / M_{\\text{molar}}$. For air, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$.",
@@ -6363,6 +6413,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Centroid of Composite Planar Areas",
+                        "imageUrl": "assets/images/centroid_of_composite_planar_areas.jpg",
+                        "imageTitle": "Centroid of Composite Planar Areas Partitioned Blueprint",
                         "formula": "$$\\bar{x} = \\frac{\\sum A_i \\bar{x}_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum A_i \\bar{y}_i}{\\sum A_i}$$",
                         "description": "Calculates the geometric center $(\\bar{x}, \\bar{y})$ of composite cross sections by taking the first moments of area divided by total area.",
                         "examTip": "Found in Statics / Mechanics of Materials. For cutouts or holes, treat their area as negative in the summation.",
@@ -6372,6 +6424,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Slenderness Ratio for Steel Compression Members",
+                        "imageUrl": "assets/images/slenderness_ratio_steel_compression_members.jpg",
+                        "imageTitle": "Slenderness Ratio Steel Column Buckling Effective Length Blueprint",
                         "formula": "$$\\lambda = \\frac{K L}{r}, \\quad r = \\sqrt{\\frac{I}{A}}$$",
                         "description": "Measures column susceptibility to lateral buckling as the ratio of effective unbraced length $K L$ to minimum radius of gyration $r$.",
                         "examTip": "Found in Structural Steel Design. Always evaluate buckling about the weak axis (minimum radius of gyration $r_y$) unless braced against lateral deflection.",
@@ -6381,6 +6435,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ohm’s Law and Joule Heating Law",
+                        "imageUrl": "assets/images/ohms_law_joule_heating.jpg",
+                        "imageTitle": "Ohm’s Law and Joule Heating Electrical Circuit Schematic Blueprint",
                         "formula": "$$V = I R, \\quad P = V I = I^2 R = \\frac{V^2}{R}$$",
                         "description": "Relates electric potential difference $V$, current $I$, and resistance $R$ in ohmic conductors, expressing dissipated thermal power $P$.",
                         "examTip": "Found in Circuit Analysis. Double check unit prefixes: $1\\text{ k}\\Omega = 10^3\\;\\Omega$, $1\\text{ mA} = 10^{-3}\\text{ A}$. $1\\text{ V} \\times 1\\text{ mA} = 1\\text{ mW}$.",
@@ -6390,6 +6446,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kirchhoff’s Current and Voltage Laws (KCL & KVL)",
+                        "imageUrl": "assets/images/kirchhoffs_current_and_voltage_laws_kcl_kvl.jpg",
+                        "imageTitle": "Kirchhoff’s Current (KCL) and Voltage (KVL) Laws Circuit Blueprint",
                         "formula": "$$\\sum I_{\\text{in}} = \\sum I_{\\text{out}}, \\quad \\sum_{k=1}^n V_k = 0$$",
                         "description": "Fundamental conservation laws of electrical charge (KCL at nodes) and electric potential energy (KVL around closed loops).",
                         "examTip": "Found in Circuit Analysis. Maintain strict consistency with the passive sign convention: current enters the positive terminal of absorbing elements.",
@@ -6399,6 +6457,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Series RLC Resonance and Bandwidth",
+                        "imageUrl": "assets/images/series_rlc_resonance_bandwidth.jpg",
+                        "imageTitle": "Series RLC Resonance Peak Half-Power Bandwidth Frequency Response Blueprint",
                         "formula": "$$\\omega_0 = \\frac{1}{\\sqrt{L C}}, \\quad Q_{\\text{factor}} = \\frac{\\omega_0 L}{R}, \\quad BW = \\frac{\\omega_0}{Q_{\\text{factor}}} = \\frac{R}{L}$$",
                         "description": "At resonant frequency $\\omega_0$, inductive and capacitive reactances cancel ($X_L = X_C$), minimizing circuit impedance to pure resistance $R$.",
                         "examTip": "Found in Frequency Response. Resonant frequency in Hertz is $f_0 = \\frac{1}{2\\pi \\sqrt{LC}}$. Half-power cutoff frequencies are $\\omega_{1,2} = \\omega_0 \\pm BW / 2$.",
@@ -6408,6 +6468,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Laplace Transform Final Value Theorem",
+                        "imageUrl": "assets/images/laplace_transform_final_value_theorem.jpg",
+                        "imageTitle": "Laplace Transform Final Value Theorem Asymptotic Response and s-Plane Blueprint",
                         "formula": "$$\\lim_{t \\to \\infty} f(t) = \\lim_{s \\to 0} s F(s)$$",
                         "description": "Calculates the steady-state value of a time-domain signal directly from its Laplace transform $F(s)$ without inverse transforming.",
                         "examTip": "Found in Control Systems. Valid ONLY if all poles of $s F(s)$ lie strictly in the open left half of the s-plane (system must be stable).",
@@ -6417,6 +6479,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
+                        "imageUrl": "assets/images/engineering_economics_compound_interest.jpg",
+                        "imageTitle": "Compound Interest Present vs Future Worth Cash Flow Diagram Blueprint",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
                         "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
@@ -6426,6 +6490,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -6435,6 +6501,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -6453,6 +6521,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Van der Waals Equation of State for Real Gases",
+                        "imageUrl": "assets/images/van_der_waals_equation_real_gases.jpg",
+                        "imageTitle": "Van der Waals Equation of State for Real Gases Molecular & Isotherm Blueprint",
                         "formula": "$$\\left(P + \\frac{a}{v^2}\\right)(v - b) = R T$$",
                         "description": "Adjusts ideal gas law for real molecular interactions: parameter $a$ accounts for intermolecular attractive forces, and $b$ accounts for finite molecular volume.",
                         "examTip": "Found in Chemical Thermodynamics. Parameters relate to critical properties: $a = \\frac{27 R^2 T_c^2}{64 P_c}$ and $b = \\frac{R T_c}{8 P_c}$.",
@@ -6462,6 +6532,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Compressibility Factor Real Gas Equation",
+                        "imageUrl": "assets/images/compressibility_factor_real_gas.jpg",
+                        "imageTitle": "Generalized Compressibility Factor Chart Z(Pr, Tr) Blueprint",
                         "formula": "$$P v = Z R T, \\quad Z = f(T_r, P_r)$$",
                         "description": "Quantifies deviation of real gas behaviour from ideality through compressibility factor $Z$, plotted on generalized compressibility charts against reduced properties.",
                         "examTip": "Found in Thermodynamics. Reduced properties are $T_r = T / T_c$ and $P_r = P / P_c$. For an ideal gas, $Z = 1$.",
@@ -6482,6 +6554,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Coulomb Dry Friction and Angle of Repose",
+                        "imageUrl": "assets/images/coulomb_dry_friction_angle_repose.jpg",
+                        "imageTitle": "Coulomb Dry Friction and Angle of Repose Mechanics Blueprint",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{k} = \\mu_k N, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Frictional resistance prior to impending slip is proportional to normal force $N$ by static coefficient $\\mu_s$. The angle of repose $\\phi_s$ is the maximum incline angle before a block slides under gravity alone.",
                         "examTip": "Found in Statics. Always check whether the block slips ($F_f = \\mu_s N$) or tips over ($M > 0$) about the pivot edge.",
@@ -6491,6 +6565,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Flat Belt Friction Equation (Capstan Formula)",
+                        "imageUrl": "assets/images/flat_belt_friction_capstan_formula.jpg",
+                        "imageTitle": "Flat Belt Friction Capstan Formula Exponential Tension Blueprint",
                         "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
                         "description": "Relates the tight side tension $T_2$ and slack side tension $T_1$ for a flexible belt wrapped around a drum with contact wrap angle $\\beta$ (in radians) and friction coefficient $\\mu$.",
                         "examTip": "Found in Statics / Machine Design. Angle $\\beta$ must be converted to radians ($180^\\circ = \\pi\\text{ rad}$). Exponent growth means few turns hold enormous loads.",
@@ -6500,6 +6576,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Normal and Tangential Acceleration in Curvilinear Motion",
+                        "imageUrl": "assets/images/normal_tangential_acceleration_curvilinear.jpg",
+                        "imageTitle": "Normal and Tangential Acceleration in Curvilinear Motion Blueprint",
                         "formula": "$$a_t = \\dot{v} = \\frac{dv}{dt}, \\quad a_n = \\frac{v^2}{\\rho}, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
                         "description": "Decomposes particle acceleration into a tangential component $a_t$ changing speed and a normal (centripetal) component $a_n$ pointing toward the center of trajectory curvature $\\rho$.",
                         "examTip": "Found in Dynamics. For constant-speed circular motion, $a_t = 0$, but centripetal acceleration $a_n = v^2/r = r\\omega^2$ remains non-zero.",
@@ -6509,6 +6587,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Coefficient of Restitution for Direct Central Impact",
+                        "imageUrl": "assets/images/coefficient_of_restitution_direct_central_impact.jpg",
+                        "imageTitle": "Coefficient of Restitution Direct Central Collision Progression Blueprint",
                         "formula": "$$e = \\frac{v'_{2} - v'_{1}}{v_1 - v_2} = \\frac{\\text{Relative Separation Velocity}}{\\text{Relative Approach Velocity}}$$",
                         "description": "Measures elasticity of collision between two bodies: $e = 1$ is perfectly elastic (kinetic energy conserved), and $e = 0$ is perfectly plastic (bodies stick together).",
                         "examTip": "Found in Dynamics. Combine the restitution equation with conservation of linear momentum ($m_1 v_1 + m_2 v_2 = m_1 v'_1 + m_2 v'_2$).",
@@ -6518,6 +6598,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Angular Impulse and Momentum Principle",
+                        "imageUrl": "assets/images/angular_impulse_and_momentum_principle.jpg",
+                        "imageTitle": "Angular Impulse and Momentum Rigid Body Dynamics Blueprint",
                         "formula": "$$\\int_{t_1}^{t_2} \\sum M_O dt = (H_O)_2 - (H_O)_1 = I_O \\omega_2 - I_O \\omega_1$$",
                         "description": "The time integral of external moments about a fixed point $O$ equals the change in angular momentum of the system.",
                         "examTip": "Found in Dynamics. When net external moment about $O$ is zero, angular momentum is strictly conserved ($I_1 \\omega_1 = I_2 \\omega_2$).",
@@ -6527,6 +6609,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Damped SDOF Natural Frequency and Damping Ratio",
+			"imageUrl": "assets/images/damped_sdof_natural_frequency_damping_ratio.jpg",
+			"imageTitle": "Damped SDOF Natural Frequency and Damping Ratio Blueprint",
                         "formula": "$$\\zeta = \\frac{c}{2 m \\omega_n} = \\frac{c}{c_c}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
                         "description": "Quantifies viscous damping in a single-degree-of-freedom oscillator. For $\\zeta < 1$ (underdamped), oscillations occur at damped natural frequency $\\omega_d$.",
                         "examTip": "Found in Dynamics / Mechanical Vibrations. Critical damping coefficient is $c_c = 2 m \\omega_n = 2\\sqrt{k m}$. Critical damping ($zeta=1$) yields fastest return to rest without overshoot.",
@@ -6536,6 +6620,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Logarithmic Decrement in Underdamped Vibrations",
+			"imageUrl": "assets/images/logarithmic_decrement_underdamped_vibrations.jpg",
+			"imageTitle": "Logarithmic Decrement in Underdamped Vibrations Blueprint",
                         "formula": "$$\\delta = \\ln\\left(\\frac{x_1}{x_2}\\right) = \\frac{2\\pi \\zeta}{\\sqrt{1 - \\zeta^2}} \\approx 2\\pi \\zeta$$",
                         "description": "Rate at which amplitude of free underdamped oscillations decays between successive peak cycles $x_1$ and $x_2$, used experimentally to find damping ratio $\\zeta$.",
                         "examTip": "Found in Dynamics / Vibrations. For small damping ($\\zeta < 0.1$), the approximation $\\delta \\approx 2\\pi\\zeta$ is highly accurate on the FE exam.",
@@ -6556,6 +6642,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Rotational Kinetic Energy of Rigid Bodies",
+			"imageUrl": "assets/images/rotational_kinetic_energy_rigid_bodies.jpg",
+			"imageTitle": "Rotational Kinetic Energy of Rigid Bodies Blueprint",
                         "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "Total kinetic energy of a planar rigid body equals the translational kinetic energy of its mass center $G$ plus the rotational kinetic energy about $G$.",
                         "examTip": "Found in Dynamics. For pure rolling of a cylinder without slip: $v_G = r\\omega$, so $T = \\frac{1}{2} m (r\\omega)^2 + \\frac{1}{2}(\\frac{1}{2} m r^2)\\omega^2 = \\frac{3}{4} m v_G^2$.",
@@ -6565,6 +6653,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mass Moment of Inertia of Common Geometric Bodies",
+			"imageUrl": "assets/images/mass_moment_of_inertia_geometric_bodies.jpg",
+			"imageTitle": "Mass Moment of Inertia of Common Geometric Bodies Blueprint",
                         "formula": "$$I_{\\text{cylinder}} = \\frac{1}{2} m r^2, \\quad I_{\\text{sphere}} = \\frac{2}{5} m r^2, \\quad I_{\\text{rod}} = \\frac{1}{12} m L^2$$",
                         "description": "Resistance of rigid rotational geometries to angular acceleration about their centroidal symmetry axes.",
                         "examTip": "Found in Dynamics / Handbook tables. For a slender rod pivoting about its pin end, use parallel axis theorem: $I_{pin} = \\frac{1}{12}mL^2 + m(L/2)^2 = \\frac{1}{3}mL^2$.",
@@ -6574,6 +6664,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thermal Expansion Deformation and Thermal Stress",
+			"imageUrl": "assets/images/thermal_expansion_deformation_thermal_stress.jpg",
+			"imageTitle": "Thermal Expansion Deformation and Thermal Stress Blueprint",
                         "formula": "$$\\delta_T = \\alpha L \\Delta T, \\quad \\sigma_T = -E \\alpha \\Delta T$$",
                         "description": "Free thermal deformation $\\delta_T$ depends on coefficient of linear thermal expansion $\\alpha$. If member ends are rigidly constrained, compressive thermal stress develops.",
                         "examTip": "Found in Mechanics of Materials. Thermal stress only develops when thermal strain is restrained by supports or adjacent materials.",
@@ -6583,6 +6675,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Transverse Shear Stress in Beams (Shear Formula)",
+			"imageUrl": "assets/images/transverse_shear_stress_beams_shear_formula.jpg",
+			"imageTitle": "Transverse Shear Stress Jourawski Shear Formula Blueprint",
                         "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\bar{y}' A'$$",
                         "description": "Calculates longitudinal and transverse shear stress at any depth in a beam cross-section undergoing vertical shear force $V$, where $Q$ is first moment of area above the cut.",
                         "examTip": "Found in Mechanics of Materials. Maximum transverse shear stress occurs at the neutral axis ($Q = Q_{\\text{max}}$); it is zero at top and bottom free surfaces.",
@@ -6592,6 +6686,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Maximum Shear Stress in Rectangular Cross-Section Beams",
+			"imageUrl": "assets/images/maximum_shear_stress_rectangular_beams.jpg",
+			"imageTitle": "Maximum Shear Stress in Rectangular Cross-Section Beams Blueprint",
                         "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\tau_{\\text{avg}}$$",
                         "description": "Exact parabolic shear stress maximum at the neutral axis of a rectangular beam of cross-sectional area $A = b h$.",
                         "examTip": "Found in Mechanics of Materials. For a circular solid cross-section, $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\tau_{\\text{avg}}$.",
@@ -6601,6 +6697,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Beam Deflection Differential Governing Equation",
+			"imageUrl": "assets/images/beam_deflection_differential_governing_equation.jpg",
+			"imageTitle": "Beam Deflection Differential Governing Equation Blueprint",
                         "formula": "$$E I \\frac{d^2 v}{dx^2} = M(x), \\quad E I \\frac{d^3 v}{dx^3} = V(x), \\quad E I \\frac{d^4 v}{dx^4} = -w(x)$$",
                         "description": "Relates applied distributed transverse load $w(x)$, shear $V(x)$, bending moment $M(x)$, slope $dv/dx$, and elastic deflection $v(x)$ in beams.",
                         "examTip": "Found in Mechanics of Materials. Boundary conditions for fixed wall: $v(0)=0, v'(0)=0$; pinned support: $v(0)=0, M(0)=0$; free end: $V(L)=0, M(L)=0$.",
@@ -6610,6 +6708,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Cantilever Beam Tip Deflection under Point Load",
+			"imageUrl": "assets/images/cantilever_beam_tip_deflection_point_load.jpg",
+			"imageTitle": "Cantilever Beam Tip Deflection under Point Load Blueprint",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}, \\quad \\theta_{\\text{max}} = \\frac{P L^2}{2 E I}$$",
                         "description": "Maximum tip deflection and slope for an end-loaded elastic cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
                         "examTip": "Found in Mechanics of Materials deflection tables. If uniform load $w$ is applied instead: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$.",
@@ -6630,6 +6730,8 @@ window.calcEvaluate = function() {
                 },
                                                                 {
                         "title": "Binary Phase Diagram Lever Rule",
+			"imageUrl": "assets/images/binary_phase_diagram_lever_rule.jpg",
+			"imageTitle": "Binary Phase Diagram Lever Rule Tie Line Blueprint",
                         "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
                         "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
                         "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length.",
@@ -6639,6 +6741,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Eutectic and Eutectoid Invariant Reactions",
+			"imageUrl": "assets/images/eutectic_eutectoid_invariant_reactions.jpg",
+			"imageTitle": "Eutectic and Eutectoid Invariant Reactions Phase Diagram Blueprint",
                         "formula": "$$\\text{Eutectic: } L \\xrightarrow{\\text{cool}} \\alpha + \\beta, \\quad \\text{Eutectoid: } \\gamma \\xrightarrow{\\text{cool}} \\alpha + \\text{Fe}_3\\text{C}$$",
                         "description": "Eutectic transforms liquid into two distinct solid phases at constant temperature. In the Fe-C system, eutectoid reaction converts austenite ($\\gamma$) at $727^\\circ\\text{C}$ ($0.76\\text{ wt}\\%\\text{ C}$) into pearlite ($\\alpha + \\text{Fe}_3\\text{C}$).",
                         "examTip": "Found in Materials Science. Peritectic reaction is liquid + solid $\\to$ new solid ($L + \\alpha \\to \\beta$).",
@@ -6837,6 +6941,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Radiation Heat Exchange Between Infinite Parallel Gray Plates",
+                        "imageUrl": "assets/images/net_radiation_exchange_between_two_bodies.jpg",
+                        "imageTitle": "Radiation Heat Exchange Between Infinite Parallel Gray Plates Blueprint",
                         "formula": "$$q_{12} = \\frac{\\sigma (T_1^4 - T_2^4)}{\\frac{1}{\\epsilon_1} + \\frac{1}{\\epsilon_2} - 1}$$",
                         "description": "Net radiant heat flux exchanged between two large parallel diffuse-gray surfaces with emissivities $\\epsilon_1$ and $\\epsilon_2$ at absolute temperatures $T_1$ and $T_2$.",
                         "examTip": "Found in Heat Transfer. Adding a radiation shield with emissivity $\\epsilon_s$ cuts heat transfer by more than 50%.",
@@ -6891,6 +6997,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Modified Goodman Fatigue Failure Criterion",
+                        "imageUrl": "assets/images/modified_goodman_fatigue_criterion.jpg",
+                        "imageTitle": "Modified Goodman Fatigue Criterion Fluctuating Stress Life Diagram Blueprint",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
                         "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
                         "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$.",
@@ -7541,6 +7649,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Moments (Couples)",
+                        "imageUrl": "assets/images/varignon_theorem_of_moments.jpg",
+                        "imageTitle": "Varignon's Theorem of Moments Blueprint",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
                         "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
@@ -7640,6 +7750,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Relative Motion",
+                        "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                        "imageTitle": "Coriolis Acceleration & Relative Motion in Rotating Frames Blueprint",
                         "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
                         "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
                         "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$.",
@@ -7850,6 +7962,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "imageUrl": "assets/images/net_radiation_exchange_between_two_bodies.jpg",
+                        "imageTitle": "Net Radiation Heat Exchange Between Two Parallel Plates Blueprint",
                         "videoUrl": "assets/videos/Net_Energy_Exchange_by_Radiation_between_Two_Bodies.mp4",
                         "videoTitle": "Net Energy Exchange by Radiation between Two Bodies Explainer",
                         "videoDuration": "10s",
@@ -7877,6 +7991,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "imageUrl": "assets/images/two_phase_vapor_liquid_systems.jpg",
+                        "imageTitle": "Two-Phase Vapor-Liquid P-v Saturation Dome Blueprint",
                         "videoUrl": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
                         "videoTitle": "Properties for Two-Phase Systems Explainer",
                         "videoDuration": "10s",
@@ -7893,15 +8009,19 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Zeroth law of thermodynamics",
+                        "imageUrl": "assets/images/zeroth_law_thermodynamics.jpg",
+                        "imageTitle": "Zeroth Law of Thermodynamics Thermal Equilibrium Blueprint",
                         "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
                         "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
                         "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
-                        "videoTitle": "Properties for Two-Phase Systems Explainer",
+                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
                         "videoDuration": "10s"
                 },
                                                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "imageUrl": "assets/images/isothermal_process_pv_ts.jpg",
+                        "imageTitle": "Isothermal Process P-v and T-s Representation Blueprint",
                         "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
                         "videoTitle": "Isothermal Process Explainer",
                         "videoDuration": "10s",
@@ -7922,6 +8042,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dry-bulb, Wet-bulb and dew-point temperature",
+                        "imageUrl": "assets/images/dry_bulb_wet_bulb_dew_point.jpg",
+                        "imageTitle": "Dry-Bulb, Wet-Bulb & Dew-Point Temperature Blueprint",
                         "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
                         "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
                         "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases.",
@@ -7979,6 +8101,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "COP of refrigeration vs. COP of Heat Pump",
+                        "imageUrl": "assets/images/cop_refrigerator_vs_heat_pump.jpg",
+                        "imageTitle": "COP of Refrigerator vs. Heat Pump Thermodynamic Cycle Blueprint",
                         "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
                         "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
                         "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$.",
@@ -7997,6 +8121,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "HVAC Processes",
+                        "imageUrl": "assets/images/hvac_processes_psychrometric.jpg",
+                        "imageTitle": "Basic Eight Air Conditioning Processes on Psychrometric Chart Blueprint",
                         "videoUrl": "assets/videos/HVAC_Processes.mp4",
                         "videoTitle": "HVAC Processes Explainer",
                         "videoDuration": "10s",
@@ -8006,11 +8132,13 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Types of Fits",
+                        "imageUrl": "assets/images/types_of_fits.jpg",
+                        "imageTitle": "Types of Fits Hole-Basis Tolerance System Blueprint",
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
-                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
-                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
+                        "videoTitle": "Types of Fits Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -8150,6 +8278,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -8186,6 +8316,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
+                          "imageUrl": "assets/images/equivalent_resistance_series_parallel.jpg",
+                          "imageTitle": "Equivalent Resistance in Series and Parallel Networks Blueprint",
                           "formula": "$$R_{\\text{series}} = \\sum_{i=1}^n R_i, \\quad \\frac{1}{R_{\\text{parallel}}} = \\sum_{i=1}^n \\frac{1}{R_i} \\implies R_{\\text{parallel}} = \\frac{R_1 R_2}{R_1 + R_2}$$",
                           "description": "Combines series resistors (current is identical, voltages add) and parallel resistors (voltage is identical, currents add) into a single equivalent lumped resistance.",
                           "examTip": "Found in Electricity and Magnetism: DC Circuits. For two parallel resistors, always use the product-over-sum shortcut $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. Parallel equivalent is always smaller than the smallest branch resistance.",
@@ -8213,6 +8345,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
+                          "imageUrl": "assets/images/ideal_transformer_turns_ratio.jpg",
+                          "imageTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratio Blueprint",
                           "formula": "$$\\frac{V_1}{V_2} = \\frac{N_1}{N_2} = a, \\quad \\frac{I_1}{I_2} = \\frac{N_2}{N_1} = \\frac{1}{a}, \\quad Z_{\\text{in}} = a^2 Z_L = \\left(\\frac{N_1}{N_2}\\right)^2 Z_L$$",
                           "description": "Describes power-conserving electromagnetic coupling between primary and secondary windings in an ideal transformer with turns ratio $a = N_1/N_2$.",
                           "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$).",
@@ -8688,6 +8822,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Compressibility Factor $Z$ and Generalized Compressibility Charts",
+                        "imageUrl": "assets/images/compressibility_factor_real_gas.jpg",
+                        "imageTitle": "Generalized Compressibility Factor Chart Z(Pr, Tr) Blueprint",
                 "formula": "$$Z = \\frac{P v}{R T} = \\frac{P M}{\\rho R T}, \\quad P_r = \\frac{P}{P_c}, \\quad T_r = \\frac{T}{T_c}$$",
                 "description": "Quantifies departure of real gas behavior from ideal gas law ($Z = 1.0$) as a universal function of reduced pressure $P_r$ and reduced temperature $T_r$ (Theorem of Corresponding States).",
                 "examTip": "Found in Chemical: Thermodynamics. At low pressures ($P_r \\ll 1$) or very high temperatures ($T_r \\gg 2$), all real gases converge to ideal gas behavior ($Z \\to 1$)."
@@ -8874,6 +9010,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                 "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
                 "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
                 "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
@@ -8976,6 +9114,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Binary Eutectic Phase Diagram Invariant Reaction",
+			"imageUrl": "assets/images/eutectic_eutectoid_invariant_reactions.jpg",
+			"imageTitle": "Eutectic and Eutectoid Invariant Reactions Phase Diagram Blueprint",
                 "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
                 "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
                 "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
@@ -9018,6 +9158,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Kinematics of Particles: Normal and Tangential Acceleration",
+                        "imageUrl": "assets/images/normal_tangential_acceleration_curvilinear.jpg",
+                        "imageTitle": "Normal and Tangential Acceleration in Curvilinear Motion Blueprint",
                 "formula": "$$\\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right) \\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right) \\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
                 "description": "Curvilinear motion coordinates: tangential acceleration $a_t$ reflects change in speed ($dv/dt$), while normal acceleration $a_n$ acts toward the center of curvature $\\rho$ reflecting change in direction.",
                 "examTip": "Found in Dynamics. For uniform circular motion, speed is constant ($a_t = 0$), but acceleration is non-zero ($a = a_n = v^2 / r$) pointing radially inward."
@@ -9048,6 +9190,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                 "formula": "$$\\sigma_h = \\frac{P r}{t} \\quad (\\text{Hoop / Tangential}), \\quad \\sigma_L = \\frac{P r}{2 t} \\quad (\\text{Longitudinal / Axial})$$",
                 "description": "Governs stress in thin-walled vessels ($r / t \\ge 10$) under internal gauge pressure $P$: circumferential hoop stress $\\sigma_h$ is exactly double longitudinal stress $\\sigma_L$, explaining why pipes split along their seams.",
                 "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
@@ -9066,6 +9210,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Transverse Shear Stress in Beams and First Moment of Area $Q$",
+			"imageUrl": "assets/images/transverse_shear_stress_beams_shear_formula.jpg",
+			"imageTitle": "Transverse Shear Stress Jourawski Shear Formula Blueprint",
                 "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\int_{y_1}^c y dA = A' \\bar{y}'$$",
                 "description": "Calculates horizontal and vertical shearing stress $\\tau$ at any depth in a beam with shear force $V$, where $Q$ is the first moment of area of the portion of cross section above the cut taken about the neutral axis.",
                 "examTip": "Found in Mechanics of Materials. For rectangular beams, maximum shear stress occurs at the neutral axis: $\\tau_{\\max} = 1.5 (V / A)$; for circular beams, $\\tau_{\\max} = \\frac{4}{3} (V / A)$."
@@ -9119,6 +9265,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Euler’s Critical Buckling Load for Columns",
+                        "imageUrl": "assets/images/eulers_critical_buckling_load.jpg",
+                        "imageTitle": "Euler's Critical Buckling Load for Columns (Straight vs. Buckled State with End Pinned Conditions)",
                         "formula": "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
                         "description": "Determines the maximum axial compressive load that a slender structural column can sustain before undergoing sudden lateral elastic instability.",
                         "examTip": "Found in Structural Mechanics and Steel Design. Effective length factor $K$: pinned-pinned $K=1.0$, fixed-fixed $K=0.5$, fixed-pinned $K=0.7$, fixed-free $K=2.0$.",
@@ -9185,6 +9333,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Transverse Shear Stress Formula (Jourawski)",
+			"imageUrl": "assets/images/transverse_shear_stress_beams_shear_formula.jpg",
+			"imageTitle": "Transverse Shear Stress Jourawski Shear Formula Blueprint",
                         "formula": "$$\\tau = \\frac{V Q}{I b}$$",
                         "description": "Calculates horizontal and vertical shear stress in a beam cross section subjected to internal shear force $V$, where $Q$ is the first moment of area above the cut line.",
                         "examTip": "Found in Mechanics of Materials. Maximum shear stress in a rectangular beam ($b \\times h$) occurs at the neutral axis and equals $\\tau_{\\text{max}} = \\frac{3V}{2A}$.",
@@ -9227,6 +9377,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Slenderness Ratio for Steel Compression Members",
+                        "imageUrl": "assets/images/slenderness_ratio_steel_compression_members.jpg",
+                        "imageTitle": "Slenderness Ratio Steel Column Buckling Effective Length Blueprint",
                         "formula": "$$\\lambda = \\frac{K L}{r}, \\quad r = \\sqrt{\\frac{I}{A}}$$",
                         "description": "Measures column susceptibility to lateral buckling as the ratio of effective unbraced length $K L$ to minimum radius of gyration $r$.",
                         "examTip": "Found in Structural Steel Design. Always evaluate buckling about the weak axis (minimum radius of gyration $r_y$) unless braced against lateral deflection.",
@@ -9281,6 +9433,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bernoulli’s Principle",
+                        "imageUrl": "assets/images/bernoullis_principle.jpg",
+                        "imageTitle": "Bernoulli’s Principle Venturi Constriction and Static Pressure Blueprint",
                         "formula": "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$",
                         "description": "States that for an inviscid, incompressible fluid in steady streamline flow, the sum of static pressure, dynamic pressure, and hydrostatic pressure is constant along a streamline.",
                         "examTip": "Search NCEES Handbook under Fluid Mechanics. Ensure you use consistent gauge vs absolute pressures and watch out for elevation head datum.",
@@ -9290,6 +9444,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Darcy-Weisbach Equation (Friction Head Loss)",
+                        "imageUrl": "assets/images/darcy_weisbach_friction_head_loss.jpg",
+                        "imageTitle": "Darcy-Weisbach Equation Friction Head Loss Conduit Blueprint",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss due to wall friction in fully developed circular pipe flow as a function of friction factor $f$, length $L$, diameter $D$, and mean velocity $v$.",
                         "examTip": "Found in Fluid Mechanics. In laminar pipe flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, find $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
@@ -9299,6 +9455,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Reynolds Number (Dynamic Similarity & Flow Regime)",
+                        "imageUrl": "assets/images/reynolds_number_dynamic_similarity.jpg",
+                        "imageTitle": "Reynolds Number Laminar vs Turbulent Flow Regimes Blueprint",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless parameter representing ratio of inertial forces to viscous forces; governs laminar vs turbulent transitions in pipe and boundary layer flows.",
                         "examTip": "Found in Fluid Mechanics. For internal conduit flow: $Re < 2100$ is laminar; $Re > 4000$ is turbulent. Kinematic viscosity is $\\nu = \\mu / \\rho$.",
@@ -9308,6 +9466,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Continuity Equation (Conservation of Mass)",
+                        "imageUrl": "assets/images/continuity_equation_conservation_of_mass.jpg",
+                        "imageTitle": "Continuity Equation Conservation of Mass Converging Conduit Blueprint",
                         "formula": "$$\\dot{m} = \\rho_1 A_1 v_1 = \\rho_2 A_2 v_2 \\implies Q = A_1 v_1 = A_2 v_2$$",
                         "description": "Expresses steady mass conservation in conduits; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is invariant along any streamtube.",
                         "examTip": "Found in Fluid Mechanics. Velocity is inversely proportional to diameter squared: $v_2 = v_1 (D_1 / D_2)^2$. Halving the pipe diameter quadruples fluid velocity.",
@@ -9328,6 +9488,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Torsion Formula (Shaft Shear Stress & Twist)",
+                        "imageUrl": "assets/images/torsion_formula_shaft_shear_stress_twist.jpg",
+                        "imageTitle": "Torsion Formula Circular Shaft Shear Stress and Angle of Twist Blueprint",
                         "formula": "$$\\tau = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{G J}$$",
                         "description": "Computes shear stress $\\tau$ at radius $r$ and total angular twist $\\phi$ in a circular shaft carrying torsional moment $T$, shear modulus $G$, and polar moment $J$.",
                         "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$. For a hollow tube: $J = \\pi(d_o^4 - d_i^4) / 32$.",
@@ -9337,6 +9499,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mohr’s Circle for Plane Stress",
+                        "imageUrl": "assets/images/mohrs_circle_for_plane_stress.jpg",
+                        "imageTitle": "Mohr’s Circle for Plane Stress State Transformation Blueprint",
                         "formula": "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}$$",
                         "description": "A graphical and analytical transformation for plane stress, yielding in-plane principal normal stresses and maximum in-plane shear stress.",
                         "examTip": "Found in Mechanics of Materials. The radius of the circle directly equals the maximum in-plane shear stress $\\tau_{\\text{max}}$.",
@@ -9346,6 +9510,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Parallel Axis Theorem (Second Moment of Area)",
+                        "imageUrl": "assets/images/parallel_axis_theorem_second_moment_of_area.jpg",
+                        "imageTitle": "Parallel Axis Theorem Second Moment of Area Blueprint",
                         "formula": "$$I_x = I_{xc} + A d^2$$",
                         "description": "Calculates the area moment of inertia of a shape about any arbitrary axis parallel to its centroidal axis.",
                         "examTip": "Found in Statics / Dynamics. Variable $d$ is strictly the perpendicular distance from the component centroid to the reference axis.",
@@ -9355,6 +9521,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Centroid of Composite Planar Areas",
+                        "imageUrl": "assets/images/centroid_of_composite_planar_areas.jpg",
+                        "imageTitle": "Centroid of Composite Planar Areas Partitioned Blueprint",
                         "formula": "$$\\bar{x} = \\frac{\\sum A_i \\bar{x}_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum A_i \\bar{y}_i}{\\sum A_i}$$",
                         "description": "Calculates the geometric center $(\\bar{x}, \\bar{y})$ of composite cross sections by taking the first moments of area divided by total area.",
                         "examTip": "Found in Statics / Mechanics of Materials. For cutouts or holes, treat their area as negative in the summation.",
@@ -9364,6 +9532,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ohm’s Law and Joule Heating Law",
+                        "imageUrl": "assets/images/ohms_law_joule_heating.jpg",
+                        "imageTitle": "Ohm’s Law and Joule Heating Electrical Circuit Schematic Blueprint",
                         "formula": "$$V = I R, \\quad P = V I = I^2 R = \\frac{V^2}{R}$$",
                         "description": "Relates electric potential difference $V$, current $I$, and resistance $R$ in ohmic conductors, expressing dissipated thermal power $P$.",
                         "examTip": "Found in Circuit Analysis. Double check unit prefixes: $1\\text{ k}\\Omega = 10^3\\;\\Omega$, $1\\text{ mA} = 10^{-3}\\text{ A}$. $1\\text{ V} \\times 1\\text{ mA} = 1\\text{ mW}$.",
@@ -9373,6 +9543,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kirchhoff’s Current and Voltage Laws (KCL & KVL)",
+                        "imageUrl": "assets/images/kirchhoffs_current_and_voltage_laws_kcl_kvl.jpg",
+                        "imageTitle": "Kirchhoff’s Current (KCL) and Voltage (KVL) Laws Circuit Blueprint",
                         "formula": "$$\\sum I_{\\text{in}} = \\sum I_{\\text{out}}, \\quad \\sum_{k=1}^n V_k = 0$$",
                         "description": "Fundamental conservation laws of electrical charge (KCL at nodes) and electric potential energy (KVL around closed loops).",
                         "examTip": "Found in Circuit Analysis. Maintain strict consistency with the passive sign convention: current enters the positive terminal of absorbing elements.",
@@ -9382,6 +9554,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
+                        "imageUrl": "assets/images/engineering_economics_compound_interest.jpg",
+                        "imageTitle": "Compound Interest Present vs Future Worth Cash Flow Diagram Blueprint",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
                         "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
@@ -9400,6 +9574,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -9409,6 +9585,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -9844,6 +10022,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thermal Expansion Deformation and Thermal Stress",
+			"imageUrl": "assets/images/thermal_expansion_deformation_thermal_stress.jpg",
+			"imageTitle": "Thermal Expansion Deformation and Thermal Stress Blueprint",
                         "formula": "$$\\delta_T = \\alpha L \\Delta T, \\quad \\sigma_T = -E \\alpha \\Delta T$$",
                         "description": "Free thermal deformation $\\delta_T$ depends on coefficient of linear thermal expansion $\\alpha$. If member ends are rigidly constrained, compressive thermal stress develops.",
                         "examTip": "Found in Mechanics of Materials. Thermal stress only develops when thermal strain is restrained by supports or adjacent materials.",
@@ -9853,6 +10033,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Flat Belt Friction Equation (Capstan Formula)",
+                        "imageUrl": "assets/images/flat_belt_friction_capstan_formula.jpg",
+                        "imageTitle": "Flat Belt Friction Capstan Formula Exponential Tension Blueprint",
                         "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
                         "description": "Relates the tight side tension $T_2$ and slack side tension $T_1$ for a flexible belt wrapped around a drum with contact wrap angle $\\beta$ (in radians) and friction coefficient $\\mu$.",
                         "examTip": "Found in Statics / Machine Design. Angle $\\beta$ must be converted to radians ($180^\\circ = \\pi\\text{ rad}$). Exponent growth means few turns hold enormous loads.",
@@ -9862,6 +10044,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Rotational Kinetic Energy of Rigid Bodies",
+			"imageUrl": "assets/images/rotational_kinetic_energy_rigid_bodies.jpg",
+			"imageTitle": "Rotational Kinetic Energy of Rigid Bodies Blueprint",
                         "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "Total kinetic energy of a planar rigid body equals the translational kinetic energy of its mass center $G$ plus the rotational kinetic energy about $G$.",
                         "examTip": "Found in Dynamics. For pure rolling of a cylinder without slip: $v_G = r\\omega$, so $T = \\frac{1}{2} m (r\\omega)^2 + \\frac{1}{2}(\\frac{1}{2} m r^2)\\omega^2 = \\frac{3}{4} m v_G^2$.",
@@ -9871,6 +10055,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Angular Impulse and Momentum Principle",
+                        "imageUrl": "assets/images/angular_impulse_and_momentum_principle.jpg",
+                        "imageTitle": "Angular Impulse and Momentum Rigid Body Dynamics Blueprint",
                         "formula": "$$\\int_{t_1}^{t_2} \\sum M_O dt = (H_O)_2 - (H_O)_1 = I_O \\omega_2 - I_O \\omega_1$$",
                         "description": "The time integral of external moments about a fixed point $O$ equals the change in angular momentum of the system.",
                         "examTip": "Found in Dynamics. When net external moment about $O$ is zero, angular momentum is strictly conserved ($I_1 \\omega_1 = I_2 \\omega_2$).",
@@ -9880,6 +10066,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mass Moment of Inertia of Common Geometric Bodies",
+			"imageUrl": "assets/images/mass_moment_of_inertia_geometric_bodies.jpg",
+			"imageTitle": "Mass Moment of Inertia of Common Geometric Bodies Blueprint",
                         "formula": "$$I_{\\text{cylinder}} = \\frac{1}{2} m r^2, \\quad I_{\\text{sphere}} = \\frac{2}{5} m r^2, \\quad I_{\\text{rod}} = \\frac{1}{12} m L^2$$",
                         "description": "Resistance of rigid rotational geometries to angular acceleration about their centroidal symmetry axes.",
                         "examTip": "Found in Dynamics / Handbook tables. For a slender rod pivoting about its pin end, use parallel axis theorem: $I_{pin} = \\frac{1}{12}mL^2 + m(L/2)^2 = \\frac{1}{3}mL^2$.",
@@ -9889,6 +10077,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                         "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
                         "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
                         "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
@@ -9907,6 +10097,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Binary Phase Diagram Lever Rule",
+			"imageUrl": "assets/images/binary_phase_diagram_lever_rule.jpg",
+			"imageTitle": "Binary Phase Diagram Lever Rule Tie Line Blueprint",
                         "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
                         "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
                         "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length.",
@@ -10006,6 +10198,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Cantilever Beam Tip Deflection under Concentrated Load",
+			"imageUrl": "assets/images/cantilever_beam_tip_deflection_point_load.jpg",
+			"imageTitle": "Cantilever Beam Tip Deflection under Point Load Blueprint",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}$$",
                         "description": "Maximum elastic tip deflection for an end-loaded cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
                         "examTip": "Found in Mechanics of Materials. For uniform distributed load $w$: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$.",
@@ -10044,6 +10238,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Maximum Shear Stress in Rectangular Beams",
+			"imageUrl": "assets/images/maximum_shear_stress_rectangular_beams.jpg",
+			"imageTitle": "Maximum Shear Stress in Rectangular Cross-Section Beams Blueprint",
                         "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\frac{V}{A}$$",
                         "description": "Exact maximum shear stress at the neutral axis for rectangular cross-sections of width $b$ and height $h$ ($A = b h$).",
                         "examTip": "Found in Mechanics of Materials. For solid circular shafts: $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\frac{V}{A}$.",
@@ -10071,6 +10267,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Work-Energy Principle (Rigid Body Dynamics)",
+                        "imageUrl": "assets/images/work_energy_principle_rigid_body_dynamics.jpg",
+                        "imageTitle": "Work-Energy Principle Rigid Body Rolling Dynamics Blueprint",
                         "formula": "$$T_1 + \\sum U_{1-2} = T_2, \\quad T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "The net work done by all external forces and couples acting on a body during displacement equals the change in its total kinetic energy (translation plus rotation).",
                         "examTip": "Found in Dynamics. For rolling without slipping on stationary surfaces, kinetic energy simplifies to $T = \\frac{1}{2} I_{IC} \\omega^2$ about the instantaneous center.",
@@ -10080,6 +10278,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Generalized Hooke’s Law (3D Elastic Stress-Strain)",
+                        "imageUrl": "assets/images/generalized_hookes_law_3d_elastic_stress_strain.jpg",
+                        "imageTitle": "Generalized Hooke’s Law 3D Triaxial Elastic Stress Tensor Cube Blueprint",
                         "formula": "$$\\epsilon_x = \\frac{1}{E}\\left[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)\\right]$$",
                         "description": "Relates elastic normal strain along a Cartesian axis to multi-axial normal stresses and Poisson's ratio $\\nu$ in linear isotropic materials.",
                         "examTip": "Found in Mechanics of Materials. Even under uniaxial tension ($\\sigma_y = \\sigma_z = 0$), lateral strains $\\epsilon_y = \\epsilon_z = -\\nu \\sigma_x / E$ still develop!",
@@ -10089,6 +10289,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Modified Goodman Fatigue Failure Criterion",
+                        "imageUrl": "assets/images/modified_goodman_fatigue_criterion.jpg",
+                        "imageTitle": "Modified Goodman Fatigue Criterion Fluctuating Stress Life Diagram Blueprint",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
                         "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
                         "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$.",
@@ -10451,6 +10653,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Moments (Couples)",
+                        "imageUrl": "assets/images/varignon_theorem_of_moments.jpg",
+                        "imageTitle": "Varignon's Theorem of Moments Blueprint",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
                         "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
@@ -10550,6 +10754,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Relative Motion",
+                        "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                        "imageTitle": "Coriolis Acceleration & Relative Motion in Rotating Frames Blueprint",
                         "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
                         "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
                         "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$.",
@@ -10822,6 +11028,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -10858,6 +11066,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
+                          "imageUrl": "assets/images/equivalent_resistance_series_parallel.jpg",
+                          "imageTitle": "Equivalent Resistance in Series and Parallel Networks Blueprint",
                           "formula": "$$R_{\\text{series}} = \\sum_{i=1}^n R_i, \\quad \\frac{1}{R_{\\text{parallel}}} = \\sum_{i=1}^n \\frac{1}{R_i} \\implies R_{\\text{parallel}} = \\frac{R_1 R_2}{R_1 + R_2}$$",
                           "description": "Combines series resistors (current is identical, voltages add) and parallel resistors (voltage is identical, currents add) into a single equivalent lumped resistance.",
                           "examTip": "Found in Electricity and Magnetism: DC Circuits. For two parallel resistors, always use the product-over-sum shortcut $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. Parallel equivalent is always smaller than the smallest branch resistance.",
@@ -11541,6 +11751,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                 "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
                 "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
                 "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
@@ -11685,6 +11897,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Kinematics of Particles: Normal and Tangential Acceleration",
+                        "imageUrl": "assets/images/normal_tangential_acceleration_curvilinear.jpg",
+                        "imageTitle": "Normal and Tangential Acceleration in Curvilinear Motion Blueprint",
                 "formula": "$$\\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right) \\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right) \\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
                 "description": "Curvilinear motion coordinates: tangential acceleration $a_t$ reflects change in speed ($dv/dt$), while normal acceleration $a_n$ acts toward the center of curvature $\\rho$ reflecting change in direction.",
                 "examTip": "Found in Dynamics. For uniform circular motion, speed is constant ($a_t = 0$), but acceleration is non-zero ($a = a_n = v^2 / r$) pointing radially inward."
@@ -11715,6 +11929,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                 "formula": "$$\\sigma_h = \\frac{P r}{t} \\quad (\\text{Hoop / Tangential}), \\quad \\sigma_L = \\frac{P r}{2 t} \\quad (\\text{Longitudinal / Axial})$$",
                 "description": "Governs stress in thin-walled vessels ($r / t \\ge 10$) under internal gauge pressure $P$: circumferential hoop stress $\\sigma_h$ is exactly double longitudinal stress $\\sigma_L$, explaining why pipes split along their seams.",
                 "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
@@ -11733,6 +11949,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Transverse Shear Stress in Beams and First Moment of Area $Q$",
+			"imageUrl": "assets/images/transverse_shear_stress_beams_shear_formula.jpg",
+			"imageTitle": "Transverse Shear Stress Jourawski Shear Formula Blueprint",
                 "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\int_{y_1}^c y dA = A' \\bar{y}'$$",
                 "description": "Calculates horizontal and vertical shearing stress $\\tau$ at any depth in a beam with shear force $V$, where $Q$ is the first moment of area of the portion of cross section above the cut taken about the neutral axis.",
                 "examTip": "Found in Mechanics of Materials. For rectangular beams, maximum shear stress occurs at the neutral axis: $\\tau_{\\max} = 1.5 (V / A)$; for circular beams, $\\tau_{\\max} = \\frac{4}{3} (V / A)$."
@@ -11771,6 +11989,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kirchhoff’s Current and Voltage Laws (KCL & KVL)",
+                        "imageUrl": "assets/images/kirchhoffs_current_and_voltage_laws_kcl_kvl.jpg",
+                        "imageTitle": "Kirchhoff’s Current (KCL) and Voltage (KVL) Laws Circuit Blueprint",
                         "formula": "$$\\sum I_{\\text{in}} = \\sum I_{\\text{out}}, \\quad \\sum_{k=1}^n V_k = 0$$",
                         "description": "Fundamental conservation laws of electrical charge (KCL at nodes) and electric potential energy (KVL around closed loops).",
                         "examTip": "Found in Circuit Analysis. Maintain strict consistency with the passive sign convention: current enters the positive terminal of absorbing elements.",
@@ -11789,6 +12009,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ohm’s Law and Joule Heating Law",
+                        "imageUrl": "assets/images/ohms_law_joule_heating.jpg",
+                        "imageTitle": "Ohm’s Law and Joule Heating Electrical Circuit Schematic Blueprint",
                         "formula": "$$V = I R, \\quad P = V I = I^2 R = \\frac{V^2}{R}$$",
                         "description": "Relates electric potential difference $V$, current $I$, and resistance $R$ in ohmic conductors, expressing dissipated thermal power $P$.",
                         "examTip": "Found in Circuit Analysis. Double check unit prefixes: $1\\text{ k}\\Omega = 10^3\\;\\Omega$, $1\\text{ mA} = 10^{-3}\\text{ A}$. $1\\text{ V} \\times 1\\text{ mA} = 1\\text{ mW}$.",
@@ -11819,6 +12041,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Series RLC Resonance and Bandwidth",
+                        "imageUrl": "assets/images/series_rlc_resonance_bandwidth.jpg",
+                        "imageTitle": "Series RLC Resonance Peak Half-Power Bandwidth Frequency Response Blueprint",
                         "formula": "$$\\omega_0 = \\frac{1}{\\sqrt{L C}}, \\quad Q_{\\text{factor}} = \\frac{\\omega_0 L}{R}, \\quad BW = \\frac{\\omega_0}{Q_{\\text{factor}}} = \\frac{R}{L}$$",
                         "description": "At resonant frequency $\\omega_0$, inductive and capacitive reactances cancel ($X_L = X_C$), minimizing circuit impedance to pure resistance $R$.",
                         "examTip": "Found in Frequency Response. Resonant frequency in Hertz is $f_0 = \\frac{1}{2\\pi \\sqrt{LC}}$. Half-power cutoff frequencies are $\\omega_{1,2} = \\omega_0 \\pm BW / 2$.",
@@ -11891,6 +12115,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Laplace Transform Final Value Theorem",
+                        "imageUrl": "assets/images/laplace_transform_final_value_theorem.jpg",
+                        "imageTitle": "Laplace Transform Final Value Theorem Asymptotic Response and s-Plane Blueprint",
                         "formula": "$$\\lim_{t \\to \\infty} f(t) = \\lim_{s \\to 0} s F(s)$$",
                         "description": "Calculates the steady-state value of a time-domain signal directly from its Laplace transform $F(s)$ without inverse transforming.",
                         "examTip": "Found in Control Systems. Valid ONLY if all poles of $s F(s)$ lie strictly in the open left half of the s-plane (system must be stable).",
@@ -11930,6 +12156,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
+                        "imageUrl": "assets/images/engineering_economics_compound_interest.jpg",
+                        "imageTitle": "Compound Interest Present vs Future Worth Cash Flow Diagram Blueprint",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
                         "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
@@ -11939,6 +12167,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -11948,6 +12178,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -12895,6 +13127,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -12931,6 +13165,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
+                          "imageUrl": "assets/images/equivalent_resistance_series_parallel.jpg",
+                          "imageTitle": "Equivalent Resistance in Series and Parallel Networks Blueprint",
                           "formula": "$$R_{\\text{series}} = \\sum_{i=1}^n R_i, \\quad \\frac{1}{R_{\\text{parallel}}} = \\sum_{i=1}^n \\frac{1}{R_i} \\implies R_{\\text{parallel}} = \\frac{R_1 R_2}{R_1 + R_2}$$",
                           "description": "Combines series resistors (current is identical, voltages add) and parallel resistors (voltage is identical, currents add) into a single equivalent lumped resistance.",
                           "examTip": "Found in Electricity and Magnetism: DC Circuits. For two parallel resistors, always use the product-over-sum shortcut $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. Parallel equivalent is always smaller than the smallest branch resistance.",
@@ -12958,6 +13194,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
+                          "imageUrl": "assets/images/ideal_transformer_turns_ratio.jpg",
+                          "imageTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratio Blueprint",
                           "formula": "$$\\frac{V_1}{V_2} = \\frac{N_1}{N_2} = a, \\quad \\frac{I_1}{I_2} = \\frac{N_2}{N_1} = \\frac{1}{a}, \\quad Z_{\\text{in}} = a^2 Z_L = \\left(\\frac{N_1}{N_2}\\right)^2 Z_L$$",
                           "description": "Describes power-conserving electromagnetic coupling between primary and secondary windings in an ideal transformer with turns ratio $a = N_1/N_2$.",
                           "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$).",
@@ -13529,6 +13767,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Van der Waals Equation of State for Real Gases",
+                        "imageUrl": "assets/images/van_der_waals_equation_real_gases.jpg",
+                        "imageTitle": "Van der Waals Equation of State for Real Gases Molecular & Isotherm Blueprint",
                         "formula": "$$\\left(P + \\frac{a}{v^2}\\right)(v - b) = R T$$",
                         "description": "Adjusts ideal gas law for real molecular interactions: parameter $a$ accounts for intermolecular attractive forces, and $b$ accounts for finite molecular volume.",
                         "examTip": "Found in Chemical Thermodynamics. Parameters relate to critical properties: $a = \\frac{27 R^2 T_c^2}{64 P_c}$ and $b = \\frac{R T_c}{8 P_c}$.",
@@ -13538,6 +13778,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Compressibility Factor Real Gas Equation",
+                        "imageUrl": "assets/images/compressibility_factor_real_gas.jpg",
+                        "imageTitle": "Generalized Compressibility Factor Chart Z(Pr, Tr) Blueprint",
                         "formula": "$$P v = Z R T, \\quad Z = f(T_r, P_r)$$",
                         "description": "Quantifies deviation of real gas behaviour from ideality through compressibility factor $Z$, plotted on generalized compressibility charts against reduced properties.",
                         "examTip": "Found in Thermodynamics. Reduced properties are $T_r = T / T_c$ and $P_r = P / P_c$. For an ideal gas, $Z = 1$.",
@@ -13640,6 +13882,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bernoulli’s Principle",
+                        "imageUrl": "assets/images/bernoullis_principle.jpg",
+                        "imageTitle": "Bernoulli’s Principle Venturi Constriction and Static Pressure Blueprint",
                         "formula": "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$",
                         "description": "States that for an inviscid, incompressible fluid in steady streamline flow, the sum of static pressure, dynamic pressure, and hydrostatic pressure is constant along a streamline.",
                         "examTip": "Search NCEES Handbook under Fluid Mechanics. Ensure you use consistent gauge vs absolute pressures and watch out for elevation head datum.",
@@ -13649,6 +13893,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Darcy-Weisbach Equation (Friction Head Loss)",
+                        "imageUrl": "assets/images/darcy_weisbach_friction_head_loss.jpg",
+                        "imageTitle": "Darcy-Weisbach Equation Friction Head Loss Conduit Blueprint",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss due to wall friction in fully developed circular pipe flow as a function of friction factor $f$, length $L$, diameter $D$, and mean velocity $v$.",
                         "examTip": "Found in Fluid Mechanics. In laminar pipe flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, find $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
@@ -13658,6 +13904,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Reynolds Number (Dynamic Similarity & Flow Regime)",
+                        "imageUrl": "assets/images/reynolds_number_dynamic_similarity.jpg",
+                        "imageTitle": "Reynolds Number Laminar vs Turbulent Flow Regimes Blueprint",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless parameter representing ratio of inertial forces to viscous forces; governs laminar vs turbulent transitions in pipe and boundary layer flows.",
                         "examTip": "Found in Fluid Mechanics. For internal conduit flow: $Re < 2100$ is laminar; $Re > 4000$ is turbulent. Kinematic viscosity is $\\nu = \\mu / \\rho$.",
@@ -13667,6 +13915,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Continuity Equation (Conservation of Mass)",
+                        "imageUrl": "assets/images/continuity_equation_conservation_of_mass.jpg",
+                        "imageTitle": "Continuity Equation Conservation of Mass Converging Conduit Blueprint",
                         "formula": "$$\\dot{m} = \\rho_1 A_1 v_1 = \\rho_2 A_2 v_2 \\implies Q = A_1 v_1 = A_2 v_2$$",
                         "description": "Expresses steady mass conservation in conduits; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is invariant along any streamtube.",
                         "examTip": "Found in Fluid Mechanics. Velocity is inversely proportional to diameter squared: $v_2 = v_1 (D_1 / D_2)^2$. Halving the pipe diameter quadruples fluid velocity.",
@@ -13676,6 +13926,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Hydrostatic Pressure Distribution with Depth",
+                        "imageUrl": "assets/images/hydrostatic_pressure_distribution_depth.jpg",
+                        "imageTitle": "Hydrostatic Pressure Distribution Linear Gradient and Resultant Force Blueprint",
                         "formula": "$$P = P_0 + \\rho g h = P_0 + \\gamma h$$",
                         "description": "Pressure increase in a static incompressible fluid is directly proportional to fluid density $\\rho$, gravity $g$, and submerged depth $h$.",
                         "examTip": "Found in Fluid Mechanics. Gauge pressure ignores atmospheric surface pressure $P_0$: $P_{\\text{gauge}} = \\gamma h$.",
@@ -13694,6 +13946,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "First Law of Thermodynamics (Closed System)",
+                        "imageUrl": "assets/images/first_law_of_thermodynamics_closed_system.jpg",
+                        "imageTitle": "First Law of Thermodynamics Closed System Energy Balance Blueprint",
                         "formula": "$$\\Delta U = Q - W = m c_v (T_2 - T_1)$$",
                         "description": "States conservation of energy for a stationary closed system: net change in internal energy equals net heat added minus net boundary work done by the system.",
                         "examTip": "Found in Thermodynamics. Sign convention: Heat added is positive ($+Q$); work done by system is positive ($+W$). For ideal gases, internal energy depends only on temperature.",
@@ -13703,6 +13957,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Carnot Thermal Efficiency (Maximum Limit)",
+                        "imageUrl": "assets/images/carnot_thermal_efficiency_maximum_limit.jpg",
+                        "imageTitle": "Carnot Thermal Efficiency Ideal P-V and T-s Cycle Diagrams Blueprint",
                         "formula": "$$\\eta_{\\text{Carnot}} = 1 - \\frac{T_L}{T_H} = \\frac{T_H - T_L}{T_H}$$",
                         "description": "Represents the absolute theoretical maximum efficiency that any heat engine operating between two thermal reservoirs can achieve.",
                         "examTip": "Found under Thermodynamics. Crucial test rule: Always convert temperatures to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}) before calculating!",
@@ -13712,6 +13968,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Gas Law Equation of State",
+                        "imageUrl": "assets/images/ideal_gas_law_equation_of_state.jpg",
+                        "imageTitle": "Ideal Gas Law Piston Cylinder State and Isothermal P-V Diagram Blueprint",
                         "formula": "$$P V = m R T = n \\bar{R} T, \\quad \\bar{R} = 8.314\\text{ kJ/(kmol}\\cdot\\text{K)}$$",
                         "description": "Relates pressure $P$, volume $V$, and absolute temperature $T$ for gases at low pressure and moderate temperature.",
                         "examTip": "Found in Thermodynamics / Chemistry. Specific gas constant $R = \\bar{R} / M_{\\text{molar}}$. For air, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$.",
@@ -13721,6 +13979,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Fourier’s Law of Thermal Conduction",
+                        "imageUrl": "assets/images/fouriers_law_of_thermal_conduction.jpg",
+                        "imageTitle": "Fourier’s Law of Thermal Conduction Plane Wall Blueprint",
                         "formula": "$$\\dot{Q} = -k A \\frac{dT}{dx}$$",
                         "description": "Defines the rate of heat transfer through a material as directly proportional to the negative temperature gradient and the cross-sectional area perpendicular to heat flow.",
                         "examTip": "Found under Heat Transfer. For multi-layer planar walls or cylindrical pipes, use the thermal resistance analogy: $R_{th} = \\frac{L}{k A}$.",
@@ -13730,6 +13990,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Newton’s Law of Cooling (Convective Heat Transfer)",
+                        "imageUrl": "assets/images/newtons_law_of_cooling_convective.jpg",
+                        "imageTitle": "Newton’s Law of Cooling Convective Heat Transfer Boundary Layer Blueprint",
                         "formula": "$$\\dot{Q}_{conv} = h A_s (T_s - T_\\infty)$$",
                         "description": "Quantifies convective heat transfer between a solid surface and an adjacent moving fluid, driven by temperature difference and convective heat transfer coefficient $h$.",
                         "examTip": "Found in Heat Transfer. Convection thermal resistance is $R_{th} = 1 / (h A_s)$. Note that $h$ is not a material constant; it depends on flow velocity, geometry, and fluid properties.",
@@ -13739,6 +14001,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stefan-Boltzmann Law of Thermal Radiation",
+                        "imageUrl": "assets/images/stefan_boltzmann_law_thermal_radiation.jpg",
+                        "imageTitle": "Stefan-Boltzmann Law of Thermal Radiation Emissive Power Blueprint",
                         "formula": "$$\\dot{Q}_{emit} = \\epsilon \\sigma A T^4, \\quad \\sigma = 5.67 \\times 10^{-8} \\text{ W}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
                         "description": "Total radiant energy emitted per unit time by a real surface is proportional to surface emissivity $\\epsilon$ and the fourth power of absolute temperature $T$.",
                         "examTip": "Found in Heat Transfer. Mandatory rule: Surface temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$.",
@@ -13748,6 +14012,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Log Mean Temperature Difference (LMTD Heat Exchangers)",
+                        "imageUrl": "assets/images/log_mean_temperature_difference_lmtd.jpg",
+                        "imageTitle": "Log Mean Temperature Difference (Parallel-Flow vs. Counter-Flow Heat Exchanger Blueprint)",
                         "formula": "$$\\Delta T_{lm} = \\frac{\\Delta T_1 - \\Delta T_2}{\\ln(\\Delta T_1 / \\Delta T_2)}, \\quad \\dot{Q} = U A F \\Delta T_{lm}$$",
                         "description": "Evaluates the effective temperature driving force in parallel-flow and counter-flow heat exchangers with overall heat transfer coefficient $U$ and area $A$.",
                         "examTip": "Found in Heat Transfer. Counter-flow arrangements produce a higher $\\Delta T_{lm}$ than parallel-flow for identical temperature endpoints, requiring less heat exchange area.",
@@ -13757,6 +14023,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Rankine Cycle Thermal Efficiency (Vapor Power)",
+                        "imageUrl": "assets/images/ideal_rankine_cycle_thermal_efficiency.jpg",
+                        "imageTitle": "Ideal Rankine Cycle Schematic and T-s Diagram with Vapor Dome",
                         "formula": "$$\\eta_{\\text{th}} = \\frac{w_{\\text{net}}}{q_{\\text{in}}} = \\frac{(h_3 - h_4) - (h_2 - h_1)}{h_3 - h_2}$$",
                         "description": "Defines thermal efficiency of steam power cycles using thermodynamic enthalpies at boiler inlet, turbine inlet, condenser inlet, and pump inlet.",
                         "examTip": "Found in Thermodynamics. Pump work is $w_p = h_2 - h_1 \\approx v_1(P_2 - P_1)$. Remember to convert $v_1$ in $\\text{m}^3/\\text{kg}$ and $P$ in $\\text{kPa}$ to yield $\\text{kJ/kg}$.",
@@ -13766,6 +14034,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Otto Cycle Efficiency (Internal Combustion)",
+                        "imageUrl": "assets/images/ideal_otto_cycle_efficiency_internal_combustion.jpg",
+                        "imageTitle": "Ideal Otto Cycle Efficiency P-V and T-s Thermodynamic Diagrams Blueprint",
                         "formula": "$$\\eta_{\\text{th, Otto}} = 1 - \\frac{1}{r^{k-1}}, \\quad r = \\frac{V_{\\text{max}}}{V_{\\text{min}}}$$",
                         "description": "Thermal efficiency of idealized four-stroke spark-ignition engines as a function of volumetric compression ratio $r$ and specific heat ratio $k = c_p/c_v$.",
                         "examTip": "Found in Thermodynamics. For cold air standard assumptions, $k = 1.4$. Increasing compression ratio improves efficiency, limited practically by engine knock.",
@@ -13775,6 +14045,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Speed of Sound & Mach Number (Compressible Flow)",
+                        "imageUrl": "assets/images/speed_of_sound_mach_number_compressible.jpg",
+                        "imageTitle": "Speed of Sound and Mach Number Compressible Flow Regimes Blueprint",
                         "formula": "$$c = \\sqrt{k R T}, \\quad M = \\frac{v}{c}$$",
                         "description": "Calculates acoustic speed $c$ in an ideal gas and Mach number $M$, establishing boundaries between subsonic ($M < 1$), sonic ($M = 1$), and supersonic ($M > 1$) flows.",
                         "examTip": "Found in Fluid Mechanics. Specific gas constant for air is $R = 287 \\text{ J/(kg}\\cdot\\text{K)}$. Temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}).",
@@ -13784,6 +14056,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                         "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
                         "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
                         "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
@@ -13793,6 +14067,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
+                        "imageUrl": "assets/images/engineering_economics_compound_interest.jpg",
+                        "imageTitle": "Compound Interest Present vs Future Worth Cash Flow Diagram Blueprint",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
                         "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
@@ -13802,6 +14078,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -13811,6 +14089,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -14198,6 +14478,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Binary Phase Diagram Lever Rule",
+			"imageUrl": "assets/images/binary_phase_diagram_lever_rule.jpg",
+			"imageTitle": "Binary Phase Diagram Lever Rule Tie Line Blueprint",
                         "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
                         "description": "Determines mass fraction of liquid phase ($W_L$) and solid phase ($W_\\alpha$) existing in equilibrium in a two-phase region along a tie line of overall alloy composition $c_0$.",
                         "examTip": "Found in Materials Science. The lever rule uses opposite segment lengths: to find fraction of liquid $W_L$, divide the right segment by total tie-line length.",
@@ -14799,6 +15081,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "imageUrl": "assets/images/net_radiation_exchange_between_two_bodies.jpg",
+                        "imageTitle": "Net Radiation Heat Exchange Between Two Parallel Plates Blueprint",
                         "videoUrl": "assets/videos/Net_Energy_Exchange_by_Radiation_between_Two_Bodies.mp4",
                         "videoTitle": "Net Energy Exchange by Radiation between Two Bodies Explainer",
                         "videoDuration": "10s",
@@ -14826,6 +15110,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "imageUrl": "assets/images/two_phase_vapor_liquid_systems.jpg",
+                        "imageTitle": "Two-Phase Vapor-Liquid P-v Saturation Dome Blueprint",
                         "videoUrl": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
                         "videoTitle": "Properties for Two-Phase Systems Explainer",
                         "videoDuration": "10s",
@@ -14842,15 +15128,19 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Zeroth law of thermodynamics",
+                        "imageUrl": "assets/images/zeroth_law_thermodynamics.jpg",
+                        "imageTitle": "Zeroth Law of Thermodynamics Thermal Equilibrium Blueprint",
                         "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
                         "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
                         "videoUrl": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
-                        "videoTitle": "Properties for Two-Phase Systems Explainer",
+                        "videoTitle": "Zeroth Law of Thermodynamics Explainer",
                         "videoDuration": "10s"
                 },
                                                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "imageUrl": "assets/images/isothermal_process_pv_ts.jpg",
+                        "imageTitle": "Isothermal Process P-v and T-s Representation Blueprint",
                         "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
                         "videoTitle": "Isothermal Process Explainer",
                         "videoDuration": "10s",
@@ -14899,6 +15189,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "COP of refrigeration vs. COP of Heat Pump",
+                        "imageUrl": "assets/images/cop_refrigerator_vs_heat_pump.jpg",
+                        "imageTitle": "COP of Refrigerator vs. Heat Pump Thermodynamic Cycle Blueprint",
                         "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
                         "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
                         "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$.",
@@ -15115,6 +15407,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -15338,6 +15632,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Compressibility Factor $Z$ and Generalized Compressibility Charts",
+                        "imageUrl": "assets/images/compressibility_factor_real_gas.jpg",
+                        "imageTitle": "Generalized Compressibility Factor Chart Z(Pr, Tr) Blueprint",
                 "formula": "$$Z = \\frac{P v}{R T} = \\frac{P M}{\\rho R T}, \\quad P_r = \\frac{P}{P_c}, \\quad T_r = \\frac{T}{T_c}$$",
                 "description": "Quantifies departure of real gas behavior from ideal gas law ($Z = 1.0$) as a universal function of reduced pressure $P_r$ and reduced temperature $T_r$ (Theorem of Corresponding States).",
                 "examTip": "Found in Chemical: Thermodynamics. At low pressures ($P_r \\ll 1$) or very high temperatures ($T_r \\gg 2$), all real gases converge to ideal gas behavior ($Z \\to 1$)."
@@ -15723,6 +16019,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Binary Eutectic Phase Diagram Invariant Reaction",
+			"imageUrl": "assets/images/eutectic_eutectoid_invariant_reactions.jpg",
+			"imageTitle": "Eutectic and Eutectoid Invariant Reactions Phase Diagram Blueprint",
                 "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
                 "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
                 "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
@@ -15875,6 +16173,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -15884,6 +16184,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -16379,6 +16681,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -16858,6 +17162,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Moments (Couples)",
+                        "imageUrl": "assets/images/varignon_theorem_of_moments.jpg",
+                        "imageTitle": "Varignon's Theorem of Moments Blueprint",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
                         "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
@@ -16939,11 +17245,13 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Types of Fits",
+                        "imageUrl": "assets/images/types_of_fits.jpg",
+                        "imageTitle": "Types of Fits Hole-Basis Tolerance System Blueprint",
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
-                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
-                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
+                        "videoTitle": "Types of Fits Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -17110,6 +17418,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -17378,6 +17688,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                 "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
                 "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
                 "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
@@ -17699,6 +18011,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bernoulli’s Principle",
+                        "imageUrl": "assets/images/bernoullis_principle.jpg",
+                        "imageTitle": "Bernoulli’s Principle Venturi Constriction and Static Pressure Blueprint",
                         "formula": "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$",
                         "description": "States that for an inviscid, incompressible fluid in steady streamline flow, the sum of static pressure, dynamic pressure, and hydrostatic pressure is constant along a streamline.",
                         "examTip": "Search NCEES Handbook under Fluid Mechanics. Ensure you use consistent gauge vs absolute pressures and watch out for elevation head datum.",
@@ -17708,6 +18022,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Darcy-Weisbach Equation (Friction Head Loss)",
+                        "imageUrl": "assets/images/darcy_weisbach_friction_head_loss.jpg",
+                        "imageTitle": "Darcy-Weisbach Equation Friction Head Loss Conduit Blueprint",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss due to wall friction in fully developed circular pipe flow as a function of friction factor $f$, length $L$, diameter $D$, and mean velocity $v$.",
                         "examTip": "Found in Fluid Mechanics. In laminar pipe flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, find $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
@@ -17717,6 +18033,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Reynolds Number (Dynamic Similarity & Flow Regime)",
+                        "imageUrl": "assets/images/reynolds_number_dynamic_similarity.jpg",
+                        "imageTitle": "Reynolds Number Laminar vs Turbulent Flow Regimes Blueprint",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless parameter representing ratio of inertial forces to viscous forces; governs laminar vs turbulent transitions in pipe and boundary layer flows.",
                         "examTip": "Found in Fluid Mechanics. For internal conduit flow: $Re < 2100$ is laminar; $Re > 4000$ is turbulent. Kinematic viscosity is $\\nu = \\mu / \\rho$.",
@@ -17726,6 +18044,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Continuity Equation (Conservation of Mass)",
+                        "imageUrl": "assets/images/continuity_equation_conservation_of_mass.jpg",
+                        "imageTitle": "Continuity Equation Conservation of Mass Converging Conduit Blueprint",
                         "formula": "$$\\dot{m} = \\rho_1 A_1 v_1 = \\rho_2 A_2 v_2 \\implies Q = A_1 v_1 = A_2 v_2$$",
                         "description": "Expresses steady mass conservation in conduits; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is invariant along any streamtube.",
                         "examTip": "Found in Fluid Mechanics. Velocity is inversely proportional to diameter squared: $v_2 = v_1 (D_1 / D_2)^2$. Halving the pipe diameter quadruples fluid velocity.",
@@ -17735,6 +18055,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Hydrostatic Pressure Distribution with Depth",
+                        "imageUrl": "assets/images/hydrostatic_pressure_distribution_depth.jpg",
+                        "imageTitle": "Hydrostatic Pressure Distribution Linear Gradient and Resultant Force Blueprint",
                         "formula": "$$P = P_0 + \\rho g h = P_0 + \\gamma h$$",
                         "description": "Pressure increase in a static incompressible fluid is directly proportional to fluid density $\\rho$, gravity $g$, and submerged depth $h$.",
                         "examTip": "Found in Fluid Mechanics. Gauge pressure ignores atmospheric surface pressure $P_0$: $P_{\\text{gauge}} = \\gamma h$.",
@@ -17753,6 +18075,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
+                        "imageUrl": "assets/images/engineering_economics_compound_interest.jpg",
+                        "imageTitle": "Compound Interest Present vs Future Worth Cash Flow Diagram Blueprint",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
                         "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
@@ -17762,6 +18086,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -17771,6 +18097,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -18908,6 +19236,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dry-bulb, Wet-bulb and dew-point temperature",
+                        "imageUrl": "assets/images/dry_bulb_wet_bulb_dew_point.jpg",
+                        "imageTitle": "Dry-Bulb, Wet-Bulb & Dew-Point Temperature Blueprint",
                         "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
                         "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
                         "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases.",
@@ -18926,6 +19256,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "HVAC Processes",
+                        "imageUrl": "assets/images/hvac_processes_psychrometric.jpg",
+                        "imageTitle": "Basic Eight Air Conditioning Processes on Psychrometric Chart Blueprint",
                         "videoUrl": "assets/videos/HVAC_Processes.mp4",
                         "videoTitle": "HVAC Processes Explainer",
                         "videoDuration": "10s",
@@ -19145,6 +19477,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -19692,6 +20026,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Second Law of Thermodynamics (Carnot Efficiency Limit)",
+                        "imageUrl": "assets/images/carnot_thermal_efficiency_maximum_limit.jpg",
+                        "imageTitle": "Carnot Thermal Efficiency Ideal P-V and T-s Cycle Diagrams Blueprint",
                         "formula": "$$\\eta_{\\text{max}} = 1 - \\frac{T_L}{T_H} = \\frac{T_H - T_L}{T_H}$$",
                         "description": "The absolute upper limit of thermal conversion efficiency for any heat engine operating between hot reservoir $T_H$ and cold sink $T_L$.",
                         "examTip": "Found in Thermodynamics. Always convert temperatures to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}) before substituting!",
@@ -19719,6 +20055,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bernoulli’s Principle for Incompressible Streamline Flow",
+                        "imageUrl": "assets/images/bernoullis_principle.jpg",
+                        "imageTitle": "Bernoulli’s Principle Venturi Constriction and Static Pressure Blueprint",
                         "formula": "$$P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g z_2$$",
                         "description": "Conservation of mechanical energy along a streamline for frictionless, steady, incompressible flow.",
                         "examTip": "Found in Fluid Mechanics. Keep static pressure, velocity head, and elevation datum consistent between points 1 and 2.",
@@ -19737,6 +20075,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mohr’s Circle for 2D Plane Stress",
+                        "imageUrl": "assets/images/mohrs_circle_for_plane_stress.jpg",
+                        "imageTitle": "Mohr’s Circle for Plane Stress State Transformation Blueprint",
                         "formula": "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}$$",
                         "description": "Yields principal normal stresses and maximum in-plane shear stress for any general plane stress state $(\\sigma_x, \\sigma_y, \\tau_{xy})$.",
                         "examTip": "Found in Mechanics of Materials. The radius of the circle directly equals the maximum in-plane shear stress $\\tau_{\\text{max}}$.",
@@ -19746,6 +20086,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Parallel Axis Theorem for Moment of Inertia",
+                        "imageUrl": "assets/images/parallel_axis_theorem_second_moment_of_area.jpg",
+                        "imageTitle": "Parallel Axis Theorem Second Moment of Area Blueprint",
                         "formula": "$$I_x = I_{xc} + A d^2, \\quad I_{xx} = I_G + m d^2$$",
                         "description": "Computes area or mass moment of inertia about any axis parallel to a known centroidal axis at perpendicular distance $d$.",
                         "examTip": "Found in Statics and Dynamics. Variable $d$ is strictly the perpendicular distance from the centroid to the new parallel reference axis.",
@@ -19761,6 +20103,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Euler’s Column Critical Buckling Formula",
+                        "imageUrl": "assets/images/eulers_critical_buckling_load.jpg",
+                        "imageTitle": "Euler's Critical Buckling Load for Columns (Straight vs. Buckled State with End Pinned Conditions)",
                         "formula": "$$P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}$$",
                         "description": "Calculates maximum axial compressive load before sudden elastic lateral buckling occurs in a slender structural member.",
                         "examTip": "Found in Mechanics of Materials. $K$ is effective length factor: $1.0$ (pinned-pinned), $0.5$ (fixed-fixed), $0.7$ (fixed-pinned), $2.0$ (fixed-free).",
@@ -19770,6 +20114,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Darcy-Weisbach Pipe Friction Equation",
+                        "imageUrl": "assets/images/darcy_weisbach_friction_head_loss.jpg",
+                        "imageTitle": "Darcy-Weisbach Equation Friction Head Loss Conduit Blueprint",
                         "formula": "$$h_f = f \\frac{L}{D} \\frac{v^2}{2g}$$",
                         "description": "Computes head loss in conduit flow as a function of friction factor $f$, length $L$, diameter $D$, and velocity $v$.",
                         "examTip": "Found in Fluid Mechanics. In laminar flow ($Re < 2100$), $f = 64/Re$. In turbulent flow, look up $f$ on the Moody diagram using relative roughness $\\epsilon/D$.",
@@ -19779,6 +20125,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Fourier’s Law of Thermal Conduction",
+                        "imageUrl": "assets/images/fouriers_law_of_thermal_conduction.jpg",
+                        "imageTitle": "Fourier’s Law of Thermal Conduction Plane Wall Blueprint",
                         "formula": "$$\\dot{Q} = -k A \\frac{dT}{dx}$$",
                         "description": "Rate of heat conduction through a material is proportional to thermal conductivity $k$, area $A$, and negative temperature gradient.",
                         "examTip": "Found in Heat Transfer. For a flat wall of thickness $L$: $\\dot{Q} = \\frac{k A}{L}(T_1 - T_2) = \\frac{\\Delta T}{R_{th}}$.",
@@ -19788,6 +20136,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Newton’s Law of Cooling (Convective Heat Transfer)",
+                        "imageUrl": "assets/images/newtons_law_of_cooling_convective.jpg",
+                        "imageTitle": "Newton’s Law of Cooling Convective Heat Transfer Boundary Layer Blueprint",
                         "formula": "$$\\dot{Q}_{conv} = h A_s (T_s - T_\\infty)$$",
                         "description": "Expresses rate of heat transfer between a solid surface at temperature $T_s$ and an adjacent moving fluid at bulk temperature $T_\\infty$.",
                         "examTip": "Found in Heat Transfer. Convective thermal resistance is $R_{th} = 1 / (h A_s)$. Heat transfer coefficient $h$ depends on flow regime and geometry.",
@@ -19797,6 +20147,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Stefan-Boltzmann Law of Thermal Radiation",
+                        "imageUrl": "assets/images/stefan_boltzmann_law_thermal_radiation.jpg",
+                        "imageTitle": "Stefan-Boltzmann Law of Thermal Radiation Emissive Power Blueprint",
                         "formula": "$$\\dot{Q}_{emit} = \\epsilon \\sigma A T^4, \\quad \\sigma = 5.67 \\times 10^{-8} \\text{ W}/(\\text{m}^2 \\cdot \\text{K}^4)$$",
                         "description": "Total radiant power emitted by a gray body with surface emissivity $\\epsilon$ at absolute thermodynamic temperature $T$.",
                         "examTip": "Found in Heat Transfer. Temperature $T$ MUST be converted to absolute Kelvin (\\text{K}) or Rankine (^\\circ\\text{R}). For an ideal blackbody, $\\epsilon = 1$.",
@@ -19806,6 +20158,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "SDOF Undamped Natural Harmonic Frequency",
+                        "imageUrl": "assets/images/sdof_undamped_natural_frequency_vibrations.jpg",
+                        "imageTitle": "SDOF Undamped Natural Frequency Spring-Mass Oscillator Blueprint",
                         "formula": "$$\\omega_n = \\sqrt{\\frac{k}{m}} \\text{ [rad/s]}, \\quad f_n = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\text{ [Hz]}$$",
                         "description": "Calculates natural angular frequency $\\omega_n$ and cyclic frequency $f_n$ for an undamped single-degree-of-freedom mass-spring mechanical oscillator.",
                         "examTip": "Found in Dynamics. Natural period of oscillation is $\\tau_n = 1 / f_n = 2\\pi / \\omega_n$.",
@@ -19815,6 +20169,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Gas Law Equation of State",
+                        "imageUrl": "assets/images/ideal_gas_law_equation_of_state.jpg",
+                        "imageTitle": "Ideal Gas Law Piston Cylinder State and Isothermal P-V Diagram Blueprint",
                         "formula": "$$P V = m R T = n \\bar{R} T, \\quad \\bar{R} = 8.314\\text{ kJ/(kmol}\\cdot\\text{K)}$$",
                         "description": "Relates pressure $P$, volume $V$, and absolute temperature $T$ for gases at low pressure and moderate temperature.",
                         "examTip": "Found in Thermodynamics / Chemistry. Specific gas constant $R = \\bar{R} / M_{\\text{molar}}$. For air, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$.",
@@ -19824,6 +20180,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Hydrostatic Pressure Distribution with Depth",
+                        "imageUrl": "assets/images/hydrostatic_pressure_distribution_depth.jpg",
+                        "imageTitle": "Hydrostatic Pressure Distribution Linear Gradient and Resultant Force Blueprint",
                         "formula": "$$P = P_0 + \\rho g h = P_0 + \\gamma h$$",
                         "description": "Pressure increase in a static incompressible fluid is directly proportional to fluid density $\\rho$, gravity $g$, and submerged depth $h$.",
                         "examTip": "Found in Fluid Mechanics. Gauge pressure ignores atmospheric surface pressure $P_0$: $P_{\\text{gauge}} = \\gamma h$.",
@@ -19833,6 +20191,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Continuity Equation for Incompressible Flow",
+                        "imageUrl": "assets/images/continuity_equation_conservation_of_mass.jpg",
+                        "imageTitle": "Continuity Equation Conservation of Mass Converging Conduit Blueprint",
                         "formula": "$$A_1 v_1 = A_2 v_2 = Q$$",
                         "description": "Conservation of mass in a fluid conduit; when fluid density $\\rho$ is constant, volumetric flow rate $Q = A v$ is constant everywhere.",
                         "examTip": "Found in Fluid Mechanics. Flow velocity varies inversely with cross-sectional area: $v_2 = v_1 (A_1 / A_2) = v_1 (D_1 / D_2)^2$.",
@@ -19853,6 +20213,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Torsion Formula for Circular Shafts",
+                        "imageUrl": "assets/images/torsion_formula_shaft_shear_stress_twist.jpg",
+                        "imageTitle": "Torsion Formula Circular Shaft Shear Stress and Angle of Twist Blueprint",
                         "formula": "$$\\tau = \\frac{T r}{J}, \\quad \\phi = \\frac{T L}{G J}$$",
                         "description": "Computes shear stress $\\tau$ at radial distance $r$ and total angular twist $\\phi$ in a circular shaft subjected to torque $T$.",
                         "examTip": "Found in Mechanics of Materials. Polar moment of inertia for a solid circular shaft is $J = \\pi d^4 / 32$.",
@@ -19862,6 +20224,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Reynolds Number (Flow Similarity Metric)",
+                        "imageUrl": "assets/images/reynolds_number_dynamic_similarity.jpg",
+                        "imageTitle": "Reynolds Number Laminar vs Turbulent Flow Regimes Blueprint",
                         "formula": "$$Re = \\frac{\\rho v D}{\\mu} = \\frac{v D}{\\nu}$$",
                         "description": "Dimensionless ratio of inertial forces to viscous forces in fluid flow, demarcating laminar from turbulent flow regimes.",
                         "examTip": "Found in Fluid Mechanics. For internal pipe flow: $Re < 2100$ is laminar; $Re > 4000$ is fully turbulent.",
@@ -19871,6 +20235,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ohm’s Law and Electrical Power",
+                        "imageUrl": "assets/images/ohms_law_joule_heating.jpg",
+                        "imageTitle": "Ohm’s Law and Joule Heating Electrical Circuit Schematic Blueprint",
                         "formula": "$$V = I R, \\quad P = V I = I^2 R = \\frac{V^2}{R}$$",
                         "description": "Fundamental relationship between voltage $V$, current $I$, resistance $R$, and dissipated electrical power $P$ in DC circuits.",
                         "examTip": "Found in Electrical Circuits. In series circuits, current is constant; in parallel circuits, voltage drop is identical across branches.",
@@ -19880,6 +20246,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
+                        "imageUrl": "assets/images/engineering_economics_compound_interest.jpg",
+                        "imageTitle": "Compound Interest Present vs Future Worth Cash Flow Diagram Blueprint",
                         "formula": "$$F = P (1 + i)^n = P (F/P, i, n)$$",
                         "description": "Calculates future worth $F$ accumulated from present principal $P$ compounded over $n$ periods at effective interest rate $i$.",
                         "examTip": "Found in Engineering Economics. Present worth factor is $(P/F, i, n) = (1 + i)^{-n}$.",
@@ -19889,6 +20257,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Centroid of Composite Planar Areas",
+                        "imageUrl": "assets/images/centroid_of_composite_planar_areas.jpg",
+                        "imageTitle": "Centroid of Composite Planar Areas Partitioned Blueprint",
                         "formula": "$$\\bar{x} = \\frac{\\sum A_i \\bar{x}_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum A_i \\bar{y}_i}{\\sum A_i}$$",
                         "description": "Calculates the geometric center $(\\bar{x}, \\bar{y})$ of composite cross sections by taking the first moments of area divided by total area.",
                         "examTip": "Found in Statics / Mechanics of Materials. For cutouts or holes, treat their area as negative in the summation.",
@@ -19916,6 +20286,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Rankine Cycle Thermal Efficiency (Vapor Power)",
+                        "imageUrl": "assets/images/ideal_rankine_cycle_thermal_efficiency.jpg",
+                        "imageTitle": "Ideal Rankine Cycle Schematic and T-s Diagram with Vapor Dome",
                         "formula": "$$\\eta_{\\text{th}} = \\frac{w_{\\text{net}}}{q_{\\text{in}}} = \\frac{(h_3 - h_4) - (h_2 - h_1)}{h_3 - h_2}$$",
                         "description": "Defines thermal efficiency of steam power cycles using thermodynamic enthalpies at boiler inlet, turbine inlet, condenser inlet, and pump inlet.",
                         "examTip": "Found in Thermodynamics. Pump work is $w_p = h_2 - h_1 \\approx v_1(P_2 - P_1)$. Remember to convert $v_1$ in $\\text{m}^3/\\text{kg}$ and $P$ in $\\text{kPa}$ to yield $\\text{kJ/kg}$.",
@@ -19925,6 +20297,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Otto Cycle Efficiency (Internal Combustion)",
+                        "imageUrl": "assets/images/ideal_otto_cycle_efficiency_internal_combustion.jpg",
+                        "imageTitle": "Ideal Otto Cycle Efficiency P-V and T-s Thermodynamic Diagrams Blueprint",
                         "formula": "$$\\eta_{\\text{th, Otto}} = 1 - \\frac{1}{r^{k-1}}, \\quad r = \\frac{V_{\\text{max}}}{V_{\\text{min}}}$$",
                         "description": "Thermal efficiency of idealized four-stroke spark-ignition engines as a function of volumetric compression ratio $r$ and specific heat ratio $k = c_p/c_v$.",
                         "examTip": "Found in Thermodynamics. For cold air standard assumptions, $k = 1.4$. Increasing compression ratio improves efficiency, limited practically by engine knock.",
@@ -19934,6 +20308,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Speed of Sound & Mach Number (Compressible Flow)",
+                        "imageUrl": "assets/images/speed_of_sound_mach_number_compressible.jpg",
+                        "imageTitle": "Speed of Sound and Mach Number Compressible Flow Regimes Blueprint",
                         "formula": "$$c = \\sqrt{k R T}, \\quad M = \\frac{v}{c}$$",
                         "description": "Calculates acoustic speed $c$ in an ideal gas and Mach number $M$, establishing boundaries between subsonic ($M < 1$), sonic ($M = 1$), and supersonic ($M > 1$) flows.",
                         "examTip": "Found in Fluid Mechanics. Specific gas constant for air is $R = 287 \\text{ J/(kg}\\cdot\\text{K)}$. Temperature $T$ must ALWAYS be in absolute Kelvin (\\text{K}).",
@@ -19943,6 +20319,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Slenderness Ratio for Steel Compression Members",
+                        "imageUrl": "assets/images/slenderness_ratio_steel_compression_members.jpg",
+                        "imageTitle": "Slenderness Ratio Steel Column Buckling Effective Length Blueprint",
                         "formula": "$$\\lambda = \\frac{K L}{r}, \\quad r = \\sqrt{\\frac{I}{A}}$$",
                         "description": "Measures column susceptibility to lateral buckling as the ratio of effective unbraced length $K L$ to minimum radius of gyration $r$.",
                         "examTip": "Found in Structural Steel Design. Always evaluate buckling about the weak axis (minimum radius of gyration $r_y$) unless braced against lateral deflection.",
@@ -19952,6 +20330,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kirchhoff’s Current and Voltage Laws (KCL & KVL)",
+                        "imageUrl": "assets/images/kirchhoffs_current_and_voltage_laws_kcl_kvl.jpg",
+                        "imageTitle": "Kirchhoff’s Current (KCL) and Voltage (KVL) Laws Circuit Blueprint",
                         "formula": "$$\\sum I_{\\text{in}} = \\sum I_{\\text{out}}, \\quad \\sum_{k=1}^n V_k = 0$$",
                         "description": "Fundamental conservation laws of electrical charge (KCL at nodes) and electric potential energy (KVL around closed loops).",
                         "examTip": "Found in Circuit Analysis. Maintain strict consistency with the passive sign convention: current enters the positive terminal of absorbing elements.",
@@ -19979,6 +20359,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capitalized Cost for Infinite Project Life",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                         "formula": "$$CC = \\frac{A}{i} = P_0 + \\frac{A_{\\text{annual}}}{i}$$",
                         "description": "Evaluates present worth of perpetual perpetual uniform annual operating expenses $A$ over an infinite horizon ($n \\to \\infty$).",
                         "examTip": "Found in Engineering Economics. Used for public infrastructure projects (dams, bridges, roads) where life is modeled as indefinite.",
@@ -19988,6 +20370,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -19997,6 +20381,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Van der Waals Equation of State for Real Gases",
+                        "imageUrl": "assets/images/van_der_waals_equation_real_gases.jpg",
+                        "imageTitle": "Van der Waals Equation of State for Real Gases Molecular & Isotherm Blueprint",
                         "formula": "$$\\left(P + \\frac{a}{v^2}\\right)(v - b) = R T$$",
                         "description": "Adjusts ideal gas law for real molecular interactions: parameter $a$ accounts for intermolecular attractive forces, and $b$ accounts for finite molecular volume.",
                         "examTip": "Found in Chemical Thermodynamics. Parameters relate to critical properties: $a = \\frac{27 R^2 T_c^2}{64 P_c}$ and $b = \\frac{R T_c}{8 P_c}$.",
@@ -20006,6 +20392,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Compressibility Factor Real Gas Equation",
+                        "imageUrl": "assets/images/compressibility_factor_real_gas.jpg",
+                        "imageTitle": "Generalized Compressibility Factor Chart Z(Pr, Tr) Blueprint",
                         "formula": "$$P v = Z R T, \\quad Z = f(T_r, P_r)$$",
                         "description": "Quantifies deviation of real gas behaviour from ideality through compressibility factor $Z$, plotted on generalized compressibility charts against reduced properties.",
                         "examTip": "Found in Thermodynamics. Reduced properties are $T_r = T / T_c$ and $P_r = P / P_c$. For an ideal gas, $Z = 1$.",
@@ -20312,12 +20700,16 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Coulomb Dry Friction Law",
+                        "imageUrl": "assets/images/coulomb_dry_friction_angle_repose.jpg",
+                        "imageTitle": "Coulomb Dry Friction and Angle of Repose Mechanics Blueprint",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_k = \\mu_k N$$",
                         "description": "Friction force opposes impending motion up to static maximum $F_s = \\mu_s N$; once sliding initiates, kinetic friction $F_k$ drops and remains constant.",
                         "examTip": "Found in Statics. Static coefficient is always greater than kinetic coefficient: $\\mu_s > \\mu_k$."
                 },
                 {
                         "title": "Angle of Static Friction and Angle of Repose",
+                        "imageUrl": "assets/images/coulomb_dry_friction_angle_repose.jpg",
+                        "imageTitle": "Coulomb Dry Friction and Angle of Repose Mechanics Blueprint",
                         "formula": "$$\\tan\\phi_s = \\mu_s$$",
                         "description": "Angle between normal reaction and total contact resultant force at impending slip, which equals the maximum angle of repose of an inclined plane.",
                         "examTip": "Found in Statics. A block placed on incline $\\theta$ slips if $\\theta > \\phi_s$, and remains stationary if $\\theta \\le \\phi_s$.",
@@ -20327,6 +20719,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Flat Belt Friction Capstan Formula",
+                        "imageUrl": "assets/images/flat_belt_friction_capstan_formula.jpg",
+                        "imageTitle": "Flat Belt Friction Capstan Formula Exponential Tension Blueprint",
                         "formula": "$$\\frac{T_2}{T_1} = e^{\\mu \\beta}$$",
                         "description": "Tension amplification around a stationary cylindrical drum with friction coefficient $\\mu$ and total wrap angle $\\beta$ (radians).",
                         "examTip": "Found in Statics. $T_2$ is always the larger tension pulling in the direction of impending motion.",
@@ -20345,6 +20739,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Normal and Tangential Acceleration in Curvilinear Motion",
+                        "imageUrl": "assets/images/normal_tangential_acceleration_curvilinear.jpg",
+                        "imageTitle": "Normal and Tangential Acceleration in Curvilinear Motion Blueprint",
                         "formula": "$$a_t = \\frac{dv}{dt}, \\quad a_n = \\frac{v^2}{\\rho}, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
                         "description": "Resolves particle acceleration along instantaneous path tangent ($a_t$, changing velocity magnitude) and normal ($a_n$, changing velocity direction toward center of curvature $\\rho$).",
                         "examTip": "Found in Dynamics. For circular path of radius $r$: $a_n = v^2 / r = r \\omega^2$.",
@@ -20363,6 +20759,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Direct Central Impact Coefficient of Restitution",
+                        "imageUrl": "assets/images/coefficient_of_restitution_direct_central_impact.jpg",
+                        "imageTitle": "Coefficient of Restitution Direct Central Collision Progression Blueprint",
                         "formula": "$$e = \\frac{v'_2 - v'_1}{v_1 - v_2}, \\quad 0 \\le e \\le 1$$",
                         "description": "Ratio of relative separation velocity to relative approach velocity along line of impact; $e = 1$ is perfectly elastic, $e = 0$ is plastic.",
                         "examTip": "Found in Dynamics. Linear momentum is conserved along line of impact: $m_1 v_1 + m_2 v_2 = m_1 v'_1 + m_2 v'_2$.",
@@ -20372,6 +20770,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Damped SDOF Harmonic Natural Frequency",
+			"imageUrl": "assets/images/damped_sdof_natural_frequency_damping_ratio.jpg",
+			"imageTitle": "Damped SDOF Natural Frequency and Damping Ratio Blueprint",
                         "formula": "$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}, \\quad \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\zeta = \\frac{c}{2\\sqrt{k m}}$$",
                         "description": "Cyclic frequency of free underdamped oscillations ($\\zeta < 1$) in a viscous damped mass-spring single-degree-of-freedom system.",
                         "examTip": "Found in Dynamics / Vibrations. When damping is zero ($\\zeta = 0$), $\\omega_d = \\omega_n$.",
@@ -20381,6 +20781,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Planar Rigid Body Rotational Kinetic Energy",
+			"imageUrl": "assets/images/rotational_kinetic_energy_rigid_bodies.jpg",
+			"imageTitle": "Rotational Kinetic Energy of Rigid Bodies Blueprint",
                         "formula": "$$T = \\frac{1}{2} m v_G^2 + \\frac{1}{2} I_G \\omega^2$$",
                         "description": "Kinetic energy of a rigid body equals translational energy of its center of mass $G$ plus rotational energy about $G$.",
                         "examTip": "Found in Dynamics. If body rotates about a fixed pin center $O$: $T = \\frac{1}{2} I_O \\omega^2$.",
@@ -20399,6 +20801,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thermal Expansion Deformation and Thermal Stress",
+			"imageUrl": "assets/images/thermal_expansion_deformation_thermal_stress.jpg",
+			"imageTitle": "Thermal Expansion Deformation and Thermal Stress Blueprint",
                         "formula": "$$\\delta_T = \\alpha L \\Delta T, \\quad \\sigma_T = -E \\alpha \\Delta T$$",
                         "description": "Unconstrained thermal elongation $\\delta_T$ depends on expansion coefficient $\\alpha$; fully restrained thermal expansion induces normal compressive stress $\\sigma_T$.",
                         "examTip": "Found in Mechanics of Materials. Thermal stress occurs only when free expansion is restricted by supports.",
@@ -20417,6 +20821,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Maximum Shear Stress in Rectangular Beams",
+			"imageUrl": "assets/images/maximum_shear_stress_rectangular_beams.jpg",
+			"imageTitle": "Maximum Shear Stress in Rectangular Cross-Section Beams Blueprint",
                         "formula": "$$\\tau_{\\text{max}} = \\frac{3 V}{2 A} = 1.5 \\frac{V}{A}$$",
                         "description": "Exact maximum shear stress at the neutral axis for rectangular cross-sections of width $b$ and height $h$ ($A = b h$).",
                         "examTip": "Found in Mechanics of Materials. For solid circular shafts: $\\tau_{\\text{max}} = \\frac{4 V}{3 A} = 1.33 \\frac{V}{A}$.",
@@ -20426,6 +20832,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Cantilever Beam Tip Deflection under Concentrated Load",
+			"imageUrl": "assets/images/cantilever_beam_tip_deflection_point_load.jpg",
+			"imageTitle": "Cantilever Beam Tip Deflection under Point Load Blueprint",
                         "formula": "$$\\delta_{\\text{max}} = \\frac{P L^3}{3 E I}$$",
                         "description": "Maximum elastic tip deflection for an end-loaded cantilever beam of length $L$, modulus $E$, and moment of inertia $I$.",
                         "examTip": "Found in Mechanics of Materials. For uniform distributed load $w$: $\\delta_{\\text{max}} = \\frac{w L^4}{8 E I}$.",
@@ -20500,6 +20908,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Binary Phase Diagram Lever Rule",
+			"imageUrl": "assets/images/binary_phase_diagram_lever_rule.jpg",
+			"imageTitle": "Binary Phase Diagram Lever Rule Tie Line Blueprint",
                         "formula": "$$W_L = \\frac{c_\\alpha - c_0}{c_\\alpha - c_L}, \\quad W_\\alpha = \\frac{c_0 - c_L}{c_\\alpha - c_L}$$",
                         "description": "Computes equilibrium phase weight fractions in two-phase regions by taking opposite segment lengths along tie lines.",
                         "examTip": "Found in Materials Science. Sum of phase fractions must equal unity: $W_L + W_\\alpha = 1.0$.",
@@ -20518,6 +20928,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Bonds",
+                        "imageUrl": "assets/images/bonds_cash_flow_valuation.jpg",
+                        "imageTitle": "Bond Investment Valuation Coupon Stream and Maturity Face Value Cash Flow Blueprint",
                         "formula": "$$V = C (P/A, i, n) + F (P/F, i, n) = C \\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right] + F (1+i)^{-n}$$",
                         "description": "Calculates the fair investment value or purchase price $V$ of a bond by summing the present worth of the periodic coupon payments annuity $C$ and the present worth of the lump-sum face/par value $F$ received at maturity.",
                         "examTip": "Found in Engineering Economics. Ensure interest rate $i$ and periods $n$ match the coupon frequency (e.g. for semiannual bonds, divide annual coupon and yield by 2, and double $n$).",
@@ -20581,6 +20993,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Angular Impulse and Momentum Principle",
+                        "imageUrl": "assets/images/angular_impulse_and_momentum_principle.jpg",
+                        "imageTitle": "Angular Impulse and Momentum Rigid Body Dynamics Blueprint",
                         "formula": "$$\\int_{t_1}^{t_2} \\sum M_O dt = (H_O)_2 - (H_O)_1 = I_O \\omega_2 - I_O \\omega_1$$",
                         "description": "The time integral of external moments about a fixed point $O$ equals the change in angular momentum of the system.",
                         "examTip": "Found in Dynamics. When net external moment about $O$ is zero, angular momentum is strictly conserved ($I_1 \\omega_1 = I_2 \\omega_2$).",
@@ -20590,6 +21004,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Mass Moment of Inertia of Common Geometric Bodies",
+			"imageUrl": "assets/images/mass_moment_of_inertia_geometric_bodies.jpg",
+			"imageTitle": "Mass Moment of Inertia of Common Geometric Bodies Blueprint",
                         "formula": "$$I_{\\text{cylinder}} = \\frac{1}{2} m r^2, \\quad I_{\\text{sphere}} = \\frac{2}{5} m r^2, \\quad I_{\\text{rod}} = \\frac{1}{12} m L^2$$",
                         "description": "Resistance of rigid rotational geometries to angular acceleration about their centroidal symmetry axes.",
                         "examTip": "Found in Dynamics / Handbook tables. For a slender rod pivoting about its pin end, use parallel axis theorem: $I_{pin} = \\frac{1}{12}mL^2 + m(L/2)^2 = \\frac{1}{3}mL^2$.",
@@ -20599,6 +21015,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thin-Walled Pressure Vessel (Hoop vs Longitudinal Stress)",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                         "formula": "$$\\sigma_h = \\frac{P r}{t} = \\frac{P d}{2t}, \\quad \\sigma_l = \\frac{P r}{2t} = \\frac{P d}{4t}$$",
                         "description": "Calculates circumferential hoop stress $\\sigma_h$ and longitudinal stress $\\sigma_l$ for thin cylindrical shells where ratio $r/t \\ge 10$.",
                         "examTip": "Found in Mechanics of Materials. Hoop stress is twice longitudinal stress ($\\sigma_h = 2\\sigma_l$). Failure in cylindrical tanks almost always occurs along longitudinal seams.",
@@ -20680,6 +21098,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Modified Goodman Fatigue Failure Criterion",
+                        "imageUrl": "assets/images/modified_goodman_fatigue_criterion.jpg",
+                        "imageTitle": "Modified Goodman Fatigue Criterion Fluctuating Stress Life Diagram Blueprint",
                         "formula": "$$\\frac{\\sigma_a}{S_e} + \\frac{\\sigma_m}{S_{ut}} = \\frac{1}{n}$$",
                         "description": "Evaluates factor of safety $n$ under fluctuating cyclic stress with alternating amplitude $\\sigma_a$ and mean stress $\\sigma_m$ against endurance limit $S_e$ and tensile strength $S_{ut}$.",
                         "examTip": "Found in Mechanical Design. If mean stress is zero (completely reversed loading), the criterion simplifies to $n = S_e / \\sigma_a$.",
@@ -21060,6 +21480,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Moments (Couples)",
+                        "imageUrl": "assets/images/varignon_theorem_of_moments.jpg",
+                        "imageTitle": "Varignon's Theorem of Moments Blueprint",
                         "formula": "$$\\mathbf{M}_O = \\mathbf{r} \\times \\mathbf{F}, \\quad M_{\\text{couple}} = F \\cdot d, \\quad \\sum \\mathbf{M}_O = \\mathbf{0}$$",
                         "description": "A moment measures rotational tendency caused by a force about a pivot point. A couple consists of two parallel forces of equal magnitude and opposite direction separated by perpendicular distance $d$; its moment is a free vector identical about any point.",
                         "examTip": "Found in Statics. Right-hand rule determines sign convention: counterclockwise moments are typically positive ($+k$). For 2D problems, scalar $M = F \\cdot d_\\perp$ is often faster than the cross-product determinant.",
@@ -21159,6 +21581,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Relative Motion",
+                        "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                        "imageTitle": "Coriolis Acceleration & Relative Motion in Rotating Frames Blueprint",
                         "formula": "$$\\mathbf{r}_B = \\mathbf{r}_A + \\mathbf{r}_{B/A}, \\quad \\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\mathbf{a}_{B/A}$$",
                         "description": "Relates absolute motions of two particles $A$ and $B$ translating relative to a fixed inertial reference frame. For rigid bodies undergoing planar rotation: $\\mathbf{v}_{B/A} = \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}$ and $\\mathbf{a}_{B/A} = \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$.",
                         "examTip": "Found in Dynamics: Rigid Body Kinematics. Vector diagram approach: Draw vector polygon $\\mathbf{v}_B = \\mathbf{v}_A + \\mathbf{v}_{B/A}$ where $\\mathbf{v}_{B/A} \\perp \\mathbf{r}_{B/A}$.",
@@ -21369,6 +21793,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Net Energy Exchange by Radiation between Two Bodies",
+                        "imageUrl": "assets/images/net_radiation_exchange_between_two_bodies.jpg",
+                        "imageTitle": "Net Radiation Heat Exchange Between Two Parallel Plates Blueprint",
                         "videoUrl": "assets/videos/Net_Energy_Exchange_by_Radiation_between_Two_Bodies.mp4",
                         "videoTitle": "Net Energy Exchange by Radiation between Two Bodies Explainer",
                         "videoDuration": "10s",
@@ -21396,6 +21822,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Properties for Two-Phase (vapor-liquid) Systems",
+                        "imageUrl": "assets/images/two_phase_vapor_liquid_systems.jpg",
+                        "imageTitle": "Two-Phase Vapor-Liquid P-v Saturation Dome Blueprint",
                         "videoUrl": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
                         "videoTitle": "Properties for Two-Phase Systems Explainer",
                         "videoDuration": "10s",
@@ -21412,6 +21840,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Zeroth law of thermodynamics",
+                        "imageUrl": "assets/images/zeroth_law_thermodynamics.jpg",
+                        "imageTitle": "Zeroth Law of Thermodynamics Thermal Equilibrium Blueprint",
                         "formula": "$$T_A = T_B \\quad \\text{and} \\quad T_B = T_C \\implies T_A = T_C$$",
                         "description": "States that if body $A$ is in thermal equilibrium with body $B$, and body $B$ is in thermal equilibrium with body $C$, then $A$ and $C$ are in mutual thermal equilibrium. Establishes temperature as a valid, universally comparable thermodynamic state variable.",
                         "examTip": "Found in Thermodynamics. The Zeroth Law provides the theoretical foundation for all thermometry: a thermometer (body $B$) calibrated against a standard can measure the temperature of any other system.",
@@ -21421,6 +21851,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Isothermal process, with P-v and T-s representation",
+                        "imageUrl": "assets/images/isothermal_process_pv_ts.jpg",
+                        "imageTitle": "Isothermal Process P-v and T-s Representation Blueprint",
                         "videoUrl": "assets/videos/Isothermal_Process_with_Pv_and_Ts_Representation.mp4",
                         "videoTitle": "Isothermal Process Explainer",
                         "videoDuration": "10s",
@@ -21441,6 +21873,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Dry-bulb, Wet-bulb and dew-point temperature",
+                        "imageUrl": "assets/images/dry_bulb_wet_bulb_dew_point.jpg",
+                        "imageTitle": "Dry-Bulb, Wet-Bulb & Dew-Point Temperature Blueprint",
                         "formula": "$$T_{\\text{dp}} \\le T_{\\text{wb}} \\le T_{\\text{db}}, \\quad T_{\\text{dp}} = T_{\\text{wb}} = T_{\\text{db}} \\iff \\phi = 100\\%$$",
                         "description": "Dry-bulb ($T_{\\text{db}}$) is true ambient air temperature. Wet-bulb ($T_{\\text{wb}}$) is the adiabatic saturation temperature measured by a thermometer with a wetted wick in airflow. Dew-point ($T_{\\text{dp}}$) is the temperature at which condensation begins when air is cooled at constant pressure.",
                         "examTip": "Found in HVAC and Thermodynamics. If air is fully saturated ($\\phi = 100\\%$), all three temperatures are identical. As relative humidity drops, the wet-bulb depression ($T_{\\text{db}} - T_{\\text{wb}}$) increases.",
@@ -21498,6 +21932,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "COP of refrigeration vs. COP of Heat Pump",
+                        "imageUrl": "assets/images/cop_refrigerator_vs_heat_pump.jpg",
+                        "imageTitle": "COP of Refrigerator vs. Heat Pump Thermodynamic Cycle Blueprint",
                         "formula": "$$\\text{COP}_{\\text{HP}} = \\text{COP}_R + 1, \\quad \\frac{Q_H}{W_{\\text{in}}} = \\frac{Q_L + W_{\\text{in}}}{W_{\\text{in}}} = \\frac{Q_L}{W_{\\text{in}}} + 1$$",
                         "description": "For the exact same operating temperatures and heat engine cycle, a heat pump's coefficient of performance always exceeds the refrigerator's COP by exactly 1. This is because the heat delivered to the warm space $Q_H$ equals evaporator heat $Q_L$ plus compressor work $W_{\\text{in}}$.",
                         "examTip": "Found in Thermodynamics. If a question states a refrigeration unit has $\\text{COP}_R = 3.2$, the identical unit operating as a heat pump under the same conditions has $\\text{COP}_{\\text{HP}} = 4.2$.",
@@ -21516,6 +21952,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "HVAC Processes",
+                        "imageUrl": "assets/images/hvac_processes_psychrometric.jpg",
+                        "imageTitle": "Basic Eight Air Conditioning Processes on Psychrometric Chart Blueprint",
                         "videoUrl": "assets/videos/HVAC_Processes.mp4",
                         "videoTitle": "HVAC Processes Explainer",
                         "videoDuration": "10s",
@@ -21582,11 +22020,13 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Types of Fits",
+                        "imageUrl": "assets/images/types_of_fits.jpg",
+                        "imageTitle": "Types of Fits Hole-Basis Tolerance System Blueprint",
                         "formula": "$$\\text{Allowance} = \\text{Min Hole} - \\text{Max Shaft}, \\quad \\text{Clearance: } \\text{Allowance} > 0, \\quad \\text{Interference: } \\text{Allowance} < 0$$",
                         "description": "Governs the intentional dimensional relationship between mating cylindrical parts (hole and shaft). Clearance fit always provides positive operating play ($\\text{Hole} > \\text{Shaft}$ for sliding or rotating bearings). Interference fit (press/shrink fit) always maintains negative clearance ($\\text{Shaft} > \\text{Hole}$ for rigid locking torque transmission). Transition fit may yield either clearance or interference depending on actual tolerance extremes.",
                         "examTip": "Found in Mechanical: Mechanical Design and Manufacturing. In standard hole-basis systems, the basic size is the minimum hole size (tolerance class $\\text{H}$, e.g. $\\text{H7/s6}$ for press fit, $\\text{H7/g6}$ for sliding clearance).",
-                        "videoUrl": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
-                        "videoTitle": "First Angle vs. Third Angle Projection Explainer",
+                        "videoUrl": "assets/videos/Types_of_Fits.mp4",
+                        "videoTitle": "Types of Fits Explainer",
                         "videoDuration": "10s"
                 },
                 {
@@ -21759,6 +22199,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
+                          "imageUrl": "assets/images/intellectual_property_patents_trade_secrets_copyrights.jpg",
+                          "imageTitle": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights Blueprint",
                           "formula": "$$\\text{Patent: 20 yrs from filing (novel, useful, non-obvious)}; \\quad \\text{Trade Secret: indefinite if kept confidential}$$",
                           "description": "Patents grant exclusive commercial rights for 20 years in exchange for full public disclosure of the invention. Trade secrets protect proprietary technical formulas or processes indefinitely without disclosure, provided reasonable security precautions are taken.",
                           "examTip": "Found in Ethics and Professional Practice. Once an invention is publicly disclosed or sold, patent applications must be filed within statutory grace periods (typically 1 year in the US).",
@@ -21795,6 +22237,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Equivalent Resistance in Series and Parallel Networks",
+                          "imageUrl": "assets/images/equivalent_resistance_series_parallel.jpg",
+                          "imageTitle": "Equivalent Resistance in Series and Parallel Networks Blueprint",
                           "formula": "$$R_{\\text{series}} = \\sum_{i=1}^n R_i, \\quad \\frac{1}{R_{\\text{parallel}}} = \\sum_{i=1}^n \\frac{1}{R_i} \\implies R_{\\text{parallel}} = \\frac{R_1 R_2}{R_1 + R_2}$$",
                           "description": "Combines series resistors (current is identical, voltages add) and parallel resistors (voltage is identical, currents add) into a single equivalent lumped resistance.",
                           "examTip": "Found in Electricity and Magnetism: DC Circuits. For two parallel resistors, always use the product-over-sum shortcut $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. Parallel equivalent is always smaller than the smallest branch resistance.",
@@ -21822,6 +22266,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
+                          "imageUrl": "assets/images/ideal_transformer_turns_ratio.jpg",
+                          "imageTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratio Blueprint",
                           "formula": "$$\\frac{V_1}{V_2} = \\frac{N_1}{N_2} = a, \\quad \\frac{I_1}{I_2} = \\frac{N_2}{N_1} = \\frac{1}{a}, \\quad Z_{\\text{in}} = a^2 Z_L = \\left(\\frac{N_1}{N_2}\\right)^2 Z_L$$",
                           "description": "Describes power-conserving electromagnetic coupling between primary and secondary windings in an ideal transformer with turns ratio $a = N_1/N_2$.",
                           "examTip": "Found in Electricity and Magnetism: Transformers. Impedance scales with the square of turns ratio $a^2$. A step-down voltage transformer ($V_2 < V_1$) steps up current ($I_2 > I_1$).",
@@ -22105,6 +22551,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Binary Eutectic Phase Diagram Invariant Reaction",
+			"imageUrl": "assets/images/eutectic_eutectoid_invariant_reactions.jpg",
+			"imageTitle": "Eutectic and Eutectoid Invariant Reactions Phase Diagram Blueprint",
                 "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
                 "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
                 "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
@@ -22147,6 +22595,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Kinematics of Particles: Normal and Tangential Acceleration",
+                        "imageUrl": "assets/images/normal_tangential_acceleration_curvilinear.jpg",
+                        "imageTitle": "Normal and Tangential Acceleration in Curvilinear Motion Blueprint",
                 "formula": "$$\\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right) \\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right) \\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
                 "description": "Curvilinear motion coordinates: tangential acceleration $a_t$ reflects change in speed ($dv/dt$), while normal acceleration $a_n$ acts toward the center of curvature $\\rho$ reflecting change in direction.",
                 "examTip": "Found in Dynamics. For uniform circular motion, speed is constant ($a_t = 0$), but acceleration is non-zero ($a = a_n = v^2 / r$) pointing radially inward."
@@ -22177,6 +22627,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
+                        "imageUrl": "assets/images/thin_walled_pressure_vessel_hoop_longitudinal.jpg",
+                        "imageTitle": "Thin-Walled Pressure Vessel Cylindrical Shell Hoop vs Longitudinal Stress Blueprint",
                 "formula": "$$\\sigma_h = \\frac{P r}{t} \\quad (\\text{Hoop / Tangential}), \\quad \\sigma_L = \\frac{P r}{2 t} \\quad (\\text{Longitudinal / Axial})$$",
                 "description": "Governs stress in thin-walled vessels ($r / t \\ge 10$) under internal gauge pressure $P$: circumferential hoop stress $\\sigma_h$ is exactly double longitudinal stress $\\sigma_L$, explaining why pipes split along their seams.",
                 "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
@@ -22195,6 +22647,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Transverse Shear Stress in Beams and First Moment of Area $Q$",
+			"imageUrl": "assets/images/transverse_shear_stress_beams_shear_formula.jpg",
+			"imageTitle": "Transverse Shear Stress Jourawski Shear Formula Blueprint",
                 "formula": "$$\\tau = \\frac{V Q}{I b}, \\quad Q = \\int_{y_1}^c y dA = A' \\bar{y}'$$",
                 "description": "Calculates horizontal and vertical shearing stress $\\tau$ at any depth in a beam with shear force $V$, where $Q$ is the first moment of area of the portion of cross section above the cut taken about the neutral axis.",
                 "examTip": "Found in Mechanics of Materials. For rectangular beams, maximum shear stress occurs at the neutral axis: $\\tau_{\\max} = 1.5 (V / A)$; for circular beams, $\\tau_{\\max} = \\frac{4}{3} (V / A)$."
@@ -22394,6 +22848,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Compressibility Factor $Z$ and Generalized Compressibility Charts",
+                        "imageUrl": "assets/images/compressibility_factor_real_gas.jpg",
+                        "imageTitle": "Generalized Compressibility Factor Chart Z(Pr, Tr) Blueprint",
                 "formula": "$$Z = \\frac{P v}{R T} = \\frac{P M}{\\rho R T}, \\quad P_r = \\frac{P}{P_c}, \\quad T_r = \\frac{T}{T_c}$$",
                 "description": "Quantifies departure of real gas behavior from ideal gas law ($Z = 1.0$) as a universal function of reduced pressure $P_r$ and reduced temperature $T_r$ (Theorem of Corresponding States).",
                 "examTip": "Found in Chemical: Thermodynamics. At low pressures ($P_r \\ll 1$) or very high temperatures ($T_r \\gg 2$), all real gases converge to ideal gas behavior ($Z \\to 1$)."
@@ -22484,6 +22940,8 @@ window.calcEvaluate = function() {
             },
             {
                 "title": "Capitalized Cost for Perpetual Horizon Engineering Projects",
+                        "imageUrl": "assets/images/capitalized_cost_infinite_project_life.jpg",
+                        "imageTitle": "Capitalized Cost Perpetual Horizon Cash Flow Diagram Blueprint",
                 "formula": "$$CC = P + \\frac{A}{i} + \\frac{RC}{(1 + i)^k - 1}$$",
                 "description": "Present worth of an engineering asset with an infinite operational life (dams, bridges, aqueducts), where initial cost is $P$, recurring annual operating cost is $A/i$, and periodic replacement cost $RC$ occurs every $k$ years.",
                 "examTip": "Found in Engineering Economics. As $n \\to \\infty$, the present worth factor $(P/A, i, n) = \\frac{(1+i)^n - 1}{i(1+i)^n} \\to \\frac{1}{i}$."
@@ -25195,6 +25653,54 @@ window.calcEvaluate = function() {
             triggerMathTypeset([frontTitle, frontHint]);
         }
 
+        // Responsive Front Blueprint Image Setup (Visible on Desktop/Laptop/Tablet, Hidden on Mobile Phones)
+        const hasImage = Boolean(card.imageUrl);
+        const frontGrid = document.getElementById('fc-front-grid');
+        const frontTextCol = document.getElementById('fc-front-text-col');
+        const frontImgCol = document.getElementById('fc-front-image-col');
+        const frontImg = document.getElementById('fc-front-image');
+        const frontImgContainer = document.getElementById('fc-front-image-container');
+        const frontCaptionText = document.getElementById('fc-front-caption-text');
+
+        if (hasImage) {
+            if (frontImgCol) {
+                frontImgCol.classList.remove('hidden');
+                frontImgCol.className = 'hidden md:flex md:col-span-5 flex-col items-center justify-center shrink-0 w-full transition-all duration-300';
+            }
+            if (frontGrid) {
+                frontGrid.className = 'w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center justify-center transition-all duration-300';
+            }
+            if (frontTextCol) {
+                frontTextCol.className = 'w-full md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left gap-3 transition-all duration-300';
+            }
+            if (frontImg) {
+                frontImg.src = card.imageUrl;
+                frontImg.alt = card.imageTitle || card.title || 'Technical Diagram';
+            }
+            if (frontCaptionText) {
+                frontCaptionText.textContent = card.imageTitle || 'Technical Illustration Blueprint';
+            }
+            if (frontImgContainer) {
+                frontImgContainer.onclick = function(e) {
+                    if (e && e.stopPropagation) e.stopPropagation();
+                    openBlueprintLightbox(e);
+                };
+            }
+        } else {
+            if (frontImgCol) {
+                frontImgCol.className = 'hidden';
+            }
+            if (frontGrid) {
+                frontGrid.className = 'w-full max-w-5xl flex flex-col items-center justify-center text-center gap-4 transition-all duration-300';
+            }
+            if (frontTextCol) {
+                frontTextCol.className = 'w-full flex flex-col items-center justify-center text-center gap-3 transition-all duration-300';
+            }
+            if (frontImg) {
+                frontImg.removeAttribute('src');
+            }
+        }
+
         // Card Back Fields
         const backTitle = document.getElementById('fc-back-title');
         const backFormula = document.getElementById('fc-back-formula');
@@ -25211,9 +25717,8 @@ window.calcEvaluate = function() {
             triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
         }
 
-        // Responsive Media & 2-Column Layout configuration (Option A: Video + Technical Blueprint)
+        // Responsive Media Layout on Back (Video prominent; Blueprint moved to front face)
         const hasVideo = Boolean(card.videoUrl);
-        const hasImage = Boolean(card.imageUrl);
         const backColVideo = document.getElementById('fc-back-col-video');
         const backColPrimary = document.getElementById('fc-back-col-primary');
         const mediaSwitcher = document.getElementById('fc-media-switcher');
@@ -25223,9 +25728,10 @@ window.calcEvaluate = function() {
         const videoDur = document.getElementById('fc-back-video-duration');
         const backVideo = document.getElementById('fc-back-video');
         const backImg = document.getElementById('fc-back-image');
-        const imgContainer = document.getElementById('fc-back-image-container');
+        const backVideoContainer = document.getElementById('fc-back-video-container');
+        const backImgContainer = document.getElementById('fc-back-image-container');
 
-        if (hasVideo || hasImage) {
+        if (hasVideo) {
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
                 backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
@@ -25234,69 +25740,62 @@ window.calcEvaluate = function() {
                 backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
             }
 
-            if (hasVideo && backVideo) {
+            if (backVideo) {
                 backVideo.src = card.videoUrl;
                 backVideo.load();
-            } else if (backVideo) {
-                backVideo.pause();
-                backVideo.removeAttribute('src');
             }
 
-            if (hasImage && backImg) {
+            if (backVideoContainer) backVideoContainer.classList.remove('hidden');
+            if (backImgContainer) backImgContainer.classList.add('hidden');
+
+            // Hide tab switcher - technical blueprint image is now prominently displayed on the front side of the card!
+            if (mediaSwitcher) {
+                mediaSwitcher.classList.add('hidden');
+                mediaSwitcher.classList.remove('flex');
+            }
+            if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+            if (headerIcon) {
+                headerIcon.textContent = 'smart_display';
+                headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
+            }
+            if (headerLabel) {
+                headerLabel.textContent = '10s Video Explainer';
+                headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
+            }
+            if (videoDur) {
+                videoDur.textContent = card.videoDuration || '10s';
+            }
+            activeMediaTab = 'video';
+        } else if (hasImage) {
+            // Blueprint fallback on back only if no video exists
+            if (backColVideo) {
+                backColVideo.classList.remove('hidden');
+                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
+            }
+            if (backColPrimary) {
+                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+            }
+            if (mediaSwitcher) {
+                mediaSwitcher.classList.add('hidden');
+                mediaSwitcher.classList.remove('flex');
+            }
+            if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+            if (headerIcon) {
+                headerIcon.textContent = 'architecture';
+                headerIcon.className = 'material-symbols-outlined text-[15px] text-purple-400';
+            }
+            if (headerLabel) {
+                headerLabel.textContent = 'Technical Blueprint';
+                headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
+            }
+            if (backImg) {
                 backImg.src = card.imageUrl;
                 backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
-                if (imgContainer) {
-                    imgContainer.onclick = openBlueprintLightbox;
+                if (backImgContainer) {
+                    backImgContainer.onclick = openBlueprintLightbox;
                 }
             }
-
-            // Wire up toggle bar or static header
-            if (hasVideo && hasImage) {
-                if (mediaSwitcher) {
-                    mediaSwitcher.classList.remove('hidden');
-                    mediaSwitcher.classList.add('flex');
-                }
-                if (mediaStaticHeader) mediaStaticHeader.classList.add('hidden');
-
-                const btnVideo = document.getElementById('fc-toggle-btn-video');
-                const btnBlueprint = document.getElementById('fc-toggle-btn-blueprint');
-                if (btnVideo) btnVideo.onclick = () => setMediaTab('video');
-                if (btnBlueprint) btnBlueprint.onclick = () => setMediaTab('blueprint');
-
-                // Default to video when both exist
-                setMediaTab('video');
-            } else if (hasVideo) {
-                if (mediaSwitcher) {
-                    mediaSwitcher.classList.add('hidden');
-                    mediaSwitcher.classList.remove('flex');
-                }
-                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
-                if (headerIcon) {
-                    headerIcon.textContent = 'smart_display';
-                    headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
-                }
-                if (headerLabel) {
-                    headerLabel.textContent = '10s Video Explainer';
-                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
-                }
-                setMediaTab('video');
-            } else {
-                // Only Blueprint Image exists
-                if (mediaSwitcher) {
-                    mediaSwitcher.classList.add('hidden');
-                    mediaSwitcher.classList.remove('flex');
-                }
-                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
-                if (headerIcon) {
-                    headerIcon.textContent = 'architecture';
-                    headerIcon.className = 'material-symbols-outlined text-[15px] text-purple-400';
-                }
-                if (headerLabel) {
-                    headerLabel.textContent = 'Technical Blueprint';
-                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
-                }
-                setMediaTab('blueprint');
-            }
+            setMediaTab('blueprint');
         } else {
             // Neither video nor image exists
             if (backColVideo) backColVideo.classList.add('hidden');
