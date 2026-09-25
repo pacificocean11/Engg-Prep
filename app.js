@@ -25574,6 +25574,44 @@ window.calcEvaluate = function() {
     }
 
     // Render current card state
+        // =========================================================================
+    // Instant Image Preloader & Decoded Memory Cache (Eliminates Flashcard Lag)
+    // =========================================================================
+    const preloadedImageCache = new Map();
+
+    function preloadCardImage(url) {
+        if (!url || preloadedImageCache.has(url)) return;
+        const img = new Image();
+        img.decoding = 'async';
+        img.loading = 'eager';
+        img.src = url;
+        preloadedImageCache.set(url, img);
+        if (img.decode) {
+            img.decode().catch(() => {});
+        }
+    }
+
+    function preloadAdjacentCardImages(index, lookaheadCount = 6) {
+        if (!currentDeck || !currentDeck.length) return;
+        const total = currentDeck.length;
+        // Preload upcoming lookaheadCount cards (primary navigation direction)
+        for (let offset = 1; offset <= lookaheadCount; offset++) {
+            const nextIdx = (index + offset) % total;
+            const nextCard = currentDeck[nextIdx];
+            if (nextCard && nextCard.imageUrl) {
+                preloadCardImage(nextCard.imageUrl);
+            }
+        }
+        // Preload previous 2 cards (backward navigation)
+        for (let offset = 1; offset <= 2; offset++) {
+            const prevIdx = (index - offset + total) % total;
+            const prevCard = currentDeck[prevIdx];
+            if (prevCard && prevCard.imageUrl) {
+                preloadCardImage(prevCard.imageUrl);
+            }
+        }
+    }
+
     function renderCard() {
         const modal = document.getElementById('fe-flashcards-modal');
         if (!modal || modal.classList.contains('hidden')) return;
@@ -25596,6 +25634,8 @@ window.calcEvaluate = function() {
         if (currentIndex >= currentDeck.length) currentIndex = 0;
 
         const card = currentDeck[currentIndex];
+        // Lookahead Preloader: Warm up upcoming card images in the background
+        preloadAdjacentCardImages(currentIndex, 6);
         isFlipped = false;
         const inner = document.getElementById('fc-flip-inner');
         if (inner) inner.classList.remove('flipped');
@@ -25674,8 +25714,27 @@ window.calcEvaluate = function() {
                 frontTextCol.className = 'w-full md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left gap-3 transition-all duration-300';
             }
             if (frontImg) {
-                frontImg.src = card.imageUrl;
                 frontImg.alt = card.imageTitle || card.title || 'Technical Diagram';
+                frontImg.decoding = 'async';
+                frontImg.loading = 'eager';
+
+                const cached = preloadedImageCache.get(card.imageUrl);
+                const isAlreadyLoaded = (frontImg.src && frontImg.src.endsWith(card.imageUrl) && frontImg.complete && frontImg.naturalWidth > 0) ||
+                                        (cached && cached.complete && cached.naturalWidth > 0);
+
+                if (isAlreadyLoaded) {
+                    frontImg.src = card.imageUrl;
+                    frontImg.classList.remove('opacity-0');
+                    frontImg.classList.add('opacity-100');
+                } else {
+                    frontImg.classList.remove('opacity-100');
+                    frontImg.classList.add('opacity-0');
+                    frontImg.onload = function() {
+                        frontImg.classList.remove('opacity-0');
+                        frontImg.classList.add('opacity-100');
+                    };
+                    frontImg.src = card.imageUrl;
+                }
             }
             if (frontCaptionText) {
                 frontCaptionText.textContent = card.imageTitle || 'Technical Illustration Blueprint';
@@ -25789,8 +25848,27 @@ window.calcEvaluate = function() {
                 headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
             }
             if (backImg) {
-                backImg.src = card.imageUrl;
                 backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
+                backImg.decoding = 'async';
+                backImg.loading = 'eager';
+
+                const cached = preloadedImageCache.get(card.imageUrl);
+                const isAlreadyLoaded = (backImg.src && backImg.src.endsWith(card.imageUrl) && backImg.complete && backImg.naturalWidth > 0) ||
+                                        (cached && cached.complete && cached.naturalWidth > 0);
+
+                if (isAlreadyLoaded) {
+                    backImg.src = card.imageUrl;
+                    backImg.classList.remove('opacity-0');
+                    backImg.classList.add('opacity-100');
+                } else {
+                    backImg.classList.remove('opacity-100');
+                    backImg.classList.add('opacity-0');
+                    backImg.onload = function() {
+                        backImg.classList.remove('opacity-0');
+                        backImg.classList.add('opacity-100');
+                    };
+                    backImg.src = card.imageUrl;
+                }
                 if (backImgContainer) {
                     backImgContainer.onclick = openBlueprintLightbox;
                 }
@@ -26212,6 +26290,13 @@ window.calcEvaluate = function() {
         currentIndex = 0;
         isFlipped = false;
 
+        // Immediately preload first 8 cards in this session
+        if (currentDeck && currentDeck.length > 0) {
+            for (let i = 0; i < Math.min(8, currentDeck.length); i++) {
+                if (currentDeck[i].imageUrl) preloadCardImage(currentDeck[i].imageUrl);
+            }
+        }
+
         const modal = document.getElementById('fe-flashcards-modal');
         const card = document.getElementById('flashcard-studio-card');
         if (!modal) return;
@@ -26337,3 +26422,26 @@ window.calcEvaluate = function() {
 
 // --- END js/fe-flashcards.js ---
 
+    // Idle Background Preloader for Flashcard Blueprints
+    if (typeof window !== 'undefined') {
+        const idlePreloadTheorems = () => {
+            try {
+                const datasets = window.THEOREMS_BY_DISCIPLINE || {};
+                let count = 0;
+                for (const d of Object.keys(datasets)) {
+                    for (const t of datasets[d]) {
+                        if (t && t.imageUrl && !preloadedImageCache.has(t.imageUrl)) {
+                            preloadCardImage(t.imageUrl);
+                            count++;
+                            if (count >= 15) return;
+                        }
+                    }
+                }
+            } catch (err) {}
+        };
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(idlePreloadTheorems, { timeout: 3000 });
+        } else {
+            setTimeout(idlePreloadTheorems, 2000);
+        }
+    }
