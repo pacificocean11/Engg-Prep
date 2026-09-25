@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v204';
+const CACHE_NAME = 'engg-prep-cache-v205';
 const APP_SHELL = [
   './',
   './index.html',
@@ -100,7 +100,22 @@ const APP_SHELL = [
   './assets/images/vector_length_and_unit_vector.jpg',
   './assets/images/vibration_transmissibility_harmonic_base.jpg',
   './assets/images/work_energy_principle_rigid_body_dynamics.jpg',
-  './assets/images/zeroth_law_thermodynamics.jpg'
+  './assets/images/zeroth_law_thermodynamics.jpg',
+  './assets/images/hydrostatic_center_of_pressure_submerged_surfaces.jpg',
+  './assets/images/archimedes_principle_of_buoyancy.jpg',
+  './assets/images/minor_head_losses_pipe_networks.jpg',
+  './assets/images/centrifugal_pump_affinity_laws.jpg',
+  './assets/images/net_positive_suction_head_available_npsha.jpg',
+  './assets/images/pump_specific_speed_dimensionless.jpg',
+  './assets/images/boundary_layer_displacement_momentum_thickness.jpg',
+  './assets/images/enthalpy_definition_specific_heat_relations.jpg',
+  './assets/images/clausius_inequality_thermodynamic_cycles.jpg',
+  './assets/images/entropy_change_ideal_gases.jpg',
+  './assets/images/ideal_diesel_cycle_thermal_efficiency.jpg',
+  './assets/images/ideal_brayton_cycle_efficiency_gas_turbines.jpg',
+  './assets/images/vapor_compression_refrigeration_cycle_cop.jpg',
+  './assets/images/exergy_availability_closed_system.jpg',
+  './assets/images/psychrometric_humidity_ratio_relative_humidity.jpg'
 ];
 
 // Install Event - Precache App Shell
