@@ -2022,7 +2022,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="exam_questions.js?v=3"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=100"></script>
+    <script src="app.js?v=106"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -2923,13 +2923,37 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                                 <span id="fc-card-level-badge" class="text-[10px] font-black uppercase tracking-wider bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full border border-slate-700">New Card</span>
                             </div>
 
-                            <!-- Front Center Content (Scrollable & Centered with Breathing Room) -->
-                            <div class="flex-1 overflow-y-auto px-8 py-8 flex flex-col items-center justify-center text-center gap-4 my-auto">
-                                <span id="fc-front-prompt-label" class="text-[11px] uppercase font-black tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/25 shrink-0">Recall the Governing Equation</span>
-                                <h2 id="fc-front-title" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-snug max-w-3xl my-1">Bernoulli's Principle</h2>
-                                <div id="fc-front-formula-view" class="hidden w-full max-w-xl bg-white/5 p-4 sm:p-5 rounded-2xl border border-purple-500/30 text-center font-mono text-cyan-300 text-base sm:text-lg overflow-x-auto my-2"></div>
-                                <div id="fc-front-hint" class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed pt-1">
-                                    What is the energy balance equation for steady, inviscid, incompressible fluid flow?
+                            <!-- Front Center Content (Responsive 2-Column on Tablet/Desktop when Diagram exists) -->
+                            <div id="fc-front-center-container" class="flex-1 overflow-y-auto px-6 sm:px-8 py-6 flex items-center justify-center my-auto w-full">
+                                <div id="fc-front-grid" class="w-full max-w-5xl flex flex-col items-center justify-center text-center gap-4 transition-all duration-300">
+                                    
+                                    <!-- Front Text Column: Prompt, Title, Formula, Hint -->
+                                    <div id="fc-front-text-col" class="flex flex-col items-center justify-center text-center gap-3 w-full transition-all duration-300">
+                                        <span id="fc-front-prompt-label" class="text-[11px] uppercase font-black tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/25 shrink-0">Recall the Governing Equation</span>
+                                        <h2 id="fc-front-title" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-snug max-w-3xl my-1">Bernoulli's Principle</h2>
+                                        <div id="fc-front-formula-view" class="hidden w-full max-w-xl bg-white/5 p-4 sm:p-5 rounded-2xl border border-purple-500/30 text-center font-mono text-cyan-300 text-base sm:text-lg overflow-x-auto my-2"></div>
+                                        <div id="fc-front-hint" class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed pt-1">
+                                            What is the energy balance equation for steady, inviscid, incompressible fluid flow?
+                                        </div>
+                                    </div>
+
+                                    <!-- Front Technical Blueprint Image Column (Visible on Tablet/Laptop/Desktop, Hidden on Mobile Phones) -->
+                                    <div id="fc-front-image-col" class="hidden flex-col items-center justify-center shrink-0 w-full transition-all duration-300">
+                                        <div id="fc-front-image-container" class="relative group/frontimg rounded-2xl overflow-hidden border border-purple-500/35 bg-[#0B1120] shadow-xl shadow-purple-950/40 cursor-pointer max-w-sm sm:max-w-md lg:max-w-lg transition-transform duration-300 hover:scale-[1.02] hover:border-purple-400/60" title="Click to view full resolution diagram">
+                                            <img id="fc-front-image" src="" alt="Technical Blueprint Diagram" class="w-full h-auto max-h-[260px] sm:max-h-[300px] lg:max-h-[340px] xl:max-h-[380px] object-contain bg-[#0B1120]">
+                                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover/frontimg:opacity-100 transition-opacity flex items-end justify-between p-2.5 pointer-events-none">
+                                                <span class="text-[10px] font-mono text-purple-200 bg-slate-900/90 px-2 py-0.5 rounded border border-purple-500/40 flex items-center gap-1">
+                                                    <span class="material-symbols-outlined text-[13px]">zoom_in</span> Click to Enlarge
+                                                </span>
+                                                <span id="fc-front-image-badge" class="text-[9px] font-black uppercase tracking-wider text-purple-300 bg-purple-950/80 px-2 py-0.5 rounded border border-purple-500/30">CAD Blueprint</span>
+                                            </div>
+                                        </div>
+                                        <p id="fc-front-image-caption" class="text-[10px] text-purple-300/80 font-medium mt-2 flex items-center gap-1.5">
+                                            <span class="material-symbols-outlined text-[13px] text-purple-400">architecture</span>
+                                            <span id="fc-front-caption-text">Technical Illustration Diagram</span>
+                                        </p>
+                                    </div>
+
                                 </div>
                             </div>
 
