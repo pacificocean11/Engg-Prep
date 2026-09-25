@@ -119,6 +119,54 @@
             triggerMathTypeset([frontTitle, frontHint]);
         }
 
+        // Responsive Front Blueprint Image Setup (Visible on Desktop/Laptop/Tablet, Hidden on Mobile Phones)
+        const hasImage = Boolean(card.imageUrl);
+        const frontGrid = document.getElementById('fc-front-grid');
+        const frontTextCol = document.getElementById('fc-front-text-col');
+        const frontImgCol = document.getElementById('fc-front-image-col');
+        const frontImg = document.getElementById('fc-front-image');
+        const frontImgContainer = document.getElementById('fc-front-image-container');
+        const frontCaptionText = document.getElementById('fc-front-caption-text');
+
+        if (hasImage) {
+            if (frontImgCol) {
+                frontImgCol.classList.remove('hidden');
+                frontImgCol.className = 'hidden md:flex md:col-span-5 flex-col items-center justify-center shrink-0 w-full transition-all duration-300';
+            }
+            if (frontGrid) {
+                frontGrid.className = 'w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center justify-center transition-all duration-300';
+            }
+            if (frontTextCol) {
+                frontTextCol.className = 'w-full md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left gap-3 transition-all duration-300';
+            }
+            if (frontImg) {
+                frontImg.src = card.imageUrl;
+                frontImg.alt = card.imageTitle || card.title || 'Technical Diagram';
+            }
+            if (frontCaptionText) {
+                frontCaptionText.textContent = card.imageTitle || 'Technical Illustration Blueprint';
+            }
+            if (frontImgContainer) {
+                frontImgContainer.onclick = function(e) {
+                    if (e && e.stopPropagation) e.stopPropagation();
+                    openBlueprintLightbox(e);
+                };
+            }
+        } else {
+            if (frontImgCol) {
+                frontImgCol.className = 'hidden';
+            }
+            if (frontGrid) {
+                frontGrid.className = 'w-full max-w-5xl flex flex-col items-center justify-center text-center gap-4 transition-all duration-300';
+            }
+            if (frontTextCol) {
+                frontTextCol.className = 'w-full flex flex-col items-center justify-center text-center gap-3 transition-all duration-300';
+            }
+            if (frontImg) {
+                frontImg.removeAttribute('src');
+            }
+        }
+
         // Card Back Fields
         const backTitle = document.getElementById('fc-back-title');
         const backFormula = document.getElementById('fc-back-formula');
@@ -135,9 +183,8 @@
             triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
         }
 
-        // Responsive Media & 2-Column Layout configuration (Option A: Video + Technical Blueprint)
+        // Responsive Media Layout on Back (Video prominent; Blueprint moved to front face)
         const hasVideo = Boolean(card.videoUrl);
-        const hasImage = Boolean(card.imageUrl);
         const backColVideo = document.getElementById('fc-back-col-video');
         const backColPrimary = document.getElementById('fc-back-col-primary');
         const mediaSwitcher = document.getElementById('fc-media-switcher');
@@ -147,9 +194,10 @@
         const videoDur = document.getElementById('fc-back-video-duration');
         const backVideo = document.getElementById('fc-back-video');
         const backImg = document.getElementById('fc-back-image');
-        const imgContainer = document.getElementById('fc-back-image-container');
+        const backVideoContainer = document.getElementById('fc-back-video-container');
+        const backImgContainer = document.getElementById('fc-back-image-container');
 
-        if (hasVideo || hasImage) {
+        if (hasVideo) {
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
                 backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
@@ -158,69 +206,62 @@
                 backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
             }
 
-            if (hasVideo && backVideo) {
+            if (backVideo) {
                 backVideo.src = card.videoUrl;
                 backVideo.load();
-            } else if (backVideo) {
-                backVideo.pause();
-                backVideo.removeAttribute('src');
             }
 
-            if (hasImage && backImg) {
+            if (backVideoContainer) backVideoContainer.classList.remove('hidden');
+            if (backImgContainer) backImgContainer.classList.add('hidden');
+
+            // Hide tab switcher - technical blueprint image is now prominently displayed on the front side of the card!
+            if (mediaSwitcher) {
+                mediaSwitcher.classList.add('hidden');
+                mediaSwitcher.classList.remove('flex');
+            }
+            if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+            if (headerIcon) {
+                headerIcon.textContent = 'smart_display';
+                headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
+            }
+            if (headerLabel) {
+                headerLabel.textContent = '10s Video Explainer';
+                headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
+            }
+            if (videoDur) {
+                videoDur.textContent = card.videoDuration || '10s';
+            }
+            activeMediaTab = 'video';
+        } else if (hasImage) {
+            // Blueprint fallback on back only if no video exists
+            if (backColVideo) {
+                backColVideo.classList.remove('hidden');
+                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
+            }
+            if (backColPrimary) {
+                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+            }
+            if (mediaSwitcher) {
+                mediaSwitcher.classList.add('hidden');
+                mediaSwitcher.classList.remove('flex');
+            }
+            if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+            if (headerIcon) {
+                headerIcon.textContent = 'architecture';
+                headerIcon.className = 'material-symbols-outlined text-[15px] text-purple-400';
+            }
+            if (headerLabel) {
+                headerLabel.textContent = 'Technical Blueprint';
+                headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
+            }
+            if (backImg) {
                 backImg.src = card.imageUrl;
                 backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
-                if (imgContainer) {
-                    imgContainer.onclick = openBlueprintLightbox;
+                if (backImgContainer) {
+                    backImgContainer.onclick = openBlueprintLightbox;
                 }
             }
-
-            // Wire up toggle bar or static header
-            if (hasVideo && hasImage) {
-                if (mediaSwitcher) {
-                    mediaSwitcher.classList.remove('hidden');
-                    mediaSwitcher.classList.add('flex');
-                }
-                if (mediaStaticHeader) mediaStaticHeader.classList.add('hidden');
-
-                const btnVideo = document.getElementById('fc-toggle-btn-video');
-                const btnBlueprint = document.getElementById('fc-toggle-btn-blueprint');
-                if (btnVideo) btnVideo.onclick = () => setMediaTab('video');
-                if (btnBlueprint) btnBlueprint.onclick = () => setMediaTab('blueprint');
-
-                // Default to video when both exist
-                setMediaTab('video');
-            } else if (hasVideo) {
-                if (mediaSwitcher) {
-                    mediaSwitcher.classList.add('hidden');
-                    mediaSwitcher.classList.remove('flex');
-                }
-                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
-                if (headerIcon) {
-                    headerIcon.textContent = 'smart_display';
-                    headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
-                }
-                if (headerLabel) {
-                    headerLabel.textContent = '10s Video Explainer';
-                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
-                }
-                setMediaTab('video');
-            } else {
-                // Only Blueprint Image exists
-                if (mediaSwitcher) {
-                    mediaSwitcher.classList.add('hidden');
-                    mediaSwitcher.classList.remove('flex');
-                }
-                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
-                if (headerIcon) {
-                    headerIcon.textContent = 'architecture';
-                    headerIcon.className = 'material-symbols-outlined text-[15px] text-purple-400';
-                }
-                if (headerLabel) {
-                    headerLabel.textContent = 'Technical Blueprint';
-                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-purple-400';
-                }
-                setMediaTab('blueprint');
-            }
+            setMediaTab('blueprint');
         } else {
             // Neither video nor image exists
             if (backColVideo) backColVideo.classList.add('hidden');
