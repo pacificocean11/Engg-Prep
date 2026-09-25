@@ -814,6 +814,8 @@
                 },
                                                                 {
                         "title": "Hydrostatic Center of Pressure on Submerged Surfaces",
+			"imageUrl": "assets/images/hydrostatic_center_of_pressure_submerged_surfaces.jpg",
+			"imageTitle": "Hydrostatic Center of Pressure on Submerged Surfaces Blueprint",
                         "formula": "$$y_{cp} = y_c + \\frac{I_{xc}}{y_c A}, \\quad F_R = \\bar{P} A = \\rho g y_c \\sin\\theta A$$",
                         "description": "Resultant hydrostatic force $F_R$ acts through the center of pressure $y_{cp}$, which is always located below the area centroid $y_c$ by distance $I_{xc}/(y_c A)$.",
                         "examTip": "Found in Fluid Mechanics. Remember $y$ is measured along the inclined surface plane from the liquid surface intersection.",
@@ -823,6 +825,8 @@
                 },
                 {
                         "title": "Archimedes’ Principle of Buoyancy",
+			"imageUrl": "assets/images/archimedes_principle_of_buoyancy.jpg",
+			"imageTitle": "Archimedes’ Principle of Buoyancy Blueprint",
                         "formula": "$$F_B = \\rho_f g V_{\\text{displaced}} = \\gamma_f V_d$$",
                         "description": "Any body wholly or partially submerged in a static fluid experiences an upward buoyant force equal to the weight of fluid displaced, acting through the center of buoyancy.",
                         "examTip": "Found in Fluid Mechanics. For a floating body in static equilibrium, $F_B = W_{\\text{body}}$, meaning $\\rho_f V_d = \\rho_{\\text{body}} V_{\\text{total}}$.",
@@ -832,6 +836,8 @@
                 },
                 {
                         "title": "Minor Head Losses in Pipe Networks",
+			"imageUrl": "assets/images/minor_head_losses_pipe_networks.jpg",
+			"imageTitle": "Minor Head Losses in Pipe Networks Blueprint",
                         "formula": "$$h_m = K_L \\frac{v^2}{2g}$$",
                         "description": "Computes localized mechanical energy dissipation caused by pipe fittings, elbows, valves, entrances, and sudden contractions/expansions using loss coefficient $K_L$.",
                         "examTip": "Found in Fluid Mechanics. Add minor losses to major Darcy friction head loss in the extended Bernoulli energy equation: $h_L = f (L/D)(v^2/2g) + \\sum K_L (v^2/2g)$.",
@@ -841,6 +847,8 @@
                 },
                 {
                         "title": "Centrifugal Pump Affinity Laws",
+			"imageUrl": "assets/images/centrifugal_pump_affinity_laws.jpg",
+			"imageTitle": "Centrifugal Pump Affinity Laws Blueprint",
                         "formula": "$$\\frac{Q_2}{Q_1} = \\frac{N_2}{N_1}, \\quad \\frac{H_2}{H_1} = \\left(\\frac{N_2}{N_1}\\right)^2, \\quad \\frac{\\dot{W}_2}{\\dot{W}_1} = \\left(\\frac{N_2}{N_1}\\right)^3$$",
                         "description": "Predicts changes in volumetric flow rate $Q$, total head $H$, and required brake horsepower $\\dot{W}$ when pump impeller rotational speed $N$ is varied.",
                         "examTip": "Found in Fluid Mechanics. Note power varies with the cube of shaft speed: doubling pump RPM requires $2^3 = 8\\times$ power!",
@@ -850,6 +858,8 @@
                 },
                 {
                         "title": "Net Positive Suction Head Available (NPSHA)",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                         "formula": "$$NPSHA = \\frac{P_{\\text{atm}}}{\\gamma} + z_s - h_f - \\frac{P_v}{\\gamma} \\ge NPSHR$$",
                         "description": "Total absolute suction head at the pump inlet above liquid vapor pressure $P_v$. To prevent catastrophic cavitation, $NPSHA$ must exceed manufacturer's $NPSHR$.",
                         "examTip": "Found in Fluid Mechanics. Raising fluid temperature increases vapor pressure $P_v$, reducing $NPSHA$ and triggering cavitation.",
@@ -859,6 +869,8 @@
                 },
                 {
                         "title": "Pump Specific Speed ($N_s$)",
+			"imageUrl": "assets/images/pump_specific_speed_dimensionless.jpg",
+			"imageTitle": "Pump Specific Speed (Ns) Blueprint",
                         "formula": "$$N_s = \\frac{N \\sqrt{Q}}{H^{3/4}}$$",
                         "description": "Dimensionless/empirical design parameter identifying optimal pump impeller type: radial flow ($N_s < 2000$), mixed flow ($2000 < N_s < 5000$), or axial flow ($N_s > 9000$).",
                         "examTip": "Found in Fluid Mechanics. In USCS units: $N$ is in rpm, $Q$ is in gpm, and $H$ is in feet of fluid.",
@@ -868,6 +880,8 @@
                 },
                 {
                         "title": "Boundary Layer Displacement and Momentum Thickness",
+			"imageUrl": "assets/images/boundary_layer_displacement_momentum_thickness.jpg",
+			"imageTitle": "Boundary Layer Displacement and Momentum Thickness Blueprint",
                         "formula": "$$\\delta^* = \\int_0^\\delta \\left(1 - \\frac{u}{U_\\infty}\\right) dy, \\quad \\theta = \\int_0^\\delta \\frac{u}{U_\\infty}\\left(1 - \\frac{u}{U_\\infty}\\right) dy$$",
                         "description": "Measures the physical distance streamline flow is displaced outward ($\\delta^*$) and total momentum deficit ($\\theta$) due to fluid viscous boundary layer growth.",
                         "examTip": "Found in Fluid Mechanics. For Blasius laminar boundary layer over flat plate: $\\delta = 5.0 x / \\sqrt{Re_x}$ and $\\delta^* = 1.72 x / \\sqrt{Re_x}$.",
@@ -877,6 +891,8 @@
                 },
                                                                                                                 {
                         "title": "Enthalpy Definition and Specific Heat Relations",
+			"imageUrl": "assets/images/enthalpy_definition_specific_heat_relations.jpg",
+			"imageTitle": "Enthalpy Definition and Specific Heat Relations Blueprint",
                         "formula": "$$h = u + P v, \\quad c_p - c_v = R, \\quad k = \\frac{c_p}{c_v}, \\quad c_p = \\frac{k R}{k - 1}$$",
                         "description": "Fundamental thermodynamic property definitions for enthalpy $h$, relating constant-pressure specific heat $c_p$ and constant-volume specific heat $c_v$ via gas constant $R$.",
                         "examTip": "Found in Thermodynamics. For cold air standard: $c_p = 1.005\\text{ kJ/(kg}\\cdot\\text{K)}$, $c_v = 0.718\\text{ kJ/(kg}\\cdot\\text{K)}$, $k = 1.40$, $R = 0.287\\text{ kJ/(kg}\\cdot\\text{K)}$.",
@@ -886,6 +902,8 @@
                 },
                 {
                         "title": "Clausius Inequality for Thermodynamic Cycles",
+			"imageUrl": "assets/images/clausius_inequality_thermodynamic_cycles.jpg",
+			"imageTitle": "Clausius Inequality for Thermodynamic Cycles Blueprint",
                         "formula": "$$\\oint \\frac{\\delta Q}{T} \\le 0$$",
                         "description": "Second law formulation stating that cyclic integral of $\\delta Q / T$ is zero for reversible cycles and strictly negative for irreversible cycles.",
                         "examTip": "Found in Thermodynamics. If $\\oint \\delta Q / T > 0$, the cycle violates the Second Law of Thermodynamics (physically impossible).",
@@ -895,6 +913,8 @@
                 },
                 {
                         "title": "Entropy Change of Ideal Gases",
+			"imageUrl": "assets/images/entropy_change_ideal_gases.jpg",
+			"imageTitle": "Entropy Change of Ideal Gases Blueprint",
                         "formula": "$$\\Delta s = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right) = c_v \\ln\\left(\\frac{T_2}{T_1}\\right) + R \\ln\\left(\\frac{v_2}{v_1}\\right)$$",
                         "description": "Calculates entropy change $\\Delta s$ between two states for an ideal gas with constant specific heats.",
                         "examTip": "Found in Thermodynamics. For an isentropic process ($\\Delta s = 0$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$.",
@@ -904,6 +924,8 @@
                 },
                 {
                         "title": "Ideal Diesel Cycle Thermal Efficiency",
+			"imageUrl": "assets/images/ideal_diesel_cycle_thermal_efficiency.jpg",
+			"imageTitle": "Ideal Diesel Cycle Thermal Efficiency Blueprint",
                         "formula": "$$\\eta_{\\text{Diesel}} = 1 - \\frac{1}{r^{k-1}}\\left[\\frac{r_c^k - 1}{k (r_c - 1)}\\right]$$",
                         "description": "Efficiency of compression-ignition IC engines as a function of compression ratio $r = V_1/V_2$ and cut-off ratio $r_c = V_3/V_2$.",
                         "examTip": "Found in Thermodynamics. Because $[(r_c^k-1)/(k(r_c-1))] > 1$, for the same compression ratio $r$, an Otto cycle is theoretically more efficient than a Diesel cycle.",
@@ -913,6 +935,8 @@
                 },
                 {
                         "title": "Ideal Brayton Cycle Efficiency for Gas Turbines",
+			"imageUrl": "assets/images/ideal_brayton_cycle_efficiency_gas_turbines.jpg",
+			"imageTitle": "Ideal Brayton Cycle Efficiency for Gas Turbines Blueprint",
                         "formula": "$$\\eta_{\\text{Brayton}} = 1 - \\frac{1}{r_p^{(k-1)/k}}, \\quad r_p = \\frac{P_2}{P_1}$$",
                         "description": "Thermal efficiency of an air-standard gas turbine cycle operating with isentropic compression, constant-pressure combustion, isentropic expansion, and exhaust.",
                         "examTip": "Found in Thermodynamics. Efficiency depends strictly on compressor pressure ratio $r_p$ and specific heat ratio $k$.",
@@ -922,6 +946,8 @@
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -931,6 +957,8 @@
                 },
                 {
                         "title": "Exergy (Availability) of a Closed System",
+			"imageUrl": "assets/images/exergy_availability_closed_system.jpg",
+			"imageTitle": "Exergy (Availability) of a Closed System Blueprint",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0)$$",
                         "description": "The maximum theoretical useful work obtainable as a system comes into thermodynamic equilibrium with an environment at $(T_0, P_0)$.",
                         "examTip": "Found in Thermodynamics. Exergy destroyed in any real process is directly proportional to entropy generation: $X_{\\text{destroyed}} = T_0 S_{\\text{gen}}$.",
@@ -940,6 +968,8 @@
                 },
                 {
                         "title": "Psychrometric Humidity Ratio and Relative Humidity",
+			"imageUrl": "assets/images/psychrometric_humidity_ratio_relative_humidity.jpg",
+			"imageTitle": "Psychrometric Humidity Ratio and Relative Humidity Blueprint",
                         "formula": "$$\\omega = 0.622 \\frac{P_v}{P - P_v}, \\quad \\phi = \\frac{P_v}{P_{sat}(T)}$$",
                         "description": "Humidity ratio $\\omega$ (mass of water vapor per unit mass dry air) and relative humidity $\\phi$ (ratio of vapor partial pressure to saturation pressure at dry-bulb temperature).",
                         "examTip": "Found in Thermodynamics / HVAC. At 100% relative humidity ($phi = 1.0$), dry-bulb temperature equals wet-bulb temperature equals dew-point temperature.",
@@ -1963,6 +1993,8 @@
                 },
                 {
                         "title": "Net Positive Suction Head (NPSH)",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
@@ -2026,6 +2058,8 @@
                 },
                 {
                         "title": "Entropy",
+			"imageUrl": "assets/images/entropy_change_ideal_gases.jpg",
+			"imageTitle": "Entropy Change of Ideal Gases Blueprint",
                         "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
                         "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
                         "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$.",
@@ -2035,6 +2069,8 @@
                 },
                 {
                         "title": "Enthalpy",
+			"imageUrl": "assets/images/enthalpy_definition_specific_heat_relations.jpg",
+			"imageTitle": "Enthalpy Definition and Specific Heat Relations Blueprint",
                         "formula": "$$H = U + P V, \\quad h = u + P v, \\quad \\Delta h = c_p \\Delta T \\text{ (ideal gas)}, \\quad \\dot{Q} - \\dot{W}_s = \\dot{m}\\left(\\Delta h + \\frac{\\Delta v^2}{2} + g \\Delta z\\right)$$",
                         "description": "Enthalpy represents total heat content, combining internal energy $U$ and flow work $P V$ required to displace fluid across system boundaries. For steady-state steady-flow (SSSF) open devices (turbines, compressors, nozzles), shaft work and heat relate directly to $\\Delta h$.",
                         "examTip": "Found in Thermodynamics: First Law of Open Systems. For throttling valves (Joule-Thomson expansion), flow is isenthalpic ($h_1 = h_2$). For ideal gases, enthalpy depends ONLY on temperature: $dh = c_p dT$.",
@@ -2106,6 +2142,8 @@
                 },
                 {
                         "title": "Absolute humidity vs. Relative humidity",
+			"imageUrl": "assets/images/psychrometric_humidity_ratio_relative_humidity.jpg",
+			"imageTitle": "Psychrometric Humidity Ratio and Relative Humidity Blueprint",
                         "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
                         "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
                         "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically.",
@@ -2115,6 +2153,8 @@
                 },
                 {
                         "title": "Exergy",
+			"imageUrl": "assets/images/exergy_availability_closed_system.jpg",
+			"imageTitle": "Exergy (Availability) of a Closed System Blueprint",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
                         "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
@@ -2133,6 +2173,8 @@
                 },
                 {
                         "title": "Refrigeration Cycles",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -2165,6 +2207,8 @@
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -2429,13 +2473,19 @@
                           "title": "Centroids and Area Moments of Inertia for Standard Shapes",
                           "formula": "$$I_{\\text{rect}} = \\frac{b h^3}{12}, \\quad I_{\\text{tri}} = \\frac{b h^3}{36} \\; (\\bar{y} = h/3), \\quad I_{\\text{circle}} = \\frac{\\pi d^4}{64} = \\frac{\\pi r^4}{4}, \\quad J = \\frac{\\pi d^4}{32}$$",
                           "description": "Handbook centroid locations and centroidal second moments of area for fundamental engineering geometric cross-sections.",
-                          "examTip": "Found in Statics and Mechanics of Materials. In $b h^3/12$, the dimension parallel to the neutral axis of bending is $b$, and the dimension perpendicular to the axis is $h$ (cubed)."
+                          "examTip": "Found in Statics and Mechanics of Materials. In $b h^3/12$, the dimension parallel to the neutral axis of bending is $b$, and the dimension perpendicular to the axis is $h$ (cubed).",
+                          "videoUrl": "assets/videos/Centroids_and_Area_Moments_of_Inertia_for_Standard_Shapes.mp4",
+                          "videoTitle": "Centroids and Area Moments of Inertia for Standard Shapes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Uniform Circular Motion (Centripetal Acceleration and Force)",
                           "formula": "$$a_n = \\frac{v^2}{\\rho} = \\rho \\omega^2, \\quad F_n = m a_n = m \\frac{v^2}{\\rho} = m \\rho \\omega^2$$",
                           "description": "When a particle travels at constant tangential speed $v$ along a curved path of radius $\\rho$, it undergoes continuous normal acceleration directed inward toward the center of curvature.",
-                          "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion."
+                          "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion.",
+                          "videoUrl": "assets/videos/Uniform_Circular_Motion_Centripetal_Acceleration_and_Force.mp4",
+                          "videoTitle": "Uniform Circular Motion Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Planar Rigid Body Relative Velocity and Acceleration Equations",
@@ -2459,7 +2509,10 @@
                           "title": "Equivalent Spring Stiffness for Springs in Parallel and Series",
                           "formula": "$$k_{\\text{parallel}} = \\sum_{i=1}^n k_i, \\quad \\frac{1}{k_{\\text{series}}} = \\sum_{i=1}^n \\frac{1}{k_i} \\implies k_{\\text{series}} = \\frac{k_1 k_2}{k_1 + k_2}$$",
                           "description": "Determines the effective lumped stiffness for multiple elastic elements. Parallel springs experience identical deflection (forces add); series springs carry identical force (deflections add).",
-                          "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel."
+                          "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel.",
+                          "videoUrl": "assets/videos/Equivalent_Spring_Stiffness_for_Springs_in_Parallel_and_Series.mp4",
+                          "videoTitle": "Equivalent Spring Stiffness for Springs in Parallel and Series Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Axial Stress and Elongation of Prismatic and Non-Prismatic Bars",
@@ -2492,7 +2545,10 @@
                           "title": "Differential Relationships between Load, Shear, and Moment",
                           "formula": "$$\\frac{dV}{dx} = -w(x) \\implies \\Delta V = -\\int w(x) \\, dx, \\quad \\frac{dM}{dx} = V(x) \\implies \\Delta M = \\int V(x) \\, dx$$",
                           "description": "Differential calculus relations connecting distributed lateral beam loading $w(x)$, internal shear force $V(x)$, and internal bending moment $M(x)$.",
-                          "examTip": "Found in Mechanics of Materials: Shear and Moment Diagrams. The slope of the moment diagram equals the shear force ($dM/dx = V$). Therefore, maximum bending moment occurs where shear crosses zero ($V = 0$)."
+                          "examTip": "Found in Mechanics of Materials: Shear and Moment Diagrams. The slope of the moment diagram equals the shear force ($dM/dx = V$). Therefore, maximum bending moment occurs where shear crosses zero ($V = 0$).",
+                          "videoUrl": "assets/videos/Differential_Relationships_between_Load_Shear_and_Moment.mp4",
+                          "videoTitle": "Differential Relationships between Load, Shear, and Moment Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Elastic Strain Energy in Axial, Bending, and Torsional Loading",
@@ -2504,19 +2560,28 @@
                           "title": "Combined Axial and Bending Stresses (Superposition Principle)",
                           "formula": "$$\\sigma_{\\text{total}} = \\pm \\frac{P}{A} \\pm \\frac{M_x y}{I_x} \\pm \\frac{M_y x}{I_y} = \\frac{P}{A} \\left(1 \\pm \\frac{e \\cdot c}{r^2}\\right)$$",
                           "description": "Superimposes concentric normal stress and flexural bending stresses in beams and structural columns subjected to eccentric or multi-axial loading.",
-                          "examTip": "Found in Mechanics of Materials. Check the extreme outer fibers: the side where bending and axial load have the same sign (e.g. compression + compression) experiences peak stress magnitude."
+                          "examTip": "Found in Mechanics of Materials. Check the extreme outer fibers: the side where bending and axial load have the same sign (e.g. compression + compression) experiences peak stress magnitude.",
+                          "videoUrl": "assets/videos/Combined_Axial_and_Bending_Stresses_Superposition_Principle.mp4",
+                          "videoTitle": "Combined Axial and Bending Stresses Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Engineering Stress-Strain vs. True Stress-Strain Relations",
                           "formula": "$$\\sigma_T = \\sigma_E(1 + \\epsilon_E), \\quad \\epsilon_T = \\ln(1 + \\epsilon_E) \\quad (\\text{valid up to necking})$$",
                           "description": "Engineering stress and strain are referenced to initial undeformed cross-sectional area $A_0$ and gauge length $L_0$, while true stress and strain account for instantaneous area $A$ and length $L$.",
-                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$)."
+                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$).",
+                          "videoUrl": "assets/videos/Engineering_Stress_Strain_vs_True_Stress_Strain_Relations.mp4",
+                          "videoTitle": "Engineering Stress-Strain vs. True Stress-Strain Relations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modulus of Resilience vs. Modulus of Toughness",
                           "formula": "$$u_r = \\frac{S_y^2}{2E}, \\quad u_t \\approx \\left(\\frac{S_y + S_{ut}}{2}\\right)\\epsilon_f \\approx \\int_0^{\\epsilon_f} \\sigma \\, d\\epsilon$$",
                           "description": "Modulus of resilience $u_r$ represents elastic strain energy capacity per unit volume up to yield point. Modulus of toughness $u_t$ represents total mechanical energy absorbed per unit volume up to fracture.",
-                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness."
+                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness.",
+                          "videoUrl": "assets/videos/Modulus_of_Resilience_vs_Modulus_of_Toughness.mp4",
+                          "videoTitle": "Modulus of Resilience vs. Modulus of Toughness Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "S-N Fatigue Curve and Ferrous Endurance Limit",
@@ -2528,7 +2593,10 @@
                           "title": "Iron-Carbon Microstructures (Ferrite, Austenite, Cementite, Pearlite, Martensite)",
                           "formula": "$$\\alpha\\text{-Ferrite (BCC, ductile)}, \\; \\gamma\\text{-Austenite (FCC)}, \\; \\text{Fe}_3\\text{C (Cementite)}, \\; \\text{Pearlite } (\\alpha + \\text{Fe}_3\\text{C}), \\; \\text{Martensite (BCT)}$$",
                           "description": "Equilibrium and non-equilibrium metallurgical phases of steel. Rapid quenching of austenite prevents carbon diffusion, forming hard, needle-like brittle martensite with body-centered tetragonal (BCT) lattice.",
-                          "examTip": "Found in Material Properties: Phase Diagrams. Martensite is too brittle for engineering use as quenched; it must be tempered (reheated below eutectoid $727^\\circ\\text{C}$) to restore ductility and toughness."
+                          "examTip": "Found in Material Properties: Phase Diagrams. Martensite is too brittle for engineering use as quenched; it must be tempered (reheated below eutectoid $727^\\circ\\text{C}$) to restore ductility and toughness.",
+                          "videoUrl": "assets/videos/Iron_Carbon_Microstructures_Ferrite_Austenite_Cementite_Pearlite_Martensite.mp4",
+                          "videoTitle": "Iron-Carbon Microstructures Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
@@ -2549,7 +2617,10 @@
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
                           "formula": "$$D_h = \\frac{4A}{P_{\\text{wetted}}} \\quad (D_{h,\\text{rect duct}} = \\frac{2ab}{a+b}, \\quad D_{h,\\text{annulus}} = D_o - D_i)$$",
                           "description": "Equivalent diameter used to calculate Reynolds numbers, relative roughness, and head losses in non-circular ducts and concentric pipe annuli.",
-                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$."
+                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$.",
+                          "videoUrl": "assets/videos/Hydraulic_Diameter_for_Non_Circular_Conduits.mp4",
+                          "videoTitle": "Hydraulic Diameter for Non-Circular Conduits Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
@@ -2561,7 +2632,10 @@
                           "title": "Steady-Flow Energy Equation for Open Thermodynamic Systems",
                           "formula": "$$\\dot{Q} - \\dot{W}_s = \\sum \\dot{m}_{out}\\left(h + \\frac{v^2}{2} + gz\\right)_{out} - \\sum \\dot{m}_{in}\\left(h + \\frac{v^2}{2} + gz\\right)_{in}$$",
                           "description": "First law of thermodynamics applied to open control volumes operating under steady-state steady-flow conditions (e.g. turbines, compressors, nozzles, boilers, throttling valves).",
-                          "examTip": "Found in Thermodynamics. Common simplifications: Nozzles (adiabatic, $\\dot{W}=0$, $\\Delta h + \\Delta v^2/2 = 0$), Turbines/Compressors (adiabatic $\\dot{Q}=0$, $\\dot{W}_s = \\dot{m}(h_{in} - h_{out})$), Throttling valves (isenthalpic $h_1 = h_2$)."
+                          "examTip": "Found in Thermodynamics. Common simplifications: Nozzles (adiabatic, $\\dot{W}=0$, $\\Delta h + \\Delta v^2/2 = 0$), Turbines/Compressors (adiabatic $\\dot{Q}=0$, $\\dot{W}_s = \\dot{m}(h_{in} - h_{out})$), Throttling valves (isenthalpic $h_1 = h_2$).",
+                          "videoUrl": "assets/videos/Steady_Flow_Energy_Equation_for_Open_Thermodynamic_Systems.mp4",
+                          "videoTitle": "Steady-Flow Energy Equation Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Isentropic Relations for Ideal Gas Expansion and Compression",
@@ -2579,7 +2653,10 @@
                           "title": "Isentropic Efficiencies of Turbines and Compressors",
                           "formula": "$$\\eta_{\\text{turb}} = \\frac{w_{\\text{actual}}}{w_{\\text{isentropic}}} = \\frac{h_1 - h_{2a}}{h_1 - h_{2s}}, \\quad \\eta_{\\text{comp}} = \\frac{w_{\\text{isentropic}}}{w_{\\text{actual}}} = \\frac{h_{2s} - h_1}{h_{2a} - h_1}$$",
                           "description": "Measures real device performance relative to an idealized reversible adiabatic baseline operating between identical inlet state and exit pressure.",
-                          "examTip": "Found in Thermodynamics: Gas and Vapor Power Cycles. Mnemonic: Efficiencies are always $\\le 1.0$. Turbines produce less work than ideal ($w_a < w_s$); compressors consume more work than ideal ($w_a > w_s$)."
+                          "examTip": "Found in Thermodynamics: Gas and Vapor Power Cycles. Mnemonic: Efficiencies are always $\\le 1.0$. Turbines produce less work than ideal ($w_a < w_s$); compressors consume more work than ideal ($w_a > w_s$).",
+                          "videoUrl": "assets/videos/Isentropic_Efficiencies_of_Turbines_and_Compressors.mp4",
+                          "videoTitle": "Isentropic Efficiencies of Turbines and Compressors Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Gas Turbine Regenerator Thermal Effectiveness",
@@ -2597,13 +2674,19 @@
                           "title": "Effectiveness-NTU Method for Heat Exchangers",
                           "formula": "$$q = \\epsilon C_{\\text{min}}(T_{h,in} - T_{c,in}), \\quad NTU = \\frac{U A}{C_{\\text{min}}}, \\quad C_r = \\frac{C_{\\text{min}}}{C_{\\text{max}}} = \\frac{(\\dot{m} c_p)_{\\text{min}}}{(\\dot{m} c_p)_{\\text{max}}}$$",
                           "description": "Method for analyzing heat exchangers when outlet fluid temperatures are unknown, avoiding iterative trial-and-error required by the LMTD method.",
-                          "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations."
+                          "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations.",
+                          "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+                          "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Closed-Loop Feedback Control System Transfer Function",
                           "formula": "$$T(s) = \\frac{Y(s)}{R(s)} = \\frac{G(s)}{1 + G(s)H(s)}, \\quad \\text{Characteristic Eq: } 1 + G(s)H(s) = 0$$",
                           "description": "Standard closed-loop canonical transfer function for a plant with forward gain $G(s)$ and negative feedback sensor transfer function $H(s)$. System stability is determined entirely by the roots of characteristic equation $1 + G(s)H(s) = 0$.",
-                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback."
+                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback.",
+                          "videoUrl": "assets/videos/Closed_Loop_Feedback_Control_System_Transfer_Function.mp4",
+                          "videoTitle": "Closed-Loop Feedback Control System Transfer Function Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Steady-State Error Constants and System Type",
@@ -2615,13 +2698,19 @@
                           "title": "Bode Plot Gain Margin and Phase Margin Stability Criteria",
                           "formula": "$$GM = -20\\log_{10}|G(j\\omega_{180})| \\text{ dB}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{0\\text{dB}}); \\quad \\text{Stable if } GM > 0, PM > 0$$",
                           "description": "Frequency-response stability criteria. Phase margin $PM$ measures additional phase lag required at gain crossover frequency (where magnitude is $0\\text{ dB}$) to cause instability. Gain margin $GM$ is the factor by which open-loop gain can increase before instability at phase crossover ($-180^\\circ$).",
-                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response."
+                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response.",
+                          "videoUrl": "assets/videos/Bode_Plot_Gain_Margin_and_Phase_Margin_Stability_Criteria.mp4",
+                          "videoTitle": "Bode Plot Gain Margin and Phase Margin Stability Criteria Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor",
                           "formula": "$$\\text{Thermocouple: } V = S_{AB}(T_1 - T_2); \\quad \\text{RTD: } R_T = R_0(1 + \\alpha \\Delta T); \\quad \\text{Thermistor: } R_T = R_0 e^{\\beta(1/T - 1/T_0)}$$",
                           "description": "Compares fundamental temperature transduction principles: Thermocouple (Seebeck thermoelectric voltage at bimetallic junction), RTD (linear positive temperature resistance in platinum), Thermistor (highly sensitive non-linear NTC semiconductor).",
-                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range."
+                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range.",
+                          "videoUrl": "assets/videos/Temperature_Sensors_Thermocouple_vs_RTD_vs_Thermistor.mp4",
+                          "videoTitle": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Maximum Shear Stress Theory (Tresca Yield Criterion for Ductile Metals)",
@@ -2657,7 +2746,10 @@
                           "title": "Spur Gear Geometry (Diametral Pitch, Module, Pitch Diameter, Speed Ratio)",
                           "formula": "$$P_d = \\frac{N}{d}, \\quad m = \\frac{d}{N}, \\quad p = \\frac{\\pi d}{N} = \\pi m = \\frac{\\pi}{P_d}, \\quad \\frac{\\omega_1}{\\omega_2} = \\frac{N_2}{N_1} = \\frac{d_2}{d_1}$$",
                           "description": "Geometric relationships between tooth count $N$, pitch circle diameter $d$, circular pitch $p$, diametral pitch $P_d$ (teeth per inch), metric module $m$ (mm per tooth), and gear velocity ratio.",
-                          "examTip": "Found in Mechanical Design: Gears. Mating gears MUST have the same diametral pitch $P_d$ (or same module $m$) and the same pressure angle $\\phi$ (typically $20^\\circ$) to mesh properly."
+                          "examTip": "Found in Mechanical Design: Gears. Mating gears MUST have the same diametral pitch $P_d$ (or same module $m$) and the same pressure angle $\\phi$ (typically $20^\\circ$) to mesh properly.",
+                          "videoUrl": "assets/videos/Spur_Gear_Geometry_Diametral_Pitch_Module_Pitch_Diameter_Speed_Ratio.mp4",
+                          "videoTitle": "Spur Gear Geometry Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Equivalent Dynamic Radial Load on Rolling Element Bearings",
@@ -2895,6 +2987,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
@@ -4963,6 +5057,8 @@
                 },
                 {
                         "title": "Net Positive Suction Head (NPSH)",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
@@ -5149,13 +5245,19 @@
                           "title": "Centroids and Area Moments of Inertia for Standard Shapes",
                           "formula": "$$I_{\\text{rect}} = \\frac{b h^3}{12}, \\quad I_{\\text{tri}} = \\frac{b h^3}{36} \\; (\\bar{y} = h/3), \\quad I_{\\text{circle}} = \\frac{\\pi d^4}{64} = \\frac{\\pi r^4}{4}, \\quad J = \\frac{\\pi d^4}{32}$$",
                           "description": "Handbook centroid locations and centroidal second moments of area for fundamental engineering geometric cross-sections.",
-                          "examTip": "Found in Statics and Mechanics of Materials. In $b h^3/12$, the dimension parallel to the neutral axis of bending is $b$, and the dimension perpendicular to the axis is $h$ (cubed)."
+                          "examTip": "Found in Statics and Mechanics of Materials. In $b h^3/12$, the dimension parallel to the neutral axis of bending is $b$, and the dimension perpendicular to the axis is $h$ (cubed).",
+                          "videoUrl": "assets/videos/Centroids_and_Area_Moments_of_Inertia_for_Standard_Shapes.mp4",
+                          "videoTitle": "Centroids and Area Moments of Inertia for Standard Shapes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Uniform Circular Motion (Centripetal Acceleration and Force)",
                           "formula": "$$a_n = \\frac{v^2}{\\rho} = \\rho \\omega^2, \\quad F_n = m a_n = m \\frac{v^2}{\\rho} = m \\rho \\omega^2$$",
                           "description": "When a particle travels at constant tangential speed $v$ along a curved path of radius $\\rho$, it undergoes continuous normal acceleration directed inward toward the center of curvature.",
-                          "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion."
+                          "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion.",
+                          "videoUrl": "assets/videos/Uniform_Circular_Motion_Centripetal_Acceleration_and_Force.mp4",
+                          "videoTitle": "Uniform Circular Motion Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Planar Rigid Body Relative Velocity and Acceleration Equations",
@@ -5179,7 +5281,10 @@
                           "title": "Equivalent Spring Stiffness for Springs in Parallel and Series",
                           "formula": "$$k_{\\text{parallel}} = \\sum_{i=1}^n k_i, \\quad \\frac{1}{k_{\\text{series}}} = \\sum_{i=1}^n \\frac{1}{k_i} \\implies k_{\\text{series}} = \\frac{k_1 k_2}{k_1 + k_2}$$",
                           "description": "Determines the effective lumped stiffness for multiple elastic elements. Parallel springs experience identical deflection (forces add); series springs carry identical force (deflections add).",
-                          "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel."
+                          "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel.",
+                          "videoUrl": "assets/videos/Equivalent_Spring_Stiffness_for_Springs_in_Parallel_and_Series.mp4",
+                          "videoTitle": "Equivalent Spring Stiffness for Springs in Parallel and Series Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Axial Stress and Elongation of Prismatic and Non-Prismatic Bars",
@@ -5212,7 +5317,10 @@
                           "title": "Differential Relationships between Load, Shear, and Moment",
                           "formula": "$$\\frac{dV}{dx} = -w(x) \\implies \\Delta V = -\\int w(x) \\, dx, \\quad \\frac{dM}{dx} = V(x) \\implies \\Delta M = \\int V(x) \\, dx$$",
                           "description": "Differential calculus relations connecting distributed lateral beam loading $w(x)$, internal shear force $V(x)$, and internal bending moment $M(x)$.",
-                          "examTip": "Found in Mechanics of Materials: Shear and Moment Diagrams. The slope of the moment diagram equals the shear force ($dM/dx = V$). Therefore, maximum bending moment occurs where shear crosses zero ($V = 0$)."
+                          "examTip": "Found in Mechanics of Materials: Shear and Moment Diagrams. The slope of the moment diagram equals the shear force ($dM/dx = V$). Therefore, maximum bending moment occurs where shear crosses zero ($V = 0$).",
+                          "videoUrl": "assets/videos/Differential_Relationships_between_Load_Shear_and_Moment.mp4",
+                          "videoTitle": "Differential Relationships between Load, Shear, and Moment Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Elastic Strain Energy in Axial, Bending, and Torsional Loading",
@@ -5224,19 +5332,28 @@
                           "title": "Combined Axial and Bending Stresses (Superposition Principle)",
                           "formula": "$$\\sigma_{\\text{total}} = \\pm \\frac{P}{A} \\pm \\frac{M_x y}{I_x} \\pm \\frac{M_y x}{I_y} = \\frac{P}{A} \\left(1 \\pm \\frac{e \\cdot c}{r^2}\\right)$$",
                           "description": "Superimposes concentric normal stress and flexural bending stresses in beams and structural columns subjected to eccentric or multi-axial loading.",
-                          "examTip": "Found in Mechanics of Materials. Check the extreme outer fibers: the side where bending and axial load have the same sign (e.g. compression + compression) experiences peak stress magnitude."
+                          "examTip": "Found in Mechanics of Materials. Check the extreme outer fibers: the side where bending and axial load have the same sign (e.g. compression + compression) experiences peak stress magnitude.",
+                          "videoUrl": "assets/videos/Combined_Axial_and_Bending_Stresses_Superposition_Principle.mp4",
+                          "videoTitle": "Combined Axial and Bending Stresses Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Engineering Stress-Strain vs. True Stress-Strain Relations",
                           "formula": "$$\\sigma_T = \\sigma_E(1 + \\epsilon_E), \\quad \\epsilon_T = \\ln(1 + \\epsilon_E) \\quad (\\text{valid up to necking})$$",
                           "description": "Engineering stress and strain are referenced to initial undeformed cross-sectional area $A_0$ and gauge length $L_0$, while true stress and strain account for instantaneous area $A$ and length $L$.",
-                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$)."
+                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$).",
+                          "videoUrl": "assets/videos/Engineering_Stress_Strain_vs_True_Stress_Strain_Relations.mp4",
+                          "videoTitle": "Engineering Stress-Strain vs. True Stress-Strain Relations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modulus of Resilience vs. Modulus of Toughness",
                           "formula": "$$u_r = \\frac{S_y^2}{2E}, \\quad u_t \\approx \\left(\\frac{S_y + S_{ut}}{2}\\right)\\epsilon_f \\approx \\int_0^{\\epsilon_f} \\sigma \\, d\\epsilon$$",
                           "description": "Modulus of resilience $u_r$ represents elastic strain energy capacity per unit volume up to yield point. Modulus of toughness $u_t$ represents total mechanical energy absorbed per unit volume up to fracture.",
-                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness."
+                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness.",
+                          "videoUrl": "assets/videos/Modulus_of_Resilience_vs_Modulus_of_Toughness.mp4",
+                          "videoTitle": "Modulus of Resilience vs. Modulus of Toughness Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "S-N Fatigue Curve and Ferrous Endurance Limit",
@@ -5263,7 +5380,10 @@
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
                           "formula": "$$D_h = \\frac{4A}{P_{\\text{wetted}}} \\quad (D_{h,\\text{rect duct}} = \\frac{2ab}{a+b}, \\quad D_{h,\\text{annulus}} = D_o - D_i)$$",
                           "description": "Equivalent diameter used to calculate Reynolds numbers, relative roughness, and head losses in non-circular ducts and concentric pipe annuli.",
-                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$."
+                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$.",
+                          "videoUrl": "assets/videos/Hydraulic_Diameter_for_Non_Circular_Conduits.mp4",
+                          "videoTitle": "Hydraulic Diameter for Non-Circular Conduits Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
@@ -5740,6 +5860,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
@@ -6615,7 +6737,10 @@
                         "title": "Bode Plot Gain Margin and Phase Margin",
                         "formula": "$$GM = -20\\log_{10}|G(j\\omega_{pc})| \\text{ [dB]}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{gc})$$",
                         "description": "Stability robustness metrics in frequency domain: phase crossover frequency $\\omega_{pc}$ occurs where $\\angle G = -180^\\circ$; gain crossover frequency $\\omega_{gc}$ occurs where $|G| = 1$ ($0\\text{ dB}$).",
-                        "examTip": "Found in Control Systems. Stable systems have both positive gain margin ($GM > 0\\text{ dB}$) and positive phase margin ($PM > 0^\\circ$)."
+                        "examTip": "Found in Control Systems. Stable systems have both positive gain margin ($GM > 0\\text{ dB}$) and positive phase margin ($PM > 0^\\circ$).",
+                          "videoUrl": "assets/videos/Bode_Plot_Gain_Margin_and_Phase_Margin_Stability_Criteria.mp4",
+                          "videoTitle": "Bode Plot Gain Margin and Phase Margin Stability Criteria Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Karnaugh Map (K-Map) Simplification Rules",
@@ -7262,7 +7387,10 @@
                           "title": "Closed-Loop Feedback Control System Transfer Function",
                           "formula": "$$T(s) = \\frac{Y(s)}{R(s)} = \\frac{G(s)}{1 + G(s)H(s)}, \\quad \\text{Characteristic Eq: } 1 + G(s)H(s) = 0$$",
                           "description": "Standard closed-loop canonical transfer function for a plant with forward gain $G(s)$ and negative feedback sensor transfer function $H(s)$. System stability is determined entirely by the roots of characteristic equation $1 + G(s)H(s) = 0$.",
-                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback."
+                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback.",
+                          "videoUrl": "assets/videos/Closed_Loop_Feedback_Control_System_Transfer_Function.mp4",
+                          "videoTitle": "Closed-Loop Feedback Control System Transfer Function Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Steady-State Error Constants and System Type",
@@ -7274,13 +7402,19 @@
                           "title": "Bode Plot Gain Margin and Phase Margin Stability Criteria",
                           "formula": "$$GM = -20\\log_{10}|G(j\\omega_{180})| \\text{ dB}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{0\\text{dB}}); \\quad \\text{Stable if } GM > 0, PM > 0$$",
                           "description": "Frequency-response stability criteria. Phase margin $PM$ measures additional phase lag required at gain crossover frequency (where magnitude is $0\\text{ dB}$) to cause instability. Gain margin $GM$ is the factor by which open-loop gain can increase before instability at phase crossover ($-180^\\circ$).",
-                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response."
+                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response.",
+                          "videoUrl": "assets/videos/Bode_Plot_Gain_Margin_and_Phase_Margin_Stability_Criteria.mp4",
+                          "videoTitle": "Bode Plot Gain Margin and Phase Margin Stability Criteria Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor",
                           "formula": "$$\\text{Thermocouple: } V = S_{AB}(T_1 - T_2); \\quad \\text{RTD: } R_T = R_0(1 + \\alpha \\Delta T); \\quad \\text{Thermistor: } R_T = R_0 e^{\\beta(1/T - 1/T_0)}$$",
                           "description": "Compares fundamental temperature transduction principles: Thermocouple (Seebeck thermoelectric voltage at bimetallic junction), RTD (linear positive temperature resistance in platinum), Thermistor (highly sensitive non-linear NTC semiconductor).",
-                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range."
+                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range.",
+                          "videoUrl": "assets/videos/Temperature_Sensors_Thermocouple_vs_RTD_vs_Thermistor.mp4",
+                          "videoTitle": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
@@ -7643,6 +7777,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
@@ -8316,7 +8452,10 @@
                         "title": "Heat Exchanger Effectiveness-NTU Method ($epsilon$-NTU)",
                         "formula": "$$\\epsilon = \\frac{q}{q_{\\text{max}}} = \\frac{C_h (T_{h,in} - T_{h,out})}{C_{\\text{min}}(T_{h,in} - T_{c,in})}, \\quad NTU = \\frac{U A}{C_{\\text{min}}}$$",
                         "description": "Analyzes heat exchangers when outlet temperatures are unknown; effectiveness $\\epsilon$ is actual heat transfer rate divided by maximum thermodynamic heat transfer achievable in a counter-current exchanger of infinite area.",
-                        "examTip": "Found in Heat Transfer. Heat capacity rates are $C_h = \\dot{m}_h c_{p,h}$ and $C_c = \\dot{m}_c c_{p,c}$; $C_{\\text{min}} = \\min(C_h, C_c)$."
+                        "examTip": "Found in Heat Transfer. Heat capacity rates are $C_h = \\dot{m}_h c_{p,h}$ and $C_c = \\dot{m}_c c_{p,c}$; $C_{\\text{min}} = \\min(C_h, C_c)$.",
+                          "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+                          "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Sieder-Tate Laminar Heat Transfer Correlation",
@@ -9078,6 +9217,8 @@
                 },
                 {
                         "title": "Net Positive Suction Head (NPSH)",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
@@ -9141,6 +9282,8 @@
                 },
                 {
                         "title": "Entropy",
+			"imageUrl": "assets/images/entropy_change_ideal_gases.jpg",
+			"imageTitle": "Entropy Change of Ideal Gases Blueprint",
                         "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
                         "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
                         "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$.",
@@ -9150,6 +9293,8 @@
                 },
                 {
                         "title": "Enthalpy",
+			"imageUrl": "assets/images/enthalpy_definition_specific_heat_relations.jpg",
+			"imageTitle": "Enthalpy Definition and Specific Heat Relations Blueprint",
                         "formula": "$$H = U + P V, \\quad h = u + P v, \\quad \\Delta h = c_p \\Delta T \\text{ (ideal gas)}, \\quad \\dot{Q} - \\dot{W}_s = \\dot{m}\\left(\\Delta h + \\frac{\\Delta v^2}{2} + g \\Delta z\\right)$$",
                         "description": "Enthalpy represents total heat content, combining internal energy $U$ and flow work $P V$ required to displace fluid across system boundaries. For steady-state steady-flow (SSSF) open devices (turbines, compressors, nozzles), shaft work and heat relate directly to $\\Delta h$.",
                         "examTip": "Found in Thermodynamics: First Law of Open Systems. For throttling valves (Joule-Thomson expansion), flow is isenthalpic ($h_1 = h_2$). For ideal gases, enthalpy depends ONLY on temperature: $dh = c_p dT$.",
@@ -9199,6 +9344,8 @@
                 },
                                 {
                         "title": "Exergy",
+			"imageUrl": "assets/images/exergy_availability_closed_system.jpg",
+			"imageTitle": "Exergy (Availability) of a Closed System Blueprint",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
                         "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
@@ -9217,6 +9364,8 @@
                 },
                 {
                         "title": "Refrigeration Cycles",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -9249,6 +9398,8 @@
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -9511,7 +9662,10 @@
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
                           "formula": "$$D_h = \\frac{4A}{P_{\\text{wetted}}} \\quad (D_{h,\\text{rect duct}} = \\frac{2ab}{a+b}, \\quad D_{h,\\text{annulus}} = D_o - D_i)$$",
                           "description": "Equivalent diameter used to calculate Reynolds numbers, relative roughness, and head losses in non-circular ducts and concentric pipe annuli.",
-                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$."
+                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$.",
+                          "videoUrl": "assets/videos/Hydraulic_Diameter_for_Non_Circular_Conduits.mp4",
+                          "videoTitle": "Hydraulic Diameter for Non-Circular Conduits Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
@@ -9523,7 +9677,10 @@
                           "title": "Steady-Flow Energy Equation for Open Thermodynamic Systems",
                           "formula": "$$\\dot{Q} - \\dot{W}_s = \\sum \\dot{m}_{out}\\left(h + \\frac{v^2}{2} + gz\\right)_{out} - \\sum \\dot{m}_{in}\\left(h + \\frac{v^2}{2} + gz\\right)_{in}$$",
                           "description": "First law of thermodynamics applied to open control volumes operating under steady-state steady-flow conditions (e.g. turbines, compressors, nozzles, boilers, throttling valves).",
-                          "examTip": "Found in Thermodynamics. Common simplifications: Nozzles (adiabatic, $\\dot{W}=0$, $\\Delta h + \\Delta v^2/2 = 0$), Turbines/Compressors (adiabatic $\\dot{Q}=0$, $\\dot{W}_s = \\dot{m}(h_{in} - h_{out})$), Throttling valves (isenthalpic $h_1 = h_2$)."
+                          "examTip": "Found in Thermodynamics. Common simplifications: Nozzles (adiabatic, $\\dot{W}=0$, $\\Delta h + \\Delta v^2/2 = 0$), Turbines/Compressors (adiabatic $\\dot{Q}=0$, $\\dot{W}_s = \\dot{m}(h_{in} - h_{out})$), Throttling valves (isenthalpic $h_1 = h_2$).",
+                          "videoUrl": "assets/videos/Steady_Flow_Energy_Equation_for_Open_Thermodynamic_Systems.mp4",
+                          "videoTitle": "Steady-Flow Energy Equation Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Isentropic Relations for Ideal Gas Expansion and Compression",
@@ -9541,7 +9698,10 @@
                           "title": "Isentropic Efficiencies of Turbines and Compressors",
                           "formula": "$$\\eta_{\\text{turb}} = \\frac{w_{\\text{actual}}}{w_{\\text{isentropic}}} = \\frac{h_1 - h_{2a}}{h_1 - h_{2s}}, \\quad \\eta_{\\text{comp}} = \\frac{w_{\\text{isentropic}}}{w_{\\text{actual}}} = \\frac{h_{2s} - h_1}{h_{2a} - h_1}$$",
                           "description": "Measures real device performance relative to an idealized reversible adiabatic baseline operating between identical inlet state and exit pressure.",
-                          "examTip": "Found in Thermodynamics: Gas and Vapor Power Cycles. Mnemonic: Efficiencies are always $\\le 1.0$. Turbines produce less work than ideal ($w_a < w_s$); compressors consume more work than ideal ($w_a > w_s$)."
+                          "examTip": "Found in Thermodynamics: Gas and Vapor Power Cycles. Mnemonic: Efficiencies are always $\\le 1.0$. Turbines produce less work than ideal ($w_a < w_s$); compressors consume more work than ideal ($w_a > w_s$).",
+                          "videoUrl": "assets/videos/Isentropic_Efficiencies_of_Turbines_and_Compressors.mp4",
+                          "videoTitle": "Isentropic Efficiencies of Turbines and Compressors Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Overall Heat Transfer Coefficient (U-Factor)",
@@ -9553,13 +9713,19 @@
                           "title": "Effectiveness-NTU Method for Heat Exchangers",
                           "formula": "$$q = \\epsilon C_{\\text{min}}(T_{h,in} - T_{c,in}), \\quad NTU = \\frac{U A}{C_{\\text{min}}}, \\quad C_r = \\frac{C_{\\text{min}}}{C_{\\text{max}}} = \\frac{(\\dot{m} c_p)_{\\text{min}}}{(\\dot{m} c_p)_{\\text{max}}}$$",
                           "description": "Method for analyzing heat exchangers when outlet fluid temperatures are unknown, avoiding iterative trial-and-error required by the LMTD method.",
-                          "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations."
+                          "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations.",
+                          "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+                          "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Closed-Loop Feedback Control System Transfer Function",
                           "formula": "$$T(s) = \\frac{Y(s)}{R(s)} = \\frac{G(s)}{1 + G(s)H(s)}, \\quad \\text{Characteristic Eq: } 1 + G(s)H(s) = 0$$",
                           "description": "Standard closed-loop canonical transfer function for a plant with forward gain $G(s)$ and negative feedback sensor transfer function $H(s)$. System stability is determined entirely by the roots of characteristic equation $1 + G(s)H(s) = 0$.",
-                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback."
+                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback.",
+                          "videoUrl": "assets/videos/Closed_Loop_Feedback_Control_System_Transfer_Function.mp4",
+                          "videoTitle": "Closed-Loop Feedback Control System Transfer Function Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Steady-State Error Constants and System Type",
@@ -9571,13 +9737,19 @@
                           "title": "Bode Plot Gain Margin and Phase Margin Stability Criteria",
                           "formula": "$$GM = -20\\log_{10}|G(j\\omega_{180})| \\text{ dB}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{0\\text{dB}}); \\quad \\text{Stable if } GM > 0, PM > 0$$",
                           "description": "Frequency-response stability criteria. Phase margin $PM$ measures additional phase lag required at gain crossover frequency (where magnitude is $0\\text{ dB}$) to cause instability. Gain margin $GM$ is the factor by which open-loop gain can increase before instability at phase crossover ($-180^\\circ$).",
-                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response."
+                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response.",
+                          "videoUrl": "assets/videos/Bode_Plot_Gain_Margin_and_Phase_Margin_Stability_Criteria.mp4",
+                          "videoTitle": "Bode Plot Gain Margin and Phase Margin Stability Criteria Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor",
                           "formula": "$$\\text{Thermocouple: } V = S_{AB}(T_1 - T_2); \\quad \\text{RTD: } R_T = R_0(1 + \\alpha \\Delta T); \\quad \\text{Thermistor: } R_T = R_0 e^{\\beta(1/T - 1/T_0)}$$",
                           "description": "Compares fundamental temperature transduction principles: Thermocouple (Seebeck thermoelectric voltage at bimetallic junction), RTD (linear positive temperature resistance in platinum), Thermistor (highly sensitive non-linear NTC semiconductor).",
-                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range."
+                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range.",
+                          "videoUrl": "assets/videos/Temperature_Sensors_Thermocouple_vs_RTD_vs_Thermistor.mp4",
+                          "videoTitle": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
@@ -9743,6 +9915,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
@@ -11511,13 +11685,19 @@
                           "title": "Engineering Stress-Strain vs. True Stress-Strain Relations",
                           "formula": "$$\\sigma_T = \\sigma_E(1 + \\epsilon_E), \\quad \\epsilon_T = \\ln(1 + \\epsilon_E) \\quad (\\text{valid up to necking})$$",
                           "description": "Engineering stress and strain are referenced to initial undeformed cross-sectional area $A_0$ and gauge length $L_0$, while true stress and strain account for instantaneous area $A$ and length $L$.",
-                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$)."
+                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$).",
+                          "videoUrl": "assets/videos/Engineering_Stress_Strain_vs_True_Stress_Strain_Relations.mp4",
+                          "videoTitle": "Engineering Stress-Strain vs. True Stress-Strain Relations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modulus of Resilience vs. Modulus of Toughness",
                           "formula": "$$u_r = \\frac{S_y^2}{2E}, \\quad u_t \\approx \\left(\\frac{S_y + S_{ut}}{2}\\right)\\epsilon_f \\approx \\int_0^{\\epsilon_f} \\sigma \\, d\\epsilon$$",
                           "description": "Modulus of resilience $u_r$ represents elastic strain energy capacity per unit volume up to yield point. Modulus of toughness $u_t$ represents total mechanical energy absorbed per unit volume up to fracture.",
-                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness."
+                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness.",
+                          "videoUrl": "assets/videos/Modulus_of_Resilience_vs_Modulus_of_Toughness.mp4",
+                          "videoTitle": "Modulus of Resilience vs. Modulus of Toughness Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
@@ -11840,6 +12020,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
@@ -13247,6 +13429,8 @@
                 },
                 {
                         "title": "Net Positive Suction Head (NPSH)",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
@@ -13294,6 +13478,8 @@
                 },
                 {
                         "title": "Absolute humidity vs. Relative humidity",
+			"imageUrl": "assets/images/psychrometric_humidity_ratio_relative_humidity.jpg",
+			"imageTitle": "Psychrometric Humidity Ratio and Relative Humidity Blueprint",
                         "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
                         "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
                         "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically.",
@@ -13458,6 +13644,8 @@
                 },
                 {
                         "title": "Exergy",
+			"imageUrl": "assets/images/exergy_availability_closed_system.jpg",
+			"imageTitle": "Exergy (Availability) of a Closed System Blueprint",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
                         "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
@@ -13579,7 +13767,10 @@
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
                           "formula": "$$D_h = \\frac{4A}{P_{\\text{wetted}}} \\quad (D_{h,\\text{rect duct}} = \\frac{2ab}{a+b}, \\quad D_{h,\\text{annulus}} = D_o - D_i)$$",
                           "description": "Equivalent diameter used to calculate Reynolds numbers, relative roughness, and head losses in non-circular ducts and concentric pipe annuli.",
-                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$."
+                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$.",
+                          "videoUrl": "assets/videos/Hydraulic_Diameter_for_Non_Circular_Conduits.mp4",
+                          "videoTitle": "Hydraulic Diameter for Non-Circular Conduits Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
@@ -13978,6 +14169,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
@@ -14913,6 +15106,8 @@
                 },
                 {
                         "title": "Archimedes’ Principle of Buoyant Force",
+			"imageUrl": "assets/images/archimedes_principle_of_buoyancy.jpg",
+			"imageTitle": "Archimedes’ Principle of Buoyancy Blueprint",
                         "formula": "$$F_B = \\rho_f g V_d = \\gamma_f V_d$$",
                         "description": "Net upward hydrostatic force exerted on a submerged or floating body equals the total weight of the displaced liquid volume $V_d$.",
                         "examTip": "Found in Fluid Mechanics. Line of action of buoyant force passes through the center of buoyancy (centroid of displaced fluid volume).",
@@ -15784,6 +15979,8 @@
                 },
                 {
                         "title": "Net Positive Suction Head (NPSH)",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                         "formula": "$$\\text{NPSHA} = \\frac{P_{s,\\text{abs}}}{\\rho g} + \\frac{v_s^2}{2g} - \\frac{P_v}{\\rho g} = \\frac{P_{\\text{atm}} - P_v}{\\gamma} + z_s - h_{f,\\text{suction}}, \\quad \\text{NPSHA} > \\text{NPSHR}$$",
                         "description": "Net Positive Suction Head Available ($\\text{NPSHA}$) measures absolute fluid head above vapor pressure $P_v$ at pump suction flange. To prevent cavitation (vapor bubble formation and destructive collapse), $\\text{NPSHA}$ must strictly exceed manufacturer required value $\\text{NPSHR}$.",
                         "examTip": "Found in Fluid Mechanics: Pumps and Turbines. Always use absolute suction pressure, never gauge pressure. Cavitation occurs when local static pressure falls below fluid vapor pressure ($P \\le P_v$).",
@@ -15847,6 +16044,8 @@
                 },
                 {
                         "title": "Entropy",
+			"imageUrl": "assets/images/entropy_change_ideal_gases.jpg",
+			"imageTitle": "Entropy Change of Ideal Gases Blueprint",
                         "formula": "$$dS = \\left(\\frac{\\delta Q}{T}\\right)_{\\text{rev}}, \\quad \\Delta S_{\\text{univ}} = \\Delta S_{\\text{sys}} + \\Delta S_{\\text{surr}} \\ge 0, \\quad s_2 - s_1 = c_p \\ln\\left(\\frac{T_2}{T_1}\\right) - R \\ln\\left(\\frac{P_2}{P_1}\\right)$$",
                         "description": "Clausius definition of entropy $S$ as a thermodynamic state property measuring microscopic disorder and irreversibility. For an isolated system or universe, entropy change is strictly non-negative ($\\Delta S \\ge 0$), with equality holding only for ideal reversible processes.",
                         "examTip": "Found in Thermodynamics: Second Law. For isentropic ideal gas processes ($s_2 = s_1$): $T_2/T_1 = (P_2/P_1)^{(k-1)/k} = (v_1/v_2)^{k-1}$ where $k = c_p/c_v$.",
@@ -15856,6 +16055,8 @@
                 },
                 {
                         "title": "Enthalpy",
+			"imageUrl": "assets/images/enthalpy_definition_specific_heat_relations.jpg",
+			"imageTitle": "Enthalpy Definition and Specific Heat Relations Blueprint",
                         "formula": "$$H = U + P V, \\quad h = u + P v, \\quad \\Delta h = c_p \\Delta T \\text{ (ideal gas)}, \\quad \\dot{Q} - \\dot{W}_s = \\dot{m}\\left(\\Delta h + \\frac{\\Delta v^2}{2} + g \\Delta z\\right)$$",
                         "description": "Enthalpy represents total heat content, combining internal energy $U$ and flow work $P V$ required to displace fluid across system boundaries. For steady-state steady-flow (SSSF) open devices (turbines, compressors, nozzles), shaft work and heat relate directly to $\\Delta h$.",
                         "examTip": "Found in Thermodynamics: First Law of Open Systems. For throttling valves (Joule-Thomson expansion), flow is isenthalpic ($h_1 = h_2$). For ideal gases, enthalpy depends ONLY on temperature: $dh = c_p dT$.",
@@ -15927,6 +16128,8 @@
                 },
                 {
                         "title": "Absolute humidity vs. Relative humidity",
+			"imageUrl": "assets/images/psychrometric_humidity_ratio_relative_humidity.jpg",
+			"imageTitle": "Psychrometric Humidity Ratio and Relative Humidity Blueprint",
                         "formula": "$$\\omega = \\frac{m_v}{m_a} = 0.622 \\frac{P_v}{P - P_v} \\left[\\frac{\\text{kg}_v}{\\text{kg}_a}\\right], \\quad \\phi = \\frac{P_v}{P_{\\text{sat}}(T_{\\text{db}})} \\times 100\\%$$",
                         "description": "Humidity ratio $\\omega$ (absolute humidity) is the actual mass of water vapor per unit mass of dry air. Relative humidity $\\phi$ is the ratio of actual water vapor partial pressure $P_v$ to saturation pressure $P_{\\text{sat}}$ at dry-bulb temperature.",
                         "examTip": "Found in Mechanical and Environmental: Psychrometrics. Heating moist air increases dry-bulb temperature but leaves humidity ratio $\\omega$ unchanged, which causes relative humidity $\\phi$ to drop dramatically.",
@@ -15936,6 +16139,8 @@
                 },
                 {
                         "title": "Exergy",
+			"imageUrl": "assets/images/exergy_availability_closed_system.jpg",
+			"imageTitle": "Exergy (Availability) of a Closed System Blueprint",
                         "formula": "$$\\Phi = (U - U_0) + P_0(V - V_0) - T_0(S - S_0), \\quad X_{\\text{dest}} = T_0 S_{\\text{gen}} = T_0 \\Delta S_{\\text{univ}}$$",
                         "description": "Exergy measures maximum theoretical useful work obtainable as a system comes into mutual equilibrium with a reference environment (dead state at $P_0, T_0$). Unlike energy, exergy is NOT conserved; it is destroyed by irreversibilities ($X_{\\text{dest}} = T_0 S_{\\text{gen}}$).",
                         "examTip": "Found in Thermodynamics: Exergy. Second-law efficiency is $\\eta_{\\text{II}} = \\frac{\\text{Exergy recovered}}{\\text{Exergy supplied}} = 1 - \\frac{T_0 S_{\\text{gen}}}{\\text{Exergy supplied}}$.",
@@ -15954,6 +16159,8 @@
                 },
                 {
                         "title": "Refrigeration Cycles",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -15986,6 +16193,8 @@
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
+			"imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
+			"imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
                         "videoUrl": "assets/videos/Refrigeration_Cycle.mp4",
                         "videoTitle": "Refrigeration Cycle Explainer",
                         "videoDuration": "10s",
@@ -16340,13 +16549,19 @@
                           "title": "Centroids and Area Moments of Inertia for Standard Shapes",
                           "formula": "$$I_{\\text{rect}} = \\frac{b h^3}{12}, \\quad I_{\\text{tri}} = \\frac{b h^3}{36} \\; (\\bar{y} = h/3), \\quad I_{\\text{circle}} = \\frac{\\pi d^4}{64} = \\frac{\\pi r^4}{4}, \\quad J = \\frac{\\pi d^4}{32}$$",
                           "description": "Handbook centroid locations and centroidal second moments of area for fundamental engineering geometric cross-sections.",
-                          "examTip": "Found in Statics and Mechanics of Materials. In $b h^3/12$, the dimension parallel to the neutral axis of bending is $b$, and the dimension perpendicular to the axis is $h$ (cubed)."
+                          "examTip": "Found in Statics and Mechanics of Materials. In $b h^3/12$, the dimension parallel to the neutral axis of bending is $b$, and the dimension perpendicular to the axis is $h$ (cubed).",
+                          "videoUrl": "assets/videos/Centroids_and_Area_Moments_of_Inertia_for_Standard_Shapes.mp4",
+                          "videoTitle": "Centroids and Area Moments of Inertia for Standard Shapes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Uniform Circular Motion (Centripetal Acceleration and Force)",
                           "formula": "$$a_n = \\frac{v^2}{\\rho} = \\rho \\omega^2, \\quad F_n = m a_n = m \\frac{v^2}{\\rho} = m \\rho \\omega^2$$",
                           "description": "When a particle travels at constant tangential speed $v$ along a curved path of radius $\\rho$, it undergoes continuous normal acceleration directed inward toward the center of curvature.",
-                          "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion."
+                          "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion.",
+                          "videoUrl": "assets/videos/Uniform_Circular_Motion_Centripetal_Acceleration_and_Force.mp4",
+                          "videoTitle": "Uniform Circular Motion Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Planar Rigid Body Relative Velocity and Acceleration Equations",
@@ -16370,7 +16585,10 @@
                           "title": "Equivalent Spring Stiffness for Springs in Parallel and Series",
                           "formula": "$$k_{\\text{parallel}} = \\sum_{i=1}^n k_i, \\quad \\frac{1}{k_{\\text{series}}} = \\sum_{i=1}^n \\frac{1}{k_i} \\implies k_{\\text{series}} = \\frac{k_1 k_2}{k_1 + k_2}$$",
                           "description": "Determines the effective lumped stiffness for multiple elastic elements. Parallel springs experience identical deflection (forces add); series springs carry identical force (deflections add).",
-                          "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel."
+                          "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel.",
+                          "videoUrl": "assets/videos/Equivalent_Spring_Stiffness_for_Springs_in_Parallel_and_Series.mp4",
+                          "videoTitle": "Equivalent Spring Stiffness for Springs in Parallel and Series Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Axial Stress and Elongation of Prismatic and Non-Prismatic Bars",
@@ -16403,7 +16621,10 @@
                           "title": "Differential Relationships between Load, Shear, and Moment",
                           "formula": "$$\\frac{dV}{dx} = -w(x) \\implies \\Delta V = -\\int w(x) \\, dx, \\quad \\frac{dM}{dx} = V(x) \\implies \\Delta M = \\int V(x) \\, dx$$",
                           "description": "Differential calculus relations connecting distributed lateral beam loading $w(x)$, internal shear force $V(x)$, and internal bending moment $M(x)$.",
-                          "examTip": "Found in Mechanics of Materials: Shear and Moment Diagrams. The slope of the moment diagram equals the shear force ($dM/dx = V$). Therefore, maximum bending moment occurs where shear crosses zero ($V = 0$)."
+                          "examTip": "Found in Mechanics of Materials: Shear and Moment Diagrams. The slope of the moment diagram equals the shear force ($dM/dx = V$). Therefore, maximum bending moment occurs where shear crosses zero ($V = 0$).",
+                          "videoUrl": "assets/videos/Differential_Relationships_between_Load_Shear_and_Moment.mp4",
+                          "videoTitle": "Differential Relationships between Load, Shear, and Moment Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Elastic Strain Energy in Axial, Bending, and Torsional Loading",
@@ -16415,19 +16636,28 @@
                           "title": "Combined Axial and Bending Stresses (Superposition Principle)",
                           "formula": "$$\\sigma_{\\text{total}} = \\pm \\frac{P}{A} \\pm \\frac{M_x y}{I_x} \\pm \\frac{M_y x}{I_y} = \\frac{P}{A} \\left(1 \\pm \\frac{e \\cdot c}{r^2}\\right)$$",
                           "description": "Superimposes concentric normal stress and flexural bending stresses in beams and structural columns subjected to eccentric or multi-axial loading.",
-                          "examTip": "Found in Mechanics of Materials. Check the extreme outer fibers: the side where bending and axial load have the same sign (e.g. compression + compression) experiences peak stress magnitude."
+                          "examTip": "Found in Mechanics of Materials. Check the extreme outer fibers: the side where bending and axial load have the same sign (e.g. compression + compression) experiences peak stress magnitude.",
+                          "videoUrl": "assets/videos/Combined_Axial_and_Bending_Stresses_Superposition_Principle.mp4",
+                          "videoTitle": "Combined Axial and Bending Stresses Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Engineering Stress-Strain vs. True Stress-Strain Relations",
                           "formula": "$$\\sigma_T = \\sigma_E(1 + \\epsilon_E), \\quad \\epsilon_T = \\ln(1 + \\epsilon_E) \\quad (\\text{valid up to necking})$$",
                           "description": "Engineering stress and strain are referenced to initial undeformed cross-sectional area $A_0$ and gauge length $L_0$, while true stress and strain account for instantaneous area $A$ and length $L$.",
-                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$)."
+                          "examTip": "Found in Material Properties and Processing. True stress is always higher than engineering stress in tension because cross-sectional area contracts ($A < A_0$).",
+                          "videoUrl": "assets/videos/Engineering_Stress_Strain_vs_True_Stress_Strain_Relations.mp4",
+                          "videoTitle": "Engineering Stress-Strain vs. True Stress-Strain Relations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modulus of Resilience vs. Modulus of Toughness",
                           "formula": "$$u_r = \\frac{S_y^2}{2E}, \\quad u_t \\approx \\left(\\frac{S_y + S_{ut}}{2}\\right)\\epsilon_f \\approx \\int_0^{\\epsilon_f} \\sigma \\, d\\epsilon$$",
                           "description": "Modulus of resilience $u_r$ represents elastic strain energy capacity per unit volume up to yield point. Modulus of toughness $u_t$ represents total mechanical energy absorbed per unit volume up to fracture.",
-                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness."
+                          "examTip": "Found in Material Properties: Tensile Testing. High resilience is needed for springs (absorb energy without yielding); high toughness is needed for impact protection and crashworthiness.",
+                          "videoUrl": "assets/videos/Modulus_of_Resilience_vs_Modulus_of_Toughness.mp4",
+                          "videoTitle": "Modulus of Resilience vs. Modulus of Toughness Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "S-N Fatigue Curve and Ferrous Endurance Limit",
@@ -16439,7 +16669,10 @@
                           "title": "Iron-Carbon Microstructures (Ferrite, Austenite, Cementite, Pearlite, Martensite)",
                           "formula": "$$\\alpha\\text{-Ferrite (BCC, ductile)}, \\; \\gamma\\text{-Austenite (FCC)}, \\; \\text{Fe}_3\\text{C (Cementite)}, \\; \\text{Pearlite } (\\alpha + \\text{Fe}_3\\text{C}), \\; \\text{Martensite (BCT)}$$",
                           "description": "Equilibrium and non-equilibrium metallurgical phases of steel. Rapid quenching of austenite prevents carbon diffusion, forming hard, needle-like brittle martensite with body-centered tetragonal (BCT) lattice.",
-                          "examTip": "Found in Material Properties: Phase Diagrams. Martensite is too brittle for engineering use as quenched; it must be tempered (reheated below eutectoid $727^\\circ\\text{C}$) to restore ductility and toughness."
+                          "examTip": "Found in Material Properties: Phase Diagrams. Martensite is too brittle for engineering use as quenched; it must be tempered (reheated below eutectoid $727^\\circ\\text{C}$) to restore ductility and toughness.",
+                          "videoUrl": "assets/videos/Iron_Carbon_Microstructures_Ferrite_Austenite_Cementite_Pearlite_Martensite.mp4",
+                          "videoTitle": "Iron-Carbon Microstructures Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
@@ -16460,7 +16693,10 @@
                           "title": "Hydraulic Diameter for Non-Circular Conduits",
                           "formula": "$$D_h = \\frac{4A}{P_{\\text{wetted}}} \\quad (D_{h,\\text{rect duct}} = \\frac{2ab}{a+b}, \\quad D_{h,\\text{annulus}} = D_o - D_i)$$",
                           "description": "Equivalent diameter used to calculate Reynolds numbers, relative roughness, and head losses in non-circular ducts and concentric pipe annuli.",
-                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$."
+                          "examTip": "Found in Fluid Mechanics. Remember the factor of 4: for a standard circular pipe, $D_h = \\frac{4(\\pi D^2 / 4)}{\\pi D} = D$. For an annular duct between pipes, $D_h = D_o - D_i$.",
+                          "videoUrl": "assets/videos/Hydraulic_Diameter_for_Non_Circular_Conduits.mp4",
+                          "videoTitle": "Hydraulic Diameter for Non-Circular Conduits Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
@@ -16472,7 +16708,10 @@
                           "title": "Steady-Flow Energy Equation for Open Thermodynamic Systems",
                           "formula": "$$\\dot{Q} - \\dot{W}_s = \\sum \\dot{m}_{out}\\left(h + \\frac{v^2}{2} + gz\\right)_{out} - \\sum \\dot{m}_{in}\\left(h + \\frac{v^2}{2} + gz\\right)_{in}$$",
                           "description": "First law of thermodynamics applied to open control volumes operating under steady-state steady-flow conditions (e.g. turbines, compressors, nozzles, boilers, throttling valves).",
-                          "examTip": "Found in Thermodynamics. Common simplifications: Nozzles (adiabatic, $\\dot{W}=0$, $\\Delta h + \\Delta v^2/2 = 0$), Turbines/Compressors (adiabatic $\\dot{Q}=0$, $\\dot{W}_s = \\dot{m}(h_{in} - h_{out})$), Throttling valves (isenthalpic $h_1 = h_2$)."
+                          "examTip": "Found in Thermodynamics. Common simplifications: Nozzles (adiabatic, $\\dot{W}=0$, $\\Delta h + \\Delta v^2/2 = 0$), Turbines/Compressors (adiabatic $\\dot{Q}=0$, $\\dot{W}_s = \\dot{m}(h_{in} - h_{out})$), Throttling valves (isenthalpic $h_1 = h_2$).",
+                          "videoUrl": "assets/videos/Steady_Flow_Energy_Equation_for_Open_Thermodynamic_Systems.mp4",
+                          "videoTitle": "Steady-Flow Energy Equation Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Isentropic Relations for Ideal Gas Expansion and Compression",
@@ -16490,7 +16729,10 @@
                           "title": "Isentropic Efficiencies of Turbines and Compressors",
                           "formula": "$$\\eta_{\\text{turb}} = \\frac{w_{\\text{actual}}}{w_{\\text{isentropic}}} = \\frac{h_1 - h_{2a}}{h_1 - h_{2s}}, \\quad \\eta_{\\text{comp}} = \\frac{w_{\\text{isentropic}}}{w_{\\text{actual}}} = \\frac{h_{2s} - h_1}{h_{2a} - h_1}$$",
                           "description": "Measures real device performance relative to an idealized reversible adiabatic baseline operating between identical inlet state and exit pressure.",
-                          "examTip": "Found in Thermodynamics: Gas and Vapor Power Cycles. Mnemonic: Efficiencies are always $\\le 1.0$. Turbines produce less work than ideal ($w_a < w_s$); compressors consume more work than ideal ($w_a > w_s$)."
+                          "examTip": "Found in Thermodynamics: Gas and Vapor Power Cycles. Mnemonic: Efficiencies are always $\\le 1.0$. Turbines produce less work than ideal ($w_a < w_s$); compressors consume more work than ideal ($w_a > w_s$).",
+                          "videoUrl": "assets/videos/Isentropic_Efficiencies_of_Turbines_and_Compressors.mp4",
+                          "videoTitle": "Isentropic Efficiencies of Turbines and Compressors Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Gas Turbine Regenerator Thermal Effectiveness",
@@ -16508,13 +16750,19 @@
                           "title": "Effectiveness-NTU Method for Heat Exchangers",
                           "formula": "$$q = \\epsilon C_{\\text{min}}(T_{h,in} - T_{c,in}), \\quad NTU = \\frac{U A}{C_{\\text{min}}}, \\quad C_r = \\frac{C_{\\text{min}}}{C_{\\text{max}}} = \\frac{(\\dot{m} c_p)_{\\text{min}}}{(\\dot{m} c_p)_{\\text{max}}}$$",
                           "description": "Method for analyzing heat exchangers when outlet fluid temperatures are unknown, avoiding iterative trial-and-error required by the LMTD method.",
-                          "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations."
+                          "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations.",
+                          "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+                          "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Closed-Loop Feedback Control System Transfer Function",
                           "formula": "$$T(s) = \\frac{Y(s)}{R(s)} = \\frac{G(s)}{1 + G(s)H(s)}, \\quad \\text{Characteristic Eq: } 1 + G(s)H(s) = 0$$",
                           "description": "Standard closed-loop canonical transfer function for a plant with forward gain $G(s)$ and negative feedback sensor transfer function $H(s)$. System stability is determined entirely by the roots of characteristic equation $1 + G(s)H(s) = 0$.",
-                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback."
+                          "examTip": "Found in Measurement, Instrumentation, and Controls: System Response. For unity negative feedback, $H(s) = 1$, giving $T(s) = \\frac{G(s)}{1 + G(s)}$. A plus sign in the denominator indicates negative feedback.",
+                          "videoUrl": "assets/videos/Closed_Loop_Feedback_Control_System_Transfer_Function.mp4",
+                          "videoTitle": "Closed-Loop Feedback Control System Transfer Function Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Steady-State Error Constants and System Type",
@@ -16526,13 +16774,19 @@
                           "title": "Bode Plot Gain Margin and Phase Margin Stability Criteria",
                           "formula": "$$GM = -20\\log_{10}|G(j\\omega_{180})| \\text{ dB}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{0\\text{dB}}); \\quad \\text{Stable if } GM > 0, PM > 0$$",
                           "description": "Frequency-response stability criteria. Phase margin $PM$ measures additional phase lag required at gain crossover frequency (where magnitude is $0\\text{ dB}$) to cause instability. Gain margin $GM$ is the factor by which open-loop gain can increase before instability at phase crossover ($-180^\\circ$).",
-                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response."
+                          "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response.",
+                          "videoUrl": "assets/videos/Bode_Plot_Gain_Margin_and_Phase_Margin_Stability_Criteria.mp4",
+                          "videoTitle": "Bode Plot Gain Margin and Phase Margin Stability Criteria Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor",
                           "formula": "$$\\text{Thermocouple: } V = S_{AB}(T_1 - T_2); \\quad \\text{RTD: } R_T = R_0(1 + \\alpha \\Delta T); \\quad \\text{Thermistor: } R_T = R_0 e^{\\beta(1/T - 1/T_0)}$$",
                           "description": "Compares fundamental temperature transduction principles: Thermocouple (Seebeck thermoelectric voltage at bimetallic junction), RTD (linear positive temperature resistance in platinum), Thermistor (highly sensitive non-linear NTC semiconductor).",
-                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range."
+                          "examTip": "Found in Measurement and Instrumentation. Thermocouple: widest temp range, rugged, passive, needs cold-junction compensation. RTD: most accurate and linear. Thermistor: highest sensitivity in narrow temp range.",
+                          "videoUrl": "assets/videos/Temperature_Sensors_Thermocouple_vs_RTD_vs_Thermistor.mp4",
+                          "videoTitle": "Temperature Sensors: Thermocouple vs. RTD vs. Thermistor Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Maximum Shear Stress Theory (Tresca Yield Criterion for Ductile Metals)",
@@ -16911,6 +17165,8 @@
             },
             {
                 "title": "Centrifugal Pump Cavitation and Available vs. Required NPSH",
+			"imageUrl": "assets/images/net_positive_suction_head_available_npsha.jpg",
+			"imageTitle": "Net Positive Suction Head Available (NPSHA) Blueprint",
                 "formula": "$$NPSH_A = \\frac{P_{\\text{suction}}}{\\gamma} + \\frac{v_s^2}{2g} - \\frac{P_{\\text{vap}}}{\\gamma} = h_{\\text{atm}} \\pm h_s - h_f - h_{\\text{vap}} > NPSH_R$$",
                 "description": "Prevents destructive vapor bubble collapse (cavitation) inside pump impellers: Net Positive Suction Head Available ($NPSH_A$) at the pump suction nozzle must exceed manufacturer's required $NPSH_R$ with adequate safety margin.",
                 "examTip": "Found in Chemical / Mechanical: Fluid Mechanics. Vapor pressure $P_{\\text{vap}}$ increases rapidly with fluid temperature, sharply decreasing available $NPSH$ and promoting cavitation."
