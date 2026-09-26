@@ -6086,6 +6086,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                           "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                           "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                           "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -6151,7 +6153,10 @@ window.calcEvaluate = function() {
                 "title": "Taylor Series and Maclaurin Series Expansions",
                 "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                 "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                      "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                      "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                      "videoDuration": "10s"
             },
                 {
                 "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
@@ -6253,6 +6258,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -6291,6 +6298,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Divergence of a Vector Field",
+      "imageUrl": "assets/images/divergence_of_a_vector_field.jpg",
+      "imageTitle": "Divergence of a Vector Field and Radial Flux Diagram",
                           "formula": "$$\\text{div } \\mathbf{F} = \\nabla \\cdot \\mathbf{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}, \\quad \\iiint_V (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_S (\\mathbf{F} \\cdot \\mathbf{n}) \\, dA$$",
                           "description": "Measures the net volumetric outward flux density of a vector field from an infinitesimal volume. A positive divergence signifies a source; a negative divergence indicates a sink. If $\\nabla \\cdot \\mathbf{F} = 0$, the field is incompressible (solenoidal).",
                           "examTip": "Found in Mathematics: Vector Analysis. Formulates the differential continuity equation in fluid mechanics: $\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\mathbf{v}) = 0$.",
@@ -6315,6 +6324,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -6324,6 +6335,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -6342,6 +6355,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -6351,6 +6366,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -6360,6 +6377,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -6369,6 +6388,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -6477,6 +6498,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -6520,6 +6543,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Permutations and Combinations Counting Rules",
+      "imageUrl": "assets/images/permutations_combinations_counting_rules.jpg",
+      "imageTitle": "Permutations and Combinations Counting Rules",
                         "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
                         "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
                         "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
@@ -6631,6 +6656,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Signal Words",
+      "imageUrl": "assets/images/safety_signal_words_danger_warning.jpg",
+      "imageTitle": "OSHA and ANSI Safety Signal Word Severity Hierarchy",
                         "videoUrl": "assets/videos/Signal_Words.mp4",
                         "videoTitle": "Signal Words Explainer",
                         "videoDuration": "10s",
@@ -6699,7 +6726,10 @@ window.calcEvaluate = function() {
                 "title": "Chronic Daily Intake Chemical Exposure Formulation",
                 "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
                 "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
+                      "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
+                      "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
+                      "videoDuration": "10s"
             },
                 {
                 "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
@@ -6723,13 +6753,19 @@ window.calcEvaluate = function() {
                 "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
                 "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
                 "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
+                      "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
+                      "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
+                      "videoDuration": "10s"
             },
                 {
                 "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
                 "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
                 "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
+                      "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
+                      "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
+                      "videoDuration": "10s"
             },
                 {
                           "title": "Intellectual Property: Patents vs. Trade Secrets vs. Copyrights",
@@ -6807,6 +6843,8 @@ window.calcEvaluate = function() {
             },
                 {
                         "title": "Straight-Line Depreciation Method",
+      "imageUrl": "assets/images/straight_line_depreciation_method.jpg",
+      "imageTitle": "Straight-Line Depreciation Book Value Schedule",
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
                         "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
@@ -6854,6 +6892,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Break-Even Production Volume",
+      "imageUrl": "assets/images/break_even_production_volume.jpg",
+      "imageTitle": "Break-Even Production Volume Analysis Chart",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
@@ -6925,7 +6965,10 @@ window.calcEvaluate = function() {
                 "title": "Earned Value Management: Cost Variance and Schedule Variance",
                 "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
                 "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
-                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$).",
+                      "videoUrl": "assets/videos/Earned_Value_Management_Cost_Variance_and_Schedule_Variance.mp4",
+                      "videoTitle": "Earned Value Management: Cost Variance and Schedule Variance Explainer",
+                      "videoDuration": "10s"
             },
                 {
                 "title": "Earned Value Management: Cost and Schedule Performance Indices",
@@ -6999,6 +7042,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Wheatstone Bridge Null Balance Condition",
+      "imageUrl": "assets/images/wheatstone_bridge_null_balance.jpg",
+      "imageTitle": "Wheatstone Bridge Circuit Null Balance Condition",
                         "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
                         "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
                         "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance.",
@@ -7008,6 +7053,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "First-Order RC Transient Response",
+      "imageUrl": "assets/images/first_order_rc_transient_response.jpg",
+      "imageTitle": "First-Order RC Transient Response Curves",
                         "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
                         "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
                         "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$.",
@@ -7017,6 +7064,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Thevenin’s Equivalent Circuit Theorem",
+      "imageUrl": "assets/images/thevenins_equivalent_circuit.jpg",
+      "imageTitle": "Thevenin's Equivalent Circuit with Series Source and Load",
                         "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
                         "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
                         "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
@@ -7026,6 +7075,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Operational Amplifier Golden Rules",
+      "imageUrl": "assets/images/ideal_op_amp_golden_rules.jpg",
+      "imageTitle": "Ideal Operational Amplifier Golden Rules and Virtual Short",
                         "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
                         "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
                         "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
@@ -7096,6 +7147,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
+      "imageUrl": "assets/images/ac_power_triangle_real_reactive_apparent.jpg",
+      "imageTitle": "AC Power Triangle (Real, Reactive, Apparent Power, and Power Factor)",
                           "formula": "$$\\mathbf{S} = P + jQ = V_{\\text{rms}} I_{\\text{rms}}^*, \\quad |S| = \\sqrt{P^2 + Q^2}, \\quad PF = \\cos\\theta = \\frac{P}{|S|}$$",
                           "description": "Relates active/real power $P$ (watts, dissipated as work/heat), reactive power $Q$ (VAR, stored in magnetic/electric fields), complex apparent power $S$ (VA), and power factor $PF$.",
                           "examTip": "Found in Electricity and Magnetism: AC Circuits. Inductive loads (motors) have lagging power factor ($Q > 0$). Adding parallel capacitors supplies leading reactive power, correcting power factor toward unity without altering real power $P$.",
@@ -7149,6 +7202,8 @@ window.calcEvaluate = function() {
             },
                 {
                         "title": "Resolution of a Force",
+      "imageUrl": "assets/images/resolution_of_a_force_vector.jpg",
+      "imageTitle": "Resolution of a Force Vector into Rectangular Components",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
                         "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
@@ -7158,6 +7213,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
+      "imageUrl": "assets/images/lamis_theorem_concurrent_forces.jpg",
+      "imageTitle": "Lami's Theorem for Concurrent Coplanar Forces in Equilibrium",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
                         "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
@@ -7187,6 +7244,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Free Body Diagram Support Reaction Rules",
+      "imageUrl": "assets/images/free_body_diagram_support_reactions.jpg",
+      "imageTitle": "Free Body Diagram Structural Support Reaction Rules",
                           "formula": "$$\\text{Roller: } 1 \\text{ normal force}; \\quad \\text{Pin/Hinge: } 2 \\text{ orthogonal forces } (R_x, R_y); \\quad \\text{Fixed: } 2 \\text{ forces } + 1 \\text{ reaction moment } (M_R)$$",
                           "description": "Determines the unknown constraints and reaction components introduced when isolating a body from its mechanical supports.",
                           "examTip": "Found in Statics: Equilibrium. Count unknown reactions before solving: if unknowns equal equilibrium equations ($3$ in 2D), structure is statically determinate. If unknowns $> 3$, structure is indeterminate.",
@@ -7268,6 +7327,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+      "imageUrl": "assets/images/area_moment_of_inertia_second_moment.jpg",
+      "imageTitle": "Area Moment of Inertia (Second Moment of Area) Diagram",
                         "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
                         "videoTitle": "Area Moment of Inertia Explainer",
                         "videoDuration": "10s",
@@ -7321,6 +7382,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Limiting friction",
+      "imageUrl": "assets/images/limiting_friction_static_kinetic.jpg",
+      "imageTitle": "Limiting Friction and Static vs Kinetic Friction Regions",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
                         "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
@@ -7390,6 +7453,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Projectile Motion",
+      "imageUrl": "assets/images/projectile_motion_kinematics.jpg",
+      "imageTitle": "Projectile Motion Kinematics and Parabolic Trajectory",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
                         "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground.",
@@ -7399,6 +7464,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Uniform Circular Motion (Centripetal Acceleration and Force)",
+      "imageUrl": "assets/images/uniform_circular_motion_centripetal.jpg",
+      "imageTitle": "Uniform Circular Motion, Centripetal Acceleration, and Force",
                           "formula": "$$a_n = \\frac{v^2}{\\rho} = \\rho \\omega^2, \\quad F_n = m a_n = m \\frac{v^2}{\\rho} = m \\rho \\omega^2$$",
                           "description": "When a particle travels at constant tangential speed $v$ along a curved path of radius $\\rho$, it undergoes continuous normal acceleration directed inward toward the center of curvature.",
                           "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion.",
@@ -7422,6 +7489,8 @@ window.calcEvaluate = function() {
             },
                 {
                         "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
+      "imageUrl": "assets/images/potential_energy_gravity_spring_forms.jpg",
+      "imageTitle": "Potential Energy in Gravitational and Elastic Spring Forms",
                         "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
                         "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
                         "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$.",
@@ -7431,6 +7500,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kinetic Energy",
+      "imageUrl": "assets/images/kinetic_energy_translational_rotational.jpg",
+      "imageTitle": "Kinetic Energy: Translational and Rotational Forms",
                         "videoUrl": "assets/videos/Kinetic_Energy.mp4",
                         "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
                         "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
@@ -7460,6 +7531,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Instantaneous Center of Rotation",
+      "imageUrl": "assets/images/instantaneous_center_of_rotation.jpg",
+      "imageTitle": "Instantaneous Center of Rotation (ICR) Planar Mechanism",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
                         "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!",
@@ -7942,6 +8015,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Gibbs Phase Rule",
+      "imageUrl": "assets/images/gibbs_phase_rule_equilibrium.jpg",
+      "imageTitle": "Gibbs Phase Rule and Multiphase Equilibrium Diagram",
                         "formula": "$$F = C - P + 2$$",
                         "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
                         "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
@@ -7979,7 +8054,10 @@ window.calcEvaluate = function() {
                 "title": "First-Order Chemical Reaction Half-Life",
                 "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
                 "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
-                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration.",
+                      "videoUrl": "assets/videos/First_Order_Chemical_Reaction_Half_Life.mp4",
+                      "videoTitle": "First-Order Chemical Reaction Half-Life Explainer",
+                      "videoDuration": "10s"
             },
                 {
                         "title": "Newton's Law of Viscosity",
@@ -8010,6 +8088,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capillarity",
+      "imageUrl": "assets/images/capillarity_fluid_surface_tension.jpg",
+      "imageTitle": "Capillarity: Capillary Rise and Depression in Liquid Tubes",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
@@ -8064,6 +8144,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Manometers",
+      "imageUrl": "assets/images/manometers_fluid_pressure_measurement.jpg",
+      "imageTitle": "Manometers and Hydrostatic Fluid Pressure Measurement",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
@@ -10290,6 +10372,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Wheatstone Bridge Null Balance Condition",
+      "imageUrl": "assets/images/wheatstone_bridge_null_balance.jpg",
+      "imageTitle": "Wheatstone Bridge Circuit Null Balance Condition",
                         "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
                         "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
                         "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance.",
@@ -10310,6 +10394,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Permutations and Combinations Counting Rules",
+      "imageUrl": "assets/images/permutations_combinations_counting_rules.jpg",
+      "imageTitle": "Permutations and Combinations Counting Rules",
                         "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
                         "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
                         "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
@@ -10355,6 +10441,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Straight-Line Depreciation Method",
+      "imageUrl": "assets/images/straight_line_depreciation_method.jpg",
+      "imageTitle": "Straight-Line Depreciation Book Value Schedule",
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
                         "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
@@ -10502,6 +10590,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Break-Even Production Volume",
+      "imageUrl": "assets/images/break_even_production_volume.jpg",
+      "imageTitle": "Break-Even Production Volume Analysis Chart",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
@@ -10560,6 +10650,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -10569,6 +10661,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -10578,6 +10672,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -10690,6 +10786,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -10699,6 +10797,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -10717,6 +10817,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -10764,6 +10866,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -10845,6 +10949,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -10852,6 +10958,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Resolution of a Force",
+      "imageUrl": "assets/images/resolution_of_a_force_vector.jpg",
+      "imageTitle": "Resolution of a Force Vector into Rectangular Components",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
                         "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
@@ -10870,6 +10978,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+      "imageUrl": "assets/images/area_moment_of_inertia_second_moment.jpg",
+      "imageTitle": "Area Moment of Inertia (Second Moment of Area) Diagram",
                         "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
                         "videoTitle": "Area Moment of Inertia Explainer",
                         "videoDuration": "10s",
@@ -10924,6 +11034,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
+      "imageUrl": "assets/images/lamis_theorem_concurrent_forces.jpg",
+      "imageTitle": "Lami's Theorem for Concurrent Coplanar Forces in Equilibrium",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
                         "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
@@ -10933,6 +11045,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Limiting friction",
+      "imageUrl": "assets/images/limiting_friction_static_kinetic.jpg",
+      "imageTitle": "Limiting Friction and Static vs Kinetic Friction Regions",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
                         "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
@@ -10980,6 +11094,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Projectile Motion",
+      "imageUrl": "assets/images/projectile_motion_kinematics.jpg",
+      "imageTitle": "Projectile Motion Kinematics and Parabolic Trajectory",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
                         "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground.",
@@ -10989,6 +11105,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
+      "imageUrl": "assets/images/potential_energy_gravity_spring_forms.jpg",
+      "imageTitle": "Potential Energy in Gravitational and Elastic Spring Forms",
                         "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
                         "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
                         "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$.",
@@ -10998,6 +11116,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Kinetic Energy",
+      "imageUrl": "assets/images/kinetic_energy_translational_rotational.jpg",
+      "imageTitle": "Kinetic Energy: Translational and Rotational Forms",
                         "videoUrl": "assets/videos/Kinetic_Energy.mp4",
                         "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
                         "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
@@ -11005,6 +11125,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Instantaneous Center of Rotation",
+      "imageUrl": "assets/images/instantaneous_center_of_rotation.jpg",
+      "imageTitle": "Instantaneous Center of Rotation (ICR) Planar Mechanism",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
                         "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!",
@@ -11050,6 +11172,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capillarity",
+      "imageUrl": "assets/images/capillarity_fluid_surface_tension.jpg",
+      "imageTitle": "Capillarity: Capillary Rise and Depression in Liquid Tubes",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
@@ -11059,6 +11183,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Manometers",
+      "imageUrl": "assets/images/manometers_fluid_pressure_measurement.jpg",
+      "imageTitle": "Manometers and Hydrostatic Fluid Pressure Measurement",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
@@ -11151,7 +11277,10 @@ window.calcEvaluate = function() {
                         "title": "pH scale",
                         "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
                         "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
-                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$.",
+                          "videoUrl": "assets/videos/pH_scale.mp4",
+                          "videoTitle": "pH Scale and Acid-Base Chemistry Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Aerobic vs Anaerobic Processes",
@@ -11209,6 +11338,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Divergence of a Vector Field",
+      "imageUrl": "assets/images/divergence_of_a_vector_field.jpg",
+      "imageTitle": "Divergence of a Vector Field and Radial Flux Diagram",
                           "formula": "$$\\text{div } \\mathbf{F} = \\nabla \\cdot \\mathbf{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}, \\quad \\iiint_V (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_S (\\mathbf{F} \\cdot \\mathbf{n}) \\, dA$$",
                           "description": "Measures the net volumetric outward flux density of a vector field from an infinitesimal volume. A positive divergence signifies a source; a negative divergence indicates a sink. If $\\nabla \\cdot \\mathbf{F} = 0$, the field is incompressible (solenoidal).",
                           "examTip": "Found in Mathematics: Vector Analysis. Formulates the differential continuity equation in fluid mechanics: $\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\mathbf{v}) = 0$.",
@@ -11321,6 +11452,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Free Body Diagram Support Reaction Rules",
+      "imageUrl": "assets/images/free_body_diagram_support_reactions.jpg",
+      "imageTitle": "Free Body Diagram Structural Support Reaction Rules",
                           "formula": "$$\\text{Roller: } 1 \\text{ normal force}; \\quad \\text{Pin/Hinge: } 2 \\text{ orthogonal forces } (R_x, R_y); \\quad \\text{Fixed: } 2 \\text{ forces } + 1 \\text{ reaction moment } (M_R)$$",
                           "description": "Determines the unknown constraints and reaction components introduced when isolating a body from its mechanical supports.",
                           "examTip": "Found in Statics: Equilibrium. Count unknown reactions before solving: if unknowns equal equilibrium equations ($3$ in 2D), structure is statically determinate. If unknowns $> 3$, structure is indeterminate.",
@@ -11348,6 +11481,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Uniform Circular Motion (Centripetal Acceleration and Force)",
+      "imageUrl": "assets/images/uniform_circular_motion_centripetal.jpg",
+      "imageTitle": "Uniform Circular Motion, Centripetal Acceleration, and Force",
                           "formula": "$$a_n = \\frac{v^2}{\\rho} = \\rho \\omega^2, \\quad F_n = m a_n = m \\frac{v^2}{\\rho} = m \\rho \\omega^2$$",
                           "description": "When a particle travels at constant tangential speed $v$ along a curved path of radius $\\rho$, it undergoes continuous normal acceleration directed inward toward the center of curvature.",
                           "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion.",
@@ -11555,6 +11690,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                           "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                           "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                           "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -11885,7 +12022,10 @@ window.calcEvaluate = function() {
                 "title": "Earned Value Management: Cost Variance and Schedule Variance",
                 "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
                 "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
-                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$).",
+                      "videoUrl": "assets/videos/Earned_Value_Management_Cost_Variance_and_Schedule_Variance.mp4",
+                      "videoTitle": "Earned Value Management: Cost Variance and Schedule Variance Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Earned Value Management: Cost and Schedule Performance Indices",
@@ -12106,7 +12246,10 @@ window.calcEvaluate = function() {
                 "title": "Chronic Daily Intake Chemical Exposure Formulation",
                 "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
                 "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
+                      "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
+                      "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
@@ -12178,13 +12321,19 @@ window.calcEvaluate = function() {
                 "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
                 "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
                 "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
+                      "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
+                      "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Taylor Series and Maclaurin Series Expansions",
                 "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                 "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                      "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                      "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
@@ -12268,12 +12417,17 @@ window.calcEvaluate = function() {
                 "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
                 "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
                 "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
+                      "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
+                      "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
+                      "videoDuration": "10s"
             }
         ],
         "Electrical and Computer": [
                 {
                         "title": "Thevenin’s Equivalent Circuit Theorem",
+      "imageUrl": "assets/images/thevenins_equivalent_circuit.jpg",
+      "imageTitle": "Thevenin's Equivalent Circuit with Series Source and Load",
                         "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
                         "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
                         "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
@@ -12329,6 +12483,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "First-Order RC Transient Response",
+      "imageUrl": "assets/images/first_order_rc_transient_response.jpg",
+      "imageTitle": "First-Order RC Transient Response Curves",
                         "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
                         "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
                         "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$.",
@@ -12534,6 +12690,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Wheatstone Bridge Null Balance Condition",
+      "imageUrl": "assets/images/wheatstone_bridge_null_balance.jpg",
+      "imageTitle": "Wheatstone Bridge Circuit Null Balance Condition",
                         "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies R_1 R_4 = R_2 R_3$$",
                         "description": "When the cross-ratio of bridge resistances is equal, the potential difference across the detector branch is exactly zero ($V_{\\text{out}} = 0\\text{ V}$), enabling ultra-precise resistance measurements.",
                         "examTip": "Found in Instrumentation / Circuits. If unknown resistor $R_x = R_1$, then $R_x = R_2 (R_3 / R_4)$ at bridge balance.",
@@ -12978,6 +13136,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Ideal Operational Amplifier Golden Rules",
+      "imageUrl": "assets/images/ideal_op_amp_golden_rules.jpg",
+      "imageTitle": "Ideal Operational Amplifier Golden Rules and Virtual Short",
                         "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
                         "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
                         "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
@@ -13090,6 +13250,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -13099,6 +13261,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -13108,6 +13272,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -13220,6 +13386,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -13229,6 +13397,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -13247,6 +13417,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -13294,6 +13466,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -13375,6 +13549,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -13409,6 +13585,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Divergence of a Vector Field",
+      "imageUrl": "assets/images/divergence_of_a_vector_field.jpg",
+      "imageTitle": "Divergence of a Vector Field and Radial Flux Diagram",
                           "formula": "$$\\text{div } \\mathbf{F} = \\nabla \\cdot \\mathbf{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}, \\quad \\iiint_V (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_S (\\mathbf{F} \\cdot \\mathbf{n}) \\, dA$$",
                           "description": "Measures the net volumetric outward flux density of a vector field from an infinitesimal volume. A positive divergence signifies a source; a negative divergence indicates a sink. If $\\nabla \\cdot \\mathbf{F} = 0$, the field is incompressible (solenoidal).",
                           "examTip": "Found in Mathematics: Vector Analysis. Formulates the differential continuity equation in fluid mechanics: $\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\mathbf{v}) = 0$.",
@@ -13521,6 +13699,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
+      "imageUrl": "assets/images/ac_power_triangle_real_reactive_apparent.jpg",
+      "imageTitle": "AC Power Triangle (Real, Reactive, Apparent Power, and Power Factor)",
                           "formula": "$$\\mathbf{S} = P + jQ = V_{\\text{rms}} I_{\\text{rms}}^*, \\quad |S| = \\sqrt{P^2 + Q^2}, \\quad PF = \\cos\\theta = \\frac{P}{|S|}$$",
                           "description": "Relates active/real power $P$ (watts, dissipated as work/heat), reactive power $Q$ (VAR, stored in magnetic/electric fields), complex apparent power $S$ (VA), and power factor $PF$.",
                           "examTip": "Found in Electricity and Magnetism: AC Circuits. Inductive loads (motors) have lagging power factor ($Q > 0$). Adding parallel capacitors supplies leading reactive power, correcting power factor toward unity without altering real power $P$.",
@@ -13586,6 +13766,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                           "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                           "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                           "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -14033,7 +14215,10 @@ window.calcEvaluate = function() {
                 "title": "Taylor Series and Maclaurin Series Expansions",
                 "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                 "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                      "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                      "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
@@ -14148,6 +14333,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Gibbs Phase Rule",
+      "imageUrl": "assets/images/gibbs_phase_rule_equilibrium.jpg",
+      "imageTitle": "Gibbs Phase Rule and Multiphase Equilibrium Diagram",
                         "formula": "$$F = C - P + 2$$",
                         "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
                         "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
@@ -14938,6 +15125,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Break-Even Production Volume",
+      "imageUrl": "assets/images/break_even_production_volume.jpg",
+      "imageTitle": "Break-Even Production Volume Analysis Chart",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
@@ -14996,6 +15185,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -15005,6 +15196,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -15014,6 +15207,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -15126,6 +15321,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -15135,6 +15332,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -15153,6 +15352,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -15200,6 +15401,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -15281,6 +15484,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -15315,6 +15520,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capillarity",
+      "imageUrl": "assets/images/capillarity_fluid_surface_tension.jpg",
+      "imageTitle": "Capillarity: Capillary Rise and Depression in Liquid Tubes",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
@@ -15324,6 +15531,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Manometers",
+      "imageUrl": "assets/images/manometers_fluid_pressure_measurement.jpg",
+      "imageTitle": "Manometers and Hydrostatic Fluid Pressure Measurement",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
@@ -15597,7 +15806,10 @@ window.calcEvaluate = function() {
                         "title": "pH scale",
                         "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
                         "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
-                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$.",
+                          "videoUrl": "assets/videos/pH_scale.mp4",
+                          "videoTitle": "pH Scale and Acid-Base Chemistry Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Alkanes, Alkenes, Alkynes",
@@ -15670,6 +15882,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Signal Words",
+      "imageUrl": "assets/images/safety_signal_words_danger_warning.jpg",
+      "imageTitle": "OSHA and ANSI Safety Signal Word Severity Hierarchy",
                         "videoUrl": "assets/videos/Signal_Words.mp4",
                         "videoTitle": "Signal Words Explainer",
                         "videoDuration": "10s",
@@ -15708,7 +15922,10 @@ window.calcEvaluate = function() {
                         "title": "Chemical Compatibility Chart",
                         "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
                         "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
-                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P).",
+                          "videoUrl": "assets/videos/Chemical_Compatibility_Chart.mp4",
+                          "videoTitle": "Chemical Compatibility Chart Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Exposure Limits",
@@ -15748,6 +15965,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Divergence of a Vector Field",
+      "imageUrl": "assets/images/divergence_of_a_vector_field.jpg",
+      "imageTitle": "Divergence of a Vector Field and Radial Flux Diagram",
                           "formula": "$$\\text{div } \\mathbf{F} = \\nabla \\cdot \\mathbf{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}, \\quad \\iiint_V (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_S (\\mathbf{F} \\cdot \\mathbf{n}) \\, dA$$",
                           "description": "Measures the net volumetric outward flux density of a vector field from an infinitesimal volume. A positive divergence signifies a source; a negative divergence indicates a sink. If $\\nabla \\cdot \\mathbf{F} = 0$, the field is incompressible (solenoidal).",
                           "examTip": "Found in Mathematics: Vector Analysis. Formulates the differential continuity equation in fluid mechanics: $\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\mathbf{v}) = 0$.",
@@ -15966,6 +16185,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                           "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                           "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                           "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -16379,7 +16600,10 @@ window.calcEvaluate = function() {
                 "title": "Chronic Daily Intake Chemical Exposure Formulation",
                 "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
                 "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
+                      "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
+                      "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
@@ -16451,7 +16675,10 @@ window.calcEvaluate = function() {
                 "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
                 "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
                 "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
+                      "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
+                      "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Binary Eutectic Phase Diagram Invariant Reaction",
@@ -16477,7 +16704,10 @@ window.calcEvaluate = function() {
                 "title": "Taylor Series and Maclaurin Series Expansions",
                 "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                 "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                      "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                      "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
@@ -16495,7 +16725,10 @@ window.calcEvaluate = function() {
                 "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
                 "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
                 "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
+                      "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
+                      "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Molarity, Molality, and Normality Chemical Concentrations",
@@ -16507,7 +16740,10 @@ window.calcEvaluate = function() {
                 "title": "First-Order Chemical Reaction Half-Life",
                 "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
                 "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
-                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration.",
+                      "videoUrl": "assets/videos/First_Order_Chemical_Reaction_Half_Life.mp4",
+                      "videoTitle": "First-Order Chemical Reaction Half-Life Explainer",
+                      "videoDuration": "10s"
             }
         ],
         "Industrial": [
@@ -16585,6 +16821,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Break-Even Production Volume",
+      "imageUrl": "assets/images/break_even_production_volume.jpg",
+      "imageTitle": "Break-Even Production Volume Analysis Chart",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
@@ -17200,6 +17438,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Permutations and Combinations Counting Rules",
+      "imageUrl": "assets/images/permutations_combinations_counting_rules.jpg",
+      "imageTitle": "Permutations and Combinations Counting Rules",
                         "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
                         "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
                         "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
@@ -17218,6 +17458,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Straight-Line Depreciation Method",
+      "imageUrl": "assets/images/straight_line_depreciation_method.jpg",
+      "imageTitle": "Straight-Line Depreciation Book Value Schedule",
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
                         "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
@@ -17303,6 +17545,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -17312,6 +17556,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -17321,6 +17567,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -17433,6 +17681,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -17442,6 +17692,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -17460,6 +17712,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -17507,6 +17761,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -17588,6 +17844,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -17595,6 +17853,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Resolution of a Force",
+      "imageUrl": "assets/images/resolution_of_a_force_vector.jpg",
+      "imageTitle": "Resolution of a Force Vector into Rectangular Components",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
                         "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
@@ -17613,6 +17873,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Area Moment of Inertia",
+      "imageUrl": "assets/images/area_moment_of_inertia_second_moment.jpg",
+      "imageTitle": "Area Moment of Inertia (Second Moment of Area) Diagram",
                         "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
                         "videoTitle": "Area Moment of Inertia Explainer",
                         "videoDuration": "10s",
@@ -17667,6 +17929,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
+      "imageUrl": "assets/images/lamis_theorem_concurrent_forces.jpg",
+      "imageTitle": "Lami's Theorem for Concurrent Coplanar Forces in Equilibrium",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
                         "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
@@ -17676,6 +17940,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Limiting friction",
+      "imageUrl": "assets/images/limiting_friction_static_kinetic.jpg",
+      "imageTitle": "Limiting Friction and Static vs Kinetic Friction Regions",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
                         "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
@@ -17732,6 +17998,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Signal Words",
+      "imageUrl": "assets/images/safety_signal_words_danger_warning.jpg",
+      "imageTitle": "OSHA and ANSI Safety Signal Word Severity Hierarchy",
                         "videoUrl": "assets/videos/Signal_Words.mp4",
                         "videoTitle": "Signal Words Explainer",
                         "videoDuration": "10s",
@@ -17770,7 +18038,10 @@ window.calcEvaluate = function() {
                         "title": "Chemical Compatibility Chart",
                         "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
                         "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
-                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P).",
+                          "videoUrl": "assets/videos/Chemical_Compatibility_Chart.mp4",
+                          "videoTitle": "Chemical Compatibility Chart Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Exposure Limits",
@@ -17911,6 +18182,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Free Body Diagram Support Reaction Rules",
+      "imageUrl": "assets/images/free_body_diagram_support_reactions.jpg",
+      "imageTitle": "Free Body Diagram Structural Support Reaction Rules",
                           "formula": "$$\\text{Roller: } 1 \\text{ normal force}; \\quad \\text{Pin/Hinge: } 2 \\text{ orthogonal forces } (R_x, R_y); \\quad \\text{Fixed: } 2 \\text{ forces } + 1 \\text{ reaction moment } (M_R)$$",
                           "description": "Determines the unknown constraints and reaction components introduced when isolating a body from its mechanical supports.",
                           "examTip": "Found in Statics: Equilibrium. Count unknown reactions before solving: if unknowns equal equilibrium equations ($3$ in 2D), structure is statically determinate. If unknowns $> 3$, structure is indeterminate.",
@@ -17938,6 +18211,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                           "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                           "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                           "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -18223,7 +18498,10 @@ window.calcEvaluate = function() {
                 "title": "Earned Value Management: Cost Variance and Schedule Variance",
                 "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
                 "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
-                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+                "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$).",
+                      "videoUrl": "assets/videos/Earned_Value_Management_Cost_Variance_and_Schedule_Variance.mp4",
+                      "videoTitle": "Earned Value Management: Cost Variance and Schedule Variance Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Earned Value Management: Cost and Schedule Performance Indices",
@@ -18267,7 +18545,10 @@ window.calcEvaluate = function() {
                 "title": "Chronic Daily Intake Chemical Exposure Formulation",
                 "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
                 "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
+                      "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
+                      "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
@@ -18291,13 +18572,19 @@ window.calcEvaluate = function() {
                 "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
                 "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
                 "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
+                      "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
+                      "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Taylor Series and Maclaurin Series Expansions",
                 "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                 "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                      "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                      "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
@@ -18315,7 +18602,10 @@ window.calcEvaluate = function() {
                 "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
                 "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
                 "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
+                      "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
+                      "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
+                      "videoDuration": "10s"
             }
         ],
         "Environmental": [
@@ -19099,6 +19389,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Straight-Line Depreciation Method",
+      "imageUrl": "assets/images/straight_line_depreciation_method.jpg",
+      "imageTitle": "Straight-Line Depreciation Book Value Schedule",
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
                         "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
@@ -19144,6 +19436,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Gibbs Phase Rule",
+      "imageUrl": "assets/images/gibbs_phase_rule_equilibrium.jpg",
+      "imageTitle": "Gibbs Phase Rule and Multiphase Equilibrium Diagram",
                         "formula": "$$F = C - P + 2$$",
                         "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
                         "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
@@ -19216,6 +19510,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Break-Even Production Volume",
+      "imageUrl": "assets/images/break_even_production_volume.jpg",
+      "imageTitle": "Break-Even Production Volume Analysis Chart",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
@@ -19274,6 +19570,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -19283,6 +19581,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -19292,6 +19592,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -19404,6 +19706,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -19413,6 +19717,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -19431,6 +19737,8 @@ window.calcEvaluate = function() {
                 },
                                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -19478,6 +19786,8 @@ window.calcEvaluate = function() {
                 },
                                                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -19559,6 +19869,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -19593,6 +19905,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Capillarity",
+      "imageUrl": "assets/images/capillarity_fluid_surface_tension.jpg",
+      "imageTitle": "Capillarity: Capillary Rise and Depression in Liquid Tubes",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
@@ -19602,6 +19916,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Manometers",
+      "imageUrl": "assets/images/manometers_fluid_pressure_measurement.jpg",
+      "imageTitle": "Manometers and Hydrostatic Fluid Pressure Measurement",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
@@ -19754,7 +20070,10 @@ window.calcEvaluate = function() {
                         "title": "pH scale",
                         "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
                         "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
-                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$.",
+                          "videoUrl": "assets/videos/pH_scale.mp4",
+                          "videoTitle": "pH Scale and Acid-Base Chemistry Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Alkanes, Alkenes, Alkynes",
@@ -19827,6 +20146,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Signal Words",
+      "imageUrl": "assets/images/safety_signal_words_danger_warning.jpg",
+      "imageTitle": "OSHA and ANSI Safety Signal Word Severity Hierarchy",
                         "videoUrl": "assets/videos/Signal_Words.mp4",
                         "videoTitle": "Signal Words Explainer",
                         "videoDuration": "10s",
@@ -19865,7 +20186,10 @@ window.calcEvaluate = function() {
                         "title": "Chemical Compatibility Chart",
                         "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
                         "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
-                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P).",
+                          "videoUrl": "assets/videos/Chemical_Compatibility_Chart.mp4",
+                          "videoTitle": "Chemical Compatibility Chart Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Exposure Limits",
@@ -20044,6 +20368,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                           "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                           "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                           "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -20074,7 +20400,10 @@ window.calcEvaluate = function() {
                 "title": "Chronic Daily Intake Chemical Exposure Formulation",
                 "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
                 "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+                "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
+                      "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
+                      "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
@@ -20479,13 +20808,19 @@ window.calcEvaluate = function() {
                 "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
                 "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
                 "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+                "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
+                      "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
+                      "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Taylor Series and Maclaurin Series Expansions",
                 "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                 "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                      "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                      "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Infinite Series Convergence Tests: Ratio and Alternating Series",
@@ -20503,7 +20838,10 @@ window.calcEvaluate = function() {
                 "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
                 "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
                 "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+                "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
+                      "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
+                      "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Molarity, Molality, and Normality Chemical Concentrations",
@@ -20515,7 +20853,10 @@ window.calcEvaluate = function() {
                 "title": "First-Order Chemical Reaction Half-Life",
                 "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
                 "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
-                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+                "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration.",
+                      "videoUrl": "assets/videos/First_Order_Chemical_Reaction_Half_Life.mp4",
+                      "videoTitle": "First-Order Chemical Reaction Half-Life Explainer",
+                      "videoDuration": "10s"
             }
         ],
         "Other": [
@@ -20543,6 +20884,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Quadratic Equation and Quadratic Formula",
+      "imageUrl": "assets/images/quadratic_equation_and_quadratic_formula.jpg",
+      "imageTitle": "Quadratic Equation and Parabolic Roots Diagram",
                         "formula": "$$a x^2 + b x + c = 0 \\implies x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}, \\quad a \\neq 0$$",
                         "description": "Calculates the roots of any single-variable second-degree polynomial equation. The nature of the roots is governed by discriminant $\\Delta = b^2 - 4ac$: two distinct real roots if $\\Delta > 0$, one repeated real root if $\\Delta = 0$, and complex conjugate roots if $\\Delta < 0$.",
                         "examTip": "Found in Mathematics: Algebra. Vieta's formulas state sum of roots $x_1 + x_2 = -b/a$ and product $x_1 x_2 = c/a$. The vertex of the parabola occurs at $x = -b/(2a)$.",
@@ -20552,6 +20895,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
+      "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
+      "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
                         "formula": "$$z = x + j y = r(\\cos\\theta + j \\sin\\theta) = r e^{j\\theta}, \\quad r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\text{atan2}(y, x)$$",
                         "description": "Expresses a complex number in Cartesian rectangular form $(x + j y)$, trigonometric polar form, and Euler exponential form. Addition/subtraction is simplest in rectangular form; multiplication/division is simplest in polar/exponential form.",
                         "examTip": "Found in Mathematics: Complex Numbers and AC Circuits. In engineering, $j = \\sqrt{-1}$. De Moivre's theorem computes powers and roots effortlessly in polar form: $z^n = r^n e^{j n \\theta} = r^n (\\cos n\\theta + j \\sin n\\theta)$.",
@@ -20561,6 +20906,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Law of Sines for Oblique Triangles",
+      "imageUrl": "assets/images/law_of_sines_oblique_triangles.jpg",
+      "imageTitle": "Law of Sines for Oblique Triangles Diagram",
                         "formula": "$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2 R$$",
                         "description": "Relates lengths of sides $a, b, c$ of any planar triangle to the sines of their opposite angles $A, B, C$, where $R$ is the circumradius of the triangle.",
                         "examTip": "Found in Mathematics: Trigonometry. Best applied when solving triangles with AAS (two angles and one side) or ASA. In SSA (side-side-angle), check for the ambiguous case yielding 0, 1, or 2 valid triangles.",
@@ -20608,6 +20955,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Types of Parabolas and Their Equations",
+      "imageUrl": "assets/images/types_of_parabolas_and_their_equations.jpg",
+      "imageTitle": "Standard Parabola Orientations and Focus-Directrix Forms",
                         "formula": "$$\\text{Vertical (opens } \\pm y\\text{): } (x - h)^2 = 4p(y - k), \\quad \\text{Focus: } (h, k + p), \\quad \\text{Directrix: } y = k - p; \\quad \\text{Horizontal (opens } \\pm x\\text{): } (y - k)^2 = 4p(x - h), \\quad \\text{Focus: } (h + p, k), \\quad \\text{Directrix: } x = h - p$$",
                         "description": "A parabola is the conic section formed by points equidistant from a fixed focal point and a fixed directrix line (eccentricity $e = 1$). The vertex is located at $(h, k)$, and focal distance $|p|$ is the distance from vertex to focus and from vertex to directrix.",
                         "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). If the $x$-term is squared, axis of symmetry is vertical (opens upward if $p > 0$, downward if $p < 0$). If the $y$-term is squared, axis is horizontal (opens right if $p > 0$, left if $p < 0$). Eccentricity is always $e = 1$.",
@@ -20677,6 +21026,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Trapezoidal Rule for Numerical Integration",
+      "imageUrl": "assets/images/trapezoidal_rule_numerical_integration.jpg",
+      "imageTitle": "Trapezoidal Rule for Numerical Integration Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{2} \\left[ f(x_0) + 2 \\sum_{i=1}^{n-1} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral of a function by dividing the interval $[a, b]$ into $n$ equal panels and summing trapezoidal areas formed by connecting endpoints with linear chords. Global error is $O(h^2)$.",
                         "examTip": "Found in Mathematics: Numerical Methods. Single-segment version: $\\int_a^b f(x) dx \\approx \\frac{b - a}{2}[f(a) + f(b)]$. Endpoints have weight 1; all interior points have weight 2.",
@@ -20686,6 +21037,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Simpson’s 1/3 Rule (Parabolic Numerical Quadrature)",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the integrand using piecewise parabolic arcs across pairs of panels. Requires an even number of intervals $n$. Achieves fourth-order accuracy $O(h^4)$ and integrates polynomials up to third degree exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Weight pattern: $1, 4, 2, 4, 2, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $\\int_a^b f(x) dx \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b - a)/2$.",
@@ -20704,6 +21057,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Simpson's Rule/Parabolic Rule",
+      "imageUrl": "assets/images/simpsons_rule_parabolic_quadrature.jpg",
+      "imageTitle": "Simpson's 1/3 Parabolic Numerical Quadrature Diagram",
                         "formula": "$$\\int_a^b f(x) \\, dx \\approx \\frac{h}{3} \\left[ f(x_0) + 4 \\sum_{i=1,3,\\dots}^{n-1} f(x_i) + 2 \\sum_{i=2,4,\\dots}^{n-2} f(x_i) + f(x_n) \\right], \\quad h = \\frac{b - a}{n}$$",
                         "description": "Approximates the definite integral by fitting quadratic parabolas through successive sets of 3 points. Requires an even number of intervals $n$. Achieves $O(h^4)$ global error and integrates polynomials up to degree 3 exactly.",
                         "examTip": "Found in Mathematics: Numerical Methods. Segment weight pattern: $1, 4, 2, 4, \\dots, 4, 1$. For a single 3-point panel ($n=2$): $I \\approx \\frac{h}{3}[f(x_0) + 4 f(x_1) + f(x_2)]$ where $h = (b-a)/2$.",
@@ -20820,6 +21175,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Inverse of a Matrix",
+      "imageUrl": "assets/images/inverse_of_a_matrix.jpg",
+      "imageTitle": "Inverse of a Square Matrix and Adjoint Method",
                         "formula": "$$A^{-1} = \\frac{1}{\\det(A)} \\text{adj}(A), \\quad \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}^{-1} = \\frac{1}{ad - bc} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$$",
                         "description": "A square matrix $A$ has an inverse $A^{-1}$ if and only if $\\det(A) \\neq 0$ (non-singular). Satisfies $A A^{-1} = A^{-1} A = I$. For a $2 \\times 2$ matrix, swap main diagonal entries, negate off-diagonal entries, and divide by determinant.",
                         "examTip": "Found in Mathematics: Linear Algebra. Inverse of product reverses: $(AB)^{-1} = B^{-1} A^{-1}$. If $\\det(A) = 0$, the matrix is singular and cannot be inverted.",
@@ -20858,6 +21215,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Divergence of a Vector Field",
+      "imageUrl": "assets/images/divergence_of_a_vector_field.jpg",
+      "imageTitle": "Divergence of a Vector Field and Radial Flux Diagram",
                         "formula": "$$\\text{div } \\mathbf{F} = \\nabla \\cdot \\mathbf{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}, \\quad \\iiint_V (\\nabla \\cdot \\mathbf{F}) \\, dV = \\iint_S (\\mathbf{F} \\cdot \\mathbf{n}) \\, dA$$",
                         "description": "Measures the net volumetric outward flux density of a vector field from an infinitesimal volume. A positive divergence signifies a source; a negative divergence indicates a sink. If $\\nabla \\cdot \\mathbf{F} = 0$, the field is incompressible (solenoidal).",
                         "examTip": "Found in Mathematics: Vector Analysis. Formulates the differential continuity equation in fluid mechanics: $\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\mathbf{v}) = 0$.",
@@ -20920,7 +21279,10 @@ window.calcEvaluate = function() {
                         "title": "Taylor Series and Maclaurin Series Expansions",
                         "formula": "$$f(x) = \\sum_{n=0}^\\infty \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\dots$$",
                         "description": "Represents smooth functions as infinite power series expanded about point $a$; a Maclaurin series is the special case where expansion center $a = 0$ (e.g., $e^x = 1 + x + x^2/2! + \\dots$).",
-                        "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$."
+                        "examTip": "Found in Mathematics. Standard Maclaurin series in the Handbook: $\\sin x = x - x^3/3! + x^5/5! - \\dots$ and $\\cos x = 1 - x^2/2! + x^4/4! - \\dots$.",
+                              "videoUrl": "assets/videos/Taylor_Series_and_Maclaurin_Series_Expansions.mp4",
+                              "videoTitle": "Taylor Series and Maclaurin Series Expansions Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Student’s $t$-Confidence Interval for Unknown Variance",
@@ -20933,6 +21295,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Construction of Confidence Intervals",
+      "imageUrl": "assets/images/construction_of_confidence_intervals.jpg",
+      "imageTitle": "Normal Distribution Two-Tailed Confidence Intervals",
                         "videoUrl": "assets/videos/Construction_of_Confidence_Intervals.mp4",
                         "formula": "$$\\text{CI}_\\mu = \\bar{x} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}} \\quad (\\sigma \\text{ known}), \\quad \\text{CI}_\\mu = \\bar{x} \\pm t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\quad (\\sigma \\text{ unknown})$$",
                         "description": "Provides an estimated interval range likely to contain the true population parameter at a specified confidence level $1 - \\alpha$. Margin of error decreases as sample size $n$ increases ($E \\propto 1/\\sqrt{n}$).",
@@ -20967,6 +21331,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Permutations and Combinations Counting Rules",
+      "imageUrl": "assets/images/permutations_combinations_counting_rules.jpg",
+      "imageTitle": "Permutations and Combinations Counting Rules",
                         "formula": "$$P(n, r) = \\frac{n!}{(n - r)!}, \\quad C(n, r) = \\binom{n}{r} = \\frac{n!}{r! (n - r)!}$$",
                         "description": "Counting techniques: permutations $P(n,r)$ count distinct arrangements where order matters; combinations $C(n,r)$ count unordered subsets.",
                         "examTip": "Found in Probability. If order or rank sequence matters (podium positions, passwords), use permutations; if grouping only matters (teams, lottery), use combinations.",
@@ -21146,7 +21512,10 @@ window.calcEvaluate = function() {
                         "title": "pH scale",
                         "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad \\text{pOH} = -\\log_{10}[\\text{OH}^-], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\implies \\text{pH} + \\text{pOH} = 14$$",
                         "description": "Quantifies the logarithmic acidity or basicity of an aqueous solution at $25^\\circ\\text{C}$. Solutions with $\\text{pH} < 7$ are acidic ($[\\text{H}^+] > 10^{-7}\\text{ M}$); $\\text{pH} = 7$ is neutral; $\\text{pH} > 7$ is basic (alkaline). Each unit decrease in pH represents a tenfold ($10\\times$) increase in hydrogen ion activity.",
-                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$."
+                        "examTip": "Found in Chemistry and Environmental Engineering: Water Quality. For a strong acid (e.g. $0.01\\text{ M HCl}$): $\\text{pH} = -\\log(0.01) = 2.0$. For a strong base ($0.001\\text{ M NaOH}$): $\\text{pOH} = 3 \\implies \\text{pH} = 14 - 3 = 11$.",
+                              "videoUrl": "assets/videos/pH_scale.mp4",
+                              "videoTitle": "pH Scale and Acid-Base Chemistry Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Molarity, Molality, and Normality Chemical Concentrations",
@@ -21215,13 +21584,19 @@ window.calcEvaluate = function() {
                         "title": "Chemical Compatibility Chart",
                         "formula": "$$\\text{Acid} + \\text{Cyanide/Sulfide} \\to \\text{HCN} \\uparrow / \\text{H}_2\\text{S} \\uparrow, \\quad \\text{Oxidizer} + \\text{Organic/Fuel} \\to \\text{Fire/Explosion}$$",
                         "description": "Systematic matrix governing safe co-storage and transport of hazardous materials to prevent uncontrolled exothermic reactions, toxic gas generation, fires, or explosions caused by inadvertent mixing. Common incompatible binary pairs include: strong acids with strong bases (extreme heat of neutralization); acids with cyanides/sulfides (deadly $\\text{HCN}$ or $\\text{H}_2\\text{S}$ gas); and strong oxidizers with flammable organics.",
-                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P)."
+                        "examTip": "Found in Chemical and Environmental: Hazardous Waste Management. EPA Chemical Compatibility Matrix utilizes reactivity group numbers to classify mixing consequences: Heat generation (H), Fire (F), Toxic gas (GT), Flammable gas (GF), Violent polymerization (P).",
+                              "videoUrl": "assets/videos/Chemical_Compatibility_Chart.mp4",
+                              "videoTitle": "Chemical Compatibility Chart Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "First-Order Chemical Reaction Half-Life",
                         "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
                         "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
-                        "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration."
+                        "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration.",
+                              "videoUrl": "assets/videos/First_Order_Chemical_Reaction_Half_Life.mp4",
+                              "videoTitle": "First-Order Chemical Reaction Half-Life Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Strain Gauge Gauge Factor Equation",
@@ -21285,6 +21660,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Ideal Operational Amplifier Golden Rules",
+      "imageUrl": "assets/images/ideal_op_amp_golden_rules.jpg",
+      "imageTitle": "Ideal Operational Amplifier Golden Rules and Virtual Short",
                         "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
                         "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
                         "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
@@ -21475,7 +21852,10 @@ window.calcEvaluate = function() {
                         "title": "Chronic Daily Intake Chemical Exposure Formulation",
                         "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
                         "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                        "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$."
+                        "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
+                              "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
+                              "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
@@ -21523,7 +21903,10 @@ window.calcEvaluate = function() {
                         "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
                         "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
                         "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                        "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution."
+                        "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
+                              "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
+                              "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Confined Space Safety",
@@ -21551,6 +21934,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Signal Words",
+      "imageUrl": "assets/images/safety_signal_words_danger_warning.jpg",
+      "imageTitle": "OSHA and ANSI Safety Signal Word Severity Hierarchy",
                         "videoUrl": "assets/videos/Signal_Words.mp4",
                         "videoTitle": "Signal Words Explainer",
                         "videoDuration": "10s",
@@ -21571,7 +21956,10 @@ window.calcEvaluate = function() {
                         "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
                         "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
                         "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                        "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$)."
+                        "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
+                              "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
+                              "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
@@ -21619,6 +22007,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Straight-Line Depreciation Method",
+      "imageUrl": "assets/images/straight_line_depreciation_method.jpg",
+      "imageTitle": "Straight-Line Depreciation Book Value Schedule",
                         "formula": "$$D_t = \\frac{C - S_n}{n}, \\quad BV_t = C - t D_t$$",
                         "description": "Allocates uniform annual depreciation deduction $D_t$ based on initial capital cost $C$, salvage value $S_n$, and recovery life $n$; book value $BV_t$ decreases linearly.",
                         "examTip": "Found in Engineering Economics. At end of useful life ($t = n$), book value equals salvage value ($BV_n = S_n$).",
@@ -21688,6 +22078,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Break-Even Production Volume",
+      "imageUrl": "assets/images/break_even_production_volume.jpg",
+      "imageTitle": "Break-Even Production Volume Analysis Chart",
                         "formula": "$$Q_{BE} = \\frac{FC}{P - VC}$$",
                         "description": "Determines minimum production volume where total revenue equals total costs, balancing fixed costs $FC$ against unit contribution margin $(P - VC)$.",
                         "examTip": "Found in Engineering Economics. At $Q_{BE}$, profit is zero. Contribution margin ratio is $(P - VC) / P$.",
@@ -21794,7 +22186,10 @@ window.calcEvaluate = function() {
                         "title": "Earned Value Management: Cost Variance and Schedule Variance",
                         "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
                         "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
-                        "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$)."
+                        "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$).",
+                              "videoUrl": "assets/videos/Earned_Value_Management_Cost_Variance_and_Schedule_Variance.mp4",
+                              "videoTitle": "Earned Value Management: Cost Variance and Schedule Variance Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Earned Value Management: Cost and Schedule Performance Indices",
@@ -21834,6 +22229,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Resolution of a Force",
+      "imageUrl": "assets/images/resolution_of_a_force_vector.jpg",
+      "imageTitle": "Resolution of a Force Vector into Rectangular Components",
                         "formula": "$$F_x = F \\cos\\theta, \\quad F_y = F \\sin\\theta, \\quad F = \\sqrt{F_x^2 + F_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{F_y}{F_x}\\right)$$",
                         "description": "Decomposes a planar vector force $\\mathbf{F}$ into independent rectangular components along coordinate axes. In 3D: $\\mathbf{F} = F_x \\mathbf{i} + F_y \\mathbf{j} + F_z \\mathbf{k} = F(\\cos\\theta_x \\mathbf{i} + \\cos\\theta_y \\mathbf{j} + \\cos\\theta_z \\mathbf{k})$.",
                         "examTip": "Found in Statics: Resultants of Force Systems. In static equilibrium, component sums must vanish independently: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum F_z = 0$.",
@@ -21843,6 +22240,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Lami's Theorem for Concurrent Forces",
+      "imageUrl": "assets/images/lamis_theorem_concurrent_forces.jpg",
+      "imageTitle": "Lami's Theorem for Concurrent Coplanar Forces in Equilibrium",
                         "formula": "$$\\frac{F_A}{\\sin\\alpha} = \\frac{F_B}{\\sin\\beta} = \\frac{F_C}{\\sin\\gamma}, \\quad \\mathbf{F}_A + \\mathbf{F}_B + \\mathbf{F}_C = \\mathbf{0}$$",
                         "description": "Applies to a particle in static equilibrium under exactly three concurrent, coplanar forces. States that the magnitude of each force is directly proportional to the sine of the interior angle between the other two forces (equivalent to the Law of Sines on the closed force triangle).",
                         "examTip": "Found in Statics: Equilibrium of a Particle. High-speed shortcut for 3-cable hanging weight or bracket problems. Angles must satisfy $\\alpha + \\beta + \\gamma = 360^\\circ$.",
@@ -21870,6 +22269,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Free Body Diagram Support Reaction Rules",
+      "imageUrl": "assets/images/free_body_diagram_support_reactions.jpg",
+      "imageTitle": "Free Body Diagram Structural Support Reaction Rules",
                         "formula": "$$\\text{Roller: } 1 \\text{ normal force}; \\quad \\text{Pin/Hinge: } 2 \\text{ orthogonal forces } (R_x, R_y); \\quad \\text{Fixed: } 2 \\text{ forces } + 1 \\text{ reaction moment } (M_R)$$",
                         "description": "Determines the unknown constraints and reaction components introduced when isolating a body from its mechanical supports.",
                         "examTip": "Found in Statics: Equilibrium. Count unknown reactions before solving: if unknowns equal equilibrium equations ($3$ in 2D), structure is statically determinate. If unknowns $> 3$, structure is indeterminate.",
@@ -21949,6 +22350,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Area Moment of Inertia",
+      "imageUrl": "assets/images/area_moment_of_inertia_second_moment.jpg",
+      "imageTitle": "Area Moment of Inertia (Second Moment of Area) Diagram",
                         "videoUrl": "assets/videos/Area_Moment_of_Inertia.mp4",
                         "videoTitle": "Area Moment of Inertia Explainer",
                         "videoDuration": "10s",
@@ -22033,6 +22436,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Limiting friction",
+      "imageUrl": "assets/images/limiting_friction_static_kinetic.jpg",
+      "imageTitle": "Limiting Friction and Static vs Kinetic Friction Regions",
                         "formula": "$$F_f \\le \\mu_s N, \\quad F_{\\max} = \\mu_s N \\text{ (impending)}, \\quad F_k = \\mu_k N \\text{ (sliding)}, \\quad \\tan\\phi_s = \\mu_s$$",
                         "description": "Coulomb dry friction states that friction force opposes impending relative motion up to maximum static threshold $F_{\\max} = \\mu_s N$. Once sliding occurs, friction drops to kinetic value $F_k = \\mu_k N$ (where $\\mu_k \\le \\mu_s$). Angle of static friction is $\\phi_s = \\tan^{-1}\\mu_s$.",
                         "examTip": "Found in Statics and Dynamics: Friction. Critical exam rule: If the applied force is below $\\mu_s N$, friction simply equals the applied force, NOT $\\mu_s N$! Always check tipping vs slipping conditions.",
@@ -22042,6 +22447,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Capillarity",
+      "imageUrl": "assets/images/capillarity_fluid_surface_tension.jpg",
+      "imageTitle": "Capillarity: Capillary Rise and Depression in Liquid Tubes",
                         "formula": "$$h = \\frac{2 \\sigma \\cos\\theta}{\\rho g r} = \\frac{4 \\sigma \\cos\\theta}{\\rho g d}$$",
                         "description": "Jurin's law computes equilibrium height $h$ of liquid in a narrow vertical tube of radius $r$ balancing upward surface tension force $2\\pi r \\sigma \\cos\\theta$ against hydrostatic weight $\\rho g \\pi r^2 h$. Wetting liquids ($\\theta < 90^\\circ$) rise; non-wetting liquids ($\\theta > 90^\\circ$) depress.",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. For clean water in clean glass, contact angle $\\theta \\approx 0^\\circ \\implies \\cos\\theta \\approx 1$. Notice capillary height is inversely proportional to tube diameter $d$.",
@@ -22051,6 +22458,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Manometers",
+      "imageUrl": "assets/images/manometers_fluid_pressure_measurement.jpg",
+      "imageTitle": "Manometers and Hydrostatic Fluid Pressure Measurement",
                         "formula": "$$P_2 - P_1 = -\\gamma (z_2 - z_1) = -\\rho g \\Delta z, \\quad P_A + \\sum (\\rho_i g h_i)_{\\text{down}} - \\sum (\\rho_j g h_j)_{\\text{up}} = P_B$$",
                         "description": "Manometers measure fluid pressure differences using columns of liquid in hydrostatic equilibrium. Moving downward through a continuous fluid increases pressure ($+ \\rho g h$); moving upward decreases pressure ($- \\rho g h$).",
                         "examTip": "Found in Fluid Mechanics: Fluid Statics. Golden rule: points at the same horizontal elevation in the same continuous, static fluid have identical pressures. Always use consistent absolute vs gauge pressure.",
@@ -22133,6 +22542,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Instantaneous Center of Rotation",
+      "imageUrl": "assets/images/instantaneous_center_of_rotation.jpg",
+      "imageTitle": "Instantaneous Center of Rotation (ICR) Planar Mechanism",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
                         "examTip": "Found in Dynamics: Rigid Body Kinematics. Once IC is located, velocities of all points on the body scale linearly with distance from IC: $v_i = \\omega \\cdot d_i$. Note: Acceleration of IC is generally NOT zero!",
@@ -22151,6 +22562,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Uniform Circular Motion (Centripetal Acceleration and Force)",
+      "imageUrl": "assets/images/uniform_circular_motion_centripetal.jpg",
+      "imageTitle": "Uniform Circular Motion, Centripetal Acceleration, and Force",
                         "formula": "$$a_n = \\frac{v^2}{\\rho} = \\rho \\omega^2, \\quad F_n = m a_n = m \\frac{v^2}{\\rho} = m \\rho \\omega^2$$",
                         "description": "When a particle travels at constant tangential speed $v$ along a curved path of radius $\\rho$, it undergoes continuous normal acceleration directed inward toward the center of curvature.",
                         "examTip": "Found in Dynamics: Particle Kinematics. Centripetal acceleration changes the direction of velocity, not its speed. Tangential acceleration $a_t = dv/dt = 0$ in uniform circular motion.",
@@ -22269,6 +22682,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Kinetic Energy",
+      "imageUrl": "assets/images/kinetic_energy_translational_rotational.jpg",
+      "imageTitle": "Kinetic Energy: Translational and Rotational Forms",
                         "videoUrl": "assets/videos/Kinetic_Energy.mp4",
                         "formula": "$$T = \\frac{1}{2}m v^2 \\text{ (particle)}, \\quad T = \\frac{1}{2}m v_G^2 + \\frac{1}{2}I_G \\omega^2 \\text{ (rigid body)}, \\quad T = \\frac{1}{2}I_O \\omega^2 \\text{ (fixed axis $O$)}$$",
                         "description": "Quantifies energy of motion. For general planar rigid body motion, kinetic energy is the sum of translational energy of the center of mass $G$ plus rotational energy about $G$. For rotation about a fixed pivot $O$, parallel-axis theorem simplifies this to $T = \\frac{1}{2}I_O \\omega^2$.",
@@ -22391,6 +22806,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Gibbs Phase Rule",
+      "imageUrl": "assets/images/gibbs_phase_rule_equilibrium.jpg",
+      "imageTitle": "Gibbs Phase Rule and Multiphase Equilibrium Diagram",
                         "formula": "$$F = C - P + 2$$",
                         "description": "Determines the degrees of freedom $F$ (independent intensive variables) in a non-reacting heterogeneous system with $C$ chemical components and $P$ phases.",
                         "examTip": "Found in Chemical Thermodynamics. For a pure substance ($C=1$) at its triple point ($P=3$), $F = 1 - 3 + 2 = 0$ (invariant state point).",
@@ -22409,6 +22826,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Projectile Motion",
+      "imageUrl": "assets/images/projectile_motion_kinematics.jpg",
+      "imageTitle": "Projectile Motion Kinematics and Parabolic Trajectory",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
                         "examTip": "Found in Dynamics: Kinematics. At maximum height, vertical velocity is zero: $v_y = 0 \\implies t_{\\text{apex}} = \\frac{v_0 \\sin\\theta}{g}$. Maximum horizontal range occurs at launch angle $\\theta = 45^\\circ$ on level ground.",
@@ -22418,6 +22837,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Potential Energy in Many forms (Gravity, Spring, etc)",
+      "imageUrl": "assets/images/potential_energy_gravity_spring_forms.jpg",
+      "imageTitle": "Potential Energy in Gravitational and Elastic Spring Forms",
                         "formula": "$$V_g = m g h, \\quad V_e = \\frac{1}{2}k x^2, \\quad T_1 + V_{g1} + V_{e1} + W_{1\\to 2}^{\\text{nc}} = T_2 + V_{g2} + V_{e2}$$",
                         "description": "Conservative forces have work independent of path, expressible as potential energy fields: gravitational potential $V_g = m g h$ (datum dependent) and linear spring elastic energy $V_e = \\frac{1}{2}k x^2$ ($x$ is elongation or compression from unstretched length).",
                         "examTip": "Found in Dynamics: Work-Energy Principle. Spring potential energy is ALWAYS positive whether stretched ($+x$) or compressed ($-x$), because displacement is squared: $\\frac{1}{2}k x^2 \\ge 0$.",
@@ -23371,6 +23792,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "First-Order RC Transient Response",
+      "imageUrl": "assets/images/first_order_rc_transient_response.jpg",
+      "imageTitle": "First-Order RC Transient Response Curves",
                         "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
                         "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
                         "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$.",
@@ -23406,6 +23829,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
+      "imageUrl": "assets/images/ac_power_triangle_real_reactive_apparent.jpg",
+      "imageTitle": "AC Power Triangle (Real, Reactive, Apparent Power, and Power Factor)",
                         "formula": "$$\\mathbf{S} = P + jQ = V_{\\text{rms}} I_{\\text{rms}}^*, \\quad |S| = \\sqrt{P^2 + Q^2}, \\quad PF = \\cos\\theta = \\frac{P}{|S|}$$",
                         "description": "Relates active/real power $P$ (watts, dissipated as work/heat), reactive power $Q$ (VAR, stored in magnetic/electric fields), complex apparent power $S$ (VA), and power factor $PF$.",
                         "examTip": "Found in Electricity and Magnetism: AC Circuits. Inductive loads (motors) have lagging power factor ($Q > 0$). Adding parallel capacitors supplies leading reactive power, correcting power factor toward unity without altering real power $P$.",
@@ -23421,6 +23846,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Wheatstone Bridge Circuit Null Balance Condition",
+      "imageUrl": "assets/images/wheatstone_bridge_null_balance.jpg",
+      "imageTitle": "Wheatstone Bridge Circuit Null Balance Condition",
                         "formula": "$$\\frac{R_1}{R_2} = \\frac{R_3}{R_4} \\implies V_{\\text{out}} = 0\\text{ V}$$",
                         "description": "Four-resistor bridge network measuring resistance changes down to milliohms; when ratio of arms is balanced, output differential voltage is zero.",
                         "examTip": "Found in Instrumentation. Foundational circuit for resistive temperature detectors (RTDs) and piezoresistive strain gauges.",
@@ -23441,6 +23868,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Thevenin’s Equivalent Circuit Theorem",
+      "imageUrl": "assets/images/thevenins_equivalent_circuit.jpg",
+      "imageTitle": "Thevenin's Equivalent Circuit with Series Source and Load",
                         "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
                         "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
                         "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
