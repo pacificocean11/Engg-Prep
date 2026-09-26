@@ -10,7 +10,180 @@
     let isFlipped = false;
     let currentMode = 'recall'; // 'recall' or 'identify'
     let currentDiscipline = 'current';
+    let currentSubjectFilter = 'all'; // 'all' or 1..14
     let activeMediaTab = 'video'; // 'video' or 'blueprint'
+
+    const MECHANICAL_SUBJECTS = [
+        { id: 1, name: '1. Mathematics' },
+        { id: 2, name: '2. Probability & Statistics' },
+        { id: 3, name: '3. Ethics & Professional Practice' },
+        { id: 4, name: '4. Engineering Economics' },
+        { id: 5, name: '5. Electricity & Magnetism' },
+        { id: 6, name: '6. Statics' },
+        { id: 7, name: '7. Dynamics & Vibrations' },
+        { id: 8, name: '8. Mechanics of Materials' },
+        { id: 9, name: '9. Material Properties & Processing' },
+        { id: 10, name: '10. Fluid Mechanics' },
+        { id: 11, name: '11. Thermodynamics' },
+        { id: 12, name: '12. Heat Transfer' },
+        { id: 13, name: '13. Measurements & Controls' },
+        { id: 14, name: '14. Mechanical Design & Analysis' }
+    ];
+
+    function getMechanicalSubjectId(title, examTip) {
+        const lower = (title || '').toLowerCase();
+        // 1. Mathematics
+        if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric/i.test(lower)) return 1;
+        // 2. Probability and Statistics
+        if (/binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
+        // 3. Ethics and Professional Practice
+        if (/paramount duty|pe seal integrity|code of ethics|safety data sheet|signal words|flammability, lfl and ufl|confined space safety|noise pollution measurements|osha|hazard quotient|excess lifetime cancer|chronic daily intake|hierarchy of controls|nfpa 704|electrical safety: gfci|hazop study|lower and upper flammability|intellectual property: patents|conflicts of interest|whistleblowing|ergonomic posture assessment/i.test(lower)) return 3;
+        // 4. Engineering Economics
+        if (/compound interest|nominal vs\. effective annual|capitalized cost|straight-line depreciation|book value|macrs|bonds|benefit-cost|break-even production volume|internal rate of return|simple payback period|break-even analysis for make-or-buy|payback period:|sensitivity analysis|critical path method|economic order quantity|earned value management|predetermined motion time|kanban production|bill of materials|exponential smoothing|forecasting error|total productive maintenance/i.test(lower)) return 4;
+        // 5. Electricity and Magnetism
+        if (/ohm’s law and joule|poynting vector|kirchhoff|thevenin|wheatstone bridge|first-order rc transient|first-order rc circuit time|operational amplifier|ideal operational amplifier|instrumentation amplifier|schmitt trigger|equivalent resistance in series|series rlc resonance|equivalent capacitance and inductance|ac power triangle|three-phase induction motor|synchronous machine|dc shunt motor|ideal transformer|dc motor back-emf/i.test(lower)) return 5;
+        // 6. Statics
+        if (/resolution of a force|lami's theorem|2d static equilibrium|moments \(couples\)|gravity retaining wall|free body diagram support|two-force and three-force|truss zero-force|method of joints|method of sections|parallel axis theorem \(second moment|centroid of composite|area moment of inertia|radius of gyration|product of inertia|centroid and moment of inertia for composite|centroids and area moments of inertia for standard shapes|coulomb dry friction|limiting friction/i.test(lower)) return 6;
+        // 7. Dynamics, Kinematics, and Vibrations
+        if (/normal and tangential acceleration in curvilinear|rectilinear kinematics|constant acceleration motion|variable acceleration motion|relative motion|projectile motion|kinematics of particles: normal|uniform circular motion|kinetic friction|particle kinetics: direct|potential energy in many|kinetic energy|linear impulse and momentum|coefficient of restitution|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|work-energy principle \(rigid body|rotational kinetic energy|mass moment of inertia of common|mass moment of inertia parallel axis|angular impulse and momentum|planar rigid body equations of motion|conservation of linear and angular momentum for colliding|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility/i.test(lower)) return 7;
+        // 8. Mechanics of Materials
+        if (/differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel/i.test(lower)) return 8;
+        // 9. Material Properties and Processing
+        if (/standard portland cement|bragg's law|engineering stress-strain vs|modulus of resilience vs|cubic crystal structures|binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|eutectic and eutectoid|gibbs phase rule|fick’s first law|fick's first law|first-order chemical reaction half-life/i.test(lower)) return 9;
+        // 10. Fluid Mechanics
+        if (/newton's law of viscosity|newtonian vs non-newtonian|surface tension|capillarity|capillary rise height|hydrostatic pressure distribution|manometers|bouyancy force|hydrostatic force on submerged curved|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|modified fluid energy equation|darcy-weisbach|reynolds number|hagen-poiseuille|moody, darcy|hydraulic diameter for non-circular|laminar flow friction factor|rapid sand filter|storm sewer gravity|hazen-williams|hardy cross|minor head losses in pipe|drag coefficient and lift|stokes' law|boundary layer displacement|speed of sound & mach|stagnation temperature|froude number and hydraulic|net positive suction head|pump hydraulic power|centrifugal pump cavitation|centrifugal pump affinity laws|pump specific speed|pitot tube|venturi meter|orifice meter|orifice discharging freely|orifice$|coagulation velocity gradient|camp-stein rapid mixing/i.test(lower)) return 10;
+        // 11. Thermodynamics
+        if (/ideal gas law equation|van der waals|compressibility factor|properties for two-phase|mole fraction vs\. mass fraction|zeroth law of thermodynamics|mollier chart|clausius-clapeyron|first law of thermodynamics \(closed|steady-flow energy equation|enthalpy$|carnot thermal efficiency|entropy$|exergy|clausius inequality|entropy change of ideal gases|isothermal process|le chatelier’s principle|isentropic relations for ideal|polytropic process boundary|enthalpy definition and specific heat|ideal rankine cycle|ideal otto cycle|isentropic efficiencies of turbines|gas turbine regenerator|ideal diesel cycle|ideal brayton cycle|refrigeration cycles|coefficient of performance \(cop\)|cop of refrigeration vs|vapor-compression refrigeration|psychrometric humidity ratio|psychrometric chart|dry-bulb, wet-bulb|absolute humidity vs\.|hvac processes|indoor air quality single-compartment|combustion theoretical air|excess air and theoretical/i.test(lower)) return 11;
+        // 12. Heat Transfer
+        if (/fourier’s law of thermal conduction|critical radius of thermal insulation|extended surface fin efficiency|conduction through a plain|conduction through a cylindrical|thermal resistance of an object|newton’s law of cooling|natural convection rayleigh|pool boiling curve|condensation heat transfer|stefan-boltzmann law|radiation view factor|radiation heat exchange|black body vs\. grey|net energy exchange by radiation|biot number for transient|lumped capacitance method|biot number vs\. fourier|log mean temperature difference|overall heat transfer coefficient|effectiveness-ntu method|heat exchanger fouling/i.test(lower)) return 12;
+        // 13. Measurements, Instrumentation, and Controls
+        if (/strain gauge gauge factor|temperature sensors: thermocouple|first-order sensor dynamic step|second-order sensor natural frequency|open-loop step response method|laplace transform final value|closed-loop feedback control|steady-state error constants|bode plot gain margin|routh-hurwitz stability|root locus construction|pid controller time-domain|process control: first-order|process control: ziegler-nichols|ratio control strategy|cascade control architecture|uncertainty/i.test(lower)) return 13;
+        // 14. Mechanical Design and Analysis
+        if (/modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|first angle vs\. third|geometric dimensioning and tolerancing/i.test(lower)) return 14;
+
+        return 1;
+    }
+
+    const OTHER_SUBJECTS = [
+        { id: 1, name: '1. Mathematics' },
+        { id: 2, name: '2. Probability & Statistics' },
+        { id: 3, name: '3. Chemistry' },
+        { id: 4, name: '4. Instrumentation & Controls' },
+        { id: 5, name: '5. Ethics & Societal Impacts' },
+        { id: 6, name: '6. Safety, Health & Environment' },
+        { id: 7, name: '7. Engineering Economics' },
+        { id: 8, name: '8. Statics' },
+        { id: 9, name: '9. Dynamics' },
+        { id: 10, name: '10. Strength of Materials' },
+        { id: 11, name: '11. Materials' },
+        { id: 12, name: '12. Fluid Mechanics' },
+        { id: 13, name: '13. Basic Electrical Engineering' },
+        { id: 14, name: '14. Thermodynamics & Heat Transfer' }
+    ];
+
+    function getOtherSubjectId(title, examTip, description) {
+        const lower = (title || '').toLowerCase();
+        const tip = (examTip || '').toLowerCase();
+
+        // Priority overrides
+        if (/mohr/i.test(lower)) return 10;
+        if (/magnetic force on a straight current/i.test(lower)) return 13;
+        if (/rectifier with filter capacitor ripple voltage/i.test(lower)) return 13;
+        if (/bjt|mosfet|transconductance|cmos inverter/i.test(lower)) return 4;
+        if (/critical path method/i.test(lower)) return 7;
+        if (/fick’s first law|fick's first law/i.test(lower)) return 11;
+        if (/mollier chart/i.test(lower)) return 14;
+        if (/refrigeration cycles/i.test(lower)) return 14;
+
+        // 1. Mathematics
+        if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|parabola|ellipse|hyperbola|circle|trigonometr|law of sines|law of cosines|double-angle|complex number|algebra|arithmetic vs geometric progression|quadratic equation|polar coordinates|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|differential equation|first-order linear ode|laplace transforms|laplace transform definition|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|numerical integration|algorithm|flowchart|pseudocode|precision limits|matrix|linear algebra|eigenvalue|determinant|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|gradient vector|green’s theorem|divergence theorem|stokes’ theorem|l’hôpital|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence/i.test(lower) && !/beam deflection|force|stress|strain|truss/i.test(lower)) return 1;
+
+        // 2. Probability and Statistics
+        if (/confidence interval|student’s \$t\$-confidence|sample mean and standard error|expected value|sample variance|variance and standard deviation|median of a sample|mode of a sample|central tendenc|dispersion|binomial distribution|standard normal distribution|normal distribution|probability density function|cumulative distribution|student's t-distribution two-sample|one-way analysis of variance|anova|chi-square|null hypothesis|permutations and combinations|bathtub failure curve|simple linear regression|correlation coefficient|least squares|goodness of fit|curve fitting|forecasting error metrics/i.test(lower)) return 2;
+
+        // 3. Chemistry
+        if (/galvanic cell|nernst equation|faraday’s law of electrolysis|oxidation|reduction|redox|molarity, molality|solution concentration|ph scale|acids? and bases?|buffer|periodic table|chemical equilibrium constant|chemical compatibility|first-order chemical reaction half-life|photosynthesis|alcohols|aldehydes and ketones|alkanes, alkenes, alkynes|ethers, carboxylic/i.test(lower)) return 3;
+
+        // 4. Instrumentation and Controls
+        if (/strain gauge gauge factor|first-order sensor dynamic step|second-order sensor natural frequency|temperature sensors: thermocouple|thermocouple seebeck|operational amplifier|op-amp|instrumentation amplifier|schmitt trigger|nyquist-shannon|flip-flop|multiplexers and demultiplexers|two's complement|half-adder and full-adder|binary ripple carry|static cmos inverter|closed-loop feedback control|steady-state error constants|bode plot gain margin/i.test(lower)) return 4;
+
+        // 5. Engineering Ethics and Societal Impacts
+        if (/paramount duty to public welfare|code of ethics|pe seal integrity|conflicts of interest|whistleblowing|intellectual property: patents|ergonomic posture/i.test(lower)) return 5;
+
+        // 6. Safety, Health, and Environment
+        if (/carcinogens|dose-response|chronic daily intake|excess lifetime cancer|exposure limits|hazard quotient|pressure relief valve sizing|flammability, lfl and ufl|lower and upper flammability|electrical safety: gfci|confined space safety|safety data sheet|signal words|noise pollution|nfpa 704|osha recordable|osha permissible noise|hazop study|osha soil classifications|osha excavation safety/i.test(lower)) return 6;
+
+        // 7. Engineering Economics
+        if (/compound interest|nominal vs\. effective annual|effective annual|straight-line depreciation|macrs|book value|benefit-cost|break-even|internal rate of return|simple payback|capitalized cost|bonds|sensitivity analysis|economic order quantity|earned value management|kanban production|bill of materials|exponential smoothing|hierarchy of controls/i.test(lower) || /economics|industrial/i.test(tip)) return 7;
+
+        // 8. Statics
+        if (/resolution of a force|concurrent forces|lami's theorem|moments \(couples\)|2d static equilibrium|free body diagram support|two-force and three-force|truss zero-force|method of joints|method of sections|gravity retaining wall|parallel axis theorem|centroid of composite|area moment of inertia|radius of gyration|product of inertia|centroids and area moments|coulomb dry friction|angle of static friction|flat belt friction|power screws lifting|weight and mass/i.test(lower) || /statics/i.test(tip)) return 8;
+
+        // 9. Dynamics
+        if (/rectilinear kinematics|constant acceleration motion|relative motion|normal and tangential acceleration|uniform circular motion|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|particle kinetics: direct|kinetic friction|planar rigid body equations of motion|newton’s second law for rigid|mass moment of inertia|linear impulse and momentum|angular impulse and momentum|coefficient of restitution|conservation of linear and angular momentum|work-energy principle|kinetic energy|rotational kinetic energy|dynamic friction|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility|vibration/i.test(lower) || /dynamics/i.test(tip)) return 9;
+
+        // 10. Strength of Materials
+        if (/differential relationships between load, shear|axial stress and elongation|poisson’s ratio|elastic flexure formula|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular|thermal expansion deformation and thermal stress|elastic section modulus|helical compression spring|agma lewis bending|combined axial and bending|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|moment-area first theorem|moment-area second theorem|elastic strain energy|analytical in-plane principal stresses|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modified goodman|soderberg|s-n fatigue curve|marin factor|rolling element bearing|cantilever sheet pile/i.test(lower) || /mechanics of materials|mechanical design/i.test(tip)) return 10;
+
+        // 11. Materials
+        if (/binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|engineering stress-strain vs|modulus of resilience vs|factor of safety definition|cubic crystal structures|types of fits|first angle vs\. third angle/i.test(lower) || /material/i.test(tip)) return 11;
+
+        // 12. Fluid Mechanics
+        if (/newton's law of viscosity|surface tension|capillarity|capillary rise height|drag coefficient and lift|reynolds number|speed of sound & mach|hydrostatic pressure distribution|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|linear impulse-momentum for fluid|modified fluid energy equation|darcy-weisbach|hydraulic diameter for non-circular|laminar flow friction factor|minor head losses in pipe|manning’s equation|pitot tube|venturi meter|orifice meter|orifice discharging freely|net positive suction head|pump hydraulic power|centrifugal pump affinity laws|pump specific speed/i.test(lower) || /fluid/i.test(tip)) return 12;
+
+        // 13. Basic Electrical Engineering
+        if (/ohm’s law and joule|kirchhoff|first-order rc transient|equivalent resistance in series|series rlc resonance|equivalent capacitance and inductance|ac power triangle|wheatstone bridge|thevenin’s equivalent|poynting vector|ideal transformer|three-phase induction motor|dc motor back-emf/i.test(lower) || /electrical/i.test(tip)) return 13;
+
+        // 14. Thermodynamics and Heat Transfer
+        if (/zeroth law of thermodynamics|first law of thermodynamics \(closed|second law of thermodynamics \(carnot|ideal gas law equation|van der waals|compressibility factor|mole fraction vs\. mass fraction|isothermal process|steady-flow energy equation|ideal rankine cycle|ideal otto cycle|coefficient of performance \(cop\)|fourier’s law of thermal conduction|critical radius of thermal insulation|newton’s law of cooling|stefan-boltzmann law|biot number vs\. fourier|log mean temperature difference|overall heat transfer coefficient|effectiveness-ntu method|conduction through a plain|conduction through a cylindrical|thermal resistance of an object|pool boiling curve|condensation heat transfer|dry-bulb, wet-bulb|absolute humidity vs\.|psychrometric chart|hvac processes|combustion theoretical air|excess air and theoretical/i.test(lower) || /thermodynamics|heat transfer/i.test(tip)) return 14;
+
+        return 1;
+    }
+
+
+    function syncSubjectSelectVisibility() {
+        const select = document.getElementById('fc-subject-select');
+        if (!select) return;
+        const actualDisc = (currentDiscipline === 'current' || !currentDiscipline) 
+            ? getActiveDiscipline() 
+            : currentDiscipline;
+        const hasSubjects = (actualDisc === 'Mechanical' || actualDisc === 'Other');
+        const isDesktop = window.innerWidth >= 1024; // Desktop and Laptop only
+
+        if (hasSubjects && isDesktop) {
+            select.classList.remove('hidden');
+            select.classList.add('lg:inline-block');
+        } else {
+            select.classList.add('hidden');
+            select.classList.remove('lg:inline-block');
+        }
+    }
+
+    function updateSubjectSelectOptions(fullDeck, actualDisc) {
+        const select = document.getElementById('fc-subject-select');
+        if (!select) return;
+
+        const isOther = (actualDisc === 'Other');
+        const subjectList = isOther ? OTHER_SUBJECTS : MECHANICAL_SUBJECTS;
+        const getSubjectFn = isOther ? getOtherSubjectId : getMechanicalSubjectId;
+
+        const counts = {};
+        fullDeck.forEach(c => {
+            const sId = c.subjectId || getSubjectFn(c.title, c.examTip, c.description);
+            counts[sId] = (counts[sId] || 0) + 1;
+        });
+
+        const totalCount = fullDeck.length;
+        let html = `<option value="all">All Subjects (${totalCount} Cards)</option>`;
+        subjectList.forEach(sub => {
+            const count = counts[sub.id] || 0;
+            html += `<option value="${sub.id}">${sub.name} (${count})</option>`;
+        });
+
+        select.innerHTML = html;
+        select.value = currentSubjectFilter;
+        select.title = 'Switch Subject (FE ' + actualDisc + ' Syllabus)';
+    }
 
     // Get active discipline from app or localStorage
     function getActiveDiscipline() {
@@ -21,19 +194,47 @@
     }
 
     // Build the theorem queue for current session
-    function buildSessionQueue(disc, mode) {
+    function buildSessionQueue(disc, mode, subjectFilter = 'all') {
         const datasets = window.THEOREMS_BY_DISCIPLINE || {};
+        let actualDisc = disc;
+        if (disc === 'current' || !disc) {
+            actualDisc = getActiveDiscipline();
+        }
 
         let allTheorems = [];
-        if (disc === 'current' || !disc) {
-            const actualDisc = getActiveDiscipline();
-            allTheorems = (datasets[actualDisc] || []).map(t => ({ ...t, disc: actualDisc }));
-        } else if (disc === 'all') {
+        if (disc === 'all') {
             Object.keys(datasets).forEach(d => {
                 (datasets[d] || []).forEach(t => allTheorems.push({ ...t, disc: d }));
             });
         } else {
-            allTheorems = (datasets[disc] || []).map(t => ({ ...t, disc: disc }));
+            allTheorems = (datasets[actualDisc] || []).map(t => ({ ...t, disc: actualDisc }));
+        }
+
+        // Tag Mechanical or Other cards with subject information
+        if (actualDisc === 'Mechanical') {
+            allTheorems.forEach(card => {
+                card.subjectId = getMechanicalSubjectId(card.title, card.examTip);
+                const subObj = MECHANICAL_SUBJECTS.find(s => s.id === card.subjectId);
+                card.subjectName = subObj ? subObj.name : '1. Mathematics';
+            });
+
+            // Apply subject filter if selected
+            if (subjectFilter && subjectFilter !== 'all') {
+                const targetSubId = Number(subjectFilter);
+                allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
+            }
+        } else if (actualDisc === 'Other') {
+            allTheorems.forEach(card => {
+                card.subjectId = getOtherSubjectId(card.title, card.examTip, card.description);
+                const subObj = OTHER_SUBJECTS.find(s => s.id === card.subjectId);
+                card.subjectName = subObj ? subObj.name : '1. Mathematics';
+            });
+
+            // Apply subject filter if selected
+            if (subjectFilter && subjectFilter !== 'all') {
+                const targetSubId = Number(subjectFilter);
+                allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
+            }
         }
 
         return allTheorems;
@@ -128,7 +329,13 @@
         const frontFormulaView = document.getElementById('fc-front-formula-view');
         const frontHint = document.getElementById('fc-front-hint');
 
-        if (cardDisc) cardDisc.textContent = `${card.disc || getActiveDiscipline()} FE Focus`;
+        if (cardDisc) {
+            if ((card.disc === 'Mechanical' || card.disc === 'Other') && card.subjectName) {
+                cardDisc.textContent = `${card.disc} FE Focus • ${card.subjectName}`;
+            } else {
+                cardDisc.textContent = `${card.disc || getActiveDiscipline()} FE Focus`;
+            }
+        }
         if (cardLvl) {
             cardLvl.textContent = `#${currentIndex + 1} of ${currentDeck.length}`;
             cardLvl.className = 'text-[10px] font-black uppercase tracking-wider bg-purple-500/20 text-purple-300 px-2.5 py-0.5 rounded-full border border-purple-500/30';
@@ -748,11 +955,21 @@
     }
 
     // Open Flashcard Studio Modal
-    function openFlashcardStudio(disc, mode) {
+    function openFlashcardStudio(disc, mode, subjectFilter) {
         currentDiscipline = disc || currentDiscipline;
         currentMode = mode || currentMode;
+        if (typeof subjectFilter !== 'undefined') {
+            currentSubjectFilter = subjectFilter;
+        }
 
-        currentDeck = buildSessionQueue(currentDiscipline, currentMode);
+        const actualDisc = (currentDiscipline === 'current' || !currentDiscipline) 
+            ? getActiveDiscipline() 
+            : currentDiscipline;
+        if (actualDisc !== 'Mechanical' && actualDisc !== 'Other') {
+            currentSubjectFilter = 'all';
+        }
+
+        currentDeck = buildSessionQueue(currentDiscipline, currentMode, currentSubjectFilter);
         currentIndex = 0;
         isFlipped = false;
 
@@ -781,6 +998,13 @@
         const modeSelect = document.getElementById('fc-mode-select');
         if (discSelect) discSelect.value = currentDiscipline;
         if (modeSelect) modeSelect.value = currentMode;
+
+        if (actualDisc === 'Mechanical' || actualDisc === 'Other') {
+            const datasets = window.THEOREMS_BY_DISCIPLINE || {};
+            const fullDeck = (datasets[actualDisc] || []);
+            updateSubjectSelectOptions(fullDeck, actualDisc);
+        }
+        syncSubjectSelectVisibility();
 
         renderCard();
     }
@@ -836,20 +1060,31 @@
     document.addEventListener('DOMContentLoaded', () => {
         const discSelect = document.getElementById('fc-discipline-select');
         const modeSelect = document.getElementById('fc-mode-select');
+        const subjectSelect = document.getElementById('fc-subject-select');
 
         if (discSelect) {
             discSelect.addEventListener('change', (e) => {
                 currentDiscipline = e.target.value;
-                openFlashcardStudio(currentDiscipline, currentMode);
+                currentSubjectFilter = 'all';
+                openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
             });
         }
 
         if (modeSelect) {
             modeSelect.addEventListener('change', (e) => {
                 currentMode = e.target.value;
-                openFlashcardStudio(currentDiscipline, currentMode);
+                openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
             });
         }
+
+        if (subjectSelect) {
+            subjectSelect.addEventListener('change', (e) => {
+                currentSubjectFilter = e.target.value;
+                openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
+            });
+        }
+
+        window.addEventListener('resize', syncSubjectSelectVisibility);
     });
 
     // Re-typeset active flashcard when MathJax finishes loading asynchronously
@@ -882,7 +1117,7 @@
     window.toggleTeleprompter = toggleKaraokeCaptions;
     // Backwards compatibility aliases
     window.rateFlashcard = nextCard;
-    window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode);
+    window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
 
 })();
 
