@@ -86,6 +86,8 @@
         "Mechanical": [
                 {
                         "title": "Distance Formula",
+                        "imageUrl": "assets/images/distance_formula.jpg",
+                        "imageTitle": "Distance Formula on Cartesian Plane Diagram",
                         "formula": "$$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$",
                         "description": "Calculates the straight-line Euclidean distance between two points in Cartesian space derived from the Pythagorean theorem.",
                         "examTip": "Found in Mathematics: Analytic Geometry. In 2D plane geometry, simplifies to $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Used for coordinate geometry, point clearances, and vector magnitudes.",
@@ -95,6 +97,8 @@
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -104,6 +108,8 @@
                 },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -113,6 +119,8 @@
                 },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -531,7 +539,10 @@
                           "title": "Sample Mean and Standard Error of the Mean",
                           "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                           "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                          "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                          "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Expected Values",
@@ -546,7 +557,10 @@
                           "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                           "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                           "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                          "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                          "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -1417,6 +1431,17 @@
                         "videoDuration": "10s"
                 },
                 {
+                          "title": "Coriolis Acceleration in Rotating Reference Frames",
+                          "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                          "imageTitle": "Coriolis Acceleration in Rotating Reference Frames Blueprint",
+                          "formula": "$$\\vec{a}_{cor} = 2\\vec{\\omega} \\times \\vec{v}_{rel}$$",
+                          "description": "Apparent inertial acceleration experienced by a body moving with velocity $\\vec{v}_{rel}$ relative to a coordinate frame that is itself rotating with angular velocity $\\vec{\\omega}$.",
+                          "examTip": "Found in Dynamics: Kinematics of Particles & Rigid Bodies. Common in mechanisms where a slider or particle moves along a rotating link or slotted guide arm ($a_c = 2\\omega v_{rel}$).",
+                          "videoUrl": "assets/videos/Coriolis_Acceleration_in_Rotating_Reference_Frames.mp4",
+                          "videoTitle": "Coriolis Acceleration in Rotating Reference Frames Explainer",
+                          "videoDuration": "10s"
+                },
+                {
                         "title": "Projectile Motion",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
@@ -1652,7 +1677,10 @@
                           "title": "Analytical In-Plane Principal Stresses and Maximum Shear Equations",
                           "formula": "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}, \\quad \\tau_{\\text{max,in-plane}} = \\frac{\\sigma_1 - \\sigma_2}{2}$$",
                           "description": "Analytically transforms general 2D plane stress state $(\\sigma_x, \\sigma_y, \\tau_{xy})$ onto principal planes where shear stress is zero and normal stresses reach maximum and minimum values.",
-                          "examTip": "Found in Mechanics of Materials: Stress Transformation. Principal planes are rotated by angle $\\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$. Maximum in-plane shear occurs at $45^\\circ$ to principal planes."
+                          "examTip": "Found in Mechanics of Materials: Stress Transformation. Principal planes are rotated by angle $\\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$. Maximum in-plane shear occurs at $45^\\circ$ to principal planes.",
+                          "videoUrl": "assets/videos/Analytical_In_Plane_Principal_Stresses_and_Maximum_Shear_Equations.mp4",
+                          "videoTitle": "Analytical In-Plane Principal Stresses and Maximum Shear Equations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Generalized Hooke’s Law (3D Elastic Stress-Strain)",
@@ -1696,7 +1724,10 @@
                           "title": "Elastic Strain Energy in Axial, Bending, and Torsional Loading",
                           "formula": "$$U_{\\text{axial}} = \\frac{P^2 L}{2AE}, \\quad U_{\\text{bending}} = \\int_0^L \\frac{M^2}{2EI} \\, dx, \\quad U_{\\text{torsion}} = \\frac{T^2 L}{2GJ}$$",
                           "description": "Internal potential energy stored elastically in a deformed structural member under mechanical loading without permanent plastic deformation.",
-                          "examTip": "Found in Mechanics of Materials: Energy Methods. Foundation of Castigliano's theorem for calculating structural deflections: $\\delta_i = \\partial U / \\partial P_i$."
+                          "examTip": "Found in Mechanics of Materials: Energy Methods. Foundation of Castigliano's theorem for calculating structural deflections: $\\delta_i = \\partial U / \\partial P_i$.",
+                          "videoUrl": "assets/videos/Elastic_Strain_Energy_in_Axial_Bending_and_Torsional_Loading.mp4",
+                          "videoTitle": "Elastic Strain Energy in Axial, Bending, and Torsional Loading Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                 "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
@@ -1731,7 +1762,10 @@
                           "title": "Elastic Section Modulus for Beam Bending",
                           "formula": "$$S = \\frac{I}{c}, \\quad \\sigma_{\\text{max}} = \\frac{M}{S} \\quad (S_{\\text{rect}} = \\frac{b h^2}{6}, \\quad S_{\\text{solid round}} = \\frac{\\pi d^3}{32})$$",
                           "description": "Geometric beam property defined as the ratio of area moment of inertia $I$ to maximum distance from neutral axis $c$. Governs peak flexural bending stress.",
-                          "examTip": "Found in Mechanics of Materials: Beams. In beam design, required minimum section modulus is $S_{\\text{req}} = M_{\\text{max}}/\\sigma_{\\text{allow}}$. Steel shapes are indexed by $S_x$ in handbook tables."
+                          "examTip": "Found in Mechanics of Materials: Beams. In beam design, required minimum section modulus is $S_{\\text{req}} = M_{\\text{max}}/\\sigma_{\\text{allow}}$. Steel shapes are indexed by $S_x$ in handbook tables.",
+                          "videoUrl": "assets/videos/Elastic_Section_Modulus_for_Beam_Bending.mp4",
+                          "videoTitle": "Elastic Section Modulus for Beam Bending Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                 "title": "Beam Flexure Formula and Maximum Bending Stress",
@@ -2186,7 +2220,10 @@
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
                           "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                           "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
-                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$)."
+                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
+                          "videoUrl": "assets/videos/Modified_Fluid_Energy_Equation_Pumps_Turbines_and_Head_Losses.mp4",
+                          "videoTitle": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Darcy-Weisbach Equation (Friction Head Loss)",
@@ -2734,7 +2771,10 @@
                           "title": "Gas Turbine Regenerator Thermal Effectiveness",
                           "formula": "$$\\epsilon = \\frac{q_{\\text{actual}}}{q_{\\text{max}}} = \\frac{h_{\\text{comb,in}} - h_{\\text{comp,out}}}{h_{\\text{turb,out}} - h_{\\text{comp,out}}} = \\frac{T_x - T_2}{T_4 - T_2}$$",
                           "description": "Quantifies the performance of a recuperator/regenerator preheating compressor discharge air using hot turbine exhaust gases in an open or closed Brayton gas turbine cycle.",
-                          "examTip": "Found in Thermodynamics: Brayton Cycles. Regeneration improves thermal efficiency by reducing required external heat input $q_{in}$ without changing net network output $w_{net}$."
+                          "examTip": "Found in Thermodynamics: Brayton Cycles. Regeneration improves thermal efficiency by reducing required external heat input $q_{in}$ without changing net network output $w_{net}$.",
+                          "videoUrl": "assets/videos/Gas_Turbine_Regenerator_Thermal_Effectiveness.mp4",
+                          "videoTitle": "Gas Turbine Regenerator Thermal Effectiveness Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Vapor-Compression Refrigeration Cycle COP",
@@ -4551,6 +4591,8 @@
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -4560,6 +4602,8 @@
                 },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -4605,6 +4649,8 @@
                 },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -4975,6 +5021,17 @@
                         "videoDuration": "10s"
                 },
                 {
+                          "title": "Coriolis Acceleration in Rotating Reference Frames",
+                          "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                          "imageTitle": "Coriolis Acceleration in Rotating Reference Frames Blueprint",
+                          "formula": "$$\\vec{a}_{cor} = 2\\vec{\\omega} \\times \\vec{v}_{rel}$$",
+                          "description": "Apparent inertial acceleration experienced by a body moving with velocity $\\vec{v}_{rel}$ relative to a coordinate frame that is itself rotating with angular velocity $\\vec{\\omega}$.",
+                          "examTip": "Found in Dynamics: Kinematics of Particles & Rigid Bodies. Common in mechanisms where a slider or particle moves along a rotating link or slotted guide arm ($a_c = 2\\omega v_{rel}$).",
+                          "videoUrl": "assets/videos/Coriolis_Acceleration_in_Rotating_Reference_Frames.mp4",
+                          "videoTitle": "Coriolis Acceleration in Rotating Reference Frames Explainer",
+                          "videoDuration": "10s"
+                },
+                {
                         "title": "Projectile Motion",
                         "formula": "$$x(t) = v_0 \\cos\\theta \\, t, \\quad y(t) = v_0 \\sin\\theta \\, t - \\frac{1}{2}g t^2, \\quad R = \\frac{v_0^2 \\sin(2\\theta)}{g}, \\quad H_{\\max} = \\frac{v_0^2 \\sin^2\\theta}{2g}$$",
                         "description": "Neglecting air resistance, projectile motion decouples into uniform horizontal motion with zero acceleration ($a_x = 0$) and vertical free-fall under constant downward gravity ($a_y = -g$). The trajectory is a symmetric parabola.",
@@ -5216,13 +5273,19 @@
                           "title": "Sample Mean and Standard Error of the Mean",
                           "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                           "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                          "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                          "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                           "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                           "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                          "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                          "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -5403,13 +5466,19 @@
                           "title": "Analytical In-Plane Principal Stresses and Maximum Shear Equations",
                           "formula": "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}, \\quad \\tau_{\\text{max,in-plane}} = \\frac{\\sigma_1 - \\sigma_2}{2}$$",
                           "description": "Analytically transforms general 2D plane stress state $(\\sigma_x, \\sigma_y, \\tau_{xy})$ onto principal planes where shear stress is zero and normal stresses reach maximum and minimum values.",
-                          "examTip": "Found in Mechanics of Materials: Stress Transformation. Principal planes are rotated by angle $\\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$. Maximum in-plane shear occurs at $45^\\circ$ to principal planes."
+                          "examTip": "Found in Mechanics of Materials: Stress Transformation. Principal planes are rotated by angle $\\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$. Maximum in-plane shear occurs at $45^\\circ$ to principal planes.",
+                          "videoUrl": "assets/videos/Analytical_In_Plane_Principal_Stresses_and_Maximum_Shear_Equations.mp4",
+                          "videoTitle": "Analytical In-Plane Principal Stresses and Maximum Shear Equations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Elastic Section Modulus for Beam Bending",
                           "formula": "$$S = \\frac{I}{c}, \\quad \\sigma_{\\text{max}} = \\frac{M}{S} \\quad (S_{\\text{rect}} = \\frac{b h^2}{6}, \\quad S_{\\text{solid round}} = \\frac{\\pi d^3}{32})$$",
                           "description": "Geometric beam property defined as the ratio of area moment of inertia $I$ to maximum distance from neutral axis $c$. Governs peak flexural bending stress.",
-                          "examTip": "Found in Mechanics of Materials: Beams. In beam design, required minimum section modulus is $S_{\\text{req}} = M_{\\text{max}}/\\sigma_{\\text{allow}}$. Steel shapes are indexed by $S_x$ in handbook tables."
+                          "examTip": "Found in Mechanics of Materials: Beams. In beam design, required minimum section modulus is $S_{\\text{req}} = M_{\\text{max}}/\\sigma_{\\text{allow}}$. Steel shapes are indexed by $S_x$ in handbook tables.",
+                          "videoUrl": "assets/videos/Elastic_Section_Modulus_for_Beam_Bending.mp4",
+                          "videoTitle": "Elastic Section Modulus for Beam Bending Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Differential Relationships between Load, Shear, and Moment",
@@ -5424,7 +5493,10 @@
                           "title": "Elastic Strain Energy in Axial, Bending, and Torsional Loading",
                           "formula": "$$U_{\\text{axial}} = \\frac{P^2 L}{2AE}, \\quad U_{\\text{bending}} = \\int_0^L \\frac{M^2}{2EI} \\, dx, \\quad U_{\\text{torsion}} = \\frac{T^2 L}{2GJ}$$",
                           "description": "Internal potential energy stored elastically in a deformed structural member under mechanical loading without permanent plastic deformation.",
-                          "examTip": "Found in Mechanics of Materials: Energy Methods. Foundation of Castigliano's theorem for calculating structural deflections: $\\delta_i = \\partial U / \\partial P_i$."
+                          "examTip": "Found in Mechanics of Materials: Energy Methods. Foundation of Castigliano's theorem for calculating structural deflections: $\\delta_i = \\partial U / \\partial P_i$.",
+                          "videoUrl": "assets/videos/Elastic_Strain_Energy_in_Axial_Bending_and_Torsional_Loading.mp4",
+                          "videoTitle": "Elastic Strain Energy in Axial, Bending, and Torsional Loading Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Combined Axial and Bending Stresses (Superposition Principle)",
@@ -5466,7 +5538,10 @@
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
                           "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                           "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
-                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$)."
+                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
+                          "videoUrl": "assets/videos/Modified_Fluid_Energy_Equation_Pumps_Turbines_and_Head_Losses.mp4",
+                          "videoTitle": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
@@ -7046,6 +7121,8 @@
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -7055,6 +7132,8 @@
                 },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -7100,6 +7179,8 @@
                 },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -7392,13 +7473,19 @@
                           "title": "Sample Mean and Standard Error of the Mean",
                           "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                           "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                          "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                          "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                           "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                           "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                          "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                          "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -8940,6 +9027,8 @@
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -8949,6 +9038,8 @@
                 },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -8994,6 +9085,8 @@
                 },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -9719,13 +9812,19 @@
                           "title": "Sample Mean and Standard Error of the Mean",
                           "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                           "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                          "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                          "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                           "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                           "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                          "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                          "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -9796,7 +9895,10 @@
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
                           "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                           "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
-                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$)."
+                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
+                          "videoUrl": "assets/videos/Modified_Fluid_Energy_Equation_Pumps_Turbines_and_Head_Losses.mp4",
+                          "videoTitle": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
@@ -11232,6 +11334,8 @@
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -11241,6 +11345,8 @@
                 },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -11286,6 +11392,8 @@
                 },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -11775,13 +11883,19 @@
                           "title": "Sample Mean and Standard Error of the Mean",
                           "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                           "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                          "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                          "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                           "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                           "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                          "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                          "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -13191,6 +13305,8 @@
                 },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -13200,6 +13316,8 @@
                 },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -13245,6 +13363,8 @@
                 },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -13860,13 +13980,19 @@
                           "title": "Sample Mean and Standard Error of the Mean",
                           "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                           "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                          "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                          "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                          "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                           "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                           "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                          "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                          "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                          "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -13937,7 +14063,10 @@
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
                           "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                           "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
-                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$)."
+                          "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
+                          "videoUrl": "assets/videos/Modified_Fluid_Energy_Equation_Pumps_Turbines_and_Head_Losses.mp4",
+                          "videoTitle": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Pump Hydraulic Power and Brake Horsepower (BHP)",
@@ -14445,6 +14574,8 @@
         "Other": [
                 {
                         "title": "Angle between Two Non-Vertical Lines",
+                        "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
+                        "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
                         "formula": "$$\\tan\\theta = \\left|\\frac{m_2 - m_1}{1 + m_1 m_2}\\right|, \\quad m_1 m_2 \\neq -1$$",
                         "description": "Calculates the acute angle $\\theta$ between two intersecting straight lines in a Cartesian plane given their slopes $m_1$ and $m_2$. Two lines are perpendicular if $m_1 m_2 = -1$ and parallel if $m_1 = m_2$.",
                         "examTip": "Found in Mathematics: Analytic Geometry. If $1 + m_1 m_2 = 0$, the lines are mutually perpendicular ($\\theta = 90^\\circ$). Always use absolute value to find the acute angle between lines.",
@@ -14454,6 +14585,8 @@
                     },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
+                        "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
+                        "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
                         "formula": "$$y = m x + b$$",
                         "description": "Standard representation of a non-vertical straight line in a plane, where $m = \\frac{\\Delta y}{\\Delta x}$ is the constant slope (rate of change) and $b = (0, b)$ is the $y$-intercept.",
                         "examTip": "Found in Mathematics: Analytic Geometry. Convert any standard form line $A x + B y + C = 0$ ($B \\neq 0$) to slope-intercept form $y = -\\frac{A}{B}x - \\frac{C}{B}$ to immediately read slope $m = -A/B$ and $y$-intercept $b = -C/B$.",
@@ -14499,6 +14632,8 @@
                     },
                 {
                         "title": "Eccentricity Classification of Conic Sections",
+                        "imageUrl": "assets/images/eccentricity_classification_of_conic_sections.jpg",
+                        "imageTitle": "Eccentricity Classification of Conic Sections Blueprint",
                         "formula": "$$e = \\frac{c}{a} = \\frac{\\text{dist}(P, F)}{\\text{dist}(P, D)} \\implies \\begin{cases} e = 0 & \\text{Circle} \\\\ 0 < e < 1 & \\text{Ellipse} \\\\ e = 1 & \\text{Parabola} \\\\ e > 1 & \\text{Hyperbola} \\end{cases}$$",
                         "description": "Defines the eccentricity $e$ of a conic section as the constant ratio of distance from any curve point $P$ to a focus $F$ over perpendicular distance to a directrix $D$.",
                         "examTip": "Found in Mathematics: Analytic Geometry and Orbital Mechanics. A circle is an ellipse with coincident foci ($c = 0 \\implies e = 0$). A parabola has eccentricity exactly 1. Planets move in Keplerian elliptical orbits with $0 < e < 1$.",
@@ -14860,7 +14995,10 @@
                         "title": "Sample Mean and Standard Error of the Mean",
                         "formula": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i, \\quad \\sigma_{\\bar{x}} = \\frac{s}{\\sqrt{n}}$$",
                         "description": "The sample mean estimates the population central tendency, while the standard error of the mean measures the dispersion of sample mean estimates around the true population mean across repeated samples.",
-                        "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half."
+                        "examTip": "Found in Probability and Statistics. Notice standard error decreases with $\\sqrt{n}$; quadrupling sample size cuts estimation uncertainty in half.",
+                              "videoUrl": "assets/videos/Sample_Mean_and_Standard_Error_of_the_Mean.mp4",
+                              "videoTitle": "Sample Mean and Standard Error of the Mean Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Expected Values",
@@ -15004,7 +15142,10 @@
                         "title": "Simple Linear Regression (Least Squares Best-Fit Line)",
                         "formula": "$$\\hat{y} = a + bx, \\quad b = \\frac{S_{xy}}{S_{xx}} = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}, \\quad a = \\bar{y} - b\\bar{x}$$",
                         "description": "Fits an optimal straight line to bivariate data $(x_i, y_i)$ by minimizing the sum of squared vertical residuals between observed and predicted values.",
-                        "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$."
+                        "examTip": "Found in Probability and Statistics: Linear Regression. The regression line always passes through the centroid point of the data $(\\bar{x}, \\bar{y})$.",
+                              "videoUrl": "assets/videos/Simple_Linear_Regression_Least_Squares_Best_Fit_Line.mp4",
+                              "videoTitle": "Simple Linear Regression (Least Squares Best-Fit Line) Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Correlation Coefficient and Coefficient of Determinations",
@@ -16033,6 +16174,17 @@
                         "videoDuration": "10s"
                     },
                 {
+                          "title": "Coriolis Acceleration in Rotating Reference Frames",
+                          "imageUrl": "assets/images/coriolis_acceleration_rotating_frame.jpg",
+                          "imageTitle": "Coriolis Acceleration in Rotating Reference Frames Blueprint",
+                          "formula": "$$\\vec{a}_{cor} = 2\\vec{\\omega} \\times \\vec{v}_{rel}$$",
+                          "description": "Apparent inertial acceleration experienced by a body moving with velocity $\\vec{v}_{rel}$ relative to a coordinate frame that is itself rotating with angular velocity $\\vec{\\omega}$.",
+                          "examTip": "Found in Dynamics: Kinematics of Particles & Rigid Bodies. Common in mechanisms where a slider or particle moves along a rotating link or slotted guide arm ($a_c = 2\\omega v_{rel}$).",
+                          "videoUrl": "assets/videos/Coriolis_Acceleration_in_Rotating_Reference_Frames.mp4",
+                          "videoTitle": "Coriolis Acceleration in Rotating Reference Frames Explainer",
+                          "videoDuration": "10s"
+                },
+                {
                         "title": "Instantaneous Center of Rotation",
                         "formula": "$$\\mathbf{v}_A = \\boldsymbol{\\omega} \\times \\mathbf{r}_{A/\\text{IC}}, \\quad v_A = \\omega \\, r_{A/\\text{IC}}, \\quad \\frac{v_A}{r_A} = \\frac{v_B}{r_B} = \\omega$$",
                         "description": "At any given instant, general planar rigid body motion can be modeled as pure rotation about an instantaneous center of zero velocity (IC). The IC is located at the intersection of lines drawn perpendicular to the velocity vectors of any two points on the body.",
@@ -16488,7 +16640,10 @@
                         "title": "Gas Turbine Regenerator Thermal Effectiveness",
                         "formula": "$$\\epsilon = \\frac{q_{\\text{actual}}}{q_{\\text{max}}} = \\frac{h_{\\text{comb,in}} - h_{\\text{comp,out}}}{h_{\\text{turb,out}} - h_{\\text{comp,out}}} = \\frac{T_x - T_2}{T_4 - T_2}$$",
                         "description": "Quantifies the performance of a recuperator/regenerator preheating compressor discharge air using hot turbine exhaust gases in an open or closed Brayton gas turbine cycle.",
-                        "examTip": "Found in Thermodynamics: Brayton Cycles. Regeneration improves thermal efficiency by reducing required external heat input $q_{in}$ without changing net network output $w_{net}$."
+                        "examTip": "Found in Thermodynamics: Brayton Cycles. Regeneration improves thermal efficiency by reducing required external heat input $q_{in}$ without changing net network output $w_{net}$.",
+                              "videoUrl": "assets/videos/Gas_Turbine_Regenerator_Thermal_Effectiveness.mp4",
+                              "videoTitle": "Gas Turbine Regenerator Thermal Effectiveness Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Clausius-Clapeyron Equation for Vapor Pressure of Pure Liquids",
@@ -16597,7 +16752,10 @@
                         "title": "Elastic Section Modulus for Beam Bending",
                         "formula": "$$S = \\frac{I}{c}, \\quad \\sigma_{\\text{max}} = \\frac{M}{S} \\quad (S_{\\text{rect}} = \\frac{b h^2}{6}, \\quad S_{\\text{solid round}} = \\frac{\\pi d^3}{32})$$",
                         "description": "Geometric beam property defined as the ratio of area moment of inertia $I$ to maximum distance from neutral axis $c$. Governs peak flexural bending stress.",
-                        "examTip": "Found in Mechanics of Materials: Beams. In beam design, required minimum section modulus is $S_{\\text{req}} = M_{\\text{max}}/\\sigma_{\\text{allow}}$. Steel shapes are indexed by $S_x$ in handbook tables."
+                        "examTip": "Found in Mechanics of Materials: Beams. In beam design, required minimum section modulus is $S_{\\text{req}} = M_{\\text{max}}/\\sigma_{\\text{allow}}$. Steel shapes are indexed by $S_x$ in handbook tables.",
+                              "videoUrl": "assets/videos/Elastic_Section_Modulus_for_Beam_Bending.mp4",
+                              "videoTitle": "Elastic Section Modulus for Beam Bending Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Differential Relationships between Load, Shear, and Moment",
@@ -16663,7 +16821,10 @@
                         "title": "Elastic Strain Energy in Axial, Bending, and Torsional Loading",
                         "formula": "$$U_{\\text{axial}} = \\frac{P^2 L}{2AE}, \\quad U_{\\text{bending}} = \\int_0^L \\frac{M^2}{2EI} \\, dx, \\quad U_{\\text{torsion}} = \\frac{T^2 L}{2GJ}$$",
                         "description": "Internal potential energy stored elastically in a deformed structural member under mechanical loading without permanent plastic deformation.",
-                        "examTip": "Found in Mechanics of Materials: Energy Methods. Foundation of Castigliano's theorem for calculating structural deflections: $\\delta_i = \\partial U / \\partial P_i$."
+                        "examTip": "Found in Mechanics of Materials: Energy Methods. Foundation of Castigliano's theorem for calculating structural deflections: $\\delta_i = \\partial U / \\partial P_i$.",
+                              "videoUrl": "assets/videos/Elastic_Strain_Energy_in_Axial_Bending_and_Torsional_Loading.mp4",
+                              "videoTitle": "Elastic Strain Energy in Axial, Bending, and Torsional Loading Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Moment-Area First Theorem (Slope Change Between Points)",
@@ -16719,7 +16880,10 @@
                         "title": "Analytical In-Plane Principal Stresses and Maximum Shear Equations",
                         "formula": "$$\\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}, \\quad \\tau_{\\text{max,in-plane}} = \\frac{\\sigma_1 - \\sigma_2}{2}$$",
                         "description": "Analytically transforms general 2D plane stress state $(\\sigma_x, \\sigma_y, \\tau_{xy})$ onto principal planes where shear stress is zero and normal stresses reach maximum and minimum values.",
-                        "examTip": "Found in Mechanics of Materials: Stress Transformation. Principal planes are rotated by angle $\\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$. Maximum in-plane shear occurs at $45^\\circ$ to principal planes."
+                        "examTip": "Found in Mechanics of Materials: Stress Transformation. Principal planes are rotated by angle $\\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$. Maximum in-plane shear occurs at $45^\\circ$ to principal planes.",
+                              "videoUrl": "assets/videos/Analytical_In_Plane_Principal_Stresses_and_Maximum_Shear_Equations.mp4",
+                              "videoTitle": "Analytical In-Plane Principal Stresses and Maximum Shear Equations Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Maximum Shear Stress Theory (Tresca Yield Criterion for Ductile Metals)",
@@ -17083,7 +17247,10 @@
                         "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
                         "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                         "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
-                        "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$)."
+                        "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
+                              "videoUrl": "assets/videos/Modified_Fluid_Energy_Equation_Pumps_Turbines_and_Head_Losses.mp4",
+                              "videoTitle": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses) Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Darcy-Weisbach Pipe Friction Equation",
