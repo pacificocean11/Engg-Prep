@@ -7184,7 +7184,10 @@ window.calcEvaluate = function() {
                           "title": "Two-Force and Three-Force Member Equilibrium Principles",
                           "formula": "$$\\text{Two-Force: equal, opposite, and collinear}; \\quad \\text{Three-Force: lines of action must intersect at a concurrent point or be parallel}$$",
                           "description": "Simplifies structural equilibrium analysis: any member loaded at only two pin joints carries purely axial tension or compression along the line connecting the joints. Three non-parallel coplanar forces in equilibrium must be concurrent.",
-                          "examTip": "Found in Statics: Frames and Trusses. Truss members, hydraulic cylinder actuators, and simple link arms are classic two-force members carrying zero bending moments."
+                          "examTip": "Found in Statics: Frames and Trusses. Truss members, hydraulic cylinder actuators, and simple link arms are classic two-force members carrying zero bending moments.",
+                          "videoUrl": "assets/videos/Two_Force_and_Three_Force_Member_Equilibrium_Principles.mp4",
+                          "videoTitle": "Two-Force and Three-Force Member Equilibrium Principles Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                 "title": "Gravity Retaining Wall Overturning Factor of Safety",
@@ -7452,7 +7455,10 @@ window.calcEvaluate = function() {
                           "title": "Planar Rigid Body Relative Velocity and Acceleration Equations",
                           "formula": "$$\\mathbf{v}_B = \\mathbf{v}_A + \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$$",
                           "description": "Fundamental kinematics vector equations relating absolute velocities and accelerations between two points $A$ and $B$ on the same planar rotating and translating rigid body.",
-                          "examTip": "Found in Dynamics: Rigid Body Kinematics. $\\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A}$ is the tangential relative acceleration, while $-\\omega^2 \\mathbf{r}_{B/A}$ is normal relative acceleration pointing toward $A$."
+                          "examTip": "Found in Dynamics: Rigid Body Kinematics. $\\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A}$ is the tangential relative acceleration, while $-\\omega^2 \\mathbf{r}_{B/A}$ is normal relative acceleration pointing toward $A$.",
+                          "videoUrl": "assets/videos/Planar_Rigid_Body_Relative_Velocity_and_Acceleration_Equations.mp4",
+                          "videoTitle": "Planar Rigid Body Relative Velocity and Acceleration Equations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Work-Energy Principle (Rigid Body Dynamics)",
@@ -8193,7 +8199,10 @@ window.calcEvaluate = function() {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
                           "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                           "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
-                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$."
+                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
+                          "videoUrl": "assets/videos/Laminar_Flow_Friction_Factor_in_Circular_Pipes.mp4",
+                          "videoTitle": "Laminar Flow Friction Factor in Circular Pipes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                 "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
@@ -8610,7 +8619,10 @@ window.calcEvaluate = function() {
                           "title": "Polytropic Process Boundary Work for Ideal Gases",
                           "formula": "$$P V^n = \\text{const} \\implies W = \\int P dV = \\frac{P_2 V_2 - P_1 V_1}{1 - n} = \\frac{m R (T_2 - T_1)}{1 - n} \\quad (n \\ne 1)$$",
                           "description": "Calculates boundary expansion or compression work during quasi-equilibrium thermodynamic processes governed by $P V^n = C$. Generalizes isobaric ($n=0$), isothermal ($n=1$), isentropic ($n=k$), and isochoric ($n=\\infty$).",
-                          "examTip": "Found in Thermodynamics. If $n = 1$, formula divides by zero; use isothermal work $W = P_1 V_1 \\ln(V_2/V_1) = m R T \\ln(P_1/P_2)$ instead."
+                          "examTip": "Found in Thermodynamics. If $n = 1$, formula divides by zero; use isothermal work $W = P_1 V_1 \\ln(V_2/V_1) = m R T \\ln(P_1/P_2)$ instead.",
+                          "videoUrl": "assets/videos/Polytropic_Process_Boundary_Work_for_Ideal_Gases.mp4",
+                          "videoTitle": "Polytropic Process Boundary Work for Ideal Gases Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Ideal Rankine Cycle Thermal Efficiency (Vapor Power)",
@@ -9216,7 +9228,10 @@ window.calcEvaluate = function() {
                           "title": "S-N Fatigue Curve and Ferrous Endurance Limit",
                           "formula": "$$S_e' \\approx 0.5 S_{ut} \\quad (S_{ut} \\le 200\\text{ ksi} / 1400\\text{ MPa}); \\quad S_e = k_a k_b k_c k_d k_e S_e'$$",
                           "description": "Relates cyclic alternating stress amplitude $S$ to cycles to failure $N$. Ferrous metals (steels) exhibit a distinct endurance limit knee around $10^6$ cycles, below which infinite fatigue life is achieved.",
-                          "examTip": "Found in Mechanical Design and Materials: Fatigue. Non-ferrous metals (aluminum, copper) have no true endurance limit; their fatigue strength continues to decrease indefinitely with cycle count."
+                          "examTip": "Found in Mechanical Design and Materials: Fatigue. Non-ferrous metals (aluminum, copper) have no true endurance limit; their fatigue strength continues to decrease indefinitely with cycle count.",
+                          "videoUrl": "assets/videos/S_N_Fatigue_Curve_and_Ferrous_Endurance_Limit.mp4",
+                          "videoTitle": "S-N Fatigue Curve and Ferrous Endurance Limit Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Maximum Shear Stress Theory (Tresca Yield Criterion for Ductile Metals)",
@@ -9231,7 +9246,10 @@ window.calcEvaluate = function() {
                           "title": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals)",
                           "formula": "$$\\sigma' = \\sqrt{\\sigma_1^2 - \\sigma_1 \\sigma_2 + \\sigma_2^2} = \\sqrt{\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2} \\ge \\frac{S_y}{n}, \\quad S_{sy} = 0.577 S_y$$",
                           "description": "Yielding initiates in ductile materials when the distortion strain energy per unit volume equals that in uniaxial tension. Represents an elliptical yield envelope and provides the most accurate yield prediction for ductile metals.",
-                          "examTip": "Found in Mechanical Design: Failure Theories. Note that pure shear yield strength is $S_{sy} = S_y / \\sqrt{3} \\approx 0.577 S_y$ (compared to $0.50 S_y$ in Tresca). Von Mises is less conservative than Tresca by up to 15%."
+                          "examTip": "Found in Mechanical Design: Failure Theories. Note that pure shear yield strength is $S_{sy} = S_y / \\sqrt{3} \\approx 0.577 S_y$ (compared to $0.50 S_y$ in Tresca). Von Mises is less conservative than Tresca by up to 15%.",
+                          "videoUrl": "assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
+                          "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Maximum Normal Stress Theory (Rankine Criterion for Brittle Materials)",
@@ -9246,7 +9264,10 @@ window.calcEvaluate = function() {
                           "title": "Coulomb-Mohr and Modified Mohr Failure Criteria for Brittle Materials",
                           "formula": "$$\\frac{\\sigma_1}{S_{ut}} - \\frac{\\sigma_3}{S_{uc}} = \\frac{1}{n} \\quad (\\sigma_1 \\ge 0 \\ge \\sigma_3)$$",
                           "description": "Failure theory specifically designed for brittle materials where compressive ultimate strength is significantly larger than tensile strength ($S_{uc} \\gg S_{ut}$, typical of cast irons and ceramics).",
-                          "examTip": "Found in Mechanical Design: Failure Theories for Brittle Materials. If both principal stresses are tensile, failure depends solely on $S_{ut}$. If in 4th quadrant (one tension, one compression), use the bi-axial interaction formula."
+                          "examTip": "Found in Mechanical Design: Failure Theories for Brittle Materials. If both principal stresses are tensile, failure depends solely on $S_{ut}$. If in 4th quadrant (one tension, one compression), use the bi-axial interaction formula.",
+                          "videoUrl": "assets/videos/Coulomb_Mohr_and_Modified_Mohr_Failure_Criteria_for_Brittle_Materials.mp4",
+                          "videoTitle": "Coulomb-Mohr and Modified Mohr Failure Criteria for Brittle Materials Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Helical Compression Spring Shear Stress with Wahl Factor",
@@ -9317,7 +9338,10 @@ window.calcEvaluate = function() {
                           "title": "ASME Transmission Shaft Design for Combined Bending and Torsion",
                           "formula": "$$d = \\left\\{ \\frac{16 n}{\\pi} \\left[ \\left( \\frac{M_a}{S_e} \\right)^2 + \\frac{3}{4}\\left( \\frac{T_a}{S_e} \\right)^2 + \\left( \\frac{M_m}{S_{ut}} \\right)^2 + \\frac{3}{4}\\left( \\frac{T_m}{S_{ut}} \\right)^2 \\right]^{1/2} \\right\\}^{1/3}$$",
                           "description": "Elliptic ASME code equation sizing solid rotating circular shafts carrying cyclic alternating bending moments $M_a$ and steady/alternating torsional torques $T_m, T_a$.",
-                          "examTip": "Found in Mechanical Design: Shafts. For standard rotating shafts with steady torque ($T_a = 0, T_m = T$) and completely reversed bending ($M_m = 0, M_a = M$), the formula simplifies significantly."
+                          "examTip": "Found in Mechanical Design: Shafts. For standard rotating shafts with steady torque ($T_a = 0, T_m = T$) and completely reversed bending ($M_m = 0, M_a = M$), the formula simplifies significantly.",
+                          "videoUrl": "assets/videos/ASME_Transmission_Shaft_Design_for_Combined_Bending_and_Torsion.mp4",
+                          "videoTitle": "ASME Transmission Shaft Design for Combined Bending and Torsion Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Spur Gear Geometry (Diametral Pitch, Module, Pitch Diameter, Speed Ratio)",
@@ -11245,7 +11269,10 @@ window.calcEvaluate = function() {
                           "title": "Two-Force and Three-Force Member Equilibrium Principles",
                           "formula": "$$\\text{Two-Force: equal, opposite, and collinear}; \\quad \\text{Three-Force: lines of action must intersect at a concurrent point or be parallel}$$",
                           "description": "Simplifies structural equilibrium analysis: any member loaded at only two pin joints carries purely axial tension or compression along the line connecting the joints. Three non-parallel coplanar forces in equilibrium must be concurrent.",
-                          "examTip": "Found in Statics: Frames and Trusses. Truss members, hydraulic cylinder actuators, and simple link arms are classic two-force members carrying zero bending moments."
+                          "examTip": "Found in Statics: Frames and Trusses. Truss members, hydraulic cylinder actuators, and simple link arms are classic two-force members carrying zero bending moments.",
+                          "videoUrl": "assets/videos/Two_Force_and_Three_Force_Member_Equilibrium_Principles.mp4",
+                          "videoTitle": "Two-Force and Three-Force Member Equilibrium Principles Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Centroids and Area Moments of Inertia for Standard Shapes",
@@ -11269,7 +11296,10 @@ window.calcEvaluate = function() {
                           "title": "Planar Rigid Body Relative Velocity and Acceleration Equations",
                           "formula": "$$\\mathbf{v}_B = \\mathbf{v}_A + \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$$",
                           "description": "Fundamental kinematics vector equations relating absolute velocities and accelerations between two points $A$ and $B$ on the same planar rotating and translating rigid body.",
-                          "examTip": "Found in Dynamics: Rigid Body Kinematics. $\\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A}$ is the tangential relative acceleration, while $-\\omega^2 \\mathbf{r}_{B/A}$ is normal relative acceleration pointing toward $A$."
+                          "examTip": "Found in Dynamics: Rigid Body Kinematics. $\\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A}$ is the tangential relative acceleration, while $-\\omega^2 \\mathbf{r}_{B/A}$ is normal relative acceleration pointing toward $A$.",
+                          "videoUrl": "assets/videos/Planar_Rigid_Body_Relative_Velocity_and_Acceleration_Equations.mp4",
+                          "videoTitle": "Planar Rigid Body Relative Velocity and Acceleration Equations Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Planar Rigid Body Equations of Motion (Newton’s 2nd Law for Rotation)",
@@ -11374,7 +11404,10 @@ window.calcEvaluate = function() {
                           "title": "S-N Fatigue Curve and Ferrous Endurance Limit",
                           "formula": "$$S_e' \\approx 0.5 S_{ut} \\quad (S_{ut} \\le 200\\text{ ksi} / 1400\\text{ MPa}); \\quad S_e = k_a k_b k_c k_d k_e S_e'$$",
                           "description": "Relates cyclic alternating stress amplitude $S$ to cycles to failure $N$. Ferrous metals (steels) exhibit a distinct endurance limit knee around $10^6$ cycles, below which infinite fatigue life is achieved.",
-                          "examTip": "Found in Mechanical Design and Materials: Fatigue. Non-ferrous metals (aluminum, copper) have no true endurance limit; their fatigue strength continues to decrease indefinitely with cycle count."
+                          "examTip": "Found in Mechanical Design and Materials: Fatigue. Non-ferrous metals (aluminum, copper) have no true endurance limit; their fatigue strength continues to decrease indefinitely with cycle count.",
+                          "videoUrl": "assets/videos/S_N_Fatigue_Curve_and_Ferrous_Endurance_Limit.mp4",
+                          "videoTitle": "S-N Fatigue Curve and Ferrous Endurance Limit Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
@@ -11404,7 +11437,10 @@ window.calcEvaluate = function() {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
                           "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                           "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
-                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$."
+                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
+                          "videoUrl": "assets/videos/Laminar_Flow_Friction_Factor_in_Circular_Pipes.mp4",
+                          "videoTitle": "Laminar Flow Friction Factor in Circular Pipes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Maximum Shear Stress Theory (Tresca Yield Criterion for Ductile Metals)",
@@ -11419,7 +11455,10 @@ window.calcEvaluate = function() {
                           "title": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals)",
                           "formula": "$$\\sigma' = \\sqrt{\\sigma_1^2 - \\sigma_1 \\sigma_2 + \\sigma_2^2} = \\sqrt{\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2} \\ge \\frac{S_y}{n}, \\quad S_{sy} = 0.577 S_y$$",
                           "description": "Yielding initiates in ductile materials when the distortion strain energy per unit volume equals that in uniaxial tension. Represents an elliptical yield envelope and provides the most accurate yield prediction for ductile metals.",
-                          "examTip": "Found in Mechanical Design: Failure Theories. Note that pure shear yield strength is $S_{sy} = S_y / \\sqrt{3} \\approx 0.577 S_y$ (compared to $0.50 S_y$ in Tresca). Von Mises is less conservative than Tresca by up to 15%."
+                          "examTip": "Found in Mechanical Design: Failure Theories. Note that pure shear yield strength is $S_{sy} = S_y / \\sqrt{3} \\approx 0.577 S_y$ (compared to $0.50 S_y$ in Tresca). Von Mises is less conservative than Tresca by up to 15%.",
+                          "videoUrl": "assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
+                          "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals) Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Maximum Normal Stress Theory (Rankine Criterion for Brittle Materials)",
@@ -11434,7 +11473,10 @@ window.calcEvaluate = function() {
                           "title": "Coulomb-Mohr and Modified Mohr Failure Criteria for Brittle Materials",
                           "formula": "$$\\frac{\\sigma_1}{S_{ut}} - \\frac{\\sigma_3}{S_{uc}} = \\frac{1}{n} \\quad (\\sigma_1 \\ge 0 \\ge \\sigma_3)$$",
                           "description": "Failure theory specifically designed for brittle materials where compressive ultimate strength is significantly larger than tensile strength ($S_{uc} \\gg S_{ut}$, typical of cast irons and ceramics).",
-                          "examTip": "Found in Mechanical Design: Failure Theories for Brittle Materials. If both principal stresses are tensile, failure depends solely on $S_{ut}$. If in 4th quadrant (one tension, one compression), use the bi-axial interaction formula."
+                          "examTip": "Found in Mechanical Design: Failure Theories for Brittle Materials. If both principal stresses are tensile, failure depends solely on $S_{ut}$. If in 4th quadrant (one tension, one compression), use the bi-axial interaction formula.",
+                          "videoUrl": "assets/videos/Coulomb_Mohr_and_Modified_Mohr_Failure_Criteria_for_Brittle_Materials.mp4",
+                          "videoTitle": "Coulomb-Mohr and Modified Mohr Failure Criteria for Brittle Materials Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
@@ -15725,7 +15767,10 @@ window.calcEvaluate = function() {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
                           "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                           "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
-                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$."
+                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
+                          "videoUrl": "assets/videos/Laminar_Flow_Friction_Factor_in_Circular_Pipes.mp4",
+                          "videoTitle": "Laminar Flow Friction Factor in Circular Pipes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Steady-Flow Energy Equation for Open Thermodynamic Systems",
@@ -15749,7 +15794,10 @@ window.calcEvaluate = function() {
                           "title": "Polytropic Process Boundary Work for Ideal Gases",
                           "formula": "$$P V^n = \\text{const} \\implies W = \\int P dV = \\frac{P_2 V_2 - P_1 V_1}{1 - n} = \\frac{m R (T_2 - T_1)}{1 - n} \\quad (n \\ne 1)$$",
                           "description": "Calculates boundary expansion or compression work during quasi-equilibrium thermodynamic processes governed by $P V^n = C$. Generalizes isobaric ($n=0$), isothermal ($n=1$), isentropic ($n=k$), and isochoric ($n=\\infty$).",
-                          "examTip": "Found in Thermodynamics. If $n = 1$, formula divides by zero; use isothermal work $W = P_1 V_1 \\ln(V_2/V_1) = m R T \\ln(P_1/P_2)$ instead."
+                          "examTip": "Found in Thermodynamics. If $n = 1$, formula divides by zero; use isothermal work $W = P_1 V_1 \\ln(V_2/V_1) = m R T \\ln(P_1/P_2)$ instead.",
+                          "videoUrl": "assets/videos/Polytropic_Process_Boundary_Work_for_Ideal_Gases.mp4",
+                          "videoTitle": "Polytropic Process Boundary Work for Ideal Gases Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Isentropic Efficiencies of Turbines and Compressors",
@@ -19860,7 +19908,10 @@ window.calcEvaluate = function() {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
                           "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                           "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
-                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$."
+                          "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
+                          "videoUrl": "assets/videos/Laminar_Flow_Friction_Factor_in_Circular_Pipes.mp4",
+                          "videoTitle": "Laminar Flow Friction Factor in Circular Pipes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                           "title": "Types of Parabolas and Their Equations",
@@ -21707,7 +21758,10 @@ window.calcEvaluate = function() {
                         "title": "Two-Force and Three-Force Member Equilibrium Principles",
                         "formula": "$$\\text{Two-Force: equal, opposite, and collinear}; \\quad \\text{Three-Force: lines of action must intersect at a concurrent point or be parallel}$$",
                         "description": "Simplifies structural equilibrium analysis: any member loaded at only two pin joints carries purely axial tension or compression along the line connecting the joints. Three non-parallel coplanar forces in equilibrium must be concurrent.",
-                        "examTip": "Found in Statics: Frames and Trusses. Truss members, hydraulic cylinder actuators, and simple link arms are classic two-force members carrying zero bending moments."
+                        "examTip": "Found in Statics: Frames and Trusses. Truss members, hydraulic cylinder actuators, and simple link arms are classic two-force members carrying zero bending moments.",
+                              "videoUrl": "assets/videos/Two_Force_and_Three_Force_Member_Equilibrium_Principles.mp4",
+                              "videoTitle": "Two-Force and Three-Force Member Equilibrium Principles Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Gravity Retaining Wall Overturning Factor of Safety",
@@ -21956,7 +22010,10 @@ window.calcEvaluate = function() {
                         "title": "Planar Rigid Body Relative Velocity and Acceleration Equations",
                         "formula": "$$\\mathbf{v}_B = \\mathbf{v}_A + \\boldsymbol{\\omega} \\times \\mathbf{r}_{B/A}, \\quad \\mathbf{a}_B = \\mathbf{a}_A + \\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A} - \\omega^2 \\mathbf{r}_{B/A}$$",
                         "description": "Fundamental kinematics vector equations relating absolute velocities and accelerations between two points $A$ and $B$ on the same planar rotating and translating rigid body.",
-                        "examTip": "Found in Dynamics: Rigid Body Kinematics. $\\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A}$ is the tangential relative acceleration, while $-\\omega^2 \\mathbf{r}_{B/A}$ is normal relative acceleration pointing toward $A$."
+                        "examTip": "Found in Dynamics: Rigid Body Kinematics. $\\boldsymbol{\\alpha} \\times \\mathbf{r}_{B/A}$ is the tangential relative acceleration, while $-\\omega^2 \\mathbf{r}_{B/A}$ is normal relative acceleration pointing toward $A$.",
+                              "videoUrl": "assets/videos/Planar_Rigid_Body_Relative_Velocity_and_Acceleration_Equations.mp4",
+                              "videoTitle": "Planar Rigid Body Relative Velocity and Acceleration Equations Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Kinematics of Particles: Normal and Tangential Acceleration",
@@ -22360,7 +22417,10 @@ window.calcEvaluate = function() {
                         "title": "Polytropic Process Boundary Work for Ideal Gases",
                         "formula": "$$P V^n = \\text{const} \\implies W = \\int P dV = \\frac{P_2 V_2 - P_1 V_1}{1 - n} = \\frac{m R (T_2 - T_1)}{1 - n} \\quad (n \\ne 1)$$",
                         "description": "Calculates boundary expansion or compression work during quasi-equilibrium thermodynamic processes governed by $P V^n = C$. Generalizes isobaric ($n=0$), isothermal ($n=1$), isentropic ($n=k$), and isochoric ($n=\\infty$).",
-                        "examTip": "Found in Thermodynamics. If $n = 1$, formula divides by zero; use isothermal work $W = P_1 V_1 \\ln(V_2/V_1) = m R T \\ln(P_1/P_2)$ instead."
+                        "examTip": "Found in Thermodynamics. If $n = 1$, formula divides by zero; use isothermal work $W = P_1 V_1 \\ln(V_2/V_1) = m R T \\ln(P_1/P_2)$ instead.",
+                              "videoUrl": "assets/videos/Polytropic_Process_Boundary_Work_for_Ideal_Gases.mp4",
+                              "videoTitle": "Polytropic Process Boundary Work for Ideal Gases Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Isentropic Efficiencies of Turbines and Compressors",
@@ -22588,7 +22648,10 @@ window.calcEvaluate = function() {
                         "title": "Distortion Energy Theory (von Mises Yield Criterion)",
                         "formula": "$$\\sigma' = \\sqrt{\\sigma_1^2 - \\sigma_1 \\sigma_2 + \\sigma_2^2} \\le S_y$$",
                         "description": "States that yielding in ductile metals occurs when distortion strain energy per unit volume reaches the distortion energy at yield in uniaxial tension.",
-                        "examTip": "Found in Mechanics of Materials. Best matches experimental yield data for structural steel and aluminum; forms an ellipse in $(\\sigma_1, \\sigma_2)$ plane."
+                        "examTip": "Found in Mechanics of Materials. Best matches experimental yield data for structural steel and aluminum; forms an ellipse in $(\\sigma_1, \\sigma_2)$ plane.",
+                              "videoUrl": "assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
+                              "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals) Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Mohr-Coulomb Failure Criterion for Soils",
@@ -22618,7 +22681,10 @@ window.calcEvaluate = function() {
                         "title": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals)",
                         "formula": "$$\\sigma' = \\sqrt{\\sigma_1^2 - \\sigma_1 \\sigma_2 + \\sigma_2^2} = \\sqrt{\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2} \\ge \\frac{S_y}{n}, \\quad S_{sy} = 0.577 S_y$$",
                         "description": "Yielding initiates in ductile materials when the distortion strain energy per unit volume equals that in uniaxial tension. Represents an elliptical yield envelope and provides the most accurate yield prediction for ductile metals.",
-                        "examTip": "Found in Mechanical Design: Failure Theories. Note that pure shear yield strength is $S_{sy} = S_y / \\sqrt{3} \\approx 0.577 S_y$ (compared to $0.50 S_y$ in Tresca). Von Mises is less conservative than Tresca by up to 15%."
+                        "examTip": "Found in Mechanical Design: Failure Theories. Note that pure shear yield strength is $S_{sy} = S_y / \\sqrt{3} \\approx 0.577 S_y$ (compared to $0.50 S_y$ in Tresca). Von Mises is less conservative than Tresca by up to 15%.",
+                              "videoUrl": "assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
+                              "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion for Ductile Metals) Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Maximum Normal Stress Theory (Rankine Criterion for Brittle Materials)",
@@ -22633,7 +22699,10 @@ window.calcEvaluate = function() {
                         "title": "Coulomb-Mohr and Modified Mohr Failure Criteria for Brittle Materials",
                         "formula": "$$\\frac{\\sigma_1}{S_{ut}} - \\frac{\\sigma_3}{S_{uc}} = \\frac{1}{n} \\quad (\\sigma_1 \\ge 0 \\ge \\sigma_3)$$",
                         "description": "Failure theory specifically designed for brittle materials where compressive ultimate strength is significantly larger than tensile strength ($S_{uc} \\gg S_{ut}$, typical of cast irons and ceramics).",
-                        "examTip": "Found in Mechanical Design: Failure Theories for Brittle Materials. If both principal stresses are tensile, failure depends solely on $S_{ut}$. If in 4th quadrant (one tension, one compression), use the bi-axial interaction formula."
+                        "examTip": "Found in Mechanical Design: Failure Theories for Brittle Materials. If both principal stresses are tensile, failure depends solely on $S_{ut}$. If in 4th quadrant (one tension, one compression), use the bi-axial interaction formula.",
+                              "videoUrl": "assets/videos/Coulomb_Mohr_and_Modified_Mohr_Failure_Criteria_for_Brittle_Materials.mp4",
+                              "videoTitle": "Coulomb-Mohr and Modified Mohr Failure Criteria for Brittle Materials Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Hooke’s Law for Uniaxial Elastic Deformation",
@@ -22745,7 +22814,10 @@ window.calcEvaluate = function() {
                         "title": "S-N Fatigue Curve and Ferrous Endurance Limit",
                         "formula": "$$S_e' \\approx 0.5 S_{ut} \\quad (S_{ut} \\le 200\\text{ ksi} / 1400\\text{ MPa}); \\quad S_e = k_a k_b k_c k_d k_e S_e'$$",
                         "description": "Relates cyclic alternating stress amplitude $S$ to cycles to failure $N$. Ferrous metals (steels) exhibit a distinct endurance limit knee around $10^6$ cycles, below which infinite fatigue life is achieved.",
-                        "examTip": "Found in Mechanical Design and Materials: Fatigue. Non-ferrous metals (aluminum, copper) have no true endurance limit; their fatigue strength continues to decrease indefinitely with cycle count."
+                        "examTip": "Found in Mechanical Design and Materials: Fatigue. Non-ferrous metals (aluminum, copper) have no true endurance limit; their fatigue strength continues to decrease indefinitely with cycle count.",
+                              "videoUrl": "assets/videos/S_N_Fatigue_Curve_and_Ferrous_Endurance_Limit.mp4",
+                              "videoTitle": "S-N Fatigue Curve and Ferrous Endurance Limit Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Thin-Walled Pressure Vessels: Cylindrical Hoop vs Longitudinal Stress",
@@ -22984,7 +23056,10 @@ window.calcEvaluate = function() {
                         "title": "Laminar Flow Friction Factor in Circular Pipes",
                         "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                         "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
-                        "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$."
+                        "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
+                              "videoUrl": "assets/videos/Laminar_Flow_Friction_Factor_in_Circular_Pipes.mp4",
+                              "videoTitle": "Laminar Flow Friction Factor in Circular Pipes Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Manning’s Equation for Open Channel Flow",
