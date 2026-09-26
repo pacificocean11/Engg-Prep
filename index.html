@@ -2022,7 +2022,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="exam_questions.js?v=3"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=108"></script>
+    <script src="app.js?v=114"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -2877,6 +2877,11 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         <option value="Industrial">Industrial</option>
                         <option value="Environmental">Environmental</option>
                         <option value="Other">Other Disciplines</option>
+                    </select>
+
+                    <!-- Subject Selector (Desktop & Laptop Only: Mechanical and Other Disciplines) -->
+                    <select id="fc-subject-select" class="hidden text-xs bg-slate-800/90 text-purple-200 border border-purple-500/40 rounded-xl px-2.5 py-1.5 font-bold cursor-pointer focus:outline-none focus:border-purple-400 transition-colors max-w-[220px] truncate" title="Switch Subject (FE Syllabus)">
+                        <option value="all">All Subjects</option>
                     </select>
 
                     <!-- Study Mode Selector -->
